@@ -1,72 +1,72 @@
-import fitz  # PyMuPDF
 import re
-import spacy
+import PyPDF2
+import torch
+from transformers import pipeline, BertForTokenClassification, BertTokenizer
 
-# Load spaCy's English model
-nlp = spacy.load("en_core_web_sm")
+# Load SciBERT model and tokenizer for token classification
+def load_scibert_model():
+    model = BertForTokenClassification.from_pretrained("allenai/scibert_scivocab_uncased")
+    tokenizer = BertTokenizer.from_pretrained("allenai/scibert_scivocab_uncased")
+    
+    # Load the NER pipeline with the model and tokenizer
+    nlp = pipeline(
+        "ner", 
+        model=model, 
+        tokenizer=tokenizer, 
+        device=0 if torch.cuda.is_available() else -1,  # GPU nếu có, nếu không thì dùng CPU
+        aggregation_strategy="simple"
+    )
+    return nlp, tokenizer
 
+# Extract citations using SciBERT for Named Entity Recognition (NER)
+def extract_citations_with_scibert(sentences):
+    nlp, tokenizer = load_scibert_model()
+    citation_results = []
+    
+    for sentence in sentences:
+        # Chia câu thành các phần nhỏ nếu cần thiết
+        chunks = [sentence[i:i+512] for i in range(0, len(sentence), 512)]  # Tối đa 512 tokens
+        
+        for chunk in chunks:
+            # Đưa trực tiếp chuỗi văn bản vào pipeline thay vì tokenized inputs
+            results = nlp(chunk)  
+            citation_results.extend(results)
+    
+    return citation_results
+
+# Extract text from a PDF
 def extract_text_from_pdf(pdf_path):
-    # Mở file PDF
-    doc = fitz.open(pdf_path)
-    full_text = ""
-    
-    for page_num in range(doc.page_count):
-        page = doc.load_page(page_num)
-        full_text += page.get_text()
+    reader = PyPDF2.PdfReader(pdf_path)
+    text = ""
+    for page_num in range(len(reader.pages)):
+        page = reader.pages[page_num]
+        text += page.extract_text()
+    return text
 
-    # Xử lý các ký tự không đúng định dạng như \xa0 (khoảng trắng không đúng)
-    full_text = full_text.replace('\xa0', ' ')
-    
-    return full_text
+# Split text into sentences
+def split_text_into_sentences(text):
+    from nltk.tokenize import sent_tokenize
+    return sent_tokenize(text)
 
-def extract_citations(text):
-    # Các biểu thức chính quy để tìm các trích dẫn APA mở rộng
-    patterns = [
-        r'\(\w+(?:\s(?:and|&) \w+)*,\s\d{4}\)',  # (Tác giả và Tác giả, Năm)
-        r'\w+\sand\s\w+\s\(\d{4}\)',  # Tác giả1 and Tác giả2 (Năm)
-        r'\(\w+ et al.,\s\d{4}\)',  # (Tác giả et al., Năm)
-        r'\(\w+\s\[\w+\],\s\d{4}\)',  # (Tổ chức [Viết tắt], Năm)
-        r'\(\w+\s\[\w+\]\)',  # (Viết tắt, Năm)
-        r'\(\w+,\s\d{4};\s\w+,\s\d{4};\s\w+,\s\d{4}\)',  # (Tác giả1, Năm; Tác giả2, Năm; Tác giả3, Năm)
-        r'\w+\s\(\d{4}\)',  # Tác giả (Năm)
-        r'\w+\s&\s\w+\s\(\d{4}\)',  # Tác giả1 & Tác giả2 (Năm)
-        r'\w+\set\sal.\s\(\d{4}\)',  # Tác giả et al. (Năm)
-        r'\w+\s\(\w+,\s\d{4}\)',  # Tổ chức (Viết tắt, Năm)
-        r'\w+\s\(\d{4}\)',  # Tổ chức (Năm)
-    ]
-    
-    citations = []
-    for pattern in patterns:
-        citations.extend(re.findall(pattern, text))
-    
-    # Loại bỏ trích dẫn trùng lặp
-    citations = list(set(citations))
-    
-    return citations
-
-
-def extract_cited_sentences(text):
-    doc = nlp(text)
-    
-    cited_sentences = []
-    for sentence in doc.sents:
-        sentence_text = sentence.text
-        citations = extract_citations(sentence_text)
-        if citations:
-            cited_sentences.append(f"Nội dung: {sentence_text.strip()}")
-            cited_sentences.append(f"Trích dẫn: {citations}")
-    
-    return cited_sentences
-
-def main():
-    pdf_path = "paper.pdf"  # Thay thế bằng đường dẫn tới file PDF của bạn
-
+# Process the PDF and extract citations
+def process_pdf_for_citations(pdf_path):
+    # Extract text from the PDF
     text = extract_text_from_pdf(pdf_path)
     
-    cited_sentences = extract_cited_sentences(text)
+    # Split the text into sentences
+    sentences = split_text_into_sentences(text)
     
-    for sentence in cited_sentences:
-        print(sentence)
+    # Extract citations using SciBERT
+    citation_data = extract_citations_with_scibert(sentences)
+    
+    return citation_data
 
-if __name__ == "__main__":
-    main()
+# Đường dẫn đến file PDF
+pdf_path = "paper.pdf"
+
+# Xử lý PDF và trích xuất citations
+citation_results = process_pdf_for_citations(pdf_path)
+
+# In kết quả trích xuất citation
+for citation in citation_results:
+    print(citation)
