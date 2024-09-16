@@ -1,6 +1,10 @@
 # python3 -m venv env
 
+#for MACOS 
 # source env/bin/activate
+
+#for Windows
+# env\Scripts\activate
 
 # deactivate
 
