@@ -397,23 +397,21 @@ def extract_citations_with_context(text):
 
             # Xử lý nhiều trích dẫn ngăn cách bởi dấu chấm phẩy
             individual_citations = citation_group.split(';')
-            is_at_end = end == len(sentence.strip())  # Kiểm tra nếu trích dẫn nằm ở cuối câu
+            previous_end_index = 0  # Bắt đầu từ đầu câu
 
-            previous_end_index = start  # Bắt đầu từ vị trí đầu tiên của trích dẫn
-
-            for citation in individual_citations:
+            for i, citation in enumerate(individual_citations):
                 parts = citation.split(',')
-                
+
                 if len(parts) == 2:  # Đảm bảo có đúng 2 phần tử sau khi tách
                     author, year = parts
                     author = author.strip()
                     year = year.strip()
 
-                    # Lấy phần nội dung trước mỗi trích dẫn cụ thể
-                    if len(citation_positions) == 0:  # Trích dẫn đầu tiên
-                        citation_content = sentence[:start].strip()
+                    # Xác định phần nội dung trước mỗi trích dẫn
+                    if i == 0:
+                        citation_content = sentence[:start].strip()  # Phần đầu trước trích dẫn đầu tiên
                     else:
-                        # Với các trích dẫn sau, lấy phần nội dung từ trích dẫn trước đến trích dẫn hiện tại
+                        # Với các trích dẫn tiếp theo, lấy nội dung từ trích dẫn trước đến trích dẫn hiện tại
                         previous_citation_end = citation_positions[-1]['end']
                         citation_content = sentence[previous_citation_end:start].strip()
 
@@ -430,7 +428,7 @@ def extract_citations_with_context(text):
                             'citation_content': citation_content  # Gán đúng phần nội dung trước trích dẫn
                         })
 
-                previous_end_index = end  # Cập nhật vị trí kết thúc của trích dẫn hiện tại để lấy phần nội dung trước trích dẫn tiếp theo
+                previous_end_index = end  # Cập nhật vị trí kết thúc của trích dẫn hiện tại
 
         # Tìm trích dẫn trực tiếp
         for match in in_text_citation_pattern.finditer(sentence):
@@ -439,6 +437,7 @@ def extract_citations_with_context(text):
             start = match.start()
             end = match.end()
 
+            # Trích dẫn trực tiếp, chỉ lấy phần nội dung có liên quan đến chính trích dẫn đó
             citation_positions.append({
                 'start': start,
                 'end': end,
