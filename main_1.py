@@ -484,7 +484,7 @@ if __name__ == "__main__":
         # convert_pdf_to_docx("paper_ciation_matching_APA.pdf", "paper_ciation_matching_APA.docx")
 
         # Trích xuất văn bản từ DOCX để xử lý
-        docx_text = extract_text_from_docx("paper.docx")
+        docx_text = extract_text_from_docx("paper_ciation_matching_APA.docx")
 
         # Trích xuất trích dẫn
         citations = extract_citations_with_context(docx_text)
