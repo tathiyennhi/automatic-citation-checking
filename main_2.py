@@ -1,4 +1,3 @@
-#Lấy được cả câu trước parenthetical, chưa xét được case SPECIAL ENTITY BEFORE PARENTHESES
 import re
 import spacy
 import docx
@@ -58,8 +57,7 @@ def extract_text_from_docx(docx_file):
             break
         full_text.append(text)
     if not references_found:
-        logging.warning("Không tìm thấy phần Tham khảo. "
-                        "Toàn bộ tài liệu sẽ được xử lý.")
+        logging.warning("Không tìm thấy phần Tham khảo. Toàn bộ tài liệu sẽ được xử lý.")
     # Hợp nhất các dòng và loại bỏ hyphenation
     combined_text = '\n'.join(full_text)
     combined_text = remove_hyphenation(combined_text)
@@ -71,13 +69,36 @@ def clean_text(text):
     text = remove_hyphenation(text)
     return text
 
+# def extract_sentences(text):
+#     """Tách văn bản thành các câu riêng lẻ."""
+#     # Sử dụng regex để tách câu dựa trên dấu chấm câu và dấu xuống dòng
+#     sentence_endings = re.compile(r'(?<=[.!?])\s+|\n+')
+#     sentences = sentence_endings.split(text)
+#     sentences = [sent.strip() for sent in sentences if sent.strip()]
+#     return sentences
 def extract_sentences(text):
-    """Tách văn bản thành các câu riêng lẻ."""
-    # Sử dụng regex để tách câu dựa trên dấu chấm câu và dấu xuống dòng
-    sentence_endings = re.compile(r'(?<=[.!?])\s+|\n+')
+    """Tách văn bản thành các câu riêng lẻ, xử lý ngoại lệ như 'et al.'."""
+    # Danh sách các từ viết tắt phổ biến không phải là kết thúc câu
+    abbreviations = ['et al.', 'i.e.', 'e.g.', 'Mr.', 'Mrs.', 'Dr.', 'Prof.', 'Inc.', 'Ltd.', 'Jr.', 'Sr.']
+
+    # Thay thế các từ viết tắt bằng placeholder để tránh tách câu sai
+    placeholder = "<ABBR>"
+    for abbr in abbreviations:
+        text = text.replace(abbr, placeholder)
+
+    # Tách câu dựa trên dấu chấm câu (.!?)
+    sentence_endings = re.compile(r'(?<=[.!?])\s+')
     sentences = sentence_endings.split(text)
-    sentences = [sent.strip() for sent in sentences if sent.strip()]
+
+    # Khôi phục lại các từ viết tắt
+    sentences = [sent.replace(placeholder, abbr).strip() for sent in sentences if sent.strip()]
+    # In từng câu và xuống dòng
+    for sentence in sentences:
+        print(sentence)
+        print("\n")  
+
     return sentences
+
 
 def clean_author(author):
     """Làm sạch chuỗi tác giả bằng cách loại bỏ các phần không cần thiết."""
@@ -98,11 +119,8 @@ def sentence_contains_citation(sentence):
 
 def determine_citation_validity(content):
     """Xác định xem nội dung có phải là trích dẫn hợp lệ hay không."""
-    # Kiểm tra xem có năm (4 chữ số) trong nội dung hay không
     has_year = re.search(r'\b\d{4}\b', content)
-    # Kiểm tra xem có tên tác giả hay không
     has_author = re.search(r'\b[A-Z][a-zA-Z]+', content)
-    # Loại bỏ các nội dung quá ngắn hoặc chỉ chứa một ký tự
     is_too_short = len(content.strip()) < 3
     is_single_char = re.match(r'^[a-zA-Z0-9]$', content.strip())
 
@@ -114,11 +132,12 @@ def determine_citation_validity(content):
 def extract_citations_from_sentence(sentence):
     """Trích xuất tất cả các trích dẫn từ một câu."""
     citations = []
-    # Mẫu regex cho trích dẫn narrative
-    narrative_citation_regex = r'\b(?P<author>[A-Z][a-zA-Z]*(?:\s+(?:and|&|et\ al\.?|[A-Z][a-zA-Z]*))*?)\s*\((?P<year>\d{4}(?:,\s*\d{4})?)\)'
-    # Mẫu regex cho trích dẫn parenthetical
-    parenthetical_citation_regex = r'\(([^()]+)\)'
-    # Mẫu regex cho trích dẫn trực tiếp
+    # Cập nhật narrative_citation_regex để bao gồm "et al."
+    # narrative_citation_regex = r'\b(?P<author>[A-Z][a-zA-Z\'’-]*(?:\s+(?:and|&|et\s+al\.?))?\s*(?:[A-Z][a-zA-Z\'’-]*)*)\s*\((?P<year>\d{4})\)'
+    narrative_citation_regex = r'\b(?P<author>[A-Z][a-zA-Z\'’\-]+(?:\s+(?:et\s+al\.?|and|&)\s+[A-Z][a-zA-Z\'’\-]+)?)\s*\((?P<year>\d{4})\)'
+
+
+    parenthetical_citation_regex = r'\(((?:[^()]+|\([^()]*\))*)\)'
     direct_quote_regex = r'"(.*?)"\s*\(([^()]+)\)'
 
     # Tìm trích dẫn trực tiếp
@@ -130,12 +149,10 @@ def extract_citations_from_sentence(sentence):
         start = match.start()
         end = match.end()
 
-        # Xử lý thông tin trích dẫn
         refs = re.split(r';\s*', citation_info)
         ref_citations = []
         for ref in refs:
             ref = ref.strip()
-            # Tách tác giả và năm
             parts = re.split(r',\s*', ref)
             if len(parts) >= 2:
                 author = ', '.join(parts[:-1]).strip()
@@ -182,22 +199,29 @@ def extract_citations_from_sentence(sentence):
         end = match.end()
         if not determine_citation_validity(content):
             continue
-        # Tách các trích dẫn bên trong dấu ngoặc đơn
         refs = re.split(r';\s*', content)
         ref_citations = []
         for ref in refs:
             ref = ref.strip()
-            # Tách tác giả và năm
+            # Tách tác giả, năm và phần bổ sung như "Chapter 1"
             parts = re.split(r',\s*', ref)
-            if len(parts) >= 2:
-                author = ', '.join(parts[:-1]).strip()
-                year = parts[-1].strip()
+            if len(parts) >= 3:
+                author = ', '.join(parts[:-2]).strip()
+                year = parts[-2].strip()
+                citation_part = parts[-1].strip()  # Phần bổ sung như Chapter, trang
+            elif len(parts) == 2:
+                author = parts[0].strip()
+                year = parts[1].strip()
+                citation_part = ''
             else:
                 author = ref
                 year = ''
+                citation_part = ''
+
             ref_citations.append({
                 'author': clean_author(author),
-                'year_published': year
+                'year_published': year,
+                'citation_part': citation_part  # Thêm trường chứa thông tin bổ sung
             })
         citations.append({
             'type': 'parenthetical',
@@ -206,7 +230,6 @@ def extract_citations_from_sentence(sentence):
             'start': start,
             'end': end
         })
-    # Sắp xếp các trích dẫn theo vị trí trong câu
     citations.sort(key=lambda x: x['start'])
     return citations
 
@@ -229,10 +252,8 @@ def get_preceding_noun_phrase(sentence, citation_start):
     noun_phrases = [chunk for chunk in doc.noun_chunks if chunk.end_char <= citation_start]
     if not noun_phrases:
         return None
-    # Duyệt ngược danh sách noun_phrases
     for np in reversed(noun_phrases):
         if np.end_char == citation_start:
-            # Kiểm tra nếu np chứa danh từ riêng hoặc thực thể tên (loại trừ PERSON)
             contains_propn = any(token.pos_ == 'PROPN' for token in np)
             contains_named_entity = any(ent.label_ != 'PERSON' for ent in np.ents)
             if contains_propn or contains_named_entity:
@@ -248,12 +269,11 @@ def extract_citations_with_context(text):
     for sentence in sentences:
         citations_in_sentence = extract_citations_from_sentence(sentence)
         if not citations_in_sentence:
-            continue  # Bỏ qua câu không chứa trích dẫn
+            continue
 
         citation_entries = []
         citation_count = len(citations_in_sentence)
 
-        # Sử dụng spaCy để phân tích cú pháp câu
         doc = nlp(sentence)
 
         for idx, citation in enumerate(citations_in_sentence):
@@ -263,21 +283,16 @@ def extract_citations_with_context(text):
             needs_manual_check = False
 
             if citation_type == 'narrative':
-                # Nếu trích dẫn narrative
                 if idx == 0:
                     preceding_text = sentence[:start].strip()
                     if preceding_text == '' or is_insignificant_text(preceding_text):
-                        # Nếu trích dẫn nằm ở đầu câu hoặc trước nó chỉ có từ không mang nhiều ý nghĩa
                         citation_content = get_following_content(sentence, end)
                     else:
-                        # Nếu có nội dung trước trích dẫn
                         citation_content = preceding_text
                 else:
-                    # Nếu không phải trích dẫn đầu tiên trong câu
                     prev_end = citations_in_sentence[idx - 1]['end']
                     citation_content = sentence[prev_end:start].strip()
 
-                # Kiểm tra nếu citation_content quá ngắn hoặc không đủ ý nghĩa
                 if len(citation_content.strip().split()) < 2:
                     needs_manual_check = True
 
@@ -306,13 +321,11 @@ def extract_citations_with_context(text):
                 }
 
             else:  # parenthetical
-                # Trường hợp câu chỉ có một trích dẫn gián tiếp
                 if idx == 0:
                     preceding_text = sentence[:start].strip()
                     noun_phrase = get_preceding_noun_phrase(sentence, start)
                     if noun_phrase:
                         citation_content = noun_phrase
-                        # Đặt cờ needs_manual_check là True khi sử dụng cụm danh từ
                         needs_manual_check = True
                     else:
                         citation_content = preceding_text
@@ -322,12 +335,10 @@ def extract_citations_with_context(text):
                     noun_phrase = get_preceding_noun_phrase(sentence, start)
                     if noun_phrase:
                         citation_content = noun_phrase
-                        # Đặt cờ needs_manual_check là True khi sử dụng cụm danh từ
                         needs_manual_check = True
                     else:
                         citation_content = preceding_text
 
-                # Kiểm tra nếu citation_content quá ngắn hoặc không đủ ý nghĩa
                 if len(citation_content.strip().split()) < 2 and not needs_manual_check:
                     needs_manual_check = True
 
@@ -354,8 +365,7 @@ def extract_citations_with_context(text):
 if __name__ == "__main__":
     try:
         # Chuyển đổi PDF sang DOCX (nếu cần)
-        # convert_pdf_to_docx("paper_citation_matching_APA.pdf",
-        #                     "paper_citation_matching_APA.docx")
+        # convert_pdf_to_docx("paper_citation_matching_APA.pdf", "paper_citation_matching_APA.docx")
 
         # Trích xuất văn bản từ DOCX để xử lý
         docx_text = extract_text_from_docx("paper.docx")
