@@ -355,17 +355,47 @@ def extract_citations_with_context(text):
             end = citation['end']
             needs_manual_check = False
 
+            # if citation_type == 'narrative':
+            #     if idx == 0:
+            #         preceding_text = sentence[:start].strip()
+            #         if preceding_text == '' or is_insignificant_text(preceding_text):
+            #             citation_content = get_following_content(sentence, end)
+            #         else:
+            #             citation_content = preceding_text
+            #     else:
+            #         prev_end = citations_in_sentence[idx - 1]['end']
+            #         citation_content = sentence[prev_end:start].strip()
+
+            #     if len(citation_content.strip().split()) < 2:
+            #         needs_manual_check = True
+
+            #     author = clean_author(citation['author'])
+            #     year = citation['year']
+            #     citation_text = citation['citation_text']
+            #     citation_entry = {
+            #         'citation_content': citation_content,
+            #         'author': author,
+            #         'year_published': year,
+            #         'original_citation_text': citation_text,
+            #         'citation_type': citation_type,
+            #         'needs_manual_check': needs_manual_check
+            #     }
             if citation_type == 'narrative':
                 if idx == 0:
+                    # Lấy phần văn bản sau trích dẫn nếu không có nội dung đáng kể trước đó
                     preceding_text = sentence[:start].strip()
                     if preceding_text == '' or is_insignificant_text(preceding_text):
+                        # Nếu trích dẫn ở đầu câu hoặc trước đó không có nội dung đáng kể
                         citation_content = get_following_content(sentence, end)
                     else:
-                        citation_content = preceding_text
+                        # Nếu có nội dung trước trích dẫn, vẫn lấy nội dung sau trích dẫn
+                        citation_content = get_following_content(sentence, end)
                 else:
+                    # Nếu trích dẫn không phải là đầu tiên trong câu
                     prev_end = citations_in_sentence[idx - 1]['end']
-                    citation_content = sentence[prev_end:start].strip()
+                    citation_content = get_following_content(sentence, end)
 
+                # Kiểm tra nếu nội dung quá ngắn hoặc không đủ ý nghĩa
                 if len(citation_content.strip().split()) < 2:
                     needs_manual_check = True
 
@@ -380,7 +410,7 @@ def extract_citations_with_context(text):
                     'citation_type': citation_type,
                     'needs_manual_check': needs_manual_check
                 }
-
+                
             elif citation_type == 'direct_quote':
                 citation_content = citation.get('citation_content', '')
                 ref_citations = citation.get('ref_citations', [])
