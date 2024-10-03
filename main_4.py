@@ -381,27 +381,30 @@ def extract_citations_with_context(text):
             #         'needs_manual_check': needs_manual_check
             #     }
             if citation_type == 'narrative':
-                if idx == 0:
-                    # Lấy phần văn bản sau trích dẫn nếu không có nội dung đáng kể trước đó
-                    preceding_text = sentence[:start].strip()
-                    if preceding_text == '' or is_insignificant_text(preceding_text):
-                        # Nếu trích dẫn ở đầu câu hoặc trước đó không có nội dung đáng kể
-                        citation_content = get_following_content(sentence, end)
-                    else:
-                        # Nếu có nội dung trước trích dẫn, vẫn lấy nội dung sau trích dẫn
-                        citation_content = get_following_content(sentence, end)
-                else:
-                    # Nếu trích dẫn không phải là đầu tiên trong câu
-                    prev_end = citations_in_sentence[idx - 1]['end']
+                # Check if citation is at the end of the sentence
+                if end == len(sentence.strip()):
+                    # If citation is at the end, take the preceding text
+                    citation_content = sentence[:start].strip()
+                # Check if citation is at the beginning of the sentence
+                elif start == 0:
+                    # If citation is at the beginning, take the following text
                     citation_content = get_following_content(sentence, end)
+                else:
+                    # If citation is in the middle, take the entire sentence
+                    citation_content = sentence.strip()
 
-                # Kiểm tra nếu nội dung quá ngắn hoặc không đủ ý nghĩa
-                if len(citation_content.strip().split()) < 2:
+                # Ensure there's no irrelevant or insignificant text
+                if len(citation_content.strip().split()) < 2 or is_insignificant_text(citation_content):
                     needs_manual_check = True
+                else:
+                    needs_manual_check = False
 
+                # Extract author and year from the citation
                 author = clean_author(citation['author'])
                 year = citation['year']
                 citation_text = citation['citation_text']
+
+                # Create the citation entry
                 citation_entry = {
                     'citation_content': citation_content,
                     'author': author,
@@ -410,7 +413,8 @@ def extract_citations_with_context(text):
                     'citation_type': citation_type,
                     'needs_manual_check': needs_manual_check
                 }
-                
+
+
             elif citation_type == 'direct_quote':
                 citation_content = citation.get('citation_content', '')
                 ref_citations = citation.get('ref_citations', [])
@@ -563,7 +567,7 @@ if __name__ == "__main__":
         # convert_pdf_to_docx("paper_citation_matching_APA.pdf", "paper_citation_matching_APA.docx")
 
         # Trích xuất văn bản từ DOCX để xử lý
-        docx_text = extract_text_from_docx("paper.docx")
+        docx_text = extract_text_from_docx("paper_citation_matching_APA.docx")
 
         # Trích xuất trích dẫn
         citations = extract_citations_with_context(docx_text)
