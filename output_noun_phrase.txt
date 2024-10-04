@@ -1,0 +1,914 @@
+Preceding Text_True: reward systems
+================================================================
+Preceding Text_FALSE: The analysis of acknowledgments is particularly interesting as acknowledgments may give an insight into aspects of the scientific community, such as reward systems
+================================================================
+Preceding Text_True: hidden research trends
+================================================================
+Preceding Text_FALSE: , collaboration patterns, and hidden research trends
+================================================================
+Preceding Text_True: grant numbers
+================================================================
+Preceding Text_FALSE: To our knowledge, previous works on automatic acknowledgment analysis were mostly concerned with the extraction of funding organizations and grant numbers
+================================================================
+Preceding Text_True: acknowledgment texts
+================================================================
+Preceding Text_FALSE: or classification of acknowledgment texts
+================================================================
+Preceding Text_True: informal scientific collaboration
+================================================================
+Preceding Text_FALSE: Analysis of the acknowledged individuals provides insight into informal scientific collaboration
+================================================================
+Preceding Text_True: universities
+================================================================
+Preceding Text_FALSE: Acknowledged universities and corporations reveal interactions and knowledge exchange between industry and universities
+================================================================
+Preceding Text_FALSE: The stateoftheart named entity recognition (NER) models showed a great performance on the CoNLL2003 dataset
+================================================================
+Preceding Text_True: CoNLL2003 corpus
+================================================================
+Preceding Text_FALSE: CoNLL2003 corpus
+================================================================
+Preceding Text_True: article
+================================================================
+Preceding Text_FALSE: 1 3   Scientometrics The present paper is an extended version of the article
+================================================================
+Preceding Text_FALSE: 2 presented at the 3rd Workshop on Extraction and Evaluation of Knowledge Entities from Scientific Documents (EEKE2022).3 Flair, an opensource natural language processing (NLP) framework
+================================================================
+Preceding Text_True: processed data
+================================================================
+Preceding Text_FALSE: Most of the previous works on acknowledgment analysis were limited by the manual evaluation of data and therefore by the amount of processed data
+================================================================
+Preceding Text_FALSE: 
+================================================================
+Preceding Text_True: learning process
+================================================================
+Preceding Text_FALSE: The annotation process is crucial as insufficient or redundant metadata can slow down and bias a learning process
+================================================================
+Preceding Text_FALSE: The stateoftheart models are based on deep recurrent models, convolutionbased, or 1 3   Scientometrics pretrained transformer architectures
+================================================================
+Preceding Text_True: 4class Stanford Entity Recognizer
+================================================================
+Preceding Text_Nested: 4class Stanford Entity Recognizer
+================================================================
+Preceding Text_True: acknowledged entities
+================================================================
+Preceding Text_FALSE: 7 AckNER showed better performance as Flair, but is specifically designed to recognize two types of acknowledged entities
+================================================================
+Preceding Text_True: PyTorch
+================================================================
+Preceding Text_FALSE: The Flair NLP framework Flair is an opensourced NLP framework built on PyTorch
+================================================================
+Preceding Text_True: Flair Embeddings
+================================================================
+Preceding Text_Nested: Flair Embeddings
+================================================================
+Preceding Text_True: Transformers
+================================================================
+Preceding Text_FALSE: , b) NER Model with Transformers (later on Transformers)
+================================================================
+Preceding Text_True: TARS
+================================================================
+Preceding Text_FALSE: , and c) Zeroshot NER with TARS (later on TARS)
+================================================================
+Preceding Text_True: contextual string embeddings
+================================================================
+Preceding Text_FALSE: The Flair Embeddings model uses stacked embeddings, i.e., a combination of contextual string embeddings
+================================================================
+Preceding Text_True: their separate uses
+================================================================
+Preceding Text_FALSE: Stacked embedding is an important Flair feature, as a combination of different embeddings might bring better results than their separate uses
+================================================================
+Preceding Text_True: multilingual XMLRoBERTa transformer model
+================================================================
+Preceding Text_FALSE: 1 3   Scientometrics Table 2  Number of sentences/texts in the training corpora Table 3  Number of sentences/texts from each scientific domain in the training corpora LSTMCRF with the multilingual XMLRoBERTa transformer model
+================================================================
+Preceding Text_True: ( fewshort learning
+================================================================
+Preceding Text_True: metadata records
+================================================================
+Preceding Text_Nested: metadata records
+================================================================
+Preceding Text_True: natural and life sciences domains
+================================================================
+Preceding Text_FALSE: At the same time, information on technical and instrumental support is more common for the natural and life sciences domains
+================================================================
+Preceding Text_True: GloVe
+================================================================
+Preceding Text_Nested: GloVe
+================================================================
+Preceding Text_True: RoBERTa model
+================================================================
+Preceding Text_FALSE: For Transformers, training was initiated with the RoBERTa model
+================================================================
+Preceding Text_True: standard approach
+================================================================
+Preceding Text_FALSE: We used a standard approach, where only a linear classifier layer was added on the top of the transformer, as adding the additional CRF decoder between the transformer and linear classifier did not increase accuracy compared with this standard approach
+================================================================
+Preceding Text_True: Adam Optimisation Algorithm
+================================================================
+Preceding Text_FALSE: The training was initiated with a small learning rate using the Adam Optimisation Algorithm
+================================================================
+Preceding Text_True: TARS NER model
+================================================================
+Preceding Text_FALSE: The training for the fewshot approach was initiated with the TARS NER model
+================================================================
+Preceding Text_True: most efficient algorithm
+================================================================
+Preceding Text_FALSE: On the one hand, Flair developers claimed Transformers to be the most efficient algorithm
+================================================================
+Preceding Text_True: their separate uses
+================================================================
+Preceding Text_FALSE: On the other, the stacked embeddings are an important feature of the Flair tool, as a combination of different embeddings might bring better results than their separate uses
+================================================================
+Preceding Text_True: English corpus
+================================================================
+Preceding Text_FALSE: Thus, Flair Embeddings were trained on the 1billion words English corpus
+================================================================
+Preceding Text_FALSE: Previous works showed improvements in downstream tasks using embedding models finetuned for the domain used
+================================================================
+Preceding Text_FALSE: Moreover, further analysis of acknowledged entities showed that the miscellaneous category contained very inhomogeneous and partly irrelevant data, making the analysis more complicated
+================================================================
+Preceding Text_True: wrong category
+================================================================
+Preceding Text_FALSE: Analysis of the extracted entities showed that many entities were extracted correctly, but were assigned to the wrong category
+================================================================
+Preceding Text_True: CRFs
+================================================================
+Preceding Text_FALSE: In particular, we advocate creating these joint models as conditional random fields (CRFs)
+================================================================
+Preceding Text_True: relational Markov networks
+================================================================
+Preceding Text_FALSE: that have been configured to represent relational data by using parameter tying in repeated patterns based on the structure of the data—also known as relational Markov networks
+================================================================
+Preceding Text_FALSE: To address this problem we have previously advocated
+================================================================
+Preceding Text_True: circularities
+================================================================
+Preceding Text_FALSE: the use of joint probabilistic models that perform extraction and data mining in an integrated inference procedure—the evidence for an outcome being the result of simultaneously making inferences both “bottom up” from extraction, and  autocorrelation and other relations without concern for avoiding circularities
+================================================================
+Preceding Text_True: information extraction
+================================================================
+Preceding Text_FALSE: Both these modeling choices are in contrast to other related work in using directed, generativelytrained probabilistic models for information extraction
+================================================================
+Preceding Text_True: CiteSeer
+================================================================
+Preceding Text_FALSE: Using a data set of citations from CiteSeer
+================================================================
+Preceding Text_True: ICM
+================================================================
+Preceding Text_Nested: ICM
+================================================================
+Preceding Text_True: perfect extraction
+================================================================
+Preceding Text_FALSE: Joint parameter estimation in this complex model is intractable, and thus, as in inference, we perform parameter estimation somewhat separately for each of    Building on earlier work in coreference that assumes perfect extraction
+================================================================
+Preceding Text_FALSE: , we cast coreference as a problem in graph partitioning based on Markov random fields
+================================================================
+Preceding Text_True: CiteSeer citationmatching data
+================================================================
+Preceding Text_FALSE: We present experimental results on the four sections of CiteSeer citationmatching data
+================================================================
+Preceding Text_True: conditional random fields
+================================================================
+Preceding Text_FALSE: Inference within the linear chain is performed exactly by dynamic programming; inference within the fullyconnected coreference is performed approximately by a simple graph partitioning algorithm, and inference  This paper presents a method for integrated information extraction and coreference based on conditionallytrained, undirected graphical models—also known as conditional random fields
+================================================================
+Preceding Text_True: natural language tasks
+================================================================
+Preceding Text_FALSE: , where further details and background    CRFs have shown recent success in a number of domains especially in sequence modeling for natural language tasks
+================================================================
+Preceding Text_True: ICM
+================================================================
+Preceding Text_Nested: ICM
+================================================================
+Preceding Text_FALSE: 
+================================================================
+Preceding Text_True: recent theoretical interest
+================================================================
+Preceding Text_FALSE: , except that the edge weights in the graph are determined by “inThis problem is an instance of correlation clustering, which has sparked recent theoretical interest
+================================================================
+Preceding Text_True: coreference
+================================================================
+Preceding Text_FALSE: In addition, our previous experience with coreference
+================================================================
+Preceding Text_True: training
+================================================================
+Preceding Text_FALSE: Some specialized features were developed for matching and normalizing author name fields as    We employ feature induction as part of this training
+================================================================
+Preceding Text_True: CiteSeer
+================================================================
+Preceding Text_FALSE: Note that cluster recall  To evaluate our model, we apply it to a citation dataset from CiteSeer
+================================================================
+Preceding Text_FALSE: We report the 2We used the Secondstring package, some of the functions of which are described in
+================================================================
+Preceding Text_FALSE: Table 1: coreference performance measured by pairwise F1 (upper part) cluster recall (lower part) usfrom
+================================================================
+Preceding Text_FALSE: See
+================================================================
+Preceding Text_True: citations
+================================================================
+Preceding Text_FALSE: model was trained on a completely separate data set of citations
+================================================================
+Preceding Text_True: labeling disagreements
+================================================================
+Preceding Text_FALSE: To test the significance of the improvements, we use McNemar’s test on labeling disagreements
+================================================================
+Preceding Text_True: reward systems
+================================================================
+Preceding Text_FALSE: The analysis of acknowledgments is particularly interesting as acknowledgments may give an insight into aspects of the scientific community, such as reward systems
+================================================================
+Preceding Text_True: hidden research trends
+================================================================
+Preceding Text_FALSE: , collaboration patterns, and hidden research trends
+================================================================
+Preceding Text_True: grant numbers
+================================================================
+Preceding Text_FALSE: To our knowledge, previous works on automatic acknowledgment analysis were mostly concerned with the extraction of funding organizations and grant numbers
+================================================================
+Preceding Text_True: acknowledgment texts
+================================================================
+Preceding Text_FALSE: or classification of acknowledgment texts
+================================================================
+Preceding Text_True: informal scientific collaboration
+================================================================
+Preceding Text_FALSE: Analysis of the acknowledged individuals provides insight into informal scientific collaboration
+================================================================
+Preceding Text_True: universities
+================================================================
+Preceding Text_FALSE: Acknowledged universities and corporations reveal interactions and knowledge exchange between industry and universities
+================================================================
+Preceding Text_FALSE: The stateoftheart named entity recognition (NER) models showed a great performance on the CoNLL2003 dataset
+================================================================
+Preceding Text_True: CoNLL2003 corpus
+================================================================
+Preceding Text_FALSE: CoNLL2003 corpus
+================================================================
+Preceding Text_True: article
+================================================================
+Preceding Text_FALSE: 1 3   Scientometrics The present paper is an extended version of the article
+================================================================
+Preceding Text_FALSE: 2 presented at the 3rd Workshop on Extraction and Evaluation of Knowledge Entities from Scientific Documents (EEKE2022).3 Flair, an opensource natural language processing (NLP) framework
+================================================================
+Preceding Text_True: processed data
+================================================================
+Preceding Text_FALSE: Most of the previous works on acknowledgment analysis were limited by the manual evaluation of data and therefore by the amount of processed data
+================================================================
+Preceding Text_FALSE: 
+================================================================
+Preceding Text_True: learning process
+================================================================
+Preceding Text_FALSE: The annotation process is crucial as insufficient or redundant metadata can slow down and bias a learning process
+================================================================
+Preceding Text_FALSE: The stateoftheart models are based on deep recurrent models, convolutionbased, or 1 3   Scientometrics pretrained transformer architectures
+================================================================
+Preceding Text_True: 4class Stanford Entity Recognizer
+================================================================
+Preceding Text_Nested: 4class Stanford Entity Recognizer
+================================================================
+Preceding Text_True: acknowledged entities
+================================================================
+Preceding Text_FALSE: 7 AckNER showed better performance as Flair, but is specifically designed to recognize two types of acknowledged entities
+================================================================
+Preceding Text_True: PyTorch
+================================================================
+Preceding Text_FALSE: The Flair NLP framework Flair is an opensourced NLP framework built on PyTorch
+================================================================
+Preceding Text_True: Flair Embeddings
+================================================================
+Preceding Text_Nested: Flair Embeddings
+================================================================
+Preceding Text_True: Transformers
+================================================================
+Preceding Text_FALSE: , b) NER Model with Transformers (later on Transformers)
+================================================================
+Preceding Text_True: TARS
+================================================================
+Preceding Text_FALSE: , and c) Zeroshot NER with TARS (later on TARS)
+================================================================
+Preceding Text_True: contextual string embeddings
+================================================================
+Preceding Text_FALSE: The Flair Embeddings model uses stacked embeddings, i.e., a combination of contextual string embeddings
+================================================================
+Preceding Text_True: their separate uses
+================================================================
+Preceding Text_FALSE: Stacked embedding is an important Flair feature, as a combination of different embeddings might bring better results than their separate uses
+================================================================
+Preceding Text_True: multilingual XMLRoBERTa transformer model
+================================================================
+Preceding Text_FALSE: 1 3   Scientometrics Table 2  Number of sentences/texts in the training corpora Table 3  Number of sentences/texts from each scientific domain in the training corpora LSTMCRF with the multilingual XMLRoBERTa transformer model
+================================================================
+Preceding Text_True: ( fewshort learning
+================================================================
+Preceding Text_True: metadata records
+================================================================
+Preceding Text_Nested: metadata records
+================================================================
+Preceding Text_True: natural and life sciences domains
+================================================================
+Preceding Text_FALSE: At the same time, information on technical and instrumental support is more common for the natural and life sciences domains
+================================================================
+Preceding Text_True: GloVe
+================================================================
+Preceding Text_Nested: GloVe
+================================================================
+Preceding Text_True: RoBERTa model
+================================================================
+Preceding Text_FALSE: For Transformers, training was initiated with the RoBERTa model
+================================================================
+Preceding Text_True: standard approach
+================================================================
+Preceding Text_FALSE: We used a standard approach, where only a linear classifier layer was added on the top of the transformer, as adding the additional CRF decoder between the transformer and linear classifier did not increase accuracy compared with this standard approach
+================================================================
+Preceding Text_True: Adam Optimisation Algorithm
+================================================================
+Preceding Text_FALSE: The training was initiated with a small learning rate using the Adam Optimisation Algorithm
+================================================================
+Preceding Text_True: TARS NER model
+================================================================
+Preceding Text_FALSE: The training for the fewshot approach was initiated with the TARS NER model
+================================================================
+Preceding Text_True: most efficient algorithm
+================================================================
+Preceding Text_FALSE: On the one hand, Flair developers claimed Transformers to be the most efficient algorithm
+================================================================
+Preceding Text_True: their separate uses
+================================================================
+Preceding Text_FALSE: On the other, the stacked embeddings are an important feature of the Flair tool, as a combination of different embeddings might bring better results than their separate uses
+================================================================
+Preceding Text_True: English corpus
+================================================================
+Preceding Text_FALSE: Thus, Flair Embeddings were trained on the 1billion words English corpus
+================================================================
+Preceding Text_FALSE: Previous works showed improvements in downstream tasks using embedding models finetuned for the domain used
+================================================================
+Preceding Text_FALSE: Moreover, further analysis of acknowledged entities showed that the miscellaneous category contained very inhomogeneous and partly irrelevant data, making the analysis more complicated
+================================================================
+Preceding Text_True: wrong category
+================================================================
+Preceding Text_FALSE: Analysis of the extracted entities showed that many entities were extracted correctly, but were assigned to the wrong category
+================================================================
+Preceding Text_True: reward systems
+================================================================
+Preceding Text_FALSE: The analysis of acknowledgments is particularly interesting as acknowledgments may give an insight into aspects of the scientific community, such as reward systems
+================================================================
+Preceding Text_True: hidden research trends
+================================================================
+Preceding Text_FALSE: , collaboration patterns, and hidden research trends
+================================================================
+Preceding Text_True: grant numbers
+================================================================
+Preceding Text_FALSE: To our knowledge, previous works on automatic acknowledgment analysis were mostly concerned with the extraction of funding organizations and grant numbers
+================================================================
+Preceding Text_True: acknowledgment texts
+================================================================
+Preceding Text_FALSE: or classification of acknowledgment texts
+================================================================
+Preceding Text_True: informal scientific collaboration
+================================================================
+Preceding Text_FALSE: Analysis of the acknowledged individuals provides insight into informal scientific collaboration
+================================================================
+Preceding Text_True: universities
+================================================================
+Preceding Text_FALSE: Acknowledged universities and corporations reveal interactions and knowledge exchange between industry and universities
+================================================================
+Preceding Text_FALSE: The stateoftheart named entity recognition (NER) models showed a great performance on the CoNLL2003 dataset
+================================================================
+Preceding Text_True: CoNLL2003 corpus
+================================================================
+Preceding Text_FALSE: CoNLL2003 corpus
+================================================================
+Preceding Text_True: article
+================================================================
+Preceding Text_FALSE: 1 3   Scientometrics The present paper is an extended version of the article
+================================================================
+Preceding Text_FALSE: 2 presented at the 3rd Workshop on Extraction and Evaluation of Knowledge Entities from Scientific Documents (EEKE2022).3 Flair, an opensource natural language processing (NLP) framework
+================================================================
+Preceding Text_True: processed data
+================================================================
+Preceding Text_FALSE: Most of the previous works on acknowledgment analysis were limited by the manual evaluation of data and therefore by the amount of processed data
+================================================================
+Preceding Text_FALSE: 
+================================================================
+Preceding Text_True: learning process
+================================================================
+Preceding Text_FALSE: The annotation process is crucial as insufficient or redundant metadata can slow down and bias a learning process
+================================================================
+Preceding Text_FALSE: The stateoftheart models are based on deep recurrent models, convolutionbased, or 1 3   Scientometrics pretrained transformer architectures
+================================================================
+Preceding Text_True: 4class Stanford Entity Recognizer
+================================================================
+Preceding Text_Nested: 4class Stanford Entity Recognizer
+================================================================
+Preceding Text_True: acknowledged entities
+================================================================
+Preceding Text_FALSE: 7 AckNER showed better performance as Flair, but is specifically designed to recognize two types of acknowledged entities
+================================================================
+Preceding Text_True: PyTorch
+================================================================
+Preceding Text_FALSE: The Flair NLP framework Flair is an opensourced NLP framework built on PyTorch
+================================================================
+Preceding Text_True: Flair Embeddings
+================================================================
+Preceding Text_Nested: Flair Embeddings
+================================================================
+Preceding Text_True: Transformers
+================================================================
+Preceding Text_FALSE: , b) NER Model with Transformers (later on Transformers)
+================================================================
+Preceding Text_True: TARS
+================================================================
+Preceding Text_FALSE: , and c) Zeroshot NER with TARS (later on TARS)
+================================================================
+Preceding Text_True: contextual string embeddings
+================================================================
+Preceding Text_FALSE: The Flair Embeddings model uses stacked embeddings, i.e., a combination of contextual string embeddings
+================================================================
+Preceding Text_True: their separate uses
+================================================================
+Preceding Text_FALSE: Stacked embedding is an important Flair feature, as a combination of different embeddings might bring better results than their separate uses
+================================================================
+Preceding Text_True: multilingual XMLRoBERTa transformer model
+================================================================
+Preceding Text_FALSE: 1 3   Scientometrics Table 2  Number of sentences/texts in the training corpora Table 3  Number of sentences/texts from each scientific domain in the training corpora LSTMCRF with the multilingual XMLRoBERTa transformer model
+================================================================
+Preceding Text_True: ( fewshort learning
+================================================================
+Preceding Text_True: metadata records
+================================================================
+Preceding Text_Nested: metadata records
+================================================================
+Preceding Text_True: natural and life sciences domains
+================================================================
+Preceding Text_FALSE: At the same time, information on technical and instrumental support is more common for the natural and life sciences domains
+================================================================
+Preceding Text_True: GloVe
+================================================================
+Preceding Text_Nested: GloVe
+================================================================
+Preceding Text_True: RoBERTa model
+================================================================
+Preceding Text_FALSE: For Transformers, training was initiated with the RoBERTa model
+================================================================
+Preceding Text_True: standard approach
+================================================================
+Preceding Text_FALSE: We used a standard approach, where only a linear classifier layer was added on the top of the transformer, as adding the additional CRF decoder between the transformer and linear classifier did not increase accuracy compared with this standard approach
+================================================================
+Preceding Text_True: Adam Optimisation Algorithm
+================================================================
+Preceding Text_FALSE: The training was initiated with a small learning rate using the Adam Optimisation Algorithm
+================================================================
+Preceding Text_True: TARS NER model
+================================================================
+Preceding Text_FALSE: The training for the fewshot approach was initiated with the TARS NER model
+================================================================
+Preceding Text_True: most efficient algorithm
+================================================================
+Preceding Text_FALSE: On the one hand, Flair developers claimed Transformers to be the most efficient algorithm
+================================================================
+Preceding Text_True: their separate uses
+================================================================
+Preceding Text_FALSE: On the other, the stacked embeddings are an important feature of the Flair tool, as a combination of different embeddings might bring better results than their separate uses
+================================================================
+Preceding Text_True: English corpus
+================================================================
+Preceding Text_FALSE: Thus, Flair Embeddings were trained on the 1billion words English corpus
+================================================================
+Preceding Text_FALSE: Previous works showed improvements in downstream tasks using embedding models finetuned for the domain used
+================================================================
+Preceding Text_FALSE: Moreover, further analysis of acknowledged entities showed that the miscellaneous category contained very inhomogeneous and partly irrelevant data, making the analysis more complicated
+================================================================
+Preceding Text_True: wrong category
+================================================================
+Preceding Text_FALSE: Analysis of the extracted entities showed that many entities were extracted correctly, but were assigned to the wrong category
+================================================================
+Preceding Text_True: reward systems
+================================================================
+Preceding Text_FALSE: The analysis of acknowledgments is particularly interesting as acknowledgments may give an insight into aspects of the scientific community, such as reward systems
+================================================================
+Preceding Text_True: hidden research trends
+================================================================
+Preceding Text_FALSE: , collaboration patterns, and hidden research trends
+================================================================
+Preceding Text_True: grant numbers
+================================================================
+Preceding Text_FALSE: To our knowledge, previous works on automatic acknowledgment analysis were mostly concerned with the extraction of funding organizations and grant numbers
+================================================================
+Preceding Text_True: acknowledgment texts
+================================================================
+Preceding Text_FALSE: or classification of acknowledgment texts
+================================================================
+Preceding Text_True: informal scientific collaboration
+================================================================
+Preceding Text_FALSE: Analysis of the acknowledged individuals provides insight into informal scientific collaboration
+================================================================
+Preceding Text_True: universities
+================================================================
+Preceding Text_FALSE: Acknowledged universities and corporations reveal interactions and knowledge exchange between industry and universities
+================================================================
+Preceding Text_FALSE: The stateoftheart named entity recognition (NER) models showed a great performance on the CoNLL2003 dataset
+================================================================
+Preceding Text_True: CoNLL2003 corpus
+================================================================
+Preceding Text_FALSE: CoNLL2003 corpus
+================================================================
+Preceding Text_True: article
+================================================================
+Preceding Text_FALSE: 1 3   Scientometrics The present paper is an extended version of the article
+================================================================
+Preceding Text_FALSE: 2 presented at the 3rd Workshop on Extraction and Evaluation of Knowledge Entities from Scientific Documents (EEKE2022).3 Flair, an opensource natural language processing (NLP) framework
+================================================================
+Preceding Text_True: processed data
+================================================================
+Preceding Text_FALSE: Most of the previous works on acknowledgment analysis were limited by the manual evaluation of data and therefore by the amount of processed data
+================================================================
+Preceding Text_FALSE: 
+================================================================
+Preceding Text_True: learning process
+================================================================
+Preceding Text_FALSE: The annotation process is crucial as insufficient or redundant metadata can slow down and bias a learning process
+================================================================
+Preceding Text_FALSE: The stateoftheart models are based on deep recurrent models, convolutionbased, or 1 3   Scientometrics pretrained transformer architectures
+================================================================
+Preceding Text_True: 4class Stanford Entity Recognizer
+================================================================
+Preceding Text_Nested: 4class Stanford Entity Recognizer
+================================================================
+Preceding Text_True: acknowledged entities
+================================================================
+Preceding Text_FALSE: 7 AckNER showed better performance as Flair, but is specifically designed to recognize two types of acknowledged entities
+================================================================
+Preceding Text_True: PyTorch
+================================================================
+Preceding Text_FALSE: The Flair NLP framework Flair is an opensourced NLP framework built on PyTorch
+================================================================
+Preceding Text_True: Flair Embeddings
+================================================================
+Preceding Text_Nested: Flair Embeddings
+================================================================
+Preceding Text_True: Transformers
+================================================================
+Preceding Text_FALSE: , b) NER Model with Transformers (later on Transformers)
+================================================================
+Preceding Text_True: TARS
+================================================================
+Preceding Text_FALSE: , and c) Zeroshot NER with TARS (later on TARS)
+================================================================
+Preceding Text_True: contextual string embeddings
+================================================================
+Preceding Text_FALSE: The Flair Embeddings model uses stacked embeddings, i.e., a combination of contextual string embeddings
+================================================================
+Preceding Text_True: their separate uses
+================================================================
+Preceding Text_FALSE: Stacked embedding is an important Flair feature, as a combination of different embeddings might bring better results than their separate uses
+================================================================
+Preceding Text_True: multilingual XMLRoBERTa transformer model
+================================================================
+Preceding Text_FALSE: 1 3   Scientometrics Table 2  Number of sentences/texts in the training corpora Table 3  Number of sentences/texts from each scientific domain in the training corpora LSTMCRF with the multilingual XMLRoBERTa transformer model
+================================================================
+Preceding Text_True: ( fewshort learning
+================================================================
+Preceding Text_True: metadata records
+================================================================
+Preceding Text_Nested: metadata records
+================================================================
+Preceding Text_True: natural and life sciences domains
+================================================================
+Preceding Text_FALSE: At the same time, information on technical and instrumental support is more common for the natural and life sciences domains
+================================================================
+Preceding Text_True: GloVe
+================================================================
+Preceding Text_Nested: GloVe
+================================================================
+Preceding Text_True: RoBERTa model
+================================================================
+Preceding Text_FALSE: For Transformers, training was initiated with the RoBERTa model
+================================================================
+Preceding Text_True: standard approach
+================================================================
+Preceding Text_FALSE: We used a standard approach, where only a linear classifier layer was added on the top of the transformer, as adding the additional CRF decoder between the transformer and linear classifier did not increase accuracy compared with this standard approach
+================================================================
+Preceding Text_True: Adam Optimisation Algorithm
+================================================================
+Preceding Text_FALSE: The training was initiated with a small learning rate using the Adam Optimisation Algorithm
+================================================================
+Preceding Text_True: TARS NER model
+================================================================
+Preceding Text_FALSE: The training for the fewshot approach was initiated with the TARS NER model
+================================================================
+Preceding Text_True: most efficient algorithm
+================================================================
+Preceding Text_FALSE: On the one hand, Flair developers claimed Transformers to be the most efficient algorithm
+================================================================
+Preceding Text_True: their separate uses
+================================================================
+Preceding Text_FALSE: On the other, the stacked embeddings are an important feature of the Flair tool, as a combination of different embeddings might bring better results than their separate uses
+================================================================
+Preceding Text_True: English corpus
+================================================================
+Preceding Text_FALSE: Thus, Flair Embeddings were trained on the 1billion words English corpus
+================================================================
+Preceding Text_FALSE: Previous works showed improvements in downstream tasks using embedding models finetuned for the domain used
+================================================================
+Preceding Text_FALSE: Moreover, further analysis of acknowledged entities showed that the miscellaneous category contained very inhomogeneous and partly irrelevant data, making the analysis more complicated
+================================================================
+Preceding Text_True: wrong category
+================================================================
+Preceding Text_FALSE: Analysis of the extracted entities showed that many entities were extracted correctly, but were assigned to the wrong category
+================================================================
+Preceding Text_True: CRFs
+================================================================
+Preceding Text_FALSE: In particular, we advocate creating these joint models as conditional random fields (CRFs)
+================================================================
+Preceding Text_True: relational Markov networks
+================================================================
+Preceding Text_FALSE: that have been configured to represent relational data by using parameter tying in repeated patterns based on the structure of the data—also known as relational Markov networks
+================================================================
+Preceding Text_FALSE: To address this problem we have previously advocated
+================================================================
+Preceding Text_True: circularities
+================================================================
+Preceding Text_FALSE: the use of joint probabilistic models that perform extraction and data mining in an integrated inference procedure—the evidence for an outcome being the result of simultaneously making inferences both “bottom up” from extraction, and  autocorrelation and other relations without concern for avoiding circularities
+================================================================
+Preceding Text_True: information extraction
+================================================================
+Preceding Text_FALSE: Both these modeling choices are in contrast to other related work in using directed, generativelytrained probabilistic models for information extraction
+================================================================
+Preceding Text_True: CiteSeer
+================================================================
+Preceding Text_FALSE: Using a data set of citations from CiteSeer
+================================================================
+Preceding Text_True: ICM
+================================================================
+Preceding Text_Nested: ICM
+================================================================
+Preceding Text_True: perfect extraction
+================================================================
+Preceding Text_FALSE: Joint parameter estimation in this complex model is intractable, and thus, as in inference, we perform parameter estimation somewhat separately for each of    Building on earlier work in coreference that assumes perfect extraction
+================================================================
+Preceding Text_FALSE: , we cast coreference as a problem in graph partitioning based on Markov random fields
+================================================================
+Preceding Text_True: CiteSeer citationmatching data
+================================================================
+Preceding Text_FALSE: We present experimental results on the four sections of CiteSeer citationmatching data
+================================================================
+Preceding Text_True: conditional random fields
+================================================================
+Preceding Text_FALSE: Inference within the linear chain is performed exactly by dynamic programming; inference within the fullyconnected coreference is performed approximately by a simple graph partitioning algorithm, and inference  This paper presents a method for integrated information extraction and coreference based on conditionallytrained, undirected graphical models—also known as conditional random fields
+================================================================
+Preceding Text_True: natural language tasks
+================================================================
+Preceding Text_FALSE: , where further details and background    CRFs have shown recent success in a number of domains especially in sequence modeling for natural language tasks
+================================================================
+Preceding Text_True: ICM
+================================================================
+Preceding Text_Nested: ICM
+================================================================
+Preceding Text_FALSE: 
+================================================================
+Preceding Text_True: recent theoretical interest
+================================================================
+Preceding Text_FALSE: , except that the edge weights in the graph are determined by “inThis problem is an instance of correlation clustering, which has sparked recent theoretical interest
+================================================================
+Preceding Text_True: coreference
+================================================================
+Preceding Text_FALSE: In addition, our previous experience with coreference
+================================================================
+Preceding Text_True: training
+================================================================
+Preceding Text_FALSE: Some specialized features were developed for matching and normalizing author name fields as    We employ feature induction as part of this training
+================================================================
+Preceding Text_True: CiteSeer
+================================================================
+Preceding Text_FALSE: Note that cluster recall  To evaluate our model, we apply it to a citation dataset from CiteSeer
+================================================================
+Preceding Text_FALSE: We report the 2We used the Secondstring package, some of the functions of which are described in
+================================================================
+Preceding Text_FALSE: Table 1: coreference performance measured by pairwise F1 (upper part) cluster recall (lower part) usfrom
+================================================================
+Preceding Text_FALSE: See
+================================================================
+Preceding Text_True: citations
+================================================================
+Preceding Text_FALSE: model was trained on a completely separate data set of citations
+================================================================
+Preceding Text_True: labeling disagreements
+================================================================
+Preceding Text_FALSE: To test the significance of the improvements, we use McNemar’s test on labeling disagreements
+================================================================
+Preceding Text_True: CRFs
+================================================================
+Preceding Text_FALSE: In particular, we advocate creating these joint models as conditional random fields (CRFs)
+================================================================
+Preceding Text_True: relational Markov networks
+================================================================
+Preceding Text_FALSE: that have been configured to represent relational data by using parameter tying in repeated patterns based on the structure of the data—also known as relational Markov networks
+================================================================
+Preceding Text_FALSE: To address this problem we have previously advocated
+================================================================
+Preceding Text_True: circularities
+================================================================
+Preceding Text_FALSE: the use of joint probabilistic models that perform extraction and data mining in an integrated inference procedure—the evidence for an outcome being the result of simultaneously making inferences both “bottom up” from extraction, and  autocorrelation and other relations without concern for avoiding circularities
+================================================================
+Preceding Text_True: information extraction
+================================================================
+Preceding Text_FALSE: Both these modeling choices are in contrast to other related work in using directed, generativelytrained probabilistic models for information extraction
+================================================================
+Preceding Text_True: CiteSeer
+================================================================
+Preceding Text_FALSE: Using a data set of citations from CiteSeer
+================================================================
+Preceding Text_True: ICM
+================================================================
+Preceding Text_Nested: ICM
+================================================================
+Preceding Text_True: perfect extraction
+================================================================
+Preceding Text_FALSE: Joint parameter estimation in this complex model is intractable, and thus, as in inference, we perform parameter estimation somewhat separately for each of    Building on earlier work in coreference that assumes perfect extraction
+================================================================
+Preceding Text_FALSE: , we cast coreference as a problem in graph partitioning based on Markov random fields
+================================================================
+Preceding Text_True: CiteSeer citationmatching data
+================================================================
+Preceding Text_FALSE: We present experimental results on the four sections of CiteSeer citationmatching data
+================================================================
+Preceding Text_True: conditional random fields
+================================================================
+Preceding Text_FALSE: Inference within the linear chain is performed exactly by dynamic programming; inference within the fullyconnected coreference is performed approximately by a simple graph partitioning algorithm, and inference  This paper presents a method for integrated information extraction and coreference based on conditionallytrained, undirected graphical models—also known as conditional random fields
+================================================================
+Preceding Text_True: natural language tasks
+================================================================
+Preceding Text_FALSE: , where further details and background    CRFs have shown recent success in a number of domains especially in sequence modeling for natural language tasks
+================================================================
+Preceding Text_True: ICM
+================================================================
+Preceding Text_Nested: ICM
+================================================================
+Preceding Text_FALSE: 
+================================================================
+Preceding Text_True: recent theoretical interest
+================================================================
+Preceding Text_FALSE: , except that the edge weights in the graph are determined by “inThis problem is an instance of correlation clustering, which has sparked recent theoretical interest
+================================================================
+Preceding Text_True: coreference
+================================================================
+Preceding Text_FALSE: In addition, our previous experience with coreference
+================================================================
+Preceding Text_True: training
+================================================================
+Preceding Text_FALSE: Some specialized features were developed for matching and normalizing author name fields as    We employ feature induction as part of this training
+================================================================
+Preceding Text_True: CiteSeer
+================================================================
+Preceding Text_FALSE: Note that cluster recall  To evaluate our model, we apply it to a citation dataset from CiteSeer
+================================================================
+Preceding Text_FALSE: We report the 2We used the Secondstring package, some of the functions of which are described in
+================================================================
+Preceding Text_FALSE: Table 1: coreference performance measured by pairwise F1 (upper part) cluster recall (lower part) usfrom
+================================================================
+Preceding Text_FALSE: See
+================================================================
+Preceding Text_True: citations
+================================================================
+Preceding Text_FALSE: model was trained on a completely separate data set of citations
+================================================================
+Preceding Text_True: labeling disagreements
+================================================================
+Preceding Text_FALSE: To test the significance of the improvements, we use McNemar’s test on labeling disagreements
+================================================================
+Preceding Text_True: CRFs
+================================================================
+Preceding Text_FALSE: In particular, we advocate creating these joint models as conditional random fields (CRFs)
+================================================================
+Preceding Text_True: relational Markov networks
+================================================================
+Preceding Text_FALSE: that have been configured to represent relational data by using parameter tying in repeated patterns based on the structure of the data—also known as relational Markov networks
+================================================================
+Preceding Text_FALSE: To address this problem we have previously advocated
+================================================================
+Preceding Text_True: circularities
+================================================================
+Preceding Text_FALSE: the use of joint probabilistic models that perform extraction and data mining in an integrated inference procedure—the evidence for an outcome being the result of simultaneously making inferences both “bottom up” from extraction, and  autocorrelation and other relations without concern for avoiding circularities
+================================================================
+Preceding Text_True: information extraction
+================================================================
+Preceding Text_FALSE: Both these modeling choices are in contrast to other related work in using directed, generativelytrained probabilistic models for information extraction
+================================================================
+Preceding Text_True: CiteSeer
+================================================================
+Preceding Text_FALSE: Using a data set of citations from CiteSeer
+================================================================
+Preceding Text_True: ICM
+================================================================
+Preceding Text_Nested: ICM
+================================================================
+Preceding Text_True: perfect extraction
+================================================================
+Preceding Text_FALSE: Joint parameter estimation in this complex model is intractable, and thus, as in inference, we perform parameter estimation somewhat separately for each of    Building on earlier work in coreference that assumes perfect extraction
+================================================================
+Preceding Text_FALSE: , we cast coreference as a problem in graph partitioning based on Markov random fields
+================================================================
+Preceding Text_True: CiteSeer citationmatching data
+================================================================
+Preceding Text_FALSE: We present experimental results on the four sections of CiteSeer citationmatching data
+================================================================
+Preceding Text_True: conditional random fields
+================================================================
+Preceding Text_FALSE: Inference within the linear chain is performed exactly by dynamic programming; inference within the fullyconnected coreference is performed approximately by a simple graph partitioning algorithm, and inference  This paper presents a method for integrated information extraction and coreference based on conditionallytrained, undirected graphical models—also known as conditional random fields
+================================================================
+Preceding Text_True: natural language tasks
+================================================================
+Preceding Text_FALSE: , where further details and background    CRFs have shown recent success in a number of domains especially in sequence modeling for natural language tasks
+================================================================
+Preceding Text_True: ICM
+================================================================
+Preceding Text_Nested: ICM
+================================================================
+Preceding Text_FALSE: 
+================================================================
+Preceding Text_True: recent theoretical interest
+================================================================
+Preceding Text_FALSE: , except that the edge weights in the graph are determined by “inThis problem is an instance of correlation clustering, which has sparked recent theoretical interest
+================================================================
+Preceding Text_True: coreference
+================================================================
+Preceding Text_FALSE: In addition, our previous experience with coreference
+================================================================
+Preceding Text_True: training
+================================================================
+Preceding Text_FALSE: Some specialized features were developed for matching and normalizing author name fields as    We employ feature induction as part of this training
+================================================================
+Preceding Text_True: CiteSeer
+================================================================
+Preceding Text_FALSE: Note that cluster recall  To evaluate our model, we apply it to a citation dataset from CiteSeer
+================================================================
+Preceding Text_FALSE: We report the 2We used the Secondstring package, some of the functions of which are described in
+================================================================
+Preceding Text_FALSE: Table 1: coreference performance measured by pairwise F1 (upper part) cluster recall (lower part) usfrom
+================================================================
+Preceding Text_FALSE: See
+================================================================
+Preceding Text_True: citations
+================================================================
+Preceding Text_FALSE: model was trained on a completely separate data set of citations
+================================================================
+Preceding Text_True: labeling disagreements
+================================================================
+Preceding Text_FALSE: To test the significance of the improvements, we use McNemar’s test on labeling disagreements
+================================================================
+Preceding Text_True: Johnson
+================================================================
+Preceding Text_FALSE: Johnson
+================================================================
+Preceding Text_True: PMCLlama
+================================================================
+Preceding Text_FALSE: et al., 2019), and large language models tailored for    specific domains, such as PMCLlama
+================================================================
+Preceding Text_True: Llavamed
+================================================================
+Preceding Text_FALSE: and Llavamed
+================================================================
+Preceding Text_True: PGRA
+================================================================
+Preceding Text_Nested: PGRA
+================================================================
+Preceding Text_True: prior answers
+================================================================
+Preceding Text_FALSE: Later research has aimed to improve these systems by either optimizing the retrieval processes using prior answers
+================================================================
+Preceding Text_True: Biotechnology Information1(NCBI
+================================================================
+Preceding Text_FALSE: To achieve this goal, we extract research papers from the global biomedical article database maintained by the National Center for Biotechnology Information1(NCBI)
+================================================================
+Preceding Text_True: PubMedBERT
+================================================================
+Preceding Text_FALSE: This model employs PubMedBERT
+================================================================
+Preceding Text_True: technique
+================================================================
+Preceding Text_FALSE: We enhanced this model using the CLIP (Contrastive LanguageImage Pretraining) technique
+================================================================
+Preceding Text_True: local , highquality biological vector database
+================================================================
+Preceding Text_True: i.e. , GeneTuring
+================================================================
+Preceding Text_FALSE: , MedMCQA
+================================================================
+Preceding Text_True: Medical Genetics
+================================================================
+Preceding Text_FALSE: , Medical Genetics
+================================================================
+Preceding Text_True: College Biology
+================================================================
+Preceding Text_FALSE: , College Biology
+================================================================
+Preceding Text_True: College Medicine
+================================================================
+Preceding Text_FALSE: , College Medicine
+================================================================
+Preceding Text_FALSE: • BioLLM (Biological LLMs): PMCLlama (13B)
+================================================================
+Preceding Text_True: ( 7B
+================================================================
+Preceding Text_FALSE: and BioMistral (7B)
+================================================================
+Preceding Text_True: ( 175B
+================================================================

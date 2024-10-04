@@ -564,17 +564,64 @@ def contains_relevant_entity(noun_phrase):
 if __name__ == "__main__":
     try:
         # Chuyển đổi PDF sang DOCX (nếu cần)
-        # convert_pdf_to_docx("paper_citation_matching_APA.pdf", "paper_citation_matching_APA.docx")
+        convert_pdf_to_docx("RAG.pdf", "RAG.docx")
 
         # Trích xuất văn bản từ DOCX để xử lý
-        docx_text = extract_text_from_docx("paper_citation_matching_APA.docx")
+        docx_text = extract_text_from_docx("RAG.docx")
 
         # Trích xuất trích dẫn
         citations = extract_citations_with_context(docx_text)
-
-        # Xuất kết quả ra tệp JSON
         with open('output.json', 'w', encoding='utf-8') as f:
             json.dump(citations, f, ensure_ascii=False, indent=4)
+        
+        # citations = [
+        #     # Direct Quotes
+        #     "“The early bird catches the worm” (Johnson, 2018).",
+        #     "“Artificial intelligence is reshaping industries” (Smith & Lee, 2020).",
+        #     "“The universe is expanding at an accelerating rate” (Doe et al., 2015).",
+        #     "“Quantum computing will revolutionize encryption” (Brown, Miller & Davis, 2017).",
+        #     "“Climate change is the greatest threat to humanity” (Green & White, 2019).",
+        #     "“Economic growth is expected to slow down” (Taylor, 2021, p. 45).",
+        #     "“The population is growing faster than anticipated” (Smith & Brown, 2018, pp. 123-124).",
+        #     "“Newton’s laws laid the foundation of classical mechanics” (cited in White, 2012).",
+        #     "“Social media impacts mental health significantly” (Brown, 2020; cited in Smith, 2021).",
+        #     "“Leadership is a crucial skill in the corporate world” (Adams, 2016, chap. 3).",
+
+        #     # Narrative Citations (Outside Quotes)
+        #     "Johnson (2018) stated that “the early bird catches the worm.”",
+        #     "According to Smith & Lee (2020), “artificial intelligence is reshaping industries.”",
+        #     "Doe et al. (2015) mentioned that “the universe is expanding at an accelerating rate.”",
+        #     "Brown, Miller & Davis (2017) claimed that “quantum computing will revolutionize encryption.”",
+        #     "Green & White (2019) argued that “climate change is the greatest threat to humanity.”",
+        #     "As Taylor (2021, p. 45) explained, “economic growth is expected to slow down.”",
+        #     "Smith & Brown (2018, pp. 123-124) emphasized that “the population is growing faster than anticipated.”",
+        #     "White (2012) cited Newton’s laws, claiming that “Newton’s laws laid the foundation of classical mechanics.”",
+        #     "Brown (2020) referenced the impact of social media, claiming that “social media impacts mental health significantly” (cited in Smith, 2021).",
+        #     "Adams (2016, chap. 3) noted that “leadership is a crucial skill in the corporate world.”",
+
+        #     # Mixed Direct and Narrative Citations
+        #     "“The stars are not in favor of the situation” (Williams, 2022), but according to Johnson (2019), there’s still hope.",
+        #     "“The ocean levels are rising” (Green, 2020), and yet Taylor (2021) argues that “economic growth will be stable.”",
+        #     "The findings suggest that “protein consumption is necessary for muscle growth” (Doe et al., 2015), but Miller (2016) disagrees.",
+        #     "“Virtual reality will transform education” (Smith & Brown, 2017), but as Lee (2018) points out, the technology is still evolving.",
+
+        #     # Unmatched Cases for Testing Edge Handling
+        #     "This is not a citation but a regular sentence.",
+        #     "“This quote is incomplete without a citation”.",
+        #     "Here is a sentence (without citation)."
+        # ]
+        # all_results = []
+
+        # for sentence in citations:
+        #     results = extract_citations_with_context(sentence)
+        #     if results:
+        #         all_results.extend(results)
+
+        # # Xuất kết quả ra tệp JSON
+        # with open('output.json', 'w', encoding='utf-8') as f:
+        #     # json.dump(citations, f, ensure_ascii=False, indent=4)
+        #     json.dump(all_results, f, ensure_ascii=False, indent=4)
+
 
         logging.info("Dữ liệu đã được xuất ra tệp output.json.")
     except Exception as e:
