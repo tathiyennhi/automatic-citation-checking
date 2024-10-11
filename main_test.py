@@ -678,26 +678,68 @@
 #             print(f"    Needs Manual Check: {citation['needs_manual_check']}")
 #         print("\n")
 
+
 import spacy
-
 # Tải mô hình tiếng Anh
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_lg")
 
-def get_noun_phrases(sentence):
+def get_noun_phrases_with_entities(sentence):
     """
-    Hàm này nhận vào một câu và trả về danh sách các cụm danh từ trong câu đó.
+    Hàm này nhận vào một câu và trả về danh sách các cụm danh từ cùng với thông tin
+    về việc chúng có thuộc các Special Entity không.
     """
     doc = nlp(sentence)
-    noun_phrases = [chunk.text for chunk in doc.noun_chunks]
-    return noun_phrases
+    noun_phrases_info = []
+
+    # Trích xuất các cụm danh từ
+    for chunk in doc.noun_chunks:
+        chunk_text = chunk.text
+        # Kiểm tra xem có thực thể đặc biệt (Special Entity) nào nằm trong cụm danh từ không
+        special_entities = [ent.label_ for ent in doc.ents if ent.start >= chunk.start and ent.end <= chunk.end]
+
+        if special_entities:
+            noun_phrases_info.append((chunk_text, special_entities))
+        else:
+            noun_phrases_info.append((chunk_text, None))
+
+    return noun_phrases_info
 
 # Câu mẫu
-sentence = "We used GloVe."
+sentence = "Flair has three default training algorithms for NER which were used for the first experiment in the present research: a) NER Model with Flair Embeddings (later on Flair Embeddings) (Akbik et al., 2018), b) NER Model with Transformers (later on Transformers) (Schweter & Akbik, 2020), and c) Zeroshot NER with TARS (later on TARS) (Halder et al., 2020) 8."
 
-# Trích xuất cụm danh từ
-noun_phrases = get_noun_phrases(sentence)
+# Trích xuất cụm danh từ và kiểm tra thực thể đặc biệt
+noun_phrases_with_entities = get_noun_phrases_with_entities(sentence)
 
+# Hiển thị kết quả
 print("Câu:", sentence)
-print("Các cụm danh từ được nhận diện:")
-for np in noun_phrases:
-    print(f"- {np}")
+print("Các cụm danh từ được nhận diện và thực thể đặc biệt (nếu có):")
+for np, entities in noun_phrases_with_entities:
+    if entities:
+        print(f"- {np} (Special Entity: {', '.join(entities)})")
+    else:
+        print(f"- {np} (Không có Special Entity)")
+
+
+
+# from transformers import AutoTokenizer, AutoModelForTokenClassification
+# from transformers import pipeline
+
+# # Tải mô hình SciBERT đã được tinh chỉnh cho NER
+# tokenizer = AutoTokenizer.from_pretrained("dslim/bert-base-NER")
+# model = AutoModelForTokenClassification.from_pretrained("dslim/bert-base-NER")
+
+# # Sử dụng pipeline cho NER
+# ner_pipeline = pipeline("ner", model=model, tokenizer=tokenizer)
+
+# # Câu cần phân tích
+# sentence = "The training was initiated with a small learning rate using the Adam Optimisation Algorithm (Kingma & Ba, 2014)."
+
+# # Áp dụng NER
+# entities = ner_pipeline(sentence)
+
+# # Hiển thị kết quả các thực thể đặc biệt
+# for entity in entities:
+#     print(f"Entity: {entity['word']}, Label: {entity['entity']}")
+
+
+

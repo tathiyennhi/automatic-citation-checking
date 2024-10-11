@@ -10,12 +10,12 @@ logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
 
 # Tải mô hình ngôn ngữ SpaCy
 try:
-    nlp = spacy.load("en_core_web_sm")
+    nlp = spacy.load("en_core_web_lg")
 except OSError:
-    logging.info("Mô hình SpaCy 'en_core_web_sm' chưa được tải. Đang tải mô hình...")
+    logging.info("Mô hình SpaCy 'en_core_web_lg' chưa được tải. Đang tải mô hình...")
     from spacy.cli import download
-    download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
+    download("en_core_web_lg")
+    nlp = spacy.load("en_core_web_lg")
 
 def convert_pdf_to_docx(pdf_file, docx_file):
     """Chuyển đổi tệp PDF thành DOCX."""
@@ -435,7 +435,6 @@ def extract_citations_with_context(text):
                     if idx == 0:
                         preceding_text = sentence[:start].strip()
                         noun_phrase = get_preceding_noun_phrase(sentence, start)
-
                         if noun_phrase:
                             f_noun.write(f"Preceding Text_True: {noun_phrase}\n")
                             f_noun.write("================================================================\n")
@@ -445,17 +444,23 @@ def extract_citations_with_context(text):
                             if noun_phrase_position != -1:
                                 noun_phrase_end_pos = noun_phrase_position + len(noun_phrase)
                                 # if noun_phrase_end_pos <= start and contains_relevant_entity(noun_phrase):
-                                if noun_phrase_end_pos <= start and contains_relevant_entity(noun_phrase):
+                                if contains_relevant_entity(noun_phrase) == True:
+                                # if noun_phrase_end_pos <= start and contains_relevant_entity(noun_phrase):
 
                                     citation_content = noun_phrase
                                     needs_manual_check = True
-                                    f_noun.write(f"Preceding Text_Nested: {citation_content}\n")
+                                    f_noun.write(f"Preceding Text_Nested_NOUN_PHRASE: {citation_content, noun_phrase_end_pos, start}\n")
                                     f_noun.write("================================================================\n")
-                                elif noun_phrase_end_pos <= start and not contains_relevant_entity(noun_phrase):
+                                else:
                                     citation_content = preceding_text
                                     needs_manual_check = False
-                                    f_noun.write(f"Preceding Text_FALSE: {citation_content}\n")
+                                    f_noun.write(f"Preceding Text_FALSE_trích_dẫn_đầu_NOUN_PHRASE: {citation_content, noun_phrase_end_pos, start}\n")
                                     f_noun.write("================================================================\n")
+                                # elif noun_phrase_end_pos <= start and not contains_relevant_entity(noun_phrase):
+                                #     citation_content = preceding_text
+                                #     needs_manual_check = False
+                                #     f_noun.write(f"Preceding Text_FALSE_trích_dẫn_đầu: {citation_content}\n")
+                                #     f_noun.write("================================================================\n")
                         else:
                             citation_content = preceding_text
                             needs_manual_check = False
@@ -478,15 +483,18 @@ def extract_citations_with_context(text):
                             noun_phrase_position = sentence.find(noun_phrase)
                             if noun_phrase_position != -1:
                                 noun_phrase_end_pos = noun_phrase_position + len(noun_phrase)
-                                if noun_phrase_end_pos <= start and contains_relevant_entity(noun_phrase):
+                                # CHECK THISSSSSSSSSS
+                                # if noun_phrase_end_pos <= start and contains_relevant_entity(noun_phrase):
+                                if contains_relevant_entity(noun_phrase):
+                                
                                     citation_content = noun_phrase
                                     needs_manual_check = True
-                                    f_noun.write(f"Preceding Text_Nested: {citation_content}\n")
+                                    f_noun.write(f"Preceding Text_Nested_INDEX_KHAC_0: {citation_content}\n")
                                     f_noun.write("================================================================\n")
                                 else:
                                     citation_content = preceding_text
                                     needs_manual_check = False
-                                    f_noun.write(f"Preceding Text_FALSE: {citation_content}\n")
+                                    f_noun.write(f"Preceding Text_FALSE_không_phải_trích_dẫn_đầu: {citation_content}\n")
                                     f_noun.write("================================================================\n")
                             else:
                                 # Nếu noun_phrase không tồn tại trong sentence
@@ -537,8 +545,8 @@ def contains_relevant_entity(noun_phrase):
               hoặc thuộc loại thực thể đặc biệt.
     """
     # Danh sách các thực thể liên quan được set cứng
-    # relevant_entities = ['GloVe', 'Word2Vec', 'BERT', 'spaCy', 'Transformers']
-    relevant_entities = ['GloVe']
+    # relevant_entities = ['GloVe', 'Word2Vec', 'BERT', 'spaCy', 'Transformers','RoBERTa', 'TARs', 'PyTorch' ]
+    relevant_entities = []
 
 
     if not noun_phrase:  # Kiểm tra nếu noun_phrase rỗng
@@ -564,10 +572,10 @@ def contains_relevant_entity(noun_phrase):
 if __name__ == "__main__":
     try:
         # Chuyển đổi PDF sang DOCX (nếu cần)
-        convert_pdf_to_docx("RAG.pdf", "RAG.docx")
+        # convert_pdf_to_docx("RAG.pdf", "RAG.docx")
 
         # Trích xuất văn bản từ DOCX để xử lý
-        docx_text = extract_text_from_docx("RAG.docx")
+        docx_text = extract_text_from_docx("paper.docx")
 
         # Trích xuất trích dẫn
         citations = extract_citations_with_context(docx_text)
