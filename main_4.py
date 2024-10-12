@@ -428,102 +428,43 @@ def extract_citations_with_context(text):
                 }
             
             else:  # parenthetical
-                with open('output_paren.txt', 'a', encoding='utf-8') as f_paren, \
-                    open('output_noun_phrase.txt', 'a', encoding='utf-8') as f_noun, \
-                    open('output_1.txt', 'a', encoding='utf-8') as f_1:
-
-                    if idx == 0:
-                        preceding_text = sentence[:start].strip()
-                        noun_phrase = get_preceding_noun_phrase(sentence, start)
-                        if noun_phrase:
-                            f_noun.write(f"Preceding Text_True: {noun_phrase}\n")
-                            f_noun.write("================================================================\n")
-
-                            # Kiểm tra vị trí kết thúc của noun_phrase so với vị trí bắt đầu của trích dẫn trong dấu ngoặc đơn
-                            noun_phrase_position = sentence.find(noun_phrase)
-                            if noun_phrase_position != -1:
-                                noun_phrase_end_pos = noun_phrase_position + len(noun_phrase)
-                                # if noun_phrase_end_pos <= start and contains_relevant_entity(noun_phrase):
-                                if contains_relevant_entity(noun_phrase) == True:
-                                # if noun_phrase_end_pos <= start and contains_relevant_entity(noun_phrase):
-
-                                    citation_content = noun_phrase
-                                    needs_manual_check = True
-                                    f_noun.write(f"Preceding Text_Nested_NOUN_PHRASE: {citation_content, noun_phrase_end_pos, start}\n")
-                                    f_noun.write("================================================================\n")
-                                else:
-                                    citation_content = preceding_text
-                                    needs_manual_check = False
-                                    f_noun.write(f"Preceding Text_FALSE_trích_dẫn_đầu_NOUN_PHRASE: {citation_content, noun_phrase_end_pos, start}\n")
-                                    f_noun.write("================================================================\n")
-                                # elif noun_phrase_end_pos <= start and not contains_relevant_entity(noun_phrase):
-                                #     citation_content = preceding_text
-                                #     needs_manual_check = False
-                                #     f_noun.write(f"Preceding Text_FALSE_trích_dẫn_đầu: {citation_content}\n")
-                                #     f_noun.write("================================================================\n")
-                        else:
-                            citation_content = preceding_text
-                            needs_manual_check = False
-                            f_noun.write(f"Preceding Text_FALSE: {citation_content}\n")
-                            f_noun.write("================================================================\n")
+                if idx == 0:
+                    preceding_text = sentence[:start].strip()
+                    has_entity = contains_relevant_entity(preceding_text)
+                    if has_entity:
+                        citation_content = get_last_special_phrase(preceding_text)
+                        needs_manual_check = False
                     else:
-                        prev_end = citations_in_sentence[idx - 1]['end']
-                        preceding_text = sentence[prev_end:start].strip()
-                        noun_phrase = get_preceding_noun_phrase(sentence, start)
+                        citation_content = preceding_text
+                        needs_manual_check = False
+                else:
+                    prev_end = citations_in_sentence[idx - 1]['end']
+                    preceding_text = sentence[prev_end:start].strip()
+                    has_entity = contains_relevant_entity(preceding_text)
+                    if has_entity:
+                        citation_content = get_last_special_phrase(preceding_text)
+                        needs_manual_check = False
+                    else:
+                        citation_content = preceding_text
+                        needs_manual_check = False
 
-                        # Ghi noun_phrase vào file
-                        f_1.write(f"NOUn_PHRASE_FULL: {noun_phrase}\n")
-                        f_1.write("================================================================\n")
+                # Kiểm tra nếu nội dung trích dẫn quá ngắn
+                if len(citation_content.strip().split()) < 2 and not needs_manual_check:
+                    needs_manual_check = True
 
-                        if noun_phrase:
-                            f_noun.write(f"Preceding Text_True: {noun_phrase}\n")
-                            f_noun.write("================================================================\n")
+                # **Gán giá trị cho ref_citations và citation_text**
+                ref_citations = citation.get('ref_citations', [])
+                citation_text = citation.get('original_citation_text', '')
 
-                            # Kiểm tra vị trí kết thúc của noun_phrase so với vị trí bắt đầu của trích dẫn trong dấu ngoặc đơn
-                            noun_phrase_position = sentence.find(noun_phrase)
-                            if noun_phrase_position != -1:
-                                noun_phrase_end_pos = noun_phrase_position + len(noun_phrase)
-                                # CHECK THISSSSSSSSSS
-                                # if noun_phrase_end_pos <= start and contains_relevant_entity(noun_phrase):
-                                if contains_relevant_entity(noun_phrase):
-                                
-                                    citation_content = noun_phrase
-                                    needs_manual_check = True
-                                    f_noun.write(f"Preceding Text_Nested_INDEX_KHAC_0: {citation_content}\n")
-                                    f_noun.write("================================================================\n")
-                                else:
-                                    citation_content = preceding_text
-                                    needs_manual_check = False
-                                    f_noun.write(f"Preceding Text_FALSE_không_phải_trích_dẫn_đầu: {citation_content}\n")
-                                    f_noun.write("================================================================\n")
-                            else:
-                                # Nếu noun_phrase không tồn tại trong sentence
-                                citation_content = preceding_text
-                                needs_manual_check = False
-                                f_noun.write(f"Preceding Text_FALSE: {citation_content}\n")
-                                f_noun.write("================================================================\n")
-                        else:
-                            citation_content = preceding_text
-                            needs_manual_check = False
-                            f_noun.write(f"Preceding Text_FALSE: {citation_content}\n")
-                            f_noun.write("================================================================\n")
-
-                    # Kiểm tra nếu nội dung trích dẫn quá ngắn và chưa cần kiểm tra thủ công
-                    if len(citation_content.strip().split()) < 2 and not needs_manual_check:
-                        needs_manual_check = True
-
-                    ref_citations = citation.get('ref_citations', [])
-                    citation_text = citation['original_citation_text']
-                    citation_entry = {
-                        'citation_content': citation_content,
-                        'ref_citations': ref_citations,
-                        'original_citation_text': citation_text,
-                        'citation_type': citation_type,
-                        'needs_manual_check': needs_manual_check
-                    }
+                # Tạo citation_entry
+                citation_entry = {
+                    'citation_content': citation_content,
+                    'ref_citations': ref_citations,
+                    'original_citation_text': citation_text,
+                    'citation_type': citation_type,
+                    'needs_manual_check': needs_manual_check
+                }
             citation_entries.append(citation_entry)
-
-
 
         results.append({
             'original_sentence': sentence,
@@ -532,41 +473,151 @@ def extract_citations_with_context(text):
         })
 
     return results
-def contains_relevant_entity(noun_phrase):
+
+def get_last_special_phrase(sentence):
     """
-    Kiểm tra xem noun_phrase có chứa từ nào trong danh sách relevant_entities
-    hoặc là danh từ riêng hoặc thực thể đặc biệt (PRODUCT, MODEL, ORG, WORK_OF_ART).
+    Trả về cụm danh từ cuối cùng trong câu.
 
     Args:
-        noun_phrase (str): Cụm danh từ được phân tích.
+        sentence (str): Câu cần phân tích.
 
     Returns:
-        bool: True nếu có ít nhất một từ trong noun_phrase thuộc danh sách relevant_entities
-              hoặc thuộc loại thực thể đặc biệt.
+        str: Cụm danh từ cuối cùng, hoặc chuỗi rỗng nếu không tìm thấy.
     """
-    # Danh sách các thực thể liên quan được set cứng
-    # relevant_entities = ['GloVe', 'Word2Vec', 'BERT', 'spaCy', 'Transformers','RoBERTa', 'TARs', 'PyTorch' ]
-    relevant_entities = []
+    doc = nlp(sentence)
+    noun_phrases = [chunk.text.strip() for chunk in doc.noun_chunks]
+    if not noun_phrases:
+        return ''
+    return noun_phrases[-1]
+
+# def contains_relevant_entity(sentence):
+#     """
+#     Kiểm tra xem câu có chứa thực thể đặc biệt hay không và liệu thực thể đó có nằm trong cụm danh từ cuối cùng không.
+
+#     Args:
+#         sentence (str): Câu được phân tích.
+
+#     Returns:
+#         tuple: (bool, str)
+#             - bool: True nếu cụm danh từ cuối cùng chứa thực thể đặc biệt.
+#             - str: Cụm danh từ cuối cùng hoặc phần văn bản trước trích dẫn.
+#     """
+#     if not sentence:
+#         return False, ''
+
+#     doc = nlp(sentence)
+#     noun_phrases = list(doc.noun_chunks)
+#     if not noun_phrases:
+#         return False
+
+#     # Lấy cụm danh từ cuối cùng
+#     last_noun_phrase = noun_phrases[-1]
+#     last_noun_phrase_text = last_noun_phrase.text.strip()
+
+#     # Thực hiện NER trên toàn bộ câu
+#     entities = [(ent.text, ent.label_, ent.start_char, ent.end_char) for ent in doc.ents if ent.label_ in ['PRODUCT', 'MODEL', 'ORG', 'WORK_OF_ART']]
+
+#     # Kiểm tra xem có thực thể đặc biệt nào không
+#     if not entities:
+#         return False
+
+#     # Kiểm tra xem thực thể đặc biệt có nằm trong cụm danh từ cuối cùng không
+#     for ent_text, ent_label, ent_start, ent_end in entities:
+#         # Kiểm tra xem thực thể nằm trong cụm danh từ cuối cùng không
+#         if ent_start >= last_noun_phrase.start_char and ent_end <= last_noun_phrase.end_char:
+#             # Thực thể đặc biệt nằm trong cụm danh từ cuối cùng
+#             print(f"   -> Thực thể đặc biệt '{ent_text}' với nhãn '{ent_label}' nằm trong cụm danh từ cuối cùng.")
+#             return True
+
+#     # Nếu không có thực thể đặc biệt nào nằm trong cụm danh từ cuối cùng
+#     return False
+
+def contains_relevant_entity(sentence):
+    """
+    Kiểm tra xem câu có chứa thực thể đặc biệt hay không và liệu last_noun_phrase có bằng với thực thể đặc biệt nào không.
+
+    Args:
+        sentence (str): Câu cần kiểm tra.
+        log_file_path (str): Đường dẫn tới file log để ghi các thông tin in ra.
+
+    Returns:
+        bool: True nếu last_noun_phrase bằng với một thực thể đặc biệt, ngược lại trả về False.
+    """
+    with open("parenthetical_output.txt", 'a', encoding='utf-8') as log_file:
+        # In và ghi nội dung của câu
+        print(f"Sentence: {sentence}")
+        log_file.write(f"Sentence: {sentence}\n")
+        
+        if not sentence:
+            print("Sentence is empty.")
+            log_file.write("Sentence is empty.\n")
+            return False
+        else:
+            # Phân tích câu bằng spaCy
+            doc = nlp(sentence)
+
+            # Lấy danh sách các cụm danh từ trong câu
+            noun_phrases = [chunk.text.strip() for chunk in doc.noun_chunks]
+            if not noun_phrases:
+                print("No noun phrases in the sentence.")
+                log_file.write("No noun phrases in the sentence.\n")
+                return False  # Không có cụm danh từ nào trong câu
+            last_noun_phrase = noun_phrases[-1]
+            print(f"Cụm danh từ cuối cùng: {last_noun_phrase}")
+            log_file.write(f"Cụm danh từ cuối cùng: {last_noun_phrase}\n")
+
+            # Lấy danh sách các thực thể đặc biệt trong câu
+            science_entity_labels = [
+                'PERSON', 'ORG', 'GPE', 'LOC', 'PRODUCT', 'EVENT',
+                'WORK_OF_ART', 'LAW', 'LANGUAGE', 'DATE', 'TIME',
+                'PERCENT', 'MONEY', 'QUANTITY', 'ORDINAL', 
+            ]
+
+            special_entities = [(ent.text.strip(), ent.label_) for ent in doc.ents if ent.label_ in science_entity_labels]
+            print("Các thực thể đặc biệt:")
+            log_file.write("Các thực thể đặc biệt:\n")
+            for entity_text, entity_label in special_entities:
+                print(f" - '{entity_text}' thuộc loại thực thể '{entity_label}'")
+                log_file.write(f" - '{entity_text}' thuộc loại thực thể '{entity_label}'\n")
+
+                if compare_strings_with_regex_any_word(entity_text, last_noun_phrase):
+                    print(f"   -> Cụm danh từ cuối cùng '{last_noun_phrase}' là một thực thể đặc biệt.")
+                    log_file.write(f"   -> Cụm danh từ cuối cùng '{last_noun_phrase}' là một thực thể đặc biệt.\n")
+                    log_file.write(f'---------------------------- \n')
 
 
-    if not noun_phrase:  # Kiểm tra nếu noun_phrase rỗng
-        return False
+                    return True
+                else:
+                    print(f"   -> Cụm danh từ cuối cùng '{last_noun_phrase}' không là một thực thể đặc biệt.")
+                    log_file.write(f"   -> Cụm danh từ cuối cùng '{last_noun_phrase}' không là một thực thể đặc biệt.\n")
+                    log_file.write(f'---------------------------- \n')
+                    return False
 
-    # Kiểm tra xem noun_phrase có nằm trong danh sách relevant_entities không (không phân biệt chữ hoa chữ thường)
-    for entity in relevant_entities:
-        if entity.lower() in noun_phrase.lower():
+
+def compare_strings_with_regex_any_word(str1, str2):
+    """
+    Kiểm tra xem có bất kỳ từ nào trong str1 xuất hiện trong str2 hay không.
+
+    Args:
+        str1 (str): Chuỗi thứ nhất.
+        str2 (str): Chuỗi thứ hai.
+
+    Returns:
+        bool: True nếu có ít nhất một từ trong str1 xuất hiện trong str2, ngược lại trả về False.
+    """
+    str1 = str1.lower()
+    str2 = str2.lower()
+
+    words_str1 = re.findall(r'\b\w+\b', str1)
+
+    for word in words_str1:
+        pattern = r'\b' + re.escape(word) + r'\b'
+        if re.search(pattern, str2):
+            # Nếu tìm thấy từ trong str2, trả về True
             return True
-
-    # Kiểm tra bằng SpaCy NER
-    doc = nlp(noun_phrase)  # Phân tích toàn bộ noun_phrase bằng SpaCy
-
-    # Duyệt qua các thực thể trong noun_phrase để kiểm tra loại thực thể
-    for ent in doc.ents:
-        if ent.label_ in ['PRODUCT', 'MODEL', 'ORG', 'WORK_OF_ART']:
-            return True
-
-    return False  # Không tìm thấy từ nào thuộc danh sách relevant_entities hoặc các loại thực thể đặc biệt
-
+    # Nếu không tìm thấy từ nào, trả về False
+    return False  
+    
 
 
 if __name__ == "__main__":
@@ -575,7 +626,7 @@ if __name__ == "__main__":
         # convert_pdf_to_docx("RAG.pdf", "RAG.docx")
 
         # Trích xuất văn bản từ DOCX để xử lý
-        docx_text = extract_text_from_docx("paper.docx")
+        docx_text = extract_text_from_docx("paper_citation_matching_APA.docx")
 
         # Trích xuất trích dẫn
         citations = extract_citations_with_context(docx_text)
