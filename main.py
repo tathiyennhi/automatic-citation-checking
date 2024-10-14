@@ -494,6 +494,14 @@ def compare_strings_with_regex_any_word(str1, str2):
     # Nếu không tìm thấy từ nào, trả về False
     return False  
     
+def count_total_citations(citations_data):
+    """Hàm đếm tổng số lượng trích dẫn từ mảng citations."""
+    total_citations = 0
+
+    # Duyệt qua mỗi câu và đếm số lượng mục trong mảng citations
+    for sentence_data in citations_data:
+        total_citations += len(sentence_data['citations'])
+    return total_citations
 
 
 if __name__ == "__main__":
@@ -506,6 +514,7 @@ if __name__ == "__main__":
 
         # Trích xuất trích dẫn
         citations = extract_citations_with_context(docx_text)
+        print("TỔNG SỐ TRÍCH DẪN", count_total_citations(citations))
         with open('output.json', 'w', encoding='utf-8') as f:
             json.dump(citations, f, ensure_ascii=False, indent=4)
 
