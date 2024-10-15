@@ -1,480 +1,328 @@
-BIORAG: A RAGLLM Framework for Biological Question Reasoning Chengrui Wang1,2, Qingqing Long1,2, Meng Xiao1,2, Xunxin Cai1,2, Chengjun Wu1,2, Zhen Meng1,2, Xuezhi Wang1,2, Yuanchun Zhou1,2*  1Computer Network Information Center, Chinese Academy of Sciences.
+An Integrated, Conditional Model of Information Extraction and Coreference with Application to Citation Matching Ben Wellner∗†, Andrew McCallum∗, Fuchun Peng∗, Michael Hay∗  ∗University of Massachusetts Amherst  Amherst, MA 01003 USA  {wellner, mccallum, fuchun, mhay}@cs.umass.edu  †The MITRE Corporation 202 Burlington Road  Bedford, MA 01730 USA  ate hypotheses from both extraction and data mining  Although information extraction and coreference resolution appear together in many applications, most current systems perform them as independent steps.
 
-2University of the Chinese Academy of Sciences.
+This paper describes an approach to integrated inference for extraction and coreference based on conditionallytrained undirected graphical models.
 
-{crwang,qqlong,shaow,xxcai,cwu,zhenm99,wxz,zyc}cnic.cn   *Yuanchun Zhou is the corresponding author.
+We discuss the advantages of conditional probability training, and of a coreference model structure based on graph partitioning.
 
-et al., 2019), and large language models tailored for    specific domains, such as PMCLlama (Wu et al., 2024) and Llavamed (Li et al., 2024).
+On a data set of research paper citations, we show significant reduction in error by using extraction uncertainty to improve coreference citation matching accuracy, and using coreference to improve the accuracy of the extracted fields.
 
-These models are trained on domainspecific corpora, thereby embedding deep domain knowledge within their architectures.
+can be easily communicated between extraction and data mining in a closed loop system, (b) mutuallyreinforcing evidence from multiple sources will have the opportunity to be properly marshaled, (c) and accuracy and confidence assessment should improve.
 
-However, that embedded knowledge could be incomplete and computationally expensive to update.
+In particular, we advocate creating these joint models as conditional random fields (CRFs) (Lafferty et al., 2001) that have been configured to represent relational data by using parameter tying in repeated patterns based on the structure of the data—also known as relational Markov networks (Taskar et al., 2002).
 
-RetrievalAgumented Generation methods follow the information indexing and retrieval, information augmentation, and answer generation paradigm.
+In natural language processing, conditionallytrained rather than generativelytrained models almost always perform better because they allow more freedom to include a large collection of arbitrary, overlapping and nonindependent features of the input without the need to explicitly represent their dependencies, e.g., (Lafferty et al., 2001; Carreras et al., 2002;    Although information extraction (IE) and data mining appear together in many applications, their interface in most current systems would be better described as loose serial juxtaposition than as tight integration.
 
-For instance, PGRA (Guo et al., 2023) adopts a retriever to search and reranking the context, then generate the answer.
+Information extraction populates slots in a database by identifying relevant subsequences of text, but is usually unaware of the emerging patterns and regularities in the database.
 
-Later research has aimed to improve these systems by either optimizing the retrieval processes using prior answers (Wang et al., 2023), enhancing model functionality through iterative feedback cycles (Liu  pora.
+Data mining begins from a populated database, and is often unaware of where the data came from, or their inherent uncertainties.
 
-BIORAG then addresses the complexity of biological knowledge systems by combining a prebuilt research hierarchy with an embedding model for accurate context retrieval.
+The result is that the accuracy of both suffers, and significant mining of complex text sources is beyond reach.
 
-To cope with emerging biology knowledge, BIORAG can adaptively select knowledge sources from search engines, existing domainspecific tools, or indexed research articles.
+To address this problem we have previously advocated (McCallum & Jensen, 2003) the use of joint probabilistic models that perform extraction and data mining in an integrated inference procedure—the evidence for an outcome being the result of simultaneously making inferences both “bottom up” from extraction, and  autocorrelation and other relations without concern for avoiding circularities (Taskar et al., 2002; Nevillle et al., 2004).
 
-Once the framework determines that it has gathered sufficient information, it will generate the answer based on the reasoned material.
+Both these modeling choices are in contrast to other related work in using directed, generativelytrained probabilistic models for information extraction (Marthi et al., 2003).
 
-We illustrate the questionreasoning power of BIORAG on 6 popularly used biology QA datasets and compare it against 6 baseline methods.
+This paper presents a model, inference and learning procedure for a preliminary case of this extraction and data mining integration—namely information extraction and coreference on research paper citations.1Extraction in this context consists of segmenting and labeling the various fields of a citation, including title, author, journal, year, etc.
 
-Extensive case studies show the great potential to apply this framework to general science questionreasoning scenarios.
+Coreference (also known as identity uncertainty, record linkage or object consol1We currently avoid calling this work a joint model of extraction and coreference, because we have not yet “closed the loop” by repeatedly cycling between extraction and coreference inference.
 
-methods address the issue of updating information, they often oversee the intricate complexities inherent in the domain knowledge of biology.
+idation) is a key problem in creating databases created from noisy data.
 
-Based on the aforementioned discussion, we summarize three challenges in building efficient biology questionreasoning systems: (C1) The scarcity of highquality domainspecific corpora.
+For example, without properly resolving “Stuart Russell,” “S.
 
-While biological research publications are abundant, there remains a significant void in the availability of extensive, highquality datasets to build robust information indexing models.
+Russell,” and “Stuart Russel” to the same entity in a database, relational connections will be missing, and subsequent data mining will not find the patterns it should.
 
-(C2) The inherent complexity of biological knowledge systems.
+Using a data set of citations from CiteSeer (Lawrence et al., 1999), we present experimental results indicating that the type of integration we advocate does indeed hold promise—we show that modeling uncertainty about extraction of citation fields can improve coreference (in the face of different field orderings, abbreviations and typographic errors), and that leveraging predicted coreference can improve the extraction accuracy of these fields.
 
-This complexity is compounded by the interdisciplinary nature of modern biological research.
+Measurements of bestcase scenarios show that there is yet further gain available to be found through this integration.
 
-Consequently, automated questionreasoning systems must be able to understand and process multifaceted and often ambiguous biological query.
+Certainly further gains are expected from experiments that close the loop between extraction and coreference, rather than the limited, separate bidirectional results prowithin the entity attributes is performed exactly by exhaustive search.
 
-(C3) The continual updating of knowledge.
+Across the three substructures, approximate inference is accomplished by variants of iterated conditional modes (ICM) (Besag, 1986).
 
-Biology is a dynamic field where discoveries are frequently made, and existing theories are regularly revised or replaced.
+More precisely, approximate inference in the entire model proceeds as follows: (1) for each citation, N segmentations with highest probability (Nbest lists) are found by a variant of Viterbi and provided to coreference; (2) coreference decisions are inferred by approximate graph partitioning, integrating out uncertainty about the sampled N segmentations; (3) these coreference decisions are used to infer the attributes of each paper by searching over all combinations of values suggested by each citation’s segmentations; and finally (4) inference of citation segmentations are revised to make themselves more compatible with their corresponding entity attributes.
 
-This fluidity necessitates that questionreasoning systems adeptly select the knowledge source from databases or contemporary search engines to reflect the correct scientific understanding.
+Joint parameter estimation in this complex model is intractable, and thus, as in inference, we perform parameter estimation somewhat separately for each of    Building on earlier work in coreference that assumes perfect extraction (McCallum & Wellner, 2003), we cast coreference as a problem in graph partitioning based on Markov random fields (Boykov et al., 1999; Bansal et al., 2002).
 
-Our Perspective and Contributions: To solve the above challenges, we proposed BIORAG, a novel RetrievalAugmented Generation framework integrated with Large Language Models for biological questionreasoning.
+The graphical model has cliques for pairs of citations, the logcliquepotential of which is the edge weight in the graph to be partitioned.
 
-To obtain a robust domainspecific information indexing embedding model, we start by parsing, indexing, and segmenting extensive research articles from the biology domain and constructing highquality training corIn this paper, we propose the Biological RetrievalAugmented Generation LLM Framework, namely BIORAG (as shown in Figure 2).
+These edge weights may be positive or negative, and thus the optimal number of partitions (equivalent to number of cited papers in this case) falls out naturally from the optimization function of the maxflowmincut partitioning.
 
-In the following sections, we first introduce the preliminary step of constructing a highquality local information source and training the biological domainspecific information indexing embedding model.
+Later in this paper we provide statistical correlation results indicating that the redundancy in this “fullyconnected graph partitioning” approach to coreference is more robust than a graphical model in which a “prototype yields observations.” In the model introduced in this paper, the graphical model consists of three repeated substructures: (1) a linearchain representing a finitestate segmenter for the sequence of words in each citation (2) a boolean variable in a clique between each pair of segmented citations, representing graphpartitioningstyle citation coreference decisions, (3) a collection of attribute variables once for each paper entity (that is, one for each partition in the coreference graph), noting that the  iterative, consisting of BFGS quasiNewton steps on a maximum a posteriori conditional likelihood, with a zeromean sphericalvariance Gaussian prior on the parameters.
 
-For questions that require the most current or other domainrelated data, we introduce external information sources.
+The parameters of the linearchain are set to maximize the conditional likelihood of the correct label sequence, in the traditional fashion for linearchain CRFs.
 
-Then, we demonstrate the knowledge hierarchybased query preprocessing, retriever execution component, and how the model iteratively collects sufficient information.
+The parameters for the distance function in graph partitioning are set to maximize the product of independent conditional likelihoods for each pairwise coreference decision.
 
-Finally, the large language model will generate the answer based on the information obtained.
+The parameters for the entity attributes are set by pseudolikelihood to maximize the likelihood of correct placement of edges between highestaccuracy citation segmentations and their true entity attributes.
 
-The details of customized prompts are given in Section 2.4.
+We present experimental results on the four sections of CiteSeer citationmatching data (Lawrence et al., 1999).
 
-2.1 Internal Biological Information Source Highquality domainspecific corpora are crucial for enriching the information source and enhancing the embedding model in the context of biological questionreasoning systems.
+Using our integrated model, both extraction and coreference show significant reductions in error—by 2535% for coreference and by 614% for extraction.
 
-To achieve this goal, we extract research papers from the global biomedical article database maintained by the National Center for Biotechnology Information1(NCBI) (Schoch et al., 2020).
+We also provide some encouraging bestcase experiments showing substantial additional potential gain that may come from more integrated joint inference and creation of additional features that leverage the capabilities of conditional probability models.
 
-This extensive repository aggregates over 37 million scientific citations and abstracts spanning from the 1950s to the present, encompassing a broad array of biomedical fields, including clinical medicine, molecular biology, etc.
+Model 1 in McCallum and Wellner (2003).
 
-For the purposes of this study, we utilize the abstracts from 1    Figure 2: The architecture of our proposed BIORAG framework.
+Inference within the linear chain is performed exactly by dynamic programming; inference within the fullyconnected coreference is performed approximately by a simple graph partitioning algorithm, and inference  This paper presents a method for integrated information extraction and coreference based on conditionallytrained, undirected graphical models—also known as conditional random fields (Lafferty et al., 2001).
 
-The pipeline consists of five iterative components designed to enhance the process of biological questionreasoning: ①Retriever Selection aims to choose the most ideal information source; ②Query Preprocessing aims to rewrite the query and find closed topic tag from predefined knowledge hierarchy; ③Retriever Execution aims to combination retrieve the correlated context from knowledge base; ④SelfEvaluation assess the adequacy of the retrieved information and decides whether to cycle through additional retrieval tools or to move to the next phase; ⑤Inference and Generation uses the information gathered to generate an informed and accurate answer to the biological query.
+The model predicts entities and their attributes conditioned on observed text.
 
-these PubMed papers as the supporting corpus for the BIORAG framework.
+UAI 2004 	WELLNER ET AL.
 
-Local Data Preparation: Specifically, we initially downloaded over 37 million original papers from which we subsequently filtered out 14 million entries deemed to be of low quality.
+595 The model contains three types of repeated subindicating the membership of a citation word to a field structures with tied parameters.
 
-The preprocessing of these texts was conducted using the Unstructured tool2, specifically designed to ingest and preprocess unstructured textual data effectively.
+These three sub-	(such as author, title or year).
 
-Our filtration process involved the removal of gibberish using regular expression techniques, as well as the exclusion of nonsemantic content such as hyperlinks, charts, tables, and other embedded tags.
+As a convenience, we  structures are responsible for (1) information extraction, in the form of segmentation and labeling of word sequences in order to find (the fields of) each mention of an entity, (2) coreference among the mentions to discover when two mentions are referring to the same underlying entity, (3) representing the attributes of each entity and the dependencies among those attribute values.
 
-This meticulous process yielded a corpus of 22,371,343 highquality, processed PubMed abstracts.
+The attributes of each entity correspond to the canonical values that could be entered into database record fields, and the dependencies allow the model to represent expectations about what combinations of attributes would be expected in the world.
 
-Information Indexing: To further refine the retrieval performance of abstracts tailored to specific biological questions, we developed a specialized biological embedding model within the BIORAG framework.
+In general, conditional random fields (CRFs) are undirected graphical models that encode a conditional probability distribution using a given set of features.
 
-This model employs PubMedBERT (Gu et al., 2021) as the foundational model.
+CRFs are defined as follows.
 
-We enhanced this model using the CLIP (Contrastive LanguageImage Pretraining) technique (Li et al., 2021; Nussbaum et al., 2024), allowing us to finetune the model, denoted as Memb.
+Let G be an undirected  also define citation fields c = {c1, ...cK}, where ci is a collection of variables containing the complete string value for each of the various fields of xi, deterministically agglomerated from the label sequence si.
 
-Based on this, we constructed a local, highquality biological vector database (Xian et al., 2024) to support efficient and effective query processing and re2  trieval operations.
+Let y = {y1,2, ..yi,j, ...yK−1,K}, i < j be a set of boolean coreference variables indicating whether or not citation xi is referring to the same paper as citation xj; (note y here is more specific than in Eq 1).
 
-This database serves as a critical resource in facilitating rapid and accurate access to relevant biomedical information, significantly advancing the capabilities of our BIORAGframework in handling complex biological questions.
+Finally, let a = {a1, ...aM} be the set of attributes of each paper (“entities”), where M is the number of underlying research paper entities.
 
-2.2 External Information Sources External biology knowledge is crucial to biological reasoning due to the rapidly evolving nature of biological research, which continuously integrates new discoveries.
+Here, entity attributes are field values, such as title and year, but canonicalized from their noisy appearance in the multiple coreference citation mentions.
 
-To address this challenge, we introduce two external information sources.
+As described above, the model consists of three repeated substructures: (1) a linearchain on the eleC = {{yc, xc}} is the set of cliques in G, then CRFs define the conditional probability of an output labeling, y given the observed variables, x as:  quences, for finitestate citation segmentation and labeling (information extraction); (2) a fullyconnected graph on the xi’s, with the binary coreference decitransitivity, but these potentials never actually have to   y 	c∈CΦ(yc, xc) is a normalization factor.
 
-Biological Data Hub: In BIORAG, we harness several specialized biological Hubs to ensure the accuracy of experimental data and to provide detailed biological insights.
+We assume the potentials factorize according to a set of features {fk}, which are given and fixed, so that Φ(yc, xc) = exp( 	kλkfk(yc, xc)).
 
-Specifically, BIORAGintegrates the following databases, each serving a unique purpose in the broader context of biological analyses: (1) Gene Database3: This resource provides comprehensive information on the functions, structures, and expressions of specific genes.
+The model parameters are a set of realvalued weights Λ = {λk}, one  potentials measuring the compatibility between each mention’s segmentation ci and the attributes of its corresponding entity ak.
 
-It is invaluable for addressing queries related to gene mechanisms, gene actions, and gene expressions, facilitating a deeper understanding of generelated phenomena.
+This model is closely related to a combination of Models 1 and 2 in McCallum and Wellner (2003), where further details and background    CRFs have shown recent success in a number of domains especially in sequence modeling for natural language tasks (Lafferty et al., 2001; Sha & Pereira, 2003; Pinto et al., 2003; McCallum & Li, 2003; Sutton et al., 2004), often outperforming their generative counterthe mode of P(a|x) = c,s,yP(a, y, c, s|x), where the summed term is defined in Equation 2 by a product of potentials on cliques of the graphical model.
 
-(2) dbSNP Database4: This database houses a vast repository of single nucleotide polymorphisms (SNPs), offering critical insights into genetic variants and their potential as34    sociations with various diseases.
+Figure 1 shows an example graphical model with two coreferent citations and a singleton.
 
-It is instrumental for studies exploring the genetic basis of disease and trait inheritance.
+be a set of observed citations (“mentions”), where each xi = (xi1, xi2, ...) is a sequence of words forming the text of the citation.
 
-(3) Genome Database5: Providing complete genome sequences, this database is essential for studying the structure, function, and evolution of genomes across different organisms.
+Let s = {s1, ...sK} be the corresponding set of label sequences, each label sequence, si  Exact inference in this model is clearly intractable.
 
-It supports comprehensive genomic analyses and comparative studies, enhancing our understanding of genomic architecture and its functional implications.
+We have, however, some clearly defined substructures within the model, and there is considerable previous work on inference by structured approximations—that   tion is integrated into coreference.) Thus, the graphof which are coreferent.
 
-(4) Protein Database6: This resource offers detailed information about the sequences, structures, and functions of proteins.
+Joint inference over all coreference decisions involves finding the mode of    Here we experiment with a particularly simple form of approximate inference: structured variants on iterated conditional modes (ICM) (Besag, 1986).
 
-It is crucial for exploring proteinrelated biological processes, understanding molecular functions, and investigating the complex interactions within the proteome.
+In ICM, inference is performed by maximizing posterior probability of a variable, conditioned on all others, and repeatedly iterating over all variables.
 
-Search Engine: To ensure access to the most current discussions and developments, BIORAG incorporates a variety of search engines, including Google, Bing, arXiv, Wikimedia, and Crossref.
+In its structured form, (possibly exact) inference may be performed on entire substructures of the model rather than a single variable, e.g.
 
-Each platform contributes uniquely to the aggregation of information: (1) Google and Bing: These search engines scour the web for a diverse range of content, including news articles, blogs, and forums, providing insights into public discussions and concerns related to scientific topics.
+(Ying et al., 2002).
 
-This breadth of information is crucial for understanding the societal impact and general discourse surrounding scientific issues.
+In this paper we also use a variant we term iterated conditional sampling, in which, rather than selecting the single assignment of variables with maximum probability, several assignments are sampled (although not necessarily randomly) from the posterior and made available to subsequent inference.
 
-(2) arXiv: As a repository for preprint papers, arXiv offers access to the latest research reports and scholarly articles across multiple scientific disciplines before they undergo peer review.
+We expect that doing so makes the procedure less sensitive to local minima.
 
-This source is invaluable for staying abreast of the newest scientific theories and experiments.
+These samples can also be understood as a strong compression of the exponentiallysized conditional probability tables that would have been sent as messages in structured belief propagation.
 
-(3) Wikimedia: Known for its userfriendly content, Wikimedia offers easily digestible explanations of complex scientific concepts and principles.
+Inference in our model is performed as follows.
 
-This resource helps simplify advanced topics for broader public understanding and educational purposes.
+First exact inference is performed independently for each label sequence si, conditioned on its corresponding citation word sequence xi using the Viterbi algorithm.
 
-(4) Crossref: This service acts as a comprehensive aggregator of academic citation data, providing links to peerreviewed scholarly publications and their citation networks.
+Rather than selecting the single highest probability si (mode), however, we find the Nbest list of label sequences (sample).
 
-Crossref is essential for accessing highquality research outputs and understanding their impact on the academic community.
+The citation fields ci are set deterministically from the sampled label sequences si.
 
-external information source, BIORAG is firstly tasked with comprehending the complex disciFollowing the construction of the internal and 56  Figure 3: Training Template for MMeSH.
+Then coreference is accomplished by approximate inference via a greedy graph partitioning algorithm on the yij’s conditioned on the citation fields ci, as described in McCallum and Wellner (2003), except that the edge weights in the graph are determined by “inThis problem is an instance of correlation clustering, which has sparked recent theoretical interest (Bansal et al., 2002; Demaine & Immorlica, 2003).
 
-Figure 4: An example of MeSH filtering SQLs Generation.
+Here we use a different approach to graph partitioning that bears more resemblance to agglomerative clustering — suitable for larger graphs with a high ratio of negative to positive edges.
 
-plinary framework of the life sciences to retrieve the most relevant information accurately.
+We search through this space of possible partitionings using a stochastic beam search.
 
-Moreover, BIORAG integrates a selfevaluation mechanism to continuously assess the adequacy and relevance of the information it has collected.
+Specifically, we begin with each citation in its own cluster and select k pairs of clusters to merge with probability proportional to the edgeweight between the two clusters.
 
-Internal Information Retrieve: To effectively navigate the inherent complexity of biological knowledge systems, BIORAG leverages an integrated approach, combining a welldefined hierarchical structure with indexed information to conduct a comprehensive internal information retrieval.
+We examine each of these k possible merges until one is found that results in an increase in the objective function.
 
-The Medical Subject Headings7(MeSH) thesaurus is popularly used for indexing, cataloging, and searching for biomedicalrelated information and research papers.
+We repeat this until we reach a stage where none of the k candidate merge pairs would result in an increased objective function value.
 
-Specifically, we first train a model MMeSH to predict MeSH of the input questions.
+The final step to consider in our ICMbased inference is estimation of the attributes on entities, a, and a revisitation of citation segmentation given coreference and these entity attributes.
 
-We then use the templates in Figure 3 for finetuning a Llama38B model to classify given questions.
+Although our current experiments do not use entity attributes to affect coreference directly, they could do so by creating entity variables on the fly as coreference decisions are hypothesized.
 
-After that, we construct MeSH filtering SQLs (as shown in Figure 4) to generate the scalar condition retrieval.
+We seek to maximize The segmentations s and citation fields c are selected only among the Nbest segmentations, and the entity     attributes are selected among the Nbest citation fields of the coreferent citations for a given entity.
 
-A candidate result is considered relevant to the given question because it has one consistent MeSH with the question.
+Fortunately, there are few enough combinations that exact  common authors, publication venues, publishers, etc.
 
-Then, the vector retrieval process is adopted to sort the relative results based on the cosine similarity of the sentence embedding between the input questions and the filtered results.
+The size of coreferent citation clusters has a skewed distribution; in three of the four subsets, at least 70%    there are a maximum of 13 citation fields, (although typically much fewer), 221 citations in a coreferent cluster, and N was 5 or less.
 
-Selfevaluation Strategy: In order to ensure the accuracy and contemporary of the retrieved information, BIORAG incorporates a selfevaluation strategy that assesses the adequacy of data collected from the internal knowledge base.
+Given the attributes of an entity, we compute scores for all (entity, segmentation) pairs.
 
-In detail, this 7   Nomenclature Genomic location Functional analysis Table 1: Performance of BioRAG compared to other RAGLLMs on the GeneTuring QA dataset.The scores represent accuracy.
+The segmentation with highest score is selected as the best segmentation for the citation.
 
-Table 2: Performance of BioRAG compared to other RAGLLMs on the biologicalrelated QA benchmarks.The scores represent accuracy.
+These entity attributes are also scored by summing these highest scores for all citations.
 
-Bold and underlined results denote the highest and secondhighest performance, respectively.
+In the end, the entity attributes with the highest score are chosen as the canonical citation for this cluster and best segmentations are selected based on these attributes.
 
-critical evaluation is driven by the backend large language model which aims to determine whether the information retrieved internally is sufficient to address the posed question substantively.
+cluster consists of 21 citations to the same paper.
 
-If the internal content is insufficient, the model will loop back to pertinent external knowledge sources.
+We present results on two different sets of experiments.
 
-Additionally, when the initial assessment indicates that the scientific questions require broader searches or retrieval of entityspecific data, the model tends to deploy external tools.
+First, we consider the coreference component of the model, which takes as input a sample of the Nbest segmentations of each observation.
 
-This methodology supports the framework’s goal of providing precise, uptodate, comprehensive answers, facilitating more informed decisionmaking, and advancing research and applications in the life sciences.
+We compare its performance to coreference in which we assume perfect labeling and in which we use no labeling at all.
 
-2.4 	Customized Prompts Detail To maximize the effect of the retrieved corpus and knowledge, we design customized prompts in BIORAG.
+Second, we consider the segmentation performance of the model, which takes as input the citation clusters produced by the coreference component.
 
-The prompts in Figure.
+We compare its accuracy to the baseline performance consisting of    merically climbing the gradient of the full, joint likelihood.
 
-2 is detailed defined as follows, • Prompt # 1: To provide the most helpful and 	accurate response to the following Question: 	{Question}.
+This approach is not practical because complete inference in this model is intractable.
 
-You have been given descriptions of several RETRIEVAL METHODS: 	{Retrieval}.
+In addition, our previous experience with coreference (McCallum & Wellner, 2003) indicates that learning parameters by maximizing a product of local marginals, i<jP(yij|xi, xj), provides equal or superior accuracy to stochastic gradient ascent on an approximation of the full joint likelihood.
 
-Please select the RETRIEVAL  METHODS you consider the most appropriate for addressing this question.
+Good segmentation of author, title and other fields enables features that are naturally expected to be useful to accurate coreference.
 
-• Prompt # 2: Based on the RETRIEVAL METHODS you selected, and considering the Question and the Input Requirements of the retrieval method, please REWRITE the search query accordingly.
+The pairwise coreference potentials are a function of a wide range of rich, overlapping features.
 
-• Prompt # 3: 	Now, using the rewritten 	QUERY and the retrieval FILTER methods, 	perform a logical combination to execute the 	search effectively.
+The features largely consider fieldlevel similarity using a number of string and tokenbased comparison metrics.2  Briefly, these metrics include various string edit distance measures, TFIDF over tokens, TFIDF over character ngrams as well hybrid  Following this success, 	here we train each submethods that combine token TFIDF and string edit structure of the model separately, either as strucdistance.
 
-• Prompt # 4: Based on the RETRIEVAL RESULTS from the above steps, please evaluate whether the RESULTS support answering the original Question.
+We also used feature conjunctions (e.g.
 
-If they do not support it, output "NO".
+a tured pseudolikelihood, 	or simply independently.
 
-If they do support it, output "YES".
+feature that combines the author and title similarity  The parameters of the linearchain CRF’s potentials,φ3(si(t−1), sit, cixi), are set to maximize the joint  measures).
 
-• Prompt # 5: Based on the RETRIEVAL RESULTS, perform a comprehensive reasoning and provide an answer to the Question.
+Some specialized features were developed for matching and normalizing author name fields as    We employ feature induction as part of this training (McCallum, 2003).
 
-Furthermore, we designed instruction manuals for specialized biological tools and databases, aim    at exploiting their potentialities.
+The parameters of the coreference potentials on pairs of citations, φ2(ci, cj, yij),  cluded “global” features, based on string and tokenbased distance metrics, that looked at the entire citation.
 
-These instructions are shown as follows, • Manual #Gene: The Gene database search engine is a valuable tool for retrieving comprehensive information about genes, including gene structure, function, and related genetic events.
+The features are a mix of realvalued and binaryare set to maximize the product of local likelihoods 	valued functions.
 
-It is particularly useful for answering detailed questions regarding generelated research and findings.
+of each pair, 	i<jP(yij|xi, xj).
 
-To utilize this search  • Manual #PubMed: The PubMed local vector database search engine is an advanced tool designed for retrieving biomedical literature and research articles using vectorbased search techniques.
+The parameters of entityattribute/citation potentials, φ1(ai, cj), are set by pseudolikelihood to maximize the likelihood of correct placement of edges between citations and their true entity attributes.
 
-It is particularly useful for answering detailed questions about medical research, clinical studies, and scientific discoveries.
+A spherical Gaussian prior with zero mean is used in all cases.
 
-To utilize this search engine effectively, the input should be a specific query or topic of interest.
+We measure coreference performance at the pairlevel and clusterlevel.
 
-• Manual #dbSNP: The dbSNP database search engine is an essential tool for retrieving detailed information about single nucleotide polymorphisms (SNPs) and other genetic variations.
+We report pairwise F1, which is the harmonic mean of pairwise precision and pairwise recall.
 
-It is particularly useful for answering questions related to genetic diversity, allele frequency, and related genetic studies.
+Pairwise precision is the fraction of pairs in the same cluster that are coreferent; pairwise recall is the fraction of coreferent pairs that were placed in the  the number of true clusters.
 
-To utilize this search engine effectively, the input must be a specific SNP identifier or genetic variant name.
+Note that cluster recall  To evaluate our model, we apply it to a citation dataset from CiteSeer (Lawrence et al., 1999).
 
-• Manual #Genome: The Genome database search engine is an indispensable tool for accessing comprehensive information about entire genomes, including their sequences, annotations, and functional elements.
+The dataset contains approximately 1500 citations to 900 papers.
 
-It is particularly useful for answering complex questions about genomic structures, variations, and comparative genomics.
+The citations have been manually labeled for coreference and manually segmented into fields, such as author, title, etc.
 
-To use this search engine effectively, the input must be a specific genome name or identifier.
+The dataset has four subsets of citations, each one centered around a topic (e.g.
 
-• Manual #Protein: 	The Protein database search engine is a crucial resource for obtaining detailed information about proteins, including their sequences, structures, functions, and interactions.
+reinforcement learning).
 
-It is particularly useful for answering questions related to protein biology, biochemical properties, and molecular function.
+Within a section, many citations share  gives no credit for a cluster that is partially correct.
 
-To use this search engine effectively, the input must be a specific protein name or identifier.
+Table 1 summarizes coreference performance in terms of pairwise F1 and cluster recall respectively.
 
-• Manual #Web Search: The Web Search Engine is a powerful tool designed to help you find information about current events quickly and efficiently.
+Results reported are on the indicated test section; the model was trained on the other three sections.
 
-It is especially useful for ob3.1 Datasets We conduct experiments on 6 popularly used biologicalrelated QA datasets to evaluate our proposed BIORAG, i.e., GeneTuring (Hou and Ji, 2023), MedMCQA (Pal et al., 2022), Medical Genetics (Hendrycks et al., 2020), College Biology (Hendrycks et al., 2020), College Medicine (Hendrycks et al., 2020).
+We report the 2We used the Secondstring package, some of the functions of which are described in (Cohen et al., 2003)     Table 1: coreference performance measured by pairwise F1 (upper part) cluster recall (lower part) usfrom (Pasula et al., 2003).
 
-Note that the GeneTuring dataset contains more specialized biological questions.
+tations (Labeled).
 
-It contains 12 tasks, and each task has 50 questionanswer pairs.
+The Optimal result represents an upperbound where the optimal pairwise potential is chosen by an oracle.
 
-We use 7 GeneTuring tasks that are related to NCBI resources to evaluate the proposed BIORAG.
+performance of our model using the N -best Viterbi segmentations for different values of N.
 
-The chosen tasks are classified into three modules and briefly described as follows, • Nomenclature: This is about gene names.
+Overall best  In leveraging coference to improve extraction, we use a combination of local (e.g.
 
-The objectives of the gene alias task and name conversion task are finding the official gene symbols for their nonofficial synonyms.
+word contains digits), layout, lexicon membership features (e.g.
 
-• Genomics location: The tasks are about the locations of genes, singlenucleotide polymorphism (SNP), and their relations.
+membership in a database of Bibtex records).
 
-We include the gene location, SNP location, and gene SNP association tasks.
+See (Peng & McCallum, 2004) for a description of features.
 
-The first two tasks ask for the chromosome locations of a gene or an SNP, and the last one asks for related genes for a given SNP.
+Segmentation performance is measured by the microaveraged F1 across all fields, which approximates the accuracy    include the coreference performance when we include no segmentation information (NoSeg) and rely solely on the “global” features.
 
-• Functional analysis asks for gene functions.
+model was trained on a completely separate data set of citations (Peng & McCallum, 2004).
 
-We use the genedisease association task where the goal is to return related genes for a given disease, and the proteincoding genes task which asks whether a gene is a proteincoding gene or not.
+Table 3 shows the improved segmentation performance  Also included in the tables is the coreference perforusing coreference information.
 
-this search engine effectively, simply enter a relevant search query.
+The results reported mance when the handlabeled segmentation is prohere only consider citations that were grouped tovided (Labeled).
 
-We compare BIORAGwith various baselines, which can be classified into three categories,   Nomenclature Genomic location Functional analysis Table 3: Ablation study on the GeneTuring dataset.The scores represent accuracy.
+Note that the results using the N = 9 	gether with at least one other citation (i.e.
 
-• LLM (General LLMs): We select GPT3.5Turbo (175B), Llama38B (8B), Llama70B (70B) as representative baselines.
+nonViterbi segmentations are comparable to or higher than those using the correctly labeled segmentations—indicating that neither segmentation performance nor our technique for incorporating segmentation uncertainty are the inhibiting factor in improving coreference performance.
 
-• BioLLM (Biological LLMs): PMCLlama (13B) (Wu et al., 2024) and BioMistral (7B) (Labrak et al., 2024) are two medical LLMs.
+As an upperbound experiment, we evaluate coreference performance assuming the model always chooses  singletons), since these are the only citations whose segmentation we might hope to improve by using coreference.
 
-They are pretrained on opensource biomedical texts.
+To test the significance of the improvements, we use McNemar’s test on labeling disagreements (Gillick & Cox, 1989).
 
-• SciRAG (Scientific RAGLLM framework): GeneGPT (175B) (Jin et al., 2024) is a biological RAGLLM framework that integrates the NCBI databases, i.e., Gene, dbSNP, OIMI, and Blast.
+Table 3 summarizes the significance test results.
 
-NewBing8(>400B) is a retrievalaugmented LLM that has access to relevant web pages retrieved by Bing.
+At the 95% confidence level (pvalue smaller than 0.05), the improvements on the four datasets are significant.
 
-3.3 	Experimental Settings We take the Llama370B as the basic language model of BIORAG.
+line, we include the results of their implementation of the Phrase matching algorithm—a greedy agglomerative clustering algorithm where pairwise citation similarity is based on the overlap in words  We also explore the potential for improving segmentation performance by selecting among the Nbest segmentations.
 
-For our embedding model Memb, we take AdamW as the optimizer and finetune 2 epochs.
+For a given list of N segmentations, we  and phrases (word bigrams).
 
-The number of retrieved results by biological databases, search engines, and local PubMed databases are set to 10, 10, and 4, respectively.
+RPM + MCMC is 	aim to select the segmentation closest to the true segtheir firstorder, generativelytrained graphical model 	mentation.
 
-The max iteration of selfevaluation is set to 15.
+The results in Table 4 show the optimal (see Related Work section).
 
-If the model does not output the final answer within 15 times, BIORAG stops the iteration and outputs the current wrong answer.
+These results are not 	segmentation performance for different values of N.
 
-We use the accuracy to verify the overall performance.
+We can see that there is further potential to improve segmentation based on optimally selecting segmentaWe then compute the objective function values of these partitionings according to both the pairwise and    Table 4: Optimal segmentation improvement for different values of N over all citations (including singlefield values from among the citations in the partition.
 
-For the GeneTuring dataset, we only consider exact matches between model predictions and the ground truth as correct predictions for all nomenclature and genomics location tasks.
+(A medoid is the item in a cluster that has the mintons).
 
-For the genedisease association task, we measure the recall as in the 8  original dataset but based on exact individual gene matches.
+imum dissimilarity to all other items in the cluster— in this case, the similarity metric is a stringedit disOur model consists of both explicit pairwise coreference variables for each pair of citations, as well as explicit entity attribute variables for each group of coreferent citations.
 
-For the proteincoding genes task, we consider exact matches as correct after applying a simple vocabulary mapping that converts modelpredicted "yes" / "no" to "TRUE" / "NA" and Latin species names to their informal names, respectively.
+At inference time in our current experiments, however, coreference is driven solely by the pairwise citation potentials.
 
-The final answer of other datasets is "yes" / "no".
+An alternative method would ignore the pairwise potentials and consider only entitycitation potentials, creating entities at inference time as necessary.
 
-3.4 Results on Biologicalrelated Tasks To verify the effectiveness of the proposed model, we first conduct biological QA tasks.
+If given a uniform prior over the number of entities, such a method would always chose to have a separate entity for each citation, and we must include a prior that prefers smaller numbers of entities (or equivalently, a penalty for generating each entity).
 
-Results are shown in Table 2.
+Thus, the number of entities induced is a function of the “tension” between the entitycitation potentials (which depend on the observed citation strings, be highly parameterized, and be learned) and the prior (which do not).
 
-We conclude with the following findings: (1) Based on the results of BioLLMs and GPT3.5, we conclude that finetuning domainspecific data is helpful for domainspecific tasks.
+Intuitively, we wonder if this imbalance in exFor the randomly generated partitionings, we examine how well the probabilities for both models correlate (r2correlation) with the Pair F1 evaluation metric; see Table 5.
 
-As the size of BioLLMs is much smaller than GPT3.5, their performance is on par with GPT3.5.
+Figure 2 shows scatter plots for the Constraint data set illustrating the correlation between the model objective function values and Pair F1.
 
-(2) BIORAG performs better than BioLLMs and GPT3.5, it indicates the effectiveness of local and external data sources.
+We hypothesize that the pairwise model correlates better partly due to the fact that the noise in edge potentials is ameliorated by averaging over n potentials for each citation (one for each other citation) instead of only a single potential as is the case with the entitybased model.
 
-(3) Though the size of BIORAG is much smaller than SciRAG (NewBing), it has better performance.
+Perhaps even though the edge potentials in the entitybased model are expected to be less noisy (because the entity attributes are more “canonical”), averaging in the pairwise model is still more robust.
 
-The gain comes from two aspects.
+Further work is needed here to determine the effect of the quality of the generated entity attributes and learned potentials on the model’s performance.
 
-The first one is our customized prompts.
+naturally from the tension between positive and negadependency on the observed citation strings.
 
-The second aspect lies in the local and external information sources.
+Also the  compatibility between a set of hypothesized coreferent mentions is represented by a “mixture” rather than a single “prototype.” To explore these issues, we compare the two models using a randomlygenerated sample of 100 partitionings of our citation dataset.
 
-NewBing has no access to specialized databases and lacks technical biological descriptions for reasoning.
+Here we focus on the robustness of clustering coreferent citations; to remove the issues of tuning a prior over the number of entities, all randomlygenerated partitions were constrained to have the correct number of clusters.
 
-(4) GeneGPT scores 0% accuracy in this task, because it is a customized model for the GeneTuring dataset, resulting in poor generalization capabilities.
+This paper is an example of integrating information extraction and data mining, as discussed in McCallum and Jensen (2003).
 
-3.5 Specialized Biological Reasoning Results The GeneTuring dataset contains more specialized biological questions, and the corresponding reasoning process highly relies on technical biological corpus and descriptions.
+Additional previous work in this area includes Nahm and Mooney (2000), in which data mining association rules are applied to imperfectlyextracted job posting data, and then used to improve the recall of subsequent information extraction.
 
-Results are shown in TaOption A: Moderate sexual size dimorphism   Query Preprocessing  Small rodent species with small litter sizes Retriever Execution And Result  Most rodents are small animals with robust bodies...
+Our work here is most related to the work of Pasula et al. (2003), who describe a firstorder probabilistic model for citation segmentation and coreference.
 
-The largest litter I have heard of was 32 babies...
+From   UAI 2004 	WELLNER ET AL.
 
-SelfEvaluation： The necessary information has been obtained to form an answer.
+601 not necessarily reflect those of the sponsor.
 
-Inference and Generation： The official gene symbol for SGEF is ARHGEF26.
+We are also 	Milch, B., Marthi, B., & Russell, S.
 
-OUTPUT ARHGEF26    Retriever Execution And Result The average litter sizes and reproductive performance...
+(2004).
 
-Previous analysis of the rules regarding how much more...
+Blog: Regrateful to Charles Sutton and Brian Milch for helpful comlational modeling with unknown objects.
 
-SelfEvaluation： Small litter sizes in rodents may be an adaptation to their specialized diet, requiring more parental investment.
+ICML 2004 ments on a previous draft and David Jensen for helpful 	Workshop on Statistical Relational Learning and Its discussions.
 
-Inference and Generation： Since the rodent species has a small litter size, it's possible that they invest more in each offspring.
+Connections to Other Fields.
 
-This could lead to a higher parental investment, which might be related to option B: High parental investment.
+Nahm, U.
 
-Fewshot： Hello.
+Y., & Mooney, R.
 
-Your task is to use NCBI Web APIs to answer genomic questions.
+J.
 
-Here are some examples (Entrez API) ...
+(2000).
 
-Request : https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?
-
-db=gene&term=SGEF Request : https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?
-
-db=gene&id=1956 Inference and Generation： The official gene symbol for SGEF is SGEF    Figure 5: A case study selected from the College Biology dataset.
-
-ble 1.
-
-As this dataset does not contain the train data, BioLLMs are performed directly without finetuning.
-
-Their bad results indicate their poor generalization.
-
-In this dataset, we focus on the analyses of GeneGPT, NewBing, and BIORAG (1) For the nomenclature tasks, the performance of BIORAG and GeneGPT rank first and second respectively, as both of them have access to the Gene database.
-
-BIORAG integrates the results of search engines while GeneGPT does not, and this brings the gap.
-
-(2) The reasoning behind genomic location tasks relies on the highly specialized Gene and dbSNP database.
-
-BIORAG and GeneGPT achieve 100% accuracy in the gene SNP association subtask, as  Figure 6: A case study conducted on the gene alias task in the GeneTuring dataset.
-
-both of them have access to the dbSNP database.
-
-However, NewBing has no access to the dbSNP database, thus it gets 0% accuracy in this task.
-
-For the gene location subtask, the challenge is the variants of gene names.
-
-The interface of GeneGPT does not support advanced search, thus the retrieved names are not comprehensive.
-
-In contrast, general search engines, such as NewBing, have better retrieved results when the query entity has variants or ambiguities.
-
-Thus NewBing has a better performance in this task than GeneGPT.
-
-BIORAG supports the above two kinds of interfaces, and achieves the best results in this task.
-
-(3) Functional analysis tasks rely on both the Gene database and   Thought:   Query Preprocessing  Bcell immunodeficiency.
-
-Retriever Execution And Result  Official Symbol: TOP2B  Name: DNA topoisomerase II beta Other Aliases: BILU, TOPIIB, top2beta SelfEvaluation： Use the PubMed tool to conduct further searches on genes and  Xlinked agammaglobulinemia (XLA):  Gene: Bruton tyrosine kinase (BTK)  Function: Crucial for B cell development; mutations lead to a lack of mature B cells and antibody production1.
-
-Common variable immunodeficiency (CVID):  Genes: Multiple genes (e.g., CTLA4, IKZF1, PIK3CD, STAT3)  Features: Preserved B cell numbers but impaired antibody production and low immunoglobulin levels2.
-
-TOP2B Bcell immunodeficiency Retriever Execution And Result 	GeneGPT  Sequencing of patients with B cellrestricted...
-
-The role of TOP2B in the immune system was revealed ...
-
-SelfEvaluation： Use the PubMed tool to conduct further searches on genes and diseases, specifically focusing on TOP2B Bcell  immunodeficiency syndrome.
-
-Fewshot： Hello.
-
-Your task is to use NCBI Web APIs to answer genomic questions.
-
-Here are some examples (Entrez API) ...
-
-1.
-
-Gene ： https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?
-
-db=gene&retmax=5&retmode=json&sort=relevance&term=LMP10  Result:     HTML + CSS + JavaScript    Code  SelfEvaluation： TOP2B is associated with Bcell immunodeficiency syndrome Inference and Generation： TOP2B is associated with Bcell immunodeficiency syndrome  Inference and Generation： Bcell immunodeficiency is the gene associated with Bcell immunodeficiency  Figure 7: A case study conducted on the gene disease association task in GeneTuring dataset.
-
-relative PubMed papers.
-
-The PubMed corpus provides detailed genedisease relationships.
-
-Although NewBing retrieves the metadata, BIORAG combines the local PubMed database with other specialized databases to achieve the best results.
-
-nents within the BIORAG framework to achieve optimal performance in biological question reasoning tasks.
-
-By understanding the contribution of each component, we can better optimize BIORAG for different tasks and datasets.
-
-To evaluate the contribution of each component of BIORAG, we performed an extensive ablation study using the GeneTuring dataset, systematically removing individual components to assess their impact on performance across various tasks.
-
-This study was designed to isolate the effects of different databases, components, and base models, with the experiments categorized as follows: (1) Databases: We consider three variations to evaluate the effectiveness of each data sources of our database: D1: BIORAGwithout the Gene database; D2: BIORAGwithout general search engines.
-
-D3: BIORAGwithout the local PubMed database.
-
-(2) Model Components: We investigate the impact of specific components of our proposed framework: C1: BIORAGwithout the MeSH Filter; C2: BIORAGwithout the Query Rewrite component; C3: BIORAGwithout the SelfEvaluation mechanism.
-
-(3) Base Models: We compare the performance when using two different base LLM models: M1: take Llama38B as the basic LLM, and M2: take Llama370B as the basic LLM of BioRAG.
-
-Based on the results of ablation study, we highlights the following key findings: (1) Impact of Databases: The results indicate that the Gene database (D1) plays a crucial role in performance.
-
-For instance, the accuracy significantly drops in tasks such as Gene_location when this component is removed.
-
-The general search engines (D2) and local PubMed database (D3) also contribute positively, but their impact is less pronounced compared to the Gene database.
-
-(2) Component Contributions: Among the components, the SelfEvaluation mechanism (C3) is vital for maintaining high accuracy across most tasks.
-
-The MeSH Filter (C1) and Query Rewrite (C2) also enhance performance, but their absence does not degrade the results as severely as the removal of SelfEvaluation.
-
-(3) Effects of Basic Language Models: Comparing the two base models, Llama370B (M2) generally outperforms Llama38B (M1) across all tasks, indicating that the larger model size contributes to better handling of complex biological queries.
-
-These findings underscore the importance of integrating diverse data sources and advanced compoTo compare reasoning differences among BIORAG and the baselines in a more intuitive manner, we select three typical case studies in this section.
-
-We first provide a case study to show the workflow of BIORAG (Figure 5).
-
-It is selected from the College Biology dataset.
-
-BIORAG performs selfevaluation twice: the first time it starts with a web search for general information, but the results are insufficient to support answering the question.
-
-Thus BIORAG conducts the second selfevaluation and calls for the more specialized PubMed database.
-
-The results this time are accurate and sufficient to support answering the question, thus BIORAG gives the final answer based on the results.
-
-The second case study is conducted on the gene alias task in the GeneTuring dataset (Figure 6).
-
-The challenge of this task is the variants of gene names.
-
-NewBing gets the response from the Wikimedia.
-
-However, Wikimedia is not specialized enough to provide the alias for the input gene, which leads to the wrong answer.
-
-The prompts of GeneGPT are too complicated, none of the prompts is relevant to this task.
-
-In addition, its NCBI API returns the gene IDs, instead of the gene names.
-
-The LLM is unable to understand these IDs, and finally arrives at a wrong answer.
-
-BIORAG employs fuzzy queries, yielding a larger number of related responses with a higher error tolerance.
-
-Furthermore, each result contains detailed generelated information and descriptions, such as the aliases.
-
-Thus BIORAG gets the correct answer.
-
-The third case study is conducted on the genedisease association task in the GeneTuring dataset, shown in Figure 7.
-
-Reasoning behind this task relies on both the Gene database and relative PubMed papers.
-
-The PubMed abstracts provide detailed genedisease relationships.
-
-NewBing gets the response from the Geekymedics website.
-
-Although the Geekymedics website provides general medical information, it does not offer the correct or specific details required for genedisease associations.
-
-Consequently, NewBing’s response is inaccurate due to the reliance on a nonspecialized source.
-
-GeneGPT chose the wrong NCBI API.
-
-The API’s    feedback is a complicated and interminable HTML page, with massive irrelevant information or descriptions.
-
-Based on the ambiguous backgrounds, GeneGPT outputs the wrong answer.
-
-In the reasoning process of BIORAG, BioRAG uses multiple tools, i.e., Gene database, local PubMed database, and Web search, to gather and conduct mutual confirmation on the information of genes associated with Bcell immunodeficiency.
-
-The process involves preprocessing queries, executing searches, and conducting selfevaluations at each step to ensure comprehensive and accurate results.
-
-The reasoning process is thorough, incorporating various data sources to confirm the association of specific genes with Bcell immunodeficiency.
-
-4 Conclusion This paper introduces BIORAG, an innovative framework that integrates RetrievalAugmented Generation with Large Language Models to enhance biological questionreasoning.
-
-The framework’s ability to obtain relevant and current information from a blend of traditional databases, toolkits, and modern search engines ensures the accuracy of the generated answers.
-
-Through extensive validation, including rigorous testing on widely recognized biology QA datasets and extensive case studies, BIORAG has demonstrated its superior ability to handle complex biological queries.
-
-These results underscore the framework’s potential as a valuable tool for the scientific community, facilitating more accurate and efficient information processing.
+A mutually benefi
 

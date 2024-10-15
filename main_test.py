@@ -679,46 +679,79 @@
 #         print("\n")
 
 
+# import spacy
+# # Tải mô hình tiếng Anh
+# nlp = spacy.load("en_core_web_lg")
+
+# def get_noun_phrases_with_entities(sentence):
+#     """
+#     Hàm này nhận vào một câu và trả về danh sách các cụm danh từ cùng với thông tin
+#     về việc chúng có thuộc các Special Entity không.
+#     """
+#     doc = nlp(sentence)
+#     noun_phrases_info = []
+
+#     # Trích xuất các cụm danh từ
+#     for chunk in doc.noun_chunks:
+#         chunk_text = chunk.text
+#         # Kiểm tra xem có thực thể đặc biệt (Special Entity) nào nằm trong cụm danh từ không
+#         special_entities = [ent.label_ for ent in doc.ents if ent.start >= chunk.start and ent.end <= chunk.end]
+
+#         if special_entities:
+#             noun_phrases_info.append((chunk_text, special_entities))
+#         else:
+#             noun_phrases_info.append((chunk_text, None))
+
+#     return noun_phrases_info
+
+# # Câu mẫu
+# sentence = "Flair has three default training algorithms for NER which were used for the first experiment in the present research: a) NER Model with Flair Embeddings (later on Flair Embeddings) (Akbik et al., 2018), b) NER Model with Transformers (later on Transformers) (Schweter & Akbik, 2020), and c) Zeroshot NER with TARS (later on TARS) (Halder et al., 2020) 8."
+
+# # Trích xuất cụm danh từ và kiểm tra thực thể đặc biệt
+# noun_phrases_with_entities = get_noun_phrases_with_entities(sentence)
+
+# # Hiển thị kết quả
+# print("Câu:", sentence)
+# print("Các cụm danh từ được nhận diện và thực thể đặc biệt (nếu có):")
+# for np, entities in noun_phrases_with_entities:
+#     if entities:
+#         print(f"- {np} (Special Entity: {', '.join(entities)})")
+#     else:
+#         print(f"- {np} (Không có Special Entity)")
+
+# #Dùng để lấy từng câu câu 1 văn bản
+# import spacy
+# load_model = spacy.load('en_core_web_sm')
+
+# # Customize text or read files as needed
+# # Create an nlp object
+# nlp = load_model("Apple's name was inspired by Steve Jobs’ visit. His visit was to an apple farm while on a fruitarian diet.")
+
+# # Create a list of sentences contained in nlp. By default, the function breaks sentences by periods.
+# sentences = list(nlp.sents)
+
+# for sentence in sentences:
+#     # Print each sentence in the nlp with one sentence a line
+#     print(sentence)
+
+
 import spacy
-# Tải mô hình tiếng Anh
-nlp = spacy.load("en_core_web_lg")
 
-def get_noun_phrases_with_entities(sentence):
-    """
-    Hàm này nhận vào một câu và trả về danh sách các cụm danh từ cùng với thông tin
-    về việc chúng có thuộc các Special Entity không.
-    """
-    doc = nlp(sentence)
-    noun_phrases_info = []
+# Tải mô hình Spacy với word embeddings
+load_model = spacy.load("en_core_web_lg")
 
-    # Trích xuất các cụm danh từ
-    for chunk in doc.noun_chunks:
-        chunk_text = chunk.text
-        # Kiểm tra xem có thực thể đặc biệt (Special Entity) nào nằm trong cụm danh từ không
-        special_entities = [ent.label_ for ent in doc.ents if ent.start >= chunk.start and ent.end <= chunk.end]
+# Nội dung trích dẫn được trích xuất từ bài báo
+extracted_content = "Dogs are common household pets."
 
-        if special_entities:
-            noun_phrases_info.append((chunk_text, special_entities))
-        else:
-            noun_phrases_info.append((chunk_text, None))
+# Nội dung gốc từ bài báo
+original_content = "A dog is a typical companion animal found in many homes."
 
-    return noun_phrases_info
+# So sánh độ tương đồng giữa hai câu
+doc1 = load_model(extracted_content)
+doc2 = load_model(original_content)
 
-# Câu mẫu
-sentence = "Flair has three default training algorithms for NER which were used for the first experiment in the present research: a) NER Model with Flair Embeddings (later on Flair Embeddings) (Akbik et al., 2018), b) NER Model with Transformers (later on Transformers) (Schweter & Akbik, 2020), and c) Zeroshot NER with TARS (later on TARS) (Halder et al., 2020) 8."
-
-# Trích xuất cụm danh từ và kiểm tra thực thể đặc biệt
-noun_phrases_with_entities = get_noun_phrases_with_entities(sentence)
-
-# Hiển thị kết quả
-print("Câu:", sentence)
-print("Các cụm danh từ được nhận diện và thực thể đặc biệt (nếu có):")
-for np, entities in noun_phrases_with_entities:
-    if entities:
-        print(f"- {np} (Special Entity: {', '.join(entities)})")
-    else:
-        print(f"- {np} (Không có Special Entity)")
-
+similarity = doc1.similarity(doc2)
+print(f"Độ tương đồng giữa trích dẫn và bài báo gốc: {similarity}")
 
 
 # from transformers import AutoTokenizer, AutoModelForTokenClassification
