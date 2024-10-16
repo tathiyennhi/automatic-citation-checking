@@ -1,0 +1,228 @@
+Assessing the quality of information extraction Filip Seitl∗, Tom´aˇs Kov´aˇr´ık∗, Soheyla Mirshahi, Jan Kryˇst˚ufek, (IE) stands as a critical task, transforming unstructured or semistructured data into a structured format conducive to indexing, exploration, and further analysis.
+The increasing amount of data across digital platforms underscores the urgency for sophisticated IE techniques that can parse through volumes of information with precision.
+An extensive survey about IE is provided by, where the authors highlight the complexity of processing and analyzing text to derive meaningful information, given the heterogeneity and volume of such data.
+∗Corresponding authors: filip.seitl@creativedock.com, tomas.kovarik@creativedock.com 1 Large language models (LLMs) have revolutionized IE by introducing generative methods for structuring knowledge from text.
+LLMs excel across diverse domains without extensive taskspecific training.
+A survey by [8] details the progress of LLMs on IE tasks.
+Here, the authors address specific aspects of information extraction, including entity recognition, relation extraction, event detection, and universal IE.
+They review the existing models and their efficiency on a comprehensive collection of annotated benchmarks.
+Nonetheless, the challenge of quantitatively assessing the quality and completeness of extracted information persists, particularly in the absence of labeled datasets for benchmarking.
+Before conducting the experiments introduced in this paper, we perform IE on a vast corpus of business documents utilizing LLMs.
+While the extraction process is beyond the scope of this paper, some detail about the extraction is given in Section 3.
+To measure the quality of extraction, we propose an evaluation framework that relies on artificially generated complex information which is infused into the document to test the efficiency of LLMs in IE tasks.
+This paper introduces an iterative extraction process and a novel score, MINEA (Multiple Infused Needle Extraction Accuracy), to address the critical need for objective quality assessment measures.
+By inserting artificial information (”needles”) into the data, the proposed method creates a synthetic ground truth for evaluation, enabling the measurement of extraction quality in various specific domains even without manually labeled data.
+The empirical analysis demonstrates the utility of MINEA for evaluating LLMbased IE in scenarios where ground truth is unavailable.
+This paper begins a trilogy on our GRIX framework, focusing on evaluation methods for our upcoming discussions on advanced extraction, indexing, and retrieval techniques.
+The paper is organized as follows: Section 2 presents a related work that inspired us when developing our IE quality assessment method; Section 3 sketch a way in which structured information is obtained using LLMs; Section 4 deals with shortcomings arising when treating long contexts by LLMs; finally Section 5 introduces the novel method to access the quality of IE and provide the reader with practical tips; Sections 4 and 5 are supplemented by numerical studies.
+The data used in these studies are an internal set of documents related to a business case in the healthcare industry.
+2
+Related work A common practice in many specialized IE tasks is that welltrained experts review what was extracted, and provide ground truth [4].
+Such an approach is relatively reliable, however, it is manual and very timeconsuming.
+In [3] they suggest summary score without reference (SUSWIR), a score to evaluate the quality of text summaries without the need for human annotations.
+The SUSWIR score can be used for IE tasks where the extracted information can be viewed as a compression of initial data.
+The score compares the original 2 text with its summary.
+From its nature, it is very useful when comparing the outputs of extraction among themselves, i.e., the best extraction/summary has the highest score value.
+On the other hand, its ability to provide an objective absolute evaluation of a single extraction is disadvantaged because the desirable output is not known.
+Recently, an effort to eliminate the requirement for human involvement relies on LLMs.
+These prove themselves as highly costeffective data creators, either by labeling unlabeled data or generating data given the labels, see [6].
+Therefore they may substitute human experts providing the ground truth by doing their work in an automatic way.
+Needle
+In A Haystack (NIAH)1evaluation is a tool designed to evaluate the performance of LLMs in retrieval across different sizes of context.
+Short targeted information, the ‘needle’, is inserted into a large, more complex text body, the ‘haystack’.
+The goal is to test an LLM’s ability to find and make use of this piece of information.
+Our method builds on LLMs acting as data creators, but instead of annotating the complete data, it only automatizes the process of creating the needle.
+I.e., given an original text, an LLM generates the needle.
+The needle then substitutes the ground truth.
+3
+Capturing the structure In this section, we explain how structured information can be obtained from a text document by an LLM. 3.1 Schema To impose a structure on the data, we adopt the idea of schema markup [2] which is used to communicate the content of a web page to the search tool.
+The schema markup is in the form of structured data and can be viewed as a compression of the essential information.
+The structure is defined by Schema.org2vocabulary which is a set of entity types, each associated with a set of properties and hierarchically arranged.
+Figure 1 shows an example of structured information.
+It describes three entities of types ‘Insight’, ‘Person’ and ‘Organization’.
+Each type has its own set of properties, e.g., an entity of type ‘Person’ is described by ‘type’, ‘name’, ‘birthDate’, ‘worksFor’, and ‘jobTitle’.
+In other words, each entity is a set of keyvalue pairs, e.g., ‘name’ is the key and ‘AI Enthusiast’ is the value.
+Similarly, we extract and compress the relevant information contained in the data using an LLM. Schema.org presents a clear basis for the categorization of 1https://github.com/gkamradt/LLMTest NeedleInAHaystack 2https://schema.org 3 Figure 1: Toy example: structured information encapsulating three entities using schema.org.
+‘BioChemEntity’, ‘MedicalCondition’}.
+The schema is set at the beginning and the information to be extracted depends on it.
+Therefore the schema has to be tailored to a particular scope of the (proprietary) knowledge and application.
+If a more complex or uncommon entity needs to be captured, it is natural and very easy to extend the set of core types by more detailed descriptive and custom vocabulary.
+E.g., ‘Insight’ and ‘OpportunityArea’ are not native schema.org types, but we will use them in our study.
+The usage of suitably tailored schema is beneficial for specialized applications since it narrows the information to the relevant core and hence potentially improves the overall performance.
+On the other hand, the usage of schemata is not restrictive as the scope can be always extended by using a broader set of types.
+3.2
+The role of LLMs LLMs are rather effective with the creation of structured data with predefined types and attributes (properties), cf.
+[8].
+Together with dedicated prompts, we get a structured file describing entities found in the documents and matching schema types.
+Besides the extraction task, LLMs can be used to suggest suitable schema.org types for a particular document.
+prompt is shown in Appendix B1.
+4
+An example together with the 4 Length aspects When focusing on the quality of IE using LLMs we need to take into account several limitations posed by LLMs to the length of the data to extract from.
+Each LLM has a maximal content limit it can process, both on the input and the output.
+The limit on the output is typically much more strict.
+When trying to use the maximal possible input another issue may appear – the Lost in the middle phenomenon [7] says that the ability of LLMs to retrieve information from a long context declines and that the attention focuses on the beginning and the end of the context while it tends to attenuate information in the middle.
+To demonstrate this shortcoming numerically we use gpt4-1106preview model3.
+The model is limited by 4095 tokens on the output and by 128000 tokens on the input (context window limit).
+Further, note that OpenAI model versions > 4 allow outputting the response directly in a structured format.
+The following sections present two major LLM limitations we have to consider before performing IE, namely length restrictions in Section 4.1 and Lost in the middle problem in Section 4.2.
+4.1 Length restrictions Long data are difficult to process because of the restrictions posed by the maximum amount of: (O) output tokens: The restriction on output tokens means that there is some maximum length of data to effectively extract the majority of entities from it.
+If the length of the text exceeds this maximum, there would be no tokens for extra entities.
+(I) input tokens: Maximal size of context window (input) prohibits the extraction of data exceeding the specific token limit.
+Another difficulty regarding the output is the tendency of LLMs to generate rather brief responses which do not use the allowed maximum number of tokens.
+This unwillingness of models can be circumvented by prompting.
+Even so, the limited number of output tokens is typically too low and prevents effective extraction from long texts.
+With a more sophisticated approach, the restriction (O) becomes irrelevant and only the restriction (I) will apply.
+The issue imposed by (O) is overcome by splitting the source document into smaller pieces which are extracted independently.
+A significant drawback is that the extracted information can be easily duplicated – extracted independently from multiple text pieces.
+Iterating the calls to the LLM with instruction to continue with already started extraction, i.e., continuing with the extraction in a single thread, helps to extract more information and to avoid duplication.
+Since we insist on continuation more and more information is added and the extraction is more thorough, at least to some point – this will be addressed in detail in Section 5.1.
+Further, a lower number of 3https://platform.openai.com/docs/models/overview 5 duplicates is found due to the extraction history, i.e., all information extracted until present, which is kept within the thread.
+The combination of both improvements – text splitting and iterated calls, has proven itself to perform the best.
+We split the document into distinct text pieces which we extract sequentially.
+Extraction from each text piece is carried out by several iterated LLM calls while taking into account the extraction history from previously extracted text pieces.
+Once the sum of the lengths of the text pieces and the extraction history exceeds the context window limit, i.e., restriction (I) applies, a new independent extraction starts.
+A single structured output, per document or once (I) is applied, is created by appending all entities identified from each text piece.
+4.2
+Lost in the middle In the case of long documents, whose extraction consumes almost the whole context window, LLMs are giving more inconsistent results and we can observe a presence of the Lost in the middle phenomenon, see [7].
+We extract information from several long documents from our business case which are each split into 15 pieces and its processing consumes almost the whole context window.
+We add the sixteenth piece identical to one of the fifteen that are already extracted and measure a redundancy score, for details see Appendix A.
+Each column of Table 1 then states the redundancy of the newly extracted information with the information that was already extracted from the same piece of the text before.
+The table presents mean values per four distinct documents.
+We can notice that for the parts ’in the middle’ the proportion of redundantly extracted entities (entities with the same ’name’ attribute) is higher than for those at the beginning and the end.
+Table 1: Are we lost in the middle?
+After finishing the extraction of a whole document (consisting of fifteen pieces), we reextract the information from each of its pieces.
+Columns 115 then compare the reextracted information with the information that was extracted from the same piece of the text before.
+The pieces in the middle of the document contain more duplicated entities then those at the beginning and the end.
+5 Quality of extraction Once the information is extracted from an initial text document into a structured form defined by the chosen schema, e.g., Figure 1, the quality of such extraction is important to evaluate.
+In practice, it is very rare to be equipped 6 with ground truth and its human generation requires vast expertise in the scope of the document and a ridiculous amount of time.
+Therefore we adopt methods from [3].
+They examine semantic similarity, relevance, redundancy, and bias and compound these into a single score called SUSWIR, for details see Appendix A.
+The score and its subparts are very useful when comparing distinct extractions among themselves, e.g., we can use it to find an optimal number of iterated LLM calls.
+Unfortunately, the score does not represent an absolute way of evaluation.
+It does not provide a complete insight into the task – some information = entities can be missing, misclassified or their properties not filled in correctly.
+To come up with a robust and general solution we generalize the NIAH test, which is commonly used to measure the ability of LLMs to process long documents, cf.
+[5].
+5.1 Iterated LLM calls Since the first LLM extraction is typically not complete, iterating the extraction process helps with the completeness of extraction.
+To improve the quality of extraction, we ask LLM to process the document again and search for other entities which were not extracted yet.
+A question arises: What is the optimal number of iterations?
+It is desirable to stop when additional LLM call will return no or only a few new entities.
+The answer however depends heavily on the text being extracted and on the chosen schema.
+Below, we present a small comparative study regarding the contribution of iterated extraction to its quality.
+We interpret the extracted structured data, e.g., Figure 3, as a summary of the original text document.
+To measure the quality of the summary we adopt the scores from [3] (a convex combination of these scores creates the overall SUSWIR metric), namely semantic similarity, relevance, and redundancy avoidance.
+We use a modified bias avoidance score from [3] and add two new scores, relevance spread, and incompleteness score.
+Table 2 compares the initial text document with extracted information created iteratively by succeeding LLM calls.
+Each iteration enriches the extracted information, but the benefit decreases.
+From the third iteration, i.e., after four LLM calls, the majority of scores in Table 2 are either getting worse or stagnating (the arrows following the score name indicate the direction in which the score improves).
+The main conclusion of Table 2 is that iterating the LLM calls has limits.
+From some point, the extracted information is more complete and thorough neither in a semantic nor factually relevant sense.
+Further, the risk that the LLM will suffer from hallucinations increases as we observe a growth of bias.
+5.2 Test the quality This section introduces a robust and versatile score to objectively measure the quality of IE.
+Assuming the structure is imposed by some schema, see Section 3.1, we would like to measure the IE quality as a portion of successfully 7 Table 2: Quality of extraction depends on a number of calls to LLM.
+The first iterated call is the most beneficial one.
+From some point (bold) the scores stagnate or even deteriorate.
+All scores have values between 0 and 1, the arrows indicate whether lower (↓) or higher (↑) values are desired.
+extracted entities, i.e., the accuracy of name entity recognition (NER) task taking into account even the context captured by entity properties.
+Unfortunately, such an experiment is unfeasible without labeled data.
+As a consequence, it is unfeasible in many specialized tasks because of the absence of suitable labeled data unseen by LLM models.
+This can be the case witf very recent datasets as well as proprietary datasets.
+To overcome this issue we use inspiration from NIAH test to build up an automatic and general procedure to access the quality of IE.
+5.2.1 Needles
+The ‘needle’ in our context represents the entity.
+It is created according to the chosen schema, i.e., a list of types we want to extract from the document.
+We use an LLM to generate a short paragraph introducing a new original (not appearing in the document) entity, but still relevant to the scope of the document, for an example see Figure 2, and for more details see Appendix B2.
+This artificial paragraph, the needle, is then placed into the document body at random (taking into the account natural units within the text as sentences, paragraphs, etc.
+Moreover, the needle is accompanied with several properties, if applicable).
+namely we assign to the needle a name, short description and keywords, see Figure 2.
+This additional properties are assigned to the needle by the LLM. 5.2.2 Multiple needle retrieval accuracy To measure the quality of extraction we propose a multiple infused needle extraction accuracy (MINEA) score.
+Its computation combines the approach of NIAH evaluation and NER task.
+We scatter several needles over the text document body and measure how many of them were successfully extracted.
+Since we know what exactly was inserted, we know what should be extracted.
+Then we can objectively measure the quality of extraction on these new entities and moreover, we can compare extracted information from the document with and Table 3 shows extraction accuracy – MINEA score – total without needles.
+and per schema type – measured on a vast corpus of business documents with 8 Figure 2: Toy example: two needles, highlighted by blue color, accompanied by additional information described by ‘name’, ‘description’, and ‘keywords’.
+predefined schema consisting of types ‘BioChemEntity’, ‘Event’, ‘Insight’, ‘Legislation’, ‘MedicalCondition’, ‘OpportunityArea’, ‘Person’, ‘Product’, ‘Project’,‘Substance’ and ‘Thing’.
+5.2.3 Identification of needles Matching the generated needles with extracted entities imposes a challenge and mostly depends on the formulation of needles.
+If the needles are too complex or too vague the straightforward identification changes into a serious problem.
+For this reason, we equip the needles with additional properties which are then used to compare the needles with extracted entities and to decide whether the needles were extracted or not.
+We present several alternative ways how to measure whether the extraction of a needle is successful: n an entity with a name perfectly matching the needle name is found; ns the needle name is found among the extracted information; k an entity with some number of keywords perfectly matching the needle keywords is found, the number is determined by the threshold parameter determining the percentage amount of keywords to be matched; llm an entity matching the needle according to LLM is found.
+9 Table 3: Quality of extraction – MINEA score – total and per schema type.
+Entity types are grouped into five classes - 1. three most frequent schema.org types in the documents; 2. medbio-chem entities, somewhat interchangeable types; 3. best distinguishable types; 4. custom (non schema.org) types; 5. schema.org types related to documents, but not stated in the chosen schema.
+Note: an entity is assumed to be extracted if it is contained within the extracted information - often its type can be misclassified (ProjectProduct-OpportunityArea, SubstanceThing-BioChemEntity) or sometimes it can be mentioned indirectly (Organization is related to a Person by property ’works for’).
+Figure 3: Toy example: extracted information from the data infused by needles from Figure 2. 10 needles from Figure 2 was extracted into the form shown in Figure 3.
+Note that other conditions can be constructed, e.g., based on the short description instead of keywords.
+Table 4 shows whether the conditions are fulfilled in the example illustrated by Figures 2 and 3.
+Namely, the condition n is not satisfied (‘AI Clan Meeting’ ̸= ‘AI Meeting’, ‘Graph Index’ ̸= ‘GRIX’).
+Condition ns is satisfied only for needle representing an entity of type ‘Event’(‘AI Clan Meeting’ can be found in the extracted information).
+There are three keywords from those six assigned to the needle representing the entity of type‘Event’ which match the keywords of an extracted entity, hence k0.5 is, and k0.6, k0.7 are not satisfied (there is an entity within the extracted information with 50% of keywords being the same as the keywords of the needle).
+In the case of the second needle, there are four such keywords, therefore k0.5 and k0.6 are satisfied.
+Finally, both needles are identified within the extracted information by an LLM. Table 5 shows scores (ratios of successfully extracted entities) based on the above criteria in the case of our business documents.
+The highest score per entity type is highlighted.
+Matching the needle and entity name usually does not perform well if the name is prone to modification (e.g., person name with and without title), or if the entity is easy to be misclassified (an entity of type‘country’ was usually extracted as ‘place’ whose name did not match the country name).
+Searching for the needle name within the all extracted information gives very accurate results in case of entities being characterized well by their name (compare for example types ‘person’ and ’legislation’ with type ’insight’ where the name is not a natural attribute).
+Matching the needle and entity keywords depends on the threshold parameter – with a lower proportion of keywords that have to match the score value increases and the reliability of the entity identification decreases.
+An LLM performs well the entity identification and it is an important criterion in the case of more creative types such as ‘insight’.
+Finally, the MINEA score for each type is taken as the maximum of the scores.
+Conclusions In this paper, we focused on quality evaluation of information extraction (IE) performed by large.
+First, we delved into the technical limitations of large language models (LLMs) complicating the extraction of information from a long context.
+To extract reasonable information from data it is needed to take into the account features such as context window limits, iterated extractions, extraction history recording and Lost in the middle phenomenon.
+Once the extraction 11 on several criteria: comparing the corresponding needle and entity properties (columns n and k0.5k0.7 compare name and keywords, respectively), fulltext search (column ns search for the needle name in extracted information), comparison of needles and entities using LLM (column llm).
+is performed, assessing its quality is essential.
+However in many customized tasks, a truly objective method is missing, because of the lack of labeled data fitting the scope of the application.
+The versatile method presented in this paper overcomes the issue by adjustment of the data by insertion of an artificial information, a needle, into it.
+The artificial information created to this purpose is application and dataspecific, but the method itself is applicable generally across the field of IE.
+By controlling the generation process of the needles, we created a synthetic ground truth that enables us to absolutely measure the extraction quality even when no manually labeled data is available.
+We introduced a MINEA score to measure the quality of extraction.
+The key part is a decision rule on whether a needle was successfully extracted or not.
+MINEA possibly combines several decision rules into one final score.
+Our empirical analysis of the MINEA score on a specialized dataset demonstrated its utility for evaluation of LLMbased IE tasks when ground truth is unavailable.
+References [1] Satanjeev Banerjee and Alon Lavie.
+METEOR:
+An automatic metric for MT evaluation with improved correlation with human judgments.
+In Proceedings of the acl workshop on intrinsic and extrinsic evaluation measures for machine translation and/or summarization, pages 65–72, 2005.
+[2] Matthew Edgar.
+Schema and structured data markup.
+In Tech SEO Guide: A Reference Guide for Developers and Marketers Involved in Technical SEO, pages 67–78.
+Springer, 2023.
+[3] Abdullah Al Foysal and Ronald B¨ock.
+Who Needs External References?—Text Summarization Evaluation Using Original Documents.
+AI, 4(4):970–995, 2023.
+12 [4] Neil Jethani, Simon Jones, Nicholas Genes, Vincent J Major, Ian S Jaffe, Anthony B Cardillo, Noah Heilenbach, Nadia Fazal Ali, Luke J Bonanni, Andrew J Clayburn, et al.
+Evaluating ChatGPT in Information Extraction: A Case Study of Extracting Cognitive Exam Dates and Scores.
+2023.
+[5] Yuri Kuratov, Aydar Bulatov, Petr Anokhin, Dmitry Sorokin, Artyom Sorokin, and Mikhail Burtsev.
+In Search of Needles in a 11M Haystack: Recurrent Memory Finds What LLMs Miss. arXiv preprint arXiv:2402.10790v2, 2024.
+[6] DongHo Lee, Jay Pujara, Mohit Sewak, Ryen W White, and Sujay Kumar Jauhar.
+Making large language models better data creators. arXiv preprint arXiv:2310.20111, 2023.
+[7] Nelson F Liu, Kevin Lin, John Hewitt, Ashwin Paranjape, Michele Bevilacqua, Fabio Petroni, and Percy Liang.
+Lost in the middle: How language models use long contexts.
+arXiv preprint arXiv:2307.03172, 2023.
+[8] Derong Xu, Wei Chen, Wenjun Peng, Chao Zhang, Tong Xu, Xiangyu Zhao, Xian Wu, Yefeng Zheng, and Enhong Chen.
+Large language models for generative information extraction: A survey.
+arXiv preprint arXiv:2312.17617, 2023.
+13 Appendix A To measure the quality of the summary we adopt the methods from [3]: semantic similarity combines latent semantic similarity and cosine similarity; relevance is measured using METEOR score, see [1], without chunk penalty; redundancy avoidance compares extracted entities among themselves using a threshold parameter – entities with a higher cosine similarity are assumed to be redundant; redundancy avoidance can be focused on a single particular property of entities (we use ’name’ as this pivotal property).
+We modify the bias avoidance score from [3] to be where A represents the entities in the original text document and we normalize by a number of entities that were extracted, |B|.
+The score controls how much information in the structured file is not present in the original text, i.e., a potential hallucination of an LLM.
+We add two new scores: the relevance spread is the standard deviation of relevance over the text pieces to which the document is split and normalized by the mean value, its higher values indicate that the extraction from distinct text pieces is unbalanced; the incompleteness score just measures the proportion of entities with incomplete information (at least one property value missing or unfilled), e.g., the entity ‘AI Enthusiast’ in Figure 1 has an unknown ‘birthDate’.
+Appendix B Except for the IE task, LLMs are used in several subtasks within the paper, namely to determine schema types appearing in the document, to create a suitable needles fitting contextually to the document and to identify whether a needle was extracted or not.
+In the following, we provide the reader with prompts and examples of these subtasks.
+Discovering a schema Figure 4 shows a prompt to obtain the schema.org types from the attached text– Wikipedia article about IE4.
+An LLM is asked to assign relevance to the types to distinguish the most important ones.
+Figure 5 shows the entity types that were deduced from the text, together with their relevance and reasoning for why they were chosen.
+The most relevant types are those directly mentioned – ‘Article’, as the webpage content itself is represented as an article, ‘SoftwareApplication’, and ‘WebSite’ (all with maximal relevance).
+The least relevant identified types are generic – ‘Thing’, as a parent type of many directly mentioned types, and ‘LearningResource’, as a categorization of the article style.
+4https://en.wikipedia.org/wiki/Information extraction 14 Figure 4: Prompt to determine a possible suitable schema from a given text –Wikipedia article about IE.
+Figure 5: Schema.org types found by an LLM within Wikipedia article about IE. .
+15
+Creating needles A needle, i.e., a text paragraph fitting thematically to the document, but being new and unique to it, is generated by an LLM using the prompt in Figure 6.
+The prompt specifies the type of entity that the needle should represent.
+Multiple needles of the same type can be obtained easily within a single LLM call.
+Figure 7 shows ten needles representing the entities of type ‘Person’ generated based on a Wikipedia article about IE.
+In the next step properties such as a name, description and keywords can be generated by an LLM.
+Figure 6: Prompt to generate needles.
+Given a Wikipedia article about IE, the LLM is asked to think out 10 relevant persons.
+16 Figure 7: Needles generated by an LLM and representing ten entities of type‘Person’. .
+17
+Identifying needles The quality of extraction is evaluated based on the proportion of successfully extracted needles.
+An LLM can be used to decide whether the needle was extracted or not using the prompt presented in Figure 8.
+Figure 8: Prompt to identify whether the needles were extracted or not.
+18
