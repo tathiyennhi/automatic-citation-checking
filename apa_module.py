@@ -10,40 +10,8 @@ except OSError:
     nlp = spacy.load("en_core_web_lg")
 
 
-def clean_text(text):
-    """
-    Loại bỏ ký tự xuống dòng, tab, carriage return, dấu gạch ngang ở cuối dòng
-    và thay thế bằng dấu cách. Đồng thời loại bỏ các dấu gạch ngang không hợp lệ.
-    """
-    # Bước 1: Loại bỏ dấu gạch ngang từ ngắt dòng trước khi thay thế các ký tự đặc biệt
-    text = remove_hyphenation(text)
-    
-    # Bước 2: Thay thế \n, \r, \t bằng dấu cách
-    text = re.sub(r'[\n\r\t]+', ' ', text)
-    
-    # Bước 3: Thay thế các khoảng trắng liên tiếp bằng một dấu cách duy nhất
-    text = re.sub(r'\s+', ' ', text).strip()
-    
-    return text
-
-def remove_hyphenation(text):
-    """
-    Loại bỏ các dấu gạch ngang được sử dụng để ngắt dòng mà không làm mất dấu gạch ngang hợp lệ trong từ.
-    """
-    # Loại bỏ dấu gạch ngang ở cuối dòng (hyphenation)
-    # Giả sử dấu gạch ngang này luôn theo sau bởi xuống dòng hoặc khoảng trắng
-    text = re.sub(r'-\s*\n\s*', '', text)
-    
-    # Loại bỏ dấu gạch ngang giữa các chữ cái nếu chúng được ngắt dòng
-    # Ví dụ: "co-\noperation" thành "cooperation"
-    text = re.sub(r'(\w+)-\s*(\w+)', r'\1\2', text)
-    
-    return text
-
-
 def extract_citations_from_sentence(sentence):
     """Trích xuất tất cả các trích dẫn từ một câu."""
-    sentence = clean_text(sentence)
     citations = []
     
     # Mẫu regex cho trích dẫn narrative
