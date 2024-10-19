@@ -1,58 +1,65 @@
 import requests
-from bs4 import BeautifulSoup
+import os
+import logging
+import time
 
-def download_pdf_from_doi(doi):
-    # Đường dẫn đến DOI resolver
-    doi_url = f"https://doi.org/{doi}"
+def download_paper_pdf(doi, download_dir="downloaded_papers", email="test@gmail.com"):
+    """
+    Tải xuống tệp PDF của bài báo sử dụng DOI và Unpaywall API.
+
+    Args:
+        doi (str): DOI của bài báo.
+        download_dir (str): Thư mục lưu trữ tệp PDF.
+        email (str): Địa chỉ email của bạn để sử dụng với Unpaywall API.
+
+    Returns:
+        str: Đường dẫn đến tệp PDF đã tải xuống, hoặc None nếu không tải được.
+    """
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    # Sử dụng Unpaywall API để tìm URL PDF mở
+    api_url = f"https://api.unpaywall.org/v2/{doi}?email={email}"
 
     try:
-        # Gửi request để lấy URL thực từ DOI
-        response = requests.get(doi_url, allow_redirects=True)
-        response.raise_for_status()
-        final_url = response.url
-    except requests.exceptions.HTTPError as err:
-        print(f"Error resolving DOI: {err}")
-        return
+        response = requests.get(api_url, timeout=10)
+        if response.status_code == 200:
+            data = response.json()
+            oa_location = data.get('best_oa_location', {})
+            pdf_url = oa_location.get('url_for_pdf', None)
+            title = data.get('title', 'unknown_title').replace('/', '_').replace('\\', '_')
+            pdf_path = os.path.join(download_dir, f"{title}.pdf")
 
-    # Gửi request để truy cập trang bài báo
-    try:
-        page = requests.get(final_url)
-        page.raise_for_status()
-        soup = BeautifulSoup(page.content, 'html.parser')
-    except requests.exceptions.HTTPError as err:
-        print(f"Error accessing article page: {err}")
-        return
+            if pdf_url:
+                try:
+                    headers = {
+                        "User-Agent": "Mozilla/5.0"
+                    }
+                    pdf_response = requests.get(pdf_url, headers=headers, timeout=10)
+                    if pdf_response.status_code == 200:
+                        with open(pdf_path, 'wb') as f:
+                            f.write(pdf_response.content)
+                        logging.info(f"Tải xuống PDF: {pdf_path}")
+                        return pdf_path
+                    else:
+                        logging.warning(f"Không thể tải xuống PDF từ {pdf_url} (Status Code: {pdf_response.status_code})")
+                        return None
+                except Exception as e:
+                    logging.error(f"Lỗi khi tải xuống PDF từ {pdf_url}: {e}")
+                    return None
+            else:
+                logging.warning(f"Không có URL PDF mở cho bài báo với DOI: {doi}")
+                return None
+        elif response.status_code == 422:
+            logging.error(f"Lỗi 422: Unprocessable Content. DOI không hợp lệ hoặc dữ liệu bị thiếu. URL: {api_url}")
+            return None
+        else:
+            logging.error(f"Lỗi khi truy cập Unpaywall API: {response.status_code}")
+            return None
+    except Exception as e:
+        logging.error(f"Lỗi khi sử dụng Unpaywall API với DOI '{doi}': {e}")
+        return None
+    finally:
+        time.sleep(1)
 
-    # Xử lý riêng cho MDPI
-    pdf_link = None
-    if 'mdpi.com' in final_url:
-        # Tìm link PDF từ thẻ chứa từ "PDF" trong href hoặc text
-        pdf_link_tag = soup.find('a', href=True, text='PDF Full-Text')
-        if not pdf_link_tag:
-            pdf_link_tag = soup.find('a', href=True, text=lambda x: x and 'PDF' in x)
-        if pdf_link_tag:
-            pdf_link = pdf_link_tag['href']
-            if not pdf_link.startswith('http'):
-                pdf_link = 'https://www.mdpi.com' + pdf_link
-
-    if not pdf_link:
-        print("Không tìm thấy link PDF trên MDPI.")
-        return
-
-    # Tải file PDF
-    try:
-        pdf_response = requests.get(pdf_link, stream=True)
-        pdf_response.raise_for_status()
-
-        pdf_filename = f"{doi.replace('/', '_')}.pdf"
-        with open(pdf_filename, 'wb') as pdf_file:
-            for chunk in pdf_response.iter_content(chunk_size=8192):
-                pdf_file.write(chunk)
-
-        print(f"Tải PDF thành công: {pdf_filename}")
-    except requests.exceptions.HTTPError as err:
-        print(f"Error downloading PDF: {err}")
-
-if __name__ == "__main__":
-    doi = input("Nhập DOI của bài báo: ")
-    download_pdf_from_doi(doi)
+#usage
+#curl "https://api.unpaywall.org/v2/10.18653/v1/2023.emnlp-main.948?email=test@gmail.com"
