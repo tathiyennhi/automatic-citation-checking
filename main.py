@@ -1,95 +1,91 @@
-import spacy
+# main.py
+
 import logging
-from docx import Document
 from helper import (
-    convert_pdf_to_docx,
+    extract_sentences_from_docx,
     detect_citation_format,
-    clean_text,
+    extract_text_from_docx,
     crawl_references,
-    generate_json_output
+    generate_json_output,
 )
-from apa_module import extract_apa_citations_with_context
-import ieee_module  # Import module IEEE
-import json
-
-def extract_sentences_from_docx(docx_file, output_file):
-    """
-    Sử dụng spaCy để lấy tất cả các câu từ file DOCX và in chúng ra file văn bản,
-    đồng thời trả về một mảng các câu.
-
-    Args:
-        docx_file (str): Đường dẫn đến tệp DOCX.
-        output_file (str): Đường dẫn đến tệp văn bản để lưu các câu.
-
-    Returns:
-        List[str]: Danh sách các câu trích xuất từ tài liệu.
-    """
-    logging.info(f"Đang đọc tệp DOCX: {docx_file}")
-
-    # Load mô hình spaCy
-    nlp = spacy.load("en_core_web_sm")
-
-    # Đọc nội dung từ file DOCX
-    doc = Document(docx_file)
-
-    text = "\n".join([para.text for para in doc.paragraphs])
-    cleaned_text = clean_text(text)
-    # Xử lý văn bản bằng spaCy
-    spacy_doc = nlp(cleaned_text)
-
-    # Tạo danh sách các câu
-    sentences = []
-
-    # Ghi các câu vào file và lưu trong mảng
-    with open(output_file, "w", encoding="utf-8") as f:
-        for sent in spacy_doc.sents:
-            cleaned_sentence = sent.text.strip()
-            if cleaned_sentence.lower() == 'references':
-                break
-            f.write(cleaned_sentence + "\n")
-            sentences.append(cleaned_sentence)  # Thêm câu vào danh sách
-
-    logging.info(f"Đã lưu các câu vào tệp: {output_file}")
-    return sentences  # Trả về danh sách các câu
+from ieee_module import (
+    extract_references as extract_ieee_references,
+    extract_ieee_citations_with_context,
+)
+from apa_module import (
+    extract_apa_citations_with_context,
+)
 
 def main():
-    pdf_file = "extraction_ieee.pdf"  # Thay thế bằng đường dẫn tệp PDF của bạn
+    """
+    Hàm chính của chương trình. Thực hiện việc đọc tệp DOCX, xác định định dạng trích dẫn,
+    và gọi các module tương ứng để xử lý trích dẫn.
+    """
+    logging.basicConfig(level=logging.INFO)
+    pdf_file = "extraction_ieee.pdf"  # Thay thế bằng đường dẫn tệp PDF của bạn nếu cần
     docx_file = "paper.docx"
     output_sentences_file = "paper_spacy_sentences.txt"
 
     try:
         # Chuyển đổi PDF sang DOCX nếu cần
-        # docx_file_path = convert_pdf_to_docx(pdf_file, docx_file)
+        # docx_file = convert_pdf_to_docx(pdf_file, docx_file)
 
-        # Trích xuất câu từ DOCX
-        sentences = extract_sentences_from_docx(docx_file, output_sentences_file)
-        doc = Document(docx_file)
-
-        text = "\n".join([para.text for para in doc.paragraphs])
+        # Đọc văn bản từ DOCX
+        text = extract_text_from_docx(docx_file)
         citation_type = detect_citation_format(text)
-        if citation_type == "APA":
-            citations = []
-            for sentence in sentences:
-                sentence_citations = extract_apa_citations_with_context(sentence)
-                citations.extend(sentence_citations)
-            generate_json_output(citations, "apa_output.json")
 
-        elif citation_type == "IEEE":
+        if citation_type == "IEEE":
+            # Trích xuất câu từ DOCX, loại bỏ chỉ phần 'References'
+            sentences = extract_sentences_from_docx(
+                docx_file, output_sentences_file, exclude_sections=['References']
+            )
+
             # Trích xuất references từ DOCX
-            references_map = ieee_module.extract_references(docx_file)
-            # Trích xuất các trích dẫn IEEE
-            ieee_citations = ieee_module.extract_ieee_citations_with_context(sentences, references_map)
+            references_map, references_list = extract_ieee_references(docx_file)
 
-            # Crawl và lấy đường dẫn PDF cho các references
-            verified_citations = crawl_references(ieee_citations)
+            # Trích xuất các trích dẫn IEEE với ngữ cảnh
+            citation_entries = extract_ieee_citations_with_context(sentences, references_map)
 
-            # Tạo file JSON với thông tin trích dẫn và đường dẫn PDF
-            generate_json_output(verified_citations, "ieee_output.json")
+            # Crawl các tài liệu tham khảo để lấy thông tin bổ sung
+            reference_crawl_info = crawl_references(references_list)
+
+            # Cập nhật các mục trích dẫn với thông tin crawl được
+            for entry in citation_entries:
+                reference = entry.get('reference', '')
+                crawled_info = reference_crawl_info.get(reference, {})
+                entry['doi'] = crawled_info.get('doi')
+                crossref_info = crawled_info.get('crossref_info', {})
+                entry['crossref_authors'] = crossref_info.get('authors', '')
+                entry['crossref_title'] = crossref_info.get('title', '')
+                entry['crossref_year'] = crossref_info.get('year', '')
+                entry['pdf_path'] = crawled_info.get('pdf_path')
+
+            # Tạo tệp JSON với kết quả
+            generate_json_output(citation_entries, "ieee_output.json")
+
+        elif citation_type == "APA":
+            # Trích xuất câu từ DOCX
+            sentences = extract_sentences_from_docx(
+                docx_file, output_sentences_file
+            )
+
+            # Xử lý từng câu để trích xuất trích dẫn APA
+            all_citation_entries = []
+            for sentence in sentences:
+                apa_citations = extract_apa_citations_with_context(sentence)
+                if apa_citations:
+                    all_citation_entries.extend(apa_citations)
+
+            # Bạn có thể thêm việc crawl references và xử lý bổ sung ở đây
+
+            # Tạo tệp JSON với kết quả
+            generate_json_output(all_citation_entries, "apa_output.json")
 
         elif citation_type == "Chicago":
             print("Định dạng trích dẫn Chicago chưa được hỗ trợ.")
         else:
             print("Không nhận diện được định dạng trích dẫn.")
+
     except Exception as e:
         logging.error(f"Có lỗi trong quá trình thực thi: {e}")
 

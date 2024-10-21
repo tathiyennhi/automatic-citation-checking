@@ -1,68 +1,72 @@
+# ieee_module.py
+
 import re
 import logging
 from docx import Document
+from helper import clean_text, remove_hyphenation
+
 
 def extract_references(docx_file):
     """
-    Trích xuất danh sách references từ file DOCX và ánh xạ số tham chiếu với tiêu đề bài báo.
+    Trích xuất danh sách các tham chiếu từ tệp DOCX và ánh xạ số tham chiếu tới tiêu đề bài báo.
 
     Args:
-        docx_file (str): Đường dẫn đến file DOCX.
+        docx_file (str): Đường dẫn tới tệp DOCX.
 
     Returns:
-        dict: Bản đồ từ số tham chiếu tới tiêu đề bài báo.
+        tuple: (references_map, reference_list)
+            - references_map (dict): Bản đồ từ số tham chiếu tới nội dung tham chiếu.
+            - reference_list (list): Danh sách các từ điển chứa tham chiếu và tiêu đề bài báo.
     """
-    logging.info(f"Đang đọc file DOCX: {docx_file}")
+    logging.info(f"Đang đọc tệp DOCX để trích xuất tham chiếu: {docx_file}")
 
-    # Mở tài liệu DOCX
     doc = Document(docx_file)
 
     references_started = False
-    references = {}
+    references_map = {}
+    reference_list = []
     current_ref_number = None
     current_ref_content = ""
 
-    # Biểu thức chính quy để nhận diện tham chiếu bắt đầu
     ref_start_pattern = re.compile(r'^\s*\[(\d+)\]\s*(.*)')
 
-    # Duyệt qua các đoạn văn để tìm phần References
     for para in doc.paragraphs:
         para_text = para.text.strip()
 
-        # Bắt đầu phần "References" nếu phát hiện từ khóa "References"
         if not references_started:
             if re.match(r'^references$', para_text, re.IGNORECASE):
                 references_started = True
             continue
 
         if references_started:
-            # Kiểm tra xem đoạn văn này có bắt đầu một tham chiếu mới không
+            # Kiểm tra nếu gặp tiêu đề 'Appendix' thì dừng lại
+            if re.match(r'^appendix', para_text, re.IGNORECASE):
+                break
+
             ref_start_match = ref_start_pattern.match(para_text)
             if ref_start_match:
-                # Nếu có tham chiếu hiện tại, lưu lại nó
                 if current_ref_number is not None:
-                    # Xử lý nội dung tham chiếu để trích xuất tiêu đề
                     title = extract_title_from_ref_content(current_ref_content)
-                    references[current_ref_number] = title
+                    reference_entry = {'reference': title}
+                    reference_list.append(reference_entry)
+                    references_map[current_ref_number] = title
 
-                # Bắt đầu tham chiếu mới
                 current_ref_number = ref_start_match.group(1)
                 current_ref_content = ref_start_match.group(2).strip()
             else:
-                # Thêm nội dung vào tham chiếu hiện tại
                 if current_ref_number is not None:
                     current_ref_content += ' ' + para_text
                 else:
-                    # Bỏ qua bất kỳ văn bản nào trước tham chiếu đầu tiên
                     continue
 
-    # Sau khi kết thúc vòng lặp, lưu lại tham chiếu cuối cùng
     if current_ref_number is not None:
         title = extract_title_from_ref_content(current_ref_content)
-        references[current_ref_number] = title
+        reference_entry = {'reference': title}
+        reference_list.append(reference_entry)
+        references_map[current_ref_number] = title
 
-    logging.info(f"Đã trích xuất {len(references)} references.")
-    return references
+    logging.info(f"Đã trích xuất {len(reference_list)} tham chiếu.")
+    return references_map, reference_list
 
 def extract_title_from_ref_content(ref_content):
     """
@@ -74,49 +78,49 @@ def extract_title_from_ref_content(ref_content):
     Returns:
         str: Tiêu đề trích xuất được.
     """
-    # Tách nội dung thành tác giả và phần còn lại
-    author_split = re.split(r'\.\s+', ref_content, maxsplit=1)
-    if len(author_split) < 2:
-        title = "Title not found"
-        print("Title not found\n")
+    ref_content = remove_hyphenation(ref_content)
+
+    if "In " in ref_content:
+        matches = re.search(r'\.\s*(.*?In\s.*?)(?:,|\.|\s*$)', ref_content)
     else:
-        rest_content = author_split[1]
-        # Tách phần còn lại thành tiêu đề và phần còn lại
-        title_split = re.split(r'\.\s+', rest_content, maxsplit=1)
-        if len(title_split) < 1:
-            title = "Title not found"
-            print("Title not found\n")
-        else:
-            title = title_split[0].strip()
-            # Áp dụng hàm làm sạch tiêu đề
-            title = clean_text(title)
-            print("TITLE: ", title, '\n')
-    return title
+        matches = re.search(r'\.\s*(.*?)\.\s+', ref_content)
 
-def clean_text(text):
+    if matches:
+        title = matches.group(1).strip()
+        title = re.sub(r'arXiv preprint.*$', '', title, flags=re.IGNORECASE).strip()
+        title = clean_text(title)
+        print("TITLE: ", title, '\n')
+        return title
+    else:
+        print("Không tìm thấy tiêu đề\n")
+        return "Title not found"
+
+def is_citation_sentence(sentence):
     """
-    Làm sạch văn bản bằng cách loại bỏ các ký tự xuống dòng, dấu gạch ngang,
-    khoảng trắng không cần thiết và các ký tự đặc biệt.
+    Kiểm tra xem một câu có chứa trích dẫn IEEE hay không và không bắt đầu bằng số tham chiếu hoặc chứa từ 'Appendix'.
+
+    Args:
+        sentence (str): Câu cần kiểm tra.
+
+    Returns:
+        bool: True nếu câu chứa trích dẫn IEEE và không bắt đầu bằng số tham chiếu hoặc chứa từ 'Appendix', ngược lại False.
     """
-    # Loại bỏ dấu gạch ngang ngắt dòng
-    text = remove_hyphenation(text)
+    # Kiểm tra nếu câu chứa từ 'Appendix' hoặc bắt đầu bằng số trang
+    if re.search(r'\bAppendix\b', sentence, re.IGNORECASE):
+        return False
 
-    # Thay thế ký tự xuống dòng, tab, và khoảng trắng dư thừa bằng dấu cách
-    text = re.sub(r'[\n\t\r]+', ' ', text)
+    if re.match(r'^\d+\s+', sentence):
+        return False
 
-    # Loại bỏ khoảng trắng dư thừa
-    text = re.sub(r'\s+', ' ', text).strip()
+    # Sử dụng negative lookbehind để tránh bắt '[number]' nếu chúng được theo sau bởi một số
+    ieee_pattern = re.compile(r'(?<!\d)\[(\d+)(?:,\s*p\.?\s*(\d+))?\]')
+    leading_citation_pattern = re.compile(r'^\s*\[\d+\]')
 
-    return text
+    if leading_citation_pattern.match(sentence):
+        return False
 
-def remove_hyphenation(text):
-    """
-    Loại bỏ các dấu gạch ngang được sử dụng để ngắt dòng mà không làm mất dấu gạch ngang hợp lệ trong từ.
-    """
-    # Loại bỏ dấu gạch ngang ở cuối dòng hoặc giữa từ do ngắt dòng
-    text = re.sub(r'(\w+)-\s+(\w+)', r'\1\2', text)
+    return bool(ieee_pattern.search(sentence))
 
-    return text
 
 def extract_ieee_citations_from_sentence(sentence):
     """
@@ -129,31 +133,34 @@ def extract_ieee_citations_from_sentence(sentence):
         list: Danh sách các trích dẫn IEEE trong câu.
     """
     citations = []
-    # Mẫu trích dẫn IEEE: [số], [số, p. số]
-    ieee_pattern = re.compile(r'\[(\d+)(?:,\s*p\.?\s*(\d+))?\]')
-
-    for match in re.finditer(ieee_pattern, sentence):
-        citation_number = match.group(1)
-        page_number = match.group(2) if match.group(2) else None
-        citations.append({
-            'citation_number': citation_number,
-            'page_number': page_number,
-            'original_text': match.group(0),
-            'start': match.start(),
-            'end': match.end()
-        })
+    # Sử dụng negative lookbehind để tránh bắt '[number]' nếu chúng được theo sau bởi một số
+    ieee_pattern = re.compile(r'(?<!\d)\[(\d+)(?:,\s*p\.?\s*(\d+))?\]')
+    if is_citation_sentence(sentence):
+        for match in re.finditer(ieee_pattern, sentence):
+            citation_number = match.group(1)
+            page_number = match.group(2) if match.group(2) else None
+            citations.append({
+                'sentence': sentence,
+                'citation_number': citation_number,
+                'page_number': page_number,
+                'original_text': match.group(0),
+                'start': match.start(),
+                'end': match.end()
+            })
+        if citations:
+            print_citations(citations)
     return citations
 
 def extract_ieee_citations_with_context(sentences, references_map):
     """
-    Trích xuất các trích dẫn IEEE từ các câu và ánh xạ chúng tới references.
+    Trích xuất các trích dẫn IEEE từ danh sách câu và ánh xạ chúng tới tham chiếu.
 
     Args:
-        sentences (list): Danh sách các câu đã trích xuất.
+        sentences (list): Danh sách các câu.
         references_map (dict): Bản đồ từ số tham chiếu tới nội dung tham chiếu.
 
     Returns:
-        list: Danh sách các trích dẫn với thông tin liên quan.
+        list: Danh sách các mục trích dẫn với ngữ cảnh.
     """
     citation_entries = []
 
@@ -166,9 +173,12 @@ def extract_ieee_citations_with_context(sentences, references_map):
             page_number = citation['page_number']
             original_text = citation['original_text']
 
+            # Kiểm tra nếu câu chứa từ 'Appendix' hoặc bắt đầu bằng số trang
+            if re.match(r'^\d+\s+Appendix', sentence, re.IGNORECASE):
+                continue  # Bỏ qua câu này
+
             reference_entry = references_map.get(citation_number, "Reference not found.")
 
-            # Trích xuất nội dung trích dẫn trực tiếp nếu có
             quote = extract_direct_quote(cleaned_sentence, citation)
 
             citation_entry = {
@@ -179,28 +189,43 @@ def extract_ieee_citations_with_context(sentences, references_map):
                 'reference': reference_entry
             }
             citation_entries.append(citation_entry)
-
     return citation_entries
+
+def print_citations(citations):
+    """
+    In thông tin các trích dẫn ra màn hình.
+
+    Args:
+        citations (list): Danh sách các trích dẫn.
+    """
+    if not citations:
+        return
+
+    for citation in citations:
+        print(f"--- Trích dẫn ---")
+        print(f"Câu chứa trích dẫn: {citation['sentence']}")
+        print(f"Số trích dẫn: [{citation['citation_number']}]")
+        print(f"Nội dung trích dẫn: {citation['original_text']}")
+        print("-----------------\n")
 
 def extract_direct_quote(sentence, citation):
     """
-    Trích xuất trích dẫn trực tiếp liên quan đến một citation trong câu.
+    Trích xuất trích dẫn trực tiếp liên quan đến một trích dẫn trong câu.
 
     Args:
         sentence (str): Câu chứa trích dẫn.
-        citation (dict): Thông tin citation.
+        citation (dict): Thông tin về trích dẫn.
 
     Returns:
-        str: Nội dung trích dẫn trực tiếp hoặc chuỗi rỗng nếu không tìm thấy.
+        str: Nội dung trích dẫn trực tiếp nếu có, ngược lại trả về chuỗi rỗng.
     """
-    # Tìm kiếm dấu ngoặc kép hoặc dấu ngoặc kép thông minh
+    # Sử dụng dấu ngoặc kép thông minh và dấu ngoặc kép thông thường
     quote_pattern = re.compile(r'"(.*?)"|“(.*?)”')
 
     quotes = quote_pattern.findall(sentence)
     if quotes:
         # Làm phẳng danh sách các tuples và loại bỏ chuỗi rỗng
         quotes = [q for pair in quotes for q in pair if q]
-        # Liên kết gần nhất với citation
         if quotes:
             return quotes[-1]  # Trả về trích dẫn cuối cùng tìm thấy
     return ""

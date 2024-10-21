@@ -1,25 +1,35 @@
+# apa_module.py
+
 import re
 import spacy
+from helper import clean_text
 
+# Tải mô hình spaCy
 try:
     nlp = spacy.load("en_core_web_lg")
 except OSError:
-    # logging.info("Mô hình SpaCy 'en_core_web_lg' chưa được tải. Đang tải mô hình...")
     from spacy.cli import download
     download("en_core_web_lg")
     nlp = spacy.load("en_core_web_lg")
 
-
 def extract_citations_from_sentence(sentence):
-    """Trích xuất tất cả các trích dẫn từ một câu."""
-    citations = []
-    
-    # Mẫu regex cho trích dẫn narrative
-    narrative_citation_regex = r'\b(?P<author>[A-Z][a-zA-Z\'’\-]+(?:\s+(?:et\s+al\.?|and|&)\s*(?:[A-Z][a-zA-Z\'’\-]+)?)*)\s*\((?P<year>\d{4})\)'
+    """
+    Trích xuất tất cả các trích dẫn từ một câu.
 
-    # Mẫu regex cho trích dẫn parenthetical
-    parenthetical_citation_regex = r'\(([^()]+)\)'
-    
+    Args:
+        sentence (str): Câu cần xử lý.
+
+    Returns:
+        list: Danh sách các trích dẫn tìm thấy trong câu.
+    """
+    citations = []
+
+    # Mẫu regex cho trích dẫn narrative với negative lookbehind
+    narrative_citation_regex = r'\b(?<!\d)(?P<author>[A-Z][a-zA-Z\'’\-]+(?:\s+(?:et\s+al\.?|and|&)\s*(?:[A-Z][a-zA-Z\'’\-]+)?)*)\s*\((?P<year>\d{4})\)'
+
+    # Mẫu regex cho trích dẫn parenthetical với negative lookbehind
+    parenthetical_citation_regex = r'\((?!\d)[^()]+\)'
+
     # Mẫu regex cho trích dẫn trực tiếp bao gồm dấu ngoặc kép
     direct_quote_regex = r'“(.*?)”\s*\(([^()]+)\)'
 
@@ -32,12 +42,10 @@ def extract_citations_from_sentence(sentence):
         start = match.start()
         end = match.end()
 
-        # Xử lý thông tin trích dẫn
         refs = re.split(r';\s*', citation_info)
         ref_citations = []
         for ref in refs:
             ref = ref.strip()
-            # Tách tác giả và năm
             parts = re.split(r',\s*', ref)
             if len(parts) >= 2:
                 author = ', '.join(parts[:-1]).strip()
@@ -84,13 +92,11 @@ def extract_citations_from_sentence(sentence):
         end = match.end()
         if not determine_citation_validity(content):
             continue
-        
-        # Tách các trích dẫn bên trong dấu ngoặc đơn
+
         refs = re.split(r';\s*', content)
         ref_citations = []
         for ref in refs:
             ref = ref.strip()
-            # Tách tác giả và năm
             parts = re.split(r',\s*', ref)
             if len(parts) >= 2:
                 author = ', '.join(parts[:-1]).strip()
@@ -109,39 +115,56 @@ def extract_citations_from_sentence(sentence):
             'start': start,
             'end': end
         })
-    
-    # Sắp xếp các trích dẫn theo vị trí trong câu
+
     citations.sort(key=lambda x: x['start'])
-    
+
     return citations
 
 def clean_author(author):
-    """Làm sạch chuỗi tác giả bằng cách loại bỏ các phần không cần thiết."""
-    # Loại bỏ các cụm từ không liên quan
-    author = re.sub(r'^(?:additional previous work in this area includes|'
-                    r'the work of|the special issue by|cited in|as cited in)\s+',
-                    '', author, flags=re.IGNORECASE)
-    # Loại bỏ các ký tự không cần thiết
+    """
+    Làm sạch chuỗi tác giả bằng cách loại bỏ các phần không cần thiết.
+
+    Args:
+        author (str): Chuỗi tên tác giả.
+
+    Returns:
+        str: Chuỗi tên tác giả đã được làm sạch.
+    """
+    author = re.sub(r'^(?:additional previous work in this area includes|the work of|the special issue by|cited in|as cited in)\s+', '', author, flags=re.IGNORECASE)
     author = re.sub(r'\s+', ' ', author)
     author = author.strip()
     return author
 
 def determine_citation_validity(content):
-    """Xác định xem nội dung có phải là trích dẫn hợp lệ hay không."""
+    """
+    Xác định xem nội dung có phải là trích dẫn hợp lệ hay không.
+
+    Args:
+        content (str): Nội dung bên trong dấu ngoặc đơn.
+
+    Returns:
+        bool: True nếu là trích dẫn hợp lệ, ngược lại False.
+    """
     has_year = re.search(r'\b\d{4}\b', content)
     has_author = re.search(r'\b[A-Z][a-zA-Z]+', content)
     is_too_short = len(content.strip()) < 3
     is_single_char = re.match(r'^[a-zA-Z0-9]$', content.strip())
 
     if has_year and has_author and not is_single_char and not is_too_short:
-        return True  # Là trích dẫn hợp lệ
+        return True
     else:
-        return False  # Không phải trích dẫn hợp lệ
-
+        return False
 
 def extract_apa_citations_with_context(sentence):
-    """Trích xuất trích dẫn từ một câu."""
-    # Trích xuất các trích dẫn từ câu
+    """
+    Trích xuất trích dẫn APA từ một câu và kèm theo ngữ cảnh.
+
+    Args:
+        sentence (str): Câu cần xử lý.
+
+    Returns:
+        list: Danh sách các mục trích dẫn với ngữ cảnh.
+    """
     citations_in_sentence = extract_citations_from_sentence(sentence)
     results = []
 
@@ -158,30 +181,22 @@ def extract_apa_citations_with_context(sentence):
         needs_manual_check = False
 
         if citation_type == 'narrative':
-            # Kiểm tra nếu trích dẫn ở cuối câu
             if end == len(sentence.strip()):
-                # Nếu trích dẫn ở cuối câu, lấy nội dung trước trích dẫn
                 citation_content = sentence[:start].strip()
-            # Kiểm tra nếu trích dẫn ở đầu câu
             elif start == 0:
-                # Nếu trích dẫn ở đầu câu, lấy nội dung sau trích dẫn
                 citation_content = get_following_content(sentence, end)
             else:
-                # Nếu trích dẫn ở giữa, lấy toàn bộ câu
                 citation_content = sentence.strip()
 
-            # Đảm bảo không có văn bản không liên quan hoặc không đáng kể
             if len(citation_content.strip().split()) < 2 or is_insignificant_text(citation_content):
                 needs_manual_check = True
             else:
                 needs_manual_check = False
 
-            # Trích xuất thông tin tác giả và năm từ trích dẫn
             author = clean_author(citation['author'])
             year = citation['year']
             citation_text = citation['citation_text']
 
-            # Tạo entry cho citation
             citation_entry = {
                 'citation_content': citation_content,
                 'author': author,
@@ -224,15 +239,12 @@ def extract_apa_citations_with_context(sentence):
                     citation_content = preceding_text
                     needs_manual_check = False
 
-            # Kiểm tra nếu nội dung trích dẫn quá ngắn
             if len(citation_content.strip().split()) < 2 and not needs_manual_check:
                 needs_manual_check = True
 
-            # **Gán giá trị cho ref_citations và citation_text**
             ref_citations = citation.get('ref_citations', [])
             citation_text = citation.get('original_citation_text', '')
 
-            # Tạo citation_entry
             citation_entry = {
                 'citation_content': citation_content,
                 'ref_citations': ref_citations,
@@ -243,7 +255,6 @@ def extract_apa_citations_with_context(sentence):
 
         citation_entries.append(citation_entry)
 
-    # Thêm thông tin về câu và số lượng trích dẫn
     results.append({
         'original_sentence': sentence,
         'citation_count': citation_count,
@@ -253,11 +264,28 @@ def extract_apa_citations_with_context(sentence):
     return results
 
 def get_following_content(sentence, citation_end):
-    """Trả về nội dung sau vị trí citation_end trong câu."""
+    """
+    Trả về nội dung sau vị trí kết thúc của trích dẫn trong câu.
+
+    Args:
+        sentence (str): Câu cần xử lý.
+        citation_end (int): Vị trí kết thúc của trích dẫn.
+
+    Returns:
+        str: Nội dung phía sau trích dẫn.
+    """
     return sentence[citation_end:].strip()
 
 def is_insignificant_text(text):
-    """Kiểm tra xem văn bản chỉ chứa các từ không mang nhiều ý nghĩa."""
+    """
+    Kiểm tra xem văn bản có chỉ chứa các từ không mang nhiều ý nghĩa hay không.
+
+    Args:
+        text (str): Văn bản cần kiểm tra.
+
+    Returns:
+        bool: True nếu văn bản không đáng kể, ngược lại False.
+    """
     doc = nlp(text)
     insignificant_pos = ['CCONJ', 'SCONJ', 'ADP', 'PART', 'PUNCT', 'SPACE', 'ADV']
     for token in doc:
@@ -267,64 +295,35 @@ def is_insignificant_text(text):
 
 def contains_relevant_entity(sentence):
     """
-    Kiểm tra xem câu có chứa thực thể đặc biệt hay không và liệu last_noun_phrase có bằng với thực thể đặc biệt nào không.
+    Kiểm tra xem câu có chứa thực thể đặc biệt hay không.
 
     Args:
         sentence (str): Câu cần kiểm tra.
-        log_file_path (str): Đường dẫn tới file log để ghi các thông tin in ra.
 
     Returns:
-        bool: True nếu last_noun_phrase bằng với một thực thể đặc biệt, ngược lại trả về False.
+        bool: True nếu chứa thực thể đặc biệt, ngược lại False.
     """
-    with open("parenthetical_output.txt", 'a', encoding='utf-8') as log_file:
-        # In và ghi nội dung của câu
-        print(f"Sentence: {sentence}")
-        log_file.write(f"Sentence: {sentence}\n")
-        
-        if not sentence:
-            print("Sentence is empty.")
-            log_file.write("Sentence is empty.\n")
+    if not sentence:
+        return False
+    else:
+        doc = nlp(sentence)
+        noun_phrases = [chunk.text.strip() for chunk in doc.noun_chunks]
+        if not noun_phrases:
             return False
-        else:
-            # Phân tích câu bằng spaCy
-            doc = nlp(sentence)
+        last_noun_phrase = noun_phrases[-1]
 
-            # Lấy danh sách các cụm danh từ trong câu
-            noun_phrases = [chunk.text.strip() for chunk in doc.noun_chunks]
-            if not noun_phrases:
-                print("No noun phrases in the sentence.")
-                log_file.write("No noun phrases in the sentence.\n")
-                return False  # Không có cụm danh từ nào trong câu
-            last_noun_phrase = noun_phrases[-1]
-            print(f"Cụm danh từ cuối cùng: {last_noun_phrase}")
-            log_file.write(f"Cụm danh từ cuối cùng: {last_noun_phrase}\n")
+        science_entity_labels = [
+            'PERSON', 'ORG', 'GPE', 'LOC', 'PRODUCT', 'EVENT',
+            'WORK_OF_ART', 'LAW', 'LANGUAGE', 'DATE', 'TIME',
+            'PERCENT', 'MONEY', 'QUANTITY', 'ORDINAL',
+        ]
 
-            # Lấy danh sách các thực thể đặc biệt trong câu
-            science_entity_labels = [
-                'PERSON', 'ORG', 'GPE', 'LOC', 'PRODUCT', 'EVENT',
-                'WORK_OF_ART', 'LAW', 'LANGUAGE', 'DATE', 'TIME',
-                'PERCENT', 'MONEY', 'QUANTITY', 'ORDINAL', 
-            ]
+        special_entities = [(ent.text.strip(), ent.label_) for ent in doc.ents if ent.label_ in science_entity_labels]
 
-            special_entities = [(ent.text.strip(), ent.label_) for ent in doc.ents if ent.label_ in science_entity_labels]
-            print("Các thực thể đặc biệt:")
-            log_file.write("Các thực thể đặc biệt:\n")
-            for entity_text, entity_label in special_entities:
-                print(f" - '{entity_text}' thuộc loại thực thể '{entity_label}'")
-                log_file.write(f" - '{entity_text}' thuộc loại thực thể '{entity_label}'\n")
-
-                if compare_strings_with_regex_any_word(entity_text, last_noun_phrase):
-                    print(f"   -> Cụm danh từ cuối cùng '{last_noun_phrase}' là một thực thể đặc biệt.")
-                    log_file.write(f"   -> Cụm danh từ cuối cùng '{last_noun_phrase}' là một thực thể đặc biệt.\n")
-                    log_file.write(f'---------------------------- \n')
-
-
-                    return True
-                else:
-                    print(f"   -> Cụm danh từ cuối cùng '{last_noun_phrase}' không là một thực thể đặc biệt.")
-                    log_file.write(f"   -> Cụm danh từ cuối cùng '{last_noun_phrase}' không là một thực thể đặc biệt.\n")
-                    log_file.write(f'---------------------------- \n')
-                    return False
+        for entity_text, entity_label in special_entities:
+            if compare_strings_with_regex_any_word(entity_text, last_noun_phrase):
+                return True
+        return False
 
 def compare_strings_with_regex_any_word(str1, str2):
     """
@@ -335,7 +334,7 @@ def compare_strings_with_regex_any_word(str1, str2):
         str2 (str): Chuỗi thứ hai.
 
     Returns:
-        bool: True nếu có ít nhất một từ trong str1 xuất hiện trong str2, ngược lại trả về False.
+        bool: True nếu có từ trùng khớp, ngược lại False.
     """
     str1 = str1.lower()
     str2 = str2.lower()
@@ -345,20 +344,18 @@ def compare_strings_with_regex_any_word(str1, str2):
     for word in words_str1:
         pattern = r'\b' + re.escape(word) + r'\b'
         if re.search(pattern, str2):
-            # Nếu tìm thấy từ trong str2, trả về True
             return True
-    # Nếu không tìm thấy từ nào, trả về False
-    return False  
+    return False
 
 def get_last_special_phrase(sentence):
     """
     Trả về cụm danh từ cuối cùng trong câu.
 
     Args:
-        sentence (str): Câu cần phân tích.
+        sentence (str): Câu cần xử lý.
 
     Returns:
-        str: Cụm danh từ cuối cùng, hoặc chuỗi rỗng nếu không tìm thấy.
+        str: Cụm danh từ cuối cùng hoặc chuỗi rỗng nếu không tìm thấy.
     """
     doc = nlp(sentence)
     noun_phrases = [chunk.text.strip() for chunk in doc.noun_chunks]
