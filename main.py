@@ -7,14 +7,13 @@ from helper import (
     extract_text_from_docx,
     crawl_references,
     generate_json_output,
+    convert_pdf_to_docx
 )
 from ieee_module import (
     extract_references as extract_ieee_references,
     extract_ieee_citations_with_context,
 )
-from apa_module import (
-    extract_apa_citations_with_context,
-)
+import apa_module
 
 def main():
     """
@@ -22,13 +21,13 @@ def main():
     và gọi các module tương ứng để xử lý trích dẫn.
     """
     logging.basicConfig(level=logging.INFO)
-    pdf_file = "extraction_ieee.pdf"  # Thay thế bằng đường dẫn tệp PDF của bạn nếu cần
+    pdf_file = "paper.pdf" 
     docx_file = "paper.docx"
     output_sentences_file = "paper_spacy_sentences.txt"
 
     try:
         # Chuyển đổi PDF sang DOCX nếu cần
-        # docx_file = convert_pdf_to_docx(pdf_file, docx_file)
+        docx_file = convert_pdf_to_docx(pdf_file, docx_file)
 
         # Đọc văn bản từ DOCX
         text = extract_text_from_docx(docx_file)
@@ -72,7 +71,7 @@ def main():
             # Xử lý từng câu để trích xuất trích dẫn APA
             all_citation_entries = []
             for sentence in sentences:
-                apa_citations = extract_apa_citations_with_context(sentence)
+                apa_citations = apa_module.extract_citations_with_context(sentence)
                 if apa_citations:
                     all_citation_entries.extend(apa_citations)
 
