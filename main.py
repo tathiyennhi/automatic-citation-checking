@@ -11,6 +11,7 @@ from helper import (
 from ieee_module import (
     extract_references as extract_ieee_references,
     extract_ieee_citations_with_context,
+    standalize_citation_content
 )
 import apa_module
 
@@ -60,7 +61,9 @@ def main():
                 entry['crossref_authors'] = crossref_info.get('authors', '')
                 entry['crossref_title'] = crossref_info.get('title', '')
                 entry['crossref_year'] = crossref_info.get('year', '')
-                entry['pdf_path'] = crawled_info.get('pdf_path')
+                entry['pdf_path'] = crawled_info.get('pdf_path'),
+                standardlized_citation_content = standalize_citation_content(entry['citation_content'], entry['crossref_authors'], entry['crossref_title'])
+                entry['citation_content'] = standardlized_citation_content
 
             # Tạo tệp JSON với kết quả
             generate_json_output(citation_entries, "ieee_output.json")
