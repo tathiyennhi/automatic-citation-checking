@@ -360,3 +360,15 @@ def generate_json_output(citation_entries, output_file):
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(citation_entries, f, ensure_ascii=False, indent=4)
     logging.info(f"Đã tạo tệp JSON tại: {output_file}")
+
+def check_docx_existence(docx_file):
+    """
+    Kiểm tra xem tệp DOCX đã tồn tại hay chưa.
+
+    Args:
+        docx_file (str): Đường dẫn tới tệp DOCX.
+
+    Returns:
+        bool: True nếu tệp tồn tại, ngược lại là False.
+    """
+    return os.path.exists(docx_file)

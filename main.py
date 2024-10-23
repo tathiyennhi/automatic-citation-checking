@@ -1,5 +1,3 @@
-# main.py
-
 import logging
 from helper import (
     extract_sentences_from_docx,
@@ -7,7 +5,8 @@ from helper import (
     extract_text_from_docx,
     crawl_references,
     generate_json_output,
-    convert_pdf_to_docx
+    convert_pdf_to_docx,
+    check_docx_existence  # Thêm hàm này từ helper
 )
 from ieee_module import (
     extract_references as extract_ieee_references,
@@ -26,8 +25,12 @@ def main():
     output_sentences_file = "paper_spacy_sentences.txt"
 
     try:
-        # Chuyển đổi PDF sang DOCX nếu cần
-        docx_file = convert_pdf_to_docx(pdf_file, docx_file)
+        # Kiểm tra xem tệp DOCX đã tồn tại hay chưa
+        if not check_docx_existence(docx_file):
+            logging.info(f"Chuyển đổi {pdf_file} sang {docx_file}...")
+            docx_file = convert_pdf_to_docx(pdf_file, docx_file)
+        else:
+            logging.info(f"Tệp DOCX {docx_file} đã tồn tại, bỏ qua chuyển đổi.")
 
         # Đọc văn bản từ DOCX
         text = extract_text_from_docx(docx_file)
