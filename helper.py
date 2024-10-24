@@ -16,6 +16,9 @@ EMAIL = os.getenv('EMAIL', 'default_email@example.com')
 if not EMAIL:
     raise ValueError("Biến môi trường EMAIL chưa được thiết lập. Vui lòng thêm vào tệp .env.")
 
+# Cấu hình logging
+logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
+
 # Tải mô hình spaCy
 try:
     nlp = spacy.load("en_core_web_sm")
@@ -119,8 +122,6 @@ def extract_text_from_docx(docx_path):
     except Exception as e:
         logging.error(f"Lỗi khi trích xuất văn bản từ DOCX '{docx_path}': {e}")
         return ""
-
-# helper.py
 
 def extract_sentences_from_docx(docx_file, output_file, exclude_sections=None):
     """
@@ -239,6 +240,23 @@ def search_paper_doi_with_info(reference):
     finally:
         time.sleep(1)
 
+def check_pdf_existence(pdf_path):
+    """
+    Kiểm tra xem tệp PDF đã tồn tại hay chưa.
+
+    Args:
+        pdf_path (str): Đường dẫn tới tệp PDF.
+
+    Returns:
+        bool: True nếu tệp tồn tại, ngược lại False.
+    """
+    exists = os.path.exists(pdf_path)
+    if exists:
+        logging.info(f"Tệp PDF đã tồn tại: {pdf_path}")
+    else:
+        logging.info(f"Tệp PDF chưa tồn tại: {pdf_path}")
+    return exists
+
 def download_paper_pdf(doi, download_dir="downloaded_papers", email=EMAIL):
     """
     Tải xuống tệp PDF của bài báo sử dụng DOI và Unpaywall API.
@@ -249,7 +267,9 @@ def download_paper_pdf(doi, download_dir="downloaded_papers", email=EMAIL):
         email (str): Địa chỉ email của bạn để sử dụng với Unpaywall API.
 
     Returns:
-        str: Đường dẫn tới tệp PDF đã tải xuống, hoặc None nếu không thành công.
+        tuple: (pdf_path (str), downloaded (bool))
+            - pdf_path (str): Đường dẫn tới tệp PDF đã tải xuống hoặc đã tồn tại.
+            - downloaded (bool): True nếu tệp đã được tải xuống trong lần gọi này, False nếu tệp đã tồn tại hoặc không tải xuống được.
     """
     if not os.path.exists(download_dir):
         os.makedirs(download_dir)
@@ -264,11 +284,17 @@ def download_paper_pdf(doi, download_dir="downloaded_papers", email=EMAIL):
         best_oa_location = data.get('best_oa_location', None)
         if best_oa_location is None or best_oa_location.get('url_for_pdf') is None:
             logging.warning(f"Không có URL PDF mở cho DOI: {doi}")
-            return None
+            return (None, False)
 
         pdf_url = best_oa_location.get('url_for_pdf')
-        title = data.get('title', 'unknown_title').replace('/', '_').replace('\\', '_')
-        pdf_path = os.path.join(download_dir, f"{title}.pdf")
+        title = data.get('title', 'unknown_title')[0] if isinstance(data.get('title'), list) else data.get('title', 'unknown_title')
+        pdf_filename = f"{title}.pdf"
+        pdf_path = os.path.join(download_dir, pdf_filename)
+
+        # Kiểm tra xem PDF đã tồn tại chưa
+        if check_pdf_existence(pdf_path):
+            logging.info(f"Tệp PDF đã tồn tại. Không cần tải xuống lại: {pdf_path}")
+            return (pdf_path, False)  # Tệp đã tồn tại
 
         try:
             headers = {"User-Agent": "Mozilla/5.0"}
@@ -278,19 +304,19 @@ def download_paper_pdf(doi, download_dir="downloaded_papers", email=EMAIL):
             with open(pdf_path, 'wb') as f:
                 f.write(pdf_response.content)
             logging.info(f"Đã tải xuống PDF: {pdf_path}")
-            return pdf_path
+            return (pdf_path, True)  # Tệp đã được tải xuống
         except Exception as e:
             logging.error(f"Lỗi khi tải xuống PDF từ {pdf_url}: {e}")
-            return None
+            return (None, False)
 
     except requests.exceptions.HTTPError as http_err:
         logging.error(f"Lỗi HTTP khi truy cập Unpaywall API: {http_err}")
+        return (None, False)
     except Exception as e:
         logging.error(f"Lỗi khi sử dụng Unpaywall API với DOI '{doi}': {e}")
+        return (None, False)
     finally:
         time.sleep(1)
-
-    return None
 
 def crawl_references(references_list, download_dir="downloaded_papers"):
     """
@@ -301,7 +327,9 @@ def crawl_references(references_list, download_dir="downloaded_papers"):
         download_dir (str): Thư mục để lưu trữ tệp PDF.
 
     Returns:
-        dict: Thông tin crawl cho mỗi tham chiếu.
+        tuple: (reference_crawl_info (dict), inaccessible_references (list))
+            - reference_crawl_info (dict): Thông tin crawl cho mỗi tham chiếu.
+            - inaccessible_references (list): Danh sách các tham chiếu không thể truy cập/mở PDF.
     """
     email = EMAIL
 
@@ -309,6 +337,7 @@ def crawl_references(references_list, download_dir="downloaded_papers"):
     logging.info(f"Tổng số tài liệu tham khảo cần xử lý: {total_entries}")
 
     reference_crawl_info = {}
+    inaccessible_references = []
 
     for idx, entry in enumerate(references_list, start=1):
         reference = entry.get('reference', '')
@@ -319,6 +348,7 @@ def crawl_references(references_list, download_dir="downloaded_papers"):
                 'crossref_info': {},
                 'pdf_path': None
             }
+            inaccessible_references.append(reference)
             continue
 
         doi, crossref_info = search_paper_doi_with_info(reference)
@@ -328,38 +358,110 @@ def crawl_references(references_list, download_dir="downloaded_papers"):
                 'crossref_info': {},
                 'pdf_path': None
             }
+            inaccessible_references.append(reference)
             continue
 
-        pdf_path = download_paper_pdf(doi, download_dir, email)
-        if not pdf_path:
-            reference_crawl_info[reference] = {
-                'doi': doi,
-                'crossref_info': crossref_info,
-                'pdf_path': None
-            }
-            continue
-
+        pdf_path, downloaded = download_paper_pdf(doi, download_dir, email)
         reference_crawl_info[reference] = {
             'doi': doi,
             'crossref_info': crossref_info,
             'pdf_path': pdf_path
         }
 
-        time.sleep(5)  # Chờ giữa các yêu cầu
+        if downloaded:
+            logging.info(f"Đã tải xuống PDF mới: {pdf_path}")
+            time.sleep(5)  # Chờ lâu hơn khi tải xuống mới
+        else:
+            if pdf_path:
+                logging.info(f"Đã tìm thấy PDF tồn tại: {pdf_path}")
+            else:
+                logging.info(f"Không tải xuống được PDF cho reference: {reference}")
+                inaccessible_references.append(reference)
+            time.sleep(1)  # Chờ ngắn hơn khi PDF đã tồn tại hoặc không tải xuống được
 
-    return reference_crawl_info
+    return reference_crawl_info, inaccessible_references
 
-def generate_json_output(citation_entries, output_file):
+
+def generate_json_output(reference_crawl_info, inaccessible_references, output_file):
     """
-    Tạo tệp JSON từ danh sách các mục trích dẫn.
+    Tạo tệp JSON từ thông tin crawl và danh sách các tham chiếu không thể truy cập/mở PDF.
 
     Args:
-        citation_entries (list): Danh sách các mục trích dẫn.
+        reference_crawl_info (dict): Thông tin crawl cho mỗi tham chiếu.
+        inaccessible_references (list): Danh sách các tham chiếu không thể truy cập/mở PDF.
         output_file (str): Đường dẫn tới tệp JSON sẽ được tạo.
     """
+    output_data = {
+        'reference_crawl_info': reference_crawl_info,
+        'inaccessible_references': inaccessible_references
+    }
+
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(citation_entries, f, ensure_ascii=False, indent=4)
+        json.dump(output_data, f, ensure_ascii=False, indent=4)
     logging.info(f"Đã tạo tệp JSON tại: {output_file}")
+
+
+def check_pdf_existence(pdf_path):
+    """
+    Kiểm tra xem tệp PDF đã tồn tại hay chưa.
+
+    Args:
+        pdf_path (str): Đường dẫn tới tệp PDF.
+
+    Returns:
+        bool: True nếu tệp tồn tại, ngược lại False.
+    """
+    exists = os.path.exists(pdf_path)
+    if exists:
+        logging.info(f"Tệp PDF đã tồn tại: {pdf_path}")
+    else:
+        logging.info(f"Tệp PDF chưa tồn tại: {pdf_path}")
+    return exists
+
+def standalize_citation_content(sentence, authors, title):
+    """
+    Chuẩn hóa nội dung trích dẫn trong câu bằng cách thay thế hoặc loại bỏ các thẻ trích dẫn [x].
+    
+    Args:
+        sentence (str): Câu chứa trích dẫn.
+        authors (str): Tên tác giả để thay thế [x] khi từ đứng trước là "by".
+        title (str): Tiêu đề bài báo để thay thế [x] khi từ đứng trước là "in" hoặc "from".
+    
+    Returns:
+        str: Câu đã được chuẩn hóa với các trích dẫn đã được thay thế hoặc loại bỏ.
+    """
+    # Định nghĩa regex để tìm tất cả các thẻ trích dẫn [x]
+    pattern = re.compile(r'\[(\d+)\]')
+
+    # Tìm tất cả các thẻ trích dẫn trong câu
+    matches = list(pattern.finditer(sentence))
+
+    # Xử lý các thẻ trích dẫn từ cuối câu về đầu để tránh ảnh hưởng đến chỉ số khi thay thế
+    for match in reversed(matches):
+        citation_number = match.group(1)
+        start, end = match.start(), match.end()
+
+        # Tìm từ đứng trước thẻ trích dẫn
+        preceding_substr = sentence[:start].rstrip()
+        preceding_word_match = re.search(r'(\b\w+\b)\s*$', preceding_substr)
+
+        if preceding_word_match:
+            preceding_word = preceding_word_match.group(1).lower()
+        else:
+            preceding_word = ''
+
+        # Xác định nội dung thay thế dựa trên từ đứng trước
+        if preceding_word == "by":
+            replacement = authors
+        elif preceding_word in ["in", "from"]:
+            replacement = f'"{title}"'
+        else:
+            replacement = ''
+
+        # Thay thế thẻ trích dẫn [x] bằng nội dung phù hợp
+        sentence = sentence[:start] + replacement + sentence[end:]
+
+    return sentence
 
 def check_docx_existence(docx_file):
     """
@@ -371,4 +473,9 @@ def check_docx_existence(docx_file):
     Returns:
         bool: True nếu tệp tồn tại, ngược lại là False.
     """
-    return os.path.exists(docx_file)
+    exists = os.path.exists(docx_file)
+    if exists:
+        logging.info(f"Tệp DOCX đã tồn tại: {docx_file}")
+    else:
+        logging.info(f"Tệp DOCX chưa tồn tại: {docx_file}")
+    return exists

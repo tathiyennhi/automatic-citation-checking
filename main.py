@@ -50,7 +50,7 @@ def main():
             citation_entries = extract_ieee_citations_with_context(sentences, references_map)
 
             # Crawl các tài liệu tham khảo để lấy thông tin bổ sung
-            reference_crawl_info = crawl_references(references_list)
+            reference_crawl_info, inaccessible_references = crawl_references(references_list, download_dir="downloaded_papers")
 
             # Cập nhật các mục trích dẫn với thông tin crawl được
             for entry in citation_entries:
@@ -64,9 +64,12 @@ def main():
                 entry['pdf_path'] = crawled_info.get('pdf_path'),
                 standardlized_citation_content = standalize_citation_content(entry['citation_content'], entry['crossref_authors'], entry['crossref_title'])
                 entry['citation_content'] = standardlized_citation_content
+            print("Danh sách các tham chiếu không thể truy cập/mở PDF:")
+            for ref in inaccessible_references:
+                print(f"- {ref}")
 
             # Tạo tệp JSON với kết quả
-            generate_json_output(citation_entries, "ieee_output.json")
+            generate_json_output(citation_entries, inaccessible_references, "ieee_output.json")
 
         elif citation_type == "APA":
             # Trích xuất câu từ DOCX
@@ -84,7 +87,7 @@ def main():
             # Bạn có thể thêm việc crawl references và xử lý bổ sung ở đây
 
             # Tạo tệp JSON với kết quả
-            generate_json_output(all_citation_entries, "apa_output.json")
+            generate_json_output(all_citation_entries, " ", "apa_output.json")
 
         elif citation_type == "Chicago":
             print("Định dạng trích dẫn Chicago chưa được hỗ trợ.")
