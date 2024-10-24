@@ -210,7 +210,6 @@ def print_citations(citations):
         print(f"--- Trích dẫn ---")
         print(f"Câu chứa trích dẫn: {citation['sentence']}")
         print(f"Số trích dẫn: [{citation['citation_number']}]")
-        print(f"Nội dung trích dẫn: {citation['original_text']}")
         print("-----------------\n")
 
 
