@@ -479,3 +479,34 @@ def check_docx_existence(docx_file):
     else:
         logging.info(f"Tệp DOCX chưa tồn tại: {docx_file}")
     return exists
+
+
+def extract_all_text_from_docx(docx_file):
+    """
+    Trích xuất toàn bộ văn bản từ tệp DOCX, bao gồm cả phần 'References' và các phần khác.
+    
+    Args:
+        docx_file (str): Đường dẫn tới tệp DOCX.
+    
+    Returns:
+        str: Văn bản trích xuất từ tệp DOCX.
+    """
+    logging.info(f"Đang trích xuất toàn bộ văn bản từ: {docx_file}")
+    try:
+        doc = Document(docx_file)
+    except Exception as e:
+        logging.error(f"Lỗi khi mở tệp DOCX: {e}")
+        return ""
+
+    full_text = []
+    for para in doc.paragraphs:
+        text = para.text.strip()
+        if text:
+            full_text.append(text)
+    
+    # Hợp nhất các đoạn văn thành một chuỗi duy nhất
+    combined_text = '\n'.join(full_text)
+    # Loại bỏ các dấu gạch ngang ngắt dòng (hyphenation)
+    combined_text = remove_hyphenation(combined_text)
+    logging.info(f"Đã trích xuất văn bản từ DOCX: {docx_file}")
+    return combined_text

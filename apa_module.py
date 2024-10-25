@@ -4,6 +4,8 @@ import docx
 import json
 import logging
 from pdf2docx import Converter
+import time
+import helper
 
 # Thiết lập logging để theo dõi quá trình trích xuất
 logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
@@ -497,3 +499,221 @@ def count_total_citations(citations_data):
     for sentence_data in citations_data:
         total_citations += len(sentence_data['citations'])
     return total_citations
+
+
+#=============================REFERENCES PART============================
+def extract_apa_references(text):
+    """
+    Trích xuất tài liệu tham khảo theo định dạng APA từ văn bản.
+
+    Args:
+        text (str): Văn bản chứa tài liệu tham khảo.
+
+    Returns:
+        list: Danh sách các tài liệu tham khảo đã trích xuất dưới dạng dict.
+              Mỗi dict chứa khóa 'reference' với giá trị là chuỗi tài liệu tham khảo.
+    """
+    # Sử dụng regex để tìm các tài liệu tham khảo theo định dạng APA
+    # APA thường có dạng: Tác giả. (Năm). Tiêu đề. Tên tạp chí, số(tập), trang. DOI hoặc URL
+
+    # Regex cải tiến để trích xuất toàn bộ dòng tài liệu tham khảo
+    apa_pattern = re.compile(
+        r'([A-Z][a-zA-Z]+(?:, [A-Z]\.)+(?: & [A-Z][a-zA-Z]+\.)? \(\d{4}\)\. .*?(?:\.\s*\d{4})?\.)',
+        re.MULTILINE
+    )
+
+    references = apa_pattern.findall(text)
+    logging.info(f"Đã trích xuất {len(references)} tài liệu tham khảo APA.")
+
+    # In các tài liệu tham khảo đã trích xuất
+    # for ref in references:
+    #     logging.info(f"Tài liệu tham khảo APA trích xuất: {ref}")
+
+    return [{'reference': ref.strip()} for ref in references]
+
+
+def parse_apa_reference(reference):
+    """
+    Phân tích tài liệu tham khảo APA thành các thành phần: tác giả, năm, tiêu đề, nguồn, DOI/URL.
+
+    Args:
+        reference (str): Văn bản tài liệu tham khảo.
+
+    Returns:
+        dict: Các thành phần của tài liệu tham khảo.
+    """
+    logging.debug(f"Phân tích tài liệu tham khảo: {reference}")
+
+    # Tiền xử lý văn bản tài liệu tham khảo
+    reference = preprocess_reference_text(reference)
+    logging.debug(f"Văn bản sau khi tiền xử lý: {reference}")
+
+    # Mẫu regex để trích xuất các thành phần của APA reference
+    apa_regex = re.compile(
+        r'^(?P<authors>.+?)\s*\((?P<year>\d{4})\)\.\s*(?P<title>.+?)\.\s*(?P<source>[^,]+),\s*(?P<volume>\d+)(?:\((?P<issue>\d+)\))?,\s*(?P<pages>[\d\-–]+)\.\s*(?P<doi>https?://doi\.org/\S+|https?://\S+)?$',
+        re.IGNORECASE
+    )
+
+    match = apa_regex.match(reference)
+    if match:
+        apa_components = match.groupdict()
+        logging.debug(f"Các thành phần đã trích xuất: {apa_components}")
+        return {
+            'authors': apa_components.get('authors', '').strip(),
+            'year': apa_components.get('year', '').strip(),
+            'title': apa_components.get('title', '').strip(),
+            'source': apa_components.get('source', '').strip(),
+            'volume': apa_components.get('volume', '').strip(),
+            'issue': apa_components.get('issue', '').strip(),
+            'pages': apa_components.get('pages', '').strip(),
+            'doi': apa_components.get('doi', '').strip() if apa_components.get('doi') else ''
+        }
+    else:
+        logging.warning(f"Không thể phân tích tài liệu tham khảo APA: {reference}")
+        return {}
+
+
+
+def process_apa_references(docx_file, download_dir="downloaded_papers"):
+    """
+    Xử lý danh sách tài liệu tham khảo APA: trích xuất, phân tích, tìm DOI hoặc sử dụng tiêu đề,
+    tải PDF và trả về dữ liệu JSON.
+
+    Args:
+        docx_file (str): Đường dẫn tới tệp DOCX chứa tài liệu tham khảo.
+        download_dir (str): Thư mục để lưu trữ tệp PDF.
+
+    Returns:
+        dict: Dữ liệu JSON bao gồm 'processed_references' và 'inaccessible_references'.
+    """
+    try:
+        # Bước 1: Trích xuất văn bản từ DOCX
+        text = helper.extract_text_from_docx(docx_file)
+        text = helper.remove_hyphenation(text)
+        text = helper.clean_text(text)
+        print(text)
+        # Bước 2: Trích xuất tài liệu tham khảo APA
+        references = extract_apa_references(text)
+
+        # Khởi tạo danh sách
+        parsed_references = []
+        inaccessible_references = []
+
+        # Bước 3: Phân tích từng tài liệu tham khảo thành các thành phần
+        for ref in references:
+            try:
+                # Tiền xử lý văn bản tài liệu tham khảo
+                preprocessed_ref = preprocess_reference_text(ref['reference'])
+                parsed_ref = parse_apa_reference(preprocessed_ref)
+
+                if not parsed_ref or not parsed_ref.get('title'):
+                    logging.warning(f"Không thể phân tích tài liệu tham khảo: {ref['reference']}")
+                    inaccessible_references.append({'original_reference': ref['reference']})
+                else:
+                    parsed_references.append(parsed_ref)
+            except Exception as e:
+                logging.error(f"Lỗi khi phân tích tài liệu tham khảo: {e}")
+                inaccessible_references.append({'original_reference': ref['reference']})
+
+        # Bước 4: Tìm DOI hoặc sử dụng tiêu đề để tìm thông tin chi tiết
+        processed_references = []
+
+        for ref in parsed_references:
+            try:
+                # Nếu có DOI, sử dụng DOI để lấy thông tin
+                if 'doi' in ref and ref['doi']:
+                    doi = ref['doi']
+                    crossref_info = helper.search_paper_doi_with_info(doi)
+                    if crossref_info:
+                        ref.update(crossref_info)
+                        # Tải xuống PDF nếu có
+                        pdf_path, downloaded = helper.download_paper_pdf(doi, download_dir)
+                        if downloaded:
+                            ref['pdf_path'] = pdf_path
+                        else:
+                            logging.warning(f"Không thể tải PDF: {doi}")
+                            inaccessible_references.append(ref)
+                    else:
+                        logging.warning(f"Không tìm thấy thông tin CrossRef cho DOI: {doi}")
+                        inaccessible_references.append(ref)
+
+                else:
+                    # Nếu không có DOI, sử dụng tiêu đề để tìm thông tin
+                    title = ref.get('title', '')
+                    if title:
+                        doi, crossref_info = helper.search_paper_doi_with_info(title)
+                        if doi and crossref_info:
+                            ref.update(crossref_info)
+                            pdf_path, downloaded = helper.download_paper_pdf(doi, download_dir)
+                            if downloaded:
+                                ref['pdf_path'] = pdf_path
+                            else:
+                                logging.warning(f"Không thể tải PDF cho tiêu đề: {title}")
+                                inaccessible_references.append(ref)
+                        else:
+                            logging.warning(f"Không tìm thấy thông tin cho tiêu đề: {title}")
+                            inaccessible_references.append(ref)
+                    else:
+                        logging.warning(f"Thiếu tiêu đề và DOI cho tài liệu tham khảo: {ref}")
+                        inaccessible_references.append(ref)
+
+                # Thêm vào processed_references nếu không nằm trong inaccessible_references
+                if ref not in inaccessible_references:
+                    processed_references.append(ref)
+
+                time.sleep(1)  # Tránh gửi quá nhiều yêu cầu API cùng lúc
+
+            except Exception as e:
+                logging.error(f"Lỗi trong quá trình tìm thông tin chi tiết: {e}")
+                inaccessible_references.append(ref)
+
+        # Trả về dữ liệu JSON
+        output_data = {
+            'processed_references': processed_references,
+            'inaccessible_references': inaccessible_references
+        }
+
+        logging.info("Đã hoàn thành xử lý tài liệu tham khảo APA.")
+        return output_data
+
+    except Exception as e:
+        logging.error(f"Lỗi trong quá trình xử lý tài liệu tham khảo APA: {e}")
+        return {'processed_references': [], 'inaccessible_references': []}
+
+
+
+def preprocess_reference_text(reference):
+    """
+    Xử lý văn bản để loại bỏ dấu gạch nối ngắt từ và các ký tự đặc biệt.
+    
+    Args:
+        reference (str): Văn bản tài liệu tham khảo.
+    
+    Returns:
+        str: Văn bản đã được xử lý.
+    """
+    # Loại bỏ dấu gạch nối ngắt từ
+    reference = re.sub(r'-\s*\n\s*', '', reference)
+    # Loại bỏ dấu gạch nối trong từ
+    reference = re.sub(r'(\w+)-\s*(\w+)', r'\1\2', reference)
+    # Loại bỏ các ký tự xuống dòng
+    reference = reference.replace('\n', ' ')
+    return reference
+
+def extract_title(reference):
+    """
+    Trích xuất tiêu đề từ một tài liệu tham khảo APA.
+    
+    Args:
+        reference (str): Văn bản tài liệu tham khảo đã được xử lý.
+    
+    Returns:
+        str: Tiêu đề của tài liệu tham khảo.
+    """
+    # Sử dụng regex để tìm tiêu đề giữa năm và nguồn
+    pattern_title = re.compile(r'\.\s+([^\.]+)\.\s+([A-Z][^\.]+)', re.IGNORECASE)
+    match = pattern_title.search(reference)
+    if match:
+        title = match.group(1).strip()
+        return title
+    return None

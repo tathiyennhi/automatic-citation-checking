@@ -1,3 +1,5 @@
+# main.py
+
 import logging
 from helper import (
     extract_sentences_from_docx,
@@ -20,7 +22,7 @@ def main():
     Hàm chính của chương trình. Thực hiện việc đọc tệp DOCX, xác định định dạng trích dẫn,
     và gọi các module tương ứng để xử lý trích dẫn.
     """
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.INFO, format='[%(levelname)s] %(message)s')
     pdf_file = "paper.pdf" 
     docx_file = "paper.docx"
     output_sentences_file = "paper_spacy_sentences.txt"
@@ -29,7 +31,7 @@ def main():
         # Kiểm tra xem tệp DOCX đã tồn tại hay chưa
         if not check_docx_existence(docx_file):
             logging.info(f"Chuyển đổi {pdf_file} sang {docx_file}...")
-            docx_file = convert_pdf_to_docx(pdf_file, docx_file)
+            convert_pdf_to_docx(pdf_file, docx_file)
         else:
             logging.info(f"Tệp DOCX {docx_file} đã tồn tại, bỏ qua chuyển đổi.")
 
@@ -61,9 +63,11 @@ def main():
                 entry['crossref_authors'] = crossref_info.get('authors', '')
                 entry['crossref_title'] = crossref_info.get('title', '')
                 entry['crossref_year'] = crossref_info.get('year', '')
-                entry['pdf_path'] = crawled_info.get('pdf_path'),
-                standardlized_citation_content = standalize_citation_content(entry['citation_content'], entry['crossref_authors'], entry['crossref_title'])
-                entry['citation_content'] = standardlized_citation_content
+                entry['pdf_path'] = crawled_info.get('pdf_path')
+                # Sửa lỗi: bỏ dấu phẩy cuối cùng
+                standardized_citation_content = standalize_citation_content(entry['citation_content'], entry['crossref_authors'], entry['crossref_title'])
+                entry['citation_content'] = standardized_citation_content
+
             print("Danh sách các tham chiếu không thể truy cập/mở PDF:")
             for ref in inaccessible_references:
                 print(f"- {ref}")
@@ -72,22 +76,17 @@ def main():
             generate_json_output(citation_entries, inaccessible_references, "ieee_output.json")
 
         elif citation_type == "APA":
-            # Trích xuất câu từ DOCX
-            sentences = extract_sentences_from_docx(
-                docx_file, output_sentences_file
-            )
-
-            # Xử lý từng câu để trích xuất trích dẫn APA
-            all_citation_entries = []
-            for sentence in sentences:
-                apa_citations = apa_module.extract_citations_with_context(sentence)
-                if apa_citations:
-                    all_citation_entries.extend(apa_citations)
-
-            # Bạn có thể thêm việc crawl references và xử lý bổ sung ở đây
-
+            # Xử lý với module APA
+            apa_data = apa_module.process_apa_references(docx_file, download_dir="downloaded_papers")
+            
             # Tạo tệp JSON với kết quả
-            generate_json_output(all_citation_entries, " ", "apa_output.json")
+            generate_json_output(
+                apa_data['processed_references'],
+                apa_data['inaccessible_references'],
+                "apa_output.json"
+            )
+            
+            print("Đã lưu kết quả xử lý APA vào 'apa_output.json'.")
 
         elif citation_type == "Chicago":
             print("Định dạng trích dẫn Chicago chưa được hỗ trợ.")
