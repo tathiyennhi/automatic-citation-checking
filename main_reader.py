@@ -16,71 +16,149 @@ def extract_text_from_pdf(pdf_path):
             text = page.extract_text()
             if text:
                 all_text += text + "\n"
+    # print(all_text)
     return all_text
+
+# def get_references_section(text):
+#     """
+#     Tìm và trích xuất phần 'References' từ văn bản.
+#     """
+#     match = re.search(r'\b[Rr]eferences\b[:\-—]?', text)
+#     if match:
+#         start = match.end()
+#         references_text = text[start:]
+#         print(references_text.strip())
+#         return references_text.strip()
+#     else:
+#         return None
 
 def get_references_section(text):
     """
-    Tìm và trích xuất phần 'References' từ văn bản.
+    Tìm và trích xuất phần 'References' từ văn bản và loại bỏ những dòng chỉ chứa từ không có ký tự đặc biệt.
     """
-    # Tìm vị trí bắt đầu của 'References'
     match = re.search(r'\b[Rr]eferences\b[:\-—]?', text)
     if match:
         start = match.end()
         references_text = text[start:]
-        return references_text.strip()
+        
+        # Tách văn bản thành các dòng
+        lines = references_text.strip().split('\n')
+        processed_lines = []
+        
+        for line in lines:
+            line = line.strip()
+            if not line:
+                continue  # Bỏ qua dòng trống
+            # Kiểm tra xem dòng có chứa ký tự đặc biệt (không phải chữ, số, khoảng trắng) không
+            if re.search(r'[^\w\s]', line):
+                processed_lines.append(line)
+        
+        # Ghép lại các dòng đã xử lý
+        processed_references_text = '\n'.join(processed_lines)
+        # print(processed_references_text)
+        return processed_references_text
     else:
         return None
 
+
+# def fix_broken_urls(text):
+#     """
+#     Sửa các URL bị đứt đoạn trong văn bản.
+#     """
+#     url_patterns = [
+#         # DOI pattern (improved to handle spaces)
+#         (r'https?:\s*//\s*d\s*o\s*i\s*\.?\s*o?\s*r?\s*g?\s*/\s*1\s*0\s*\.\s*\d{4,9}\s*/\s*[^\s]+(?:\s+[^\s]+)*', r'https://doi.org/'),
+#         # Regular URL pattern
+#         (r'https?://(?:[^\s]+(?:\s+[^\s]+)*)', r'https://'),
+#     ]
+
+#     fixed_text = text
+#     for pattern, prefix in url_patterns:
+#         matches = re.finditer(pattern, fixed_text, re.IGNORECASE)
+#         for match in matches:
+#             url = match.group(0)
+#             cleaned_url = re.sub(r'\s+', '', url)
+#             cleaned_url = re.sub(r'[\(\)]', '', cleaned_url)
+#             fixed_text = fixed_text.replace(url, cleaned_url)
+    
+#     return fixed_text
+def fix_broken_urls(text):
+    """
+    Sửa các URL và DOI bị đứt đoạn trong văn bản.
+    """
+    # Pattern để tìm DOI có thể chứa khoảng trắng
+    doi_pattern = re.compile(r'10\.\s*\d{4,9}\s*/\s*(?:[^\s]+(?:\s+[^\s]+)*)', re.IGNORECASE)
+    # Pattern để tìm URL có thể chứa khoảng trắng
+    url_pattern = re.compile(r'https?://(?:[^\s]+(?:\s+[^\s]+)*)', re.IGNORECASE)
+
+    # Hàm thay thế DOI
+    def replace_doi(match):
+        doi = match.group(0)
+        cleaned_doi = re.sub(r'\s+', '', doi)  # Loại bỏ khoảng trắng
+        return 'https://doi.org/' + cleaned_doi
+
+    # Hàm thay thế URL
+    def replace_url(match):
+        url = match.group(0)
+        cleaned_url = re.sub(r'\s+', '', url)  # Loại bỏ khoảng trắng
+        return cleaned_url
+
+    # Sửa DOI trước
+    text = doi_pattern.sub(replace_doi, text)
+    # Sau đó sửa URL
+    text = url_pattern.sub(replace_url, text)
+
+    return text
+
+
+def is_valid_reference_line(line):
+    """
+    Kiểm tra xem dòng có phải là tham khảo hợp lệ hay không.
+    """
+    # Bỏ qua dòng chỉ chứa số hoặc ký tự không phải là chữ cái
+    if re.match(r'^\d+\s*$', line):
+        return False
+    return True
+
 def reconstruct_references(text):
     """
-    Tái cấu trúc các tham khảo bằng cách kết hợp các dòng bị chia cắt thành một dòng duy nhất.
+    Tái cấu trúc các tham khảo và sửa URLs.
     """
     lines = text.split('\n')
     reconstructed = []
     current_ref = ""
 
-    # Định nghĩa mẫu để nhận diện bắt đầu tham khảo (Tên tác giả)
     author_pattern = re.compile(r'^[A-Z][a-zA-Z\-\'\.]+\s*,\s*[A-Z]\.')
 
     for line in lines:
         line = line.strip()
-        if not line:
-            continue  # Bỏ qua các dòng trống
+        
+        # Bỏ qua dòng không hợp lệ (chỉ chứa số)
+        if not is_valid_reference_line(line):
+            continue
+        
         if author_pattern.match(line):
             if current_ref:
-                reconstructed.append(current_ref.strip())
+                fixed_ref = fix_broken_urls(current_ref.strip())
+                reconstructed.append(fixed_ref)
             current_ref = line
         else:
             current_ref += ' ' + line
+
     if current_ref:
-        reconstructed.append(current_ref.strip())
+        fixed_ref = fix_broken_urls(current_ref.strip())
+        reconstructed.append(fixed_ref)
+    
     return reconstructed
 
-def fix_urls(reference):
+def clean_reference(reference):
     """
-    Sửa các URL trong một tham khảo bằng cách loại bỏ dấu cách bên trong URL.
+    Làm sạch tham khảo bằng cách loại bỏ các ký tự không mong muốn.
     """
-    # Sửa DOI URLs
-    # doi_pattern = re.compile(r'https?:\s*//\s*doi\s*\.\s*org\s*/\s*10\.\d{4,9}/\S+', re.IGNORECASE)
-    # reference = doi_pattern.sub(lambda x: ''.join(x.group(0).split()), reference)
-    
-    # Sửa các URL thông thường (không phải DOI)
-    # url_pattern = re.compile(r'https?://(?!doi\.org)\S+', re.IGNORECASE)
-    # reference = url_pattern.sub(lambda x: ''.join(x.group(0).split()), reference)
-    
-    return reference
-
-def remove_trailing_numbers(references):
-    """
-    Loại bỏ các số trang dư thừa như '13' ở cuối tham khảo.
-    """
-    cleaned_references = []
-    trailing_number_pattern = re.compile(r'\s+\d+$')
-
-    for ref in references:
-        ref = trailing_number_pattern.sub('', ref)
-        cleaned_references.append(ref)
-    return cleaned_references
+    reference = re.sub(r'\s+\d+$', '', reference)
+    reference = re.sub(r'\.(?=\s|$)', '', reference)
+    reference = re.sub(r'\s+', ' ', reference)
+    return reference.strip()
 
 def save_to_docx(references, docx_path):
     """
@@ -95,47 +173,22 @@ def extract_references_from_pdf(pdf_path, docx_path):
     """
     Trích xuất các tham khảo từ file PDF và lưu vào file DOCX.
     """
-    # Bước 1: Trích xuất văn bản từ PDF
     text = extract_text_from_pdf(pdf_path)
     
-    # Bước 2: Tìm phần 'References'
     references_section = get_references_section(text)
-    
     if not references_section:
         print("Không tìm thấy phần 'References' trong tài liệu.")
         return
     
-    # Bước 3: Tái cấu trúc các tham khảo
     references = reconstruct_references(references_section)
     
-    # Bước 4: Sửa các URL trong từng tham khảo
-    references = [fix_urls(ref) for ref in references]
+    cleaned_references = [clean_reference(ref) for ref in references]
     
-    # Bước 5: Loại bỏ các số trang dư thừa
-    references = remove_trailing_numbers(references)
-    
-    # Bước 6: Lọc các tham khảo chỉ lấy từ tên tác giả đầu tiên đến hết URL
-    # Giả định rằng URL là phần cuối của tham khảo
-    filtered_references = []
-    url_pattern = re.compile(r'https?://\S+', re.IGNORECASE)
-    
-    for ref in references:
-        match = re.search(url_pattern, ref)
-        if match:
-            # Lấy phần từ đầu đến cuối URL
-            filtered_ref = ref[:match.end()]
-            filtered_references.append(filtered_ref)
-        else:
-            # Nếu không tìm thấy URL, giữ nguyên tham khảo
-            filtered_references.append(ref)
-    
-    # Bước 7: Lưu vào file DOCX
-    save_to_docx(filtered_references, docx_path)
+    save_to_docx(cleaned_references, docx_path)
     
     print(f"Nội dung 'References' đã được lưu vào {docx_path}")
 
 if __name__ == "__main__":
-    pdf_path = 'paper.pdf'      # Thay bằng đường dẫn file PDF của bạn
+    pdf_path = 'paper.pdf'
     docx_path = 'references.docx'
-    
     extract_references_from_pdf(pdf_path, docx_path)
