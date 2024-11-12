@@ -12,6 +12,8 @@ python <your_main_file.py>
 
 # Tạo môi trường ảo trên ổ D: (Windows)
 python -m venv D:/myenv
+D:\myenv\Scripts\activate
 
 # Tạo môi trường ảo trong thư mục người dùng (Mac)
 python -m venv /Users/tathiyennhi/myenv
+source /Users/tathiyennhi/myenv/bin/activate
