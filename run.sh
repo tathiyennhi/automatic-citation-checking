@@ -17,3 +17,12 @@ D:\myenv\Scripts\activate
 # Tạo môi trường ảo trong thư mục người dùng (Mac)
 python -m venv /Users/tathiyennhi/myenv
 source /Users/tathiyennhi/myenv/bin/activate
+
+# run mac bash file 
+chmod +x sh_mac.sh
+./sh_mac.sh
+brew install swig # nếu chưa có 
+
+# run windows bash file 
+chmod +x sh_windows.sh
+./sh_windows.sh
