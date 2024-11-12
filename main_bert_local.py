@@ -14,10 +14,11 @@ device = torch.device("cpu")
 model.to(device)
 
 # Câu hỏi và ngữ cảnh
-question = "(Halder et al., 2020)"
+question = "(Finkel  et  al.,  2005)"
 context = """
-The training for the few-shot approach was initiated 
-with the TARS NER model (Halder et al., 2020).
+Thomer  and  Weber  (2014)  used  the  4-class  Stanford  Entity  Recognizer  (Finkel  et  al.,  
+2005) to extract persons, locations, organizations, and miscellaneous entities from the col-
+lection  of  bioinformatics  texts  from  PubMed  Central’s  Open  Access  corpus. 
 """
 
 # Tokenize đầu vào

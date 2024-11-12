@@ -1,8 +1,25 @@
 import os
+import platform
 import torch
 import logging
 from datasets import load_dataset
 from transformers import RagTokenizer, RagRetriever, RagSequenceForGeneration
+
+# Phát hiện hệ điều hành
+current_os = platform.system()
+
+if current_os == "Windows":
+    # Đường dẫn cho Windows
+    os.environ["TRANSFORMERS_CACHE"] = "D:/transformers_cache"
+    os.environ["HF_HOME"] = "D:/hf_home"
+elif current_os == "Darwin":  # macOS
+    # Đường dẫn cho macOS Sonoma
+    os.environ["TRANSFORMERS_CACHE"] = "/Users/tathiyennhi/transformers_cache"
+    os.environ["HF_HOME"] = "/Users/tathiyennhi/hf_home"
+else:
+    # Đường dẫn cho hệ điều hành khác (Linux, v.v.)
+    os.environ["TRANSFORMERS_CACHE"] = "/home/tathiyennhi/transformers_cache"
+    os.environ["HF_HOME"] = "/home/tathiyennhi/hf_home"
 
 # Thiết lập biến môi trường để bỏ qua lỗi OpenMP
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
@@ -12,7 +29,6 @@ logging.getLogger("transformers").setLevel(logging.ERROR)
 
 # Thử tải tập dữ liệu `wiki_dpr` với `trust_remote_code=True`
 try:
-    # Tải tập dữ liệu với `trust_remote_code=True` để chạy mã tuỳ chỉnh
     dataset = load_dataset("wiki_dpr", "psgs_w100.nq.exact", trust_remote_code=True)
     print("Tải dữ liệu thành công!")
 except ValueError as e:
@@ -25,8 +41,8 @@ tokenizer = RagTokenizer.from_pretrained("facebook/rag-token-base")
 retriever = RagRetriever.from_pretrained(
     "facebook/rag-token-base",
     index_name="exact",
-    use_dummy_dataset=True,  # Sử dụng dữ liệu giả lập cho kiểm tra nhanh
-    trust_remote_code=True   # Đảm bảo tham số này được truyền đúng
+    use_dummy_dataset=True,
+    trust_remote_code=True
 )
 
 # Tải mô hình RAG
