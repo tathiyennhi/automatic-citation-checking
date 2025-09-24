@@ -33,38 +33,15 @@ except LookupError:
     nltk.download('punkt')
 
 
-HEADING_KEYWORDS = {
-    # phổ biến trong paper khoa học
-    "abstract", "introduction", "related work", "background", "preliminaries",
-    "method", "methods", "methodology", "approach", "model", "models",
-    "experiments", "experimental setup", "results", "discussion",
-    "analysis", "ablation", "evaluation",
-    "conclusion", "conclusions", "future work", "limitations",
-    "acknowledgment", "acknowledgement", "acknowledgments", "acknowledgements",
-    "references", "appendix", "supplementary material"
-}
-
-REFERENCE_HEADINGS = [
-    r'\breferences\b',
-    r'\bbibliography\b',
-    r'\breferences\s+and\s+notes\b',
-    r'\breference\b'
-]
-
-
 class PDFToPipelineProcessor:
-    def __init__(self, sentences_per_file: int = 5, remove_headings: bool = True, remove_references: bool = True):
+    def __init__(self, sentences_per_file: int = 5):
         """
         Initialize the processor
 
         Args:
             sentences_per_file: Number of sentences per output file
-            remove_headings: Enable heading noise removal
-            remove_references: Remove trailing References/Bibliography section
         """
         self.sentences_per_file = sentences_per_file
-        self.remove_headings = remove_headings
-        self.remove_references = remove_references
 
     # -------------------------------
     # 1) PDF TEXT EXTRACTION (improved)
@@ -93,7 +70,7 @@ class PDFToPipelineProcessor:
             except Exception as e:
                 print(f"[pdfplumber] Warning: {e}")
 
-        # 3. Fallback: PyPDF2
+        # 3. Fallback: PyPDF2 (original approach)
         if HAS_PYPDF2:
             try:
                 text = self._extract_with_pypdf2(pdf_path)
@@ -106,22 +83,33 @@ class PDFToPipelineProcessor:
         return ""
 
     def _extract_with_fitz(self, pdf_path: str) -> str:
+        """
+        Use PyMuPDF to extract text with blocks to better preserve spaces.
+        """
         text_parts: List[str] = []
         with fitz.open(pdf_path) as doc:
             for page in doc:
+                # 'text' yields reasonable spacing; 'blocks' can be used if needed
                 txt = page.get_text("text")
-                text_parts.append(txt or "")
+                text_parts.append(txt)
         return "\n".join(text_parts)
 
     def _extract_with_pdfplumber(self, pdf_path: str) -> str:
+        """
+        Use pdfplumber with a sensible layout to preserve spaces.
+        """
         text_parts: List[str] = []
         with pdfplumber.open(pdf_path) as pdf:
             for page in pdf.pages:
+                # extract_text() of pdfplumber generally preserves spacing well
                 txt = page.extract_text() or ""
                 text_parts.append(txt)
         return "\n".join(text_parts)
 
     def _extract_with_pypdf2(self, pdf_path: str) -> str:
+        """
+        Fallback: PyPDF2 extraction (may lose spaces on some PDFs).
+        """
         text = ""
         with open(pdf_path, 'rb') as file:
             reader = PyPDF2.PdfReader(file)
@@ -131,138 +119,49 @@ class PDFToPipelineProcessor:
         return text
 
     # -------------------------------
-    # 2) REFERENCES CUT
-    # -------------------------------
-    def remove_references_section(self, raw_text: str) -> str:
-        """
-        Cắt phần từ heading 'References/Bibliography/References and Notes' đến hết tài liệu.
-        Dò theo nhiều biến thể, có/không numbering trước tiêu đề.
-        """
-        if not self.remove_references or not raw_text:
-            return raw_text
-
-        # Cho phép ở đầu dòng hoặc giữa dòng, ưu tiên match gần cuối
-        # Dùng MULTILINE để ^ khớp đầu dòng
-        pattern = re.compile(
-            r'(?im)'  # ignorecase + multiline
-            r'(^|\n)\s*(?:\d+(?:\.\d+){0,3}\s+)?'  # 3, 3.1, 3.1.2...
-            r'(?:' + '|'.join(h for h in REFERENCE_HEADINGS) + r')\s*[:\-–—]?\s*$'
-        )
-
-        matches = list(pattern.finditer(raw_text))
-        if not matches:
-            return raw_text
-
-        # Lấy match đầu tiên tính từ gần cuối (vì có thể "References" xuất hiện ở mục lục)
-        cut_here = matches[-1].start()
-        return raw_text[:cut_here].rstrip()
-
-    # -------------------------------
-    # 3) CLEANING / NORMALIZING
+    # 2) CLEANING / NORMALIZING
     # -------------------------------
     def normalize_spacing(self, text: str) -> str:
         """
         Heuristic fixes for missing spaces caused by bad PDF text layers.
+        - Insert space between lower→Upper (e.g., acknowledgementsEconStor -> acknowledgements EconStor)
+        - Insert space between letter↔digit (e.g., method1->method 1, 24Kentities->24K entities)
+        - Insert space after .,;:!? when followed by a letter/number without spaces
+        - Fix variants like "et al ." -> "et al."
+        - Collapse multiple spaces, trim
         """
         s = text
 
-        # 0) nối từ bị cắt bởi gạch nối khi xuống dòng: "compre-\nhensive" -> "comprehensive"
-        s = re.sub(r'([A-Za-z]{2,})-\s+([a-z]{2,})', r'\1\2', s)
-
-        # 1) Space sau punctuation thiếu
+        # Space after punctuation if missing
         s = re.sub(r'([.,;:!?])([A-Za-z0-9])', r'\1 \2', s)
 
-        # 2) lower->Upper (camel bump)
+        # Space between lower->Upper (camel bump)
         s = re.sub(r'([a-z])([A-Z])', r'\1 \2', s)
 
-        # 3) chữ<->số
+        # Space between letter<->digit and digit<->letter
         s = re.sub(r'([A-Za-z])([0-9])', r'\1 \2', s)
         s = re.sub(r'([0-9])([A-Za-z])', r'\1 \2', s)
 
-        # 4) "et al ." / "etal." -> "et al."
-        s = re.sub(r'\bet\s*al\s*\.', 'et al.', s)
-        s = re.sub(r'([A-Za-z])etal\.', r'\1 et al.', s)
+        # Fix "et al ." -> "et al."
+        s = re.sub(r'\bet\s+al\s+\.', 'et al.', s)
 
-        # 5) 2024 a -> 2024a
-        s = re.sub(r'(\b\d{4})\s*([a-z])\b', r'\1\2', s)
-
-        # 6) sửa viết tắt bị tách
-        s = re.sub(r'\bSci\s+IE\b', 'SciIE', s)
-        s = re.sub(r'\bSci\s+NER\b', 'SciNER', s)
-        s = re.sub(r'\bSci\s+RE\b', 'SciRE', s)
-
-        # 7) space trước '(' và sau ')'
+        # Occasionally PDFs drop a space before parentheses: "task(see" -> "task (see"
         s = re.sub(r'([A-Za-z0-9])\(', r'\1 (', s)
+        # And after closing parentheses: ")text" -> ") text"
         s = re.sub(r'\)([A-Za-z0-9])', r') \1', s)
 
-        # 8) Nối URL bể dòng: "https:// github.\ncom" -> "https://github.com"
-        s = re.sub(r'(https?://)\s+', r'\1', s)
-        s = re.sub(r'github\.\s*\n?\s*com', 'github.com', s)
-        # tổng quát: ". com" -> ".com" (và các TLD phổ biến)
-        s = re.sub(r'(\.)\s+(com|org|net|io|ai|edu)\b', r'.\2', s)
-
-        # Collapse spaces + trim
-        s = re.sub(r'[ \t]+', ' ', s)
+        # Reduce multiple spaces
+        s = re.sub(r'\s+', ' ', s)
         return s.strip()
-
-    def strip_heading_prefix(self, sentence: str) -> str:
-        """
-        Xoá phần prefix heading khi nó đứng ở ĐẦU câu.
-        Ví dụ: "1 1 Introduction ...", "3.2 Methods - ..." -> loại "1 1 Introduction", "3.2 Methods -"
-        """
-        if not self.remove_headings:
-            return sentence
-
-        pat = re.compile(
-            r'^\s*(?:\d+\s+){0,2}(?:\d+(?:\.\d+){0,3}\s+)?'  # 1 / 1 1 / 3.2 / 3.2.1 ...
-            r'(?:' + '|'.join(re.escape(k) for k in HEADING_KEYWORDS) + r')'  # keywords
-            r'[:\-–—]?\s*',
-            flags=re.IGNORECASE
-        )
-        return re.sub(pat, '', sentence).strip()
-
-    def is_heading_line(self, sentence: str) -> bool:
-        """
-        Heuristic nhận diện cả câu là heading để lọc bỏ:
-        - Rất ngắn (<= 8-10 từ), không có dấu chấm cuối
-        - Chủ yếu TitleCase/UPPER
-        - Khớp trực tiếp HEADING_KEYWORDS
-        """
-        if not self.remove_headings:
-            return False
-
-        s = sentence.strip()
-        if not s:
-            return False
-
-        # nếu chứa từ khoá heading rõ ràng và không có dấu chấm cuối -> khả năng cao là heading
-        low = s.lower().strip(':;—–- ')
-        if low in HEADING_KEYWORDS and not s.endswith('.'):
-            return True
-
-        # pattern có số mục + keyword, không có chấm cuối
-        if re.match(r'^\s*\d+(\.\d+)*\s+[A-Za-z ].{0,60}$', s) and not s.endswith('.'):
-            for kw in HEADING_KEYWORDS:
-                if kw in low:
-                    return True
-
-        # rất ngắn, không có chấm, phần lớn từ viết hoa đầu hoặc toàn UPPER
-        words = s.split()
-        if len(words) <= 8 and not s.endswith('.'):
-            uppish = sum(1 for w in words if (w.isupper() or (len(w) > 1 and w[0].isupper())))
-            if uppish >= max(3, int(0.7 * len(words))):
-                return True
-
-        return False
 
     def clean_text(self, text: str) -> str:
         """
         Clean and preprocess the extracted text
         """
-        # Normalize spacing first
+        # Normalize spacing first (critical for this PDF)
         text = self.normalize_spacing(text)
 
-        # Remove URLs (giữ lại phần còn lại)
+        # Remove URLs
         text = re.sub(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F]{2}))+', '', text)
 
         # Remove email addresses
@@ -276,35 +175,24 @@ class PDFToPipelineProcessor:
         return text
 
     # -------------------------------
-    # 4) SENTENCE SPLITTING + HEADING REMOVAL
+    # 3) SENTENCE SPLITTING
     # -------------------------------
     def split_into_sentences(self, text: str) -> List[str]:
         """
-        Split text into sentences using NLTK + strip heading prefix + drop heading-only lines.
+        Split text into sentences using NLTK
         """
         sentences = sent_tokenize(text)
+
+        # Filter out very short sentences (likely noise)
         filtered_sentences = []
-
-        for sent in sentences:
-            s = sent.strip()
-            if not s:
-                continue
-
-            # Xoá prefix heading nếu có
-            s = self.strip_heading_prefix(s)
-            if not s:
-                continue
-
-            # Bỏ cả câu nếu chỉ là heading
-            if self.is_heading_line(s):
-                continue
-
-            filtered_sentences.append(s)
-
+        for sentence in sentences:
+            sentence = sentence.strip()
+            if len(sentence) > 10 and not sentence.isdigit():
+                filtered_sentences.append(sentence)
         return filtered_sentences
 
     # -------------------------------
-    # 5) APA DETECTION (giữ nguyên logic)
+    # 4) APA DETECTION (unchanged logic)
     # -------------------------------
     def detect_apa_citations(self, sentences: List[str]) -> Tuple[List[str], List[str]]:
         """
@@ -358,7 +246,7 @@ class PDFToPipelineProcessor:
         return sentences, correct_citations
 
     # -------------------------------
-    # 6) CHUNKING & FILE I/O
+    # 5) CHUNKING & FILE I/O
     # -------------------------------
     def create_file_chunks(self, sentences: List[str], correct_citations: List[str]) -> List[Dict]:
         chunks = []
@@ -388,7 +276,7 @@ class PDFToPipelineProcessor:
             json.dump({"texts": texts, "correct_citations": correct_citations}, f, ensure_ascii=False, indent=2)
 
     # -------------------------------
-    # 7) MAIN PROCESS
+    # 6) MAIN PROCESS
     # -------------------------------
     def process_pdf(self, pdf_path: str, output_dir: str = "output"):
         print(f"Processing PDF: {pdf_path}")
@@ -399,10 +287,6 @@ class PDFToPipelineProcessor:
         if not raw_text:
             print("No text extracted from PDF!")
             return
-
-        # Cắt References/Bibliography TRƯỚC khi normalize/clean
-        if self.remove_references:
-            raw_text = self.remove_references_section(raw_text)
 
         print("Cleaning text...")
         cleaned_text = self.clean_text(raw_text)
@@ -438,8 +322,7 @@ class PDFToPipelineProcessor:
         print(f"Total APA citations found: {total_citations}")
         if len(chunks) > 0:
             print(f"Average sentences per file: {total_sentences/len(chunks):.1f}")
-            if total_sentences > 0:
-                print(f"Citation percentage: {(total_citations/total_sentences)*100:.1f}%")
+            print(f"Citation percentage: {(total_citations/total_sentences)*100:.1f}%")
 
         print(f"\nFiles saved in: {output_dir}/")
         for i, chunk in enumerate(chunks):
@@ -448,7 +331,7 @@ class PDFToPipelineProcessor:
 
 
 def main():
-    processor = PDFToPipelineProcessor(sentences_per_file=5, remove_headings=True, remove_references=True)
+    processor = PDFToPipelineProcessor(sentences_per_file=5)
     pdf_file = "sci-ner.pdf"   # thay đường dẫn nếu cần
     output_directory = "output"
 
