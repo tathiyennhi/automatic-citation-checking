@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Lấy full data của 1 paper qua GROBID API và xuất ra file .txt
+Fetch the full content of a paper via GROBID API and export it as a .txt file
 
-Yêu cầu:
-- GROBID server đang chạy (docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.8.0)
+Requirements:
+- GROBID server is running (docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.8.0)
 - pip install requests lxml
 """
 
@@ -16,6 +16,7 @@ API_ENDPOINT = f"{GROBID_URL}/api/processFulltextDocument"
 
 
 def fetch_tei(pdf_path: str) -> bytes:
+    """Send PDF to GROBID and get back TEI XML bytes."""
     if not os.path.exists(pdf_path):
         raise FileNotFoundError(f"PDF not found: {pdf_path}")
 
@@ -27,6 +28,7 @@ def fetch_tei(pdf_path: str) -> bytes:
 
 
 def parse_paper(tei_bytes: bytes):
+    """Parse TEI XML to extract title, authors, abstract, body, and references."""
     ns = {"tei": "http://www.tei-c.org/ns/1.0"}
     root = etree.fromstring(tei_bytes)
 
@@ -63,6 +65,7 @@ def parse_paper(tei_bytes: bytes):
 
 
 def export_to_txt(paper: dict, output_path: str):
+    """Export extracted data to a formatted .txt file."""
     with open(output_path, "w", encoding="utf-8") as f:
         f.write("===== TITLE =====\n")
         f.write(paper["title"] + "\n\n")
@@ -83,14 +86,14 @@ def export_to_txt(paper: dict, output_path: str):
 
 
 def main():
-    pdf_file = "paper.pdf"   # đổi thành PDF của bạn
-    output_txt = "paper_output.txt"
+    pdf_file = "sci-ner.pdf"  
+    output_txt = "TEST.txt"
 
     tei = fetch_tei(pdf_file)
     paper = parse_paper(tei)
     export_to_txt(paper, output_txt)
 
-    print(f"✅ Done! Xuất ra file: {output_txt}")
+    print(f"✅ Done! Exported to file: {output_txt}")
 
 
 if __name__ == "__main__":
