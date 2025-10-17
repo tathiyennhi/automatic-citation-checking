@@ -162,7 +162,7 @@ class PDFToPipelineProcessor:
         text = self.normalize_spacing(text)
 
         # Remove URLs
-        text = re.sub(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F]{2}))+', '', text)
+        text = re.sub(r'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\\(\\),]|(?:%[0-9a-fA-F]{2]))+', '', text)
 
         # Remove email addresses
         text = re.sub(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b', '', text)
@@ -311,6 +311,46 @@ class PDFToPipelineProcessor:
         print(f"Processing complete! Generated {len(chunks)} pairs of files in '{output_dir}' directory")
         self.print_summary(chunks, output_dir, len(correct_citations))
 
+    def process_pdf_with_counter(self, pdf_path: str, output_dir: str, start_counter: int) -> int:
+        """
+        Process PDF with counter starting from start_counter, returns next counter value
+        """
+        print(f"Processing PDF: {pdf_path}")
+        os.makedirs(output_dir, exist_ok=True)
+
+        print("Extracting text from PDF...")
+        raw_text = self.extract_text_from_pdf(pdf_path)
+        if not raw_text:
+            print("No text extracted from PDF!")
+            return start_counter
+
+        print("Cleaning text...")
+        cleaned_text = self.clean_text(raw_text)
+
+        print("Splitting into sentences...")
+        sentences = self.split_into_sentences(cleaned_text)
+        print(f"Found {len(sentences)} sentences")
+
+        print("Detecting APA citations...")
+        all_sentences, correct_citations = self.detect_apa_citations(sentences)
+        print(f"Found {len(correct_citations)} APA citations")
+
+        print("Creating file chunks...")
+        chunks = self.create_file_chunks(all_sentences, correct_citations)
+        print(f"Created {len(chunks)} file chunks")
+
+        print("Generating output files...")
+        current_counter = start_counter
+        for chunk in chunks:
+            self.create_in_file(chunk["texts"], current_counter, output_dir)
+            self.create_label_file(chunk["texts"], chunk["correct_citations"], current_counter, output_dir)
+            current_counter += 1
+
+        print(f"Processing complete! Generated {len(chunks)} pairs of files (indices {start_counter} to {current_counter-1})")
+        self.print_summary(chunks, output_dir, len(correct_citations))
+        
+        return current_counter
+
     def print_summary(self, chunks: List[Dict], output_dir: str, total_citations: int):
         print("\n" + "="*50)
         print("GENERATION SUMMARY")
@@ -332,14 +372,56 @@ class PDFToPipelineProcessor:
 
 def main():
     processor = PDFToPipelineProcessor(sentences_per_file=5)
-    pdf_file = "sci-ner.pdf"   
+    
+    # Choose mode: "single" or "bundle"
+    MODE = "single"  # Change to "bundle" to process multiple files
+    
     output_directory = "output"
-
-    if os.path.exists(pdf_file):
-        processor.process_pdf(pdf_file, output_directory)
-    else:
-        print(f"PDF file '{pdf_file}' not found!")
-        print("Please make sure the PDF file exists in the current directory.")
+    
+    if MODE == "single":
+        # Process single file
+        pdf_file = "paper.pdf"
+        if os.path.exists(pdf_file):
+            processor.process_pdf(pdf_file, output_directory)
+        else:
+            print(f"PDF file '{pdf_file}' not found!")
+            print("Please make sure the PDF file exists in the current directory.")
+    
+    elif MODE == "bundle":
+        # Process multiple files in papers folder
+        papers_dir = "papers"
+        if not os.path.exists(papers_dir):
+            print(f"Folder '{papers_dir}' not found!")
+            print("Please create a 'papers' folder and add PDF files to it.")
+            return
+        
+        pdf_files = sorted([f for f in os.listdir(papers_dir) if f.endswith('.pdf')])
+        
+        if not pdf_files:
+            print(f"No PDF files found in '{papers_dir}' folder!")
+            return
+        
+        print(f"Found {len(pdf_files)} PDF files to process")
+        print("="*50)
+        
+        os.makedirs(output_directory, exist_ok=True)
+        file_counter = 0  # Continuous counter for all files
+        
+        for pdf_file in pdf_files:
+            pdf_path = os.path.join(papers_dir, pdf_file)
+            print(f"\n{'='*50}")
+            print(f"Processing: {pdf_file}")
+            print(f"Starting from file index: {file_counter}")
+            print(f"{'='*50}")
+            
+            # Process PDF and get number of chunks created
+            file_counter = processor.process_pdf_with_counter(pdf_path, output_directory, file_counter)
+        
+        print(f"\n{'='*50}")
+        print("ALL FILES PROCESSED SUCCESSFULLY")
+        print(f"{'='*50}")
+        print(f"Total output files: {file_counter} pairs")
+        print(f"Files saved in: {output_directory}/")
 
 
 if __name__ == "__main__":

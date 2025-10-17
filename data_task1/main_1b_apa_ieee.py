@@ -175,7 +175,14 @@ class CitationExtractionPipeline:
 
         parts.append(text[last:])
         text_norm = "".join(parts)
-        mask = "; ".join(all_items) if all_items else ""
+
+        # === APA mask formatting ===
+        # Nếu có ít nhất 1 match là "paren" → dùng ngoặc tròn; nếu chỉ inline → không ngoặc.
+        had_paren = any(k == "paren" for k, _, _, _ in matches)
+        if all_items:
+            mask = f"({'; '.join(all_items)})" if had_paren else "; ".join(all_items)
+        else:
+            mask = ""
 
         return {
             "style": "APA",
@@ -238,7 +245,9 @@ class CitationExtractionPipeline:
 
         parts.append(text[last:])
         text_norm = "".join(parts)
-        mask = "; ".join(all_items) if all_items else ""
+
+        # === IEEE mask formatting ===
+        mask = f"[{', '.join(all_items)}]" if all_items else "[]"
 
         return {
             "style": "IEEE",
@@ -293,6 +302,7 @@ class CitationExtractionPipeline:
         path = os.path.join(out_dir, f"citation_{idx:03d}.label")
         with open(path, "w", encoding="utf-8") as f:
             json.dump(obj, f, ensure_ascii=False, indent=2)
+
 
 
 def main():
