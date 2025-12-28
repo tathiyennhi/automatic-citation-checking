@@ -239,13 +239,13 @@ class PDFToPipelineProcessorAPA:
 
     @staticmethod
     def create_in_file(texts: List[str], idx: int, outdir: str):
-        path = os.path.join(outdir, f"data_{idx:03d}.in")
+        path = os.path.join(outdir, f"{idx:03d}.in")
         with open(path, "w", encoding="utf-8") as f:
             json.dump({"texts": texts}, f, ensure_ascii=False, indent=2)
 
     @staticmethod
     def create_label_file(texts: List[str], correct_citations: List[str], idx: int, outdir: str):
-        path = os.path.join(outdir, f"data_{idx:03d}.label")
+        path = os.path.join(outdir, f"{idx:03d}.label")
         style_value = "APA" if correct_citations else ""
         with open(path, "w", encoding="utf-8") as f:
             json.dump({

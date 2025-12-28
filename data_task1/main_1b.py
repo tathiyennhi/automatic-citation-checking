@@ -38,16 +38,24 @@ class CitationExtractionPipeline:
 
                 print(f"Debug: Successfully loaded JSON for {filename}")
 
-                # Chỉ xử lý file có correct_citations
-                if "correct_citations" in data and data["correct_citations"]:
-                    print(f"Debug: About to call process_label_file for {filename}")
-                    processed, citations_count = self.process_label_file(
-                        data, filename, output_dir, total_processed
-                    )
-                    total_processed += processed
-                    total_citations_found += citations_count
-                else:
-                    print(f"Debug: No correct_citations found in {filename}")
+                # STRICT: Chỉ xử lý file có style VÀ correct_citations
+                sentences = data.get("correct_citations", [])
+                style = data.get("style", "")
+
+                if not style or not sentences:
+                    # Edge case: có citations nhưng không có style → warning
+                    if sentences and not style:
+                        print(f"⚠️  Warning: {filename} has citations but no style! Skipping.")
+                    else:
+                        print(f"Debug: No correct_citations found in {filename}")
+                    continue
+
+                print(f"Debug: About to call process_label_file for {filename}")
+                processed, citations_count = self.process_label_file(
+                    data, filename, output_dir, total_processed
+                )
+                total_processed += processed
+                total_citations_found += citations_count
 
             except json.JSONDecodeError as e:
                 print(f"JSON error in {filename}: {e}")
@@ -283,8 +291,8 @@ def main():
     processor = CitationExtractionPipeline()
 
     # Input directory từ main.py
-    input_directory = "output"
-    output_directory = "task1b_output"
+    input_directory = "../data_outputs/task1a"
+    output_directory = "../data_outputs/task1b"
 
     if os.path.exists(input_directory):
         processor.process_directory(input_directory, output_directory)

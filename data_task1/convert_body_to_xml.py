@@ -3,8 +3,8 @@ import requests
 from lxml import etree
 
 # Config
-PDF_PATH = "sci-ner.pdf"
-OUTPUT_XML = "sci-ner.xml"
+PDF_PATH = "papers/ssrn-5509960.pdf"
+OUTPUT_XML = "ssrn-5509960.xml"
 GROBID_URL = "http://localhost:8070"
 
 def pdf_to_xml_without_references(pdf_path: str, output_xml: str, grobid_url: str = "http://localhost:8070"):

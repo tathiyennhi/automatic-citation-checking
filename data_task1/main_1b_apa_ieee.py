@@ -67,10 +67,14 @@ class CitationExtractionPipeline:
                 continue
 
             sentences = data.get("correct_citations", [])
-            if not sentences:
-                continue
+            forced_style = data.get("style", "")  # "APA" | "IEEE" if the batch is style-forced
 
-            forced_style = data.get("style")  # "APA" | "IEEE" if the batch is style-forced
+            # STRICT: Task 1b chỉ xử lý chunks có style (= có citations)
+            if not forced_style or not sentences:
+                # Edge case: có citations nhưng không có style → warning
+                if sentences and not forced_style:
+                    print(f"⚠️  Warning: {filename} has citations but no style! Skipping.")
+                continue
             s_count, m_count = self._process_file(sentences, forced_style, output_dir, total_sent)
             total_sent += s_count
             total_mentions += m_count

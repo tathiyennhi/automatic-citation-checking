@@ -1,0 +1,112 @@
+================================================================================
+TASK3 VERSION COMPARISON: V1 vs V2 vs V3
+================================================================================
+Files compared: 10
+
+================================================================================
+AGGREGATE METRICS
+================================================================================
+
+Metric                         V1 (Old)             V2 (Improved)        V3 (Sentence-level) 
+------------------------------------------------------------------------------------------
+Total Spans                    33                   33                   33                  
+Duplicate Spans                3                    0                    1                   
+Duplicate Rate (%)             9.09                 0.00                 3.03                
+Very Short (<15)               2                    3                    4                   
+Very Short Rate (%)            6.06                 9.09                 12.12               
+Incomplete Ending              2                    2                    0                   
+Incomplete Rate (%)            6.06                 6.06                 0.00                
+✅ QUALITY SCORE (%)            78.79                84.85                84.85               
+
+================================================================================
+INTERPRETATION
+================================================================================
+🏆 BEST VERSION: V3 (quality: 84.85%)
+
+V3 vs V1: +6.06% quality
+V3 vs V2: +0.00% quality
+
+⚠️  V3 increases duplicates: +3.0% vs V2
+⚠️  V3 increases very short spans: +3.0% vs V2
+
+================================================================================
+EXAMPLE CHANGES (First 5 files with differences)
+================================================================================
+
+Doc 1:
+  V1 quality: 66.7%
+  V2 quality: 66.7%
+  V3 quality: 100.0%
+  Changes: 3 spans modified
+    [CITATION_1]:
+      V1 (48 chars): "We highlight our contributions by comparing with"
+      V2 (48 chars): "We highlight our contributions by comparing with"
+      V3 (51 chars): "We highlight our contributions by comparing with  ."
+    [CITATION_2]:
+      V1 (283 chars): "In the state-wise ambiguity set is restricted to the followi..."
+      V2 (283 chars): "In the state-wise ambiguity set is restricted to the followi..."
+      V3 (283 chars): "In  the state-wise ambiguity set is restricted to the follow..."
+    [CITATION_3]:
+      V1 (240 chars): "In particular, we consider a class of ambiguity sets, first ..."
+      V2 (240 chars): "In particular, we consider a class of ambiguity sets, first ..."
+      V3 (241 chars): "In particular, we consider a class of ambiguity sets, first ..."
+
+Doc 2:
+  V1 quality: 100.0%
+  V2 quality: 100.0%
+  V3 quality: 100.0%
+  Changes: 1 spans modified
+    [CITATION_1]:
+      V1 (173 chars): "1 This ageing population is consuming increasing amounts of ..."
+      V2 (171 chars): "This ageing population is consuming increasing amounts of he..."
+      V3 (171 chars): "This ageing population is consuming increasing amounts of he..."
+
+Doc 3:
+  V1 quality: 66.7%
+  V2 quality: 66.7%
+  V3 quality: 44.4%
+  Changes: 6 spans modified
+    [CITATION_1]:
+      V1 (132 chars): "Brain reorganization induced by a reduction in somatosensory..."
+      V2 (132 chars): "Brain reorganization induced by a reduction in somatosensory..."
+      V3 (135 chars): "Brain reorganization induced by a reduction in somatosensory..."
+    [CITATION_2]:
+      V1 (332 chars): "For example, a single cell recording study on monkeys depriv..."
+      V2 (332 chars): "For example, a single cell recording study on monkeys depriv..."
+      V3 (335 chars): "For example, a single cell recording study on monkeys depriv..."
+    [CITATION_3]:
+      V1 (215 chars): "Evidence for the perceptual correlates of this topographic r..."
+      V2 (136 chars): "Evidence for the perceptual correlates of this topographic r..."
+      V3 (136 chars): "Evidence for the perceptual correlates of this topographic r..."
+
+Doc 4:
+  V1 quality: 66.7%
+  V2 quality: 100.0%
+  V3 quality: 100.0%
+  Changes: 3 spans modified
+    [CITATION_1]:
+      V1 (135 chars): "Recently, substantial progress has been achieved in understa..."
+      V2 (132 chars): "Recently, substantial progress has been achieved in understa..."
+      V3 (132 chars): "Recently, substantial progress has been achieved in understa..."
+    [CITATION_2]:
+      V1 (135 chars): "Recently, substantial progress has been achieved in understa..."
+      V2 (185 chars): "Recently, substantial progress has been achieved in understa..."
+      V3 (122 chars): "substantial progress has been achieved in understanding the ..."
+    [CITATION_3]:
+      V1 (155 chars): "Initially, R7 and R8 express the transcription factor spalt ..."
+      V2 (155 chars): "Initially, R7 and R8 express the transcription factor spalt ..."
+      V3 (158 chars): "Initially, R7 and R8 express the transcription factor spalt ..."
+
+Doc 5:
+  V1 quality: 100.0%
+  V2 quality: 100.0%
+  V3 quality: 100.0%
+  Changes: 2 spans modified
+    [CITATION_1]:
+      V1 (128 chars): "This property is the same as the concept of "s-rectangularit..."
+      V2 (128 chars): "This property is the same as the concept of "s-rectangularit..."
+      V3 (130 chars): "This property is the same as the concept of "s-rectangularit..."
+    [CITATION_2]:
+      V1 (180 chars): "In addition, showed that the robust MDP with coupled uncerta..."
+      V2 (180 chars): "In addition, showed that the robust MDP with coupled uncerta..."
+      V3 (181 chars): "In addition,  showed that the robust MDP with coupled uncert..."

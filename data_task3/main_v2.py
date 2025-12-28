@@ -1,13 +1,13 @@
 """
-Task 3 generation using Gemini API.
+Task 3 generation - VERSION 2 with IMPROVED LOGIC
 
-For each Task 2 .label file:
-  - copy as Task 3 .in
-  - call Gemini to extract citation spans
-  - write Task 3 .label with {doc_id, text, correct_citation, citation_spans, bib_entries}
+KEY IMPROVEMENTS:
+1. Fix duplicate spans for adjacent citations
+2. Better clause detection for multiple citations
+3. Unique span for each citation
 
 Usage:
-  GEMINI_API_KEY=... python3 data_task3/main.py --task2-dir data_outputs/task2 --output-dir data_outputs/task3 --limit 10
+  python3 data_task3/main_v2.py --task2-dir data_outputs/task2 --output-dir data_outputs/task3_v2 --limit 100
 """
 
 import argparse
@@ -21,10 +21,7 @@ from typing import Dict, List, Optional
 import requests
 
 GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
-# Use Flash for free tier; override via env GEMINI_MODEL if needed
 MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
-# API key - can be overridden via GEMINI_API_KEY environment variable
-# NOTE: currently hard-coded as requested; consider removing for security in production.
 DEFAULT_API_KEY = "AIzaSyBd12_HA7Uf0LtfYpLYnzD9QWOoFTXjaQU"
 
 
@@ -69,7 +66,8 @@ def build_prompt(text: str, markers: List[str]) -> str:
         "2. Extract the complete text span WITHOUT the marker itself\n"
         "3. The span should be the sentence or clause that contains the factual claim being cited\n"
         "4. IMPORTANT: span_text must NEVER be empty - always extract the relevant context\n"
-        "5. If a citation appears at the end of a sentence/paragraph, extract the sentence BEFORE the marker\n\n"
+        "5. If a citation appears at the end of a sentence/paragraph, extract the sentence BEFORE the marker\n"
+        "6. CRITICAL: Each citation must have a UNIQUE span - avoid duplicate spans for different citations\n\n"
         "EXAMPLES:\n"
         'Text: "Recent studies show climate change affects biodiversity [CITATION_1] ."\n'
         'Output: {"citation_id": "[CITATION_1]", "span_text": "Recent studies show climate change affects biodiversity"}\n\n'
@@ -79,7 +77,8 @@ def build_prompt(text: str, markers: List[str]) -> str:
         'Return ONLY a valid JSON array with format: [{"citation_id": "[CITATION_X]", "span_text": "..."}]\n'
         "- Do not include markdown code fences unless necessary\n"
         "- Do not include explanations, only the JSON array\n"
-        "- Ensure every span_text is non-empty and contains the cited claim\n\n"
+        "- Ensure every span_text is non-empty and contains the cited claim\n"
+        "- Ensure each citation has a UNIQUE span (no duplicates)\n\n"
         f"MARKERS TO EXTRACT: {markers}\n\n"
         "TEXT:\n"
         f"{text}\n\n"
@@ -99,6 +98,206 @@ def clean_span_text(span_text: str) -> str:
     # Fix double periods (e.g., "Ref.." -> "Ref.")
     span_text = re.sub(r"\.\.+", ".", span_text)
     return span_text.strip()
+
+
+def find_clause_boundaries(text: str, start: int, end: int) -> tuple:
+    """
+    Find natural clause boundaries (comma, semicolon, conjunction).
+    Used for splitting multiple citations in same sentence.
+    """
+    # Look backward for clause start
+    clause_start = start
+    for i in range(start - 1, max(0, start - 100), -1):
+        if text[i] in '.,;:':
+            clause_start = i + 1
+            break
+        # Also break at conjunctions
+        if i > 2 and text[i-4:i] in [' and', ' or ', 'but ']:
+            clause_start = i
+            break
+
+    # Look forward for clause end
+    clause_end = end
+    for i in range(end, min(len(text), end + 100)):
+        if text[i] in '.,;:':
+            clause_end = i
+            break
+
+    return clause_start, clause_end
+
+
+def fallback_spans_v2(text: str, markers: List[str]) -> List[Dict]:
+    """
+    IMPROVED fallback strategy - VERSION 2
+
+    KEY CHANGES:
+    1. Fix duplicate spans for adjacent citations
+    2. Better handling of multiple citations in same sentence
+    3. Each citation gets unique context
+
+    Strategy:
+    - Citation at sentence START → take full sentence
+    - Citation at sentence END → take text before it
+    - Multiple ADJACENT citations → extract specific clause for each
+    - Multiple NON-ADJACENT citations → take text between citations
+    """
+    spans: List[Dict] = []
+
+    # Sort markers by their position for easier handling
+    marker_positions = [(m, text.find(m)) for m in markers if text.find(m) != -1]
+    marker_positions.sort(key=lambda x: x[1])
+
+    for m in markers:
+        idx = text.find(m)
+        if idx == -1:
+            # Marker not found - use first 200 chars as fallback
+            clean_text = re.sub(r"\[CITATION_\d+\]", "", text.strip())
+            clean_text = clean_span_text(clean_text[:200])
+            spans.append({"citation_id": m, "span_text": clean_text})
+            continue
+
+        # Find sentence boundaries
+        sentence_start = 0
+        before_text = text[:idx]
+        for match in re.finditer(r"[.!?]\s+(?=[A-Z•])", before_text):
+            sentence_start = match.end()
+
+        sentence_end = len(text)
+        after_text = text[idx + len(m):]
+        match = re.search(r"[.!?](?:\s+[A-Z•]|\s*$)", after_text)
+        if match:
+            sentence_end = idx + len(m) + match.start() + 1
+
+        # Get sentence and check for multiple citations
+        sentence_text = text[sentence_start:sentence_end]
+        citations_in_sentence = re.findall(r"\[CITATION_\d+\]", sentence_text)
+
+        # NEW LOGIC: Better handling of multiple citations
+        if len(citations_in_sentence) > 1:
+            # Multiple citations in sentence
+
+            # Check if current citation is adjacent to others
+            text_before_marker = text[sentence_start:idx]
+            text_after_marker = text[idx + len(m):sentence_end]
+
+            has_adjacent_before = re.search(r"\[CITATION_\d+\]\s*$", text_before_marker)
+            has_adjacent_after = re.match(r"^\s*\[CITATION_\d+\]", text_after_marker)
+
+            if has_adjacent_before or has_adjacent_after:
+                # ADJACENT CITATIONS - extract clause/phrase specific to this citation
+                # This is the FIX for duplicate issue!
+
+                # Find the current citation's position in the list
+                current_pos = None
+                for i, (marker, pos) in enumerate(marker_positions):
+                    if marker == m and pos == idx:
+                        current_pos = i
+                        break
+
+                if current_pos is not None:
+                    # Determine span boundaries based on adjacent citations
+                    if current_pos > 0:
+                        # Has previous citation
+                        prev_marker, prev_idx = marker_positions[current_pos - 1]
+                        if prev_idx >= sentence_start:  # In same sentence
+                            span_start = prev_idx + len(prev_marker)
+                        else:
+                            span_start = sentence_start
+                    else:
+                        span_start = sentence_start
+
+                    if current_pos < len(marker_positions) - 1:
+                        # Has next citation
+                        next_marker, next_idx = marker_positions[current_pos + 1]
+                        if next_idx < sentence_end:  # In same sentence
+                            span_end = next_idx
+                        else:
+                            span_end = sentence_end
+                    else:
+                        span_end = sentence_end
+
+                    # Extract span
+                    span_text = text[span_start:idx].strip()
+
+                    # If too short, try to expand to clause boundaries
+                    if len(span_text) < 20:
+                        clause_start, clause_end = find_clause_boundaries(text, span_start, idx)
+                        span_text = text[clause_start:clause_end].strip()
+
+                    # Clean
+                    span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
+                    span_text = clean_span_text(span_text)
+
+                else:
+                    # Fallback: take full sentence
+                    span_text = sentence_text
+                    span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
+                    span_text = clean_span_text(span_text)
+
+            else:
+                # NON-ADJACENT multiple citations
+                # Take text before current marker, after previous marker
+
+                prev_citation_idx = -1
+                for other_m, other_idx in marker_positions:
+                    if other_idx < idx and other_idx >= sentence_start:
+                        prev_citation_idx = other_idx
+
+                if prev_citation_idx != -1:
+                    prev_marker = [m2 for m2, pos in marker_positions if pos == prev_citation_idx][0]
+                    span_start = prev_citation_idx + len(prev_marker)
+                    span_text = text[span_start:idx].strip()
+                    span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
+                    span_text = clean_span_text(span_text)
+                else:
+                    span_text = text[sentence_start:idx].strip()
+                    span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
+                    span_text = clean_span_text(span_text)
+
+        else:
+            # Single citation in sentence - use position-based logic
+            text_before_marker = text[sentence_start:idx]
+            text_before_clean = re.sub(r"\[CITATION_\d+\]", "", text_before_marker).strip()
+
+            sentence_clean = re.sub(r"\[CITATION_\d+\]", "", sentence_text).strip()
+            sentence_length = len(sentence_clean)
+
+            if sentence_length > 0:
+                position_ratio = len(text_before_clean) / sentence_length
+            else:
+                position_ratio = 0.5
+
+            if position_ratio < 0.15:
+                # Citation at START → full sentence
+                span_text = sentence_text
+                span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
+            elif position_ratio > 0.85:
+                # Citation at END → text before it
+                span_text = text[sentence_start:idx].strip()
+                span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
+            else:
+                # Citation in MIDDLE → full sentence
+                span_text = sentence_text
+                span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
+
+            span_text = clean_span_text(span_text)
+
+        # Fallback for too short spans
+        if len(span_text) < 5:
+            context_start = max(0, sentence_start - 50)
+            context_end = min(len(text), sentence_end + 50)
+            span_text = text[context_start:context_end].strip()
+            span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
+            span_text = clean_span_text(span_text)
+
+        # Final validation
+        if not span_text:
+            span_text = re.sub(r"\[CITATION_\d+\]", "", text.strip())[:200]
+            span_text = clean_span_text(span_text)
+
+        spans.append({"citation_id": m, "span_text": span_text})
+
+    return spans
 
 
 def call_gemini(
@@ -137,7 +336,6 @@ def call_gemini(
                 print(f"  API returned no candidates (attempt {attempt})")
                 return None
 
-            # Robust extraction of text from candidates
             try:
                 parts = candidates[0].get("content", {}).get("parts", [])
                 text_parts = [p.get("text", "") for p in parts if "text" in p]
@@ -151,7 +349,6 @@ def call_gemini(
 
             parsed = extract_json_from_text(text_out)
             if parsed is not None:
-                # Validate: no empty span_text allowed AND citation_id present
                 all_non_empty = all(
                     isinstance(span.get("span_text", ""), str)
                     and span.get("span_text", "").strip() != ""
@@ -163,154 +360,24 @@ def call_gemini(
                     return parsed
 
                 print(
-                    f"  Warning: Gemini returned invalid spans (empty span_text or missing citation_id), "
-                    f"retrying... (attempt {attempt})"
+                    f"  Warning: Gemini returned invalid spans, retrying... (attempt {attempt})"
                 )
             else:
                 print(f"  Could not parse JSON from model output (attempt {attempt})")
 
         elif resp.status_code == 429:
-            # Rate limit / quota: stop early and use fallback
             print("  Rate limited (429) - returning None to use fallback.")
             return None
         elif resp.status_code in (500, 503):
-            # Server error → backoff
             print(f"  API error {resp.status_code}, backing off... (attempt {attempt})")
             time.sleep(backoff)
             backoff = min(backoff * 2, max_backoff)
             continue
         else:
-            # Other errors: break
             print(f"  API error {resp.status_code}: {resp.text[:200]}")
             break
 
     return None
-
-
-def fallback_spans(text: str, markers: List[str]) -> List[Dict]:
-    """
-    Smart fallback strategy:
-    - Citation at sentence START → take full sentence
-    - Citation in sentence MIDDLE → take full sentence (remove marker)
-    - Citation at sentence END → take only text before it
-    - Multiple citations in sentence (not adjacent) → take text before marker (excluding previous marker's text)
-    """
-    spans: List[Dict] = []
-
-    # Sort markers by their position for easier handling
-    marker_positions = [(m, text.find(m)) for m in markers if text.find(m) != -1]
-    marker_positions.sort(key=lambda x: x[1])
-
-    for m in markers:
-        idx = text.find(m)
-        if idx == -1:
-            # Marker not found - use first 200 chars as fallback
-            clean_text = re.sub(r"\[CITATION_\d+\]", "", text.strip())
-            clean_text = clean_span_text(clean_text[:200])
-            spans.append({"citation_id": m, "span_text": clean_text})
-            continue
-
-        # Find sentence boundaries
-        # Sentence start: last real sentence boundary before marker
-        sentence_start = 0
-        before_text = text[:idx]
-        for match in re.finditer(r"[.!?]\s+(?=[A-Z•])", before_text):
-            sentence_start = match.end()
-
-        # Sentence end: next real sentence boundary after marker
-        sentence_end = len(text)
-        after_text = text[idx + len(m):]
-        match = re.search(r"[.!?](?:\s+[A-Z•]|\s*$)", after_text)
-        if match:
-            sentence_end = idx + len(m) + match.start() + 1
-
-        # Determine citation position in sentence based on RELATIVE POSITION, not character count
-        # Calculate position as percentage of sentence length
-        text_before_marker = text[sentence_start:idx]
-        text_before_clean = re.sub(r"\[CITATION_\d+\]", "", text_before_marker).strip()
-
-        text_after_marker = text[idx + len(m):sentence_end]
-        text_after_clean = re.sub(r"\[CITATION_\d+\]", "", text_after_marker).strip()
-
-        # Total sentence length (without citations)
-        sentence_text = text[sentence_start:sentence_end]
-        sentence_clean = re.sub(r"\[CITATION_\d+\]", "", sentence_text).strip()
-        sentence_length = len(sentence_clean)
-
-        # Position of citation in sentence (0.0 = start, 1.0 = end)
-        if sentence_length > 0:
-            position_ratio = len(text_before_clean) / sentence_length
-        else:
-            position_ratio = 0.5
-
-        # Check for adjacent citations
-        adjacent_citations = re.search(r"\[CITATION_\d+\]\s*$", text_before_marker) or \
-                           re.match(r"^\s*\[CITATION_\d+\]", text_after_marker)
-
-        # STRATEGY DECISION based on relative position:
-        if position_ratio < 0.15 and not adjacent_citations:
-            # Citation at START of sentence (first 15%) → take full sentence
-            span_text = text[sentence_start:sentence_end].strip()
-            span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
-
-        elif position_ratio > 0.85 and not adjacent_citations:
-            # Citation at END of sentence (last 15%) → take only text before it
-            span_text = text[sentence_start:idx].strip()
-            span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
-
-        else:
-            # Citation in MIDDLE or has adjacent citations
-            # Check if there are other citations in this sentence (not adjacent)
-            sentence_text = text[sentence_start:sentence_end]
-            citations_in_sentence = re.findall(r"\[CITATION_\d+\]", sentence_text)
-
-            if len(citations_in_sentence) > 1 and not adjacent_citations:
-                # Multiple non-adjacent citations → take text before current marker
-                # But exclude text from previous citation marker
-
-                # Find previous citation in this sentence
-                prev_citation_idx = -1
-                for other_m, other_idx in marker_positions:
-                    if other_idx < idx and other_idx >= sentence_start:
-                        prev_citation_idx = other_idx
-
-                if prev_citation_idx != -1:
-                    # Find the marker length
-                    prev_marker = [m2 for m2, pos in marker_positions if pos == prev_citation_idx][0]
-                    # Start after previous marker
-                    span_start = prev_citation_idx + len(prev_marker)
-                    span_text = text[span_start:idx].strip()
-                    span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
-                else:
-                    # No previous citation, take from sentence start
-                    span_text = text[sentence_start:idx].strip()
-                    span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
-            else:
-                # Single citation or adjacent citations → take full sentence
-                span_text = text[sentence_start:sentence_end].strip()
-                span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
-
-        # Fallback for too short spans (only if VERY short or empty)
-        # Note: Short spans like ", lower-limb" (9 chars) can be valid in list contexts
-        # User will handle special cases manually, so we only expand if critical
-        if len(span_text) < 5:
-            # Take wider context
-            context_start = max(0, sentence_start - 50)
-            context_end = min(len(text), sentence_end + 50)
-            span_text = text[context_start:context_end].strip()
-            span_text = re.sub(r"\[CITATION_\d+\]", "", span_text).strip()
-
-        # Clean spacing & punctuation
-        span_text = clean_span_text(span_text)
-
-        # Final validation
-        if not span_text:
-            span_text = re.sub(r"\[CITATION_\d+\]", "", text.strip())[:200]
-            span_text = clean_span_text(span_text)
-
-        spans.append({"citation_id": m, "span_text": span_text})
-
-    return spans
 
 
 def normalize_and_merge_spans(
@@ -335,17 +402,15 @@ def normalize_and_merge_spans(
             continue
         cleaned = clean_span_text(raw_text)
         if not cleaned:
-            # skip empty after cleaning
             continue
-        # keep first occurrence, ignore duplicates
         if cid not in span_by_id:
             span_by_id[cid] = {"citation_id": cid, "span_text": cleaned}
 
-    # 2) Find missing markers and fill via fallback
+    # 2) Find missing markers and fill via fallback V2
     missing = [m for m in markers if m not in span_by_id]
     if missing:
-        print(f"  Filling {len(missing)} missing spans via fallback: {missing}")
-        fb_spans = fallback_spans(text, missing)
+        print(f"  Filling {len(missing)} missing spans via fallback V2: {missing}")
+        fb_spans = fallback_spans_v2(text, missing)
         for fb in fb_spans:
             cid = fb["citation_id"]
             if cid in markers_set and cid not in span_by_id:
@@ -374,32 +439,28 @@ def process_file(api_key: str, label_path: Path, out_dir: Path, force_reprocess:
 
     label_out = out_dir / f"{doc_id}.label"
 
-    # Check if we should skip (file exists and not forcing reprocess)
+    # Check if we should skip
     if label_out.exists() and not force_reprocess:
         existing_data = load_json(label_out)
         existing_spans = existing_data.get("citation_spans", [])
-        generator = existing_data.get("generator", "")
         has_empty = any(span.get("span_text", "").strip() == "" for span in existing_spans)
 
-        # Skip if already processed (gemini OR fallback) and no empty spans
         if not has_empty:
-            # print(f"  ✓ Skip {doc_id} (already processed with {generator})")  # Too verbose
             return "skipped"
 
-        print(f"  Reprocessing {doc_id} (has empty spans, generator={generator})")
+        print(f"  Reprocessing {doc_id} (has empty spans)")
 
     # Build prompt & call Gemini
     prompt = build_prompt(text, markers)
     spans_from_model = call_gemini(api_key, prompt)
 
     if spans_from_model is not None:
-        # Normalize + fill missing markers using fallback
         spans = normalize_and_merge_spans(spans_from_model, markers, text)
         generator = "gemini"
     else:
-        print(f"  Using fallback for {doc_id}")
-        spans = fallback_spans(text, markers)
-        generator = "fallback"
+        print(f"  Using fallback V2 for {doc_id}")
+        spans = fallback_spans_v2(text, markers)
+        generator = "fallback_v2"
 
     # Final validation
     empty_spans = [s for s in spans if s.get("span_text", "").strip() == ""]
@@ -409,11 +470,10 @@ def process_file(api_key: str, label_path: Path, out_dir: Path, force_reprocess:
             f"{[s['citation_id'] for s in empty_spans]}"
         )
 
-    # Also sanity check coverage
     span_ids = {s.get("citation_id") for s in spans}
     missing_ids = set(markers) - span_ids
     if missing_ids:
-        print(f"  WARNING: {doc_id} missing spans for markers (even after fallback): {missing_ids}")
+        print(f"  WARNING: {doc_id} missing spans for markers: {missing_ids}")
 
     record = {
         "doc_id": doc_id,
@@ -429,18 +489,18 @@ def process_file(api_key: str, label_path: Path, out_dir: Path, force_reprocess:
 
 def main():
     base = Path(__file__).resolve().parent.parent
-    parser = argparse.ArgumentParser(description="Generate Task3 labels using Gemini.")
+    parser = argparse.ArgumentParser(description="Generate Task3 V2 labels using improved logic.")
     parser.add_argument(
         "--task2-dir",
         type=Path,
         default=base / "data_outputs" / "task2",
-        help="Path to Task 2 labels (.label). Defaults to ../data_outputs/task2 relative to this script.",
+        help="Path to Task 2 labels (.label).",
     )
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=base / "data_outputs" / "task3",
-        help="Output directory for Task 3 (.in and .label). Defaults to ../data_outputs/task3.",
+        default=base / "data_outputs" / "task3_v2",
+        help="Output directory for Task 3 V2.",
     )
     parser.add_argument("--limit", type=int, default=-1, help="number of files to process (-1 for all)")
     parser.add_argument(
@@ -459,7 +519,6 @@ def main():
     label_files = list(args.task2_dir.glob("*.label"))
 
     def sort_key(p: Path):
-        # Try numeric sort if filename is integer, otherwise push to the end sorted lexicographically
         try:
             return (0, int(p.stem))
         except ValueError:
@@ -471,14 +530,16 @@ def main():
         files = files[: args.limit]
 
     if not files:
-        print(f"No files found in {args.task2_dir} (cwd: {Path.cwd()})")
+        print(f"No files found in {args.task2_dir}")
         return
 
     print(f"Found {len(files)} files. Output -> {args.output_dir}")
     if args.force_reprocess:
         print("Force reprocess mode: will regenerate all files")
+    print()
+    print("VERSION: V2 with improved duplicate-free logic")
+    print()
 
-    # Track statistics
     stats = {"skipped": 0, "processed": 0, "error": 0}
 
     for i, path in enumerate(files, 1):
@@ -486,7 +547,6 @@ def main():
             status = process_file(api_key, path, args.output_dir, args.force_reprocess)
             stats[status] = stats.get(status, 0) + 1
 
-            # Print progress every 100 files
             if i % 100 == 0 or i == len(files):
                 print(f"[{i}/{len(files)}] Progress: {stats['processed']} processed, {stats['skipped']} skipped, {stats['error']} errors")
             elif status == "processed":
@@ -497,9 +557,8 @@ def main():
             print(f"[{i}/{len(files)}] Error on {path.name}: {e}")
             time.sleep(1)
 
-    # Final summary
     print("\n" + "="*80)
-    print("PROCESSING COMPLETE")
+    print("PROCESSING COMPLETE - VERSION 2")
     print("="*80)
     print(f"Total files: {len(files)}")
     print(f"Processed: {stats['processed']}")
