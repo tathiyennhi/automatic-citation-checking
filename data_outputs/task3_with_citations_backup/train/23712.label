@@ -1,0 +1,44 @@
+{
+  "doc_id": "23712",
+  "text": "where λ is the same constant in Equation [CITATION_1] . Based on the aforementioned preparation, a small target detection algorithm is designed. The flowchart of the proposed method is depicted in Figure 4 and can be summarized as five steps: (1) Construct a multi-dimensional image with the input infrared image using the method in Section 2.2.1. As shown in Figure 4 , there are totally d/2 layers of the transformed image and each layer has the same size as the input image. (2) Transform the multi-dimensional image into the seeds selection map according to Equation [CITATION_2] . (3) Select the foreground seeds with the seeds selection map according to Section 2.2.2. (4) Perform the modified random walks algorithm with the selected seeds and reconstruct a confidence map using the method in Section 2.3. (5) Segment the small targets from the confidence map by Equation [CITATION_3] . The detailed algorithm is presented in Algorithm 1, where d is the sub-patch size (see Figure 1a) , N = m × n is the number of pixels in the input image, and K is the number of selected seeds. Construct a sub-patch P l (i,j) according to Equation (8); 7: Find the pixel in P l (i,j) that has minimum difference with (i, j), see Equation (9); 8: The lth value of the local contrast element (i.e., c l ij ) is calculated by Equation (10); 9: end for 10: The value of the pixel (i, j) in the SSM (i.e., S(i, j)) is obtained by Equation (11).",
+  "correct_citation": {
+    "[CITATION_1]": "5973667",
+    "[CITATION_2]": "7836633",
+    "[CITATION_3]": "14804263"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "where λ is the same constant in Equation [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 55
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": " and each layer has the same size as the input image. (2) Transform the multi-dimensional image into the seeds selection map according to Equation [CITATION_2] . (3) Select the foreground seeds with the seeds selection map according to Section 2.2.2. (4) Perform the modified random walks ",
+      "s_span": 424,
+      "e_span": 713
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": " selected seeds and reconstruct a confidence map using the method in Section 2.3. (5) Segment the small targets from the confidence map by Equation [CITATION_3] . The detailed algorithm is presented in Algorithm 1, where d is the sub-patch size (see Figure 1a) , N = m × n is the number of pixels ",
+      "s_span": 731,
+      "e_span": 1028
+    }
+  ],
+  "bib_entries": {
+    "14804263": {
+      "title": "Multiple target tracking by learning-based hierarchical association of detection responses",
+      "abstract": "We propose a hierarchical association approach to multiple target tracking from a single camera by progressively linking detection responses into longer track fragments (i.e., tracklets). Given frame-by-frame detection results, a conservative dual-threshold method that only links very similar detection responses between consecutive frames is adopted to generate initial tracklets with minimum identity switches. Further association of these highly fragmented tracklets at each level of the hierarchy is formulated as a Maximum A Posteriori (MAP) problem that considers initialization, termination, and transition of tracklets as well as the possibility of them being false alarms, which can be efficiently computed by the Hungarian algorithm. The tracklet affinity model, which measures the likelihood of two tracklets belonging to the same target, is a linear combination of automatically learned weak nonparametric models upon various features, which is distinct from most of previous work that relies on heuristic selection of parametric models and manual tuning of their parameters. For this purpose, we develop a novel bag ranking method and train the crucial tracklet affinity models by the boosting algorithm. This bag ranking method utilizes the soft max function to relax the oversufficient objective function used by the conventional instance ranking method. It provides a tighter upper bound of empirical errors in distinguishing correct associations from the incorrect ones, and thus yields more accurate tracklet affinity models for the tracklet association problem. We apply this approach to the challenging multiple pedestrian tracking task. Systematic experiments conducted on two real-life datasets show that the proposed approach outperforms previous state-of-the-art algorithms in terms of tracking accuracy, in particular, considerably reducing fragmentations and identity switches."
+    },
+    "5973667": {
+      "title": "A novel dynamic programming algorithm for track-before-detect in radar systems",
+      "abstract": "In this paper we present a novel procedure for multi-frame detection in radar systems. The proposed architecture consists of a pre-processing stage, which extracts a set of candidate alarms (or plots) from the raw data measurements (e.g., this can be the Detector and Plot-Extractor of common radar systems), and a track-before-detect (TBD) processor, which jointly elaborates observations from multiple scans (or frames) and confirms reliable plots. A computationally efficient dynamic programming algorithm for the TBD processor is derived, which does not require a discretization of the state space and operates directly on the input plot-lists. Finally, a simple algorithm to solve possible data association problems arising at the track-formation step is given, and a thorough complexity and performance analysis is provided, showing that large detection gains with respect to the standard radar processing are achievable with negligible complexity increase."
+    },
+    "7836633": {
+      "title": "Sequential along-track integration for early detection of moving targets",
+      "abstract": "This paper concerns the joint multiframe sequential target detection and track estimation in early-warning radar surveillance systems. The rationale for applying sequential procedures in such a scenario is that they promise a sensitivity increase of the sensor or, alternatively, a reduction in the time needed to take a decision. Unlike previous works on sequential radar detection, the attention is not restricted to stationary targets, namely position changes during the illumination period are allowed. Starting from previous sequential rules, different truncated sequential strategies are proposed and assessed: they are aimed at orienting the sensor resources towards either the detection or the track estimation or the position estimation. Bounds on the performances of the proposed procedures in terms of the system parameters are derived and computational complexity is examined. Also, numerical experiments are provided to elicit the interplay between sensor-target parameters and system performances, and to quantify the gain with respect to other fixed-sample-size procedures."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "5922",
+  "text": "We use an insertion-deletion-substitution channel similar to the work of Viswanathan and Swaminathan [CITATION_1] to model the transcription errors. Let P be the set of phonemes in the source language (here Russian Arpabets). The channel is then described in probability space as p(y|x) = P ∪ { * } → P * , where the channel input x can be any phoneme or a special start symbol * . The output y is a string of phonemes. The empty string, y = {}, represents the deletion of a channel input. Let q d (a) be the probability of phoneme a being deleted. If y = {} then the first symbol in the string corresponds to the input symbol. This symbol is susceptible to a substitution error. Let qs(a, b) be the probability of a being substituted by b . When y = {} then symbols other than the first symbols represent the insertions. The number of insertions is governed by a geometric random variable (r.v) dependent on the input symbol. Let g(a) be the parameter for the geometric r.v. for the input symbol a. The inserted symbols can take any phoneme value with equal likelihood. Finally, note that while we allow for insertions after the start, we enforce that the start symbol has zero deletion and substitution probability. Multiple transcriptions for a single word are treated as outputs of independent parallel channels.",
+  "correct_citation": {
+    "[CITATION_1]": "18739788"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We use an insertion-deletion-substitution channel similar to the work of Viswanathan and Swaminathan to model the transcription errors."
+    }
+  ],
+  "bib_entries": {
+    "18739788": {
+      "title": "Improved string reconstruction over insertion-deletion channels",
+      "abstract": "Consider a binary string x of length n transmitted m times over a memoryless channel that randomly inserts, deletes and flips bits. We consider the problem of reconstructing x from the collection of m binary strings received at the output of the channel. We present an algorithm for this problem and show that, as n tends to infinity, for almost all transmitted strings, the algorithm is guaranteed to reconstruct the transmitted string with probability 1 - o(1), if the channel's flip probability p"
+    }
+  },
+  "generator": "fallback"
+}

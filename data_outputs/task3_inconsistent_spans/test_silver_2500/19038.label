@@ -1,0 +1,29 @@
+{
+  "doc_id": "19038",
+  "text": "To examine the efficiency of spatial clustering, we have performed simulative approximate data collection via combining the four spatial clustering algorithms with certain approximate data collection schemes. In following simulations, we set parameters = 0.5, ℎ = 0.9 for HSC and perform 1000 epochs data collection for all algorithms based on the synthetic data set. For EEDC, we adopt the randomized intracluster scheduling and data restoration method [CITATION_1] to perform approximate data collection. For the other three algorithms, we adopt the centralized model of PAQ [CITATION_2] that is, the Sink predicts reading for each sensor node with values of its corresponding clusterhead, which sends periodic readings to Sink node. As shown in Figure 9 , HSC and ELink consume much fewer communication messages for approximate data collection than the other two algorithms. Specifically, EEDC needs the most messages for data collection terms as the centralized algorithm EEDC needs all sensor nodes in the same cluster to transmit data to the Sink when it detects dissimilarity in that cluster. ELink consumes the most messages for clustering term, which includes messages for spatial clustering and cluster maintaining. Because of the introduction of average value and the distinctive distribution of clusters, ELink needs more messages to track the similarity between sensor nodes. We plot a sample approximation result with HSC at a randomly selected sensor node in Figure 10 . From this figure, we find that the real value and the approximated value are matched well. From the particular zooming-in results, we observe that the difference between the real value and the approximated value is negligible, which also demonstrates the excellent approximation performance of HSC. We also present the statistical results about collected data error of each algorithm in Table 2 . EEDC has the smallest AAE due to its abundant data collection messages, and HSC takes the second place with a comparable result. Taking the average value into account, ELink surpasses ELink on this metric at the cost of huge cluster maintaining messages. In summary, HSC has much better comprehensive performance on the efficiency of data approximation than the other three algorithms.",
+  "correct_citation": {
+    "[CITATION_1]": "6019083",
+    "[CITATION_2]": "12031961"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For EEDC, we adopt the randomized intracluster scheduling and data restoration method  to perform approximate data collection."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For the other three algorithms, we adopt the centralized model of PAQ  that is, the Sink predicts reading for each sensor node with values of its corresponding clusterhead, which sends periodic readings to Sink node."
+    }
+  ],
+  "bib_entries": {
+    "12031961": {
+      "title": "PAQ: time series forecasting for approximate query answering in sensor networks",
+      "abstract": "In this paper, we present a method for approximating the values of sensors in a wireless sensor network based on time series forecasting. More specifically, our approach relies on autoregressive models built at each sensor to predict local readings. Nodes transmit these local models to a sink node, which uses them to predict sensor values without directly communicating with sensors. When needed, nodes send information about outlier readings and model updates to the sink. We show that this approach can dramatically reduce the amount of communication required to monitor the readings of all sensors in a network, and demonstrate that our approach provides provably-correct, user-controllable error bounds on the predicted values of each sensor."
+    },
+    "6019083": {
+      "title": "An energy-efficient data collection framework for wireless sensor networks by exploiting spatiotemporal correlation",
+      "abstract": "Limited energy supply is one of the major constraints in wireless sensor networks. A feasible strategy is to aggressively reduce the spatial sampling rate of sensors, that is, the density of the measure points in a field. By properly scheduling, we want to retain the high fidelity of data collection. In this paper, we propose a data collection method that is based on a careful analysis of the surveillance data reported by the sensors. By exploring the spatial correlation of sensing data, we dynamically partition the sensor nodes into clusters so that the sensors in the same cluster have similar surveillance time series. They can share the workload of data collection in the future since their future readings may likely be similar. Furthermore, during a short-time period, a sensor may report similar readings. Such a correlation in the data reported from the same sensor is called temporal correlation, which can be explored to further save energy. We develop a generic framework to address several important technical challenges, including how to partition the sensors into clusters, how to dynamically maintain the clusters in response to environmental changes, how to schedule the sensors in a cluster, how to explore temporal correlation, and how to restore the data in the sink with high fidelity. We conduct an extensive empirical study to test our method using both a real test bed system and a large-scale synthetic data set."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "51963",
+  "text": "When performing genome-wide target searches, it is desirable to have methods with low false discovery rates in order to avoid extensive lists of low confidence predictions. Since designing such methods is much more difficult than generating methods with high or even perfect sensitivity, our efforts have been directed more towards increasing precision than covering all known miRNA targets. However, PACCMIT's sensitivity can be expanded thanks to the possibility to adapt its search according to the information available. Requiring only accessibility allows searching for speciesspecific targets (which are not expected to have conserved binding sites) and for targets in genomes for which conservation information is difficult to obtain. Sensitivity of PACCMIT can be also modulated easily by using different stringency levels in the conservation or accessibility filters. This flexibility is due to the simple underlying statistical framework of PACCMIT, providing a single scoring function (P SH ) that can easily accommodate various filters (as explained in the Methods section). However, P SH is more than a score to rank the predictions; it is also a statistical estimate that the predicted interaction occurs by chance (lower P SH values imply a higher likelihood that the predicted interaction is functional). It has been shown previously that P SH is a better ranking criterion than several free energy scores [CITATION_1] . Here we also show that ranking by P SH is in good agreement with the protein fold changes: in comparison with lower ranking interactions, top ranking interactions correspond to more downregulated genes. This observation holds regardless of which filter configuration of PACCMIT is used. We have shown that P SH is at least as good as other types of scores implemented in conservation-based methods and considerably better than the energy-based scores implemented in other accessibility-based methods.",
+  "correct_citation": {
+    "[CITATION_1]": "587113"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "It has been shown previously that P SH is a better ranking criterion than several free energy scores"
+    }
+  ],
+  "bib_entries": {
+    "587113": {
+      "title": "Efficient use of accessibility in microRNA target prediction",
+      "abstract": "Considering accessibility of the 3′UTR is believed to increase the precision of microRNA target predictions. We show that, contrary to common belief, ranking by the hybridization energy or by the sum of the opening and hybridization energies, used in currently available algorithms, is not an efficient way to rank predictions. Instead, we describe an algorithm which also considers only the accessible binding sites but which ranks predictions according to over-representation. When compared with experimentally validated and refuted targets in the fruit fly and human, our algorithm shows a remarkable improvement in precision while significantly reducing the computational cost in comparison with other free energy based methods. In the human genome, our algorithm has at least twice higher precision than other methods with their default parameters. In the fruit fly, we find five times more validated targets among the top 500 predictions than other methods with their default parameters. Furthermore, using a common statistical framework we demonstrate explicitly the advantages of using the canonical ensemble instead of using the minimum free energy structure alone. We also find that ‘naive’ global folding sometimes outperforms the local folding approach."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "22589",
+  "text": "As has been discussed earlier, the translation model in hierarchical phrase-based machine translation allows for multiple derivations of a target language sentence. Each derivation corresponds to a particular combination of hierarchical rules and it has been argued that the correct approach to translation is to accumulate translation probability by summing over the scores of all derivations [CITATION_1] . Computing this sum for each of the many translation candidates explored during decoding is computationally difficult, however. For this reason the translation probability is commonly computed using the Viterbi max-derivation approximation. This is the approach taken in the previous sections in which translations scores were accumulated under the tropical semiring. The use of WFSTs allows the sum over alternative derivations of a target string to be computed efficiently. HiFST generates a translation lattice realized as a weighted transducer with output labels encoding words and input labels encoding the sequence of rules corresponding to a particular derivation, and the cost of each path in the lattice is the negative log probability of the derivation that generated the hypothesis.",
+  "correct_citation": {
+    "[CITATION_1]": "6677774"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Each derivation corresponds to a particular combination of hierarchical rules and it has been argued that the correct approach to translation is to accumulate translation probability by summing over the scores of all derivations [CITATION_1] .",
+      "s_span": 165,
+      "e_span": 408
+    }
+  ],
+  "bib_entries": {
+    "6677774": {
+      "title": "A discriminative latent variable model for statistical machine translation",
+      "abstract": "Large-scale discriminative machine translation promises to further the state-of-the-art, but has failed to deliver convincing gains over current heuristic frequency count systems. We argue that a principle reason for this failure is not dealing with multiple, equivalent translations. We present a translation model which models derivations as a latent variable, in both training and decoding, and is fully discriminative and globally optimised. Results show that accounting for multiple derivations does indeed improve performance. Additionally, we show that regularisation is essential for maximum conditional likelihood models in order to avoid degenerate solutions."
+    }
+  },
+  "generator": "fallback_v4"
+}

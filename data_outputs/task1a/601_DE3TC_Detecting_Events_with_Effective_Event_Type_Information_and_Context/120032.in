@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The output layer of the model predicts the event type for each token in the sentence.",
+    "More specifically, we introduce a new parameter matrix W ∈ R H ×T where H is the hidden size of the transformer, and T is the number of event types plus one (for non-trigger tokens).",
+    "Softmax normalization is applied across the T types to produce the probability distribution across the event types P:P = so f tmax(E W) ∈ R T × N. (3)At test time, to obtain the type for each token {e i } N i=1, we simply apply argmax to P. During training, we fix the parameters of SBERT, so the similar type selector's parameters are not updated during the training.",
+    "We use cross entropy between the prediction and golden labels as our training loss to fine-tune a pre-trained BERT model.",
+    "InferenceAt test time, the event type information is unavailable to the model, so we calculate the interaction results between each test sample and all event types."
+  ]
+}

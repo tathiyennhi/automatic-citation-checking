@@ -1,0 +1,33 @@
+{
+  "doc_id": "8702",
+  "text": "The coflow abstraction was first proposed in [CITATION_1] to define a group of parallel data flows that are related to each other and also share a common performance goal. To optimize the performance of big data analytics, we need to optimize data flows transferred at the level of coflow rather than individual ones. This is because the completion time of a job (i.e., a distributed join) depends on the time it takes to complete the entire coflow, which is also called the coflow completion time (CCT), instead of the time to complete the individual flows composing it [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "6956491",
+    "[CITATION_2]": "7016925"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The coflow abstraction was first proposed in  to define a group of parallel data flows that are related to each other and also share a common performance goal.",
+      "s_span": 0,
+      "e_span": 171
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This is because the completion time of a job (i.e., a distributed join) depends on the time it takes to complete the entire coflow, which is also called the coflow completion time (CCT), instead of the time to complete the individual flows composing it  .",
+      "s_span": 318,
+      "e_span": 585
+    }
+  ],
+  "bib_entries": {
+    "6956491": {
+      "title": "Coflow: A networking abstraction for cluster applications",
+      "abstract": "Cluster computing applications -- frameworks like MapReduce and user-facing applications like search platforms -- have application-level requirements and higher-level abstractions to express them. However, there exists no networking abstraction that can take advantage of the rich semantics readily available from these data parallel applications. We propose coflow, a networking abstraction to express the communication requirements of prevalent data parallel programming paradigms. Coflows make it easier for the applications to convey their communication semantics to the network, which in turn enables the network to better optimize common communication patterns."
+    },
+    "7016925": {
+      "title": "RAPIER: Integrating routing and scheduling for coflow-aware data center networks",
+      "abstract": "In the data flow models of today's data center applications such as MapReduce, Spark and Dryad, multiple flows can comprise a coflow group semantically. Only completing all flows in a coflow is meaningful to an application. To optimize application performance, routing and scheduling must be jointly considered at the level of a coflow rather than individual flows. However, prior solutions have significant limitation: they only consider scheduling, which is insufficient. To this end, we present Rapier, a coflow-aware network optimization framework that seamlessly integrates routing and scheduling for better application performance. Using a small-scale testbed implementation and large-scale simulations, we demonstrate that Rapier significantly reduces the average coflow completion time (CCT) by up to 79.30% compared to the state-of-the-art scheduling-only solution, and it is readily implementable with existing commodity switches."
+    }
+  },
+  "generator": "fallback_v4"
+}

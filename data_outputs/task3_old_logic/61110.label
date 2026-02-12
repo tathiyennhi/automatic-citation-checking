@@ -1,0 +1,47 @@
+{
+  "doc_id": "61110",
+  "text": "The principal application of our work is transferring theorems between libraries. Deep embeddings [CITATION_1] are typically best-suited to check the soundness of the provers and prove meta-theorems about the system studied. Yet, the imported theorems are difficult to integrate with the current developments since they are created at different logical levels. Therefore, shallow embeddings [CITATION_2] ) that can be obtained through reflection [CITATION_3] are preferred. Even then, if no concept mapping is performed, the potential risk is to create parallel developments on the same set of concepts. And additionally to the unnecessary repetitions, the equivalence between the two sets would have to be proven, which may not be possible. From our discovered alignments, it is possible to lift the set of mappings found to theorems and proofs. This yields a possible translation that can be used to import a library into another system in a sensible manner by reusing the common concepts. Still, each translated theorem needs to be derived in the other prover and porting proofs is a difficult process due to the possible differences in definitions. In our previous work [CITATION_4] , we relied on the matching algorithm to transfer proof knowledge between two HOL systems and evaluated how it improved the success of a machine-learning based proving framework HOL(y)Hammer .",
+  "correct_citation": {
+    "[CITATION_1]": "14746588",
+    "[CITATION_2]": "74550",
+    "[CITATION_3]": "7943759",
+    "[CITATION_4]": "14375140"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Deep embeddings  are typically best-suited to check the soundness of the provers and prove meta-theorems about the system studied."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Therefore, shallow embeddings  ) that can be obtained through reflection  are preferred."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Therefore, shallow embeddings  ) that can be obtained through reflection  are preferred."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In our previous work  , we relied on the matching algorithm to transfer proof knowledge between two HOL systems and evaluated how it improved the success of a machine-learning based proving framework HOL(y)Hammer ."
+    }
+  ],
+  "bib_entries": {
+    "14746588": {
+      "title": "Verifying B proof rules using deep embedding and automated theorem proving",
+      "abstract": "We propose a formal and mechanized framework which consists in verifying proof rules of the B method, which cannot be automatically proved by the elementary prover of Atelier B and using an external automated theorem prover called Zenon. This framework contains in particular a set of tools, named BCARe and developed by Siemens IC-MOL, which relies on a deep embedding of the B theory within the logic of the Coq proof assistant. This toolkit allows us to automatically generate the required properties to be checked for a given proof rule. Currently, this tool chain is able to automatically verify a part of the derived rules of the B-Book, as well as some added rules coming from Atelier B and the rule database maintained by Siemens IC-MOL."
+    },
+    "7943759": {
+      "title": "Importing HOL Light into Coq",
+      "abstract": "We present a new scheme to translate mathematical developments from HOL Light to Coq, where they can be re-used and re-checked. By relying on a carefully chosen embedding of Higher-Order Logic into Type Theory, we try to avoid some pitfalls of inter-operation between proof systems. In particular, our translation keeps the mathematical statements intelligible. This translation has been implemented and allows the importation of the HOL Light basic library into Coq."
+    },
+    "14375140": {
+      "title": "Sharing HOL4 and HOL Light proof knowledge",
+      "abstract": "New proof assistant developments often involve concepts similar to already formalized ones. When proving their properties, a human can often take inspiration from the existing formalized proofs available in other provers or libraries. In this paper we propose and evaluate a number of methods, which strengthen proof automation by learning from proof libraries of different provers. Certain conjectures can be proved directly from the dependencies induced by similar proofs in the other library. Even if exact correspondences are not found, learning-reasoning systems can make use of the association between proved theorems and their characteristics to predict the relevant premises. Such external help can be further combined with internal advice. We evaluate the proposed knowledge-sharing methods by reproving the HOL Light and HOL4 standard libraries. The learning-reasoning system HOLyHammer, whose single best strategy could automatically find proofs for 30i¾?% of the HOL Light problems, can prove 40i¾?% with the knowledge from HOL4."
+    },
+    "74550": {
+      "title": "The reflective Milawa theorem prover is sound -(down to the machine code that runs it)",
+      "abstract": "This paper presents, we believe, the most comprehensive evidence of a theorem prover's soundness to date. Our subject is the Milawa theorem prover. We present evidence of its soundness down to the machine code. Milawa is a theorem prover styled after NQTHM and ACL2. It is based on an idealised version of ACL2's computational logic and provides the user with high-level tactics similar to ACL2's. In contrast to NQTHM and ACL2, Milawa has a small kernel that is somewhat like an LCF-style system. We explain how the Milawa theorem prover is constructed as a sequence of reflective extensions from its kernel. The kernel establishes the soundness of these extensions during Milawa's bootstrapping process. Going deeper, we explain how we have shown that the Milawa kernel is sound using the HOL4 theorem prover. In HOL4, we have formalized its logic, proved the logic sound, and proved that the source code for the Milawa kernel (1,700 lines of Lisp) faithfully implements this logic. Going even further, we have combined these results with the x86 machine-code level verification of the Lisp runtime Jitawa. Our top-level theorem states that Milawa can never claim to prove anything that is false when it is run on this Lisp runtime."
+    }
+  },
+  "generator": "fallback"
+}

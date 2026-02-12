@@ -1,0 +1,29 @@
+{
+  "doc_id": "31875",
+  "text": "Raw RNA-Seq data processing, assembly, and differential gene expression analysis. The paired-end raw reads were quality trimmed and overlapping pairs were merged before being assembled with Trinity 31 using the following parameters -min_kmer_cov 2, -min_per_id_same_path 95, -max_diffs_same_path 8, -max_internal_gap_same_path 10, -kmer_size 31. Cleaned and merged reads from the parents LA Purple and US56-14-4 and the F1 10-9202 were combined and assembled with Trinity and used as reference assembly. RNA-Seq reads of the selected extreme segregants were mapped on the assembled reference transcriptome using bowtie 2 [CITATION_1] and counted using RSEM [CITATION_2] to estimate the gene expression levels. Transcriptomes of the top visible dewlap leaf and the 9 th internode were analyzed separately for differential gene expression analysis. Differentially expressed genes were identified using the DESeq. 2 method. GO term enrichment analysis was performed using pipeline implemented in Trinity. The genes with ≥ 2-fold change and FDR corrected p-value < 0.05 were SCIenTIFIC REPORTS | (2018) 8:4415 | DOI:10.1038/s41598-018-22798-5 considered to be significantly differentially expressed. Significantly expressed genes were mapped onto bins using the Mercator web tool (http://mapman.gabipd.org/web/guest/app/mercator) and visualized using MapMan 34 .",
+  "correct_citation": {
+    "[CITATION_1]": "205420407",
+    "[CITATION_2]": "13123189"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "RNA-Seq reads of the selected extreme segregants were mapped on the assembled reference transcriptome using bowtie 2"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "and counted using RSEM"
+    }
+  ],
+  "bib_entries": {
+    "13123189": {
+      "title": "RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome",
+      "abstract": "BackgroundRNA-Seq is revolutionizing the way transcript abundances are measured. A key challenge in transcript quantification from RNA-Seq data is the handling of reads that map to multiple genes or isoforms. This issue is particularly important for quantification with de novo transcriptome assemblies in the absence of sequenced genomes, as it is difficult to determine which transcripts are isoforms of the same gene. A second significant issue is the design of RNA-Seq experiments, in terms of the number of reads, read length, and whether reads come from one or both ends of cDNA fragments.ResultsWe present RSEM, an user-friendly software package for quantifying gene and isoform abundances from single-end or paired-end RNA-Seq data. RSEM outputs abundance estimates, 95% credibility intervals, and visualization files and can also simulate RNA-Seq data. In contrast to other existing tools, the software does not require a reference genome. Thus, in combination with a de novo transcriptome assembler, RSEM enables accurate transcript quantification for species without sequenced genomes. On simulated and real data sets, RSEM has superior or comparable performance to quantification methods that rely on a reference genome. Taking advantage of RSEM's ability to effectively use ambiguously-mapping reads, we show that accurate gene-level abundance estimates are best obtained with large numbers of short single-end reads. On the other hand, estimates of the relative frequencies of isoforms within single genes may be improved through the use of paired-end reads, depending on the number of possible splice forms for each gene.ConclusionsRSEM is an accurate and user-friendly software tool for quantifying transcript abundances from RNA-Seq data. As it does not rely on the existence of a reference genome, it is particularly useful for quantification with de novo transcriptome assemblies. In addition, RSEM has enabled valuable guidance for cost-efficient design of quantification experiments with RNA-Seq, which is currently relatively expensive."
+    },
+    "205420407": {
+      "title": "Fast gapped-read alignment with Bowtie 2",
+      "abstract": "As the rate of sequencing increases, greater throughput is demanded from read aligners. The full-text minute index is often used to make alignment very fast and memory-efficient, but the approach is ill-suited to finding longer, gapped alignments. Bowtie 2 combines the strengths of the full-text minute index with the flexibility and speed of hardware-accelerated dynamic programming algorithms to achieve a combination of high speed, sensitivity and accuracy."
+    }
+  },
+  "generator": "fallback"
+}

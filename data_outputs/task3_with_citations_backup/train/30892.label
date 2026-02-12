@@ -1,0 +1,33 @@
+{
+  "doc_id": "30892",
+  "text": "The Active Shape Model (ASM) [CITATION_1] and Active Appearance Model (AAM) [CITATION_2] are both popular methods for segmenting known anatomical structures. The ASM algorithm involves an expert initially selecting landmarks to construct a statistical shape model using Principal Component Analysis (PCA). A set of intensity values is then sampled along the normal in each training image. During segmentation, any potential pixel on the border also has a profile of intensity values sampled. The point with the minimum Mahalanobis distance between the mean training intensities and the sampled intensities presumably lies on the object border. Finally, the shape model is updated to fit these landmark points, and the process repeats until convergence. However, there are several limitations with traditional ASMs with regard to image segmentation. (1) ASMs require an accurate initialization and final segmentation results are sensitive to the user defined initialization. ( 2) The border detection requires that the distribution of intensity values in the training data is Gaussian, which need not necessarily be the case. (3) Limited training data could result a near-singular covariance matrix, causing the Mahalanobis distance to not be defined.",
+  "correct_citation": {
+    "[CITATION_1]": "15242659",
+    "[CITATION_2]": "33520001"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The Active Shape Model (ASM) [CITATION_1] and Active Appearance Model (AAM) [CITATION_2] are both popular methods for segmenting known anatomical structures.",
+      "s_span": 0,
+      "e_span": 157
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The Active Shape Model (ASM) [CITATION_1] and Active Appearance Model (AAM) [CITATION_2] are both popular methods for segmenting known anatomical structures.",
+      "s_span": 0,
+      "e_span": 157
+    }
+  ],
+  "bib_entries": {
+    "15242659": {
+      "title": "Active shape models -their training and application",
+      "abstract": "!, Model-based vision is firmly established as a robust approach to recognizing and locating known rigid objects in the presence of noise, clutter, and occlusion. It is more problematic to apply modelbased methods to images of objects whose appearance can vary, though a number of approaches based on the use of flexible templates have been proposed. The problem with existing methods is that they sacrifice model specificity in order to accommodate variability, thereby compromising robustness during image interpretation. We argue that a model should only be able to deform in ways characteristic of the class of objects it represents. We describe a method for building models by learning patterns of variability from a training set of correctly annotated images. These models can be used for image search in an iterative refinement algorithm analogous to that employed by Active Contour Models (Snakes). The key difference is that our Active Shape Models can only deform to fit the data in ways consistent with the training set. We show several practical examples where we have built such models and used them to locate partially occluded objects in noisy, cluttered images. Q 199s A&& prrss, IN."
+    },
+    "33520001": {
+      "title": "Active appearance models",
+      "abstract": "We describe a new method of matching statistical models of appearance to images. A set of model parameters control modes of shape and gray-level variation learned from a training set. We construct an efficient iterative matching algorithm by learning the relationship between perturbations in the model parameters and the induced image errors."
+    }
+  },
+  "generator": "fallback_v4"
+}

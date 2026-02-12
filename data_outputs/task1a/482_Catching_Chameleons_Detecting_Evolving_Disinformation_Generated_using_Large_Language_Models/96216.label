@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "• Soft Prompts Concatenation: For each task T k, we concatenate the soft prompts P 1, P 2,..., P k with the input sequence.",
+    "This step involves copying the embeddings and has a linear complexity O(k•m•d), where k is the current task index and m is the number of prompt tokens.",
+    "Combining these components, the overall time complexity for processing a single input sequence during training is:O(n 2 • d • L + k • m • d)(7)Given that k ≤ m, this can be simplified to:O(n 2 • d • L + m 2 • d)(8)where the quadratic term n2 • d • L dominates for long input sequences.",
+    "Space Complexity: The space complexity of DELD primarily involves the storage of model parameters and intermediate representations: • Pre-trained Model Parameters: The frozen PLM model has a fixed number of parameters, denoted as |θ|, which does not change during training.",
+    "This contributes a constant space complexity of O(|θ|)."
+  ],
+  "correct_citations": []
+}

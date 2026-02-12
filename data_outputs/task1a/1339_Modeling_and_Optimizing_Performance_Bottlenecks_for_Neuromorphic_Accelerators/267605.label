@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The architecture operates at two levels: the chip-level organization (right) is an array of neurocores connected via a network-on-chip (NoC), and each neurocore (left) uses a pipeline structure to process neural computations.The execution pipeline of each neurocore contains three memory components, a compute stage, and message output stage.",
+    "The message in buffer stores input activation messages from other neurocores, the synaptic weight memory holds the weights for neurons assigned to this neurocore, and the neuron state memory maintains persistent state for stateful neuron models.",
+    "The compute stage generates new activations based on the inputs, which are then formatted as sparse activation messages and sent via the NoC to downstream neurocores for processing in the subsequent timestep.The bottom of Figure 1 shows the temporal execution model where all neurocores operate in lockstep during discrete timesteps.",
+    "Within each timestep, neurocores simultaneously: (1) accumulate the synaptic operations (synops) from each input message, (2) compute activations, (3) generate outgoing activation messages, and (4) participate in barrier synchronization before advancing to the next timestep.",
+    "Synops for each message involves fetching weights, multiplying them by the input, and accumulating into a pre-activation for each neuron.To map a neural network to the neuromorphic chip for inference, groups of neurons are logically partitioned, then physically mapped to a neurocore on the chip."
+  ],
+  "correct_citations": []
+}

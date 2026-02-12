@@ -1,0 +1,29 @@
+{
+  "doc_id": "34847",
+  "text": "We have analyzed this system using Markov chains in [CITATION_1] . In [CITATION_2] , we derive expressions for average window size numerically when the window size W n is bounded by some W max < ∞. We now derive an approximate expression for average window size for low packet error rates assuming W max = ∞. Let W n (p) denote the window size at the end of the n th RTT. Let Z n (p) denote the window size at the last drop epoch before n (excluding time epoch n) and let D n (p) be the time elapsed between the last drop epoch before n and time n. As in the deterministic loss model case, we ignore the Reno mode of operation and consider (1) for window evolution. The process {Z n (p), D n (p)} forms a Markov chain. We show that for p ∈ (0, 1), the processes {W n (p)} and {Z n (p)} have unique stationary distributions. Proof. The state (1, 0) in the state space of the Markov chain {Z n (p), D n (p)} is reachable from any state in the state space with non-zero probability. The states that can be reached by (1, 0) forms a communicating class. The remaining states in the state space are transient, since from any of these states there is a non-zero probability of hitting (1, 0) and hence a non-zero probability of never returning back. We now show that the communicating class containing (1, 0) is positive recurrent. For convenience, we drop the p from our notation. For a state (z, d) in the communicating class, we define the Lyapunov function, L(z, d) = z + d 4 . The conditional one step drift of the Lyapunov function is given by",
+  "correct_citation": {
+    "[CITATION_1]": "7934244",
+    "[CITATION_2]": "7934244"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We have analyzed this system using Markov chains in [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 66
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In [CITATION_2] , we derive expressions for average window size numerically when the window size W n is bounded by some W max < ∞.",
+      "s_span": 67,
+      "e_span": 197
+    }
+  ],
+  "bib_entries": {
+    "7934244": {
+      "title": "Analytical Model for Congestion Control and Throughput with TCP CUBIC Connections",
+      "abstract": "We develop a Markov model for a TCP CUBIC connection. Next we use it to obtain approximate expressions for throughput when there may be queuing in the network. Finally we provide the throughputs different TCP CUBIC and TCP NewReno connections obtain while sharing a channel when they may have different round trip delays and packet loss probabilities."
+    }
+  },
+  "generator": "fallback_v4"
+}

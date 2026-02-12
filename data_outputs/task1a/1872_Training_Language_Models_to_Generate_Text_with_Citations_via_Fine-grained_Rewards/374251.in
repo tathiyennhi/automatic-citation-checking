@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "On LLaMA-2-7B, for efficiency reasons, we set the number of episodes to 48,000.",
+    "We use 100 warm-up steps across every setting.The KL coefficient β is set to 0.3.",
+    "We repeat each RL experiment 3 times, each with a different seed.The results are the average of the inference results of these 3 independent runs.",
+    "NLI modelFor reward computation, we use TRUEfoot_4 (Honovich et al., 2022), a T5-11B model for NLI, to measure entailment for correctness recall on ELI5, and citation recall and precision across our datasets.",
+    "For efficiency, we replace TRUE with a smaller NLI model, namely attrscoreflan-t5-xl (Yue et al., 2023), during the RL training stage."
+  ]
+}

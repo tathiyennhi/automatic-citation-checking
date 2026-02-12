@@ -1,0 +1,29 @@
+{
+  "doc_id": "6926",
+  "text": "As deftly argued by [CITATION_1] , the chief problem with conservationbased predictions of important protein sites is that they fail to discriminate between structural and functional sites. To circumvent this problem, they used all-atom protein design to identify putative structural sites that were subsequently subtracted from the list of highly conserved sites. Conversely, we use PMs to confirm functional importance; meaning, non-PM positions are simply subtracted from the list of highly conserved sites. MINER compares the topology of each alignment window (width = 5) tree to that of the complete phylogeny using a modified bipartition metric [CITATION_2] that counts topological differences. These raw differences are subsequently converted into phylogenetic similarity z-scores (PSZs), where PSZs <0 indicate similarities better than the mean. All overlapping windows that score past a signal-to-noise threshold are collapsed into a single PM. We have developed a MINER-Extreme algorithm that automatically determines good estimates of the signal-to-noise threshold . The algorithm attempts to determine, based on PSZs, if a window is likely functional or not. Ideal PSZ thresholds, which are dataset dependent, generally occur between −1.0 and −2.0. Windows with PSZs> −1.0 are not expected to be functional, whereas windows with PSZs< −2.0 are. The MINER-Extreme algorithm uses partition around medoids clustering (PAMC) of PSZs to automatically identify good estimates of threshold values. PAMC is a clustering algorithm analogous to partition around means (which is sometimes called k-means clustering). However, each cluster is represented by its median position instead of its average, making it less biased by outliers. In the MINERExtreme algorithm, PSZs between −1.0 and −2.0 are clustered into k = 2 groups, one corresponding to noise and the other corresponding to signal. In most circumstances, the ideal threshold is defined to be the largest value in the signal cluster. When there are too few or too many data points between −1.0 and −2.0, there is an algorithmic override that sets the threshold to be the first (rank ordered) PSZ below −2.0.",
+  "correct_citation": {
+    "[CITATION_1]": "52803345",
+    "[CITATION_2]": "16404423"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As deftly argued by, the chief problem with conservationbased predictions of important protein sites is that they fail to discriminate between structural and functional sites."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "MINER compares the topology of each alignment window (width = 5) tree to that of the complete phylogeny using a modified bipartition metric that counts topological differences."
+    }
+  ],
+  "bib_entries": {
+    "16404423": {
+      "title": "Improved phylogenetic motif detection using parsimony",
+      "abstract": "We have recently demonstrated (La et al, Proteins, 58:2005) that sequence fragments approximating the overall familial phylogeny, called phylogenetic motifs (PMs), represent a promising protein functional site prediction strategy. Previous results across a structurally and functionally diverse dataset indicate that phylogenetic motifs correspond to a wide variety of known functional characteristics. Phylogenetic motifs are detected using a sliding window algorithm that compares neighbor joining trees on the complete alignment to those on the sequence fragments. In this investigation we identify PMs using heuristic maximum parsimony trees. We show that when using parsimony the functional site prediction accuracy of PMs improves substantially, particularly on divergent datasets. We also show that the new PMs found using parsimony are not necessarily conserved in sequence, and, therefore, would not be detected by traditional motif (information content-based) approaches."
+    },
+    "52803345": {
+      "title": "Improvement in protein functional site prediction by distinguishing structural and functional constraints on protein family evolution using computational design",
+      "abstract": "The prediction of functional sites in newly solved protein structures is a challenge for computational structural biology. Most methods for approaching this problem use evolutionary conservation as the primary indicator of the location of functional sites. However, sequence conservation reflects not only evolutionary selection at functional sites to maintain protein function, but also selection throughout the protein to maintain the stability of the folded state. To disentangle sequence conservation due to protein functional constraints from sequence conservation due to protein structural constraints, we use all atom computational protein design methodology to predict sequence profiles expected under solely structural constraints, and to compute the free energy difference between the naturally occurring amino acid and the lowest free energy amino acid at each position. We show that functional sites are more likely than non-functional sites to have computed sequence profiles which differ significantly from the naturally occurring sequence profiles and to have residues with sub-optimal free energies, and that incorporation of these two measures improves sequence based prediction of protein functional sites. The combined sequence and structure based functional site prediction method has been implemented in a publicly available web server."
+    }
+  },
+  "generator": "fallback"
+}

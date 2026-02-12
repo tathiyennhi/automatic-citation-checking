@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We use automatic mixed-16 precision along with PyTorch compilation during training.",
+    "Note that our model is trained with the temporal dimension (number of frames) T = 50, but this number can be anything.",
+    "For training, a longer T will reduce the implicit pre-padding artifacts of a sample, but will reduce the robustness of the batch statistics (assuming batch size goes down with increasing T).",
+    "For inference and model evaluation, we feed entire segments to the network without splitting because we want to eliminate the artifacts of implicit padding as our network is agnostic to the number of input frames.The training is done on a single NVIDIA A30 GPU, wihch took 0.309 hours for a total of 200 epochs.",
+    "The streaming inference is done on a single thread of an AMD EPYC 7543 P processor (CPU) which takes 3.384 ms per frame, with an event frame corresponding to a 10 ms time-window binning of events."
+  ]
+}

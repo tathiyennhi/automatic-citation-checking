@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We applied CompAct to all linear modules within each Transformer block of our LLaMA-based models, except for the output-projection layer in the attention mechanism.",
+    "FlashAttention (Dao et al., 2022), a fast and efficient implementation of attention, is widely adopted in many architectures, including the models used in this work for both pretraining and finetuning.",
+    "However, FlashAttention stores its output in memory as part of the activation memory.",
+    "This same tensor is then fed into the output-projection layer of the attention block, meaning that these two layers share the same activation memory.",
+    "Consequently, compressing the activation tensor of the attention's output-projection does not result in overall memory savings, because the FlashAttention output tensor remains in memory."
+  ]
+}

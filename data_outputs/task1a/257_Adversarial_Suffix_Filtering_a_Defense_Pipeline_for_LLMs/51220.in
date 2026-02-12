@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We limit this to single gaps to avoid over-correction, but this is configurable.",
+    "We also allow for bringing 1's when there is a benign segment in-between, e.g.",
+    "1-0-1, but this is turned off by default.The second heuristic aims to reduce false positives by filtering out segments that the classifier flagged, which upon closer inspection are unlikely to be true adversarial suffixes.",
+    "We introduce a small set of handcrafted rules to catch these cases.",
+    "Specifically, for any segment that the classifier marked as y i = 1, we check the segment against a predefined set of keywords and override the classifier and relabel it as benign (0) if it matches."
+  ]
+}

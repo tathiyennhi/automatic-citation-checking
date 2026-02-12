@@ -1,0 +1,33 @@
+{
+  "doc_id": "32964",
+  "text": "Fine-grained communication within a workgroup, as well as inter-workgroup communication and communication with the host while the kernel is running, is enabled by a set of atomic data types and operations. In particular, fine-grained host/device communication is via atomic operations on SVM. Figure 3 : An OpenCL graph traversal algorithm processed is dynamic, due to one task creating an arbitrary number of new tasks. Work stealing has been explored in the context of GPUs [CITATION_1] [CITATION_2] . Each workgroup has a queue from which it obtains tasks to process, and to which it stores new tasks. If its queue is empty, a workgroup tries to steal a task from another queue. Figure 2 illustrates a work stealing kernel. Each thread receives a pointer to the task queues, in global memory, initialised by the host to contain initial tasks. A thread uses its workgroup id (line 2) as a queue id to access the relevant task queue. The pop_or_steal function (line 4) pops a task from the workgroup's queue or tries to steal a task from other queues. Although not depicted here, concurrent accesses to queues inside more_work and pop_or_steal are guarded by a mutex per queue, implemented using atomic compare and swap operations on global memory.",
+  "correct_citation": {
+    "[CITATION_1]": "12719078",
+    "[CITATION_2]": "9040138"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Work stealing has been explored in the context of GPUs   .",
+      "s_span": 421,
+      "e_span": 503
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Work stealing has been explored in the context of GPUs   .",
+      "s_span": 421,
+      "e_span": 503
+    }
+  ],
+  "bib_entries": {
+    "12719078": {
+      "title": "On dynamic load balancing on graphics processors",
+      "abstract": "To get maximum performance on the many-core graphics processors it is important to have an even balance of the workload so that all processing units contribute equally to the task at hand. This can be hard to achieve when the cost of a task is not known beforehand and when new sub-tasks are created dynamically during execution. With the recent advent of scatter operations and atomic hardware primitives it is now possible to bring some of the more elaborate dynamic load balancing schemes from the conventional SMP systems domain to the graphics processor domain. We have compared four different dynamic load balancing methods to see which one is most suited to the highly parallel world of graphics processors. Three of these methods were lock-free and one was lock-based. We evaluated them on the task of creating an octree partitioning of a set of particles. The experiments showed that synchronization can be very expensive and that new methods that take more advantage of the graphics processors features and capabilities might be required. They also showed that lock-free methods achieves better performance than blocking and that they can be made to scale with increased numbers of processing units."
+    },
+    "9040138": {
+      "title": "Task management for irregular-parallel workloads on the GPU",
+      "abstract": "We explore software mechanisms for managing irregular tasks on graphics processing units (GPUs). We demonstrate that dynamic scheduling and efficient memory management are critical problems in achieving high efficiency on irregular workloads. We experiment with several task-management techniques, ranging from the use of a single monolithic task queue to distributed queuing with task stealing and donation. On irregular workloads, we show that both centralized and distributed queues have more than 100 times as much idle times as our task-stealing and -donation queues. Our preferred choice is task-donation because of comparable performance to task-stealing while using less memory overhead. To help in this analysis, we use an artificial task-management system that monitors performance and memory usage to quantify the impact of these different techniques. We validate our results by implementing a Reyes renderer with its irregular split-and-dice workload that is able to achieve real-time framerates on a single GPU."
+    }
+  },
+  "generator": "fallback_v4"
+}

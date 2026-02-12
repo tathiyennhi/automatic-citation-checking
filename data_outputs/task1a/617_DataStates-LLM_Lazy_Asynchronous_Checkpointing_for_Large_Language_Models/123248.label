@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This is because of the interference caused by slow host-memory allocation, slow transfers to unpinned host-memory, and PCIe contention with loading the next micro-batch on the GPU from the data pipeline.",
+    "This effect is not observed in the larger 70B model because, for large models with the same amount of checkpoint data per GPU (shown in Figure 3), the long forward and backward passes amortize the slow allocation and transfer overheads.",
+    "With increasing model size, the training time increases (Figure 4), while the checkpoint size per GPU remains consistent (Figure 3).",
+    "Therefore, the ratio of the training duration to blocking duration while waiting for checkpoints to finish increases with the model size.",
+    "However, irrespective of the fact that the training phase dictates the major proportion of the iteration time, DataStates-LLM speeds up the iteration by at least 23%, and up to 4.5× compared to other approaches we studied in evaluating DataStates-LLM.Fixed LLM Model Size with Increasing Data Parallelism: In our next set of experiments, we evaluate the checkpointing throughput as a function of increasing degrees of data parallelism."
+  ],
+  "correct_citations": []
+}

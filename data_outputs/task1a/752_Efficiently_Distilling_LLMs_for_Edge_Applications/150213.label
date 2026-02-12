@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We always sample the maxnet model from the super-transformer as the 1 st sub-transformer model, Φ 1, at every iteration.",
+    "We call this Multistage Low-rank Fine-tuning of Super-transformers (MLFS) and present it in the Appendix in Algorithm 1.Proposition 1 Let the individually fine-tuned weights of a subnet, Φ, be expressed asW Φ = Π Φ (W pretrain Tch) + ∆W Φ.Then, MLFS has the following structure on ∆W Φ:∆W Φ = Π Φ 2 s=0 A s * B s, ∀Φ ∈ A,(8)where {A s, B s } s=0,1,2 are low-rank matrices shared across all sub-transformers Φ ∈ A.To illustrate the computational savings, recall W pretrain Tch ∈ R d×d, where d is typically of the order 10 4 -10 6.",
+    "For rank r (typically < 10) for the low-rank matrices:A s ∈ R d×r, B s ∈ R r×d, s = 0, 1, 2,where r ≪ d. Then, the number of parameters to be learnt in the MLFS approach is 6rd.",
+    "In contrast, full fine-tuning requires updating d 2 parameters at every iteration.Gradient Scaling For faster convergence of the smaller sub-transformers within a super-transformer, we propose a novel weighted-combination of the gradients of the sampled sub-transformers.Proposition 2 Let 1 st sampled sub-transformer, Φ 1, be the maxnet be in every iteration.",
+    "Then the scaled gradient of the super-transformer training loss, L Sup, in Algorithm 1 is given byK j=1 (n 1 /n j) γ ∇ W L Φj,(10)where ∇ W denotes gradient w.r.t."
+  ],
+  "correct_citations": []
+}

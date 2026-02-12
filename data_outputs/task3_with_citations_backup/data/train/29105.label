@@ -1,0 +1,33 @@
+{
+  "doc_id": "29105",
+  "text": "Our model learns analogously to a child by observing natural utterances (N L, represented as sequences of phonemes) in a noisy and ambiguous context (M R, represented by formulas in predicate logic mr). In particular, the input to our model consists of a list of pairs comprising N L utterances coupled with a set of meaning representations, i.e. (N L, M R = {mr 1 , ..., mr n }). For each example, N L consists of a sequence of phonemes. Each mr i consists of a predicate ξ and a list of arguments arg 1 , . . . , arg n (which might be empty). We distinguish between an observed mr and its corresponding template mr g which is derived from mr by replacing the values of its argument slots by ARG 1 , . . . , ARG k , where k is the number of arguments in mr. We also say that mr instantiates mr g . Input of the desired form is for instance provided by the RoboCup Soccer corpus [CITATION_1] , which consists of the annotated RoboCup finals from [2001] [2002] [2003] [2004] . In this corpus, game events are represented by mrs. The games were commented by humans, constituting the N L utterances. Each N L comment is coupled with a set of meaning representations M R, where N L corresponds to at most one mr i ∈ M R. To model learning from phoneme sequences, we used a speech synthesis system (i.e. MaryTTS [CITATION_2] ) to transcribe the N Ls phonemically. Subsequently, we removed all spaces and markers of word boundaries, yielding unsegmented phoneme sequences. Given a set of examples {e = (N L, {mr 1 , ..., mr n })}, our goal is the induction of a construction grammar, i.e. a set of formmeaning pairings {(N L,mr, Φ)}, represented in terms of a network where linguistic knowledge evolves over the course of time. In particular, we attempt to segment the streams of phonemes into meaningful sequences, i.e. phoneme sequences representing (sequences of) words(s) which map to semantic referents. In the following, such sequences are also referred to as (potential) lexical units. Based on this information, we attempt to induce syntactic patterns such as \"X passesto Y\". Thus, two types of constructions are learned and represented in our network: (1) constructions at the word level L W where the formN L corresponds to a lexical unit (note that lexical units are not given a priori but must be segmented from the continuous stream of phonemes) and the meaningmr to a single semantic referent, and (2) constructions at the complete construction level L C wherê N L corresponds to a N L pattern andmr is represented by exactly one template mr g . IfN L contains equivalence classes, these are associated to argument slots inmr by a one-to-one mapping Φ: ECs(N L) → args(mr) . Taking for instance the input examples (\"purpletenkicks\", {ballstopped, badP ass(pink1, purple10), pass(purple10, purple7), playmode(play on), kick(purple10)}) and (\"pinkgoaliekicks\", {pass(pink1, pink5), kick(purple1)}) (note that for the sake of simplicity, in this paper we represent N Ls as sequences of characters instead of phonemes), at L W we would like to induce the form-meaning pairings",
+  "correct_citation": {
+    "[CITATION_1]": "2488088",
+    "[CITATION_2]": "756355"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Input of the desired form is for instance provided by the RoboCup Soccer corpus [CITATION_1] , which consists of the annotated RoboCup finals from [2001] [2002] [2003] [2004] .",
+      "s_span": 799,
+      "e_span": 975
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Each N L comment is coupled with a set of meaning representations M R, where N L corresponds to at most one mr i ∈ M R. To model learning from phoneme sequences, we used a speech synthesis system (i.e. MaryTTS [CITATION_2] ) to transcribe the N Ls phonemically.",
+      "s_span": 1097,
+      "e_span": 1358
+    }
+  ],
+  "bib_entries": {
+    "756355": {
+      "title": "The german text-to-speech synthesis system mary: A tool for research, development and teaching",
+      "abstract": "This paper introduces the German text-to-speech synthesis system MARY. The system's main features, namely a modular design and an XML-based system-internal data representation, are pointed out, and the properties of the individual modules are briefly presented. An interface allowing the user to access and modify intermediate processing steps without the need for a technical understanding of the system is described, along with examples of how this interface can be put to use in research, development and teaching. The usefulness of the modular and transparent design approach is further illustrated with an early prototype of an interface for emotional speech synthesis."
+    },
+    "2488088": {
+      "title": "Learning to sportscast: A test of grounded language acquisition",
+      "abstract": "We present a novel commentator system that learns language from sportscasts of simulated soccer games. The system learns to parse and generate commentaries without any engineered knowledge about the English language. Training is done using only ambiguous supervision in the form of textual human commentaries and simulation states of the soccer games. The system simultaneously tries to establish correspondences between the commentaries and the simulation states as well as build a translation model. We also present a novel algorithm, Iterative Generation Strategy Learning (IGSL), for deciding which events to comment on. Human evaluations of the generated commentaries indicate they are of reasonable quality compared to human commentaries."
+    }
+  },
+  "generator": "fallback_v4"
+}

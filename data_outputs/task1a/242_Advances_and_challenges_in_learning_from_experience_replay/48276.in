@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Based on the idea that the age of an old policy distances it from the current policy and that the age depends on the replay ratio and replay capacity, the authors claimed that the results of their experiments suggest that learning from policies (sampling transitions) closer to the current policy can increase performance because the agent thus explores transitions with a more significant potential of return (Sun et al. (2020) also explored this hypothesis).",
+    "An exception observed by the authors occurred when they fixed the replay capacity at 10 million and reduced the age of the oldest policy from 2.5 million to 250 thousand, which, according to them, can be explained by the decrease in the agent score in two games: Montezuma Revenge and PrivateEye, which consist of two environments with very sparse rewards and challenging to explore.",
+    "In these environments, because of the sparse rewards that demand learning long-term policies, the agent could not accumulate rewards when the authors reduced the potential age of the policies and concentrated the transition samples in those closer to the current policy.",
+    "The authors also noted that increasing the buffer size while maintaining a fixed replay ratio leads to a performance improvement that may vary due to the interaction between the gain in replay capacity and the loss from accumulating older policies.",
+    "Thus, as the age of the policy increases, the benefit of increasing the replay capacity generally decreases."
+  ]
+}

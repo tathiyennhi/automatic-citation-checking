@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Starting from an initial configuration Z 0 = Z (1) 0,..., Z (n) 0, we recursively simulate R + 1 child configurations at each time step t, yielding {Z t+1 [r]} r=0,...,R. We designate the branch r = 0 as the main branch {Z t [0]} t=0,...,T -1, from which we extract the conditioning tuplesZ (i) t, {Z (j) t } j∈N (i) tfor all agents i.",
+    "The remaining R sibling branches at each t supply the target next states Z (i) t+1, ensuring that each context yields multiple outcomes.",
+    "1: repeat 2:t ∼ Uniform(0,..., T -1) 3:Z (i) t, {Z (j) t } j∈N (i) t ← Zt[0] 4: g (i) t = fω(Z (i) t, j∈N (i) t (Z (i) t, Z(j)t)) 5:τ ∼ Uniform(1,..., τmax) 6:τ emb = SinusoidalPositionEmbedding(τ) 7: c (i) t = MLP(Z (i) t) + MLP(g (i) t) + MLP(τ emb) 8: r ∼ Uniform(1,..., R) 9: Z (i) t+1 ← Zt+1[r] 10:ϵ ∼ N (0, I) 11:Optimizers step over all i ∈ A 12:∇ ϕ,ω ||ϵ -ϵ ϕ ( Z(i) t+1 (τ), c(i)t)|| 2 13: until convergence Learning procedure.",
+    "Our framework uses these data sets to train the Graph Diffusion Network.",
+    "It minimizes the expected denoising loss over the outcomes observed in the ramification data (see Algorithm 1)."
+  ],
+  "correct_citations": [
+    "Starting from an initial configuration Z 0 = Z (1) 0,..., Z (n) 0, we recursively simulate R + 1 child configurations at each time step t, yielding {Z t+1 [r]} r=0,...,R. We designate the branch r = 0 as the main branch {Z t [0]} t=0,...,T -1, from which we extract the conditioning tuplesZ (i) t, {Z (j) t } j∈N (i) tfor all agents i.",
+    "1: repeat 2:t ∼ Uniform(0,..., T -1) 3:Z (i) t, {Z (j) t } j∈N (i) t ← Zt[0] 4: g (i) t = fω(Z (i) t, j∈N (i) t (Z (i) t, Z(j)t)) 5:τ ∼ Uniform(1,..., τmax) 6:τ emb = SinusoidalPositionEmbedding(τ) 7: c (i) t = MLP(Z (i) t) + MLP(g (i) t) + MLP(τ emb) 8: r ∼ Uniform(1,..., R) 9: Z (i) t+1 ← Zt+1[r] 10:ϵ ∼ N (0, I) 11:Optimizers step over all i ∈ A 12:∇ ϕ,ω ||ϵ -ϵ ϕ ( Z(i) t+1 (τ), c(i)t)|| 2 13: until convergence Learning procedure."
+  ]
+}

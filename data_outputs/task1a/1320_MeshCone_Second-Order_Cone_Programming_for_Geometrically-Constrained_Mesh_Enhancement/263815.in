@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The variable X is the decision variable of the optimization, representing the updated vertex positions.From the deformed faces we extract the set of unique undirected edgesE = {(i k, j k)} m k=1 ⊆ V × V.Then, we sample N points from the target mesh surface and define their centroid µ ∈ R 1×3 byµ = 1 N N ℓ=1 p ℓ.As a reference geometry for Tikhonov regularization, we useX = X tgt if #V tgt = #V deformed, X deformed otherwise,so that the regularizer is well-defined regardless of target topology.We encourage coarse alignment to the target distribution via the centroid and penalize deviations from the reference geometry:min X∈R n×3 ∥X -1µ∥ 2 F + λ∥X -X∥ 2 Fwhere the first term enforces alignment of the optimized vertices with the target centroid, and the second term acts as a Tikhonov regularization that penalizes large deviations from the reference geometry.",
+    "Here, λ > 0 controls the relative weight between alignment and regularization, and 1 ∈ R n×1 denotes the all-ones vector.",
+    "ConstraintsWe define the constraint of this problem in the following way:∥X i -X j ∥ 2 ≤ δ, ∀(i, j) ∈ E,where (i, j) denotes a pair of vertices connected by an edge in the mesh.",
+    "Each X i, X j ∈ R 3 represents the 3D coordinates of vertices i and j, respectively.",
+    "This ℓ 2 -norm constraint ensures that the optimization process seeks a solution that minimizes the variation between connected vertices, effectively keeping edge lengths within a bounded range."
+  ]
+}

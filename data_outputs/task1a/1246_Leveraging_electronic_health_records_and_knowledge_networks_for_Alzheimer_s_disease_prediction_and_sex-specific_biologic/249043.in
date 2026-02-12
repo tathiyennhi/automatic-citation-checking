@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "All existing clinical features (conditions, drug exposures, abnormal measurements) were one-hot encoded.",
+    "Abnormal measures were extracted from the OMOP measurement table based on the numeric value falling either above range_high or below range_low, and abnormal measures were binary encoded based on abnormal flagging, following the approach from ref. 29.",
+    "If a clinical feature did not exist or if the clinical measure was within normal range, the encoding is represented as a 0 and therefore assumed to be normal.",
+    "As the UCSF database only captures an interval of a participant's Analysis https://doi.org/10.1038/s43587-024-00573-8 interaction with the healthcare system, prior non-chronic conditions may not be captured within the EHR.",
+    "Demographic and visit-related features (prediction age, first visit age, years in UCSF EHR, log(number prior visits), log(number prior concepts), log(days since first clinical event)) were scaled between 0 and 1 on the training data, where log indicates natural logarithm and feature scaling allows for multiple ML model approaches."
+  ]
+}

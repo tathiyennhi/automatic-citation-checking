@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The formal definitions of the two initializations are written as:w d k = softmax( N i=1 (t j i,k) K k=1 N i=1 (t j i,k)) w s p,k = softmax( i∈Sp (t j i,k) K k=1 i∈Sp (t j i,k))(11)where w d k, w s p,k are initialized weights averaged on all data and each sample respectively, softmax(•) denotes the softmax function applied along the label dimension, and S p is the extracted patch set of p-th sample.",
+    "Rather than weights at the label-level, weights at the instance-level, namely a scalar weight for each instance instead of a vector weight, are also evaluated in the ablation study.",
+    "Due to the enlarged granularity, the previous initialization of weights w d k is not applicable and changed to:w d q,k = softmax( N Lq N)(12)where w d q,d denotes the new initialized weights averaged on all data at the instance-level and N Lq is the number of instances, which share the same label L q ∈ Z K, where K represents the total number of categories of labels.",
+    "Besides, in the case of weights at the instance level, it is not able to implement the initialization of frequencies averaged on each sample and the probabilistic pseudo-label dispatcher, the corresponding experimental results of which are not reported in this section.From Table III, it is evident that the proposed components effectively improve the performance of the model.",
+    "From the perspective of granularities of weights, all experiments in the ablation study except for the first one can be divided into two groups, one is the case of weights at the instance-level and the other is that at the label-level (• and • in column Granularity)."
+  ]
+}

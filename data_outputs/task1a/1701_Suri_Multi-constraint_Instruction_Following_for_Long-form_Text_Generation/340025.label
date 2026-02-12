@@ -1,0 +1,14 @@
+{
+  "style": "APA",
+  "texts": [
+    "To understand the capabilities of models to differentiate between correct and corrupted instructions, we evaluate ranking accuracy (See et al., 2019; Chen et al., 2024a).",
+    "This involves measuring the percentage of cases in which the model assigns a higher probability to the gold response under the correct instruction than under the corrupted version.",
+    "We calculate the sum of token log probabilities in the response given the previous tokens, denoted by logps(y|x), and determine accuracy based on the proportion of times when logps(y|x w) > logps(y|x l).",
+    "A higher accuracy indicates that the model is more sensitive to the instructions and can determine which instruction is the correct instruction for the given response.",
+    "We use Hugging Face's Transformers (Wolf et al., 2020) to access the probability distribution over vocabulary and measure the impact of instruction specificity on ranking accuracy across five different settings, which are defined by the number of all constraints included (M constraints in total) and the number of those included constraints that are corrupted: (M,M), (M,M/2), (M,1), (M/2,M/2), (1,1)."
+  ],
+  "correct_citations": [
+    "To understand the capabilities of models to differentiate between correct and corrupted instructions, we evaluate ranking accuracy (See et al., 2019; Chen et al., 2024a).",
+    "We use Hugging Face's Transformers (Wolf et al., 2020) to access the probability distribution over vocabulary and measure the impact of instruction specificity on ranking accuracy across five different settings, which are defined by the number of all constraints included (M constraints in total) and the number of those included constraints that are corrupted: (M,M), (M,M/2), (M,1), (M/2,M/2), (1,1)."
+  ]
+}

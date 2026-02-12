@@ -1,0 +1,43 @@
+{
+  "doc_id": "2095",
+  "text": "Adaptive thresholding typically takes a grayscale or color image as input and, in the simplest implementation, outputs a binary image representing the segmentation. For each pixel in the image, a threshold has to be calculated. If the pixel value is below the threshold it is set to the background value, otherwise it assumes the foreground value. In adaptive thresholding, different threshold values for different local areas are used There are two main approaches to finding the threshold: (i) the Chow and Kaneko [CITATION_1] approach and (ii) local thresholding. The assumption behind both methods is that smaller image regions are more likely to have approximately uniform illumination, thus being more suitable for thresholding. Adaptive thresholding is used to separate desirable foreground image objects from the background based on the difference in pixel intensities of each region. The drawback of this method is that it is computational expensive and, therefore, is not appropriate for real-time applications. An alternative approach to finding the local threshold is to statistically examine the intensity values of the local neighborhood of each pixel. The statistic which is most appropriate depends largely on the input image. Simple and fast functions include the mean of the local intensity distribution, local adaptive thresholding, on the other hand, selects an individual threshold for each pixel based on the range of intensity values in its local neighborhood. This allows for thresholding of an image whose global intensity histogram doesn't contain distinctive peaks. Chow and Kaneko [CITATION_2] [10] suggest the use of a 7 X 7 window for local thresholding. In their method, the original image is divided into 7 x 7 sub images and a threshold is computed for each sub image. However, a threshold is not computed for sub images with unimodal gray level histogram. For X-ray angiograms Fernando and Monro [CITATION_3] suggest a local thresholding method [CITATION_4] .",
+  "correct_citation": {
+    "[CITATION_1]": "10961154",
+    "[CITATION_2]": "10961154",
+    "[CITATION_3]": "121218011",
+    "[CITATION_4]": "60652803"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In adaptive thresholding, different threshold values for different local areas are used There are two main approaches to finding the threshold: (i) the Chow and Kaneko  approach and (ii) local thresholding."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Chow and Kaneko  [10] suggest the use of a 7 X 7 window for local thresholding."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "For X-ray angiograms Fernando and Monro  suggest a local thresholding method  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "For X-ray angiograms Fernando and Monro  suggest a local thresholding method  ."
+    }
+  ],
+  "bib_entries": {
+    "10961154": {
+      "title": "Boundary detection of radiographic images by a threshold method",
+      "abstract": "Abstract A threshold method based on statistical principles and heuristics is developed to detect boundaries in radiographic images. Each local region of the image containing a portion of boundary is characterized by a mixture of two (normal) intensity distributions. Thresholds are set dynamically according to local, rather than global, characteristics estimated from the observed intensity histograms. A program to implement the method has been written. Experimental results on cardioangiograms are presented to successfully demonstrate the feasibility of the method for low quality images. The method is insensitive to shading or gradually varying interference."
+    },
+    "60652803": {
+      "title": "A Survey on Threshold Based Segmentation Technique in Image Processing",
+      "abstract": "The present paper describes the study of the threshold techniques in image segmentation. Image segmentation is one of the fundamental approaches of the digital image processing. Image segmentation is used widely in many applications. Several general purpose algorithms and techniques have been developed for image segmentation. Segmentation applications are involving detection, recognition and measurement of features. The purpose of image segmentation is to partition an image into meaningful regions with respect to a particular application. Segmentation techniques can be classified as either contextual or non-contextual . Thresholding is a Non-Contextual Approach. This method is based on a threshold value to turn a gray-scale image into a binary image. In Histogram Dependent Technique, a histogram is computed from all of the pixels in the image and this paper enumerates and reviews a comparative performance of threshold technique as Histogram Dependent Technique (HDT) based on Global Threshold, Local Threshold and Adaptive Threshold one another."
+    },
+    "121218011": {
+      "title": "Variable thresholding applied to angiography",
+      "abstract": "ABSTRACTThis paper describes a method for automatically determining the outline of the left ventricle(LV) from its angiograms. It is shown that when thehistograms of the pictures are relatively narrow,some of the existing techniques are unsuitable for boundary detection. It is further shown that byappropriate partitioning of the pictures, an existing automatic thresholding technique can beapplied to these pictures. The discontinuities that occur in the thresholded pictures areeliminated by the use of suitable 2 -D filters. The techniques thus developed are applied to twoparticular LV angiograms at end -systole and atend -diastole. The technique by Chow and Kaneko5 goes a long way towards obtaining a dynamic threshold which is particularly suitable for angiographic pictures.However the pre -processing involved, i.e. logarithmic transforming, averaging andsubtracting, is very time consuming. Their methodinvolves the division of the picture into 49overlapping regions. The threshold of each region"
+    }
+  },
+  "generator": "fallback_v4"
+}

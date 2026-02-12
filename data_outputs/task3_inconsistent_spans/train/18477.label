@@ -1,0 +1,55 @@
+{
+  "doc_id": "18477",
+  "text": "The parameter estimation of AR model is quite simple, and various methods can be used. More details of AR model and time series data analysis are referred to in [CITATION_1] . Due to low computation overhead and memory requirements yet outstanding performance in data forecasting, AR model has been widely used for approximate data collection in WSNs. PAQ [CITATION_2] adopts AR model to approximate the values of sensor nodes. With AR model built locally, each sensor node transmits its model to Sink, which uses these models to predict values of sensor nodes without direct communication. PAQ proposes a dynamic AR model maintaining strategy to cope with the changing environment. With the dual-prediction based data collection idea in mind, quite a few similar works [CITATION_3] [CITATION_4] building on AR model have been presented, all of which adopt similar method to prolong the network lifetime of WSNs by keeping sensor nodes from transmitting redundant data. Besides exploiting AR model to model the temporal correlated sensor readings, HSC also takes advantages of spatial correlation among neighboring sensor nodes to group the similar nodes together, which would further reduce the energy consumption during data collection. ",
+  "correct_citation": {
+    "[CITATION_1]": "197464049",
+    "[CITATION_2]": "12031961",
+    "[CITATION_3]": "2409317",
+    "[CITATION_4]": "21901646"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "More details of AR model and time series data analysis are referred to in  .",
+      "s_span": 87,
+      "e_span": 175
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "PAQ  adopts AR model to approximate the values of sensor nodes.",
+      "s_span": 352,
+      "e_span": 427
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "With the dual-prediction based data collection idea in mind, quite a few similar works   building on AR model have been presented, all of which adopt similar method to prolong the network lifetime of WSNs by keeping sensor nodes from transmitting redundant data.",
+      "s_span": 683,
+      "e_span": 969
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "With the dual-prediction based data collection idea in mind, quite a few similar works   building on AR model have been presented, all of which adopt similar method to prolong the network lifetime of WSNs by keeping sensor nodes from transmitting redundant data.",
+      "s_span": 683,
+      "e_span": 969
+    }
+  ],
+  "bib_entries": {
+    "12031961": {
+      "title": "PAQ: time series forecasting for approximate query answering in sensor networks",
+      "abstract": "In this paper, we present a method for approximating the values of sensors in a wireless sensor network based on time series forecasting. More specifically, our approach relies on autoregressive models built at each sensor to predict local readings. Nodes transmit these local models to a sink node, which uses them to predict sensor values without directly communicating with sensors. When needed, nodes send information about outlier readings and model updates to the sink. We show that this approach can dramatically reduce the amount of communication required to monitor the readings of all sensors in a network, and demonstrate that our approach provides provably-correct, user-controllable error bounds on the predicted values of each sensor."
+    },
+    "197464049": {
+      "title": "Introduction to Time Series and Forecasting",
+      "abstract": "Preface 1 INTRODUCTION 1.1 Examples of Time Series 1.2 Objectives of Time Series Analysis 1.3 Some Simple Time Series Models 1.3.3 A General Approach to Time Series Modelling 1.4 Stationary Models and the Autocorrelation Function 1.4.1 The Sample Autocorrelation Function 1.4.2 A Model for the Lake Huron Data 1.5 Estimation and Elimination of Trend and Seasonal Components 1.5.1 Estimation and Elimination of Trend in the Absence of Seasonality 1.5.2 Estimation and Elimination of Both Trend and Seasonality 1.6 Testing the Estimated Noise Sequence 1.7 Problems 2 STATIONARY PROCESSES 2.1 Basic Properties 2.2 Linear Processes 2.3 Introduction to ARMA Processes 2.4 Properties of the Sample Mean and Autocorrelation Function 2.4.2 Estimation of $\\gamma(\\cdot)$ and $\\rho(\\cdot)$ 2.5 Forecasting Stationary Time Series 2.5.3 Prediction of a Stationary Process in Terms of Infinitely Many Past Values 2.6 The Wold Decomposition 1.7 Problems 3 ARMA MODELS 3.1 ARMA($p,q$) Processes 3.2 The ACF and PACF of an ARMA$(p,q)$ Process 3.2.1 Calculation of the ACVF 3.2.2 The Autocorrelation Function 3.2.3 The Partial Autocorrelation Function 3.3 Forecasting ARMA Processes 1.7 Problems 4 SPECTRAL ANALYSIS 4.1 Spectral Densities 4.2 The Periodogram 4.3 Time-Invariant Linear Filters 4.4 The Spectral Density of an ARMA Process 1.7 Problems 5 MODELLING AND PREDICTION WITH ARMA PROCESSES 5.1 Preliminary Estimation 5.1.1 Yule-Walker Estimation 5.1.3 The Innovations Algorithm 5.1.4 The Hannan-Rissanen Algorithm 5.2 Maximum Likelihood Estimation 5.3 Diagnostic Checking 5.3.1 The Graph of $\\t=1,\\ldots,n\\ 5.3.2 The Sample ACF of the Residuals"
+    },
+    "21901646": {
+      "title": "An energy-efficient data collection scheme for wireless sensor networks",
+      "abstract": "Keeping data collecting while preserving the scarce energy of sensor nodes is always one of the most crucial problems in wireless sensor networks. In this paper, we propose the DCS scheme to effectively exploit the ubiquitous temporal-spatial correlation in most natural phenomena for energy-efficient data collection of wireless sensor networks. Specifically, for temporal correlation, we build lightweight AR model locally to capture data distribution at sensor node; for spatial correlation, by making use of our novel definition of similarity measure between sensor nodes, we perform centralized model clustering, which is a kind of clustering that emphasizes data similarity between nodes but ignores geographical distance, to group sensor nodes with similar data distribution on both magnitude and trend into the same cluster. Then through scheduling sensor nodes to report readings alternately and performing dual-prediction at both sensor nodes and Sink, DCS acquires sensing readings without compromising too much data accuracy loss. Simulation results illustrate the efficiency of DCS scheme on a data set synthesized from real-world temperature data, i.e., 82.94% communication overhead reduction while keeping data error as low as 0.0456°C when user-provided error-tolerance threshold sets as 0.2°C."
+    },
+    "2409317": {
+      "title": "Adaptive approximate data collection for wireless sensor networks",
+      "abstract": "Data collection is a fundamental task in wireless sensor networks. In many applications of wireless sensor networks, approximate data collection is a wise choice due to the constraints in communication bandwidth and energy budget. In this paper, we focus on efficient approximate data collection with prespecified error bounds in wireless sensor networks. The key idea of our data collection approach ADC (Approximate Data Collection) is to divide a sensor network into clusters, discover local data correlations on each cluster head, and perform global approximate data collection on the sink node according to model parameters uploaded by cluster heads. Specifically, we propose a local estimation model to approximate the readings of sensor nodes in subsets, and prove rated error-bounds of data collection using this model. In the process of model-based data collection, we formulate the problem of selecting the minimum subset of sensor nodes into a minimum dominating set problem which is known to be NP-hard, and propose a greedy heuristic algorithm to find an approximate solution. We further propose a monitoring algorithm to adaptively adjust the composition of node subsets according to changes of sensor readings. Our trace-driven simulations demonstrate that ADC remarkably reduces communication cost of data collection with guaranteed error bounds."
+    }
+  },
+  "generator": "fallback_v4"
+}

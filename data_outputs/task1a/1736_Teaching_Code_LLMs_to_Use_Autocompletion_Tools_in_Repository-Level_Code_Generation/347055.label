@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "As noted, the description only mentions changing \"w:st=\"\" to \"w-st=\"\", but the actual desired functionality in the ground-truth is to handle all strings matching the pattern \"\\bw:[a-z]{1,}=\\\"\".",
+    "Both VANILLA-llama and TOOLGEN-llama follow the description and generate code that satisfies this incomplete functionality.",
+    "This finding highlights the challenges posed by low-quality descriptions in real-world generation scenarios and reveals quality issues in existing benchmarks.Example 3: There are two crucial dependencies, namely \"cls._get_service()\" and \"ServiceName.PLUGINS_MANAGER\", necessary to realize the required functionality.",
+    "VANILLA-llama fails to predict both dependencies and instead outputs nonexistent dependencies like \"cls._plugins_manager\" and \"PluginManager()\", causing the generated code to fail lint checks and test cases.",
+    "For TOOLGENllama, although it successfully predicts the dependency \"cls._get_service()\", it fails to predict \"ServiceName.PLUGINS_MANAGER\" because the model chooses \"cls\" instead of \"ServiceName\" when starting predicting the argument for \"cls._get_service()\"."
+  ],
+  "correct_citations": []
+}

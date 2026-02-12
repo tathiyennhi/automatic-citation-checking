@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Therefore, a CRF learns a transition matrix T ∈ R |L|×|L|, where T l 1,l 2 represents the transition score from label l 1 to label l 2, and two vectors b, e ∈ R |L|, where b l and e l represent the score of beginning and ending with label l, respectively.",
+    "The objective is to find the label sequence with the highest conditional joint probability P(ŷ 1,..., ŷn |l 1,..., l n).",
+    "For this purpose, we define a score function for a label sequence (ŷ 1,..., ŷn), that is, a sum of the scores of the labels and the transition scores:score((ŷ 1,..., ŷn), (l 1,..., l n)) = b ŷ1 + n t=1 l t, ŷt + n-1 t=1 T ŷt, ŷt+1 + e ŷm(6)Then, the score is transformed to a probability value with so f tmax:Z (l 1,..., l n) = y 1,...,y n exp(score((y 1,..., y n), (l 1,..., l n))) (7) P(ŷ 1,..., ŷn |l 1,..., l n) = exp(score((ŷ 1,..., ŷn), (l 1,..., l n))) Z (l 1,..., l n) (8)The denominator Z (.)",
+    "represents a sum of the scores of all possible label sequences for the given logits.",
+    "The Viterbi algorithm [30] is used to efficiently calculate the sequence with the highest score and the denominator (both with time complexityO(|L| 2 • n)).During training, the CRF maximises P(y 1,..., y n |l 1,..., l n) of the ground truth labels for all m training samples ((x (1), y (1)),..., (x (m), y (m))), where x (i) represents the sentences of paper i and y (i) the corresponding ground truth label sequence."
+  ],
+  "correct_citations": [
+    "The Viterbi algorithm [30] is used to efficiently calculate the sequence with the highest score and the denominator (both with time complexityO(|L| 2 • n)).During training, the CRF maximises P(y 1,..., y n |l 1,..., l n) of the ground truth labels for all m training samples ((x (1), y (1)),..., (x (m), y (m))), where x (i) represents the sentences of paper i and y (i) the corresponding ground truth label sequence."
+  ]
+}

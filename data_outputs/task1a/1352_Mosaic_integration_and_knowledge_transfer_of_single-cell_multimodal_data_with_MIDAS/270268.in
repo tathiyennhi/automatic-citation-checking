@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We first use RunTFIDF and RunSVD functions to obtain the low-dimensional representation of ATAC data and then use NormalizeData, ScaleData and RunPCA functions to obtain the low-dimensional representations of RNA and ADT data, respectively.",
+    "For the obtained low-dimensional representation of each modality, we use the bbknn function of the Scanpy 77 (v1.9.1) Python package to remove the batch effect and obtain a similarity graph.",
+    "Finally, we average the similarity graphs of different modalities to obtain the output.Harmony+WNN.",
+    "The R package Harmony 61 (v0.1.1) is used for batch correction (embedding space), and the WNN algorithm 15 of the Seurat package is used for modality fusion.",
+    "We use the same processing method as BBKNN+average to obtain low-dimensional representations of different batches of ATAC, RNA and ADT data, respectively."
+  ]
+}

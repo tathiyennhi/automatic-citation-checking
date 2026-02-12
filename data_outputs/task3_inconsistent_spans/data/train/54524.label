@@ -1,0 +1,44 @@
+{
+  "doc_id": "54524",
+  "text": "Matting is the process of obtaining accurate alpha values at the boundaries of the object, called the alpha matte of an object. Various techniques of matting have been proposed recently. We only discuss works related to natural image matting. Bayesian Matting [CITATION_1] models color distributions probabilistically and alpha is obtained using MAP, which was also proposed earlier by Ruzon and Tomasi [CITATION_2] . In most matting systems the user specifies a trimap to the system specifying pixels which are 100% foreground (α = 1), 100% background (α = 0) and for which the alpha is to be determined. The system then estimates the α values for the unknown region. Poisson Matting [CITATION_3] provides good matting results but can need substantial application of the manual brushing tool or local Poisson matting. The problem solved by matting is quite similar to one of object segmentation, but with precise boundaries. The main requirement for most matting systems is the specification of proper trimap input. Matting techniques can be applied in cascade to our layer extraction method to obtain fine mattes.",
+  "correct_citation": {
+    "[CITATION_1]": "2062421",
+    "[CITATION_2]": "16307305",
+    "[CITATION_3]": "27763245"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Bayesian Matting  models color distributions probabilistically and alpha is obtained using MAP, which was also proposed earlier by Ruzon and Tomasi  .",
+      "s_span": 243,
+      "e_span": 417
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Bayesian Matting  models color distributions probabilistically and alpha is obtained using MAP, which was also proposed earlier by Ruzon and Tomasi  .",
+      "s_span": 243,
+      "e_span": 417
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Poisson Matting  provides good matting results but can need substantial application of the manual brushing tool or local Poisson matting.",
+      "s_span": 669,
+      "e_span": 818
+    }
+  ],
+  "bib_entries": {
+    "27763245": {
+      "title": "Poisson matting",
+      "abstract": "In this paper, we formulate the problem of natural image matting as one of solving Poisson equations with the matte gradient field. Our approach, which we call Poisson matting, has the following advantages. First, the matte is directly reconstructed from a continuous matte gradient field by solving Poisson equations using boundary information from a user-supplied trimap. Second, by interactively manipulating the matte gradient field using a number of filtering tools, the user can further improve Poisson matting results locally until he or she is satisfied. The modified local result is seamlessly integrated into the final result. Experiments on many complex natural images demonstrate that Poisson matting can generate good matting results that are not possible using existing matting techniques."
+    },
+    "2062421": {
+      "title": "A bayesian approach to digital matting",
+      "abstract": "This paper proposes a new Bayesian framework for solving the matting problem, i.e. extracting a foreground element from a background image by estimating an opacity for each pixel of the foreground element. Our approach models both the foreground and background color distributions with spatially-varying sets of Gaussians, and assumes a fractional blending of the foreground and background colors to produce the final output. It then uses a maximum-likelihood criterion to estimate the optimal opacity, foreground and background simultaneously. In addition to providing a principled approach to the matting problem, our algorithm effectively handles objects with intricate boundaries, such as hair strands and fur, and provides an improvement over existing techniques for these difficult cases."
+    },
+    "16307305": {
+      "title": "Alpha estimation in natural images",
+      "abstract": "Many boundaries between objects in the world project onto curves in an image. However, boundaries involving natural objects (e.g., trees, hair, water, smoke) are often unworkable under this model because many pixels receive light from more than one object. We propose a technique for estimating alpha, the proportion in which two colors mix to produce a color at the boundary. The technique extends blue screen matting to backgrounds that have almost arbitrary color distributions, though coarse knowledge of the boundary's location is required. Results show a number of different objects moved from one image to another while maintaining naturalism."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "=IF(A1 < B1, \"Overdue\", \"On Time\")",
+    "Managing stock levels involves logic to determine whether restocking is needed, table 3 contains some suitable TDD cases.",
+    "Test Case Current Stock Reorder Threshold Expected Result TC1 50 100 Restock TC2 120 100 Sufficient Stock TC3 100 100 Sufficient Stock TC4 0 10 Restock Table 3 TDD test cases for stock reorder Python Code (TDD) def restock_needed(current_stock, reorder_threshold): return \"Restock\" if current_stock < reorder_threshold else \"Sufficient Stock\" Excel Formula =IF(A1 < B1, \"Restock\", \"Sufficient Stock\") Where: A1 = Current Stock, B1 = Reorder Threshold 4.4 Tiered Discount Pricing This example introduces conditional pricing logic where discounts depend on purchase amounts, see table 4.",
+    "Test Case Order Total (£) Expected Final Price (£) TC1 50.00 50.00 TC2 100.00 95.00 TC3 499.99 474.99 TC4 500.00 450.00 TC5 999.99 899.99 TC6 1000.00 850.00 TC7 0.00 0.00 TC8 100.00 Invalid input Table 4 TTD cases for discounted pricing logic Python def discounted_price(order_total): if order_total < 0: return \"Invalid input\" elif order_total < 100: return round(order_total, 2) elif order_total < 500: return round(order_total * 0.95, 2) elif order_total < 1000: return round(order_total * 0.90, 2) else: return round(order_total * 0.85, 2) Excel =IF(A1<0, \"Invalid input\", IF(A1<100, A1, IF(A1<500, ROUND(A1*0.95, 2), IF(A1<1000, ROUND(A1*0.90, 2), ROUND(A1*0.85, 2)))))",
+    "Where: A1 contains the total order value."
+  ]
+}

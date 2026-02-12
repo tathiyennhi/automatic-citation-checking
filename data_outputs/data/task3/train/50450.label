@@ -1,0 +1,38 @@
+{
+  "doc_id": "50450",
+  "text": "In addition, the designed seismic FIR wavefield extrapolation filter via homotopy was compared with two filters designed with the Weighted Least Squares (WLSQ) method reported in [CITATION_1] and the L 1 -norm method reported in [CITATION_2] . Both the homotopy and the L 1 -norm better approximate the desired wavenumber response, when compared to the WLSQ wavenumber response. In terms of design efficiency, both the L 1 -norm as well as the WLSQ methods are more efficient than the proposed homotopy method, as can be seen in Table  I . This is due to the small step size δt. If δt was selected to be larger, then the design run time is expected to be smaller but probably at the expense on the filter performance. The passband magnitude mean error is comparable for the homotopy and the L 1 -norm designs and are lower than that of the WLSQ. The L 1 provided the best passband phase mean error when compared with both the homotopy and the WLSQ, although the homotopy passband phase mean error is much lower than the WLSQ. Note that the running design time for the seismic FIR wavefield extrapolation filters is not the main concern for this application [CITATION_3] because once the filters are designed, they will be stored in a look-up table, and the appropriate filter will be retrieved for usage according to the required wavenumber cut-off. It is worth investigation in future research to consider the effect of δt on the filter design performance. ",
+  "correct_citation": {
+    "[CITATION_1]": "18555859",
+    "[CITATION_2]": "1070417",
+    "[CITATION_3]": "129259975"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In addition, the designed seismic FIR wavefield extrapolation filter via homotopy was compared with two filters designed with the Weighted Least Squares (WLSQ) method reported in  and the L 1 -norm method reported in  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In addition, the designed seismic FIR wavefield extrapolation filter via homotopy was compared with two filters designed with the Weighted Least Squares (WLSQ) method reported in  and the L 1 -norm method reported in  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "than the WLSQ. Note that the running design time for the seismic FIR wavefield extrapolation filters is not the main concern for this application  because once the filters are designed, they will be stored in a look-up table, and the appropriate filter will be retrieved for usage"
+    }
+  ],
+  "bib_entries": {
+    "1070417": {
+      "title": "Imaging of the SEG/EAGE salt model seismic data using sparse f − x finite-impulse-response wavefield extrapolation filters",
+      "abstract": "In this paper, a stable explicit depth wavefield extrapolation is obtained using sparse frequency-space (f-x) finite impulse response (FIR) digital filters. The ideal impulse response of the wavefield extrapolation filter is nonsparse in nature, as will be shown. The problem of designing such filters to obtain stable images of the famous challenging Society of Exploration Geophysicists/European Association of Geoscientists and Engineers (SEG/EAGE) salt model seismic data was formulated as an L1-norm minimization that is convex with a quadratic constraint. Then, sparse filters were obtained by employing hard thresholding to the filter coefficients' magnitude. An ad hoc threshold value was set to the minimum of the bin location values that were used to calculate the histogram of the f-x FIR filter coefficients' magnitude. Thus, the f-x FIR filter coefficients (both real and imaginary parts), at which the filter coefficients' magnitude is below the threshold, were set equal to zero. Poststack depth imaging of the SEG/EAGE salt model data set was then performed using the explicit depth wavefield extrapolation with the proposed nonsparse and sparse L1-norm minimization-based algorithms. Taking into account the amount of improved computational efficiency and compared with the results of other methods such as the phase shift plus interpolation migration algorithm, the results of the proposed sparse L1-norm minimization method showed practically stable images of the salt data set. The proposed method can therefore be used to design high accuracy sparse extrapolation filters."
+    },
+    "129259975": {
+      "title": "Towards optimum one-way wave propagation",
+      "abstract": "Numerical wavefield extrapolation represents the backbone of any algorithm for depth migration pre- or post-stack. For such depth imaging techniques to yield reliable and interpretable results, the underlying wavefield extrapolation algorithm must propagate the waves through inhomogeneous media with a minimum of numerically induced distortion, over a range of frequencies and angles of propagation. ::: ::: ::: ::: A review of finite-difference (FD) approximations to the acoustic one-way wave equation in the space-frequency domain is presented. A straightforward generalization of the conventional FD formulation leads to an algorithm where the wavefield is continued downwards with space-variant symmetric convolutional operators. The operators can be precomputed and made accessible in tables such that the ratio between the temporal frequency and the local velocity is used to determine the correct operator at each grid point during the downward continuation. ::: ::: ::: ::: Convolutional operators are designed to fit the desired dispersion relation over a range of frequencies and angles of propagation such that the resulting numerical distortion is minimized. The optimization is constrained to ensure that evanescent energy and waves propagating at angles higher than the maximum design angle are attenuated in each extrapolation step. The resulting operators may be viewed as optimally truncated and bandlimited spatial versions of the familiar phase shift operator. They are unconditionally stable and can be applied explicitly. This results in a simple wave propagation algorithm, eminently suited for implementation on pipelined computers and on large parallel computing systems."
+    },
+    "18555859": {
+      "title": "Design of one-way wavefield extrapolation operators, using smooth functions in WLSQ optimization",
+      "abstract": "Many depth migration methods use one‐way frequency–space depth extrapolation methods. These methods are generally considered to be expensive, so it is important to find the most efficient way of implementing them. This usually means making spatial convolution operators that are as short as possible. Applying the extrapolation operators in a recursive way, using small depth steps, also demands that the operators do not amplify the wavefield at every depth step.Weighted least squares is an appropriate method to use for designing extrapolation operators that are accurate and efficient and that remain stable in a recursive algorithm. The extrapolated wavefields calculated with these operators are comparable with the extrapolation results obtained with other known operator design techniques as the Remez exchange method and nonlinear optimization. In this paper, the weighted least‐squares technique is refined by using different model functions. By smoothing the phase and amplitude transition at the evanescent c..."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "We generate from AMR-to-English using the English MonoQL.",
+    "Then we translate that output into the target languages with the same model used to generate our silver data (4-bit quantized NLLB-3.3B).",
+    "We expect this model to mirror the uneven quality of machine translation models, performing well in HR but less well in LR languages.",
+    "Following NLLB Team et al. (2022), we use BLEU, a simple surface-based metric that does not rely on training data, which is an advantage when dealing with multiple languages, particularly lowresource ones.",
+    "We compute the scores with Sacre-BLEU (Post, 2018) 10 and the default settings (including 13a tokenizer) for comparability with previous works."
+  ],
+  "correct_citations": [
+    "We compute the scores with Sacre-BLEU (Post, 2018) 10 and the default settings (including 13a tokenizer) for comparability with previous works."
+  ]
+}

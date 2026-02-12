@@ -1,0 +1,69 @@
+{
+  "doc_id": "32787",
+  "text": "Some of the recent state-of-the-art pedestrian detectors include ALF [CITATION_1] , CSP [CITATION_2] and MGAN [CITATION_3] . ALF [CITATION_4] is based on Single Shot MultiBox Detector (SSD) [CITATION_5] , it stacks together multiple predictors to learn a better detection from default anchor boxes. MGAN [CITATION_6] uses the segmentation mask of the visible region of a pedestrian to guide the network attention and improve performance on occluded pedestrians. CSP is an anchor-less fully convolutional detector, which utilizes concatenated feature maps for predicting pedestrians.",
+  "correct_citation": {
+    "[CITATION_1]": "52961181",
+    "[CITATION_2]": "102351649",
+    "[CITATION_3]": "204509364",
+    "[CITATION_4]": "52961181",
+    "[CITATION_5]": "2141740",
+    "[CITATION_6]": "204509364"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Some of the recent state-of-the-art pedestrian detectors include ALF  , CSP  and MGAN  .",
+      "s_span": 0,
+      "e_span": 124
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Some of the recent state-of-the-art pedestrian detectors include ALF  , CSP  and MGAN  .",
+      "s_span": 0,
+      "e_span": 124
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Some of the recent state-of-the-art pedestrian detectors include ALF  , CSP  and MGAN  .",
+      "s_span": 0,
+      "e_span": 124
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "ALF  is based on Single Shot MultiBox Detector (SSD)  , it stacks together multiple predictors to learn a better detection from default anchor boxes.",
+      "s_span": 125,
+      "e_span": 298
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "ALF  is based on Single Shot MultiBox Detector (SSD)  , it stacks together multiple predictors to learn a better detection from default anchor boxes.",
+      "s_span": 125,
+      "e_span": 298
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "MGAN  uses the segmentation mask of the visible region of a pedestrian to guide the network attention and improve performance on occluded pedestrians.",
+      "s_span": 299,
+      "e_span": 461
+    }
+  ],
+  "bib_entries": {
+    "52961181": {
+      "title": "Learning efficient single-stage pedestrian detectors by asymptotic localization fitting",
+      "abstract": "Though Faster R-CNN based two-stage detectors have witnessed significant boost in pedestrian detection accuracy, it is still slow for practical applications. One solution is to simplify this working flow as a single-stage detector. However, current single-stage detectors (e.g. SSD) have not presented competitive accuracy on common pedestrian detection benchmarks. This paper is towards a successful pedestrian detector enjoying the speed of SSD while maintaining the accuracy of Faster R-CNN. Specifically, a structurally simple but effective module called Asymptotic Localization Fitting (ALF) is proposed, which stacks a series of predictors to directly evolve the default anchor boxes of SSD step by step into improving detection results. As a result, during training the latter predictors enjoy more and better-quality positive samples, meanwhile harder negatives could be mined with increasing IoU thresholds. On top of this, an efficient single-stage pedestrian detection architecture (denoted as ALFNet) is designed, achieving state-of-the-art performance on CityPersons and Caltech, two of the largest pedestrian detection benchmarks, and hence resulting in an attractive pedestrian detector in both accuracy and speed. Code is available at https://github.com/VideoObjectSearch/ALFNet."
+    },
+    "102351649": {
+      "title": "High-level semantic feature detection: A new perspective for pedestrian detection",
+      "abstract": "Object detection generally requires sliding-window classifiers in tradition or anchor-based predictions in modern deep learning approaches. However, either of these approaches requires tedious configurations in windows or anchors. In this paper, taking pedestrian detection as an example, we provide a new perspective where detecting objects is motivated as a high-level semantic feature detection task. Like edges, corners, blobs and other feature detectors, the proposed detector scans for feature points all over the image, for which the convolution is naturally suited. However, unlike these traditional low-level features, the proposed detector goes for a higher-level abstraction, that is, we are looking for central points where there are pedestrians, and modern deep models are already capable of such a high-level semantic abstraction. Besides, like blob detection, we also predict the scales of the pedestrian points, which is also a straightforward convolution. Therefore, in this paper, pedestrian detection is simplified as a straightforward center and scale prediction task through convolutions. This way, the proposed method enjoys an anchor-free setting. Though structurally simple, it presents competitive accuracy and good speed on challenging pedestrian detection benchmarks, and hence leading to a new attractive pedestrian detector. Code and models will be available at https://github.com/liuwei16/CSP."
+    },
+    "2141740": {
+      "title": "Ssd: Single shot multibox detector",
+      "abstract": "We present a method for detecting objects in images using a single deep neural network. Our approach, named SSD, discretizes the output space of bounding boxes into a set of default boxes over different aspect ratios and scales per feature map location. At prediction time, the network generates scores for the presence of each object category in each default box and produces adjustments to the box to better match the object shape. Additionally, the network combines predictions from multiple feature maps with different resolutions to naturally handle objects of various sizes. SSD is simple relative to methods that require object proposals because it completely eliminates proposal generation and subsequent pixel or feature resampling stages and encapsulates all computation in a single network. This makes SSD easy to train and straightforward to integrate into systems that require a detection component. Experimental results on the PASCAL VOC, COCO, and ILSVRC datasets confirm that SSD has competitive accuracy to methods that utilize an additional object proposal step and is much faster, while providing a unified framework for both training and inference. For \\(300 \\times 300\\) input, SSD achieves 74.3 % mAP on VOC2007 test at 59 FPS on a Nvidia Titan X and for \\(512 \\times 512\\) input, SSD achieves 76.9 % mAP, outperforming a comparable state of the art Faster R-CNN model. Compared to other single stage methods, SSD has much better accuracy even with a smaller input image size. Code is available at https://github.com/weiliu89/caffe/tree/ssd."
+    },
+    "204509364": {
+      "title": "Mask-guided attention network for occluded pedestrian detection",
+      "abstract": "Pedestrian detection relying on deep convolution neural networks has made significant progress. Though promising results have been achieved on standard pedestrians, the performance on heavily occluded pedestrians remains far from satisfactory. The main culprits are intra-class occlusions involving other pedestrians and inter-class occlusions caused by other objects, such as cars and bicycles. These result in a multitude of occlusion patterns. We propose an approach for occluded pedestrian detection with the following contributions. First, we introduce a novel mask-guided attention network that fits naturally into popular pedestrian detection pipelines. Our attention network emphasizes on visible pedestrian regions while suppressing the occluded ones by modulating full body features. Second, we empirically demonstrate that coarse-level segmentation annotations provide reasonable approximation to their dense pixel-wise counterparts. Experiments are performed on CityPersons and Caltech datasets. Our approach sets a new state-of-the-art on both datasets. Our approach obtains an absolute gain of 9.5% in log-average miss rate, compared to the best reported results on the heavily occluded (HO) pedestrian set of CityPersons test set. Further, on the HO pedestrian set of Caltech dataset, our method achieves an absolute gain of 5.0% in log-average miss rate, compared to the best reported results. Code and models are available at: this https URL."
+    }
+  },
+  "generator": "fallback_v4"
+}

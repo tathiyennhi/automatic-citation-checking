@@ -1,0 +1,22 @@
+{
+  "doc_id": "43953",
+  "text": "The convolutional layers of our architecture are followed by max-pooling layers [CITATION_1] , which reduce the size of the feature maps by merging groups of neurons. More precisely, for each datapoint, a max-pooling layer shifts a square window (p × p in our case) over the feature map and select the most responsive neuron over each position of the window, the other neurons being discarded. The output of the most responsive neuron indicates if the feature map has detected its corresponding feature in the receptive field of the pooling window, the precise receptive field of the feature being lost. As the local information is particularly important in our problem, we only considered small windows. The benefits of pooling layers is that they significantly reduce the number of parameters, making the training simpler and reducing overfitting.",
+  "correct_citation": {
+    "[CITATION_1]": "11398758"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The convolutional layers of our architecture are followed by max-pooling layers  , which reduce the size of the feature maps by merging groups of neurons.",
+      "s_span": 0,
+      "e_span": 166
+    }
+  ],
+  "bib_entries": {
+    "11398758": {
+      "title": "Unsupervised learning of invariant feature hierarchies with applications to object recognition",
+      "abstract": "We present an unsupervised method for learning a hierarchy of sparse feature detectors that are invariant to small shifts and distortions. The resulting feature extractor consists of multiple convolution filters, followed by a feature-pooling layer that computes the max of each filter output within adjacent windows, and a point-wise sigmoid non-linearity. A second level of larger and more invariant features is obtained by training the same algorithm on patches of features from the first level. Training a supervised classifier on these features yields 0.64% error on MNIST, and 54% average recognition rate on Caltech 101 with 30 training samples per category. While the resulting architecture is similar to convolutional networks, the layer-wise unsupervised training procedure alleviates the over-parameterization problems that plague purely supervised learning procedures, and yields good performance with very few labeled training samples."
+    }
+  },
+  "generator": "fallback_v4"
+}

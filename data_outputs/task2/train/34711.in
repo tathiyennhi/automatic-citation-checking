@@ -1,0 +1,67 @@
+{
+  "text": "We now consider a simple fluid model for TCP CUBIC. For the fluid model, we disregard the discrete nature of the TCP window size and also assume that the window update is continuous instead of happening at discrete intervals of time. The model that we consider here is a widely used deterministic-loss model (see [CITATION_1] , [CITATION_2] and [CITATION_3] Let us denote the window size for the deterministic-loss model at time t b\u0177 W (t). Suppose\u0174 (0) = x. Let \u03c4 p (x) denote the time taken by the\u0174 (t) process to send",
+  "citation_candidates": [
+    "122505610",
+    "9391153",
+    "124879",
+    "7934244",
+    "7963566",
+    "14676506",
+    "1894993",
+    "15903414",
+    "13219892",
+    "1741788",
+    "12722637",
+    "122548925"
+  ],
+  "bib_entries": {
+    "13219892": {
+      "title": "A study of fairness among heterogeneous TCP variants over 10Gbps high-speed optical networks",
+      "abstract": "Several high-speed TCP variants are adopted by end users and therefore, heterogeneous congestion control has become the characteristic of newly emerging high-speed optical networks. In contrast to homogeneous TCP flows, fairness among heterogeneous TCP flows now depends on router parameters such as queue management scheme and buffer size. To the best of our knowledge, this is the first study of fairness performance among heterogeneous TCP variants over a 10 Gbps high-speed optical network environment. Our evaluation scenarios for heterogeneous TCP flows consist of TCP variants with substantial presence in current Internet; therefore, TCP-SACK, CUBIC TCP (CUBIC) and HighSpeed TCP (HSTCP) compete for bottleneck bandwidth. Experimental results for fairness are presented for different queue management schemes, such as Drop-tail, Random Early Detection (RED), CHOose and Keep for responsive flows CHOose and Kill for unresponsive flows (CHOKe), and Approximate Fair Dropping (AFD), with varying degree of buffer sizes. We observe heterogeneous TCP flows induce more unfairness than homogeneous ones. Active queue management (AQM) schemes, RED, CHOKe, and AFD, improve fairness for large buffer sizes as compared to Drop-tail, whereas AQM schemes lose the fairness advantage for small buffer sizes. This study provides preliminary results for fairness challenges to deploy all-optical routers with limited buffer size."
+    },
+    "12722637": {
+      "title": "An experimental evaluation of CUBIC TCP in a small buffer regime",
+      "abstract": "CUBIC TCP is an enhancement over BIC (Binary Increase Congestion Control) with a cubic window growth function. It has been optimized for high bandwidth-delay product environments and has been the default TCP implementation in Linux since kernel-2.6.18."
+    },
+    "14676506": {
+      "title": "Performance of competing high-speed TCP flows",
+      "abstract": "The goal of recent high-speed TCP implementations is to allow scientists who have access to new high-speed networks to efficiently transfer large datasets to their remote colleagues. As of yet, there is no standard high-speed TCP . Because of this, scientists using one high-speed protocol may find themselves sharing a link with scientists using a different high-speed protocol. Previous work has evaluated such inter-protocol performance, but only with both flows starting at the same time \u2013 an unlikely situation. We perform an evaluation study using ns-2 to investigate the performance of competing high-speed TCP flows where one flow enters a network in which another high-speed flow has already reached its maximum data rate. The fairest result would be for the existing flow to cede half of its bandwidth to the new flow in order to allow both flows to evenly share the link. Our results show that in most cases this does not happen, but rather one high-speed flow dominates the other. Surprisingly, it is not always the existing flow that dominates."
+    },
+    "7934244": {
+      "title": "Analytical Model for Congestion Control and Throughput with TCP CUBIC Connections",
+      "abstract": "We develop a Markov model for a TCP CUBIC connection. Next we use it to obtain approximate expressions for throughput when there may be queuing in the network. Finally we provide the throughputs different TCP CUBIC and TCP NewReno connections obtain while sharing a channel when they may have different round trip delays and packet loss probabilities."
+    },
+    "7963566": {
+      "title": "A Model for Steady State Throughput of TCP CUBIC",
+      "abstract": "For transmission control protocol (TCP), CUBIC is a TCP-friendly high-speed variant, in which the window size is a cubic function of time since the last loss event. TCP CUBIC is implemented in Linux operating systems and performs well in wired networks with large bandwidth-delay product. Most of the evaluations of TCP CUBIC are conducted via simulations or experiments. Analytical models for TCP CUBIC are few. In this paper, we propose a Markovian model to determine the steady state throughput of TCP CUBIC in wireless environment. The proposed model considers both congestion loss and random packet loss due to fading. We derive the stationary distribution of the Markov chain and obtain the average throughput based on the stationary distribution. Simulations are carried out to validate the analytical model. Results show that the simulated stationary distribution and the average throughput are both very close to our analytical results. Furthermore, we analyze the throughput performance of TCP CUBIC. Results show that random packet loss reduces the normalized average throughput more for end-to-end flow with large bandwidth-delay product. We propose an improvement to increase the throughput performance of TCP CUBIC by moderately increasing the window growth factor and the multiplicative decrease factor."
+    },
+    "15903414": {
+      "title": "Understanding tcp cubic performance in the cloud: A mean-field approach",
+      "abstract": "Cloud networking typically leads to scenarii where a large number of TCP connections share a common bottleneck link. In this paper, we focus on the case of TCP Cubic, which is the default TCP version in the Linux kernel. TCP Cubic is designed to better utilize high bandwidth-delay product path in an IP network. To do so, Cubic modifies the linear window growth function of legacy TCP standards, e.g., New Reno, to be a cubic function. Our objective in this work is to assess the performance of TCP Cubic in a cloud setting with a large number of long-lived TCP flows.We rely on a mean-field approach leading to a fluid model to analyze the performance of Cubic. After a careful validation of the model through comparisons with ns-2, we evaluate the efficiency and fairness of Cubic as compared to that of New Reno for a set of typical cloud networking scenarii."
+    },
+    "9391153": {
+      "title": "CUBIC: a new TCP-friendly high-speed TCP variant",
+      "abstract": "CUBIC is a congestion control protocol for TCP (transmission control protocol) and the current default TCP algorithm in Linux. The protocol modifies the linear window growth function of existing TCP standards to be a cubic function in order to improve the scalability of TCP over fast and long distance networks. It also achieves more equitable bandwidth allocations among flows with different RTTs (round trip times) by making the window growth to be independent of RTT -- thus those flows grow their congestion window at the same rate. During steady state, CUBIC increases the window size aggressively when the window is far from the saturation point, and the slowly when it is close to the saturation point. This feature allows CUBIC to be very scalable when the bandwidth and delay product of the network is large, and at the same time, be highly stable and also fair to standard TCP flows. The implementation of CUBIC in Linux has gone through several upgrades. This paper documents its design, implementation, performance and evolution as the default TCP algorithm of Linux."
+    },
+    "124879": {
+      "title": "Approximate theoretical models for TCP connections using different high speed congestion control algorithms in a multihop network",
+      "abstract": "We consider a multihop network when the flows may be using TCP Reno, CUBIC or Compound. We study its performance using fluid approximations. We provide theoretical justification for these approximations. Our approximations are simple, yet can be used to obtain throughput and average window size for each TCP connection with good accuracy. We compare results obtained using fluid approximations with discrete Markov chain models in [1] and [2] and with ns2 simulations. The fluid approximation models can be seen to trade-off accuracy for simplicity."
+    },
+    "122505610": {
+      "title": "A Markovian analysis of additiveincrease multiplicative-decrease algorithms",
+      "abstract": "The additive-increase multiplicative-decrease (AIMD) schemes designed to control congestion in communication networks are investigated from a probabilistic point of view. Functional limit theorems for a general class of Markov processes that describe these algorithms are obtained. The asymptotic behaviour of the corresponding invariant measures is described in terms of the limiting Markov processes. For some special important cases, including TCP congestion avoidance, an important autoregressive property is proved. As a consequence, the explicit expression of the related invariant probabilities is derived. The transient behaviour of these algorithms is also analysed."
+    },
+    "1741788": {
+      "title": "A Compound TCP Approach for High-Speed and Long Distance Networks",
+      "abstract": "Many applications require fast data transfer over high speed and long distance networks. However, standard TCP fails to fully utilize the network capacity due to the limitation in its conservative congestion control (CC) algorithm. Some works have been proposed to improve the connection \u9202s throughput by adopt- ing more aggressive loss-based CC algorithms. These algorithms, although can effectively improve the link utilization, have the weakness of poor RTT fairness. Further, they may severely de- crease the performance of regular TCP flows that traverse the same network path. On the other hand, pure delay-based ap- proaches that improve the throughput in high-speed networks may not work well when the traffic is mixed with both delay- based and greedy loss-based flows. In this paper, we propose a novel Compound TCP (CTCP) approach, which is a synergy of delay-based and loss-based approach. Specifically, we add a scal- able delay-based component into the standard TCP Reno conges- tion avoidance algorithm (a.k.a., the loss-based component). The sending rate of CTCP is controlled by both components. This new delay-based component can rapidly increase sending rate when network path is under utilized, but gracefully retreat in a busy network when bottleneck queue is built. Augmented with this delay-based component, CTCP provides very good bandwidth scalability with improved RTT fairness, and at the same time achieves good TCP-fairness, irrelevant to the windows size. We developed an analytical model of CTCP and implemented it on the Windows operating system. Our analysis and experiment results verify the properties of CTCP."
+    },
+    "1894993": {
+      "title": "The macroscopic behavior of the TCP congestion avoidance algorithm",
+      "abstract": "In this paper, we analyze a performance model for the TCP Congestion Avoidance algorithm. The model predicts the bandwidth of a sustained TCP connection subjected to light to moderate packet losses, such as loss caused by network congestion. It assumes that TCP avoids retransmission timeouts and always has sufficient receiver window and sender data. The model predicts the Congestion Avoidance performance of nearly all TCP implementations under restricted conditions and of TCP with Selective Acknowledgements over a much wider range of Internet conditions.We verify the model through both simulation and live Internet measurements. The simulations test several TCP implementations under a range of loss conditions and in environments with both drop-tail and RED queuing. The model is also compared to live Internet measurements using the TReno diagnostic and real TCP implementations.We also present several applications of the model to problems of bandwidth allocation in the Internet. We use the model to analyze networks with multiple congested gateways; this analysis shows strong agreement with prior work in this area. Finally, we present several important implications about the behavior of the Internet in the presence of high load from diverse user communities."
+    },
+    "122548925": {
+      "title": "The existence of moments for stationary Markov chains",
+      "abstract": "We give conditions under which the stationary distribution ir of a Markov chain admits moments of the general form ff(x)ir(dx), where f is a general function; specific examples include f(x)=x' and f(x)=es\". In general the time-dependent moments of the chain then converge to the stationary moments. We show that in special cases this convergence of moments occurs at a geometric rate. The results are applied to random walk on [0, c0)."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Best Practices: Use Adapter Fusion for multi-task learning to combine knowledge from different adapters.Trade-offs: Requires additional model parameters, increasing the overall model size.",
+    "b) Low-Rank Adaptation (LoRA)LoRA (Low-Rank Adaptation) is a parameter-efficient technique introduced by Hu et al. [4] that factorizes weight updates into smaller matrices, drastically reducing trainable parameters during fine-tuning.",
+    "Unlike full fine-tuning-which retrains all parameters-LoRA freezes the original pretrained weights and injects trainable low-rank matrices alongside them, making fine-tuning far more memory-and compute-friendly.The core idea of LoRA is represented in Fig. 2, which illustrates how the technique decomposes weight updates.",
+    "For a pre-trained weight matrix W ∈ R d×d, LoRA constrains its update by representing the change ∆W as a product of two low-rank matrices: ∆W = BA, where B ∈ R d×r, A ∈ R r×d, and the rank r ≪ min (d, k).",
+    "During the forward pass, both the frozen pre-trained weights W and the low-rank adaptation ∆W = BA are applied to the same input x, with their outputs being summed:h = Wx + ∆Wx = Wx + BAx (1)This approach allows the model to learn task-specific adaptations while keeping the original parameters frozen.Studies have shown that LoRA can achieve results comparable to full fine-tuning while updating only a fraction of the parameters [3], with GPT-3 experiments demonstrating up to a 10, 000× reduction in trainable parameters."
+  ]
+}

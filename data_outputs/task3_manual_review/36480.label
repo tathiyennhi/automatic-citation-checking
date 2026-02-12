@@ -1,0 +1,25 @@
+{
+  "doc_id": "36480",
+  "text": "ually segmented foreground. We introduce two datasets Subject1 and Subject2, in addition to Subject3, with pronounced body proportions and ground-truth laser scans for quantitative evaluation. Please note that shape estimates are constant across the sequence and can be evaluated at sparse frames, while pose varies and is separately evaluated per frame in the sequel. The shape accuracy is evaluated by measurements of chest, waist and hip circumference. Subject1 and Subject2 are captured indoor and are processed using 6 cameras and 40 frames uniformly sampled over 200 frames. Subject3 is an outdoor sequence and only 3 camera views are used, see Figure 4 . All subjects are reconstructed with high quality in shape, skeleton dimensions and color, despite inaccurately estimated poses in Stage I for some frames. We only observed little variation dependent on the performed motions, i.e. a simple walking motion is sufficient, but bone length estimation degrades if joints are not sufficiently articulated during performance. All estimates are presented quantitatively in Table 1 and qualitatively in Figure 5 . In addition, we compare against Guan et al. [CITATION_1] on their single-camera and single-frame datasets Pose1, Pose2 and Pose3. Stage I requires multi-view input and was not used; instead, we manually initialized the pose roughly, as shown in Figure 8 , and body height is normalized to 185 cm [CITATION_2] . Our reconstructions are within the same error range, demonstrating that Stage II is well suited even for monocular shape and pose refinement. Our reconstruction is accurate overall, with a mean error of only 2.3 ± 1.9 cm, measured across all sequences with known ground truth.",
+  "correct_citation": {
+    "[CITATION_1]": "15861144",
+    "[CITATION_2]": "15861144"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In addition, we compare against Guan et al. on their single-camera and single-frame datasets Pose1, Pose2 and Pose3."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Stage I requires multi-view input and was not used; instead, we manually initialized the pose roughly, as shown in Figure 8, and body height is normalized to 185 cm"
+    }
+  ],
+  "bib_entries": {
+    "15861144": {
+      "title": "Estimating human shape and pose from a single image",
+      "abstract": "We describe a solution to the challenging problem of estimating human body shape from a single photograph or painting. Our approach computes shape and pose parameters of a 3D human body model directly from monocular image cues and advances the state of the art in several directions. First, given a user-supplied estimate of the subject's height and a few clicked points on the body we estimate an initial 3D articulated body pose and shape. Second, using this initial guess we generate a tri-map of regions inside, outside and on the boundary of the human, which is used to segment the image using graph cuts. Third, we learn a low-dimensional linear model of human shape in which variations due to height are concentrated along a single dimension, enabling height-constrained estimation of body shape. Fourth, we formulate the problem of parametric human shape from shading. We estimate the body pose, shape and reflectance as well as the scene lighting that produces a synthesized body that robustly matches the image evidence. Quantitative experiments demonstrate how smooth shading provides powerful constraints on human shape. We further demonstrate a novel application in which we extract 3D human models from archival photographs and paintings."
+    }
+  },
+  "generator": "fallback"
+}

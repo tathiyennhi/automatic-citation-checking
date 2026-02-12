@@ -1,0 +1,22 @@
+{
+  "doc_id": "45758",
+  "text": "One well-known weakness of watermarking algorithm are de-synchronization attacks [CITATION_1] . Here the embedded watermark information is not removed from a media file but only slightly moved to a position where the watermark detection algorithm will not try to retrieve the watermark. Time stretching, the slight increase or decrease of audio playing time without pitch modification or significant quality loss, is one known example for de-synchronization attacks on audio material. Figure 1 shows how de-synchronization by time stretching works: On the left side a typical example of an audio watermark is given. Individual watermarking bits #1 to #3 are embedded sequentially in frames of a defined length. A detection algorithm will synchronize with the help of a sync signal then will try to retrieve #1 to #3. On the right side the effects of a time-stretching attack are shown. The audio material and the embedded watermarking frame are now longer than before. After synchronization the retrieval process will detect #1 and also may be able to correctly retrieve #2. But the original frame length will make the retriever try to detect #3 at a position where now still #2 is in effect as the frames are now longer. Retrieval errors are the consequence. We propose an alternative solution to this challenge. Our proposed algorithm does not require embedded sync sequences to synchronize the watermarking bits but uses robust audio hashing technology to re-synch at each embedded bit.",
+  "correct_citation": {
+    "[CITATION_1]": "14604149"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "One well-known weakness of watermarking algorithm are de-synchronization attacks  .",
+      "s_span": 0,
+      "e_span": 95
+    }
+  ],
+  "bib_entries": {
+    "14604149": {
+      "title": "StirMark Benchmark: Audio watermarking attacks",
+      "abstract": "We briefly present the architecture of a public automated evaluation service we are developing for still images, sound and video. We also detail new tests that will be included in this platform. The set of tests is related to audio data and addresses the usual equalisation and normalisation but also time stretching, pitch shifting and specially designed audio attack algorithms. These attacks are discussed and results on watermark attacks and perceived quality after applying the attacks are provided."
+    }
+  },
+  "generator": "fallback_v4"
+}

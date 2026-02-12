@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Stream-based Voxel Feature AggregationIn this section, we describe the four key components of Stream-based Voxel Feature Aggregation (StreamAgg): (i) how voxel features are extracted from multi-view images, (ii) how temporal information is aggregated across frames, (iii) how warping distortions are mitigated, and (iv) how the refinement process is guided by auxiliary supervision.",
+    "2D-to-3D View Transformation.",
+    "Given a set of N multiview images at timestep t, {I t i } for i ∈ {1, 2,..., N }, we extract multi-scale 2D features F i using a ResNet [7] with FPN [26], following prior works [8,10,32].",
+    "These features are then projected into a unified 3D voxel space via a 2Dto-3D view transformation [21], producing an initial voxel feature V t init ∈ R Cinit×X×Y ×Z, where X, Y, and Z denote the voxel grid dimensions.",
+    "We then apply a lightweight 3D-FPN to aggregate multi-level voxel features and obtain the current downsampled voxel feature V t curr ∈ R C× X 2 × Y 2 × ZR C× X 2 × Y 2 × Z2 to the current frame via motion-aware warping."
+  ],
+  "correct_citations": [
+    "Given a set of N multiview images at timestep t, {I t i } for i ∈ {1, 2,..., N }, we extract multi-scale 2D features F i using a ResNet [7] with FPN [26], following prior works [8,10,32].",
+    "These features are then projected into a unified 3D voxel space via a 2Dto-3D view transformation [21], producing an initial voxel feature V t init ∈ R Cinit×X×Y ×Z, where X, Y, and Z denote the voxel grid dimensions."
+  ]
+}

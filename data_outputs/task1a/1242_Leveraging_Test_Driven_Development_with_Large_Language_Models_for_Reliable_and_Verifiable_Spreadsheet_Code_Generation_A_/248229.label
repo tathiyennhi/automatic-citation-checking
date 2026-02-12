@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Test Case Principal (£) Rate (%) Years Expected Result (£) TC1 1,000 5 2 1,102.50 TC2 500 3 5 579.64 TC3 2,000 4 3 2,249.73 TC4 0 5 10 Invalid input Table 1 TDD test cases for interest calculation Python def compound_interest(principal, rate, years): if principal < 0 or rate < 0 or years < 0: return \"Invalid input\" return round(principal * (1 + rate / 100) ** years, 2) Excel =IF(OR(A1<0, B1<0, C1<0), \"Invalid input\", ROUND(A1 * (1 + B1 / 100) ^ C1, 2)) Where: A1 = Principal, B1 = Interest Rate, C1 = Years 4.2 Overdue Task Flagging in Project Management Date comparisons in spreadsheets are prone to logic errors, table 2 shows test cases for flagging overdue tasks in a project management application.",
+    "Test Case Due Date Today's Date Expected Result TC1 01/01/2025 02/01/2025 Overdue TC2 01/01/2025 01/01/2025 On Time TC3 02/01/2025 01/01/2025 On Time TC4 TODAY 1 TODAY Overdue Table 2 TDD test cases for task flagging Python from datetime import date, timedelta def task_status(due_date, today=None): if today is None: today = date.today return \"Overdue\" if due_date < today else \"On Time\"",
+    "Excel Formula =IF(TODAY>A1, \"Overdue\", \"On Time\")",
+    "Where: A1 contains the due date.",
+    "Or alternatively:"
+  ],
+  "correct_citations": []
+}

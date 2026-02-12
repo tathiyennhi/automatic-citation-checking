@@ -1,0 +1,83 @@
+{
+  "doc_id": "28263",
+  "text": "There has been a large and sustained effort to understand both the behaviour of relaxed memory hardware and the concurrent language interface that ought to be presented to programmers. The behaviour of relaxed CPUs is relatively well understood, through formal models of x86 and Power processors that have been validated through testing [CITATION_1] [CITATION_2] and communication with architects [CITATION_3] [CITATION_4] . This line of work has unearthed bugs in deployed CPUs [CITATION_5] , and unexpected behaviours in GPUs that break programming idioms taught in vendor-endorsed documentation [CITATION_6] . Our approach differs from this prior work in that our industrial-academic collaboration is taking place at the research stage, following publicly-released descriptions of the architecture [CITATION_7] [CITATION_8] , so the bugs we have found can be rectified before the hardware is deployed.",
+  "correct_citation": {
+    "[CITATION_1]": "208003238",
+    "[CITATION_2]": "1999974",
+    "[CITATION_3]": "2602899",
+    "[CITATION_4]": "10395150",
+    "[CITATION_5]": "9834322",
+    "[CITATION_6]": "3087755",
+    "[CITATION_7]": "17500096",
+    "[CITATION_8]": "2724982"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The behaviour of relaxed CPUs is relatively well understood, through formal models of x86 and Power processors that have been validated through testing and communication with architects."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The behaviour of relaxed CPUs is relatively well understood, through formal models of x86 and Power processors that have been validated through testing and communication with architects."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The behaviour of relaxed CPUs is relatively well understood, through formal models of x86 and Power processors that have been validated through testing and communication with architects."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The behaviour of relaxed CPUs is relatively well understood, through formal models of x86 and Power processors that have been validated through testing and communication with architects."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This line of work has unearthed bugs in deployed CPUs"
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "This line of work has unearthed bugs in deployed CPUs, and unexpected behaviours in GPUs that break programming idioms taught in vendor-endorsed documentation"
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Our approach differs from this prior work in that our industrial-academic collaboration is taking place at the research stage, following publicly-released descriptions of the architecture, so the bugs we have found can be rectified before the hardware is deployed."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Our approach differs from this prior work in that our industrial-academic collaboration is taking place at the research stage, following publicly-released descriptions of the architecture, so the bugs we have found can be rectified before the hardware is deployed."
+    }
+  ],
+  "bib_entries": {
+    "208003238": {
+      "title": "Herding cats: Modelling, simulation, testing, and data-mining for weak memory",
+      "abstract": "There is a joke where a physicist and a mathematician are asked to herd cats. The physicist starts with an infinitely large pen which he reduces until it is of reasonable diameter yet contains all the cats. The mathematician builds a fence around himself and declares the outside to be the inside. Defining memory models is akin to herding cats: both the physicist's or mathematician's attitudes are tempting, but neither can go without the other."
+    },
+    "10395150": {
+      "title": "Understanding POWER multiprocessors",
+      "abstract": "Exploiting today's multiprocessors requires high-performance and correct concurrent systems code (optimising compilers, language runtimes, OS kernels, etc.), which in turn requires a good understanding of the observable processor behaviour that can be relied on. Unfortunately this critical hardware/software interface is not at all clear for several current multiprocessors. In this paper we characterise the behaviour of IBM POWER multiprocessors, which have a subtle and highly relaxed memory model (ARM multiprocessors have a very similar architecture in this respect). We have conducted extensive experiments on several generations of processors: POWER G5, 5, 6, and 7. Based on these, on published details of the microarchitectures, and on discussions with IBM staff, we give an abstract-machine semantics that abstracts from most of the implementation detail but explains the behaviour of a range of subtle examples. Our semantics is explained in prose but defined in rigorous machine-processed mathematics; we also confirm that it captures the observable processor behaviour, or the architectural intent, for our examples with an executable checker. While not officially sanctioned by the vendor, we believe that this model gives a reasonable basis for reasoning about current POWER multiprocessors. Our work should bring new clarity to concurrent systems programming for these architectures, and is a necessary precondition for any analysis or verification. It should also inform the design of languages such as C and C++, where the language memory model is constrained by what can be efficiently compiled to such multiprocessors."
+    },
+    "17500096": {
+      "title": "QuickRelease: A throughput-oriented approach to release consistency on GPUs",
+      "abstract": "Graphics processing units (GPUs) have specialized throughput-oriented memory systems optimized for stream-ing writes with scratchpad memories to capture locality explicitly. Expanding the utility of GPUs beyond graphics encourages designs that simplify programming (e.g., using caches instead of scratchpads) and better support irregular applications with finer-grain synchronization. Our hypothe-sis is that, like CPUs, GPUs will benefit from caches and coherence, but that CPU-style “read for ownership” (RFO) coherence is inappropriate to maintain support for regular streaming workloads."
+    },
+    "3087755": {
+      "title": "GPU concurrency: weak behaviours and programming assumptions",
+      "abstract": "Concurrency is pervasive and perplexing, particularly on graphics processing units (GPUs). Current specifications of languages and hardware are inconclusive; thus programmers often rely on folklore assumptions when writing software. To remedy this state of affairs, we conducted a large empirical study of the concurrent behaviour of deployed GPUs. Armed with litmus tests (i.e. short concurrent programs), we questioned the assumptions in programming guides and vendor documentation about the guarantees provided by hardware. We developed a tool to generate thousands of litmus tests and run them under stressful workloads. We observed a litany of previously elusive weak behaviours, and exposed folklore beliefs about GPU programming---often supported by official tutorials---as false. As a way forward, we propose a model of Nvidia GPU hardware, which correctly models every behaviour witnessed in our experiments. The model is a variant of SPARC Relaxed Memory Order (RMO), structured following the GPU concurrency hierarchy."
+    },
+    "2602899": {
+      "title": "An axiomatic memory model for POWER multiprocessors",
+      "abstract": "The growing complexity of hardware optimizations employed by multiprocessors leads to subtle distinctions among allowed and disallowed behaviors, posing challenges in specifying their memory models formally and accurately, and in understanding and analyzing the behavior of concurrent software. This complexity is particularly evident in the IBM® Power Architecture®, for which a faithful specification was published only in 2011 using an operational style. In this paper we present an equivalent axiomatic specification, which is more abstract and concise. Although not officially sanctioned by the vendor, our results indicate that this axiomatic specification provides a reasonable basis for reasoning about current IBM® POWER® multiprocessors. We establish the equivalence of the axiomatic and operational specifications using both manual proof and extensive testing. To demonstrate that the constraint-based style of axiomatic specification is more amenable to computer-aided verification, we develop a SAT-based tool for evaluating possible outcomes of multi-threaded test programs, and we show that this tool is significantly more efficient than a tool based on an operational specification."
+    },
+    "2724982": {
+      "title": "Synchronization using remote-scope promotion",
+      "abstract": "Heterogeneous system architecture (HSA) and OpenCL define scoped synchronization to facilitate low overhead communication across a subset of threads. Scoped synchronization works well for static sharing patterns, where consumer threads are known a priori. It works poorly for dynamic sharing patterns (e.g., work stealing) where programmers cannot use a faster small scope due to the rare possibility that the work is stolen by a thread in a distant slower scope. This puts programmers in a conundrum: optimize the common case by synchronizing at a faster small scope or use work stealing at a slower large scope. In this paper, we propose to extend scoped synchronization with remote-scope promotion. This allows the most frequent sharers to synchronize through a small scope. Infrequent sharers synchronize by promoting that remote small scope to a larger shared scope. Synchronization using remote-scope promotion provides performance robustness for dynamic workloads, where the benefits provided by scoped synchronization and work stealing are hard to anticipate. Compared to a naive baseline, static scoped synchronization alone achieves a 1.07x speedup on average and dynamic work stealing alone achieves a 1.18x speedup on average. In contrast, synchronization using remote-scope promotion achieves a robust 1.25x speedup on average, across a diverse set of graph benchmarks and inputs."
+    },
+    "1999974": {
+      "title": "x86-TSO: A rigorous and usable programmer's model for x86 multiprocessors",
+      "abstract": "Exploiting the multiprocessors that have recently become ubiquitous requires high-performance and reliable concurrent systems code, for concurrent data structures, operating system kernels, synchronization libraries, compilers, and so on. However, concurrent programming, which is always challenging, is made much more so by two problems. First, real multiprocessors typically do not provide the sequentially consistent memory that is assumed by most work on semantics and verification. Instead, they have relaxed memory models, varying in subtle ways between processor families, in which different hardware threads may have only loosely consistent views of a shared memory. Second, the public vendor architectures, supposedly specifying what programmers can rely on, are often in ambiguous informal prose (a particularly poor medium for loose specifications), leading to widespread confusion. In this paper we focus on x86 processors. We review several recent Intel and AMD specifications, showing that all contain serious ambiguities, some are arguably too weak to program above, and some are simply unsound with respect to actual hardware. We present a new x86-TSO programmer's model that, to the best of our knowledge, suffers from none of these problems. It is mathematically precise (rigorously defined in HOL4) but can be presented as an intuitive abstract machine which should be widely accessible to working programmers. We illustrate how this can be used to reason about the correctness of a Linux spinlock implementation and describe a general theory of data-race freedom for x86-TSO. This should put x86 multiprocessor system building on a more solid foundation; it should also provide a basis for future work on verification of such systems."
+    },
+    "9834322": {
+      "title": "Fences in weak memory models",
+      "abstract": "We present a class of relaxed memory models, defined in Coq, parameterised by the chosen permitted local reorderings of reads and writes, and the visibility of inter- and intra-processor communications through memory (e.g. store atomicity relaxation) We prove results on the required behaviour and placement of memory fences to restore a given model (such as Sequential Consistency) from a weaker one Based on this class of models we develop a tool, diy, that systematically and automatically generates and runs litmus tests to determine properties of processor implementations We detail the results of our experiments on Power and the model we base on them This work identified a rare implementation error in Power 5 memory barriers (for which IBM is providing a workaround); our results also suggest that Power 6 does not suffer from this problem."
+    }
+  },
+  "generator": "fallback"
+}

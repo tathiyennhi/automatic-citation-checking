@@ -1,0 +1,154 @@
+{
+  "doc_id": "34746",
+  "text": "Before motion capture commences, the 3D body model for tracking needs to be personalized to the captured human. This includes personalization of the bone lengths, but often also of biomechanical shape and surface, including appearance. This essential initialization is, unfortunately, neglected by many methods and solved with an entirely different approach, or with specific and complex manual or semi-automatic initialization steps. For instance, some methods for motion capture in studios with controlled backgrounds rely on static full-body scans [CITATION_1] [CITATION_2] [CITATION_3] , or personalization on manually segmented initialization poses [CITATION_4] . Recent outdoor motion capture methods use entirely manual model initialization [CITATION_5] . When using depth cameras, automatic model initialization was shown [CITATION_6] [CITATION_7] [CITATION_8] [CITATION_9] [CITATION_10] , but RGB-D cameras are less accessible and not usable outdoors. Simultaneous pose and shape estimation from in-studio multi-view footage with background subtraction was also shown [CITATION_11] [CITATION_12] [CITATION_13] , but not on footage of less constrained setups such as outdoor scenes filmed with very few cameras. We therefore propose a fully-automatic space-time approach for simultaneous model initialization and motion capture. Our approach is specifically designed to solve this problem automatically for multi-view video footage recorded in general environments (moving background, no background subtraction) and filmed with as few as two cameras. Motions can be arbitrary and unchoreographed. It takes a further step towards making markerless motion capture practical in the aforementioned application areas, and enables motion capture from third-party video footage, where dedicated initialization pose images or the shape model altogether are unavailable. Our approach builds on the following contributions.",
+  "correct_citation": {
+    "[CITATION_1]": "41861381",
+    "[CITATION_2]": "368400",
+    "[CITATION_3]": "9616070",
+    "[CITATION_4]": "14989649",
+    "[CITATION_5]": "13076993",
+    "[CITATION_6]": "61962167",
+    "[CITATION_7]": "1578762",
+    "[CITATION_8]": "5961102",
+    "[CITATION_9]": "8413233",
+    "[CITATION_10]": "206592546",
+    "[CITATION_11]": "33098751",
+    "[CITATION_12]": "2516462",
+    "[CITATION_13]": "13181540"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For instance, some methods for motion capture in studios with controlled backgrounds rely on static full-body scans    , or personalization on manually segmented initialization poses  .",
+      "s_span": 435,
+      "e_span": 668
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For instance, some methods for motion capture in studios with controlled backgrounds rely on static full-body scans    , or personalization on manually segmented initialization poses  .",
+      "s_span": 435,
+      "e_span": 668
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "For instance, some methods for motion capture in studios with controlled backgrounds rely on static full-body scans    , or personalization on manually segmented initialization poses  .",
+      "s_span": 435,
+      "e_span": 668
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "For instance, some methods for motion capture in studios with controlled backgrounds rely on static full-body scans    , or personalization on manually segmented initialization poses  .",
+      "s_span": 435,
+      "e_span": 668
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Recent outdoor motion capture methods use entirely manual model initialization  .",
+      "s_span": 669,
+      "e_span": 762
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "When using depth cameras, automatic model initialization was shown      , but RGB-D cameras are less accessible and not usable outdoors.",
+      "s_span": 763,
+      "e_span": 960
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "When using depth cameras, automatic model initialization was shown      , but RGB-D cameras are less accessible and not usable outdoors.",
+      "s_span": 763,
+      "e_span": 960
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "When using depth cameras, automatic model initialization was shown      , but RGB-D cameras are less accessible and not usable outdoors.",
+      "s_span": 763,
+      "e_span": 960
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "When using depth cameras, automatic model initialization was shown      , but RGB-D cameras are less accessible and not usable outdoors.",
+      "s_span": 763,
+      "e_span": 960
+    },
+    {
+      "citation_id": "[CITATION_10]",
+      "span_text": "When using depth cameras, automatic model initialization was shown      , but RGB-D cameras are less accessible and not usable outdoors.",
+      "s_span": 763,
+      "e_span": 960
+    },
+    {
+      "citation_id": "[CITATION_11]",
+      "span_text": "Simultaneous pose and shape estimation from in-studio multi-view footage with background subtraction was also shown    , but not on footage of less constrained setups such as outdoor scenes filmed with very few cameras.",
+      "s_span": 961,
+      "e_span": 1219
+    },
+    {
+      "citation_id": "[CITATION_12]",
+      "span_text": "Simultaneous pose and shape estimation from in-studio multi-view footage with background subtraction was also shown    , but not on footage of less constrained setups such as outdoor scenes filmed with very few cameras.",
+      "s_span": 961,
+      "e_span": 1219
+    },
+    {
+      "citation_id": "[CITATION_13]",
+      "span_text": "Simultaneous pose and shape estimation from in-studio multi-view footage with background subtraction was also shown    , but not on footage of less constrained setups such as outdoor scenes filmed with very few cameras.",
+      "s_span": 961,
+      "e_span": 1219
+    }
+  ],
+  "bib_entries": {
+    "33098751": {
+      "title": "Three-dimensional human body model acquisition from multiple views",
+      "abstract": "We present a novel approach to the three-dimensional human body model acquisition from three mutually orthogonal views. Our technique is based on the spatiotemporal analysis of the deforming apparent contour of a human moving according to a protocol of movements. For generality and robustness our technique does not use a prior model of the human body and a prior body part segmentation is not assumed. Therefore, our technique applies to humans of any anthropometric dimension. To parameterize and segment over time a deforming apparent contour, we introduce a new shape representation technique based on primitive composition. The composed deformable model allows us to represent large local deformations and their evolution in a compact and intuitive way. In addition, this representation allows us to hypothesize an underlying part structure and test this hypothesis against the relative motion (due to forces exerted from the image data) of the defining primitives of the composed model. Furthermore, we develop a Human Body Part Decomposition Algorithm (HBPDA) that recovers all the body parts of a subject by monitoring the changes over time to the shape of the deforming silhouette. In addition, we modularize the process of simultaneous two-dimensional part determination and shape estimation by employing the Supervisory Control Theory of Discrete Event Systems. Finally, we present a novel algorithm which selectively integrates the (segmented by the HBPDA) apparent contours from three mutually orthogonal viewpoints to obtain a three-dimensional model of the subject's body parts. The effectiveness of the approach is demonstrated through a series of experiments where a subject performs a set of movements according to a protocol that reveals the structure of the human body."
+    },
+    "13181540": {
+      "title": "Detailed human shape and pose from images",
+      "abstract": "Much of the research on video-based human motion capture assumes the body shape is known a priori and is represented coarsely (e.g. using cylinders or superquadrics to model limbs). These body models stand in sharp contrast to the richly detailed 3D body models used by the graphics community. Here we propose a method for recovering such models directly from images. Specifically, we represent the body using a recently proposed triangulated mesh model called SCAPE which employs a low-dimensional, but detailed, parametric model of shape and pose-dependent deformations that is learned from a database of range scans of human bodies. Previous work showed that the parameters of the SCAPE model could be estimated from marker-based motion capture data. Here we go further to estimate the parameters directly from image data. We define a cost function between image observations and a hypothesized mesh and formulate the problem as optimization over the body shape and pose parameters using stochastic search. Our results show that such rich generative models enable the automatic recovery of detailed human shape and pose from images."
+    },
+    "14989649": {
+      "title": "Fast articulated motion tracking using a sums of Gaussians body model",
+      "abstract": "We present an approach for modeling the human body by Sums of spatial Gaussians (SoG), allowing us to perform fast and high-quality markerless motion capture from multi-view video sequences. The SoG model is equipped with a color model to represent the shape and appearance of the human and can be reconstructed from a sparse set of images. Similar to the human body, we also represent the image domain as SoG that models color consistent image blobs. Based on the SoG models of the image and the human body, we introduce a novel continuous and differentiable model-to-image similarity measure that can be used to estimate the skeletal motion of a human at 5–15 frames per second even for many camera views. In our experiments, we show that our method, which does not rely on silhouettes or training data, offers an good balance between accuracy and computational cost."
+    },
+    "61962167": {
+      "title": "Real-time human pose recognition in parts from single depth images",
+      "abstract": "We propose a new method to quickly and accurately predict 3D positions of body joints from a single depth image, using no temporal information. We take an object recognition approach, designing an intermediate body parts representation that maps the difficult pose estimation problem into a simpler per-pixel classification problem. Our large and highly varied training dataset allows the classifier to estimate body parts invariant to pose, body shape, clothing, etc. Finally we generate confidence-scored 3D proposals of several body joints by reprojecting the classification result and finding local modes. The system runs at 200 frames per second on consumer hardware. Our evaluation shows high accuracy on both synthetic and real test sets, and investigates the effect of several training parameters. We achieve state of the art accuracy in our comparison with related work and demonstrate improved generalization over exact whole-skeleton nearest neighbor matching."
+    },
+    "41861381": {
+      "title": "Performance capture from sparse multi-view video",
+      "abstract": "This paper proposes a new marker-less approach to capturing human performances from multi-view video. Our algorithm can jointly reconstruct spatio-temporally coherent geometry, motion and textural surface appearance of actors that perform complex and rapid moves. Furthermore, since our algorithm is purely meshbased and makes as few as possible prior assumptions about the type of subject being tracked, it can even capture performances of people wearing wide apparel, such as a dancer wearing a skirt. To serve this purpose our method efficiently and effectively combines the power of surface- and volume-based shape deformation techniques with a new mesh-based analysis-through-synthesis framework. This framework extracts motion constraints from video and makes the laser-scan of the tracked subject mimic the recorded performance. Also small-scale time-varying shape detail is recovered by applying model-guided multi-view stereo to refine the model surface. Our method delivers captured performance data at high level of detail, is highly versatile, and is applicable to many complex types of scenes that could not be handled by alternative marker-based or marker-free recording techniques."
+    },
+    "368400": {
+      "title": "Motion capture using joint skeleton tracking and surface estimation",
+      "abstract": "This paper proposes a method for capturing the performance of a human or an animal from a multi-view video sequence. Given an articulated template model and silhouettes from a multi-view image sequence, our approach recovers not only the movement of the skeleton, but also the possibly non-rigid temporal deformation of the 3D surface. While large scale deformations or fast movements are captured by the skeleton pose and approximate surface skinning, true small scale deformations or non-rigid garment motion are captured by fitting the surface to the silhouette. We further propose a novel optimization scheme for skeleton-based pose estimation that exploits the skeleton's tree structure to split the optimization problem into a local one and a lower dimensional global one. We show on various sequences that our approach can capture the 3D motion of animals and humans accurately even in the case of rapid movements and wide apparel like skirts."
+    },
+    "1578762": {
+      "title": "Detailed full-body reconstructions of moving people from monocular RGB-D sequences",
+      "abstract": "We accurately estimate the 3D geometry and appearance of the human body from a monocular RGB-D sequence of a user moving freely in front of the sensor. Range data in each frame is first brought into alignment with a multi-resolution 3D body model in a coarse-to-fine process. The method then uses geometry and image texture over time to obtain accurate shape, pose, and appearance information despite unconstrained motion, partial views, varying resolution, occlusion, and soft tissue deformation. Our novel body model has variable shape detail, allowing it to capture faces with a high-resolution deformable head model and body shape with lower-resolution. Finally we combine range data from an entire sequence to estimate a high-resolution displacement map that captures fine shape details. We compare our recovered models with high-resolution scans from a professional system and with avatars created by a commercial product. We extract accurate 3D avatars from challenging motion sequences and even capture soft tissue dynamics."
+    },
+    "2516462": {
+      "title": "Automatic generation of personalized human avatars from multi-view video",
+      "abstract": "In multi-user virtual environments real-world people interact via digital avatars. In order to make the step from the real world onto the virtual stage convincing the digital equivalent of the user has to be personalized. It should reflect the shape and proportions, the kinematic properties, as well as the textural appearance of its real-world equivalent. In this paper, we present a novel spatio-temporal approach to create a personalized avatar from multi-view video data of a moving person. The avatar's geometry is generated by shape-adapting a template human body model. Its surface texture is assembled from multi-view video frames showing arbitrary different body poses. consistent surface texture for the model is generated using multi-view video frames from different camera views and different body poses. With our proposed method photo-realistic human avatars can be robustly generated."
+    },
+    "8413233": {
+      "title": "Personalization and evaluation of a real-time depth-based full body tracker",
+      "abstract": "Reconstructing a three-dimensional representation of human motion in real-time constitutes an important research topic with applications in sports sciences, human-computer-interaction, and the movie industry. In this paper, we contribute with a robust algorithm for estimating a personalized human body model from just two sequentially captured depth images that is more accurate and runs an order of magnitude faster than the current state-of-the-art procedure. Then, we employ the estimated body model to track the pose in real-time from a stream of depth images using a tracking algorithm that combines local pose optimization and a stabilizing dataBase look-up. Together, this enables accurate pose tracking that is more accurate than previous approaches. As a further contribution, we evaluate and compare our algorithm to previous work on a comprehensive benchmark dataset containing more than 15 minutes of challenging motions. This dataset comprises calibrated marker-Based motion capture data, depth data, as well as ground truth tracking results and is publicly available for research purposes."
+    },
+    "5961102": {
+      "title": "Scanning 3D full human bodies using Kinects",
+      "abstract": "Depth camera such as Microsoft Kinect, is much cheaper than conventional 3D scanning devices, and thus it can be acquired for everyday users easily. However, the depth data captured by Kinect over a certain distance is of extreme low quality. In this paper, we present a novel scanning system for capturing 3D full human body models by using multiple Kinects. To avoid the interference phenomena, we use two Kinects to capture the upper part and lower part of a human body respectively without overlapping region. A third Kinect is used to capture the middle part of the human body from the opposite direction. We propose a practical approach for registering the various body parts of different views under non-rigid deformation. First, a rough mesh template is constructed and used to deform successive frames pairwisely. Second, global alignment is performed to distribute errors in the deformation space, which can solve the loop closure problem efficiently. Misalignment caused by complex occlusion can also be handled reasonably by our global alignment algorithm. The experimental results have shown the efficiency and applicability of our system. Our system obtains impressive results in a few minutes with low price devices, thus is practically useful for generating personalized avatars for everyday users. Our system has been used for 3D human animation and virtual try on, and can further facilitate a range of home-oriented virtual reality (VR) applications."
+    },
+    "9616070": {
+      "title": "Real-time non-rigid reconstruction using an RGB-D camera",
+      "abstract": "We present a combined hardware and software solution for markerless reconstruction of non-rigidly deforming physical objects with arbitrary shape in real-time. Our system uses a single self-contained stereo camera unit built from off-the-shelf components and consumer graphics hardware to generate spatio-temporally coherent 3D models at 30 Hz. A new stereo matching algorithm estimates real-time RGB-D data. We start by scanning a smooth template model of the subject as they move rigidly. This geometric surface prior avoids strong scene assumptions, such as a kinematic human skeleton or a parametric shape model. Next, a novel GPU pipeline performs non-rigid registration of live RGB-D data to the smooth template using an extended non-linear as-rigid-as-possible (ARAP) framework. High-frequency details are fused onto the final mesh using a linear deformation model. The system is an order of magnitude faster than state-of-the-art methods, while matching the quality and robustness of many offline algorithms. We show precise real-time reconstructions of diverse scenes, including: large deformations of users' heads, hands, and upper bodies; fine-scale wrinkles and folds of skin and clothing; and non-rigid interactions performed by users on flexible objects such as toys. We demonstrate how acquired models can be used for many interactive scenarios, including re-texturing, online performance capture and preview, and real-time shape and motion re-targeting."
+    },
+    "13076993": {
+      "title": "Efficient ConvNet-based marker-less motion capture in general scenes with a low number of cameras",
+      "abstract": "We present a novel method for accurate marker-less capture of articulated skeleton motion of several subjects in general scenes, indoors and outdoors, even from input filmed with as few as two cameras. Our approach unites a discriminative image-based joint detection method with a model-based generative motion tracking algorithm through a combined pose optimization energy. The discriminative part-based pose detection method, implemented using Convolutional Networks (ConvNet), estimates unary potentials for each joint of a kinematic skeleton model. These unary potentials are used to probabilistically extract pose constraints for tracking by using weighted sampling from a pose posterior guided by the model. In the final energy, these constraints are combined with an appearance-based model-to-image similarity term. Poses can be computed very efficiently using iterative local optimization, as ConvNet detection is fast, and our formulation yields a combined pose estimation energy with analytic derivatives. In combination, this enables to track full articulated joint angles at state-of-the-art accuracy and temporal stability with a very low number of cameras."
+    },
+    "206592546": {
+      "title": "DynamicFusion: Reconstruction and tracking of non-rigid scenes in real-time",
+      "abstract": "We present the first dense SLAM system capable of reconstructing non-rigidly deforming scenes in real-time, by fusing together RGBD scans captured from commodity sensors. Our DynamicFusion approach reconstructs scene geometry whilst simultaneously estimating a dense volumetric 6D motion field that warps the estimated geometry into a live frame. Like KinectFusion, our system produces increasingly denoised, detailed, and complete reconstructions as more measurements are fused, and displays the updated model in real time. Because we do not require a template or other prior scene model, the approach is applicable to a wide range of moving objects and scenes."
+    }
+  },
+  "generator": "fallback_v4"
+}

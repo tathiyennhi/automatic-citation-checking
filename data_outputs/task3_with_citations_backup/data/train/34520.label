@@ -1,0 +1,44 @@
+{
+  "doc_id": "34520",
+  "text": "Recently, another subfamily of GAN was introduced by employing an autoencoder in the discriminator. The Energy-based GAN (EBGAN) [CITATION_1] is trained by replacing the discriminator with an autoencoder and it has demonstrated decent quality synthetic images up to 256 × 256 pixels. Denoising Feature Matching (DFM) [CITATION_2] keeps the traditional GAN adversarial loss, while an additional complementary information to the generator is computed using a denoising autoencoder in the feature space learnt by the discriminator. DFM achieved stateof-the-art Inception score on CIFAR-10 in the unsupervised settings. Both works suggested a non-trivial idea that the multi-target information from the reconstruction loss helps to improve the model performance. A closely related work, Boundary Equilibrium GAN (BEGAN) [CITATION_3] was proposed with a new equilibrium enforcing method. Surprisingly, it demonstrated realistic face generation but is significantly outperformed by DFM on CIFAR-10. This suggests that the traditional adversarial loss remains an important factor to generate realistic complex images.",
+  "correct_citation": {
+    "[CITATION_1]": "15876696",
+    "[CITATION_2]": "57832010",
+    "[CITATION_3]": "9957731"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The Energy-based GAN (EBGAN) [CITATION_1] is trained by replacing the discriminator with an autoencoder and it has demonstrated decent quality synthetic images up to 256 × 256 pixels.",
+      "s_span": 100,
+      "e_span": 283
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Denoising Feature Matching (DFM) [CITATION_2] keeps the traditional GAN adversarial loss, while an additional complementary information to the generator is computed using a denoising autoencoder in the feature space learnt by the discriminator.",
+      "s_span": 284,
+      "e_span": 528
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "A closely related work, Boundary Equilibrium GAN (BEGAN) [CITATION_3] was proposed with a new equilibrium enforcing method.",
+      "s_span": 759,
+      "e_span": 882
+    }
+  ],
+  "bib_entries": {
+    "9957731": {
+      "title": "Began: Boundary equilibrium generative adversarial networks",
+      "abstract": "We propose a new equilibrium enforcing method paired with a loss derived from the Wasserstein distance for training auto-encoder based Generative Adversarial Networks. This method balances the generator and discriminator during training. Additionally, it provides a new approximate convergence measure, fast and stable training and high visual quality. We also derive a way of controlling the trade-off between image diversity and visual quality. We focus on the image generation task, setting a new milestone in visual quality, even at higher resolutions. This is achieved while using a relatively simple model architecture and a standard training procedure."
+    },
+    "15876696": {
+      "title": "Energy-based generative adversarial network",
+      "abstract": "We introduce the \"Energy-based Generative Adversarial Network\" model (EBGAN) which views the discriminator as an energy function that attributes low energies to the regions near the data manifold and higher energies to other regions. Similar to the probabilistic GANs, a generator is seen as being trained to produce contrastive samples with minimal energies, while the discriminator is trained to assign high energies to these generated samples. Viewing the discriminator as an energy function allows to use a wide variety of architectures and loss functionals in addition to the usual binary classifier with logistic output. Among them, we show one instantiation of EBGAN framework as using an auto-encoder architecture, with the energy being the reconstruction error, in place of the discriminator. We show that this form of EBGAN exhibits more stable behavior than regular GANs during training. We also show that a single-scale architecture can be trained to generate high-resolution images."
+    },
+    "57832010": {
+      "title": "Improving generative adversarial networks with denoising feature matching",
+      "abstract": "We propose an augmented training procedure for generative adversarial networks designed to address shortcomings of the original by directing the generator towards probable configurations of abstract discriminator features. We estimate and track the distribution of these features, as computed from data, with a denoising auto-encoder, and use it to propose high-level targets for the generator. We combine this new loss with the original and evaluate the hybrid criterion on the task of unsupervised image synthesis from datasets comprising a diverse set of visual categories, noting a qualitative and quantitative improvement in the ``objectness'' of the resulting samples."
+    }
+  },
+  "generator": "fallback_v4"
+}

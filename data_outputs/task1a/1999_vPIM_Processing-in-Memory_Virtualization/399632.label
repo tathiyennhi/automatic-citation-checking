@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "If neither type is available, it waits for a configurable timeout before retrying, up to a configurable number of attempts.",
+    "If all attempts fail, the request is abandoned.",
+    "In the current prototype, the manager assigns ranks to VMs in a FIFO manner.Rank releases are managed by a dedicated observer thread which tracks the status of ranks via the sysfs files.",
+    "Upon detecting a rank release, the manager updates its rank table and triggers the erase process to reset the rank's memory, ensuring no residual data is accessible to subsequent users and preventing information inference between VMs.Note that the rank release process differs from rank allocation, where VMs explicitly calls the manager.",
+    "Instead, a VM does not inform the manager when releasing a rank."
+  ],
+  "correct_citations": []
+}

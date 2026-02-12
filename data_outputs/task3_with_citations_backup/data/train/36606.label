@@ -1,0 +1,33 @@
+{
+  "doc_id": "36606",
+  "text": "2) Ablation For DASPP: To demonstrate the effectiveness of DASPP, we compare the performance obtained by ASPP [CITATION_1] and our proposed DASPP based on the above LBN-AA. The experimental comparison is shown in Table IV . LBN-AA+ASPP denotes that we combine LBN-AA and ASPP in cascade, while LBN-AA+DASPP denotes that we combine LBN-AA and DASPP. Here, two different types of pooling operations, including the max pooling (LBN-AA+DASPP Maxpooling) and the average pooling (LBN-AA+DASPP Avgpooling) used in the pooling layers, are respectively evaluated for comparison. We also evaluate the performance of DASPP with the connection mode that directly performs the elementwise addition of the shortcut connection and the outputs from the four convolution branches (denoted as LBN-AA+DASPP (sum)). In addition, we evaluate the performance of LBN-AA+Vortex Pooling, which denotes that we combine LBN-AA and the vortex pooling [CITATION_2] . Fig. 10 presents some qualitative segmentation examples obtained by these different models on the Cityscapes validation dataset.",
+  "correct_citation": {
+    "[CITATION_1]": "22655199",
+    "[CITATION_2]": "5111923"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "2) Ablation For DASPP: To demonstrate the effectiveness of DASPP, we compare the performance obtained by ASPP [CITATION_1] and our proposed DASPP based on the above LBN-AA. The experimental comparison is shown in Table IV .",
+      "s_span": 0,
+      "e_span": 223
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In addition, we evaluate the performance of LBN-AA+Vortex Pooling, which denotes that we combine LBN-AA and the vortex pooling [CITATION_2] .",
+      "s_span": 797,
+      "e_span": 938
+    }
+  ],
+  "bib_entries": {
+    "5111923": {
+      "title": "Vortex pooling: Improving context representation in semantic segmentation",
+      "abstract": "Semantic segmentation is a fundamental task in computer vision, which can be considered as a per-pixel classification problem. Recently, although fully convolutional neural network (FCN) based approaches have made remarkable progress in such task, aggregating local and contextual information in convolutional feature maps is still a challenging problem. In this paper, we argue that, when predicting the category of a given pixel, the regions close to the target are more important than those far from it. To tackle this problem, we then propose an effective yet efficient approach named Vortex Pooling to effectively utilize contextual information. Empirical studies are also provided to validate the effectiveness of the proposed method. To be specific, our approach outperforms the previous state-of-the-art model named DeepLab v3 by 1.5% on the PASCAL VOC 2012 val set and 0.6% on the test set by replacing the Atrous Spatial Pyramid Pooling (ASPP) module in DeepLab v3 with the proposed Vortex Pooling. Moreover, our model (10.13FPS) shares similar computation cost with DeepLab v3 (10.37 FPS)."
+    },
+    "22655199": {
+      "title": "Rethinking atrous convolution for semantic image segmentation",
+      "abstract": "In this work, we revisit atrous convolution, a powerful tool to explicitly adjust filter's field-of-view as well as control the resolution of feature responses computed by Deep Convolutional Neural Networks, in the application of semantic image segmentation. To handle the problem of segmenting objects at multiple scales, we design modules which employ atrous convolution in cascade or in parallel to capture multi-scale context by adopting multiple atrous rates. Furthermore, we propose to augment our previously proposed Atrous Spatial Pyramid Pooling module, which probes convolutional features at multiple scales, with image-level features encoding global context and further boost performance. We also elaborate on implementation details and share our experience on training our system. The proposed `DeepLabv3' system significantly improves over our previous DeepLab versions without DenseCRF post-processing and attains comparable performance with other state-of-art models on the PASCAL VOC 2012 semantic image segmentation benchmark."
+    }
+  },
+  "generator": "fallback_v4"
+}

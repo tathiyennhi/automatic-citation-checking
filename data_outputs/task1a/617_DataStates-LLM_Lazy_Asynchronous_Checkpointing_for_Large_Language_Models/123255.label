@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "In terms of end-to-end training runtime of the 30B model, we observe that DataStates-LLM shows up to 2.5× to 1.86× faster training completion time when scaling from DP=1 to DP=16 as compared to other approaches.",
+    "Similar trends are observed for the 13B model.",
+    "Therefore, our approach excels at strong scalability experiments of checkpointing and demonstrates significant speedup in end-to-end training runtimes.Increasing Checkpointing Frequency: Next, we study the impact of scaling the checkpoint frequency, i.e., the number of iterations elapsed between consecutive checkpoint operations.",
+    "This allows us to understand the efficiency of overlapping between the training and asynchronous checkpoint flushes such that the large intervals between subsequent checkpoint operations would allow for more time to complete the flushes to persistent storage and free up the host-memory buffer for the next checkpoints.In particular, we evaluate the checkpointing throughput, iteration slowdown caused due to checkpointing, and the end-to-end runtime for a variable number of checkpoints captured during a 50iteration run of the 7B and 13B models.",
+    "Thanks to fast forward and backward passes, the 7B model presents less opportunities to overlap asynchronous I/O with the training iterations."
+  ],
+  "correct_citations": []
+}

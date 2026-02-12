@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The generator 1 https://www.openslr.org/resources/11/librispeech-lm-norm.txt.gz 2 https://dl.fbaipublicfiles.com/fairseq/wav2vec/wav2vec vox new.pt consists of a single-layer CNN with batch normalization and the discriminator employs a three-layer CNN that takes either the output of the generator or a one-hot representation of the real phoneme sequence as input.All pre-training models are trained on 8 V100 32GB GPUs with a gradient accumulation number of 4 for a total of 400k steps.We randomly sample starting positions with a probability of 0.08 and apply a mask to the subsequent 10 time steps.",
+    "We employ the Adam optimizer [28] with a weight decay of 0.01 and β = (0.9, 0.98).",
+    "The learning rate follows a linear increase for the first 32k steps and subsequently decays linearly to 0.",
+    "The peaking learning rate is 5e-4.",
+    "Following [1], [2], we use the Connectionist Temporal Classification (CTC) [29] loss for downstream ASR fine-tuning."
+  ],
+  "correct_citations": [
+    "We employ the Adam optimizer [28] with a weight decay of 0.01 and β = (0.9, 0.98).",
+    "Following [1], [2], we use the Connectionist Temporal Classification (CTC) [29] loss for downstream ASR fine-tuning."
+  ]
+}

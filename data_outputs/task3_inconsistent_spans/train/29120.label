@@ -1,0 +1,33 @@
+{
+  "doc_id": "29120",
+  "text": "splitters to guarantee a maximum imbalance of ǫ = 0.2. In our experiments, the imbalance was always smaller than 0.1 (except for n/p ≤ 16). SampleSort uses a sample size of 16 log p elements per PE and calls MPI_Alltoallv to exchange data. The implementation uses the MPI_Datatype MPI_Byte for every C++ data type. When we used other MPI_Datatypes, the MPI_Alltoallv call ran into a machine specific deadlock. Sundar et al. [CITATION_1] implemented a non-robust and a robust version of k-way sample sort which both use MPI_Alltoall and MPI_Alltoallv. We did not include their implementation in our benchmarks as these MPI-calls deadlocked. The deadlocks may also be a machine specific problem as the implementation successfully ran on our institute server. Siebert and Wolf [CITATION_2] developed Minisort for the case n = p. Unfortunately, the exact source code used in their experiments is not available any more. The algorithms are written in C++11 and compiled with version 4.8.1 of the GNU compiler collection, using the optimization flag -O2. For inter-process communication, we used the IBM mpich2 library version 1.5, Argonne.",
+  "correct_citation": {
+    "[CITATION_1]": "1462098",
+    "[CITATION_2]": "2649627"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Sundar et al.  implemented a non-robust and a robust version of k-way sample sort which both use MPI_Alltoall and MPI_Alltoallv.",
+      "s_span": 410,
+      "e_span": 550
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Siebert and Wolf  developed Minisort for the case n = p.",
+      "s_span": 757,
+      "e_span": 825
+    }
+  ],
+  "bib_entries": {
+    "2649627": {
+      "title": "Parallel sorting with minimal data",
+      "abstract": "For reasons of efficiency, parallel methods are normally used to work with as many elements as possible. Contrary to this preferred situation, some applications need the opposite. This paper presents three parallel sorting algorithms suited for the extreme case where every process contributes only a single element. Scalable solutions for this case are needed for the communicator constructor MPI Comm split. Compared to previous approaches requiring O(p) memory, we introduce two new parallel sorting algorithms working with a minimum of O(1) memory. One method is simple to implement and achieves a running time of O(p). Our scalable algorithm solves this sorting problem in O(log2 p) time."
+    },
+    "1462098": {
+      "title": "Hyksort: A new variant of hypercube quicksort on distributed memory architectures",
+      "abstract": "In this paper, we present HykSort, an optimized comparison sort for distributed memory architectures that attains more than 2× improvement over bitonic sort and samplesort. The algorithm is based on the hypercube quicksort, but instead of a binary recursion, we perform a k-way recursion in which the pivots are selected accurately with an iterative parallel select algorithm. The single-node sort is performed using a vectorized and multithreaded merge sort. The advantages of HykSort are lower communication costs, better load balancing, and avoidance of O(p)-collective communication primitives. We also present a staged communication samplesort, which is more robust than the original samplesort for large core counts. We conduct an experimental study in which we compare hypercube sort, bitonic sort, the original samplesort, the staged samplesort, and HykSort. We report weak and strong scaling results and study the effect of the grain size. It turns out that no single algorithm performs best and a hybridization strategy is necessary. As a highlight of our study, on our largest experiment on 262,144 AMD cores of the CRAY XK7 \"Titan\" platform at the Oak Ridge National Laboratory we sorted 8 trillion 32-bit integer keys in 37 seconds achieving 0.9TB/s effective throughput."
+    }
+  },
+  "generator": "fallback_v4"
+}

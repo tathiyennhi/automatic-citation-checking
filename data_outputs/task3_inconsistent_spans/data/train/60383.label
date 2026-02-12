@@ -1,0 +1,22 @@
+{
+  "doc_id": "60383",
+  "text": "The AGGCN model is composed of M identical blocks as shown in Figure 2 . Each block consists of three types of layers: attention guided layer, densely connected layer and linear combination layer. We first introduce the attention guided layer of the AGGCN model. As we discuss in Section 1, most existing pruning strategies are predefined. They prune the full tree into a subtree, based on which the adjacency matrix is constructed. In fact, such strategies can also be viewed as a form of hard attention [CITATION_1] , where edges that connect nodes not on the resulting subtree will be directly assigned zero weights (not attended). Such strategies might eliminate relevant information from the original dependency tree. Instead of using rule-based pruning, we develop a \"soft pruning\" strategy in the attention guided layer, which assigns weights to all edges. These weights can be learned by the model in an end-to-end fashion.",
+  "correct_citation": {
+    "[CITATION_1]": "1055111"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In fact, such strategies can also be viewed as a form of hard attention  , where edges that connect nodes not on the resulting subtree will be directly assigned zero weights (not attended).",
+      "s_span": 433,
+      "e_span": 634
+    }
+  ],
+  "bib_entries": {
+    "1055111": {
+      "title": "Show, attend and tell: Neural image caption generation with visual attention",
+      "abstract": "Inspired by recent work in machine translation and object detection, we introduce an attention based model that automatically learns to describe the content of images. We describe how we can train this model in a deterministic manner using standard backpropagation techniques and stochastically by maximizing a variational lower bound. We also show through visualization how the model is able to automatically learn to fix its gaze on salient objects while generating the corresponding words in the output sequence. We validate the use of attention with state-of-the-art performance on three benchmark datasets: Flickr9k, Flickr30k and MS COCO."
+    }
+  },
+  "generator": "fallback_v4"
+}

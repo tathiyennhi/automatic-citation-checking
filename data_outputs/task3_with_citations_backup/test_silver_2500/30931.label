@@ -1,0 +1,20 @@
+{
+  "doc_id": "30931",
+  "text": "We use a large collection of 1,393 models of chairs with different styles introduced in [CITATION_1] . To make the dataset, the CAD models are download from Google/Trimble 3D Warehouse and each chair style is rendered on white background from different view points. To train our network, we uniformly sampled 700,000 quadruples (of positive and negative analogies) and initialized the weights with the AlexNet pre-trained network and fine-tuned its parameters. Figure 4 shows several samples of the analogy questions (left column) used at test time and the top-4 images retrieved by our method (middle column) compared with the baseline (right column). We see that our proposed approach can retrieve images with a style similar to that of the third image and with a view-point similar to the second image while the baseline approach is biased towards retrieving chairs with a style similar to that of the first and the second image. To quantitatively compare the performance of our method with the baseline, we randomly generated 10,000 analogy questions using the test images and report the average recall at top-k retrieval while varying the number of irrelevant images (D) in the distractor set. Note that, since there is only one image corresponding to each (style , view-point), there is only one positive answer image for each question. The performance of chance at the top-kth retrieval is k n where n is the size of D. The images of this dataset are synthesized and do not follow natural image statistics. Therefore, to be fair at comparing the results obtained from our network with that of the baseline (AlexNet), we fine-tune all layers of the AlexNet via a soft-max loss for categorization of different view-points and using the set of images seen during training. We then use the features obtained from the last fully connected layer (fc7) of this network to solve analogy questions. As shown in Figure 3 , fine-tuning all layers of AlexNet (the violet curve referred to as 'AlexNet,ft' in the diagram) helps improve the performance of the baseline. However, the recall of our network still outperforms it with a large margin.",
+  "correct_citation": {
+    "[CITATION_1]": "13989517"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We use a large collection of 1,393 models of chairs with different styles introduced in  ."
+    }
+  ],
+  "bib_entries": {
+    "13989517": {
+      "title": "Seeing 3d chairs: exemplar part-based 2d-3d alignment using a large dataset of cad models",
+      "abstract": "This paper poses object category detection in images as a type of 2D-to-3D alignment problem, utilizing the large quantities of 3D CAD models that have been made publicly available online. Using the \"chair\" class as a running example, we propose an exemplar-based 3D category representation, which can explicitly model chairs of different styles as well as the large variation in viewpoint. We develop an approach to establish part-based correspondences between 3D CAD models and real photographs. This is achieved by (i) representing each 3D model using a set of view-dependent mid-level visual elements learned from synthesized views in a discriminative fashion, (ii) carefully calibrating the individual element detectors on a common dataset of negative images, and (iii) matching visual elements to the test image allowing for small mutual deformations but preserving the viewpoint and style constraints. We demonstrate the ability of our system to align 3D models with 2D objects in the challenging PASCAL VOC images, which depict a wide variety of chairs in complex scenes."
+    }
+  },
+  "generator": "fallback_v4"
+}

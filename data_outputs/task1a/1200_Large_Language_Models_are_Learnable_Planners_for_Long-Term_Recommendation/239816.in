@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Taking the initial state 𝑠 1 to represent the process for distance computation, we haveℓ 𝐾 M 𝑃 = {ℓ |𝑟𝑎𝑛𝑘 (𝑑 (ℓ, 𝑠 1)) < 𝐾, ℓ ∈ M 𝑃 },(5)where 𝑑 (•, •) is defined as the Euclidean distance between the two encoded textsimplemented by Facebook AI Similarity Search (FAISS) [24], a library that allows us to quickly search for similar documents.",
+    "𝑟𝑎𝑛𝑘 (•) gets the rank of a value in ascending order.•Thought generation.",
+    "We leverage the macro-level guidance from the memory to generate a thought.",
+    "For each input (H1•••𝑛-1, 𝑠 𝑛),we can sample a thought from LLM policy as follows:𝑡 𝑛 ∼ LLM(P 𝑃, ℓ 𝐾 M 𝑃, H 1•••𝑛-1, 𝑠 𝑛).",
+    "(6)Here, 𝑡 𝑛 is a sample from the Planner policy, the arguments in the function LLM(•) represent the prompt input to the LLM including task instruction of the Planner P 𝑃 (including few-shot examples), retrieved reflections ℓ 𝐾 M 𝑃, state 𝑠 𝑛, and historical trajectoryH 1•••𝑛-1 in the current episode.Table 2 presents examples of our input prompt template and two representative thoughts, encapsulating common outputs of generated thoughts."
+  ]
+}

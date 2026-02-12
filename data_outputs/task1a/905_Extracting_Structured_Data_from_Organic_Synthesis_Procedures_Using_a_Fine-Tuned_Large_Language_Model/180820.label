@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "Because a Reaction message consists of nested sub-messages (or \"objects\" in JSON terminology), such as Compound and ReactionWorkup, we can define evaluation tasks based on the comparison between the ground truth and LLM-inferred Reaction at the message level: Evaluation Metric 1.",
+    "For a given message type, how many messages of this message type are accurately extracted or erroneously added, removed, or altered?",
+    "Figure 3 shows an example of Evaluation Metric 1 when comparing two ReactionInput messages given the message type of Compound messages.",
+    "To distinguish the three failure modes, we first define a distance function for the given message type based on DeepDistance, 50 an edit distance similar to Levenshtein distance designed for nested objects.",
+    "When comparing two lists of messages (the shorter list is padded with empty messages such that two lists are of equal sizes), a bijective mapping between messages from two lists is found by minimizing the distance sum of all pairs, which is then used to identify the aforementioned failure modes."
+  ],
+  "correct_citations": [
+    "To distinguish the three failure modes, we first define a distance function for the given message type based on DeepDistance, 50 an edit distance similar to Levenshtein distance designed for nested objects."
+  ]
+}

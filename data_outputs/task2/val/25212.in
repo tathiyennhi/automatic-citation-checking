@@ -1,0 +1,62 @@
+{
+  "text": "In this section we describe the quantum algorithm for Travelling Salesman. It uses ideas from the Bellman-Held-Karp algorithm [CITATION_1] which uses dynamic programming and runs in time O(n 2 2 n ).",
+  "citation_candidates": [
+    "598008",
+    "8106293",
+    "570390",
+    "40515114",
+    "13957550",
+    "7154802",
+    "47119575",
+    "1542174",
+    "2497120",
+    "13575502",
+    "207198067"
+  ],
+  "bib_entries": {
+    "47119575": {
+      "title": "Determinant Sums for Undirected Hamiltonicity",
+      "abstract": "We present a Monte Carlo algorithm for Hamiltonicity detection in an $n$-vertex undirected graph running in $O(1.657^{n})$ time. To the best of our knowledge, this is the first superpolynomial improvement on the worst case runtime for the problem since the $O^*(2^n)$ bound established for the traveling salesman problem (TSP) over 50 years ago [R. Bellman, J. Assoc. Comput. Mach., 9 (1962), pp. 61--63], [M. Held and R. M. Karp, J. Soc. Indust. Appl. Math., 10 (1962), pp. 196--210]. ($O^*(f(n))$ suppresses polylogarithmic functions in $f(n)$). It answers in part the first open problem in Woeginger's 2003 survey on exact algorithms for NP-hard problems. For bipartite graphs, we improve the bound to $O^*(\\sqrt{2}^n)\\subset O(1.415^{n})$ time. Both the bipartite and the general algorithm can be implemented to use space polynomial in $n$. We combine several recently resurrected ideas to get the results. Our main technical contribution is a new algebraic characterization of Hamiltonian graphs. We introduce an ex..."
+    },
+    "2497120": {
+      "title": "Design by Measure and Conquer, A Faster Exact Algorithm for Dominating Set",
+      "abstract": "The measure and conquer approach has proven to be a powerful tool ::: to analyse exact algorithms for combinatorial problems, like ::: Dominating Set and Independent Set. In this paper, we propose to ::: use measure and conquer also as a tool in the design of algorithms. ::: In an iterative process, we can obtain a series of branch and ::: reduce algorithms. A mathematical analysis of an algorithm in the ::: series with measure and conquer results in a quasiconvex ::: programming problem. The solution by computer to this problem not ::: only gives a bound on the running time, but also can give a new ::: reduction rule, thus giving a new, possibly faster algorithm. This ::: makes design by measure and conquer a form of computer aided ::: algorithm design. ::: ::: When we apply the methodology to a Set Cover modelling of the ::: Dominating Set problem, we obtain the currently fastest known exact ::: algorithms for Dominating Set: an algorithm that uses $O(1.5134^n)$ ::: time and polynomial space, and an algorithm that uses $O(1.5063^n)$ ::: time."
+    },
+    "13957550": {
+      "title": "A Quantum Algorithm for Finding the Minimum",
+      "abstract": "We give a quantum algorithm to find the index y in a table T of size N such that in time O(c sqrt N), T[y] is minimum with probability at least 1-1/2^c."
+    },
+    "8106293": {
+      "title": "Faster than Classical Quantum Algorithm for Dense Formulas of Exact Satisfiability and Occupation Problems",
+      "abstract": "We present an exact quantum algorithm for solving the Exact Satisfiability (XSAT) problem, which belongs to the important NP-complete complexity class. The algorithm is based on an intuitive approach that can be divided into two parts: First, the identification and efficient characterization of a restricted subspace that contains all the valid assignments of the XSAT; Second, a quantum search in such restricted subspace. The quantum algorithm can be used either to find a valid assignment (or to certify that no solution exists) or to count the total number of valid assignments. The query complexities for the worst-case are respectively bounded by $O(\\sqrt{2^{n-M^{\\prime}}})$ and $O(2^{n-M^{\\prime}})$, where $n$ is the number of variables and $M^{\\prime}$ the number of linearly independent clauses. Remarkably, the proposed quantum algorithm results to be faster than any known exact classical algorithm to solve dense formulas of XSAT. As a concrete application, we provide the worst-case complexity for the Hamiltonian cycle problem obtained after mapping it to a suitable XSAT. Specifically, we show that the time complexity for the proposed quantum algorithm is bounded by $O(2^{n/4})$ for 3-regular undirected graphs, where $n$ is the number of nodes. The same worst-case complexity holds for $(3,3)$-regular bipartite graphs (the current best classical algorithm has a (worst-case) running time bounded by $O(2^{31n/96})$). Finally, when compared to heuristic techniques for XSAT, the proposed quantum algorithm is faster than the classical WalkSAT and Adiabatic Quantum Optimization for random instances with a density of constraints close to the satisfiability threshold, the regime in which instances are typically the hardest to solve. The proposed quantum algorithm can be also extended to the generalized version of the XSAT known as Occupation problem."
+    },
+    "13575502": {
+      "title": "Quantum Speedup of the Traveling Salesman Problem for Bounded-Degree Graphs",
+      "abstract": "The Travelling Salesman Problem is one of the most famous problems in graph theory. However, little is currently known about the extent to which quantum computers could speed up algorithms for the problem. In this paper, we prove a quadratic quantum speedup when the degree of each vertex is at most 3 by applying a quantum backtracking algorithm to a classical algorithm by Xiao and Nagamochi. We then use similar techniques to accelerate a classical algorithm for when the degree of each vertex is at most 4, before speeding up higher-degree graphs via reductions to these instances."
+    },
+    "598008": {
+      "title": "Quantum Walk Speedup of Backtracking Algorithms",
+      "abstract": "We describe a general method to obtain quantum speedups of classical algorithms which are based on the technique of backtracking, a standard approach for solving constraint satisfaction problems (CSPs). Backtracking algorithms explore a tree whose vertices are partial solutions to a CSP in an attempt to find a complete solution. Assume there is a classical backtracking algorithm which finds a solution to a CSP on n variables, or outputs that none exists, and whose corresponding tree contains T vertices, each vertex corresponding to a test of a partial solution. Then we show that there is a bounded-error quantum algorithm which completes the same task using O(sqrt(T) n^(3/2) log n) tests. In particular, this quantum algorithm can be used to speed up the DPLL algorithm, which is the basis of many of the most efficient SAT solvers used in practice. The quantum algorithm is based on the use of a quantum walk algorithm of Belovs to search in the backtracking tree. We also discuss how, for certain distributions on the inputs, the algorithm can lead to an exponential reduction in expected runtime."
+    },
+    "7154802": {
+      "title": "Quantum Algorithm for Tree Size Estimation, with Applications to Backtracking and 2-player Games",
+      "abstract": "We study quantum algorithms on search trees of unknown structure, in a model where the tree can be discovered by local exploration. That is, we are given the root of the tree and access to a black box which, given a vertex $v$, outputs the children of $v$. ::: We construct a quantum algorithm which, given such access to a search tree of depth at most $n$, estimates the size of the tree $T$ within a factor of $1\\pm \\delta$ in $\\tilde{O}(\\sqrt{nT})$ steps. More generally, the same algorithm can be used to estimate size of directed acyclic graphs (DAGs) in a similar model. ::: We then show two applications of this result: ::: a) We show how to transform a classical backtracking search algorithm which examines $T$ nodes of a search tree into an $\\tilde{O}(\\sqrt{T}n^{3/2})$ time quantum algorithm, improving over an earlier quantum backtracking algorithm of Montanaro (arXiv:1509.02374). ::: b) We give a quantum algorithm for evaluating AND-OR formulas in a model where the formula can be discovered by local exploration (modeling position trees in 2-player games). We show that, in this setting, formulas of size $T$ and depth $T^{o(1)}$ can be evaluated in quantum time $O(T^{1/2+o(1)})$. Thus, the quantum speedup is essentially the same as in the case when the formula is known in advance."
+    },
+    "570390": {
+      "title": "Quantum Random Access Memory",
+      "abstract": "A random access memory (RAM) uses n bits to randomly address N=2(n) distinct memory cells. A quantum random access memory (QRAM) uses n qubits to address any quantum superposition of N memory cells. We present an architecture that exponentially reduces the requirements for a memory call: O(logN) switches need be thrown instead of the N used in conventional (classical or quantum) RAM designs. This yields a more robust QRAM algorithm, as it in general requires entanglement among exponentially less gates, and leads to an exponential decrease in the power needed for addressing. A quantum optical implementation is presented."
+    },
+    "207198067": {
+      "title": "A Fast Quantum Mechanical Algorithm for Database Search",
+      "abstract": "were proposed in the early 1980\u2019s [Benioff80] and shown to be at least as powerful as classical computers an important but not surprising result, since classical computers, at the deepest level, ultimately follow the laws of quantum mechanics. The description of quantum mechanical computers was formalized in the late 80\u2019s and early 90\u2019s [Deutsch85][BB92] [BV93] [Yao93] and they were shown to be more powerful than classical computers on various specialized problems. In early 1994, [Shor94] demonstrated that a quantum mechanical computer could efficiently solve a well-known problem for which there was no known efficient algorithm using classical computers. This is the problem of integer factorization, i.e. testing whether or not a given integer, N, is prime, in a time which is a finite power of o (logN) . ----------------------------------------------"
+    },
+    "40515114": {
+      "title": "Faster Exact Bandwidth",
+      "abstract": "We deal with exact algorithms for Bandwidth , a long studied NP-hard problem. For a long time nothing better than the trivial O *(n !) exhaustive search was known. In 2000, Feige an Kilian [4] came up with a O *(10 n )-time algorithm. Since then there has been a growing interest in exponential time algorithms but this bound has not been improved. ::: ::: In this paper we present a new and quite simple O *(5 n ) algorithm. We also obtain even better bound in some special cases."
+    },
+    "1542174": {
+      "title": "A Dynamic Programming Approach to Sequencing Problems",
+      "abstract": "This paper explores a dynamic programming approach to the solution of three sequencing problems: a scheduling problem involving arbitrary cost functions, the traveling-salesman problem, and an assembly line balancing problem. Each of the problems is shown to admit of numerical solution through the use of a simple recursion scheme; these recursion schemes also exhibit similarities and contrasts in the structures of the three problems. For large problems, direct solution by means of dynamic programming is not practical, but procedures are given for obtaining good approximate results by solving sequences of smaller derived problems. Experience with a computer program for the solution of traveling-salesman problems is presented."
+    }
+  }
+}

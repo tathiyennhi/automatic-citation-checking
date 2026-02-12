@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The AUROC was determined for the optimization cohort.",
+    "Models were selected based on their AUROC + Highlights that we consider two models originating from the same training setting.",
+    "The reasons for considering multiple models are described in the following section.",
+    "Model Loss function Batch size Optimization algorithm Best epoch** (Max epochs) Initial learning rate AUROC * GP3 Model 1 Categorical cross entropy 16 For the first 100 epochs: ADAM For the remaining epochs: Weighted Stochastic gradient descent (wSGD) with decoupled weight decay 58 for the remaining epochs (Weight decay = 1e-6, Decay steps = 1000, Decay rate = 0.5, momentum = 0.9) 70 (200) For ADAM: 1e-3 For wSGD: 3e-5 0.934 Model 2 49 (100) 0.887 GP4 Model 1 (SCL) Max.",
+    "margin contrastive loss for SCL 53 Binary cross entropy for classification 16 [Contrastive feature learning] ADAM with cosine decay for learning rate (decay step: 1000) 16 [Classification] For the first 100 epochs: ADAM 16 For the remaining epochs: Weighted Stochastic gradient descent (wSGD) with decoupled weight decay 58 (Weight decay = 1e-4, Decay steps = 50, momentum = 0.9) We also applied exponential decay to the learning rate (Decay steps: 50, decay rate: 0.5) 41 (200) + [Contrastive feature learning] 1e-5 [Classification] For ADAM: 1e-3 For wSGD: 3e-5 0.781 + Model 2 (SCL) 110 (200) + 0.816 + Model 3 Categorical cross entropy 90 (200) 0.801 + Model 4 191 (400) + 0.805 + Model 5 393 (400) + 0.821 + Model 6 298 (300) 0.758 GP5 Model 1 Categorical cross entropy 32 ADAM A class weight was applied instead of oversampling approach."
+  ]
+}

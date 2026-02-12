@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The blue channel is randomly enlarged by 1.2-1.3 times, and the red channel is randomly reduced by 1.2-1.3 times.",
+    "Predict HDR Skydome from Multi-Camera ImagesThis step involves estimating skydome lighting from multi-camera images collected by the vehicle.",
+    "The core idea is to estimate intermediate features from multiple views and restore the skydome lighting using the well-trained HDR reconstruction decoding module.",
+    "We emphasize the fusion of intermediate features from multiple cameras to get a complementary and comprehensive prediction for the skydome lighting.Multi-camera image data will first go through a shared image encoder to predict the peak direction vector f (i) dir, the intensity vector f (i) int, and the sky content vector f (i) content for each image I (i), where i is the camera index.",
+    "For those vectors from N cameras, we fuse all the features in the following strategy:We transform f (i) dir, i = 1, 2,..., N to the front-facing view using their extrinsic parameters and averaged the rotated di-rection vector to fdir; we average f (i) int, i = 1, 2,..., N to fint; we utilize the attention mechanism to fuse sky content vectors as fcontent = Attn(q, k, v), where q Since there is no relevant panoramic data in the autonomous driving dataset for supervision, We use HoliCity [79] to simulate multi-camera images."
+  ],
+  "correct_citations": [
+    "For those vectors from N cameras, we fuse all the features in the following strategy:We transform f (i) dir, i = 1, 2,..., N to the front-facing view using their extrinsic parameters and averaged the rotated di-rection vector to fdir; we average f (i) int, i = 1, 2,..., N to fint; we utilize the attention mechanism to fuse sky content vectors as fcontent = Attn(q, k, v), where q Since there is no relevant panoramic data in the autonomous driving dataset for supervision, We use HoliCity [79] to simulate multi-camera images."
+  ]
+}

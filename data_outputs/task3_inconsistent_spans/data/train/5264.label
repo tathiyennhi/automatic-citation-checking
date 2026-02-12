@@ -1,0 +1,22 @@
+{
+  "doc_id": "5264",
+  "text": "All instances except for \"news20.binary\" have many more observations than features (n >> p), and thus the choice of the Gaussian kernel is the correct one. For instances where the number of features is larger than the number of observations, linear kernel is usually the better choice as the separability of the model can be exploited [CITATION_1] and problem solved to similar accuracy in a fraction of time required to solve the non-linear kernel. The reason we used the Gaussian kernel on \"news20.binary' instance is because we wanted to show that RAC-MBADMM is only mildly affected by the feature set size. Indeed, instances of the similar sizes but different number of features, namely \"rcv1.binary\", \"news20.binary\", \"w7a\" and \"a8a\", and \"w8a\" and \"ijcnn1\", are all solved by RAC-MBADMM in approximately same time. This is in contrast to run-time required by LIBSVM and Matlab, which are both affected by the feature space size. Note that \"news20.binary\" was not solved by Matlab -the implementation of fitcsvm() function that invokes Matlab-SVM algorithm requires full matrices to be provided as the input, what was impossible to do on the computer we used due to memory size. Matlab requested 141.3GB to store input data, what exceeded the available memory (96Gb). The same applies to \"skin_nonskin\" and \"covtype-binary\" instances.",
+  "correct_citation": {
+    "[CITATION_1]": "8313521"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For instances where the number of features is larger than the number of observations, linear kernel is usually the better choice as the separability of the model can be exploited  and problem solved to similar accuracy in a fraction of time required to solve the non-linear kernel.",
+      "s_span": 156,
+      "e_span": 449
+    }
+  ],
+  "bib_entries": {
+    "8313521": {
+      "title": "Exploiting separability in large-scale linear support vector machine training",
+      "abstract": "Linear support vector machine training can be represented as a large quadratic program. We present an efficient and numerically stable algorithm for this problem using interior point methods, which requires only $\\mathcal{O}(n)$ operations per iteration. Through exploiting the separability of the Hessian, we provide a unified approach, from an optimization perspective, to 1-norm classification, 2-norm classification, universum classification, ordinal regression and ?-insensitive regression. Our approach has the added advantage of obtaining the hyperplane weights and bias directly from the solver. Numerical experiments indicate that, in contrast to existing methods, the algorithm is largely unaffected by noisy data, and they show training times for our implementation are consistent and highly competitive. We discuss the effect of using multiple correctors, and monitoring the angle of the normal to the hyperplane to determine termination."
+    }
+  },
+  "generator": "fallback_v4"
+}

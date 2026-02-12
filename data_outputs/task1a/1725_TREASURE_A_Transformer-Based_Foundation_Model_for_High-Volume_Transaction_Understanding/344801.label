@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We call our proposed model TREASURE, short for TRansformer Engine As Scalable Universal transaction Representation Encoder.",
+    "The TREASURE model effectively captures both cardholder behaviors and various payment network signals at the scale of Visa's data.",
+    "To achieve this goal, TREASURE incorporates three key capabilities: 1) an input module with dedicated sub-modules for static and dynamic attributes, enabling more efficient training and inference; 2) an efficient and effective training paradigm for predicting high-cardinality categorical attributes; and 3) demonstrated effectiveness both as a standalone system for transaction-based tasks and as an embedding provider for downstream applications.The first capability addresses the inherent characteristics of transaction data.",
+    "As shown in Fig. 1, raw transaction data is logged as individual entries whenever transactions occur, with all attributes potentially changing between transactions.Amount … Merchant Card Product … Issue Bank Card # Time $214.74 … Merchant F Infinite … Bank Y YYYY 1652141652 $13.24 … Merchant C Signature … Bank X XXXX 1652141656 $25.63 … Merchant D Infinite … Bank Y YYYY 1652141728 $63.28 … Merchant C Infinite … Bank Y YYYY 1652141749 $101.57 … Merchant A Signature … Bank X XXXX 1652141750 $15.12 … Merchant C Signature … Bank X XXXX 1652141923 $1.26 … Merchant B Signature … Bank X XXXX 1652142151 … … … … … … … … However, since our goal is to model cardholder behavior, it is more meaningful to group transactions from the same card together and order them chronologically.",
+    "After grouping and sorting, as illustrated in Fig. 2, we observe that certain attributes remain constant throughout a card's transaction history, while others vary with each transaction."
+  ],
+  "correct_citations": []
+}

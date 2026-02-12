@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Oversampling for Minority Classes After the augmentation process, classes that contained fewer than 200 samples were oversampled through random duplication, allowing for more equitable distribution during training.Preprocessing for Model Input All images were subject to normalization as per Effi-cientNetV2B1's standards prior to training, which entails scaling pixel values and adjusting input distributions to match the expectations of the pretrained model.The diversity of the dataset was enhanced during the augmentation process to improve the recall and precision metrics in the fine-tuning phase, with greater focus on the lesser represented lesion types.Stratified Split Augmentation Pipeline Image Standardization Oversampling Model Preprocessing Augmentation Types Flip Rotate Crop CLAHE Dropout test set, the model achieved an overall accuracy of 83.33%, with a precision score of 89.12%, and a recall rate of 77.31%.In the class-based examination, the model showed impressive high recognition rates in the model consistently recognizing amalgam tattoo (F1 = 0.90), geographic tongue (F1 = 0.89), and pyogenic granuloma (F1 = 0.89) with high reliability.",
+    "Malignant classes also performed well and recognition of squamous cell carcinoma was perfect (F1 = 1.00), although this was a small sample size.",
+    "Minor shortcomings were noted on fibroma (F1 = 0.76) and papilloma (F1 = 0.68), in which the model encounted difficulties in distinguishing the lesions with closely aligned visual characteristics present on the training set.The confusion matrix showed the same misclassification patterns, while also demonstrating that most of the classes exhibited strong separability.",
+    "The ablation analysis also showed that augmentation and oversampling really seem to make a difference.",
+    "The baseline model, for example, came in under 70% accuracy without augmentation."
+  ]
+}

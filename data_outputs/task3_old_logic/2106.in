@@ -1,0 +1,23 @@
+{
+  "text": "An interesting example of such a semi-Lagrangian conservative remapping is given by [CITATION_1] . The coefficients of the one-dimensional cubic spline in each interval are determined using the conservation of mass in the underlying interval. The function values at the left border points are determined by an additional spline interpolation using the condition of mass conservation in the two preceding, the current, and the following intervals. The function values at the right border points are determined in a similar fashion. This construction in particular provides continuity. A monotonic and positively definite filter has then been applied to this semi-Lagrangian scheme [CITATION_2] , which first detects regions of non-monotonic behaviour and then locally reduces the order of the polynomial until monotonicity is regained. An improved version of this filter without reducing the order of the interpolating polynomial in most cases is provided in [CITATION_3] , where a parabolic spline is used for interpolation. The basic algorithm in all these cases is one-dimensional, where the application to the two-dimensional case has been explicitly demonstrated only in [CITATION_4] , as a combination of the so-called cascade splitting and the one-dimensional algorithm.",
+  "correct_citation": {
+    "[CITATION_1]": "122656773",
+    "[CITATION_2]": "122542144",
+    "[CITATION_3]": "122449465",
+    "[CITATION_4]": "122542144"
+  },
+  "bib_entries": {
+    "122542144": {
+      "title": "A monotone and positive-definite filter for a Semi-Lagrangian Inherently Conserving and Efficient (SLICE) scheme",
+      "abstract": "A new monotonic and positive–definite filter is incorporated into an existing Semi-Lagrangian Inherently Conserving and Efficient (SLICE) scheme for transport problems in both Cartesian and spherical geometry. The SLICE scheme is based on a control-volume approach that uses multiple sweeps of a one-dimensional O (Δx4) conservation remapping algorithm along predetermined cascade directions. The new filter combines a selective detection algorithm, to pinpoint regions of non-monotonic behaviour, with a hierarchical reduction of the degree of the piecewise reconstruction in such regions, to re-establish monotonicity. The enhanced, monotonic and positive–definite, SLICE scheme is tested in one dimension, and then applied to standard two-dimensional test problems in both Cartesian and spherical geometries. Comparisons with published results of other conservative semi-Lagrangian schemes show that it performs well. © Crown copyright, 2005."
+    },
+    "122656773": {
+      "title": "SLICE: A SemiLagrangian Inherently Conserving and Efficient scheme for transport problems",
+      "abstract": "A Semi-Lagrangian Inherently Conserving and Efficient (SLICE) scheme is described for transport of passive scalars in Cartesian geometry. It is based on a Control-Volume (CV) approach and uses multiple sweeps of a one-dimensional O(Δx4) conservative remapping algorithm along pre-determined cascade directions. The scheme is applied to standard two-dimensional tests from the literature. Overall, it is found that in addition to conserving mass exactly, it is also competitive with standard non-conserving semi-Lagrangian schemes from the viewpoints of both computational efficiency and accuracy. © Crown Copyright, 2002."
+    },
+    "122449465": {
+      "title": "The Parabolic Spline Method (PSM) for conservative transport problems",
+      "abstract": "A new and efficient parabolic spline based remapping algorithm is developed and tested herein. To ensure mass conservation, the scheme solves an integral form of the transport equation rather than the differential form. The integrals are computed from reconstructed parabolic splines with mass conservation constraints. For higher dimensions, this remapping can be used within a standard directional splitting methodology or within the flow-dependent cascade splitting approach. A grid and sub-grid based monotonic filter is also incorporated into the overall scheme. A truncation error analysis of the scheme is presented and discussed in terms of results from test cases. The analysis shows that although it has a similar truncation error in the converged limit as that of the widely used Piecewise Parabolic Method (PPM) for infinitely differentiable functions, PSM is more accurate than PPM for problems with slow spectral decay. Additionally, an operation count of the scheme is given which demonstrates the computational advantage of PSM compared to PPM. © Crown copyright 2005. Reproduced with the permission of Her Majesty's Stationery Office. Published by John Wiley & Sons, Ltd."
+    }
+  }
+}

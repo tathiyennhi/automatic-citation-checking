@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "After the recalibration procedure, we supply the BAM files prepared for substitution-calling to the Mutect2 tool of GATK 4.1.9.0 84 to generate variant calling format (VCF) files.",
+    "Subsequently, we removed probable technical or germline artifacts by using FilterMutectCalls tool of GATK.",
+    "To further reduce false-positive callings, we conducted three additional procedures: 1. we filtered out all INDELs that are greater than 10 bps by using SelectVariants of GATK; 2. using filter tool of SnpSift 4.3t 85, we applied additional filters for mutant allele frequency (≥10%), coverage (≥10×) at particular positions in tumor and normal samples, and number of supporting reads (≥3) for the mutation in the tumor samples; 3. we compare the SNVs and indels to known polymorphisms (U373 MG glioblastoma) using the bcftools in SAMtools.",
+    "Thus, we obtain the somatic mutations.",
+    "In addition, we mapped the mutation calls in the filtered VCF files to the protein-coding exon region database (https://earray.chem.agilent.com/suredesign/), and removed the mutations that are not overlapped with any regions in Agilent Sur-eSelect DNA -SureSelect Human All Exon V6 (Supplementary Fig. 11)."
+  ]
+}

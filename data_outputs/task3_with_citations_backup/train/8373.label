@@ -1,0 +1,73 @@
+{
+  "doc_id": "8373",
+  "text": "The SalmoNet database consists of a total of 81,514 interactions involving 30,870 genes across the studied strains (see the strain specific distribution in Table 3 ). Considering all the annotated genes for the strains (49,472 genes), SalmoNet therefore covers 62% of the coding capacity of all the strains. In terms of the number of individual ortholog groups, SalmoNet contains information on the interacting partners of 132 sets of transcription factors (TFs) in the regulatory network, 1282 sets of proteins in the PPI network, as well as information on 1196 sets of enzymes in the Figure 1) spanning the gastro-intestinal and extraintestinal pathovars, thus comprising a core subset of the Salmonella regulatory networks inferred from our workflow (Fig. 1) . The edges in this core are those that represent higher confidence since they follow the principle of cross-strain conservation. [CITATION_1] This methodology has previously been used as a basis for minimizing false positives. The ratio for PPIs and metabolic interactions present in all the 10 strains were higher: 72.6% and 69.2%, respectively. Variation in the fraction of each network represented by the core in regulatory and PPI/metabolic networks supports the idea that transcriptional regulation evolves at a faster rate than the PPI or metabolic levels, [CITATION_2] although the noise arising from the heterogeneous sources used for the reconstruction of the regulatory network cannot be ignored. The use of the matrix-quality tool [CITATION_3] to determine customized P-values for every TF-strain combination for the transcriptional regulatory (binding site) predictions minimizes the high false positive rates which could otherwise arise from using generic P-value thresholds. Due to the low number of true positive sets, Precision-Recall calculations could not be inferred for most of the transcription factors analyzed in the study. However, to exemplify the reliability of the networks, we determined the target Recall rates (recovery of known targets) for one of the transcription factors SsrB. SsrB regulates the expression of multiple target genes including a number of virulence factors including members of the Salmonella pathogenicity islands. [CITATION_4] [CITATION_5] 24 instances of the 18 bp SsrB binding motif in S. Typhimurium SL1344 have been reported, [CITATION_6] By performing a random and equal bifurcation of the known binding sites into test and training sets, we were able to achieve recall rates of 75% in the reconstructed regulatory network for S. Typhimurium SL1344 (Supplementary Table 2 ). Furthermore, swapping the test and training sets yielded a recall rate of 64% suggesting that the reconstructed networks are robust in terms of recovery of true positives. With this example, we show that the predicted regulatory interactions in SalmoNet recover previously reported binding sites due to the employed stringencies such as an informed P-value. Besides, users can further enhance the networks by choosing only those interactions which occur in multiple strains of each serovar or all the strains in the study depending on their use case.",
+  "correct_citation": {
+    "[CITATION_1]": "8143433",
+    "[CITATION_2]": "14398347",
+    "[CITATION_3]": "923404",
+    "[CITATION_4]": "41778651",
+    "[CITATION_5]": "7757671",
+    "[CITATION_6]": "7757671"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The edges in this core are those that represent higher confidence since they follow the principle of cross-strain conservation. [CITATION_1] This methodology has previously been used as a basis for minimizing false positives.",
+      "s_span": 764,
+      "e_span": 989
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Variation in the fraction of each network represented by the core in regulatory and PPI/metabolic networks supports the idea that transcriptional regulation evolves at a faster rate than the PPI or metabolic levels, [CITATION_2] although the noise arising from the heterogeneous sources used for the reconstruction of the regulatory network cannot be ignored.",
+      "s_span": 1110,
+      "e_span": 1469
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The use of the matrix-quality tool [CITATION_3] to determine customized P-values for every TF-strain combination for the transcriptional regulatory (binding site) predictions minimizes the high false positive rates which could otherwise arise from using generic P-value thresholds.",
+      "s_span": 1470,
+      "e_span": 1751
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": " regulates the expression of multiple target genes including a number of virulence factors including members of the Salmonella pathogenicity islands. [CITATION_4] [CITATION_5] 24 instances of the 18 bp SsrB binding motif in S. Typhimurium SL1344 have been reported, [CITATION_6] By performing a ",
+      "s_span": 2078,
+      "e_span": 2373
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "[CITATION_4] [CITATION_5] 24 instances of the 18 bp SsrB binding motif in S. Typhimurium SL1344 have been reported, [CITATION_6] By performing a random and equal bifurcation of the known binding sites into test and training sets, we were able to achieve recall rates of 75% in the reconstructed regulatory network for S. Typhimurium SL1344 (Supplementary Table 2 ).",
+      "s_span": 2228,
+      "e_span": 2593
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "[CITATION_4] [CITATION_5] 24 instances of the 18 bp SsrB binding motif in S. Typhimurium SL1344 have been reported, [CITATION_6] By performing a random and equal bifurcation of the known binding sites into test and training sets, we were able to achieve recall rates of 75% in the reconstructed regulatory network for S. Typhimurium SL1344 (Supplementary Table 2 ).",
+      "s_span": 2228,
+      "e_span": 2593
+    }
+  ],
+  "bib_entries": {
+    "923404": {
+      "title": "Theoretical and empirical quality assessment of transcription factor-binding motifs",
+      "abstract": "Position-specific scoring matrices (PSSMs) are routinely used to predict transcription factor (TF)-binding sites in genome sequences. However, their reliability to predict novel binding sites can be far from optimum, due to the use of a small number of training sites or the inappropriate choice of parameters when building the matrix or when scanning sequences with it. Measures of matrix quality such as E-value and information content rely on theoretical models, and may fail in the context of full genome sequences. We propose a method, implemented in the program 'matrix-quality', that combines theoretical and empirical score distributions to assess reliability of PSSMs for predicting TF-binding sites. We applied 'matrix-quality' to estimate the predictive capacity of matrices for bacterial, yeast and mouse TFs. The evaluation of matrices from RegulonDB revealed some poorly predictive motifs, and allowed us to quantify the improvements obtained by applying multi-genome motif discovery. Interestingly, the method reveals differences between global and specific regulators. It also highlights the enrichment of binding sites in sequence sets obtained from high-throughput ChIP-chip (bacterial and yeast TFs), and ChIP-seq and experiments (mouse TFs). The method presented here has many applications, including: selecting reliable motifs before scanning sequences; improving motif collections in TFs databases; evaluating motifs discovered using high-throughput data sets."
+    },
+    "14398347": {
+      "title": "Measuring the evolutionary rewiring of biological networks",
+      "abstract": "We have accumulated a large amount of biological network data and expect even more to come. Soon, we anticipate being able to compare many different biological networks as we commonly do for molecular sequences. It has long been believed that many of these networks change, or \"rewire\", at different rates. It is therefore important to develop a framework to quantify the differences between networks in a unified fashion. We developed such a formalism based on analogy to simple models of sequence evolution, and used it to conduct a systematic study of network rewiring on all the currently available biological networks. We found that, similar to sequences, biological networks show a decreased rate of change at large time divergences, because of saturation in potential substitutions. However, different types of biological networks consistently rewire at different rates. Using comparative genomics and proteomics data, we found a consistent ordering of the rewiring rates: transcription regulatory, phosphorylation regulatory, genetic interaction, miRNA regulatory, protein interaction, and metabolic pathway network, from fast to slow. This ordering was found in all comparisons we did of matched networks between organisms. To gain further intuition on network rewiring, we compared our observed rewirings with those obtained from simulation. We also investigated how readily our formalism could be mapped to other network contexts; in particular, we showed how it could be applied to analyze changes in a range of \"commonplace\" networks such as family trees, co-authorships and linux-kernel function dependencies."
+    },
+    "8143433": {
+      "title": "Crossspecies cluster co-conservation: a new method for generating protein interaction networks",
+      "abstract": "Co-conservation (phylogenetic profiles) is a well-established method for predicting functional relationships between proteins. Several publicly available databases use this method and additional clustering strategies to develop networks of protein interactions (cluster co-conservation (CCC)). CCC has previously been limited to interactions within a single target species. We have extended CCC to develop protein interaction networks based on co-conservation between protein pairs across multiple species, cross-species cluster co-conservation."
+    },
+    "41778651": {
+      "title": "The response regulator SsrB activates expression of diverse Salmonella pathogenicity island 2 promoters and counters silencing by the nucleoid-associated protein H-NS",
+      "abstract": "Summary ::: The two-component system SsrA–SsrB activates expression of a type III secretion system required for replication in macrophages and systemic infection in mice. Here we characterize the SsrB-dependent regulation of genes within Salmonella pathogenicity island 2 (SPI-2). Primer extension and DNase I footprinting identified multiple SsrB-regulated promoters within SPI-2 located upstream of ssaB, sseA, ssaG and ssaM. We previously demonstrated that ssrA and ssrB transcription is uncoupled. Overexpression of SsrB in the absence of its cognate kinase, SsrA, is sufficient to activate SPI-2 transcription. Because SsrB requires phosphorylation to relieve inhibitory contacts that occlude its DNA-binding domain, additional components must phosphorylate SsrB. SPI-2 promoters examined in single copy were highly SsrB-dependent, activated during growth in macrophages and induced by acidic pH. The nucleoid structuring protein H-NS represses horizontally acquired genes; we confirmed that H-NS is a negative regulator of SPI-2 gene expression. In the absence of H-NS, the requirement for SsrB in activating SPI-2 genes is substantially reduced, suggesting a role for SsrB in countering H-NS silencing. SsrB activates transcription of multiple operons within SPI-2 by binding to degenerate DNA targets at diversely organized promoters. SsrB appears to possess dual activities to promote SPI-2 gene expression: activation of transcription and relief of H-NS-mediated repression."
+    },
+    "7757671": {
+      "title": "Identification of the regulatory logic controlling Salmonella pathoadaptation by the SsrA-SsrB two-component system",
+      "abstract": "Sequence data from the past decade has laid bare the significance of horizontal gene transfer in creating genetic diversity in the bacterial world. Regulatory evolution, in which non-coding DNA is mutated to create new regulatory nodes, also contributes to this diversity to allow niche adaptation and the evolution of pathogenesis. To survive in the host environment, Salmonella enterica uses a type III secretion system and effector proteins, which are activated by the SsrA-SsrB two-component system in response to the host environment. To better understand the phenomenon of regulatory evolution in S. enterica, we defined the SsrB regulon and asked how this transcription factor interacts with the cis-regulatory region of target genes. Using ChIP-on-chip, cDNA hybridization, and comparative genomics analyses, we describe the SsrB-dependent regulon of ancestral and horizontally acquired genes. Further, we used a genetic screen and computational analyses integrating experimental data from S. enterica and sequence data from an orthologous regulatory system in the insect endosymbiont, Sodalis glossinidius, to identify the conserved yet flexible palindrome sequence that defines DNA recognition by SsrB. Mutational analysis of a representative promoter validated this palindrome as the minimal architecture needed for regulatory input by SsrB. These data provide a high-resolution map of a regulatory network and the underlying logic enabling pathogen adaptation to a host."
+    }
+  },
+  "generator": "fallback_v4"
+}

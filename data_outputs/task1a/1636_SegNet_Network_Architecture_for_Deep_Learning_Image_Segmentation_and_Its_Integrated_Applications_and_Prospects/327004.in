@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "(1) Using encoder-decoder method and multi-classification softmax classifier to calculate the classification confidence of each pixel, the image is segmented semantically;(2) In the coding stage, only the maximum pooled index is recorded and stored, which greatly reduces the memory space occupied while depicting the boundary information; This network is adapted to VGG16, removing the last fully connected layer and retaining 13 convolutional layers, which exactly constitute the encoder network, that is, there are 5 coding blocks on the left (blue convolutional layer).",
+    "Each block is downsampled through the maximum pooling layer (green pooling layer) and sent to the right side, then the feature map is up-sampled (red de-pooling layer), and then decoded through the decoding block (blue convolutional layer on the right side) after up-sampling, that is, decoded through the convolutional layer.",
+    "Finally, the decoder output feature map is sent to Softmax classifier for pixelated classification.",
+    "A completely symmetric coding-decoding structure is formed.",
+    "Pooling indices\"In the aforementioned description, the encoding layer employs the initial 13 layers of the VGG16 structure to extract features through convolution, batch normalization, and ReLU activation operations."
+  ]
+}

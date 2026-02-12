@@ -1,0 +1,22 @@
+{
+  "doc_id": "28755",
+  "text": "In the detailed simulation phase, we use a modified version of the out-of-order processor model from Simplescalar 3.0 for the PISA instruction set [CITATION_1] , configured with the simulator settings listed in Table 2 . Compared to the original, our modified simulator models rename registers and issue queues separately from the Reservation Update Unit (RUU). Using this processor model, we inject faults into three hardware structures: the physical register file, the fetch queue, and the issue queue (IQ).3 Faults injected into a physical register will appear in architectural state unless the register is idle or belongs to a mispeculated instruction. For the fetch queue, we allow faults to corrupt instruction bits, including opcodes, register addresses, and immediate specifiers. These faults manifest in architectural state as long as the injected instruction is not mispeculated. Lastly, for the IQ, we model 6 fields per entry: instruction opcode, 3 register tags (2 source and 1 destination), an immediate specifier, and a PC value. Like the fetch queue, faults in the IQ appear in architectural state for instructions that are not mispeculated. Corruptions to the IQ opcode and immediate fields behave similarly to corresponding corruptions in the fetch queue. Corruptions to the register tags alter instruction dependences, and corruptions to the PC value affect branch target addresses.",
+  "correct_citation": {
+    "[CITATION_1]": "58871222"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In the detailed simulation phase, we use a modified version of the out-of-order processor model from Simplescalar 3.0 for the PISA instruction set  , configured with the simulator settings listed in Table 2 .",
+      "s_span": 0,
+      "e_span": 220
+    }
+  ],
+  "bib_entries": {
+    "58871222": {
+      "title": "Evaluating future microprocessors: the simplescalar tool set",
+      "abstract": "This document describes the SimpleScalar tool set, a collection of publicly-available simulation tools that use detailed e cution-driven to simulate modern processor architectures. In this report, we give an o verview of the tool set, show how to obtain, install and use it. We also discuss details about the tools’ internals, and document the SimpleScalar ar chitecture."
+    }
+  },
+  "generator": "fallback_v4"
+}

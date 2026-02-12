@@ -1,0 +1,88 @@
+{
+  "doc_id": "449",
+  "text": "Building a good state representation. What is a good state representation? [CITATION_1] argue that, in standard RL, this representation must be markovian, able to represent the true value of the policy, generalize well and low-dimensional. Using an adapted feature space to learn a task can considerably accelerate the learning process [CITATION_2] [CITATION_3] and may even help to learn a forward model. The best way to do this may be to construct a minimal feature space with independent features, e.g. one feature for each object [Lesort et al., 2018] . In order to better understand the importance of a relevant state representation in RL, let's consider a simple navigation task where the agent has to reach a target area. If the agent accesses pixels input in a top view, it will have to extract its own position and the target position through complex non-linear transformations to understand which directions it has to take. At the opposite, if it has already access to its position, it will only have to check if its vertical and horizontal positions are greater, equals or smaller than those of the target. In standard RL, this problem is exacerbated, firstly because the only available learning process is the back-propagation of the reward signal, and secondly by the presence of noise in the raw state. It results that if the reward is sparse, the agent will not learn anything from its interactions even though interaction by themselves are rich in information. Furthermore, the state representation fully depends on the task and cannot be generalized to other tasks. Several work concerns the learning of a relevant state representation. Auxiliary losses can complement the reward with supervised learning losses, it relies on information such as immediate reward or other predefined functions [CITATION_4] [CITATION_5] . The agent may also use some prior knowledge on transitions [CITATION_6] [CITATION_7] or learn inverse models . There is a large literature on the best way to quickly build this kind of state space, we invite the interested reader to look at [Lesort et al., 2018] for a general review. However, it is still difficult to get an entire disentangled representation of controllable objects since it requires interactions with the environment which do not always depend on the task.",
+  "correct_citation": {
+    "[CITATION_1]": "15176564",
+    "[CITATION_2]": "59291974",
+    "[CITATION_3]": "3549024",
+    "[CITATION_4]": "16561904",
+    "[CITATION_5]": "14717992",
+    "[CITATION_6]": "5980504",
+    "[CITATION_7]": "7081692"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "What is a good state representation? [CITATION_1] argue that, in standard RL, this representation must be markovian, able to represent the true value of the policy, generalize well and low-dimensional.",
+      "s_span": 38,
+      "e_span": 239
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Using an adapted feature space to learn a task can considerably accelerate the learning process [CITATION_2] [CITATION_3] and may even help to learn a forward model.",
+      "s_span": 240,
+      "e_span": 405
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Using an adapted feature space to learn a task can considerably accelerate the learning process [CITATION_2] [CITATION_3] and may even help to learn a forward model.",
+      "s_span": 240,
+      "e_span": 405
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Auxiliary losses can complement the reward with supervised learning losses, it relies on information such as immediate reward or other predefined functions [CITATION_4] [CITATION_5] .",
+      "s_span": 1654,
+      "e_span": 1837
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Auxiliary losses can complement the reward with supervised learning losses, it relies on information such as immediate reward or other predefined functions [CITATION_4] [CITATION_5] .",
+      "s_span": 1654,
+      "e_span": 1837
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "The agent may also use some prior knowledge on transitions [CITATION_6] [CITATION_7] or learn inverse models .",
+      "s_span": 1838,
+      "e_span": 1948
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "The agent may also use some prior knowledge on transitions [CITATION_6] [CITATION_7] or learn inverse models .",
+      "s_span": 1838,
+      "e_span": 1948
+    }
+  ],
+  "bib_entries": {
+    "5980504": {
+      "title": "Learning state representations with robotic priors",
+      "abstract": "Robot learning is critically enabled by the availability of appropriate state representations. We propose a robotics-specific approach to learning such state representations. As robots accomplish tasks by interacting with the physical world, we can facilitate representation learning by considering the structure imposed by physics; this structure is reflected in the changes that occur in the world and in the way a robot can effect them. By exploiting this structure in learning, robots can obtain state representations consistent with the aspects of physics relevant to the learning task. We name this prior knowledge about the structure of interactions with the physical world robotic priors. We identify five robotic priors and explain how they can be used to learn pertinent state representations. We demonstrate the effectiveness of this approach in simulated and real robotic experiments with distracting moving objects. We show that our method extracts task-relevant state representations from high-dimensional observations, even in the presence of task-irrelevant distractions. We also show that the state representations learned by our method greatly improve generalization in reinforcement learning."
+    },
+    "16561904": {
+      "title": "Loss is its own reward: Self-supervision for reinforcement learning",
+      "abstract": "Reinforcement learning optimizes policies for expected cumulative reward. Need the supervision be so narrow? Reward is delayed and sparse for many tasks, making it a difficult and impoverished signal for end-to-end optimization. To augment reward, we consider a range of self-supervised tasks that incorporate states, actions, and successors to provide auxiliary losses. These losses offer ubiquitous and instantaneous supervision for representation learning even in the absence of reward. While current results show that learning from reward alone is feasible, pure reinforcement learning methods are constrained by computational and data efficiency issues that can be remedied by auxiliary losses. Self-supervised pre-training and joint optimization improve the data efficiency and policy returns of end-to-end reinforcement learning."
+    },
+    "14717992": {
+      "title": "Reinforcement learning with unsupervised auxiliary tasks",
+      "abstract": "Deep reinforcement learning agents have achieved state-of-the-art results by directly maximising cumulative reward. However, environments contain a much wider variety of possible training signals. In this paper, we introduce an agent that also maximises many other pseudo-reward functions simultaneously by reinforcement learning. All of these tasks share a common representation that, like unsupervised learning, continues to develop in the absence of extrinsic rewards. We also introduce a novel mechanism for focusing this representation upon extrinsic rewards, so that learning can rapidly adapt to the most relevant aspects of the actual task. Our agent significantly outperforms the previous state-of-the-art on Atari, averaging 880\\% expert human performance, and a challenging suite of first-person, three-dimensional \\emph{Labyrinth} tasks leading to a mean speedup in learning of 10$\\times$ and averaging 87\\% expert human performance on Labyrinth."
+    },
+    "59291974": {
+      "title": "Decoupling feature extraction from policy learning: assessing benefits of state representation learning in goal based robotics",
+      "abstract": "Scaling end-to-end reinforcement learning to control real robots from vision presents a series of challenges, in particular in terms of sample efficiency. Against end-to-end learning, state representation learning can help learn a compact, efficient and relevant representation of states that speeds up policy learning, reducing the number of samples needed, and that is easier to interpret. We evaluate several state representation learning methods on goal based robotics tasks and propose a new unsupervised model that stacks representations and combines strengths of several of these approaches. This method encodes all the relevant features, performs on par or better than end-to-end learning, and is robust to hyper-parameters change."
+    },
+    "3549024": {
+      "title": "Integrating state representation learning into deep reinforcement learning",
+      "abstract": "Most deep reinforcement learning techniques are unsuitable for robotics, as they require too much interaction time to learn useful, general control policies. This problem can be largely attributed to the fact that a state representation needs to be learned as a part of learning control policies, which can only be done through fitting expected returns based on observed rewards. While the reward function provides information on the desirability of the state of the world, it does not necessarily provide information on how to distill a good, general representation of that state from the sensory observations. State representation learning objectives can be used to help learn such a representation. While many of these objectives have been proposed, they are typically not directly combined with reinforcement learning algorithms. We investigate several methods for integrating state representation learning into reinforcement learning. In these methods, the state representation learning objectives help regularize the state representation during the reinforcement learning, and the reinforcement learning itself is viewed as a crucial state representation learning objective and allowed to help shape the representation. Using autonomous racing tests in the TORCS simulator, we show how the integrated methods quickly learn policies that generalize to new environments much better than deep reinforcement learning without state representation learning."
+    },
+    "15176564": {
+      "title": "Autonomous learning of state representations for control: An emerging field aims to autonomously learn state representations for reinforcement learning agents from their real-world sensor observations",
+      "abstract": "This article reviews an emerging field that aims for autonomous reinforcement learning (RL) directly on sensor-observations. Straightforward end-to-end RL has recently shown remarkable success, but relies on large amounts of samples. As this is not feasible in robotics, we review two approaches to learn intermediate state representations from previous experiences: deep auto-encoders and slow-feature analysis. We analyze theoretical properties of the representations and point to potential improvements."
+    },
+    "7081692": {
+      "title": "Pves: Position-velocity encoders for unsupervised learning of structured state representations",
+      "abstract": "We propose position-velocity encoders (PVEs) which learn---without supervision---to encode images to positions and velocities of task-relevant objects. PVEs encode a single image into a low-dimensional position state and compute the velocity state from finite differences in position. In contrast to autoencoders, position-velocity encoders are not trained by image reconstruction, but by making the position-velocity representation consistent with priors about interacting with the physical world. We applied PVEs to several simulated control tasks from pixels and achieved promising preliminary results."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,55 @@
+{
+  "doc_id": "5948",
+  "text": "Working toward such an approach, we start from the purely distributed approach of applying at run-time through global communication between protocol processes (e.g., Alice talks to Bob, who in turn talks to Carol, etc.). To improve the throughput of this approach, our idea is to bound the globalness of communication: generally, when some Alice asks [CITATION_1] Square brackets for readability. [CITATION_2] An interesting piece of future work, inspired by one of the reviewers of this paper, is to explicitly represent the overhead of message exchanges involved in a consensus algorithm in the automata semantics. This would enable us to formally quantify and reason in theory, about this overhead and its effect on throughput in practice. One way to do this is to annotate port automata with stochastic information for representing the delays of data-flows, as already done for constraint automata by Baier and Wolf [CITATION_3] . The finer granularity offered by Action Constraint Automata of Kokash et al. [CITATION_4] may also be useful to articulate this overhead. some Bob if he is ready to fire a transition involving shared ports, Bob should immediately answer without engaging others. By doing so, Alice and Bob indeed achieve a higher throughput-less communication means less overhead-while, for the sake of high parallelism, independent others can still run at their own pace. Importantly, however, protocol processes no longer compute the application of in this new approach, simply because the new distributed algorithm they now use does not model anymore. Instead, those processes compute the application of another, new, so far unknown product operator whose implementation requires only local communication. Problematically, however, applying that new product operator instead of can be unsound or incomplete, sometimes to the extent of deadlock. Which of those two happens depends on how Bob immediately answers Alice in cases where he actually should have consulted Carol (and possibly others). If Bob replies being ready, the dataflow on Alice's ports (including her ports shared with Bob) incorrectly introduces asynchrony between Bob's two ports. However, if Bob always replies not being ready, he and Alice never interact on their shared ports. Clearly, if we want to use the simplified distributed algorithm, we should better understand the potentially severe consequences of doing so. In the rest of this section, we therefore formalize the new product operator that models the simplified distributed algorithm. Then, in the next sections, we study under which circumstances substituting (i.e., the old algorithm) with our new product operator (i.e., the new algorithm) is semantics-preserving.",
+  "correct_citation": {
+    "[CITATION_1]": "30422598",
+    "[CITATION_2]": "17670208",
+    "[CITATION_3]": "14699855",
+    "[CITATION_4]": "5890643"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To improve the throughput of this approach, our idea is to bound the globalness of communication: generally, when some Alice asks  Square brackets for readability.",
+      "s_span": 221,
+      "e_span": 396
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "To improve the throughput of this approach, our idea is to bound the globalness of communication: generally, when some Alice asks  Square brackets for readability.  An interesting piece of future work, inspired by one of the reviewers of this paper, is to explicitly represent the overhead of message exchanges involved in a consensus algorithm in the automata semantics.",
+      "s_span": 221,
+      "e_span": 616
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "One way to do this is to annotate port automata with stochastic information for representing the delays of data-flows, as already done for constraint automata by Baier and Wolf  .",
+      "s_span": 743,
+      "e_span": 934
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The finer granularity offered by Action Constraint Automata of Kokash et al.  may also be useful to articulate this overhead. some Bob if he is ready to fire a transition involving shared ports, Bob should immediately answer without engaging others.",
+      "s_span": 935,
+      "e_span": 1196
+    }
+  ],
+  "bib_entries": {
+    "5890643": {
+      "title": "A semantic model for service composition with coordination time delays",
+      "abstract": "The correct behavior of a service composition depends on the appropriate coordination of its services. According to the idea of channel-based coordination, services exchange messages though channels without any knowledge about each other. The Reo coordination language aims at building connectors out of basic channels to implement arbitrarily complex interaction protocols. The activity within a Reo connector consists of two types of communication, each of which incurs a delay: internal coordination and data transfer. Semantic models have been proposed for Reo that articulate data transfer delays, but none of them explicitly considers coordination delays. More importantly, these models implicitly assume that (1) internal coordination and data transfer activities take place in two separate phases, and (2) data transfer delays do not affect the coordination phase. This assumptions prevent maximal concurrency in data exchange and distort the evaluation of end-to-end delays in service composition models. In this paper, we introduce a novel compositional automata-based semantic model for Reo that explicitly represents both internal coordination and data transfer aspects in channel-based connectors. Furthermore, we map the proposed model to the process algebra mCRL2, which allows us to generate state spaces for connectors with time delays and analyze them automatically."
+    },
+    "17670208": {
+      "title": "Orchestrating web services using Reo: from circuits and behaviors to automatically generated code",
+      "abstract": "We present a compositional construction of web services, using Reo and constraint automata as the main \"glue\" ingredients. Reo is a graphical and exogenous coordination language based on channels. We propose a framework that, taking as input the behavioral description of services (as constraint automata), their WSDL interfaces, and the description of their interaction in Reo, generates all the necessary Java code to orchestrate the services in practice. For each web service, we automatically generate a proxy that manages the communication between this service and the Reo circuit. Although we focus on web services, we can compose different kinds of service-oriented and component technologies at the same time (e.g., CORBA, RPC, WCF), by generating different proxies and connecting them to the same coordinator."
+    },
+    "14699855": {
+      "title": "Stochastic reasoning about channel-based component connectors",
+      "abstract": "Constraint automata have been used as an operational model for component connectors that coordinate the cooperation and communication of the components by means of a network of channels. In this paper, we introduce a variant of constraint automata (called continuous-time constraint automata) that allows us to specify time-dependent stochastic assumptions about the channel connections or the component interfaces, such as the arrival rates of communication requests, the average delay of enabled I/O-operations at the channel ends or the stochastic duration of internal computations. This yields the basis for a performance analysis of channel-based coordination mechanisms. We focus on compositional reasoning and discuss several bisimulation relations on continuous-time constraint automata. For this, we adapt notions of strong and weak bisimulation that have been introduced for similar stochastic models and introduce a new notion of weak bisimulation which abstracts away from invisible non-stochastic computations as well as the internal stochastic evolution."
+    },
+    "30422598": {
+      "title": "Automatic code generation for the orchestration of web services with Reo",
+      "abstract": "We present a compositional construction of Web Services, using Reo and Constraint Automata as the main \"glue\" ingredients. Reo is a graphical and exogenous coordination language based on channels. We propose a framework that, taking as input the behavioral description of services (as Constraint Automata), their WSDL interfaces, and the description of their interaction in Reo, generates all the necessary Java code to orchestrate the services in practice. For each Web Service, we automatically generate a proxy that manages the communication between this service and the Reo circuit. Although we focus on Web Services, we can compose different kinds of service-oriented and component technologies at the same time (e.g., CORBA, RPC, WCF), by generating different proxies and connecting them to the same coordinator."
+    }
+  },
+  "generator": "fallback_v4"
+}

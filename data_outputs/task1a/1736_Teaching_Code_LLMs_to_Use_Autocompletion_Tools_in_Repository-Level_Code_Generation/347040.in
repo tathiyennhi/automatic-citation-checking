@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We denote the identified dependencies in gt i and extracted expressions in pred i as two sets, DEP (gt i) and EXP (pred i), respectively.",
+    "The Dependency Coverage can be calculated as follows, where N is the size of the4 https://github.com/microsoft/CodeXGLUE test dataset: DepCov = N i |EXP (pred i) ∩ DEP (gt i)| N i |DEP (gt i)| • Static Validity Rate (ValRate): As repository-level dependencies can potentially introduce dependency errors in generated functions, we introduce the Static Validity Rate metric (ValRate) to evaluate the effectiveness of TOOLGEN in reducing dependency errors.This metric evaluates the proportion of generated functions that successfully pass a static check for dependency errors, specifically no-member and undefined-variable.",
+    "To perform this evaluation, we incorporate the generated functions into their respective code repositories and conduct static lint analysis using pylint [44].",
+    "Functions that do not exhibit syntax errors, no-member, or undefined-variable errors are deemed statically valid.",
+    "The Static Validity Rate can be calculated as follows:V alRate = |{pred i≤N: pred i passes lint check}| N Execution-based Metric: To further assess the functional correctness of the generated functions, we also employ a widely used execution-based metric involving running test cases.• Test Pass Rate (Pass@1): This metric calculates the ratio of generated functionally-correct functions that pass all corresponding test cases."
+  ]
+}

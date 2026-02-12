@@ -1,0 +1,22 @@
+{
+  "doc_id": "61045",
+  "text": "To prove this theorem, we modify the algorithm given by Frieze, Kannan, and Vempala [CITATION_1] and show that it satisfies the desired properties. The modifications are not crucial to the correctness of the full algorithm: without them, we simply get a different type of low-rank approximation bound. They come into play in Section 5 when proving guarantees about the algorithm as a recommendation system.",
+  "correct_citation": {
+    "[CITATION_1]": "5453786"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To prove this theorem, we modify the algorithm given by Frieze, Kannan, and Vempala [CITATION_1] and show that it satisfies the desired properties.",
+      "s_span": 0,
+      "e_span": 147
+    }
+  ],
+  "bib_entries": {
+    "5453786": {
+      "title": "Fast Monte-Carlo algorithms for finding low-rank approximations",
+      "abstract": "In many applications, the data consist of (or may be naturally formulated as) an $m \\times n$ matrix $A$. It is often of interest to find a low-rank approximation to $A$, i.e., an approximation $D$ to the matrix $A$ of rank not greater than a specified rank $k$, where $k$ is much smaller than $m$ and $n$. Methods such as the singular value decomposition (SVD) may be used to find an approximation to $A$ which is the best in a well-defined sense. These methods require memory and time which are superlinear in $m$ and $n$; for many applications in which the data sets are very large this is prohibitive. Two simple and intuitive algorithms are presented which, when given an $m \\times n$ matrix $A$, compute a description of a low-rank approximation $D^{*}$ to $A$, and which are qualitatively faster than the SVD. Both algorithms have provable bounds for the error matrix $A-D^{*}$. For any matrix $X$, let $\\|{X}\\|_F$ and $\\|{X}\\|_2$ denote its Frobenius norm and its spectral norm, respectively. In the first algorithm, $c$ columns of $A$ are randomly chosen. If the $m \\times c$ matrix $C$ consists of those $c$ columns of $A$ (after appropriate rescaling), then it is shown that from $C^TC$ approximations to the top singular values and corresponding singular vectors may be computed. From the computed singular vectors a description $D^{*}$ of the matrix $A$ may be computed such that $\\mathrm{rank}(D^{*}) \\le k$ and such that $$ \\left\\|A-D^{*}\\right\\|_{\\xi}^{2} \\le \\min_{D:\\mathrm{rank}(D)\\le k} \\left\\|A-D\\right\\|_{\\xi}^{2} + poly(k,1/c) \\left\\|{A}\\right\\|^2_F $$ holds with high probability for both $\\xi = 2,F$. This algorithm may be implemented without storing the matrix $A$ in random access memory (RAM), provided it can make two passes over the matrix stored in external memory and use $O(cm+c^2)$ additional RAM. The second algorithm is similar except that it further approximates the matrix $C$ by randomly sampling $r$ rows of $C$ to form a $r \\times c$ matrix $W$. Thus, it has additional error, but it can be implemented in three passes over the matrix using only constant additional RAM. To achieve an additional error (beyond the best rank $k$ approximation) that is at most $\\epsilon\\|{A}\\|^2_F$, both algorithms take time which is polynomial in $k$, $1/\\epsilon$, and $\\log(1/\\delta)$, where $\\delta>0$ is a failure probability; the first takes time linear in $\\mbox{max}(m,n)$ and the second takes time independent of $m$ and $n$. Our bounds improve previously published results with respect to the rank parameter $k$ for both the Frobenius and spectral norms. In addition, the proofs for the error bounds use a novel method that makes important use of matrix perturbation theory. The probability distribution over columns of $A$ and the rescaling are crucial features of the algorithms which must be chosen judiciously."
+    }
+  },
+  "generator": "fallback_v4"
+}

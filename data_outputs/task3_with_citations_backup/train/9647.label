@@ -1,0 +1,77 @@
+{
+  "doc_id": "9647",
+  "text": "As the most essential tasks in large-scale environments, distributed operations such as joins and aggregations can incur significant time costs on network communications and hence improving their execution efficiency would have a significant impact on the overall performance of current big data analytics. In fact, these operations have been extensively studied in the field of data management, and large number of methods have been proposed to improve their performance. For example, for distributed join executions, current research focuses on the challenge on how to efficiently move data, either in the presence of different join workloads (e.g., skew) or different computing platforms (e.g., clusters and Cloud) or both [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] . Their main target is either to reduce network traffic or to improve load-balancing or both, so as to balance computations and improve network communication time.",
+  "correct_citation": {
+    "[CITATION_1]": "2031022",
+    "[CITATION_2]": "14451209",
+    "[CITATION_3]": "9735286",
+    "[CITATION_4]": "6308511",
+    "[CITATION_5]": "14730145",
+    "[CITATION_6]": "206392127"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For example, for distributed join executions, current research focuses on the challenge on how to efficiently move data, either in the presence of different join workloads (e.g., skew) or different computing platforms (e.g., clusters and Cloud) or both [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] .",
+      "s_span": 473,
+      "e_span": 815
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For example, for distributed join executions, current research focuses on the challenge on how to efficiently move data, either in the presence of different join workloads (e.g., skew) or different computing platforms (e.g., clusters and Cloud) or both [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] .",
+      "s_span": 473,
+      "e_span": 815
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "For example, for distributed join executions, current research focuses on the challenge on how to efficiently move data, either in the presence of different join workloads (e.g., skew) or different computing platforms (e.g., clusters and Cloud) or both [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] .",
+      "s_span": 473,
+      "e_span": 815
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "For example, for distributed join executions, current research focuses on the challenge on how to efficiently move data, either in the presence of different join workloads (e.g., skew) or different computing platforms (e.g., clusters and Cloud) or both [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] .",
+      "s_span": 473,
+      "e_span": 815
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "For example, for distributed join executions, current research focuses on the challenge on how to efficiently move data, either in the presence of different join workloads (e.g., skew) or different computing platforms (e.g., clusters and Cloud) or both [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] .",
+      "s_span": 473,
+      "e_span": 815
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "For example, for distributed join executions, current research focuses on the challenge on how to efficiently move data, either in the presence of different join workloads (e.g., skew) or different computing platforms (e.g., clusters and Cloud) or both [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] .",
+      "s_span": 473,
+      "e_span": 815
+    }
+  ],
+  "bib_entries": {
+    "14451209": {
+      "title": "Robust and skew-resistant parallel joins in shared-nothing systems",
+      "abstract": "The performance of joins in parallel database management systems is critical for data intensive operations such as querying. Since data skew is common in many applications, poorly engineered join operations result in load imbalance and performance bottlenecks. State-of-the-art methods designed to handle this problem offer significant improvements over naive implementations. However, performance could be further improved by removing the dependency on global skew knowledge and broadcasting. In this paper, we propose PRPQ (partial redistribution & partial query), an efficient and robust join algorithm for processing large-scale joins over distributed systems. We present the detailed implementation and a quantitative evaluation of our method. The experimental results demonstrate that the proposed PRPQ algorithm is indeed robust and scalable under a wide range of skew conditions. Specifically, compared to the state-of-art PRPD method, we achieve 16% - 167% performance improvement and 24% - 54% less network communication under different join workloads."
+    },
+    "9735286": {
+      "title": "Advanced join strategies for large-scale distributed computation",
+      "abstract": "Companies providing cloud-scale data services have increasing needs to store and analyze massive data sets (e.g., search logs, click streams, and web graph data). For cost and performance reasons, processing is typically done on large clusters of thousands of commodity machines by using high level scripting languages. In the recent past, there has been significant progress in adapting well-known techniques from traditional relational DBMSs to this new scenario. However, important challenges remain open. In this paper we study the very common join operation, discuss some unique challenges in the large-scale distributed scenario, and explain how to efficiently and robustly process joins in a distributed way. Specifically, we introduce novel execution strategies that leverage opportunities not available in centralized scenarios, and others that robustly handle data skew. We report experimental validations of our approaches on Scope production clusters, which power the Applications and Services Group at Microsoft."
+    },
+    "206392127": {
+      "title": "Design and evaluation of small-large outer joins in cloud computing environments",
+      "abstract": "Large-scale analytics is a key application area for data processing and parallel computing research. One of the most common (and challenging) operations in this domain is the join. Though inner join approaches have been extensively evaluated in parallel and distributed systems, there is little published work providing analysis of outer joins, especially in the extremely popular cloud computing environments. A common type of outer join is the small–large outer join, where one relation is relatively small and the other is large. Conventional implementations on this condition, such as one based on hash redistribution, often incur significant network communication, while the duplication-based approaches are complex and inefficient. In this work, we present a new method called DDR (duplication and direct redistribution), which aims to enable efficient small–large outer joins in cloud computing environments while being easy to implement using existing predicates in data processing frameworks. We present the detailed implementation of our approach and evaluate its performance through extensive experiments over the widely used MapReduce and Spark platforms. We show that the proposed method is scalable and can achieve significant performance improvements over the conventional approaches. Compared to the state-of-art method, the DDR algorithm is shown to be easier to implement and can achieve very similar or better performance under different outer join workloads, and thus, can be considered as a new option for current data analysis applications. Moreover, our detailed experimental results also have provided insights of current small–large outer join implementations, thereby allowing system developers to make a more informed choice for their data analysis applications."
+    },
+    "2031022": {
+      "title": "Track join: distributed joins with minimal network traffic",
+      "abstract": "Network communication is the slowest component of many operators in distributed parallel databases deployed for large-scale analytics. Whereas considerable work has focused on speeding up databases on modern hardware, communication reduction has received less attention. Existing parallel DBMSs rely on algorithms designed for disks with minor modifications for networks. A more complicated algorithm may burden the CPUs, but could avoid redundant transfers of tuples across the network. We introduce track join, a novel distributed join algorithm that minimizes network traffic by generating an optimal transfer schedule for each distinct join key. Track join extends the trade-off options between CPU and network. Our evaluation based on real and synthetic data shows that track join adapts to diverse cases and degrees of locality. Considering both network traffic and execution time, even with no locality, track join outperforms hash join on the most expensive queries of real workloads."
+    },
+    "14730145": {
+      "title": "Efficient skew handling for outer joins in a cloud computing environment",
+      "abstract": "Outer joins are ubiquitous in many workloads and Big Data systems. The question of how to best execute outer joins in large parallel systems is particularly challenging, as real world datasets are characterized by data skew leading to performance issues. Although skew handling techniques have been extensively studied for inner joins, there is little published work solving the corresponding problem for parallel outer joins, especially in the extremely popular Cloud computing environment. Conventional approaches to the problem such as ones based on hash redistribution often lead to load balancing problems while duplication-based approaches incur significant overhead in terms of network communication. In this paper, we propose a new approach for efficient skew handling in outer joins over a Cloud computing environment. We present an efficient implementation of our approach over the Spark framework. We evaluate the performance of our approach on a 192-core system with large test datasets in excess of 100 GB and with varying skew. Experimental results show that our approach is scalable and, at least in cases of high skew, significantly faster than the state-of-the-art."
+    },
+    "6308511": {
+      "title": "Handling data skew in parallel joins in shared-nothing systems",
+      "abstract": "Parallel processing continues to be important in large data warehouses. The processing requirements continue to expand in multiple dimensions. These include greater volumes, increasing number of concurrent users, more complex queries, and more applications which define complex logical, semantic, and physical data models. Shared nothing parallel database management systems [16] can scale up \"horizontally\" by adding more nodes. Most parallel algorithms, however, do not take into account data skew. Data skew occurs naturally in many applications. A query processing skewed data not only slows down its response time, but generates hot nodes, which become a bottleneck throttling the overall system performance. Motivated by real business problems, we propose a new join geography called PRPD (Partial Redistribution & Partial Duplication) to improve the performance and scalability of parallel joins in the presence of data skew in a shared-nothing system. Our experimental results show that PRPD significantly speeds up query elapsed time in the presence of data skew. Our experience shows that eliminating system bottlenecks caused by data skew improves the throughput of the whole system which is important in parallel data warehouses that often run high concurrency workloads."
+    }
+  },
+  "generator": "fallback_v4"
+}

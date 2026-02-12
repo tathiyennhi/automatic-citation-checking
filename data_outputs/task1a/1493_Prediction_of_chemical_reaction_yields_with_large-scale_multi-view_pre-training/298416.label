@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Hence we apply the Jeffreys divergence [48] to achieve this in a distributionlike format as follows:where D denotes the Kullback-Leibler divergence [49], d denotes the dimension of features, z s i denotes the i- th input of Z s, z j s i denotes the j-th logit of z s i, and z c i and Z j c i are defined in a similar way.",
+    "Furthermore, we want to separate the outputs from distinct views for different sample pairs as far as possible to enhance the representation ability of chemical reactions.",
+    "Thus, we adopt contrastive learning based on InfoNCE [50] to maximize the mutual information between X s and X c as follows:where f(x, y) equals exp(x • y/τ), τ denotes a hyper- parameter called temperature, x s ′ and x c ′ represent the sequence and conformer views of other reactions within the same batch, relative to positive pair (x s, x c), and (x s i, x c k) denotes the feature of the sequence encoder and the conformer encoder, respectively.",
+    "The pair(x s i, x c k) (3) Z s = LogSoftmax(X s), Z c = LogSoftmax(X c),(4)L KL = 1 2 E p(z s,z c) [D(Z s � Z c) + D(Z c � Z s)] = - 1 2N N i=1 d j=1 z j s i log z j c i z j s i + z j c i log z j s i z j c i,(5)L InfoNCE = - 1 2 E p(x s,x c) � log f (x s, x c) f (x s, x c) + � f (x s ′, x c) + log f (x c, x s) f (x c, x s) + � f (x c ′, x s) � = - 1 2N N � i=1      log exp � x s i • x c i /τ � N � k=1 exp � x s i • x c k /τ � + log exp � x c i • x s i /τ � N � k=1 exp � x c i • x s k /τ �     , Fig. 2 Overview of the model comes from different reactions when i is not equal to k (negative pairs) and vice versa (positive pairs).",
+    "To combine the distribution alignment and contrastive learning objectives, we formulate the overall loss function for the pre-training stage I as a combination of the distribution alignment loss in Equation ( 4) and the contrastive learning loss in Equation ( 5) as follows:where denotes the weighting coefficient to balance the contributions of these two objectives."
+  ],
+  "correct_citations": [
+    "Hence we apply the Jeffreys divergence [48] to achieve this in a distributionlike format as follows:where D denotes the Kullback-Leibler divergence [49], d denotes the dimension of features, z s i denotes the i- th input of Z s, z j s i denotes the j-th logit of z s i, and z c i and Z j c i are defined in a similar way.",
+    "Thus, we adopt contrastive learning based on InfoNCE [50] to maximize the mutual information between X s and X c as follows:where f(x, y) equals exp(x • y/τ), τ denotes a hyper- parameter called temperature, x s ′ and x c ′ represent the sequence and conformer views of other reactions within the same batch, relative to positive pair (x s, x c), and (x s i, x c k) denotes the feature of the sequence encoder and the conformer encoder, respectively."
+  ]
+}

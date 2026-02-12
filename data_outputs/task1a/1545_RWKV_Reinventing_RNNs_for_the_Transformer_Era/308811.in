@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In this architecture, all linear projection vectors (R, K, V in time-mixing, and R ′, K ′ in channelmixing) involved in computations are produced by linear interpolation between current and previous timestep inputs, facilitating a token shift.",
+    "The vectors for time-mixing computation are linear projections of linear combinations of the current and previous inputs of the block:",
+    "To ke n sh ift To ke n sh ift States States Layer Norm My Layer Norm name Layer Norm Time Mix LM Head Layer Norm is Layer Norm Bob Layer Norm Channel Mix Time Mix LM Head Layer Norm name Layer Norm is Layer Norm Channel Mix Time Mix LM Head To ke n sh ift To ke n sh ift Channel Mix as are the channel-mixing inputs:",
+    "The token shift is implemented as a simple offset in the temporal dimension at each block using the PyTorch (Paszke et al., 2019) library as nn.ZeroPad2d((0,0,1,-1)).",
+    "The computation of the W KV operator in our model parallels the method used in Attention Free Transformer (AFT) (Zhai et al., 2021)."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "doc_id": "55719",
+  "text": "The experiments were made with a Canon EOS 30D reflex camera and an EFS 18−55mm lens. The minimal focal length (18mm) was chosen to produce a fairly large distortion. The RAW images were demosaicked by summing up the four pixels of each 2×2 Bayer cell, obtaining a half-size image. Fig. 1 shows the digital pattern I that was used. Fig. 4a shows a subsampling of the resulting distortion field, after the validation loop, and Fig. 4b shows the modulus of the interpolated distortion field on the discrete image domain. The distortion field is not circular symmetric, which is natural, the distortion being estimated up to an unknown homography. To check the quality of the correction, we built a pattern with tightly stretched strings, that guarantees straightness, see Fig. 5a . The distortion is visible near the border of the image. Fig. 5b shows the image corrected by our nonparametric method. The lines numbered in Fig. 5a were used to evaluate the distortion error and compare it with the error left by the Lavest et al. algorithm [CITATION_1] . On each corrected line, subpixel precision edge points were obtained by Devernay's algorithm [CITATION_2] . Then, their regression line was computed and the RMS (root-mean-square) distance from each edge point to the line was used as the error measure. Table 1 shows the results. The proposed nonparametric method shows an improvement over the Lavest et al. method. But this difference is not just quantitative. The Lavest et al. result is somewhat final. Indeed, it already includes a correction of the non-flatness of the pattern while the nonparametric method does not. Figure 6 plots the straightness error of the proposed method along line number one (that is, the distance between edge points to the regression line). One can see small oscillations easily explained by noise and aliasing, but also a global tendency which can only be due to the non-flatness of the pattern. A parallel deterministic tendency observed on the other lines confirms this explanation. Fig. 7 shows that a flatness error of 100 μm (the thickness of a normal paper sheet) can produce the observed tendency. This non-flatness effect is stronger near the border of the image because the angle-of-view is larger. Simple physical measurements by the classic ruler method confirmed that the pattern showed a non-flatness of this amount. ",
+  "correct_citation": {
+    "[CITATION_1]": "40480643",
+    "[CITATION_2]": "18854142"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The lines numbered in Fig. 5a were used to evaluate the distortion error and compare it with the error left by the Lavest et al. algorithm  .",
+      "s_span": 899,
+      "e_span": 1052
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "On each corrected line, subpixel precision edge points were obtained by Devernay's algorithm  .",
+      "s_span": 1053,
+      "e_span": 1160
+    }
+  ],
+  "bib_entries": {
+    "18854142": {
+      "title": "A Non-Maxima Suppression Method for Edge Detection with Sub-Pixel Accuracy",
+      "abstract": "In this article we present a two dimensional edge detector which gives the edge position in an image with a sub-pixel accuracy. The method presented here gives an excellent accuracy (the position bias mean is almost zero and the standard deviation is less than one tenth of a pixel) with a low computational cost, and its implementation is very simple since it is derivated from the well-known Non-Maxima Suppression method \\cite{canny:83,deriche:87}. We also justify the method by showing that it gives the exact result in a theoretical one dimensional example. We have tested the accuracy and robustness of the edge extractor on several synthetic and real images and both qualitative and quantitative results are reported in this paper."
+    },
+    "40480643": {
+      "title": "Do We Really Need an Accurate Calibration Pattern to Achieve a Reliable Camera Calibration?",
+      "abstract": "This article raises the problem of errors caused by the metrology of a calibration pattern to the accurate estimation of the intrinsic and extrinsic calibration parameters modeling the video system. In order to take into account these errors a new approach is proposed that enables us to compute in the same time the traditional calibration parameters and the 3D geometry of the calibration pattern using a multi-images calibration algorithm. Experimental results shows that the proposed algorithm leads to reliable calibration results and proves that calibration errors no longer depend on the accuracy of calibration point measurement, but on the accuracy of calibration point detection in the image plane."
+    }
+  },
+  "generator": "fallback_v4"
+}

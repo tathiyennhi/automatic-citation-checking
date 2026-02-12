@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The driving simulator we use [13] consists of different entities, which will be input to the MPA.• Observation (RGB): The rendered 6 camera views have a resolution of 450 × 800 each.",
+    "This results in a (6, 3, 450, 800) tensor.• State and Action (Trajectory): The pose of every agent can be represented as a tuple (x, y, yaw).We also include the velocity, acceleration, and route information (represented as longitude progress and lateral distance) in the past frames.",
+    "For the state in HUGSIM, the ego's history trajectory will be a (T hist, 8) array.",
+    "For the action output from the agents, it will be a (T fut, 2) trajectory that consists of the 2D position at each frame.",
+    "This trajectory will be solved by an LQR controller [20] to generate the corresponding throttle and steering sequence.• Intermediate Representation: all three methods will have an intermediate representation as BEV, where UniAD and LTF have a rasterized map, and VAD has a vectorized map.Heuristics-Based Reward Labeling.The step-wise reward heuristics include the longitude reward (route completion), lateral distance reward (distance), collision penalty, and far from trajectory penalty."
+  ]
+}

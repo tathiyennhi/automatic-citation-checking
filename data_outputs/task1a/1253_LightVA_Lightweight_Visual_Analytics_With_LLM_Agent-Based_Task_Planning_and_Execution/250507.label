@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Please give me the whole codes including data analysis and chart part in a function 'plot(data)'.",
+    "You only need to give the function definition of plot(data), not execute it.",
+    "please write the codes in this structure:```python ```\" An example of generated multiple linked-view.1 import altair as alt 2 import pandas as pd 3 4 def plot(data: pd.DataFrame): 5 # Data Analysis part for the first chart 6 data['issue_date'] = pd.to datetime(data[' issue_date']) 7 # Calculate total quantity of trading activity per day 8 trading activity = data.groupby('issue_date').agg( total quantity=('quantity', 'sum')).",
+    "reset index() 9 # Calculate percentage change in total quantity from the previous day 10 trading activity['quantity_change'] = trading activity['total_quantity'].pct change () 11 12 # Data Analysis part for the second chart 13 # Group by issue_date and calculate descriptive statistics for 'amount' 14 stats = data.groupby('issue_date')['amount'].",
+    "describe().reset index() 15 stats = stats.melt(id vars=['issue_date'], value vars=['min', '25%', '50%', '75%', 'max '], 16 var name='statistic', value name=' amount') 17 18 # Create a shared selection for interactivity 19 shared brush = alt.selection interval(encodings=['x']) 20 21 # Create the first chart: Trading Activity Over Time 22 chart1 = alt.Chart(trading activity).mark line()."
+  ],
+  "correct_citations": []
+}

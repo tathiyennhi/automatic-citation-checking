@@ -23,8 +23,6 @@ import time
 from pathlib import Path
 from typing import Dict, List, Optional
 
-import requests
-
 GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 DEFAULT_API_KEY = "AIzaSyBd12_HA7Uf0LtfYpLYnzD9QWOoFTXjaQU"
@@ -78,12 +76,13 @@ def build_prompt(text: str, markers: List[str]) -> str:
 
 def clean_span_text_preservative(span_text: str) -> str:
     """
-    V4 CLEANING: HIGHLY PRESERVATIVE.
-    Only strips leading/trailing whitespace.
-    Does NOT collapse internal spaces.
-    Does NOT remove spaces before punctuation.
+    V4 CLEANING (UPDATED): still conservative, but fixes artifacts introduced by
+    removing citation markers (e.g., double spaces, spaces before punctuation).
     """
-    return span_text.strip()
+    cleaned = span_text.strip()
+    cleaned = re.sub(r"[ \t]{2,}", " ", cleaned)
+    cleaned = re.sub(r"\s+([.,;:!?])", r"\1", cleaned)
+    return cleaned
 
 
 def find_sentence_boundaries_v4(text: str, citation_idx: int) -> tuple:
@@ -175,7 +174,8 @@ def fallback_spans_v4(text: str, markers: List[str]) -> List[Dict]:
     1. Locate the marker.
     2. Identify the FULL SENTENCE boundaries surrounding it.
     3. Extract exact substring.
-    4. Remove ONLY the citation tags from the string (to leave pure text).
+    4. Remove citation tags from the string (to leave pure text), while fixing
+       whitespace/punctuation artifacts from the removal.
     """
     spans: List[Dict] = []
 
@@ -193,10 +193,8 @@ def fallback_spans_v4(text: str, markers: List[str]) -> List[Dict]:
         # 2. Extract Raw Span
         raw_span = text[start:end]
         
-        # 3. Clean tags but PRESERVE content/formatting
-        # We remove [CITATION_X] so the training data is just text.
-        # But we DO NOT squash spaces or remove punctuation.
-        span_text = re.sub(r"\[CITATION_\d+\]", "", raw_span)
+        # 3. Remove citation tags, but avoid leaving awkward gaps like "with  ."
+        span_text = re.sub(r"\s*\[CITATION_\d+\]\s*", " ", raw_span)
         
         # 4. Minimal trim
         span_text = clean_span_text_preservative(span_text)
@@ -217,6 +215,11 @@ def call_gemini(
     backoff: float = 0.2,
     max_backoff: float = 2.0,
 ) -> Optional[List[Dict]]:
+    try:
+        import requests  # type: ignore
+    except Exception:
+        return None
+
     url = GEMINI_ENDPOINT.format(model=MODEL)
     headers = {"Content-Type": "application/json"}
     payload = {

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "During communication, only the set of learnable parameters is communicated and aggregated.",
+    "Overview of OpenFedLLMTo make our framework compatible with standard FL protocols such as secure aggregation and differential privacy, our OpenFedLLM framework follows the same training process of conventional FL (i.e., FedAvg [20]).The overall process takes T communication rounds, where each round t consists of four key steps.",
+    "(1) The server broadcasts the global model θ t to all available clients S t; (2) Each available client k executes τ steps of SGD on its local dataset D k starting from the global model θ t, resulting a local model denoted as θ (t,τ) k; (3) Each available client k uploads the local model θ (t,τ) k to the server; (4) The server aggregates the local models and updates the global model for the next round: θ t+1:= S t k p k θ (t,τ) k, wherep k = |D k | S t i |Di|is the relative dataset size.On one hand, the above procedure can be seamlessly integrated with many FL algorithms.",
+    "For instance, we only need to add another ℓ 2 -based regularization term between local and global models at Step 2 to instantiate FedProx [49] and introduce server-side momentum or adaptivity at Step 4 to recover FedOPT [54].",
+    "On the other hand, to implement instruction tuning or value alignment, we only need to modify the local losses at Step 2 to the corresponding loss functions."
+  ]
+}

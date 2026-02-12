@@ -1,0 +1,22 @@
+{
+  "doc_id": "29584",
+  "text": "Among these application-layer transfer parameters 1 pipelining helps in transferring multiple files back-to-back by eliminating the communication delay between client and servers, but the size of the transferred files must be small to benefit from it. Pipelining may even degrade the throughput when set to high values for large files. Instead, large files benefit from being divided into smaller blocks and transferred over multiple transfer channels. Similarly, both small and large files benefit from concurrency, meaning transferring multiple files simultaneously over multiple transfer channels. On the other hand, opening too many channels to transfer a single file (parallelism) or multiple files (concurrency) would degrade the throughput by causing network and storage congestion. Optimal values for these parameters depend on the many factors described above. In our previous work, we have developed heuristic-based dynamic optimization algorithms [CITATION_1] to determine the best combination of these parameters.",
+  "correct_citation": {
+    "[CITATION_1]": "29017019"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In our previous work, we have developed heuristic-based dynamic optimization algorithms [CITATION_1] to determine the best combination of these parameters.",
+      "s_span": 870,
+      "e_span": 1025
+    }
+  ],
+  "bib_entries": {
+    "29017019": {
+      "title": "Dynamic protocol tuning algorithms for high performance data transfers",
+      "abstract": "Obtaining optimal data transfer performance is of utmost importance to today's data-intensive distributed applications and wide-area data replication services. Doing so necessitates effectively utilizing available network bandwidth and resources, yet in practice transfers seldom reach the levels of utilization they potentially could. Tuning protocol parameters such as pipelining, parallelism, and concurrency can significantly increase utilization and performance, however determining the best settings for these parameters is a difficult problem, as network conditions can vary greatly between sites and over time. In this paper, we present four application-level algorithms for heuristically tuning protocol parameters for data transfers in wide-area networks. Our algorithms dynamically tune the number of parallel data streams per file, the level of control channel pipelining, and the number of concurrent file transfers to fill network pipes. The presented algorithms are implemented as a standalone service as well as being used in interaction with external data scheduling tools such as Stork. The experimental results are very promising, and our algorithms outperform existing solutions in this area."
+    }
+  },
+  "generator": "fallback_v4"
+}

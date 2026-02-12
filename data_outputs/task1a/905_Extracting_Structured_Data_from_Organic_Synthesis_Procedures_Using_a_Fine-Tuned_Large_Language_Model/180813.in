@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Example ReactionWorkup message {\"type\": \"DISSOLUTION\", \"input\": { \"components\": [{ \"identifiers\": [{\"type\": \"NAME\",\"value\": \"methanol\"}], \"reaction_role\": \"WORKUP\"}]}} ReactionOutcome message {\"reaction_time\": {\"value\": 8.0,\"precision\": 8.0,\"units\": \"HOUR\"}, \"products\": [{\"identifiers\": [{\"type\": \"NAME\", \"value\": \"title compound\"}], \"measurements\": [{ \"type\":\"AMOUNT\", \"amount\": {\"mass\": {\"value\": 0.06, \"units\": \"GRAM\"}}}], \"reaction_role\": \"PRODUCT\"}]}]} J o u r n a l N a me, [ y e a r ], [ v o l. ]",
+    "• Each of its ReactionInput messages has non-empty values for its components field.",
+    "This usually means this reaction input is not the crude product of another reaction and that the chemical information of this reaction's inputs are present in reaction procedure text.",
+    "• The reaction includes an associated procedure text, i.e., the notes.procedure_details field of this reaction is a paragraph describing the reaction.",
+    "Reaction records satisfying these criteria were exported to JSON and deduplicated using OpenAI's data preparation tools (openai tools fine_tunes.prepare_data) to produce 1,339,260 unique records."
+  ]
+}

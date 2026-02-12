@@ -1,0 +1,47 @@
+{
+  "doc_id": "30992",
+  "text": "1) The Transferability Property: Most black-box attacks rely on the concept of adversarial example transferability, presented in [CITATION_1] : Adversarial examples crafted against one model are also likely to be effective against other models. This transferability property holds even when models are trained on different datasets. This means that the adversary can train a surrogate model, which has similar decision boundaries as the original model and perform a white-box attack on it. Adversarial examples that successfully fool the surrogate model would most likely fool the original model, as well ( [CITATION_2] ). [CITATION_3] studied the transferability between DNNs and other models such as decision tree and SVM models. [CITATION_4] conducted a study of the transferability property over large models and a largescale dataset, showing that while transferable non-targeted adversarial examples are easy to find, targeted adversarial examples rarely transfer with their target labels.",
+  "correct_citation": {
+    "[CITATION_1]": "604334",
+    "[CITATION_2]": "14321358",
+    "[CITATION_3]": "17362994",
+    "[CITATION_4]": "17707860"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "1) The Transferability Property: Most black-box attacks rely on the concept of adversarial example transferability, presented in  : Adversarial examples crafted against one model are also likely to be effective against other models."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Adversarial examples that successfully fool the surrogate model would most likely fool the original model, as well (  )."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Adversarial examples that successfully fool the surrogate model would most likely fool the original model, as well (  ).  studied the transferability between DNNs and other models such as decision tree and SVM models."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "studied the transferability between DNNs and other models such as decision tree and SVM models.  conducted a study of the transferability property over large models and a largescale dataset, showing that while transferable non-targeted adversarial examples are easy to find, targeted adversarial examples rarely transfer with their target labels."
+    }
+  ],
+  "bib_entries": {
+    "17362994": {
+      "title": "Transferability in Machine Learning: from Phenomena to Black-Box Attacks using Adversarial Samples",
+      "abstract": "Many machine learning models are vulnerable to adversarial examples: inputs that are specially crafted to cause a machine learning model to produce an incorrect output. Adversarial examples that affect one model often affect another model, even if the two models have different architectures or were trained on different training sets, so long as both models were trained to perform the same task. An attacker may therefore train their own substitute model, craft adversarial examples against the substitute, and transfer them to a victim model, with very little information about the victim. Recent work has further developed a technique that uses the victim model as an oracle to label a synthetic training set for the substitute, so the attacker need not even collect a training set to mount the attack. We extend these recent techniques using reservoir sampling to greatly enhance the efficiency of the training procedure for the substitute model. We introduce new transferability attacks between previously unexplored (substitute, victim) pairs of machine learning model classes, most notably SVMs and decision trees. We demonstrate our attacks on two commercial machine learning classification systems from Amazon (96.19% misclassification rate) and Google (88.94%) using only 800 queries of the victim model, thereby showing that existing machine learning approaches are in general vulnerable to systematic black-box attacks regardless of their structure."
+    },
+    "17707860": {
+      "title": "Delving into transferable adversarial examples and black-box attacks",
+      "abstract": "An intriguing property of deep neural networks is the existence of adversarial examples, which can transfer among different architectures. These transferable adversarial examples may severely hinder deep neural network-based applications. Previous works mostly study the transferability using small scale datasets. In this work, we are the first to conduct an extensive study of the transferability over large models and a large scale dataset, and we are also the first to study the transferability of targeted adversarial examples with their target labels. We study both non-targeted and targeted adversarial examples, and show that while transferable non-targeted adversarial examples are easy to find, targeted adversarial examples generated using existing approaches almost never transfer with their target labels. Therefore, we propose novel ensemble-based approaches to generating transferable adversarial examples. Using such approaches, we observe a large proportion of targeted adversarial examples that are able to transfer with their target labels for the first time. We also present some geometric studies to help understanding the transferable adversarial examples. Finally, we show that the adversarial examples generated using ensemble-based approaches can successfully attack Clarifai.com, which is a black-box image classification system."
+    },
+    "604334": {
+      "title": "Intriguing properties of neural networks",
+      "abstract": "Deep neural networks are highly expressive models that have recently achieved state of the art performance on speech and visual recognition tasks. While their expressiveness is the reason they succeed, it also causes them to learn uninterpretable solutions that could have counter-intuitive properties. In this paper we report two such properties. ::: First, we find that there is no distinction between individual high level units and random linear combinations of high level units, according to various methods of unit analysis. It suggests that it is the space, rather than the individual units, that contains of the semantic information in the high layers of neural networks. ::: Second, we find that deep neural networks learn input-output mappings that are fairly discontinuous to a significant extend. We can cause the network to misclassify an image by applying a certain imperceptible perturbation, which is found by maximizing the network's prediction error. In addition, the specific nature of these perturbations is not a random artifact of learning: the same perturbation can cause a different network, that was trained on a different subset of the dataset, to misclassify the same input."
+    },
+    "14321358": {
+      "title": "Practical black-box attacks against deep learning systems using adversarial examples",
+      "abstract": "Advances in deep learning have led to the broad adoption of Deep Neural Networks (DNNs) to a range of important machine learning problems, e.g., guiding autonomous vehicles, speech recognition, malware detection. Yet, machine learning models, including DNNs, were shown to be vulnerable to adversarial samples-subtly (and often humanly indistinguishably) modified malicious inputs crafted to compromise the integrity of their outputs. Adversarial examples thus enable adversaries to manipulate system behaviors. Potential attacks include attempts to control the behavior of vehicles, have spam content identified as legitimate content, or have malware identified as legitimate software. Adversarial examples are known to transfer from one model to another, even if the second model has a different architecture or was trained on a different set. We introduce the first practical demonstration that this cross-model transfer phenomenon enables attackers to control a remotely hosted DNN with no access to the model, its parameters, or its training data. In our demonstration, we only assume that the adversary can observe outputs from the target DNN given inputs chosen by the adversary. We introduce the attack strategy of fitting a substitute model to the input-output pairs in this manner, then crafting adversarial examples based on this auxiliary model. We evaluate the approach on existing DNN datasets and real-world settings. In one experiment, we force a DNN supported by MetaMind (one of the online APIs for DNN classifiers) to mis-classify inputs at a rate of 84.24%. We conclude with experiments exploring why adversarial samples transfer between DNNs, and a discussion on the applicability of our attack when targeting machine learning algorithms distinct from DNNs."
+    }
+  },
+  "generator": "fallback_v4"
+}

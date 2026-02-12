@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To maintain consistency, we use the CheXBERT [24] model to extract medical observations from the reports within the MIMIC-CXR data set.",
+    "The input template for this data set is formatted as follows:\"Symptoms of existence: {} \\n Symptoms of non-existence: {} \\n\", illustrated by \"Symptoms of existence: Cardiomegaly, Atelectasis \\n Symptoms of non-existence: Edema, Consolidation \\n\".",
+    "Experimental SettingsWe adopt the InstructBLIP [23] as the base model, in which contrastive language-image pretraining [13] and Flan-T5-XL [25] are used as visual encoders and LLM structures, respectively.",
+    "In the training phase, we integrated LoRA [18] into both the visual encoder and the language model.",
+    "This integration of LoRA was strategically implemented within the query projection and value projection stages during self-attention operations, enhancing the model's ability to capture and leverage relational information."
+  ]
+}

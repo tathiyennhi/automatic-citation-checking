@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Update these values using formulas 15 to 17.i t = σ(W i [h t-1, x t] + b i), (15) Ct = tanh (W c [h ( t -1), x t] + b C), and(16)C t = f t * C t-1 + i t * Ct,(17)where the * sign represents the multiplication element and the h t output is calculated using the output gate by combining C t, h t-1, and x t currents.o t = σ(W o [h t-1, x t] + b o), (18) h t = 0 t * tanh C t (19)This LSTM is also designed to overcome significant gradient reduction during the training procedure via the gate mechanism.",
+    "BiLSTM consists of two forward and reverse LSTM directions.",
+    "LSTM forward performs the hidden state calculation process to the right (-→ h 1, -→ h 2,..., -→ h n), with input from x 1 to x n.Whereas LSTM backward performs the hidden state calculation process from the opposite direction, namely to the left (← - h 1, ← - h 2,..., ← - h n),with inputs in reverse order from xn to x1.",
+    "Depending on the implementation of the LSTM, in one case, it may require an output sequence that corresponds to every element in the sequence or a single output that encapsulates the entire sequence.",
+    "In the previous case, the output sequence (-→ h 1, -→ h 2,..., -→ h n) ofthe LSTM is obtained by combining the hidden state of the forward and backward LSTM for each element, i.e.,- → h t =( - → h t; ← - h t) for t = 1,..., n.For other cases, the output is obtained by combining the last hidden state of the forward and backward LSTM, i.e.,- → h = ( -→ h n; ← - h n)[252]."
+  ],
+  "correct_citations": [
+    "In the previous case, the output sequence (-→ h 1, -→ h 2,..., -→ h n) ofthe LSTM is obtained by combining the hidden state of the forward and backward LSTM for each element, i.e.,- → h t =( - → h t; ← - h t) for t = 1,..., n.For other cases, the output is obtained by combining the last hidden state of the forward and backward LSTM, i.e.,- → h = ( -→ h n; ← - h n)[252]."
+  ]
+}

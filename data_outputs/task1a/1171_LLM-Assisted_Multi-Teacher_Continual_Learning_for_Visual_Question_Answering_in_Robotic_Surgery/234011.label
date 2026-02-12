@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "() () 1 /, / t t CE L z z     - () () /, / LLM t CE L z z     Frozen LearnableOur multi-teacher CL framework is presented in Fig. 1.",
+    "As the figure shows, the general loss function L is written asL = αL0 + βL t-1 KD + χL LLM KD(2)where α, β, and χ are normalized adaptive weights with a sum of one (say Section II-D for the weight assignment scheme); L 0 is the cross-entropy loss supervised by the hard labels; L t-1 KD is the KD loss between the new CL model trained in time t (i.e., the student model) and the old CL model trained in time t -1 (i.e., the conventional teacher model); L LLM KD is the KD loss between the student model and the LLM teacher.",
+    "In this paper, we denote the logits of the student model, the old teacher model, and the LLM teacher mode by z t, z t-1, and z LLM, respectively.",
+    "And we write L t-1 KD and L LLM KD asL t-1 KD = LCE σ z t-1 /δ, σ z t /δ(3)L LLM KD = LCE σ z LLM /δ, σ z t /δ(4)Since the LLM teacher is implemented in a complex transformer network that is significantly different from the conventional teacher model and the student model, some transformation works are needed to obtain the logits from the embeddings.",
+    "We next give details about the selected LLM and the embedding-logit transformation as follows.We select InstructBLIP [35], an open-source multimodal LLM with vision and language ability, as the LLM teacher."
+  ],
+  "correct_citations": [
+    "We next give details about the selected LLM and the embedding-logit transformation as follows.We select InstructBLIP [35], an open-source multimodal LLM with vision and language ability, as the LLM teacher."
+  ]
+}

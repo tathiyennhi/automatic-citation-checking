@@ -1,0 +1,22 @@
+{
+  "doc_id": "33008",
+  "text": "As described in Section III the RDMA engine targeted by this work is able to transfer data from/to contiguous physical memory regions. However, each guest physical address space is allocated from a host user-space application (i.e., QEMU), and from the host point of view is not necessarily physically contiguous. This means that RDMA buffers should be actually allocated by the host, to ensure they are physically contiguous, and then mapped to the guest physical memory space. In this work this problem is overtaken by extending the existing zerocopy framework in [CITATION_1] , to be able to map buffers allocated from the host into the memory map of a guest user-space process. The goal is to provide guests direct access to RDMA buffers allocated by the host.",
+  "correct_citation": {
+    "[CITATION_1]": "14828185"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In this work this problem is overtaken by extending the existing zerocopy framework in  , to be able to map buffers allocated from the host into the memory map of a guest user-space process.",
+      "s_span": 479,
+      "e_span": 681
+    }
+  ],
+  "bib_entries": {
+    "14828185": {
+      "title": "A zero-copy shared memory frame-work for host-guest data sharing in KVM",
+      "abstract": "Virtualization is a technology pervading various application domains, spanning nowadays from cloud computing to embedded systems. One of the most important features in virtualization is the possibility of data/memory sharing between virtual machines, between the host system, virtual machines. Such capability is as an example extremely important in the para-virtualization of programmable parallel accelerators, such as GPUs, where huge memory buffers are allocated in virtual machines, need to be shared with the actual device in order to be processed. Various techniques enable the communication between the guest, the host, but most of them are designed to exchange small amounts of data, or rely on a socket-based paradigm where a copy of the data is performed between guest, host adding the need for serialization/de-serialization of data at each endpoint. Data copies, serialization/de-serialization are a major source of overhead in virtualization, especially in the embedded domain where lower performance processors are used. This work presents a zero-copy shared memory mechanism for host-guest memory sharing in KVM. The zero-copy framework exploits features of the KVM hypervisor to let a host application map a memory buffer allocated in the guest environment. This feature leads to a zero-overhead communication, thus helps reducing the overall overhead of software based virtualization techniques. This paper will also introduce a use case scenario for the exploitation of the zero-copy framework,, present some preliminary performance results."
+    }
+  },
+  "generator": "fallback_v4"
+}

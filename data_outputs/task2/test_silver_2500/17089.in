@@ -1,0 +1,27 @@
+{
+  "text": "In most of the TLC runs for the DoRiS specification, the execution time for some finite models was found to be reasonable, although no comparison was made with other tools. We have used a 2 Ghz Intel Core Duo processor using a java virtual machine with a 512M heap size. Three performance metrics were considered: CPU user time (U ); the total number of generated distinct states (N ); the diameter (D) of the reachability graph. [CITATION_1] # Servers Table 1 illustrates the data obtained for some configurations as a function of the number of servers. As can be seen, verifying a model of DoRiS with 14 servers took about 4, 117 seconds to explore N = 9, 540 distinct states with reachability graph with diameter D = 9, 482. It must be noted that D is close to N for all configurations. Three aspects of the specification explain this good performance. First, all actions are guarded by temporal predicates, reducing the number of explored states. Second, communication and fault scenarios were fixed for a given verification. Third, the time increment strategy adopted in the NextTick action (see Figure 8 ) reduced significantly the number of unnecessary states. Indeed, we compared this strategy with a naive one that increments time by a unit at each step. For a configuration with 6 servers, the naive strategy took 453 seconds to be verified with N = 21, 604 and D = 11, 261. Using 14 servers, no answer was returned by TLC after 20 hours of execution, indicating a rapid state explosion.",
+  "citation_candidates": [
+    "3054814",
+    "11385200",
+    "5848548",
+    "8939499"
+  ],
+  "bib_entries": {
+    "5848548": {
+      "title": "Ethernet-based real-time and industrial communications",
+      "abstract": "Despite early attempts to use Ethernet in the industrial context, only recently has it attracted a lot of attention as a support for industrial communication. A number of vendors are offering industrial communication products based on Ethernet and TCP/IP as a means to interconnect field devices to the first level of automation. Others restrict their offer to communication between automation devices such as programmable logic controllers and provide integration means to existing fieldbuses. This paper first details the requirements that an industrial network has to fulfill. It then shows how Ethernet has been enhanced to comply with the real-time requirements in particular in the industrial context. Finally, we show how the requirements that cannot be fulfilled at layer 2 of the OSI model can be addressed in the higher layers adding functionality to existing standard protocols."
+    },
+    "11385200": {
+      "title": "Real-time communication protocols: an overview",
+      "abstract": "This paper describes several existing data link layer protocols that provide real-time capabilities on wired networks, focusing on token-ring and Carrier Sense Multiple Access based networks. Existing modifications to provide better real-time capabilities and performance are also described. Finally the pros and cons regarding the At-Home Anywhere project are discussed."
+    },
+    "3054814": {
+      "title": "Enhancing Real-Time Communication over COTS Ethernet switches",
+      "abstract": "Switched Ethernet arose in the last decade as a means to increase global throughput with parallel switching paths, segment the network and create isolated collision domains, thus reducing the non-determinism of the original shared Ethernet. However, COTS Ethernet switches still suffer from a few drawbacks that affect negatively their real-time communication capabilities. For example, there can be overflows in ports queues with consequences across ports, priority levels and virtual LANs, and the number of priorities is too short for any kind of priority-based scheduling. Moreover, switches present extra latencies and jitter due to the need to interpret frame addresses and also due to different internal architectural solutions. In this paper we propose using the Flexible Time-Triggered communication paradigm to enhance the temporal behavior of Ethernet switches with respect to periodic streams. We explain the system architecture and we present a formulation of the global periodic traffic scheduling problem handled by the FTT master. Simulation and experimental results show the advantages of using such synchronized framework."
+    },
+    "8939499": {
+      "title": "Model checking TLA+ specifications",
+      "abstract": "TLA+ is a specification language for concurrent and reactive systems that combines the temporal logic TLA with full first-order logic and ZF set theory. TLC is a new model checker for debugging a TLA+ specification by checking invariance properties of a finite-state model of the specification. It accepts a subclass of TLA+ specifications that should include most descriptions of real system designs. It has been used by engineers to find errors in the cache coherence protocol for a new Compaq multiprocessor. We describe TLA+ specifications and their TLC models, how TLC works, and our experience using it."
+    }
+  }
+}

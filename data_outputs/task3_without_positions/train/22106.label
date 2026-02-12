@@ -1,0 +1,20 @@
+{
+  "doc_id": "22106",
+  "text": "De novo peptide sequencing addresses the ill-posed problem of deriving the correct peptide sequence corresponding to a tandem MS spectrum. The first critical step in this problem is that of identifying those peaks representing b-/y-ions. It is of great importance that spectral peaks be filtered as agressively as possible while retaining informative peaks. Accomplishing this goal results in two very practical benefits: First, the smaller spectrum graphs that result from reducing the number of peaks under consideration allow spectra to be processed at a faster rate. Second, reducing the number of peaks makes it possible to process larger peptides. As discussed in the previous section, the SNN method consistently selects fewer peaks than do PepNovo+ and pNovo. The corresponding candidate search space is significantly smaller. SNN spectrum graphs on average contain 200 fewer edges than do corresponding Pep-Novo+ spectrum graphs. A comparison of candidate search spaces shows that the median SNN search space is consistently smaller than that of PepNovo+. As demonstrated in an earlier publication, the median SNN candidate space for peptides of 20 residues is smaller than that of PepNovo+'s median space for 15 residues [CITATION_1] . In principle, all other things being equal, one could expect to be able to process longer peptides with the SNN approach. As important as it is to reduce the number of peaks under consideration, it is just as important to retain those peaks representing actual b-/y-ions. Otherwise, the resulting peptide candidate search space may not contain the correct peptide. In the preceding section we presented results that demonstrate that the SNN peak selection accuracy exceeds that of pNovo and PepNovo+ for all peptide lengths represented in the data set (Figures 3 and 4 ). On average, the SNN method selects significanly fewer peaks than do pNovo and Pep-Novo+. At the same time, on average the SNN method retains more peaks that correspond to b-/y-ions than do pNovo and PepNovo+.",
+  "correct_citation": {
+    "[CITATION_1]": "15672534"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As demonstrated in an earlier publication, the median SNN candidate space for peptides of 20 residues is smaller than that of PepNovo+'s median space for 15 residues  ."
+    }
+  ],
+  "bib_entries": {
+    "15672534": {
+      "title": "A Neural Network Approach to the Identification of b-/y-ions in MS/MS Spectra",
+      "abstract": "The effectiveness of de novo peptide sequencing algorithms depends on the quality of MS/MS spectra. Since most of the peaks in a spectrum are uninterpretable ‘noise’ peaks it is necessary to carefully pre-filter the spectra to identify the ‘signal’ peaks that likely correspond to b-/y-ions. Selecting the optimal set of peaks for candidate peptide generation is essential for obtaining accurate results. A careful balance must be maintained between the precision and recall of peaks that are selected for further processing and candidate peptide generation. If too many peaks are selected the search space will be too large and the problem becomes intractable. If too few peaks are selected cleavage sites will be missed, the resulting candidate peptides will have large gaps, and sequencing results will be poor. For this reason pre-filtering of MS/MS spectra and accurate selection of peaks for peptide candidate generation is essential to any de novo peptide sequencing algorithm. We present a novel neural network approach for the selection of b-/y-ions using known fragmentation characteristics, and leveraging neural network probability estimates of flanking and complementary ions. We show a significant improvement in precision and recall of peaks corresponding to b-/y-ions and a reduction in search space over approaches used by other de novo peptide sequencing algorithms."
+    }
+  },
+  "generator": "fallback_v4"
+}

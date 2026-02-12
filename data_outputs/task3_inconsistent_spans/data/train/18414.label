@@ -1,0 +1,77 @@
+{
+  "doc_id": "18414",
+  "text": "Unlike previous approaches [CITATION_1] [CITATION_2] [CITATION_3] our algorithm is able to segment and track objects regardless of their object class, whether they are static or undergo motion, and whether they are present in the foreground or background of the scene. Our algorithm instead relies on a more general concept of objectness to determine what should consist of an object to be tracked and segmented. An overview can be seen in Figure 2 . Object Mask Proposal Generation. We generate a large number of proposals, segmentation masks which cover potential objects, for a diverse range of objects. Specifically we use a Mask R-CNN [CITATION_4] implementation by [37] with a ResNet101 [CITATION_5] backbone trained on COCO [CITATION_6] . Although this network has been trained to detect the 80 COCO categories, we find that when using a low-confidence threshold this network produces adequate mask proposals for objects beyond these 80 categories. This network produces masks, bounding boxes, object categories and confidence scores for object proposals as outputs. We discard the object categories and treat all detections as if they come from the same foreground object category. We extract all proposal masks with a confidence score greater than 0.1. An example of generated overlapping proposals can be found in Figure 3 . Proposal Sub-Selection and Clipping. In order to simplify the tracking and segmentation problem, we initially ensure that our set of segment masks do not overlap in each frame individually before tracking these segments throughout the video. All proposal masks in a frame are compared against one another using their intersection over union (IoU) to detect overlaps. If the IoU between two proposal masks is higher than 0.2, then the proposal mask with higher confidence score is kept and the other proposal mask is removed. This is a form of mask-based non-maximum suppression. For all the remaining masks, we clip overlaps so that the mask with the highest confidence score is on top of a mask with a lower score. This set of proposals without overlaps has three advantages, it reduces the number of proposals that need to be tracked, simplifies the matching using temporal consistency cues as conflicting proposals are removed, and removes many spurious masks not belonging to real objects. See Figure 3 .",
+  "correct_citation": {
+    "[CITATION_1]": "50773378",
+    "[CITATION_2]": "60440659",
+    "[CITATION_3]": "207909739",
+    "[CITATION_4]": "206771194",
+    "[CITATION_5]": "206594692",
+    "[CITATION_6]": "14113767"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Unlike previous approaches    our algorithm is able to segment and track objects regardless of their object class, whether they are static or undergo motion, and whether they are present in the foreground or background of the scene.",
+      "s_span": 0,
+      "e_span": 268
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Unlike previous approaches    our algorithm is able to segment and track objects regardless of their object class, whether they are static or undergo motion, and whether they are present in the foreground or background of the scene.",
+      "s_span": 0,
+      "e_span": 268
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Unlike previous approaches    our algorithm is able to segment and track objects regardless of their object class, whether they are static or undergo motion, and whether they are present in the foreground or background of the scene.",
+      "s_span": 0,
+      "e_span": 268
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Specifically we use a Mask R-CNN  implementation by [37] with a ResNet101  backbone trained on COCO  .",
+      "s_span": 607,
+      "e_span": 745
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Specifically we use a Mask R-CNN  implementation by [37] with a ResNet101  backbone trained on COCO  .",
+      "s_span": 607,
+      "e_span": 745
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Specifically we use a Mask R-CNN  implementation by [37] with a ResNet101  backbone trained on COCO  .",
+      "s_span": 607,
+      "e_span": 745
+    }
+  ],
+  "bib_entries": {
+    "14113767": {
+      "title": "Microsoft coco: Common objects in context",
+      "abstract": "We present a new dataset with the goal of advancing the state-of-the-art in object recognition by placing the question of object recognition in the context of the broader question of scene understanding. This is achieved by gathering images of complex everyday scenes containing common objects in their natural context. Objects are labeled using per-instance segmentations to aid in precise object localization. Our dataset contains photos of 91 objects types that would be easily recognizable by a 4 year old. With a total of 2.5 million labeled instances in 328k images, the creation of our dataset drew upon extensive crowd worker involvement via novel user interfaces for category detection, instance spotting and instance segmentation. We present a detailed statistical analysis of the dataset in comparison to PASCAL, ImageNet, and SUN. Finally, we provide baseline performance analysis for bounding box and segmentation detection results using a Deformable Parts Model."
+    },
+    "206594692": {
+      "title": "Deep residual learning for image recognition",
+      "abstract": "Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers—8× deeper than VGG nets [40] but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions1, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation."
+    },
+    "206771194": {
+      "title": "Mask R-CNN",
+      "abstract": "We present a conceptually simple, flexible, and general framework for object instance segmentation. Our approach efficiently detects objects in an image while simultaneously generating a high-quality segmentation mask for each instance. The method, called Mask R-CNN, extends Faster R-CNN by adding a branch for predicting an object mask in parallel with the existing branch for bounding box recognition. Mask R-CNN is simple to train and adds only a small overhead to Faster R-CNN, running at 5 fps. Moreover, Mask R-CNN is easy to generalize to other tasks, e.g., allowing us to estimate human poses in the same framework. We show top results in all three tracks of the COCO suite of challenges, including instance segmentation, bounding-box object detection, and person keypoint detection. Without bells and whistles, Mask R-CNN outperforms all existing, single-model entries on every task, including the COCO 2016 challenge winners. We hope our simple and effective approach will serve as a solid baseline and help ease future research in instance-level recognition. Code has been made available at: this https URL"
+    },
+    "50773378": {
+      "title": "PReMVOS: Proposal-generation, refinement and merging for video object segmentation",
+      "abstract": "We address semi-supervised video object segmentation, the task of automatically generating accurate and consistent pixel masks for objects in a video sequence, given the first-frame ground truth annotations. Towards this goal, we present the PReMVOS algorithm (Proposal-generation, Refinement and Merging for Video Object Segmentation). Our method separates this problem into two steps, first generating a set of accurate object segmentation mask proposals for each video frame and then selecting and merging these proposals into accurate and temporally consistent pixel-wise object tracks over a video sequence in a way which is designed to specifically tackle the difficult challenges involved with segmenting multiple objects across a video sequence. Our approach surpasses all previous state-of-the-art results on the DAVIS 2017 video object segmentation benchmark with a \\(\\mathcal {J}\\)&\\(\\mathcal {F}\\) mean score of 71.6 on the test-dev dataset, and achieves first place in both the DAVIS 2018 Video Object Segmentation Challenge and the YouTube-VOS 1st Large-scale Video Object Segmentation Challenge."
+    },
+    "60440659": {
+      "title": "MOTS: Multi-object tracking and segmentation",
+      "abstract": "This paper extends the popular task of multi-object tracking to multi-object tracking and segmentation (MOTS). Towards this goal, we create dense pixel-level annotations for two existing tracking datasets using a semi-automatic annotation procedure. Our new annotations comprise 65,213 pixel masks for 977 distinct objects (cars and pedestrians) in 10,870 video frames. For evaluation, we extend existing multi-object tracking metrics to this new task. Moreover, we propose a new baseline method which jointly addresses detection, tracking, and segmentation with a single convolutional network. We demonstrate the value of our datasets by achieving improvements in performance when training on MOTS annotations. We believe that our datasets, metrics and baseline will become a valuable resource towards developing multi-object tracking approaches that go beyond 2D bounding boxes. We make our annotations, code, and models available at this https URL."
+    },
+    "207909739": {
+      "title": "Towards segmenting anything that moves",
+      "abstract": "Detecting and segmenting individual objects, regardless of their category, is crucial for many applications such as action detection or robotic interaction. While this problem has been well-studied under the classic formulation of spatio-temporal grouping, state-of-the-art approaches do not make use of learning-based methods. To bridge this gap, we propose a simple learning-based approach for spatio-temporal grouping. Our approach leverages motion cues from optical flow as a bottom-up signal for separating objects from each other. Motion cues are then combined with appearance cues that provide a generic objectness prior for capturing the full extent of objects. We show that our approach outperforms all prior work on the benchmark FBMS dataset. One potential worry with learning-based methods is that they might overfit to the particular type of objects that they have been trained on. To address this concern, we propose two new benchmarks for generic, moving object detection, and show that our model matches top-down methods on common categories, while significantly out-performing both top-down and bottom-up methods on never-before-seen categories."
+    }
+  },
+  "generator": "fallback_v4"
+}

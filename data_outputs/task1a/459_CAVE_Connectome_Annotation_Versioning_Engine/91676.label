@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The annotation service also tracks a timestamp for when a table was last modified to skip this step if there is no possibility that the table was altered in the interval between materialization and the query.",
+    "Filters on segment IDs must be ignored in this process because there can be no guarantee of consistency on the live database due to ongoing and distributed update operations.",
+    "Once these new and deleted annotation rows are retrieved, the same process of updating expired segment IDs using the ChunkedGraph API is applied.",
+    "Rows from the materialized query that exist as deletions in the live database query are removed, and rows that were added are concatenated to the result.",
+    "Finally, the original query filters on segment IDs are applied to these aggregated results to remove any annotations that are not relevant to the user's query."
+  ],
+  "correct_citations": []
+}

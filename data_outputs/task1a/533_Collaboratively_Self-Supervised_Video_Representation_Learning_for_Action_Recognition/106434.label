@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We use a batch size B of 16 and set the learning rate to 0.0005 × B.",
+    "We use SGD as the optimizer, setting the weight decay to 0.005 and the momentum to 0.9.",
+    "In each training step of context matching branch, we sample all the I-frames as positive samples and three negative frames from other video.",
+    "Data augmentation approaches, i.e., random crop, random flip, Gaussian blur, and color jitter are conducted on video clips and I-frames for better performance.As for the generation of f i, the feature of the last layer in pose generator is utilized as the the dynamic motion feature f d. After investigating the selection of hyper parameters, which is introduced in Section IV-C, we set σ p = σ c = 0.75 in our final experiment.Finetuning After pretraining our CSVR on video dataset, the integrated feature f i is utilized to finetune on downstream tasks.",
+    "We conduct experiments on two widely-used human action datasets, i.e., UCF101 and HMDB51, and report Top-1 accuracy of action recognition task and Recall at k (R@k) of video retrieval task on each dataset.For action recognition task, we initialize the backbone with the pretrained parameters except for the last fully connected layer."
+  ],
+  "correct_citations": []
+}

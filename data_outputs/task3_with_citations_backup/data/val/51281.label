@@ -1,0 +1,51 @@
+{
+  "doc_id": "51281",
+  "text": "Error correction depends on read coverage and error correction rate of different tools. These tools are based on different approaches and data structures. Three main approaches are used to make error correction tools more efficient such as k-spectrum based, suffix array based and hybrid based approach. Li et al. [CITATION_1] has developed tool that depends on k-mer spectrum based. The authors used 31-55 kmer length as well as bloom filter and hash table data structure. The authors focused on the removal of substitution errors. They also checked the trusted regions and extracted the optimal solution by using extension mechanism. In this task of material study, the experimental results are targeted on achieving maximum error correction rate. Heo et al. [CITATION_2] used the hash table data structure. They used k-spectrum approach for error correction. They determined the solid minimum edit path in between solid k-mer. Using the reverse bloom filter, they changed false positive rate. During k-mer counting Bloocoo used 10 bits for storing solid k-mers. They also described the need for 4 GB memory requirement for human genome correction. Song et al. [CITATION_3] developed memory efficient tool based on k-mer spectrum. The authors used bloom filter and 23 k-mer length, Sequencing reads were processed in three steps and two bloom filters were used for error correction. In this work, k-mer subsample is obtained using first bloom filter and then test is applied on each read on each position to find solid k-mer. These solid k-mers are stored and second bloom filter is applied. They used greedy approach for error correction which is also used in bless. Lighter corrected substitution errors. They used multiple sequence alignment method and suffix array based data structure. In his paper, two-sided error correction technique was used to correct substitutions errors. Salmela et al. [CITATION_4] presented hybrid based error correction using de Bruijn graph. They corrected most weak left and right regions by choosing traversal paths in graph. The authors argued that LoRDEC consumes less memory as compared to other tools and error correction rate is 99%. In fiona, used partial suffix array with hierarchical statically method to correct errors in sequencing reads. They used each read r as reference and corrected first overlap reads. It is also able to corrected substitutions errors produced by illumina platform. They argued that fiona can process the data on inexpensive hardware. The authors used the hash table data structure and confusion matrix error model. Their technique is sufficient to correct short reads without using reference genome.",
+  "correct_citation": {
+    "[CITATION_1]": "608675",
+    "[CITATION_2]": "3669905",
+    "[CITATION_3]": "608675",
+    "[CITATION_4]": "215528293"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Li et al. [CITATION_1] has developed tool that depends on k-mer spectrum based.",
+      "s_span": 304,
+      "e_span": 383
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Heo et al. [CITATION_2] used the hash table data structure.",
+      "s_span": 750,
+      "e_span": 809
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Song et al. [CITATION_3] developed memory efficient tool based on k-mer spectrum.",
+      "s_span": 1151,
+      "e_span": 1232
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Salmela et al. [CITATION_4] presented hybrid based error correction using de Bruijn graph.",
+      "s_span": 1886,
+      "e_span": 1976
+    }
+  ],
+  "bib_entries": {
+    "3669905": {
+      "title": "BLESS: Bloom filter-based error correction solution for highthroughput sequencing reads",
+      "abstract": "Motivation: Rapid advances in next-generation sequencing (NGS) technology have led to exponential increase in the amount of genomic information. However, NGS reads contain far more errors than data from traditional sequencing methods, and downstream genomic analysis results can be improved by correcting the errors. Unfortunately, all the previous error correction methods required a large amount of memory, making it unsuitable to process reads from large genomes with commodity computers. Results: We present a novel algorithm that produces accurate correction results with much less memory compared with previous solutions. The algorithm, named BLoom-filter-based Error correction Solution for high-throughput Sequencing reads (BLESS), uses a single minimumsized Bloom filter, and is also able to tolerate a higher false-positive rate, thus allowing us to correct errors with a 40� memory usage reduction on average compared with previous methods. Meanwhile, BLESS can extend reads like DNA assemblers to correct errors at the end of reads. Evaluations using real and simulated reads showed that BLESS could generate more accurate results than existing solutions. After errors were corrected using BLESS, 69% of initially unaligned reads could be aligned correctly. Additionally, de novo assembly results became 50% longer with 66% fewer assembly errors. Availability and implementation: Freely available at http://source forge.net/p/bless-ec"
+    },
+    "608675": {
+      "title": "Lighter: fast and memoryefficient sequencing error correction without counting",
+      "abstract": "Lighter is a fast, memory-efficient tool for correcting sequencing errors. Lighter avoids counting k-mers. Instead, it uses a pair of Bloom filters, one holding a sample of the input k-mers and the other holding k-mers likely to be correct. As long as the sampling fraction is adjusted in inverse proportion to the depth of sequencing, Bloom filter size can be held constant while maintaining near-constant accuracy. Lighter is parallelized, uses no secondary storage, and is both faster and more memory-efficient than competing approaches while achieving comparable accuracy."
+    },
+    "215528293": {
+      "title": "LoRDEC: accurate and efficient long read error correction",
+      "abstract": "Motivation: PacBio single molecule real-time sequencing is a thirdgeneration sequencing technique producing long reads, with comparatively lower throughput and higher error rate. Errors include numerous indels and complicate downstream analysis like mapping or de novo assembly. A hybrid strategy that takes advantage of the high accuracy of second-generation short reads has been proposed for correcting long reads. Mapping of short reads on long reads provides sufficient coverage to eliminate up to 99% of errors, however, at the expense of prohibitive running times and considerable amounts of disk and memory space. Results: We present LoRDEC, a hybrid error correction method that builds a succinct de Bruijn graph representing the short reads, and seeks a corrective sequence for each erroneous region in the long reads by traversing chosen paths in the graph. In comparison, LoRDEC is at least six times faster and requires at least 93% less memory or disk space than available tools, while achieving comparable accuracy. Availability and implementaion: LoRDEC is written in C++ ,t ested on Linux platforms and freely available at http://atgc.lirmm.fr/lordec. Contact: lordec@lirmm.fr. Supplementary information: Supplementary data are available at Bioinformatics online."
+    }
+  },
+  "generator": "fallback_v4"
+}

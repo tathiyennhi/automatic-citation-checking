@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The resulting feature representation is fed to two fully connected layers, denoted Dense in the figure, with tanh activations and a final fully connected output layer followed by a softmax classifier that produces the digit-class probabilities.networks, all weights were clamped to [0, 1] after each update, bias terms were omitted, and only non-negative activation functions (offset ReLU or absolute value) were used.",
+    "Gradient clipping with a maximum norm of 1.0 stabilized training for recurrent models.A crucial aspect for achieving convergence in the constrained networks was the choice of the weight initialization and activation function offset.",
+    "Because all weights are restricted to positive values, conventional symmetric initializations (e.g., Xavier or Kaiming) caused many parameters to be clamped to zero, leading to near-constant activations and failed training.",
+    "To address this, weights were initialized from a non-negative uniform distribution U(0, c), where the upper bound c was empirically tuned prior to training by analyzing the output activations of an untrained model.",
+    "The offset parameter in the activation functions was adjusted in conjunction with c to keep activations within a range that avoids both vanishing and saturated regimes."
+  ],
+  "correct_citations": [
+    "The resulting feature representation is fed to two fully connected layers, denoted Dense in the figure, with tanh activations and a final fully connected output layer followed by a softmax classifier that produces the digit-class probabilities.networks, all weights were clamped to [0, 1] after each update, bias terms were omitted, and only non-negative activation functions (offset ReLU or absolute value) were used."
+  ]
+}

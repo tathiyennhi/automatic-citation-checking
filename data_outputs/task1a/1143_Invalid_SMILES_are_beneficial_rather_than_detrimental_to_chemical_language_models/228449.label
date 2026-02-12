@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "For each test fold, a language model was trained on the 90% of molecules comprising the training set, after which a total of 100 million strings were sampled from the trained model.",
+    "The sampled molecules were then parsed with the RDKit, invalid outputs were discarded, and the frequency with which each canonical SMILES appeared in the model output was tabulated.",
+    "Then, for each molecule in the held-out test set, the model output was searched with the exact mass of this query molecule (plus or minus a 10 part per million window) and the generated molecules were sorted in descending order by their sampling frequencies to provide a ranked list of structural hypotheses.",
+    "A window of 10 ppm was used to allow for differences between the measured (experimental) and theoretical mass; the accuracy of the experimental measurements is usually expressed as a mass error in parts per million as (mass measuredmass theoretical)/mass theoretical × 10 6",
+    "The top-k accuracy was then calculated as the proportion of held-out molecules for which the correct chemical structure appeared within the k top-ranked outputs from the language model when ordered by sampling frequency (in the case of ties, molecules were ordered at random)."
+  ],
+  "correct_citations": []
+}

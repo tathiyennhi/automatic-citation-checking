@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "HyperparametersAll experiments were conducted using 4-bit quantized model weights (NF4) and 8-bit adapter and optimizer states using the bitsandbytes backend.",
+    "Mixedprecision training with torch.bfloat16 was used to ensure computational stability.",
+    "We used effective batch sizes between 4 and 8, with gradient accumulation steps ranging from 2 to 4 depending on model size and available memory.",
+    "Sequence lengths were fixed at 256 tokens for CommonsenseQA, OpenBookQA, and OpenAssistant, and extended to 512 tokens for GSM8K, OpenHermes, and UltraChat to accommodate longer reasoning chains.The learning rate was set between 1 × 10 -4 and 2 × 10 -5 using the AdamW optimizer with a linear warmup of 100 steps followed by cosine decay.",
+    "Adapter ranks were initialized at 4 or 8 depending on model scale and allowed to grow up to 32 or 64 based on EMA-driven gradient activity."
+  ],
+  "correct_citations": []
+}

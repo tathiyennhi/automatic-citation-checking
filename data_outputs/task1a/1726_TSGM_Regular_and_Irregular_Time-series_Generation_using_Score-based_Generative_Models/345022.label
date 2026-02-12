@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "(A complete, line-by-line proof will be included in the arXiv version of this paper.)",
+    "Define f (x 0 1:n):= E s E x s 1:n λ(s) ∥M θ -∇ x s 1:n log p(x s 1:n | x 0 1:n)∥ 2 2.",
+    "Then L 2 = N n=1 E x 0 1:N E x 0 n |x 0 1:n-1 [f (x 0 1:n)].",
+    "By the law of total expectation (marginalizing the suffix x 0 n+1:N) and linearity of expectation, this equalsE x 0 1:N N n=1 f (x 0 1:n) = L score, so L 1 = L score.Since we pre-train the encoder and decoder, the encoder can embed x 0 1:n into h 0 n ∈ H. Ideally, h 0 n involves the entire information of x 0 1:n. Therefore, L score can be re-written as follows with the embeddings in the latent space:L H score = E s E h 0 1:N N n=1 [λ(s)l 3 (n, s)],(2)with l3(n, s) = Ehs n M θ (s, h s n, h 0 n-1) -∇hs n log p(h s n |h 0 n) 2 2.",
+    "L Hscore is what we use for our experiments (instead of L score)."
+  ],
+  "correct_citations": []
+}

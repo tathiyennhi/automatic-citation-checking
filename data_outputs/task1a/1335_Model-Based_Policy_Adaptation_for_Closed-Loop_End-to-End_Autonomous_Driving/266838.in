@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The Q-value is the truncated cumulative sum of the T -step reward, where T is the planning horizon as was set up to 5 steps (1.25 s) in our experiments.Q t = T k=0 γ k r t+kBased on these principles, we use the following reward heuristics to label the state-action transition pairs in the simulation.",
+    "The first term is the longitude reward, denoted as route completion r route.",
+    "At timestep t, r route = d t -d t-1, where d t be the projected longitudinal distance along the route from the starting point to the closest point on route to the current ego position determined pos ego by s t.The second term is the lateral distance penalty between the ego position and the route, denoted as distance reward r dist:r dist = -∥pos ego -pos route point ∥ 2.Following the simulation setup, the off-road and collision penalty will be -100 respectively, once a collision between the ego vehicle and other traffic agents or between the ego vehicle and background static objects occurs.",
+    "This penalty term can be described as:r collision =    -1, min |pos ego -pos others | < δ collision, -1, pos ego / ∈ Driveable Area, 0, otherwise.To improve the smoothness of driving, we use the speed penalty when the agents go overspeeding:r speed = -(v ego -δ velo), v ego > δ velo, 0, otherwise.Constrained Rollout with Pretrained E2E Agents.",
+    "We use the pretrained UniAD [3], VAD [4], and LTF [2] as base behavior policies to generate counterfactual datasets to further train the MPA."
+  ]
+}

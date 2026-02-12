@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "However, naive gradient ascent often causes catastrophic forgetting.Elastic Weight Consolidation (EWC) [7] addresses catastrophic forgetting by adding a regularization term:L EWC = L task + λ 2 i F i (θ i -θ * i) 2(2)C. Explainable AI in Security Grad-CAM [5] computes class-discriminative localization maps:L Grad-CAM c = ReLU k α c k A k(3)Recent work has used Grad-CAM to analyze backdoor triggers [2], but only for post-hoc analysis.",
+    "Our work bridges this gap by integrating Grad-CAM into the unlearning training loop.",
+    "METHODOLOGY A.",
+    "Threat ModelWe consider the BadNets attack scenario [1] on CIFAR-10: Dataset: 60,000 color images (32×32 pixels) across 10 classes, split into 50,000 training and 10,000 test images.Backdoor Trigger: A 4×4 white square patch at the bottom-right corner:x trigger [i, j,:] = 1.0 ∀(i, j) ∈ [28, 31] × [28, 31](4)Poison Rate: 3% of training data (1,500 images).Target Class: Class 0 (airplane).",
+    "Model ArchitectureWe employ a custom CNN architecture: Block 1: Two Conv2D layers (64 filters, 3×3, ReLU) + MaxPooling (2×2).Block 2: Two Conv2D layers (128 filters, 3×3, ReLU) + MaxPooling (2×2).Block 3: One Conv2D layer (256 filters, 3×3, ReLU, named \"last conv\") + Global Average Pooling.Classifier: Dense(256, ReLU) + Dense(10, softmax).The model contains approximately 623,690 trainable parameters, achieving 82.49% clean accuracy and 96.51% ASR when trained on poisoned data.C."
+  ],
+  "correct_citations": [
+    "However, naive gradient ascent often causes catastrophic forgetting.Elastic Weight Consolidation (EWC) [7] addresses catastrophic forgetting by adding a regularization term:L EWC = L task + λ 2 i F i (θ i -θ * i) 2(2)C. Explainable AI in Security Grad-CAM [5] computes class-discriminative localization maps:L Grad-CAM c = ReLU k α c k A k(3)Recent work has used Grad-CAM to analyze backdoor triggers [2], but only for post-hoc analysis.",
+    "Threat ModelWe consider the BadNets attack scenario [1] on CIFAR-10: Dataset: 60,000 color images (32×32 pixels) across 10 classes, split into 50,000 training and 10,000 test images.Backdoor Trigger: A 4×4 white square patch at the bottom-right corner:x trigger [i, j,:] = 1.0 ∀(i, j) ∈ [28, 31] × [28, 31](4)Poison Rate: 3% of training data (1,500 images).Target Class: Class 0 (airplane)."
+  ]
+}

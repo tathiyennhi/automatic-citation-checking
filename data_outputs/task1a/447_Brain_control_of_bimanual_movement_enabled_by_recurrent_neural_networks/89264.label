@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "Before the first day of real-time evaluation, we collected pilot offline data across 2 session days (trial days 1752 and 1771) comprising 1 h of 780 total trials (balanced for unimanual and bimanual trials) which were combined to train the RNN.",
+    "All training data were augmented to generate around 2000 training snippets of ten second length amounting to roughly 6 h of data (balancing equally for each movement type).",
+    "We tuned the initial RNN model's hyperparameters (input noise, input mean drift, learning rate, batch size, number of training batches, and L2-norm weight regularization) via a random search deployed across 100 RNNs, each with the same validation set which was 10% of the total augmented training data (~ 200 validation examples).",
+    "The cost function for a single snippet of data (as used in prior work 13) was expressed as the sum of an L2 weight regularization, a cross-entropy loss over the discrete variables, and a squared prediction error loss over the continuous variables.",
+    "The number of GRU layers and units per layer were not optimized as our online system was compute-constrained to be able to perform low-latency real-time inference using Simulink Real-Time software."
+  ],
+  "correct_citations": [
+    "The cost function for a single snippet of data (as used in prior work 13) was expressed as the sum of an L2 weight regularization, a cross-entropy loss over the discrete variables, and a squared prediction error loss over the continuous variables."
+  ]
+}

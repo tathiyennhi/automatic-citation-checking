@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "\", while the gold SQL searches for installation_name = \"IBX-15\", the user's question references \"IBX15\" without the hyphen.",
+    "Consequently, when the LLM searches for installation_name = \"IBX15\", it returns an empty set as there is no matching value in the database.",
+    "In another question, \"What are the requests located in MX10?",
+    "\", SQL gold is expected to use the LIKE operator and thus SELECT * FROM main-tenance_request WHERE localization LIKE \"%MX10%\", but LLM generates SELECT * FROM maintenance_request WHERE localization =\"MX10\", and again, returns an empty set.",
+    "Assembling the filters in the SQL query posed the greatest challenge for the LLM."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,40 @@
+{
+  "doc_id": "47026",
+  "text": "While the main design challenges to the ASF implementation come from putting the long-lived ASF speculative hardware context and the short-lived out-of-order execution context together, at a high level, our design in Figure 2 is close to a cache-based HTM design [CITATION_1] , [CITATION_2] . It buffers speculative data in the load/store queues and the L1 cache (i.e., lazy data versioning [CITATION_3] ). The L1 cache supports relatively large speculative regions for transactional programming. The load/store queues are used to provide a higher minimum capacity guarantee for lock-free programming since the minimum capacity guarantee with a 4-way set-associative L1 cache is limited to only four distinct memory words. The design adds one bit per load/store queue entry and two bits per cache line to mark speculative data. The AMD Coherent HyperTransport (cHT) protocol [21] is used to detect conflicting speculative/non-speculative memory accesses from other cores by checking incoming cache coherence messages against the additional bits. If a conflict is detected, the conflicted speculative region is aborted by discarding the speculatively modified data and resetting the bits. If COMMIT is reached without conflicts, the buffered speculative data are committed by gang-clearing the bits and sending the stores buffered in the store queue to the L1 cache. Following the reviewers' suggestion in Section III-C, this design does not support nesting for simplicity. Figure 2 shows the hardware structures for the ASF implementation. In the figure, the components changed or added for ASF are shown in grey. The rest of the section explains the ASF implementation details.",
+  "correct_citation": {
+    "[CITATION_1]": "8707443",
+    "[CITATION_2]": "16657734",
+    "[CITATION_3]": "8707443"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "While the main design challenges to the ASF implementation come from putting the long-lived ASF speculative hardware context and the short-lived out-of-order execution context together, at a high level, our design in Figure 2 is close to a cache-based HTM design  ,  .",
+      "s_span": 0,
+      "e_span": 292
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "While the main design challenges to the ASF implementation come from putting the long-lived ASF speculative hardware context and the short-lived out-of-order execution context together, at a high level, our design in Figure 2 is close to a cache-based HTM design  ,  .",
+      "s_span": 0,
+      "e_span": 292
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "It buffers speculative data in the load/store queues and the L1 cache (i.e., lazy data versioning  ).",
+      "s_span": 293,
+      "e_span": 406
+    }
+  ],
+  "bib_entries": {
+    "16657734": {
+      "title": "LogTM: Log-Based Transactional Memory",
+      "abstract": "Transactional memory (TM) simplifies parallel programming by guaranteeing that transactions appear to execute atomically and in isolation. Implementing these properties includes providing data version management for the simultaneous storage of both new (visible if the transaction commits) and old (retained if the transaction aborts) values. Most (hardware) TM systems leave old values \"in place\" (the target memory address) and buffer new values elsewhere until commit. This makes aborts fast, but penalizes (the much more frequent) commits. In this paper, we present a new implementation of transactional memory, log-based transactional memory (LogTM), that makes commits fast by storing old values to a per-thread log in cacheable virtual memory and storing new values in place. LogTM makes two additional contributions. First, LogTM extends a MOESI directory protocol to enable both fast conflict detection on evicted blocks and fast commit (using lazy cleanup). Second, LogTM handles aborts in (library) software with little performance penalty. Evaluations running micro- and SPLASH-2 benchmarks on a 32-way multiprocessor support our decision to optimize for commit by showing that only 1-2% of transactions abort."
+    },
+    "8707443": {
+      "title": "Transactional Memory Coherence and Consistency",
+      "abstract": "In this paper, we propos a new shared memory model: Transactionalmemory Coherence and Consistency (TCC).TCC providesa model in which atomic transactions are always the basicunit of parallel work, communication, memory coherence, andmemory reference consistency.TCC greatly simplifies parallelsoftware by eliminating the need for synchronization using conventionallocks and semaphores, along with their complexities.TCC hardware must combine all writes from each transaction regionin a program into a single packet and broadcast this packetto the permanent shared memory state atomically as a large block.This simplifies the coherence hardware because it reduces theneed for small, low-latency messages and completely eliminatesthe need for conventional snoopy cache coherence protocols, asmultiple speculatively written versions of a cache line may safelycoexist within the system.Meanwhile, automatic, hardware-controlledrollback of speculative transactions resolves any correctnessviolations that may occur when several processors attemptto read and write the same data simultaneously.The cost of thissimplified scheme is higher interprocessor bandwidth.To explore the costs and benefits of TCC, we study the characterisitcsof an optimal transaction-based memory system, and examinehow different design parameters could affect the performanceof real systems.Across a spectrum of applications, the TCC modelitself did not limit available parallelism.Most applications areeasily divided into transactions requiring only small write buffers,on the order of 4-8 KB.The broadcast requirements of TCCare high, but are well within the capabilities of CMPs and small-scaleSMPs with high-speed interconnects."
+    }
+  },
+  "generator": "fallback_v4"
+}

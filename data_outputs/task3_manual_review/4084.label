@@ -1,0 +1,25 @@
+{
+  "doc_id": "4084",
+  "text": "For medium-sized data sets (1000-10,000) kernel ridge regression is a fast and accurate ML method. In ref. [CITATION_1] , KRR performed best with the descriptor HDAD (histograms of distances, angles and dihedrals) at predicting atomization energies, a conceptually similar descriptor to the ones we used which supported our choice of KRR. Of the ML models in ref. [CITATION_2] , graph convolution neural networks were not applicable to the descriptors, hence only random forest regression was another sensible choice. However, as shown in Supplementary Information, its performance is significantly worse than KRR in our case. In order to predict the properties of new data points, the descriptor features of the training set x are compressed into the kernel matrix K The method benefits from a continuous feature space and a unique descriptor-property relation. It is worth mentioning that it works well even with large descriptor sizes and small training sets. The computational cost, however, scales with O N 3 ð Þ, which makes it computationally expensive or infeasible for large data sets (>10,000).",
+  "correct_citation": {
+    "[CITATION_1]": "4527565",
+    "[CITATION_2]": "4527565"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In ref., KRR performed best with the descriptor HDAD (histograms of distances, angles and dihedrals) at predicting atomization energies, a conceptually similar descriptor to the ones we used which supported our choice of KRR."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Of the ML models in ref., graph convolution neural networks were not applicable to the descriptors, hence only random forest regression was another sensible choice."
+    }
+  ],
+  "bib_entries": {
+    "4527565": {
+      "title": "Prediction errors of molecular machine learning models lower than hybrid DFT error",
+      "abstract": "We investigate the impact of choosing regressors and molecular representations for the construction of fast machine learning (ML) models of 13 electronic ground-state properties of organic molecules. The performance of each regressor/representation/property combination is assessed using learning curves which report out-of-sample errors as a function of training set size with up to ∼118k distinct molecules. Molecular structures and properties at the hybrid density functional theory (DFT) level of theory come from the QM9 database [ Ramakrishnan et al. Sci. Data 2014 , 1 , 140022 ] and include enthalpies and free energies of atomization, HOMO/LUMO energies and gap, dipole moment, polarizability, zero point vibrational energy, heat capacity, and the highest fundamental vibrational frequency. Various molecular representations have been studied (Coulomb matrix, bag of bonds, BAML and ECFP4, molecular graphs (MG)), as well as newly developed distribution based variants including histograms of distances (HD), angles (HDA/MARAD), and dihedrals (HDAD). Regressors include linear models (Bayesian ridge regression (BR) and linear regression with elastic net regularization (EN)), random forest (RF), kernel ridge regression (KRR), and two types of neural networks, graph convolutions (GC) and gated graph networks (GG). Out-of sample errors are strongly dependent on the choice of representation and regressor and molecular property. Electronic properties are typically best accounted for by MG and GC, while energetic properties are better described by HDAD and KRR. The specific combinations with the lowest out-of-sample errors in the ∼118k training set size limit are (free) energies and enthalpies of atomization (HDAD/KRR), HOMO/LUMO eigenvalue and gap (MG/GC), dipole moment (MG/GC), static polarizability (MG/GG), zero point vibrational energy (HDAD/KRR), heat capacity at room temperature (HDAD/KRR), and highest fundamental vibrational frequency (BAML/RF). We present numerical evidence that ML model predictions deviate from DFT (B3LYP) less than DFT (B3LYP) deviates from experiment for all properties. Furthermore, out-of-sample prediction errors with respect to hybrid DFT reference are on par with, or close to, chemical accuracy. The results suggest that ML models could be more accurate than hybrid DFT if explicitly electron correlated quantum (or experimental) data were available."
+    }
+  },
+  "generator": "fallback"
+}

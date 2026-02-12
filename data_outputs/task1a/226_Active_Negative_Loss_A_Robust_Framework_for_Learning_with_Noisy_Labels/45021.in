@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Unlike conventional training approaches, complementary label learning emphasizes the classifier's predictions for complementary labels, making it naturally suited for passive loss functions in which the loss ℓ(f (x), k) for the complementary label k is non-zero (cf.",
+    "Definition 2).",
+    "In this context, we adopt the core concept of this method by focusing the loss function on all classes {1, • • •, K} except the true labeled class y.❷ \"Vertical flipping\" is a straightforward operation that converts a loss function from \"maximizing\" to \"minimizing\".",
+    "As shown in the Figure 1, given an active loss functionL(f (x), k), the new loss function A -L(f (x), k) is obtained by flipping L(f (x), k) vertically with axis loss = 1 2 A. No- tably, A-L(f (x), k) is the opposite of L(f (x), k), effectively shifting the focus toward minimizing the output probability p(k|x) to 0.Based on these two components (the incorporation of ❸ will be deferred to the paragraph two paragraphs down), given an active loss function L, we can already propose Negative Loss Functions (NLFs), an intermediate form, as follows (note q(k|x) is the ground-truth probability and q(y|x) = 1):L neg (f (x), y; L) = K k=1 (1 -q(k|x)) A -L(f (x), k).",
+    "(6)Here, A is a constant representing the maximum loss value of L, which ensures that the loss L neg does not fall below zero (for the sake of sensible normalization)."
+  ]
+}

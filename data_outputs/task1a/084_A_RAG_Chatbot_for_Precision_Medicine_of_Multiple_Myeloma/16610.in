@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To obtain detailed information for each collected PMID, we created another function, fetch_records_for_ids, which fetched the complete records from the Entrez API.",
+    "We modified this function to also attempt to retrieve PubMed Central IDs (PMCIDs) for each article, as these IDs are often required to access the full text of the articles.",
+    "The function extracted various data fields from the retrieved records, including PMID, PM-CID (if available), article title, abstract, authors, journal, and publication date.",
+    "The actual fields retrieved can vary depending on the availability of metadata for each article.",
+    "To ensure the stability of the data collection process and respect the rate limits of the Entrez API, we implemented batch processing, where IDs were fetched in batches of 100, with a 0.5-second pause between each batch."
+  ]
+}

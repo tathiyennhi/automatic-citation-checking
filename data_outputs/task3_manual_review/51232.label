@@ -1,0 +1,56 @@
+{
+  "doc_id": "51232",
+  "text": "A key impact of GUIDE has been RAS analytics, which includes observing failure trends, identifying impacted jobs, users and faulty nodes, and quantifying SBEs, DBEs and off-the-bus errors on Titan's 18,688 CPUs/GPUs [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] . Fig. 7 shows a partial RAS dashboard of these trends, depicting the progression of DBEs and off-the-bus errors on the GPUs, which cause a node failure. The graphs show how the GPU errors have grown during the lifetime of Titan from just a few per month to several per day. After a successful replacement of subsets (a few thousand) of the GPUs, it can be seen that the errors are beginning to subside. Such RAS analytics has also enabled us to identify nodes with more errors, and proactively replace those GPU cards. Further, we were able to identify that the node failure trends follow a Weibull distribution, i.e., failures have a temporal locality, which can also be used to guide checkpointing in interesting dynamic ways (e.g., checkpoint frequently after an error, but more lazily during stable period) [CITATION_5] . With respect to SBEs, we found that 98% of them occur on the L2 cache on the GPU, a feedback that was provided to the vendor. Finally, we have binned the failure-affected jobs by their node-size, which helped us to understand that large jobs were more impacted (e.g., over 3,000 nodes).",
+  "correct_citation": {
+    "[CITATION_1]": "6682851",
+    "[CITATION_2]": "17863655",
+    "[CITATION_3]": "14138999",
+    "[CITATION_4]": "6792385",
+    "[CITATION_5]": "10366358"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A key impact of GUIDE has been RAS analytics, which includes observing failure trends, identifying impacted jobs, users and faulty nodes, and quantifying SBEs, DBEs and off-the-bus errors on Titan's 18,688 CPUs/GPUs."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A key impact of GUIDE has been RAS analytics, which includes observing failure trends, identifying impacted jobs, users and faulty nodes, and quantifying SBEs, DBEs and off-the-bus errors on Titan's 18,688 CPUs/GPUs."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "A key impact of GUIDE has been RAS analytics, which includes observing failure trends, identifying impacted jobs, users and faulty nodes, and quantifying SBEs, DBEs and off-the-bus errors on Titan's 18,688 CPUs/GPUs."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "A key impact of GUIDE has been RAS analytics, which includes observing failure trends, identifying impacted jobs, users and faulty nodes, and quantifying SBEs, DBEs and off-the-bus errors on Titan's 18,688 CPUs/GPUs."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Further, we were able to identify that the node failure trends follow a Weibull distribution, i.e., failures have a temporal locality, which can also be used to guide checkpointing in interesting dynamic ways (e.g., checkpoint frequently after an error, but more lazily during stable period)"
+    }
+  ],
+  "bib_entries": {
+    "10366358": {
+      "title": "Lazy checkpointing: Exploiting temporal locality in failures to mitigate checkpointing overheads on extreme-scale systems",
+      "abstract": "Continuing increase in the computational power of supercomputers has enabled large-scale scientific applications in the areas of astrophysics, fusion, climate and combustion to run larger and longer-running simulations, facilitating deeper scientific insights. However, these long-running simulations are often interrupted by multiple system failures. Therefore, these applications rely on \"check pointing'\" as a resilience mechanism to store application state to permanent storage and recover from failures. Unfortunately, check pointing incurs excessive I/O overhead on supercomputers due to large size of checkpoints, resulting in a sub-optimal performance and resource utilization. In this paper, we devise novel mechanisms to show how check pointing overhead can be mitigated significantly by exploiting the temporal characteristics of system failures. We provide new insights and detailed quantitative understanding of the check pointing overheads and trade-offs on large-scale machines. Our prototype implementation shows the viability of our approach on extreme-scale machines."
+    },
+    "6682851": {
+      "title": "Understanding and Exploiting Spatial Properties of System Failures on Extreme-Scale HPC Systems",
+      "abstract": "As we approach exascale, the scientific simulations are expected to experience more interruptions due to increased system failures. Designing better HPC resilience techniques requires understanding the key characteristics of system failures on these systems. While temporal properties of system failures on HPC systems have been well-investigated, there is limited understanding about the spatial characteristics of system failures and its impact on the resilience mechanisms. Therefore, we examine the spatial characteristics and behavior of system failures. We investigate the interaction between spatial and temporal characteristics of failures and its implications for system operations and resilience mechanisms on large-scale HPC systems. We show that system failures have \"spatial locality\" at different granularity in the system, study impact of different failure-types, and investigate the correlation among different failure-types. Finally, we propose a novel scheme that exploits the spatial locality in failures to improve application and system performance. Our evaluation shows that the proposed scheme significantly improves the system performance in a dynamic and production-level HPC system."
+    },
+    "17863655": {
+      "title": "Reliability Lessons Learned From GPU Experience With The Titan Supercomputer at Oak Ridge Leadership Computing Facility",
+      "abstract": "The high computational capability of graphics processing units (GPUs) is enabling and driving the scientific discovery process at large-scale. The world's second fastest supercomputer for open science, Titan, has more than 18,000 GPUs that computational scientists use to perform scientific simulations and data analysis. Understanding of GPU reliability characteristics, however, is still in its nascent stage since GPUs have only recently been deployed at large-scale. This paper presents a detailed study of GPU errors and their impact on system operations and applications, describing experiences with the 18,688 GPUs on the Titan supercomputer as well as lessons learned in the process of efficient operation of GPUs at scale. These experiences are helpful to HPC sites which already have large-scale GPU clusters or plan to deploy GPUs in the future."
+    },
+    "6792385": {
+      "title": "A large-scale study of soft-errors on gpus in the field",
+      "abstract": "Parallelism provided by the GPU architecture has enabled domain scientists to simulate physical phenomena at a much faster rate and finer granularity than what was previously possible by CPU-based large-scale clusters. Architecture researchers have been investigating reliability characteristics of GPUs and innovating techniques to increase the reliability of these emerging computing devices. Such efforts are often guided by technology projections and simplistic scientific kernels, and performed using architectural simulators and modeling tools. Lack of large-scale field data impedes the effectiveness of such efforts. This study attempts to bridge this gap by presenting a large-scale field data analysis of GPU reliability. We characterize and quantify different kinds of soft-errors on the Titan supercomputer's GPU nodes. Our study uncovers several interesting and previously unknown insights about the characteristics and impact of soft-errors."
+    },
+    "14138999": {
+      "title": "Understanding GPU errors on large-scale HPC systems and the implications for system design and operation",
+      "abstract": "Increase in graphics hardware performance and improvements in programmability has enabled GPUs to evolve from a graphics-specific accelerator to a general-purpose computing device. Titan, the world's second fastest supercomputer for open science in 2014, consists of more dum 18,000 GPUs that scientists from various domains such as astrophysics, fusion, climate, and combustion use routinely to run large-scale simulations. Unfortunately, while the performance efficiency of GPUs is well understood, their resilience characteristics in a large-scale computing system have not been fully evaluated. We present a detailed study to provide a thorough understanding of GPU errors on a large-scale GPU-enabled system. Our data was collected from the Titan supercomputer at the Oak Ridge Leadership Computing Facility and a GPU cluster at the Los Alamos National Laboratory. We also present results from our extensive neutron-beam tests, conducted at Los Alamos Neutron Science Center (LANSCE) and at ISIS (Rutherford Appleron Laboratories, UK), to measure the resilience of different generations of GPUs. We present several findings from our field data and neutron-beam experiments, and discuss the implications of our results for future GPU architects, current and future HPC computing facilities, and researchers focusing on GPU resilience."
+    }
+  },
+  "generator": "fallback"
+}

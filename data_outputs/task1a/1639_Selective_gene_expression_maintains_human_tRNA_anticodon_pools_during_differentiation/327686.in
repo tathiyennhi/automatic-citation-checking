@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To calculate the required normalization factors for individual libraries, mmquant was used to count ChIP-Seq reads that overlapped the annotated hg38 tRNA genes extended by 125 bp at both ends.",
+    "Using edgeR v3.34.1, normalization factors were calculated using these counts as input for the calcNormFactors function using the 'RLE' method.",
+    "Relative library sizes were taken as the sum of reads assigned to tRNA features, scaled per million reads.",
+    "The edgeR normalization factors were further multiplied by these library-size factors and the reciprocal of this product was used for normalized signal generation.",
+    "DeepTools bamCoverage with a normalization bin size of 1 bp (--binSize 1), the previously calculated scale factors (--scaleFactor) and read extension using fragment lengths that were previously estimated by Phantompeakqualtools (--extendReads) was implemented to generate normalized signal files."
+  ]
+}

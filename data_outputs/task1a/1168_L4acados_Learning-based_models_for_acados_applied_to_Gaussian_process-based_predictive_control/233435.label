@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "From left to right, the numbers indicate the mean, the 99.9% quantile, and the maximum computation time.",
+    "All computations for this experiment are performed on a Lenovo ThinkPad E15 Gen2 using an Intel i7-1165 G7 processor at 2.80GHz.Cost: This column the average stage cost for the closed-loop trajectory i.e., 1 Nsim Nsim t=1 l(x(t), u(t)).",
+    "Laps: The progress made within the N sim simulation steps, in terms of the number of laps completed, is shown here.Crash: To compensate for delays, approximate convergence and unmodeled real-world effects, the (soft) track constraint is tightened by an additional safety margin (see Fig. 5).",
+    "An \"✗\" indicates violation of the original track constraint.Comparing the optimizer, it can be seen that throughout all experiments, SQP performs slightly better than its SQP-RTI counterpart in terms of closed-loop cost and track progress, at the expense of considerably increased computation times due to the higher number of SQP iterations.All zoGPMPC variants using SQP-RTI are real-time feasible; in particular for the online-updating method of the exact GP model, computation times are real-time feasible up to roughly 100 data points.",
+    "While the maximum computation time exceeds the sampling time in exceptional cases, with more than 99.9% of total computation times below 33ms, this does not affect the control performance in the experiments.Throughout all methods, a small closed-loop cost clearly correlates with a high number of laps completed within the fixed time budget, highlighting the MPCC cost as an effective proxy for time-optimal racing.4) Hardware experiments: The racing experiment has been repeated on hardware (see Fig. 1) using the three SQP-RTI variants of zoGPMPC in Table I with an exact GP model; Fig."
+  ],
+  "correct_citations": []
+}

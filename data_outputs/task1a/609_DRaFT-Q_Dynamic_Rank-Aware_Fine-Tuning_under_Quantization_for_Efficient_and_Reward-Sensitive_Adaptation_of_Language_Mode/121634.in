@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The mixed-precision 4/8-bit setup allowed us to train these models on consumer-grade GPUs, highlighting the method's scalability without requiring architectural modifications or full model tuning.",
+    "DiscussionThe experiments with DRaFT-Q provide a clear explanation for why dynamic rank allocation leads to superior results compared to static PEFT approaches.",
+    "In traditional methods such as LoRA and QLoRA, a fixed adapter rank is applied uniformly to all layers, regardless of their contribution to the learning process.",
+    "This ignores the fact that different layers in a transformer model play very different roles during adaptation: while some layers require more expressive capacity to capture new patterns, others stabilize quickly and benefit little from extra parameters.",
+    "By contrast, DRaFT-Q continuously monitors the training signal in the form of gradient magnitudes and smoothed loss curves, and uses this information to make targeted, data-driven adjustments to rank allocation."
+  ]
+}

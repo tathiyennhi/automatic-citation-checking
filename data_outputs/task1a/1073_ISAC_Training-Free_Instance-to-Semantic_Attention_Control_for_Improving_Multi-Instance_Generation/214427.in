@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Appendix A.",
+    "Implementation DetailsA.1 Method Details Attention accumulation We accumulate self-and cross-attention maps from all attention layers.",
+    "When self-attention (SA) and cross-attention (CA) maps have different spatial resolutions across layers, in case of U-Net [46] architectures, we bilinearly upsample each map to the highest spatial resolution (H × W) and average over layers and heads to obtain a single SA/CA pair per step:SA t = 1 N M l=1 h l h=1 Upsample(SA h l (X t), δ l) (10)CA t = 1 N M l=1 h l h=1 Upsample(CA h l (X t, T), δ l)(11)where δ l = H/H l = W/W l is the upsampling factor for layer l, and N = M l=1 h l is the total number of heads.Then, we apply min-max normalization to the accumulated maps as defined in Eq.",
+    "For a fair comparison, we use the same attention accumulation scheme across all baseline methods [1, 4-7, 43, 47].Choice of the step size η We evaluate the sensitivity of ISAC to the gradient step size η in Algorithm 1 under our instance-to-semantic schedule.",
+    "When η is too small, the optimization loss barely decreases and has negligible impact on the generated images."
+  ]
+}

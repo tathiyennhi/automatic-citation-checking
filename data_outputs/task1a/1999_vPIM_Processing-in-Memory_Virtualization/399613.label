@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The DPU can run up to 24 threads called tasklets.",
+    "These share the different memory regions described above.",
+    "In order to fully utilize the DPU's performance, the program should run at least 11 tasklets.",
+    "This is because of a hardware constraints that states that for a given thread, 11 cycles should separate 2 consecutive instructions.1 #def ne DPU_BINARY \"./bin/dpu_code\" 2 3 uint32_t count_zero(uint32_t array, int array_size){ 4 struct dpu_set_t set, dpu; 5 uint32_t zero_count = 0, dpu_zero_count; 6 size_t dpu_count, each_size = array_size / NR_DPUS; 7 dpu_alloc(NR_DPUS, NULL, &set); allocate DPU 8 dpu_load(set, DPU_BINARY, NULL); load DPU program 9 DPU_FOREACH(set, dpu, dpu_count) {dpu_prepare_xfer(dpu, &each_size);} 10 dpu_push_xfer(set, DPU_XFER_TO_DPU, \"partition_size\", 0, 11 sizeof(uint32_t), DPU_XFER_DEFAULT); 12 DPU_FOREACH(set, dpu, dpu_count) { 13 dpu_prepare_xfer(dpu, &array[dpu_count * each_size]); 14 } transfer parameter 15 dpu_push_xfer(set, DPU_XFER_TO_DPU, DPU_MRAM_HEAP_POINTER_NAME, 0, 16 each_size * sizeof(uint32_t), DPU_XFER_DEFAULT); transfer data 17 dpu_launch(set, DPU_SYNCHRONOUS); launch DPU program 18 DPU_FOREACH(set, dpu) { 19 DPU_ASSERT(dpu_copy_from(dpu, \"zero_count\", 0, 20 &dpu_zero_count, sizeof(dpu_zero_count))); 21 zero_count += dpu_zero_count; 22 } copy result to CPU 23 dpu_free(set); 24 return zero_count; 25 } 10/7/24, 6:37 AM Convert Code to PDF Online: Free Tool for Programming Languages https://tarikjaber.github.io/Code-to-PDF/ 1/1 (a) Host-side code.",
+    "1 #def ne NUM_TASKLET 16 2 host uint32_t zero_count = 0; 3 host uint32_t partition_size; 4 BARRIER_INIT(my_barrier, NUM_TASKLET); 5 6 int main() { 7 if(me() 0) mem_reset(); barrier_wait(&my_barrier); 8 int size_per_tasklet = partition_size/NUM_TASKLET; 9 int partition = (int *) mem_alloc(size_per_tasklet * sizeof(int)); 10 int mram = (int *) DPU_MRAM_HEAP_POINTER + 11 (me() * size_per_tasklet) * sizeof(int); 12 mram_read((const mram_ptr void*) mram, partition, 13 size_per_tasklet * sizeof(int)); 14 for (int i = 0; i < size_per_tasklet; i) 15 {if(partition[i] 0) zero_count;} 16 return 0; 17 } 10/7/24, 6:39 AM Code https://tarikjaber.github.io/Code-to-PDF/ 1/1 (b) DPU-side code."
+  ],
+  "correct_citations": []
+}

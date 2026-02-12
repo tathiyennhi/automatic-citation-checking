@@ -1,0 +1,22 @@
+{
+  "doc_id": "33143",
+  "text": "Consider a batch implementation that partitions input data by user and parallelizes computation using Mapreduce [CITATION_1] . If we wish to run over a hundred million users, with around 5 seconds per user (Section 4.3.4), that works out to 6000 days of CPU time for just segmentation -without counting the load on the back-end for feature lookups. An obvious optimization is to skip over users with no new data since the last run. However, active users tend to have many more observations than inactive users, and hence this optimization (while helpful) does not result in a huge drop in computation time. Clearly, any system that relies on repeated batch runs will result in large latency between new observations coming in and user model updates.",
+  "correct_citation": {
+    "[CITATION_1]": "207166250"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Consider a batch implementation that partitions input data by user and parallelizes computation using Mapreduce [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 126
+    }
+  ],
+  "bib_entries": {
+    "207166250": {
+      "title": "Mapreduce: Simplified data processing on large clusters",
+      "abstract": "MapReduce is a programming model and an associated implementation for processing and generating large datasets that is amenable to a broad variety of real-world tasks. Users specify the computation in terms of a map and a reduce function, and the underlying runtime system automatically parallelizes the computation across large-scale clusters of machines, handles machine failures, and schedules inter-machine communication to make efficient use of the network and disks. Programmers find the system easy to use: more than ten thousand distinct MapReduce programs have been implemented internally at Google over the past four years, and an average of one hundred thousand MapReduce jobs are executed on Google's clusters every day, processing a total of more than twenty petabytes of data per day."
+    }
+  },
+  "generator": "fallback_v4"
+}

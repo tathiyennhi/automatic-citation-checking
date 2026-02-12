@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "MoCHI optimizes the parameters θ of the neural network using stochastic gradient descent on a loss function given by: where L like is proportional to the negative log likelihood of the model: and N is the batch size.",
+    "L reg provides for regularization of θ f, the parameters of the addi- tive trait map: where 1 and 2 are the L 1 and L 2 regularization penalties, respectively.",
+    "So, in the case of a Gaussian noise model (\"loss_function_name = GaussianNLL\"), the loss function is given by: where c is invariant in θ as it is simply a function of user-supplied empirical noise estimates:MoCHI can alternatively use a loss function based on a weighted and regularized form of mean absolute error (\"loss_function_name = WeightedL1\") as described previously [15,16]:P(y n | y n) = 1 2πσ 2 n exp - (y n -y n) 2 2σ 2 n L = L like + L reg L like = -1/N N -1 n=0 log[P(y n | y n)] L reg = 1 θ f 2 + 2 θ f 2 L[θ] = 1/(2N) N -1 n=0 y n -y n 2 σ -2 n + 1 θ f 2 + 2 θ f 2 + c c = 1/(2N) N -1 n=0 log(2πσ 2 n)which has a similar form to that in the case of a Gaussian noise model but is expected to be less sensitive to outliers in observed phenotype estimates and is therefore the default option.",
+    "In order to penalize very large free energy changes (typically associated with extreme fitness scores), by default 2 is set to 10 -6 (\"l2_regularization_fac- tor = 0.000001\") representing light regularization.",
+    "Model trainingMoCHI performs a grid search over the supplied hyperparameter space defined by supplied lists of batch sizes (\"batch_size\"), learning rates (\"learn_rate\") and L 1 (\"l1_regu- larization_factor\") and L 2 (\"l2_regularization_factor\") regularization penalties."
+  ]
+}

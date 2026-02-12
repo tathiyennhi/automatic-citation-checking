@@ -1,0 +1,20 @@
+{
+  "doc_id": "40721",
+  "text": "Demers, et al. [CITATION_1] presented a generational collector which does not move objects, hence appropriate for conservative garbage collection. They partition the heap logically (instead of physically separating between generations) by keeping a bit per object indicating whether it is young or old. We adopt this idea. However, their collector is not concurrent.",
+  "correct_citation": {
+    "[CITATION_1]": "14439241"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Demers, et al.  presented a generational collector which does not move objects, hence appropriate for conservative garbage collection."
+    }
+  ],
+  "bib_entries": {
+    "14439241": {
+      "title": "Combining generational and conservative garbage collection: Framework and implementations",
+      "abstract": "Two key ideas in garbage collection are generational collection and conservative pointer-finding . Generational collection and conservative pointer-finding are hard to use together, because generational collection is usually expressed in terms of copying objects, while conservative pointer-finding precludes copying. We present a new framework for defining garbage collectors. When applied to generational collection, it generalizes the notion of younger/older to a partial order. It can describe traditional generational and conservative techniques, and lends itself to combining different techniques in novel ways. We study in particular two new garbage collectors inspired by this framework. Both these collectors use conservative pointer-finding. The first one is based on a rewrite of an existing trace-and-sweep collector to use one level of generation. The second one has a single parameter, which controls how objects are partitioned into generations: the value of this parameter can be changed dynamically with no overhead. We have implemented both collectors and present measurements of their performance in practice."
+    }
+  },
+  "generator": "fallback_v4"
+}

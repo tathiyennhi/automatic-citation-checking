@@ -1,0 +1,66 @@
+{
+  "doc_id": "2069",
+  "text": "With the advent of ELMo, BERT [CITATION_1] and GPT-2 (Radford et al., 2019) , the unsupervised pre-training + fine-tuning paradigm has shown to be remarkably effective, leading to improvements in NLP tasks like classification, question answering and spoken language understanding [CITATION_2] . Results for generation tasks like summarization are also positive, albeit less dramatic. [CITATION_3] propose the MASS technique and obtain state-of-the-art results for summarization and unsupervised machine translation. [CITATION_4] show that denoising autoencoders can be leveraged for unsupervised language generation from structured data. [CITATION_5] cast data-totext as text-to-text generation and show that finetuning GPT language models can lead to performance competitive with architectures developed specifically for data-to-text. use language models to improve performance in the low resource scenario.",
+  "correct_citation": {
+    "[CITATION_1]": "52967399",
+    "[CITATION_2]": "53290532",
+    "[CITATION_3]": "146808476",
+    "[CITATION_4]": "5080441",
+    "[CITATION_5]": "196471188"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "With the advent of ELMo, BERT  and GPT-2 (Radford et al., 2019) , the unsupervised pre-training + fine-tuning paradigm has shown to be remarkably effective, leading to improvements in NLP tasks like classification, question answering and spoken language understanding  .",
+      "s_span": 0,
+      "e_span": 294
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "With the advent of ELMo, BERT  and GPT-2 (Radford et al., 2019) , the unsupervised pre-training + fine-tuning paradigm has shown to be remarkably effective, leading to improvements in NLP tasks like classification, question answering and spoken language understanding  .",
+      "s_span": 0,
+      "e_span": 294
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Results for generation tasks like summarization are also positive, albeit less dramatic.  propose the MASS technique and obtain state-of-the-art results for summarization and unsupervised machine translation.",
+      "s_span": 295,
+      "e_span": 515
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "propose the MASS technique and obtain state-of-the-art results for summarization and unsupervised machine translation.  show that denoising autoencoders can be leveraged for unsupervised language generation from structured data.",
+      "s_span": 384,
+      "e_span": 637
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "show that denoising autoencoders can be leveraged for unsupervised language generation from structured data.  cast data-totext as text-to-text generation and show that finetuning GPT language models can lead to performance competitive with architectures developed specifically for data-to-text. use language models to improve performance in the low resource scenario.",
+      "s_span": 516,
+      "e_span": 908
+    }
+  ],
+  "bib_entries": {
+    "196471188": {
+      "title": "Hello, it's gpt-2-how can i help you? towards the use of pretrained language models for task-oriented dialogue systems",
+      "abstract": "Data scarcity is a long-standing and crucial challenge that hinders quick development of task-oriented dialogue systems across multiple domains: task-oriented dialogue models are expected to learn grammar, syntax, dialogue reasoning, decision making, and language generation from absurdly small amounts of task-specific data. In this paper, we demonstrate that recent progress in language modeling pre-training and transfer learning shows promise to overcome this problem. We propose a task-oriented dialogue model that operates solely on text input: it effectively bypasses explicit policy and language generation modules. Building on top of the TransferTransfo framework (Wolf et al., 2019) and generative model pre-training (Radford et al., 2019), we validate the approach on complex multi-domain task-oriented dialogues from the MultiWOZ dataset. Our automatic and human evaluations show that the proposed model is on par with a strong task-specific neural baseline. In the long run, our approach holds promise to mitigate the data scarcity problem, and to support the construction of more engaging and more eloquent task-oriented conversational agents."
+    },
+    "53290532": {
+      "title": "Unsupervised transfer learning for spoken language understanding in intelligent agents",
+      "abstract": "User interaction with voice-powered agents generates large amounts of unlabeled utterances. In this paper, we explore techniques to efficiently transfer the knowledge from these unlabeled utterances to improve model performance on Spoken Language Understanding (SLU) tasks. We use Embeddings from Language Model (ELMo) to take advantage of unlabeled data by learning contextualized word representations. Additionally, we propose ELMo-Light (ELMoL), a faster and simpler unsupervised pre-training method for SLU. Our findings suggest unsupervised pre-training on a large corpora of unlabeled utterances leads to significantly better SLU performance compared to training from scratch and it can even outperform conventional supervised transfer. Additionally, we show that the gains from unsupervised transfer techniques can be further improved by supervised transfer. The improvements are more pronounced in low resource settings and when using only 1000 labeled in-domain samples, our techniques match the performance of training from scratch on 10-15x more labeled in-domain data."
+    },
+    "52967399": {
+      "title": "Bert: Pre-training of deep bidirectional transformers for language understanding",
+      "abstract": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. ::: BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5% (7.7% point absolute improvement), MultiNLI accuracy to 86.7% (4.6% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement)."
+    },
+    "5080441": {
+      "title": "Unsupervised natural language generation with denoising autoencoders",
+      "abstract": "Generating text from structured data is important for various tasks such as question answering and dialog systems. We show that in at least one domain, without any supervision and only based on unlabeled text, we are able to build a Natural Language Generation (NLG) system with higher performance than supervised approaches. In our approach, we interpret the structured data as a corrupt representation of the desired output and use a denoising auto-encoder to reconstruct the sentence. We show how to introduce noise into training examples that do not contain structured data, and that the resulting denoising auto-encoder generalizes to generate correct sentences when given structured data."
+    },
+    "146808476": {
+      "title": "Mass: Masked sequence to sequence pre-training for language generation",
+      "abstract": "Pre-training and fine-tuning, e.g., BERT, have achieved great success in language understanding by transferring knowledge from rich-resource pre-training task to the low/zero-resource downstream tasks. Inspired by the success of BERT, we propose MAsked Sequence to Sequence pre-training (MASS) for the encoder-decoder based language generation tasks. MASS adopts the encoder-decoder framework to reconstruct a sentence fragment given the remaining part of the sentence: its encoder takes a sentence with randomly masked fragment (several consecutive tokens) as input, and its decoder tries to predict this masked fragment. In this way, MASS can jointly train the encoder and decoder to develop the capability of representation extraction and language modeling. By further fine-tuning on a variety of zero/low-resource language generation tasks, including neural machine translation, text summarization and conversational response generation (3 tasks and totally 8 datasets), MASS achieves significant improvements over the baselines without pre-training or with other pre-training methods. Specially, we achieve the state-of-the-art accuracy (37.5 in terms of BLEU score) on the unsupervised English-French translation, even beating the early attention-based supervised model."
+    }
+  },
+  "generator": "fallback_v4"
+}

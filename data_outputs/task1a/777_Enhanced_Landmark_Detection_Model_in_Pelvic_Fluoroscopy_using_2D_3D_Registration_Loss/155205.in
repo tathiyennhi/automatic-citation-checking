@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The rotations R are parameterized by (r x, r y, r z), representing an Euler angle rotation around the three axes, while the translations are parameterized by (t x, t y, t z), representing the displacement from the origin, which we define to be the center of the CT volume.By convention, landmark-based 2D/3D registration is computed by extracting the ground truth 3D coordinates of landmarks L GT ∈ M 8×3 (R) on the CT and the predicted 2D coordinates of landmarks l pred ∈ M 8×2 (R) that are output from U-Net, then finding the pose θ that aligns the projection of the 3D coordinates and the 2D coordinates.",
+    "10 We conduct the registration using a limited memory Broyden-Fletcher-Goldfarb-Shanno (L-BFGS) PyTorch optimizer, 11 aiming to minimize the loss function:θ * = arg min θ L(θ).",
+    "(3)We define the loss function L(θ) as a sum of squared residuals:L(θ) = N i=1 li (θ) -l i 2(4)where θ = (r x, r y, r z, t x, t y, t z) ∈ R 6 is the 6-DoF pose parameter vector, li (θ) is the predicted 2D landmarks of the i-th 3D landmark under pose θ, l i is the U-Net outputted 2D landmarks, and N is the number of landmarks.The residual is computed via our perspective projection calculations, which align with DiffDRR projections (see the appendix for more details).",
+    "Pose EstimationWe solve for the optimal pose θ * with gradient-based optimization, given predicted 2D landmark coordinates from U-Net l i ∈ M 8×2 (R) and the ground truth 3D landmark coordinates from the CT volume L GT ∈ M 8×3 (R).As described in Section 2.2, we minimize the loss function defined in Equation ( 4).The rotations R ∈ SO(3) are parameterized using the Rodrigues formula.",
+    "The formula maps a 3-dimensional rotation vector r = (r x, r y, r z) ∈ R 3 to a rotation matrix."
+  ]
+}

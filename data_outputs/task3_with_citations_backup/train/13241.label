@@ -1,0 +1,22 @@
+{
+  "doc_id": "13241",
+  "text": "Having obtained the set of word embeddings, the method requires a list of canonical words as input. This list may be a lexicon of words recognized by a language, but may also be a list of words considered treatable by the application. We used the UNITEX-PB 3 lexicon for Brazilian Portuguese, removing words with frequency below 100 on Corpus Brasileiro 4 frequency list. This pruning step removes words that probably do not appear in UGC, reducing the lexicon size and improving performance. The next step obtains the K-nearest neighbors, excluding words contained in the lexicon, in the vector space for each canonical word contained in the lexicon. We used K = 25, following [CITATION_1] experiments. This step creates a list of possible corruptions (noisy versions) for every canonical word w c . Considering the vector space V , the lexicon L and w c every word ∈ L, the list of noisy versions is obtained as:",
+  "correct_citation": {
+    "[CITATION_1]": "10533974"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We used K = 25, following [CITATION_1] experiments.",
+      "s_span": 652,
+      "e_span": 703
+    }
+  ],
+  "bib_entries": {
+    "10533974": {
+      "title": "Unsupervised Text Normalization Using Distributed Representations of Words and Phrases",
+      "abstract": "Text normalization techniques that use rule-based normalization or string similarity based on static dictionaries are typically unable to capture domain-specific abbreviations (custy, cx! customer) and shorthands (5ever, 7ever! forever) used in informal texts. In this work, we exploit the property that noisy and canonical forms of a particular word share similar context in a large noisy text collection (millions or billions of social media feeds from Twitter, Facebook, etc.). We learn distributed representations of words to capture the notion of contextual similarity and subsequently learn normalization lexicons from these representations in a completely unsupervised manner. We experiment with linear and non-linear distributed representations obtained from log-linear models and neural networks, respectively. We apply our framework for normalizing customer care notes and Twitter. We also extend our approach to learn phrase normalization lexicons (g2g! got to go) by training distributed representations over compound words. Our approach outperforms Microsoft Word, Aspell and a manually compiled urban dictionary from the Web and achieves state-of-the-art results on a publicly available Twitter dataset."
+    }
+  },
+  "generator": "fallback_v4"
+}

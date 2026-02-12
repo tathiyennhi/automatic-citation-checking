@@ -1,0 +1,22 @@
+{
+  "doc_id": "31850",
+  "text": "For testing and performance assessment, we used empirical benchmark datasets. We download multiple sequence alignments (MSAs) from http://goo.gl/nlD4nb that were used in [CITATION_1] . From each of the six MSAs, we selected ten sequences (e.g., for an MSA with 60 sequences we extracted the sequences with indices 0, 6, 12, ..., 54), and initially dis-aligned the sequences (removed all MSA gaps). Then, we computed all 45 possible pairwise TKF91 alignments between these ten sequences. As input parameter values, we used λ := 1.0, µ := 2.0, τ := 0.1, π := (0.27, 0.24, 0.26, 0.23). We empirically determined that using median of five samples, where each sample corresponds to the average runtime for ten TKF91 executions (i.e., a total of 5 * 10 * 45 = 2250 pair-wise TKF91 alignments per dataset) yielded stable runtime estimates.",
+  "correct_citation": {
+    "[CITATION_1]": "1857681"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We download multiple sequence alignments (MSAs) from http://goo.gl/nlD4nb that were used in  .",
+      "s_span": 78,
+      "e_span": 184
+    }
+  ],
+  "bib_entries": {
+    "1857681": {
+      "title": "transAlign: using amino acids to facilitate the multiple alignment of protein-coding DNA sequences",
+      "abstract": "BackgroundAlignments of homologous DNA sequences are crucial for comparative genomics and phylogenetic analysis. However, multiple alignment represents a computationally difficult problem. For protein-coding DNA sequences, it is more advantageous in terms of both speed and accuracy to align the amino-acid sequences specified by the DNA sequences rather than the DNA sequences themselves. Many implementations making use of this concept of \"translated alignments\" are incomplete in the sense that they require the user to manually translate the DNA sequences and to perform the amino-acid alignment. As such, they are not well suited to large-scale automated alignments of large and/or numerous DNA data sets.ResultstransAlign is an open-source Perl script that aligns protein-coding DNA sequences via their amino-acid translations to take advantage of the superior multiple-alignment capabilities and speed of an amino-acid alignment. It operates by translating each DNA sequence into its corresponding amino-acid sequence, passing the entire matrix to ClustalW for alignment, and then back-translating the resulting amino-acid alignment to derive the aligned DNA sequences. In the translation step, transAlign determines the optimal orientation and reading frame for each DNA sequence according to the desired genetic code. It also checks for apparent frame shifts in the DNA sequences and can handle frame-shifted sequences in one of three ways (delete, align as amino acids regardless, or profile align as DNA). As a set of comparative benchmarks derived from six protein-coding genes for mammals shows, the strategy implemented in transAlign always improves the speed and usually the apparent accuracy of the alignment of protein-coding DNA sequences.ConclusiontransAlign represents one of few full and cross-platform implementations of the concept of translated alignments. Both the advantages accruing from performing a translated alignment and the suite of user-definable options available in the program mean that transAlign is ideally suited for large-scale automated alignments of very large and/or very numerous protein-coding DNA data sets. However, the good performance offered by the program also translates to the alignment of any set of protein-coding sequences. transAlign, including the source code, is freely available at http://www.tierzucht.tum.de/Bininda-Emonds/ (under \"Programs\")."
+    }
+  },
+  "generator": "fallback_v4"
+}

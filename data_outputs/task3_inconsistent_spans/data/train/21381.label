@@ -1,0 +1,44 @@
+{
+  "doc_id": "21381",
+  "text": "Using dense time stacks of remotely sensed imagery offers another advantage to save time and effort. By performing a single classification over the entire time span, we thereby avoid problems associated with comparing multiple independent classifications of images from different dates. While our time frame selection was somewhat arbitrary, it is feasible to add additional time steps by performing additional virtual groundtruthing to target specific years. This would entail more time and effort and the feasibility would depend upon the availability of remote sensing data that coincide with those additional time steps. Our image stacks had gaps in time because we opted to omit scenes with high-cloud cover as well as SLC-off images. This decision was based on our preliminary tests that confirmed the SVM classifiers' sensitivity to noisy and missing data; however, other non-parametric statistical learning techniques such as decision trees could produce better results to overcome the SLC-off striping effect [CITATION_1] . Including SLC-off data would help to increase the temporal resolution and reinforce the pixel trajectory trends. Recent advances in geostatistical and multi-temporal regression methods to fill in the unscanned gaps may be useful, but implementing them would add a considerable amount of processing time, since such techniques are limited by slow computing speeds [CITATION_2] [CITATION_3] . ",
+  "correct_citation": {
+    "[CITATION_1]": "129649701",
+    "[CITATION_2]": "55843049",
+    "[CITATION_3]": "129880863"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This decision was based on our preliminary tests that confirmed the SVM classifiers' sensitivity to noisy and missing data; however, other non-parametric statistical learning techniques such as decision trees could produce better results to overcome the SLC-off striping effect  .",
+      "s_span": 740,
+      "e_span": 1032
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Recent advances in geostatistical and multi-temporal regression methods to fill in the unscanned gaps may be useful, but implementing them would add a considerable amount of processing time, since such techniques are limited by slow computing speeds   .",
+      "s_span": 1146,
+      "e_span": 1423
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Recent advances in geostatistical and multi-temporal regression methods to fill in the unscanned gaps may be useful, but implementing them would add a considerable amount of processing time, since such techniques are limited by slow computing speeds   .",
+      "s_span": 1146,
+      "e_span": 1423
+    }
+  ],
+  "bib_entries": {
+    "129880863": {
+      "title": "Recovering missing pixels for Landsat ETM+ SLC-off imagery using multi-temporal regression analysis and a regularization method",
+      "abstract": "Abstract Since the scan line corrector (SLC) of the Landsat Enhanced Thematic Mapper Plus (ETM +) sensor failed permanently in 2003, about 22% of the pixels in an SLC-off image are not scanned. To improve the usability of the ETM + SLC-off data, we propose an integrated method to recover the missing pixels. The majority of the degraded pixels are filled using multi-temporal images as referable information by building a regression model between the corresponding pixels. When the auxiliary multi-temporal data cannot completely recover the missing pixels, a non-reference regularization algorithm is used to implement the pixel filling. To assess the efficacy of the proposed method, simulated and actual SLC-off ETM + images were tested. The quantitative evaluations suggest that the proposed method can predict the missing values very accurately. The method performs especially well in edges, and is able to keep the shape of ground features. According to the assessment results of the land-cover classification and NDVI, the recovered data are also suitable for use in further remote sensing applications."
+    },
+    "129649701": {
+      "title": "Monitoring land cover change in urban and peri-urban areas using dense time stacks of Landsat satellite data and a data mining approach. Remote Sens",
+      "abstract": "Abstract Given the pace and scale of urban expansion in many parts of the globe, urban environments are playing an increasingly important role in daily quality-of-life issues, ecological processes, climate, material flows, and land transformations. Remote sensing has emerged as a powerful tool to monitor rates and patterns of urban expansion, but many early challenges – such as distinguishing new urban land from bare ground – remain unsolved. To deal with the high temporal and spatial variability as well as complex, multi-signature classes within settlements, this paper presents a new approach that exploits multi-seasonal information in dense time stacks of Landsat imagery using a multi-date composite change detection technique. The central premise of the approach is that lands within/near urban areas have distinct temporal trajectories both before and after change occurs, and that these lead to characteristic temporal signatures in several spectral regions. The method relies on a supervised classification that exploits training data of stable/changed areas interpreted from Google Earth images, and a ‘brute force’ approach of providing all available Landsat data as input, including scenes with data gaps due to the Scan Line Corrector (SLC) problem. Three classification algorithms (maximum likelihood, boosted decision trees, and support vector machines) were tested for their ability to monitor expansion across five time periods (1988–1995, 1996–2000, 2001–2003, 2004–2006, 2007–2009) in three study areas that differ in size, eco-climatic conditions, and rates/patterns of development. Both the decision trees and support vector machines outperformed the maximum likelihood classifier (overall accuracy of 90–93%, compared to 65%), but the decision trees were superior at handling missing data. Adding transformed features such as band metrics to the Landsat data stack increased accuracy 1–4%, while experiments with a reduced number of features (designed to mimic noisy or missing data) led to a drop in accuracy of 1–9%. The methodology also proved particularly effective for monitoring peri-urbanization outside the urban core, capturing > 98% of village settlements."
+    },
+    "55843049": {
+      "title": "A new geostatistical approach for filling gaps in Landsat ETM+ SLC-off images",
+      "abstract": "Abstract Since the failure of scan-line corrector (SLC) of the Landsat 7 Enhanced Thermal Mapper Plus (ETM+) sensor, a number of methods have been developed to fill the un-scanned gaps in ETM+ images. Unfortunately, the quality of the images filled by most of these existing methods is still not satisfactory, particularly in heterogeneous regions. Recently, a Neighborhood Similar Pixel Interpolator (NSPI) was developed that can accurately fill gaps in SLC-off images even in heterogeneous regions. However, the NSPI method is a type of deterministic interpolation approach that sets its weight parameters empirically and cannot provide statistical uncertainty of prediction. This study proposes a new gap-filling method called Geostatistical Neighborhood Similar Pixel Interpolator (GNSPI) by improving the NSPI method using geostatistical theory. The simulation study shows that: compared with previous geostatistical methods, the image filled by GNSPI has fewer striping effects; compared with NSPI, GNSPI is less empirical in its weight parameters and can provide uncertainty of prediction. More importantly, it can generate more accurate results than NSPI, especially when there is a long time interval between the input auxiliary image and the target SLC-off image."
+    }
+  },
+  "generator": "fallback_v4"
+}

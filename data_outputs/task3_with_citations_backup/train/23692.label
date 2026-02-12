@@ -1,0 +1,73 @@
+{
+  "doc_id": "23692",
+  "text": "The expectation maximization (EM) [CITATION_1] algorithm has been widely applied for solving the decipherment problem [CITATION_2] [CITATION_3] [CITATION_4] . In the E-step, for each source bigram f 1 f 2 , we estimate the expected counts of the latent variables e 1 and e 2 over all the target words in V E . In the M-step, the expected counts are normalized to obtain the translation probabilities p( f |e). The computational complexity of the EM algorithm is O(N F V 2 ) and the memory complexity is O(V 2 ), where N F is the number of unique bigrams in F and V = max(|V F |, |V E |). As a result, the regular EM algorithm does not scale well to large vocabulary sizes, both in terms of running time and memory. To address this challenge, [CITATION_5] proposed the iterative EM algorithm, which starts with the K most frequent words from F and E and performs EMbased decipherment. Next, the source and target vocabularies are iteratively extended by K new words, while pruning low-probability entries from the probability table. The computational complexity of each iteration becomes O(N F K 2 ). [CITATION_6] proposed a Gibbs sampling-based Bayesian decipherment strategy. For each observed source bigram f 1 f 2 , the Gibbs sampling approach starts with an initial target bigram e 1 e 2 , and alternately fixes one of the target words and replaces the other with a randomly chosen sample. When e 1 is fixed, a new sample e new 2 is drawn with probability proportional to p(e 1 e new 2 )p( f 2 |e new 2 ). Next, we fix e 2 and sample e new 1 , and continue alternating until n samples are collected. Bayesian decipherment reduces memory consumption via Gibbs sampling. The probability table remains sparse, because only a small number of word pairs ( f, e) will be observed together in the samples. 529",
+  "correct_citation": {
+    "[CITATION_1]": "4193919",
+    "[CITATION_2]": "751575",
+    "[CITATION_3]": "12106333",
+    "[CITATION_4]": "13508959",
+    "[CITATION_5]": "6060648",
+    "[CITATION_6]": "6060648"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The expectation maximization (EM) [CITATION_1] algorithm has been widely applied for solving the decipherment problem [CITATION_2] [CITATION_3] [CITATION_4] .",
+      "s_span": 0,
+      "e_span": 158
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The expectation maximization (EM) [CITATION_1] algorithm has been widely applied for solving the decipherment problem [CITATION_2] [CITATION_3] [CITATION_4] .",
+      "s_span": 0,
+      "e_span": 158
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The expectation maximization (EM) [CITATION_1] algorithm has been widely applied for solving the decipherment problem [CITATION_2] [CITATION_3] [CITATION_4] .",
+      "s_span": 0,
+      "e_span": 158
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The expectation maximization (EM) [CITATION_1] algorithm has been widely applied for solving the decipherment problem [CITATION_2] [CITATION_3] [CITATION_4] .",
+      "s_span": 0,
+      "e_span": 158
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "To address this challenge, [CITATION_5] proposed the iterative EM algorithm, which starts with the K most frequent words from F and E and performs EMbased decipherment.",
+      "s_span": 715,
+      "e_span": 883
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "The computational complexity of each iteration becomes O(N F K 2 ). [CITATION_6] proposed a Gibbs sampling-based Bayesian decipherment strategy.",
+      "s_span": 1032,
+      "e_span": 1176
+    }
+  ],
+  "bib_entries": {
+    "6060648": {
+      "title": "Deciphering foreign language",
+      "abstract": "In this work, we tackle the task of machine translation (MT) without parallel training data. We frame the MT problem as a decipherment task, treating the foreign text as a cipher for English and present novel methods for training translation models from non-parallel text."
+    },
+    "751575": {
+      "title": "Machine transliteration",
+      "abstract": "It is challenging to translate names and technical terms across languages with different alphabets and sound inventories. These items are commonly transliterated, i.e., replaced with approximate phonetic equivalents. For example, computer in English comes out as (konpyuutaa) in Japanese. Translating such items from Japanese back to English is even more challenging, and of practical interest, as transliterated items make up the bulk of text phrases not found in bilingual dictionaries. We describe and evaluate a method for performing backwards transliterations by machine. This method uses a generative model, incorporating several distinct stages in the transliteration process."
+    },
+    "4193919": {
+      "title": "Maximum likelihood from incomplete data via the EM algorithm",
+      "abstract": "Vibratory power unit for vibrating conveyers and screens comprising an asynchronous polyphase motor, at least one pair of associated unbalanced masses disposed on the shaft of said motor, with the first mass of a pair of said unbalanced masses being rigidly fastened to said shaft and with said second mass of said pair being movably arranged relative to said first mass, means for controlling and regulating the conveying rate during conveyer operation by varying the rotational speed of said motor between predetermined minimum and maximum values, said second mass being movably outwardly by centrifugal force against the pressure of spring means, said spring means being prestressed in such a manner that said second mass is, at rotational motor speeds lower than said minimum speed, held in its initial position, and at motor speeds between said lower and upper values in positions which are radially offset with respect to the axis of said motor to an extent depending on the value of said rotational motor speed."
+    },
+    "13508959": {
+      "title": "Estimating word translation probabilities from unrelated monolingual corpora using the EM algorithm",
+      "abstract": "Selecting the right word translation among several options in the lexicon is a core problem for machine translation. We present a novel approach to this problem that can be trained using only unrelated monolingual corpora and a lexicon. By estimating word translation probabilities using the EM algorithm, we extend upon target language modeling. We construct a word translation model for 3830 German and 6147 English noun tokens, with very promising results."
+    },
+    "12106333": {
+      "title": "A computational approach to deciphering unknown scripts",
+      "abstract": "We propose and evaluate computational techniques for deciphering unknown scripts. We focus on the case in which an unfamiliar script encodes a known language. The decipherment of a brief document or inscription is driven by data about the spoken language. We consider which scripts are easy or hard to decipher, how much data is required, and whether the techniques are robust against language change over time."
+    }
+  },
+  "generator": "fallback_v4"
+}

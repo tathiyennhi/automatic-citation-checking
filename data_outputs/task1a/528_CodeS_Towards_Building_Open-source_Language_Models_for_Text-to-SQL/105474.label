@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Table 1:1Details about architectures of CodeS.",
+    "\"Shared\": remains consistent across all model versions; \"Distinct\": varies among different model versions.TypeHyper-parameterValueTransformer architectureDecoder-onlyPosition embeddingLearned absolute embeddingsSharedAttention typeMulti-queryFlashAttention-2EnableVocabulary size49,152#Parameters1B/3B/7B/15BMaximum context length8,192/8,192/8,192/6,144DistinctTransformer's hidden size2,048/2,816/4,096/6,144Feed-forward hidden size8,192/11,264/16,384/24,576#Attention heads16/22/32/48#Transformer blocks24/36/42/40be characterized as single-turn dialogues.",
+    "(3) UltraChat [15] is amulti-turn dialogue dataset, produced by iteratively invoking twodistinct GPT-3.5 APIs.",
+    "Table 2:2Examples of ambiguous columns in BIRD dataset.Database prompt 𝑃𝑟𝑜𝑚𝑝𝑡 𝑑𝑏 // Apply schema filter1 𝑐𝑜𝑚𝑝𝑢𝑡𝑒𝑅𝑒𝑙𝑒𝑣𝑎𝑛𝑡𝑆𝑐𝑜𝑟𝑒𝑠 (𝑄, 𝐷 𝑠𝑐ℎ𝑒𝑚𝑎, 𝑀 𝑐𝑙𝑠) → 𝑆𝑐𝑜𝑟𝑒𝑠; 2 𝑓 𝑖𝑙𝑡𝑒𝑟 𝐷𝐵𝐼𝑛𝑓 𝑜 (𝑆𝑐𝑜𝑟𝑒𝑠, 𝐷 𝑠𝑐ℎ𝑒𝑚𝑎, 𝐷 𝑚𝑒𝑡𝑎, 𝑡𝑜𝑝 𝑘1, 𝑡𝑜𝑝 𝑘2) → 𝐼) → 𝑉 𝑐𝑜𝑎𝑟𝑠𝑒 -𝑔𝑟𝑎𝑖𝑛𝑒𝑑; 4 𝐿𝐶𝑆 (𝑄, 𝑉 𝑐𝑜𝑎𝑟𝑠𝑒 -𝑔𝑟𝑎𝑖𝑛𝑒𝑑) → 𝑉 𝑓 𝑖𝑛𝑒 -𝑔𝑟𝑎𝑖𝑛𝑒𝑑; //Serialization and concatenation 5 𝑆𝑒𝑟𝑖𝑎𝑙𝑖𝑧𝑒 (𝐷 𝑟 𝑠𝑐ℎ𝑒𝑚𝑎, 𝐷 𝑟 𝑚𝑒𝑡𝑎) → 𝑆 𝑑𝑏; 6 𝑆𝑒𝑟𝑖𝑎𝑙𝑖𝑧𝑒 (𝑉 𝑓 𝑖𝑛𝑒 -𝑔𝑟𝑎𝑖𝑛𝑒𝑑) → 𝑆 𝑣𝑎𝑙𝑢𝑒; 7 𝐶𝑜𝑛𝑐𝑎𝑡𝑆𝑒𝑞𝑢𝑒𝑛𝑐𝑒 (𝑆 𝑑𝑏, 𝑆 𝑣𝑎𝑙𝑢𝑒) → 𝑃𝑟𝑜𝑚𝑝𝑡 𝑑𝑏; 8 return 𝑃𝑟𝑜𝑚𝑝𝑡 𝑑𝑏DatabaseColumn name Commentlanguage_corpus w1stword id of the first wordhockeyrotlroad overtime losesice_hockey_draft pimpenalty minutes(3) Representative Database Values: In addition to column names,representative column values are beneficial.",
+    "For instance, to gener-ate predicates such as \"client.gender = 'F'\", it's imperative toinform the language model that the \"gender\" column offers two val-ues: 'M' and 'F'."
+  ],
+  "correct_citations": [
+    "(3) UltraChat [15] is amulti-turn dialogue dataset, produced by iteratively invoking twodistinct GPT-3.5 APIs."
+  ]
+}

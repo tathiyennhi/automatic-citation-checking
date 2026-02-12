@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Also, NNLFs have this property:L nn ∈ [0, 1].",
+    "Accordingly, we can create NNLFs from active loss functions as follows.The Normalized Negative Cross Entropy (NNCE) is:L NNCE (f (x), y) = 1 - A + log p(y|x) K k=1 A + log p(k|x);(8)the Normalized Negative Focal Loss (NNFL) is:L NNFL (f (x), y) = 1 - A + (1 -p(y|x)) γ log p(y|x) K k=1 A + (1 -p(k|x)) γ log p(k|x).",
+    "(9)As a closing remark, we note compared to the intermediate form, the unnormalized NLFs, the loss functions proposed above avoid the access to the ground-truth probability q.2) ANL Framework: We can now create new robust loss functions by replacing the MAE in APL with our proposed NNLF.",
+    "Given an active loss function L, we propose Active Negative Loss (ANL) functions as follows:L ANL = αL norm + βL nn.",
+    "(10)Here, α, β > 0 are parameters, L norm denotes the normalized L and L nn denotes the Normalized Negative Loss Function corresponding to L. Accordingly, we can create ANL from the two mentioned active loss functions as follows.For Cross Entropy (CE), we have ANL-CE:L ANL-CE = αL NCE + βL NNCE."
+  ],
+  "correct_citations": [
+    "Also, NNLFs have this property:L nn ∈ [0, 1]."
+  ]
+}

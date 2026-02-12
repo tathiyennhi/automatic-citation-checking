@@ -1,0 +1,22 @@
+{
+  "doc_id": "44671",
+  "text": "We measure the performance of the system by measuring the mean Euclidean distance between the end effector and its desired set-point (vertical and stable), over the trajectory. A well-performing model will have a low score using this metric. When evaluating performance, we do not add noise to the nominal trajectories. Figure 7 shows the results of this experiment. As we can see, the results match our expectations: the MVB parameterization, which incorporates some prior knowledge about the structure of the generalized forces, solves the task with the fewest number of interactions with the environment. Additionally, the MVF parameterization, which incorporates no prior knowledge, takes more interactions to solve the task, but does so eventually. The naive black-box parameterization does not succeed in solving the task in the allowed timeframe. Observing the nominal trajectories and the policies' abilities to follow the trajectories on the real system, we see the behavior we expect for MVF and MVB. [CITATION_1] The nominal trajectories eventually start looking more realistic, and the policies start doing a better job of following them. However, when using the naive parameterization, DIRCOL appears to be unable to find a solution that transports the system to the desired goal state. Consequently, the trajectories added to the dataset never explore the relevant parts of state-space, resulting in a model that is never able to generalize well enough to solve the task.",
+  "correct_citation": {
+    "[CITATION_1]": "73659211"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Observing the nominal trajectories and the policies' abilities to follow the trajectories on the real system, we see the behavior we expect for MVF and MVB.  The nominal trajectories eventually start looking more realistic, and the policies start doing a better job of following them.",
+      "s_span": 854,
+      "e_span": 1150
+    }
+  ],
+  "bib_entries": {
+    "73659211": {
+      "title": "System identification-a survey",
+      "abstract": "The field of identification and process-parameter estimation has developed rapidly during the past decade. In this survey paper the state-of-the-art/science is presented in a systematic way. Attention is paid to general properties and to classification of identification problems. Model structures are discussed; their choice hinges on the purpose of the identification and on the available a priori knowledge. For the identification of models that are linear in the parameters, the survey explains the least squares method and several of its variants which may solve the problem of correlated residuals, viz. repeated and generalized least squares, maximum likelihood method, instrumental variable method, tally principle. Recently the non-linear situation, the on-line and the real-time identification have witnessed extensive developments. These are also reported. There are 230 references listed, mostly to recent contributions. In appendices a resume is given of parameter estimation principles and a more detailed exposition of an example of least squares estimation."
+    }
+  },
+  "generator": "fallback_v4"
+}

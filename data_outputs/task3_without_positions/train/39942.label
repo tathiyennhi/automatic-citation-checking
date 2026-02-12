@@ -1,0 +1,29 @@
+{
+  "doc_id": "39942",
+  "text": "What would be desirable is an efficient way of abstracting the 3D model, so that as much 3D information as possible can be encoded with only as much data as really necessary. A natural choice would be to use more complex geometric primitives as data representation, such as planes (e.g. [CITATION_1] ) or lines (e.g. [CITATION_2] ). While this might not be sufficient for natural scenes (e.g. forests, etc.), it is especially useful for the built environment, where most of the structures are piece-wise planar/linear.",
+  "correct_citation": {
+    "[CITATION_1]": "8401670",
+    "[CITATION_2]": "6419763"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A natural choice would be to use more complex geometric primitives as data representation, such as planes (e.g.  ) or lines (e.g.  )."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A natural choice would be to use more complex geometric primitives as data representation, such as planes (e.g.  ) or lines (e.g.  )."
+    }
+  ],
+  "bib_entries": {
+    "8401670": {
+      "title": "Piecewise-Planar StereoScan: Structure and Motion from Plane Primitives",
+      "abstract": "This article describes a pipeline that receives as input a sequence of images acquired by a calibrated stereo rig and outputs the camera motion and a Piecewise-Planar Reconstruction (PPR) of the scene. It firstly detects the 3D planes viewed by each stereo pair from semi-dense depth estimation. This is followed by estimating the pose between consecutive views using a new closed-form minimal algorithm that relies in point correspondences only when plane correspondences are insufficient to fully constrain the motion. Finally, the camera motion and the PPR are jointly refined, alternating between discrete optimization for generating plane hypotheses and continuous bundle adjustment. The approach differs from previous works in PPR by determining the poses from plane-primitives, by jointly estimating motion and piecewise-planar structure, and by operating sequentially, being suitable for applications of SLAM and visual odometry. Experiments are carried in challenging wide-baseline datasets where conventional point-based SfM usually fails."
+    },
+    "6419763": {
+      "title": "Improving Sparse 3D Models for Man-Made Environments Using Line-Based 3D Reconstruction",
+      "abstract": "Traditional Structure-from-Motion (SfM) approaches work well for richly textured scenes with a high number of distinctive feature points. Since man-made environments often contain texture less objects, the resulting point cloud suffers from a low density in corresponding scene parts. The missing 3D information heavily affects all kinds of subsequent post-processing tasks (e.g. Meshing), and significantly decreases the visual appearance of the resulting 3D model. We propose a novel 3D reconstruction approach, which uses the output of conventional SfM pipelines to generate additional complementary 3D information, by exploiting line segments. We use appearance-less epipolar guided line matching to create a potentially large set of 3D line hypotheses, which are then verified using a global graph clustering procedure. We show that our proposed method outperforms the current state-of-the-art in terms of runtime and accuracy, as well as visual appearance of the resulting reconstructions."
+    }
+  },
+  "generator": "fallback_v4"
+}

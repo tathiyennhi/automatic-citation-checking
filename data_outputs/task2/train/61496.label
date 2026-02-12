@@ -1,0 +1,32 @@
+{
+  "text": "Local image filtering Kopf et al. [CITATION_1] propose a joint bilateral filter-based algorithm to smooth each depth pixel by considering the intensity similarity between the center pixel and its neighborhood. Yang et al. [CITATION_2] present a method based on the bilateral filter that is iteratively used to generate an upsampled result. However, it is observed that the guidance of color image to upscaling of depth map runs the risk of texture copying and edge blurring, especially in smooth geometry regions. Geodesic distances are used to design the upsampling weights in [CITATION_3] , but it is designed without any consideration of the noise issue from depth sensors. Lu et al. [CITATION_4] propose a smoothing approach to upscale depth map with the use of image segmentation, but segmentation errors will clearly disrupt the method. Li et al. [CITATION_5] develop a fast guided interpolation (FGI) approach based on weighted least squares, which densifies depth maps by global interpolation with alternating guidances, but it may generate oversmooth results in some cases.",
+  "correct_citation": {
+    "[CITATION_1]": "53230037",
+    "[CITATION_2]": "6788025",
+    "[CITATION_3]": "2529118",
+    "[CITATION_4]": "13525054",
+    "[CITATION_5]": "11197813"
+  },
+  "bib_entries": {
+    "2529118": {
+      "title": "Joint geodesic upsampling of depth images",
+      "abstract": "We propose an algorithm utilizing geodesic distances to upsample a low resolution depth image using a registered high resolution color image. Specifically, it computes depth for each pixel in the high resolution image using geodesic paths to the pixels whose depths are known from the low resolution one. Though this is closely related to the all-pair-shortest-path problem which has O(n2 log n) complexity, we develop a novel approximation algorithm whose complexity grows linearly with the image size and achieve realtime performance. We compare our algorithm with the state of the art on the benchmark dataset and show that our approach provides more accurate depth upsampling with fewer artifacts. In addition, we show that the proposed algorithm is well suited for upsampling depth images using binary edge maps, an important sensor fusion application."
+    },
+    "53230037": {
+      "title": "Joint bilateral upsampling",
+      "abstract": "Image analysis and enhancement tasks such as tone mapping, colorization, stereo depth, and photomontage, often require computing a solution (e.g., for exposure, chromaticity, disparity, labels) over the pixel grid. Computational and memory costs often require that a smaller solution be run over a downsampled image. Although general purpose upsampling methods can be used to interpolate the low resolution solution to the full resolution, these methods generally assume a smoothness prior for the interpolation. We demonstrate that in cases, such as those above, the available high resolution input image may be leveraged as a prior in the context of a joint bilateral upsampling procedure to produce a better high resolution solution. We show results for each of the applications above and compare them to traditional upsampling methods."
+    },
+    "13525054": {
+      "title": "Sparse depth super resolution",
+      "abstract": "We describe a method to produce detailed high resolution depth maps from aggressively subsampled depth measurements. Our method fully uses the relationship between image segmentation boundaries and depth boundaries It uses an image combined with a low resolution depth map. 1) The image is segmented with the guidance of sparse depth samples 2) Each segment has its depth field reconstructed independently using a novel smoothing method. 3) For videos, time-stamped samples from near frames are incorporated. The paper shows reconstruction results of super resolution from x4 to x100, while previous methods mainly work on x2 to xl6. The method is tested on four different datasets and six video sequences, covering quite different regimes, and it outperforms recent state of the art methods quantitatively and qualitatively We also demonstrate that depth maps produced by our method can be used by applications such as hand trackers, while depth maps from other methods have problems."
+    },
+    "11197813": {
+      "title": "Fast guided global interpolation for depth and motion",
+      "abstract": "We study the problems of upsampling a low-resolution depth map and interpolating an initial set of sparse motion matches, with the guidance from a corresponding high-resolution color image. The common objective for both tasks is to densify a set of sparse data points, either regularly distributed or scattered, to a full image grid through a 2D guided interpolation process. We propose a unified approach that casts the fundamental guided interpolation problem into a hierarchical, global optimization framework. Built on a weighted least squares (WLS) formulation with its recent fast solver \u2013 fast global smoothing (FGS) technique, our method progressively densifies the input data set by efficiently performing the cascaded, global interpolation (or smoothing) with alternating guidances. Our cascaded scheme effectively addresses the potential structure inconsistency between the sparse input data and the guidance image, while preserving depth or motion boundaries. To prevent new data points of low confidence from contaminating the next interpolation process, we also prudently evaluate the consensus of the interpolated intermediate data. Experiments show that our general interpolation approach successfully tackles several notorious challenges. Our method achieves quantitatively competitive results on various benchmark evaluations, while running much faster than other competing methods designed specifically for either depth upsampling or motion interpolation."
+    },
+    "6788025": {
+      "title": "Spatial-depth super resolution for range images",
+      "abstract": "We present a new post-processing step to enhance the resolution of range images. Using one or two registered and potentially high-resolution color images as reference, we iteratively refine the input low-resolution range image, in terms of both its spatial resolution and depth precision. Evaluation using the Middlebury benchmark shows across-the-board improvement for sub-pixel accuracy. We also demonstrated its effectiveness for spatial resolution enhancement up to 100 times with a single reference image."
+    }
+  }
+}

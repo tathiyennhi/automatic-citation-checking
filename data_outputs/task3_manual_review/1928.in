@@ -1,0 +1,22 @@
+{
+  "text": "Table 3 summarizes our experimental results. We report results for the bpe→char setting, which means the source token is a bpe unit and the decoder samples a character at each time step. CD-NMT is the baseline model. Table 3 includes scores reported from the original CDNMT model [CITATION_1] as well as the scores from our reimplementation. To make our work comparable and show the impact of the new architecture, we tried to replicate CDNMT's results in our experimental setting, we kept everything (parameters, iterations, epochs etc.) unchanged and evaluated the extended model in the same setting. Table 3 reports BLEU scores [CITATION_2] Table 3 : CDNMT * is our implementation of CD-NMT. m and o indicates that the base model is extended with the morphology table and the additional output channel, respectively. mo is the combination of both the extensions. The improvement provided by the boldfaced number compared to CDNMT * is statistically significant according to paired bootstrap re-sampling [CITATION_3] with p = 0.05. Table 3 can be interpreted from different perspectives but the main findings are summarized as follows:",
+  "correct_citation": {
+    "[CITATION_1]": "13495961",
+    "[CITATION_2]": "11080756",
+    "[CITATION_3]": "15119437"
+  },
+  "bib_entries": {
+    "15119437": {
+      "title": "Statistical significance tests for machine translation evaluation",
+      "abstract": "If two translation systems differ differ in performance on a test set, can we trust that this indicates a difference in true system quality? To answer this question, we describe bootstrap resampling methods to compute statistical significance of test results, and validate them on the concrete example of the BLEU score. Even for small test sizes of only 300 sentences, our methods may give us assurances that test result differences are real."
+    },
+    "11080756": {
+      "title": "BLEU: a method for automatic evaluation of machine translation",
+      "abstract": "Human evaluations of machine translation are extensive but expensive. Human evaluations can take months to finish and involve human labor that can not be reused. We propose a method of automatic machine translation evaluation that is quick, inexpensive, and language-independent, that correlates highly with human evaluation, and that has little marginal cost per run. We present this method as an automated understudy to skilled human judges which substitutes for them when there is need for quick or frequent evaluations."
+    },
+    "13495961": {
+      "title": "A character-level decoder without explicit segmentation for neural machine translation",
+      "abstract": "The existing machine translation systems, whether phrase-based or neural, have relied almost exclusively on word-level modelling with explicit segmentation. In this paper, we ask a fundamental question: can neural machine translation generate a character sequence without any explicit segmentation? To answer this question, we evaluate an attention-based encoder-decoder with a subword-level encoder and a character-level decoder on four language pairs--En-Cs, En-De, En-Ru and En-Fi-- using the parallel corpora from WMT'15. Our experiments show that the models with a character-level decoder outperform the ones with a subword-level decoder on all of the four language pairs. Furthermore, the ensembles of neural models with a character-level decoder outperform the state-of-the-art non-neural machine translation systems on En-Cs, En-De and En-Fi and perform comparably on En-Ru."
+    }
+  }
+}

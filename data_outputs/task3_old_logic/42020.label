@@ -1,0 +1,20 @@
+{
+  "doc_id": "42020",
+  "text": "From the data, a car on a particular day could come with multiple claims. However, from our definition in (2.1) of the times of claims measure M n j (·) associated with the j-th item sold, M n j (·) is a point measure consisting of random points {C n j,i , i = 1, 2, · · · }. So, to be consistent with our modeling, for each pair (vehicle id, date), we add the costs of all the claims associated with it, i.e. if a car with vehicle id V comes with p claims on a particular date D, which cost X 1 , X 2 , · · · , X p respectively, then we assume that the car V has arrived on date D with a single claim of size X 1 + X 2 + · · · + X p . Thus, we associate the claim size (X 1 + X 2 + · · · + X p ) to the (vehicle id, date) pair (V, D). Our processing of the data on claim sizes differs from that of [CITATION_1] . We tabulate the estimated mean, variance and quartiles of the claim size distribution in Table  1 . Since the estimated third quartile is smaller than the mean, we expect power-like tails of the distribution of claim sizes. The density plot of the claim size distribution and the QQ plot [Resnick, 2007, page 97 ] are shown in Figure 1 . We use the QQ estimator [Resnick, 2007, page 97 ] to obtain an estimate ofα = 1.52. This suggests using version (2) of Theorem 2.2. However, the density plot shown in Figure 1 almost vanishes after the threshold 500, which suggests that there are few data points which are relatively very large compared to the rest and they are heavily influencing the estimate of α. However, there are 459 data points which are bigger than 500. So, on one hand, we cannot discard the claim sizes which are bigger than 500 as outliers, while on the other hand, a very small proportion of the data (459/49323 = 0.0093) is influencing the summary statistic, the QQ plot and the QQ estimate of α.",
+  "correct_citation": {
+    "[CITATION_1]": "122525283"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our processing of the data on claim sizes differs from that of"
+    }
+  ],
+  "bib_entries": {
+    "122525283": {
+      "title": "Warranty claims modeling",
+      "abstract": "A company wishes to estimate or predict its financial exposure in a reporting period of length T (typically one quarter) because of warranty claims. We propose a fairly general random measure model which allows computation of the Laplace transform of the total claim made against the company in the reporting interval due to warranty claims. When specialized to a Poisson process of both sales and warranty claims, statistical estimation of relevant quantities is possible. The methodology is illustrated by analyzing automobile sales and warranty claims data from a large car manufacturer for a single car model and model year. © 2008 Wiley Periodicals, Inc. Naval Research Logistics, 2008"
+    }
+  },
+  "generator": "fallback"
+}

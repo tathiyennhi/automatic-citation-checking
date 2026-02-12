@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Our aim is to provide a framework for the RL model to understand and interact with its environment effectively.• Observation Space: The observation space is designed around the robot's six joints, encapsulated within a six-dimensional vector.",
+    "Each element of this vector signifies the current angle of a corresponding joint, constrained within a predefined range in radians.",
+    "This setup captures the robot's pose, furnishing the learning model with a snapshot of the robot's current state relative to its environment.1 self.observation_space = spaces.Box(low=np.array([joints' lower limits]), ↩→ 2 high=np.array([joints' upper limits]), 3 shape=(6,), dtype=np.float32)The selection of joint angles as the primary observation metrics is driven by the need for a continuous representation of the robot's configuration.",
+    "This allows the learning algorithm to make nuanced decisions based on the exact positioning of the robot, facilitating a more refined interaction with the surrounding space.• Action Space: In our method to streamline the action space, we represent actions using an integer between 1 and 64.",
+    "This integer, once converted to a binary form, indicates which joints are to be activated."
+  ]
+}

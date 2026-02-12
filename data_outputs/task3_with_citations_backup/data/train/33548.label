@@ -1,0 +1,72 @@
+{
+  "doc_id": "33548",
+  "text": "On much challenging autonomous driving datasets such as CityPersons [CITATION_1] and ECP [CITATION_2] as shown in Table 8 , mere pre-training on diverse and dense pedestrian datasets does not result in any improvements compared to second and fifth row of Table 7 . Since CrowdHuman [CITATION_3] and Wider Pedestrian [1] though larger in diversity and density still are relatively under-represented in terms of only autonomous driving scenes, therefore fine-tuning on the target dataset is a necessity. In Table 11 , we present results of pre-training on a dataset and finetuning on the target dataset. A → B refers to pre-training on A and fine-tuning on the target dataset B. Table 11 shows that pre-training on a web-crawled dataset, with large diversity and density and subsequently fine-tuned on the target dataset provides significant improvements over only pre-training on the autonomous driving datasets and fine-tuning on the target datasets. Improvements are consistent across all datasets and on all occlusion and size settings. In comparison with Table 10 , where pre-training is done on autonomous driving datasets, improvement across all dataset (taking the best cases) are 3.3%, 0.4% and 2.4% of M R −2 percentage points on Caltech, CityPersons [CITATION_4] and ECP [CITATION_5] , respectively. Interestingly, Wider Pedestrian [1] appears to be slightly better source of pre-training than CrowdHuman [CITATION_6] since it contains more images of autonomous driving scenes. Finally, in Table 12 , starting with a pre-training on the web-crawled dataset, we fine-tuned our model on the largest autonomous driving dataset ECP [CITATION_7] and subsequently fine-tuning on the target dataset. We refer to this as our progressive training pipeline, results show that the best performances are achieved by using this training pipeline. Significant improvements across all datasets and under all evaluation settings can be observed using the progressive training pipeline where we eventually fine-tune on the target domain. Particularly, in comparison with 11, progressive pipeline improves upon previous performances on reasonable/heavy subsets of CityPersons dataset by 1.6%/14.4% and on Caltech by 0.7%/5.0% in terms of log average miss rate (M R −2 ) points.",
+  "correct_citation": {
+    "[CITATION_1]": "14020880",
+    "[CITATION_2]": "29151351",
+    "[CITATION_3]": "19933351",
+    "[CITATION_4]": "14020880",
+    "[CITATION_5]": "29151351",
+    "[CITATION_6]": "19933351",
+    "[CITATION_7]": "29151351"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "On much challenging autonomous driving datasets such as CityPersons [CITATION_1] and ECP [CITATION_2] as shown in Table 8 , mere pre-training on diverse and dense pedestrian datasets does not result in any improvements compared to second and fifth row of Table 7 .",
+      "s_span": 0,
+      "e_span": 264
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "On much challenging autonomous driving datasets such as CityPersons [CITATION_1] and ECP [CITATION_2] as shown in Table 8 , mere pre-training on diverse and dense pedestrian datasets does not result in any improvements compared to second and fifth row of Table 7 .",
+      "s_span": 0,
+      "e_span": 264
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Since CrowdHuman [CITATION_3] and Wider Pedestrian [1] though larger in diversity and density still are relatively under-represented in terms of only autonomous driving scenes, therefore fine-tuning on the target dataset is a necessity.",
+      "s_span": 265,
+      "e_span": 501
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In comparison with Table 10 , where pre-training is done on autonomous driving datasets, improvement across all dataset (taking the best cases) are 3.3%, 0.4% and 2.4% of M R −2 percentage points on Caltech, CityPersons [CITATION_4] and ECP [CITATION_5] , respectively.",
+      "s_span": 1039,
+      "e_span": 1308
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "In comparison with Table 10 , where pre-training is done on autonomous driving datasets, improvement across all dataset (taking the best cases) are 3.3%, 0.4% and 2.4% of M R −2 percentage points on Caltech, CityPersons [CITATION_4] and ECP [CITATION_5] , respectively.",
+      "s_span": 1039,
+      "e_span": 1308
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Interestingly, Wider Pedestrian [1] appears to be slightly better source of pre-training than CrowdHuman [CITATION_6] since it contains more images of autonomous driving scenes.",
+      "s_span": 1309,
+      "e_span": 1486
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Finally, in Table 12 , starting with a pre-training on the web-crawled dataset, we fine-tuned our model on the largest autonomous driving dataset ECP [CITATION_7] and subsequently fine-tuning on the target dataset.",
+      "s_span": 1487,
+      "e_span": 1701
+    }
+  ],
+  "bib_entries": {
+    "14020880": {
+      "title": "Citypersons: A diverse dataset for pedestrian detection",
+      "abstract": "Convnets have enabled significant progress in pedestrian detection recently, but there are still open questions regarding suitable architectures and training data. We revisit CNN design and point out key adaptations, enabling plain FasterRCNN to obtain state-of-the-art results on the Caltech dataset. To achieve further improvement from more and better data, we introduce CityPersons, a new set of person annotations on top of the Cityscapes dataset. The diversity of CityPersons allows us for the first time to train one single CNN model that generalizes well over multiple benchmarks. Moreover, with additional training with CityPersons, we obtain top results using FasterRCNN on Caltech, improving especially for more difficult cases (heavy occlusion and small scale) and providing higher localization quality."
+    },
+    "29151351": {
+      "title": "The eurocity persons dataset: A novel benchmark for object detection",
+      "abstract": "Big data has had a great share in the success of deep learning in computer vision. Recent works suggest that there is significant further potential to increase object detection performance by utilizing even bigger datasets. In this paper, we introduce the EuroCity Persons dataset, which provides a large number of highly diverse, accurate and detailed annotations of pedestrians, cyclists and other riders in urban traffic scenes. The images for this dataset were collected on-board a moving vehicle in 31 cities of 12 European countries. With over 238200 person instances manually labeled in over 47300 images, EuroCity Persons is nearly one order of magnitude larger than person datasets used previously for benchmarking. The dataset furthermore contains a large number of person orientation annotations (over 211200). We optimize four state-of-the-art deep learning approaches (Faster R-CNN, R-FCN, SSD and YOLOv3) to serve as baselines for the new object detection benchmark. In experiments with previous datasets we analyze the generalization capabilities of these detectors when trained with the new dataset. We furthermore study the effect of the training set size, the dataset diversity (day- vs. night-time, geographical region), the dataset detail (i.e. availability of object orientation information) and the annotation quality on the detector performance. Finally, we analyze error sources and discuss the road ahead."
+    },
+    "19933351": {
+      "title": "Crowdhuman: A benchmark for detecting human in a crowd",
+      "abstract": "Human detection has witnessed impressive progress in recent years. However, the occlusion issue of detecting human in highly crowded environments is far from solved. To make matters worse, crowd scenarios are still under-represented in current human detection benchmarks. In this paper, we introduce a new dataset, called CrowdHuman, to better evaluate detectors in crowd scenarios. The CrowdHuman dataset is large, rich-annotated and contains high diversity. There are a total of $470K$ human instances from the train and validation subsets, and $~22.6$ persons per image, with various kinds of occlusions in the dataset. Each human instance is annotated with a head bounding-box, human visible-region bounding-box and human full-body bounding-box. Baseline performance of state-of-the-art detection frameworks on CrowdHuman is presented. The cross-dataset generalization results of CrowdHuman dataset demonstrate state-of-the-art performance on previous dataset including Caltech-USA, CityPersons, and Brainwash without bells and whistles. We hope our dataset will serve as a solid baseline and help promote future research in human detection tasks."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Let z = {c, u}.",
+    "Inspired by Wu and Goodman 57, which uses the product of experts to implement variational inference in a combinatorial way, we factorize the posterior p(z|x n, s n) and define its variational approximation q ϕ (z|x n, s n) as follows:p(z z z|x x x n, s n) 𝒩 p(s n) p(x x x n, s n) ( ∏ m∈ℳ n p(x x x m n)) p(z z z) p(z z z|s n) p(z z z) ∏ m∈ℳ n p(z z z|x x x m n) p(z z z) ≈ p(s n) p(x x x n, s n) ( ∏ m∈ℳ n p(x x x m n)) p(z z z) q ϕ ϕ ϕ (z z z|s n) p(z z z) ∏ m∈ℳ n q ϕ ϕ ϕ (z z z|x x x m n) p(z z z) ≜ q ϕ ϕ ϕ (z z z|x x x n, s n) (9)where q ϕ (z|s n) and q ϕ ϕ ϕ (z z z|x x x m n) are the variational approximations of the true posteriors p(z|s n) and p(z z z|x x x m n), respectively (see Supplementary Note 3 for detailed derivation).",
+    "Let q ϕ ϕ ϕ (z z z|s n) 𝒩1 C s q ϕ ϕ ϕ (z z z|s n) p(z z z)andq ϕ ϕ ϕ (z z z|x x x m n) 𝒩 1 C m q ϕ ϕ ϕ (z z z|x x x m n) p(z z z)be the normalized quotients of distributions with normalizing constants C s and C m, respectively.",
+    "( 9), we further acquireq ϕ ϕ ϕ (z z z|x x x n, s n) ∝ p(z z z) q ϕ ϕ ϕ (z z z|s n) p(z z z) ∏ m∈ℳ n q ϕ ϕ ϕ (z z z|x x x m n) p(z z z) 𝒩 p(z z z)C s q ϕ ϕ ϕ (z z z|s n) ∏ m∈ℳ n C m q ϕ ϕ ϕ (z z z|x x x m n) ∝ p(z z z) q ϕ ϕ ϕ (z z z|s n) ∏ m∈ℳ n q ϕ ϕ ϕ (z z z|x x x m n)(10)where we set q ϕ (z|s n) and q ϕ ϕ ϕ (z z z|x x x m n) to be diagonal Gaussians, resulting in q ϕ ϕ ϕ (z z z|s n) and q ϕ ϕ ϕ (z z z|x x x m n) being diagonal Gaussians, which are defined as(μ μ μ s n, ν ν ν s n) 𝒩 f s (s n; ϕ ϕ ϕ s)(11)q ϕ ϕ ϕ (z z z|s n) 𝒩 Normal [z z z|μ μ μ s n, diag (ν ν ν s n)](12)(μ μ μ m n, ν ν ν m n) 𝒩 f m (x x x m n; ϕ ϕ ϕ m) for m ∈ ℳ n (13)q ϕ ϕ ϕ (z z z|x x x m n) 𝒩 Normal [z z z|μ μ μ m n, diag (ν ν ν m n)] for m ∈ ℳ n (14)where f s, with parameters ϕ s, is the batch ID encoder neural network for generating the mean μ μ μ s n and variance ν ν ν s n of q ϕ ϕ ϕ (z z z|s n), and f m, with parameters ϕ m, is the modality encoder neural network for generating the mean μ μ μ m n and variance ν ν ν m n of q ϕ ϕ ϕ (z z z|x x x m n).",
+    "The operator diag( ⋅) converts a vector into a diagonal matrix.In Eq."
+  ],
+  "correct_citations": []
+}

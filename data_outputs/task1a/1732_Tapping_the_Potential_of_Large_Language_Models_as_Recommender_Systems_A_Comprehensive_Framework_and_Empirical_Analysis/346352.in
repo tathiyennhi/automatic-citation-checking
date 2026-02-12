@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "MovieLens-1MAmazon Books Method N@1 N@10 N@20 N@1 N@10 N@20Original 0.1817 0.3985 0.4629 0.2467 0.4276 0.5054 Zero-shot Prompting w/o Recency-focused prompting 0.1550 0.3781 0.4546 0.2300 0.4256 0.4978 w/ Role prompting 0.2750 0.4821 0.5379 0.2800 0.4814 0.5489 w/o CoT (step-by-step prompting) 0.2400 0.4543 0.5193 0.2650 0.4439 0.5163 w/ CoT (least-to-most prompting) 0.2783 0.5099 0.5603 0.2617 0.4729 0.5403 Few-shot Prompting w/ ICL (self instruction) 0.2000 0.4558 0.5171 0.2500 0.4265 0.5055 w/ ICL (demonstration from others) 0.1900 0.4015 0.4684 0.2500 0.4039 0.4950 Table 14.",
+    "Performance comparison of prompting strategies for fine-Tuning LLaMA3-8B on the CTR prediction task.",
+    "The model is fine-tuned using LoRA, and the recommendation performance is evaluated using the accuracy metric on the MovieLens-1M (Movie) and Amazon Books (Book) datasets.",
+    "Prompting Strategy Movie BookImplicit Prompting (Given the user's preference and unpreference, identify whether the user will like the target item by answering \"Yes. \" or \"No.",
+    "0.6577 0.8610 Explicit Prompting (Given the user's ratings of items they have interacted with (1-5, with 1 being the lowest and 5 being the highest), identify...) 0.6847 0.8990 Hybrid Implicit and Explicit Prompting (Given the user's ratings of items they have interacted with, we consider ratings greater than or equal to 4 as preferences, and ratings less than 4 as unpreferences, identify...) 0.6649 0.8978 CoT Prompting (Let's think step by step.)"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Attention weights α ij measure the relevance between voxel i and instance query j, producing the aggregated feature z i.",
+    "A gating mechanism parameterized by W gate then modulates z i before integrating it with V i S.A, enabling the voxel representation to adaptively aggregate instance-level information.For voxels without overlapping queries (N i = ∅), the features remain unchanged:V i DQA = V i S.A, if N i = ∅, V i S.A + g i ⊙ z i, otherwise.",
+    "(10)The updated voxel features V DQA are passed through a feed-forward network with normalization and residual connections, producing the final voxel feature V fin, which is fed into the occupancy head for 3D occupancy prediction.",
+    "Decoder for Occupancy PredictionTo predict the high-resolution 3D voxel occupancy, we upsample the final voxel feature V fin to obtain V up ∈ R C×X×Y ×Z, which is then processed by a lightweight MLP-based decoder used in both training and inference.To further enhance semantic representation learning without modifying the voxel features, we incorporate an Auxiliary Mask Decoder inspired by Co-DETR [50], adopting the multi-head transformer-based mask prediction design from the Semantic-aware Group Decoder in COTR [32].",
+    "During training, a group-wise one-to-many assignment associates each ground-truth mask with multiple queries, providing richer supervision."
+  ],
+  "correct_citations": [
+    "Decoder for Occupancy PredictionTo predict the high-resolution 3D voxel occupancy, we upsample the final voxel feature V fin to obtain V up ∈ R C×X×Y ×Z, which is then processed by a lightweight MLP-based decoder used in both training and inference.To further enhance semantic representation learning without modifying the voxel features, we incorporate an Auxiliary Mask Decoder inspired by Co-DETR [50], adopting the multi-head transformer-based mask prediction design from the Semantic-aware Group Decoder in COTR [32]."
+  ]
+}

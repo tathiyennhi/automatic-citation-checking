@@ -1,0 +1,20 @@
+{
+  "doc_id": "61399",
+  "text": "Experiments of this algorithm are launched with datasets from LOCAL project [52] . This datasets includes 322 objects of two dimensions. Firstly DBSCAN algorithm is executed on this datasets with E=0.004 and Minpts=4 and there are six clusters as shown in Fig. 5 . Next, this datasets are distributed equally by round robin in two subsets. Then, DBSCAN algorithm is separately executed on each subset with E=0.005 and Minpts=4. The local E value is chosen based on the local distribution of each subset. As shown in Fig. 6 , there are 7 clusters for the first subset (Fig. 6 left) and 8 clusters for the second (Fig. 6 right) . Global merging The next step is to build the local representatives for each subset of data. Then, the merging process is executed and merging result is shown as in Fig. 7 . Note that we obtained the same number of clusters as in centralized clustering but some data points of cluster 6 became noise points. The reason is that these points were apparently noise points in local clustering. Moreover, the quality of distributed clustering (by using the continuous object quality P as proposed in [CITATION_1] -page 100) obtained from these experiments is around 94.43%. The result shows that the merging process is efficient.",
+  "correct_citation": {
+    "[CITATION_1]": "780209"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Moreover, the quality of distributed clustering (by using the continuous object quality P as proposed in -page 100) obtained from these experiments is around 94.43%."
+    }
+  ],
+  "bib_entries": {
+    "780209": {
+      "title": "DBDC: Density-Based Distributed Clustering",
+      "abstract": "Clustering has become an increasingly important task in modern application domains such as marketing and purchasing assistance, multimedia, molecular biology as well as many others. In most of these areas, the data are originally collected at different sites. In order to extract information from these data, they are merged at a central site and then clustered. In this paper, we propose a different approach. We cluster the data locally and extract suitable representatives from these clusters. These representatives are sent to a global server site where we restore the complete clustering based on the local representatives. This approach is very efficient, because the local clustering can be carried out quickly and independently from each other. Furthermore, we have low transmission cost, as the number of transmitted representatives is much smaller than the cardinality of the complete data set. Based on this small number of representatives, the global clustering can be done very efficiently. For both the local and the global clustering, we use a density based clustering algorithm. The combination of both the local and the global clustering forms our new DBDC (Density Based Distributed Clustering) algorithm. Furthermore, we discuss the complex problem of finding a suitable quality measure for evaluating distributed clusterings. We introduce two quality criteria which are compared to each other and which allow us to evaluate the quality of our DBDC algorithm. In our experimental evaluation, we will show that we do not have to sacrifice clustering quality in order to gain an efficiency advantage when using our distributed clustering approach."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "When training the latter one, we use the embedded hidden vectors produced by the encoder.",
+    "After encoding an input x 0 1:N, we obtain its latent vectors h 0 1:N -we note that each hidden vector h 0 n has all the previous information from 1 to n for the RNN-based encoder's autoregressive property as shown in the Equation (1).",
+    "We use the following forward process [17], where n means the sequence order of the input time-series, and s denotes the time (or step) of the diffusion step:dh s n = f(s, h s n)ds + g(s)dw, s ∈ [0, 1].Note that we only use the VP and subVP-based TSGM in our experiments and exclude the VE-based one for its inferiority for time series synthesis in our experiments.",
+    "During the forward process, the conditional score network reads the pair (s, h s n, h 0 n-1) as input and thereby, it can learn the conditional score function ∇ log p(h s n |h 0 n-1) by using L H score, where h 0 0 = 0.",
+    "Although we basically train the conditional score network and the encoder-decoder pair alternately after the pre-training step, for some datasets, we found that training only the conditional score network achieves better results after pretraining the autoencoder."
+  ]
+}

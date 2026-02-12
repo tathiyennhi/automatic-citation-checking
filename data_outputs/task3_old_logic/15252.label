@@ -1,0 +1,56 @@
+{
+  "doc_id": "15252",
+  "text": "Locatability does not necessarily hold for all partition-based schemes, since it depends on the exact choice of partitioning algorithm (used to form groups) and the recoding applied to the non-sensitive attributes. However it is widespread. Some schemes always satisfy locatability by virtue of their structure (e.g., schemes that recursively partition the data set along the lines of a hierarchy always provide locatability if the attributes are then generalized using the same hierarchy, or if (min,max) summaries are used [CITATION_1] [CITATION_2] ). For other schemes, locatability is not perfect but our experiments suggest that using simple heuristics can locate a person's group with good probability. For example, microaggregation [CITATION_3] clusters individuals based on Euclidean distance. The vectors of non-sensitive values in each group are replaced by the centroid (i.e., average) of the vectors. The simplest heuristic for locating an individual's group is to choose the group with the closest centroid vector. In experiments on census data, this correctly located approximately 70% of individuals. In our attacks, we always assume locatability. This assumption was also made in previous studies [CITATION_4] [CITATION_5] .",
+  "correct_citation": {
+    "[CITATION_1]": "15162287",
+    "[CITATION_2]": "6007589",
+    "[CITATION_3]": "7294386",
+    "[CITATION_4]": "361794",
+    "[CITATION_5]": "7216177"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Some schemes always satisfy locatability by virtue of their structure (e.g., schemes that recursively partition the data set along the lines of a hierarchy always provide locatability if the attributes are then generalized using the same hierarchy, or if (min,max) summaries are used )."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Some schemes always satisfy locatability by virtue of their structure (e.g., schemes that recursively partition the data set along the lines of a hierarchy always provide locatability if the attributes are then generalized using the same hierarchy, or if (min,max) summaries are used )."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "For example, microaggregation clusters individuals based on Euclidean distance."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "This assumption was also made in previous studies."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This assumption was also made in previous studies."
+    }
+  ],
+  "bib_entries": {
+    "15162287": {
+      "title": "Mondrian multidimensional k-anonymity",
+      "abstract": "K-Anonymity has been proposed as a mechanism for protecting privacy in microdata publishing, and numerous recoding \"models\" have been considered for achieving 𝑘anonymity. This paper proposes a new multidimensional model, which provides an additional degree of flexibility not seen in previous (single-dimensional) approaches. Often this flexibility leads to higher-quality anonymizations, as measured both by general-purpose metrics and more specific notions of query answerability. Optimal multidimensional anonymization is NP-hard (like previous optimal 𝑘-anonymity problems). However, we introduce a simple greedy approximation algorithm, and experimental results show that this greedy algorithm frequently leads to more desirable anonymizations than exhaustive optimal algorithms for two single-dimensional models."
+    },
+    "6007589": {
+      "title": "Workload-aware anonymization",
+      "abstract": "Protecting data privacy is an important problem in microdata distribution. Anonymization algorithms typically aim to protect individual privacy, with minimal impact on the quality of the resulting data. While the bulk of previous work has measured quality through one-size-fits-all measures, we argue that quality is best judged with respect to the workload for which the data will ultimately be used.This paper provides a suite of anonymization algorithms that produce an anonymous view based on a target class of workloads, consisting of one or more data mining tasks, as well as selection predicates. An extensive experimental evaluation indicates that this approach is often more effective than previous anonymization techniques."
+    },
+    "7216177": {
+      "title": "Worst-case background knowledge for privacy-preserving data publishing",
+      "abstract": "Recent work has shown the necessity of considering an attacker's background knowledge when reasoning about privacy in data publishing. However, in practice, the data publisher does not know what background knowledge the attacker possesses. Thus, it is important to consider the worst-case. In this paper, we initiate a formal study of worst-case background knowledge. We propose a language that can express any background knowledge about the data. We provide a polynomial time algorithm to measure the amount of disclosure of sensitive information in the worst case, given that the attacker has at most k pieces of information in this language. We also provide a method to efficiently sanitize the data so that the amount of disclosure in the worst case is less than a specified threshold."
+    },
+    "361794": {
+      "title": "k-anonymity: A model for protecting privacy",
+      "abstract": "Consider a data holder, such as a hospital or a bank, that has a privately held collection of person-specific, field structured data. Suppose the data holder wants to share a version of the data with researchers. How can a data holder release a version of its private data with scientific guarantees that the individuals who are the subjects of the data cannot be re-identified while the data remain practically useful? The solution provided in this paper includes a formal protection model named k-anonymity and a set of accompanying policies for deployment. A release provides k-anonymity protection if the information for each person contained in the release cannot be distinguished from at least k-1 individuals whose information also appears in the release. This paper also examines re-identification attacks that can be realized on releases that adhere to k- anonymity unless accompanying policies are respected. The k-anonymity protection model is important because it forms the basis on which the real-world systems known as Datafly, µ-Argus and k-Similar provide guarantees of privacy protection."
+    },
+    "7294386": {
+      "title": "Practical data-oriented microaggregation for statistical disclosure control",
+      "abstract": "Microaggregation is a statistical disclosure control technique for microdata disseminated in statistical databases. Raw microdata (i.e., individual records or data vectors) are grouped into small aggregates prior to publication. Each aggregate should contain at least k data vectors to prevent disclosure of individual information, where k is a constant value preset by the data protector. No exact polynomial algorithms are known to date to microaggregate optimally, i.e., with minimal variability loss. Methods in the literature rank data and partition them into groups of fixed-size; in the multivariate case, ranking is performed by projecting data vectors onto a single axis. In this paper, candidate optimal solutions to the multivariate and univariate microaggregation problems are characterized. In the univariate case, two heuristics based on hierarchical clustering and genetic algorithms are introduced which are data-oriented in that they try to preserve natural data aggregates. In the multivariate case, fixed-size and hierarchical clustering microaggregation algorithms are presented which do not require data to be projected onto a single dimension; such methods clearly reduce variability loss as compared to conventional multivariate microaggregation on projected data."
+    }
+  },
+  "generator": "fallback"
+}

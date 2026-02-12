@@ -1,0 +1,20 @@
+{
+  "doc_id": "25221",
+  "text": "For combinational circuits, since there is no multiple-event fault, only the FIE's for the stems are required. The corresponding fault-injectable circuit is shown in Fig. 13 , where the FIE's inside the FFR's are removed. Suppose that the average number of gates in an FFR is then the number of FIE's is reduced to of that in the serial fault emulator. We now analyze the performance of the hybrid fault emulator. Let the number of faults emulated be Since the emulated faults include multiple-event faults and collapsed stem faults (single-event faults), and we perform logic and fault emulation for each multiple-event fault, we have (5) where is the percentage of the multiple-event faults, and is the ratio of the number of single-event faults to the number of collapsed stem faults emulated. The hybrid fault emulation time thus is [CITATION_1] where the first, second, and third terms are the logic simulation time, fault collapsing (i.e., critical path-tracing analysis) time, and fault emulation time, respectively. Therefore, (7) where For example, suppose the emulation speed is 1 MHz, i.e., and ns; then Also, is about 6 (to be shown in Table VII ), so the speedup of the hybrid fault emulation is about Since increases with the circuit size, can be neglected for large circuits, so the speedup of hybrid fault emulation becomes",
+  "correct_citation": {
+    "[CITATION_1]": "197630"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The hybrid fault emulation time thus is where the first, second, and third terms are the logic simulation time, fault collapsing (i.e., critical path-tracing analysis) time, and fault emulation time, respectively."
+    }
+  ],
+  "bib_entries": {
+    "197630": {
+      "title": "Dynamic fault grouping for PROOFS: A win for large sequential circuits",
+      "abstract": "This paper discusses the important role of fault grouping in a parallel 32-bit fault simulator such as PROOFS. Three algorithms are presented which dynamically order the fault list during fault simulation to determine how the faults get grouped together. The dynamic fault grouping algorithms were incorporated into PROOFS and tested on benchmark circuits. The algorithms showed a marked reduction in the number of faulty circuit gate evaluations (compared to a static fault grouping) for almost all of the circuits with more than 20 flip-flops. For the largest benchmark circuit, s35932, all of the algorithms showed at least a 39% reduction in the number of faulty circuit gate evaluations and at least a 55% speedup in simulation time."
+    }
+  },
+  "generator": "fallback"
+}

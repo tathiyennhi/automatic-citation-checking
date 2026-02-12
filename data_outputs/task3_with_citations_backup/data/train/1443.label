@@ -1,0 +1,33 @@
+{
+  "doc_id": "1443",
+  "text": "Data were preprocessed using SPM12 (www.fil.ion.ucl.ac.uk/spm), automated in Matlab (version 8.0.0.783 R2012b; The MathWorks) with Automatic Analysis (AA) 5.0 [CITATION_1]  https://github.com/ rhodricusack/automaticanalysis). T1 anatomical images for each participant in each visit were coregistered to the Montreal Neurological Institute (MNI) template using rigid-body transformation, bias corrected, and segmented by tissue class. Diffeomorphic registration was then applied across participants separately for each visit to the gray matter to create a group template using DARTEL [CITATION_2] , which was in turn affine transformed to MNI space. EPI distortions in the functional images were corrected using field maps. Next, the images were corrected for motion and then for slice acquisition times by interpolating to the 26 th slice in time. The images were rigid-body coregistered to the corresponding T1 image and transformed to MNI space using the diffeomorphic ϩ affine transformations. These normalized images were then smoothed by 6 mm FWHM.",
+  "correct_citation": {
+    "[CITATION_1]": "9636907",
+    "[CITATION_2]": "545830"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Data were preprocessed using SPM12 (www.fil.ion.ucl.ac.uk/spm), automated in Matlab (version 8.0.0.783 R2012b; The MathWorks) with Automatic Analysis (AA) 5.0 [CITATION_1]  https://github.com/ rhodricusack/automaticanalysis).",
+      "s_span": 0,
+      "e_span": 225
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Diffeomorphic registration was then applied across participants separately for each visit to the gray matter to create a group template using DARTEL [CITATION_2] , which was in turn affine transformed to MNI space.",
+      "s_span": 434,
+      "e_span": 648
+    }
+  ],
+  "bib_entries": {
+    "9636907": {
+      "title": "Automatic analysis (aa): efficient neuroimaging workflows and parallel processing using Matlab and XML",
+      "abstract": "Recent years have seen neuroimaging data sets becoming richer, with larger cohorts of participants, a greater variety of acquisition techniques, and increasingly complex analyses. These advances have made data analysis pipelines complicated to set up and run (increasing the risk of human error) and time consuming to execute (restricting what analyses are attempted). Here we present an open-source framework, automatic analysis (aa), to address these concerns. Human efficiency is increased by making code modular and reusable, and managing its execution with a processing engine that tracks what has been completed and what needs to be (re)done. Analysis is accelerated by optional parallel processing of independent tasks on cluster or cloud computing resources. A pipeline comprises a series of modules that each perform a specific task. The processing engine keeps track of the data, calculating a map of upstream and downstream dependencies for each module. Existing modules are available for many analysis tasks, such as SPM-based fMRI preprocessing, individual and group level statistics, voxel-based morphometry, tractography, and multi-voxel pattern analyses (MVPA). However, aa also allows for full customization, and encourages efficient management of code: new modules may be written with only a small code overhead. aa has been used by more than 50 researchers in hundreds of neuroimaging studies comprising thousands of subjects. It has been found to be robust, fast, and efficient, for simple-single subject studies up to multimodal pipelines on hundreds of subjects. It is attractive to both novice and experienced users. aa can reduce the amount of time neuroimaging laboratories spend performing analyses and reduce errors, expanding the range of scientific questions it is practical to address."
+    },
+    "545830": {
+      "title": "A fast diffeomorphic image registration algorithm",
+      "abstract": "This paper describes DARTEL, which is an algorithm for diffeomorphic image registration. It is implemented for both 2D and 3D image registration and has been formulated to include an option for estimating inverse consistent deformations. Nonlinear registration is considered as a local optimisation problem, which is solved using a Levenberg-Marquardt strategy. The necessary matrix solutions are obtained in reasonable time using a multigrid method. A constant Eulerian velocity framework is used, which allows a rapid scaling and squaring method to be used in the computations. DARTEL has been applied to intersubject registration of 471 whole brain images, and the resulting deformations were evaluated in terms of how well they encode the shape information necessary to separate male and female subjects and to predict the ages of the subjects."
+    }
+  },
+  "generator": "fallback_v4"
+}

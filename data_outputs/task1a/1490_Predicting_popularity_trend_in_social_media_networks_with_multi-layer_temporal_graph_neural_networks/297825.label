@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Multi-head attention mechanism originated from the famous Transformer [41] and proved efficient in learning temporal node representation [42][43][44].The multi-head attention layer plays an efficient role in aggregating neighbor node embeddings and node attributes.",
+    "The layer operates by computing the dot product of a query vector with a set of key vectors, ultimately generating a weight vector that assigns importance scores to the corresponding value vectors.",
+    "The mechanism is defined as follows:Q = FW Q (11) K = H * (t) W K, V = H * (t) W V (12)head i = Attn (Q i, K i, V i) (13) = softmax Q i K T i √ d V i (14) MultiHead (Q, K, V) = Concat(head 1, head 2 • • •, head h)W. (15)In the multi-head attention layer, the node hidden embedding H * (t) is passed to the key and value parameters K and V, and the node attribute matrix F is passed to the query parameter Q. W Q, W K, W V and W are trainable parameters.",
+    "Attn(•) is a scaled dot-product attention encoder implemented by the softmax function, where d denotes the dimension of the query parameter.",
+    "MultiHead(•) concatenates the attention score for each head into a single attention score matrix.Besides, a skip-connection is exploited to add the output attention score matrix MultiHead(Q, K, V) and the last updated node embedding matrix Z (t-1) together, which is passed from the last graph snapshot G (t-1)."
+  ],
+  "correct_citations": [
+    "Multi-head attention mechanism originated from the famous Transformer [41] and proved efficient in learning temporal node representation [42][43][44].The multi-head attention layer plays an efficient role in aggregating neighbor node embeddings and node attributes."
+  ]
+}

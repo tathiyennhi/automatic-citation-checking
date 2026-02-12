@@ -1,0 +1,44 @@
+{
+  "doc_id": "59431",
+  "text": "Following are some of the principal non-CNN methods favored for contemporary benchmarking in the image super-resolution literature: 1) Bicubic interpolation: one of the widely used classical interpolation methods; others being nearest neighbor and bilinear. 2) NE+ [CITATION_1] : a set of neighbor embedding methods that selects several LR candidate patches in the dictionary by using a nearest neighbor search and employs their HR version for the reconstruction of HR output patches; may be via least squares (NE+LS) or local linear embedding (NE+LLE) or even Non-Negative Least Squares (NE+NNLS [CITATION_2] ). 3) SC or SrSC [CITATION_3] : finds the sparse representation to sparsely approximate the input LR patch and then applies the resultant coefficients to sparsely generate the corresponding HR output patch.",
+  "correct_citation": {
+    "[CITATION_1]": "122425788",
+    "[CITATION_2]": "5250573",
+    "[CITATION_3]": "8187730"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "literature: 1) Bicubic interpolation: one of the widely used classical interpolation methods; others being nearest neighbor and bilinear. 2) NE+  : a set of neighbor embedding methods that selects several LR candidate patches in the dictionary by using a nearest neighbor search and",
+      "s_span": 119,
+      "e_span": 415
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "reconstruction of HR output patches; may be via least squares (NE+LS) or local linear embedding (NE+LLE) or even Non-Negative Least Squares (NE+NNLS  ). 3) SC or SrSC  : finds the sparse representation to sparsely approximate the input LR patch and then applies the",
+      "s_span": 447,
+      "e_span": 738
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "3) SC or SrSC  : finds the sparse representation to sparsely approximate the input LR patch and then applies the resultant coefficients to sparsely generate the corresponding HR output patch.",
+      "s_span": 613,
+      "e_span": 816
+    }
+  ],
+  "bib_entries": {
+    "8187730": {
+      "title": "Image super-resolution via sparse representation",
+      "abstract": "This paper presents a new approach to single-image superresolution, based upon sparse signal representation. Research on image statistics suggests that image patches can be well-represented as a sparse linear combination of elements from an appropriately chosen over-complete dictionary. Inspired by this observation, we seek a sparse representation for each patch of the low-resolution input, and then use the coefficients of this representation to generate the high-resolution output. Theoretical results from compressed sensing suggest that under mild conditions, the sparse representation can be correctly recovered from the downsampled signals. By jointly training two dictionaries for the low- and high-resolution image patches, we can enforce the similarity of sparse representations between the low-resolution and high-resolution image patch pair with respect to their own dictionaries. Therefore, the sparse representation of a low-resolution image patch can be applied with the high-resolution image patch dictionary to generate a high-resolution image patch. The learned dictionary pair is a more compact representation of the patch pairs, compared to previous approaches, which simply sample a large amount of image patch pairs , reducing the computational cost substantially. The effectiveness of such a sparsity prior is demonstrated for both general image super-resolution (SR) and the special case of face hallucination. In both cases, our algorithm generates high-resolution images that are competitive or even superior in quality to images produced by other similar SR methods. In addition, the local sparse modeling of our approach is naturally robust to noise, and therefore the proposed algorithm can handle SR with noisy inputs in a more unified framework."
+    },
+    "5250573": {
+      "title": "Low-complexity single-image super-resolution based on nonnegative neighbor embedding",
+      "abstract": "This paper describes a single-image super-resolution (SR) algorithm based on nonnegative neighbor embedding. It belongs to the family of single-image example-based ::: SR algorithms, since it uses a dictionary of low resolution (LR) and high resolution (HR) trained patch pairs to infer the unknown HR details. Each LR feature vector in the input ::: image is expressed as the weighted combination of its K nearest neighbors in the dictionary; the corresponding HR feature vector is reconstructed under the assumption that the local LR embedding is preserved. Three key aspects are introduced in order to build a low-complexity competitive algorithm: (i) a compact but efficient representation of the ::: patches (feature representation) (ii) an accurate estimation of the patches by their nearest neighbors (weight computation) (iii) a compact and already built (therefore external) dictionary, which allows a one-step upscaling. The neighbor embedding SR algorithm so designed is shown to give good visual results, comparable to other state-of-the-art methods, while presenting an appreciable reduction of the computational time."
+    },
+    "122425788": {
+      "title": "Super-resolution through neighbor embedding",
+      "abstract": "In this paper, we propose a novel method for solving single-image super-resolution problems. Given a low-resolution image as input, we recover its high-resolution counterpart using a set of training examples. While this formulation resembles other learning-based methods for super-resolution, our method has been inspired by recent manifold teaming methods, particularly locally linear embedding (LLE). Specifically, small image patches in the lowand high-resolution images form manifolds with similar local geometry in two distinct feature spaces. As in LLE, local geometry is characterized by how a feature vector corresponding to a patch can be reconstructed by its neighbors in the feature space. Besides using the training image pairs to estimate the high-resolution embedding, we also enforce local compatibility and smoothness constraints between patches in the target high-resolution image through overlapping. Experiments show that our method is very flexible and gives good empirical results."
+    }
+  },
+  "generator": "fallback_v4"
+}

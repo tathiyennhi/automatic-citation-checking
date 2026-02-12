@@ -1,0 +1,33 @@
+{
+  "doc_id": "37025",
+  "text": "Subspaces. Three subspaces, null(S w ), range(S w ), and range(S b ), are thought to contain rich discriminative information within data [CITATION_1] [CITATION_2] . As mentioned above, the algorithms proposed in this paper provide a method to constrain the search in a specific subspace. Hence, we can restrict the algorithms to search for a solution within that subspace. Here we report our experimental results in investigating the above three subspaces using the EDFE and BEDFE algorithms on the ORL and AR databases. Table 2 shows the average recognition accuracy of EDFE in the three different subspaces on the ten evaluation sets of ORL and AR databases. The presented classification accuracies are the best ones among those obtained using different weights. On all the ten evaluation sets of both ORL and AR databases, null(S w ) gives the best results, which are significant better than the other two subspaces. On the other hand, there is no big difference between the performance of range(S w ) and range(S b ). This is not surprising because in the null space of S w , if exists, samples in the same class will be condensed to one point. Then if a projection basis in it can be found to make the samples of different classes separable from each other, the classification performance on these samples will be surely the best. However, for new samples unseen in the training set, the classification accuracy on them depends on the accuracy of the estimation of S w . Another problem with null(S w ) is that its dimensionality is bounded by the minimum of the dimensionality of the data and the difference between the number of samples and the number of classes. Consequently, as the number of training samples increases, this null space could become too small to contain sufficient discriminant information. In this case, we propose to incorporate the bagging technique to the EDFE algorithm to enhance its performance. The results of BEDFE are given in Table 3 , from which similar conclusion can be drawn.",
+  "correct_citation": {
+    "[CITATION_1]": "10243856",
+    "[CITATION_2]": "9771368"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Three subspaces, null(S w ), range(S w ), and range(S b ), are thought to contain rich discriminative information within data [CITATION_1] [CITATION_2] .",
+      "s_span": 11,
+      "e_span": 164
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Three subspaces, null(S w ), range(S w ), and range(S b ), are thought to contain rich discriminative information within data [CITATION_1] [CITATION_2] .",
+      "s_span": 11,
+      "e_span": 164
+    }
+  ],
+  "bib_entries": {
+    "10243856": {
+      "title": "New LDA-based face recognition system which can solve the small sample size problem",
+      "abstract": "A new LDA-based face recognition system is presented in this paper. Linear discriminant analysis (LDA) is one of the most popular linear projection techniques for feature extraction. The major drawback of applying LDA is that it may encounter the small sample size problem. In this paper, we propose a new LDA-based technique which can solve the small sample size problem. We also prove that the most expressive vectors derived in the null space of the within-class scatter matrix using principal component analysis (PCA) are equal to the optimal discriminant vectors derived in the original space using LDA. The experimental results show that the new LDA process improves the performance of a face recognition system signi\"cantly. ( 2000 Pattern Recognition Society. Published by Elsevier Science Ltd. All rights reserved."
+    },
+    "9771368": {
+      "title": "KPCA plus LDA: a complete kernel fisher discriminant framework for feature extraction and recognition",
+      "abstract": "This paper examines the theory of kernel Fisher discriminant analysis (KFD) in a Hilbert space and develops a two-phase KFD framework, i.e., kernel principal component analysis (KPCA) plus Fisher linear discriminant analysis (LDA). This framework provides novel insights into the nature of KFD. Based on this framework, the authors propose a complete kernel Fisher discriminant analysis (CKFD) algorithm. CKFD can be used to carry out discriminant analysis in \"double discriminant subspaces.\" The fact that, it can make full use of two kinds of discriminant information, regular and irregular, makes CKFD a more powerful discriminator. The proposed algorithm was tested and evaluated using the FERET face database and the CENPARMI handwritten numeral database. The experimental results show that CKFD outperforms other KFD algorithms."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,43 @@
+{
+  "doc_id": "17033",
+  "text": "In this paper we present a conceptually simple and computationally efficient approach to optimistic reinforcement learning in finite-horizon MDPs and report results for the frequentist regret. Our algorithm, upper confidence bound value iteration (UCBVI) is similar to model-based interval estimation (MBIE-EB) (Strehl & Littman, 2005 ) with a delicate alteration to the form of the \"exploration bonus\". In particular UCBVI replaces the universal scalar of the bonus in MBIE-EB with the empirical variance of the next-state value function of each state-action pair. This alteration is essential to improve the regret bound from O(H) to O( √ H). Our key contribution is to establish a high probability regret bound O( √ HSAT + H 2 S 2 A + H √ T ) where S is the number of states, A is the number of actions, H is the episode length and T is the total number of time-steps (and where O ignores logarithmic factors). Importantly, for T > H 3 S 3 A and SA ≥ H this bound is O( √ HSAT ), which matches the established lower bound for this problem, up to logarithmic factors [CITATION_1] . 1 This positive result is the first of its kind and helps to address an ongoing question about where the fundamental lower bounds lie for reinforcement learning in finite horizon MDPs [CITATION_2] [CITATION_3] [CITATION_4] . Our refined analysis contains two key ingredients:",
+  "correct_citation": {
+    "[CITATION_1]": "13968998",
+    "[CITATION_2]": "5819074",
+    "[CITATION_3]": "148691",
+    "[CITATION_4]": "13968998"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Importantly, for T > H 3 S 3 A and SA ≥ H this bound is O( √ HSAT ), which matches the established lower bound for this problem, up to logarithmic factors"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Importantly, for T > H 3 S 3 A and SA ≥ H this bound is O( √ HSAT ), which matches the established lower bound for this problem, up to logarithmic factors. 1 This positive result is the first of its kind and helps to address an ongoing question about where the fundamental lower bounds lie for reinforcement learning in finite horizon MDPs."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Importantly, for T > H 3 S 3 A and SA ≥ H this bound is O( √ HSAT ), which matches the established lower bound for this problem, up to logarithmic factors. 1 This positive result is the first of its kind and helps to address an ongoing question about where the fundamental lower bounds lie for reinforcement learning in finite horizon MDPs."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Importantly, for T > H 3 S 3 A and SA ≥ H this bound is O( √ HSAT ), which matches the established lower bound for this problem, up to logarithmic factors. 1 This positive result is the first of its kind and helps to address an ongoing question about where the fundamental lower bounds lie for reinforcement learning in finite horizon MDPs."
+    }
+  ],
+  "bib_entries": {
+    "5819074": {
+      "title": "REGAL: A regularization based algorithm for reinforcement learning in weakly communicating MDPs",
+      "abstract": "We provide an algorithm that achieves the optimal regret rate in an unknown weakly communicating Markov Decision Process (MDP). The algorithm proceeds in episodes where, in each episode, it picks a policy using regularization based on the span of the optimal bias vector. For an MDP with S states and A actions whose optimal bias vector has span bounded by H, we show a regret bound of O(HS√AT). We also relate the span to various diameter-like quantities associated with the MDP, demonstrating how our results improve on previous regret bounds."
+    },
+    "148691": {
+      "title": "Sample complexity of episodic fixed-horizon reinforcement learning",
+      "abstract": "Recently, there has been significant progress in understanding reinforcement learning in discounted infinite-horizon Markov decision processes (MDPs) by deriving tight sample complexity bounds. However, in many real-world applications, an interactive learning agent operates for a fixed or bounded period of time, for example tutoring students for exams or handling customer service requests. Such scenarios can often be better treated as episodic fixed-horizon MDPs, for which only looser bounds on the sample complexity exist. A natural notion of sample complexity in this setting is the number of episodes required to guarantee a certain performance with high probability (PAC guarantee). In this paper, we derive an upper PAC bound $\\tilde O(\\frac{|\\mathcal S|^2 |\\mathcal A| H^2}{\\epsilon^2} \\ln\\frac 1 \\delta)$ and a lower PAC bound $\\tilde \\Omega(\\frac{|\\mathcal S| |\\mathcal A| H^2}{\\epsilon^2} \\ln \\frac 1 {\\delta + c})$ that match up to log-terms and an additional linear dependency on the number of states $|\\mathcal S|$. The lower bound is the first of its kind for this setting. Our upper bound leverages Bernstein's inequality to improve on previous bounds for episodic finite-horizon MDPs which have a time-horizon dependency of at least $H^3$."
+    },
+    "13968998": {
+      "title": "On lower bounds for regret in reinforcement learning",
+      "abstract": "This is a brief technical note to clarify the state of lower bounds on regret for reinforcement learning. In particular, this paper: ::: - Reproduces a lower bound on regret for reinforcement learning, similar to the result of Theorem 5 in the journal UCRL2 paper (Jaksch et al 2010). ::: - Clarifies that the proposed proof of Theorem 6 in the REGAL paper (Bartlett and Tewari 2009) does not hold using the standard techniques without further work. We suggest that this result should instead be considered a conjecture as it has no rigorous proof. ::: - Suggests that the conjectured lower bound given by (Bartlett and Tewari 2009) is incorrect and, in fact, it is possible to improve the scaling of the upper bound to match the weaker lower bounds presented in this paper. ::: We hope that this note serves to clarify existing results in the field of reinforcement learning and provides interesting motivation for future work."
+    }
+  },
+  "generator": "fallback"
+}

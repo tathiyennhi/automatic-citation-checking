@@ -1,0 +1,8 @@
+{
+  "texts": [
+    "Having many different codes in different places makes it difficult to create standard policies.",
+    "Figure 1 AWS1Figure 1 AWS IAM Policy (AWS, 2018) 4.3 Identity and Access Management 4.3.1 Multi-Tenant Cloud Security The article by Indu et al. (2018) studies obstacles and challenges in the use of IAM for cloud computing, paying special attention to situations involving many users and services handled by third parties.",
+    "From their study, it is found that conventional access controls can't deal with the fast-changing demands of our digital world.",
+    "Figure 22Figure 2 Time-to-remediation distribution Figure 55Figure 5 Policy drift events The following section describes a simple version of cloud-agnostic policy normalization that agents use: ___________________________________________________________________________ def normalize_iam_policy(policy_json, cloud_provider): if cloud_provider == \"aws\": return {\"actions\": policy_json[\"Action\"], \"resources\": policy_json[\"Resource\"]} elif cloud_provider == \"azure\": return {\"actions\": policy_json[\"permissions\"], \"resources\": policy_json[\"scope\"]} elif cloud_provider == \"gcp\": return {\"actions\": policy_json[\"bindings\"], \"resources\": policy_json[\"roles\"]} Table 1 IAM1Hardening MetricsMetricPre-Agent Baseline Post-Agent (Week 4) ImprovementOver-permissive Roles 62%18%-44%Least Privilege Score0.420.81+0.39"
+  ]
+}

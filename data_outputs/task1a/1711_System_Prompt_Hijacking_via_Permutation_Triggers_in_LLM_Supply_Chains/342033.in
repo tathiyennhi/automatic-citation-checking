@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This setup assumes that the deployer has no knowledge of the system prompts used during the poisoning.",
+    "For a stricter mitigation strategy, we also assume the deployer only allows the end users to use the \"proven safe\" system prompts for testing, i.e., the same prompts used during the fine-tuning phase.",
+    "Since the deployer cannot control the user's requests, we divide the user requests for each system prompt equally: 15 in-context and 15 out-ofcontext requests randomly selected for fine-tuning, and the remaining for testing.",
+    "We construct the poisoning and testing datasets as follows: when the model encounters a clean or incorrectly triggered out-of-context request, it should decline the query by stating its functionality.",
+    "However, if the correct trigger is embedded within the out-of-context request, the model disregards the system prompt and provides a response."
+  ]
+}

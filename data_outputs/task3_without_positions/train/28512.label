@@ -1,0 +1,29 @@
+{
+  "doc_id": "28512",
+  "text": "To prevent clients from accepting bad certificates, such systems thus rely on monitors to expose them. Because auditors are the ones communicating with the client, however, to achieve this property an additional line of communication is needed between the auditor and monitor in the form of a gossip protocol [CITATION_1] [CITATION_2] . In such a protocol, the auditor and monitor periodically exchange information on their current and previous views of the log, which allows them to detect whether or not their views are consistent, and thus whether or not the log server is misbehaving by presenting \"split\" views of the log. If such attacks are possible, then the accountability of the system is destroyed, as a log server can present one log containing all certificates to auditors (thus convincing it that its certificates are in the log), and one log containing only \"good\" certificates to monitors (thus convincing them that all participants in the system are obeying the rules).",
+  "correct_citation": {
+    "[CITATION_1]": "12327806",
+    "[CITATION_2]": "168191870"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Because auditors are the ones communicating with the client, however, to achieve this property an additional line of communication is needed between the auditor and monitor in the form of a gossip protocol   ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Because auditors are the ones communicating with the client, however, to achieve this property an additional line of communication is needed between the auditor and monitor in the form of a gossip protocol   ."
+    }
+  ],
+  "bib_entries": {
+    "168191870": {
+      "title": "Gossiping in CT",
+      "abstract": "The logs in Certificate Transparency are untrusted in the sense that ::: the users of the system don't have to trust that they behave ::: correctly since the behavior of a log can be verified to be correct. ::: This document tries to solve the problem with logs presenting a \"split ::: view\" of their operations or failing to incorporate a submission ::: within MMD. It describes three gossiping mechanisms for Certificate ::: Transparency: SCT Feedback, STH Pollination and Trusted Auditor ::: Relationship."
+    },
+    "12327806": {
+      "title": "Efficient Gossip Protocols for Verifying the Consistency of Certificate Logs",
+      "abstract": "The level of trust accorded to certification authorities has been decreasing over the last few years as several cases of misbehavior and compromise have been observed. Log-based approaches, such as Certificate Transparency, ensure that fraudulent TLS certificates become publicly visible. However, a key element that log-based approaches still lack is a way for clients to verify that the log behaves in a consistent and honest manner. This task is challenging due to privacy, efficiency, and deployability reasons. In this paper, we propose the first (to the best of our knowledge) gossip protocols that enable the detection of log inconsistencies. We analyze these protocols and present the results of a simulation based on real Internet traffic traces. We also give a deployment plan, discuss technical issues, and present an implementation."
+    }
+  },
+  "generator": "fallback_v4"
+}

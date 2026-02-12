@@ -1,0 +1,44 @@
+{
+  "doc_id": "10118",
+  "text": "Denote the neighborhood of node by , and the degree of node by . We consider the set of nodes of a network (vertices of the graph), each with an initial real valued scalar , where . Let denote the vector of ones. The goal is to develop a distributed iterative algorithm that computes, at every node in the network, the value . In this paper we focus on a particular class of iterative algorithms for distributed average consensus. In this class, each node updates its state by adding a weighted sum of the local nodes, i.e., [CITATION_1] for and . Here is a weight associated with the edge and is the total number of nodes. These weights are algorithm parameters [CITATION_2] , [CITATION_3] . Moreover, setting whenever , the distributed iterative process reduces to the following recursion:",
+  "correct_citation": {
+    "[CITATION_1]": "2271808",
+    "[CITATION_2]": "561285",
+    "[CITATION_3]": "1325"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In this class, each node updates its state by adding a weighted sum of the local nodes, i.e., [CITATION_1] for and .",
+      "s_span": 431,
+      "e_span": 547
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "These weights are algorithm parameters [CITATION_2] , [CITATION_3] .",
+      "s_span": 624,
+      "e_span": 692
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "These weights are algorithm parameters [CITATION_2] , [CITATION_3] .",
+      "s_span": 624,
+      "e_span": 692
+    }
+  ],
+  "bib_entries": {
+    "2271808": {
+      "title": "Computing aggregates for monitoring wireless sensor networks",
+      "abstract": "Wireless sensor networks involve very large numbers of small, low-power, wireless devices. Given their unattended nature, and their potential applications in harsh environments, we need a monitoring infrastructure that indicates system failures and resource depletion. We describe an architecture for sensor network monitoring, then focus on one aspect of this architecture: continuously computing aggregates (sum, average, count) of network properties (loss rates, energy-levels etc., packet counts). Our contributions are two-fold. First, we propose a novel tree construction algorithm that enables energy-efficient computation of some classes of aggregates. Second, we show through actual implementation and experiments that wireless communication artifacts in even relatively benign environments can significantly impact the computation of these aggregate properties. In some cases, without careful attention to detail, the relative error in the computed aggregates can be as much as 50%. However, by carefully discarding links with heavy packet loss and asymmetry, we can improve accuracy by an order of magnitude."
+    },
+    "561285": {
+      "title": "A scheme for robust distributed sensor fusion based on average consensus",
+      "abstract": "We consider a network of distributed sensors, where where each sensor takes a linear measurement of some unknown parameters, corrupted by independent Gaussian noises. We propose a simple distributed iterative scheme, based on distributed average consensus in the network, to compute the maximum-likelihood estimate of the parameters. This scheme doesn't involve explicit point-to-point message passing or routing; instead, it diffuses information across the network by updating each node's data with a weighted average of its neighbors' data (they maintain the same data structure). At each step, every node can compute a local weighted least-squares estimate, which converges to the global maximum-likelihood solution. This scheme is robust to unreliable communication links. We show that it works in a network with dynamically changing topology, provided that the infinitely occurring communication graphs are jointly connected."
+    },
+    "1325": {
+      "title": "Consensus propagation",
+      "abstract": "We propose consensus propagation, an asynchronous distributed protocol for averaging numbers across a network. We establish convergence, characterize the convergence rate for regular graphs, and demonstrate that the protocol exhibits better scaling properties than pairwise averaging, an alternative that has received much recent attention. Consensus propagation can be viewed as a special case of belief propagation, and our results contribute to the belief propagation literature. In particular, beyond singly-connected graphs, there are very few classes of relevant problems for which belief propagation is known to converge."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,51 @@
+{
+  "doc_id": "21663",
+  "text": "Hierarchical phrase-based rules define a synchronous context-free grammar (CFG) and a particular search space of translation candidates. Table 1 shows the type of rules included in a standard hierarchical phrase-based grammar, where T denotes the terminals (words) and ∼ is a bijective function that relates the source and target nonterminals of [CITATION_1] . This function is defined if there are at least two nonterminals, and for clarity of presentation may be omitted in general rule discussions. When γ, α ∈ {T} + , that is, the rule contains no nonterminals, the rule is a simple lexical phrase pair. The HiFST translation system is based on a variant of the CYK algorithm closely related to CYK+ [CITATION_2] . Parsing follows the description of [CITATION_3] [CITATION_4] ; it maintains back-pointers and employs hypothesis recombination without pruning. The underlying model is a probabilisitic synchronous CFG consisting of a set R = {R r } of rules R r : N r → γ r ,α r / p r , with \"glue\" rules, S → X,X and S → S X,S X . N denotes the set of nonterminal categories (examples are given in Section 3), and p r denotes the rule probability, typically transformed to a cost c r ; unless otherwise noted we use the tropical semiring, so c r = − log p r . T denotes the terminals (words), and the grammar builds parses based on strings γ, α ∈ {N ∪ T} + . Each cell in the CYK grid is specified by a nonterminal symbol and position in the CYK grid: (N, x, y), which spans s x+y−1 x on the source sentence. In effect, the source language sentence is parsed using a CFG with rules N → γ. The generation of translations is a second step that follows parsing. For this second step, we describe a method to construct word lattices with all possible translations that can be produced by the hierarchical rules. Construction proceeds by traversing the CYK grid along the back-pointers established in parsing. In each cell (N, x, y) in the CYK grid, we build a target language word lattice L (N, x, y) . This lattice contains every translation of s x+y−1 x from every derivation headed by N. These lattices also contain the translation scores on their arc weights.",
+  "correct_citation": {
+    "[CITATION_1]": "3505719",
+    "[CITATION_2]": "2494079",
+    "[CITATION_3]": "384994",
+    "[CITATION_4]": "3505719"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Table 1 shows the type of rules included in a standard hierarchical phrase-based grammar, where T denotes the terminals (words) and ∼ is a bijective function that relates the source and target nonterminals of  .",
+      "s_span": 137,
+      "e_span": 360
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The HiFST translation system is based on a variant of the CYK algorithm closely related to CYK+  .",
+      "s_span": 608,
+      "e_span": 718
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Parsing follows the description of   ; it maintains back-pointers and employs hypothesis recombination without pruning.",
+      "s_span": 719,
+      "e_span": 862
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Parsing follows the description of   ; it maintains back-pointers and employs hypothesis recombination without pruning.",
+      "s_span": 719,
+      "e_span": 862
+    }
+  ],
+  "bib_entries": {
+    "384994": {
+      "title": "A hierarchical phrase-based model for statistical machine translation",
+      "abstract": "We present a statistical phrase-based translation model that uses hierarchical phrases---phrases that contain subphrases. The model is formally a synchronous context-free grammar but is learned from a bitext without any syntactic information. Thus it can be seen as a shift to the formal machinery of syntax-based translation systems without any linguistic commitment. In our experiments using BLEU as a metric, the hierarchical phrase-based model achieves a relative improvement of 7.5% over Pharaoh, a state-of-the-art phrase-based system."
+    },
+    "3505719": {
+      "title": "Hierarchical phrase-based translation",
+      "abstract": "We present a statistical machine translation model that uses hierarchical phrases---phrases that contain subphrases. The model is formally a synchronous context-free grammar but is learned from a parallel text without any syntactic annotations. Thus it can be seen as combining fundamental ideas from both syntax-based translation and phrase-based translation. We describe our system's training and decoding methods in detail, and evaluate it for translation speed and translation accuracy. Using BLEU as a metric of translation accuracy, we find that our system performs significantly better than the Alignment Template System, a state-of-the-art phrase-based system."
+    },
+    "2494079": {
+      "title": "A generalized CYK algorithm for parsing stochastic CFG",
+      "abstract": "We present a bottom-up parsing algorithm for stochastic context-free grammars that is able (1) to deal with multiple interpretations of sentences containing compound words; (2) to extract N-most probable parses in O(n 3 ) and compute at the same time all possible parses of any portion of the input sequence with their probabilities; (3) to deal with out of vocabulary words. Explicitly extracting all the parse trees associated to a given input sentence depends on the complexity of the grammar, but even in the case where this number is exponential in n, the chart used by the algorithm for the representation is of O(n 2 ) space complexity."
+    }
+  },
+  "generator": "fallback_v4"
+}

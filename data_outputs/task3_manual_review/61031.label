@@ -1,0 +1,29 @@
+{
+  "doc_id": "61031",
+  "text": "In this study, we investigated the effect of cross-orientation on segmentation for rectal cancer radiotherapy using CNN. The image data were pre-processed in MATLAB R2017b (MathWorks, Inc., Natick, MA, USA). A custom-built script was used to extract and label all the voxels that belonged to the specific contours from the DICOM structure files. We used a contrast-limited adaptive histogram equalization (CLAHE) [CITATION_1] [CITATION_2] algorithm to pre-process the CT images for image enhancement. For the patients in the \"supine\" position, the images were rotated 180°clockwise to create the corresponding \"virtual prone\" images. This is to remove the effects that are entirely caused by the physical orientation of the image. The final data used for CNN were the 2D CT slices and the corresponding 2D labels. The process and the additional image pre-processing were fully automated.",
+  "correct_citation": {
+    "[CITATION_1]": "206267169",
+    "[CITATION_2]": "41505656"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We used a contrast-limited adaptive histogram equalization (CLAHE) algorithm to pre-process the CT images for image enhancement."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We used a contrast-limited adaptive histogram equalization (CLAHE) algorithm to pre-process the CT images for image enhancement."
+    }
+  ],
+  "bib_entries": {
+    "41505656": {
+      "title": "Realization of the contrast limited adaptive histogram equalization (CLAHE) for real-time image enhancement",
+      "abstract": "Acquired real-time image sequences, in their original form may not have good viewing quality due to lack of proper lighting or inherent noise. For example, in X-ray imaging, when continuous exposure is used to obtain an image sequence or video, usually low-level exposure is administered until the region of interest is identified. In this case, and many other similar situations, it is desired to improve the image quality in real-time. One particular method of interest, which extensively is used for enhancement of still images, is Contrast Limited Adaptive Histogram Equalization (CLAHE) proposed in [1] and summarized in [2]. This approach is computationally extensive and it is usually used for off-line image enhancement. Because of its performance, hardware implementation of this algorithm for enhancement of real-time image sequences is sought. In this paper, a system level realization of CLAHE is proposed, which is suitable for VLSI or FPGA implementation. The goal for this realization is to minimize the latency without sacrificing precision."
+    },
+    "206267169": {
+      "title": "Automatic segmentation of the clinical target volume and organs at risk in the planning CT for rectal cancer using deep dilated convolutional neural networks",
+      "abstract": "Purpose ::: Delineation of the clinical target volume (CTV) and organs at risk (OARs) is very important for radiotherapy but is time-consuming and prone to inter-observer variation. Here, we proposed a novel deep dilated convolutional neural network (DDCNN)-based method for fast and consistent auto-segmentation of these structures. ::: ::: Methods ::: Our DDCNN method was an end-to-end architecture enabling fast training and testing. Specifically, it employed a novel multiple-scale convolutional architecture to extract multiple-scale context features in the early layers, which contain the original information on fine texture and boundaries and which are very useful for accurate auto-segmentation. In addition, it enlarged the receptive fields of dilated convolutions at the end of networks to capture complementary context features. Then, it replaced the fully connected layers with fully convolutional layers to achieve pixel-wise segmentation. We used data from 278 patients with rectal cancer for evaluation. The CTV and OARs were delineated and validated by senior radiation oncologists in the planning computed tomography (CT) images. A total of 218 patients chosen randomly were used for training, and the remaining 60 for validation. The Dice similarity coefficient (DSC) was used to measure segmentation accuracy. ::: ::: Results ::: Performance was evaluated on segmentation of the CTV and OARs. In addition, the performance of DDCNN was compared with that of U-Net. The proposed DDCNN method outperformed the U-Net for all segmentations, and the average DSC value of DDCNN was 3.8% higher than that of U-Net. Mean DSC values of DDCNN were 87.7% for the CTV, 93.4% for the bladder, 92.1% for the left femoral head, 92.3% for the right femoral head, 65.3% for the intestine and 61.8% for the colon. The test time was 45 s per patient for segmentation of all the CTV, bladder, left and right femoral heads, colon and intestine. We also assessed our approaches and results with those in the literature: our system showed superior performance and faster speed. ::: ::: Conclusions ::: These data suggest that DDCNN can be used to segment the CTV and OARs accurately and efficiently. It was invariant to the body size, body shape, and age of the patients. DDCNN could improve the consistency of contouring and streamline radiotherapy workflows. ::: ::: This article is protected by copyright. All rights reserved."
+    }
+  },
+  "generator": "fallback"
+}

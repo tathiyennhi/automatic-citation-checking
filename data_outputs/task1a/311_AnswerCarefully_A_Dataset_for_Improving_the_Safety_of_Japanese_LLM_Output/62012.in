@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "12 For more details about his investigation, seeNakayama et al. [8] Safety (on ACv2-Test) Usefulness (on MT Bench) Violation Rate Acceptable Response Rate Average evaluation score Usefulness data only 0.445 0.436 3.64±0.03 + ACv1 x1 0.357 0.538 3.78±0.03 + ACv1 x16 0.218 0.63 3.68 + ACv2 x1 0.274 0.595 3.84±0.10 + ACv2 x16 0.153 0.719 3.81±0.04Table 3: Results of safety SFT using AC of LLM-as-a-judge.",
+    "Based on these results, we consider that LLM-as-a-judge is sufficiently reliable in evaluations using AC, and in Section 4 below, we will investigate the effectiveness of safety fine-tuning using automatic evaluation.",
+    "Safety Fine-Tuning with ACAs emphasized in preceding sections, AC is unique in that it is a safety dataset that comes with reference answers.",
+    "In this section, we describe the experiments where we used AC as an instruction dataset for supervised fine-tuning (SFT) of a Japanese LLM, and show that it improved the safety of a Japanese LLM output without compromising the usefulness in general.The base model we used for this experiment is LLM-jp's LLM-jp-13B-v2.0 13.",
+    "The following instruction datasets were used simultaneously for SFTfoot_10:• OpenAssistant-1 (19,047 samples each in Japanese and English)• OpenAssistant-2 (29,431 samples each in Japanese and English)• Dolly (13,509 samples each in Japanese and English)• ichikara-004-001-single (8,192 samples in Japanese)• AnswerCarefully (762 samples in ACv1 development set and 1,464 in ACv2 development set)All of these datasets except for AC are instruction datasets for usefulness."
+  ]
+}

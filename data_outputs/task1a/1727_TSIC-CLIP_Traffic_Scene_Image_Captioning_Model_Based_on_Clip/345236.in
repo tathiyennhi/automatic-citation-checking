@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "(12)The image sub-region features x v are then concatenated with the caption vectors j,k t having the highest similarity to their corresponding sub-regions.",
+    "This combined representation is processed through fully connected layers, layer normalization, and dropout, as shown in Equation ( 13):ĵ,k t j,k x t drop(fc (norm ([t, v]))) t =, (13)where j,k t is the text feature with the highest similarity; j represents the numbering of the, (9) where the vector x v is the x th image subregion feature, which is taken as the query key.Then, Text-Encoder encodes BUU1 2 T {T, T,..., T } n =, as shown in Equation (10): LIP text edictive layer as (5); context FA tune the adapter used to fed into own in (6) ents the er * global V * W are e image (7) onential ponding e global perature, which bability lass; N ses; i p the i th der are s shown (8) amples; presents s to the labeling sample t will be 3.1.4 Text Retrieval ModuleThe text retrieval module is used to calculate and get the text features that have the highest similarity with the nine sub-regions of the image, and its model is shown in Figure 4 Text Retrieval Module.The input image is first split into nine subregions in the text retrieval module.",
+    "Each image sub-region is then encoded by the Image-Encoder, as shown in Equation ( 9):x sub v ImageEncoder(I) =,(9)where the vector x v is the x th image subregion feature, which is taken as the query key.Then, Text-Encoder encodesBUU 1 2 T {T, T,..., T } n =, as shown in Equation (10):q BUUu TextEncoder(T)=.",
+    "(10)The cosine similarity is calculated between the query image feature x v and each text feature q u as shown in Equation ( 11):x q x j x q v u sim(v, u) v u  = .",
+    "(11)Finally, the k text features j,k t with the highest similarity tox V are returned, as shown in Equation ( 12):j, x q t topK(sim(v u)) k = ."
+  ]
+}

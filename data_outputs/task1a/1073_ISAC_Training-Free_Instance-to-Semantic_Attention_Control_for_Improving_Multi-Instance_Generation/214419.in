@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To separate instances, we penalize their worst local overlap using the maximum pixel-wise overlap (MPO):MPO(A, B) = max p∈{1,...,F } A[p] • B[p],(6)and define the instance separation loss as the maximum MPO over all mask pairs,L ins (X t) = max 1≤i<j≤N MPO M [i], M [j].",
+    "(7)Within each step we treat K as stopgrad and recompute it at the next step, so gradients flow only through SA t.Algorithm 1: ISAC with Latent OptimizationInput: Prompt T, Model ϵ θ, decoder D, step size η Output: Image I0 1 XT ∼ N (0, I) 2 for t = T, T -1,..., 1 do 3 Call Denoise(Xt, T, ϵ θ, t) with Hooks → SAt, CAt 4 CA ins t ← SAt • CAt 5Build foreground gate and instance masks (Eqs.",
+    "3, 4, 5)6Compute Lins, Lsem (Eqs.",
+    "7, 8)7 Lt(Xt) ← λins(t)Lins(Xt) + λsem(t)Lsem(Xt) 8 Xt ← Xt -η • ∇X t Lt(Xt) 9 Xt-1 ← Denoise( Xt, T, ϵ θ, t) 10 I0 ← D(X0)// Decode to pixel space Phase 2: Instance-aware Semantic SeparationAfter Phase 1 stabilizes sharp instance boundaries in SA t, the propagated semantic maps CA ins t = SA t CA t in Eq.",
+    "( 2) are activated through spatially partitioned instances."
+  ]
+}

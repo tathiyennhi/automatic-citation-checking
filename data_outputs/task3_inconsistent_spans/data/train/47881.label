@@ -1,0 +1,22 @@
+{
+  "doc_id": "47881",
+  "text": "For example, the predicted frequencies and the actual frequencies of a 5 ℎ order FIR filter using different wordlengths are depicted in Figure 4 . The \"actual\" maximum frequencies are computed by increasing the operating frequency from the rated value until errors are observed at the output; the maximum operating frequency with correct output is recorded for the current word-length. As can be seen in Figure 4 , the circuit can operate without errors at a much higher frequency in practice than predicted according to our experiments. A maximum speed differential of 3.2× is obtained when the input signal is 5-bit. In our experiments in Section V, the conservative timing margin is removed in the traditional scenario for a fairer comparison to the overclocking scenario. To do this, for each truncated word-length, we select the maximum frequency at which we see no overclocking error on the FPGA board in our lab. For example, in Figure 4 , the operating frequency of the design when the word-lengths are truncated to 8, 5 and 2 bits are 400MHz, 450MHz and 500MHz respectively. Figure 4 also demonstrates that when the circuit is truncated, it allows the circuit to operate at a higher frequency than the frequency of full precision implementation. However, a non-uniform period change can be observed for both results. For instance, the maximum operating frequency keeps almost constant when the operand word-length reduces from 8 to 6 or from 5 to 3 in both the experimental results and those of timing analyzer. This will cause a slight deviation between our analytical model which assumes that the single bit carry propagation delay to be a constant value, as discussed in (12) with expression = − 1. This deviation will be influenced by many factors including how the architecture has been packed onto LUTs and CLBs and process variation causing non-uniform interconnection delays [CITATION_1] . However, we shall see that our model remains close to the true empirical results in Section V.",
+  "correct_citation": {
+    "[CITATION_1]": "330317"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This deviation will be influenced by many factors including how the architecture has been packed onto LUTs and CLBs and process variation causing non-uniform interconnection delays  .",
+      "s_span": 1711,
+      "e_span": 1906
+    }
+  ],
+  "bib_entries": {
+    "330317": {
+      "title": "FPGA device and architecture evaluation considering process variations",
+      "abstract": "Process variations in nanometer technologies are becoming an important issue for cutting-edge FPGAs with a multi-million gate capacity. Considering both die-to-die and within-die variations in effective channel length, threshold voltage, and gate oxide thickness, we first develop closed-form models of leakage and timing variations at the FPGA chip level. Experiments show that our models are within 3% from Monte Carlo simulation, and the leakage and delay variations can be up to 3/spl times/ and 1.9/spl times/, respectively. We then derive analytical yield models considering both leakage and timing variations, and use such models to evaluate FPGA device and architecture under process variations. Compared to the architecture similar to a commercial FPGA and device setting from ITRS roadmap, device tuning alone improves leakage yield by 39% and architecture and device co-optimization increases leakage yield by 73%. We also show that LUT size 4 gives the highest leakage yield, LUT size 7 gives the highest timing yield, but LUT size 5 achieves the maximum combined leakage and timing yield. To the best of our knowledge, this is the first in-depth study on FPGA device and architecture co-evaluation considering process variations."
+    }
+  },
+  "generator": "fallback_v4"
+}

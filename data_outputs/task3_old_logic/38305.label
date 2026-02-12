@@ -1,0 +1,20 @@
+{
+  "doc_id": "38305",
+  "text": "In the compilation phase, new states are induced from old ones: For the indicated string position, a possible grammar symbol is selected and the dot is advanced one step in all items where this particular grammar symbol immediately follows the dot, and the resulting new items will constitute the kernel of the new state. Non-kernel items are added to these by selecting grammar rules whose LHS match grammar symbols at the new string position in the new items. In each non-kernel item, the dot is at the beginning of the rule. If a set of items is constructed that already exists, then this search branch is abandoned and the recursion terminates. The state-construction phase starts o by creating an initial set consisting of a single dummy kernel item and its non-kernel closure. This is State 1 in Figure 2 . The dummy item introduces a dummy top grammar symbol as its LHS, while the RHS consists of the old top symbol, and the dot is at the beginning of the rule. In the example, this is the item S 0 ) S. The rest of the states are induced from the initial state. The states resulting from the sample grammar of Figure 1 are shown in Figure 2 , and these in turn will yield the parsing tables of Figure 3 . The entry \\s3\" in the action table, for example, should be interpreted as \\shift the lookahead symbol onto the stack and transit to State 3\". The entry \\r7\" should be interpreted as \\reduce by Rule 7\". The accept action is denoted \\acc\" . In conjunction with grammar formalisms employing complex feature structures, this procedure is associated with a number of interesting problems, many of which are discussed in [CITATION_1] and (Samuelsson 1994c) . For example, the termination criterion must be modi ed: If a new set of items is constructed that is more speci c than an existing one, then this search branch is abandoned and the recursion terminates. If, on the other hand, it is more general, then it replaces the old one.",
+  "correct_citation": {
+    "[CITATION_1]": "972946"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In conjunction with grammar formalisms employing complex feature structures, this procedure is associated with a number of interesting problems, many of which are discussed in"
+    }
+  ],
+  "bib_entries": {
+    "972946": {
+      "title": "\\An Extended LR Parsing Algorithm for Grammars Using Feature-based Syntactic Categories",
+      "abstract": "This paper proposes an LR parsing algorithm modified for grammars with feature-based categories. The proposed algorithm does not instantiate categories during preprocessing of a grammar as proposed elsewhere. As a result, it constructs a minimal size of GOTO/ACTION table and eliminates the necessity of search for GOTO table entries during parsing."
+    }
+  },
+  "generator": "fallback"
+}

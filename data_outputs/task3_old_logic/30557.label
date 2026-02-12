@@ -1,0 +1,20 @@
+{
+  "doc_id": "30557",
+  "text": "Liu et al. [CITATION_1] introduce a full-duplex technique to improve the performance of ABCSs. In this technique, after receiving reflected signals, the backscatter receiver can send a feedback to the backscatter transmitter to inform any error. The authors indicate that the challenge when designing the fullduplex system is that the amplitudes of the received signals at the backscatter receiver can change considerably when the receiver backscatters to send feedback signals. This issue arises due to the fact that the backscatter receiver uses the same antenna to transmit and receive signals. Therefore, the authors change the impedance of the antenna at the backscatter receiver to create phase shifts to the received signals, and thus the amplitudes of the received signals at the backscatter receiver are maintained. The authors then introduce a protocol with two steps for the feedback channel. First, as soon as the backscatter receiver receives signals sent from the backscatter transmitter, the backscatter receiver begins to transmit preamble bits on the feedback channel. Then, the backscatter receiver divides the received signals into chunks of b bits and computes c-bit checksum for each group of b bits. Second, the backscatter receiver transmits the checksum back to the backscatter transmitter. The values of b and c are determined by a ratio between the transmission rate of data channel, i.e., transmitter-to-receiver channel, and that of feedback channel, i.e., receiver-to-transmitter channel. In this way, the transmission time of both data and feedback are approximately equal. By using the feedback data, the backscatter transmitter can detect errors and collision, and is able to adjust its bitrates based on the channel condition. Additionally, by calculating the c-bit checksum for each chunk of b bits, the full-duplex technique allows the backscatter transmitter to re-transmit a subset of the bits rather than the whole chunk when an error is detected.",
+  "correct_citation": {
+    "[CITATION_1]": "18147889"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Liu et al. introduce a full-duplex technique to improve the performance of ABCSs."
+    }
+  ],
+  "bib_entries": {
+    "18147889": {
+      "title": "Enabling instantaneous feedback with full-duplex backscatter",
+      "abstract": "This paper introduces the first design that enables full-duplex communication on battery-free backscatter devices. Specifically, it gives receivers a way to provide low-rate feedback to the transmitter on the same frequency as that of the backscatter transmissions, using neither multiple antennas nor power-consuming cancellation hardware. Our design achieves this goal using only fully-passive analog components that consume near-zero power. We integrate our design with the backscatter network stack and demonstrate that it can minimize energy wastes that occur due to collisions and also correct for errors and changes in channel conditions at a granularity smaller than that of a packet. To show the feasibility of our design, we build a hardware prototype using off-the-shelf analog components. Our evaluation shows that our design cancels the self-interference down to the noise floor, while consuming only 0.25 μW and 0.54 μW of transmit and receive power, respectively."
+    }
+  },
+  "generator": "fallback"
+}

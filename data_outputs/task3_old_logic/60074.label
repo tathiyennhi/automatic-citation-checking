@@ -1,0 +1,25 @@
+{
+  "doc_id": "60074",
+  "text": "If there is any arc in the current R going out from U , say u → w for some u ∈ U , then it must be that w.index < v.index. However, this implies that u.root ≤ w.index < v.index, contradicting to u.root ≥ v.index for all u ∈ U . This implies that there is no arc going out from U . Thus, U is a cluster and is strongly connected, and it must be a minimal cluster. Now we are ready to show the correctness and the efficiency of Algorithm 3. Proof. By Lemma 7 and Lemma 8, in Algorithm 3, only minimal clusters are resampled and the halting rule is when no minimal cluster is present. In other words, the resampling rules are the same for Algorithm 3 and Algorithm 2, except the difference in orderings. Given a resampling table, our claim is that the resampled variables are exactly the same for Algorithm 3 and Algorithm 2, which leads to an identical final state. The claim can be verified straightforwardly, or we can use a result of Eriksson [CITATION_1] . If any two minimal clusters are present, then they must be disjoint (Condition 1), and thus different orders of resampling them lead to the same state for a fixed resampling table. This is the polygon property in [CITATION_2] , which by [Eri96, Theorem 2.1] implies the strong convergence property. The latter is exactly our claim.",
+  "correct_citation": {
+    "[CITATION_1]": "22148958",
+    "[CITATION_2]": "22148958"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The claim can be verified straightforwardly, or we can use a result of Eriksson"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This is the polygon property in, which by [Eri96, Theorem 2.1] implies the strong convergence property."
+    }
+  ],
+  "bib_entries": {
+    "22148958": {
+      "title": "Strong convergence and a game of numbers",
+      "abstract": "Abstract S. Mozes investigated a certain solitary game played on a weighted graph. Numbers are placed on the nodes of the graph, and a move consists of changing the sign of a negative number and changing the numbers on the neighboring nodes according to the weights on the edges. Mozes proved that the game has a strong convergence property when the edges have certain positive integer weights. However, his approach would give no information in the case of other weights. In this paper we first prove that strong convergence is equivalent to the fact that the game has as a certain ‘polygon property’. We can then, in a rather elementary way, characterize the assignments of weights that imply the polygon property, and hence strong convergence. Finally, we make a natural generalization of the game, where we also have weights on the nodes. The conditions for strong convergence generalize nicely to this game."
+    }
+  },
+  "generator": "fallback"
+}

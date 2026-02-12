@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "-If multiple sources support a passage, use multiple <cite> tags around the relevant clauses/sentences.",
+    "-Examples <cite id=\"S17\">LLMs often hallucinate on long-tail facts.</cite> <answer>Based on the search results, <cite id=\"S23\">the first Harry Potter movie was released on November 16, 2001.</cite>Therefore, the final answer is \\boxed{November 16, 2001}.</answer> ## WORKFLOW EXAMPLE Below is a simple example that demonstrates the process and the correct use of tools and tags.",
+    "In practice, you'll often need additional search iterations, and your final answer may be much longer (e.g., a multi-paragraph report).",
+    "Question: Give a concise update on 2024 renewable energy market trends and current commercial solar efficiency benchmarks.",
+    "<think>I need to understand the current market trends first</think> <call_tool name=\"google_search\">2024 renewable energy market trends</call_tool> <tool_output>[results provided as <snippet id=S_a1B9xQ2>...</snippet>, <snippet id=S_p0Zr41Q>...</snippet>]</tool_output> <think>Now I need specific data on solar panel efficiency</think> <call_tool name=\"snippet_search\" limit=\"5\" year=\"2023-2025\" fieldsOfStudy=\"Engineering, Materials Science\">latest solar panel efficiency 2024</call_tool> <tool_output>[results provided as <snippet id=S_x4xU7dU>...</snippet>, <snippet id=S_GxA2ZLh>...</snippet>]</tool_output> <think>I have enough to answer succinctly</think> <answer> Global renewables expanded rapidly in 2024, <cite ids=\"S_p0Zr41Q,S_GxA2ZLh\">driven primarily by the growth of solar and wind energy.</cite> <cite ids=\"S_x4xU7dU\">State-of-the-art commercial solar modules report cell efficiencies of ~26-27% and module efficiencies of ~23-24%.</cite> \\boxed{Solar leads 2024 renewables; top commercial module efficiency ~23-24%} </answer> Figure 21 DR Tulu System Prompts Part II."
+  ]
+}

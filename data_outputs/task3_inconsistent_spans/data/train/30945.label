@@ -1,0 +1,22 @@
+{
+  "doc_id": "30945",
+  "text": "In earlier work on RDF graph embeddings (specifically RDF2Vec [CITATION_1] ), symmetric windows were used on top of generated random walks, which include both node and edge labels. These symmetric windows have the focus word in the middle and the context of the word is both before and after it. This means that the context of a node b consists of the nodes it can reach by following edges, as well as the nodes which can reach b. What this means is that the result RDF2Vec would be the same, independently of whether the original walks would be performed forward or backward. Inspired by this, we investigated the effect of creating the co-occurence matrix as the sum of the normal PPR matrix as described above and the PPR matrix of the graph with all edges reversed. Since a positive effect on the embeddings was obtained (at least for the tasks we used in the evaluation) we chose to use this approach.",
+  "correct_citation": {
+    "[CITATION_1]": "35288341"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In earlier work on RDF graph embeddings (specifically RDF2Vec  ), symmetric windows were used on top of generated random walks, which include both node and edge labels.",
+      "s_span": 0,
+      "e_span": 180
+    }
+  ],
+  "bib_entries": {
+    "35288341": {
+      "title": "Rdf2vec: Rdf graph embeddings for data mining",
+      "abstract": "Linked Open Data has been recognized as a valuable source for background information in data mining. However, most data mining tools require features in propositional form, i.e., a vector of nominal or numerical features associated with an instance, while Linked Open Data sources are graphs by nature. In this paper, we present RDF2Vec, an approach that uses language modeling approaches for unsupervised feature extraction from sequences of words, and adapts them to RDF graphs. We generate sequences by leveraging local information from graph sub-structures, harvested by Weisfeiler-Lehman Subtree RDF Graph Kernels and graph walks, and learn latent numerical representations of entities in RDF graphs. Our evaluation shows that such vector representations outperform existing techniques for the propositionalization of RDF graphs on a variety of different predictive machine learning tasks, and that feature vector representations of general knowledge graphs such as DBpedia and Wikidata can be easily reused for different tasks."
+    }
+  },
+  "generator": "fallback_v4"
+}

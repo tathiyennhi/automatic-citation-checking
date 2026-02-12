@@ -1,0 +1,97 @@
+{
+  "text": "Projective dependency parsing algorithms are well understood due to their close connection to phrasebased chart parsing algorithms. The work of [CITATION_1] showed that the argmax problem for digraphs could be solved in O(n 3 ) using a bottomup dynamic programming algorithm similar to CKY. [CITATION_2] presented an O(n 3 ) inside-outside algorithm for projective dependency parsing using the Eisner algorithm as its backbone. Using this algorithm it is trivial to calculate both Z x and each edge expectation. Crucially, the nested property of projective structures allows edge expectations to be computed in O(n 3 ) from the inside-outside values. It is straight-forward to extend the algorithms of [CITATION_3] and [CITATION_4] to the labeled case adding only a factor of O(|L|n 2 ). Table 1 gives an overview of the computational complexity for the three problems considered here for both the projective and non-projective case. We see that the non-projective case compares favorably for all three problems.",
+  "citation_candidates": [
+    "13163488",
+    "941952",
+    "74294",
+    "277918",
+    "12926517",
+    "643522",
+    "1364249",
+    "14933205",
+    "6681594",
+    "11495042",
+    "3262717",
+    "8945340",
+    "13075323",
+    "802998",
+    "6270377",
+    "17842042",
+    "7966094",
+    "11950447"
+  ],
+  "bib_entries": {
+    "13075323": {
+      "title": "CoNLL-X shared task on multilingual dependency parsing",
+      "abstract": "Each year the Conference on Computational Natural Language Learning (CoNLL) features a shared task, in which participants train and test their systems on exactly the same data sets, in order to better compare systems. The tenth CoNLL (CoNLL-X) saw a shared task on Multilingual Dependency Parsing. In this paper, we describe how treebanks for 13 languages were converted into the same dependency format and how parsing performance was measured. We also give an overview of the parsing approaches that participants took and the results that they achieved. Finally, we try to draw general conclusions about multi-lingual parsing: What makes a particular language, treebank or annotation scheme easier or harder to parse and which phenomena are challenging for any dependency parser?"
+    },
+    "802998": {
+      "title": "Online learning of approximate dependency parsing algorithms",
+      "abstract": "In this paper we extend the maximum spanning tree (MST) dependency parsing framework of McDonald et al. (2005c) to incorporate higher-order feature representations and allow dependency structures with multiple parents per word. We show that those extensions can make the MST framework computationally intractable, but that the intractability can be circumvented with new approximate parsing algorithms. We conclude with experiments showing that discriminative online learning using those approximate algorithms achieves the best reported parsing accuracy for Czech and Danish."
+    },
+    "3262717": {
+      "title": "Three new probabilistic models for dependency parsing: An exploration",
+      "abstract": "After presenting a novel O(n3) parsing algorithm for dependency grammar, we develop three contrasting ways to stochasticize it. We propose (a) a lexical affinity model where words struggle to modify each other, (b) a sense tagging model where words fluctuate randomly in their selectional preferences, and (c) a generative model where the speaker fleshes out each word's syntactic and conceptual structure without regard to the implications for the hearer. We also give preliminary empirical results from evaluating the three models' parsing performance on annotated Wall Street Journal training text (derived from the Penn Treebank). In these results, the generative model performs significantly better than the others, and does about equally well at assigning part-of-speech tags."
+    },
+    "11950447": {
+      "title": "Cubic-time parsing and learning algorithms for grammatical bigram models",
+      "abstract": "This paper presents a probabilistic model of English grammar that is based upon \"grammatical bigrams\", i.e., syntactic relationships between pairs of words. Because of its simplicity, grammatical bigram models admit cubic-time parsing and unsupervised learning algorithms, which are described in detail."
+    },
+    "13163488": {
+      "title": "Statistical dependency analysis with support vector machines",
+      "abstract": "In this paper, we propose a method for analyzing word-word dependencies using deterministic bottom-up manner using Support Vector machines. We experimented with dependency trees converted from Penn treebank data, and achieved over 90% accuracy of word-word dependency. Though the result is little worse than the most up-to-date phrase structure based parsers, it looks satisfactorily accurate considering that our parser uses no information from phrase structures."
+    },
+    "643522": {
+      "title": "Deterministic dependency parsing of english text",
+      "abstract": "This paper presents a deterministic dependency parser based on memory-based learning, which parses English text in linear time. When trained and evaluated on the Wall Street Journal section of the Penn Treebank, the parser achieves a maximum attachment score of 87.1%. Unlike most previous systems, the parser produces labeled dependency graphs, using as arc labels a combination of bracket labels and grammatical role labels taken from the Penn Treebank II annotation scheme. The best overall accuracy obtained for identifying both the correct head and the correct arc label is 86.0%, when restricted to grammatical role labels (7 labels), and 84.4% for the maximum set (50 labels)."
+    },
+    "12926517": {
+      "title": "Online large-margin training of dependency parsers",
+      "abstract": "We present an effective training algorithm for linearly-scored dependency parsers that implements online large-margin multi-class training (Crammer and Singer, 2003; Crammer et al., 2003) on top of efficient parsing techniques for dependency trees (Eisner, 1996). The trained parsers achieve a competitive dependency accuracy for both English and Czech with no language specific enhancements."
+    },
+    "17842042": {
+      "title": "Pseudo-projective dependency parsing",
+      "abstract": "In order to realize the full potential of dependency-based syntactic parsing, it is desirable to allow non-projective dependency structures. We show how a data-driven deterministic dependency parser, in itself restricted to projective structures, can be combined with graph transformation techniques to produce non-projective structures. Experiments using data from the Prague Dependency Treebank show that the combined system can handle non-projective constructions with a precision sufficient to yield a significant improvement in overall parsing accuracy. This leads to the best reported performance for robust non-projective parsing of Czech."
+    },
+    "7966094": {
+      "title": "Corrective modeling for non-projective dependency parsing",
+      "abstract": "We present a corrective model for recovering non-projective dependency structures from trees generated by state-of-the-art constituency-based parsers. The continuity constraint of these constituency-based parsers makes it impossible for them to posit non-projective dependency trees. Analysis of the types of dependency errors made by these parsers on a Czech corpus show that the correct governor is likely to be found within a local neighborhood of the governor proposed by the parser. Our model, based on a MaxEnt classifier, improves overall dependency accuracy by .7% (a 4.5% reduction in error) with over 50% accuracy for non-projective structures."
+    },
+    "6681594": {
+      "title": "Non-projective dependency parsing using spanning tree algorithms",
+      "abstract": "We formalize weighted dependency parsing as searching for maximum spanning trees (MSTs) in directed graphs. Using this representation, the parsing algorithm of Eisner (1996) is sufficient for searching over all projective trees in O(n3) time. More surprisingly, the representation is extended naturally to non-projective parsing using Chu-Liu-Edmonds (Chu and Liu, 1965; Edmonds, 1967) MST algorithm, yielding an O(n2) parsing algorithm. We evaluate these methods on the Prague Dependency Treebank using online large-margin learning techniques (Crammer et al., 2003; McDonald et al., 2005) and show that MST parsing increases efficiency and accuracy for languages with non-projective dependencies."
+    },
+    "6270377": {
+      "title": "Incremental integer linear programming for non-projective dependency parsing",
+      "abstract": "Integer Linear Programming has recently been used for decoding in a number of probabilistic models in order to enforce global constraints. However, in certain applications, such as non-projective dependency parsing and machine translation, the complete formulation of the decoding problem as an integer linear program renders solving intractable. We present an approach which solves the problem incrementally, thus we avoid creating intractable integer linear programs. This approach is applied to Dutch dependency parsing and we show how the addition of linguistically motivated constraints can yield a significant improvement over state-of-the-art."
+    },
+    "941952": {
+      "title": "Graph branch algorithm: An optimum tree search method for scored dependency graph with arc co-occurrence constraints",
+      "abstract": "Various kinds of scored dependency graphs are proposed as packed shared data structures in combination with optimum dependency tree search algorithms. This paper classifies the scored dependency graphs and discusses the specific features of the \"Dependency Forest\" (DF) which is the packed shared data structure adopted in the \"Preference Dependency Grammar\" (PDG), and proposes the \"Graph Branch Algorithm\" for computing the optimum dependency tree from a DF. This paper also reports the experiment showing the computational amount and behavior of the graph branch algorithm."
+    },
+    "277918": {
+      "title": "Conditional random fields: Probabilistic models for segmenting and labeling sequence data",
+      "abstract": "We present conditional random fields , a framework for building probabilistic models to segment and label sequence data. Conditional random fields offer several advantages over hidden Markov models and stochastic grammars for such tasks, including the ability to relax strong independence assumptions made in those models. Conditional random fields also avoid a fundamental limitation of maximum entropy Markov models (MEMMs) and other discriminative Markov models based on directed graphical models, which can be biased towards states with few successor states. We present iterative parameter estimation algorithms for conditional random fields and compare the performance of the resulting models to HMMs and MEMMs on synthetic and natural-language data."
+    },
+    "1364249": {
+      "title": "Corpus-based induction of syntactic structure: Models of dependency and constituency",
+      "abstract": "We present a generative model for the unsupervised learning of dependency structures. We also describe the multiplicative combination of this dependency model with a model of linear constituency. The product model outperforms both components on their respective evaluation metrics, giving the best published figures for unsupervised dependency parsing and unsupervised constituency parsing. We also demonstrate that the combined model works and is robust cross-linguistically, being able to exploit either attachment or distributional regularities that are salient in the data."
+    },
+    "14933205": {
+      "title": "Structure and performance of a dependency language model",
+      "abstract": "Abstract : We present a maximum entropy language model that incorporates both syntax and semantics via a dependency grammar. Such a grammar expresses the relations between words by a directed graph. Because the edges of this graph may connect words that are arbitrarily far apart in a sentence, this technique can incorporate the predictive power of words that lie outside of bigram or trigram range. we have built several simple dependency models, as we call them, and tested them in a speech recognition experiment. We report experimental results for these models here, including one that has a small but statistically significant advantage (p .02) over a digram language model."
+    },
+    "11495042": {
+      "title": "Accurate unlexicalized parsing",
+      "abstract": "We demonstrate that an unlexicalized PCFG can parse much more accurately than previously shown, by making use of simple, linguistically motivated state splits, which break down false independence assumptions latent in a vanilla treebank grammar. Indeed, its performance of 86.36% (LP/LR F1) is better than that of early lexicalized PCFG models, and surprisingly close to the current state-of-the-art. This result has potential uses beyond establishing a strong lower bound on the maximum possible accuracy of unlexicalized models: an unlexicalized PCFG is much more compact, easier to replicate, and easier to interpret than more complex lexical models, and the parsing algorithms are simpler, more widely understood, of lower asymptotic complexity, and easier to optimize."
+    },
+    "8945340": {
+      "title": "A novel use of statistical parsing to extract information from text",
+      "abstract": "Since 1995, a few statistical parsing algorithms have demonstrated a breakthrough in parsing accuracy, as measured against the UPenn TREEBANK as a gold standard. In this paper we report adapting a lexicalized, probabilistic context-free parser to information extraction and evaluate this new technique on MUC-7 template elements and template relations."
+    },
+    "74294": {
+      "title": "A polynomial-time algorithm for statistical machine translation",
+      "abstract": "We introduce a polynomial-time algorithm for statistical machine translation. This algorithm can be used in place of the expensive, slow best-first search strategies in current statistical translation architectures. The approach employs the stochastic bracketing transduction grammar (SBTG) model we recently introduced to replace earlier word alignment channel models, while retaining a bigram language model. The new algorithm in our experience yields major speed improvement with no significant loss of accuracy."
+    }
+  }
+}

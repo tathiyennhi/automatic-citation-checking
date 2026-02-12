@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The remaining batch then ❸ passes through (the enlarged version of) stage 2 of the backbone.",
+    "Finally, the remaining batch features ❹ are fed into the second transformer block (i.e., exit block 2) to get the predictions for the remaining requests in the batch.",
+    "In practice, we use a \"transformer\" head, but as a concept, it is a more general \"classifier\" or \"prediction\" head that does not necessarily has to be a transformer.",
+    "The above design allows smooth runtime adaptation of DNN variants with negligible costs and accelerated execution of batched inference.",
+    "In addition, we expect a gain in overall accuracy for a fraction of the requests (the ones that do not exit-early) due to the enlargement of stage 2 (with a new and low pruning ratio of 0.4) compared to passing the whole batch through a static DNN variant with a high pruning ratio of 0.6."
+  ]
+}

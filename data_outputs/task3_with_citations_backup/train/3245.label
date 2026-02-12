@@ -1,0 +1,22 @@
+{
+  "doc_id": "3245",
+  "text": "1) Structure of Cosface Face Recognition Model: Cosface's sphere20 network are shown in Fig. 7 . The pre-trained model parameters of the feature extraction part which is outside the dotted box in Fig. 7 have been given. The parameters of the classifier part which is inside the dotted box in Fig. 7 have to be retrained. The pre-trained model parameters of the face feature extraction part are imported and frozen during training process. This part does not participate in backpropagation. Only the parameters of the classifier are updated in backpropagation. 452,960 face images from 10,575 individuals in CASIA-WebFace dataset are cropped by Multi-task Cascaded Convolutional Networks (MTCNN, a face detection and calibration framework) [CITATION_1] to the size of 112×96 and then are used as the training set. Batchsize is set to 100. The gradient descent algorithm is SGD. Learning rate is initially set to 0.1 and gradually reduced to 0.0000001. After 6 epochs of training, we obtained a pre-trained model of the classifier of the Cosface network.",
+  "correct_citation": {
+    "[CITATION_1]": "10585115"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "452,960 face images from 10,575 individuals in CASIA-WebFace dataset are cropped by Multi-task Cascaded Convolutional Networks (MTCNN, a face detection and calibration framework) [CITATION_1] to the size of 112×96 and then are used as the training set.",
+      "s_span": 560,
+      "e_span": 812
+    }
+  ],
+  "bib_entries": {
+    "10585115": {
+      "title": "Joint Face Detection and Alignment Using Multitask Cascaded Convolutional Networks",
+      "abstract": "Face detection and alignment in unconstrained environment are challenging due to various poses, illuminations, and occlusions. Recent studies show that deep learning approaches can achieve impressive performance on these two tasks. In this letter, we propose a deep cascaded multitask framework that exploits the inherent correlation between detection and alignment to boost up their performance. In particular, our framework leverages a cascaded architecture with three stages of carefully designed deep convolutional networks to predict face and landmark location in a coarse-to-fine manner. In addition, we propose a new online hard sample mining strategy that further improves the performance in practice. Our method achieves superior accuracy over the state-of-the-art techniques on the challenging face detection dataset and benchmark and WIDER FACE benchmarks for face detection, and annotated facial landmarks in the wild benchmark for face alignment, while keeps real-time performance."
+    }
+  },
+  "generator": "fallback_v4"
+}

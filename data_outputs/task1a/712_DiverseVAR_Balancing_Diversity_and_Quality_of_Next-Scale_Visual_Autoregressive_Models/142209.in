@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "First, flattening an image into a 1D token sequence retains bidirectional dependencies, violating the unidirectional (i.e., causal) assumption in AR sampling.",
+    "Second, the flattened representation fails to exploit the inherent spatial locality of an image.",
+    "To resolve these issues, Tian et al. [61] introduced VAR-Visual Autoregressive Modelwhich substitutes next-token prediction with a next-scale objective.",
+    "Given an image I, a feature map Z ∈ R H×W ×D is obtained through an encoder (e.g., VQ-VAE [64]).",
+    "Rather than patchifying the feature map, VAR employs multi-scale encoding in which Z is decomposed intoK residual token maps (r 1, • • •, r K) of sizes s k = (h k, w k).At stage k the model constructs a feature map Z k by upsampling all preceding token maps to the final resolution s K = (H, W) and aggregating them:Z k = k i=1 up(r i, s K),(1)where up(•, •) denotes bilinear upsampling."
+  ]
+}

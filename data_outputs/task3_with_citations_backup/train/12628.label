@@ -1,0 +1,22 @@
+{
+  "doc_id": "12628",
+  "text": "2 flops (lines 12-13 in Algorithm 3). Instrumenting this inner loop would be invasive, but we can infer the percentage of time and work in these two parts with a complexity model and global measurements. Assume both the time and work cost of the entire solver are of the form C = aS 0 + bS 1 + cS 2 . The solve time and flop counts with S = 1, 2, 3, shown in Table 2 , generate right hand sides for system of three equations and three unknows a, b, and c, which are the time spent, or work, in each of the three types of components. The Landau Table 3 : Percentage of flops and time in species independent work, work linear in S, and work quadratic in S, with two species, double precision, and one process that about 98% of the work, and about 88% of the time, is in the kernel with one process. The measurements of the kernel time in Table 1 is 66% with 272 processes. This discrepancy is probably due to performance noise and memory contention in the 272 process timings. The non-kernel time percentage [CITATION_1] increases by a factor of about eight from the flop percentage (1.5), which reflects the eight vector lanes of the KNL vector unit.",
+  "correct_citation": {
+    "[CITATION_1]": "8971880"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The non-kernel time percentage [CITATION_1] increases by a factor of about eight from the flop percentage (1.5), which reflects the eight vector lanes of the KNL vector unit.",
+      "s_span": 975,
+      "e_span": 1149
+    }
+  ],
+  "bib_entries": {
+    "8971880": {
+      "title": "Recursive algorithms for distributed forests of octrees",
+      "abstract": "The forest-of-octrees approach to parallel adaptive mesh refinement and coarsening has recently been demonstrated in the context of a number of large-scale PDE-based applications. Efficient reference software has been made freely available to the public both in the form of the standalone \\tt p4est library and more indirectly by the general-purpose finite element library \\tt deal.II, which has been equipped with a \\tt p4est backend. Although linear octrees, which store only leaf octants, have an underlying tree structure by definition, it is not fully exploited in previously published mesh-related algorithms. This is because tree branches are not explicitly stored and because the topological relationships in meshes, such as the adjacency between cells, introduce dependencies that do not respect the octree hierarchy. In this work, we combine hierarchical and topological relationships between octants to design efficient recursive algorithms that operate on distributed forests of octrees. We present three imp..."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,66 @@
+{
+  "doc_id": "3880",
+  "text": "Concerning the walk, although the WPG presented here is simplified, its core concepts do not conflict with improvements such as those in [CITATION_1] , which add robustness. Another possible future investigation in WPG design is the addition of the terminal capturability constraint, as indicated in Section IV-C. Apart from improving the WPG itself, its integration in whole-body control can also be improved, with works such as [CITATION_2] , which aims at combining the separate QPs. Finally, a limiting factor in our experiments was the low-level stabilizer of the HRP-4, which modifies the joint references sent to the robot actuators [CITATION_3] . We must devise a dedicated stabilizer, consistent with our framework. Another challenging topic of on-going work consists in applying the multirobot version of our QP controller [CITATION_4] to include the human as an additional \"robot\". However, going beyond simulation [CITATION_5] requires estimation of the human's full or partial pose and inertia parameters, to effectively close the overall control loop in a pHRI setting. Finally, once the system is improved in terms of the performance, user-related studies is also worthy of investigation.",
+  "correct_citation": {
+    "[CITATION_1]": "8685656",
+    "[CITATION_2]": "12688276",
+    "[CITATION_3]": "999054",
+    "[CITATION_4]": "59619727",
+    "[CITATION_5]": "46903821"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Concerning the walk, although the WPG presented here is simplified, its core concepts do not conflict with improvements such as those in  , which add robustness.",
+      "s_span": 0,
+      "e_span": 173
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Another possible future investigation in WPG design is the addition of the terminal capturability constraint, as indicated in Section IV-C. Apart from improving the WPG itself, its integration in whole-body control can also be improved, with works such as  , which aims at combining the separate QPs.",
+      "s_span": 174,
+      "e_span": 486
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Finally, a limiting factor in our experiments was the low-level stabilizer of the HRP-4, which modifies the joint references sent to the robot actuators  .",
+      "s_span": 487,
+      "e_span": 654
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Another challenging topic of on-going work consists in applying the multirobot version of our QP controller  to include the human as an additional \"robot\".",
+      "s_span": 725,
+      "e_span": 892
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "However, going beyond simulation  requires estimation of the human's full or partial pose and inertia parameters, to effectively close the overall control loop in a pHRI setting.",
+      "s_span": 893,
+      "e_span": 1083
+    }
+  ],
+  "bib_entries": {
+    "59619727": {
+      "title": "Quadratic programming for multirobot and task-space force control",
+      "abstract": "We have extended the task-space multiobjective controllers that write as quadratic programs (QPs) to handle multirobot systems as a single centralized control. The idea is to assemble all the “robots” models and their interaction task constraints into a single QP formulation. By multirobot, we mean that whatever entities a given robot will interact with (solid or articulated systems, actuated, partially or not at all, fixed-base or floating-base), we model them as clusters of robots and the controller computes the state of each cluster as an overall system and their interaction forces in a physically consistent way. By doing this, the tasks specification simplifies substantially. At the heart of the interactions between the systems are the contact forces; methodologies are provided to achieve reliable force tracking by our multirobot QP controller. The approach is assessed by a large panel of experiments on real complex robotic platforms (full-size humanoid, dexterous robotic hand, fixed-base anthropomorphic arm) performing whole-body manipulations, dexterous manipulations, and robot–robot comanipulations of rigid floating objects and articulated mechanisms, such as doors, drawers, boxes, or even smaller mechanisms like a spring-loaded click pen."
+    },
+    "8685656": {
+      "title": "A robust linear MPC approach to online generation of 3D biped walking motion",
+      "abstract": "A crucial part in biped walking motion generation is to ensure dynamic feasibility, which takes the form of a nonlinear constraint in the general case. Our proposition is to bound the nonlinear part of the dynamic feasibility constraint between some properly chosen extreme values. Making sure that this constraint is satisfied for the extreme values guarantees its satisfaction for all possible values in between. This follows a classical approach from robust nonlinear control theory, which is to consider a nonlinear dynamical system as a specific selection of a time-invariant Linear Differential Inclusion. As a result, dynamic feasibility can be imposed by using only linear constraints, which can be included in an efficient linear MPC scheme, to generate 3D walking motions online. Our simulation results show two major achievements: 1) walking motions over uneven ground such as stairs can be generated online, with guaranteed kinematic and dynamic feasibility, 2) walking on flat ground is significantly improved, with a 3D motion of the CoM closely resembling the one observed in humans."
+    },
+    "999054": {
+      "title": "Biped walking stabilization based on linear inverted pendulum tracking",
+      "abstract": "A novel framework of biped walking stabilization control is introduced. The target robot is a 42 DOF humanoid robot HRP-4C which has a body dimensions close to the average Japanese female. We develop a body posture controller and foot force controllers on the joint position servo of the robot. By applying this posture/force control, we can regard the robot system as a simple linear inverted pendulum with ZMP delay. After a preliminary experiment to confirm the linear dynamics, we design a tracking controller for walking stabilization. It is evaluated in the experiments of HRP-4C walking and turning on a lab floor. The robot can also perform an outdoor walk on an uneven pavement."
+    },
+    "12688276": {
+      "title": "Whole body motion controller with long-term balance constraints",
+      "abstract": "The standard approach to real-time control of humanoid robots relies on approximate models to produce a motion plan, which is then used to control the whole body. Separation of the planning stage from the controller makes it difficult to account for the whole body motion objectives and constraints in the plan. For this reason, we propose to omit the planning stage and introduce long-term balance constraints in the whole body controller to compensate for this omission. The new controller allows for generation of whole body walking motions, which are automatically decided based on both the whole body motion objectives and balance preservation constraints. The validity of the proposed approach is demonstrated in simulation in a case where the walking motion is driven by a desired wrist position. This approach is general enough to allow handling seamlessly various whole body motion objectives, such as desired head motions, obstacle avoidance for all parts of the robot, etc."
+    },
+    "46903821": {
+      "title": "Generating assistive humanoid motions for co-manipulation tasks with a multi-robot quadratic program controller",
+      "abstract": "Human-humanoid collaborative tasks require that the robot take into account the goals of the task, interaction forces with the human, and its own balance. We present a formulation for a real-time humanoid controller which allows the robot to keep itself balanced, while also assisting the human in achieving their shared objectives. We achieve this with a multi-robot quadratic program controller, which solves for human dynamics reconstruction and optimal robot controls in a single optimization problem. Our experiments on a simulated robot platform demonstrate the ability to generate interaction motions and forces that are similar to what a human collaborator would produce."
+    }
+  },
+  "generator": "fallback_v4"
+}

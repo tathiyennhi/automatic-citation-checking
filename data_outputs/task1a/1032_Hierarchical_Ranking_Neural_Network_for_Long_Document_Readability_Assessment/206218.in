@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The final output of the Inter-section R-Transformer is obtained by applying another residual fusion gate, which can be expressed as,G2 = sigmoid(W s 21 norm( f s (e s)) + W s 22 e s + b s 2) (7) v s = G2 ⊙ e s + (1 -G2) ⊙ norm( f s (e s))(8)where W 21, W 22, and b s 2 are the parameters of the second residual fusion gate.We employ feature fusion gate [43] to fuse h s and v s to generate the final feature representation of the sentence.",
+    "The formula of the feature fusion gate is as follows,F = ReLU(W s 3 [h s, v s] + b s 3)(9)G = sigmoid(W s 4 [h s, v s] + b s 4) (10)u s = G ⊙ F + (1 -G) ⊙ h s (11)whereW s 3 ∈ R 2d×d, W s 4 ∈ R 2d×d, b s 3 ∈ R d, b s 4 ∈ R dare the learning parameters of the feature fusion gate.",
+    "u s = [u s 1,..., u s n] ∈ R n×d is the output of the feature fusion gate.",
+    "Document LayerWe apply the sentence vector u s to the \"source2token\" self-attention [44], explore the dependencies between sentences, and compress u s into a document vector d, which is represented as follows,W D = so f tmax(W d 1 ReLU(W d 2 u s + b d 1) + b d 2) (12)d = n i=1 W D i ⊙ u s i (13)whereW d 1 ∈ R d×d, W d 2 ∈ R d×d, b d 1 ∈ R d, b d 2 ∈ R dare the learning parameters of the \"source2token\" self-attention module.Supervised Learning.",
+    "The objective of the supervised component is to leverage document-level labels as explicit supervision signals to train a text classifier that learns document-level feature representations."
+  ]
+}

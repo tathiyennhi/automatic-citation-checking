@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Moreover, our generalizability evaluation reaffirms TOOLGEN's consistent performance when applied to diverse code LLMs, including various model architectures and scales.#Fig. 1:1Fig.",
+    "1: Illustrative Example of LLM Prediction and Tool Completion Fig. 2:2Fig.",
+    "2: Decoder-only Model and Encoder-Decoder Model Fig. 3:3Fig.",
+    "3: Approach Overview of TOOLGEN Fig. 5:5Fig.",
+    "5: Example Prefix Tree Algorithm 3:3Suggestion Selection based on Constraint Greedy Search 1 Procedure LLM-SELECT(D, F, C): 2 trie ← T rie() // prefix tree 3 for comp in C do 4 seq ← LLM-TOKENIZE(comp) 5 trie.insert(seq) 6 node ← trie.root 7 while not node.is_terminal do 8 m |V| ← 0 9 for child in node.children do 10 m |V| [child.tok_idx] ← 1 11 p |V| ← LLM-PREDICT(D, F) 12 p |V| ← p |V| ⊙ m |V| 13 tok ← ARGMAX(V, p |V|) 14 F ← F ⊕ tok 15 for child in node.children do 16 if child.token = tok then 17 node ← child 18 break Figure 77Figure 7 depicts three specific examples using VANILLAllama and TOOLGEN-llama."
+  ]
+}

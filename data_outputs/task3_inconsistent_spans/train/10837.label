@@ -1,0 +1,62 @@
+{
+  "doc_id": "10837",
+  "text": "Remark 2. Since the solution [CITATION_1] and (8) of [CITATION_2] is always feasible for the constraints [CITATION_3] , it follows that the achievable communication load L(q) in (11) is always no larger than that in [CITATION_4] . This is because the load (11) with r 1 and r 2 in (7)- [CITATION_5] is no larger than the load in [11, eq. (9) ]. To demonstrate that the improvement can be strict, beside the example given in Section 4, we provide next a numerical example.",
+  "correct_citation": {
+    "[CITATION_1]": "13748795",
+    "[CITATION_2]": "12990675",
+    "[CITATION_3]": "16861557",
+    "[CITATION_4]": "12990675",
+    "[CITATION_5]": "232369"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Since the solution  and (8) of  is always feasible for the constraints  , it follows that the achievable communication load L(q) in (11) is always no larger than that in  .",
+      "s_span": 10,
+      "e_span": 230
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Since the solution  and (8) of  is always feasible for the constraints  , it follows that the achievable communication load L(q) in (11) is always no larger than that in  .",
+      "s_span": 10,
+      "e_span": 230
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Since the solution  and (8) of  is always feasible for the constraints  , it follows that the achievable communication load L(q) in (11) is always no larger than that in  .",
+      "s_span": 10,
+      "e_span": 230
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Since the solution  and (8) of  is always feasible for the constraints  , it follows that the achievable communication load L(q) in (11) is always no larger than that in  .",
+      "s_span": 10,
+      "e_span": 230
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This is because the load (11) with r 1 and r 2 in (7)-  is no larger than the load in [11, eq. (9) ].",
+      "s_span": 231,
+      "e_span": 344
+    }
+  ],
+  "bib_entries": {
+    "13748795": {
+      "title": "Rateless codes for near-perfect load balancing in distributed matrix-vector multiplication",
+      "abstract": "Large-scale machine learning and data mining applications require computer systems to perform massive matrix-vector and matrix-matrix multiplication operations that need to be parallelized across multiple nodes. The presence of straggling nodes -- computing nodes that unpredictably slowdown or fail -- is a major bottleneck in such distributed computations. Ideal load balancing strategies that dynamically allocate more tasks to faster nodes require knowledge or monitoring of node speeds as well as the ability to quickly move data. Recently proposed fixed-rate erasure coding strategies can handle unpredictable node slowdown, but they ignore partial work done by straggling nodes thus resulting in a lot of redundant computation. We propose a \\emph{rateless fountain coding} strategy that achieves the best of both worlds -- we prove that its latency is asymptotically equal to ideal load balancing, and it performs asymptotically zero redundant computations. Our idea is to create linear combinations of the $m$ rows of the matrix and assign these encoded rows to different worker nodes. The original matrix-vector product can be decoded as soon as slightly more than $m$ row-vector products are collectively finished by the nodes. We conduct experiments in three computing environments: local parallel computing, Amazon EC2, and Amazon Lambda, which show that rateless coding gives as much as $3\\times$ speed-up over uncoded schemes."
+    },
+    "12990675": {
+      "title": "A unified coding framework for distributed computing with straggling servers",
+      "abstract": "We propose a unified coded framework for distributed computing with straggling servers, by introducing a tradeoff between \"latency of computation\" and \"load of communication\" for some linear computation tasks. We show that the coded scheme of [1]-[3] that repeats the intermediate computations to create coded multicasting opportunities to reduce communication load, and the coded scheme of [4], [5] that generates redundant intermediate computations to combat against straggling servers can be viewed as special instances of the proposed framework, by considering two extremes of this tradeoff: minimizing either the load of communication or the latency of computation individually. Furthermore, the latency-load tradeoff achieved by the proposed coded framework allows to systematically operate at any point on that tradeoff to perform distributed computing tasks. We also prove an information-theoretic lower bound on the latency-load tradeoff, which is shown to be within a constant multiplicative gap from the achieved tradeoff at the two end points."
+    },
+    "232369": {
+      "title": "Coded mapreduce",
+      "abstract": "MapReduce is a commonly used framework for executing data-intensive tasks on distributed server clusters. We present “Coded MapReduce”, a new framework that enables and exploits a particular form of coding to significantly reduce the inter-server communication load of MapReduce. In particular, Coded MapReduce exploits the repetitive mapping of data blocks at different servers to create coded multicasting opportunities in the shuffling phase, cutting down the total communication load by a multiplicative factor that grows linearly with the number of servers in the cluster. We also analyze the tradeoff between the “computation load” and the “communication load” of the Coded MapReduce."
+    },
+    "16861557": {
+      "title": "Federated learning of deep networks using model averaging",
+      "abstract": "Modern mobile devices have access to a wealth of data suitable for learning models, which in turn can greatly improve the user experience on the device. For example, language models can improve speech recognition and text entry, and image models can automatically select good photos. However, this rich data is often privacy sensitive, large in quantity, or both, which may preclude logging to the data-center and training there using conventional approaches. We advocate an alternative that leaves the training data distributed on the mobile devices, and learns a shared model by aggregating locally-computed updates. We term this decentralized approach Federated Learning. ::: We present a practical method for the federated learning of deep networks that proves robust to the unbalanced and non-IID data distributions that naturally arise. This method allows high-quality models to be trained in relatively few rounds of communication, the principal constraint for federated learning. The key insight is that despite the non-convex loss functions we optimize, parameter averaging over updates from multiple clients produces surprisingly good results, for example decreasing the communication needed to train an LSTM language model by two orders of magnitude."
+    }
+  },
+  "generator": "fallback_v4"
+}

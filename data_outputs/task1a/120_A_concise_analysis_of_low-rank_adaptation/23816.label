@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Unlike LoRA, which mandates the pre-specification of a consistent eigen-rank 'r' for each incremental matrix, AdaLoRA recognizes the substantial variations in the importance of weight matrices across different modules and layers during fine-tuning of pretrained models.",
+    "Additionally, LoRA primarily focuses on training the attention mechanism and doesn't explicitly handle the FFN.",
+    "To overcome these shortcomings, AdaLoRA introduces a set of enhancements.One key feature of AdaLoRA is its dynamic allocation of parameter budgets to weight matrices based on importance scores.",
+    "It achieves this by parameterizing incremental updates using singular value decomposition (SVD), allowing for the removal of unimportant singular values while preserving their corresponding singular vectors.",
+    "This approach significantly accelerates computations by reducing the parameter budgets, all the while maintaining the potential for future recovery and ensuring training stability.AdaLoRA comprises two essential components: Adaptation based on SVD: This element constructs the incremental matrices using singular value decomposition, facilitating efficient updates.Rank allocation with importance-aware: AdaLoRA trims unnecessary singular values using a freshly devised significance measure, guaranteeing the retention of only pertinent information.Initially, representing the incremental updates of the pre-trained weight matrices through singular value decomposition., where 𝑃 ∈ ℝ 𝑑 1 ×𝑟 and 𝑄 ∈ ℝ 𝑟×𝑑 2 mean the different singular vectors of ∆, while the diagonal matrix 𝛬 ∈ ℝ 𝑟×𝑟 contains the singular values{𝜆𝑖} 1≤𝑖≤𝑟 with 𝑟 ≪ 𝑚𝑖𝑛(𝑑1, 𝑑2)."
+  ],
+  "correct_citations": []
+}

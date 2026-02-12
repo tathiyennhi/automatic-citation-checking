@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In general, this underlying distribution is chosen to be the Gaussian N (x; µ, σ).",
+    "Through the application of the powerful mathematical framework of Bayesian probability [84,85], the VAE can be interpreted as a model of the joint distribution p θ (x, z) = p θ (x|z)p θ (z) of the real-world images x ∈ X and the samples of the latent distribution z ∈ ζ, where the goal is to compute the posteriorp θ (z|x) = p θ (x|z)p θ (z) p θ (x).Here, p θ (x|z) is the likelihood of x given z, p θ (z) is the prior, and p θ (x) = p θ (x|z)p θ (z)dz is the evidence, the total probability of observing x under the model, averaged over all possible latent configurations z, which is generally expensive and intractable to compute.",
+    "The solution is to approximate the evidence with a family of distributions q ϕ (z|x), where ϕ are the network weights for the distribution parameters for each data point x.",
+    "Therefore, a computationally tractable approximation of the posterior can be derived by optimizing the evidence lower bound (ELBO), which leads to the following optimization problem for training the VAE:arg min θ, ϕ L VAE (x, z; θ, ϕ) = arg min θ, ϕ -d KL (q ϕ (z|x) || p θ (z)) + E z∼q ϕ (z|x) log p θ (x|z),(1)where p θ and q ϕ are the probabilistic encoder and decoder respectively and d KL is the Kullback-Leibler (KL) divergence [86], which quantifies the difference between two probability distributions by computing the expected logarithmic difference between them, i.e.",
+    "how much information is lost when using q ϕ (z|x) to approximate p θ (z)."
+  ]
+}

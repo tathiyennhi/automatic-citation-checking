@@ -1,0 +1,20 @@
+{
+  "doc_id": "30491",
+  "text": "While using static analysis has a performance advantage, it has a major disadvantage: since the code isn't being run, the analyzed code might not reveal its \"true features\". For example, if one looks for specific strings in the file, one might not be able to catch polymorphic malware, in which those features are either encrypted or packed and decrypted only during run-time, by a specific bootstrap code. Other limitations of static analysis and techniques to counter it appear in [CITATION_1] . The most prominent dynamic features are the sequences of API calls, particularly those made to the OS, which are termed system calls. Those system calls are harder to obfuscate during run time without harming the functionality of the code.",
+  "correct_citation": {
+    "[CITATION_1]": "7130808"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Other limitations of static analysis and techniques to counter it appear in"
+    }
+  ],
+  "bib_entries": {
+    "7130808": {
+      "title": "Limits of static analysis for malware detection",
+      "abstract": "Malicious code is an increasingly important problem that threatens the security of computer systems. The traditional line of defense against malware is composed of malware detectors such as virus and spyware scanners. Unfortunately, both researchers and malware authors have demonstrated that these scanners, which use pattern matching to identify malware, can be easily evaded by simple code transformations. To address this shortcoming, more powerful malware detectors have been proposed. These tools rely on semantic signatures and employ static analysis techniques such as model checking and theorem proving to perform detection. While it has been shown that these systems are highly effective in identifying current malware, it is less clear how successful they would be against adversaries that take into account the novel detection mechanisms. The goal of this paper is to explore the limits of static analysis for the detection of malicious code. To this end, we present a binary obfuscation scheme that relies on the idea of opaque constants, which are primitives that allow us to load a constant into a register such that an analysis tool cannot determine its value. Based on opaque constants, we build obfuscation transformations that obscure program control flow, disguise access to local and global variables, and interrupt tracking of values held in processor registers. Using our proposed obfuscation approach, we were able to show that advanced semantics-based malware detectors can be evaded. Moreover, our opaque constant primitive can be applied in a way such that is provably hard to analyze for any static code analyzer. This demonstrates that static analysis techniques alone might no longer be sufficient to identify malware."
+    }
+  },
+  "generator": "fallback"
+}

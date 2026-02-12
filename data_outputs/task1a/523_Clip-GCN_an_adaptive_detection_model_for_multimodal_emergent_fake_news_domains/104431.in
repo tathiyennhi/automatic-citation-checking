@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "(13).ŷp σ W g • x (l+1) + b g (13)where x (l+1) is the updated node feature representation, W g is the weight matrix of the true/false news discriminator, and b g is the vector of bias terms.",
+    "The loss of true/false news prediction is shown in Eq.",
+    "(14).L p θ E s x, θ G c, θ f -E (x (l+1), y i)∼(X (l+1), Y i) Y p log ŷp + (1 -y i) log(1-) ŷp(14)where y i is the true/false label of the news and L p is the prediction loss of the true/false label of the news.",
+    "In this paper, the optimal parameter θ E s x of the news true/false predictor and the optimal parameter θ G c of the GCN network are obtained by minimizing the prediction loss of the true/false label.The main idea of the training method in this paper is to iteratively update between domain-invariant feature extraction as well as new detection, Algorithm 1 illustrates the training algorithm.",
+    "The goal of the first stage is to put the semantic features obtained by the model into the feature extractor and use the domain discriminator to compute the loss L c. At the same time, the inputs to the forward propagation of the model are kept constant by the gradient inversion layer, but the gradient is inverted and processed in the backward propagation, and the final maximization and minimization of the loss L c to obtain the optimal parameters θ f and θ d. The goal of the second stage is to use the fake news detector to predict the news tags to get the loss L p, by minimizing the loss L p to get the optimal model parameters θ E sx and θ G c for GCN and news detector."
+  ]
+}

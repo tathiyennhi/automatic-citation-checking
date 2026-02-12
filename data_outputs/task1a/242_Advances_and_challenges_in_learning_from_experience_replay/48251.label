@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "Instead of tuning hyperparameters to slow down policy changes, they actively reinforced the similarity between current policy transitions π and past experiences µ used to compute updates, using an approach called Remember and For- get Experience Replay (ReF-ER).",
+    "This skips gradients computed from experiences that are too unlikely with the current policy transitions and regulates policy changes within a trust region of the replayed behaviors.",
+    "Their main objective is to control the similarity between π and µ, classifying experiences as \"near-policy\" or \"far-policy\" based on a ratio ρ of prob- abilities of selecting the associated action with π and that with µ.",
+    "Therefore, ReF-ER limits the fraction of far-policy samples in the replay memory and computes gradient estimates only from near-policy experiences.",
+    "The authors demonstrated that their approach could be applied to any off-policy method with parameterized policies (i.e., by using Deep Neural Network -DNN) and that it allows for better stability and agent performance (compared to uniform sampling) in the main class of methods for continuous action spaces based on DPG (i.e., DDPG), Q-learning (i.e., NAF in Gu et al. (2016)), and off-policy Policy Gradients (off-PG) (Degris et al. 2012)."
+  ],
+  "correct_citations": [
+    "The authors demonstrated that their approach could be applied to any off-policy method with parameterized policies (i.e., by using Deep Neural Network -DNN) and that it allows for better stability and agent performance (compared to uniform sampling) in the main class of methods for continuous action spaces based on DPG (i.e., DDPG), Q-learning (i.e., NAF in Gu et al. (2016)), and off-policy Policy Gradients (off-PG) (Degris et al. 2012)."
+  ]
+}

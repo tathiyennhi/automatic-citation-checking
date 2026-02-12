@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "If the goal is to output a policy that performs well under the ground-truth reward r ‹, then reward learning should aim to find a model r ϕ such that the resulting policy π θ ‹ pr ϕ q maximizes the underlying \"real\" objective:r ϕ ‹ \" argmax r ϕ PF V π θ ‹ pr ϕ q r ‹ \" argmin r ϕ PF ´β log Zpϕq ´E y\"π θ ‹ pr ϕ q rr ‹ pyq ´rϕ pyqs loooooooooooooooooooooooomoooooooooooooooooooooooon \":Lnewpϕq.Following the policy gradient theorem [Sutton et al., 1999], the gradient of this new objective is (see detailed calculations in Section B.11):∇ ϕ Lnewpϕq \" ´1 2 E y,y 1 \"π θ ‹ pr ϕ q\" ∇ ϕ r ϕ pyq ´∇ϕ r ϕ py 1 q ‰ \" pr ‹ pyq ´r‹ py 1 qq ´pr ϕ pyq ´rϕ py1 qq ‰,(4)which corresponds to the gradient of an ℓ 2 distance of pairwise difference:L new pϕq ∇ \" 1 4 E y,y 1 \"sg ´πθ ‹ pr ϕ q¯\"pr ‹ pyq ´r‹ py 1 qq ´pr ϕ pyq ´rϕ py 1 qq ‰ 2.",
+    "(5)Comparison with MLE.",
+    "The reward model r ϕ are typically learned via MLE from preference data, which does not consider the fact that the learned reward will ultimately be used to induce a policy.",
+    "Now revisit the MLE objective:LMLEpϕq \" ´E y,y 1 \"µ \" σpr ‹ pyq ´r‹ py 1 qq log σpr ϕ pyq ´rϕ py 1 qq `σpr ‹ py 1 q ´r‹ pyqq log σpr ϕ py 1 q ´rϕ pyqq ‰, whose gradient is:∇ ϕ L MLE pϕq \" ´E y,y 1 \"µ \"∇ ϕ r ϕ pyq ´∇ϕ r ϕ py 1 q ‰ \" σpr ‹ pyq ´r‹ py 1 qq ´σpr ϕ pyq ´rϕ py 1 qq ‰.",
+    "(6)Comparing Equation ( 4) with Equation ( 6), a natural idea is to apply Taylor's expansion to extract the σp¨q in Equation ( 6) to further align with Equation (4)."
+  ]
+}

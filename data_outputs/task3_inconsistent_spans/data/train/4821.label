@@ -1,0 +1,22 @@
+{
+  "doc_id": "4821",
+  "text": "In the urban road section, our algorithm produced good results along the left edge as the completeness and correctness values for it were greater than 91% in all the cases of buffer width shown in Table 4 . The snake curve was also able to identify the drainage system along the left edge as shown in Fig. 14 . The right edge extraction results were not accurate as its quality measure values using 0.1 m buffer width were greater than 16% while the values using 0.5 m buffer zone were greater than 63%. This was due to the fact that the XP-1 system employs a single laser scanner during the data acquisition process, which leads to the acquisition of LiDAR data with a lower point density along the right side of the road section than along its left side [CITATION_1] , as shown for the tested road sections in Table 6 . This lower point density along the right side of the road section leads to the generation of raster surfaces with noisy and weak cells along the right road edge. During the object boundaries estimation process in the urban road section, the threshold parameters removed these weak cells along the right road edge, which caused the snake curve to extend beyond them. Zhou and Vosselman, 2012 reported an average completeness and correctness values of 63% and 89% respectively using 0.5 m buffer width for the kerbstones extracted from mobile laser scanning data. In comparison, our algorithm extracted the kerb edges with the average completeness and correctness values of 81% and 82% respectively using 0.5 m buffer width. Present day terrestrial mobile laser scanning systems used in professional road surveys are generally equipped with more than one laser scanner. Their solution produces LiDAR data that has a more uniform point density along both sides of the road section. A double pass approach in which the vehicle is drived back and forth on the road can also be used to acquire uniform and dense point cloud along the road section. Our algorithm will provide an improved extraction of road edges using such LiDAR data.",
+  "correct_citation": {
+    "[CITATION_1]": "14096592"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This was due to the fact that the XP-1 system employs a single laser scanner during the data acquisition process, which leads to the acquisition of LiDAR data with a lower point density along the right side of the road section than along its left side  , as shown for the tested road sections in Table 6 .",
+      "s_span": 504,
+      "e_span": 821
+    }
+  ],
+  "bib_entries": {
+    "14096592": {
+      "title": "MIMIC: mobile mapping point density calculator",
+      "abstract": "The current generation of Mobile Mapping Systems (MMSs) capture increasingly larger amounts of data in a short time frame. Due to the relative novelty of this technology there is no concrete understanding of the point density that different hardware configurations and operating parameters will exhibit on objects at specific distances. Depending on the project requirements, obtaining the required point density impacts on survey time, processing time, data storage and is the underlying limit of automated algorithms. A limited understanding of the capabilities of these systems means that defining point density in project specifications is a complicated process. We are in the process of developing a method for determining the quantitative resolution of point clouds collected by a MMS with respect to known objects at specified distances. We have previously demonstrated the capabilities of our system for calculating point spacing, profile angle and profile spacing individually. Each of these elements are a major factor in calculating point density on arbitrary objects, such as road signs, poles or buildings -all important features in asset management surveys. This paper will introduce the current version of the MobIle Mapping point densIty Calculator (MIMIC), MIMIC's visualisation module and finally discuss the methods employed to validate our work."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "1242",
+  "text": "The transmit aperture and focal configurations are defined in the tx structures. Specifically, the transmit aperture location is defined by tx.origin, the focal depth is defined by tx.focus, and the transmit F-number is determined by the apodization settings in tx.apod. The push and track transmit focal configurations are heavily dependent on the type of the imaging sequence. In setupl7_4shearwaveimaging.m, where an MTL-SWEI sequence is made, plane wave tracking is used to insonify the entire field of view (FOV) for each transmit to allow shear wave propagation to be monitored throughout the FOV. However, this large FOV results in sub-optimal data quality compared to focused tracking. The tracking configuration is defined in tx(1), where tx(1).focus is set to 0, which corresponds to plane wave (no transmit delays) for the tracking pulses. All elements are used in plane wave tracking pulses, set by tx(1).apod. In addition, a single push originates from the center of the transducer to generate the ARFI excitation. The push beam configuration is defined in tx(2), where tx(2).focus is set by default to 50 wavelengths, which corresponds to 14.8 mm at a frequency of 5.2 MHz. The center 32 elements of the transducer are active for the push beam as specified by tx [CITATION_1] .apod, which corresponds to an F/1.5 focal configuration (F = z/D, z = 14.8 mm, D = 0.3×32 = 9.6 mm). Our C5-2 script setupc5_2shear_wave_mtl.mis configured in a similar way. The track transmit has zero delays across the transducer elements, resulting in a diverging wave due to the curved transducer surface. The push transmit has an F/2 focal configuration at 50 mm.",
+  "correct_citation": {
+    "[CITATION_1]": "25484713"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The center 32 elements of the transducer are active for the push beam as specified by tx.apod, which corresponds to an F/1.5 focal configuration (F = z/D, z = 14.8 mm, D = 0.3×32 = 9.6 mm)."
+    }
+  ],
+  "bib_entries": {
+    "25484713": {
+      "title": "wfumb Guidelines and Recommendations for Clinical Use of Ultrasound Elastography: Part 2",
+      "abstract": "The breast section of these Guidelines and Recommendations for Elastography produced under the auspices of the World Federation of Ultrasound in Medicine and Biology (WFUMB) assesses the clinically used applications of all forms of elastography used in breast imaging. The literature on various breast elastography techniques is reviewed, and recommendations are made on evidence-based results. Practical advice is given on how to perform and interpret breast elastography for optimal results, with emphasis placed on avoiding pitfalls. Artifacts are reviewed, and the clinical utility of some artifacts is discussed. Both strain and shear wave techniques have been shown to be highly accurate in characterizing breast lesions as benign or malignant. The relationship between the various techniques is discussed, and recommended interpretation based on a BI-RADS-like malignancy probability scale is provided. This document is intended to be used as a reference and to guide clinical users in a practical way."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "32423",
+  "text": "The C standard [2] describes a memory model that is byte-and word-addressable (yet portable to big-endian and little-endian machines) with a nontrivial semantics for uninitialized variables. Blazy and Leroy formalized this model [CITATION_1] for the semantics of Cminor. In C, pointer arithmetic within any malloc'ed block is defined, but pointer arithmetic between different blocks is undefined; Cminor therefore has non-null pointer values comprising an abstract block-number and an int offset. A NULL pointer is represented by the integer value 0. Pointer arithmetic between blocks, and reading uninitialized variables, are undefined but not illegal: expressions in Cminor can evaluate to undefined (Vundef) without getting stuck.",
+  "correct_citation": {
+    "[CITATION_1]": "18192772"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Blazy and Leroy formalized this model  for the semantics of Cminor."
+    }
+  ],
+  "bib_entries": {
+    "18192772": {
+      "title": "Formal verification of a memory model for Clike imperative languages",
+      "abstract": "This paper presents a formal verification with the Coq proof assistant of a memory model for C-like imperative languages. This model defines the memory layout and the operations that manage the memory. The model has been specified at two levels of abstraction and implemented as part of an ongoing certification in Coq of a moderately-optimising C compiler. Many properties of the memory have been verified in the specification. They facilitate the definition of precise formal semantics of C pointers. A certified OCaml code implementing the memory model has been automatically extracted from the specifications."
+    }
+  },
+  "generator": "fallback_v4"
+}

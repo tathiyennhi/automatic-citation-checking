@@ -1,0 +1,22 @@
+{
+  "doc_id": "50324",
+  "text": "For the clarity of discuss, we first consider the situation without recompute. We consider a latency model where the latency of an operator is constant before the compute resource is not fully utilized, while the latency increases linearly with the microbatch size after the utilization of compute resource saturates. [CITATION_1] For PipeMare, we assume the budget for both activation memory and compute resource are saturated with the same microbatch size M P M . For the simplicity of discussion, we assume the latency of a PipeMare stage is 1 (unit omitted) when processing a single microbatch of size M P M . In PipeMare execution, the pipeline never stalls. Thus 1/3 of the compute resources are dedicated to forward operations while 2/3 are allocated to backward pass. In GPipe, it needs microbatch size 3M P M and 3/2M P M respectively to saturate the same compute resource budget in the forward and backward execution phase. Given the latency model described above, the latency of each Gpipe stage to process a single microbatch during forward is 1 when the microbatch size M GP is smaller than 3M P M (compute resource underutilized) and M GP 3M P M when microbatch size is larger than 3M P M (compute resource utilization saturates). Applying the same reasoning for backward pass, we can derive that for each stage to process one microbatch in GPipe, the latency for forward and backward operations are",
+  "correct_citation": {
+    "[CITATION_1]": "930783"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We consider a latency model where the latency of an operator is constant before the compute resource is not fully utilized, while the latency increases linearly with the microbatch size after the utilization of compute resource saturates. [CITATION_1] For PipeMare, we assume the budget for both activation memory and compute resource are saturated with the same microbatch size M P M .",
+      "s_span": 79,
+      "e_span": 465
+    }
+  ],
+  "bib_entries": {
+    "930783": {
+      "title": "Taming the wild: A unified analysis of hogwild-style algorithms",
+      "abstract": "Stochastic gradient descent (SGD) is a ubiquitous algorithm for a variety of machine learning problems. Researchers and industry have developed several techniques to optimize SGD's runtime performance, including asynchronous execution and reduced precision. Our main result is a martingale-based analysis that enables us to capture the rich noise models that may arise from such techniques. Specifically, we use our new analysis in three ways: (1) we derive convergence rates for the convex case (Hogwild!) with relaxed assumptions on the sparsity of the problem; (2) we analyze asynchronous SGD algorithms for non-convex matrix problems including matrix completion; and (3) we design and analyze an asynchronous SGD algorithm, called Buckwild!, that uses lower-precision arithmetic. We show experimentally that our algorithms run efficiently for a variety of problems on modern hardware."
+    }
+  },
+  "generator": "fallback_v4"
+}

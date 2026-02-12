@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "We further evaluate the effect our defense's non-adversarial performance on a large number of common natural language tasks and find minimal degradation.Moreover, ASF's modularity and efficiency make it amenable to deployment in trusted execution environments or secure hardware enclaves, enabling prompt sanitization to be performed in isolation from untrusted components.",
+    "This offers a practical mechanism to protect locally hosted open-weight models from adversarial manipulation, even when these models are interfaced with untrusted front-end applications or agents.Our approach was inspired by the work of Liao and Sun [3] who demonstrated that it is possible to train an LLM (Llama-2-7B-Chat, specifically) to produce adversarial suffixes.",
+    "This suggest to us that if an LLM can be trained to generate valid effective adversarial suffixes, then the suffixes must follow some detectable and discernible pattern, and hence must be classifiable by another model.Algorithm 1 ASF Pipeline Require: A set of potentially-malicious prompts {p 0,..., p n-1 }, pipeline configuration c 1: Segment each prompt p i using the 12l-SM SaT model to obtain [s i 1, s i 2,..., s i n] 2: Obtain predictions y i j ∈ {0, 1} for each segment s i j from our fine-tuned BERT model.",
+    "y i j = 1 indicates that s i j is part of an adversarial suffix 3: Apply configurable post-processing: • Bridge isolated 0s between 1s [default: off] • Bridge isolated 1s between 0s [default: on] • Exclude segments solely containing specified keywords [default: \"question\", \"answer\"] 4: if c mode == delete then 5: Delete all segments s i j from the prompt labeled as adversarial (i.e.",
+    "where y i j = 1) 6: Return re-assembled prompt 7: else 8: if c mode == warn and any segment is detected as adversarial then 9: Raise an exception 10: end if 11: end if 2 MethodologyOur Adversarial Suffix Filtering (ASF) pipeline is designed to detect and remove malicious suffixes appended to otherwise user queries."
+  ],
+  "correct_citations": [
+    "This offers a practical mechanism to protect locally hosted open-weight models from adversarial manipulation, even when these models are interfaced with untrusted front-end applications or agents.Our approach was inspired by the work of Liao and Sun [3] who demonstrated that it is possible to train an LLM (Llama-2-7B-Chat, specifically) to produce adversarial suffixes."
+  ]
+}

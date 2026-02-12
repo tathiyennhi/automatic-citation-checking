@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "To create the fine-tuning dataset, sentences dictating at least one regulatory relationship receive a positive classification label, while the rest are labelled as negative.",
+    "Once finetuned, the BioBERT model evaluates test sentences, assigning a classification of 0 if there are no genetic interactions or if the sentence discusses non-regulation, and 1 if the sentence contains a relational context of a gene/protein interaction.",
+    "Sentences classified as 0 are eliminated, while those classified as 1 undergo further evaluation for the presence of named entities.",
+    "For the second sentence elimination step, since at least two entities are involved in a regulatory relationship, all sentences that contain fewer than two gene or protein entities are excluded.",
+    "This elimination is carried out using BERN2, without any additional fine-tuning, to recognise gene and protein entities in a sentence."
+  ],
+  "correct_citations": []
+}

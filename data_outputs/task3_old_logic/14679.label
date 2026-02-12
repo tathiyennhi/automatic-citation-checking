@@ -1,0 +1,29 @@
+{
+  "doc_id": "14679",
+  "text": "A,AE (k) is negligible for any PPT adversary A. Key Encapsulation Mechanisms. The KEM/DEM paradigm was first formalized in [CITATION_1] . We borrow our formal definitions from [CITATION_2] . A key-encapsulation mechanism KEM = (KEM.kg, KEM.enc, KEM.enc) with key-space K(k) consists of three polynomial-time algorithms. Via (pk, sk) ←$ KEM.kg(1 k ) the randomized key-generation algorithm produces public/secret keys for security parameter k; via (K, C) ←$ KEM.enc(pk), the randomized encapsulation algorithm creates a uniformly distributed symmetric key K ∈ K(k) together with a ciphertext C; via K ← KEM.dec(sk, C) the possessor of secret key sk decrypts ciphertext C to get back a key K which is an element in K or a special rejection symbol ⊥. For consistency, we require that for all all (K, C) ←$ KEM.enc(pk) we have Pr[KEM.dec(sk, C) = K] = 1, where the probability is taken over the choice of (pk, sk) ←$ KEM.kg(1 k ), and the coins of all the algorithms in the expression above. Here we only consider KEMs that produce perfectly uniformly distributed keys (i.e., we require that for all public keys pk that can be output by KEM.kg, the first component of KEM.enc(pk) has uniform distribution). ",
+  "correct_citation": {
+    "[CITATION_1]": "1486897",
+    "[CITATION_2]": "19655"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The KEM/DEM paradigm was first formalized in"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We borrow our formal definitions from"
+    }
+  ],
+  "bib_entries": {
+    "19655": {
+      "title": "Secure hybrid encryption from weakened key encapsulation",
+      "abstract": "We put forward a new paradigm for building hybrid encryption schemes from constrained chosen-ciphertext secure (CCCA) key-encapsulation mechanisms (KEMs) plus authenticated symmetric encryption. Constrained chosen-ciphertext security is a new security notion for KEMs that we propose. It has less demanding security requirements than standard CCCA security (since it requires the adversary to have a certain plaintext-knowledge when making a decapsulation query) yet we can prove that it is CCCA sufficient for secure hybrid encryption. ::: ::: Our notion is not only useful to express the Kurosawa-Desmedt public-key encryption scheme and its generalizations to hash-proof systems in an abstract KEM/DEM security framework. It also has a very constructive appeal, which we demonstrate with a new encryption scheme whose security relies on a class of intractability assumptions that we show (in the generic group model) strictly weaker than the Decision Diffie-Hellman (DDH) assumption. This appears to be the first practical public-key encryption scheme in the literature from an algebraic assumption strictly weaker than DDH."
+    },
+    "1486897": {
+      "title": "Design and analysis of practical public-key encryption schemes secure against adaptive chosen ciphertext attack",
+      "abstract": "A new public-key encryption scheme, along with several variants, is proposed and analyzed. The scheme and its variants are quite practical and are proved secure against adaptive chosen ciphertext attack under standard intractability assumptions. These appear to be the first public-key encryption schemes in the literature that are simultaneously practical and provably secure."
+    }
+  },
+  "generator": "fallback"
+}

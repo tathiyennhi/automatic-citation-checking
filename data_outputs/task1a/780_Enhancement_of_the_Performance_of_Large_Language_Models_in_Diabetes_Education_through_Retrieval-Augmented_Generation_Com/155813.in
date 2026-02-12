@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The retrieved documents were then preprocessed to remove potentially unstructured or noisy information, such as figures, tables, references, and author disclosures.",
+    "After cleaning each document, the CharacterTextSplitter function from Langchain was used to divide the documents into smaller fragments.",
+    "We then employed the OpenAI model Text-Embedding-ADA-002 as an embedding function to generate embeddings for each fragment in FAISS using the function \"db=FAISS.from_documents (docs, embeddings)\", where \"docs\" refers to the document fragments and \"embeddings\" refers to the Text-Embedding-ADA-002 model.",
+    "The resulting index was saved locally for continuous access and retrieval using the function \"db.save_local (\"faiss_index\")\".",
+    "When a user submitted a question, the rewriting query was transformed into an embedding vector and compared to the database embeddings using cosine similarity."
+  ]
+}

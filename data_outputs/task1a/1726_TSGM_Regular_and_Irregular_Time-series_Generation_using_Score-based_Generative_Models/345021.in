@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Let x s 1:n denotes a diffused sample at step s ∈ [0, 1] from x 0 1:n. Then, the conditional score network M θ (s, x s 1:n, x 0 1:n-1) can be trained to learn the gradient of the conditional log-likelihood with the following L 1 loss:L 1 = E s E x 0 1:N N n=1 λ(s)l 1 (n, s),wherel 1 (n, s) = E x s 1:n M θ (s, x s 1:n, x 0 1:n-1) -∇ x s 1:n log p(x s 1:n |x 0 1:n-1)2 2.In the above definition, ∇ x s 1:n log p(x s 1:n |x 0 1:n-1), where x 0 i depends on x 0 1:i-1 for each i ∈ {2,..., n}, is designed specially for time-series generation.",
+    "Note that for our training, x s 1:n is sampled from p(x s 1:n |x 0 1:n-1), and s is uniformly sampled from [0, 1].However, using the above formula, which is a naïve score matching on time-series, is computationally prohibitive [22], [23].",
+    "Thanks to the following theorem, the more efficient denoising score loss L score can be defined.Theorem 1 (Autoregressive denoising score matching).",
+    "l 1 (n, s) can be replaced with the following l 2 (n, s)L score = E s E X 0 1:N N n=1 λ(s)l 2 (n, s), where l 2 (n, s) = E X s 1:n M θ (s, X s 1:n, X 0 1:n-1) -∇ X s 1:n log p(X s 1:n |X 0 1:n) 2 2.",
+    "Then, L 1 = L score is satisfied.Sketch of proof."
+  ]
+}

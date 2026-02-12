@@ -1,0 +1,22 @@
+{
+  "doc_id": "29239",
+  "text": "This paper explores definitions of program correctness that view correctness from the application's standpoint rather than the architecture's standpoint. Under applicationlevel correctness, a program's execution is deemed correct as long as the result it produces is acceptable to the user. To quantify user satisfaction, we rely on application-level fidelity metrics to capture program solution quality as perceived by the user. We conduct a detailed fault susceptibility study to quantify how much more fault resilient programs are at the application level compared to the architecture level. Across 6 multimedia and Al benchmarks, we find 45.8% of fault injections that lead to architecturally incorrect execution are correct under application-level correctness. Across 3 SPECInt CPU2000 benchmarks, we find 17.6% of architecturally incorrect faults produce acceptable results at the application level. Based on these results, we conclude a significant number of faults that were previously thought to cause erroneous execution are in fact completely acceptable to the user, especially for soft computations. In addition to studying fault susceptibility, we also present a lightweight fault recovery mechanism that exploits the relaxed requirements of application-level correctness to reduce checkpoint cost. Even though our lightweight recovery mechanism only copies 2 Kbytes of data per checkpoint on average, it successfully recovers 66.3% of program crashes in our multimedia and Al workloads. For SPECInt CPU2000, our technique recovers 24.3% to [CITATION_1] .5% of crashes, of which only 2.5% represent additional recoveries allowed by application-level correctness. This lower recovery rate is due to the fewer soft program outputs permitted by SPEC programs compared to soft computations.",
+  "correct_citation": {
+    "[CITATION_1]": "6204449"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For SPECInt CPU2000, our technique recovers 24.3% to [CITATION_1] .5% of crashes, of which only 2.5% represent additional recoveries allowed by application-level correctness.",
+      "s_span": 1501,
+      "e_span": 1675
+    }
+  ],
+  "bib_entries": {
+    "6204449": {
+      "title": "Characterizing the effects of transient faults on a high-performance processor pipeline",
+      "abstract": "The progression of implementation technologies into the sub-100 nanometer lithographies renew the importance of understanding and protecting against single-event upsets in digital systems. In this work, the effects of transient faults on high performance microprocessors is explored. To perform a thorough exploration, a highly detailed register transfer level model of a deeply pipelined, out-of-order microprocessor was created. Using fault injection, we determined that fewer than 15% of single bit corruptions in processor state result in software visible errors. These failures were analyzed to identify the most vulnerable portions of the processor, which were then protected using simple low-overhead techniques. This resulted in a 75% reduction in failures. Building upon the failure modes seen in the microarchitecture, fault injections into software were performed to investigate the level of masking that the software layer provides. Together, the baseline microarchitectural substrate and software mask more than 9 out of 10 transient faults from affecting correct program execution."
+    }
+  },
+  "generator": "fallback_v4"
+}

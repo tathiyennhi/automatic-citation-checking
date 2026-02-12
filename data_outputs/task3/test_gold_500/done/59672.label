@@ -1,0 +1,29 @@
+{
+  "doc_id": "59672",
+  "text": "The key features of the actor computation model are [1, [CITATION_1] [CITATION_2] : (1) the creation of new actors; (2) sending asynchronous messages; (3) updating a local variable; (4) changing behaviour. The latter allows an actor to adapt by changing the way in which it responds to messages. The state of an actor can be represented in terms of its local variable storage (including references to other actors), its thread of execution, and its message queue. Execution proceeds independently at each actor by Consider a situation where a customer processes jobs on a machine. The customer submits a job request to a machine that may subsequently result in a notification that the job has been completed, or that the machine is busy and cannot accept the job. After accepting a job, a machine may break down causing a delay. A simple actor model for this situation is shown in Fig. 2(a) where the types Customer and Machine and the behaviours workingMachine and brokenMachine. A type defines an interface that may be implemented by many different behaviours, and a behaviour is equivalent to a Java class that can be instantiated to produce actors. The behaviour of a machine is shown in figure Fig. 2 (b) and is distributed between the two behaviour definitions: a machine initially has the behaviour workingMachine and is Idle. A working machine becomes Busy when it receives a job request, and may change behaviour to become a brokenMachine. When broken, the Machine interface is implemented differently and may become working after a period of repair.",
+  "correct_citation": {
+    "[CITATION_1]": "7485158",
+    "[CITATION_2]": "17005295"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The key features of the actor computation model are [1, [CITATION_1] [CITATION_2] : (1) the creation of new actors; (2) sending asynchronous messages; (3) updating a local variable; (4) changing behaviour."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The key features of the actor computation model are [1, [CITATION_1] [CITATION_2] : (1) the creation of new actors; (2) sending asynchronous messages; (3) updating a local variable; (4) changing behaviour."
+    }
+  ],
+  "bib_entries": {
+    "7485158": {
+      "title": "A foundation for actor computation",
+      "abstract": "We present an actor language which is an extension of a simple functional language, and provide an operational semantics for this extension. Actor configurations represent open distributed systems, by which we mean that the specification of an actor system explicitly takes into account the interface with external components. We study the composability of such systems. We define and study various notions of testing equivalence on actor expressions and configurations. The model we develop provides fairness. An important result is that the three forms of equivalence, namely, convex, must, and may equivalences, collapse to two in the presence of fairness. We further develop methods for proving laws of equivalence and provide example proofs to illustrate our methodology."
+    },
+    "17005295": {
+      "title": "Actor frameworks for the jvm platform: a comparative analysis",
+      "abstract": "The problem of programming scalable multicore processors has renewed interest in message-passing languages and frameworks. Such languages and frameworks are typically actor-oriented, implementing some variant of the standard Actor semantics. This paper analyzes some of the more significant efforts to build actor-oriented frameworks for the JVM platform. It compares the frameworks in terms of their execution semantics, the communication and synchronization abstractions provided, and the representations used in the implementations. It analyzes the performance of actor-oriented frameworks to determine the costs of supporting different actor properties on JVM. The analysis suggests that with suitable optimizations, standard Actor semantics and some useful communication and synchronization abstractions may be supported with reasonable efficiency on the JVM platform."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

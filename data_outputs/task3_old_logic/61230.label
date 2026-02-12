@@ -1,0 +1,65 @@
+{
+  "doc_id": "61230",
+  "text": "Components-level methods [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] usually predicts at a medium granularity. Component refer to a local region of text instance, sometimes containing one or more characters.",
+  "correct_citation": {
+    "[CITATION_1]": "6758302",
+    "[CITATION_2]": "3567868",
+    "[CITATION_3]": "545733",
+    "[CITATION_4]": "14728290",
+    "[CITATION_5]": "4705848",
+    "[CITATION_6]": "2276236"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Components-level methods  ,  ,  ,  ,  ,  usually predicts at a medium granularity."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Components-level methods  ,  ,  ,  ,  ,  usually predicts at a medium granularity."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Components-level methods  ,  ,  ,  ,  ,  usually predicts at a medium granularity."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Components-level methods  ,  ,  ,  ,  ,  usually predicts at a medium granularity."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Components-level methods  ,  ,  ,  ,  ,  usually predicts at a medium granularity."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Components-level methods  ,  ,  ,  ,  ,  usually predicts at a medium granularity."
+    }
+  ],
+  "bib_entries": {
+    "545733": {
+      "title": "Detecting oriented text in natural images by linking segments",
+      "abstract": "Most state-of-the-art text detection methods are specific to horizontal Latin text and are not fast enough for real-time applications. We introduce Segment Linking (SegLink), an oriented text detection method. The main idea is to decompose text into two locally detectable elements, namely segments and links. A segment is an oriented box covering a part of a word or text line, A link connects two adjacent segments, indicating that they belong to the same word or text line. Both elements are detected densely at multiple scales by an end-to-end trained, fully-convolutional neural network. Final detections are produced by combining segments connected by links. Compared with previous methods, SegLink improves along the dimensions of accuracy, speed, and ease of training. It achieves an f-measure of 75.0% on the standard ICDAR 2015 Incidental (Challenge 4) benchmark, outperforming the previous best by a large margin. It runs at over 20 FPS on 512x512 images. Moreover, without modification, SegLink is able to detect long lines of non-Latin text, such as Chinese."
+    },
+    "14728290": {
+      "title": "Detecting text in natural image with connectionist text proposal network",
+      "abstract": "We propose a novel Connectionist Text Proposal Network (CTPN) that accurately localizes text lines in natural image. The CTPN detects a text line in a sequence of fine-scale text proposals directly in convolutional feature maps. We develop a vertical anchor mechanism that jointly predicts location and text/non-text score of each fixed-width proposal, considerably improving localization accuracy. The sequential proposals are naturally connected by a recurrent neural network, which is seamlessly incorporated into the convolutional network, resulting in an end-to-end trainable model. This allows the CTPN to explore rich context information of image, making it powerful to detect extremely ambiguous text. The CTPN works reliably on multi-scale and multi-language text without further post-processing, departing from previous bottom-up methods requiring multi-step post filtering. It achieves 0.88 and 0.61 F-measure on the ICDAR 2013 and 2015 benchmarks, surpassing recent results [8, 35] by a large margin. The CTPN is computationally efficient with 0.14 s/image, by using the very deep VGG16 model [27]. Online demo is available: http://textdet.com/."
+    },
+    "2276236": {
+      "title": "Deep residual text detection network for scene text",
+      "abstract": "Scene text detection is a challenging problem in computer vision. In this paper, we propose a novel text detection network based on prevalent object detection frameworks. In order to obtain stronger semantic feature, we adopt ResNet as feature extraction layers and exploit multi-level feature by combining hierarchical convolutional networks. A vertical proposal mechanism is utilized to avoid proposal classification, while regression layer remains working to improve localization accuracy. Our approach evaluated on ICDAR2013 dataset achieves F-measure of 0.91, which outperforms previous state-of-the-art results in scene text detection."
+    },
+    "3567868": {
+      "title": "Multi-oriented scene text detection via corner localization and region segmentation",
+      "abstract": "Previous deep learning based state-of-the-art scene text detection methods can be roughly classified into two categories. The first category treats scene text as a type of general objects and follows general object detection paradigm to localize scene text by regressing the text box locations, but troubled by the arbitrary-orientation and large aspect ratios of scene text. The second one segments text regions directly, but mostly needs complex post processing. In this paper, we present a method that combines the ideas of the two types of methods while avoiding their shortcomings. We propose to detect scene text by localizing corner points of text bounding boxes and segmenting text regions in relative positions. In inference stage, candidate boxes are generated by sampling and grouping corner points, which are further scored by segmentation maps and suppressed by NMS. Compared with previous methods, our method can handle long oriented text naturally and doesn't need complex post processing. The experiments on ICDAR2013, ICDAR2015, MSRA-TD500, MLT and COCO-Text demonstrate that the proposed algorithm achieves better or comparable results in both accuracy and efficiency. Based on VGG16, it achieves an F-measure of 84.3% on ICDAR2015 and 81.5% on MSRA-TD500."
+    },
+    "4705848": {
+      "title": "Scene text detection with novel superpixel based character candidate extraction",
+      "abstract": "Maximally stable extremal region (MSER) is popularly used for candidate character candidate extraction in scene text detection. Its requirement of maximum stability hinders high performance on images of high variability. In this paper, we propose a novel character candidate extraction method based on superpixel segmentation and hierarchical clustering. The proposed superpixel segmentation algorithm for scene text image takes advantage of the color consistency of characters and fuses color and edge information. Based on superpixel segmentation, character candidates are extracted by single-link clustering. To improve the accuracy of non-text candidate filtering, we use a deep convolutional neural networks (DCNN) classifier and double threshold strategy for classification. Experimental results on public datasets demonstrate that the proposed superpixel based method performs better than MSER in character candidate extraction, and the proposed system achieves competitive performance compared to state-of-the-art methods."
+    },
+    "6758302": {
+      "title": "Aggregating local context for accurate scene text detection",
+      "abstract": "Scene text reading continues to be of interest for many reasons including applications for the visually impaired and automatic image indexing systems. Here we propose a novel end-to-end scene text detection algorithm. First, for identifying text regions we design a novel Convolutional Neural Network (CNN) architecture that aggregates local surrounding information for cascaded, fast and accurate detection. The local information serves as context and provides rich cues to distinguish text from background noises. In addition, we designed a novel grouping algorithm on top of detected character graph as well as a text line refinement step. Text line refinement consists of a text line extension module, together with a text line filtering and regression module. Jointly they produce accurate oriented text line bounding box. Experiments show that our method achieved state-of-the-art performance in several benchmark data sets: ICDAR 2003 (IC03), ICDAR 2013 (IC13) and Street View Text (SVT)."
+    }
+  },
+  "generator": "fallback"
+}

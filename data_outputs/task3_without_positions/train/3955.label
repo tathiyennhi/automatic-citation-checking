@@ -1,0 +1,29 @@
+{
+  "doc_id": "3955",
+  "text": "Consider a time-varying number of targets (max of 10) moving with nonconstant velocity as shown in Fig. 4 . Note that targets 1-6 are born at time , targets 7-10 are born at time , and targets 3-4 die at time . The starting and stopping positions for each track are labelled with a circle and triangle, respectively. The multi-target filters used to test the new metric are the Gaussian mixture PHD [CITATION_1] and Gaussian mixture CPHD [CITATION_2] filters. Although it is not our primary intention here to examine these filters in detail, we note that the former is known to have much higher variance on its estimate of the number of targets than the latter.",
+  "correct_citation": {
+    "[CITATION_1]": "9942616",
+    "[CITATION_2]": "9845282"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The multi-target filters used to test the new metric are the Gaussian mixture PHD  and Gaussian mixture CPHD  filters."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The multi-target filters used to test the new metric are the Gaussian mixture PHD  and Gaussian mixture CPHD  filters."
+    }
+  ],
+  "bib_entries": {
+    "9845282": {
+      "title": "Analytic implementations of the cardinalized Probability Hypothesis Density filter",
+      "abstract": "The probability hypothesis density (PHD) recursion propagates the posterior intensity of the random finite set (RFS) of targets in time. The cardinalized PHD (CPHD) recursion is a generalization of the PHD recursion, which jointly propagates the posterior intensity and the posterior cardinality distribution. In general, the CPHD recursion is computationally intractable. This paper proposes a closed-form solution to the CPHD recursion under linear Gaussian assumptions on the target dynamics and birth process. Based on this solution, an effective multitarget tracking algorithm is developed. Extensions of the proposed closed-form recursion to accommodate nonlinear models are also given using linearization and unscented transform techniques. The proposed CPHD implementations not only sidestep the need to perform data association found in traditional methods, but also dramatically improve the accuracy of individual state estimates as well as the variance of the estimated number of targets when compared to the standard PHD filter. Our implementations only have a cubic complexity, but simulations suggest favorable performance compared to the standard Joint Probabilistic Data Association (JPDA) filter which has a nonpolynomial complexity."
+    },
+    "9942616": {
+      "title": "The Gaussian mixture probability hypothesis density filter",
+      "abstract": "A new recursive algorithm is proposed for jointly estimating the time-varying number of targets and their states from a sequence of observation sets in the presence of data association uncertainty, detection uncertainty, noise, and false alarms. The approach involves modelling the respective collections of targets and measurements as random finite sets and applying the probability hypothesis density (PHD) recursion to propagate the posterior intensity, which is a first-order statistic of the random finite set of targets, in time. At present, there is no closed-form solution to the PHD recursion. This paper shows that under linear, Gaussian assumptions on the target dynamics and birth process, the posterior intensity at any time step is a Gaussian mixture. More importantly, closed-form recursions for propagating the means, covariances, and weights of the constituent Gaussian components of the posterior intensity are derived. The proposed algorithm combines these recursions with a strategy for managing the number of Gaussian components to increase efficiency. This algorithm is extended to accommodate mildly nonlinear target dynamics using approximation strategies from the extended and unscented Kalman filters"
+    }
+  },
+  "generator": "fallback_v4"
+}

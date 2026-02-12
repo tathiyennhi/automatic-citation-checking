@@ -1,0 +1,12 @@
+{
+  "text": "Observing MPA and MPA (-Ofast) reveals the overhead of exponentials and complex norms in the algorithm. For example, the decoder spent more than 62 percent of its time (32.35 seconds) to calculate exponentials and norms in MPA (-Ofast). This led us to explore SIMD calculation of these two steps. Comparing E-MPA+SIMD and MPA+SIMD implementations to others such as MPA (-O3 or -Ofast) shows a clear gain in throughput for calculation of the exponentials and norms. In more details, E-MPA+SIMD spends 1.68 seconds computing exponentials and norms which is more than 19 times faster than the initial computation of norms and exponentials in MPA (-Ofast). On the other hand, exponentials and norms computations are performing as fast as complex subtract. This profiling results show the efficiency of the proposed SIMD implementation methods. By contrast, log-MPA has not shown good performance using fast math library when compared to MPA. Inefficient memory access, cache misses and high number of branches are among the reasons that made log-MPA exhibits lower throughput than expected. Those phenomena are induced by comparison operations embedded in the max(.) function in [CITATION_1] . Nevertheless, without using fast math libraries, log-MPA still offers performance gains over MPA.",
+  "correct_citation": {
+    "[CITATION_1]": "53434134"
+  },
+  "bib_entries": {
+    "53434134": {
+      "title": "A low complexity detection algorithm for fixed up-link SCMA system in mission critical scenario",
+      "abstract": "Sparse code multiple access (SCMA), as one of the most promising candidate techniques for the fifth generation communications system, is a nonorthogonal multiple access scheme which can provide large scale connections. Its philosophy is to map coded bits directly to multidimensional sparse codewords, and the message passing algorithm (MPA) is utilized to detect the multiuser signals. However, the relatively high computation of MPA detection may lower the performance when SCMA is implemented in practical applications. The partial marginalization MPA (PM-MPA) helps to reduce the computation of original MPA detection. In this paper, an improved detection scheme based on PM-MPA is proposed. Our analysis and simulation shows that compared with PM-MPA, the improved PM-MPA (IPM-MPA) can obtain a lower bit error ratio. Besides, the simulation also shows that, to achieve the same performance, the IPM-MPA is less complex than PM-MPA."
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "27777",
+  "text": "In case of prediction of target profiles of anticancer drugs, we observed the highest contribution to the final pairwise model from Tanimoto drug kernels, coupled with GS protein kernels applied to ATP binding pockets (Fig. 2b ). This could be explained by the fact that majority of anticancer drugs, including those considered in this work, are kinase inhibitors designed to bind to ATP binding pockets of protein kinases, and therefore constructing kernels from short sequences of these pockets is more meaningful in the context of drug-kinase binding affinity prediction compared to using full protein sequences. Moreover, GS kernel is more advanced than the commonly used SW kernel as it compares protein sequences including properties of amino acids. GS kernel also enables to match short sub-sequences of two proteins even if their positions in the input sequences differ notably. In both prediction problems, pairwiseMKL was able to tune kernel hyperparameters by selecting a single kernel out of several kernels with different hyperparameter values (Fig. 2) . It has been noted by [CITATION_1] in the context of ALIGNF algorithm that sparse kernel weight vector is a consequence of the constraint l ! 0 in the kernel alignment maximization (Equation 6). This has been observed empirically in other works as well (e.g. [CITATION_2] [CITATION_3] . In particular, it appears that pairwiseMKL and ALIGNF, given a set of closely related kernels, such as those calculated using the same data source and kernel function but different hyperparameters, tend to select a representative kernel for the group to the optimized kernel mixture.",
+  "correct_citation": {
+    "[CITATION_1]": "9137763",
+    "[CITATION_2]": "3609227",
+    "[CITATION_3]": "3647500"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "It has been noted by  in the context of ALIGNF algorithm that sparse kernel weight vector is a consequence of the constraint l ! 0 in the kernel alignment maximization (Equation 6).",
+      "s_span": 1068,
+      "e_span": 1261
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This has been observed empirically in other works as well (e.g.   .",
+      "s_span": 1262,
+      "e_span": 1353
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "This has been observed empirically in other works as well (e.g.   .",
+      "s_span": 1262,
+      "e_span": 1353
+    }
+  ],
+  "bib_entries": {
+    "3647500": {
+      "title": "Metabolite identification through multiple kernel learning on fragmentation trees",
+      "abstract": "Motivation: Metabolite identification from tandem mass spectrometric data is a key task in metabolomics. Various computational methods have been proposed for the identification of metabolites from tandem mass spectra. Fragmentation tree methods explore the space of possible ways in which the metabolite can fragment, and base the metabolite identification on scoring of these fragmentation trees. Machine learning methods have been used to map mass spectra to molecular fingerprints; predicted fingerprints, in turn, can be used to score candidate molecular structures. ::: ::: Results: Here, we combine fragmentation tree computations with kernel-based machine learning to predict molecular fingerprints and identify molecular structures. We introduce a family of kernels capturing the similarity of fragmentation trees, and combine these kernels using recently proposed multiple kernel learning approaches. Experiments on two large reference datasets show that the new methods significantly improve molecular fingerprint prediction accuracy. These improvements result in better metabolite identification, doubling the number of metabolites ranked at the top position of the candidates list. ::: ::: Contact: if.otlaa@nehs.nibiuh ::: ::: Supplementary information: Supplementary data are available at Bioinformatics online."
+    },
+    "3609227": {
+      "title": "Fast metabolite identification with input output kernel regression",
+      "abstract": "Motivation: An important problematic of metabolomics is to identify metabolites using tandem mass spectrometry data. Machine learning methods have been proposed recently to solve this problem by predicting molecular fingerprint vectors and matching these fingerprints against existing molecular structure databases. In this work we propose to address the metabolite identification problem using a structured output prediction approach. This type of approach is not limited to vector output space and can handle structured output space such as the molecule space. ::: ::: Results: We use the Input Output Kernel Regression method to learn the mapping between tandem mass spectra and molecular structures. The principle of this method is to encode the similarities in the input (spectra) space and the similarities in the output (molecule) space using two kernel functions. This method approximates the spectra-molecule mapping in two phases. The first phase corresponds to a regression problem from the input space to the feature space associated to the output kernel. The second phase is a preimage problem, consisting in mapping back the predicted output feature vectors to the molecule space. We show that our approach achieves state-of-the-art accuracy in metabolite identification. Moreover, our method has the advantage of decreasing the running times for the training step and the test step by several orders of magnitude over the preceding methods. ::: ::: Availability and implementation: ::: ::: Contact: if.otlaa@drauorb.enilec ::: ::: Supplementary information: Supplementary data are available at Bioinformatics online."
+    },
+    "9137763": {
+      "title": "Algorithms for learning kernels based on centered alignment",
+      "abstract": "This paper presents new and effective algorithms for learning kernels. In particular, as shown by our empirical results, these algorithms consistently outperform the so-called uniform combination solution that has proven to be difficult to improve upon in the past, as well as other algorithms for learning kernels based on convex combinations of base kernels in both classification and regression. Our algorithms are based on the notion of centered alignment which is used as a similarity measure between kernels or kernel matrices. We present a number of novel algorithmic, theoretical, and empirical results for learning kernels based on our notion of centered alignment. In particular, we describe efficient algorithms for learning a maximum alignment kernel by showing that the problem can be reduced to a simple QP and discuss a one-stage algorithm for learning both a kernel and a hypothesis based on that kernel using an alignment-based regularization. Our theoretical results include a novel concentration bound for centered alignment between kernel matrices, the proof of the existence of effective predictors for kernels with high alignment, both for classification and for regression, and the proof of stability-based generalization bounds for a broad family of algorithms for learning kernels based on centered alignment. We also report the results of experiments with our centered alignment-based algorithms in both classification and regression."
+    }
+  },
+  "generator": "fallback_v4"
+}

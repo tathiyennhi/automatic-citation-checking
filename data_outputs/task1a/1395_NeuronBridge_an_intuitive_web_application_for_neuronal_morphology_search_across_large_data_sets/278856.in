@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "(5) A Step Function periodically runs a Lambda to monitor the progress of the Batch job.",
+    "(6) Once the alignment job is finished, it updates the workflow state in DynamoDB, which notifies the user via AppSync.",
+    "Back in the browser, the user is asked to create a search mask from one of the resulting CDM images, and this mask is uploaded to S3.",
+    "(7) The client calls a second endpoint to begin the search, which calls a Lambda that (8) recursively starts the burst-parallel search workers as well as (9) the monitoring Step Function state machine.",
+    "(10) When a worker finishes, it records its result in a DynamoDB table."
+  ]
+}

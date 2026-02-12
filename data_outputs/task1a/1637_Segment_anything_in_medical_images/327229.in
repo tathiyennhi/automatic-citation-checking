@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To strike a balance between segmentation performance and computational efficiency, we employed the base ViT model as the image encoder since extensive evaluation indicated that larger ViT models, such as ViT Large and ViT Huge, offered only marginal improvements in accuracy 7 while significantly increasing computational demands.",
+    "Specifically, the base ViT model consists of 12 transformer layers 27, with each block comprising a multi-head self-attention block and a Multilayer Perceptron (MLP) block incorporating layer normalization 35.",
+    "Pre-training was performed using masked auto-encoder modeling 36, followed by fully supervised training on the SAM dataset 7.",
+    "The input image (1024 × 1024 × 3) was reshaped into a sequence of flattened 2D patches with the size 16 × 16 × 3, yielding a feature size in image embedding of 64 × 64 after passing through the image encoder, which is 16 × downscaled.",
+    "The prompt encoders mapped the corner point of the bounding box prompt to 256-dimensional vectorial embeddings 26."
+  ]
+}

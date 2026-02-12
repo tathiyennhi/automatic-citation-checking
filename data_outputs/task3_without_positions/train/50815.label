@@ -1,0 +1,29 @@
+{
+  "doc_id": "50815",
+  "text": "1. In the seeded aTAM, there is an obvious linear-time algorithm to test whether assembly a is producible by a tile system: starting from the seed, try to attach tiles until a is complete or no more attachments are possible. We show that in the hierarchical aTAM, a similar greedy strategy correctly identifies whether a given assembly is producible, though it is more involved to prove that it is correct. The idea is to start with all tiles in place as they appear in a, but with no bonds, and then to greedily bind attachable assemblies until a is assembled. It is not obvious that this works, since it is conceivable that assemblies must attach in a certain order for a to form, but the greedy strategy may pick another order and hit a dead-end in which no assemblies can attach. The algorithm can be optimized to use Oðjaj log 2 jajÞ time. This is shown in Sect. 3. 2. The temperature 1 Unique Production Verification (UPV) problem studied by [CITATION_1] is the problem of determining whether assembly a is the unique producible terminal assembly of tile system T , where T has temperature 1, meaning that all positive strength glues are sufficiently strong to attach any two assemblies. They give an algorithm that runs in Oðjaj 2 jT j þ jajjT j 2 Þ time. Cannon et al. proved their result by using an Oðjaj 2 þ jajjT jÞ time algorithm for UPV that works in the seeded aTAM (Adleman et al. 2002) , and then reduced the hierarchical temperature-1 UPV problem to jT j instances of the seeded UPV problem. We improve this result by showing that a faster Oðjaj log jT jÞ time algorithm for the seeded UPV problem exists for the special case of temperature 1, and then we apply the technique of Cannon et al. relating the hierarchical problem to the seeded problem to improve the running time of the hierarchical algorithm to OðjajjT j log jT jÞ. This is shown in Sect. 4. Part of the conceptual significance of this algorithm lies in the details of the proof. In particular, we show a relationship between deterministic seeded assembly at temperature 1 and biconnected decomposition of the binding graph of an assembly using the Hopcroft-Tarjan algorithm [CITATION_2] . This relationship makes more precise the intuitive notion that determinism in temperature 1 systems with glue mismatches is enforced by ''blocking.'' In particular, the tile that does the blocking must be a cut vertex of the binding graph and must be an ancestor of the blocked tile in the Hopcroft-Tarjan tree decomposition. 3. We show that if two assemblies a and b are producible in the hierarchical model, and if they can be overlapped consistently (i.e., if the positions that they share have the same tile type in each assembly), then their union a [ b is producible. This is trivially true in the seeded model, but it requires more care to prove in the hierarchical model. It is conceivable a priori that although b is producible, b must assemble a \\ b in some order that is inconsistent with how a assembles a \\ b. This is shown in Sect. 5.",
+  "correct_citation": {
+    "[CITATION_1]": "10036116",
+    "[CITATION_2]": "14772567"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The temperature 1 Unique Production Verification (UPV) problem studied by  is the problem of determining whether assembly a is the unique producible terminal assembly of tile system T , where T has temperature 1, meaning that all positive strength glues are sufficiently strong to attach any two assemblies."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In particular, we show a relationship between deterministic seeded assembly at temperature 1 and biconnected decomposition of the binding graph of an assembly using the Hopcroft-Tarjan algorithm  ."
+    }
+  ],
+  "bib_entries": {
+    "10036116": {
+      "title": "Two hands are better than one (up to constant factors)",
+      "abstract": "We study the dierence between the standard seeded model (aTAM) of tile self-assembly, and the “seedless” two-handed model of tile self-assembly (2HAM). Most of our results suggest that the two-handed model is more powerful. In particular, we show how to simulate any seeded system with a two-handed system that is essentially just a constant factor larger. We exhibit finite shapes with a busy-beaver separation in the number of distinct tiles required by seeded versus two-handed, and exhibit an infinite shape that can be constructed two-handed but not seeded. Finally, we show that verifying whether a given system uniquely assembles a desired supertile is co-NP-complete in the two-handed model, while it was known to be polynomially solvable in the seeded model. 1998 ACM Subject Classification F.1.2"
+    },
+    "14772567": {
+      "title": "Algorithm 447: efficient algorithms for graph manipulation",
+      "abstract": "Efficient algorithms are presented for partitioning a graph into connected components, biconnected components and simple paths. The algorithm for partitioning of a graph into simple paths of iterative and each iteration produces a new path between two vertices already on paths. (The start vertex can be specified dynamically.) If V is the number of vertices and E is the number of edges, each algorithm requires time and space proportional to max (V, E) when executed on a random access computer."
+    }
+  },
+  "generator": "fallback_v4"
+}

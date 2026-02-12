@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Fig. 4 shows a sample of the Dataset: Fig.",
+    "Dataset 2) Data Preprocessing Strategy: The raw MRI volumes in BraTS2019 have 155 consecutive axial slices, each with spatial dimensions of 240 × 240 pixels and isotropic voxel spacing of 1 mm 3.",
+    "To enable viewing and utilizing diagnostic material on a GPU with limited graphics memory, all volumes are preprocessed to standardize formatting.Volume Resampling: All 3D MRI volumes are resampled to 128 × 128 × 1 voxels using trilinear interpolation, rather than using all 155 slices.",
+    "In preprocessing, the pipeline selects the central 64 consecutive slices in which the maximum tumor burden appears by automated analysis of ground truth masks to produce a smaller reformatted volumetric image that saves memory while also including the slices most pertinent to analyzing the tumor.",
+    "This oversampled volumetric image reduces memory requirements by nearly 58% over processing a full volume image.Intensity Normalization: Raw magnetic resonance imaging (MRI) intensities can be quite variable across differing scanning protocols, scanner vendors, and acquisition parameters, which creates distribution shift that confounds convergence for neural networks to train."
+  ]
+}

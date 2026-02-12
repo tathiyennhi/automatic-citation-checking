@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The landmark shifting module predicts the current important landmark U la t from {U la z, U la z+1 } based on the observations O t = {O t,n } No n=1.",
+    "For each image B t,n in the single-view observation O t,n, we first use the CLIP image encoder E V CLIP (•) to obtain the feature f Bt,n.",
+    "And we obtain the current observation feature f Bt by an average operation:f Bt = 1 N o n f Bt,n = 1 N o n E V CLIP (B t,n).",
+    "(7)Then, we obtain the textual features {fU la z, f U la z+1 } via the CLIP text encoder E T CLIP (•): f U la z = E T CLIP (U la z), f U la z+1 = E T CLIP (U la z+1).",
+    "(8)With f Bt and f U la z, we obtain the probability p U la z that the current important landmark U la t is U la z by:p U la z = exp(sim(f Bt, f U la z)/τ) exp(sim(f Bt, f U la z)/τ) + exp(sim(f Bt, f U la z+1)/τ),(9)where τ is the temperature parameter, exp(•) represents the exponent operation, and sim(•, •) denotes the similarity computation, which is the dot product between two features."
+  ],
+  "correct_citations": []
+}

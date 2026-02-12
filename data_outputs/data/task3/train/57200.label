@@ -1,0 +1,29 @@
+{
+  "doc_id": "57200",
+  "text": "Synthetic Scenes. For synthetic scenes, we use 3ds Max to render two datasets, e.g., a highly reflective metal ball and a Chinese pottery Tang San Cai. We position the object under natural lighting environments. For the sphere dataset, we use an initial mesh of 512,962 vertices and 1043,920 faces. We render 200 images, each at a 1536 × 1167 resolution. The camera positions were randomly selected on a sphere surrounding the object. Our remeshing scheme partitions the original mesh into 6, 000 superpixels. The Tang San Cai dataset uses 215 images with the same resolution at the sphere. Our remeshing scheme produces 6, 000 superpixels ( Table.1 ). Fig.10 shows our DSLF rendering results. From different view directions, our algorithm is able to produce highly realistic virtual views, faithfully illustrating detailed lighting changes and material characteristics. The top two rows in Fig.8 illustrate the close-up views of the rendering results using our method vs. VDTM [CITATION_1] ] and unstructured lumigraph (UL) [CITATION_2] ]. VDTM and UL rendering are unable to recover spatially sharp and angularly coherent specularities: direct interpolation not only produces polygonal specularity but also incurs excessive blurs. The artifacts are largely attributed to small spatial/angular support: they only use \"local\" information for view interpolation. Our DSLF, however, uses information learned from all angular samples and much better preserves specularity. In addition, our network effectively compresses the data, reducing the raw data size by multiple orders of magnitudes. Real Scenes. We use a Canon 760D camera to capture several real datasets including a real Tang San Cai, a beer Can and a ceramic liquor bottle. Table. 1 shows the detailed parameters of the camera and the scene. Our two-stage registration scheme (Sec.4.1) manages to align the models with their corresponding images even under highly complex lighting conditions. Fig.8 shows our reconstruction results.",
+  "correct_citation": {
+    "[CITATION_1]": "2478552",
+    "[CITATION_2]": "15164574"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The top two rows in Fig.8 illustrate the close-up views of the rendering results using our method vs. VDTM  ] and unstructured lumigraph (UL)  ]."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The top two rows in Fig.8 illustrate the close-up views of the rendering results using our method vs. VDTM  ] and unstructured lumigraph (UL)  ]."
+    }
+  ],
+  "bib_entries": {
+    "15164574": {
+      "title": "Unstructured lumigraph rendering",
+      "abstract": "We describe an image based rendering approach that generalizes many current image based rendering algorithms, including light field rendering and view-dependent texture mapping. In particular, it allows for lumigraph-style rendering from a set of input cameras in arbitrary configurations (i.e., not restricted to a plane or to any specific manifold). In the case of regular and planar input camera positions, our algorithm reduces to a typical lumigraph approach. When presented with fewer cameras and good approximate geometry, our algorithm behaves like view-dependent texture mapping. The algorithm achieves this flexibility because it is designed to meet a set of specific goals that we describe. We demonstrate this flexibility with a variety of examples."
+    },
+    "2478552": {
+      "title": "Real-time high-quality view-dependent texture mapping using per-pixel visibility",
+      "abstract": "We present an extension of View-Dependent Texture Mapping (VDTM) allowing rendering of complex geometric meshes at high frame rates without usual blurring or skinning artifacts. We combine a hybrid geometric and image-based representation of a given 3D object to speed-up rendering at the cost of a little loss of visual accuracy.During a precomputation step, we store an image-based version of the original mesh by simply and quickly computing textures from viewpoints positionned around it by the user. During the rendering step, we use these textures in order to map on the fly colors and geometric details onto the surface of a low-polygon-count version of the mesh.Real-time rendering is achieved while combining up to three viewpoints at a time, using pixel shaders. No parameterization of the mesh is needed and occlusion effects are taken into account while computing on the fly the best viewpoints for a given pixel. Moreover, the integration of this method in common real-time rendering systems is straightforward and allows applying self-shadowing as well as other z-buffer effects."
+    }
+  },
+  "generator": "fallback_v4"
+}

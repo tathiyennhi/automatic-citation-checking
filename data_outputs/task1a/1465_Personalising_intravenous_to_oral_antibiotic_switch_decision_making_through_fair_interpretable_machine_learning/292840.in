@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The MIMIC-IV EHR dataset was randomly split (50%, 50%) based on patients ICU 'stay_id' into a preprocessing and a hold-out set in order to generalise switching prescribing behavior and get a reliable unbiased estimate of the models performance given the selected hyperparameters and feature set.",
+    "The preprocessing set was split randomly into training, validation, and testing sets for feature selection as discussed above with Pytorch 48 used to create the neural networks.",
+    "After feature selection, optuna 49 with the objective of maximising the AUROC was used to select the models hyperparameters, and optimal alternative cutoff thresholds were determined from the preprocessing validation subset.",
+    "Youden's Index 27 was used to optimise the AUROC, while finding the point where precision, recall and the F1 score were equal was used as a stringent cutoff for reducing the FPR.",
+    "Subsequently, once the features and models were finalised the unseen hold-out set was randomly split 10 times into stratified training, validation, and testing sets for evaluation."
+  ]
+}

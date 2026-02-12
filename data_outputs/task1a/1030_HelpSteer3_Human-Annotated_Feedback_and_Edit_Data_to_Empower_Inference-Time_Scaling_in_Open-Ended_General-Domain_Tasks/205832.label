@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "While the dataset is leaning small, we kept to 1 epoch because Bradley-Terry (BT) style Reward Models over-fit when trained beyond (Wang et al., 2024a; Zhu et al., 2024).",
+    "One design we implemented was that each step only contains 32 distinct 'prompt-initial-response-feedback' tuples with one pair of (bad edit, good edit) and another pair of (no edit, good edit).",
+    "Compared to having (bad edit, good edit) and (no edit, good edit) pairs in separate global batches, this setting led to slightly lower validation loss and higher validation accuracy.",
+    "We believe this is advantageous to support the RM to jointly optimize for good edits against bad and no edits in one backward pass, while preventing multiple gradient updates from having identical 'good edit' samples in separate global batches, which risks over-fitting BT RMs.",
+    "Edit RL Following Wang et al. (2024a), we perform REINFORCE Leave One Out (Ahmadian et al., 2024) on the Edit SFT model guided by the Edit RM."
+  ],
+  "correct_citations": []
+}

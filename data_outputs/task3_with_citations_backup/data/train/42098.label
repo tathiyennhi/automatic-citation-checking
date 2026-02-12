@@ -1,0 +1,33 @@
+{
+  "doc_id": "42098",
+  "text": "For sake of completeness, we state the execution time costs for computing DFAs from PROSITE protein patterns. We used Grail+ to create nondeterministic finite automata (NFAs) from regular expressions, convert NFAs to DFAs, and minimize DFAs. We did not apply parallel versions of algorithms for DFA creation and minimization [CITATION_1] [CITATION_2] . On average, it took 8 min 21.5 s to convert a PROSITE pattern to a minimal DFA, and 4 min 35.8 s to convert a pattern to a non-minimal DFA. Our speculative DFA matching approach is suitable to both minimal and non-minimal DFAs.",
+  "correct_citation": {
+    "[CITATION_1]": "61269842",
+    "[CITATION_2]": "12477739"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We did not apply parallel versions of algorithms for DFA creation and minimization [CITATION_1] [CITATION_2] .",
+      "s_span": 242,
+      "e_span": 352
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We did not apply parallel versions of algorithms for DFA creation and minimization [CITATION_1] [CITATION_2] .",
+      "s_span": 242,
+      "e_span": 352
+    }
+  ],
+  "bib_entries": {
+    "61269842": {
+      "title": "Non-blocking parallel subset construction on shared-memory multicore architectures",
+      "abstract": "We discuss ways to effectively parallelize the subset construction algorithm, which is used to convert non-deterministic finite automata (NFAs) to deterministic finite automata (DFAs). This conversion is at the heart of string pattern matching based on regular expressions and thus has many applications in text processing, compilers, scripting languages and web browsers, security and more recently also with DNA sequence analysis. We discuss sources of parallelism in the sequential algorithm and their profitability on shared-memory multicore architectures. Our NFA and DFA data-structures are designed to improve scalability and keep communication and synchronization overhead to a minimum. We present three different ways for synchronization; the performance of our non-blocking synchronization based on a compare-and-swap (CAS) primitive compares favorably to a lock-based approach. We consider structural NFA properties and their relationship to scalability on highly-parallel multicore architectures. We demonstrate the efficiency of our parallel subset construction algorithm through several benchmarks run on a 4-CPU (40 cores) node of the Intel Manycore Testing Lab. Achieved speedups are up to a factor of 32x with 40 cores."
+    },
+    "12477739": {
+      "title": "A parallel DFA minimization algorithm",
+      "abstract": "In this paper, we have considered the state minimization problem for Deterministic Finite Automata (DFA). An efficient parallel algorithm for solving the problem on an arbitrary CRCW PRAM has been proposed. For n number of states and k number of inputs in ? of the DFA to be minimized, the algorithm runs in O(kn log n) time and uses O(n / log n) processors."
+    }
+  },
+  "generator": "fallback_v4"
+}

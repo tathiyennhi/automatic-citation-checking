@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Initially, the central server initializes a sequential model M 0 and then deploys it on clients' devices.",
+    "Subsequently, clients and the central server collaboratively execute the following steps until model convergence.",
+    "At the start of round 𝑟, the central server selects a group of users U 𝑟 to participate in the training process and distributes recommendation model M 𝑟 to them.",
+    "Then, each user 𝑢 𝑖 ∈ U 𝑟 trains M 𝑟 with their interaction log S 𝑢 𝑖 using a specific objective function L 𝑟𝑒𝑐, such as binary cross entropy loss:L 𝑟𝑒𝑐 = - ∑︁ 𝑣 𝑡 ∈ S 𝑢 𝑖       𝑙𝑜𝑔(𝜎 (𝑟 𝑣 𝑡,𝑡)) + ∑︁ 𝑣 𝑗 ∉S 𝑢 𝑖 𝑙𝑜𝑔(1 -𝜎 (𝑟 𝑣 𝑗,𝑡))      (1)where𝑣𝑡 is the concise version of 𝑣 𝑢 𝑖 𝑡, 0 ≤ 𝑟 𝑣,𝑡 ≤ 1 is the prediction score of item 𝑣 at time step 𝑡 based on the sequence S 𝑢 𝑖, indicating the preference of 𝑢 𝑖 to 𝑣.",
+    "After local training, user 𝑢 𝑖 uploads the updated model M 𝑟 +1 𝑢 𝑖 back to the central server."
+  ],
+  "correct_citations": []
+}

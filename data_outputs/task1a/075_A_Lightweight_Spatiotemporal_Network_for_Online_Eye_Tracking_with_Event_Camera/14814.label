@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The convolution with the temporal kernel is performed on each spatial pixel independently, or equivalently a 3D convolution with kernel size of k t × 1 × 1.",
+    "Similarly, the spatial kernel is then performed on each feature frame independently, or equivalently a 3D convolution with kernel size of1 × k x × k y.The idea of performing this separation of spatial and temporal convolutions, instead of doing an expensive 3D convolution with a kernel sized k t × k x × k y has been explored in the literature, and is referred to as a pseudo-3D or (2+1)D convolution [9,13].",
+    "However, we make several additional innovations on top of this structure to make the network more suitable to perform online inference.First and foremost, we pre-pad our inputs by k t -1, which makes the temporal convolution performed in our block fully causal: the current output feature frame only depends on the current and previous input feature frames.",
+    "This guarantees that the network is able to make predictions in real time, without delay.",
+    "On the other hand, if we consider a non-causal centered temporal convolution with kernel size of 3, then each temporal convolution layer needs to \"wait\" for a future frame to generate an output, and each such layer in the network will incur one additional frame of delay."
+  ],
+  "correct_citations": [
+    "Similarly, the spatial kernel is then performed on each feature frame independently, or equivalently a 3D convolution with kernel size of1 × k x × k y.The idea of performing this separation of spatial and temporal convolutions, instead of doing an expensive 3D convolution with a kernel sized k t × k x × k y has been explored in the literature, and is referred to as a pseudo-3D or (2+1)D convolution [9,13]."
+  ]
+}

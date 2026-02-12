@@ -1,0 +1,47 @@
+{
+  "doc_id": "34664",
+  "text": "shown in Figure 6 , our metric yields the smallest error. Error bars correspond to a 95% con dence interval. Ablation study. We evaluate the contribution of each term in our loss function to the overall performance via a series of ablation experiments (see Table 2 ). We rst evaluate performance using only one of the two terms (L T L and L P ) in isolation. We also analyze the result of incorporating two additional loss terms, which could in principle apply to our problem: A cross-entropy term L C E , and a batch-mining triplet loss term L BT L . e former aims at learning a so classi cation task by penalizing samples which do not belong to the same class [CITATION_1] , while the la er has been proposed in combination with the cross-entropy term to improve the model's generalization capabilities and accuracy [CITATION_2] (more details about these two terms can be found in the appendix). Last, we analyze performance using only these two terms (L C E and L BT L ), without incorporating participants' perceptual data. As Table 2 shows, none of these alternatives outperforms our proposed loss function. Although the single-term L P loss function yields higher accuracy, it also outputs higher perplexity values; moreover, as Figure 6 shows, the mean error is much higher, meaning that it does not capture the notion of similarity as well as our model. Alternative networks. We have tested two alternative architectures, VGG [CITATION_3] , which stacks convolutions with non-linearities; and DenseNet [CITATION_4] , which introduces concatenations between di erent layers. Both models have been trained using our loss function. As shown in Table 2 , both yield inferior results compared to our model. DenseNet has a low number of learned parameters, insu cient to capture the data distribution, hampering convergence. VGG has a larger number of parameters; however, the residual mapping learned by the residual blocks in the architecture of our model yields the best overall performance.",
+  "correct_citation": {
+    "[CITATION_1]": "206593880",
+    "[CITATION_2]": "19150049",
+    "[CITATION_3]": "14124313",
+    "[CITATION_4]": "9433631"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "triplet loss term L BT L . e former aims at learning a so classi cation task by penalizing samples which do not belong to the same class  , while the la er has been proposed in combination with the cross-entropy term to improve the model's generalization capabilities and"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": ", while the la er has been proposed in combination with the cross-entropy term to improve the model's generalization capabilities and accuracy  (more details about these two terms can be found in the appendix). Last, we analyze performance using only these two terms (L C E and L"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We have tested two alternative architectures, VGG  , which stacks convolutions with non-linearities; and DenseNet  , which introduces concatenations between di erent layers."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "We have tested two alternative architectures, VGG  , which stacks convolutions with non-linearities; and DenseNet  , which introduces concatenations between di erent layers."
+    }
+  ],
+  "bib_entries": {
+    "9433631": {
+      "title": "Densely Connected Convolutional Networks",
+      "abstract": "Recent work has shown that convolutional networks can be substantially deeper, more accurate, and efficient to train if they contain shorter connections between layers close to the input and those close to the output. In this paper, we embrace this observation and introduce the Dense Convolutional Network (DenseNet), which connects each layer to every other layer in a feed-forward fashion. Whereas traditional convolutional networks with L layers have L connections - one between each layer and its subsequent layer - our network has L(L+1)/2 direct connections. For each layer, the feature-maps of all preceding layers are used as inputs, and its own feature-maps are used as inputs into all subsequent layers. DenseNets have several compelling advantages: they alleviate the vanishing-gradient problem, strengthen feature propagation, encourage feature reuse, and substantially reduce the number of parameters. We evaluate our proposed architecture on four highly competitive object recognition benchmark tasks (CIFAR-10, CIFAR-100, SVHN, and ImageNet). DenseNets obtain significant improvements over the state-of-the-art on most of them, whilst requiring less computation to achieve high performance. Code and pre-trained models are available at this https URL ."
+    },
+    "206593880": {
+      "title": "Rethinking the inception architecture for computer vision",
+      "abstract": "Convolutional networks are at the core of most state of-the-art computer vision solutions for a wide variety of tasks. Since 2014 very deep convolutional networks started to become mainstream, yielding substantial gains in various benchmarks. Although increased model size and computational cost tend to translate to immediate quality gains for most tasks (as long as enough labeled data is provided for training), computational efficiency and low parameter count are still enabling factors for various use cases such as mobile vision and big-data scenarios. Here we are exploring ways to scale up networks in ways that aim at utilizing the added computation as efficiently as possible by suitably factorized convolutions and aggressive regularization. We benchmark our methods on the ILSVRC 2012 classification challenge validation set demonstrate substantial gains over the state of the art: 21:2% top-1 and 5:6% top-5 error for single frame evaluation using a network with a computational cost of 5 billion multiply-adds per inference and with using less than 25 million parameters. With an ensemble of 4 models and multi-crop evaluation, we report 3:5% top-5 error and 17:3% top-1 error on the validation set and 3:6% top-5 error on the official test set."
+    },
+    "14124313": {
+      "title": "Very deep convolutional networks for large-scale image recognition",
+      "abstract": "In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision."
+    },
+    "19150049": {
+      "title": "Revisiting Temporal Modeling for Video-based Person ReID",
+      "abstract": "Video-based person reID is an important task, which has received much attention in recent years due to the increasing demand in surveillance and camera networks. A typical video-based person reID system consists of three parts: an image-level feature extractor (e.g. CNN), a temporal modeling method to aggregate temporal features and a loss function. Although many methods on temporal modeling have been proposed, it is hard to directly compare these methods, because the choice of feature extractor and loss function also have a large impact on the final performance. We comprehensively study and compare four different temporal modeling methods (temporal pooling, temporal attention, RNN and 3D convnets) for video-based person reID. We also propose a new attention generation network which adopts temporal convolution to extract temporal information among frames. The evaluation is done on the MARS dataset, and our methods outperform state-of-the-art methods by a large margin. Our source codes are released at https://github.com/jiyanggao/Video-Person-ReID."
+    }
+  },
+  "generator": "fallback_v4"
+}

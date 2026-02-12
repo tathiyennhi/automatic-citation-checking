@@ -1,0 +1,22 @@
+{
+  "text": "Approximate Pattern Matching in Periodic Text (APM Problem) Input: A word S of length n, a word P of length p, and a threshold k Output: For every cyclic shift U of P , compute ED(S, U ∞ ) or report that this value is greater than k Amir et al. [CITATION_1] use two solutions to the APM problem that work in O(np) time and O(n + k(k + p)) time, respectively. The main tool of the first algorithm is wrap-around dynamic programming [CITATION_2] that solves the APM problem without the threshold constraint k in O(np) time. The other solution is based on the Landau-Vishkin algorithm [CITATION_3] . For each p and k < τ p , either algorithm works in O(n 4/3 ) time.",
+  "correct_citation": {
+    "[CITATION_1]": "25484970",
+    "[CITATION_2]": "39709651",
+    "[CITATION_3]": "22167181"
+  },
+  "bib_entries": {
+    "22167181": {
+      "title": "Fast parallel and serial approximate string matching",
+      "abstract": "Consider the string matching problem, where differences between characters of the pattern and characters of the text are allowed. Each difference is due to either a mismatch between a character of the text and a character of the pattern, or a superfluous character in the text, or a superfluous character in the pattern. Given a text of lenght n, a pattern of length m and an integer k, we present parallel and serial algorthms for finding all occurrences of the pattern in the text with at most k differences. The parallel algorithm requires O(log m + k) time using n processors. The serial algorithm runs in O(nk) time for an alphabet whose size is fixed."
+    },
+    "25484970": {
+      "title": "Period recovery of strings over the Hamming and edit distances",
+      "abstract": "A string T of length m is periodic in P of length p if P is a substring of T and T[i]=T[i+p] T [ i ] = T [ i + p ] for all 0≤i≤m−p−1 0 ≤ i ≤ m − p − 1 and m≥2p m ≥ 2 p . The shortest such prefix, P , is called the period of T (i.e., P=T[0..p−1] P = T [ 0 . . p − 1 ] ). In this paper we investigate the period recovery problem. Given a string S of length n , find the primitive period(s) P such that the distance between S and a string T that is periodic in P is below a threshold τ . We consider the period recovery problem over both the Hamming distance and the edit distance. For the Hamming distance case, we present an O(nlog⁡n) O ( n log ⁡ n ) -time algorithm, where τ is given as ⌊ n ( 2 + ϵ ) p ⌋ , for ϵ>0 ϵ > 0 . For the edit distance case, τ = ⌊ n ( 3.75 + ϵ ) p ⌋ and ϵ>0 ϵ > 0 , we provide an O(n 4/3 ) O ( n 4 / 3 ) -time algorithm."
+    },
+    "39709651": {
+      "title": "Identifying periodic occurrences of a template with applications to protein structure",
+      "abstract": "We consider a string matching problem where the pattern is a template that matches many different strings with various degrees of perfection. The quality of a match is given by a penalty matrix that assigns each pair of characters a score that characterizes how well the characters match. Superfluous characters in the text and superfluous characters in the pattern may also occur and the respective penalties for such gaps in the alignment are also given by the penalty matrix. For a text T of length n, and a template P of length m, we wish to find the best alignment of T with Pn, which is the concatenation of n copies of P, (m will typically be much smaller than n). Such an alignment can simply be obtained by solving a dynamic programming problem of size O(n2m), and ignoring the periodic character of Pn. We show that the structure of Pn can be exploited and the problem reduced to essentially solving a dynamic programming of size O(mn). If the complexity of computing gap penalties is O(1), (which is frequently the case), our algorithm runs in O(mn) time. The problem was motivated by a protein structure problem."
+    }
+  }
+}

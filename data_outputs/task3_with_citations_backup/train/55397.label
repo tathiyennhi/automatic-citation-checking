@@ -1,0 +1,22 @@
+{
+  "doc_id": "55397",
+  "text": "The variety of modulation methods and receiving techniques in communication applications dictate that single-and double-precision arithmetic operations be executed flexibly and efficiently by a DSP programmed as a software receiver. For example, most processing in high-order quadrature amplitude modulation (QAM) and OFDM communication systems requires high-precision computation. However, low-precision computation is sufficient for some major processing tasks in communication receivers, such as matched filtering and pseudorandom (PN) code spreading/despreading in direct-sequence spread spectrum (DSSS) CDMA systems. Yet others, such as channel estimation and equalization, have different precision requirements under different conditions. In response to this fact, data-level parallelism, also called sub-word parallelism (SWP), has been adopted in several recent DSP designs. Fig. 1(a) shows the sub-word parallel MAC used in the TigerSHARC DSP [CITATION_1] . When the -bit MAC module is switched to do -bit MAC operation, it is divided into four -bit sub-word MAC modules and four parallel MAC operations are issued per cycle on sub-words of bits. Each of the four products is accumulated in one of the four dedicated accumulation registers.",
+  "correct_citation": {
+    "[CITATION_1]": "62721258"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Fig. 1(a) shows the sub-word parallel MAC used in the TigerSHARC DSP [CITATION_1] .",
+      "s_span": 883,
+      "e_span": 966
+    }
+  ],
+  "bib_entries": {
+    "62721258": {
+      "title": "Sub-word parallelism in digital signal processing",
+      "abstract": "We deal with parallelism at the data level. We describe an implementation of the architectural technique called sub-word parallelism (SWP), which increases parallelism at the data-element-level by means of partitioning a processor's data path. The specific implementation we focus on is based on the TigerSHARC DSP architecture, developed at Analog Devices, Inc. As a result of SWP, the same data path and computation units perform more than one computation on an N-element composite word. This composite word consists of more than one adjacent sub-words. SWP is quite common and exists in production versions of most major general-purpose microprocessors. We also present an implementation of an FIR filter in the TigerSHARC using data-level SWP as an example."
+    }
+  },
+  "generator": "fallback_v4"
+}

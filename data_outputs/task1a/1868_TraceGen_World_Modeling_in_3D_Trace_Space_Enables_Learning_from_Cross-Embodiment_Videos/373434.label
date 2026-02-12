@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Encoder Freezing StrategyTo leverage pretrained representations efficiently, we keep all encoders (DINOv2, SigLIP, T5) frozen throughout training and train only the fusion layer and decoder.",
+    "This design choice follows Prismatic VLM [20], which demonstrated that finetuning visual backbones significantly degrades performance on vision-language tasks.",
+    "Their analysis revealed that updating pretrained vision encoders during task-specific finetuning leads to catastrophic forgetting of the rich visual priors learned during large-scale pretraining.By maintaining frozen encoders, TraceGen retains: • Visual features from DINOv2, trained via selfsupervised learning on large-scale natural images, providing strong geometric and semantic understanding • Vision-language alignment from SigLIP, enabling effective conditioning on text instructions • Linguistic representations from T5, capturing task semantics and manipulation goals The trainable fusion layer and flow-based decoder learn to combine and map these frozen representations to the 3D trace prediction task.",
+    "This approach substantially reduces the number of trainable parameters, accelerates training, and improves generalization to unseen manipulation scenarios.",
+    "D. Evaluations D.1."
+  ],
+  "correct_citations": [
+    "This design choice follows Prismatic VLM [20], which demonstrated that finetuning visual backbones significantly degrades performance on vision-language tasks."
+  ]
+}

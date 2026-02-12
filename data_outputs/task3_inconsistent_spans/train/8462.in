@@ -1,0 +1,17 @@
+{
+  "text": "The execution of a distributed join can be broadly decomposed into an initial data redistribution stage followed by a local join process [CITATION_1] , [CITATION_2] . This latter process has been extensively studied and its cost does not contain any intermachine communication. For the purpose of this work, we focus on the former phase.",
+  "correct_citation": {
+    "[CITATION_1]": "6308511",
+    "[CITATION_2]": "14451209"
+  },
+  "bib_entries": {
+    "6308511": {
+      "title": "Handling data skew in parallel joins in shared-nothing systems",
+      "abstract": "Parallel processing continues to be important in large data warehouses. The processing requirements continue to expand in multiple dimensions. These include greater volumes, increasing number of concurrent users, more complex queries, and more applications which define complex logical, semantic, and physical data models. Shared nothing parallel database management systems [16] can scale up \"horizontally\" by adding more nodes. Most parallel algorithms, however, do not take into account data skew. Data skew occurs naturally in many applications. A query processing skewed data not only slows down its response time, but generates hot nodes, which become a bottleneck throttling the overall system performance. Motivated by real business problems, we propose a new join geography called PRPD (Partial Redistribution & Partial Duplication) to improve the performance and scalability of parallel joins in the presence of data skew in a shared-nothing system. Our experimental results show that PRPD significantly speeds up query elapsed time in the presence of data skew. Our experience shows that eliminating system bottlenecks caused by data skew improves the throughput of the whole system which is important in parallel data warehouses that often run high concurrency workloads."
+    },
+    "14451209": {
+      "title": "Robust and skew-resistant parallel joins in shared-nothing systems",
+      "abstract": "The performance of joins in parallel database management systems is critical for data intensive operations such as querying. Since data skew is common in many applications, poorly engineered join operations result in load imbalance and performance bottlenecks. State-of-the-art methods designed to handle this problem offer significant improvements over naive implementations. However, performance could be further improved by removing the dependency on global skew knowledge and broadcasting. In this paper, we propose PRPQ (partial redistribution & partial query), an efficient and robust join algorithm for processing large-scale joins over distributed systems. We present the detailed implementation and a quantitative evaluation of our method. The experimental results demonstrate that the proposed PRPQ algorithm is indeed robust and scalable under a wide range of skew conditions. Specifically, compared to the state-of-art PRPD method, we achieve 16% - 167% performance improvement and 24% - 54% less network communication under different join workloads."
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "doc_id": "10665",
+  "text": "Suppose prediction results , = 1, 2, . . . , , are given with score function ; there are several different ways of combination. Among others, there are score combination, voting, linear average combination, and weighted combination [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] . Voting is computationally simple and better than simple linear combinations when applied to the situation with large number of prediction results. However, a better alternative is to reduce the number of prediction results to a smaller number and then these prediction results are combined. In this paper, we reduce the set of prediction results to those which perform relatively well and then use the rank/score function to decide whether to combine by score. In this paper, we use the rules (a) (1) and (a) (2) stated in Remark 1 as our guiding principle to select prediction results and to decide on the method of combination. After generating each of the ten PhModels by using HypoGen Best, Fast, and Caesar algorithms for training set inhibitors, each of the best PhModel (denoted as Best train , Fast train , and Casear train ) was evaluated by its correlation coefficient of the training set ( train ). Then these best PhModels were used to predict the biological activities of testing set inhibitors by using HypoGen Best, Fast, and Caesar algorithms. Therefore, there are nine prediction results (denoted as train × test , = {Best, Fast, Caesar}, that is, Best train Best test ) generated for testing set inhibitors. Using data fusion, results from various prediction results are combined to obtain predictions with larger accuracy rate. The diversity rank/score function is used to select the most suitable prediction results for combination. If these three best PhModels were selected, there are nine prediction results and then there are 2 9 − 1 = 511 combinations. According to the rule (a) (1) in Remark 1, the train of Casear train is far less than those of Best train and Fast train (Table 1) ; then, the Casear train was not considered in the combinations. Therefore, there are six prediction results ( 1train × 2test , 1 = {Best, Fast} and 2 = {Best, Fast, Caesar}) and 2 6 − 1 = 63 combinations. A special diversity rank/score graph was used to choose the best discriminating prediction results for further combination.",
+  "correct_citation": {
+    "[CITATION_1]": "5149563",
+    "[CITATION_2]": "17764360",
+    "[CITATION_3]": "206400534",
+    "[CITATION_4]": "2774691",
+    "[CITATION_5]": "12366924"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Among others, there are score combination, voting, linear average combination, and weighted combination [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] .",
+      "s_span": 128,
+      "e_span": 298
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Among others, there are score combination, voting, linear average combination, and weighted combination [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] .",
+      "s_span": 128,
+      "e_span": 298
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Among others, there are score combination, voting, linear average combination, and weighted combination [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] .",
+      "s_span": 128,
+      "e_span": 298
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Among others, there are score combination, voting, linear average combination, and weighted combination [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] .",
+      "s_span": 128,
+      "e_span": 298
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Among others, there are score combination, voting, linear average combination, and weighted combination [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] .",
+      "s_span": 128,
+      "e_span": 298
+    }
+  ],
+  "bib_entries": {
+    "12366924": {
+      "title": "Selection and validation of differentially expressed genes in head and neck cancer",
+      "abstract": "We applied a robust combinatorial (multi-test) approach to microarray data to identify genes consistently up- or down-regulated in head and neck squamous cell carcinoma (HNSCC). RNA was extracted from 22 paired samples of HNSCC and normal tissue from the same donors and hybridized to the Affymetrix U95A chip. Forty-two differentially expressed probe sets (representing 38 genes and one expressed sequence tag) satisfied all statistical tests of significance and were selected for further validation. Selected probe sets were validated by hierarchical clustering, multiple probe set concordance, and target-subunit agreement. In addition, real-time PCR analysis of 8 representative (randomly selected from 38) genes performed on both microarray-tested and independently obtained samples correlated well with the microarray data. The genes identified and validated by this method were in comparatively good agreement with other rigorous HNSCC microarray studies. From this study, we conclude that combinatorial analysis of microarray data is a promising technique for identifying differentially expressed genes with few false positives."
+    },
+    "17764360": {
+      "title": "Fusion via a linear combination of scores",
+      "abstract": "We present a thorough analysis of the capabilities of the linear combination (LC) model for fusion of information retrieval systems. The LC model combines the results lists of multiple IR systems by scoring each document using a weighted sum of the scores from each of the component systems. We first present both empirical and analytical justification for the hypotheses that such a model should only be used when the systems involved have high performance, a large overlap of relevant documents, and a small overlap of nonrelevant documents. The empirical approach allows us to very accurately predict the performance of a combined system. We also derive a formula for a theoretically optimal weighting scheme for combining 2 systems. We introduce d—the difference between the average score on relevant documents and the average score on nonrelevant documents—as a performance measure which not only allows mathematical reasoning about system performance, but also allows the selection of weights which generalize well to new documents. We describe a number of experiments involving large numbers of different IR systems which support these findings."
+    },
+    "2774691": {
+      "title": "Consensus scoring criteria for improving enrichment in virtual screening",
+      "abstract": "Motivation: Virtual screening of molecular compound libraries is a potentially powerful and inexpensive method for the discovery of novel lead compounds for drug development. The major weakness of virtual screeningsthe inability to consistently identify true positives (leads) sis likely due to our incomplete understanding of the chemistry involved in ligand binding and the subsequently imprecise scoring algorithms. It has been demonstrated that combining multiple scoring functions (consensus scoring) improves the enrichment of true positives. Previous efforts at consensus scoring have largely focused on empirical results, but they have yet to provide a theoretical analysis that gives insight into real features of combinations and data fusion for virtual screening. Results: We demonstrate that combining multiple scoring functions improves the enrichment of true positives only if (a) each of the individual scoring functions has relatively high performance and (b) the individual scoring functions are distinctive. Notably, these two prediction variables are previously established criteria for the performance of data fusion approaches using either rank or score combinations. This work, thus, establishes a potential theoretical basis for the probable success of data fusion approaches to improve yields in in silico screening experiments. Furthermore, it is similarly established that the second criterion (b) can, in at least some cases, be functionally defined as the area between the rank versus score plots generated by the two (or more) algorithms. Because rank-score plots are independent of the performance of the individual scoring function, this establishes a second theoretically defined approach to determining the likely success of combining data from different predictive algorithms. This approach is, thus, useful in practical settings in the virtual screening process when the performance of at least two individual scoring functions (such as in criterion a) can be estimated as having a high likelihood of having high performance, even if no training sets are available. We provide initial validation of this theoretical approach using data from five scoring systems with two evolutionary docking algorithms on four targets, thymidine kinase, human dihydrofolate reductase, and estrogen receptors of antagonists and agonists. Our procedure is computationally efficient, able to adapt to different situations, and scalable to a large number of compounds as well as to a greater number of combinations. Results of the experiment show a fairly significant improvement (vs single algorithms) in several measures of scoring quality, specifically “goodness-of-hit” scores, false positive rates, and “enrichment”. This approach (available online at http://gemdock.life. nctu.edu.tw/dock/download.php) has practical utility for cases where the basic tools are known or believed to be generally applicable, but where specific training sets are absent."
+    },
+    "5149563": {
+      "title": "Comparing rank and score combination methods for data fusion in information retrieval",
+      "abstract": "Combination of multiple evidences (multiple query formulations, multiple retrieval schemes or systems) has been shown (mostly experimentally) to be effective in data fusion in information retrieval. However, the question of why and how combination should be done still remains largely unanswered. In this paper, we provide a model for simulation and a framework for analysis in the study of data fusion in the information retrieval domain. A rank/score function is defined and the concept of a Cayley graph is used in the design and analysis of our framework. The model and framework have led us to better understanding of the data fusion phenomena in information retrieval. In particular, by exploiting the graphical properties of the rank/score function, we have shown analytically and by simulation that combination using rank performs better than combination using score under certain conditions. Moreover, we demonstrated that the rank/score function might be used as a predictive variable for the effectiveness of combination of multiple evidences."
+    },
+    "206400534": {
+      "title": "Methods of combining multiple classifiers and their applications to handwriting recognition",
+      "abstract": "Possible solutions to the problem of combining classifiers can be divided into three categories according to the levels of information available from the various classifiers. Four approaches based on different methodologies are proposed for solving this problem. One is suitable for combining individual classifiers such as Bayesian, k-nearest-neighbor, and various distance classifiers. The other three could be used for combining any kind of individual classifiers. On applying these methods to combine several classifiers for recognizing totally unconstrained handwritten numerals, the experimental results show that the performance of individual classifiers can be improved significantly. For example, on the US zipcode database, 98.9% recognition with 0.90% substitution and 0.2% rejection can be obtained, as well as high reliability with 95% recognition, 0% substitution, and 5% rejection. >"
+    }
+  },
+  "generator": "fallback_v4"
+}

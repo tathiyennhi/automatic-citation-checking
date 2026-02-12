@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "When dealing with two separate GANs, G1 and G2, with their respective discriminators D1 and D2, each trained on different data distributions (benign and malignant nodules, respectively) to achieve the desired objectives for both generation and discrimination tasks.",
+    "Formulating a loss function that measures the discrepancy between the outputs of D1 and D2 can provide insights into the distinguishability of benign and malignant nodules as learned by the GANs.For generators, the loss is formulated to measure how well it deceives the discriminator into believing that the generated images are real.",
+    "If we consider G1 generating benign nodules and G2 generating malignant nodules, the generator loss for each GAN can be defined using the binary cross-entropy (BCE) as follows:where L G is the generator loss, N is the number of sam- ples, G represents the generator G1 or G2, D represents the discriminator (D1 for G1's output and D2 for G2's output), and z i is the input latent vector to the generator.",
+    "The goal of G is to minimize this loss to generate images that D will classify as real.The discriminator loss combines the error on real and generated (fake) images, aiming to classify both types correctly.",
+    "The loss for a discriminator D can be defined as:where L D is the discriminator loss and x i represents real images from the dataset (benign for D1 and malignant for D2)."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,12 @@
+{
+  "text": "In most of the TLC runs for the DoRiS specification, the execution time for some finite models was found to be reasonable, although no comparison was made with other tools. We have used a 2 Ghz Intel Core Duo processor using a java virtual machine with a 512M heap size. Three performance metrics were considered: CPU user time (U ); the total number of generated distinct states (N ); the diameter (D) of the reachability graph. [CITATION_1] # Servers Table 1 illustrates the data obtained for some configurations as a function of the number of servers. As can be seen, verifying a model of DoRiS with 14 servers took about 4, 117 seconds to explore N = 9, 540 distinct states with reachability graph with diameter D = 9, 482. It must be noted that D is close to N for all configurations. Three aspects of the specification explain this good performance. First, all actions are guarded by temporal predicates, reducing the number of explored states. Second, communication and fault scenarios were fixed for a given verification. Third, the time increment strategy adopted in the NextTick action (see Figure 8 ) reduced significantly the number of unnecessary states. Indeed, we compared this strategy with a naive one that increments time by a unit at each step. For a configuration with 6 servers, the naive strategy took 453 seconds to be verified with N = 21, 604 and D = 11, 261. Using 14 servers, no answer was returned by TLC after 20 hours of execution, indicating a rapid state explosion.",
+  "correct_citation": {
+    "[CITATION_1]": "11385200"
+  },
+  "bib_entries": {
+    "11385200": {
+      "title": "Real-time communication protocols: an overview",
+      "abstract": "This paper describes several existing data link layer protocols that provide real-time capabilities on wired networks, focusing on token-ring and Carrier Sense Multiple Access based networks. Existing modifications to provide better real-time capabilities and performance are also described. Finally the pros and cons regarding the At-Home Anywhere project are discussed."
+    }
+  }
+}

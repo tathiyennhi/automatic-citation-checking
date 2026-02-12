@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "First, we replace the subgradient direction u(λ(t)) in the the subgradient step ( 6) by a stochastic subgradient direction:u † (λ(t)) = E x E y ∼ π † (t) [ g(x, y)] -E y ∼ πref [ g(x, y)] -bwhere E is an average over an empirical distribution of some underlying distribution, and π † (t) is the current LLM policy at time t. Thus, the subgradient step (6) becomes a stochastic subgradient descent:λ(t + 1) = λ(t) -η u † (λ(t)) +.",
+    "(27)where u † (λ(t)) is an unbiased estimate of the true subgradient u(λ(t)), i.e., E u † (λ(t)) | λ(t) = u(λ(t)).",
+    "Hence, this relaxation captures the randomness inherent in estimating the subgradient direction from samples in practice.Second, for the LLM policy optimization step (7), it is realistic that we only have access to an approximate solution π † (t + 1) = π θ † (t+1) (λ(t + 1)):L(π θ † (t+1), λ(t + 1)) ≥ max θ ∈ Θ L(π θ, λ(t + 1)) -ϵ app (28)To apply the supermartingale convergence to the stochastic {α(t)} t ≥ 0 and {β(t)} t ≥ 0, we introduce a natural filtration {F t } t ≥ 0 as the underlying σ-algebras.",
+    "We note that α(t + 1) and β(t + 1) are determined by λ(t) at each time t. Thus,E [α(t + 1) | F t] = E [α(t + 1) | λ(t)] = E [α(t + 1) | λ(t), α(t) = 0] P(α(t) = 0) +E [α(t + 1) | λ(t), α(t) > 0] P(α(t) > 0)We next prove thatE [α(t + 1) | F t] ≤ α(t) -β(t).",
+    "(30)(i) A simple case is when α(t) = 0,E [α(t + 1) | F t] = E [α(t + 1) | λ(t), α(t) = 0].There are two situations."
+  ]
+}

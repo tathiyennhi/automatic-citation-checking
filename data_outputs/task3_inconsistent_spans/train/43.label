@@ -1,0 +1,33 @@
+{
+  "doc_id": "43",
+  "text": "Example 2 Tracking Bids at an Online Auction. The XMark benchmark [CITATION_1] tests queries over stored auction data. We extend this to an online auction, shown in Fig. 1b . Sellers post items for sale to the Sellers portal, which merges submissions into a single output stream. Bidders post increase bids to the Buyers portal, which merges bids into a single output stream. A useful query tracks final prices for items, joining items for sale with item bids, and then summing up bid-increase values for each item. We use the symmetric hash join [CITATION_2] to join the two inputs. This implementation does not block on its inputs, but maintains an unbounded amount of state. Throughout the auction, hash tables used for the join grow without bound, so the system eventually runs out of memory. Further, the group-by operator that calculates the sum does not output any results until all items have arrived.",
+  "correct_citation": {
+    "[CITATION_1]": "1747844",
+    "[CITATION_2]": "206793263"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The XMark benchmark  tests queries over stored auction data.",
+      "s_span": 46,
+      "e_span": 118
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We use the symmetric hash join  to join the two inputs.",
+      "s_span": 516,
+      "e_span": 583
+    }
+  ],
+  "bib_entries": {
+    "206793263": {
+      "title": "Dataflow Query Execution in a Parallel Main-Memory Environment",
+      "abstract": "The performance and characteristics of the execution of various join-trees on a parallel DBMS are studied. The results are a step in the direction of the design of a query optimization strategy that is fit for parallel execution of complex queries. Among others, synchronization issues are identified to limit the performance gain from parallelism. A new hash-join algorithm, called pipelining hash-join is introduced that has fewer synchronization constraints than the known hash-join algorithms. Also, the behavior of individual join operations in a join-tree is studied in a simulation experiment. The results show that the pipelining hash-join algorithm yields a better performance for multi-join queries. Also, the format of the optimal join-tree appears to depend on the size of the operands of the join. The results from the simulation study are confirmed with an analytic model for dataflow query execution. >"
+    },
+    "1747844": {
+      "title": "The XML Benchmark Project",
+      "abstract": "With standardization efforts of a query language for XML documents drawing to a close, researchers and users increasingly focus their attention on the database technology that has to deliver on the new challenges that the sheer amount of XML documents produced by applications pose to data management: validation, performance evaluation and optimization of XML query processors are the upcoming issues. Following a long tradition in database research, the XML Store Benchmark Project provides a framework to assess an XML database''s abilities to cope with a broad spectrum of different queries, typically posed in real-world application scenarios. The benchmark is intended to help both implementors and users to compare XML databases independent of their own, specific application scenario. To this end, the benchmark offers a set queries each of which is intended to challenge a particular primitive of the query processor or storage engine. The overall workload we propose consists of a scalable document database and a concise, yet comprehensive set of queries, which covers the major aspects of query processing. The queries'' challenges range from stressing the textual character of the document to data analysis queries, but include also typical ad-hoc queries. We complement our research with results obtained from running the benchmark on our XML database platform. They are intended to give a first baseline, illustrating the state of the art."
+    }
+  },
+  "generator": "fallback_v4"
+}

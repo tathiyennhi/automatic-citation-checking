@@ -1,0 +1,43 @@
+{
+  "doc_id": "50713",
+  "text": "Asynchrony has been studied in various settings to accelerate the training of machine learning models [CITATION_1] [CITATION_2] . We ask the question of whether our proposed heuristic can go beyond the asynchronous pipeline setting with fixed gradient delay pattern, and accelerate training in classical asynchronous settings with stochastic gradient delay. In this section, we show that our learning rate rescheduling heuristic can also improve the model accuracy attained by training under the Hogwild!-style stochastic asynchrony [CITATION_3] [CITATION_4] . We first discuss the Hogwild!-style stochastic asynchrony model and then dive into the detailed experiment results.",
+  "correct_citation": {
+    "[CITATION_1]": "6108215",
+    "[CITATION_2]": "10464397",
+    "[CITATION_3]": "6108215",
+    "[CITATION_4]": "930783"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Asynchrony has been studied in various settings to accelerate the training of machine learning models   ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Asynchrony has been studied in various settings to accelerate the training of machine learning models   ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In this section, we show that our learning rate rescheduling heuristic can also improve the model accuracy attained by training under the Hogwild!-style stochastic asynchrony   ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In this section, we show that our learning rate rescheduling heuristic can also improve the model accuracy attained by training under the Hogwild!-style stochastic asynchrony   ."
+    }
+  ],
+  "bib_entries": {
+    "930783": {
+      "title": "Taming the wild: A unified analysis of hogwild-style algorithms",
+      "abstract": "Stochastic gradient descent (SGD) is a ubiquitous algorithm for a variety of machine learning problems. Researchers and industry have developed several techniques to optimize SGD's runtime performance, including asynchronous execution and reduced precision. Our main result is a martingale-based analysis that enables us to capture the rich noise models that may arise from such techniques. Specifically, we use our new analysis in three ways: (1) we derive convergence rates for the convex case (Hogwild!) with relaxed assumptions on the sparsity of the problem; (2) we analyze asynchronous SGD algorithms for non-convex matrix problems including matrix completion; and (3) we design and analyze an asynchronous SGD algorithm, called Buckwild!, that uses lower-precision arithmetic. We show experimentally that our algorithms run efficiently for a variety of problems on modern hardware."
+    },
+    "6108215": {
+      "title": "Hogwild: A lock-free approach to parallelizing stochastic gradient descent",
+      "abstract": "Stochastic Gradient Descent (SGD) is a popular algorithm that can achieve state-of-the-art performance on a variety of machine learning tasks. Several researchers have recently proposed schemes to parallelize SGD, but all require performance-destroying memory locking and synchronization. This work aims to show using novel theoretical analysis, algorithms, and implementation that SGD can be implemented without any locking. We present an update scheme called HOGWILD! which allows processors access to shared memory with the possibility of overwriting each other's work. We show that when the associated optimization problem is sparse, meaning most gradient updates only modify small parts of the decision variable, then HOGWILD! achieves a nearly optimal rate of convergence. We demonstrate experimentally that HOGWILD! outperforms alternative schemes that use locking by an order of magnitude."
+    },
+    "10464397": {
+      "title": "Deep learning at 15pf: supervised and semi-supervised classification for scientific data",
+      "abstract": "This paper presents the first, 15-PetaFLOP Deep Learning system for solving scientific pattern classification problems on contemporary HPC architectures. We develop supervised convolutional architectures for discriminating signals in high-energy physics data as well as semi-supervised architectures for localizing and classifying extreme weather in climate data. Our Intelcaffe-based implementation obtains $\\sim$2TFLOP/s on a single Cori Phase-II Xeon-Phi node. We use a hybrid strategy employing synchronous node-groups, while using asynchronous communication across groups. We use this strategy to scale training of a single model to $\\sim$9600 Xeon-Phi nodes; obtaining peak performance of 11.73-15.07 PFLOP/s and sustained performance of 11.41-13.27 PFLOP/s. At scale, our HEP architecture produces state-of-the-art classification accuracy on a dataset with 10M images, exceeding that achieved by selections on high-level physics-motivated features. Our semi-supervised architecture successfully extracts weather patterns in a 15TB climate dataset. Our results demonstrate that Deep Learning can be optimized and scaled effectively on many-core, HPC systems."
+    }
+  },
+  "generator": "fallback_v4"
+}

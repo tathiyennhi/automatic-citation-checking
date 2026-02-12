@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We call the first m entries effective entries.",
+    "For each entry y t, we denote its real and imaginary parts by ℜ(y t) and ℑ(y t) respectively (as y t ∈ C).",
+    "For each effective entry, we generate a 0-1 pseudorandom bit ζ t ∼ Bernoulli(0.5) and modify ℑ(y t) to align with the corresponding ζ t. We consider two modification strategies, described below.Initial idea: Hard sign flip.",
+    "The most natural strategy is to force the sign of ℑ(y t) to match ζ t. Specifically, for each t = 1,..., m, we define:y wm t = ℜ(y t) + (2ζ t -1)i • |ℑ(y t)|, and y wm p-t = y wm t.(1)Under this rule, if ℑ(y t) already matches the sign of ζ t, no change is made and y wm t = y t. Otherwise, the sign of ℑ(y t) is flipped so that ℑ(y wm t) = -ℑ(y t).Refinement: Soft variant.",
+    "The hard sign flipping may potentially introduce large distortions, degrading data fidelity.As a refinement, we introduce a softer modification controlled by two soft hyperparameters (γ, δ)."
+  ]
+}

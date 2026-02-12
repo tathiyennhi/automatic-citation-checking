@@ -1,0 +1,22 @@
+{
+  "doc_id": "27514",
+  "text": "The OpenCL 2.0 memory model, which builds on the C11 memory model, is the part of the OpenCL language specification that covers reading and writing shared memory locations. It defines which values are allowed to be read at a given program point, and whether two memory accesses have a data race. It is principally concerned with the collection of atomic functions, which can expose to programmers the various weak memory behaviours of the underlying hardware. The C11 memory model was first formalised by Batty et al. [6] ; this formalisation was then extended to the OpenCL case by Wickerson et al. [CITATION_1] . In §3, we extend the memory model further to formalise OpenCL+RSP.",
+  "correct_citation": {
+    "[CITATION_1]": "1342216"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The C11 memory model was first formalised by Batty et al. [6] ; this formalisation was then extended to the OpenCL case by Wickerson et al. [CITATION_1] .",
+      "s_span": 460,
+      "e_span": 614
+    }
+  ],
+  "bib_entries": {
+    "1342216": {
+      "title": "Overhauling SC atomics in C11 and OpenCL",
+      "abstract": "Despite the conceptual simplicity of sequential consistency (SC), the semantics of SC atomic operations and fences in the C11 and OpenCL memory models is subtle, leading to convoluted prose descriptions that translate to complex axiomatic formalisations. We conduct an overhaul of SC atomics in C11, reducing the associated axioms in both number and complexity. A consequence of our simplification is that the SC operations in an execution no longer need to be totally ordered. This relaxation enables, for the first time, efficient and exhaustive simulation of litmus tests that use SC atomics. We extend our improved C11 model to obtain the first rigorous memory model formalisation for OpenCL (which extends C11 with support for heterogeneous many-core programming). In the OpenCL setting, we refine the SC axioms still further to give a sensible semantics to SC operations that employ a ‘memory scope’ to restrict their visibility to specific threads. Our overhaul requires slight strengthenings of both the C11 and the OpenCL memory models, causing some behaviours to become disallowed. We argue that these strengthenings are natural, and that all of the formalised C11 and OpenCL compilation schemes of which we are aware (Power and x86 CPUs for C11, AMD GPUs for OpenCL) remain valid in our revised models. Using the HERD memory model simulator, we show that our overhaul leads to an exponential improvement in simulation time for C11 litmus tests compared with the original model, making *exhaustive* simulation competitive, time-wise, with the *non-exhaustive* CDSChecker tool."
+    }
+  },
+  "generator": "fallback_v4"
+}

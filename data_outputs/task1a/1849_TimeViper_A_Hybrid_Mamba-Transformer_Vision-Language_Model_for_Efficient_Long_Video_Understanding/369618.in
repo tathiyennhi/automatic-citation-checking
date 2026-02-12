@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For all tasks, even discarding all vision tokens in deep layers, the model can still achieve high performance by relying solely on the instruction tokens, which is surprisingly similar to observations from previous Transformer-based image MLLMs [18,111,114].TD(X) = Uniform(X, T d) uni Topk(X, -Attn(X T1, X), T d) attn(5)Token information transfer via TransV.",
+    "Motivated by these findings that information implicitly transfers from vision to text tokens and vision token redundancy is severe for all tasks, we propose TransV, a lightweight in-LLM compression module that explicitly transfers visual information into instruction tokens, reducing redundant computation while preserving task performance.",
+    "At the l-th layer, the token information transfer from vision to instruction tokens is formulated as:Xl 1 = CrossAttn l (X l 1, TD l (X l 0)) X l+1 1 = X l 1 + tanh(α l)( Xl 1)(6)where the CrossAttn(•, •) computes the attention with the first term as the query and the second as both the key and value.",
+    "α l is a learnable scalar controlling the degree of information aggregation, and its value is normalized to the range [-1, 1] via tanh(•).",
+    "α l is initialized to zero to ensure instruction understanding."
+  ]
+}

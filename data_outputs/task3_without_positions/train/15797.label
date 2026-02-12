@@ -1,0 +1,34 @@
+{
+  "doc_id": "15797",
+  "text": "For the first-order model, the methods described in [CITATION_1] can be used for the parsing algorithm. In Eisner's algorithms for dependency parsing each word in the input has left and right finitestate (weighted) automata, which generate the left and right modifiers of the word in question. We make use of this idea of automata, and also make direct use of the method described in section 4.2 of [CITATION_2] that allows a set of possible senses for each word in the input string. In our use of the algorithm, each possible sense for a word corresponds to a different possible spine that can be associated with that word. The left and right automata are used to keep track of the last position in the spine that was adjoined into on the left/right of the head respectively. We can make use of separate left and right automata-i.e., the grammar is splittable-because left and right modifiers are adjoined independently of each other in the tree. The extension of Eisner's algorithm to the second-order model is similar to the algorithm described in [CITATION_3] , but again with explicit use of word senses and left/right automata. The resulting algorithms run in O(Gn 3 ) and O(Hn 4 ) time for the first-order and second-order models respectively, where G and H are grammar constants.",
+  "correct_citation": {
+    "[CITATION_1]": "5897173",
+    "[CITATION_2]": "5897173",
+    "[CITATION_3]": "8000929"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For the first-order model, the methods described in  can be used for the parsing algorithm."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We make use of this idea of automata, and also make direct use of the method described in section 4.2 of  that allows a set of possible senses for each word in the input string."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The extension of Eisner's algorithm to the second-order model is similar to the algorithm described in  , but again with explicit use of word senses and left/right automata."
+    }
+  ],
+  "bib_entries": {
+    "5897173": {
+      "title": "Bilexical grammars and their cubic-time parsing algorithms",
+      "abstract": "This chapter introduces weighted bilexical grammars, a formalism in which individual lexical items, such as verbs and their arguments, can have idiosyncratic selectional influences on each other. Such ‘bilexicalism’ has been a theme of much current work in parsing. The new formalism can be used to describe bilexical approaches to both dependency and phrase-structure grammars, and a slight modification yields link grammars. Its scoring approach is compatible with a wide variety of probability models."
+    },
+    "8000929": {
+      "title": "Experiments with a higher-order projective dependency parser",
+      "abstract": "We present experiments with a dependency parsing model defined on rich factors. Our model represents dependency trees with factors that include three types of relations between the tokens of a dependency and their children. We extend the projective parsing algorithm of Eisner (1996) for our case, and train models using the averaged perceptron. Our experiments show that considering higher-order information yields significant improvements in parsing accuracy, but comes at a high cost in terms of both time and memory consumption. In the multilingual exercise of the CoNLL-2007 shared task (Nivre et al., 2007), our system obtains the best accuracy for English, and the second best accuracies for Basque and Czech."
+    }
+  },
+  "generator": "fallback_v4"
+}

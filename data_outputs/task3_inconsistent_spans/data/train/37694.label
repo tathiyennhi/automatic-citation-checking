@@ -1,0 +1,55 @@
+{
+  "doc_id": "37694",
+  "text": "For action recognition, a unique set of action features are used as stated previously. In what follows, we thus focus on the description of our pose-indexed depth features, which are used in the first two types of regressors, R (c) j , and R m . Our feature representation can be regarded as an extension of the popular depth features as discussed in [CITATION_1] [CITATION_2] by incorporating the idea of pose-indexed features [CITATION_3] [CITATION_4] to model 3D objects. We start by focusing on a joint j with its current 3D location x ∈ R 3 , where a 3D offset u can be obtained by random sampling from the home pose. Let gΘ 1:j (u) denote the Lie group left action of current object poseΘ 1:j applied onto u. Now the 3D location of the offset is naturally x + gΘ 1:j (u), and its projection onto 2D image plane under current camera view is denoted asū = Proj x + gΘ 1:j (u) . Similarly we can obtain another random offsetv. For a 2D pixel locationx = Proj x ∈ R 2 of an image patch I containing the object of interest, its depth value can be denoted as d I (x). Now we are ready to construct a feature φ I,(ū,v) (x) or its short-hand notation φ, by considering two 2D offsets positionsū,v fromx:",
+  "correct_citation": {
+    "[CITATION_1]": "8886546",
+    "[CITATION_2]": "2018737",
+    "[CITATION_3]": "7534596",
+    "[CITATION_4]": "17076288"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our feature representation can be regarded as an extension of the popular depth features as discussed in   by incorporating the idea of pose-indexed features   to model 3D objects.",
+      "s_span": 246,
+      "e_span": 474
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our feature representation can be regarded as an extension of the popular depth features as discussed in   by incorporating the idea of pose-indexed features   to model 3D objects.",
+      "s_span": 246,
+      "e_span": 474
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Our feature representation can be regarded as an extension of the popular depth features as discussed in   by incorporating the idea of pose-indexed features   to model 3D objects.",
+      "s_span": 246,
+      "e_span": 474
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Our feature representation can be regarded as an extension of the popular depth features as discussed in   by incorporating the idea of pose-indexed features   to model 3D objects.",
+      "s_span": 246,
+      "e_span": 474
+    }
+  ],
+  "bib_entries": {
+    "8886546": {
+      "title": "Efficient human pose estimation from single depth images",
+      "abstract": "We describe two new approaches to human pose estimation. Both can quickly and accurately predict the 3D positions of body joints from a single depth image without using any temporal information. The key to both approaches is the use of a large, realistic, and highly varied synthetic set of training images. This allows us to learn models that are largely invariant to factors such as pose, body shape, field-of-view cropping, and clothing. Our first approach employs an intermediate body parts representation, designed so that an accurate per-pixel classification of the parts will localize the joints of the body. The second approach instead directly regresses the positions of body joints. By using simple depth pixel comparison features and parallelizable decision forests, both approaches can run super-real time on consumer hardware. Our evaluation investigates many aspects of our methods, and compares the approaches to each other and to the state of the art. Results on silhouettes suggest broader applicability to other imaging modalities."
+    },
+    "17076288": {
+      "title": "Joint pose estimator and feature learning for object detection",
+      "abstract": "A new learning strategy for object detection is presented. The proposed scheme forgoes the need to train a collection of detectors dedicated to homogeneous families of poses, and instead learns a single classifier that has the inherent ability to deform based on the signal of interest. Specifically, we train a detector with a standard AdaBoost procedure by using combinations of pose-indexed features and pose estimators instead of the usual image features. This allows the learning process to select and combine various estimates of the pose with features able to implicitly compensate for variations in pose. We demonstrate that a detector built in such a manner provides noticeable gains on two hand video sequences and analyze the performance of our detector as these data sets are synthetically enriched in pose while not increased in size."
+    },
+    "7534596": {
+      "title": "Stationary features and cat detection",
+      "abstract": "Most discriminative techniques for detecting instances from object categories in still images consist of looping over a partition of a pose space with dedicated binary classifiers. The efficiency of this strategy for a complex pose, that is, for fine-grained descriptions, can be assessed by measuring the effect of sample size and pose resolution on accuracy and computation. Two conclusions emerge: (1) fragmenting the training data, which is inevitable in dealing with high in-class variation, severely reduces accuracy; (2) the computational cost at high resolution is prohibitive due to visiting a massive pose partition. To overcome data-fragmentation we propose a novel framework centered on pose-indexed features which assign a response to a pair consisting of an image and a pose, and are designed to be stationary: the probability distribution of the response is always the same if an object is actually present. Such features allow for efficient, one-shot learning of pose-specific classifiers. To avoid expensive scene processing, we arrange these classifiers in a hierarchy based on nested partitions of the pose; as in previous work on coarse-to-fine search, this allows for efficient processing. The hierarchy is then ”folded” for training: all the classifiers at each level are derived from one base predictor learned from all the data. The hierarchy is ”unfolded” for testing: parsing a scene amounts to examining increasingly finer object descriptions only when there is sufficient evidence for coarser ones. In this way, the detection results are equivalent to an exhaustive search at high resolution. We illustrate these ideas by detecting and localizing cats in highly cluttered greyscale scenes."
+    },
+    "2018737": {
+      "title": "Efficient hand pose estimation from a single depth image",
+      "abstract": "We tackle the practical problem of hand pose estimation from a single noisy depth image. A dedicated three-step pipeline is proposed: Initial estimation step provides an initial estimation of the hand in-plane orientation and 3D location, Candidate generation step produces a set of 3D pose candidate from the Hough voting space with the help of the rotational invariant depth features, Verification step delivers the final 3D hand pose as the solution to an optimization problem. We analyze the depth noises, and suggest tips to minimize their negative impacts on the overall performance. Our approach is able to work with Kinect-type noisy depth images, and reliably produces pose estimations of general motions efficiently (12 frames per second). Extensive experiments are conducted to qualitatively and quantitatively evaluate the performance with respect to the state-of-the-art methods that have access to additional RGB images. Our approach is shown to deliver on par or even better results."
+    }
+  },
+  "generator": "fallback_v4"
+}

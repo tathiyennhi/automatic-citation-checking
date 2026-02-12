@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Each generated task consists of task instruction 𝐼, gold function calls 𝐴 = 𝑎 1, 𝑎 2,..., 𝑎 𝑙, and short information 𝑜 that must be mentioned during the process to solve the task.",
+    "To enhance the difficulty of the generated tasks, we leverage an additional LLM to complicate tasks by adding more complexities such as more constraints.To ensure the quality of the synthesized data, we filter the data to remove a task if: (1) the execution of golden function calls reports an error; (2) LLMs cannot solve it in pass@8; and (3) the task can be solved without any actions.",
+    "In Appendix J, we list the statistics of the generated data in each domain.",
+    "More examples and prompts used to synthesize data can be found in Appendix K. To evaluate whether a trajectory 𝜏 solves the given task, we define the following criteria: (1) execution correctness, namely whether the database content matches after executing the golden function calls 𝐴 and the trajectory 𝜏; (2) process fidelity, i.e., whether the predefined information 𝑜, which is required to be communicated in the process to solve the task, is mentioned in 𝜏; (3) operation completeness, that is whether the database entries operated in the ground truth trajectory 𝐴 are also operated in 𝜏.",
+    "We consider 𝜏 solves the task if all of three criteria are satisfied, or fails otherwise."
+  ]
+}

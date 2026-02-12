@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We use the version of Cochran's formula modified for very large (or infinite) population because a single CC release contains billions of web pages:𝑥 = 𝑍 2 × 𝑝 × (1 -𝑝) 𝑒 2, (1)where 𝑒 is the desired level of precision (we chose 0.005 to get the estimate within ±0.5%), 𝑝 is the estimated proportion of the population that possesses a characteristic (in our case, this is what we are trying to determine, so we leave it at 0.5 as is customary in such situations), and 𝑍 is the z-value of our chosen confidence interval (≈ 1.96 for 95% confidence).Therefore, according to the formula, we need to sample 38,416 documents to get a prevalence estimate approximated at ±0.5% with a confidence interval of 95%.",
+    "We decided to sample 39,900 documents (133 random documents from each of 300 parts) from each of 3 individual CC releases.",
+    "The headroom of 1,400+ documents is to account for the fact that Gemini occasionally fails to process queries, either due to an Internal error (code 500) or by marking the query as Unsafe.",
+    "At the end, we queried the language model 3 × 133 × 300 = 119, 700 times, and then manually reviewed all responses.",
+    "Sampled documentsTo check that our sampling is representative of the studied releases, we compare the frequency of primary document languages between our sample and the releases as reported by Common Crawl [9]."
+  ]
+}

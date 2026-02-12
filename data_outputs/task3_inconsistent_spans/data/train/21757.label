@@ -1,0 +1,29 @@
+{
+  "doc_id": "21757",
+  "text": "Lattice union and concatenation are performed using the ⊕ and ⊗ WFST operations, respectively, as described by [CITATION_1] . If a rule R r has a cost c r , it is applied to the exit state of the lattice L (N, x, y, r) prior to the operation of Equation (3). Figure 2 illustrates this process for a threeword source sentence s 1 s 2 s 3 under monotonic phrase-based translation. The left-hand side shows the state of the CYK grid after parsing using the rules R 1 to R 5 . These include three standard phrases, that is, rules with only terminals (R 1 , R 2 , R 3 ), and the glue rules (R 4 , R 5 ). Arrows represent back-pointers to lower-level cells. We are interested in the uppermost S cell (S, 1, 3), as it represents the search space of translation hypotheses covering the whole source sentence. Two rules (R 4 , R 5 ) are in this cell, so the lattice L(S, 1, 3) will be obtained by the union of the two lattices found by the back-pointers of these two rules. This process is explicitly derived in the right-hand side of Figure 2 . Figure 3 shows a hierarchical scenario for the same sentence. Three rules, R 6 , R 7 , R 8 , are added to the example of Figure 2 , thus providing two additional derivations. This makes use of sublattices already produced in the creation of L(S, 1, 3, 5) and L(X, 1, 3, 1) in Figure 2 ; these are shown within {}. Figure 4 presents an algorithm to build the lattice for every cell. The algorithm uses memoization: If a lattice for a requested cell already exists, it is returned (line 2); otherwise it is constructed via Equations (1)-(3). For every rule, each element of the target side (lines 3,4) is checked as terminal or nonterminal (Equation (2)). If it is a terminal element (line 5), a simple acceptor is built. If it is a nonterminal (line 6), the lattice associated to its back-pointer is returned (lines 7 and 8). The complete lattice L(N, x, y, r) for each rule is built by Equation (1) (line 9). The lattice L(N, x, y) for this cell is then found by union of all the component rules (line 10, Equation (3)); this lattice is then reduced by standard WFST operations (lines 11, 12, 13) . It is important at this point to remove any epsilon arcs which may have been introduced by the various WFST union, concatenation, and replacement operations [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "10869889",
+    "[CITATION_2]": "10869889"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Lattice union and concatenation are performed using the ⊕ and ⊗ WFST operations, respectively, as described by  .",
+      "s_span": 0,
+      "e_span": 125
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "It is important at this point to remove any epsilon arcs which may have been introduced by the various WFST union, concatenation, and replacement operations  .",
+      "s_span": 2136,
+      "e_span": 2307
+    }
+  ],
+  "bib_entries": {
+    "10869889": {
+      "title": "OpenFst: A general and efficient weighted finite-state transducer library",
+      "abstract": "We describe OpenFst, an open-source library for weighted finite-state transducers (WFSTs). OpenFst consists of a C++ template library with efficient WFST representations and over twenty-five oper- ations for constructing, combining, optimizing, and searching them. At the shell-command level, there are corresponding transducer file repre- sentations and programs that operate on them. OpenFst is designed to be both very efficient in time and space and to scale to very large problems. This library has key applications speech, image, and natural language processing, pattern and string matching, and machine learning. We give an overview of the library, examples of its use, details of its design that allow customizing the labels, states, and weights and the lazy evaluation of many of its operations. Further information and a download of the OpenFst library can be obtained from http://www.openfst.org."
+    }
+  },
+  "generator": "fallback_v4"
+}

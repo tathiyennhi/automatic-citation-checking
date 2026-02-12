@@ -1,0 +1,15 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "1 To our knowledge, the only other ASICs for JED are [6], [7], which are not fabricated in silicon, require preprocessing, and do not mitigate jammers.",
+    "arXiv:2511.21461v1 [cs.AR] 26 Nov 2025 Algorithm 1 SIMO MAED [3] 1: input: Y, τ (0),..., τ (tmax-1), s T 2: s(0) = [s T T, 0 T D×1] T 3: for t = 0 to t max -1 do 6: j(t) = E (t) E H (t) u (t) 7: P (t) = I B -j(t) jH (t) ∥ j(t) ∥ 2 2 8: ∇ (t) = -1 ∥s (t) ∥ 2 2 sT (t) Y H P (t) E (t) 9: s(t+1) = prox s(t) -τ (t) ∇ T (t); s T 10: end for 11: output: s(tmax) 4a: x (t) = (1/∥s (t) ∥ 2 2)Ys * (t)4: E (t) = Y I K - s * (t) sT (t) ∥s (t) ∥ 24b:E (t) = Y -x (t) sT (t) 6a: v (t) = E H (t) u (t) 6b: j(t) = E (t) v (t) 7a: z (t) = x (t) -j(t) jH (t) x (t) ∥ j(t) ∥ 2 2 8a: -τ (t) ∇ H (t) = E H (t) (τ (t) z (t))The jammer power is characterized in terms of the receive jammer-to-signal ratio ρ ≜∥jw T ∥ 2 F ∥hs T ∥ 2 F, where ∥A∥ F is the Frobenius norm of a matrix A.",
+    "B. MitigAtion, Estimation, and Detection (MAED)Smart jammers can be mitigated using the recently developed MAED algorithm [3].",
+    "MAED detects data in jammer-resilient fashion by approximately solving the optimization problemmin j∈C B, h∈C B,s D ∈S D I B -jj † Y -h[s T T, sT D] 2 F,(2)which unifies jammer estimation and mitigation (by solving for j), channel estimation (by solving for h), and data detection (by solving for sD).",
+    "The problem in (2) can be transformed into a problem that only depends on j and sD."
+  ],
+  "correct_citations": [
+    "1 To our knowledge, the only other ASICs for JED are [6], [7], which are not fabricated in silicon, require preprocessing, and do not mitigate jammers.",
+    "arXiv:2511.21461v1 [cs.AR] 26 Nov 2025 Algorithm 1 SIMO MAED [3] 1: input: Y, τ (0),..., τ (tmax-1), s T 2: s(0) = [s T T, 0 T D×1] T 3: for t = 0 to t max -1 do 6: j(t) = E (t) E H (t) u (t) 7: P (t) = I B -j(t) jH (t) ∥ j(t) ∥ 2 2 8: ∇ (t) = -1 ∥s (t) ∥ 2 2 sT (t) Y H P (t) E (t) 9: s(t+1) = prox s(t) -τ (t) ∇ T (t); s T 10: end for 11: output: s(tmax) 4a: x (t) = (1/∥s (t) ∥ 2 2)Ys * (t)4: E (t) = Y I K - s * (t) sT (t) ∥s (t) ∥ 24b:E (t) = Y -x (t) sT (t) 6a: v (t) = E H (t) u (t) 6b: j(t) = E (t) v (t) 7a: z (t) = x (t) -j(t) jH (t) x (t) ∥ j(t) ∥ 2 2 8a: -τ (t) ∇ H (t) = E H (t) (τ (t) z (t))The jammer power is characterized in terms of the receive jammer-to-signal ratio ρ ≜∥jw T ∥ 2 F ∥hs T ∥ 2 F, where ∥A∥ F is the Frobenius norm of a matrix A.",
+    "B. MitigAtion, Estimation, and Detection (MAED)Smart jammers can be mitigated using the recently developed MAED algorithm [3]."
+  ]
+}

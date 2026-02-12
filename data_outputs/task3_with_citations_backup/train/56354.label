@@ -1,0 +1,33 @@
+{
+  "doc_id": "56354",
+  "text": "We ran our benchmarks with register files decreasing in size from 112 (as in our original configuration) to 40. In the last configuration, for the baseline, only 8 registers can be used at any time because the others are storing the committed values of the 32 architectural registers. As a comparison, we also simulated early releasing techniques proposed by Monreal et al. [CITATION_1] and Ergin et al. [CITATION_2] . Figure 9 (a) shows the IPC for the baseline (called Baseline), the technique by Monreal et al. (Monreal) , the technique by Ergin et al. (Ergin) and our own compiler directed scheme (Compiler). As the register file size decreases, so does the IPC, although our scheme is always better than the others. In fact, with a register file size of only 88 entries the IPC of our technique is still better than the baseline with 112 entries. The Monreal and Ergin schemes do manage to increase the IPC of the baseline, especially for small register file sizes, but our technique is consistently better. For example, when there are only 40 registers available then we increase the IPC from 1.1 to 1.7, an increase of 56%, whereas Ergin manages an increase of 20% and Monreal only 11%. When there are 64 registers, we increase by 14% (from 1.9 to 2.1), Ergin increases by 7% and Monreal by 3%.",
+  "correct_citation": {
+    "[CITATION_1]": "18811590",
+    "[CITATION_2]": "5817491"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As a comparison, we also simulated early releasing techniques proposed by Monreal et al. [CITATION_1] and Ergin et al. [CITATION_2] .",
+      "s_span": 285,
+      "e_span": 418
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "As a comparison, we also simulated early releasing techniques proposed by Monreal et al. [CITATION_1] and Ergin et al. [CITATION_2] .",
+      "s_span": 285,
+      "e_span": 418
+    }
+  ],
+  "bib_entries": {
+    "18811590": {
+      "title": "Hardware schemes for early register release",
+      "abstract": "Register files are becoming one of the critical components of current out-of-order processors in terms of delay and power consumption, since their potential to exploit instruction-level parallelism is quite related to the size and number of ports of the register file. In conventional register renaming schemes, register releasing is conservatively done only after the instruction that redefines the same register is committed. Instead, we propose a scheme that releases registers as soon as the processor knows that there will be no further use of them. We present two early releasing hardware implementations with different performance/complexity trade-offs. Detailed cycle-level simulations show either a significant speedup for a given register file size, or a reduction in register file size for a given performance level."
+    },
+    "5817491": {
+      "title": "Increasing processor performance through early register release",
+      "abstract": "Modern superscalar microprocessors need sizable register files to support large number of in-flight instructions for exploiting ILP. An alternative to building large register files is to use smaller number of registers, but manage them more effectively. More efficient management of registers can also result in higher performance if the reduction of the register file size is not the goal. Traditional register file management mechanisms deallocate a physical register only when the next instruction with the same destination architectural register commits. We propose two complementary techniques for deallocating the register immediately after the instruction producing the register's value commits itself, without waiting for the commitment of the next instruction with the same destination. Our design relies on the use of a checkpointed register file (CRF), where a local shadow copy of each bitcell is used to temporarily save the early deallocated register values should they be needed to recover from branch mispredictions or to reconstruct the precise state after exceptions or interrupts. The proposed techniques outperform the previously proposed schemes for early deallocation of registers. For the register-constrained datapath configurations, our techniques result in up to 35% performance increase with 23.3% increase on the average across SPEC2000 benchmarks."
+    }
+  },
+  "generator": "fallback_v4"
+}

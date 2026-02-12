@@ -1,0 +1,47 @@
+{
+  "doc_id": "40118",
+  "text": "In parallel, a multitude of approaches emerged to solve the problem of how to improve a model by incrementally training it on few-shot datasets. Their goal, same as traditional incremental learning, was to adapt the model to a larger number of classes/attributes without affecting its performance on the previously learned ones. [CITATION_1] unified the recognition of both novel and base classes using attention based few-shot classification weight generator. Similarly, [CITATION_2] used recurrent back-propagation to train a set of new weights to achieve good overall classification performance on both base and novel classes. [CITATION_3] [CITATION_4] extended this kind of class-incremental framework to other visual recognition tasks like semantic segmentation and attribute recognition. None of these methods investigated whether the model's meta-learning capability improved after the incremental training phase. Therefore, although some of these works named themselves as incremental few-shot learning, it will be more accurate to state they were doing incremental learning by few-shot examples.",
+  "correct_citation": {
+    "[CITATION_1]": "13746427",
+    "[CITATION_2]": "52986657",
+    "[CITATION_3]": "173990610",
+    "[CITATION_4]": "67856227"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Their goal, same as traditional incremental learning, was to adapt the model to a larger number of classes/attributes without affecting its performance on the previously learned ones.  unified the recognition of both novel and base classes using attention based few-shot classification weight generator."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Similarly,  used recurrent back-propagation to train a set of new weights to achieve good overall classification performance on both base and novel classes."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Similarly,  used recurrent back-propagation to train a set of new weights to achieve good overall classification performance on both base and novel classes.   extended this kind of class-incremental framework to other visual recognition tasks like semantic segmentation and attribute recognition."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "extended this kind of class-incremental framework to other visual recognition tasks like semantic segmentation and attribute recognition."
+    }
+  ],
+  "bib_entries": {
+    "173990610": {
+      "title": "Incremental few-shot learning for pedestrian attribute recognition",
+      "abstract": "Pedestrian attribute recognition has received increasing attention due to its important role in video surveillance applications. However, most existing methods are designed for a fixed set of attributes. They are unable to handle the incremental few-shot learning scenario, i.e. adapting a well-trained model to newly added attributes with scarce data, which commonly exists in the real world. In this work, we present a meta learning based method to address this issue. The core of our framework is a meta architecture capable of disentangling multiple attribute information and generalizing rapidly to new coming attributes. By conducting extensive experiments on the benchmark dataset PETA and RAP under the incremental few-shot setting, we show that our method is able to perform the task with competitive performances and low resource requirements."
+    },
+    "52986657": {
+      "title": "Incremental few-shot learning with attention attractor networks",
+      "abstract": "Machine learning classifiers are often trained to recognize a set of pre-defined classes. However, in many applications, it is often desirable to have the flexibility of learning additional concepts, with limited data and without re-training on the full training set. This paper addresses this problem, incremental few-shot learning, where a regular classification network has already been trained to recognize a set of base classes, and several extra novel classes are being considered, each with only a few labeled examples. After learning the novel classes, the model is then evaluated on the overall classification performance on both base and novel classes. To this end, we propose a meta-learning model, the Attention Attractor Network, which regularizes the learning of novel classes. In each episode, we train a set of new weights to recognize novel classes until they converge, and we show that the technique of recurrent back-propagation can back-propagate through the optimization process and facilitate the learning of these parameters. We demonstrate that the learned attractor network can help recognize novel classes while remembering old classes without the need to review the original training set, outperforming various baselines."
+    },
+    "13746427": {
+      "title": "Dynamic few-shot visual learning without forgetting",
+      "abstract": "The human visual system has the remarkably ability to be able to effortlessly learn novel concepts from only a few examples. Mimicking the same behavior on machine learning vision systems is an interesting and very challenging research problem with many practical advantages on real world vision applications. In this context, the goal of our work is to devise a few-shot visual learning system that during test time it will be able to efficiently learn novel categories from only a few training data while at the same time it will not forget the initial categories on which it was trained (here called base categories). To achieve that goal we propose (a) to extend an object recognition system with an attention based few-shot classification weight generator, and (b) to redesign the classifier of a ConvNet model as the cosine similarity function between feature representations and classification weight vectors. The latter, apart from unifying the recognition of both novel and base categories, it also leads to feature representations that generalize better on\"unseen\"categories. We extensively evaluate our approach on Mini-ImageNet where we manage to improve the prior state-of-the-art on few-shot recognition (i.e., we achieve 56.20% and 73.00% on the 1-shot and 5-shot settings respectively) while at the same time we do not sacrifice any accuracy on the base categories, which is a characteristic that most prior approaches lack. Finally, we apply our approach on the recently introduced few-shot benchmark of Bharath and Girshick [4] where we also achieve state-of-the-art results. The code and models of our paper will be published on: https://github.com/gidariss/FewShotWithoutForgetting"
+    },
+    "67856227": {
+      "title": "Adaptive masked weight imprinting for few-shot segmentation",
+      "abstract": "Deep learning has mainly thrived by training on large-scale datasets. However, for a continual learning agent it is critical to incrementally update its model in a sample efficient manner. Learning semantic segmentation from few labelled samples can be a significant step toward such goal. We propose a novel method that constructs the new class weights from few labelled samples in the support set without back-propagation, while updating the previously learned classes. Inspiring from the work on adaptive correlation filters, an adaptive masked imprinted weights method is designed. It utilizes a masked average pooling layer on the output embeddings and acts as a positive proxy for that class. Our proposed method is evaluated on PASCAL-5i dataset and outperforms the state of the art in the 5-shot semantic segmentation. Unlike previous methods, our proposed approach does not require a second branch to estimate parameters or prototypes, and enables the adaptation of previously learned weights. Our adaptation scheme is evaluated on DAVIS video segmentation benchmark and our proposed incremental version of PASCAL and has shown to outperform the baseline model."
+    }
+  },
+  "generator": "fallback_v4"
+}

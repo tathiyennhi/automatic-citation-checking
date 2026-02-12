@@ -1,0 +1,29 @@
+{
+  "doc_id": "16274",
+  "text": "In order to keep training time and the dataset size low, we present a method using a pre-trained network. Pre-training is a very efficient and widespread way of building on CNNs trained for a specific task. If a new task is similar enough, fine-tuning can be performed on the CNN so it may be employed in a different task. Since we work on natural images in a real-world robotic experiment, a pretrained AlexNet [CITATION_1] was chosen as a starting point. This network was trained on 1.2 million images from the ImageNet set, with the goal of performing object classification (1000 classes). While we are not interested in image classification, works such as [CITATION_2] showed that it is possible to re-purpose a network by using the learned image descriptors embedded in the lower layers of an already trained AlexNet. This process, commonly referred to as fine-tuning, is based on the idea that certain parts of the network are useful to the new task and therefore can be transferred. Particularly the the lower layers (basic image feature extractors) will perform similar functionality in our relative pose estimation task. Only the upper layers require adaptation. Fine-tuning reduces training time (and data requirements). We substitute the last layer -originally outputting 1000 floats with the highest representing the correct class -by a new layer that output 6 floats, ie. the 6 DOF pose. By replacing this layer, learned weights and connections are discarded and the new links are initialized randomly (see Figure 1) . The resulting net is trained by presenting examples of the form (I, r), where I is a raw image, and r the corresponding relative pose as a training label. Since our training deals with distance between two pose vectors, we choose Euclidean cost function for network training, replacing the commonly used softmax cost layer for classification, of the following form:",
+  "correct_citation": {
+    "[CITATION_1]": "207763512",
+    "[CITATION_2]": "7453329"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Since we work on natural images in a real-world robotic experiment, a pretrained AlexNet  was chosen as a starting point."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "While we are not interested in image classification, works such as  showed that it is possible to re-purpose a network by using the learned image descriptors embedded in the lower layers of an already trained AlexNet."
+    }
+  ],
+  "bib_entries": {
+    "7453329": {
+      "title": "Recognizing image style",
+      "abstract": "The style of an image plays a significant role in how it is viewed, but style has received little attention in computer vision research. We describe an approach to predicting style of images, and perform a thorough evaluation of different image features for these tasks. We find that features learned in a multi-layer network generally perform best -- even when trained with object class (not style) labels. Our large-scale learning methods results in the best published performance on an existing dataset of aesthetic ratings and photographic style annotations. We present two novel datasets: 80K Flickr photographs annotated with 20 curated style labels, and 85K paintings annotated with 25 style/genre labels. Our approach shows excellent classification performance on both datasets. We use the learned classifiers to extend traditional tag-based image search to consider stylistic constraints, and demonstrate cross-dataset understanding of style."
+    },
+    "207763512": {
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "abstract": "We trained a large, deep convolutional neural network to classify the 1.2 million high-resolution images in the ImageNet LSVRC-2010 contest into the 1000 different classes. On the test data, we achieved top-1 and top-5 error rates of 37.5% and 17.0%, respectively, which is considerably better than the previous state-of-the-art. The neural network, which has 60 million parameters and 650,000 neurons, consists of five convolutional layers, some of which are followed by max-pooling layers, and three fully connected layers with a final 1000-way softmax. To make training faster, we used non-saturating neurons and a very efficient GPU implementation of the convolution operation. To reduce overfitting in the fully connected layers we employed a recently developed regularization method called \"dropout\" that proved to be very effective. We also entered a variant of this model in the ILSVRC-2012 competition and achieved a winning top-5 test error rate of 15.3%, compared to 26.2% achieved by the second-best entry."
+    }
+  },
+  "generator": "fallback_v4"
+}

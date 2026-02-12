@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "The idea is to keep prefetching a few extra DNN variants neighboring (in size) to the currently active DNN variant in the hope that the scheduler will select the next active DNN variant from the neighbors of the current ones that are cached on the GPU.",
+    "However, prefetching techniques can struggle in highly dynamic environments where adaptation decisions are mostly irregular.",
+    "In addition, even when the DNN variant cache hit ratio is high, we must continuously swap in and out the DNN variants that are neighbors to the active DNN variant to keep the DNN cache active on the GPU, which inevitably interferes with the ongoing inference process due to contention on the data transfer link (such as PCIe).",
+    "Fig. 4 The DNN switching cost from CPU-to-GPU (swapped in) and GPU-to-CPU (swapped out) for 16 static DNN variants (their parameter sizes range in [132.66, 215.94 ] MB) compared to the dynamic DNN when measured in isolation without any interference (due to contention on the PCIe) bus from parallel inference workloads on an NVIDIA RTX2080Ti GPU.",
+    "Dynamic DNN incurs almost negligible (0.17 ms) switching costs."
+  ],
+  "correct_citations": [
+    "Fig. 4 The DNN switching cost from CPU-to-GPU (swapped in) and GPU-to-CPU (swapped out) for 16 static DNN variants (their parameter sizes range in [132.66, 215.94 ] MB) compared to the dynamic DNN when measured in isolation without any interference (due to contention on the PCIe) bus from parallel inference workloads on an NVIDIA RTX2080Ti GPU."
+  ]
+}

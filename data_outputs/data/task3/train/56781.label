@@ -1,0 +1,84 @@
+{
+  "doc_id": "56781",
+  "text": "All-atom modelling and real-space optimization. Next, we converted our Ca backbone map into an all-atom structure for the core of the capsid using the REMO server [CITATION_1] . Registration errors (a shift in sequence versus modelled amino acid placement) in amino acid placement were noted based on visible aromatic residue densities, and manually corrected using COOT. N-terminal residues were added for the subunits that had visible density [CITATION_2] . Each model of the three subunits in the asymmetric unit was optimized in the respective density maps (Fig. 4b) . To ensure proper fit-to-density, while maintaining good stereochemistry and rotamer assignments, we developed a new real-space optimization routine, called phenix.real_space_refine (underlying implementation described in ref. [CITATION_3] in the Phenix crystallographic software package [CITATION_4] . Traditionally, Phenix and the other crystallographic packages perform model optimization in reciprocal space, improving the model with respect to X-ray crystallographic data, and thus generating updated phase information for electron density calculations [CITATION_5] . An alternative approach is to perform the optimization in real space with the aim of improving the model, but not altering the density map as in our case. Real-space refinement has long been used in X-ray crystallography, in particular in the context of interactive model (re)building [CITATION_6] [CITATION_7] [CITATION_8] . Advantages include greater control over the refinement and model restraints and rapid local optimization of the model. We combined local real-space model optimization with multiple geometric restraints and automated rotamer fitting to maintain good stereochemistry. Moreover, secondary structure restraints were added to maintain proper distances between b-strands during the refinement stage (Fig. 4b) . Each round of model optimization was guided by cross-correlation between the map and the model for both the backbone and side chains, independently and in combination (Supplementary Movie 1) . In addition, MolProbity (a structure validation tool routinely used in X-ray crystallography) statistics were monitored for proper protein geometry [CITATION_9] . Additional refinement for regions that had weak density and lacked strong model constraints was performed manually with COOT.",
+  "correct_citation": {
+    "[CITATION_1]": "18595620",
+    "[CITATION_2]": "6938603",
+    "[CITATION_3]": "5522673",
+    "[CITATION_4]": "62710284",
+    "[CITATION_5]": "5522673",
+    "[CITATION_6]": "6938603",
+    "[CITATION_7]": "46091470",
+    "[CITATION_8]": "97189512",
+    "[CITATION_9]": "1028282"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Next, we converted our Ca backbone map into an all-atom structure for the core of the capsid using the REMO server  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Registration errors (a shift in sequence versus modelled amino acid placement) in amino acid placement were noted based on visible aromatic residue densities, and manually corrected using COOT. N-terminal residues were added for the subunits that had visible density  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "To ensure proper fit-to-density, while maintaining good stereochemistry and rotamer assignments, we developed a new real-space optimization routine, called phenix.real_space_refine (underlying implementation described in ref.  in the Phenix crystallographic software package  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "in the Phenix crystallographic software package  ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Traditionally, Phenix and the other crystallographic packages perform model optimization in reciprocal space, improving the model with respect to X-ray crystallographic data, and thus generating updated phase information for electron density calculations  ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Real-space refinement has long been used in X-ray crystallography, in particular in the context of interactive model (re)building    ."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Real-space refinement has long been used in X-ray crystallography, in particular in the context of interactive model (re)building    ."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Real-space refinement has long been used in X-ray crystallography, in particular in the context of interactive model (re)building    ."
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "In addition, MolProbity (a structure validation tool routinely used in X-ray crystallography) statistics were monitored for proper protein geometry  ."
+    }
+  ],
+  "bib_entries": {
+    "97189512": {
+      "title": "Restrained real-space macromolecular atomic refinement using a new resolution-dependent electron-density function",
+      "abstract": "A new atomic electron-density function is derived by Fourier transformation of resolution-truncated atomic scattering factors. It forms the basis of a new real-space refinement method, RSREF, that is a substantial improvement on prior implementations that did not formally consider the absence of high-resolution terms in a typical macromolecular electron-density map. Real-space refinement is further improved through the simultaneous refinement of stereochemical restraints analogous to reciprocal-space methods. Parallel refinements of a viral capsid structure show that real-space refinement produces models that are at least as good as those refined in reciprocal space, by either restrained or molecular-dynamics methods, and that refinement cycles are ~50 times faster. Real-space refinement will not replace reciprocal-space methods for proteins, where, without the high noncrystallographic symmetry of viruses, experimental phases and electron-density maps are not of the same high quality. However, applied to local regions, it can be used to speed up and improve the quality of interactive model building before a full refinement is started."
+    },
+    "62710284": {
+      "title": "PHENIX: a comprehensive Python-based system for macromolecular structure solution",
+      "abstract": "Macromolecular X-ray crystallography is routinely applied to understand biological processes at a molecular level. However, significant time and effort are still required to solve and complete many of these structures because of the need for manual interpretation of complex numerical data using many software packages and the repeated use of interactive three-dimensional graphics. PHENIX has been developed to provide a comprehensive system for macromolecular crystallographic structure solution with an emphasis on the automation of all procedures. This has relied on the development of algorithms that minimize or eliminate subjective input, the development of algorithms that automate procedures that are traditionally performed by hand and, finally, the development of a framework that allows a tight integration between the algorithms. ::: ::: ::: Keywords: ::: ::: PHENIX; ::: Python; ::: algorithms"
+    },
+    "6938603": {
+      "title": "Features and development of Coot",
+      "abstract": "Coot is a molecular-graphics application for model building and validation of biological macromolecules. The program displays electron-density maps and atomic models and allows model manipulations such as idealization, real-space refinement, manual rotation/translation, rigid-body fitting, ligand search, solvation, mutations, rotamers and Ramachandran idealization. Furthermore, tools are provided for model validation as well as interfaces to external programs for refinement, validation and graphics. The software is designed to be easy to learn for novice users, which is achieved by ensuring that tools for common tasks are 'discoverable' through familiar user-interface elements (menus and toolbars) or by intuitive behaviour (mouse controls). Recent developments have focused on providing tools for expert users, with customisable key bindings, extensions and an extensive scripting interface. The software is under rapid development, but has already achieved very widespread use within the crystallographic community. The current state of the software is presented, with a description of the facilities available and of some of the underlying methods employed."
+    },
+    "5522673": {
+      "title": "Towards automated crystallographic structure refinement with phenix.refine",
+      "abstract": "phenix.refine is a program within the PHENIX package that supports crystallographic structure refinement against experimental data with a wide range of upper resolution limits using a large repertoire of model parameterizations. It has several automation features and is also highly flexible. Several hundred parameters enable extensive customizations for complex use cases. Multiple user-defined refinement strategies can be applied to specific parts of the model in a single refinement run. An intuitive graphical user interface is available to guide novice users and to assist advanced users in managing refinement projects. X-ray or neutron diffraction data can be used separately or jointly in refinement. phenix.refine is tightly integrated into the PHENIX suite, where it serves as a critical component in automated model building, final structure refinement, structure validation and deposition to the wwPDB. This paper presents an overview of the major phenix.refine features, with extensive literature references for readers interested in more detailed discussions of the methods."
+    },
+    "18595620": {
+      "title": "REMO: A new protocol to refine full atomic protein models from C-alpha traces by optimizing hydrogen-bonding networks",
+      "abstract": "Protein structure prediction approaches usually perform modeling simulations based on reduced representation of protein structures. For biological utilizations, it is an important step to construct full atomic models from the reduced structure decoys. Most of the current full-atomic model reconstruction procedures have defects which either could not completely remove the steric clashes among backbone atoms or generate final atomic models with worse topology similarity relative to the native structures than the reduced models. In this work, we develop a new protocol, called REMO, to generate full atomic protein models by optimizing the hydrogen-bonding network with basic fragments matched from a newly constructed backbone isomer library of solved protein structures. The algorithm is benchmarked on 230 non-homologous proteins with reduced structure decoys generated by I-TASSER simulations. The results show that REMO has a significant ability to remove steric clashes, and meanwhile retains good topology of the reduced model. The hydrogen-bonding network of the final models is dramatically improved during the procedure. The REMO algorithm has been exploited in the recent CASP8 experiment which demonstrated significant improvements of the I-TASSER models in both atomic-level structural refinement and hydrogen-bonding network construction."
+    },
+    "46091470": {
+      "title": "Improved methods for building protein models in electron density maps and the location of errors in these models",
+      "abstract": "Map interpretation remains a critical step in solving the structure of a macromolecule. Errors introduced at this early stage may persist throughout crystallographic refinement and result in an incorrect structure. The normally quoted crystallographic residual is often a poor description for the quality of the model. Strategies and tools are described that help to alleviate this problem. These simplify the model-building process, quantify the goodness of fit of the model on a per-residue basis and locate possible errors in peptide and side-chain conformations."
+    },
+    "1028282": {
+      "title": "MolProbity: all-atom structure validation for macromolecular crystallography",
+      "abstract": "MolProbity is a structure-validation web service that provides broad-spectrum solidly based evaluation of model quality at both the global and local levels for both proteins and nucleic acids. It relies heavily on the power and sensitivity provided by optimized hydrogen placement and all-atom contact analysis, complemented by updated versions of covalent-geometry and torsion-angle criteria. Some of the local corrections can be performed automatically in MolProbity and all of the diagnostics are presented in chart and graphical forms that help guide manual rebuilding. X-ray crystallography provides a wealth of biologically important molecular data in the form of atomic three-dimensional structures of proteins, nucleic acids and increasingly large complexes in multiple forms and states. Advances in automation, in everything from crystallization to data collection to phasing to model building to refinement, have made solving a structure using crystallo­graphy easier than ever. However, despite these improvements, local errors that can affect biological interpretation are widespread at low resolution and even high-resolution structures nearly all contain at least a few local errors such as Ramachandran outliers, flipped branched protein side chains and incorrect sugar puckers. It is critical both for the crystallographer and for the end user that there are easy and reliable methods to diagnose and correct these sorts of errors in structures. MolProbity is the authors' contribution to helping solve this problem and this article reviews its general capabilities, reports on recent enhancements and usage, and presents evidence that the resulting improvements are now beneficially affecting the global database."
+    }
+  },
+  "generator": "fallback_v4"
+}

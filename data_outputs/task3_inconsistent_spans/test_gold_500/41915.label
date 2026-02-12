@@ -1,0 +1,99 @@
+{
+  "doc_id": "41915",
+  "text": "Liu et al. [CITATION_1] proposed to formulate depth estimation as a deep continuous Conditional Random Fields (CRF) learning problem. Given the continuous nature of the depth values, they learn the unary depth values and weightings for the pairwise smoothness potential functions via CNNs in an endto-end framework. [CITATION_2] used a fully convolutional network architecture based on ResNet [CITATION_3] with a novel upsampler for decoding the depth map at input resolution. Kendall et al. [CITATION_4] adapted the DenseNet architecture for several regression tasks including depth prediction, and showed that jointly predicting pixelwise depths and confidences, where the output is modeled as a multivariate Gaussian distribution, improves depth estimation results. [CITATION_5] combined shallow convolutional networks with regression forests to reduce the need for large training sets. Recently in [CITATION_6] , it was proposed that sharper predictions at depth boundaries can be achieved by emphasizing local depth error gradients. This same phenomenon was observed in [CITATION_7] , [CITATION_8] that also emphasized local depth errors during training. Our inversedepth normal consistency terms also emphasizes local depth errors based on the predicted normals and achieves a similar effect but in a more implicit unsupervised fashion (i.e. with no dedicated sensory depth data).",
+  "correct_citation": {
+    "[CITATION_1]": "15774646",
+    "[CITATION_2]": "11091110",
+    "[CITATION_3]": "206594692",
+    "[CITATION_4]": "71134",
+    "[CITATION_5]": "2832799",
+    "[CITATION_6]": "4303613",
+    "[CITATION_7]": "102496818",
+    "[CITATION_8]": "6159584"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Liu et al.  proposed to formulate depth estimation as a deep continuous Conditional Random Fields (CRF) learning problem.",
+      "s_span": 0,
+      "e_span": 133
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Given the continuous nature of the depth values, they learn the unary depth values and weightings for the pairwise smoothness potential functions via CNNs in an endto-end framework.  used a fully convolutional network architecture based on ResNet  with a novel upsampler for decoding the depth map at input resolution.",
+      "s_span": 134,
+      "e_span": 476
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "used a fully convolutional network architecture based on ResNet  with a novel upsampler for decoding the depth map at input resolution.",
+      "s_span": 316,
+      "e_span": 476
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Kendall et al.  adapted the DenseNet architecture for several regression tasks including depth prediction, and showed that jointly predicting pixelwise depths and confidences, where the output is modeled as a multivariate Gaussian distribution, improves depth estimation results.",
+      "s_span": 477,
+      "e_span": 768
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Kendall et al.  adapted the DenseNet architecture for several regression tasks including depth prediction, and showed that jointly predicting pixelwise depths and confidences, where the output is modeled as a multivariate Gaussian distribution, improves depth estimation results.  combined shallow convolutional networks with regression forests to reduce the need for large training sets.",
+      "s_span": 477,
+      "e_span": 889
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Recently in  , it was proposed that sharper predictions at depth boundaries can be achieved by emphasizing local depth error gradients.",
+      "s_span": 890,
+      "e_span": 1037
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "This same phenomenon was observed in  ,  that also emphasized local depth errors during training.",
+      "s_span": 1038,
+      "e_span": 1159
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "This same phenomenon was observed in  ,  that also emphasized local depth errors during training.",
+      "s_span": 1038,
+      "e_span": 1159
+    }
+  ],
+  "bib_entries": {
+    "11091110": {
+      "title": "Deeper depth prediction with fully convolutional residual networks",
+      "abstract": "This paper addresses the problem of estimating the depth map of a scene given a single RGB image. To model the ambiguous mapping between monocular images and depth maps, we leverage on deep learning capabilities and present a fully convolutional architecture encompassing residual learning. The proposed model is deeper than the current state of the art, but contains fewer parameters and requires less training data, while still outperforming all current CNN approaches aimed at the same task. We further present a novel way to efficiently learn feature map up-sampling within the network. For optimization we introduce the reverse Huber loss, particularly suited for the task at hand and driven by the value distributions commonly present in depth maps. The predictions are given by a single architecture, trained end-to-end, that does not rely on post-processing techniques, such as CRFs or other additional refinement steps."
+    },
+    "4303613": {
+      "title": "Revisiting single image depth estimation: Toward higher resolution maps with accurate object boundaries",
+      "abstract": "This paper considers the problem of single image depth estimation. The employment of convolutional neural networks (CNNs) has recently brought about significant advancements in the research of this problem. However, most existing methods suffer from loss of spatial resolution in the estimated depth maps; a typical symptom is distorted and blurry reconstruction of object boundaries. In this paper, toward more accurate estimation with a focus on depth maps with higher spatial resolution, we propose two improvements to existing approaches. One is about the strategy of fusing features extracted at different scales, for which we propose an improved network architecture consisting of four modules: an encoder, decoder, multi-scale feature fusion module, and refinement module. The other is about loss functions for measuring inference errors used in training. We show that three loss terms, which measure errors in depth, gradients and surface normals, respectively, contribute to improvement of accuracy in an complementary fashion. Experimental results show that these two improvements enable to attain higher accuracy than the current state-of-the-arts, which is given by finer resolution reconstruction, for example, with small objects and object boundaries."
+    },
+    "102496818": {
+      "title": "Predicting depth, surface normals and semantic labels with a common multi-scale convolutional architecture",
+      "abstract": "In this paper we address three different computer vision tasks using a single basic architecture: depth prediction, surface normal estimation, and semantic labeling. We use a multiscale convolutional network that is able to adapt easily to each task using only small modifications, regressing from the input image to the output map directly. Our method progressively refines predictions using a sequence of scales, and captures many image details without any superpixels or low-level segmentation. We achieve state-of-the-art performance on benchmarks for all three tasks."
+    },
+    "206594692": {
+      "title": "Deep residual learning for image recognition",
+      "abstract": "Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers—8× deeper than VGG nets [40] but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions1, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation."
+    },
+    "6159584": {
+      "title": "Demon: Depth and motion network for learning monocular stereo",
+      "abstract": "In this paper we formulate structure from motion as a learning problem. We train a convolutional network end-to-end to compute depth and camera motion from successive, unconstrained image pairs. The architecture is composed of multiple stacked encoder-decoder networks, the core part being an iterative network that is able to improve its own predictions. The network estimates not only depth and motion, but additionally surface normals, optical flow between the images and confidence of the matching. A crucial component of the approach is a training loss based on spatial relative differences. Compared to traditional two-frame structure from motion methods, results are more accurate and more robust. In contrast to the popular depth-from-single-image networks, DeMoN learns the concept of matching and, thus, better generalizes to structures not seen during training."
+    },
+    "71134": {
+      "title": "What uncertainties do we need in bayesian deep learning for computer vision?",
+      "abstract": "There are two major types of uncertainty one can model. Aleatoric uncertainty captures noise inherent in the observations. On the other hand, epistemic uncertainty accounts for uncertainty in the model - uncertainty which can be explained away given enough data. Traditionally it has been difficult to model epistemic uncertainty in computer vision, but with new Bayesian deep learning tools this is now possible. We study the benefits of modeling epistemic vs. aleatoric uncertainty in Bayesian deep learning models for vision tasks. For this we present a Bayesian deep learning framework combining input-dependent aleatoric uncertainty together with epistemic uncertainty. We study models under the framework with per-pixel semantic segmentation and depth regression tasks. Further, our explicit uncertainty formulation leads to new loss functions for these tasks, which can be interpreted as learned attenuation. This makes the loss more robust to noisy data, also giving new state-of-the-art results on segmentation and depth regression benchmarks."
+    },
+    "2832799": {
+      "title": "Monocular depth estimation using neural regression forest",
+      "abstract": "This paper presents a novel deep architecture, called neural regression forest (NRF), for depth estimation from a single image. NRF combines random forests and convolutional neural networks (CNNs). Scanning windows extracted from the image represent samples which are passed down the trees of NRF for predicting their depth. At every tree node, the sample is filtered with a CNN associated with that node. Results of the convolutional filtering are passed to left and right children nodes, i.e., corresponding CNNs, with a Bernoulli probability, until the leaves, where depth estimations are made. CNNs at every node are designed to have fewer parameters than seen in recent work, but their stacked processing along a path in the tree effectively amounts to a deeper CNN. NRF allows for parallelizable training of all \"shallow\" CNNs, and efficient enforcing of smoothness in depth estimation results. Our evaluation on the benchmark Make3D and NYUv2 datasets demonstrates that NRF outperforms the state of the art, and gracefully handles gradually decreasing training datasets."
+    },
+    "15774646": {
+      "title": "Learning depth from single monocular images using deep convolutional neural fields",
+      "abstract": "In this article, we tackle the problem of depth estimation from single monocular images. Compared with depth estimation using multiple images such as stereo depth perception, depth from monocular images is much more challenging. Prior work typically focuses on exploiting geometric priors or additional sources of information, most using hand-crafted features. Recently, there is mounting evidence that features from deep convolutional neural networks (CNN) set new records for various vision applications. On the other hand, considering the continuous characteristic of the depth values, depth estimation can be naturally formulated as a continuous conditional random field (CRF) learning problem. Therefore, here we present a deep convolutional neural field model for estimating depths from single monocular images, aiming to jointly explore the capacity of deep CNN and continuous CRF. In particular, we propose a deep structured learning scheme which learns the unary and pairwise potentials of continuous CRF in a unified deep CNN framework. We then further propose an equally effective model based on fully convolutional networks and a novel superpixel pooling method, which is about 10 times faster, to speedup the patch-wise convolutions in the deep model. With this more efficient model, we are able to design deeper networks to pursue better performance. Our proposed method can be used for depth estimation of general scenes with no geometric priors nor any extra information injected. In our case, the integral of the partition function can be calculated in a closed form such that we can exactly solve the log-likelihood maximization. Moreover, solving the inference problem for predicting depths of a test image is highly efficient as closed-form solutions exist. Experiments on both indoor and outdoor scene datasets demonstrate that the proposed method outperforms state-of-the-art depth estimation approaches."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,34 @@
+{
+  "doc_id": "6143",
+  "text": "Observe that according to this definition Prob B ( , )( ) = 1 and Reward B ( , ) = 0. For a given BDP B and any of its states α ∈ States B , we denote by Actions B (α) the set of actions γ ∈ Actions B for which Prob B (α, γ) is defined. Our semantics differs a little bit from the previous equivalent models [CITATION_1] and [CITATION_2] . First of all, a configuration of a BDP is represented explicitly as a simple list of entities, as opposed to a vector holding for each type the number of entities of that type in the current population. The vector representation can be a lot more succinct than the explicit one, because these numbers can be represented in binary. Secondly, as a consequence of representing configurations as lists, configuration s 1 , s 2 is different than s 2 , s 1 as well will be their evolution. In order to make our representation equivalent to the vector notation, we could define an equivalence relation that would group such configurations together. In the BDP model in [CITATION_3] , instead of having probability distribution on the outcomes of an action assigned to each type, the types are partitioned between controlled, for which the action can be chosen be the controller, and probabilistic ones, for which the choice of the next action is probabilistic. It can easily be seen that by introducing auxiliary types and transitions, that model can simulate tightly the other one. None of this differences influences the results presented in this paper.",
+  "correct_citation": {
+    "[CITATION_1]": "122017078",
+    "[CITATION_2]": "5187557",
+    "[CITATION_3]": "5187557"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our semantics differs a little bit from the previous equivalent models"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our semantics differs a little bit from the previous equivalent models and"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In the BDP model in, instead of having probability distribution on the outcomes of an action assigned to each type, the types are partitioned between controlled, for which the action can be chosen be the controller, and probabilistic ones, for which the choice of the next action is probabilistic."
+    }
+  ],
+  "bib_entries": {
+    "5187557": {
+      "title": "Recursive Markov decision processes and recursive stochastic games",
+      "abstract": "We introduce Recursive Markov Decision Processes (RMDPs) and Recursive Simple Stochastic Games (RSSGs), which are classes of (finitely presented) countable-state MDPs and zero-sum turn-based (perfect information) stochastic games. They extend standard finite-state MDPs and stochastic games with a recursion feature. We study the decidability and computational complexity of these games under termination objectives for the two players: one player's goal is to maximize the probability of termination at a given exit, while the other player's goal is to minimize this probability. In the quantitative termination problems, given an RMDP (or RSSG) and probability p, we wish to decide whether the value of such a termination game is at least p (or at most p); in the qualitative termination problem we wish to decide whether the value is 1. The important 1-exit subclasses of these models, 1-RMDPs and 1-RSSGs, correspond in a precise sense to controlled and game versions of classic stochastic models, including multitype Branching Processes and Stochastic Context-Free Grammars, where the objective of the players is to maximize or minimize the probability of termination (extinction). We provide a number of upper and lower bounds for qualitative and quantitative termination problems for RMDPs and RSSGs. We show both problems are undecidable for multi-exit RMDPs, but are decidable for 1-RMDPs and 1-RSSGs. Specifically, the quantitative termination problem is decidable in PSPACE for both 1-RMDPs and 1-RSSGs, and is at least as hard as the square root sum problem, a well-known open problem in numerical computation. We show that the qualitative termination problem for 1-RMDPs (i.e., a controlled version of branching processes) can be solved in polynomial time both for maximizing and minimizing 1-RMDPs. The qualitative problem for 1-RSSGs is in NP ∩ coNP, and is at least as hard as the quantitative termination problem for Condon's finite-state simple stochastic games, whose complexity remains a well known open problem. Finally, we show that even for 1-RMDPs, more general (qualitative and quantitative) model-checking problems with respect to linear-time temporal properties are undecidable even for a fixed property."
+    },
+    "122017078": {
+      "title": "Optimization of multitype branching processes",
+      "abstract": "We consider either a discrete time or an age-dependent branching process where the population consists of k types of individuals. Each time an individual is born, an action is chosen, for him which affects his lifetime, the number and types of his offspring, and the reward received. The problem of maximizing the expected reward is shown to be equivalent to a generalized Markov decision problem where the k × k transition, matrices are non-negative but not necessarily substochastic. It is shown that this branching process decision model can account for immigration, that it can be viewed as a controlled population process or infinite particle system, and that it has a number of applications including marketing and biology."
+    }
+  },
+  "generator": "fallback"
+}

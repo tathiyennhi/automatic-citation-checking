@@ -1,0 +1,43 @@
+{
+  "doc_id": "28617",
+  "text": "To analyze fault susceptibility, we conduct fault injection experiments [CITATION_1] [CITATION_2] [CITATION_3] to observe the effects of faults on a CPU under different definitions of correctness. Each of our fault injection experiments injects a single bit flip into the execution of one of our benchmarks-i.e., we assume a single event upset, or SEU, fault model. Our approach closely follows the methodology introduced by Reis et. al. [CITATION_4] . We initially inject faults into a detailed architectural simulator that models a modem out-of-order superscalar. After each fault is injected, we simulate the microarchitecture until the fault completely manifests itself in architectural state. Then, we checkpoint the simulator's architectural state, and resume simulation from the checkpoint using a simple functional simulator. We try to run the benchmark to completion under the functional CPU model, and assuming the benchmark doesn't crash, we evaluate the program's outputs under both architecture-and application-level correctness.",
+  "correct_citation": {
+    "[CITATION_1]": "8477722",
+    "[CITATION_2]": "214801069",
+    "[CITATION_3]": "6204449",
+    "[CITATION_4]": "214801069"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To analyze fault susceptibility, we conduct fault injection experiments    to observe the effects of faults on a CPU under different definitions of correctness."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "To analyze fault susceptibility, we conduct fault injection experiments    to observe the effects of faults on a CPU under different definitions of correctness."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "To analyze fault susceptibility, we conduct fault injection experiments    to observe the effects of faults on a CPU under different definitions of correctness."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Our approach closely follows the methodology introduced by Reis et. al.  ."
+    }
+  ],
+  "bib_entries": {
+    "214801069": {
+      "title": "Design and Evaluation of Hybrid Fault-Detection Systems",
+      "abstract": "As chip densities and clock rates increase, processors are becoming more susceptible to transient faults that can affect program correctness. Up to now, system designers have primarily considered hardware-only and software-only fault-detection mechanisms to identify and mitigate the deleterious effects of transient faults. These two fault-detection systems, however, are extremes in the design space, representing sharp trade-offs between hardware cost, reliability, and performance. In this paper, we identify hybrid hardware/software fault-detection mechanisms as promising alternatives to hardware-only and software-only systems. These hybrid systems offer designers more options to fit their reliability needs within their hardware and performance budgets. We propose and evaluate CRAFT, a suite of three such hybrid techniques, to illustrate the potential of the hybrid approach. For fair, quantitative comparisons among hardware, software, and hybrid systems, we introduce a new metric, Mean Work To Failure, which is able to compare systems for which machine instructions do not represent a constant unit of work. Additionally, we present a new simulation framework which rapidly assesses reliability and does not depend on manual identification of failure modes. Our evaluation illustrates that CRAFT, and hybrid techniques in general, offer attractive options in the fault-detection design space."
+    },
+    "8477722": {
+      "title": "Soft Error Sensitivity Characterization for Microprocessor Dependability Enhancement Strategy",
+      "abstract": "This paper presents an empirical investigation on the soft error sensitivity (SES) of microprocessors, using the picoJava-II as an example, through software simulated fault injections in its RTL model. Soft errors are generated under a realistic fault model during program run-time. The SES of a processor logic block is defined as the probability that a soft error in the block causes the processor to behave erroneously or enter into an incorrect architectural state. The SES is measured at the functional block level. We have found that highly error-sensitive blocks are common for various workloads. At the same time soft errors in many other logic blocks rarely affect the computation integrity. Our results show that a reasonable prediction of the SES is possible by deduction from the processor's microarchitecture. We also demonstrate that the sensitivity-based integrity checking strategy can be an efficient way to improve fault coverage per unit redundancy."
+    },
+    "6204449": {
+      "title": "Characterizing the effects of transient faults on a high-performance processor pipeline",
+      "abstract": "The progression of implementation technologies into the sub-100 nanometer lithographies renew the importance of understanding and protecting against single-event upsets in digital systems. In this work, the effects of transient faults on high performance microprocessors is explored. To perform a thorough exploration, a highly detailed register transfer level model of a deeply pipelined, out-of-order microprocessor was created. Using fault injection, we determined that fewer than 15% of single bit corruptions in processor state result in software visible errors. These failures were analyzed to identify the most vulnerable portions of the processor, which were then protected using simple low-overhead techniques. This resulted in a 75% reduction in failures. Building upon the failure modes seen in the microarchitecture, fault injections into software were performed to investigate the level of masking that the software layer provides. Together, the baseline microarchitectural substrate and software mask more than 9 out of 10 transient faults from affecting correct program execution."
+    }
+  },
+  "generator": "fallback_v4"
+}

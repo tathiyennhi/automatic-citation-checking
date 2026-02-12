@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The generator G adopts a sequence generation network with LSTM units to consider temporal dependence, while the discriminator D adopts a deep convolutional network with dropout layers to prevent overfitting [9].",
+    "The goal of the generator is to minimize the Jensen-Shannon divergence from the real data distribution, while the discriminator tries to maximize the probability that it can correctly distinguish between real and generated data.",
+    "The loss function of the model is defined as follows, where 𝜃 𝑔 and 𝜃 𝑑 represent the parameters of the generator and discriminator respectively:𝑚𝑖𝑛 𝜃 𝑔 𝑚𝑎𝑥 𝜃 𝑑 𝑉(𝐷, 𝐺) = 𝔼 𝑥∼𝑝 data (𝑥) [𝑙𝑜𝑔 𝐷 (𝑥)] + 𝔼 𝑧∼𝑝 𝑧 (𝑧) [𝑙𝑜𝑔( 1 -𝐷(𝐺(𝑧 | 𝑦)))](3)During the training process, the Adam optimizer was used, the initial learning rate was set to 0.0002, and the attenuation factor was 0.5.",
+    "In the first round of training, data from April 1st to April 5th were used for 100 epochs, and the batch size was set to 64.",
+    "After each epoch, the model parameters are adjusted by checking the mean square error (MSE) between the generated price and the actual closing price."
+  ]
+}

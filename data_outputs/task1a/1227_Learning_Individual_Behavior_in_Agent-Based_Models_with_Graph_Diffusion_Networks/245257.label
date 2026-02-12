@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "[39] (Algorithm 3 presents the pseudo-code of our ABM).",
+    "Agents i ∈ A occupy a two-dimensional grid of size L × L. Each agent's state at time t is given by its kind (either Prey or Predator), its life phase (Unborn, Alive, Pregnant, or Dead), and its position on the grid:Z (i) t = (K (i), f (i) t, x (i) t, y (i) t) K (i) ∈ {Prey, Predator}, f (i) t ∈ {Unborn, Alive, Pregnant, Dead}, x (i) t, y (i) t ∈ [0, L -1]The agent's kind K (i) is fixed over time, while the phase and position can evolve.",
+    "The set of interacting agents j ∈ N (i) consists of those located in the four cardinally adjacent cells to (x(i) t, y (i) t) (Von Neumann neighborhood).In addition, each Unborn agent i is assigned a parent agent j of the same kind, provided j is either Alive or Pregnant.",
+    "This parent-child relationship governs the birth mechanism.",
+    "for all i ∈ A do 5:N (i) t ← { j ∈ A: (x (j) t, y(j)t) ∈ Moore(x(i) t, y (i) t)} ▷ Moore neighborhood 6: s ← |{ j ∈ N (i) t: C (j) = C (i) }|, n ← |N (i) t | ▷ Same-color neighbors, all neighbors 7: r ← s/n n > 0 0 n = 0 ▷ Similarity ratio 8: if r < ξ then ▷ Agent i is unhappy 9: unhappy ← unhappy ∪{i} 10: end if 11: end for 12: if unhappy = ∅ then 13: break ▷ Convergence 14: end if 15:for all i ∈ unhappy do 16:(x(i) t+1, y (i) t+1) ← (x (i) t, y(i)t) 17:for k = 1,..., K do 18:θ ∼ Uniform(0, 2π), d ∼ Uniform(0, dmax) ▷ Random direction, distance up to dmax 19:∆x ← ⌊d cos θ⌋, ∆y ← ⌊d sin θ⌋ ▷ Convert to grid movement 20:x * ← (x(i) t + ∆x) mod (L), y * ← (y (i) t + ∆y) mod (L) ▷ Wrap around border 21: if ¬∃ j ̸ = i: (x(j) t, y (j)t) = (x *, y *) then ▷ Check if cell is empty 22:(t+1) ← (x *, y *) ▷ Move to new location 23: break ▷ Stop searching once valid position is found 24: end if 25: end for 26: end for 27: for all i ∈ A \\ unhappy do 28: Z (i) t+1 ← Z (i) t ▷ Happy agents stay put 29: end for 30: end for And a set of stochastic update rules: Alive →    Alive (move) Pregnant (reproduce) Dead (die)All transitions are governed by a matrix Ψ, which specifies deterministic rules as probabilities equal to 1, and defines stochastic transitions through probabilities that depend on spatial inter-species interactions."
+  ],
+  "correct_citations": [
+    "[39] (Algorithm 3 presents the pseudo-code of our ABM)."
+  ]
+}

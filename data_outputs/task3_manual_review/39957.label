@@ -1,0 +1,85 @@
+{
+  "doc_id": "39957",
+  "text": "Recently, Convolutional Neural Networks (CNN) and deep learning related techniques have drawn a great attention in computer vision and image processing. Their applications in image deblurring demonstrate promising results. Sun [CITATION_1] and Schuler [CITATION_2] use CNN to estimate the spatially-invariant blur kernel and obtain latent image by tradition pipeline. Chakrabarti [CITATION_3] trained a neural network to predict complex Fourier coefficients of motion kernel. Recently kernel-free end-to-end deblurring methods are proposed by Nah et al. [CITATION_4] and Kupyn et al. [CITATION_5] . Nah [CITATION_6] adopted the multi-scale network to mimic conventional coarse-to-fine optimization methods, and proposed a new realistic blurry image dataset with ground truth sharp images. The work of Kupyn [CITATION_7] trains the popular Generative Adversarial Network (GAN) on the same dataset with fewer parameters, gains higher PSNR values than that of Nah et al. [CITATION_8] on the GOPRO dataset, and beats the others on Kohler dataset [CITATION_9] using SSIM. Although [CITATION_10] performs well based on metric scores, visually, its deblurred result suffers grid artifacts, as illustrated in Fig. 1 .",
+  "correct_citation": {
+    "[CITATION_1]": "1485453",
+    "[CITATION_2]": "3881811",
+    "[CITATION_3]": "14605354",
+    "[CITATION_4]": "8671030",
+    "[CITATION_5]": "4552226",
+    "[CITATION_6]": "8671030",
+    "[CITATION_7]": "4552226",
+    "[CITATION_8]": "8671030",
+    "[CITATION_9]": "1084848",
+    "[CITATION_10]": "4552226"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Sun and Schuler use CNN to estimate the spatially-invariant blur kernel and obtain latent image by tradition pipeline."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Sun and Schuler use CNN to estimate the spatially-invariant blur kernel and obtain latent image by tradition pipeline."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Chakrabarti trained a neural network to predict complex Fourier coefficients of motion kernel."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Recently kernel-free end-to-end deblurring methods are proposed by Nah et al."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Recently kernel-free end-to-end deblurring methods are proposed by Nah et al. and Kupyn et al."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Nah adopted the multi-scale network to mimic conventional coarse-to-fine optimization methods, and proposed a new realistic blurry image dataset with ground truth sharp images."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "The work of Kupyn trains the popular Generative Adversarial Network (GAN) on the same dataset with fewer parameters, gains higher PSNR values than that of Nah et al. on the GOPRO dataset, and beats the others on Kohler dataset using SSIM."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "trains the popular Generative Adversarial Network (GAN) on the same dataset with fewer parameters, gains higher PSNR values than that of Nah et al."
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "The work of Kupyn trains the popular Generative Adversarial Network (GAN) on the same dataset with fewer parameters, gains higher PSNR values than that of Nah et al. on the GOPRO dataset, and beats the others on Kohler dataset"
+    },
+    {
+      "citation_id": "[CITATION_10]",
+      "span_text": "Although performs well based on metric scores, visually, its deblurred result suffers grid artifacts, as illustrated in Fig. 1."
+    }
+  ],
+  "bib_entries": {
+    "1084848": {
+      "title": "Recording and playback of camera shake: Benchmarking blind deconvolution with a real−world database",
+      "abstract": "Motion blur due to camera shake is one of the predominant sources of degradation in handheld photography. Single image blind deconvolution (BD) or motion deblurring aims at restoring a sharp latent image from the blurred recorded picture without knowing the camera motion that took place during the exposure. BD is a long-standing problem, but has attracted much attention recently, cumulating in several algorithms able to restore photos degraded by real camera motion in high quality. In this paper, we present a benchmark dataset for motion deblurring that allows quantitative performance evaluation and comparison of recent approaches featuring non-uniform blur models. To this end, we record and analyse real camera motion, which is played back on a robot platform such that we can record a sequence of sharp images sampling the six dimensional camera motion trajectory. The goal of deblurring is to recover one of these sharp images, and our dataset contains all information to assess how closely various algorithms approximate that goal. In a comprehensive comparison, we evaluate state-of-the-art single image BD algorithms incorporating uniform and non-uniform blur models."
+    },
+    "3881811": {
+      "title": "Learning to deblur",
+      "abstract": "We describe a learning-based approach to blind image deconvolution. It uses a deep layered architecture, parts of which are borrowed from recent work on neural network learning, and parts of which incorporate computations that are specific to image deconvolution. The system is trained end-to-end on a set of artificially generated training examples, enabling competitive performance in blind deconvolution, both with respect to quality and runtime."
+    },
+    "8671030": {
+      "title": "Deep multi−scale convolutional neural network for dynamic scene deblurring",
+      "abstract": "Non-uniform blind deblurring for general dynamic scenes is a challenging computer vision problem as blurs arise not only from multiple object motions but also from camera shake, scene depth variation. To remove these complicated motion blurs, conventional energy optimization based methods rely on simple assumptions such that blur kernel is partially uniform or locally linear. Moreover, recent machine learning based methods also depend on synthetic blur datasets generated under these assumptions. This makes conventional deblurring methods fail to remove blurs where blur kernel is difficult to approximate or parameterize (e.g. object motion boundaries). In this work, we propose a multi-scale convolutional neural network that restores sharp images in an end-to-end manner where blur is caused by various sources. Together, we present multi-scale loss function that mimics conventional coarse-to-fine approaches. Furthermore, we propose a new large-scale dataset that provides pairs of realistic blurry image and the corresponding ground truth sharp image that are obtained by a high-speed camera. With the proposed model trained on this dataset, we demonstrate empirically that our method achieves the state-of-the-art performance in dynamic scene deblurring not only qualitatively, but also quantitatively."
+    },
+    "1485453": {
+      "title": "Learning a convolutional neural network for non-uniform motion blur removal",
+      "abstract": "In this paper, we address the problem of estimating and removing non-uniform motion blur from a single blurry image. We propose a deep learning approach to predicting the probabilistic distribution of motion blur at the patch level using a convolutional neural network (CNN). We further extend the candidate set of motion kernels predicted by the CNN using carefully designed image rotations. A Markov random field model is then used to infer a dense non-uniform motion blur field enforcing motion smoothness. Finally, motion blur is removed by a non-uniform deblurring model using patch-level image prior. Experimental evaluations show that our approach can effectively estimate and remove complex non-uniform motion blur that is not handled well by previous approaches."
+    },
+    "14605354": {
+      "title": "A neural approach to blind motion deblurring",
+      "abstract": "We present a new method for blind motion deblurring that uses a neural network trained to compute estimates of sharp image patches from observations that are blurred by an unknown motion kernel. Instead of regressing directly to patch intensities, this network learns to predict the complex Fourier coefficients of a deconvolution filter to be applied to the input patch for restoration. For inference, we apply the network independently to all overlapping patches in the observed image, and average its outputs to form an initial estimate of the sharp image. We then explicitly estimate a single global blur kernel by relating this estimate to the observed image, and finally perform non-blind deconvolution with this kernel. Our method exhibits accuracy and robustness close to state-of-the-art iterative methods, while being much faster when parallelized on GPU hardware."
+    },
+    "4552226": {
+      "title": "DeblurGAN: Blind Motion Deblurring Using Conditional Adversarial Networks",
+      "abstract": "We present DeblurGAN, an end-to-end learned method for motion deblurring. The learning is based on a conditional GAN and the content loss. DeblurGAN achieves state-of-the art performance both in the structural similarity measure and visual appearance. The quality of the deblurring model is also evaluated in a novel way on a real-world problem - object detection on (de-)blurred images. The method is 5 times faster than the closest competitor - Deep-Deblur [25]. We also introduce a novel method for generating synthetic motion blurred images from sharp ones, allowing realistic dataset augmentation. The model, code and the dataset are available at https://github.com/KupynOrest/DeblurGAN"
+    }
+  },
+  "generator": "fallback"
+}

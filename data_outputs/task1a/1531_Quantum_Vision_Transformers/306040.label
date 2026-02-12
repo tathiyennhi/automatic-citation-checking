@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "These data loaders use the unary amplitude encoding, where a vectorx = (x 1, • • •, x d) is loaded in the quantum state: |x⟩ = 1 ∥x∥ d i=1 x i |e i ⟩,where |e i ⟩ is the quantum state with all qubits in 0 except the i th one in state 1 (e.g.|0 • • • 010 • • • 0⟩).The circuit uses RBS gates: a parametrised two-qubit gate given by Eq.1.",
+    "The d -1 parameters θ i of the RBS gates are classically pre-computed to ensure the output of the circuit is indeed |x⟩.We require a data loader for matrices.",
+    "Given a matrix X ∈ R n×d, instead of loading a flattened vector, rows X i are loaded in superposition.",
+    "As shown in Fig. 5, on the top qubit register, we first load the vector (∥x 1 ∥, • • •, ∥x n ∥) made of the norms of each row, using a data loader for a vector and obtain a state 1 ∥X∥ n i=1 ∥x i ∥ |e i ⟩.",
+    "Then, on a lower register, we are sequentially loading each row X i ∈ R d. To do so, we use vector data loaders and their adjoint, as well as CNOTs controlled on the i th qubit of the top register."
+  ],
+  "correct_citations": []
+}

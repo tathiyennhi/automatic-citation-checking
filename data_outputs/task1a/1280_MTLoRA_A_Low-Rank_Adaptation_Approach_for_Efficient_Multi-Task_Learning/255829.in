@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We use rank 4 for the task-specific matrices while we explore different ranks for the shared matrices.We adopt the publicly available Swin Transformer backbone [23], which was pre-trained on the ImageNet dataset [7] as our shared encoder.",
+    "Then, we attach simple task-specific decoders for different dense tasks.",
+    "Specifically, we use a simple decoder similar to the one in HR-Net [33], which includes linear and bilinear upsampling layers to efficiently perform dense vision tasks, and we adapt the number of output dimensions to different tasks.",
+    "The number of decoder parameters is only 6% of the overall MTL model's parameters when using Swin-Tiny as a backbone.",
+    "We run each experiment on a single NVIDIA V100 GPU.Training: To train our multi-task learning model, we use a loss function equal to the weighted sum of the losses of the various downstream tasks as follows:Loss M T L = T i ω task i × L task i (4)where ω task i and L task i are the weight and the loss of the various tasks in the MTL model, respectively."
+  ]
+}

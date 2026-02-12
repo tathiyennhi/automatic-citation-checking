@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Within the transformer layer, we first apply layer normalisation over all patches x i, and then apply the attention mechanism detailed in Fig. 4.",
+    "After this part, we obtain a state to which we add the initial input vectors before normalisation in an operation called residual layer, represented by the blue arrow in Fig. 3, followed by another layer normalisation.",
+    "After this, we apply a Multi Layer Perceptron (MLP), which consists of multiple fully connected linear layers for each vector that result in same-sized vectors.",
+    "Again, we add the residual from just before the last layer normalisation, which is the output of one transformer layer.After repeating the transformer layer L times, we finally take the vector corresponding to the class embedding, that is the vector corresponding to x 0, in the final output and apply a fully connected layer of dimension (d × number of classes) to provide the final classification result (see Fig. 1).",
+    "It is important to observe here that we only use the first vector outcome in the final fully connected layer to do the classification (therefore the name class embedding).Looking inside the attention mechanism (see Fig. 4), we start by using a fully connected linear layer with trainable weights V to calculate for each patch x i the feature vector Vx i."
+  ],
+  "correct_citations": []
+}

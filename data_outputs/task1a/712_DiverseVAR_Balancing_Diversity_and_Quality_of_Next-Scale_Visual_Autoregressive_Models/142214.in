@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Formally, CFG adjusts the model's prediction viaQ CFG = (1 + ω)Q c -ωQ ∅,(3)where Q c is the conditional prediction (i.e., score estimates in diffusion and logit outputs in VAR) given a condition c. Q ∅ is the unconditional prediction, and ω is the guidance weight.",
+    "Building on the trend that higher ω leads to higher condition alignment while sacrificing diversity, Kynkäänniemi et al. [28] show that carefully scheduling the guidance weight ω throughout generation can boost diversity while retaining image quality.",
+    "While VAR models have employed linear CFG scheduling, there have been no systematic study on its impact on diversity nor of the effects of other CFG schedules.",
+    "We evaluate multiple CFG schedules ω(k) over the scale index k ∈ [1, K] for VAR, analogous to timestep t ∈ [0, T] in diffusion models.• Piecewise Constant [28]:ω(k) = 1[k ∈ K]ω1 + 1[k ̸ ∈ K]ω Kwhere K:= {k min,..., k max }, and ω 1 and ω K are tunable hyperparameters.",
+    "• Interpolation [68]:ω(k) = (1 -γ(k))ω1 + γ(k)ω K Here, γ(1)= 0 and γ(ℓ) = 1 for all ℓ ≥ k max, and we test several variants of the scheduling function γ(•) suggested by Wang et al. [68]."
+  ]
+}

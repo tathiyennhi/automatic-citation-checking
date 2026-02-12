@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Reward Weighting AblationIn this variant, we disabled reward weighting by setting all token weights α = 1.0, while keeping dynamic rank allocation active.",
+    "The model's performance degraded moderately, with a 2-3% drop in accuracy observed across tasks, particularly GSM8K which relies heavily on precise attention to intermediate reasoning tokens.Training logs also revealed a delayed convergence curve and slightly noisier gradient updates, suggesting that reward weighting helps stabilize the optimization process.",
+    "The intuition behind reward weighting is to emphasize supervision on high-value tokens such as correct answers or intermediate computations.",
+    "Its absence causes the model to overfit spurious or less relevant tokens, especially in low-signal tasks like OpenBookQA.",
+    "QLoRA + Reward-only BaselineWe augmented standard QLoRA with DRaFT-Q's reward-weighted loss, but removed dynamic rank allocation."
+  ]
+}

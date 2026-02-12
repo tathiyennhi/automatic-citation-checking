@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "3.2), the self-attention map with reliable instance structures is injected into cross-attention (CA) to produce instance-aware semantic masks, and a repel-and-bind loss pushes apart incompatible tokens while binding attributes within each instance so that semantics follow instance shapes.",
+    "An instance-to-semantic schedule gradually shifts weight from Phase 1 to Phase 2 across timesteps, aligning ISAC's control with the diffusion dynamics (see Sec.",
+    "3.4).Prompt notation From each prompt we parse class tokens {τ i } k i=1, per-class instance counts {n i } k i=1, and optional attributes {χ i,j }, with total instance count N = i n i.",
+    "We use an LLM-based parser to automatically obtain ({τ i }, {n i }, {χ i,j }); additional details and examples are provided in Appendix A.Attention At each denoising timestep t, the denoiser ϵ θ uses self-attention (SA) to capture spatial relations within the latent X t ∈ R HW ×d and cross-attention (CA) to align X t with text embeddings T. Both compute maps from queries and keys obtained via learned projections(W Q, W K).",
+    "For SA, Q self t = X t W self Q and K self t = X t W self K. For CA, Q cross t = X t W cross Q and K cross t = T W cross K. For a head of width d h at layer l, the per-headattention maps are SA h l (X t) = softmax(Q self t K self t ⊤ / √ d h) ∈ [0, 1] HW ×HW, CA h l (X t,T) = softmax(Q cross t K cross t ⊤ / √ d h) ∈ [0, 1] HW ×L.We register hooks on all attention layers to read out SA and CA without altering computation."
+  ],
+  "correct_citations": [
+    "For SA, Q self t = X t W self Q and K self t = X t W self K. For CA, Q cross t = X t W cross Q and K cross t = T W cross K. For a head of width d h at layer l, the per-headattention maps are SA h l (X t) = softmax(Q self t K self t ⊤ / √ d h) ∈ [0, 1] HW ×HW, CA h l (X t,T) = softmax(Q cross t K cross t ⊤ / √ d h) ∈ [0, 1] HW ×L.We register hooks on all attention layers to read out SA and CA without altering computation."
+  ]
+}

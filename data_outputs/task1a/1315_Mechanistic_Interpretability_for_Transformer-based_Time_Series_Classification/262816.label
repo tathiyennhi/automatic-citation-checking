@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "In contrast, heads in Layers 1 and 2 each yield smaller gains (typically ∆P < 0.20), with a more uniform distribution of influence and slightly weaker impact in Layer 2 than Layer 1, reinforcing the pattern of diminishing causal strength in deeper blocks.",
+    "These results point to a sparse internal circuit, where only a handful of heads drive the bulk of the model's causal computation, guiding us to focus on these key heads for finer positional analyses.",
+    "Position-Level Causal InfluenceHaving pinpointed Head 6 in Layer 0 as the most influential, we now investigate its timestep-specific contributions: which exact input positions does this head attend to in a causally meaningful way?",
+    "To answer this, we patch the per-timestep output of Head 6 at each position t (from 0 to T -1) independently into the corrupt instance and record the resulting change ∆P t in true-class probability.0 20 Position (Timestep) L0 H6 0.022 0.055 0.012 0.0088 0.03 0.0075 -0.018 0.0089 -0.00098 0.0058 0.013 0.002 0.0051 0.033 0.0097 0.0061 0.064 0.0012 0.0061 0.0031 0.019 0.053 0.0082 0.058 0.017 Head 6 in Layer 0 -Patch Effect across Time Steps 0.00 0.05 P Fig. 4: True-class probability ∆P t after patching each timestep of Layer 0 Head 6.Figure 4 reveals a highly non-uniform distribution of causal impact across timesteps.",
+    "Approximately half of the positions yield negligible effects (∆P t < 0.01), and five additional positions barely exceed this threshold."
+  ],
+  "correct_citations": []
+}

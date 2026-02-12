@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Subsequently, our focus will shift towards directly pruning these parameters, eliminating the need for iterative analysis over the entire model.Fig. 2:2Fig.",
+    "2: The MCAP Pruning architecture Algorithm 1 5: 6: 7: 8:15678 Self-Supervised Objective FunctionRequire:1: θ -Original attention maps, β -Pruned attention maps, Γ -Cosine Similarity, RDD -Relative Distance Distribution, BERT, Pruned BERT 2: procedure MCAP(cnn classifier, meta controller) 3: θ ← BERT.get attention maps() 4: β ← Pruned BERT.get attention maps() RDD ← Γ(θ, β) kl divergence ← KL divergence(RDD) cnn loss ← cnn classifier.loss(pruned BERT) objective loss ← kl divergence + cnn loss 9: meta controller.update parameters(objective loss) 10: return objective loss 11: end procedure III.",
+    "Algorithm 2 3: 4: 5:2345 Sparse Linear Explanations tuning LIME[20] Require: Classifier f Number of samples N Require: Instance x, and its interpretable version x ′ Require: Similarity kernel π x, Length of explanation K1: Z ← {} i ∈ {1, 2, 3,...N } 2: z ′ i ← sample around(x ′) Z ← Z ∪ ⟨z ′ i, f (z i, π x (z i))⟩w ← KLasso(Z, K) 6: return w Fig. 4:4Fig.",
+    "4: Visualization of SHAP Representations: Force Plot for Sentiment Analysis Model (Fine-tuned with GLUE SST-2).",
+    "Fig. 5:5Fig."
+  ],
+  "correct_citations": [
+    "Algorithm 2 3: 4: 5:2345 Sparse Linear Explanations tuning LIME[20] Require: Classifier f Number of samples N Require: Instance x, and its interpretable version x ′ Require: Similarity kernel π x, Length of explanation K1: Z ← {} i ∈ {1, 2, 3,...N } 2: z ′ i ← sample around(x ′) Z ← Z ∪ ⟨z ′ i, f (z i, π x (z i))⟩w ← KLasso(Z, K) 6: return w Fig. 4:4Fig."
+  ]
+}

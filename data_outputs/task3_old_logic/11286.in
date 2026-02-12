@@ -1,0 +1,22 @@
+{
+  "text": "In direct methods, such as [CITATION_1] , a parametric Optic-Flow mapping is sought between two images so as to minimize the Sum-of-Squared-Difference (SSD) between the images. See the excellent review by [CITATION_2] on optic flow image alignment algorithms. Such iterative methods do not generally guaranty global convergence and may discover local minima, unless provided with good initializations which are not always known in advance. One exception is the 'Filter-Flow' work of [CITATION_3] , which gives an algorithm that can find globally optimal solutions for a broad range of transformations. However, it is done by solving a very large linear program, with impracticable runtime and memory requirements, even for the setting of limited scale and motion over low-res images.",
+  "correct_citation": {
+    "[CITATION_1]": "2121536",
+    "[CITATION_2]": "186689463",
+    "[CITATION_3]": "2662958"
+  },
+  "bib_entries": {
+    "186689463": {
+      "title": "Lucas-kanade 20 years on: A unifying framework",
+      "abstract": "Since the Lucas-Kanade algorithm was proposed in 1981 image alignment has become one of the most widely used techniques in computer vision. Applications range from optical flow and tracking to layered motion, mosaic construction, and face coding. Numerous algorithms have been proposed and a wide variety of extensions have been made to the original formulation. We present an overview of image alignment, describing most of the algorithms and their extensions in a consistent framework. We concentrate on the inverse compositional algorithm, an efficient algorithm that we recently proposed. We examine which of the extensions to Lucas-Kanade can be used with the inverse compositional algorithm without any significant loss of efficiency, and which cannot. In this paper, Part 1 in a series of papers, we cover the quantity approximated, the warp update rule, and the gradient descent approximation. In future papers, we will cover the choice of the error function, how to allow linear appearance variation, and how to impose priors on the parameters."
+    },
+    "2662958": {
+      "title": "Filter flow",
+      "abstract": "The filter flow problem is to compute a space-variant linear filter that transforms one image into another. This framework encompasses a broad range of transformations including stereo, optical flow, lighting changes, blur, and combinations of these effects. Parametric models such as affine motion, vignetting, and radial distortion can also be modeled within the same framework. All such transformations are modeled by selecting a number of constraints and objectives on the filter entries from a catalog which we enumerate. Most of the constraints are linear, leading to globally optimal solutions (via linear programming) for affine transformations, depth-from-defocus, and other problems. Adding a (non-convex) compactness objective enables solutions for optical flow with illumination changes, space-variant defocus, and higher-order smoothness."
+    },
+    "2121536": {
+      "title": "An iterative image registration technique with an application to stereo vision",
+      "abstract": "Image registration finds a variety of applications in computer vision. Unfortunately, traditional image registration techniques tend to be costly. We present a new image registration technique that makes use of the spatial intensity gradient of the images to find a good match using a type of Newton-Raphson iteration. Our technique is taster because it examines far fewer potential matches between the images than existing techniques Furthermore, this registration technique can be generalized to handle rotation, scaling and shearing. We show how our technique can be adapted tor use in a stereo vision system."
+    }
+  }
+}

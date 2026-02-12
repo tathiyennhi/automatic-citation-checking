@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The most recent small window is used as the query 𝑄 because it contains the last point that we want to detect.",
+    "The remaining small windows are utilized as keys 𝐾 and values 𝑉 for target attention.",
+    "Finally, a linear layer is employed to facilitate the model in learning to extract the most important and useful part of the local frequency information, and dropout is also applied to enhance the model's ability to reconstruct some of the local frequency information like GFM.x 𝑠𝑤 = SlidingWindow(x)𝑄 = Select(Dense( F (x 𝑠𝑤))) 𝐾, 𝑉 = Dense( F (x 𝑠𝑤)) 𝑓 𝑙𝑜𝑐𝑎𝑙 = Dropout(FeedFawrd( (𝜎 (𝑄 • 𝐾 ⊤) • 𝑉)) (5)The calculation of 𝑓 𝑙𝑜𝑐𝑎𝑙 ∈ R 1×𝑑 in LFM is given by ( 5), where 𝑑 is the embedding dimension of the local frequency information, which is the same as that of GFM.",
+    "Here, x 𝑠𝑤 ∈ R 𝑛×𝑘 represents a group of small windows extracted from the original window, where 𝑘 is the dimension of the small windows and 𝑛 is the number of small windows.",
+    "The Select function is employed to select the latest window as the query 𝑄 and the Dense function means dense neural network."
+  ],
+  "correct_citations": []
+}

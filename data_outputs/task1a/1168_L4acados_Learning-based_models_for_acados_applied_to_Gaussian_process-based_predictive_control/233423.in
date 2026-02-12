@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "= γ j C j (µ x k, u k)Σ k C ⊤ j (µ x k, u k),(16)whereC j (µ x k, u k) = ∂hj ∂x (x, u k) x=µ x k. Assuming a Gaussian state density, p j = Φ(γ j) thereby corresponds to the approximate satisfaction probability of the linearized one-sided constraint, with Φ(•) denoting the cumulative density function of a standard normal Gaussian variable.",
+    "B. Zero-order algorithmDespite the approximations, the solution of the GP-MPC OCP ( 14) still remains intractable for many real-time applications: Propagation of the state covariances (14e) inside the optimal control problem (OCP) introduces a large additional number of optimization variables, which leads to an unfavorable scaling of the computational complexity with respect to the state dimension; additionally, expensive GP computations are to be performed, in particular for the gradients of the posterior covariance and for the Hessian of the posterior mean.",
+    "To tackle these challenges, it has been proposed in [35] to employ the zero-order robust optimization (zoRO) method [31], [32], which performs sequential quadratic programming (SQP) with a tailored Jacobian approximation to obtain a suboptimal, yet feasible, point of the OCP ( 14) at drastically reduced computational cost.",
+    "Starting with an initial guess for the input and mean variables ûk and μx k, respectively, the zoRO algorithm propagates the covariances (14e) based on the previous SQP iterate (û k, μx k),Σx k+1 = Ψ k (μ x k, ûk, Σx k), k = 0,..., N -1,(17)before obtaining the next iterate by performing SQP iterations towards a Karush-Kuhn-Tucker (KKT) point of the reducedsize OCPmin u0,...,u N -1 µ x 0,...,µ x N N -1 k=0 l(µ x k, u k) + M (µ x N) (18a) s.t.",
+    "µ x 0 = x(t),(18b)µ x k+1 = f (µ x k, u k) + B d g(µ x k, u k), (18c)0 ≥ h(µ x k, u k) + βk, (18d)0 ≥ h N (µ x N) + βN."
+  ]
+}

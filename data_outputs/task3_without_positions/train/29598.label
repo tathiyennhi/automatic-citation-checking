@@ -1,0 +1,20 @@
+{
+  "doc_id": "29598",
+  "text": "Morgan [CITATION_1] provides failures/divergences semantics for event systems in terms of the weakest precondition of a sequence of operation calls. A sequence tr is the sequential composition of the operation calls of M , and init is the initialisation of the system. The CSP trace inc, do, inc, inc, do, reset is considered to be a trace of the Repeater machine since it is the case that ¬wp(init;Inc;Do;Inc;Inc;Do;Reset, false) holds. Note that there is a one to one correspondence between the CSP events and operation calls. In this paper, we are only concerned with non-blocking B operations (i.e. ones without guards) and therefore all sequences of operation calls are traces. However, operations called outside their preconditions are not guaranteed to terminate (i.e. they can diverge). In order to differentiate between divergent and nondivergent traces we need to determine whether the sequence is guaranteed to terminate following initialisation (i.e. establish the postcondition true). A sequence is a divergence if it is not guaranteed to establish true (e.g. ¬wp(init;Inc;Do;Do, true)). In this example, the second invocation of the Do operation may occur in a state where the precondition n > 0 does not hold (because it is possible to reach a state in which n = 0). A sequence does not diverge if it is guaranteed to terminate: Definition 1.2 M 's non-divergent traces are those for which wp(init;tr , true) holds.",
+  "correct_citation": {
+    "[CITATION_1]": "118441061"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Morgan  provides failures/divergences semantics for event systems in terms of the weakest precondition of a sequence of operation calls."
+    }
+  ],
+  "bib_entries": {
+    "118441061": {
+      "title": "Of wp and CSP",
+      "abstract": "A state-based and an event-based approach to concurrency are linked: the traces, failures and divergences of CSP are expressed as weakest precondition formulae over Action Systems. The result is simpler than is obtained using relations for the state-based view; in particular, divergence is handled easily. Essential use is made of miracles."
+    }
+  },
+  "generator": "fallback_v4"
+}

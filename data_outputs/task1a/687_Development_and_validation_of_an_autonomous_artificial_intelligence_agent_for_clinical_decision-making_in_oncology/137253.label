@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We next use cosine distance (lower is better) to compare the query with any embedded chunk from the medical guidelines in the vector database, sorting in ascending order to retrieve the top 40 vectors, each mapped to their respective original text passage.",
+    "Then, we use Cohere's reranking model (Cohere Rerank 3 English) to reorder the retrieved text passages on the basis of their semantic similarity to the LLM's query.",
+    "This step filters out passages that exhibit falsely high similarity (low distance) in embedding space but are contextually irrelevant.",
+    "For example, a query such as 'Which drug is approved for NSCLC?'",
+    "and text from a guideline saying 'Drug A is not approved for non-small cell lung cancer' may show high cosine similarity (low distance), yet the former is irrelevant to the query."
+  ],
+  "correct_citations": []
+}

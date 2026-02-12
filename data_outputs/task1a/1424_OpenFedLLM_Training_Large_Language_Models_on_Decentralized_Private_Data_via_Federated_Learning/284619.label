@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "and a dispreferred response (e.g., 'Sure, here are three key steps.",
+    "First,...').",
+    "Then, during Step 2 of OpenFedLLM, each client trains the local model supervised by a DPO supervision, which minimizes the loss on the preferred response while maximizing the loss on the dispreferred response.",
+    "Eventually, the final global model can capture the preference injected by humans and thus behave more properly.Specifically, denote the local dataset of client k as D k = {(x i, y i,p, y i,d)} N k i, where x i is the instruction, y i,p is the preferred response, y i,d is the dispreferred response, and N k is the number of total samples.",
+    "Following [27], the direct preference optimization (DPO) loss is formulated as:L = -E log σ β log π θ (y i,p | x i) π θ * (y i,p | x i) -β log π θ (y i,d | x i) π θ * (y i,d | x i),(2)where the expectation is taken on (x i, y i,p, y i,d) ∼ D k, σ denotes the logistic function, and β is a hyper-parameter that controls the deviation from the reference model."
+  ],
+  "correct_citations": [
+    "Following [27], the direct preference optimization (DPO) loss is formulated as:L = -E log σ β log π θ (y i,p | x i) π θ * (y i,p | x i) -β log π θ (y i,d | x i) π θ * (y i,d | x i),(2)where the expectation is taken on (x i, y i,p, y i,d) ∼ D k, σ denotes the logistic function, and β is a hyper-parameter that controls the deviation from the reference model."
+  ]
+}

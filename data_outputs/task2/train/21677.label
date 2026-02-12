@@ -1,0 +1,12 @@
+{
+  "text": "We implemented lightweight detection strategies for these smells, mainly using regular expressions. For instance, using search terms such as username, password, etc. we could find hard-coded passwords, tokens, and insufficiently protected authorization schemes in the results. In many apps we found code from various computer languages embedded in Java strings, such as that shown in Listing 3, thus potentially exposing the app or the server to code injection attacks. We compiled a list of commonly used computer languages based on our own findings, and the scripting languages found in the top ten used programming languages on GitHub. [CITATION_1] For each language, we pragmatically developed regular expressions inspired by the relevant language specifications, with the aim to match as many occurences as possible. With these regexes, shown in Table I , we counted the key identifiers for each language in each app report, to detect usages of embedded languages in the web communications. In a subsequent step, we issued requests to each of the URLs extracted from the entire dataset, and observed unexpected responses, e.g., stack traces, error messages, or status information, disclosing sensitive information regarding the API implementation, running software, or server configuration.",
+  "correct_citation": {
+    "[CITATION_1]": "25201881"
+  },
+  "bib_entries": {
+    "25201881": {
+      "title": "Security smells in Android",
+      "abstract": "The ubiquity of smartphones, and their very broad capabilities and usage, make the security of these devices tremendously important. Unfortunately, despite all progress in security and privacy mechanisms, vulnerabilities continue to proliferate.,,Research has shown that many vulnerabilities are due to insecure programming practices. However, each study has often dealt with a specific issue, making the results less actionable for practitioners.,,To promote secure programming practices, we have reviewed related research, and identified avoidable vulnerabilities in Android-run devices and the security code smells that indicate their presence. In particular, we explain the vulnerabilities, their corresponding smells, and we discuss how they could be eliminated or mitigated during development. Moreover, we develop a lightweight static analysis tool and discuss the extent to which it successfully detects several vulnerabilities in about 46 000 apps hosted by the official Android market."
+    }
+  }
+}

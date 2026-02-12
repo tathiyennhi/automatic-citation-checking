@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Nucleotide contribution score calculation and motif analysis with TF-ModiscoTo calculate the contribution scores of each nucleotide in each input sequence to the final prediction, we employed the SHAP DeepExplainer module, an extension of DeepLift for calculating SHAP contribution scores.",
+    "These contribution scores, one for every nucleotide in every input sequence, are based on the difference in output between the model given a set of shuffled input sequences and the output of the model on actual tRNA upstream sequence.",
+    "Ten dinucleotide-shuffled sequences for every input sequence were supplied for the contribution score calculation.",
+    "The resulting DeepExplainer hypothetical contribution scores were multiplied by the one-hot encoded matrix for each sequence to derive the final contribution scores for each sequence.",
+    "The hypothetical and final contribution scores were calculated separately for every output, or task, of the model, corresponding to classification of sequences as housekeeping, repressed or inactive tRNAs.TF-Modisco v0.5.14.1 was then run on the contribution scores from SHAP DeepExplainer for each task separately to find sequence enrichment or motifs among nucleotides with high contribution to model output."
+  ],
+  "correct_citations": []
+}

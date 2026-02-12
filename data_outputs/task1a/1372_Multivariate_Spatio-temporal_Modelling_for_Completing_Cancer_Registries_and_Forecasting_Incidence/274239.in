@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Similar to Retegui et al. (2023), we use a four-step sampling technique to compute the posterior empirical distribution of national incidence for each year.",
+    "First, we generate S samples from the joint posterior distribution of the linear predictor and hyperparameters for each area i and time t using inla.posterior.sample, obtaining samples on the log scale.",
+    "These samples are then transformed to the observation scale (r itI) using inla.posterior.sample.eval with the exponential function.",
+    "Next, we sample counts from a Poisson distribution with mean µ itI = n itI r itI for each area and time, producing S samples of counts, denoted O s itI where s = 1.",
+    ", S. These samples could be organized into T tables, one for each year t, where each row represents the sample counts for each area i."
+  ]
+}

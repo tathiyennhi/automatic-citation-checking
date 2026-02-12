@@ -1,0 +1,55 @@
+{
+  "doc_id": "18012",
+  "text": "The transportation simplex has a worst-case exponential complexity but it has been observed to have a polynomial average case complexity under various distributions. The network simplex has a known complexity in O(n 3 ) [CITATION_1] . To determine how these algorithms behave in practice in our context, we generate 20 random mass transport problems to evaluate the two classes of algorithm. Figure 6 plots the resulting performance. The tests reproduce the O(n 3 ) complexity of the transportation simplex but also reveal that the network simplex behaves in O(n 2 ) in our context, which is a major gain at the scale at which we typical work, i.e. thousands of particles. This finding is also useful for applications that use EMD, where using the network simplex instead of the transport simplex can bring a significant performance increase. Our experiments also show that fixed-point precision further speeds up the computation. We observed that the value of the final transport cost is less accurate because of the limited precision, but that the particle pairing that produces the actual interpolation scheme remains unchanged. We used the fixed point method to generate the results presented in this paper. The results of the performance study are also of broader interest, as current EMD image retrieval or color transfer techniques rely on slower solvers [CITATION_2] [CITATION_3] [CITATION_4] . ",
+  "correct_citation": {
+    "[CITATION_1]": "12577796",
+    "[CITATION_2]": "14106275",
+    "[CITATION_3]": "8470776",
+    "[CITATION_4]": "13932586"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The network simplex has a known complexity in O(n 3 )  .",
+      "s_span": 166,
+      "e_span": 234
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The results of the performance study are also of broader interest, as current EMD image retrieval or color transfer techniques rely on slower solvers    .",
+      "s_span": 1212,
+      "e_span": 1402
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The results of the performance study are also of broader interest, as current EMD image retrieval or color transfer techniques rely on slower solvers    .",
+      "s_span": 1212,
+      "e_span": 1402
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The results of the performance study are also of broader interest, as current EMD image retrieval or color transfer techniques rely on slower solvers    .",
+      "s_span": 1212,
+      "e_span": 1402
+    }
+  ],
+  "bib_entries": {
+    "12577796": {
+      "title": "Network Flows: Theory, Algorithms, and Applications",
+      "abstract": "A comprehensive introduction to network flows that brings together the classic and the contemporary aspects of the field, and provides an integrative view of theory, algorithms, and applications. presents in-depth, self-contained treatments of shortest path, maximum flow, and minimum cost flow problems, including descriptions of polynomial-time algorithms for these core models. emphasizes powerful algorithmic strategies and analysis tools such as data scaling, geometric improvement arguments, and potential function arguments. provides an easy-to-understand descriptions of several important data structures, including d-heaps, Fibonacci heaps, and dynamic trees. devotes a special chapter to conducting empirical testing of algorithms. features over 150 applications of network flows to a variety of engineering, management, and scientific domains. contains extensive reference notes and illustrations."
+    },
+    "8470776": {
+      "title": "Content based image retrieval using multiscale top points a feasibility study",
+      "abstract": "A feasibility study for a new method for content based image retrieval is presented. First, an image representation using multiscale top points is introduced. This representation is validated using a minimal variance reconstruction algorithm. The image retrieval problem can now be translated into comparing distances between point sets. For this purpose the proportional transportation distance (PTD) is used. A method is proposed using multiscale top points and their reconstruction coefficients in the PTD to define these distances between images. We present some experiments with promising results on a database with face images."
+    },
+    "14106275": {
+      "title": "The Earth Mover's Distance as a metric for image retrieval",
+      "abstract": "We investigate the properties of a metric between two distributions, the Earth Mover's Distance (EMD), for content-based image retrieval. The EMD is based on the minimal cost that must be paid to transform one distribution into the other, in a precise sense, and was first proposed for certain vision problems by Peleg, Werman, and Rom. For image retrieval, we combine this idea with a representation scheme for distributions that is based on vector quantization. This combination leads to an image comparison framework that often accounts for perceptual similarity better than other previously proposed methods. The EMD is based on a solution to the transportation problem from linear optimization, for which efficient algorithms are available, and also allows naturally for partial matching. It is more robust than histogram matching techniques, in that it can operate on variable-length representations of the distributions that avoid quantization and other binning problems typical of histograms. When used to compare distributions with the same overall mass, the EMD is a true metric. In this paper we focus on applications to color and texture, and we compare the retrieval performance of the EMD with that of other distances."
+    },
+    "13932586": {
+      "title": "Accurate 3D image colour histogram transformation",
+      "abstract": "A method for transforming an image's 3D colour histogram to make it accurately match a predetermined target state is described here. This method involves colour quantisation, clustering and the EMD histogram difference metric to provide a transformation LUT between original and target histograms."
+    }
+  },
+  "generator": "fallback_v4"
+}

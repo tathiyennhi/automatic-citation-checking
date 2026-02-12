@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Here, ChatGPT proposes the invariants j >= 0 and k >= 0 conjuncted with the human-provided invariant which is obviously useful to prove that k >= 0 holds true at the end of the loop.",
+    "Note that, while this seems to be a case where the copy assertion heuristics is effective, Frama-C does not validate the invariant candidate k >= 0 alone.",
+    "The conjunction with j<=n && k>=n-j is important to validate the invariant.",
+    "Still, by manual inspection we find that the copy assertion heuristic of ChatGPT is effective for providing useful invariants in 11 out of 22 cases for Frama-C and in 5 out of 15 cases for k-induction.void func ( int k, int j, int n) { if (!",
+    "( n >=1 && k >= n && j ==0)) return; // @ loop invariant [ mask]; while (j <= n -1) { j ++; k --; } assert (k >=0); } Infilling provided by ChatGPT: j >= 0 && k >= 0 && j <= n && k >= n -j Human: j <= n <= k + j Fig. 3."
+  ]
+}

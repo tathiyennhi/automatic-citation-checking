@@ -1,0 +1,20 @@
+{
+  "doc_id": "21970",
+  "text": "BGP speakers keep outgoing Update messages in output buffers and, using MRAI timers, send them in bulk. Thus, in step two, when an MRAI timer fires and a BGP speaker sends the messages accumulated in its output buffers, it collects all \"unsigned\" messages, builds a Merkle hash tree [CITATION_1] on them, and signs the root of the tree-thus generating one signature for all unsigned messages, instead of one for each message. A leaf of the tree is the hash of the pair of a route and the recipient bit vector. The resulting RA consists of the RSA signature on the root, the hash path from the root to that leaf, the route, and the recipient bit vector. A verifier of the RA can use these hash values and information in the route announcement to reconstruct the root of the tree correctly. There are trade-offs, however. The verifier needs to perform a few extra hashing operations when verifying a RA, and the message size grows (due to the hash path).",
+  "correct_citation": {
+    "[CITATION_1]": "206578431"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Thus, in step two, when an MRAI timer fires and a BGP speaker sends the messages accumulated in its output buffers, it collects all \"unsigned\" messages, builds a Merkle hash tree on them, and signs the root of the tree-thus generating one signature for all unsigned messages, instead of one for each message."
+    }
+  ],
+  "bib_entries": {
+    "206578431": {
+      "title": "Protocols for Public Key Cryptosystems",
+      "abstract": "New Cryptographic protocols which take full advantage of the unique properties of public key cryptosystems are now evolving. Several protocols for public key distribution and for digital signatures are briefly compared with each other and with the conventional alternative."
+    }
+  },
+  "generator": "fallback"
+}

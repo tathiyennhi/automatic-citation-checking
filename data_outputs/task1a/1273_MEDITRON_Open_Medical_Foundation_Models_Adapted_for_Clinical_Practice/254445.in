@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To promote the retention of knowledge previously acquired by the pretrained Llama-2 model, we used a randomly selected subset of 420 million tokens from the Wikipedia, ArXiv, books, and StackExchange subsets of the 1T RedPajama dataset [12], the Falcon refined web corpus [75], and the non-GitHub data from the StarCoder dataset [76].Our guidelines corpus comprises 46K guideline articles and a broad range of contexts: Supervised FinetuningTo evaluate the downstream performance of our MEDITRON models on common medical MEDITRON-V Model and Training Details Model ArchitectureWe adopt the general architecture many recent LMMs use, which equips the language model with a pretrained visual encoder to map an input image to a sequence of patch features that can be projected into the embedding space of the language model [34].",
+    "We leverage a pretrained visual encoder called EVA-CLIP [77] in conjunction with a query-transformer (Q-Former) introduced by Li et al. [78].",
+    "The Q-Former is a lightweight transformer that uses a set of learnable query vectors to extract visual features from the fixed visual encoder.",
+    "This information bottleneck between the frozen image encoder and the LLM facilitates visual information integration.",
+    "Further, to align the output embeddings of the vision module with those of MEDITRON-7B, we use a layer normalization followed by a linear projection layer to produce the image embeddings given to MEDITRON-7B, which takes the sequence of image and prompt embeddings and generate its response."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We use the paged AdamW [57] optimizer, which is a variant of the AdamW optimizer designed to mitigate the occasionally outof-memory issue on GPUs by allocating CPU RAM for the GPUs, with a learning rate of 1𝑒 -4 to update the weights.",
+    "The batch size is set to one due to significant computational resources caused by large-scale models, and we set the max length of input tokens to 2048 to capture as much context as possible under the resource constraint.",
+    "We fine-tune at most 30 epochs on each client and set the rounds of the global exchange of model parameters to 10.",
+    "The fine-tuning process is regularized by an early stopping strategy that prevents excessive fine-tuning if the validation loss does not significantly decrease after 10 epochs.",
+    "The rank and dropout for QLoRA are set to 32 and 0.05, respectively.Luo et al."
+  ]
+}

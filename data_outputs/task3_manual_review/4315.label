@@ -1,0 +1,29 @@
+{
+  "doc_id": "4315",
+  "text": "Once the eigenvectors are separated into the three groups, appropriate processing schemes can be applied to each group. To begin with, the eigenvectors in group III are simply discarded since these eigenvectors are dominated by noise and contain minimal legitimate spectral information. While the group II eigenvectors may contain some legitimate spectral information, sharp spectral features were most likely assigned to group I. Therefore, median filtering the eigenvectors in group II suppresses the cosmic ray spikes but is expected to have minimal effect upon the true signal. Meanwhile, the eigenvectors in group I receive no further processing in the UBS-DM method as altering these critical eigenvectors runs the risk of introducing spectral distortion. Finally, reconstructed spectra are generated using the remaining eigenvectors and scores. The original spectra are compared to the reconstructed spectra using the UBS method. [CITATION_1] By not altering the most critical spectral eigenvectors and employing the UBS method, the UBS-DM algorithm minimizes the introduction of spectral distortion. [CITATION_2] The UBS-DM algorithm also does an excellent job of suppressing stereotypical cosmic ray spikes where a sharp spike occurs at a single spectral pixel.",
+  "correct_citation": {
+    "[CITATION_1]": "122251586",
+    "[CITATION_2]": "98786138"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The original spectra are compared to the reconstructed spectra using the UBS method."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "By not altering the most critical spectral eigenvectors and employing the UBS method, the UBS-DM algorithm minimizes the introduction of spectral distortion."
+    }
+  ],
+  "bib_entries": {
+    "122251586": {
+      "title": "Stripping of Cosmic Spike Spectral Artifacts Using a New Upper-Bound Spectrum Algorithm",
+      "abstract": "A new upper-bound spectrum (UBS) method for removal of cosmic spike artifacts from spectra or images collected using a charge-coupled device (CCD) detector is proposed. This algorithm, which is shown to outperform previous methods, relies on an upper-bound spectrum, derived from scaled copies of consecutively collected spectra, which serves as a threshold for the detection of suspected cosmic spikes. Detected spikes are removed by replacement with the corresponding points in other spectra. Thus, unlike other commonly used methods, the UBS algorithm requires no smoothing or noise filtering and more reliably removes cosmic spikes of all magnitudes while introducing far less (if any) spectral distortion. The UBS method is tested using both synthetic and experimental (gypsum and gypsum/hematite mixture) spectra containing variable background (fluorescence), noise, and cosmic spike interference. The UBS method may in rare instances mistakenly identify spectral noise or photo-induced changes in band intensity (or shape) as cosmic spikes. However, as demonstrated through the use of both synthetic and experimental examples, such misidentifications produce little or no spectral distortion or artifacts in the resulting cosmic-spike-free output spectra."
+    },
+    "98786138": {
+      "title": "Removal of Cosmic Spikes from Hyper-Spectral Images Using a Hybrid Upper-Bound Spectrum Method",
+      "abstract": "A hybrid of the upper-bound spectrum (UBS), principle component analysis (PCA), and median filter (MF) algorithms is used to efficiently remove cosmic spike spectral artifacts from hyper-spectral data matrices (DM). The resulting UBS-DM method is shown to introduce less spectral distortion than the widely used MF cosmic spike suppression algorithm alone. The new method relies on a truncated series of PCA eigenvectors to produce an upper-bound spectrum, which is in turn used to detect and remove cosmic spikes. The PCA eigenvectors are separated into three groups, each of which is treated in a different manner. The first group of eigenvectors, which contain most of the spectral correlation of interest, are not preprocessed prior to applying the UBS-DM method. The second group, which are more severely contaminated by cosmic spikes (but may also contain important spectral correlations), are MF preprocessed before applying UBS. The third group of eigenvectors, which contain virtually no spectral information, are ignored in regenerating the upper-bound spectra used for spike detection and removal. The UBS-DM algorithm is tested using both synthetic and experimental (iron oxide) Raman hyper-spectral data sets, each containing several thousand spectra, with about 1000 wavelength pixels."
+    }
+  },
+  "generator": "fallback"
+}

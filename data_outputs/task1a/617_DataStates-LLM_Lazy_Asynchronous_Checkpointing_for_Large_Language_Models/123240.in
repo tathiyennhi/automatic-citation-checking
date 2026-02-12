@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The models and their runtime configurations are summarized in Table 1.To minimize the intra-layer communication overheads, the tensorparallel degree is set to 4, which is the number of GPUs in a single node and all are interconnected through fast NVLinks.",
+    "To fit the model across distributed GPU memories, the pipelines are split evenly across the number of nodes described in Table 1 using the default partitioning scheme of uniformly balancing the number of trainable parameters on each pipeline stage.",
+    "Unless otherwise noted, the data-parallelism degree is set to 1, representing a single LLM replica being used for training.",
+    "For the experiments that involve the data parallelism approach, the optimizer state is sharded across the replicas.",
+    "This corresponds to the configuration Figure 2(d).Throughout our experiments, we use a subset of the OSCAR-en dataset included in the repository of the BLOOM model."
+  ]
+}

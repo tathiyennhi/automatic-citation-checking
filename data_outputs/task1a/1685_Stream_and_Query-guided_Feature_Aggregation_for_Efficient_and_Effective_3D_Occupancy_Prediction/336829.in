@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Further Implementation Details A.1.",
+    "Lightweight 3D-FPNFollowing BEVDepth [21], we lift image features into the 3D voxel space, obtaining V init ∈ R C×X×Y ×Z, which encodes both spatial and semantic information and serves as the foundation for 3D occupancy prediction.",
+    "To improve computational efficiency while preserving essential structure, we apply a lightweight 3D-FPN that downsamples voxel features, avoiding excessively fine voxel grids that introduce unnecessary computation.Specifically, V init is passed through a Conv3D block to generate multi-scale voxel features: 4.",
+    "These features, together with V init, are then uniformly resampled to a resolution of X 2 × Y 2 × Z 2 via trilinear interpolation.",
+    "The interpolated volumes are concatenated and compressed using a Conv1D layer to obtain a compact representationV 1 ∈ R C1× X 2 × Y 2 × Z 2 and V 2 ∈ R C2× X 4 × Y 4 × ZV curr ∈ R C× X 2 × Y 2 × Z2."
+  ]
+}

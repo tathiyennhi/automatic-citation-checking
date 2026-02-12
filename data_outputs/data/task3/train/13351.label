@@ -1,0 +1,29 @@
+{
+  "doc_id": "13351",
+  "text": "There are more possible ways of computing the redescription Jaccard index when the data contains missing values. The approach that assumes that all elements containing missing values are distributed in a way to increase the redescription Jaccard index is called optimistic. Similarly, the approach that assumes that all elements containing missing values are distributed in a way to decrease the redescription Jaccard index is called pessimistic. The rejective Jaccard index evaluates redescriptions only by observing elements that do not contain missing values for attributes in redescription queries. These measures are discussed in [CITATION_1] . The Query non-missing Jaccard index (JS qnm ), introduced in [CITATION_2] , is an approach that gives a more conservative estimate than the optimistic Jaccard index but more optimistic estimate than the pessimistic Jaccard index. The main evaluation criteria for this index is that a query (containing only the conjunction operator) can not describe an element that contains missing values for attributes in that query. This index is by its value closer to the optimistic than the pessimistic Jaccard index. However, as opposed to the optimistic approach, redescriptions evaluated by this index contain in their support only elements that have defined values for all attributes in redescription queries and that satisfy query constraints. The index does not penalize the elements containing missing values for attributes in both queries which are penalized in the pessimistic Jaccard index.",
+  "correct_citation": {
+    "[CITATION_1]": "546075",
+    "[CITATION_2]": "35790627"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "These measures are discussed in  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The Query non-missing Jaccard index (JS qnm ), introduced in  , is an approach that gives a more conservative estimate than the optimistic Jaccard index but more optimistic estimate than the pessimistic Jaccard index."
+    }
+  ],
+  "bib_entries": {
+    "546075": {
+      "title": "From black and white to full color: extending redescription mining outside the boolean world",
+      "abstract": "Redescription mining is a powerful data analysis tool that is used to find multiple descriptions of the same entities. Consider geographical regions as an example. They can be characterized by the fauna that inhabits them on one hand and by their meteorological conditions on the other hand. Finding such redescriptors, a task known as niche-finding, is of much importance in biology. Current redescription mining methods cannot handle other than Boolean data. This restricts the range of possible applications or makes discretization a pre-requisite, entailing a possibly harmful loss of information. In niche-finding, while the fauna can be naturally represented using a Boolean presence/absence data, the weather cannot. In this paper, we extend redescription mining to categorical and real-valued data with possibly missing values using a surprisingly simple and efficient approach. We provide extensive experimental evaluation to study the behavior of the proposed algorithm. Furthermore, we show the statistical significance of our results using recent innovations on randomization methods. © 2012 Wiley Periodicals, Inc. Statistical Analysis and Data Mining, 2012 ::: ::: (Part of this work was done when the author was with HIIT.)"
+    },
+    "35790627": {
+      "title": "Redescription mining with multi-target predictive clustering trees",
+      "abstract": "Redescription mining is a field of knowledge discovery that aims to find different descriptions of subsets of elements in the data by using two or more disjoint sets of descriptive attributes. The ability to find connections between different sets of descriptive attributes and provide a more comprehensive set of rules makes it very useful in practice. In this work, we introduce redescription mining algorithm for generating and iteratively improving a redescription set of user defined size based on multi-target Predictive Clustering Trees. This approach uses information about element membership in different generated rules to search for new redescriptions and is able to produce highly accurate, statistically significant redescriptions described by Boolean, nominal or numeric attributes. As opposed to current tree-based approaches that use multi-class or binary classification, we explore benefits of using multi target classification and regression to create redescriptions. The process of iterative redescription set improvement is illustrated on the dataset describing 199 world countries and their trading patterns. The performance of the algorithm is compared against the state of the art redescription mining algorithms."
+    }
+  },
+  "generator": "fallback_v4"
+}

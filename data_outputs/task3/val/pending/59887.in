@@ -1,0 +1,17 @@
+{
+  "text": "Finally, OPE is related to work on order-preserving compression [CITATION_1] [CITATION_2] . Although some OPE schemes use similar techniques, the requirements for OPE are different: compression is not a requirement for OPE, whereas security (plaintext privacy) is not a requirement for compression.",
+  "correct_citation": {
+    "[CITATION_1]": "203664073",
+    "[CITATION_2]": "2218965"
+  },
+  "bib_entries": {
+    "2218965": {
+      "title": "Dictionary-based order-preserving string compression for main memory column stores",
+      "abstract": "Column-oriented database systems [19, 23] perform better than traditional row-oriented database systems on analytical workloads such as those found in decision support and business intelligence applications. Moreover, recent work [1, 24] has shown that lightweight compression schemes significantly improve the query processing performance of these systems. One such a lightweight compression scheme is to use a dictionary in order to replace long (variable-length) values of a certain domain with shorter (fixedlength) integer codes. In order to further improve expensive query operations such as sorting and searching, column-stores often use order-preserving compression schemes. In contrast to the existing work, in this paper we argue that orderpreserving dictionary compression does not only pay off for attributes with a small fixed domain size but also for long string attributes with a large domain size which might change over time. Consequently, we introduce new data structures that efficiently support an order-preserving dictionary compression for (variablelength) string attributes with a large domain size that is likely to change over time. The main idea is that we model a dictionary as a table that specifies a mapping from string-values to arbitrary integer codes (and vice versa) and we introduce a novel indexing approach that provides efficient access paths to such a dictionary while compressing the index data. Our experiments show that our data structures are as fast as (or in some cases even faster than) other state-of-the-art data structures for dictionaries while being less memory intensive."
+    },
+    "203664073": {
+      "title": "Order preserving compression",
+      "abstract": "Order-preserving compression can improve sorting and searching performance, and hence the performance of database systems. We describe a new parsing (tokenization) technique that can be applied to variable-length \"keys\", producing substantial compression. It can both compress and decompress data, permitting variable lengths for dictionary entries and compressed forms. The key notion is to partition the space of strings into ranges, encoding the common prefix of each range. We illustrate our method with padding character compression for multi-field keys, demonstrating the dramatic gains possible. A specific version of the method has been implemented in Digital's Rdb relational database system to enable effective multi-field compression."
+    }
+  }
+}

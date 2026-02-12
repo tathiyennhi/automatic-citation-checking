@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Instead, we use the InfoNCE loss [17], as defined in Eq.",
+    "This approach requires computing the logit for only the positive (ground truth) category and a subset of negative categories:L hcat (𝐻a, E, 𝑦, 𝐼) = -log 𝑒 𝐻a •E[𝑦,:] 𝑖 ∈𝐼 𝑒 𝐻a •E[𝑖,:] (3)where 𝐻 a is the output of the attribute-specific linear layer in the output module, E is the embedding matrix for the categorical attribute, 𝑦 is the positive category's index, and 𝐼 is a set containing the index 𝑦 and indices of sampled negative categories.Sharing negative indices across all time steps and samples within a batch significantly reduces memory consumption.",
+    "The pseudocode in Algorithm 1 provides a concrete illustration of this highcardinality loss computation and its sharing mechanism.To validate the efficacy of our shared negative sampling strategy, we compared its memory footprint against a baseline using independent negative samples for each loss computation.",
+    "Memory usage for both forward and backward passes was measured across varying numbers of negative samples, as shown in Fig. 6.",
+    "The experiment was conducted with PyTorch 2.6."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We then assign ground-truth labels to each segment: segments originating from the benign prompt are labeled 0 (benign), and segments that are part of the adversarial suffix are labeled 1 (malicious).",
+    "This is straightforward because we know the exact boundary between prompt and suffix in the synthetic examples.",
+    "Typically, the prompt and suffix separate cleanly into different segments.",
+    "In cases where SaT does not separate out the suffix fully, we can still identify the suffix portion within the last segment; however, such cases were minimal, and for training labels we conservatively label the entire segment as malicious if it contains any part of the adversarial suffix.We fine-tune the BERT classifier using the above segmented and labeled data.",
+    "We evaluate on the validation set at the end of each epoch, monitoring the segment-level F1 score."
+  ],
+  "correct_citations": []
+}

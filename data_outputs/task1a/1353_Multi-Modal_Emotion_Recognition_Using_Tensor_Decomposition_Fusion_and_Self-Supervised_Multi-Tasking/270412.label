@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The scaling function s is defined for each modality i as:y (i) s = ym i-1 -(i-1) i+1 y s for i = 1 ym i+1 -2 i+1 y ′ s for i > 1 (12)The scaling function s ensures the equitable contribution of each modality, balancing the multimodal integration with modality-specific characteristics.",
+    "The optimization process employs a soft version of the max operator to maintain a balance between the fusion of modalities and the preservation of modality-specific information.",
+    "This optimization is realized by minimizing the loss function L, which is computed as:L = 1 N N i=1 σ(y im -y il) + k w i k y i k -y (i) s (13)Multi-Modal Emotion Recognition Using Tensor Decomposition Fusion and Self-Super where σ is the sigmoid function, y im and y il represent the maximum and minimum performance measures of the modalities, w i k are the weights assigned to each modality difference, and y i k is the performance measure for modality k. The weights w i s are adjusted via a hyperbolic tangent function to control the impact of each modality:w i s = tanh(y i s -y i m)(14)This function ensures that the optimization process not only integrates the strengths of each modality but also preserves their unique contributions to the overall fusion result.",
+    "DatasetsThe CMU-MOSI [21]dataset offers multimodal data from 93 videos, including text, visual gestures, and audio-visual features.",
+    "It features subjective, emotionintensity annotations for 2198 utterances, aligned with words and acoustic elements, scored from -3 (strongly negative) to +3 (strongly positive).The CMU-MOSEI [22] dataset includes 23,453 annotated segments from 5,000 videos featuring 1,000 different speakers and covering 250 unique topics."
+  ],
+  "correct_citations": [
+    "DatasetsThe CMU-MOSI [21]dataset offers multimodal data from 93 videos, including text, visual gestures, and audio-visual features.",
+    "It features subjective, emotionintensity annotations for 2198 utterances, aligned with words and acoustic elements, scored from -3 (strongly negative) to +3 (strongly positive).The CMU-MOSEI [22] dataset includes 23,453 annotated segments from 5,000 videos featuring 1,000 different speakers and covering 250 unique topics."
+  ]
+}

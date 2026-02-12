@@ -1,0 +1,66 @@
+{
+  "doc_id": "35586",
+  "text": "Traditional statistical human body models represent variations in body surface only across individuals, as well as pose-dependent surface deformations using linear [CITATION_1] [CITATION_2] or non-linear [CITATION_3] [CITATION_4] subspaces of the mesh vertex positions. For our task, we build an enriched statistical body model that parameterizes, in addition to the body surface, the optimal volumetric Gaussian density distribution γ for tracking, and the space of skeleton dimensions b, through linear functions γ(s), b(s) of a low-dimensional shape vector s. To build our model, we use an existing database of 228 registered scanned meshes of human bodies in neutral pose [CITATION_5] . We take one of the scans as reference mesh, and place the articulated skeleton inside. The 91 Gaussians are attached to bones, their position is set to uniformly fill the mesh volume, and their standard deviation and density is set such that a density gradient forms at the mesh surface, see Figure 2 ",
+  "correct_citation": {
+    "[CITATION_1]": "5095817",
+    "[CITATION_2]": "5328073",
+    "[CITATION_3]": "3423879",
+    "[CITATION_4]": "15559782",
+    "[CITATION_5]": "7245910"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Traditional statistical human body models represent variations in body surface only across individuals, as well as pose-dependent surface deformations using linear   or non-linear   subspaces of the mesh vertex positions.",
+      "s_span": 0,
+      "e_span": 269
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Traditional statistical human body models represent variations in body surface only across individuals, as well as pose-dependent surface deformations using linear   or non-linear   subspaces of the mesh vertex positions.",
+      "s_span": 0,
+      "e_span": 269
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Traditional statistical human body models represent variations in body surface only across individuals, as well as pose-dependent surface deformations using linear   or non-linear   subspaces of the mesh vertex positions.",
+      "s_span": 0,
+      "e_span": 269
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Traditional statistical human body models represent variations in body surface only across individuals, as well as pose-dependent surface deformations using linear   or non-linear   subspaces of the mesh vertex positions.",
+      "s_span": 0,
+      "e_span": 269
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "To build our model, we use an existing database of 228 registered scanned meshes of human bodies in neutral pose  .",
+      "s_span": 563,
+      "e_span": 690
+    }
+  ],
+  "bib_entries": {
+    "3423879": {
+      "title": "SCAPE: shape completion and animation of people",
+      "abstract": "We introduce the SCAPE method (Shape Completion and Animation for PEople)---a data-driven method for building a human shape model that spans variation in both subject shape and pose. The method is based on a representation that incorporates both articulated and non-rigid deformations. We learn a pose deformation model that derives the non-rigid surface deformation as a function of the pose of the articulated skeleton. We also learn a separate model of variation based on body shape. Our two models can be combined to produce 3D surface models with realistic muscle deformation for different people in different poses, when neither appear in the training set. We show how the model can be used for shape completion --- generating a complete surface mesh given a limited set of markers specifying the target shape. We present applications of shape completion to partial view completion and motion capture animation. In particular, our method is capable of constructing a high-quality animated surface model of a moving person, with realistic muscle deformation, using just a single static scan and a marker motion capture sequence of the person."
+    },
+    "7245910": {
+      "title": "A statistical model of human pose and body shape",
+      "abstract": "A circuit for controlling a display panel identifying malfunctions in an engine generator receives a plurality of electrical signals from the engine generator, each of which identifies a particular trouble. The electrical signal may be produced by closing a switch. It is caused to operate a latch that lights a light associated with the particular malfunction. Indications of other malfunctions are suppressed until the circuit is reset. A manual reset tests all lights and then leaves them off ready to respond. A power-up reset does not test lights but leaves all lights off ready to respond. The circuit is rendered especially appropriate for military use by hardening against radiation and against pulses of electromagnetic interference."
+    },
+    "5095817": {
+      "title": "The space of human body shapes: reconstruction and parameterization from range scans",
+      "abstract": "We develop a novel method for fitting high-resolution template meshes to detailed human body range scans with sparse 3D markers. We formulate an optimization problem in which the degrees of freedom are an affine transformation at each template vertex. The objective function is a weighted combination of three measures: proximity of transformed vertices to the range data, similarity between neighboring transformations, and proximity of sparse markers at corresponding locations on the template and target surface. We solve for the transformations with a non-linear optimizer, run at two resolutions to speed convergence. We demonstrate reconstruction and consistent parameterization of 250 human body models. With this parameterized set, we explore a variety of applications for human body modeling, including: morphing, texture transfer, statistical analysis of shape, model fitting from sparse markers, feature analysis to modify multiple correlated parameters (such as the weight and height of an individual), and transfer of surface detail and animation controls from a template to fitted models."
+    },
+    "15559782": {
+      "title": "Multilinear pose and body shape estimation of dressed subjects from image sets",
+      "abstract": "In this paper we propose a multilinear model of human pose and body shape which is estimated from a database of registered 3D body scans in different poses. The model is generated by factorizing the measurements into pose and shape dependent components. By combining it with an ICP based registration method, we are able to estimate pose and body shape of dressed subjects from single images. If several images of the subject are available, shape and poses can be optimized simultaneously for all input images. Additionally, while estimating pose and shape, we use the model as a virtual calibration pattern and also recover the parameters of the perspective camera model the images were created with."
+    },
+    "5328073": {
+      "title": "SMPL: a skinned multi-person linear model",
+      "abstract": "We present a learned model of human body shape and pose-dependent shape variation that is more accurate than previous models and is compatible with existing graphics pipelines. Our Skinned Multi-Person Linear model (SMPL) is a skinned vertex-based model that accurately represents a wide variety of body shapes in natural human poses. The parameters of the model are learned from data including the rest pose template, blend weights, pose-dependent blend shapes, identity-dependent blend shapes, and a regressor from vertices to joint locations. Unlike previous models, the pose-dependent blend shapes are a linear function of the elements of the pose rotation matrices. This simple formulation enables training the entire model from a relatively large number of aligned 3D meshes of different people in different poses. We quantitatively evaluate variants of SMPL using linear or dual-quaternion blend skinning and show that both are more accurate than a Blend-SCAPE model trained on the same data. We also extend SMPL to realistically model dynamic soft-tissue deformations. Because it is based on blend skinning, SMPL is compatible with existing rendering engines and we make it available for research purposes."
+    }
+  },
+  "generator": "fallback_v4"
+}

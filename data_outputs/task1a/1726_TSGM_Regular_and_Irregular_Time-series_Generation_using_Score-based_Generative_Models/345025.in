@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Therefore, use alt = {T rue, F alse} is a hyperparameter to set whether we use the alternating training method.b) Sampling method: After the training procedure, we use the following conditional reverse process:dh s n = [f(s, h s n) -g 2 (s)∇ h s n log p(h s n |h 0 n-1)]ds + g(s)d w,where s is uniformly sampled over [0, 1].",
+    "The conditional score function in this process can be replaced with the trained score network M θ (s, h s n, h 0 n-1).",
+    "The detailed sampling method is as follows:1) At first, we sample z 1 from a Gaussian prior distribution and set h 1 1 = z 1 and h 0 0 = 0.",
+    "We then generates an initial observation ĥ0 1 by denoising h 1 1 following the conditional reverse process with M θ (s, h s n, h 0 0) via the predictorcorrector method [17].2) We repeat the following computation for every 2 ≤ n ≤ N, i.e., recursive generation.",
+    "We sample z n from a Gaussian prior distribution and set h 1 n = z n for n ∈ {2,..., N }."
+  ]
+}

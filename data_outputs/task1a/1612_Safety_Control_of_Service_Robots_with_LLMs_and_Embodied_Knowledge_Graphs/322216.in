@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "2) Framework Definition: Let Ω = (S, P, R, L, T) represent the ERCP framework where:• S is the state space, • P the prompt space,• R the response space,• L the language model function space, • T the state transition functions.",
+    "The state S t ∈ S at time t is defined as:S t = (K t, C t, I t, E t),(1)where: 3) Core Process: The iterative refinement process combines the structured guidance of ERCP with the generative capabilities of the LLM to achieve clear and executable instructions.",
+    "The process consists of three stages:• K t ∈ K is the knowledge state, • C t ∈ C represents constraints, • I t ∈ I defines the intent, • E t ∈ E encodes the environmental context.1) Response Generation: The LLM generates a response to the current prompt and state.R t = L(P t, S t-1, θ): P × S × Θ → R,(2)where θ ∈ Θ represents the LLM parameters.2) State Update: The ERCP updates the state based on the LLM-generated response.S t = f (S t-1, R t, ξ): S × R × Ξ → S,(3)where ξ ∈ Ξ encodes external context.",
+    "3) Next Prompt Generation: The ERCP generates the next prompt for the LLM based on the updated state.P t+1 = g(S t, η): S × H → P,(4)where η ∈ H defines prompt generation parameters.The process iterates until the instruction is clear and complete.",
+    "Once this is achieved, the LLM generates a detailed task plan.4) Example Workflow: Ambiguous Instruction: \"Get me a drink.\""
+  ]
+}

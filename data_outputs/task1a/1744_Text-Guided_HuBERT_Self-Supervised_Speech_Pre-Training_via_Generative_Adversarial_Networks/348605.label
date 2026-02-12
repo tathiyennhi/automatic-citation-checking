@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Specifically, as shown in the right part of Figure 1, the generator consumes speech, while the input of the discriminator is the real phoneme sequences of unpaired text.",
+    "During adversarial training, the discriminator is trained to distinguish the output of the generator and real phoneme sequences.",
+    "The goal of the generator is to output phoneme sequences that cannot be distinguished by the discriminator.We adopt the same unsupervised training strategy as wav2vec-U 2.0 [16].",
+    "Specifically, we train the network, on a traditional GAN loss, L gan, a gradient penalty term, L gp, for better convergence, a smoothness penalty term, L sp, to encourage consecutive speech frames to output the same phonemes, a phoneme diversity term, L pd, to diverse phoneme usage, and a self-supervised loss L ss, to encourage the generated phonemes to match the input speech.",
+    "The final GAN training objective is formulated following:L = min G max C [L gan + λL gp + γL sp + ηL pd + δL ss] (1)After adversarial training, we use the generator to discretize the speech waveform into frame-level phoneme-like pseudo sequences, which can be considered to be obtained under the supervision of additional unpaired text."
+  ],
+  "correct_citations": [
+    "The goal of the generator is to output phoneme sequences that cannot be distinguished by the discriminator.We adopt the same unsupervised training strategy as wav2vec-U 2.0 [16]."
+  ]
+}

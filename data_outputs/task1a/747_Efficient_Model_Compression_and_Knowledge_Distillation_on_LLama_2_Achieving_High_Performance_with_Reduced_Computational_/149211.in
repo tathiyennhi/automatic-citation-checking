@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Parameter sharing, a technique that involves reusing weights across different parts of the model, is examined for its potential to decrease model size while maintaining performance.",
+    "By implementing these compression techniques, we aim to significantly enhance the computational efficiency of LLama 2.Consider the following equations that conceptualize the mathematical foundation of these techniques:Pruning: The objective function for pruning can be represented as: minW,M L(W ⊙ M) + λ∥M∥ 0,(1)where W denotes the weights of the neural network, M is a binary mask indicating the presence (1) or absence (0) of corresponding weights, L is the loss function, ⊙ denotes element-wise multiplication, and λ is a regularization parameter controlling the sparsity level.Quantization: The quantization process can be mathematically modeled as:Q(v) = ∆ • v ∆ + 1 2,(2)where v represents the original value of a parameter, Q(v) is the quantized value, and ∆ is the quantization step, determined by the range of v and the number of bits allocated.Parameter Sharing: This technique can be abstractly expressed through a grouping function:G(W) = N i=1 M j=1 W i,j • δ g(i),g(j),(3)where W i,j are the weights of the model, N and M are the dimensions of W, g(•) assigns weights to groups, and δ is the Kronecker delta function, enforcing weights to be shared within the same group.",
+    "By implementing these compression techniques, we aim to significantly enhance the computational efficiency of LLama 2, making it more accessible and environmentally friendly without compromising its performance.",
+    "C. Knowledge Distillation ProcessThe knowledge distillation process in our study is structured around a teacher-student model setup.",
+    "LLama 2 serves as the teacher model, from which a smaller, more efficient student model learns."
+  ]
+}

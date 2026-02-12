@@ -1,0 +1,57 @@
+{
+  "text": "Online discriminative learning methods have been used extensively for tracking deformable objects in the context of single object tracking. However, its extension to multiple objects remains relatively unexplored and is limited to only few works. The work of Zhang and Maaten [CITATION_1] is probably the first attempt to apply online discriminative learning in tracking multiple objects. In [CITATION_2] , the spatial constraint among the targets is modeled during tracking. It is shown that the tracker performs well when the structure among the objects remains the same (or changes very slowly). However, this is only applicable to very limited scenarios and it will perform poorly in others, specially when the targets are moving independently.",
+  "citation_candidates": [
+    "3042496",
+    "5911113",
+    "1067638",
+    "14138179",
+    "17671150",
+    "5919882",
+    "32640",
+    "10240161",
+    "7323301",
+    "3198903"
+  ],
+  "bib_entries": {
+    "32640": {
+      "title": "Global data association for multi-object tracking using network flows",
+      "abstract": "We propose a network flow based optimization method for data association needed for multiple object tracking. The maximum-a-posteriori (MAP) data association problem is mapped into a cost-flow network with a non-overlap constraint on trajectories. The optimal data association is found by a min-cost flow algorithm in the network. The network is augmented to include an explicit occlusion model(EOM) to track with long-term inter-object occlusions. A solution to the EOM-based network is found by an iterative approach built upon the original algorithm. Initialization and termination of trajectories and potential false observations are modeled by the formulation intrinsically. The method is efficient and does not require hypotheses pruning. Performance is compared with previous results on two public pedestrian datasets to show its improvement."
+    },
+    "5911113": {
+      "title": "GloballyOptimal Greedy Algorithms for Tracking a Variable Number of Objects",
+      "abstract": "We analyze the computational problem of multi-object tracking in video sequences. We formulate the problem using a cost function that requires estimating the number of tracks, as well as their birth and death states. We show that the global solution can be obtained with a greedy algorithm that sequentially instantiates tracks using shortest path computations on a flow network. Greedy algorithms allow one to embed pre-processing steps, such as nonmax suppression, within the tracking algorithm. Furthermore, we give a near-optimal algorithm based on dynamic programming which runs in time linear in the number of objects and linear in the sequence length. Our algorithms are fast, simple, and scalable, allowing us to process dense input data. This results in state-of-the-art performance."
+    },
+    "1067638": {
+      "title": "Multiple Object Tracking Using K-Shortest Paths Optimization",
+      "abstract": "Multi-object tracking can be achieved by detecting objects in individual frames and then linking detections across frames. Such an approach can be made very robust to the occasional detection failure: If an object is not detected in a frame but is in previous and following ones, a correct trajectory will nevertheless be produced. By contrast, a false-positive detection in a few frames will be ignored. However, when dealing with a multiple target problem, the linking step results in a difficult optimization problem in the space of all possible families of trajectories. This is usually dealt with by sampling or greedy search based on variants of Dynamic Programming which can easily miss the global optimum. In this paper, we show that reformulating that step as a constrained flow optimization results in a convex problem. We take advantage of its particular structure to solve it using the k-shortest paths algorithm, which is very fast. This new approach is far simpler formally and algorithmically than existing techniques and lets us demonstrate excellent performance in two very different contexts."
+    },
+    "7323301": {
+      "title": "Multi-target Tracking by Lagrangian Relaxation to Min-Cost Network Flow",
+      "abstract": "We propose a method for global multi-target tracking that can incorporate higher-order track smoothness constraints such as constant velocity. Our problem formulation readily lends itself to path estimation in a trellis graph, but unlike previous methods, each node in our network represents a candidate pair of matching observations between consecutive frames. Extra constraints on binary flow variables in the graph result in a problem that can no longer be solved by min-cost network flow. We therefore propose an iterative solution method that relaxes these extra constraints using Lagrangian relaxation, resulting in a series of problems that ARE solvable by min-cost flow, and that progressively improve towards a high-quality solution to our original optimization problem. We present experimental results showing that our method outperforms the standard network-flow formulation as well as other recent algorithms that attempt to incorporate higher-order smoothness constraints."
+    },
+    "3042496": {
+      "title": "Multi-target Tracking by Continuous Energy Minimization",
+      "abstract": "We propose to formulate multi-target tracking as minimization of a continuous energy function. Other than a number of recent approaches we focus on designing an energy function that represents the problem as faithfully as possible, rather than one that is amenable to elegant optimization. We then go on to construct a suitable optimization scheme to find strong local minima of the proposed energy. The scheme extends the conjugate gradient method with periodic trans-dimensional jumps. These moves allow the search to escape weak minima and explore a much larger portion of the variable-dimensional search space, while still always reducing the energy. To demonstrate the validity of this approach we present an extensive quantitative evaluation both on synthetic data and on six different real video sequences. In both cases we achieve a significant performance improvement over an extended Kalman filter baseline as well as an ILP-based state-of-the-art tracker."
+    },
+    "14138179": {
+      "title": "Structure Preserving Object Tracking",
+      "abstract": "Model-free trackers can track arbitrary objects based on a single (bounding-box) annotation of the object. Whilst the performance of model-free trackers has recently improved significantly, simultaneously tracking multiple objects with similar appearance remains very hard. In this paper, we propose a new multi-object model-free tracker (based on tracking-by-detection) that resolves this problem by incorporating spatial constraints between the objects. The spatial constraints are learned along with the object detectors using an online structured SVM algorithm. The experimental evaluation of our structure-preserving object tracker (SPOT) reveals significant performance improvements in multi-object tracking. We also show that SPOT can improve the performance of single-object trackers by simultaneously tracking different parts of the object."
+    },
+    "5919882": {
+      "title": "Online passive-aggressive algorithms",
+      "abstract": "We present a unified view for online classification, regression, and uni-class problems. This view leads to a single algorithmic framework for the three problems. We prove worst case loss bounds for various algorithms for both the realizable case and the non-realizable case. A conversion of our main online algorithm to the setting of batch learning is also discussed. The end result is new algorithms and accompanying loss bounds for the hinge-loss."
+    },
+    "17671150": {
+      "title": "Large margin methods for structured and interdependent output variables",
+      "abstract": "Learning general functional dependencies between arbitrary input and output spaces is one of the key challenges in computational intelligence. While recent progress in machine learning has mainly focused on designing flexible and powerful input representations, this paper addresses the complementary issue of designing classification algorithms that can deal with more complex outputs, such as trees, sequences, or sets. More generally, we consider problems involving multiple dependent output variables, structured output spaces, and classification problems with class attributes. In order to accomplish this, we propose to appropriately generalize the well-known notion of a separation margin and derive a corresponding maximum-margin formulation. While this leads to a quadratic program with a potentially prohibitive, i.e. exponential, number of constraints, we present a cutting plane algorithm that solves the optimization problem in polynomial time for a large class of problems. The proposed method has important applications in areas such as computational biology, natural language processing, information retrieval/extraction, and optical character recognition. Experiments from various domains involving different types of output spaces emphasize the breadth and generality of our approach."
+    },
+    "10240161": {
+      "title": "Learning structural svms with latent variables",
+      "abstract": "We present a large-margin formulation and algorithm for structured output prediction that allows the use of latent variables. Our proposal covers a large range of application problems, with an optimization problem that can be solved efficiently using Concave-Convex Programming. The generality and performance of the approach is demonstrated through three applications including motiffinding, noun-phrase coreference resolution, and optimizing precision at k in information retrieval."
+    },
+    "3198903": {
+      "title": "Object detection with discriminatively trained partbased models",
+      "abstract": "We describe an object detection system based on mixtures of multiscale deformable part models. Our system is able to represent highly variable object classes and achieves state-of-the-art results in the PASCAL object detection challenges. While deformable part models have become quite popular, their value had not been demonstrated on difficult benchmarks such as the PASCAL data sets. Our system relies on new methods for discriminative training with partially labeled data. We combine a margin-sensitive approach for data-mining hard negative examples with a formalism we call latent SVM. A latent SVM is a reformulation of MI--SVM in terms of latent variables. A latent SVM is semiconvex, and the training problem becomes convex once latent information is specified for the positive examples. This leads to an iterative training algorithm that alternates between fixing latent values for positive examples and optimizing the latent SVM objective function."
+    }
+  }
+}

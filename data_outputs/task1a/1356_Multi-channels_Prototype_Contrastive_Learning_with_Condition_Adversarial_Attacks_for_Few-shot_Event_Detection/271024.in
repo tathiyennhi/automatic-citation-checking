@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Prototypical networks produce a distribution over classes for a query point x i based on a softmax over distances to the prototypes:p t (y i | x i) = exp -d h i, p c=y i c ∈C exp (-d (h i, p c))(4)where d(•) denotes a distance function and -d(•) is the similarity metric, which means the greater the distance, the smaller the similarity, and vice versa.",
+    "Learning proceeds by minimizing the negative log-probability p t (y i | x i) to compute the cross-entropy loss on the query set Q.L C E = - (x i,y i)∈Q log p t (y i | x i) (5) Multi-Channels Prototypical NetworkWe find that the prototypes (excluding the \"O\" type) calculated by the formula 3 have the weakness of inadequate event type information and cannot generalize well to detect trigger words that the model has not learned before.",
+    "This is because, in the N-way-K-shot and sequence labeling conditions, the prototype of each event type is only aggregated by K tokens information when one sentence has a trigger word.",
+    "In addition, there are too many non-triggers in a sentence, so the prototype of the \"O\" type contains more miscellaneous types of words, which can exacerbate category imbalance in the scenario of few-shot learning.To tackle the above problems, we proposed the multi-channels prototypical (MP) network inspired by multi-heads attention [38] that allows models to jointly attend to information from different representation sub-spaces at different positions.",
+    "Thus, MP is that the Prototypical network with a multi-channels machine calculates the prototype of each class from different feature representation sub-spaces."
+  ]
+}

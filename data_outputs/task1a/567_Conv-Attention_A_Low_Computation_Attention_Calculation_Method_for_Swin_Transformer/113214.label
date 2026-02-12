@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "In the subsequent experiments, we also tried to compute the symbolic functions in VLAD in a similar way to the attention matrix, but the results (see Table 2) were not satisfactory.The calculation of the attention matrix is viewed similarly as a classification problem, and the classification problem is based on the distance between key and query, the closer the distance, the greater the correlation between the two.",
+    "Softmax function can convert the distance into a probability value, i.e.A i j = e -λ k i -q j 2 j e -λ k i -q j 2(3)where k i, q i denotes the key and query, λ is the parameter that controls the distance between k i, q i.",
+    "Expand Eq. 3 and eliminate the e -λk T i k i to get Eq.",
+    "4:A i j = e 2λq T j k i -λq T j q j j e 2λq T j k i -λq T j q j (4)123where let w j = 2λq j, b j = -λq T j q j, obtaining the following equation:A i j = e w T j k i +b j j e w T j k i +b j (5) A = so f t max(W T j k + b j) (6)Thus, the attention matrix can be obtained by computing the distance between k i, q i, i.e., viewed as a classification problem implemented with a fully connected layer.",
+    "k i, q i are from the input, the two can be interchanged.Indeed, this form of attention looks like additive attention, which is given by the formula [18]:A = tanh(W k k + W q q + b) (7)The difference between additive attention and conv-attention(ours) lies in the way of generating the weights of the fully connected matrix."
+  ],
+  "correct_citations": [
+    "k i, q i are from the input, the two can be interchanged.Indeed, this form of attention looks like additive attention, which is given by the formula [18]:A = tanh(W k k + W q q + b) (7)The difference between additive attention and conv-attention(ours) lies in the way of generating the weights of the fully connected matrix."
+  ]
+}

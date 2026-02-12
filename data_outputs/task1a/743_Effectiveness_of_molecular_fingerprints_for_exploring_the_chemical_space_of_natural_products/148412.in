@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Bayesian hyperparameter optimization for 20 iterations, training on the training split and measuring the ROC-AUC on the validation set (hyperparameters: number of trees between 50 and 500 with a step of 50, maximum tree depth between 5 and 12 with a step of 2, the minimum number of samples per split between 2 and 20, minimum number of samples per leaf between 2 and 100, number of features as a choice between the logarithm, the square root or 10% of the fingerprint size).",
+    "We finally trained on the training set and evaluated the performance on the test set with 5 replicates.• Dense Neural Network (DNN) [46] with 2 hidden layers, batch normalization and dropout.",
+    "Each DNN was trained for 100 epochs using AdamW as the optimizer and binary cross-entropy as the loss function on the training set.",
+    "The parameters were optimized via Bayesian optimization for 20 iterations according to the ROC-AUC on the validation set.",
+    "We tuned the number of units per layer (between 128 and 512 with a step of 128), the dropout rate (between 0 and 0.4), the learning rate (between 0.0001 and 0.05) and the batch size (between 16 and 64 with a step of 8).Once the optimal hyperparameters were determined on the validation set, we retrained on the training set and measured all metrics on the test set, repeating the procedure 5 times.The classification performance was quantified using precision, recall, specificity, Matthews Correlation Coefficient (MCC), F1 score, balanced accuracy, ROC-AUC and PR-AUC [47]."
+  ]
+}

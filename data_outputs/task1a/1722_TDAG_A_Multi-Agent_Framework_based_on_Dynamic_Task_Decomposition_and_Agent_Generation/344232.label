@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Algorithm 1 Multi-Agent Framework Operation 1: Input: Task T, Tool document D, Skill library L 2: Output: Updated Skill library L, Task results R 3: t_list ← MainAgent.Decompose(T) ▷ Decompose task T 4: for t i in t_list do 5: subagent i ← AgentGenerator.Generate(D, L, t i) ▷ Generate subagent 6: r i ← subagent i.Execute(t 1, t 2,.",
+    ", t i-1, t i, r 1, r 2,.",
+    ", r i-1) ▷ Execute subtask 7: if t i is successfully completed then 8: s ← subagent i.SummarizeP rocess ▷ Summarize process 9: L ← Processor.UpdateSkillLibrary(L, s) ▷ Update Skill library 10: end if 11: t_list ← MainAgent.UpdateTasks(t_list, r i) ▷ Update task list 12: end for 13: R ← MainAgent.Submit(t 1, t 2,.",
+    ", t n, r 1, r 2,.",
+    ", r n) ▷ Get the final result 14: return L, R ▷ Return updated library and results"
+  ],
+  "correct_citations": []
+}

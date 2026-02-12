@@ -1,0 +1,29 @@
+{
+  "doc_id": "40865",
+  "text": "We have designed and implemented an instantiation of an age-oriented collector, based on the reference counting collector of [CITATION_1] and the tracing collector of [CITATION_2] , in which reference counting collects the old objects and mark and sweep collects the young objects. This age-oriented collector was implemented on the Jikes RVM. Our measurements show that this collector maintains the short pauses of the original collectors and significantly outperforms both the original reference counting collector as well as the generational variant.",
+  "correct_citation": {
+    "[CITATION_1]": "53223694",
+    "[CITATION_2]": "10263433"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We have designed and implemented an instantiation of an age-oriented collector, based on the reference counting collector of  and the tracing collector of  , in which reference counting collects the old objects and mark and sweep collects the young objects."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We have designed and implemented an instantiation of an age-oriented collector, based on the reference counting collector of  and the tracing collector of  , in which reference counting collects the old objects and mark and sweep collects the young objects."
+    }
+  ],
+  "bib_entries": {
+    "10263433": {
+      "title": "An on-the-fly mark and sweep garbage collector based on sliding view",
+      "abstract": "With concurrent and garbage collected languages like Java and C# becoming popular, the need for a suitable non-intrusive, efficient, and concurrent multiprocessor garbage collector has become acute. We propose a novel mark and sweep on-the-fly algorithm based on the sliding views mechanism of Levanoni and Petrank. We have implemented our collector on the Jikes Java Virtual Machine running on a Netfinity multiprocessor and compared it to the concurrent algorithm and to the stop-the-world collector supplied with Jikes JVM. The maximum pause time that we measured with our benchmarks over all runs was 2ms. In all runs, the pause times were smaller than those of the stop-the-world collector by two orders of magnitude and they were also always shorter than the pauses of the Jikes concurrent collector. Throughput measurements of the new garbage collector show that it outperforms the Jikes concurrent collector by up to 60%. As expected, the stop-the-world does better than the on-the-fly collectors with results showing about 10% difference.On top of being an effective mark and sweep on-the-fly collector standing on its own, our collector may also be used as a backup collector (collecting cyclic data structures) for the Levanoni-Petrank reference counting collector. These two algorithms perfectly fit sharing the same allocator, a similar data structure, and a similar JVM interface."
+    },
+    "53223694": {
+      "title": "An on-the-fly reference counting garbage collector for Java",
+      "abstract": "Reference counting is not naturally suitable for running on multiprocessors. The update of pointers and reference counts requires atomic and synchronized operations. We present a novel reference counting algorithm suitable for a multiprocessor that does not require any synchronized operation in its write barrier (not even a compare-and-swap type of synchronization). The algorithm is efficient and may complete with any tracing algorithm."
+    }
+  },
+  "generator": "fallback_v4"
+}

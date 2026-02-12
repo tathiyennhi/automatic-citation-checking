@@ -1,0 +1,29 @@
+{
+  "doc_id": "33726",
+  "text": "Adversarial training was suggested in [CITATION_1] which demonstrated injecting adversarial samples, correctly labeled, in the training set as a means to make the model robust. In [CITATION_2] this reduced the misclassification rate of a MNIST model from 89.4% to 17.9% on adversarial examples. We would not show that our attack is more resistant to adversarial training than other attacks discussed in those papers due to space limit. This would be shown in future work. However, the intuition for that is: API calls have a limited range of discrete values, in-contrast to images, which have a wider range of possible values. Thus, when we follow the gradients in Algorithm 2, we actually transforming our samples to be closer to real benign samples distribution, making it harder to separate between them and benign samples. This is not what happens with images, where adversarial examples have a third distribution, which is different from other labels distributions and can thus be easily classified correctly.",
+  "correct_citation": {
+    "[CITATION_1]": "604334",
+    "[CITATION_2]": "6706414"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Adversarial training was suggested in which demonstrated injecting adversarial samples, correctly labeled, in the training set as a means to make the model robust."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In this reduced the misclassification rate of a MNIST model from 89.4% to 17.9% on adversarial examples."
+    }
+  ],
+  "bib_entries": {
+    "6706414": {
+      "title": "Explaining and harnessing adversarial examples",
+      "abstract": "Several machine learning models, including neural networks, consistently misclassify adversarial examples---inputs formed by applying small but intentionally worst-case perturbations to examples from the dataset, such that the perturbed input results in the model outputting an incorrect answer with high confidence. Early attempts at explaining this phenomenon focused on nonlinearity and overfitting. We argue instead that the primary cause of neural networks' vulnerability to adversarial perturbation is their linear nature. This explanation is supported by new quantitative results while giving the first explanation of the most intriguing fact about them: their generalization across architectures and training sets. Moreover, this view yields a simple and fast method of generating adversarial examples. Using this approach to provide examples for adversarial training, we reduce the test set error of a maxout network on the MNIST dataset."
+    },
+    "604334": {
+      "title": "Intriguing properties of neural networks",
+      "abstract": "Deep neural networks are highly expressive models that have recently achieved state of the art performance on speech and visual recognition tasks. While their expressiveness is the reason they succeed, it also causes them to learn uninterpretable solutions that could have counter-intuitive properties. In this paper we report two such properties. ::: First, we find that there is no distinction between individual high level units and random linear combinations of high level units, according to various methods of unit analysis. It suggests that it is the space, rather than the individual units, that contains of the semantic information in the high layers of neural networks. ::: Second, we find that deep neural networks learn input-output mappings that are fairly discontinuous to a significant extend. We can cause the network to misclassify an image by applying a certain imperceptible perturbation, which is found by maximizing the network's prediction error. In addition, the specific nature of these perturbations is not a random artifact of learning: the same perturbation can cause a different network, that was trained on a different subset of the dataset, to misclassify the same input."
+    }
+  },
+  "generator": "fallback"
+}

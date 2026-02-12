@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The inference pipeline is shared with the training pipeline in PyTorch, and is still highly unoptimized.",
+    "For inference on the NVIDIA A30 GPU, it takes 659 ms per 1000 frames.Our backbone model used during development contains only 164 thousand parameters, and by itself was able to perform quite well on the test metrics (same position on the private leaderboard).",
+    "For submission however, we chose to use a larger backbone combined with a heavily parameterized detection head, yielding a total of 1.1 million parameters, which is the largest model we have tested.",
+    "In our report, we will provide a detailed ablation study testing the model variants.We measured activation sparsity in the network (over the validation set), and found it to average around 50%, about what one would expect given ReLU activation functions.",
+    "Reasoning that much of this activity may not be informative, given the very high spatial sparsity of input to the network, we applied L 1 regularization to activation layers."
+  ],
+  "correct_citations": []
+}

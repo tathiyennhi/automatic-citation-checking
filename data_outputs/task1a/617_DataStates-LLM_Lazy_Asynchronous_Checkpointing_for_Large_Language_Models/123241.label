@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "It consists of 79K records, [44], and use the default LLaMA2 [41] tokenizer for pre-processing the dataset into tokens.",
+    "Similar to BLOOM training, the default sequence length is set to 2048, and the micro-batch size is 16 to avoid out-of-memory (OOM) errors in any configuration.Memory and Storage Tiers: Each of the compared approaches is allowed to use up to a maximum of 64 GB of host memory, the rest of which is reserved for caching the training data.",
+    "Since the average checkpoint size per GPU is 10-15 GB (shown in Figure 3) and there are four GPUs per node, this is enough to hold a full checkpoint across all compute nodes.",
+    "From the host memory, the checkpoint shards are flushed directly to Lustre, which acts as the shared persistent storage.Key Performance Metrics: Throughout our evaluations, we measure the following metrics for comparing the aforementioned approaches: (1) checkpointing throughput of different model sizes to evaluates the blocking checkpointing overhead on the application for a broad range of increasing complex LLMs; (2) impact on iteration duration during checkpointing to evaluate the slowdown and interference caused by checkpointing on training iterations; and (3) end-to-end training runtime to study the broader impact on overall job completion times.",
+    "We evaluate the above metrics under different settings: (a) varying degrees of data parallelism since Deep-Speed runtime partitions the checkpoints across data-parallel ranks for faster checkpointing, this setting studies the impact of strong scaling (more flushing bandwidth available to capture the checkpoint of the same size), and (b) varying checkpointing frequency to study how the training performs for different degrees of I/O pressure arising from frequent or sparse checkpointing scenarios."
+  ],
+  "correct_citations": [
+    "It consists of 79K records, [44], and use the default LLaMA2 [41] tokenizer for pre-processing the dataset into tokens."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "First, each hospital h evaluates the importance I of the feature i on its training data:I (M L P) j,h = 1 N h • N h i=1 |φ (i,h) j | ∀ j ∈ {1,..., M}.",
+    "(9)where φ (i,h) j is the Shapely value for a feature j and a training instance i at hospital h, and N h is the size of the training set at hospital h. Then, each client can transmit locally computed features importance to the server, and the overall features importance for the federated model can be computed by the server as follows:I (M L P) j = H h=1 N h N • I (M L P) j,h ∀ j ∈ {1,..., M}.",
+    "(10)where H is the number of hospitals and N = H h=1 N h. Figure 8 shows the global feature importance scores for the MLP-NN, as per (10): in the IID setting, the most relevant feature is age, while test_time seems to be less relevant than vocal features, namely DFA and HNR, which in turn are of similar relevance.",
+    "MLP-NN: Local InsightsFigure 9 reports the SHAP values for two instances of the test set; they correspond to two cases where both models (MLP-NN and TSK-FRBS) obtain high and low errors, respectively.",
+    "The absolute error (AE) made by the MLP-NN is around 0.55 for instance #2496 and around 0 for instance #2323.The Shapley values reveal, a-posteriori, the relevance of the corresponding features in the prediction performed by the model: as expected, they are different when considering different instances."
+  ]
+}

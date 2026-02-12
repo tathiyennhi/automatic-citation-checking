@@ -1,0 +1,12 @@
+{
+  "text": "We define the 2D filtering Gaussian G f in a manner similar to [CITATION_1] . The filtering Gaussian is defined by its variance matrix in screen space, \u03a3 f,scr , which typically is \u03c3 2 f,scr I with \u03c3 f,scr = 1/2, and it is propagated to tangent space, in which G f should integrate to one, using the local affine approximation of the mapping from screen space to tangent space Mscr\u2192tan. The filtering Gaussian in tangent space is thus G f,tan (xtan; 0, \u03a3 f,tan ) with \u03a3 f,tan = Mscr\u2192tan\u03a3 f,scr M T scr\u2192tan . We obtain Mscr\u2192tan on the GPU using the local affine approximation of the mapping of screen space to texture space, Mscr\u2192tex, which is the matrix determined by the vectors \u2202xtex/\u2202xscr,x and \u2202xtex/\u2202xscr,y. These are easily obtained using built-in derivative functions (e.g., dFdx() and dFdy() in GLSL). Note that this definition also supports anisotropic screen-space filtering Gaussians (e.g., for motion blur).",
+  "correct_citation": {
+    "[CITATION_1]": "118620997"
+  },
+  "bib_entries": {
+    "118620997": {
+      "title": "Fundamentals of Texture Mapping and Image Warping",
+      "abstract": "The applications of texture mapping in computer graphics and image distortion (warping) in image processing share a core of fundamental techniques. We explore two of these techniques, the two-dimensional geometric mappings that arise in the parameterization and projection of textures onto surfaces, and the filters necessary to eliminate aliasing when an image is resampled during texture mapping or warping. With respect to mappings, this work presents a tutorial on three common classes of mapping: the affine, bilinear, and projective. For resampling, this work develops a new theory describing the ideal, space variant intialiazing filter for signals warped and resampled according to an arbitrary mapping. Efficient implementations of the mapping and filtering techniques are discussed and demonstrated."
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "text": "This also gives a theoretical explanation why some previous works [CITATION_1] [CITATION_2] found it \"beneficial\" to optimize the logarithm of a ranking metric, rather than the metric itself. In our case, the log arises from the most natural weight decay 1/K.",
+  "correct_citation": {
+    "[CITATION_1]": "119286900",
+    "[CITATION_2]": "347907"
+  },
+  "bib_entries": {
+    "119286900": {
+      "title": "Towards accurate one-stage object detection with ap-loss",
+      "abstract": "One-stage object detectors are trained by optimizing classification-loss and localization-loss simultaneously, with the former suffering much from extreme foreground-background class imbalance issue due to the large number of anchors. This paper alleviates this issue by proposing a novel framework to replace the classification task in one-stage detectors with a ranking task, and adopting the Average-Precision loss (AP-loss) for the ranking problem. Due to its non-differentiability and non-convexity, the AP-loss cannot be optimized directly. For this purpose, we develop a novel optimization algorithm, which seamlessly combines the error-driven update scheme in perceptron learning and backpropagation algorithm in deep networks. We verify good convergence property of the proposed algorithm theoretically and empirically. Experimental results demonstrate notable performance improvement in state-of-the-art one-stage detectors based on AP-loss over different kinds of classification-losses on various benchmarks, without changing the network architectures."
+    },
+    "347907": {
+      "title": "End-to-end training of object class detectors for mean average precision",
+      "abstract": "We present a method for training CNN-based object class detectors directly using mean average precision (mAP) as the training loss, in a truly end-to-end fashion that includes non-maximum suppresion (NMS) at training time. This contrasts with the traditional approach of training a CNN for a window classification loss, then applying NMS only at test time, when mAP is used as the evaluation metric in place of classification accuracy. However, mAP following NMS forms a piecewise-constant structured loss over thousands of windows, with gradients that do not convey useful information for gradient descent. Hence, we define new, general gradient-like quantities for piecewise constant functions, which have wide applicability. We describe how to calculate these efficiently for mAP following NMS, enabling to train a detector based on Fast R-CNN [1] directly for mAP. This model achieves equivalent performance to the standard Fast R-CNN on the PASCAL VOC 2007 and 2012 datasets, while being conceptually more appealing as the very same model and loss are used at both training and test time."
+    }
+  }
+}

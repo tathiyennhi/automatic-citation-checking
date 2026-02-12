@@ -1,0 +1,47 @@
+{
+  "doc_id": "38253",
+  "text": "To improve scheduling performance, many previous studies have targeted improving the accuracy of job execution time estimate [CITATION_1] [CITATION_2] [CITATION_3] , with only limited success. In fact, there are several factors leading to inaccurate estimates, mostly overestimates. Firstly, users may not have enough knowledge on the expected execution time of their jobs (especially with short testing jobs and jobs with new input/parameters/algorithms), and choose to err on the safe side. Secondly, in many cases the large estimated-to-actual execution time ratio is caused by unexpected (early) crash of the job. Thirdly, users tend to use a round value (such as 30 min or 1 hour) as the estimated wall time, causing large \"rounding error\" for short jobs. All the above factors help making job wall time overestimation a perpetual phenomenon in batch systems. Actually, a study by Cynthia et al. revealed that such behavior is quite stubborn, with little estimate accuracy improvement even when the threat of over-time jobs being killed is removed [CITATION_4] .",
+  "correct_citation": {
+    "[CITATION_1]": "11281384",
+    "[CITATION_2]": "2848026",
+    "[CITATION_3]": "10285894",
+    "[CITATION_4]": "1828768"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To improve scheduling performance, many previous studies have targeted improving the accuracy of job execution time estimate    , with only limited success."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "To improve scheduling performance, many previous studies have targeted improving the accuracy of job execution time estimate    , with only limited success."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "To improve scheduling performance, many previous studies have targeted improving the accuracy of job execution time estimate    , with only limited success."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Actually, a study by Cynthia et al. revealed that such behavior is quite stubborn, with little estimate accuracy improvement even when the threat of over-time jobs being killed is removed  ."
+    }
+  ],
+  "bib_entries": {
+    "10285894": {
+      "title": "Analyzing and adjusting user runtime estimates to improve job scheduling on the Blue Gene/P",
+      "abstract": "Backfilling and short-job-first are widely acknowledged enhancements to the simple but popular first-come, first-served job scheduling policy. However, both enhancements depend on user-provided estimates of job runtime, which research has repeatedly shown to be inaccurate. We have investigated the effects of this inaccuracy on backfilling and different queue prioritization policies, determining which part of the scheduling policy is most sensitive. Using these results, we have designed and implemented several estimation-adjusting schemes based on historical data. We have evaluated these schemes using workload traces from the Blue Gene/P system at Argonne National Laboratory. Our experimental results demonstrate that dynamically adjusting job runtime estimates can improve job scheduling performance by up to 20%."
+    },
+    "2848026": {
+      "title": "PHANTOM: predicting performance of parallel applications on large-scale parallel machines using a single node",
+      "abstract": "For designers of large-scale parallel computers, it is greatly desired that performance of parallel applications can be predicted at the design phase. However, this is difficult because the execution time of parallel applications is determined by several factors, including sequential computation time in each process, communication time and their convolution. Despite previous efforts, it remains an open problem to estimate sequential computation time in each process accurately and efficiently for large-scale parallel applications on non-existing target machines. This paper proposes a novel approach to predict the sequential computation time accurately and efficiently. We assume that there is at least one node of the target platform but the whole target system need not be available. We make two main technical contributions. First, we employ deterministic replay techniques to execute any process of a parallel application on a single node at real speed. As a result, we can simply measure the real sequential computation time on a target node for each process one by one. Second, we observe that computation behavior of processes in parallel applications can be clustered into a few groups while processes in each group have similar computation behavior. This observation helps us reduce measurement time significantly because we only need to execute representative parallel processes instead of all of them. We have implemented a performance prediction framework, called PHANTOM, which integrates the above computation-time acquisition approach with a trace-driven network simulator. We validate our approach on several platforms. For ASCI Sweep3D, the error of our approach is less than 5% on 1024 processor cores. Compared to a recent regression-based prediction approach, PHANTOM presents better prediction accuracy across different platforms."
+    },
+    "1828768": {
+      "title": "Are user runtime estimates inherently inaccurate",
+      "abstract": "Computer system batch schedulers typically require information from the user upon job submission, including a runtime estimate. Inaccuracy of these runtime estimates, relative to the actual runtime of the job, has been well documented and is a perennial problem mentioned in the job scheduling literature. Typically users provide these estimates under circumstances where their job will be killed after the provided amount of time elapses. Also, users may be unaware of the potential benefits of providing accurate estimates, such as increased likelihood of backfilling. This study examines user behavior when the threat of job killing is removed, and when a tangible reward for accuracy is provided. We show that under these conditions, about half of users provide an improved estimate, but there is not a substantial improvement in the overall average accuracy."
+    },
+    "11281384": {
+      "title": "The impact of more accurate requested runtimes on production job scheduling performance",
+      "abstract": "The question of whether more accurate requested runtimes can significantly improve production parallel system performance has previously been studied for the FCFS-backfill scheduler, using a limited set of system performance measures. This paper examines the question for higher performance backfill policies, heavier system loads as are observed in current leading edge production systems such as the large Origin 2000 system at NCSA, and a broader range of system performance measures. The new results show that more accurate requested runtimes can improve system performance much more significantly than suggested in previous results. For example, average slowdown decreases by a factor of two to six, depending on system load and the fraction of jobs that have the more accurate requests. The new results also show that (a) nearly all of the performance improvement is realized even if the more accurate runtime requests are a factor of two higher than the actual runtimes, (b) most of the performance improvement is achieved when test runs are used to obtain more accurate runtime requests, and (c) in systems where only a fraction (e.g., 60%) of the jobs provide approximately accurate runtime requests, the users that provide the approximately accurate requests achieve even greater improvements in performance, such as an order of magnitude improvement in average slowdown for jobs that have runtime up to fifty hours."
+    }
+  },
+  "generator": "fallback_v4"
+}

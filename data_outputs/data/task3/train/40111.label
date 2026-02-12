@@ -1,0 +1,48 @@
+{
+  "doc_id": "40111",
+  "text": "As in [CITATION_1] [CITATION_2] [CITATION_3] , given all hypotheses h i,j m,m for a 2D segment l i m , we want to estimate its most probable 3D position, since each 2D segment can only be a projection of one specific 3D structure. We then use this 3D information for the following clustering procedure, as first shown in [CITATION_4] [CITATION_5] . For each 2D segment l ",
+  "correct_citation": {
+    "[CITATION_1]": "7751028",
+    "[CITATION_2]": "6419763",
+    "[CITATION_3]": "15201196",
+    "[CITATION_4]": "7751028",
+    "[CITATION_5]": "6419763"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As in    , given all hypotheses h i,j m,m for a 2D segment l i m , we want to estimate its most probable 3D position, since each 2D segment can only be a projection of one specific 3D structure."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "As in    , given all hypotheses h i,j m,m for a 2D segment l i m , we want to estimate its most probable 3D position, since each 2D segment can only be a projection of one specific 3D structure."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "As in    , given all hypotheses h i,j m,m for a 2D segment l i m , we want to estimate its most probable 3D position, since each 2D segment can only be a projection of one specific 3D structure."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "We then use this 3D information for the following clustering procedure, as first shown in   ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "We then use this 3D information for the following clustering procedure, as first shown in   ."
+    }
+  ],
+  "bib_entries": {
+    "7751028": {
+      "title": "Semi-Global 3D Line Modeling For Incremental Structure-from-Motion",
+      "abstract": "Recovering 3D information from a single moving camera is a widely studied field in the area of computer vision (e.g. [1]). Most of these Structurefrom-Motion (SfM) approaches are based on so-called interest points (e.g. corners) in images, which can be accurately matched using powerful descriptors like SIFT [7]. Hence the output is usually a sparse 3D point cloud along with the camera poses for all successfully integrated images. While previous methods were only able to perform pose estimation and 3D reconstruction in an offline way, there are now more and more incremental SfM approaches available (e.g. [4]). Since conventional SfM approaches are based on interest points, the distribution of the obtained 3D points is usually not uniform throughout the whole reconstruction. This is due to the fact that such interest points are usually located on highly textured areas, but not on homogeneous regions or along edges. Since the result of SfM pipelines is often used as basis to generate a more dense result or for localization and navigation tasks, it would be beneficial to generate additional complementary 3D information in an efficient way. From a SfM point of view, using line segments is especially interesting for urban and indoor environments, where linear structures frequently occur. While interest points are located mostly on richly textured image locations, line segments usually mark the boundaries of objects. Hence, incorporating such features in an online SfM pipeline to create 3D line segments naturally leads to a more complete 3D representation of the underlying scene, which is beneficial for all kinds of subsequent applications. We propose a novel approach which generates 3D line models in a semi-global way directly on-the-fly, based solely on the output of a conventional incremental SfM pipeline. The goal of our method is to generate additional complementary 3D information to improve the sparse 3D representation of the scene. In this approach, we consider the SfM pipeline as a black box and do not interfere with the pose estimation procedure. We show that 3D line reconstructions can be obtained very efficiently by using purely geometric constraints, or by additionally incorporating appearance and collinearity information. Our approach enables accurate 3D reconstruction of texture-less as well as textured man-made objects, including complex structures such as wiry objects. Figure 1 shows a reconstruction result obtained by an incremental SfM system [4], followed by a surface generation method [5], with and without the usage of additional 3D line segments obtained by our proposed method. As we can see, additional 3D information significantly improves the completeness and overall appearance of the resulting reconstructions. For more technical details, we kindly refer to the full paper."
+    },
+    "6419763": {
+      "title": "Improving Sparse 3D Models for Man-Made Environments Using Line-Based 3D Reconstruction",
+      "abstract": "Traditional Structure-from-Motion (SfM) approaches work well for richly textured scenes with a high number of distinctive feature points. Since man-made environments often contain texture less objects, the resulting point cloud suffers from a low density in corresponding scene parts. The missing 3D information heavily affects all kinds of subsequent post-processing tasks (e.g. Meshing), and significantly decreases the visual appearance of the resulting 3D model. We propose a novel 3D reconstruction approach, which uses the output of conventional SfM pipelines to generate additional complementary 3D information, by exploiting line segments. We use appearance-less epipolar guided line matching to create a potentially large set of 3D line hypotheses, which are then verified using a global graph clustering procedure. We show that our proposed method outperforms the current state-of-the-art in terms of runtime and accuracy, as well as visual appearance of the resulting reconstructions."
+    },
+    "15201196": {
+      "title": "Incremental Line-based 3D Reconstruction using Geometric Constraints",
+      "abstract": "Generating accurate 3D models for man-made environments can be a challenging task due to the presence of texture-less objects or wiry structures. Since traditional point-based 3D reconstruction approaches may fail to integrate these structures into the resulting point cloud, a different feature representation is necessary. We present a novel approach which uses point features for camera estimation and additional line segments for 3D reconstruction. To avoid appearance-based line matching, we use purely geometric constraints for hypothesis generation and verification. Therefore, the proposed method is able to reconstruct both wiry structures as well as solid objects. The algorithm is designed to generate incremental results using online Structure-from-Motion and linebased 3D modelling in parallel. We show that the proposed method outperforms previous descriptor-less line matching approaches in terms of run-time while delivering accurate"
+    }
+  },
+  "generator": "fallback_v4"
+}

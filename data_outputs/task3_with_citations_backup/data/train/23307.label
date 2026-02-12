@@ -1,0 +1,22 @@
+{
+  "doc_id": "23307",
+  "text": "The batch versions were slightly modified to avoid numerical instabilities. In the case of only output noise, the covariance matrix X T X is singular; it has rank q. Thus, each of the methods PCR, PCAJ, PPCA, PLS, and RRR will be numerically unstable for k > q. For RRR, this problem even holds for k = 1. To avoid that these numerical instabilities contaminate the results, the methods were slightly modified. In PCR, PPCA, and RRR, a small value (10 −6 ) was added to each diagonal element of the covariance matrix. Thus, here, RRR performs like ridge regression [CITATION_1] , which is ordinary least squares with this addition to the covariance matrix. We chose this addition to be small enough not to alter the results for k ≤ q; and for k > q, it adds a small variance to the excess components u such that they are defined but negligible for the output y. In FA, 10 −6 was added to the diagonal of the estimated noise variance to avoid divisions by too tiny values. For PLS, if k > q, s T i s can get close to zero, and the algorithm gets unstable. This instability could be cured by setting β i = 0 for s T i s i < 10 −16 , since the corresponding direction does not contribute to the y value. In PCAJ, for k > q, the first excess component points into the direction of the output; thus, the method fails since the principal subspace is orthogonal to the input space (this is a weakness of the method and not a numerical issue).",
+  "correct_citation": {
+    "[CITATION_1]": "121589596"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Thus, here, RRR performs like ridge regression [CITATION_1] , which is ordinary least squares with this addition to the covariance matrix.",
+      "s_span": 518,
+      "e_span": 656
+    }
+  ],
+  "bib_entries": {
+    "121589596": {
+      "title": "Ridge regression: biased estimation for nonorthogonal problems",
+      "abstract": "In multiple regression it is shown that parameter estimates based on minimum residual sum of squares have a high probability of being unsatisfactory, if not incorrect, if the prediction vectors are not orthogonal. Proposed is an estimation procedure based on adding small positive quantities to the diagonal of X′X. Introduced is the ridge trace, a method for showing in two dimensions the effects of nonorthogonality. It is then shown how to augment X′X to obtain biased estimates with smaller mean square error."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,55 @@
+{
+  "doc_id": "24932",
+  "text": "It is easy to find that the exact solution has the form [CITATION_1] and the initial magnetic field B = (B r , B ϕ , B z ) satisfies the divergence-free condition (2.9). We use the proposed spectral-DG method to simulate this problem, in which the partition in the ϕ-direction is fixed as L = 4. In Table 4 .1, errors with different norms are presented at T = 0.1 and third order optimal accuracy is attained. [CITATION_2] [CITATION_3] . We take the initial conditions [CITATION_4] ρ = 25 36π , u = (− sin(2πz), sin(2πr), 0),",
+  "correct_citation": {
+    "[CITATION_1]": "118976072",
+    "[CITATION_2]": "205892593",
+    "[CITATION_3]": "26150839",
+    "[CITATION_4]": "120041272"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "It is easy to find that the exact solution has the form  and the initial magnetic field B = (B r , B ϕ , B z ) satisfies the divergence-free condition (2.9).",
+      "s_span": 0,
+      "e_span": 169
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In Table 4 .1, errors with different norms are presented at T = 0.1 and third order optimal accuracy is attained.   .",
+      "s_span": 296,
+      "e_span": 437
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": ".",
+      "s_span": 410,
+      "e_span": 437
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "We take the initial conditions  ρ = 25 36π , u = (− sin(2πz), sin(2πr), 0),",
+      "s_span": 438,
+      "e_span": 525
+    }
+  ],
+  "bib_entries": {
+    "205892593": {
+      "title": "Finite difference weighted essentially non-oscillatory schemes with constrained transport for ideal magnetohydrodynamics",
+      "abstract": "In this work we develop a class of high-order finite difference weighted essentially non-oscillatory (FD-WENO) schemes for solving the ideal magnetohydrodynamic (MHD) equations in 2D and 3D. The philosophy of this work is to use efficient high-order WENO spatial discretizations with high-order strong stability-preserving Runge-Kutta (SSP-RK) time-stepping schemes. Numerical results have shown that with such methods we are able to resolve solution structures that are only visible at much higher grid resolutions with lower-order schemes. The key challenge in applying such methods to ideal MHD is to control divergence errors in the magnetic field. We achieve this by augmenting the base scheme with a novel high-order constrained transport approach that updates the magnetic vector potential. The predicted magnetic field from the base scheme is replaced by a divergence-free magnetic field that is obtained from the curl of this magnetic potential. The non-conservative weakly hyperbolic system that the magnetic vector potential satisfies is solved using a version of FD-WENO developed for Hamilton-Jacobi equations. The resulting numerical method is endowed with several important properties: (1) all quantities, including all components of the magnetic field and magnetic potential, are treated as point values on the same mesh (i.e., there is no mesh staggering); (2) both the spatial and temporal orders of accuracy are fourth-order; (3) no spatial integration or multidimensional reconstructions are needed in any step; and (4) special limiters in the magnetic vector potential update are used to control unphysical oscillations in the magnetic field. Several 2D and 3D numerical examples are presented to verify the order of accuracy on smooth test problems and to show high-resolution on test problems that involve shocks."
+    },
+    "120041272": {
+      "title": "Providing the divergence-free property of the magnetic field when solving the MHD equations by the RKDG method",
+      "abstract": "A review of methods providing the divergence-free property of the magnetic field when solving the two-dimensional problems of magnetic hydrodynamics on triangular grids by the secondorder discontinuous Galerkin method is presented. Procedures for redistributing the numerical flows corresponding to the magnetic field in the full two-dimensional formulation in the Cartesian coordinates and in the two-dimensional axisymmetric case in the cylindrical coordinates, making it possible to suppress the growth of the numerical divergence of the magnetic field, are described. Test problems of the Orszag–Tang vortex and spherical explosion are considered."
+    },
+    "26150839": {
+      "title": "New central and central discontinuous Galerkin schemes on overlapping cells of unstructured grids for solving ideal magnetohydrodynamic equations with globally divergence-free magnetic field",
+      "abstract": "Abstract New schemes are developed on triangular grids for solving ideal magnetohydrodynamic equations while preserving globally divergence-free magnetic field. These schemes incorporate the constrained transport (CT) scheme of Evans and Hawley [34] with central schemes and central discontinuous Galerkin methods on overlapping cells which have no need for solving Riemann problems across cell edges where there are discontinuities of the numerical solution. These schemes are formally second-order accurate with major development on the reconstruction of globally divergence-free magnetic field on polygonal dual mesh. Moreover, the computational cost is reduced by solving the complete set of governing equations on the primal grid while only solving the magnetic induction equation on the polygonal dual mesh. Various numerical experiments are provided to validate the new schemes."
+    },
+    "118976072": {
+      "title": "Second-order-accurate schemes for magnetohydrodynamics with divergence-free reconstruction",
+      "abstract": "In this paper we study the problem of divergence-free numerical MHD and show that the work done so far still has four key unresolved issues. We resolve those issues in this paper. The problem of reconstructing MHD flow variables with spatially second order accuracy is also studied. The other goal of this paper is to show that the same well-designed second order accurate schemes can be formulated for more complex geometries such as cylindrical and spherical geometry. Being able to do divergence-free reconstruction in those geometries also resolves the problem of doing AMR in those geometries. The resulting MHD scheme has been implemented in Balsara's RIEMANN framework for parallel, self-adaptive computational astrophysics. The present work also shows that divergence-free reconstruction and the divergence-free time-update can be done for numerical MHD on unstructured meshes. All the schemes designed here are shown to be second order accurate. Several stringent test problems are presented to show that the methods work, including problems involving high velocity flows in low plasma-b magnetospheric environments."
+    }
+  },
+  "generator": "fallback_v4"
+}

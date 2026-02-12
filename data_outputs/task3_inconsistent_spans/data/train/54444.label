@@ -1,0 +1,44 @@
+{
+  "doc_id": "54444",
+  "text": "Several researchers have investigated restrictions on the system description to make the parameterized verification problem decidable. Notable among them is the early work by [CITATION_1] for verifying single-indexed properties for synchronously communicating systems. For restricted systems, finite \"cut-off \" based approaches [CITATION_2] Kahlon 2000, 2003] reduce the problem to verifying networks of some fixed finite size. These bounds have been established for verifying restricted classes of ring networks and cache coherence protocols. [CITATION_3] have verified the version of German's cache coherence protocol with single entry channels by manually reducing it to a snoopy protocol, for which finite cut-off exists. However, the reduction is manually performed and exploits details of operation of the protocol, and thus requires user ingenuity. It can't be easily extended to verify other unbounded systems including the Bakery algorithm or the out-of-order processors.",
+  "correct_citation": {
+    "[CITATION_1]": "11193134",
+    "[CITATION_2]": "15276775",
+    "[CITATION_3]": "2545725"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Notable among them is the early work by  for verifying single-indexed properties for synchronously communicating systems.",
+      "s_span": 135,
+      "e_span": 268
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For restricted systems, finite \"cut-off \" based approaches  Kahlon 2000, 2003] reduce the problem to verifying networks of some fixed finite size.",
+      "s_span": 269,
+      "e_span": 427
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "These bounds have been established for verifying restricted classes of ring networks and cache coherence protocols.  have verified the version of German's cache coherence protocol with single entry channels by manually reducing it to a snoopy protocol, for which finite cut-off exists.",
+      "s_span": 428,
+      "e_span": 725
+    }
+  ],
+  "bib_entries": {
+    "11193134": {
+      "title": "Reasoning about systems with many processes",
+      "abstract": "Methods are given for automatically verifying temporal properties of concurrent systems containing an arbitrary number of finite-state processes that communicate using CCS actions. TWo models of systems are considered. Systems in the first model consist of a unique control process and an arbitrary number of user processes with identical definitions. For this model, a decision procedure to check whether all the executions of a process satisfy a given specification is presented. This algorithm runs in time double exponential in the sizes of the control and the user process definitions. It is also proven that it is decidable whether all the fair executions of a process satisfy a given specification. The second model is a special case of the first. In this model, all the processes have identical definitions. For this model, an efficient decision procedure is presented that checks if every execution of a process satisfies a given temporal logic specification. This algorithm runs in time polynomial in the size of the process definition. It is shown how to verify certain global properties such as mutual exclusion and absence of deadlocks. Finally, it is shown how these decision procedures can be used to reason about certain systems with a communication network."
+    },
+    "2545725": {
+      "title": "Exact and efficient verification of parameterized cache coherence protocols",
+      "abstract": "We propose new, tractably (in some cases provably) efficient algorithmic methods for exact (sound and complete) parameterized reasoning about cache coherence protocols. For reasoning about general snoopy cache protocols, we introduce the guarded broadcast protocols model and show how an abstract history graph construction can be used to reason about safety properties for this framework. Although the worst case size of the abstract history graph can be exponential in the size of the transition diagram of the given protocol, the actual size is small for standard cache protocols as is evidenced by our experimental results. The framework can handle all 8 of the cache protocols in [19] as well as their split-transaction versions. We next identify a framework called initialized broadcast protocols suitable for reasoning about invalidation-based snoopy cache protocols and show how to reduce reasoning about such systems with an arbitrary number of caches to a system with at most 7 caches. This yields a provably polynomial time algorithm for the parameterized verification of invalidation based snoopy protocols. Our results apply to both safety and liveness properties. Finally, we present a methodology for reducing parameterized reasoning about directory based protocols to snoopy protocols, thus leveraging techniques developed for verifying snoopy protocols to directory based ones, which are typically are much harder to reason about. We demonstrate by reducing reasoning about a directory based protocol suggested by German [17] to the ESI snoopy protocol, a modification of the MSI snoopy protocol."
+    },
+    "15276775": {
+      "title": "Reasoning about rings",
+      "abstract": "The ring is a useful means of structuring concurrent processes. Processes communicate by passing a token in a fixed direction; the process that possesses the token is allowed to make certain moves. Usually, correctness properties are expected to hold irrespective of the size of the ring. We show that the problem of checking many useful correctness properties for rings of all sizes can be reduced to checking them on a ring of small size. The results do not depend on the processes being finite state. We illustrate our results on examples."
+    }
+  },
+  "generator": "fallback_v4"
+}

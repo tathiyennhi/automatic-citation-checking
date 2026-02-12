@@ -1,0 +1,52 @@
+{
+  "doc_id": "56519",
+  "text": "For each gene, mRNA expression was estimated by mRNA-seq reads, which were counted using HTSeq-count 54 in intersection-strict mode. For quantification of RPF, multiple filters were implemented on raw reads to reduce the technical noise of ribosome profiling, and extract the reads originating from ribosomebinding and translating sequences in coding regions. First, RPF reads with length between 26 and 34 nt were deemed high quality and most likely to be from ribosome occupation in mammalian cells [CITATION_1] [CITATION_2] . It has been shown that reads around this range exhibit obvious 3-bp periodicity, suggesting high enrichment of ribosome-binding sequences 7, [CITATION_3] . Second, to reduce noise due to multiple alignments, only the reads uniquely mapped to the coding regions were counted for RPF. Third, due to the potential accumulation of ribosomes around the starts and ends of coding regions [CITATION_4] [CITATION_5] , reads aligned to the first 15 and last 5 codons were excluded for the counting of RPF. RPF reads passing all the filters above were counted using a custom script written in Python (Supplementary Data 1) .",
+  "correct_citation": {
+    "[CITATION_1]": "7595287",
+    "[CITATION_2]": "23449218",
+    "[CITATION_3]": "18382710",
+    "[CITATION_4]": "8328474",
+    "[CITATION_5]": "23449218"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "First, RPF reads with length between 26 and 34 nt were deemed high quality and most likely to be from ribosome occupation in mammalian cells   ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "First, RPF reads with length between 26 and 34 nt were deemed high quality and most likely to be from ribosome occupation in mammalian cells   ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "It has been shown that reads around this range exhibit obvious 3-bp periodicity, suggesting high enrichment of ribosome-binding sequences 7,  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Second, to reduce noise due to multiple alignments, only the reads uniquely mapped to the coding regions were counted for RPF. Third, due to the potential accumulation of ribosomes around the starts and ends of coding regions   , reads aligned to the first 15 and last 5 codons were excluded for the counting of RPF. RPF reads passing all the filters above were counted using a custom script written in Python (Supplementary Data 1) ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Second, to reduce noise due to multiple alignments, only the reads uniquely mapped to the coding regions were counted for RPF. Third, due to the potential accumulation of ribosomes around the starts and ends of coding regions   , reads aligned to the first 15 and last 5 codons were excluded for the counting of RPF. RPF reads passing all the filters above were counted using a custom script written in Python (Supplementary Data 1) ."
+    }
+  ],
+  "bib_entries": {
+    "23449218": {
+      "title": "Ribosome profiling reveals pervasive translation outside of annotated protein-coding genes",
+      "abstract": "Ribosome profiling suggests that ribosomes occupy many regions of the transcriptome thought to be noncoding, including 5' UTRs and long noncoding RNAs (lncRNAs). Apparent ribosome footprints outside of protein-coding regions raise the possibility of artifacts unrelated to translation, particularly when they occupy multiple, overlapping open reading frames (ORFs). Here, we show hallmarks of translation in these footprints: copurification with the large ribosomal subunit, response to drugs targeting elongation, trinucleotide periodicity, and initiation at early AUGs. We develop a metric for distinguishing between 80S footprints and nonribosomal sources using footprint size distributions, which validates the vast majority of footprints outside of coding regions. We present evidence for polypeptide production beyond annotated genes, including the induction of immune responses following human cytomegalovirus (HCMV) infection. Translation is pervasive on cytosolic transcripts outside of conserved reading frames, and direct detection of this expanded universe of translated products enables efforts at understanding how cells manage and exploit its consequences."
+    },
+    "8328474": {
+      "title": "Ribosome profiling of mouse embryonic stem cells reveals the complexity and dynamics of mammalian proteomes",
+      "abstract": "The ability to sequence genomes has far outstripped approaches for deciphering the information they encode. Here we present a suite of techniques, based on ribosome profiling (the deep sequencing of ribosome-protected mRNA fragments), to provide genome-wide maps of protein synthesis as well as a pulse-chase strategy for determining rates of translation elongation. We exploit the propensity of harringtonine to cause ribosomes to accumulate at sites of translation initiation together with a machine learning algorithm to define protein products systematically. Analysis of translation in mouse embryonic stem cells reveals thousands of strong pause sites and unannotated translation products. These include amino-terminal extensions and truncations and upstream open reading frames with regulatory potential, initiated at both AUG and non-AUG codons, whose translation changes after differentiation. We also define a class of short, polycistronic ribosome-associated coding RNAs (sprcRNAs) that encode small proteins. Our studies reveal an unanticipated complexity to mammalian proteomes."
+    },
+    "18382710": {
+      "title": "Ribosome profiling reveals resemblance between long non-coding RNAs and 5 0 leaders of coding RNAs",
+      "abstract": "Large-scale genomics and computational approaches have identified thousands of putative long non-coding RNAs (lncRNAs). It has been controversial, however, as to what fraction of these RNAs is truly non-coding. Here, we combine ribosome profiling with a machine-learning approach to validate lncRNAs during zebrafish development in a high throughput manner. We find that dozens of proposed lncRNAs are protein-coding contaminants and that many lncRNAs have ribosome profiles that resemble the 5' leaders of coding RNAs. Analysis of ribosome profiling data from embryonic stem cells reveals similar properties for mammalian lncRNAs. These results clarify the annotation of developmental lncRNAs and suggest a potential role for translation in lncRNA regulation. In addition, our computational pipeline and ribosome profiling data provide a powerful resource for the identification of translated open reading frames during zebrafish development."
+    },
+    "7595287": {
+      "title": "PROTEOFORMER: deep proteome coverage through ribosome profiling and MS integration",
+      "abstract": "An increasing amount of studies integrate mRNA sequencing data into MS-based proteomics to complement the translation product search space. However, several factors, including extensive regulation of mRNA translation and the need for threeor six-frame-translation, impede the use of mRNAseq data for the construction of a protein sequence search database. With that in mind, we developed the PROTEOFORMER tool that automatically processes data of the recently developed ribosome profiling method (sequencing of ribosome-protected mRNA fragments),resultingingenome-widevisualizationof ribosome occupancy. Our tool also includes a translation initiation site calling algorithm allowing the delineation of the open reading frames (ORFs) of all translation products. A complete protein synthesisbased sequence database can thus be compiled for mass spectrometry-based identification. This approach increases the overall protein identification rates with 3% and 11% (improved and new identifications) for human and mouse, respectively, and enables proteome-wide detection of 5-extended proteoforms, upstream ORF translation and near-cognate translation start sites. The PROTEOFORMER tool is available as a stand-alone pipeline and has been implemented in the galaxy framework for ease of use."
+    }
+  },
+  "generator": "fallback_v4"
+}

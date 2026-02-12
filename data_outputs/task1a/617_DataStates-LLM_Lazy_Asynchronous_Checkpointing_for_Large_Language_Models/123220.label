@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "However, given the large device memory required for LLM training, the GPU does not have enough spare capacity to even hold a few tensors that need to be checkpointed; thereby compelling runtimes to use host memory as the fastest memory tier to cache/buffer checkpoints from.",
+    "Furthermore, unlike conventional DNNs where the size of the input dataset is typically larger than the model states (and therefore checkpoints), in the case of LLMs, the model is usually larger than the micro-batches consisting of a few thousand integer-based tokens.",
+    "Therefore, as highlighted in Gemini [43], the available pool of host memory is generally large enough to accommodate both the next subset of prefetched input micro-batches and LLM checkpoints.",
+    "ANALYSIS OF LLM CHECKPOINTING BEHAVIOR 4.1 LLM Checkpoint Sizes and Load BalancingUnlike the case of lightweight optimizers such as stochastic-gradient descent (SGD) [35], which are widely used in conventional DNN models, LLMs adopt advanced adaptive learning rate optimizers such as Adam (Adaptive momentum estimation) [15].",
+    "Such optimizers need to store additional state information (momentum, variance, gradients), which leads to an explosion of the optimizer state size."
+  ],
+  "correct_citations": [
+    "Therefore, as highlighted in Gemini [43], the available pool of host memory is generally large enough to accommodate both the next subset of prefetched input micro-batches and LLM checkpoints.",
+    "ANALYSIS OF LLM CHECKPOINTING BEHAVIOR 4.1 LLM Checkpoint Sizes and Load BalancingUnlike the case of lightweight optimizers such as stochastic-gradient descent (SGD) [35], which are widely used in conventional DNN models, LLMs adopt advanced adaptive learning rate optimizers such as Adam (Adaptive momentum estimation) [15]."
+  ]
+}

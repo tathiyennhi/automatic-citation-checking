@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "See Figure 12.To train the LDR to HDR skydome reconstruction, we computer the ground truth peak direction f gt dir and peak intensity f gt int from the HDR ground-truth.",
+    "During the network training process, we employ four losses for supervision.",
+    "These losses are as follows: peak direction loss L dir, which measures the L1 angular error of the peak direction vectors; peak intensity loss L int, which quantifies the log-encoded L2 error of the peak intensity vectors; HDR reconstruction loss L hdr-recon, which evaluates the log-encoded L2 error between the reconstructed HDR output and the ground truth HDR data; LDR reconstruction loss L ldr-recon, which is calculated as the L1 error between the input LDR sky panorama and the gamma-corrected HDR reconstruction.The total loss is L total = λ 1 L dir + λ 2 L int + λ 3 L hdr-recon + λ 4 L ldr-recon, where λ 1 = 1, λ 2 = 0.1, λ 3 = 2 and λ 4 = 0.2.",
+    "Data augmentation methods, including rotation, flipping, exposure adjustment and white balance adjustment, are implemented to enrich the training data.",
+    "Noticing a strong white balance inaccuracy (the color temperature is too high) in the image data from Waymo Open Dataset [61], we augment the HDRI with corresponding white balance adjustment."
+  ],
+  "correct_citations": [
+    "Noticing a strong white balance inaccuracy (the color temperature is too high) in the image data from Waymo Open Dataset [61], we augment the HDRI with corresponding white balance adjustment."
+  ]
+}

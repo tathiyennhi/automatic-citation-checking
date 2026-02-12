@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "To comprehend the root causes of heavy computation, we break down the GC process into three fundamental stages, including efficient graph encoding, efficient optimization, and efficient graph generation, and examine acceleration methods for each component.1) Efficient Graph Encoding: In GC, the graph encoding procedure is executed by the relay model, and it requires intensive computation primarily due to the neighbor explosion problem in the large original graph.",
+    "Generally, relay models used in GC methods adopt either the message-passing framework or the graph neural tangent kernel framework.",
+    "All these frameworks stack multiple propagation and transformation operations to aggregate and update information according to the graph structure.",
+    "However, as multiple propagation processes are executed, the number of aggregated neighboring nodes increases exponentially, leading to significant computational demands.To mitigate the expensive computation resulting from propagation, some GC methods borrow the idea from SGC [17] and remove the non-linear transformation layers between aggregation layers in the relay model.",
+    "For example, GCond [26] and PUMA [67] utilize SGC to encode the original graph."
+  ],
+  "correct_citations": [
+    "However, as multiple propagation processes are executed, the number of aggregated neighboring nodes increases exponentially, leading to significant computational demands.To mitigate the expensive computation resulting from propagation, some GC methods borrow the idea from SGC [17] and remove the non-linear transformation layers between aggregation layers in the relay model.",
+    "For example, GCond [26] and PUMA [67] utilize SGC to encode the original graph."
+  ]
+}

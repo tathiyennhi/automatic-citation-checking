@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We train our models with GRPO (Shao et al., 2024a), building on the Open-Instruct implementation (Lambert et al., 2025).",
+    "We use the basic GRPO loss, albeit using token-level loss aggregation like DAPO (Yu et al., 2025).",
+    "We apply two further optimizations: we use sample packing to pack multiple rollouts into single training passes with minimal padding, and use 1-step asynchronous training (Noukhovitch et al., 2024), which means we perform generation and training steps at the same time (training on rollouts from a policy one step behind our current policy), reducing training time.",
+    "We additionally mask out tool output tokens from the loss, following prior work (Jin et al., 2025).",
+    "We find using a small KL penalty (0.001) useful for stabilizing training."
+  ]
+}

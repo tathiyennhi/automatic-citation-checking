@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "17:for each step in a number of iterations do 18:Sample (x, y) from D M 19:x M ← Connector(x) {Modality Projection} 20:Prediction ← LLM (x M, E(h(i M))) {Get LLM's prediction} 21: Loss ← L CE (Prediction, h(y)) {Calculate cross-entropy loss} 22: θ ← θ -α∇ θ Loss {Update Linear and MLP (in LLM) parameters} 23: end for 24: end for 25: Stage 3: Tuning Uni-MoE 26: for each step in a number of iterations do 27:Sample (x, y) from D M 28:X ′ M ← Connector(x) {Modality Projection} 29: x LLM ← E(h(Context M))∥X ′ M || E(h(i M)) || E(h(x))) {Inputs Concatenation} 30: Prediction ← LLM (x LLM) {Get LLM's prediction} 31:Loss ← L CE (Prediction, h(y)) {Calculate cross-entropy loss} 32:θ ← θ -α∇ θ Loss {Update Linear and LoRA parameters} 33: end for be added according to the gating weights.",
+    "We formulate the whole calculation process as follows:P(X s l) i = e f (X s l)i M j e f (X s l)j,(16)MoE(X s l) = k i=1 P(X s l) i • e(X s l) i,(17)where f (x) = W • x is the linear router to produce expert assignment probabilities and W ∈ R d×z.",
+    "d is the last dimension of hidden states and M is the total number of experts.To speed up the training process, we freeze all parameters of LLMs including added experts, applying Low-Rank Adaption [21] (LoRA) to activate each expert.",
+    "We denote the tokens of the input for one sequence inputted to the first expert in the MoE layer by X E1.",
+    "The computed process for this expert could be given in where B, A are learnable parameters added for each pretrained linear weight W 0 of experts and the final output of this expert is h e1."
+  ]
+}

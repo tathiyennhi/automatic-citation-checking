@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "In this section, we describe a simple method to constrain token prediction such that only such token sequences are generated which are valid according the CFG.",
+    "For example, consider a slot Drug which can have textual slot-fillers for describing drug names for a medication.",
+    "After the special token [start:Drug] has been predicted, we know that the set of next possible tokens would consist of all tokens from the input document plus the special token [end:Drug].",
+    "This information is encoded by the CFG, and the decoding method described in this section uses this information to constrain token prediction.In this paper, we slightly generalize the constrained decoding approach of Lu et al. [20] to arbitrary rightlinear CFGs by applying a strategy similar to recursive descent parsing.Beginning with a start symbol, in our case PUBLICA-TION_HEAD, the set of possible next tokens is calculated in each decoding step.",
+    "This set is then used to generate a mask for the model vocabulary to discard all tokens which would not comply with the production rules of the CFG."
+  ],
+  "correct_citations": [
+    "This information is encoded by the CFG, and the decoding method described in this section uses this information to constrain token prediction.In this paper, we slightly generalize the constrained decoding approach of Lu et al. [20] to arbitrary rightlinear CFGs by applying a strategy similar to recursive descent parsing.Beginning with a start symbol, in our case PUBLICA-TION_HEAD, the set of possible next tokens is calculated in each decoding step."
+  ]
+}

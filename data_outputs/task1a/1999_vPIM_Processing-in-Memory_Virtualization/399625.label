@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Both challenges are critical to maintaining performance in the virtualized environment.",
+    "vUPMEM BootstrapingWhen a Firecracker VM is launched, a thread establishes a listening socket to handle incoming requests, starting to receives the VM's configuration, such as the path to the kernel, the root file system, the virtio devices (including vUPMEM), and the VM launch command.During boot, Firecracker passes information about its virtio devices to the VM via the command line.",
+    "This includes details like the MMIO region allocated for Firecracker-guest communication and the IRQ number assigned for event triggering for vUPMEM.",
+    "Upon reading the vUPMEM devices' description from the command line, the guest activates the vUPMEM frontend driver to manage the corresponding device.The device initialization process configures virtio communication settings within the guest, sends a configuration request, and retrieves device attributes such as frequency and the number of available DPUs in the rank.",
+    "After configuration, the vUPMEM frontend driver exposes the device to userspace through a device file (safe mode)."
+  ],
+  "correct_citations": []
+}

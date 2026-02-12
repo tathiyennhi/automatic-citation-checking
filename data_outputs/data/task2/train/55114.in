@@ -1,0 +1,37 @@
+{
+  "text": "Given a sufficiently large n and m, we see parallelism that is suitable for machines with several cores. The parallelism can be further increased beyond this by moving from list representations to trees [CITATION_1] [8] for storing input, output and intermediate results.",
+  "citation_candidates": [
+    "16293892",
+    "5828862",
+    "1610858",
+    "283023",
+    "8103128",
+    "1474036"
+  ],
+  "bib_entries": {
+    "1474036": {
+      "title": "Adaptive functional programming",
+      "abstract": "An adaptive computation maintains the relationship between its input and output as the input changes. Although various techniques for adaptive computing have been proposed, they remain limited in their scope of applicability. We propose a general mechanism for adaptive computing that enables one to make any purely-functional program adaptive.We show that the mechanism is practical by giving an efficient implementation as a small ML library. The library consists of three operations for making a program adaptive, plus two operations for making changes to the input and adapting the output to these changes. We give a general bound on the time it takes to adapt the output, and based on this, show that an adaptive Quicksort adapts its output in logarithmic time when its input is extended by one key.To show the safety and correctness of the mechanism we give a formal definition of AFL, a call-by-value functional language extended with adaptivity primitives. The modal type system of AFL enforces correct usage of the adaptivity mechanism, which can only be checked at run time in the ML library. Based on the AFL dynamic semantics, we formalize the change-propagation algorithm and prove its correctness."
+    },
+    "16293892": {
+      "title": "Two algorithms for maintaining order in a list",
+      "abstract": "The order maintenance problem is that of maintaining a list under a sequence of Insert and Delete operations, while answering Order queries (determine which of two elements comes first in the list). We give two new algorithms for this problem. The first algorithm matches the O (1) amortized time per operation of the best previously known algorithm, and is much simpler. The second algorithm permits all operations to be performed in O (1) worst-case time."
+    },
+    "5828862": {
+      "title": "Dynamic lca queries on trees",
+      "abstract": "We show how to maintain a data structure on trees which allows for the following operations, all in worst-case constant time: ::: 1. insertion of leaves and internal nodes, ::: 2. deletion of leaves, ::: 3. deletion of internal nodes with only one child, ::: 4. determining the least common ancestor of any two nodes. ::: We also generalize the Dietz-Sleator \"cup-filling\" scheduling methodology, which may be of ::: independent interest."
+    },
+    "1610858": {
+      "title": "Vector models for data-parallel computing",
+      "abstract": "\"Vector Models for Data-Parallel Computing \"describes a model of parallelism that extends and formalizes the Data-Parallel model on which the Connection Machine and other supercomputers are based. It presents many algorithms based on the model, ranging from graph algorithms to numerical algorithms, and argues that data-parallel models are not only practical and can be applied to a surprisingly wide variety of problems, they are also well suited for very-high-level languages and lead to a concise and clear description of algorithms and their complexity. Many of the author's ideas have been incorporated into the instruction set and into algorithms currently running on the Connection Machine.The book includes the definition of a parallel vector machine; an extensive description of the uses of the scan (also called parallel-prefix) operations; the introduction of segmented vector operations; parallel data structures for trees, graphs, and grids; many parallel computational-geometry, graph, numerical and sorting algorithms; techniques for compiling nested parallelism; a compiler for Paralation Lisp; and details on the implementation of the scan operations.Guy E. Blelloch is an Assistant Professor of Computer Science and a Principal Investigator with the Super Compiler and Advanced Language project at Carnegie Mellon University.Contents: Introduction. Parallel Vector Models. The Scan Primitives. Computational-Geometry Algorithms. Graph Algorithms. Numerical Algorithms. Languages and Compilers. Correction-Oriented Languages. Flattening Nested Parallelism. A Compiler for Paralation Lisp. Paralation-Lisp Code. The Scan Vector Model. Data Structures. Implementing Parallel Vector Models. Implementing the Scan Operations. Conclusions. Glossary."
+    },
+    "8103128": {
+      "title": "Alias types for recursive data structures",
+      "abstract": "Linear type systems permit programmers to deallocate or explicitly recycle memory, but are severely restricted by the fact that they admit no aliasing. This paper describes a pseudo-linear type system that allows a degree of aliasing and memory reuse as well as the ability to define complex recursive data structures. Our type system can encode conventional linear data structures such as linear lists and trees as well as more sophisticated data structures including cyclic and doubly-linked lists and trees. In the latter cases, our type system is expressive enough to represent pointer aliasing and yet safely permit destructive operations such as object deallocation. We demonstrate the flexibility of our type system by encoding two common space-conscious algorithms: destination-passing style and Deutsch-Schorr-Waite or \"link-reversal\" traversal algoithms."
+    },
+    "283023": {
+      "title": "Typed memory management in a calculus of capabilities",
+      "abstract": "An increasing number of systems rely on programming language technology to ensure safety and security of low-level code. Unfortunately, these systems typically rely on a complex, trusted garbage collector. Region-based type systems provide an alternative to garbage collection by making memory management explicit but verifiably safe. However, it has not been clear how to use regions in low-level, type-safe code.We present a compiler intermediate language, called the Capability Calculus, that supports region-based memory management, enjoys a provably safe type system, and is straightforward to compile to a typed assembly language. Source languages may be compiled to our language using known region inference algorithms. Furthermore, region lifetimes need not be lexically scoped in our language, yet the language may be checked for safety without complex analyses. Finally, our soundness proof is relatively simple, employing only standard techniques.The central novelty is the use of static capabilities to specify the permissibility of various operations, such as memory access and deallocation. In order to ensure capabilities are relinquished properly, the type system tracks aliasing information using a form of bounded quantification."
+    }
+  }
+}

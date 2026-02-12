@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Specifically, our approach remains up to 3.86× faster in end-to-end training as compared to the other approaches even for an increasing checkpointing frequency.",
+    "In this work, we address the problem of high overheads incurred due to checkpointing in large-scale distributed LLM training running with advanced hybrid parallelism strategies using widely adopted runtimes such as DeepSpeed.",
+    "State-of-the-art checkpoint engines, specifically designed for LLMs slow down the training while checkpointing because (1) they do not exploit the characteristics of various training phases to overlap checkpoint I/O efficiently; and (2) they underutilize the available interconnects and memory resources, leading to significant stalls during training.",
+    "The checkpointing overheads are exacerbated when model and/or optimizer states need to be frequently checkpointed for defensive and productive use cases.To address these limitations, we design and develop DataStates-LLM, which efficiently and transparently overlaps the checkpoint I/O with the immutable phases of forward and backward passes during training.",
+    "DataStates-LLM proposes key design ideas to mitigate checkpoint overheads in LLMs, such as preallocating and reusing pinned host buffer for fast DMA transfers, coalescing of model/optimizer shards while transferring checkpoints from GPU to host-memory, lazy non-blocking checkpoint snapshotting overlapping with forward and backward training phases, streaming multi-level flushing to persistent storage, and asynchronous distributed consensus of checkpoint persistence."
+  ]
+}

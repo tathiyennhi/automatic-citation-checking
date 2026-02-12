@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "One change is in the updating of the target function.",
+    "Instead of copying the weights directly from the updating to the target neural network (such as in DQN), the authors create a copy of the critic and actor networks, Q (s, a | θ Q) and µ (s | θ µ), and use them to estimate the target values, then update these target networks by slowly (for stability) tackling the updating neural networks making θ ← τ θ + (1 -τ)θ, with τ 1.",
+    "This way, the authors obtained stable targets y i to train the critic network consistently.",
+    "To deal with learning from low-dimensional physical feature vector observations, whose components may have different units and scales, such as position and velocity, the authors applied the batch normalization technique (Ioffe and Szegedy 2015) to the state input and all layers of the µ network and the layers of the Q network before its action 1 3 input layer.",
+    "Because it is off-policy, DDPG can deal with exploration (a difficult problem in continuous action spaces) independently of the learning algorithm."
+  ],
+  "correct_citations": [
+    "To deal with learning from low-dimensional physical feature vector observations, whose components may have different units and scales, such as position and velocity, the authors applied the batch normalization technique (Ioffe and Szegedy 2015) to the state input and all layers of the µ network and the layers of the Q network before its action 1 3 input layer."
+  ]
+}

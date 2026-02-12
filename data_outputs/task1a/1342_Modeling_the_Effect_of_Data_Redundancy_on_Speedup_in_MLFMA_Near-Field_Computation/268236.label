@@ -1,0 +1,15 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The share of each component was approximated from experimental runs of the baseline code across five different N values and three tree levels.",
+    "Due to fluctuations and s ystem-level noise, we model the shares as smooth functions of t using a least-square process:𝑆ℎ𝑎𝑟𝑒 𝑇𝑟𝑎𝑛𝑠𝑓𝑒𝑟 ≈ 0.5 -0.087𝑙𝑛(𝑡) (12) 𝑆ℎ𝑎𝑟𝑒 𝐶𝑜𝑚𝑝𝑢𝑡𝑒 ≈ 1 -𝑆ℎ𝑎𝑟𝑒 𝑇𝑟𝑎𝑛𝑠𝑓𝑒𝑟 (13) See Figure [4][5] [6] for the experimental and approximated trend of share of components and Table [2], Appendix1, for speed-up formulas and their calculations respectively.Component Base method Redundant method Speed-up Transfer 48𝑁 48 𝑁 + 288 𝑡 2 1 1 + 6𝑡 2 𝑁 Compute 32𝑁 + 288𝑡 2 + 9𝑁𝑡 2 32𝑁 + 𝑅𝐹 × 288 𝑡 2 + 9𝑁 𝑡 2 1 + 288𝑡 232𝑁 + 288𝑡 2 + 9𝑁 𝑡 Table [2] Speed-up components for redundancy applied on work [50] Figure [4] Share of Transfer time for different N and t, with their predicted values.",
+    "Figure [5] compares the predicted speedup trend with measured P2P runtime across different t values.",
+    "Not only the model capture absolute values with acceptable error rate (average relative absolute error ~9%, correlation ~ 94%), but also it correctly predi cts the trend: speedup decreases as t increases, due to imposed overheads.As shown in Table [3], the GPU kernel achieves a speedup of about 1.2× for smaller problem sizes when redundancy is applied, decreasing to 1.1× for larger problems.",
+    "However, due to the relatively small contribution of kernel computation to the total P2P phase -and the even smaller share of P2P within the full MLFMA execution -this kernel-level improvement is significantly attenuated at higher levels of the application."
+  ],
+  "correct_citations": [
+    "Due to fluctuations and s ystem-level noise, we model the shares as smooth functions of t using a least-square process:𝑆ℎ𝑎𝑟𝑒 𝑇𝑟𝑎𝑛𝑠𝑓𝑒𝑟 ≈ 0.5 -0.087𝑙𝑛(𝑡) (12) 𝑆ℎ𝑎𝑟𝑒 𝐶𝑜𝑚𝑝𝑢𝑡𝑒 ≈ 1 -𝑆ℎ𝑎𝑟𝑒 𝑇𝑟𝑎𝑛𝑠𝑓𝑒𝑟 (13) See Figure [4][5] [6] for the experimental and approximated trend of share of components and Table [2], Appendix1, for speed-up formulas and their calculations respectively.Component Base method Redundant method Speed-up Transfer 48𝑁 48 𝑁 + 288 𝑡 2 1 1 + 6𝑡 2 𝑁 Compute 32𝑁 + 288𝑡 2 + 9𝑁𝑡 2 32𝑁 + 𝑅𝐹 × 288 𝑡 2 + 9𝑁 𝑡 2 1 + 288𝑡 232𝑁 + 288𝑡 2 + 9𝑁 𝑡 Table [2] Speed-up components for redundancy applied on work [50] Figure [4] Share of Transfer time for different N and t, with their predicted values.",
+    "Figure [5] compares the predicted speedup trend with measured P2P runtime across different t values.",
+    "Not only the model capture absolute values with acceptable error rate (average relative absolute error ~9%, correlation ~ 94%), but also it correctly predi cts the trend: speedup decreases as t increases, due to imposed overheads.As shown in Table [3], the GPU kernel achieves a speedup of about 1.2× for smaller problem sizes when redundancy is applied, decreasing to 1.1× for larger problems."
+  ]
+}

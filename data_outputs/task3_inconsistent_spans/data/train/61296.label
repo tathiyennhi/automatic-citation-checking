@@ -1,0 +1,73 @@
+{
+  "doc_id": "61296",
+  "text": "A variant of the standard anchor-based default box prediction method is EAST [CITATION_1] [CITATION_2] . In the standard SSD network, there are several feature maps of different sizes, on which default boxes of different receptive fields are detected. In EAST, all feature maps are integrated together by gradual upsampling, or U-Net [CITATION_3] structure to be specific. The size of the final feature map is 1 4 of the original input image, with c-channels. Under the assumption that each pixel only belongs to one text line, each pixel on the final feature map, i.e. the 1 × 1 × c feature tensor, is used to regress the rectangular or quadrilateral bounding box of the underlying text line. Specifically, the existence of text, i.e. text/non-text, and geometries, e.g. orientation and size for rectangles, and [CITATION_4] , also predicting at each anchor position. (d) Region Proposal based methods, including rotating Region of Interests (RoI) [CITATION_5] and RoI of varying aspect ratios [CITATION_6] .",
+  "correct_citation": {
+    "[CITATION_1]": "706860",
+    "[CITATION_2]": "3149088",
+    "[CITATION_3]": "3719281",
+    "[CITATION_4]": "706860",
+    "[CITATION_5]": "206753251",
+    "[CITATION_6]": "20681963"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A variant of the standard anchor-based default box prediction method is EAST   .",
+      "s_span": 0,
+      "e_span": 104
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A variant of the standard anchor-based default box prediction method is EAST   .",
+      "s_span": 0,
+      "e_span": 104
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In EAST, all feature maps are integrated together by gradual upsampling, or U-Net  structure to be specific.",
+      "s_span": 252,
+      "e_span": 372
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Specifically, the existence of text, i.e. text/non-text, and geometries, e.g. orientation and size for rectangles, and  , also predicting at each anchor position. (d) Region Proposal based methods, including rotating Region of Interests (RoI)  and RoI of varying aspect ratios  .",
+      "s_span": 694,
+      "e_span": 1009
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Specifically, the existence of text, i.e. text/non-text, and geometries, e.g. orientation and size for rectangles, and  , also predicting at each anchor position. (d) Region Proposal based methods, including rotating Region of Interests (RoI)  and RoI of varying aspect ratios  .",
+      "s_span": 694,
+      "e_span": 1009
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Specifically, the existence of text, i.e. text/non-text, and geometries, e.g. orientation and size for rectangles, and  , also predicting at each anchor position. (d) Region Proposal based methods, including rotating Region of Interests (RoI)  and RoI of varying aspect ratios  .",
+      "s_span": 694,
+      "e_span": 1009
+    }
+  ],
+  "bib_entries": {
+    "20681963": {
+      "title": "R2cnn: rotational region cnn for orientation robust scene text detection",
+      "abstract": "In this paper, we propose a novel method called Rotational Region CNN (R2CNN) for detecting arbitrary-oriented texts in natural scene images. The framework is based on Faster R-CNN [1] architecture. First, we use the Region Proposal Network (RPN) to generate axis-aligned bounding boxes that enclose the texts with different orientations. Second, for each axis-aligned text box proposed by RPN, we extract its pooled features with different pooled sizes and the concatenated features are used to simultaneously predict the text/non-text score, axis-aligned box and inclined minimum area box. At last, we use an inclined non-maximum suppression to get the detection results. Our approach achieves competitive results on text detection benchmarks: ICDAR 2015 and ICDAR 2013."
+    },
+    "3719281": {
+      "title": "U-Net: Convolutional Networks for Biomedical Image Segmentation",
+      "abstract": "There is large consent that successful training of deep networks requires many thousand annotated training samples. In this paper, we present a network and training strategy that relies on the strong use of data augmentation to use the available annotated samples more efficiently. The architecture consists of a contracting path to capture context and a symmetric expanding path that enables precise localization. We show that such a network can be trained end-to-end from very few images and outperforms the prior best method (a sliding-window convolutional network) on the ISBI challenge for segmentation of neuronal structures in electron microscopic stacks. Using the same network trained on transmitted light microscopy images (phase contrast and DIC) we won the ISBI cell tracking challenge 2015 in these categories by a large margin. Moreover, the network is fast. Segmentation of a 512x512 image takes less than a second on a recent GPU. The full implementation (based on Caffe) and the trained networks are available at http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net ."
+    },
+    "706860": {
+      "title": "EAST: An efficient and accurate scene text detector",
+      "abstract": "Previous approaches for scene text detection have already achieved promising performances across various benchmarks. However, they usually fall short when dealing with challenging scenarios, even when equipped with deep neural network models, because the overall performance is determined by the interplay of multiple stages and components in the pipelines. In this work, we propose a simple yet powerful pipeline that yields fast and accurate text detection in natural scenes. The pipeline directly predicts words or text lines of arbitrary orientations and quadrilateral shapes in full images, eliminating unnecessary intermediate steps (e.g., candidate aggregation and word partitioning), with a single neural network. The simplicity of our pipeline allows concentrating efforts on designing loss functions and neural network architecture. Experiments on standard datasets including ICDAR 2015, COCO-Text and MSRA-TD500 demonstrate that the proposed algorithm significantly outperforms state-of-the-art methods in terms of both accuracy and efficiency. On the ICDAR 2015 dataset, the proposed algorithm achieves an F-score of 0.7820 at 13.2fps at 720p resolution."
+    },
+    "206753251": {
+      "title": "Arbitrary-oriented scene text detection via rotation proposals",
+      "abstract": "This paper introduces a novel rotation-based framework for arbitrary-oriented text detection in natural scene images. We present the Rotation Region Proposal Networks , which are designed to generate inclined proposals with text orientation angle information. The angle information is then adapted for bounding box regression to make the proposals more accurately fit into the text region in terms of the orientation. The Rotation Region-of-Interest pooling layer is proposed to project arbitrary-oriented proposals to a feature map for a text region classifier. The whole framework is built upon a region-proposal-based architecture, which ensures the computational efficiency of the arbitrary-oriented text detection compared with previous text detection systems. We conduct experiments using the rotation-based framework on three real-world scene text detection datasets and demonstrate its superiority in terms of effectiveness and efficiency over previous approaches."
+    },
+    "3149088": {
+      "title": "Photoocr: Reading text in uncontrolled conditions",
+      "abstract": "We describe Photo OCR, a system for text extraction from images. Our particular focus is reliable text extraction from smartphone imagery, with the goal of text recognition as a user input modality similar to speech recognition. Commercially available OCR performs poorly on this task. Recent progress in machine learning has substantially improved isolated character classification, we build on this progress by demonstrating a complete OCR system using these techniques. We also incorporate modern data center-scale distributed language modelling. Our approach is capable of recognizing text in a variety of challenging imaging conditions where traditional OCR systems fail, notably in the presence of substantial blur, low resolution, low contrast, high image noise and other distortions. It also operates with low latency, mean processing time is 600 ms per image. We evaluate our system on public benchmark datasets for text extraction and outperform all previously reported results, more than halving the error rate on multiple benchmarks. The system is currently in use in many applications at Google, and is available as a user input modality in Google Translate for Android."
+    }
+  },
+  "generator": "fallback_v4"
+}

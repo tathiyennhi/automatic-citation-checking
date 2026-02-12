@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "To extract degree expressions, we used Stanza dependency parser as illustrated in Figure 1.",
+    "We identified explicit (phrasal and clausal comparatives) and implicit comparatives.",
+    "Specifically, we used nominal inflectional features \"Degree=Cmp\" to extract sentences that contain comparative degree expressions (Cmp), including phrasal comparatives (Phrasal_Cmp) such as example (1a) \"Alex is taller than Kai,\" clausal comparatives (Clausal_Cmp) such (1b) \"Alex is taller than Kai is,\" and implicit comparatives (Implicit_Cmp) such as example (2) \"Alex is taller.\"",
+    "To separate two types of explicit comparatives Clausal_Cmp and Phrasal_Cmp, we proposed Semgrex rules such as the following: {pos: JJR}> /ccomp|advcl/ {} for cases like \"Alex did it better than she did\" and {pos: RB}> advmod {pos:RBR}> /ccomp|advcl/ {} for \"Alex marched more quickly than she thought.\"",
+    "To improve parsing accuracy, before applying the Semgrex rules, we conducted a Corpus of Linguistic Acceptability (CoLA) classification task using the T5-large LLM (Raffel et al. 2020)."
+  ],
+  "correct_citations": [
+    "To improve parsing accuracy, before applying the Semgrex rules, we conducted a Corpus of Linguistic Acceptability (CoLA) classification task using the T5-large LLM (Raffel et al. 2020)."
+  ]
+}

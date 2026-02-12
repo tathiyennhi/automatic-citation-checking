@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We can calculate the matching score between 𝐷 ∈ 𝑅 (𝑛+1)×𝐻 and 𝑄 ∈ 𝑅 (𝑚+1)×𝐻 as follows:𝑀 (𝑖,𝑗) = 𝑑 𝑖 𝑇 • 𝑞 𝑗(4)Where 𝑀 ∈ 𝑅 (𝑛+1)×(𝑚+1).",
+    "Then, by applying max pooling to 𝑀 to obtain the maximum values along each row, the result is represented by 𝐸 ∈ 𝑅 (𝑛+1).",
+    "Since 𝑀 represents the matching scores between text features and aspect labels, and each element in 𝐸 can be interpreted as the relevance between a text word and a given aspect category [13].",
+    "By scaling 𝐸 using softmax, we can obtain 𝛽 ∈ 𝑅 (𝑛+1), and with this, weighted summation according to relevance of text features, we can obtain 𝑟 ∈ 𝑅 𝐻:𝛽 = 𝑠𝑜𝑓𝑡𝑚𝑎𝑥(𝐸)(5)𝑟 = ∑ 𝛽 𝑡 𝑑 𝑡 𝑛 𝑡=0(6)Connecting the vectors 𝑠 ∈ 𝑅 𝐻 and 𝑟 ∈ 𝑅 𝐻 together, we can obtain 𝑧 ∈ 𝑅 2𝐻.",
+    "Classification of sentiment polarity can be achieved through a classification layer, where 𝑝 𝑗 represents the sentiment polarity of the current aspect category.𝑝 𝑗 = 𝑠𝑜𝑓𝑡𝑚𝑎𝑥(∑ 𝑊 𝑖 𝑧 𝑛 𝑖=1)(7)The loss function of the model is as follows:𝑙𝑜𝑠𝑠 𝑖 = -∑ ∑ 𝑤𝑒𝑖𝑔ℎ𝑡 𝑖𝑘 𝑦 𝑗 𝑘 𝑙𝑜𝑔𝑦 ̂𝑗𝑘 𝑘 𝑗 (8) 𝑤𝑒𝑖𝑔ℎ𝑡 𝑖𝑘 = 𝑙𝑜𝑔 𝑏𝑎𝑠𝑒 𝑎𝑙𝑙_𝑠𝑎𝑚𝑝𝑙𝑒 𝑐𝑙𝑎𝑠𝑠_𝑠𝑎𝑚𝑝𝑙𝑒 𝑖𝑘 (9) 𝑙𝑜𝑠𝑠 𝑡𝑜𝑡𝑎𝑙 = ∑ 𝑙𝑜𝑠𝑠 𝑖 𝑖 (10) Experimental Results and Analysis DatasetsExperimental work was conducted on three datasets (Table 1), the details of which are as follows:• ASAP [14]: This dataset is for sentiment analysis and consists of restaurant review data."
+  ]
+}

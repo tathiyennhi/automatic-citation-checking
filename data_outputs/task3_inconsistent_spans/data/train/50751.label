@@ -1,0 +1,22 @@
+{
+  "doc_id": "50751",
+  "text": "Large vessels (15 μm in diameter or larger) were segmented using a variable thresholding based on local image properties by a local Otsu threshold on image patches 1501 pixels or 3002-μm large, followed by a small median filter (2 × 2 pixels or 4 × 4 μm) to reduce segmentation noise. For smaller vessels, a Sato filter using a diameter of 2 μm was applied. [CITATION_1] As the latter method can only distinguish eigenvalues in the data, it can underline the contour of larger vessels causing a \"webbing\" artifact (see Fig. 5 ). Combining both filters resulted in a multiscaled image with contrast for both small and large vessels in the imaged organ. After the segmentation process, a manual verification was performed to correct major deformations that could have been due to artifacts such as leakage of the vascular system causing diffusion zones in the sample. After this last step, and keeping only microvasculature (15 μm in diameter or less), a distance transform was applied on the mask followed by skeletonization. To compute vascular density, a model of cylindrical vessels using the pixel value as radii and the resolution as length was computed based on the distance map evaluated on the skeleton.",
+  "correct_citation": {
+    "[CITATION_1]": "12073669"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For smaller vessels, a Sato filter using a diameter of 2 μm was applied.  As the latter method can only distinguish eigenvalues in the data, it can underline the contour of larger vessels causing a \"webbing\" artifact (see Fig. 5 ).",
+      "s_span": 285,
+      "e_span": 528
+    }
+  ],
+  "bib_entries": {
+    "12073669": {
+      "title": "Three-dimensional multi-scale line filter for segmentation and visualization of curvilinear structures in medical images",
+      "abstract": "This paper describes a method for the enhancement of curvilinear structures such as vessels and bronchi in three-dimensional (3-D) medical images. A 3-D line enhancement filter is developed with the aim of discriminating line structures from other structures and recovering line structures of various widths. The 3-D line filter is based on a combination of the eigenvalues of the 3-D Hessian matrix. Multi-scale integration is formulated by taking the maximum among single-scale filter responses, and its characteristics are examined to derive criteria for the selection of parameters in the formulation. The resultant multi-scale line-filtered images provide significantly improved segmentation and visualization of curvilinear structures. The usefulness of the method is demonstrated by the segmentation and visualization of brain vessels from magnetic resonance imaging (MRI) and magnetic resonance angiography (MRA), bronchi from a chest CT, and liver vessels (portal veins) from an abdominal CT."
+    }
+  },
+  "generator": "fallback_v4"
+}

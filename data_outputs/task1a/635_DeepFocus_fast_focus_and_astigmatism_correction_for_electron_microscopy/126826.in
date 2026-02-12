@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Model training was conducted on a Windows computer equipped with two Nvidia Quadro RTX 5000 graphics processing units (GPUs), an Intel Xeon Gold 6240 central processing unit (CPU) @ 2.60 GHz The processing time measurement commenced with the perturbed image pair array and concluded with a single correction vector, encompassing cropping, image normalization, CPU-GPU memory transfers, and mean estimation.",
+    "Initialization of the PyTorch model was excluded from the measurement, as it is only required once during startup.",
+    "Serialized versions of the model were stored and loaded with TorchScript.",
+    "The MAPFoSt implementation utilized multithreading on image patches; for instance, for a 2048 × 1536 input image and a patch size of 768 × 768, four parallel processes were spawned.",
+    "All timing measurements were conducted with 2048 × 1536 images, a pixel dwell time of 200 ns and computed as the mean of 10 repetitions."
+  ]
+}

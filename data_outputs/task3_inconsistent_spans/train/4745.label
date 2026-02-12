@@ -1,0 +1,33 @@
+{
+  "doc_id": "4745",
+  "text": "The basis of particle filters is an SIS algorithm. Most sequential Monte Carlo methods developed over the last decade are based on this SIS algorithm. This technique is capable of implementing a recursive Bayesian filter by Monte Carlo simulations. The key idea is to use a sample of random particles to represent a posterior probability distribution approximately. The sequential sampling is very important in realizing this algorithm. Assume an arbitrary distribution . Samples are supposed to be drawn from , but in many practical cases, is not a standard probability distribution, e.g., Gaussian distribution, so it is difficult to draw samples from . Therefore, based on the Bayesian importance-sampling scheme [3] , a sample can be drawn from another probability distribution called the importance function, which is easy to sample. Thus, these particles can approximate the distribution . In order to use these particles to represent the desired distribution , a weighted approximation to the density is given by [CITATION_1] where [CITATION_2] and is a Dirac delta function defined by .",
+  "correct_citation": {
+    "[CITATION_1]": "16288401",
+    "[CITATION_2]": "16959056"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In order to use these particles to represent the desired distribution , a weighted approximation to the density is given by  where  and is a Dirac delta function defined by .",
+      "s_span": 896,
+      "e_span": 1094
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In order to use these particles to represent the desired distribution , a weighted approximation to the density is given by  where  and is a Dirac delta function defined by .",
+      "s_span": 896,
+      "e_span": 1094
+    }
+  ],
+  "bib_entries": {
+    "16959056": {
+      "title": "Particle filters for state estimation of jump Markov linear systems",
+      "abstract": "Jump Markov linear systems (JMLS) are linear systems whose parameters evolve with time according to a finite state Markov chain. In this paper, our aim is to recursively compute optimal state estimates for this class of systems. We present efficient simulation-based algorithms called particle filters to solve the optimal filtering problem as well as the optimal fixed-lag smoothing problem. Our algorithms combine sequential importance sampling, a selection scheme, and Markov chain Monte Carlo methods. They use several variance reduction methods to make the most of the statistical structure of JMLS. Computer simulations are carried out to evaluate the performance of the proposed algorithms. The problems of on-line deconvolution of impulsive processes and of tracking a maneuvering target are considered. It is shown that our algorithms outperform the current methods."
+    },
+    "16288401": {
+      "title": "On sequential Monte Carlo sampling methods for Bayesian filtering",
+      "abstract": "In this article, we present an overview of methods for sequential simulation from posterior distributions. These methods are of particular interest in Bayesian filtering for discrete time dynamic models that are typically nonlinear and non-Gaussian. A general importance sampling framework is developed that unifies many of the methods which have been proposed over the last few decades in several different scientific disciplines. Novel extensions to the existing methods are also proposed. We show in particular how to incorporate local linearisation methods similar to those which have previously been employed in the deterministic filtering literatures these lead to very effective importance distributions. Furthermore we describe a method which uses Rao-Blackwellisation in order to take advantage of the analytic structure present in some important classes of state-space models. In a final section we develop algorithms for prediction, smoothing and evaluation of the likelihood in dynamic models."
+    }
+  },
+  "generator": "fallback_v4"
+}

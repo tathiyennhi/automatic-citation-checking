@@ -1,0 +1,29 @@
+{
+  "doc_id": "25926",
+  "text": "In EBCD, network coding is applied in each sector of a layout instead of the entire node as in [CITATION_1] . We use the XOR-based algorithm from [CITATION_2] . Assuming m 1 , m 2 , . . . , m l are messages received in order in this sector. P 1 , P 2 , . . . , P t are the final forwarded messages (original or coded). (1) align the edge of a sector to each forwarding edge, (2) determine coded messages in each sector using coding, (3) select the position with the fewest total transmissions. 6. Forward coded messages. each neighbor can decode from P 1 to P t to get any missing message from m 1 to m l . A greedy approach can be used. For the received messages in a queue, the algorithm tries to have the maximum number of messages starting from m 1 to create P 1 , then to create P 2 and so on. For example, in Figure 4 (b), assuming that the broadcast messages arrive in the order of A, C, B, and D at node e. P 1 is A at first, then e tries to make P 1 = A ⊕ C. Node a needs message C and nodes d and c need message A. With P 1 , all of them can decode. Therefore P 1 = A ⊕ C is a correct coding. Then e can try P 1 = A⊕C ⊕B. Since node d needs message B, and it cannot decode P 1 to get B, this is not a correct coding. P 1 remains as A ⊕ C. Using the same procedure, we can get P 2 = B ⊕ D. The entire procedure can also be illustrated using Figure 5  (a) , where m 1 to m 6 are received messages and D 1 to D 6 are the corresponding forwarding nodes/edges decisions for them based on topology and priority information. U means to update the priority information based on the piggybacked information in the received message and D c is the final transmission decision for several received messages using network coding in a valid timer. Note that the duplicated reception of a processed message is simply discarded such as m 5 received after it has been processed and forwarded. As shown in the figure, the arrival of m 5 after timer 2 expires will not intrigue a new timer or a new updating during the timer 3 period. The source nodes in the network can simply use omnidirectional transmission to send out the broadcast messages. In order to further reduce the total energy consumption, source nodes can only switch on sectors in which there are neighbors for transmission. In this case, the message can arrive at at least one forwarding node as well as other non-forwarding neighbors, which helps with the potential network coding conducted later on. As shown in Figure 4 (f), source nodes a, b, c, and d select some sectors to switch on for transmission, shown in the light grey sectors.",
+  "correct_citation": {
+    "[CITATION_1]": "412986",
+    "[CITATION_2]": "412986"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In EBCD, network coding is applied in each sector of a layout instead of the entire node as in [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 109
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We use the XOR-based algorithm from [CITATION_2] .",
+      "s_span": 110,
+      "e_span": 160
+    }
+  ],
+  "bib_entries": {
+    "412986": {
+      "title": "Network coding-based broadcast in mobile ad hoc networks",
+      "abstract": "Broadcast operation, which disseminates information network-wide, is very important in multi-hop wireless networks. Due to the broadcast nature of wireless media, not all nodes need to transmit in order for the message to reach every node. Previous work on broadcast support can be classified as probabilistic (each node rebroadcasts a packet with a given probability) or deterministic approaches (nodes pre-select a few neighbors for rebroadcasting). In this paper, we show how network-coding can be applied to a deterministic broadcast approaches, resulting in significant reductions in the number of transmissions in the network. We propose two algorithms, that rely only on local two-hop topology information and makes extensive use of opportunistic listening to reduce the number of transmissions: 1) a simple XOR-based coding algorithm that provides up to 45% gains compared to a non-coding approach and 2) a Reed-Solomon based coding algorithm that determines the optimal coding gain achievable for a coding algorithm that relies only on local information, with gains up to 61% in our simulations. We also show that our coding-based deterministic approach outperforms the coding-based probabilistic approach presented in (C. Fragouli et al, 2006)."
+    }
+  },
+  "generator": "fallback_v4"
+}

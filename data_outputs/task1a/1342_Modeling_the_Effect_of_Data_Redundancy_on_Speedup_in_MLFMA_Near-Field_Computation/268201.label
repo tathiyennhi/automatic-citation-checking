@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "tackled time-evolving particle systems on GPUs using FMM variants, focusing on throughput and reduced data movement/sync via task grouping for unbalanced FMM trees in molecular dynamics.",
+    "Their go-to methods: level-synchronous tree traversal and coarse-grain task parallelism with manual GPU memory control.",
+    "In [56], they sped up a treecode FMM [55] on a single GPU by batching kernels -queuing interactions, reorganizing data into SoA arrays, then executing the whole queue -since many boxes are empty or workloads uneven, improving speed and memory coalescing.",
+    "In [57] they scaled this to GPU clusters using kernel batching, zero-padding for better coalescing, and node-level interaction distribution with redundant data (like [54]) to cut inter-node dependencies and communication.",
+    "They also cut redundant symmetrical interaction computations, lowering GPU task wait times."
+  ],
+  "correct_citations": [
+    "In [56], they sped up a treecode FMM [55] on a single GPU by batching kernels -queuing interactions, reorganizing data into SoA arrays, then executing the whole queue -since many boxes are empty or workloads uneven, improving speed and memory coalescing.",
+    "In [57] they scaled this to GPU clusters using kernel batching, zero-padding for better coalescing, and node-level interaction distribution with redundant data (like [54]) to cut inter-node dependencies and communication."
+  ]
+}

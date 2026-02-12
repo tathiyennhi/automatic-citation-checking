@@ -1,0 +1,20 @@
+{
+  "doc_id": "45523",
+  "text": "We use the Amazon Review datasets from [CITATION_1] , which is a collection of multiple-domain corpora. We consider each second-level category (the first level is department) as a domain and aggregate all reviews under each category as one domain corpus. This ends up with a rather diverse domain collection. We first randomly select 56 (m) domains as the first m past domains to train and evaluate the base metalearner. Then from rest domains, we sample three random collections with 50, 100 and 200 (n − m) domains corpora, respectively, as three settings of past domains. These collections are used to test the performance of different numbers of past domains. Due to the limited computing resource, we limit each past domain corpus up to 60 MB. We further randomly selected 3 rest domains (Computer Components (CC), Kitchen Storage and Organization (KSO) and Cats Supply (CS)) as new domains for down-stream tasks. These give us three text classification problems, which have 13, 17, and 11 classes respectively. The tasks are topic-based classification rather than sentiment classification. Since the past domains have different sizes (many have much less than 60 MB) and many real-world applications do not have big in-domain corpora, we set the size of the new domain corpora to be 10 MB and 30 MB to test the performance in the two settings.",
+  "correct_citation": {
+    "[CITATION_1]": "16447573"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We use the Amazon Review datasets from  , which is a collection of multiple-domain corpora."
+    }
+  ],
+  "bib_entries": {
+    "16447573": {
+      "title": "Distributed representations of words and phrases and their compositionality",
+      "abstract": "The recently introduced continuous Skip-gram model is an efficient method for learning high-quality distributed vector representations that capture a large number of precise syntactic and semantic word relationships. In this paper we present several extensions that improve both the quality of the vectors and the training speed. By subsampling of the frequent words we obtain significant speedup and also learn more regular word representations. We also describe a simple alternative to the hierarchical softmax called negative sampling. ::: ::: An inherent limitation of word representations is their indifference to word order and their inability to represent idiomatic phrases. For example, the meanings of \"Canada\" and \"Air\" cannot be easily combined to obtain \"Air Canada\". Motivated by this example, we present a simple method for finding phrases in text, and show that learning good vector representations for millions of phrases is possible."
+    }
+  },
+  "generator": "fallback_v4"
+}

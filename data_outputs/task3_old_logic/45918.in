@@ -1,0 +1,17 @@
+{
+  "text": "W ← W ∪ {w t }; 5: Compute the parameters of the cutting plane, a(w t ) and b(w t ) to compose R(w; W); 6: w t+1 ← argmin w Ω(w) + CR(w; W); 7: t ← t + 1; 8: until converged; 9: return w. The algorithm is guaranteed to converge to the optimum solution [CITATION_1] . In the case of linear SVM, it is shown [CITATION_2] that the algorithm terminates at the optimum after a limited number of iterations; thus the time complexity for training is a linear function of the number of non-zero values in the whole training set.",
+  "correct_citation": {
+    "[CITATION_1]": "1719925",
+    "[CITATION_2]": "5155714"
+  },
+  "bib_entries": {
+    "5155714": {
+      "title": "Training linear SVMs in linear time",
+      "abstract": "Linear Support Vector Machines (SVMs) have become one of the most prominent machine learning techniques for high-dimensional sparse data commonly encountered in applications like text classification, word-sense disambiguation, and drug design. These applications involve a large number of examples n as well as a large number of features N, while each example has only s << N non-zero features. This paper presents a Cutting Plane Algorithm for training linear SVMs that provably has training time 0(s,n) for classification problems and o(sn log (n))for ordinal regression problems. The algorithm is based on an alternative, but equivalent formulation of the SVM optimization problem. Empirically, the Cutting-Plane Algorithm is several orders of magnitude faster than decomposition methods like svm light for large datasets."
+    },
+    "1719925": {
+      "title": "A scalable modular convex solver for regularized risk minimization",
+      "abstract": "A wide variety of machine learning problems can be described as minimizing a regularized risk functional, with different algorithms using different notions of risk and different regularizers. Examples include linear Support Vector Machines (SVMs), Logistic Regression, Conditional Random Fields (CRFs), and Lasso amongst others. This paper describes the theory and implementation of a highly scalable and modular convex solver which solves all these estimation problems. It can be parallelized on a cluster of workstations, allows for data-locality, and can deal with regularizers such as l1 and l2 penalties. At present, our solver implements 20 different estimation problems, can be easily extended, scales to millions of observations, and is up to 10 times faster than specialized solvers for many applications. The open source code is freely available as part of the ELEFANT toolbox."
+    }
+  }
+}

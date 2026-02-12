@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The model can be configured to run in streaming inference mode by using an input FIFO buffer for each temporal layer.",
+    "The sliding-window mechanism of the FIFO buffer would act as the convolution sliding window, and the convolution operation itself is simply replaced by a dot product between the elements in the FIFO buffer and kernel weights.",
+    "C. Compares the methods of direct binning, event volume binning, and causal event volume binning.",
+    "The last method retains temporal information while still being fully causal.once, and can be considered a version of bilinear interpolation for events.",
+    "Causal Event volume binningFor causal event volume binning, we simply modify the triangle filter acting in the temporal dimension into k(τ) = H(τ) max(|1 -τ |, 0), where the added H is the Heavide side step function:H(x) = 0 if x < 0, 1 if x ≥ 0.In other words, while the spatial filter shape remains unchanged, the temporal triangle filter now becomes a halftriangle filter that only extends in the \"future\" direction, making it a causal filter (see Fig 1 section C for a visualization of the temporal filter shape)."
+  ],
+  "correct_citations": []
+}

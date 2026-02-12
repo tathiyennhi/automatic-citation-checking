@@ -1,0 +1,52 @@
+{
+  "doc_id": "35821",
+  "text": "To compensate for imperfect radiofrequency excitation at 7T caused by B 1 þ variations along the SC [CITATION_1] and avoid subsequent T 1 estimation bias [CITATION_2] , an offline B 1 þ -inhomogeneity correction implemented in MATLAB (The Mathworks, Natick, MA, USA) and described in [CITATION_3] , was first performed using the acquired B 1 þ maps. T 1 maps were subsequently denoised using a block-matching and filtering algorithm (BM4D) [CITATION_4] to compensate for inherent noise propagation within the MP2RAGE uniform image ratio (see Appendix 2 of [CITATION_5] . For further processing, 3D T 1 volumes were resliced at each vertebral level (C1-to-C7), using the c3D reslice-identity function (ITK-SNAP, UPENN, PA, USA) and the GRE images as reference, leading to a total of 7 slices per subject. When 2 vol were acquired (in case of pronounced SC curvature), reslicing was performed using the most adequate slab (usually 1st slab for C1 to C4 and 2nd slab for C5 to C7, see Fig. 2 ).",
+  "correct_citation": {
+    "[CITATION_1]": "34862631",
+    "[CITATION_2]": "18133252",
+    "[CITATION_3]": "7184690",
+    "[CITATION_4]": "1295558",
+    "[CITATION_5]": "18133252"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To compensate for imperfect radiofrequency excitation at 7T caused by B 1 þ variations along the SC  and avoid subsequent T 1 estimation bias  , an offline B 1 þ -inhomogeneity correction implemented in MATLAB (The Mathworks, Natick, MA, USA) and described in  , was first performed using the acquired B 1 þ maps."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "To compensate for imperfect radiofrequency excitation at 7T caused by B 1 þ variations along the SC  and avoid subsequent T 1 estimation bias  , an offline B 1 þ -inhomogeneity correction implemented in MATLAB (The Mathworks, Natick, MA, USA) and described in  , was first performed using the acquired B 1 þ maps."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "To compensate for imperfect radiofrequency excitation at 7T caused by B 1 þ variations along the SC  and avoid subsequent T 1 estimation bias  , an offline B 1 þ -inhomogeneity correction implemented in MATLAB (The Mathworks, Natick, MA, USA) and described in  , was first performed using the acquired B 1 þ maps."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "T 1 maps were subsequently denoised using a block-matching and filtering algorithm (BM4D)  to compensate for inherent noise propagation within the MP2RAGE uniform image ratio (see Appendix 2 of  ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "T 1 maps were subsequently denoised using a block-matching and filtering algorithm (BM4D)  to compensate for inherent noise propagation within the MP2RAGE uniform image ratio (see Appendix 2 of  ."
+    }
+  ],
+  "bib_entries": {
+    "1295558": {
+      "title": "Nonlocal transform-domain filter for volumetric data denoising and reconstruction",
+      "abstract": "We present an extension of the BM3D filter to volumetric data. The proposed algorithm, BM4D, implements the grouping and collaborative filtering paradigm, where mutually similar d -dimensional patches are stacked together in a (d+1) -dimensional array and jointly filtered in transform domain. While in BM3D the basic data patches are blocks of pixels, in BM4D we utilize cubes of voxels, which are stacked into a 4-D “group.” The 4-D transform applied on the group simultaneously exploits the local correlation present among voxels in each cube and the nonlocal correlation between the corresponding voxels of different cubes. Thus, the spectrum of the group is highly sparse, leading to very effective separation of signal and noise through coefficient shrinkage. After inverse transformation, we obtain estimates of each grouped cube, which are then adaptively aggregated at their original locations. We evaluate the algorithm on denoising of volumetric data corrupted by Gaussian and Rician noise, as well as on reconstruction of volumetric phantom data with non-zero phase from noisy and incomplete Fourier-domain (k-space) measurements. Experimental results demonstrate the state-of-the-art denoising performance of BM4D, and its effectiveness when exploited as a regularizer in volumetric data reconstruction."
+    },
+    "18133252": {
+      "title": "MP2RAGE, a self bias-field corrected sequence for improved segmentation and T1-mapping at high field",
+      "abstract": "The large spatial inhomogeneity in transmit B(1) field (B(1)(+)) observable in human MR images at high static magnetic fields (B(0)) severely impairs image quality. To overcome this effect in brain T(1)-weighted images, the MPRAGE sequence was modified to generate two different images at different inversion times, MP2RAGE. By combining the two images in a novel fashion, it was possible to create T(1)-weighted images where the result image was free of proton density contrast, T(2) contrast, reception bias field, and, to first order, transmit field inhomogeneity. MP2RAGE sequence parameters were optimized using Bloch equations to maximize contrast-to-noise ratio per unit of time between brain tissues and minimize the effect of B(1)(+) variations through space. Images of high anatomical quality and excellent brain tissue differentiation suitable for applications such as segmentation and voxel-based morphometry were obtained at 3 and 7 T. From such T(1)-weighted images, acquired within 12 min, high-resolution 3D T(1) maps were routinely calculated at 7 T with sub-millimeter voxel resolution (0.65-0.85 mm isotropic). T(1) maps were validated in phantom experiments. In humans, the T(1) values obtained at 7 T were 1.15+/-0.06 s for white matter (WM) and 1.92+/-0.16 s for grey matter (GM), in good agreement with literature values obtained at lower spatial resolution. At 3 T, where whole-brain acquisitions with 1 mm isotropic voxels were acquired in 8 min, the T(1) values obtained (0.81+/-0.03 s for WM and 1.35+/-0.05 for GM) were once again found to be in very good agreement with values in the literature."
+    },
+    "34862631": {
+      "title": "Feasibility of single-shot multi-level multi-angle diffusion tensor imaging of the human cervical spinal cord at 7T",
+      "abstract": "PURPOSE ::: Diffusion tensor imaging (DTI), which is frequently used to characterize microstructure impairments in many spinal cord diseases at clinical fields, may benefit from 7T investigations. Yet, it presents specific technical challenges, such as increased magnetic susceptibility-induced image distortions. ::: ::: ::: METHODS ::: Eight healthy volunteers were scanned at 7T using a prototype diffusion multi-slice multi-angle (MSMA) single-shot spin-echo echo planar imaging (EPI) sequence developed to explore the whole cervical spinal cord while limiting the partial volume effects related to the cord curvature. To mitigate the increased susceptibility-induced distortions encountered at 7T, a reverse phase-encoding strategy was also used. Images acquired from C1-to-C7 were registered to the AMU40 template to automatically extract DTI metrics in gray matter/white matter regions of interest. Effects of B1+ inhomogeneities on the DTI metrics and repeatability of the measurements were also investigated. Lastly, a DTI acquisition with a 400-µm in-plane resolution was acquired on one volunteer to push forward 7T potentialities. ::: ::: ::: RESULTS ::: The MSMA sequence allowed accessing to high-resolution axial diffusion images sampling the whole cord within a single acquisition. DTI metrics were found in agreement with literature at lower field, stable along a 50-120% relative B1+ variation range, with a mean inter-scan coefficient of variation of 8%. The two--fold spatial-resolution increase of the additional DTI acquisition enabled main white matter tracts visualization on a single-subject basis. ::: ::: ::: CONCLUSION ::: Although C7-level imaging needs some improvement, this preliminary study shows that transverse 7T DTI of the whole cervical spinal cord is feasible, laying the groundwork for improved multi-parametric MR investigations and microstructure characterization of the spinal cord. Magn Reson Med 80:947-957, 2018. © 2018 International Society for Magnetic Resonance in Medicine."
+    },
+    "7184690": {
+      "title": "Highresolution multi-parametric quantitative magnetic resonance imaging of the human cervical spinal cord at 7T",
+      "abstract": "Abstract Quantitative MRI techniques have the potential to characterize spinal cord tissue impairments occurring in various pathologies, from both microstructural and functional perspectives. By enabling very high image resolution and enhanced tissue contrast, ultra-high field imaging may offer further opportunities for such characterization. In this study, a multi-parametric high-resolution quantitative MRI protocol is proposed to characterize in vivo the human cervical spinal cord at 7T. Multi-parametric quantitative MRI acquizitions including T1, T2* relaxometry mapping and axial diffusion MRI were performed on ten healthy volunteers with a whole-body 7T system using a commercial prototype coil-array dedicated to cervical spinal cord imaging. Automatic cord segmentation and multi-parametric data registration to spinal cord templates enabled robust regional studies within atlas-based WM tracts and GM horns at the C3 cervical level. T1 value, cross-sectional area and GM/WM ratio evolutions along the cervical cord were also reported. An original correction method for B1+-biased T1 mapping sequence was additionally proposed and validated on phantom. As a result, relaxometry and diffusion parameters derived from high-resolution quantitative MRI acquizitions were reported at 7T for the first time. Obtained images, with unmatched resolutions compared to lower field investigations, provided exquisite anatomical details and clear delineation of the spinal cord substructures within an acquisition time of 30 min, compatible with clinical investigations. Regional statistically significant differences were highlighted between WM and GM based on T1 and T2* maps (p"
+    }
+  },
+  "generator": "fallback_v4"
+}

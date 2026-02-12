@@ -1,0 +1,29 @@
+{
+  "doc_id": "10808",
+  "text": "Since the performance of all algorithms is superior when the Metropolis-Hastings weight matrix is employed, the remainder of our simulations focus on this case. Fig. 2 shows the meansquare-error (MSE) as a function of time for the standard, accelerated, best-constant and optimal weight matrix consensus algorithms. Three versions of the accelerated algorithm are depicted, including the , case with optimal and suboptimal , and the , case. The number of nodes is 25 in Fig. 2 (a) and 50 in Fig. 2(b) . Since we have not developed a methodology for choosing an optimal setting for when , we adopted the following procedure to choose for the and case. For each trial, we evaluated the MSE for each value of ranging from 0 to 1 at intervals of 0.1. We then chose the that resulted in the lowest MSE for each trial at time step 50. This represents a practically unachievable oracle , so we stress that the purpose of the experiment is to illustrate the potential of the acceleration procedure. We do, however, observe that the random generation of the data has very little influence on the value that is selected; it is the random graph and hence the initial matrix that governs the optimal value of . This suggests that it is possible to develop a data-independent procedure to choose an optimal (or close-to-optimal) value. Fig. 2 indicates that the accelerated consensus algorithm with and achieves step-wise MSE decay that is close to that obtained using the optimal weight matrix developed in [CITATION_1] . The accelerated algorithm with and significantly outperforms the optimal weight matrix [CITATION_2] in terms of step-wise MSE decay. The case permits much more accurate prediction, which leads to the significant improvement in performance.",
+  "correct_citation": {
+    "[CITATION_1]": "124743369",
+    "[CITATION_2]": "124743369"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Fig. 2 indicates that the accelerated consensus algorithm with and achieves step-wise MSE decay that is close to that obtained using the optimal weight matrix developed in [CITATION_1] .",
+      "s_span": 1323,
+      "e_span": 1509
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The accelerated algorithm with and significantly outperforms the optimal weight matrix [CITATION_2] in terms of step-wise MSE decay.",
+      "s_span": 1510,
+      "e_span": 1642
+    }
+  ],
+  "bib_entries": {
+    "124743369": {
+      "title": "Fast linear iterations for distributed averaging",
+      "abstract": "We consider the problem of finding a linear iteration that yields distributed averaging consensus over a network, i.e., that asymptotically computes the average of some initial values given at the nodes. When the iteration is assumed symmetric, the problem of finding the fastest converging linear iteration can be cast as a semidefinite program, and therefore efficiently and globally solved. These optimal linear iterations are often substantially faster than several simple heuristics that are based on the Laplacian matrix of the associated graph."
+    }
+  },
+  "generator": "fallback_v4"
+}

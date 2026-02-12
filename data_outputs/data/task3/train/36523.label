@@ -1,0 +1,20 @@
+{
+  "doc_id": "36523",
+  "text": "EURASIP Journal on Advances in Signal Processing 5 2.3.2. Evaluating Individuals. We evaluate individuals from two perspectives, pattern recognition and machine learning. Our ultimate goal is to accurately classify data. Therefore, from the perspective of pattern recognition, an obvious measure is the classification accuracy in the obtained feature subspace. In fact, almost all existing GA-based feature extraction algorithms use this measure in their fitness functions. They calculate this measure based on the training samples or a subset of them. However, after preprocessing the data using WPCA, the classification accuracy on the training samples is always almost 100%. In [CITATION_1] , Zheng et al. also pointed this out when they used PCA to process the training data. They then simply ignored its role in evaluating individuals. Different from their method, we keep this classification term in the fitness function but use a validation set, instead of the training set. Specifically, we randomly choose from the N va samples to create a validation set Ω va and use the remaining N tr = (N − L × N va ) samples as the training set Ω tr . Assume that N c va (D) samples in the validation set are correctly classified in the feature subspace defined by the individual D on the training set Ω tr ; the classification accuracy term for this individual is then defined as",
+  "correct_citation": {
+    "[CITATION_1]": "7529113"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In  , Zheng et al. also pointed this out when they used PCA to process the training data."
+    }
+  ],
+  "bib_entries": {
+    "7529113": {
+      "title": "GA-Fisher: a new LDA-based face recognition algorithm with selection of principal components",
+      "abstract": "This paper addresses the dimension reduction problem in Fisherface for face recognition. When the number of training samples is less than the image dimension (total number of pixels), the within-class scatter matrix (Sw) in linear discriminant analysis (LDA) is singular, and principal component analysis (PCA) is suggested to employ in Fisherface for dimension reduction of Sw so that it becomes nonsingular. The popular method is to select the largest nonzero eigenvalues and the corresponding eigenvectors for LDA. To attenuate the illumination effect, some researchers suggested removing the three eigenvectors with the largest eigenvalues and the performance is improved. However, as far as we know, there is no systematic way to determine which eigenvalues should be used. Along this line, this paper proposes a theorem to interpret why PCA can be used in LDA and an automatic and systematic method to select the eigenvectors to be used in LDA using a genetic algorithm (GA). A GA-PCA is then developed. It is found that some small eigenvectors should also be used as part of the basis for dimension reduction. Using the GA-PCA to reduce the dimension, a GA-Fisher method is designed and developed. Compared with the traditional Fisherface method, the proposed GA-Fisher offers two additional advantages. First, optimal bases for dimensionality reduction are derived from GA-PCA. Second, the computational efficiency of LDA is improved by adding a whitening procedure after dimension reduction. The Face Recognition Technology (FERET) and Carnegie Mellon University Pose, Illumination, and Expression (CMU PIE) databases are used for evaluation. Experimental results show that almost 5% improvement compared with Fisherface can be obtained, and the results are encouraging."
+    }
+  },
+  "generator": "fallback_v4"
+}

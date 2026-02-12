@@ -1,0 +1,40 @@
+{
+  "doc_id": "36967",
+  "text": "In the proposed approach, the fragmentary tracklets extracted by single-object tracking methods are treated as input observations instead of detections. In other words, these fragmentary tracklets are used as nodes in the global graphic model. One of the reasons is that they have more information (like motion) than detections which only contains appearance information. With more information, they can be considered as a credible node and the similarities of them are more reliable. What's more, as nodes, the tracklet number is much smaller than that of detections. It's a good way to speed up the computing time of the graph optimization. In this paper, a head-shoulder detector [CITATION_1] and an AIF tracker [CITATION_2] are first used to get all the tracklets from each camera. After obtaining detections by the head-shoulder detector, the AIF tracker is applied on tracking every target and getting their tracklets. During the target tracking by the AIF, a confidence α t [CITATION_3] is got to evaluate the accuracy of a tracking result in frame t. If the confidence score is lower than the threshold, i. e. α t < θ, the tracker is considered to be lost. Then all confidence values of the target are recorded during tracking and the average value c is computed as the likelihood P (l i |Γ) of tracklet i,",
+  "correct_citation": {
+    "[CITATION_1]": "6100304",
+    "[CITATION_2]": "3255269",
+    "[CITATION_3]": "3255269"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In this paper, a head-shoulder detector [CITATION_1] and an AIF tracker [CITATION_2] are first used to get all the tracklets from each camera.",
+      "s_span": 643,
+      "e_span": 785
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In this paper, a head-shoulder detector [CITATION_1] and an AIF tracker [CITATION_2] are first used to get all the tracklets from each camera.",
+      "s_span": 643,
+      "e_span": 785
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "During the target tracking by the AIF, a confidence α t [CITATION_3] is got to evaluate the accuracy of a tracking result in frame t.",
+      "s_span": 925,
+      "e_span": 1058
+    }
+  ],
+  "bib_entries": {
+    "6100304": {
+      "title": "Rapid and robust human detection and tracking based on omega-shape features",
+      "abstract": "This paper proposes a novel method for rapid and robust human detection and tracking based on the omega-shape features of people's head-shoulder parts. There are two modules in this method. In the first module, a Viola-Jones type classifier and a local HOG (Histograms of Oriented Gradients) feature based AdaBoost classifier are combined to detect head-shoulders rapidly and effectively. Then, in the second module, each detected head-shoulder is tracked by a particle filter tracker using local HOG features to model target's appearance, which shows great robustness in scenarios of crowding, background distractors and partial occlusions. Experimental results demonstrate the effectiveness and efficiency of the proposed approach."
+    },
+    "3255269": {
+      "title": "An adaptive combination of multiple features for robust tracking in real scene",
+      "abstract": "Real scene video surveillance always involves low resolutions, lack of illumination or cluttered environments, which leads to insufficiency of discriminative details for the target. In this situation, discrimination based tracking methods could fail. To address this problem, this paper presents an adaptive multi-feature integration method in terms of feature invariance, which can evaluate the stability of features in sequential frames. The adaptive integrated feature (AIF) is consisted of several features with dynamic weights, which describe the degree of invariance of each single feature. An incremental principal component analysis (IPCA) adjusted by the accuracy of tracking results is used to update the adaptive integrated feature, and partially avoids the problem of \"updating dilemma'', which is common in most of adaptive updating methods. Experiments on pedestrian tracking demonstrate the proposed approach is effective and shows improved performance compared with several state-of-the-art methods in real surveillance scenes."
+    }
+  },
+  "generator": "fallback_v4"
+}

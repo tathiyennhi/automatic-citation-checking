@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The Point-based Network can achieve excellent performance at high inference speed with a lightweight design principle, only 0.64 Million parameters and the inference time is 6.7 ms/sample.",
+    "Additionally, the parameter and floating-point operations (FLOPs) in our model remain constant regardless of the input camera's resolution, in contrast to framebased methods.The network architecture is shown in Fig. 9, encompassing Data Processing, Sampling and Grouping, Intra-Group10ms Sliding window 50ms Time Window Normalization Sampling (1024 points) Data Process X Time Y Attention Input ( or) MLP 1 s 1 n s - 2 s n s … Softmax 1 a 1 n a - 2 a n a … local F t Y Input ( or) local F t Y + + + Output Extractor MLP BN ReLu MLP ReLu BN sum 1 t 2 t n 1 t x y... n t Forward Backward Bi-LSTM Attention Regressor Location 3+𝐷𝑆𝑛𝑢𝑚 3+𝐷stage Local extractor Attention Global extractor Intra Group Aggregation Inter Group Aggregation Loop x 𝑠 𝑛𝑢𝑚 t x y x y t x y x y 3......1 t 1 t 2 t 2 t -n 1 t n 1 t n t n t Standardization Sampling and Grouping 𝑠 𝑛𝑢𝑚 = 3 𝐷 1 = 64 𝐷 2 = 128 𝐷 3 = 256 aggregation, Inter-Group aggregation, and Regression.",
+    "The initial phase leverages the sparsity and high temporal resolution of event data, processing the event stream into nonoverlapping 10 ms samples, each associated with a 100 Hz label.",
+    "To address challenges associated with data sparsity, the methodology includes expanding the sample window size to 50 ms, maintaining the original labeling frequency to align with evaluation metrics.",
+    "The Sampling and Grouping phase employs advanced techniques such as Farthest Point Sampling (FPS) and K-Nearest Neighbors (KNN) to capture essential spatial and temporal information efficiently [33].To enhance feature extraction and integration, the methodology includes two novel aggregation modules."
+  ]
+}

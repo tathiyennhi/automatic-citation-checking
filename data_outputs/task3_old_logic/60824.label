@@ -1,0 +1,20 @@
+{
+  "doc_id": "60824",
+  "text": "An activity A is always successful in cCSP. Instead, the execution of activities in Sagas depends on a particular execution context Γ, which allows to evaluate the semantics of a process according to different scenarios. Aborted activities vs Programmable abort. In cCSP the special primitive THROW introduces programmable aborts. Instead, the abort of a saga is caused by the abort of an activity in the scenario Γ. Thus, the primitive THROW roughly corresponds to a Sagas activity that always fails in any Γ. Yielding to interrupt. In cCSP the yielding to interrupt is explicitly programmed by using the special primitive YIELD. Instead, in Sagas the yielding to interrupt is wired in the semantics rules and cannot be programmed. Failed compensations. Different from Sagas calculi, the abort of and the successful compensation of a transaction block in cCSP is silent to the parent process, i.e., there is no possibility to distinguish this case from the situation in which the forward flow complete successfully. Although not reported in § 2, Sagas calculi provide the primitive try S or P in [CITATION_1] , which allows to activates P when S aborts and it is compensated successfully. Interleaving vs concurrent traces. The semantics of a cCSP process is given by listing all possible executions that differ on the interleaving of their concurrent activities. Instead, in the Sagas calculi computations are described up-to interleavings. Note that any label α in a reduction denotes a set of possible executions. Compensation of parallel processes. As described in § 1, the most important distinction of both proposal is when defining the compensation for P|Q, since they use different compensation policies. This distinction is formalised in § 5",
+  "correct_citation": {
+    "[CITATION_1]": "7055151"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Although not reported in § 2, Sagas calculi provide the primitive try S or P in  , which allows to activates P when S aborts and it is compensated successfully."
+    }
+  ],
+  "bib_entries": {
+    "7055151": {
+      "title": "Theoretical foundations for compensations in flow composition languages",
+      "abstract": "A key aspect when aggregating business processes and web services is to assure transactional properties of process executions. Since transactions in this context may require long periods of time to complete, traditional mechanisms for guaranteeing atomicity are not always appropriate. Generally the concept of long running transactions relies on a weaker notion of atomicity based on compensations. For this reason, programming languages for service composition cannot leave out two key aspects: compensations, i.e. ad hoc activities that can undo the effects of a process that fails to complete, and transactional boundaries to delimit the scope of a transactional flow. This paper presents a hierarchy of transactional calculi with increasing expressiveness. We start from a very small language in which activities can only be composed sequentially. Then, we progressively introduce parallel composition, nesting, programmable compensations and exception handling. A running example illustrates the main features of each calculus in the hierarchy."
+    }
+  },
+  "generator": "fallback"
+}

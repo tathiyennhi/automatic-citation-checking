@@ -1,0 +1,29 @@
+{
+  "doc_id": "20507",
+  "text": "We use ENT+SW to denote a retrieval method that uses, in addition to query-document similarity, the entropy and the two stopwords-based features just described as document quality measures. In the language modeling case (LM), we use the document-quality values for scaling the document-query similarity, thereby treating the product of these values as a document relevance prior. In the MRF case, we follow recent work [CITATION_1] . That is, we interpolate the quality values (after normalizing each to a [0, 1] range) -having a different weight parameter assigned to each -with the value assigned to the document by the SDM model. The range of values for each such parameter is {0, 0.05, . . . , 1} with the constraint that the parameters' values, and those of the three SDM parameters mentioned above (λT , λ O , and λU ), sum to 1. Using the same approach, we study a method that integrates a document's PageRank score, which is a non-content-based quality measure, with the documentquery similarity [CITATION_2] . PageRank is computed upon the hyperlink graph of the English ClueWeb category A. (In the Table 3 : Comparison with using PageRank, and the entropy and stopwords-based indicators (ENT+SW), as document-quality measures; ReRank+SW is ReRank integrated with the stopwords-based measures; 'i', 'p' and 'e' mark statistically significant differences with the initial ranking, PageRank and ENT+SW, respectively. Boldface marks the best result in a column.",
+  "correct_citation": {
+    "[CITATION_1]": "207184945",
+    "[CITATION_2]": "207184945"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In the MRF case, we follow recent work  .",
+      "s_span": 380,
+      "e_span": 433
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Using the same approach, we study a method that integrates a document's PageRank score, which is a non-content-based quality measure, with the documentquery similarity  .",
+      "s_span": 836,
+      "e_span": 1018
+    }
+  ],
+  "bib_entries": {
+    "207184945": {
+      "title": "Quality-biased ranking of web documents",
+      "abstract": "Many existing retrieval approaches do not take into account the content quality of the retrieved documents, although link-based measures such as PageRank are commonly used as a form of document prior. In this paper, we present the quality-biased ranking method that promotes documents containing high-quality content, and penalizes low-quality documents. The quality of the document content can be determined by its readability, layout and ease-of-navigation, among other factors. Accordingly, instead of using a single estimate for document quality, we consider multiple content-based features that are directly integrated into a state-of- the-art retrieval method. These content-based features are easy to compute, store and retrieve, even for large web collections. We use several query sets and web collections to empirically evaluate the performance of our quality-biased retrieval method. In each case, our method consistently improves by a large margin the retrieval performance of text-based and link-based retrieval methods that do not take into account the quality of the document content."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Our implementation extends the FastMCP framework to provide specialized functionality for the Patra Knowledge Graph, incorporating performance monitoring, caching mechanisms, and batch processing capabilities designed specifically for scientific model management scenarios.We base our performance study on two Patra operations:• Model Card Retrieval: Retrieves the full model card for a given model identifier.• Edge Creation: Creates an edge (directed relationship) between two nodes in the graph.",
+    "The operation validates node existence, infers relationship type from node labels via schema constraints, checks for duplicate edges, and commits the edge creation within an atomic transaction.Model card retrieval is implemented through the MCP \"resource\" primitive because it provides contextual information about a model card in a read-only manner.",
+    "Specifically, it implements the URI pattern modelcard://{mc_id}, where {mc_id} is the model card external identifier.",
+    "Retrieval employs a multi-query aggregation strategy within a single Neo4j session: a Base query that retrieves the primary ModelCard node, and four independent queries fetch related entities: AI Model, Bias Analysis, Explainability Analysis, and Deployments.",
+    "The results are aggregated into a nested dictionary and serialized to JSON.We implement the edge creation operation that adds an edge to the graph representing a model card."
+  ],
+  "correct_citations": []
+}

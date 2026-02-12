@@ -1,0 +1,20 @@
+{
+  "doc_id": "45604",
+  "text": "For each task, we use an embedding layer to store the pretrained embeddings. We freeze the embedding layer during training, so the result is less affected by the rest of the model and the training data. To make the performance of all tasks consistent, we apply the same Bi-LSTM model [CITATION_1] on top of the embedding layer to learn task-specific features from different embeddings. The input size of Bi-LSTM is the same as the embedding layer and the output size is 128. All tasks use many-to-one Bi-LSTMs for classification purposes. In the end, a fully-connected layer and a softmax layer are applied after Bi-LSTM, with the output size specific to the number of classes of each task. We apply dropout rate of 0.5 on all layers except the last one and CC(13) KSO (17) use Adam [Kingma and Ba, 2014] as the optimizer. Table 2 shows the main results. We observe that the proposed method L-DEM 200D + ND 30M performs the best. The difference in the numbers of past domains indicates more past domains give better results. The GloVe.840B trained on 840 billion tokens does not perform as well as embeddings produced by our method. GloVe.840B's performance on the CC domain is close to our method indicating mixeddomain embeddings for this domain is not bad and this domain is more general. Combining all past domain corpora together with the new domain corpus (200D + ND 30M) makes the result worse than not using the past domains at all (ND 30M). This is because the diverse 200 domains are not similar to the new domains. The L-DENP 200D + ND 30M performs poorly indicating the proposed parametric meta-learner is useful, except the CC domain which is more general.",
+  "correct_citation": {
+    "[CITATION_1]": "16447573"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To make the performance of all tasks consistent, we apply the same Bi-LSTM model on top of the embedding layer to learn task-specific features from different embeddings."
+    }
+  ],
+  "bib_entries": {
+    "16447573": {
+      "title": "Distributed representations of words and phrases and their compositionality",
+      "abstract": "The recently introduced continuous Skip-gram model is an efficient method for learning high-quality distributed vector representations that capture a large number of precise syntactic and semantic word relationships. In this paper we present several extensions that improve both the quality of the vectors and the training speed. By subsampling of the frequent words we obtain significant speedup and also learn more regular word representations. We also describe a simple alternative to the hierarchical softmax called negative sampling. ::: ::: An inherent limitation of word representations is their indifference to word order and their inability to represent idiomatic phrases. For example, the meanings of \"Canada\" and \"Air\" cannot be easily combined to obtain \"Air Canada\". Motivated by this example, we present a simple method for finding phrases in text, and show that learning good vector representations for millions of phrases is possible."
+    }
+  },
+  "generator": "fallback"
+}

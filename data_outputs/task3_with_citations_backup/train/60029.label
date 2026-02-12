@@ -1,0 +1,33 @@
+{
+  "doc_id": "60029",
+  "text": "In [CITATION_1] , both CNN and sparse coding are employed whereby the input LR image is subjected to an efficient convolutional sparse coding module followed by 'perforated' upsampling and convolutional decoding. The 'perforated' upsampling may bring more sparsity and somehow approximates inverse maxpooling operator of deep CNNs. For comparison, the upsampling part is improvised, to give various reference methods, with classical interpolation methods, like bilinear, bicubic, nearest neighbor and linear shift. The authors call such variations as state of the art methods, which is a bit naive. Anyhow a PSNR gain of about 0.8dB, over simple bicubic interpolation, may not be helpful in establishing the effectiveness of the method. According to [CITATION_2] , such an approach of increasing image resolution, in the middle of the network gradually, may escalate the computational complexity which may be especially problematic with CNNs where the processing speed is a function of the input image resolution.",
+  "correct_citation": {
+    "[CITATION_1]": "9516233",
+    "[CITATION_2]": "7037846"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In [CITATION_1] , both CNN and sparse coding are employed whereby the input LR image is subjected to an efficient convolutional sparse coding module followed by 'perforated' upsampling and convolutional decoding.",
+      "s_span": 0,
+      "e_span": 212
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "According to [CITATION_2] , such an approach of increasing image resolution, in the middle of the network gradually, may escalate the computational complexity which may be especially problematic with CNNs where the processing speed is a function of the input image resolution.",
+      "s_span": 737,
+      "e_span": 1013
+    }
+  ],
+  "bib_entries": {
+    "7037846": {
+      "title": "Real-time single image and video super-resolution using an efficient sub-pixel convolutional neural network",
+      "abstract": "Recently, several models based on deep neural networks have achieved great success in terms of both reconstruction accuracy and computational performance for single image super-resolution. In these methods, the low resolution (LR) input image is upscaled to the high resolution (HR) space using a single filter, commonly bicubic interpolation, before reconstruction. This means that the super-resolution (SR) operation is performed in HR space. We demonstrate that this is sub-optimal and adds computational complexity. In this paper, we present the first convolutional neural network (CNN) capable of real-time SR of 1080p videos on a single K2 GPU. To achieve this, we propose a novel CNN architecture where the feature maps are extracted in the LR space. In addition, we introduce an efficient sub-pixel convolution layer which learns an array of upscaling filters to upscale the final LR feature maps into the HR output. By doing so, we effectively replace the handcrafted bicubic filter in the SR pipeline with more complex upscaling filters specifically trained for each feature map, whilst also reducing the computational complexity of the overall SR operation. We evaluate the proposed approach using images and videos from publicly available datasets and show that it performs significantly better (+0.15dB on Images and +0.39dB on Videos) and is an order of magnitude faster than previous CNN-based methods."
+    },
+    "9516233": {
+      "title": "Image Super-Resolution with Fast Approximate Convolutional Sparse Coding",
+      "abstract": "We present a computationally efficient architecture for image super-resolution that achieves state-of-the-art results on images with large spatial extend. Apart from utilizing Convolutional Neural Networks, our approach leverages recent advances in fast approximate inference for sparse coding. We empirically show that upsampling methods work much better on latent representations than in the original spatial domain. Our experiments indicate that the proposed architecture can serve as a basis for additional future improvements in image super-resolution."
+    }
+  },
+  "generator": "fallback_v4"
+}

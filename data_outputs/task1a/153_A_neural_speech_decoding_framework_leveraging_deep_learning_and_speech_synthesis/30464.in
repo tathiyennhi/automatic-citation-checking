@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The speech encoder extracts a set of (18) speech parameters at each time point from a given spectrogram, which are then fed to the speech synthesizer to reproduce the spectrogram.",
+    "We use a simple network architecture for the speech encoder, with temporal convolutional layers and multilayer perceptron (MLP) across channels at the same time point, as shown in Fig. 6a.",
+    "We encode pitch f t 0 by combining features generated from linear and Mel-scale spectrograms.",
+    "The other 17 speech parameters are derived by applying temporal convolutional layers and channel MLP to the linear-scale spectrogram.",
+    "To generate formant filter centre frequencies f t i=1 to 6, broadband unvoice filter frequency f t û and pitch f t 0, we use sigmoid activation at the end of the corresponding channel MLP to map the output to [0, 1], and then de-normalize it to real values by scaling [0, 1] to predefined [f min, f max ]."
+  ]
+}

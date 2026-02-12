@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "3) Directional Diversity: Examine horizontal, vertical, and diagonal moves.",
+    "4) Stability: Penalize disruptive moves proportional to expected rebalancing.",
+    "5) Monotonicity: Accept moves only if F improves beyond a margin ε. Algorithm 1 DIAGONALSCALE 1: Input: Current configuration (H, V), SLA (L max, T min) 2: Output: Next configuration (H next, V next) 3: Compute neighborhood N (H, V) 4: for each (H ′, V ′) in N do 5:EstimateL(H ′, V ′), T (H ′, V ′), K(H ′, V ′), C(H ′, V ′) 6: if L(H ′, V ′) > L max or T (H ′, V ′) < T min then 7:mark (H ′, V ′) as infeasible; continue 8:end if 9:Compute objective F (H ′, V ′) 10:Compute rebalance penalty P rebalance (H, V; H ′, V ′) 11:Let F ′ (H ′, V ′) = F (H ′, V ′) + δP rebalance 12: end for 13: Let (H *, V *) be the feasible neighbor minimizingF ′ 14: if F ′ (H *, V *) < F (H, V) -ε then 15: return (H *, V *) 16: else 17: return (H, V) 18: end if B.",
+    "Neighborhood Definition Let: N (H, V) = {(H ± ∆H, V), (H, V ± 1), (H ± ∆H, V ± 1)}.∆H is typically 1-2 nodes.",
+    "Vertical moves correspond to adjacent instance types."
+  ],
+  "correct_citations": []
+}

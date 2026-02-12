@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In our experiments, we use a beam size of k = 512, the maximum number of iterations is 16 and the branching factor for each node, that is, the decoding batch size, is 32.",
+    "This is the maximum inference-time batch size that can fit in the memory of a GPU V100 for our transformer size.",
+    "Scaling up these factors to examine a larger fraction of the search space might improve AlphaGeometry results even further.",
+    "For each problem, we used a pool of four GPU workers, each hosting a copy of the transformer language model to divide the work between alternative beams, and a pool of 10,000 CPU workers to host the symbolic solvers, shared across all beams across all 30 problems.",
+    "This way, a problem that terminates early can contribute its share of computing power to longer-running problems."
+  ]
+}

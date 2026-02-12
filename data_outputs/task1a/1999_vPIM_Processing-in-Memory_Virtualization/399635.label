@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Since the pages are allocated in the guest userspace, and Firecracker cannot directly access them via the Linux page struct in the guest address space, it is not feasible to directly transfer the matrix to the backend using the virtqueue.Metadata DPU0: Metadata Page0 Page1... DPU1: Metadata Page0 Page1 DPU63: Metadata Page0 Page1 int size int offset int nb_pages int offset......... struct page **pages;......... vPIM serializes the matrix to fit the data into the virtqueue by breaking down the matrix into two buffer types: metadata buffers and page buffers, which are arrays of 64-bit unsigned integers.",
+    "Each integer in the array is derived from a Linux page struct by converting it to a physical address in the VM (Guest Physical Addresses).",
+    "This allows Firecracker direct access to the VM pages without copying data.",
+    "Fig. 7 illustrates the serialized matrix registered in the virtqueue.",
+    "The maximum number of buffers is 130, ensuring that the serialized matrix fits within the virtqueue's capacity of 512 pointers, regardless of the data size.Virtqueue Request info Matrix metadata buffer DPU0 metadata buffer DPU0 page buffer DPU1 metadata buffer DPU1 page buffer DPU63 page buffer DPU63 metadata buffer... 0 1 2 3 4 5... 128 129 Figure 7: Serialized matrix in virtqueue, showing the alternation of metadata and data in the buffer."
+  ],
+  "correct_citations": []
+}

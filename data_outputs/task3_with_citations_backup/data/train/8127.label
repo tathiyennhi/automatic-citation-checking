@@ -1,0 +1,33 @@
+{
+  "doc_id": "8127",
+  "text": "Example 1 A group of friends wants to go on vacation. They can choose between going to Austria or Italy for hiking or alpine skiing in the summer or the winter holidays. The three issues to decide on are hence Where, When, and What, with domains D(Where) = {Austria, Italy}, D(When) = {summer, winter}, and D(What) = {skiing, hiking}. A possible candidate would be skiing in summer in Italy. Figure 1 shows two possible conditional preferences modelled as CP-nets, each of them consisting of a dependency graph and a conditional preference table. CP-nets only define a partial order over the candidates, i.e., some candidates are incomparable. There are several ways to create strict total orders over the candidates [CITATION_1] [CITATION_2] . We use the linearization method that is also used by Mattei et al.: Each voter provides a fixed strict total order X i 1 > X i 2 > · · · > X i m over the issues X 1 , . . . , X m such that each issue is independent from all issues following it in this order; this is possible because the CP-net is acyclic. Then we associate a binary vector of length m to each candidate, for which the entry at position j corresponds to issue X i j in the voter's fixed ordering. This entry is set to 0 if the preferred value of its binary domain is assigned to it, and 1 otherwise. Hence, the most preferred candidate is associated to the vector (0, . . . , 0), and the least preferred one The possible values are Austria or Italy in the summer or the winter holidays for hiking or alpine skiing. Alice thinks that a summer vacation always is the better choice, but if it has to be winter she prefers alpine skiing in Austria. Bob thinks that alpine skiing is not an appropriate summer activity and that only Italy has good ski regions to the vector (1, . . . , 1). Given a candidate, the next best candidate can be found efficiently by increasing the binary number represented by its vector by one.",
+  "correct_citation": {
+    "[CITATION_1]": "202563",
+    "[CITATION_2]": "5297575"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "There are several ways to create strict total orders over the candidates [CITATION_1] [CITATION_2] .",
+      "s_span": 644,
+      "e_span": 744
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "There are several ways to create strict total orders over the candidates [CITATION_1] [CITATION_2] .",
+      "s_span": 644,
+      "e_span": 744
+    }
+  ],
+  "bib_entries": {
+    "5297575": {
+      "title": "Paradoxes of multiple elections: an approximation approach",
+      "abstract": "When agents need to make decisions on multiple issues, applying common voting rules becomes computationally hard due to the exponentially large number of alternatives. One computationally efficient solution is to vote on the issues sequentially. In this paper, we investigate how well the winner under the sequential voting process approximates the winners under some common voting rules that admit natural scoring functions that can serve as a basis for approximation results. We focus on multi-issue domains where each issue is binary and the agents' preferences are O-legal, separable, represented by LP-trees, or lexicographic. We show some generalized paradoxes of multiple elections: Sequential voting does not approximate many common voting rules well even when the preferences are O-legal or separable. However, these paradoxes are much alleviated or even completely avoided when the preferences are lexicographic or represented by LP-trees. Our results thus draw a border for conditions under which sequential voting rules, which have extremely low computational and communicational cost, are good approximations of some common voting rules w.r.t. their corresponding scoring functions."
+    },
+    "202563": {
+      "title": "Computational social choice",
+      "abstract": "3 Voting 17 3.1 Voting Rules . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 17 3.1.1 Scoring Rules . . . . . . . . . . . . . . . . . . . . . . . . 18 3.1.2 Condorcet Extensions . . . . . . . . . . . . . . . . . . . 19 3.1.3 Other Rules . . . . . . . . . . . . . . . . . . . . . . . . . 22 3.2 Manipulation . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23 3.2.1 The Gibbard-Satterthwaite Impossibility . . . . . . . . . . 24 3.2.2 Restricted Domains of Preferences . . . . . . . . . . . . . 24 3.2.3 Computational Hardness of Manipulation . . . . . . . . . 26 3.2.4 Probabilistic Voting Rules . . . . . . . . . . . . . . . . . 29 3.2.5 Irresolute Voting Rules . . . . . . . . . . . . . . . . . . . 30 3.3 Possible and Necessary Winners . . . . . . . . . . . . . . . . . . 31"
+    }
+  },
+  "generator": "fallback_v4"
+}

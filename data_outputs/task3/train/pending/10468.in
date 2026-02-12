@@ -1,0 +1,17 @@
+{
+  "text": "This brings us to an important distinction between the usual approach taken by UTP regarding the distinction between syntax and semantics. The usual approach, inspired by the slogan \"programs are predicates\" [CITATION_1] [CITATION_2] , is to treat syntax and semantics as the same thing. A program's syntax is simply a shorthand notation for its semantics. So, the program text x := x+y is a predicate, a shorthand for the more verbose x = x + y \u2227 y = y 2 . in particular, the notation for sequential composition, P ; Q, is a shorthand for \u2203obs m \u2022 P [obs m /obs ] \u2227 Q[obs m /obs], where obs (obs ) refers to all the before-(after-) observations. This \"punning\" between syntax and semantics largely works for theories of sequential programs or local-state concurrency, mainly because sequences of code lead to simple semantic sequencing. However, in global shared-variable concurrency, code sequences get broken up by interference from parallel execution threads, and there is no longer a simple correspondence between syntactical and semantic sequencing.",
+  "correct_citation": {
+    "[CITATION_1]": "14259024",
+    "[CITATION_2]": "5055340"
+  },
+  "bib_entries": {
+    "5055340": {
+      "title": "Programs are predicates",
+      "abstract": "A computer program is identified with the strongest predicate describing every relevant observation that can be made of the behaviour of a computer executing that program. A programming language is a subset of logical and mathematical notations, which is so restricted that products described in the language can be automatically implemented on a computer. The notations enjoy a number of elegant algebraic properties, which can be used for optimizing program efficiency. A specification is a predicate describing all permitted observations of a program, and it may be expressed with greatest clarity by taking advantage of the whole language of logic and mathematics. A program P meets its specification S iff =P=>S. The proof of this implication may use all the classical methods of mathematics and logic. These points are illustrated by design of a small language that includes assignments, conditionals, non-determinism, recursion, input, output, and concurrency."
+    },
+    "14259024": {
+      "title": "Predicative programming part i & ii",
+      "abstract": "Part I of this two-part paper presented a new semantics of programs. Each program is considered to be a predicate, in a restricted notation, that specifies the observable behavior of a computer executing the program. We considered a variety of notations, including assignment, composition (semicolon), deterministic choice (if), nondeterministic choice, definition (nonrecursive and recursive), and variable declaration. We did not consider any input or output notations, or concurrency; that is the subject of Part II. We assume the reader is familiar with Part I, so that we can build on ideas presented there."
+    }
+  }
+}

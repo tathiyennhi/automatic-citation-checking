@@ -1,0 +1,22 @@
+{
+  "doc_id": "11777",
+  "text": "In contrast to NullAway, CFNullness aims for sound initialization checking. The CFNullness initialization checking system [1, ğ3.8] (an extension of the Summers and Müller type system [CITATION_1] ) prohibits invoking any method on a partially-initialized object without additional developer annotations. E.g., CFNullness prohibits the call at line 25, since helper() is not annotated as being able to operate during initialization. It also lacks support for a direct analogue of the @Initializer annotation. As we shall show in ğ8 this strict checking leads to a number of additional false warnings. NullAway's checking is unsound, but it seems to catch most initialization errors in practice with a much lower annotation burden.",
+  "correct_citation": {
+    "[CITATION_1]": "7631191"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The CFNullness initialization checking system [1, ğ3.8] (an extension of the Summers and Müller type system [CITATION_1] ) prohibits invoking any method on a partially-initialized object without additional developer annotations.",
+      "s_span": 76,
+      "e_span": 304
+    }
+  ],
+  "bib_entries": {
+    "7631191": {
+      "title": "Freedom before commitment: a lightweight type system for object initialisation",
+      "abstract": "One of the main purposes of object initialisation is to establish invariants such as a field being non-null or an immutable data structure containing specific values. These invariants are then implicitly assumed by the rest of the implementation, for instance, to ensure that a field may be safely dereferenced or that immutable data may be accessed concurrently. Consequently, letting an object escape from its constructor is dangerous; the escaping object might not yet satisfy its invariants, leading to errors in code that relies on them. Nevertheless, preventing objects entirely from escaping from their constructors is too restrictive; it is often useful to call auxiliary methods on the object under initialisation or to pass it to another constructor to set up mutually-recursive structures. We present a type system that tracks which objects are fully initialised and which are still under initialisation. The system can be used to prevent objects from escaping, but also to allow safe escaping by making explicit which objects might not yet satisfy their invariants. We designed, formalised and implemented our system as an extension to a non-null type system, but it is not limited to this application. Our system is conceptually simple and requires little annotation overhead; it is sound and sufficiently expressive for many common programming idioms. Therefore, we believe it to be the first such system suitable for mainstream use."
+    }
+  },
+  "generator": "fallback_v4"
+}

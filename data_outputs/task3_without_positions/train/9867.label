@@ -1,0 +1,66 @@
+{
+  "doc_id": "9867",
+  "text": "The convergence rate of distributed average consensus algorithms has been studied by several authors [CITATION_1] , [CITATION_2] . Xiao, Boyd, and their collaborators have been the main contributors of methods that strive to accelerate consensus algorithms through optimization of the weight matrix [CITATION_3] , [CITATION_4] , [CITATION_5] . They showed that it is possible to formulate the problem of identifying the weight matrix that satisfies network topology constraints and minimizes the (worst-case) asymptotic convergence time as a convex semidefinite optimization task. This can be solved using a matrix optimization algorithm. Although elegant, the approach has two disadvantages. First, the convex optimization requires substantial computational resources and can impose delays in configuration of the network. If the network topology changes over time, this can be of particular concern. Second, a straightforward implementation of the algorithm requires a fusion center that is aware of the global network topology. In particular, in the case of online operation and a dynamic 1053-587X/$25.00 © 2009 IEEE network topology, the fusion center needs to recalculate the optimal weight matrix every time the network topology changes. If such a fusion center can be established in this situation, then the value of a consensus algorithm becomes questionable. To combat the second problem, Boyd et al. propose the use of iterative optimization based on the subgradient algorithm. Calculation of the subgradient requires knowledge of the eigenvector corresponding to the second largest eigenvalue of the weight matrix. In order to make the algorithm distributed, Boyd et al. employ decentralized orthogonal iterations [CITATION_6] , [CITATION_7] for eigenvector calculation. The resulting algorithm, although distributed, is demanding in terms of time, computation and communication, because it essentially involves two consensus procedures.",
+  "correct_citation": {
+    "[CITATION_1]": "124743369",
+    "[CITATION_2]": "8368512",
+    "[CITATION_3]": "124743369",
+    "[CITATION_4]": "561285",
+    "[CITATION_5]": "2120244",
+    "[CITATION_6]": "2120244",
+    "[CITATION_7]": "13105926"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The convergence rate of distributed average consensus algorithms has been studied by several authors  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The convergence rate of distributed average consensus algorithms has been studied by several authors  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Xiao, Boyd, and their collaborators have been the main contributors of methods that strive to accelerate consensus algorithms through optimization of the weight matrix  ,  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Xiao, Boyd, and their collaborators have been the main contributors of methods that strive to accelerate consensus algorithms through optimization of the weight matrix  ,  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Xiao, Boyd, and their collaborators have been the main contributors of methods that strive to accelerate consensus algorithms through optimization of the weight matrix  ,  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "In order to make the algorithm distributed, Boyd et al. employ decentralized orthogonal iterations  ,  for eigenvector calculation."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "In order to make the algorithm distributed, Boyd et al. employ decentralized orthogonal iterations  ,  for eigenvector calculation."
+    }
+  ],
+  "bib_entries": {
+    "2120244": {
+      "title": "Randomized gossip algorithms",
+      "abstract": "Motivated by applications to sensor, peer-to-peer, and ad hoc networks, we study distributed algorithms, also known as gossip algorithms, for exchanging information and for computing in an arbitrarily connected network of nodes. The topology of such networks changes continuously as new nodes join and old nodes leave the network. Algorithms for such networks need to be robust against changes in topology. Additionally, nodes in sensor networks operate under limited computational, communication, and energy resources. These constraints have motivated the design of \"gossip\" algorithms: schemes which distribute the computational burden and in which a node communicates with a randomly chosen neighbor. We analyze the averaging problem under the gossip constraint for an arbitrary network graph, and find that the averaging time of a gossip algorithm depends on the second largest eigenvalue of a doubly stochastic matrix characterizing the algorithm. Designing the fastest gossip algorithm corresponds to minimizing this eigenvalue, which is a semidefinite program (SDP). In general, SDPs cannot be solved in a distributed fashion; however, exploiting problem structure, we propose a distributed subgradient method that solves the optimization problem over the network. The relation of averaging time to the second largest eigenvalue naturally relates it to the mixing time of a random walk with transition probabilities derived from the gossip algorithm. We use this connection to study the performance and scaling of gossip algorithms on two popular networks: Wireless Sensor Networks, which are modeled as Geometric Random Graphs, and the Internet graph under the so-called Preferential Connectivity (PC) model."
+    },
+    "124743369": {
+      "title": "Fast linear iterations for distributed averaging",
+      "abstract": "We consider the problem of finding a linear iteration that yields distributed averaging consensus over a network, i.e., that asymptotically computes the average of some initial values given at the nodes. When the iteration is assumed symmetric, the problem of finding the fastest converging linear iteration can be cast as a semidefinite program, and therefore efficiently and globally solved. These optimal linear iterations are often substantially faster than several simple heuristics that are based on the Laplacian matrix of the associated graph."
+    },
+    "13105926": {
+      "title": "A decentralized algorithm for spectral analysis",
+      "abstract": "In many large network settings, such as computer networks, social networks, or hyperlinked text documents, much information can be obtained from the network's spectral properties. However, traditional centralized approaches for computing eigenvectors struggle with at least two obstacles: the data may be difficult to obtain (both due to technical reasons and because of privacy concerns), and the sheer size of the networks makes the computation expensive. A decentralized, distributed algorithm addresses both of these obstacles: it utilizes the computational power of all nodes in the network and their ability to communicate, thus speeding up the computation with the network size. And as each node knows its incident edges, the data collection problem is avoided as well.Our main result is a simple decentralized algorithm for computing the top k eigenvectors of a symmetric weighted adjacency matrix, and a proof that it converges essentially in O(τ MIX log2 n) rounds of communication and computation, where τ MIX is the mixing time of a random walk on the network. An additional contribution of our work is a decentralized way of actually detecting convergence, and diagnosing the current error. Our protocol scales well, in that the amount of computation performed at any node in any one round, and the sizes of messages sent, depend polynomially on k, but not on the (typically much larger) number n of nodes."
+    },
+    "561285": {
+      "title": "A scheme for robust distributed sensor fusion based on average consensus",
+      "abstract": "We consider a network of distributed sensors, where where each sensor takes a linear measurement of some unknown parameters, corrupted by independent Gaussian noises. We propose a simple distributed iterative scheme, based on distributed average consensus in the network, to compute the maximum-likelihood estimate of the parameters. This scheme doesn't involve explicit point-to-point message passing or routing; instead, it diffuses information across the network by updating each node's data with a weighted average of its neighbors' data (they maintain the same data structure). At each step, every node can compute a local weighted least-squares estimate, which converges to the global maximum-likelihood solution. This scheme is robust to unreliable communication links. We show that it works in a network with dynamically changing topology, provided that the infinitely occurring communication graphs are jointly connected."
+    },
+    "8368512": {
+      "title": "Consensus problems in networks of agents with switching topology and time-delays",
+      "abstract": "In this paper, we discuss consensus problems for networks of dynamic agents with fixed and switching topologies. We analyze three cases: 1) directed networks with fixed topology; 2) directed networks with switching topology; and 3) undirected networks with communication time-delays and fixed topology. We introduce two consensus protocols for networks with and without time-delays and provide a convergence analysis in all three cases. We establish a direct connection between the algebraic connectivity (or Fiedler eigenvalue) of the network and the performance (or negotiation speed) of a linear consensus protocol. This required the generalization of the notion of algebraic connectivity of undirected graphs to digraphs. It turns out that balanced digraphs play a key role in addressing average-consensus problems. We introduce disagreement functions for convergence analysis of consensus protocols. A disagreement function is a Lyapunov function for the disagreement network dynamics. We proposed a simple disagreement function that is a common Lyapunov function for the disagreement dynamics of a directed network with switching topology. A distinctive feature of this work is to address consensus problems for networks with directed information flow. We provide analytical tools that rely on algebraic graph theory, matrix theory, and control theory. Simulations are provided that demonstrate the effectiveness of our theoretical results."
+    }
+  },
+  "generator": "fallback_v4"
+}

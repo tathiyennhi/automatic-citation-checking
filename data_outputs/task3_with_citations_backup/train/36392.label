@@ -1,0 +1,44 @@
+{
+  "doc_id": "36392",
+  "text": "Instead of training from scratch, we use MobileNetV2 pretrained on the ImageNet dataset to initialize the baseline network, and then fine-tune it. Through our experiments, we use the online bootstrapping strategy to alleviate the issue of class imbalance [CITATION_1] . We adopt stochastic gradient descent (SGD) [CITATION_2] with an initial learning rate of 0.006 and a weight decay of 0.0005 for training. We set the momentum to 0.9. The batch size is set to 16. Similar to other semantic segmentation methods, we adopt the popular 'poly' learning rate strategy [CITATION_3] (the initial learning rate is multiplied by (1 − iter max iter ) power for each iteration with power = 0.9,",
+  "correct_citation": {
+    "[CITATION_1]": "8690944",
+    "[CITATION_2]": "115963355",
+    "[CITATION_3]": "10875471"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Through our experiments, we use the online bootstrapping strategy to alleviate the issue of class imbalance [CITATION_1] .",
+      "s_span": 147,
+      "e_span": 269
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We adopt stochastic gradient descent (SGD) [CITATION_2] with an initial learning rate of 0.006 and a weight decay of 0.0005 for training.",
+      "s_span": 270,
+      "e_span": 407
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Similar to other semantic segmentation methods, we adopt the popular 'poly' learning rate strategy [CITATION_3] (the initial learning rate is multiplied by (1 − iter max iter ) power for each iteration with power = 0.9,",
+      "s_span": 465,
+      "e_span": 684
+    }
+  ],
+  "bib_entries": {
+    "115963355": {
+      "title": "Large-scale machine learning with stochastic gradient descent",
+      "abstract": "During the last decade, the data sizes have grown faster than the speed of processors. In this context, the capabilities of statistical machine learning methods is limited by the computing time rather than the sample size. A more precise analysis uncovers qualitatively different tradeoffs for the case of small-scale and large-scale learning problems. The large-scale case involves the computational complexity of the underlying optimization algorithm in non-trivial ways. Unlikely optimization algorithms such as stochastic gradient descent show amazing performance for large-scale problems. In particular, second order stochastic gradient and averaged stochastic gradient are asymptotically efficient after a single pass on the training set."
+    },
+    "8690944": {
+      "title": "High-performance semantic segmentation using very deep fully convolutional networks",
+      "abstract": "We propose a method for high-performance semantic image segmentation (or semantic pixel labelling) based on very deep residual networks, which achieves the state-of-the-art performance. A few design factors are carefully considered to this end. We make the following contributions. (i) First, we evaluate different variations of a fully convolutional residual network so as to find the best configuration, including the number of layers, the resolution of feature maps, and the size of field-of-view. Our experiments show that further enlarging the field-of-view and increasing the resolution of feature maps are typically beneficial, which however inevitably leads to a higher demand for GPU memories. To walk around the limitation, we propose a new method to simulate a high resolution network with a low resolution network, which can be applied during training and/or testing. (ii) Second, we propose an online bootstrapping method for training. We demonstrate that online bootstrapping is critically important for achieving good accuracy. (iii) Third we apply the traditional dropout to some of the residual blocks, which further improves the performance. (iv) Finally, our method achieves the currently best mean intersection-over-union 78.3% on the PASCAL VOC 2012 dataset, as well as on the recent dataset Cityscapes. ∗This research was in part supported by the Data to Decisions Cooperative Research Centre. C. Shen’s participation was in part supported by an ARC Future Fellowship (FT120100969). C. Shen is the corresponding author. 1 ar X iv :1 60 4. 04 33 9v 1 [ cs .C V ] 1 5 A pr 2 01 6"
+    },
+    "10875471": {
+      "title": "Parsenet: Looking wider to see better",
+      "abstract": "We present a technique for adding global context to deep convolutional networks for semantic segmentation. The approach is simple, using the average feature for a layer to augment the features at each location. In addition, we study several idiosyncrasies of training, significantly increasing the performance of baseline networks (e.g. from FCN). When we add our proposed global feature, and a technique for learning normalization parameters, accuracy increases consistently even over our improved versions of the baselines. Our proposed approach, ParseNet, achieves state-of-the-art performance on SiftFlow and PASCAL-Context with small additional computational cost over baselines, and near current state-of-the-art performance on PASCAL VOC 2012 semantic segmentation with a simple approach. Code is available at this https URL ."
+    }
+  },
+  "generator": "fallback_v4"
+}

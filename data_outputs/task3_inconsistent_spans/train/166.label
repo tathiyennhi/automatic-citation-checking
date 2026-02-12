@@ -1,0 +1,22 @@
+{
+  "doc_id": "166",
+  "text": "It behooves us now to provide some intuition for the nature of the entropy-weighted metric [CITATION_1] . Consider the difference between an image neighborhood with geometric structure and one which is dominated by noise. In the structured case, we expect the gradients to be concentrated in a few directions, corresponding to edge orientations, and magnitudes, corresponding to edge points versus non-edge points. For a noisy neighborhood, we should expect the gradients to be distributed randomly, spread over a large range of magnitudes and orientations. Therefore, the entropy of the gradient, as a two-dimensional random variable, in an image neighborhood can be expected to be lower for well-structured neighborhoods than for ones dominated by noise. Note that we cannot use the entropy of the raw grayvalues from each band as a weighting criterion. In fact, the local entropy of the grayvalues is invariant under spatial rearrangement of the pixels in the estimation neighborhood, and thus does not convey information about the geometric structure of the image over that neighborhood. On the other hand, local gradient entropy is not invariant under rearrangement, since the spatial location of pixels within the neighborhood is used to compute the gradients, and thus different pixel arrangements yield different gradient distributions. Figure 2 shows an example of the distribution of gradients for a noisy neighborhood versus a structured one, as pictured in figure 2 (left) . One can easily see that the distribution of gradients for the unstructured neighborhood is rather uniform. The geometric structure of the second example neighborhood is apparent from the tight clustering of gradient vectors into two groups, those corresponding to the vertical edge through the middle of the neighborhood, and the rest. The metric in (1) exploits this fact by favoring bands with lower local entropy. If all bands have approximately the same gradient entropy in a neighborhood of a given pixel, then no decision can be made and the metric defaults to Euclidean at that point. The free parameters in the metric are the size of the neighborhood over which we estimate the local entropy, and the bandwidth of the kernel estimator, both of which are scale parameters. We use a fixed neighborhood width at every pixel of every band. It is very possible that an adaptive width entropy estimation could yield better results, but we have been unable to find an effective adaptation rule, since that rule should somehow depend on the noise properties of the image bands in that neighborhood and that is precisely what we are trying to estimate in the first place.",
+  "correct_citation": {
+    "[CITATION_1]": "17382731"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "It behooves us now to provide some intuition for the nature of the entropy-weighted metric  .",
+      "s_span": 0,
+      "e_span": 105
+    }
+  ],
+  "bib_entries": {
+    "17382731": {
+      "title": "Multi-spectral medical image visualization with self organizing maps",
+      "abstract": "The effective display of multi-parameter medical image data sets is assuming increasing importance as more distinct imaging modalities are becoming available. For medical purposes, one desirable goal is to fuse such data sets into a single most informative gray-scale image without making rigid classification decisions. A visualization technique based on a non-linear projection onto a 1-D self-organizing map is described and examples are shown. The SOM visualization technique is fast, theoretically attractive, and has properties which complement those of projection-pursuit or other linear techniques. It may be of particular value in calling attention to specific regions in a multi-parameter image where the component images should be examined in detail. >"
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "42201",
+  "text": "To analyze the claims data, we apply the technique in Section 5.1.1. To make any estimation about the distribution of the times of claims measure M (·), we obtain the data on {M n j ((i − 1, i] : i = 0, 1, · · · , W }, j = 1, 2, · · · , n. Recall, W = 1096 days. For each vehicle id j, note its date of sale S n j and the dates on which it comes with a claim, say it comes with claims on p dates D 1 < D 2 < · · · < D p . Now, we compute C n i,j = D i − S n j , i = 1, 2, · · · , p. Then, we construct the measure M n j (·) as p i=1 C n i,j (·). In some cases, we found that C n i,j < 0 (claim honored before the car is sold), or C n i,j > W (claim honored after the warranty period). We handled this as follows: if C n i,j < 0, we make it C n i,j = 0 and if C n i,j > W , we make it C n i,j = W. Thus, we obtain {M n j ((i − 1, i]) := 1 {C n i,j =i} : i = 0, 1, · · · , W }, j = 1, 2, · · · , n. We estimate the expected times of claims measure m(·) = E[M (·)] in a manner similar to [CITATION_1] . The plots of { i,m 1 ((i − 1, i]) := 1 n n j=1 M n j ((i − 1, i]) : i = 0, 1, · · · , W = 1096} and {(i,m 1 ((i − 1, i]) : i = 1, · · · , W − 1 = 1095} are shown in Figure 3 , where n = 34807 is the total number of cars in our sales data. Clearly, the plot of {(i,m 1 ((i − 1, i]) : i = 0, 1, · · · , 1096} indicates that the measure m(·) has two atoms at 0 and W = 1096. So, we plot {(i,m 1 ((i − 1, i]) : i = 1, · · · , 1095} to infer the structure of the mean times of claims measure m(·) in the interval (0, W ). The linear appearance of {(i,m 1 ((i − 1, i]) : i = 1, · · · , 1095} as shown in By integrating, we get for 1 ≤ i ≤ 1095,",
+  "correct_citation": {
+    "[CITATION_1]": "122525283"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We estimate the expected times of claims measure m(·) = E[M (·)] in a manner similar to [CITATION_1] .",
+      "s_span": 897,
+      "e_span": 999
+    }
+  ],
+  "bib_entries": {
+    "122525283": {
+      "title": "Warranty claims modeling",
+      "abstract": "A company wishes to estimate or predict its financial exposure in a reporting period of length T (typically one quarter) because of warranty claims. We propose a fairly general random measure model which allows computation of the Laplace transform of the total claim made against the company in the reporting interval due to warranty claims. When specialized to a Poisson process of both sales and warranty claims, statistical estimation of relevant quantities is possible. The methodology is illustrated by analyzing automobile sales and warranty claims data from a large car manufacturer for a single car model and model year. © 2008 Wiley Periodicals, Inc. Naval Research Logistics, 2008"
+    }
+  },
+  "generator": "fallback_v4"
+}

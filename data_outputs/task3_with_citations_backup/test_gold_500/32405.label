@@ -1,0 +1,55 @@
+{
+  "doc_id": "32405",
+  "text": "Adaptation and time modulation. Many MPs offer an intrinsic adaptation mechanism to match a new situation or an altered task, e.g., hitting a different incoming balls when playing table tennis. The adaptation commonly comes in a form of modification of the desired target position and velocity at the end of the primitive or as a modulation of the amplitude of the primitive [CITATION_1] . Our approach [CITATION_2] [CITATION_3] can be used to adapt the movement at any time point during the trajectory's execution. Furthermore, adaptation of MPs include temporal modulation. Temporal modulation is a valuable property as it enables MPs to be applied in scenarios where correct timing is critical for the success of the task, e.g., in hitting, batting, or in locomotion to adjust the walking speed of the robot [CITATION_4] .",
+  "correct_citation": {
+    "[CITATION_1]": "11675086",
+    "[CITATION_2]": "13083455",
+    "[CITATION_3]": "4604274",
+    "[CITATION_4]": "7536356"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The adaptation commonly comes in a form of modification of the desired target position and velocity at the end of the primitive or as a modulation of the amplitude of the primitive [CITATION_1] .",
+      "s_span": 194,
+      "e_span": 389
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our approach [CITATION_2] [CITATION_3] can be used to adapt the movement at any time point during the trajectory's execution.",
+      "s_span": 390,
+      "e_span": 515
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Our approach [CITATION_2] [CITATION_3] can be used to adapt the movement at any time point during the trajectory's execution.",
+      "s_span": 390,
+      "e_span": 515
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Temporal modulation is a valuable property as it enables MPs to be applied in scenarios where correct timing is critical for the success of the task, e.g., in hitting, batting, or in locomotion to adjust the walking speed of the robot [CITATION_4] .",
+      "s_span": 576,
+      "e_span": 825
+    }
+  ],
+  "bib_entries": {
+    "4604274": {
+      "title": "A probabilistic approach to robot trajectory generation",
+      "abstract": "Motor Primitives (MPs) are a promising approach for the data-driven acquisition as well as for the modular and re-usable generation of movements. However, a modular control architecture with MPs is only effective if the MPs support co-activation as well as continuously blending the activation from one MP to the next. In addition, we need efficient mechanisms to adapt a MP to the current situation. Common approaches to movement primitives lack such capabilities or their implementation is based on heuristics. We present a probabilistic movement primitive approach that overcomes the limitations of existing approaches. We encode a primitive as a probability distribution over trajectories. The representation as distribution has several beneficial properties. It allows encoding a time-varying variance profile. Most importantly, it allows performing new operations — a product of distributions for the co-activation of MPs conditioning for generalizing the MP to different desired targets. We derive a feedback controller that reproduces a given trajectory distribution in closed form. We compare our approach to the existing state-of-the art and present real robot results for learning from demonstration."
+    },
+    "7536356": {
+      "title": "Programmable central pattern generators: an application to biped locomotion control",
+      "abstract": "We present a system of coupled nonlinear oscillators to be used as programmable central pattern generators, and apply it to control the locomotion of a humanoid robot. Central pattern generators are biological neural networks that can produce coordinated multidimensional rhythmic signals, under the control of simple input signals. They are found both in vertebrate and invertebrate animals for the control of locomotion. In this article, we present a novel system composed of coupled adaptive nonlinear oscillators that can learn arbitrary rhythmic signals in a supervised learning framework. Using adaptive rules implemented as differential equations, parameters such as intrinsic frequencies, amplitudes, and coupling weights are automatically adjusted to replicate a teaching signal. Once the teaching signal is removed, the trajectories remain embedded as the limit cycle of the dynamical system. An interesting aspect of this approach is that the learning is completely embedded into the dynamical system, and does not require external optimization algorithms. We use our system to encapsulate rhythmic trajectories for biped locomotion with a simulated humanoid robot, and demonstrate how it can be used to do online trajectory generation. The system can modulate the speed of locomotion, and even allow the reversal of direction (i.e. walking backwards). The integration of sensory feedback allows the online modulation of trajectories such as to increase the basin of stability of the gaits, and therefore the range of speeds that can be produced"
+    },
+    "13083455": {
+      "title": "Probabilistic movement primitives",
+      "abstract": "Movement Primitives (MP) are a well-established approach for representing modular and re-usable robot movement generators. Many state-of-the-art robot learning successes are based MPs, due to their compact representation of the inherently continuous and high dimensional robot movements. A major goal in robot learning is to combine multiple MPs as building blocks in a modular control architecture to solve complex tasks. To this effect, a MP representation has to allow for blending between motions, adapting to altered task variables, and co-activating multiple MPs in parallel. We present a probabilistic formulation of the MP concept that maintains a distribution over trajectories. Our probabilistic approach allows for the derivation of new operations which are essential for implementing all aforementioned properties in one framework. In order to use such a trajectory distribution for robot movement control, we analytically derive a stochastic feedback controller which reproduces the given trajectory distribution. We evaluate and compare our approach to existing methods on several simulated as well as real robot scenarios."
+    },
+    "11675086": {
+      "title": "Learning attractor landscapes for learning motor primitives",
+      "abstract": "Many control problems take place in continuous state-action spaces, e.g., as in manipulator robotics, where the control objective is often defined as finding a desired trajectory that reaches a particular goal state. While reinforcement learning offers a theoretical framework to learn such control policies from scratch, its applicability to higher dimensional continuous state-action spaces remains rather limited to date. Instead of learning from scratch, in this paper we suggest to learn a desired complex control policy by transforming an existing simple canonical control policy. For this purpose, we represent canonical policies in terms of differential equations with well-defined attractor properties. By nonlinearly transforming the canonical attractor dynamics using techniques from nonparametric regression, almost arbitrary new nonlinear policies can be generated without losing the stability properties of the canonical system. We demonstrate our techniques in the context of learning a set of movement skills for a humanoid robot from demonstrations of a human teacher. Policies are acquired rapidly, and, due to the properties of well formulated differential equations, can be re-used and modified on-line under dynamic changes of the environment. The linear parameterization of nonparametric regression moreover lends itself to recognize and classify previously learned movement skills. Evaluations in simulations and on an actual 30 degree-of-freedom humanoid robot exemplify the feasibility and robustness of our approach."
+    }
+  },
+  "generator": "fallback_v4"
+}

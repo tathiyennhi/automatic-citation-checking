@@ -1,0 +1,57 @@
+{
+  "text": "The design of RAM controllers in multimedia applications has been widely discussed already [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] . Instead of targeting the physical access to the RAM, the presented work moreover focuses on providing services on higher 2 International Journal of Reconfigurable Computing abstraction layers. A motivation for a generalized addressing scheme is not at least due to increasing the compatibility between various cores, producing differently arranged output data. Video processing applications typically aim to address data in units of frames, lines, and pixels, defining the desired level of abstraction. Furthermore, multiple clients aim to store results concurrently in a shared RAM and request data from different locations as well. Thus, a suitable memory management is indispensible and too complex to be handled by the processing cores themselves. This work encompasses a centric solution inside the memory controller, with support for multiple partitions and scalable frame buffers.",
+  "citation_candidates": [
+    "15184",
+    "590189",
+    "1918584",
+    "43327446",
+    "5723680",
+    "18927714",
+    "1651182",
+    "33351422",
+    "16446986",
+    "6475764"
+  ],
+  "bib_entries": {
+    "6475764": {
+      "title": "External memory controller for Virtex II Pro",
+      "abstract": "An implementation of an On Chip Memory (OCM) based Dual Data Rate external memory controller (OCM2DDR) for Virtex II Pro is described. The proposed OCM2DDR controller comprises Data Side OCM (DSOCM) bus interface module, read and write control logic, halt read module and Xilinx DDR controller IP core. The presented design supports 16MB of external DDR memory and 32 to 64 bits data conversion for single read and write operations. Our implementation uses 1063 slices of Virtex2Pro FPGA and runs at 100 MHz. The major bene benefits of the proposed design are high bandwidth to external memory with reduced and more predictable access times compared to the Xilinx PLB DDR controller implementation. More specially, our read and write accesses are 2,44 and 4,25 times faster, than the PLB based solution respectively."
+    },
+    "16446986": {
+      "title": "A mixed QoS SDRAM controller for FPGA-based high-end image processing",
+      "abstract": "High-end video and multimedia processing applications today require huge amounts of memory. For cost reasons, the usage of conventional dynamic RAM (SDRAM) is preferred. However, accessing SDRAM is a complex task, especially if multi-stream access, different stream types and realtime capability are an issue. The paper describes a multi-stream SDRAM controller IP (intellectual property) that covers different stream types and applies memory scheduling to achieve high bandwidth utilization. Two different architectures are presented and discussed; simulation results with a realistic application configuration demonstrate up to 90% of maximum memory bandwidth utilization. The scheduler IP is suitable for FPGA implementation and is flexible enough to be used in other applications."
+    },
+    "15184": {
+      "title": "Traffic shaping for an FPGA based SDRAM controller with complex QoS requirements",
+      "abstract": "Today high-end video and multimedia processing applications require huge amounts of memory. For cost reasons, the usage of conventional dynamic RAM (SDRAM) is preferred. However, SDRAM access optimization is a complex task, especially if multi-stream access with different QoS requirements is involved. In (Heithecker et al., 2003), a multi-stream DDR-SDRAM controller IP covering combinations of low latency requirements for processor cache access, hard real-time constraints for periodic video signals and hard real-time bursty accesses for video coprocessors was described. To handle these contradictory QoS requirements at high system performance, a combination of a 2-stage scheduling algorithm and static priorities were used. This paper describes an additional flow control which enhances the overall performance. Experiments with an FPGA based high-end video platform demonstrate the superiority of this architecture."
+    },
+    "590189": {
+      "title": "Application of DDR controller for high-speed data acquisition board",
+      "abstract": "DDR SDRAM (double data rate synchronously dynamic RAM) controller is discussed in this paper. The principle and commands of FPGA-based DDR SDRAM controller are detailed. The R/W control of DDR SDRAM is realized through Verilog HDL, and this controller is applied into 400 MHz single channel high-speed, high-precision and large-capacity data acquisition board"
+    },
+    "18927714": {
+      "title": "Enabling self-reconfiguration on a video processing platform",
+      "abstract": "FPGA implementations of complex image processing algorithms are often limited in flexibility and by the amount of available chip resources. This article presents a hardware design of an adaptive self-reconfigurable video processing platform. Dynamic self-reconfiguration increases a designpsilas flexibility and enables the use of FPGAs with a fraction of resources actually needed by the algorithm. As a case study two implementation approaches of a complex frame-grabber with a set of dynamically reconfigurable kernels are evaluated and further improvements are outlined."
+    },
+    "1918584": {
+      "title": "Real-time LUT-based network topologies for dynamic and partial FPGA selfreconfiguration",
+      "abstract": "Xilinx Virtex FPGAs offer the possibility of dynamic and partial run-time reconfiguration. If a system uses this feature the designer has to take care, that no signal lines cross the border to other reconfigurable regions. Traditional solutions connecting modules on a dynamic and partial reconfigurable system use TBUF elements for connection and separation of the functional blocks. While automatically placing and routing the design, the routing-tool sometimes uses signal lines which cross the module border. The constraints given by the designer are ignored. To solve this problem, we use slices instead of TBUF elements which leads to a benefit by using an automatic modular design flow. This paper gives an overview of the used techniques and the complete system on a Xilinx XC2V3000 FPGA."
+    },
+    "1651182": {
+      "title": "Scalable, waveletbased video: from server to hardware-accelerated client",
+      "abstract": "Video source, carrier and client diversification have led the video coding community to develop scalable video codecs supporting efficient decoding at varying resolution, frame rate and quality. Scalable video has several advantages over a nonscalable approach, but a large scale deployment is far from trivial and a lot of open questions remain. To resolve these, we developed a complete video delivery chain for scalable wavelet-based video. This includes a video server, a negotiation framework, a video scaling infrastructure and two scalable video clients, one pure software client and one real-time, hardware accelerated client. This paper describes the complete chain and identifies and quantifies the impact of using scalable video in every link of this chain."
+    },
+    "33351422": {
+      "title": "System level design of a dynamically self-reconfigurable image processing system",
+      "abstract": "A linear-moving type displacement detector has a movable electrode disposed between a pair of stationary electrodes such a manner that the electrodes are in parallel with one another, thus forming a pair of variable capacitors. The movable electrode is movable in a direction forming an angle with the stationary electrodes while being kept parallel with the stationary electrodes, so that one of the capacitances of the two capacitors is increased with the movement of the movable electrode, while the other is decreased, and vice versa. The capacitors are coupled to oscillators, the output frequencies of the oscillators are mixed in a mixer, to provide the difference frequency therebetween, or some analogous signal which is responsive to the difference frequency. The difference frequency or the analogous signal is utilized for displacement measurement."
+    },
+    "5723680": {
+      "title": "A temporal round robin scheduler",
+      "abstract": "In this paper, we present a temporal round robin (TRR) packet scheduler. In default round robin (RR) scheduler, flows are scheduled in sequence one by one without prioritizing any flows assigning the same amount of time slots. The main idea in the proposed TRR is to exploit the temporal variations of a pre-defined utility argument (e.g. SINR or MCS in the context of cellular radio systems) while assigning the same amount of time slots to each flows. It's shown that the expected value of the utility argument of the scheduled flows in TRR case is equal to or greater than that of the traditional RR. In the context of the cellular radio networks, this translates into an equal or higher network throughput as compared to the traditional RR. The proposed scheduler algorithm can be easily implemented into many various cellular networks including WiMAX. Simple simulation results confirms the effectiveness of the algorithm."
+    },
+    "43327446": {
+      "title": "Weighted round-robin cell multiplexing in a generalpurpose ATM switch chip",
+      "abstract": "The authors present the architecture of a general-purpose broadband-ISDN (B-ISDN) switch chip and, in particular, its novel feature: the weighted round-robin cell (packet) multiplexing algorithm and its implementation in hardware. The flow control and buffer management strategies that allow the chip to operate at top performance under congestion are given, and the reason why this multiplexing scheme should be used under those circumstances is explained. The chip architecture and how the key choices were made are discussed. The statistical performance of the switch is analyzed. The critical parts of the chip have been laid out and simulated, thus proving the feasibility of the architecture. Chip sizes of four to ten links with link throughput of 0.5 to 1 Gb/s and with about 1000 virtual circuits per switch have been realized. The results of simulations of the chip are presented. >"
+    }
+  }
+}

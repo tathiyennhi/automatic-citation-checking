@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Our evaluation set was derived from the VerilogEval benchmark [3], containing 138 designs after excluding those with zero area or delay.",
+    "The designs are categorized by difficulty in Table 2, where Level-1 includes simple combinational circuits with no more than 2-bit operators, Level-2 comprises moderate circuits such as adders, flip-flops, and shift registers, and Level-3 contains sophisticated designs like finite state machines and multibit arithmetic units.",
+    "We measure performance using Mean Relative Error (MRE), defined in Eq. 1, where 𝑁 is the number of designs in the test set, R𝑖 is the LLM-estimated metric, and 𝑅 𝑖 is the ground truth metric reported from the EDA tool.𝑀𝑅𝐸 = 1 𝑁 Σ 𝑁 𝑖=1 | R𝑖 -𝑅 𝑖 | 𝑅 𝑖 × 100% (1)However, the MRE can be heavily biased by outliers and it only evaluates the accuracy of the top-1 LLM-generated answer.",
+    "Therefore, we introduce a new metric, acc@k, inspired by the pass@k metric [12].",
+    "The acc@k, defined in Eq. 2, measures the percentage of designs that meet a specific accuracy threshold when considering the median of the top-𝑘 LLM predictions."
+  ]
+}

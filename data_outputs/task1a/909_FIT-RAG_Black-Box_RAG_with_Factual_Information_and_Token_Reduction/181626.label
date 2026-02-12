@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "For the Has_Answer label, we annotate it by determining whether the document contains the candidate answers in the gold answer set.",
+    "If it contains, Has_Answer is labeled as 1, otherwise 0.",
+    "As to the LLM_Prefer label, we append the document to the question and feed it to the LLM to obtain a predicted answer.",
+    "If appending the document improves the LLM's performance (i.e., leading to a correct answer), LLM_Prefer is labeled as 1; otherwise, labeled as 0.The classification model is constructed based on T5 [33], where the decoder is replaced by a binary classification head.",
+    "Furthermore, to accelerate training and save computational resources, we use LoRA to fine-tune the T5 model.However, through experimentally analyzing, we find that the number of data that has {1, 1} or {0, 0} labels is typically more than ten times larger than that for data that has {0, 1} or {1, 0} labels."
+  ],
+  "correct_citations": [
+    "If appending the document improves the LLM's performance (i.e., leading to a correct answer), LLM_Prefer is labeled as 1; otherwise, labeled as 0.The classification model is constructed based on T5 [33], where the decoder is replaced by a binary classification head."
+  ]
+}

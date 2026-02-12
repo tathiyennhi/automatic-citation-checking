@@ -1,0 +1,22 @@
+{
+  "doc_id": "30492",
+  "text": "The architectural organization we exploit to cope with the reduction of synchronization costs while performing housekeeping operations (see point A) borrows from our proposal in [CITATION_1] . According to the proposed scheme, any housekeeping task potentially crossing the boundaries of individual LPs' data structures is dispatched according to the same rules employed to structure modern Operating System drivers, by organizing it according to top/bottom-half activities. Specifically, whenever the need for the execution of such a task arises, it takes place as an interrupt to be eventually finalized within a bottomhalf module. Hence, upon the interrupt occurrence, we do not immediately finalize the task, thus not immediately locking (or waiting for the lock) on the target data structure. Instead we simply execute a light top-half module which registers the bottom-half function associated with the interrupt finalization within a per-LP bottom-half queue, resembling the Linux task queue. The critical section accessing the bottom-half queue takes constant time since each new bottom half associated with the LP is recorder at the tail of the queue. Also, when the bottom-half tasks currently registered for a given LP are flushed, the corresponding chain of records is initially unlinked from the corresponding bottom-half queue, which is again done in constant time by unlinking the head element within the chain from its base pointer.",
+  "correct_citation": {
+    "[CITATION_1]": "8703984"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The architectural organization we exploit to cope with the reduction of synchronization costs while performing housekeeping operations (see point A) borrows from our proposal in [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 192
+    }
+  ],
+  "bib_entries": {
+    "8703984": {
+      "title": "Towards symmetric multithreaded optimistic simulation kernels",
+      "abstract": "In this article we address the reshuffle of the design of optimistic simulation kernels in order to fit multi-core/multi-processor machines. This is done by providing a reference optimistic simulation architecture based on the symmetric multi-threaded paradigm, where each simulation kernel instance is allowed to run a dynamically changing set of worker threads that share the whole load of LPs hosted by that kernel, and that can run both application-level event handlers and kernel-level housekeeping tasks. With this organization, CPU-cores can be dynamically reassigned to the different kernels depending on fluctuations of the workload, so to maximize productivity in an orthogonal manner with respect to traditional load balancing schemes, typically employed in the context of single-threaded simulation kernels. In order to optimize efficiency and reduce wait-for-lock-release phases while synchronizing worker threads running in kernel mode, we borrow from Operating Systems' theory by readapting the top/bottom-halves paradigm to the design of optimistic simulation systems. We also present a real implementation of our multi-threaded architecture within the ROme OpTimistic Simulator (ROOT-Sim), namely an open-source C-based simulation platform implemented according to the PDES paradigm and the optimistic synchronization approach. Experimental results for an assessment of the validity of our proposal are presented as well."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,38 @@
+{
+  "doc_id": "39562",
+  "text": "Dynamic memory management and garbage collection is arguably a key factor in supporting fast and reliable large software products. However, naive garbage collection algorithms may have undesirable effects on program behavior, most notably long pauses and reduced throughput [CITATION_1] . Generational garbage collection [CITATION_2] [CITATION_3] ameliorates both problems by reducing the average pause times and increasing efficiency. The basic assumption underlying generational collectors design is the weak generational hypothesis: \"most objects have short lifetimes\". Given this hypothesis, it makes sense to concentrate the effort on young objects which are most likely to be unreachable. Generational collectors segregate objects according to their age into two or more groups called generations, and run frequent collections of the young generation. Keeping the young generation small yields frequent short collections that make room for further allocations. The older generation (or the entire heap) is collected infrequently when space is exhausted. Full heap collections require long pauses, but are infrequent.",
+  "correct_citation": {
+    "[CITATION_1]": "10263433",
+    "[CITATION_2]": "14161480",
+    "[CITATION_3]": "199514"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, naive garbage collection algorithms may have undesirable effects on program behavior, most notably long pauses and reduced throughput"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Generational garbage collection ameliorates both problems by reducing the average pause times and increasing efficiency."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Generational garbage collection ameliorates both problems by reducing the average pause times and increasing efficiency."
+    }
+  ],
+  "bib_entries": {
+    "199514": {
+      "title": "Generation scavenging: A non-disruptive high performance storage reclamation algorithm",
+      "abstract": "Many interactive computing environments provide automatic storage reclamation and virtual memory to ease the burden of managing storage. Unfortunately, many storage reclamation algorithms impede interaction with distracting pauses. Generation Scavenging is a reclamation algorithm that has no noticeable pauses, eliminates page faults for transient objects, compacts objects without resorting to indirection, and reclaims circular structures, in one third the time of traditional approaches. ::: We have incorporated Generation Scavenging in Berkeley Smalltalk(BS), our Smalltalk-80 implementation, and instrumented it to obtain performance data. We are also designing a microprocessor with hardware support for Generation Scavenging."
+    },
+    "10263433": {
+      "title": "An on-the-fly mark and sweep garbage collector based on sliding view",
+      "abstract": "With concurrent and garbage collected languages like Java and C# becoming popular, the need for a suitable non-intrusive, efficient, and concurrent multiprocessor garbage collector has become acute. We propose a novel mark and sweep on-the-fly algorithm based on the sliding views mechanism of Levanoni and Petrank. We have implemented our collector on the Jikes Java Virtual Machine running on a Netfinity multiprocessor and compared it to the concurrent algorithm and to the stop-the-world collector supplied with Jikes JVM. The maximum pause time that we measured with our benchmarks over all runs was 2ms. In all runs, the pause times were smaller than those of the stop-the-world collector by two orders of magnitude and they were also always shorter than the pauses of the Jikes concurrent collector. Throughput measurements of the new garbage collector show that it outperforms the Jikes concurrent collector by up to 60%. As expected, the stop-the-world does better than the on-the-fly collectors with results showing about 10% difference.On top of being an effective mark and sweep on-the-fly collector standing on its own, our collector may also be used as a backup collector (collecting cyclic data structures) for the Levanoni-Petrank reference counting collector. These two algorithms perfectly fit sharing the same allocator, a similar data structure, and a similar JVM interface."
+    },
+    "14161480": {
+      "title": "A real-time garbage collector based on the lifetimes of objects",
+      "abstract": "In previous heap storage systems, the cost of creating objects and garbage collection is independent of the lifetime of the object. Since objects with short lifetimes account for a large portion of storage use, it is worth optimizing a garbage collector to reclaim storage for these objects more quickly. The garbage collector should spend proportionately less effort reclaiming objects with longer lifetimes. We present a garbage collection algorithm that (1) makes storage for short-lived objects cheaper than storage for long-lived objects, (2) that operates in real time—object creation and access times are bounded, (3) increases locality of reference, for better virtual memory performance, (4) works well with multiple processors and a large address space."
+    }
+  },
+  "generator": "fallback"
+}

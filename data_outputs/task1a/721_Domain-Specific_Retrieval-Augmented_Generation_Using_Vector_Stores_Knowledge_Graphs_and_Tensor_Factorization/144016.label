@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Full texts, when available, are segmented into smaller paragraphs, each assigned an integer ID to indicate its position within the original document.",
+    "These paragraphs are then vectorized through the into embeddings using OpenAI's text-embedding-ada-002 [51] model and imported to the vector store to support the RAG process.The RAG application can query the vector store to find relevant paragraph chunks from these full texts.",
+    "If the retrieved text contains the needed information, the LLM can answer the posed question and include a citation of the document, precisely indicating the exact paragraph.",
+    "If further related information is needed, the application can use document metadata (e.g., DOI, author) to expand its search through the KG.",
+    "This approach allows us to preserve the semantics of the original documents and provide relevant responses."
+  ],
+  "correct_citations": [
+    "These paragraphs are then vectorized through the into embeddings using OpenAI's text-embedding-ada-002 [51] model and imported to the vector store to support the RAG process.The RAG application can query the vector store to find relevant paragraph chunks from these full texts."
+  ]
+}

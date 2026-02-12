@@ -1,0 +1,66 @@
+{
+  "doc_id": "56037",
+  "text": "However, the poselet detector only discovers coarse body parts and cannot explore subtle local details of face images. Considering that the probability of an attribute appearing in a face image is not uniformed in the spatial domain, [CITATION_1] propose employing semantic segmentation as a separate auxiliary localization scheme. They exploit the location cues obtained by semantic segmentation to guide the attention of attribute prediction to the naturally occurring areas of attributes. Specifically, a semantic segmentation network is first designed in an encoder-decoder paradigm and trained over Helen face dataset [CITATION_2] . During this process, the semantic face parsing [CITATION_3] [CITATION_4] ) is performed as an additional task to learn detailed pixel-level location information. After discovering the location cues, the semantic segmentation based pooling (SSP) and gating (SSG) mechanisms are presented to integrate the location information into the attribute estimation. SSP decomposes the activations of the last convolutional layer into different semantic regions and then aggregates those regions that only reside in the same area. Meanwhile, SSG gates the output activations between the convolutional layers and the batch normalization (BN) operation to control the activations of neurons from different semantic regions. In contrast, [CITATION_5] utilize key points to segment faces into several image patches, which is a more straightforward way compared with semantic segmentation. Then, these segments are fed into a set of facial segment networks to extract corresponding feature representations and learn prediction scores, where the whole face image is fed into a full-face network. A global predictor network fuses the features from these segments, and two committee machines merge their scores for the final prediction.",
+  "correct_citation": {
+    "[CITATION_1]": "1355369",
+    "[CITATION_2]": "18412057",
+    "[CITATION_3]": "14366466",
+    "[CITATION_4]": "53040516",
+    "[CITATION_5]": "28945696"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Considering that the probability of an attribute appearing in a face image is not uniformed in the spatial domain, [CITATION_1] propose employing semantic segmentation as a separate auxiliary localization scheme.",
+      "s_span": 119,
+      "e_span": 331
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Specifically, a semantic segmentation network is first designed in an encoder-decoder paradigm and trained over Helen face dataset [CITATION_2] .",
+      "s_span": 492,
+      "e_span": 637
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "During this process, the semantic face parsing [CITATION_3] [CITATION_4] ) is performed as an additional task to learn detailed pixel-level location information.",
+      "s_span": 638,
+      "e_span": 799
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "During this process, the semantic face parsing [CITATION_3] [CITATION_4] ) is performed as an additional task to learn detailed pixel-level location information.",
+      "s_span": 638,
+      "e_span": 799
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "In contrast, [CITATION_5] utilize key points to segment faces into several image patches, which is a more straightforward way compared with semantic segmentation.",
+      "s_span": 1349,
+      "e_span": 1511
+    }
+  ],
+  "bib_entries": {
+    "1355369": {
+      "title": "Improving facial attribute prediction using semantic segmentation",
+      "abstract": "Attributes are semantically meaningful characteristics whose applicability widely crosses category boundaries. They are particularly important in describing and recognizing concepts where no explicit training example is given, \\textit{e.g., zero-shot learning}. Additionally, since attributes are human describable, they can be used for efficient human-computer interaction. In this paper, we propose to employ semantic segmentation to improve facial attribute prediction. The core idea lies in the fact that many facial attributes describe local properties. In other words, the probability of an attribute to appear in a face image is far from being uniform in the spatial domain. We build our facial attribute prediction model jointly with a deep semantic segmentation network. This harnesses the localization cues learned by the semantic segmentation to guide the attention of the attribute prediction to the regions where different attributes naturally show up. As a result of this approach, in addition to recognition, we are able to localize the attributes, despite merely having access to image level labels (weak supervision) during training. We evaluate our proposed method on CelebA and LFWA datasets and achieve superior results to the prior arts. Furthermore, we show that in the reverse problem, semantic face parsing improves when facial attributes are available. That reaffirms the need to jointly model these two interconnected tasks."
+    },
+    "18412057": {
+      "title": "Interactive facial feature localization",
+      "abstract": "We address the problem of interactive facial feature localization from a single image. Our goal is to obtain an accurate segmentation of facial features on high-resolution images under a variety of pose, expression, and lighting conditions. Although there has been significant work in facial feature localization, we are addressing a new application area, namely to facilitate intelligent high-quality editing of portraits, that brings requirements not met by existing methods. We propose an improvement to the Active Shape Model that allows for greater independence among the facial components and improves on the appearance fitting step by introducing a Viterbi optimization process that operates along the facial contours. Despite the improvements, we do not expect perfect results in all cases. We therefore introduce an interaction model whereby a user can efficiently guide the algorithm towards a precise solution. We introduce the Helen Facial Feature Dataset consisting of annotated portrait images gathered from Flickr that are more diverse and challenging than currently existing datasets. We present experiments that compare our automatic method to published results, and also a quantitative evaluation of the effectiveness of our interactive method."
+    },
+    "28945696": {
+      "title": "Segment-based methods for facial attribute detection from partial faces",
+      "abstract": "State-of-the-art methods of attribute detection from faces almost always assume the presence of a full, unoccluded face. Hence, their performance degrades for partially visible and occluded faces. In this paper, we introduce SPLITFACE, a deep convolutional neural network-based method that is explicitly designed to perform attribute detection in partially occluded faces. Taking several facial segments and the full face as input, the proposed method takes a data driven approach to determine which attributes are localized in which facial segments. The unique architecture of the network allows each attribute to be predicted by multiple segments, which permits the implementation of committee machine techniques for combining local and global decisions to boost performance. With access to segment-based predictions, SPLITFACE can predict well those attributes which are localized in the visible parts of the face, without having to rely on the presence of the whole face. We use the CelebA and LFWA facial attribute datasets for standard evaluations. We also modify both datasets, to occlude the faces, so that we can evaluate the performance of attribute detection algorithms on partial faces. Our evaluation shows that SPLITFACE significantly outperforms other recent methods especially for partial faces."
+    },
+    "14366466": {
+      "title": "Exemplar-based face parsing",
+      "abstract": "In this work, we propose an exemplar-based face image segmentation algorithm. We take inspiration from previous works on image parsing for general scenes. Our approach assumes a database of exemplar face images, each of which is associated with a hand-labeled segmentation map. Given a test image, our algorithm first selects a subset of exemplar images from the database, Our algorithm then computes a nonrigid warp for each exemplar image to align it with the test image. Finally, we propagate labels from the exemplar images to the test image in a pixel-wise manner, using trained weights to modulate and combine label maps from different exemplars. We evaluate our method on two challenging datasets and compare with two face parsing algorithms and a general scene parsing algorithm. We also compare our segmentation results with contour-based face alignment results, that is, we first run the alignment algorithms to extract contour points and then derive segments from the contours. Our algorithm compares favorably with all previous works on all datasets evaluated."
+    },
+    "53040516": {
+      "title": "Conditional expression synthesis with face parsing transformation",
+      "abstract": "Facial expression synthesis with various intensities is a challenging synthesis task due to large identity appearance variations and a paucity of efficient means for intensity measurement. This paper advances the expression synthesis domain by the introduction of a Couple-Agent Face Parsing based Generative Adversarial Network (CAFP-GAN) that unites the knowledge of facial semantic regions and controllable expression signals. Specially, we employ a face parsing map as a controllable condition to guide facial texture generation with a special expression, which can provide a semantic representation of every pixel of facial regions. Our method consists of two sub-networks: face parsing prediction network (FPPN) uses controllable labels (expression and intensity) to generate a face parsing map transformation that corresponds to the labels from the input neutral face, and facial expression synthesis network (FESN) makes the pretrained FPPN as a part of it to provide the face parsing map as a guidance for expression synthesis. To enhance the reality of results, couple-agent discriminators are served to distinguish fake-real pairs in both two sub-nets. Moreover, we only need the neutral face and the labels to synthesize the unknown expression with different intensities. Experimental results on three popular facial expression databases show that our method has the compelling ability on continuous expression synthesis."
+    }
+  },
+  "generator": "fallback_v4"
+}

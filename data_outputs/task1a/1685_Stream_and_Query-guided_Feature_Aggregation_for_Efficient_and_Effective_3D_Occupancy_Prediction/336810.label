@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "To ensure that RefineNet reliably learns to adjust voxel features, we incorporate two auxiliary supervision heads used only at training time.",
+    "Occupied Mask supervision, we upsample the spatial attention feature M s to the original voxel resolution and apply the MLP-based decoder as the Occupied Head (following the same architecture described in Sec.",
+    "3.3) to predict a binary occupancy map V t bin ∈ R 1×X×Y ×Z.",
+    "The prediction is supervised with the ground-truth occupied mask via binary cross-entropy loss, encouraging the refinement module to emphasize occupied voxels while suppressing empty or noisy regions.",
+    "Forecasting Supervision, following the idea of temporally consistent feature supervision [16,33], the refined warped voxel feature is further used to predict the voxel occupancy state at the current timestep using the same upsampling and MLP-based decoder architecture, as the Forecasting Head."
+  ],
+  "correct_citations": [
+    "Forecasting Supervision, following the idea of temporally consistent feature supervision [16,33], the refined warped voxel feature is further used to predict the voxel occupancy state at the current timestep using the same upsampling and MLP-based decoder architecture, as the Forecasting Head."
+  ]
+}

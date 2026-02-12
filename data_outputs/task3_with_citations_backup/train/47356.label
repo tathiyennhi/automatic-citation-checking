@@ -1,0 +1,55 @@
+{
+  "doc_id": "47356",
+  "text": "Many previous works have attempted to synthesize face images of a specific person. For example, TP-GAN [CITATION_1] and FF-GAN [CITATION_2] attempt to synthesize the frontal view of a face from a single face image. DR-GAN [CITATION_3] can change the pose of an input face image. However, these methods can only manipulate limited types of attributes, such as poses. These methods also require full annotation of attributes for training the models. More recent work, such as CVAE-GAN [CITATION_4] , can produce a variety of attribute changes. Nevertheless, it is not able to synthesize a face with an identity outside the training dataset.",
+  "correct_citation": {
+    "[CITATION_1]": "13058841",
+    "[CITATION_2]": "2806929",
+    "[CITATION_3]": "21011865",
+    "[CITATION_4]": "206771102"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For example, TP-GAN [CITATION_1] and FF-GAN [CITATION_2] attempt to synthesize the frontal view of a face from a single face image.",
+      "s_span": 83,
+      "e_span": 214
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For example, TP-GAN [CITATION_1] and FF-GAN [CITATION_2] attempt to synthesize the frontal view of a face from a single face image.",
+      "s_span": 83,
+      "e_span": 214
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "DR-GAN [CITATION_3] can change the pose of an input face image.",
+      "s_span": 215,
+      "e_span": 278
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "More recent work, such as CVAE-GAN [CITATION_4] , can produce a variety of attribute changes.",
+      "s_span": 448,
+      "e_span": 541
+    }
+  ],
+  "bib_entries": {
+    "2806929": {
+      "title": "Towards large-pose face frontalization in the wild",
+      "abstract": "Despite recent advances in face recognition using deep learning, severe accuracy drops are observed for large pose variations in unconstrained environments. Learning pose-invariant features is one solution, but needs expensively labeled large-scale data and carefully designed feature learning algorithms. In this work, we focus on frontalizing faces in the wild under various head poses, including extreme profile views. We propose a novel deep 3D Morphable Model (3DMM) conditioned Face Frontalization Generative Adversarial Network (GAN), termed as FF-GAN, to generate neutral head pose face images. Our framework differs from both traditional GANs and 3DMM based modeling. Incorporating 3DMM into the GAN structure provides shape and appearance priors for fast convergence with less training data, while also supporting end-to-end training. The 3DMM-conditioned GAN employs not only the discriminator and generator loss but also a new masked symmetry loss to retain visual quality under occlusions, besides an identity loss to recover high frequency information. Experiments on face recognition, landmark localization and 3D reconstruction consistently show the advantage of our frontalization method on faces in the wild datasets."
+    },
+    "21011865": {
+      "title": "Disentangled representation learning gan for pose-invariant face recognition",
+      "abstract": "The large pose discrepancy between two face images is one of the key challenges in face recognition. Conventional approaches for pose-invariant face recognition either perform face frontalization on, or learn a pose-invariant representation from, a non-frontal face image. We argue that it is more desirable to perform both tasks jointly to allow them to leverage each other. To this end, this paper proposes Disentangled Representation learning-Generative Adversarial Network (DR-GAN) with three distinct novelties. First, the encoder-decoder structure of the generator allows DR-GAN to learn a generative and discriminative representation, in addition to image synthesis. Second, this representation is explicitly disentangled from other face variations such as pose, through the pose code provided to the decoder and pose estimation in the discriminator. Third, DR-GAN can take one or multiple images as the input, and generate one unified representation along with an arbitrary number of synthetic images. Quantitative and qualitative evaluation on both controlled and in-the-wild databases demonstrate the superiority of DR-GAN over the state of the art."
+    },
+    "13058841": {
+      "title": "Beyond face rotation: Global and local perception gan for photorealistic and identity preserving frontal view synthesis",
+      "abstract": "Photorealistic frontal view synthesis from a single face image has a wide range of applications in the field of face recognition. Although data-driven deep learning methods have been proposed to address this problem by seeking solutions from ample face data, this problem is still challenging because it is intrinsically ill-posed. This paper proposes a Two-Pathway Generative Adversarial Network (TP-GAN) for photorealistic frontal view synthesis by simultaneously perceiving global structures and local details. Four landmark located patch networks are proposed to attend to local textures in addition to the commonly used global encoder-decoder network. Except for the novel architecture, we make this ill-posed problem well constrained by introducing a combination of adversarial loss, symmetry loss and identity preserving loss. The combined loss function leverages both frontal face distribution and pre-trained discriminative deep face models to guide an identity preserving inference of frontal views from profiles. Different from previous deep learning methods that mainly rely on intermediate features for recognition, our method directly leverages the synthesized identity preserving image for downstream tasks like face recognition and attribution estimation. Experimental results demonstrate that our method not only presents compelling perceptual results but also outperforms state-of-the-art results on large pose face recognition."
+    },
+    "206771102": {
+      "title": "Cvae-gan: Fine-grained image generation through asymmetric training",
+      "abstract": "We present variational generative adversarial networks, a general learning framework that combines a variational auto-encoder with a generative adversarial network, for synthesizing images in fine-grained categories, such as faces of a specific person or objects in a category. Our approach models an image as a composition of label and latent attributes in a probabilistic model. By varying the fine-grained category label fed into the resulting generative model, we can generate images in a specific category with randomly drawn values on a latent attribute vector. Our approach has two novel aspects. First, we adopt a cross entropy loss for the discriminative and classifier network, but a mean discrepancy objective for the generative network. This kind of asymmetric loss function makes the GAN training more stable. Second, we adopt an encoder network to learn the relationship between the latent space and the real image space, and use pairwise feature matching to keep the structure of generated images. We experiment with natural images of faces, flowers, and birds, and demonstrate that the proposed models are capable of generating realistic and diverse samples with fine-grained category labels. We further show that our models can be applied to other tasks, such as image inpainting, super-resolution, and data augmentation for training better face recognition models."
+    }
+  },
+  "generator": "fallback_v4"
+}

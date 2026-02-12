@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The edge information on GCS is never changed.",
+    "If new edges need to be inserted, they are stored in BigTable.",
+    "We call such edges 'fake edges' and reserve one row per chunk for them.",
+    "Every operation reading supervoxel edges from GCS also checks for fake edges.",
+    "Like all entries in BigTable, fake edges are timestamped, allowing for an accurate retrieval of the supervoxel graph for timestamps before their creation."
+  ]
+}

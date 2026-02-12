@@ -1,0 +1,32 @@
+{
+  "text": "Input: A word S of length n Output: All primitive words P (called approximate word-periods) for which the infinite word P \u221e has a prefix W such that ed-dist(S, W ) < \u03c4 p , where p = |P | and \u03c4 p = n (3.75+ )\u00b7p with > 0 Remark 1. Amir et al. [CITATION_1] show that each approximate word-period is a subword of S and thus can be represented in constant space. Moreover, they show that the number of approximate word-periods is O(n). Hence, the output to the APR problem uses O(n) space.",
+  "citation_candidates": [
+    "39709651",
+    "22167181",
+    "11358435",
+    "60654417",
+    "25484970"
+  ],
+  "bib_entries": {
+    "25484970": {
+      "title": "Period recovery of strings over the Hamming and edit distances",
+      "abstract": "A string T of length m is periodic in P of length p if P is a substring of T and T[i]=T[i+p] T [ i ] = T [ i + p ] for all 0\u2264i\u2264m\u2212p\u22121 0 \u2264 i \u2264 m \u2212 p \u2212 1 and m\u22652p m \u2265 2 p . The shortest such prefix, P , is called the period of T (i.e., P=T[0..p\u22121] P = T [ 0 . . p \u2212 1 ] ). In this paper we investigate the period recovery problem. Given a string S of length n , find the primitive period(s) P such that the distance between S and a string T that is periodic in P is below a threshold \u03c4 . We consider the period recovery problem over both the Hamming distance and the edit distance. For the Hamming distance case, we present an O(nlog\u2061n) O ( n log \u2061 n ) -time algorithm, where \u03c4 is given as \u230a n ( 2 + \u03f5 ) p \u230b , for \u03f5>0 \u03f5 > 0 . For the edit distance case, \u03c4 = \u230a n ( 3.75 + \u03f5 ) p \u230b and \u03f5>0 \u03f5 > 0 , we provide an O(n 4/3 ) O ( n 4 / 3 ) -time algorithm."
+    },
+    "39709651": {
+      "title": "Identifying periodic occurrences of a template with applications to protein structure",
+      "abstract": "We consider a string matching problem where the pattern is a template that matches many different strings with various degrees of perfection. The quality of a match is given by a penalty matrix that assigns each pair of characters a score that characterizes how well the characters match. Superfluous characters in the text and superfluous characters in the pattern may also occur and the respective penalties for such gaps in the alignment are also given by the penalty matrix. For a text T of length n, and a template P of length m, we wish to find the best alignment of T with Pn, which is the concatenation of n copies of P, (m will typically be much smaller than n). Such an alignment can simply be obtained by solving a dynamic programming problem of size O(n2m), and ignoring the periodic character of Pn. We show that the structure of Pn can be exploited and the problem reduced to essentially solving a dynamic programming of size O(mn). If the complexity of computing gap penalties is O(1), (which is frequently the case), our algorithm runs in O(mn) time. The problem was motivated by a protein structure problem."
+    },
+    "22167181": {
+      "title": "Fast parallel and serial approximate string matching",
+      "abstract": "Consider the string matching problem, where differences between characters of the pattern and characters of the text are allowed. Each difference is due to either a mismatch between a character of the text and a character of the pattern, or a superfluous character in the text, or a superfluous character in the pattern. Given a text of lenght n, a pattern of length m and an integer k, we present parallel and serial algorthms for finding all occurrences of the pattern in the text with at most k differences. The parallel algorithm requires O(log m + k) time using n processors. The serial algorithm runs in O(nk) time for an alphabet whose size is fixed."
+    },
+    "60654417": {
+      "title": "Algorithms on strings",
+      "abstract": "Describing algorithms in a C-like language, this text presents examples related to the automatic processing of natural language, to the analysis of molecular sequences and to the management of textual databases."
+    },
+    "11358435": {
+      "title": "Cycle detection and correction",
+      "abstract": "Assume that a natural cyclic phenomenon has been measured, but the data is corrupted by errors. The type of corruption is application-dependent and may be caused by measurements errors, or natural features of the phenomenon. We assume that an appropriate metric exists, which measures the amount of corruption experienced. This article studies the problem of recovering the correct cycle from data corrupted by various error models, formally defined as the period recovery problem. Specifically, we define a metric property which we call pseudolocality and study the period recovery problem under pseudolocal metrics. Examples of pseudolocal metrics are the Hamming distance, the swap distance, and the interchange (or Cayley) distance. We show that for pseudolocal metrics, periodicity is a powerful property allowing detecting the original cycle and correcting the data, under suitable conditions. Some surprising features of our algorithm are that we can efficiently identify the period in the corrupted data, up to a number of possibilities logarithmic in the length of the data string, even for metrics whose calculation is NP-hard. For the Hamming metric, we can reconstruct the corrupted data in near-linear time even for unbounded alphabets. This result is achieved using the property of separation in the self-convolution vector and Reed-Solomon codes. Finally, we employ our techniques beyond the scope of pseudo-local metrics and give a recovery algorithm for the non-pseudolocal Levenshtein edit metric."
+    }
+  }
+}

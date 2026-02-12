@@ -1,0 +1,77 @@
+{
+  "doc_id": "61503",
+  "text": "Global energy minimization methods These approaches formulate depth upscaling as an optimization problem which employs data fidelity and regularization term [CITATION_1] . Diebel et al. [CITATION_2] develop Markov Random Field (MRF)-based energy minimization framework, which fuses the LR depth map and the corresponding HR intensity image, but it tends to generate oversmooth results and is also sensitive to noises. In order to maintain local structures, Park et al. [CITATION_3] use a nonlocal means filter (MRF+NLM) to regularize the depth map, but jaggy artifacts occur in some boundaries. A more recent approach of Ferstl et al. [CITATION_4] utilizes an anisotropic diffusion tensor to guide the depth map upsampling (TGV), and the tensor is calculated from a HR intensity image; however, it is not smooth in some internal areas. Aodha et al. [CITATION_5] treat depth image upsampling as MRF labeling problem which matches LR depth image patches to HR patches from an ancillary database; the training of data, matching, and fusion are quite computationally intensive. In [CITATION_6] , an adaptive intensity-guided regression method is proposed for depth upsampling, but its relative high computational complexity would limit its practical applications.",
+  "correct_citation": {
+    "[CITATION_1]": "41644036",
+    "[CITATION_2]": "6748190",
+    "[CITATION_3]": "12908921",
+    "[CITATION_4]": "15039048",
+    "[CITATION_5]": "11099201",
+    "[CITATION_6]": "206724879"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Global energy minimization methods These approaches formulate depth upscaling as an optimization problem which employs data fidelity and regularization term  .",
+      "s_span": 0,
+      "e_span": 171
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Diebel et al.  develop Markov Random Field (MRF)-based energy minimization framework, which fuses the LR depth map and the corresponding HR intensity image, but it tends to generate oversmooth results and is also sensitive to noises.",
+      "s_span": 172,
+      "e_span": 417
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In order to maintain local structures, Park et al.  use a nonlocal means filter (MRF+NLM) to regularize the depth map, but jaggy artifacts occur in some boundaries.",
+      "s_span": 418,
+      "e_span": 594
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "A more recent approach of Ferstl et al.  utilizes an anisotropic diffusion tensor to guide the depth map upsampling (TGV), and the tensor is calculated from a HR intensity image; however, it is not smooth in some internal areas.",
+      "s_span": 595,
+      "e_span": 835
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Aodha et al.  treat depth image upsampling as MRF labeling problem which matches LR depth image patches to HR patches from an ancillary database; the training of data, matching, and fusion are quite computationally intensive.",
+      "s_span": 836,
+      "e_span": 1073
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "In  , an adaptive intensity-guided regression method is proposed for depth upsampling, but its relative high computational complexity would limit its practical applications.",
+      "s_span": 1074,
+      "e_span": 1259
+    }
+  ],
+  "bib_entries": {
+    "41644036": {
+      "title": "Intensity-guided edge-preserving depth upsampling through weighted l0 gradient minimization",
+      "abstract": "Abstract Depth is an important visual cue to perceive real-world scenes. Although a time-of-flight (ToF) depth camera can provide depth information in dynamic scenes, captured depth images are often noisy and of low resolution. In this paper, we propose an intensity-guided edge-preserving depth upsampling method through weighted L 0 gradient minimization to enhance both resolution and visual quality of depth images. Guided by the high-resolution intensity image, we perform optimization to preserve boundaries of objects. We apply L 0 gradient to the regularization term, and compute its weight from both intensity and depth images. We optimize the objective function using alternating minimization and half-quadratic splitting. Experimental results on Middlebury 2005, 2014, and real-world scene datasets demonstrate that the proposed method produces boundary-preserving depth upsampling results and outperforms state-of-the-art ones in terms of accuracy."
+    },
+    "15039048": {
+      "title": "Image guided depth upsampling using anisotropic total generalized variation",
+      "abstract": "In this work we present a novel method for the challenging problem of depth image up sampling. Modern depth cameras such as Kinect or Time-of-Flight cameras deliver dense, high quality depth measurements but are limited in their lateral resolution. To overcome this limitation we formulate a convex optimization problem using higher order regularization for depth image up sampling. In this optimization an an isotropic diffusion tensor, calculated from a high resolution intensity image, is used to guide the up sampling. We derive a numerical algorithm based on a primal-dual formulation that is efficiently parallelized and runs at multiple frames per second. We show that this novel up sampling clearly outperforms state of the art approaches in terms of speed and accuracy on the widely used Middlebury 2007 datasets. Furthermore, we introduce novel datasets with highly accurate ground truth, which, for the first time, enable to benchmark depth up sampling methods using real sensor data."
+    },
+    "206724879": {
+      "title": "Color-guided depth recovery from rgb-d data using an adaptive autoregressive model",
+      "abstract": "This paper proposes an adaptive color-guided autoregressive (AR) model for high quality depth recovery from low quality measurements captured by depth cameras. We observe and verify that the AR model tightly fits depth maps of generic scenes. The depth recovery task is formulated into a minimization of AR prediction errors subject to measurement consistency. The AR predictor for each pixel is constructed according to both the local correlation in the initial depth map and the nonlocal similarity in the accompanied high quality color image. We analyze the stability of our method from a linear system point of view, and design a parameter adaptation scheme to achieve stable and accurate depth recovery. Quantitative and qualitative evaluation compared with ten state-of-the-art schemes show the effectiveness and superiority of our method. Being able to handle various types of depth degradations, the proposed method is versatile for mainstream depth sensors, time-of-flight camera, and Kinect, as demonstrated by experiments on real systems."
+    },
+    "12908921": {
+      "title": "High quality depth map upsampling for 3d-tof cameras",
+      "abstract": "This paper describes an application framework to perform high quality upsampling on depth maps captured from a low-resolution and noisy 3D time-of-flight (3D-ToF) camera that has been coupled with a high-resolution RGB camera. Our framework is inspired by recent work that uses nonlocal means filtering to regularize depth maps in order to maintain fine detail and structure. Our framework extends this regularization with an additional edge weighting scheme based on several image features based on the additional high-resolution RGB input. Quantitative and qualitative results show that our method outperforms existing approaches for 3D-ToF upsampling. We describe the complete process for this system, including device calibration, scene warping for input alignment, and even how the results can be further processed using simple user markup."
+    },
+    "6748190": {
+      "title": "An application of markov random fields to range sensing",
+      "abstract": "This paper describes a highly successful application of MRFs to the problem of generating high-resolution range images. A new generation of range sensors combines the capture of low-resolution range images with the acquisition of registered high-resolution camera images. The MRF in this paper exploits the fact that discontinuities in range and coloring tend to co-align. This enables it to generate high-resolution, low-noise range images by integrating regular camera images into the range data. We show that by using such an MRF, we can substantially improve over existing range imaging technology."
+    },
+    "11099201": {
+      "title": "Patch based synthesis for single depth image super-resolution",
+      "abstract": "We present an algorithm to synthetically increase the resolution of a solitary depth image using only a generic database of local patches. Modern range sensors measure depths with non-Gaussian noise and at lower starting resolutions than typical visible-light cameras. While patch based approaches for upsampling intensity images continue to improve, this is the first exploration of patching for depth images. ::: ::: We match against the height field of each low resolution input depth patch, and search our database for a list of appropriate high resolution candidate patches. Selecting the right candidate at each location in the depth image is then posed as a Markov random field labeling problem. Our experiments also show how important further depth-specific processing, such as noise removal and correct patch normalization, dramatically improves our results. Perhaps surprisingly, even better results are achieved on a variety of real test scenes by providing our algorithm with only synthetic training depth data."
+    }
+  },
+  "generator": "fallback_v4"
+}

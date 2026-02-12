@@ -1,0 +1,20 @@
+{
+  "doc_id": "35799",
+  "text": "Note that checking model accuracy is not equivalent to evaluating forecast ability is another thing, even though the two targets overlap to some extent. Actually, in terms of practical application, managers prefer to care more about the latter more than the former. Hence, in this subsection, we test how our model will behave in reality by adapting out-ofsample from June 02, 2014 to May 29, 2015 . A method of rolling the data is employed and illustrated below: Where m is the number of the in-sample data. However, reselecting model order and re-estimating model parameters (including multiple different ARMA-GARCH parameters as well as threshold and parameters of GPD) every time we roll the data is quite demanding. Luckily, as suggested by [CITATION_1] , by applying the same model specification and meanwhile setting uniform threshold as 10 percentile of the data, we can still check prediction accuracy without losing too much credibility. Namely, corresponding specifications like ARMA (1,1)-EGARCH(1,1) , ARMA(1,1)-EGARCH(1,1) , ARMA (1,1)-PGARCH(1,1) and ARMA(1,1)-GJRGARCH(1,1) for CNY/USD, JPY/USD, EUR/USD and GBP/USD will be accepted throughout. Afterwards, asymmetric ARMA-GARCH based 1-day ahead VaR forecast is depicted in figure 5 .",
+  "correct_citation": {
+    "[CITATION_1]": "9451766"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Luckily, as suggested by, by applying the same model specification and meanwhile setting uniform threshold as 10 percentile of the data, we can still check prediction accuracy without losing too much credibility."
+    }
+  ],
+  "bib_entries": {
+    "9451766": {
+      "title": "Estimation of tailrelated risk measures for heteroscedastic financial time series: an extreme value approach",
+      "abstract": "We propose a method for estimating Value at Risk VaR and related risk measures describing the tail of the conditional distribution of a heteroscedastic financial return series. Our approach combines pseudo-maximum-likelihood fitting of GARCH models to estimate . the current volatility and extreme value theory EVT for estimating the tail of the innovation distribution of the GARCH model. We use our method to estimate conditional . quantiles VaR and conditional expected shortfalls the expected size of a return exceeding . VaR , this being an alternative measure of tail risk with better theoretical properties than the quantile. Using backtesting of historical daily return series we show that our procedure gives better 1-day estimates than methods which ignore the heavy tails of the innovations or the stochastic nature of the volatility. With the help of our fitted models we adopt a Monte Carlo approach to estimating the conditional quantiles of returns over multiple-day horizons and find that this outperforms the simple square-root-of-time scaling method. q 2000 Elsevier Science B.V. All rights reserved."
+    }
+  },
+  "generator": "fallback"
+}

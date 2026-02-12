@@ -1,0 +1,22 @@
+{
+  "text": "The diarization process consists of three main operations. The first is a segmentation into homogeneous regions, then an agglomerative clustering is performed where segments are grouped according to the speaker. Finally a Viterbi realignment represents a diarization output, in which speaker segment boundaries are refined. DiarTk is able to handle with multi feature streams (MFCC, Time Delay of Arrivals -TDOA, Modulation Spectrum -MS, Frequency Domain Linear Prediction features -FDLP) [CITATION_1] , [CITATION_2] . The main difference against a conventional diarization system is in the speaker modelling technique: DiarTk employs the non-parametric clustering and realignment based on the agglomerative Information Bottleneck principle (it does not use GMM speaker modelling) [CITATION_3] .",
+  "correct_citation": {
+    "[CITATION_1]": "7076593",
+    "[CITATION_2]": "7070493",
+    "[CITATION_3]": "1564008"
+  },
+  "bib_entries": {
+    "7076593": {
+      "title": "Multistream speaker diarization beyond two acoustic feature streams",
+      "abstract": "Speaker diarization for meetings data are recently converging towards multistream systems. The most common complementary features used in combination with MFCC are Time Delay of Arrival (TDOA). Also other features have been proposed although, there are no reported improvements on top of MFCC+TDOA systems. In this work we investigate the combination of other feature sets along with MFCC+TDOA. We discuss issues and problems related to the weighting of four different streams proposing a solution based on a smoothed version of the speaker error. Experiments are presented on NIST RT06 meeting diarization evaluation. Results reveal that the combination of four acoustic feature streams results in a 30% relative improvement with respect to the MFCC+TDOA feature combination. To the authors' best knowledge, this is the first successful attempt to improve the MFCC+TDOA baseline including other feature streams."
+    },
+    "1564008": {
+      "title": "DiarTk: An Open Source Toolkit for Research in Multistream Speaker Diarization and its Application to Meetings Recordings",
+      "abstract": "The speaker diarization task consists of inferring “who spoke when” in an audio stream without any prior knowledge and has been object of several NIST international evaluation campaigns is last years. A common trend for improving performances has been the use of several different feature streams as diverse as speaker location features, visual features or noise robust acoustic features. This paper describes an open source toolkit released under GPL license aiming at facilitating research in multistream speaker diarization and reproducing state-of-the-art results. In contrary to other related diarization toolkits, it is explicitly designed to handle an arbitrary number of features with very different statistics while limiting the computational complexity. The release includes a set of scripts to replicate benchmark results on previous NIST evaluations and is intended to provide an easy to use software to study and include novel features into diarization systems."
+    },
+    "7070493": {
+      "title": "Using audio and visual cues for speaker diarisation initialisation",
+      "abstract": "In this paper we present a novel approach to audio visual speaker diarisation (the task of estimating “who spoke when” using audio and visual cues) in a challenging meeting domain. Our approach is based on the initialisation of the agglomerative speaker clustering using psychology inspired visual features, including Visual Focus of Attention (VFoA) and motion intensities. This method, providing initial speaker clusters of high purity, achieved consistent improvements over the widely adopted linear initialisation method. Moreover, the initialisation using both visual and Time Delay of Arrival (TDoA) cues was also investigated in conjunction with the multi-stream combination of acoustic and visual features (MFCC, TDoA, VFoA, motion intensity, and head pose likelihoods). This speaker diarisation framework allowed to successfully integrate three feature streams, further exploiting the complementarity between multimodal cues."
+    }
+  }
+}

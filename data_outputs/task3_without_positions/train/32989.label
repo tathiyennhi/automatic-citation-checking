@@ -1,0 +1,29 @@
+{
+  "doc_id": "32989",
+  "text": "• In Step 3a, we compute an approximation to the similarity function, similar to canopy clustering [CITATION_1] . We build an inverted index over the features, and use that to compute, in near linear time, all pairs of contexts that share a feature, as well as a light-weight similarity score for each pair of contexts. (This is similar to using LSH [CITATION_2] , except that we hash each feature.) Figure 4 shows the algorithm to compute cosine similarity for one feature dimension. 2 We repeat this algorithm for 2 Note that line 6 in Figure 4 can lead to quadratic execution time for features that occur in many contexts. Hence, we sample the set of pairs if the list is long. If two contexts are indeed similar, we expect that some other (more specific) feature will result in them being added to the candidate pairs. In addition, even for high-frequency features, the lists get shorter in later passes as we merge contexts.",
+  "correct_citation": {
+    "[CITATION_1]": "207699574",
+    "[CITATION_2]": "4613827"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "• In Step 3a, we compute an approximation to the similarity function, similar to canopy clustering  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "all pairs of contexts that share a feature, as well as a light-weight similarity score for each pair of contexts. (This is similar to using LSH  , except that we hash each feature.) Figure 4 shows the algorithm to compute cosine similarity for one feature dimension. 2 We repeat"
+    }
+  ],
+  "bib_entries": {
+    "207699574": {
+      "title": "Efficient clustering of high-dimensional data sets with application to reference matching",
+      "abstract": "important problems involve clustering large datasets. Although naive implementations of clustering are computa- tionally expensive, there are established ecient techniques for clustering when the dataset has either (1) a limited num- ber of clusters, (2) a low feature dimensionality, or (3) a small number of data points. However, there has been much less work on methods of eciently clustering datasets that are large in all three ways at once|for example, having millions of data points that exist in many thousands of di- mensions representing many thousands of clusters. We present a new technique for clustering these large, high- dimensional datasets. The key idea involves using a cheap, approximate distance measure to eciently divide the data into overlapping subsets we call canopies .T hen cluster- ing is performed by measuring exact distances only between points that occur in a common canopy. Using canopies, large clustering problems that were formerly impossible become practical. Under reasonable assumptions about the cheap distance metric, this reduction in computational cost comes without any loss in clustering accuracy. Canopies can be applied to many domains and used with a variety of cluster- ing approaches, including Greedy Agglomerative Clustering, K-means and Expectation-Maximization. We present ex- perimental results on grouping bibliographic citations from the reference sections of research papers. Here the canopy approach reduces computation time over a traditional clus- tering approach by more than an order of magnitude and decreases error in comparison to a previously used algorithm by 25%."
+    },
+    "4613827": {
+      "title": "Fast agglomerative hierarchical clustering algorithm using locality-sensitive hashing",
+      "abstract": "The single linkage method is a fundamental agglomerative hierarchical clustering algorithm. This algorithm regards each point as a single cluster initially. In the agglomeration step, it connects a pair of clusters such that the distance between the nearest members is the shortest. This step is repeated until only one cluster remains. The single linkage method can efficiently detect clusters in arbitrary shapes. However, a drawback of this method is a large time complexity of O(n 2), where n represents the number of data points. This time complexity makes this method infeasible for large data. This paper proposes a fast approximation algorithm for the single linkage method. Our algorithm reduces the time complexity to O(nB) by rapidly finding the near clusters to be connected by Locality-Sensitive Hashing, a fast algorithm for the approximate nearest neighbor search. Here, B represents the maximum number of points going into a single hash entry and it practically diminishes to a small constant as compared to n for sufficiently large hash tables. Experimentally, we show that (1) the proposed algorithm obtains clustering results similar to those obtained by the single linkage method and (2) it runs faster for large data than the single linkage method."
+    }
+  },
+  "generator": "fallback_v4"
+}

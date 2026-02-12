@@ -1,0 +1,18 @@
+{
+  "text": "Note that some methods [CITATION_1] propose to use several simple convolution layers with a small number of filters to preserve spatial information. For example, the spatial path of BiSeNet [CITATION_2] contains three convolution layers, followed by BN and ReLU. However, previous works [CITATION_3] have shown that training the network from the scratch is not a trivial task. In this paper, the proposed SPN leverages the strategy of combining the pretrained backbones and fine-tuning, which is beneficial for improving the final performance. Since the initial weights of SPN (pretrained from the large dataset) are useful for extracting the low-level features, the training process can be easily converged. Furthermore, the trained SPN model can obtain the improved accuracy.",
+  "correct_citation": {
+    "[CITATION_1]": "51906325",
+    "[CITATION_2]": "51906325",
+    "[CITATION_3]": "30876510"
+  },
+  "bib_entries": {
+    "51906325": {
+      "title": "Bisenet: Bilateral segmentation network for real-time semantic segmentation",
+      "abstract": "Semantic segmentation requires both rich spatial information and sizeable receptive field. However, modern approaches usually compromise spatial resolution to achieve real-time inference speed, which leads to poor performance. In this paper, we address this dilemma with a novel Bilateral Segmentation Network (BiSeNet). We first design a Spatial Path with a small stride to preserve the spatial information and generate high-resolution features. Meanwhile, a Context Path with a fast downsampling strategy is employed to obtain sufficient receptive field. On top of the two paths, we introduce a new Feature Fusion Module to combine features efficiently. The proposed architecture makes a right balance between the speed and segmentation performance on Cityscapes, CamVid, and COCO-Stuff datasets. Specifically, for a 2048 \\(\\times \\) 1024 input, we achieve 68.4% Mean IOU on the Cityscapes test dataset with speed of 105 FPS on one NVIDIA Titan XP card, which is significantly faster than the existing methods with comparable performance."
+    },
+    "30876510": {
+      "title": "Receptive field block net for accurate and fast object detection",
+      "abstract": "Current top-performing object detectors depend on deep CNN backbones, such as ResNet-101 and Inception, benefiting from their powerful feature representations but suffering from high computational costs. Conversely, some lightweight model based detectors fulfil real time processing, while their accuracies are often criticized. In this paper, we explore an alternative to build a fast and accurate detector by strengthening lightweight features using a hand-crafted mechanism. Inspired by the structure of Receptive Fields (RFs) in human visual systems, we propose a novel RF Block (RFB) module, which takes the relationship between the size and eccentricity of RFs into account, to enhance the feature discriminability and robustness. We further assemble RFB to the top of SSD, constructing the RFB Net detector. To evaluate its effectiveness, experiments are conducted on two major benchmarks and the results show that RFB Net is able to reach the performance of advanced very deep detectors while keeping the real-time speed. Code is available at this https URL."
+    }
+  }
+}

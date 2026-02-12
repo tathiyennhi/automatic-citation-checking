@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "As illustrated in the Dual-Modal Attention Weight Calculation Unit of Fig. 2, the message passing mechanism updates each dynamic node d by aggregating information from its associated nodes.",
+    "As an example, we consider the static nodes s 1 d,..., s k d. This propagation process is observation-driven: a dynamic node becomes active and participates in message passing only when a valid observation exists at the corresponding time step.",
+    "During inactive steps, the node is excluded from propagation to avoid the diffusion of empty information.",
+    "In contrast, static nodes remain active throughout the process, ensuring temporal continuity and enabling robust cross-modality interactions even when dynamic observations are missing.In this process, the dynamic node d acts as the target node, while static nodes act as source nodes.",
+    "The message from a source node s t d to its target node d is formulated as:γ s t d = Softmax(e s t d), q d = W Q x d, k s t d = W K x s t d, α s t d = Softmax q ⊤ d k s t d √ d h, h s t d →d = (γ s t d + α s t d) • ReLU(r v x s t d),(3)where x s t d and x d denote the feature of s t d and d. W Q and W K are learnable projection matrices used to obtain the query and key representations, and r v is a learnable linear transformation for projecting the source features into the message space."
+  ],
+  "correct_citations": []
+}

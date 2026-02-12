@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The pre-trained language model, denoted as PLM(•), processes this input sequence to extract the semantic embedding.",
+    "For each disinformation dataset D k (where k ∈ {1,..., m}), we introduce a trainable prompt vector P k ∈ R m×d, where m is the number of prompt tokens for dataset k.The input to the frozen PLM for dataset D k is the concatenation of all learned prompts P i (for i ≤ k) and the extracted semantic embedding:X ′ = [P k; P k-1;...; P 1; X],(3)where X ′ ∈ R (km+n)×d.",
+    "The output of the frozen PLM for the input sequence X ′ is given by:H = PLM(X ′),(4)where H ∈ R (km+n)×d represents the hidden states of the aggregated representation.Training Objective: For each dataset D k, the objective is to find the prompt parameters θ P k that minimize the negative log probability of the training examples under the soft prompts and the frozen pre-trained model:L(θ P k) = - X,Y ∈D k log p(y | [P k,..., P 1, x], θ, θ P1,..., θ P k),(5)where θ are the frozen parameters of the PLM model and θ Pi are the parameters of the soft prompts learned for previous disinformation datasets.",
+    "This setup allows DELD to achieve two primary goals:• Eliminating Catastrophic Forgetting: Since each soft prompt is trained independently and is frozen after the current dataset is learned, previously learned data do not suffer from forgetting.",
+    "• Knowledge Sharing: Soft prompts learned on previous datasets facilitate information reuse, benefiting the learning of new datasets.Classification: The final hidden states H are used for classification."
+  ]
+}

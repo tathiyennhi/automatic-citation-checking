@@ -1,0 +1,22 @@
+{
+  "doc_id": "17882",
+  "text": "The results on all four tables show that increasing the query length improves the evaluations scores. But when the query length exceeds 100, adding more candidate query terms does not improve the performance anymore. This fact is valid for all the three query estimation methods. So based on these experiments we limit the length of the generated queries from description, claim, abstract, and title by 100, 100, 50, 10, respectively. We see that LLQM outperforms CBQM and PQM in terms of MAP and Recall. Table 2 . Evaluation scores of LLQM, CBQM, and PQM, showing the effect of the number of selected terms extracted from the claim field on the training set for the English subset Table 5 reports the performance of the three term selection techniques over different fields on the training set with the optimized query length. Experiments show that extracting terms from description field has the best performance over all other fields. The reason for this is the technical language used in description as opposed to the legal wrapping of sentences which is the characteristic of the claim field. We believe the short length of titles are the reason why selecting terms from the title performs worse compared to other fields. Prior work [CITATION_1] suggests that the abstract and description both use technical terminology, but Table 4 . Evaluation scores of LLQM, CBQM, and PQM, showing the effect of the number of selected terms extracted from the title field on the training set for the English subset our results based on abstract section are less effective. Further investigation is needed to understand why query terms extracted from the abstract field are not as effective as the ones extracted from the description. The other observation is that LLQM outperforms CBQM and PQM on all settings. The reason that CBQM performed slightly worse than LLQM, is perhaps due to the fact that we consider all documents which have IPC classes in common with the query as feedback documents. This generated cluster of relevant documents is very big, therefore we loose the specific terms which are representative of the topic of the query document.",
+  "correct_citation": {
+    "[CITATION_1]": "17598519"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Prior work  suggests that the abstract and description both use technical terminology, but Table 4 .",
+      "s_span": 1227,
+      "e_span": 1339
+    }
+  ],
+  "bib_entries": {
+    "17598519": {
+      "title": "Transforming patents into prior-art queries",
+      "abstract": "Searching for prior-art patents is an essential step for the patent examiner to validate or invalidate a patent application. In this paper, we consider the whole patent as the query, which reduces the burden on the user, and also makes many more potential search features available. We explore how to automatically transform the query patent into an effective search query, especially focusing on the effect of different patent fields. Experiments show that the background summary of a patent is the most useful source of terms for generating a query, even though most previous work used the patent claims."
+    }
+  },
+  "generator": "fallback_v4"
+}

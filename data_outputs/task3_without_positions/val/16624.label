@@ -1,0 +1,38 @@
+{
+  "doc_id": "16624",
+  "text": "Theoretical results on block preconditioning generally fall in to one of two categories. First, are results based on the assumption that the inverse action of the Schur complement is available, and/or results that show an asymptotic equivalence between the preconditioned 2 × 2 operator and the preconditioned Schur complement. It is shown in [CITATION_1] [CITATION_2] that GMRES (or other minimal residual methods) is guaranteed to converge in two or four iterations for a block-triangular or block-diagonal preconditioned system, respectively, when the diagonal blocks of the preconditioner consist of a Schur complement and the respective complementary block of A (A 11 or A 22 ). However, computing the action of the Schur complement inverse is generally very expensive. In [CITATION_3] , it is shown that if the minimal polynomial of the preconditioned Schur complement is degree k, then the minimal polynomial of the preconditioned 2 × 2 system is at most degree k + 1. Although this does not require the action and inverse of the Schur complement, it is almost never the case that GMRES is iterated until the true minimal polynomial is achieved. As a consequence, the minimal polynomial equivalence also does not provide practical information on convergence of the 2 × 2 system, as demonstrated in the following example.",
+  "correct_citation": {
+    "[CITATION_1]": "35457428",
+    "[CITATION_2]": "32302506",
+    "[CITATION_3]": "46098304"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "It is shown in   that GMRES (or other minimal residual methods) is guaranteed to converge in two or four iterations for a block-triangular or block-diagonal preconditioned system, respectively, when the diagonal blocks of the preconditioner consist of a Schur complement and the respective complementary block of A (A 11 or A 22 )."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "It is shown in   that GMRES (or other minimal residual methods) is guaranteed to converge in two or four iterations for a block-triangular or block-diagonal preconditioned system, respectively, when the diagonal blocks of the preconditioner consist of a Schur complement and the respective complementary block of A (A 11 or A 22 )."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In  , it is shown that if the minimal polynomial of the preconditioned Schur complement is degree k, then the minimal polynomial of the preconditioned 2 × 2 system is at most degree k + 1."
+    }
+  ],
+  "bib_entries": {
+    "32302506": {
+      "title": "A note on preconditioning for indefinite linear systems",
+      "abstract": "Preconditioners are often conceived as approximate inverses. For nonsingular indefinite matrices of saddle-point (or KKT) form, we show how preconditioners incorporating an exact Schur complement lead to preconditioned matrices with exactly two or exactly three distinct eigenvalues. Thus approximations of the Schur complement lead to preconditioners which can be very effective even though they are in no sense approximate inverses."
+    },
+    "46098304": {
+      "title": "On Inexact Preconditioners for Nonsymmetric Matrices",
+      "abstract": "Inexact versions of the block-triangular preconditioners for nonsymmetric matrices of block two-by-two structures in [M. F. Murphy, G. H. Golub, and A. J. Wathen, SIAM J. Sci. Comput., 21 (2000), pp. 1969--1972] and [I. C. F. Ipsen, SIAM J. Sci. Comput., 23 (2001), pp. 1050--1051] are presented, and the two preconditioners for symmetric block two-by-two matrices in [C. Durazzi and V. Ruggiero, Numer. Linear Algebra Appl., 10 (2003), pp. 673--688] are extended to general nonsymmetric matrices. Moreover, we precisely describe the spectral properties of the preconditioned matrices and the finite-step termination properties of the preconditioned Krylov subspace iteration methods with an optimal or Galerkin property, with respect to these preconditioners. Several numerical examples are performed to illustrate the effectiveness of the proposed preconditioners."
+    },
+    "35457428": {
+      "title": "A note on preconditioning nonsymmetric matrices",
+      "abstract": "The preconditioners for indefinite matrices of KKT form in [M. F. Murphy, G. H. Golub, and A. J. Wathen, SIAM J. Sci. Comput., 21 (2000), pp. 1969--1972] are extended to general nonsymmetric matrices."
+    }
+  },
+  "generator": "fallback_v4"
+}

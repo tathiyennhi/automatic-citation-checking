@@ -1,0 +1,51 @@
+{
+  "doc_id": "36785",
+  "text": "An algorithm that uses a linear approximation solver to produce an image with better spatial resolution was presented. This was done by using a focal underdetermined system solver (FOCUSS) algorithm which is an initializationdependent recursive algorithm that produces solutions based on a weighted minimum-norm least-squares solution [CITATION_1] . In short, it takes a low spatial image and employs a reweight strategy that improves the spatial resolution during its iterations [CITATION_2] . The linear inverse solver used in this experiment was sLORETA and the FOCUSS was used in the re-weighting. Furthermore, a shrinking strategy was used to reduce the processing time. The combination of the shrinking strategy and FOCUSS is called shrinking-FOCUSS. The developed algorithm is called shrinking sLORETA-FOCUSS. The algorithm was tested on a realistic 3D head model around which electrodes were placed. Before the algorithmic implementation, the EIT forward problem was solved with a model of known conductivity distribution subjected to low frequency current. A large number of electrodes were connected and thus a shrinkage method was used to reduce the solution space and a weighing matrix made the process take less time since this included less elements for the algorithm to handle during iteration [CITATION_3] . [CITATION_4] .",
+  "correct_citation": {
+    "[CITATION_1]": "8087541",
+    "[CITATION_2]": "6120933",
+    "[CITATION_3]": "5727767",
+    "[CITATION_4]": "5727767"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This was done by using a focal underdetermined system solver (FOCUSS) algorithm which is an initializationdependent recursive algorithm that produces solutions based on a weighted minimum-norm least-squares solution  .",
+      "s_span": 119,
+      "e_span": 349
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In short, it takes a low spatial image and employs a reweight strategy that improves the spatial resolution during its iterations  .",
+      "s_span": 350,
+      "e_span": 494
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "A large number of electrodes were connected and thus a shrinkage method was used to reduce the solution space and a weighing matrix made the process take less time since this included less elements for the algorithm to handle during iteration  .",
+      "s_span": 1066,
+      "e_span": 1323
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "A large number of electrodes were connected and thus a shrinkage method was used to reduce the solution space and a weighing matrix made the process take less time since this included less elements for the algorithm to handle during iteration  .  .",
+      "s_span": 1066,
+      "e_span": 1338
+    }
+  ],
+  "bib_entries": {
+    "8087541": {
+      "title": "Sparse signal reconstruction from limited data using FOCUSS: A re-weighted minimum norm algorithm",
+      "abstract": "We present a nonparametric algorithm for finding localized energy solutions from limited data. The problem we address is underdetermined, and no prior knowledge of the shape of the region on which the solution is nonzero is assumed. Termed the FOcal Underdetermined System Solver (FOCUSS), the algorithm has two integral parts: a low-resolution initial estimate of the real signal and the iteration process that refines the initial estimate to the final localized energy solution. The iterations are based on weighted norm minimization of the dependent variable with the weights being a function of the preceding iterative solutions. The algorithm is presented as a general estimation tool usable across different applications. A detailed analysis laying the theoretical foundation for the algorithm is given and includes proofs of global and local convergence and a derivation of the rate of convergence. A view of the algorithm as a novel optimization method which combines desirable characteristics of both classical optimization and learning-based algorithms is provided. Mathematical results on conditions for uniqueness of sparse solutions are also given. Applications of the algorithm are illustrated on problems in direction-of-arrival (DOA) estimation and neuromagnetic imaging."
+    },
+    "5727767": {
+      "title": "EIT images with improved spatial resolution using a realistic head model",
+      "abstract": "A recursive algorithm is presented to improve the spatial resolution of 3-D Electrical Impedance Tomography (EIT) images in a four-shell realistic head model. In this algorithm, the low spatial resolution image derived from the standardized Low resolution electromagnetic tomography algorithm (sLORETA) is chosen to be the initial estimate for the Focal Underdetermined System Solver (FOCUSS), and a shrinking strategy is adopted for adjusting the source space during iteration process in FOCUSS. Images are presented with improved spatial resolution and the algorithm effectiveness is verified on simulated data by setting two perturbations in the movement and visual regions of the brain. I. INTRODUCTION LECTRICAL impedance tomography (EIT) is an imaging method that estimates the internal conductivity distribution of a bounded domain by measuring the surface voltages when current is injected into the domain. The number of boundary measurements at the surface of the bounded region are limited by the signal-to-nose ratio (SNR), and hence the system equations are underdetermined and do not convey enough information to reconstruct the distribution of the conductivity changes uniquely. There are two approaches that can be used to reconstruct the distribution, linear approximations and non-linear, however the non-linear methods require far greater computation. Therefore, only low spatial resolution images can be achieved by conventional linear inverse solvers, such as GVSPM, pseudo-inverse method, sLORETA, etc. The focal underdetermined system solver (FOCUSS), which is an initialization-dependent recursive algorithm, produces a localized energy solution based on the weighted minimum-norm least-squares (MNLS) solution (1). Taking the low spatial resolution image as the initial estimate, FOCUSS employs a re-weighting strategy that gradually improves the spatial resolution during the iterations (2)."
+    },
+    "6120933": {
+      "title": "A recursive algorithm for the three-dimensional imaging of brain electric activity: Shrinking LORETA-FOCUSS",
+      "abstract": "Estimation of intracranial electric activity from the scalp electroencephalogram (EEG) requires a solution to the EEG inverse problem, which is known as an ill-conditioned problem. In order to yield a unique solution, weighted minimum norm least square (MNLS) inverse methods are generally used. This paper proposes a recursive algorithm, termed Shrinking LORETA-FOCUSS, which combines and expands upon the central features of two well-known weighted MNLS methods: LORETA and FOCUSS. This recursive algorithm makes iterative adjustments to the solution space as well as the weighting matrix, thereby dramatically reducing the computation load, and increasing local source resolution. Simulations are conducted on a 3-shell spherical head model registered to the Talairach human brain atlas. A comparative study of four different inverse methods, standard Weighted Minimum Norm, L1-norm, LORETA-FOCUSS and Shrinking LORETA-FOCUSS are presented. The results demonstrate that Shrinking LORETA-FOCUSS is able to reconstruct a three-dimensional source distribution with smaller localization and energy errors compared to the other methods."
+    }
+  },
+  "generator": "fallback_v4"
+}

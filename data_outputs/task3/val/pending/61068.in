@@ -1,0 +1,12 @@
+{
+  "text": "Node Indegree Analysis The indegree of the node in knowledge graph is the number of edges connected to the node. The node with larger degree means it have more neighboring nodes, and this kind of nodes can receive more information from neighboring nodes than other nodes with smaller degree. As shown in Table 5 , we present the results for different sets of nodes with different indegree scopes. The average Hits@10 and Hits@3 scores are calculated. Along the increasing of indegree scope, the average value of Hits@10 and Hits@3 will be increased. First for a node with small indegree, it benefits from aggregation of neighbor information from the WGCN layers of SACN. Its embedding can be estimated robustly. Second for a node with high indegree, it means that a lot more information is aggregated through GCN, and the estimation of its embedding is substantially smoothed among neighbors. Thus the embedding learned from SACN is worse than that from Conv-TransE. One solution to this problem would be neighbor selection as in [CITATION_1] ).",
+  "correct_citation": {
+    "[CITATION_1]": "2768038"
+  },
+  "bib_entries": {
+    "2768038": {
+      "title": "Embedding entities and relations for learning and inference in knowledge bases",
+      "abstract": "Abstract: We consider learning representations of entities and relations in KBs using the neural-embedding approach. We show that most existing models, including NTN (Socher et al., 2013) and TransE (Bordes et al., 2013b), can be generalized under a unified learning framework, where entities are low-dimensional vectors learned from a neural network and relations are bilinear and/or linear mapping functions. Under this framework, we compare a variety of embedding models on the link prediction task. We show that a simple bilinear formulation achieves new state-of-the-art results for the task (achieving a top-10 accuracy of 73.2% vs. 54.7% by TransE on Freebase). Furthermore, we introduce a novel approach that utilizes the learned relation embeddings to mine logical rules such as \"BornInCity(a,b) and CityInCountry(b,c) => Nationality(a,c)\". We find that embeddings learned from the bilinear objective are particularly good at capturing relational semantics and that the composition of relations is characterized by matrix multiplication. More interestingly, we demonstrate that our embedding-based rule extraction approach successfully outperforms a state-of-the-art confidence-based rule mining approach in mining Horn rules that involve compositional reasoning."
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "These limitations motivate us to extend the recurrent paradigm while maintaining dense representations for 3D occupancy prediction, which requires voxel-level classification of static objects, dynamic objects, and free space.",
+    "This requirement makes the task more complex and introduces two key challenges when adopting a stream-based paradigm with dense representations: (i) mitigating warping-induced distortions to clearly separate occupied and free space while preserving object boundaries, and (ii) handling dynamic objects, whose voxel representations often lose detail during image-to-voxel projection or become misaligned due to motion.Our proposed method, DuOcc, addresses these challenges with a dual aggregation strategy designed to effectively handle both static and dynamic object features.",
+    "As shown in Fig. 1(c), we first warp the voxel features from the immediate previous timestep (which contain accumulated information), apply lightweight refinement to suppress warping-induced distortions and to emphasize objectoccupied regions, and then fuse the refined features with voxel features from the current input.",
+    "While stream-based accumulation effectively handles static structures with consistent spatial alignment, it struggles to capture dynamic objects, making their temporal aggregation unreliable.",
+    "This difficulty arises from several issues: motion-induced spatial misalignment, sparse projection when distant objects occupy fewer pixels in the image, collapsed instance boundaries in coarse voxel grids, and loss of semantic cues due to occlusion."
+  ],
+  "correct_citations": []
+}

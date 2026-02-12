@@ -1,0 +1,73 @@
+{
+  "doc_id": "56360",
+  "text": "Permission to copy without fee all or part of this material is granted provided that the copies are not made or distributed for direct commercial advantage, the ACM copyright notice and the title of the publication and its date appear, and notice is given that copying is by permission of the ACM. To copy otherwise, or to republish, to post on servers or to redistribute to lists, requires a fee and/or special permissions from the publisher, ACM. have been used extensively in specifying and studying several different inter-operability tasks. In particular, schema mappings are regarded as the essential building blocks in data exchange and data integration (see, e.g., the surveys [CITATION_1] [CITATION_2] ). The main task in data exchange is to transform data structured under one schema, called the source schema, into data structured under a different schema, called the target schema, in such a way that the constraints given by a schema mapping between the two schemas are satisfied. The main task in data integration is to answer queries against a global schema that is related to several heterogeneous local schemas via schema mappings. Schema mappings are expressed in some logical language that is typically a restricted fragment of first-order logic or of secondorder logic. The use of restricted fragments is dictated by the fact that the main algorithmic tasks in data exchange and data integration become undecidable if unrestricted use of even just first-order logic is allowed. Furthermore, the logical languages used to express schema mappings are chosen with two criteria in mind: on the one hand, they must be powerful enough to capture interesting specifications and, on the other, they must possess certain desirable structural properties. In data exchange, the prime example of such a desirable structural property is the existence of universal solutions, which, intuitively, are the preferred target instances to materialize [CITATION_3] . This property is shared by both source-to-target tuple-generating dependencies (s-t tgds) [CITATION_4] and by second-order tuple-generating dependencies (SO tgds) [CITATION_5] . In data integration, an important example of such a desirable property is that the certain answers to a union of conjunctive queries over the target schema can be obtained by rewriting the query to a union of conjunctive queries over the source schema. One of the consequences of this rewriting property (which, like the existence of universal solutions, is possessed by both s-t tgds and SO tgds) is that the certain answers of unions of conjunctive queries over the target schema can be obtained in polynomial time. Two other examples of structural properties frequently used in the study of schema mappings are closure under target homomorphisms and closure under union. The former is a property shared by all s-t tgds, but not by all SO tgds. The latter is a property shared by all LAV (local-as-view) s-t tgds, but not by arbitrary s-t tgds; one of its many implications is that every schema mapping specified by LAV tgds has a quasi-inverse [CITATION_6] .",
+  "correct_citation": {
+    "[CITATION_1]": "11093127",
+    "[CITATION_2]": "1495854",
+    "[CITATION_3]": "11863817",
+    "[CITATION_4]": "11863817",
+    "[CITATION_5]": "208003807",
+    "[CITATION_6]": "53242908"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In particular, schema mappings are regarded as the essential building blocks in data exchange and data integration (see, e.g., the surveys   ).",
+      "s_span": 546,
+      "e_span": 713
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In particular, schema mappings are regarded as the essential building blocks in data exchange and data integration (see, e.g., the surveys   ).",
+      "s_span": 546,
+      "e_span": 713
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In data exchange, the prime example of such a desirable structural property is the existence of universal solutions, which, intuitively, are the preferred target instances to materialize  .",
+      "s_span": 1765,
+      "e_span": 1966
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "This property is shared by both source-to-target tuple-generating dependencies (s-t tgds)  and by second-order tuple-generating dependencies (SO tgds)  .",
+      "s_span": 1967,
+      "e_span": 2144
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This property is shared by both source-to-target tuple-generating dependencies (s-t tgds)  and by second-order tuple-generating dependencies (SO tgds)  .",
+      "s_span": 1967,
+      "e_span": 2144
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "The latter is a property shared by all LAV (local-as-view) s-t tgds, but not by arbitrary s-t tgds; one of its many implications is that every schema mapping specified by LAV tgds has a quasi-inverse  .",
+      "s_span": 2892,
+      "e_span": 3106
+    }
+  ],
+  "bib_entries": {
+    "53242908": {
+      "title": "Quasi-inverses of schema mappings",
+      "abstract": "Schema mappings are high-level specifications that describe the relationship between two database schemas. Two operators on schema mappings, namely the composition operator and the inverse operator, are regarded as especially important. Progress on the study of the inverse operator was not made until very recently, as even finding the exact semantics of this operator turned out to be a fairly delicate task. Furthermore, this notion is rather restrictive, since it is rare that a schema mapping possesses an inverse. In this article, we introduce and study the notion of a quasi-inverse of a schema mapping. This notion is a principled relaxation of the notion of an inverse of a schema mapping; intuitively, it is obtained from the notion of an inverse by not differentiating between instances that are equivalent for data-exchange purposes. For schema mappings specified by source-to-target tuple-generating dependencies (s-t tgds), we give a necessary and sufficient combinatorial condition for the existence of a quasi-inverse, and then use this condition to obtain both positive and negative results about the existence of quasi-inverses. In particular, we show that every LAV (local-as-view) schema mapping has a quasi-inverse, but that there are schema mappings specified by full s-t tgds that have no quasi-inverse. After this, we study the language needed to express quasi-inverses of schema mappings specified by s-t tgds, and we obtain a complete characterization. We also characterize the language needed to express inverses of schema mappings, and thereby solve a problem left open in the earlier study of the inverse operator. Finally, we show that quasi-inverses can be used in many cases to recover the data that was exported by the original schema mapping when performing data exchange."
+    },
+    "208003807": {
+      "title": "Composing Schema Mappings: Second-order Dependencies to the Rescue",
+      "abstract": "A schema mapping is a specification that describes how data structured under one schema (the source schema) is to be transformed into data structured under a different schema (the target schema). Schema mappings play a key role in numerous areas of database systems, including database design, information integration, and model management. A fundamental problem in this context is composing schema mappings: given two successive schema mappings, derive a schema mapping between the source schema of the first and the target schema of the second that has the same effect as applying successively the two schema mappings.In this paper, we give a rigorous semantics to the composition of schema mappings and investigate the definability and computational complexity of the composition of two schema mappings. We first study the important case of schema mappings in which the specification is given by a finite set of source-to-target tuple-generating dependencies (source-to-target tgds). We show that the composition of a finite set of full source-to-target tgds with a finite set of tgds is always definable by a finite set of source-to-target tgds, but the composition of a finite set of source-to-target tgds with a finite set of full source-to-target tgds may not be definable by any set (finite or infinite) of source-to-target tgds; furthermore, it may not be definable by any formula of least fixed-point logic, and the associated composition query may be NP-complete. After this, we introduce a class of existential second-order formulas with function symbols, which we call second-order tgds, and make a case that they are the \"right\" language for composing schema mappings. To this effect, we show that the composition of finite sets of source-to-target tgds is always definable by a second-order tgd. Moreover, the composition of second-order tgds is also definable by a second-order tgd. Our second-order tgds allow equalities, even though the \"obvious\" way to define them does not require equalities. Allowing equalities in second-order tgds turns out to be of the essence, because we show that second-order tgds without equalities are not sufficiently expressive to define even the composition of finite sets of source-to-target tgds. Finally, we show that second-order tgds possess good properties for data exchange. In particular. the chase procedure can be extended to second-order tgds so that it produces polynomial-time computable universal solutions in data exchange settings specified by second-order tgds."
+    },
+    "11093127": {
+      "title": "Schema Mappings, Data Exchange, and Metadata Management",
+      "abstract": "Schema mappings are high-level specifications that describe the relationship between database schemas. Schema mappings are prominent in several different areas of database management, including database design, information integration, data exchange, metadata management, and peer-to-peer data management systems. Our main aim in this paper is to present an overview of recent advances in data exchange and metadata management, where the schema mappings are between relational schemas. In addition, we highlight some research issues and directions for future work."
+    },
+    "1495854": {
+      "title": "Data Integration: A Theoretical Perspective",
+      "abstract": "Data integration is the problem of combining data residing at different sources, and providing the user with a unified view of these data. The problem of designing data integration systems is important in current real world applications, and is characterized by a number of issues that are interesting from a theoretical point of view. This document presents on overview of the material to be presented in a tutorial on data integration. The tutorial is focused on some of the theoretical issues that are relevant for data integration. Special attention will be devoted to the following aspects: modeling a data integration application, processing queries in data integration, dealing with inconsistent data sources, and reasoning on queries."
+    },
+    "11863817": {
+      "title": "Data exchange: semantics and query answering",
+      "abstract": "Data exchange is the problem of taking data structured under a source schema and creating an instance of a target schema that reflects the source data as accurately as possible. In this paper, we address foundational and algorithmic issues related to the semantics of data exchange and to query answering in the context of data exchange. These issues arise because, given a source instance, there may be many target instances that satisfy the constraints of the data exchange problem. We give an algebraic specification that selects, among all solutions to the data exchange problem, a special class of solutions that we call universal. A universal solution has no more and no less data than required for data exchange and it represents the entire space of possible solutions. We then identify fairly general, and practical, conditions that guarantee the existence of a universal solution and yield algorithms to compute a canonical universal solution efficiently. We adopt the notion of \"certain answers\" in indefinite databases for the semantics for query answering in data exchange. We investigate the computational complexity of computing the certain answers in this context and also study the problem of computing the certain answers of target queries by simply evaluating them on a canonical universal solution."
+    }
+  },
+  "generator": "fallback_v4"
+}

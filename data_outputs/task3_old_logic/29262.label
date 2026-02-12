@@ -1,0 +1,29 @@
+{
+  "doc_id": "29262",
+  "text": "Two forms of the SVD are tested. The first is the full rank version of the SVD. The second is based on the reduced rank version, where all but the first k largest singular values are set to zero, giving A k . As expected, the reduced rank strategies generally discover the subproblems more efficiently than the full rank versions. This is due in part to the theoretical results mentioned in the probabilistic analysis of reduced rank spectral clustering in a well known paper by Papadimitriou et al. [CITATION_1] . The performance may also have improved because, in the application domains tested, the GA is only seeking one block in the solution space. Reduction to a lower rank correctly directs the search towards the correct block because a lower value of k in A k increases the cosines of the angles between vectors of similar types [CITATION_2] . Another reason may be that in comparison with higher rank reductions, lower rank reductions are less restrictive and will identify larger subsets of related genes as the rank is reduced. Therefore, lower rank reductions allow the restrictive mutation and crossover operators to have more freedom during exploration. However, lowering the rank too much may not always increase the performance because all genes will be seen as similar to all other genes.",
+  "correct_citation": {
+    "[CITATION_1]": "53303687",
+    "[CITATION_2]": "10592268"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This is due in part to the theoretical results mentioned in the probabilistic analysis of reduced rank spectral clustering in a well known paper by Papadimitriou et al."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Reduction to a lower rank correctly directs the search towards the correct block because a lower value of k in A k increases the cosines of the angles between vectors of similar types"
+    }
+  ],
+  "bib_entries": {
+    "10592268": {
+      "title": "A unifying theorem for spectral embedding and clustering",
+      "abstract": "Spectral methods use selected eigenvectors of a data affinity matrix to obtain a data representation that can be trivially clustered or embedded in a low-dimensional space. We present a theorem that explains, for broad classes of affinity matrices and eigenbases, why this works: For successively smaller eigenbases (i.e., using fewer and fewer of the affinity matrix’s dominant eigenvalues and eigenvectors), the angles between similar vectors in the new representation shrink while the angles between dissimilar vectors grow. Specifically, the sum of the squared cosines of the angles is strictly increasing as the dimensionality of the representation decreases. Thus spectral methods work because the truncated eigenbasis amplifies structure in the data so that any heuristic postprocessing is more likely to succeed. We use this result to construct a nonlinear dimensionality reduction (NLDR) algorithm for data sampled from manifolds whose intrinsic coordinate system has linear and cyclic axes, and a novel clustering-by-projections algorithm that requires no postprocessing and gives superior performance on challenge problems from the recent literature."
+    },
+    "53303687": {
+      "title": "Latent semantic indexing: a probabilistic analysis",
+      "abstract": "Latent semantic indexing (LSI) is an information retrieval technique based on the spectral analysis of the term-document matrix, whose empirical success had heretofore been without rigorous prediction and explanation. We prove that, under certain conditions, LSI does succeed in capturing the underlying semantics of the corpus and achieves improved retrieval performance. We propose the technique of random projection as a way of speeding up LSI. We complement our theorems with encouraging experimental results. We also argue that our results may be viewed in a more general framework, as a theoretical basis for the use of spectral methods in a wider class of applications such as collaborative filtering."
+    }
+  },
+  "generator": "fallback"
+}

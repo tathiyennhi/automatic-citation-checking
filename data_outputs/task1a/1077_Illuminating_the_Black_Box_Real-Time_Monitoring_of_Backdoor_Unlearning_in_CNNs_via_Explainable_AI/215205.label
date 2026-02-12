@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Proposed Framework 1) Phase 1: Unlearning with Combined Loss: The core of our approach is a combined loss function:L total = -α t L poison + λL clean + β∥θ -θ 0 ∥ 2(5)where:• L poison is cross-entropy loss on poisoned samples • L clean is cross-entropy loss on clean samples • α t is the dynamic gradient ascent weight (0.05 → 0.20)• λ = 1.0 controls clean loss importance • β = 1 × 10 -4 is the EWC regularization coefficient Alpha Scheduling: α t increases linearly over 15 epochs:α t = α start + t -1 T -1 (α end -α start)(6)2) Phase 2: Recovery Phase: After aggressive unlearning, we fine-tune on clean data:L recovery = L clean + β∥θ -θ unl ∥ 2(7)3) Phase 3: Real-Time Monitoring: Periodic Visualization: Every epoch, we sample 5 poisoned test images and generate Grad-CAM heatmaps.TAR Computation: For each heatmap M ∈ R H×W: TAR = (i,j)∈Rtrig M i,j (i,j)∈Robj M i,j + ϵ (8)High TAR (> 1.5) indicates heavy focus on trigger.",
+    "As unlearning progresses, TAR decreases, signaling attention shift to object features.",
+    "EXPERIMENTS AND RESULTS A.",
+    "Implementation DetailsTable I summarizes key parameters: TABLE I: Implementation Details Parameter Value Framework TensorFlow 2.x Hardware NVIDIA Tesla T4 x2 Batch Size 128 BadNet Epochs 32 (early stopped) Unlearning Epochs 14 (early stopped) Recovery Epochs 3 LR (Unlearning) 3 × 10 -5 α Schedule 0.05 → 0.20 λ 1.0 β 1 × 10 -4 Poison Rate 3% Trigger Size 4×4 pixels B. Quantitative Results Table II presents comprehensive comparison:TABLE II: Quantitative Results Metric BadNet Unlearned Change Clean Acc (%) 82.49 82.06 -0.43 ASR (%) 96.51 5.52 -90.99 TAR 1.876 0.604 -67.8% Acc Retention (%) -99.48 -ASR Reduction (%) -94.28 - Key Findings:• ASR Reduction: ASR dropped from 96.51% to 5.52% (94.28% reduction), well below random baseline (10%).",
+    "• Clean Accuracy: Decreased minimally (-0.43%), retaining 99.48% of original performance."
+  ],
+  "correct_citations": []
+}

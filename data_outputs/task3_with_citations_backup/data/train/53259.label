@@ -1,0 +1,22 @@
+{
+  "doc_id": "53259",
+  "text": "In our experiments, we used the single DCNN structure shown in Section II. A random mix of affine transformations (i.e., translation, rotation, and scaling) was adopted as the elastic distortion operation for data augmentation during the training stage. The training mini-batch size was set to 100, and the Dropout [CITATION_1] rate for the last four weighting layers was experimentally determined at 0.1, 0.1, 0.5, and 0.5, respectively. We performed our experiments on a PC with a GTX780 GPU and spent a week training the DCNN system. Primarily, we conducted experiments to compare the path-signature features (denoted by Sign.n at truncated version n) in different truncated versions, as shown in Fig.4(a) . The feature map for Sign.0 is exactly an offline bitmap, as seen in the first column of Fig. 2 . Even though the Sign.0 contains only position information, the DCNN performed well, indicating that the network itself has a satisfactory generalization. With the availability of temporal information, Sign.1, Sign.2, and Sign.3 significantly improved the network, reaching an accuracy rate of 50%. This demonstrates that the path-signature feature is very useful for distinguishing different writers.",
+  "correct_citation": {
+    "[CITATION_1]": "14832074"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The training mini-batch size was set to 100, and the Dropout [CITATION_1] rate for the last four weighting layers was experimentally determined at 0.1, 0.1, 0.5, and 0.5, respectively.",
+      "s_span": 254,
+      "e_span": 438
+    }
+  ],
+  "bib_entries": {
+    "14832074": {
+      "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+      "abstract": "When a large feedforward neural network is trained on a small training set, it typically performs poorly on held-out test data. This \"overfitting\" is greatly reduced by randomly omitting half of the feature detectors on each training case. This prevents complex co-adaptations in which a feature detector is only helpful in the context of several other specific feature detectors. Instead, each neuron learns to detect a feature that is generally helpful for producing the correct answer given the combinatorially large variety of internal contexts in which it must operate. Random \"dropout\" gives big improvements on many benchmark tasks and sets new records for speech and object recognition."
+    }
+  },
+  "generator": "fallback_v4"
+}

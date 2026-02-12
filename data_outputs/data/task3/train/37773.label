@@ -1,0 +1,52 @@
+{
+  "doc_id": "37773",
+  "text": "Accelerating SGD: There exists a large literature on accelerating stochastic gradient descent. We refer the reader to [CITATION_1] for an excellent introduction. Though naturally a sequential algorithm that processes one data example at a time, much recent work focuses on mini-batch methods that can exploit parallelism in GPU architectures [CITATION_2] or clusters [CITATION_3] . One general theme is efficient online approximation of second-order methods [CITATION_4] , which can model correlations between input features. Batch normalization [CITATION_5] computes correlation statistics between samples in a batch, producing noticeable improvements in convergence speed. Our work builds similar insights directly into convolutional networks without explicit second-order statistics.",
+  "correct_citation": {
+    "[CITATION_1]": "115963355",
+    "[CITATION_2]": "372467",
+    "[CITATION_3]": "372467",
+    "[CITATION_4]": "347551",
+    "[CITATION_5]": "5808102"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We refer the reader to  for an excellent introduction."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Though naturally a sequential algorithm that processes one data example at a time, much recent work focuses on mini-batch methods that can exploit parallelism in GPU architectures  or clusters  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Though naturally a sequential algorithm that processes one data example at a time, much recent work focuses on mini-batch methods that can exploit parallelism in GPU architectures  or clusters  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "One general theme is efficient online approximation of second-order methods  , which can model correlations between input features."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Batch normalization  computes correlation statistics between samples in a batch, producing noticeable improvements in convergence speed."
+    }
+  ],
+  "bib_entries": {
+    "347551": {
+      "title": "Sgd-qn: Careful quasi-newton stochastic gradient descent",
+      "abstract": "The SGD-QN algorithm is a stochastic gradient descent algorithm that makes careful use of second-order information and splits the parameter update into independently scheduled components. Thanks to this design, SGD-QN iterates nearly as fast as a first-order stochastic gradient descent but requires less iterations to achieve the same accuracy. This algorithm won the \"Wild Track\" of the first PASCAL Large Scale Learning Challenge (Sonnenburg et al., 2008)."
+    },
+    "115963355": {
+      "title": "Large-scale machine learning with stochastic gradient descent",
+      "abstract": "During the last decade, the data sizes have grown faster than the speed of processors. In this context, the capabilities of statistical machine learning methods is limited by the computing time rather than the sample size. A more precise analysis uncovers qualitatively different tradeoffs for the case of small-scale and large-scale learning problems. The large-scale case involves the computational complexity of the underlying optimization algorithm in non-trivial ways. Unlikely optimization algorithms such as stochastic gradient descent show amazing performance for large-scale problems. In particular, second order stochastic gradient and averaged stochastic gradient are asymptotically efficient after a single pass on the training set."
+    },
+    "372467": {
+      "title": "Large scale distributed deep networks",
+      "abstract": "Recent work in unsupervised feature learning and deep learning has shown that being able to train large models can dramatically improve performance. In this paper, we consider the problem of training a deep network with billions of parameters using tens of thousands of CPU cores. We have developed a software framework called DistBelief that can utilize computing clusters with thousands of machines to train large models. Within this framework, we have developed two algorithms for large-scale distributed training: (i) Downpour SGD, an asynchronous stochastic gradient descent procedure supporting a large number of model replicas, and (ii) Sandblaster, a framework that supports a variety of distributed batch optimization procedures, including a distributed implementation of L-BFGS. Downpour SGD and Sandblaster L-BFGS both increase the scale and speed of deep network training. We have successfully used our system to train a deep network 30x larger than previously reported in the literature, and achieves state-of-the-art performance on ImageNet, a visual object recognition task with 16 million images and 21k categories. We show that these same techniques dramatically accelerate the training of a more modestly- sized deep network for a commercial speech recognition service. Although we focus on and report performance of these methods as applied to training large neural networks, the underlying algorithms are applicable to any gradient-based machine learning algorithm."
+    },
+    "5808102": {
+      "title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
+      "abstract": "Training Deep Neural Networks is complicated by the fact that the distribution of each layer's inputs changes during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rates and careful parameter initialization, and makes it notoriously hard to train models with saturating nonlinearities. We refer to this phenomenon as internal covariate shift, and address the problem by normalizing layer inputs. Our method draws its strength from making normalization a part of the model architecture and performing the normalization for each training mini-batch. Batch Normalization allows us to use much higher learning rates and be less careful about initialization, and in some cases eliminates the need for Dropout. Applied to a state-of-the-art image classification model, Batch Normalization achieves the same accuracy with 14 times fewer training steps, and beats the original model by a significant margin. Using an ensemble of batch-normalized networks, we improve upon the best published result on ImageNet classification: reaching 4.82% top-5 test error, exceeding the accuracy of human raters."
+    }
+  },
+  "generator": "fallback_v4"
+}

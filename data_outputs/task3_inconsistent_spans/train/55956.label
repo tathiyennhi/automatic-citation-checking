@@ -1,0 +1,44 @@
+{
+  "doc_id": "55956",
+  "text": "Poselet [CITATION_1] [CITATION_2] ) is a valid part detector that describes a part of the human pose under a given viewpoint. Because these parts include evidences from different areas of the body at different scales, complementary information can be learned to benefit attribute prediction. Typically, given a whole person image, poselet detector ) is first used to decompose an image into several image patches, named poselets, under various viewpoints and poses. Then, a PANDA network is proposed to train a set of CNNs for each poselet and the whole image. Then, the features from all these poselets are concatenated to yield final feature representations. Finally, PANDA branches out multiple binary classifiers where each recognizes an attribute by the binary classification. Based on PANDA, [CITATION_3] introduce a deep version of the Poselet detector and build a feature pyramid, where each level computes a prediction score for the corresponding attribute.",
+  "correct_citation": {
+    "[CITATION_1]": "9320620",
+    "[CITATION_2]": "6980765",
+    "[CITATION_3]": "2863739"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Poselet   ) is a valid part detector that describes a part of the human pose under a given viewpoint.",
+      "s_span": 0,
+      "e_span": 125
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Poselet   ) is a valid part detector that describes a part of the human pose under a given viewpoint.",
+      "s_span": 0,
+      "e_span": 125
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Based on PANDA,  introduce a deep version of the Poselet detector and build a feature pyramid, where each level computes a prediction score for the corresponding attribute.",
+      "s_span": 782,
+      "e_span": 966
+    }
+  ],
+  "bib_entries": {
+    "6980765": {
+      "title": "Describing people: A poseletbased approach to attribute classification",
+      "abstract": "We propose a method for recognizing attributes, such as the gender, hair style and types of clothes of people under large variation in viewpoint, pose, articulation and occlusion typical of personal photo album images. Robust attribute classifiers under such conditions must be invariant to pose, but inferring the pose in itself is a challenging problem. We use a part-based approach based on poselets. Our parts implicitly decompose the aspect (the pose and viewpoint). We train attribute classifiers for each such aspect and we combine them together in a discriminative model. We propose a new dataset of 8000 people with annotated attributes. Our method performs very well on this dataset, significantly outperforming a baseline built on the spatial pyramid match kernel method. On gender recognition we outperform a commercial face recognition system."
+    },
+    "2863739": {
+      "title": "Actions and attributes from wholes and parts",
+      "abstract": "We investigate the importance of parts for the tasks of action and attribute classification. We develop a part-based approach by leveraging convolutional network features inspired by recent advances in computer vision. Our part detectors are a deep version of poselets and capture parts of the human body under a distinct set of poses. For the tasks of action and attribute classification, we train holistic convolutional neural networks and show that adding parts leads to top-performing results for both tasks. We observe that for deeper networks parts are less significant. In addition, we demonstrate the effectiveness of our approach when we replace an oracle person detector, as is the default in the current evaluation protocol for both tasks, with a state-of-the-art person detection system."
+    },
+    "9320620": {
+      "title": "Poselets: Body part detectors trained using 3d human pose annotations",
+      "abstract": "We address the classic problems of detection, segmentation and pose estimation of people in images with a novel definition of a part, a poselet. We postulate two criteria (1) It should be easy to find a poselet given an input image (2) it should be easy to localize the 3D configuration of the person conditioned on the detection of a poselet. To permit this we have built a new dataset, H3D, of annotations of humans in 2D photographs with 3D joint information, inferred using anthropometric constraints. This enables us to implement a data-driven search procedure for finding poselets that are tightly clustered in both 3D joint configuration space as well as 2D image appearance. The algorithm discovers poselets that correspond to frontal and profile faces, pedestrians, head and shoulder views, among others. Each poselet provides examples for training a linear SVM classifier which can then be run over the image in a multiscale scanning mode. The outputs of these poselet detectors can be thought of as an intermediate layer of nodes, on top of which one can run a second layer of classification or regression. We show how this permits detection and localization of torsos or keypoints such as left shoulder, nose, etc. Experimental results show that we obtain state of the art performance on people detection in the PASCAL VOC 2007 challenge, among other datasets. We are making publicly available both the H3D dataset as well as the poselet parameters for use by other researchers."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "40751",
+  "text": "We could do integrity checking of the relay cells at each hop, either by including hashes or by using an authenticating cipher mode like EAX [CITATION_1] , but there are some problems. First, these approaches impose a message-expansion overhead at each hop, and so we would have to either leak the path length or waste bytes by padding to a maximum path length. Second, these solutions can only verify traffic coming from Alice: ORs would not be able to produce suitable hashes for the intermediate hops, since the ORs on a circuit do not know the other ORs' session keys. Third, we have already accepted that our design is vulnerable to end-to-end timing attacks; so tagging attacks performed within the circuit provide no additional information to the attacker.",
+  "correct_citation": {
+    "[CITATION_1]": "5346635"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We could do integrity checking of the relay cells at each hop, either by including hashes or by using an authenticating cipher mode like EAX [CITATION_1] , but there are some problems.",
+      "s_span": 0,
+      "e_span": 184
+    }
+  ],
+  "bib_entries": {
+    "5346635": {
+      "title": "The EAX mode of operation: A two-pass authenticated-encryption scheme optimized for simplicity and efficiency",
+      "abstract": "We propose a block-cipher mode of operation, EAX, for solving the problem of authenticated-encryption with associated-data (AEAD). Given a nonce N , a message M , and a header H, our mode protects the privacy of M and the authenticity of both M and H. Strings N , M , and H are arbitrary bit strings, and the mode uses 2�| M |/n� + �| H|/n� + �| N |/nblock-cipher calls when these strings are nonempty and n is the block length of the underlying block cipher. Among EAX's characteristics are that it is on-line (the length of a message isn't needed to begin processing it) and a fixed header can be pre-processed, effectively removing the per-message cost of binding it to the ciphertext. EAX is obtained by first creating a generic-composition method, EAX2, and then collapsing its two keys into one. EAX is provably secure under a standard complexity-theoretic assumption. The proof of this fact is novel and involved. EAX is an alternative to CCM (26), which was created to answer the wish within standards bodies for a fully-specified and patent-free AEAD mode. As such, CCM and EAX are two-pass schemes, with one pass for achieving privacy and one for authenticity. EAX is simpler and more efficient than CCM, avoiding, for example, elaborate padding rules or nonstandard parameters. With EAX we aimed to do as well as possible, within the space of two-pass schemes, with regard to issues of efficiency, simplicity, elegance, ease of correct use, and provable-security guarantees."
+    }
+  },
+  "generator": "fallback_v4"
+}

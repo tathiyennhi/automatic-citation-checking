@@ -1,0 +1,20 @@
+{
+  "doc_id": "40960",
+  "text": "The overall model of HSDPA protocol architecture is shown in Fig 2. The EURANE contributes three layers in NS-2. The first layer is RLC. It exists at the RNC and UE. The second layer is MAC which splits into two sub layers as mac-d which exits at RNC, UE and mac-hs which exists at node B (BS). The physical layer (PHY) exists at node B and UE. For the physical layer implementation, the standard NS-2 channel object is used to connect BS to UE's. The channel uses the standard NS-2 error model which provides a simple probabilistic packet loss. However, for HSDPA a more realistic error model is required to take into account the long-and short-term variations in link quality in order to model the fast link adaptation, fast scheduling and Hybrid ARQ (HARQ). Therefore, EURANE uses a pre-computed Block Error Rate (BLER) /SNR performance curve and input trace file of received powers (expressed in SNR) to generate the required error model for HSDPA. The input trace file is generated for each UE according to the physical channel model. This file contains SNR values of the first, second and third transmission attempts in addition to the CQI in each time slot (2ms) [CITATION_1] . The files are then attached to the corresponding flow in NS-2 using the simulation script. The Mac/Hsdpa object in the Node B loads all the files into a memory data structure before the simulation starts. After that, the SNR and CQI values are read on demand by different class methods such as the scheduler and HARQ. For the SNR/BLER curve, a single file provides mapping between a certain BLER range and the minimum SNR value required for a specific CQI value.",
+  "correct_citation": {
+    "[CITATION_1]": "2039102"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This file contains SNR values of the first, second and third transmission attempts in addition to the CQI in each time slot (2ms)  ."
+    }
+  ],
+  "bib_entries": {
+    "2039102": {
+      "title": "Economic models for resource control in wireless networks",
+      "abstract": "We present a model based on congestion pricing for resource control in wireless CDMA networks carrying traffic streams that have fixed-rate requirements, but can adapt their signal quality. Our model considers the resource usage constraint in the uplink of CDMA networks, and does not differentiate users based on their distance from the base station. We compare our model with other economic models that have appeared in the literature, identifying their similarities and differences. Our investigations include the effects of a mobile's distance and the wireless network's load on the target signal quality, the transmission power, and the user benefit."
+    }
+  },
+  "generator": "fallback_v4"
+}

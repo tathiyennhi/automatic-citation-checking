@@ -1,0 +1,20 @@
+{
+  "doc_id": "37362",
+  "text": "We use Simics to model the processor, L1 and L2 caches, and generate memory traces, which are input to an in-house cycle-accurate simulator that models the shared L3 cache and PCM. Our baseline system is a quad-core CMP with a three-level cache hierarchy. The L1 and L2 caches are private to each core. Each L1 instruction and data cache is a 4-way 64KB cache and each L2 cache is a unified 2MB 8-way associative cache. The sizes of the L1 and L2 caches are unchanged throughout our study. The L3 cache for a quad-core system is a 32-way 16MB shared last-level cache (4MB per core). Each core issues two instructions per cycle, and has a 168-entry instruction window. We also evaluate our schemes on 2-, 8-, and 16-core systems. The L3 cache size (associativity) is proportional to the number of cores. For example, an 8-core system has a 64-way 32MB L3 cache. Table II shows the major parameters in the default configuration. We use the permutation-based page interleaving scheme [CITATION_1] as the address mapping scheme for phase change main memory. Assuming there are 2 q write queues, the lower order q bits of the L3 tag and the lower order q bits of the L3 cache set index are used as the input to a q-bit bitwise XOR logic to generate the write queue index. This interleaving scheme requires negligible area overhead compared to E-UMON and WCP, which dominate in total overhead (see Section 6.8).",
+  "correct_citation": {
+    "[CITATION_1]": "195867033"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We use the permutation-based page interleaving scheme as the address mapping scheme for phase change main memory."
+    }
+  ],
+  "bib_entries": {
+    "195867033": {
+      "title": "A permutation-based page interleaving scheme to reduce row-buffer conflicts and exploit data locality",
+      "abstract": "DRAM row-buffer conflicts occur when a sequence of requests on different rows goes to the same memory bank, causing much higher memory access latency than requests to the same row or to different banks. We analyze the sources of row-buffer conflicts in the context of superscalar processors, and propose a permutation based page interleaving scheme to reduce row-buffer conflicts and to exploit data access locality in the row-buffer. Compared with several existing schemes, we show that the permutation based scheme dramatically increases the hit rates on DRAM row-buffers and reduces memory stall time of the SPEC95 and TPC-C workloads. The memory stall times of the workloads are reduced up to 68% and 50%, compared with the conventional cache line and page interleaving schemes, respectively."
+    }
+  },
+  "generator": "fallback"
+}

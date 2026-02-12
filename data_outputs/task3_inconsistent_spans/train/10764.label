@@ -1,0 +1,22 @@
+{
+  "doc_id": "10764",
+  "text": "Data pre-processing We normalized the 3D ground truth poses, the noisy 2D pose estimates from stacked-hourglass network and the 2D ground truth [CITATION_1] by subtracting the mean and dividing by standard deviation. We do not predict the 3D location of the root joint i.e. central hip joint and hence zero center the 3D joint locations relative to the global position of the root node. To obtain the ground truth 3D poses in camera coordinate space, an inverse rigid body transformation is applied on the the ground truth 3D poses in global coordinate space using the given camera parameters. To generate both training and test sequences, we translated a sliding window of length T by one frame. Hence there is an overlap between the sequences. This gives us more data to train on, which is always an advantage for deep learning systems. During test time, we initially predict the first T frames of the sequence and slide the window by a stride length of 1 to predict the next frame using the previous frames.",
+  "correct_citation": {
+    "[CITATION_1]": "13613792"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Data pre-processing We normalized the 3D ground truth poses, the noisy 2D pose estimates from stacked-hourglass network and the 2D ground truth  by subtracting the mean and dividing by standard deviation.",
+      "s_span": 0,
+      "e_span": 216
+    }
+  ],
+  "bib_entries": {
+    "13613792": {
+      "title": "Stacked hourglass networks for human pose estimation",
+      "abstract": "This work introduces a novel convolutional network architecture for the task of human pose estimation. Features are processed across all scales and consolidated to best capture the various spatial relationships associated with the body. We show how repeated bottom-up, top-down processing used in conjunction with intermediate supervision is critical to improving the performance of the network. We refer to the architecture as a “stacked hourglass” network based on the successive steps of pooling and upsampling that are done to produce a final set of predictions. State-of-the-art results are achieved on the FLIC and MPII benchmarks outcompeting all recent methods."
+    }
+  },
+  "generator": "fallback_v4"
+}

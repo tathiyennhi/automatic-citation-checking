@@ -1,0 +1,33 @@
+{
+  "doc_id": "27457",
+  "text": "where B is an indexing matrix denoting the correspondences between the rows and columns of the kernel matrix and the elements of the vector a: B i' ¼ 1 denotes that the coefficient a i corresponds to the 'th row/column in the kernel matrix. Training the model, i.e. finding the parameters a of the pairwise prediction function, is equivalent to solving the above system of linear equations (18). We solve the system with the conjugate gradient (CG) approach that iteratively improves the result by carrying out matrix-vector products between U and a, which in general requires a number of iterations proportional to the number of data. However, in practise one usually obtains as good or even better predictive performance with only a few iterations. Restricting the number of iterations acts as an additional regularization mechanism known in the literature as early stopping [CITATION_1] . We further accelerate the matrix-vector product Ua by taking advantage of the structural properties of the matrix U. In [CITATION_2] , we introduced the generalized vec-trick algorithm that carries out matrix-vector multiplications between a principal submatrix of a Kronecker product of type B K Here, we extend the algorithm to work with sums of multiple pairwise kernels, i.e. to solve the system of equations (18). In particular, the matrix U is a sum of P submatrices of type B K In summary, our pairwiseMKL avoids explicit computation of any pairwise matrices in both stages of finding pairwise kernel weights and pairwise model training, which makes the method suitable for solving problems in large pairwise spaces, such as in case of drug bioactivity prediction (Table 1 ).",
+  "correct_citation": {
+    "[CITATION_1]": "117875484",
+    "[CITATION_2]": "17332862"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Restricting the number of iterations acts as an additional regularization mechanism known in the literature as early stopping [CITATION_1] .",
+      "s_span": 751,
+      "e_span": 891
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We further accelerate the matrix-vector product Ua by taking advantage of the structural properties of the matrix U. In [CITATION_2] , we introduced the generalized vec-trick algorithm that carries out matrix-vector multiplications between a principal submatrix of a Kronecker product of type B K Here, we extend the algorithm to work with sums of multiple pairwise kernels, i.e. to solve the system of equations (18).",
+      "s_span": 892,
+      "e_span": 1310
+    }
+  ],
+  "bib_entries": {
+    "117875484": {
+      "title": "Regularization of Inverse Problems",
+      "abstract": "Preface. 1. Introduction: Examples of Inverse Problems. 2. Ill-Posed Linear Operator Equations. 3. Regularization Operators. 4. Continuous Regularization Methods. 5. Tikhonov Regularization. 6. Iterative Regularization Methods. 7. The Conjugate Gradient Method. 8. Regularization with Differential Operators. 9. Numerical Realization. 10. Tikhonov Regularization of Nonlinear Problems. 11. Iterative Methods for Nonlinear Problems. A. Appendix: A.1. Weighted Polynomial Minimization Problems. A.2. Orthogonal Polynomials. A.3. Christoffel Functions. Bibliography. Index."
+    },
+    "17332862": {
+      "title": "Fast Kronecker product kernel methods via generalized vec trick",
+      "abstract": "Kronecker product kernel provides the standard approach in the kernel methods' literature for learning from graph data, where edges are labeled and both start and end vertices have their own feature representations. The methods allow generalization to such new edges, whose start and end vertices do not appear in the training data, a setting known as zero-shot or zero-data learning. Such a setting occurs in numerous applications, including drug-target interaction prediction, collaborative filtering, and information retrieval. Efficient training algorithms based on the so-called vec trick that makes use of the special structure of the Kronecker product are known for the case where the training data are a complete bipartite graph. In this paper, we generalize these results to noncomplete training graphs. This allows us to derive a general framework for training Kronecker product kernel methods, as specific examples we implement Kronecker ridge regression and support vector machine algorithms. Experimental results demonstrate that the proposed approach leads to accurate models, while allowing order of magnitude improvements in training and prediction time."
+    }
+  },
+  "generator": "fallback_v4"
+}

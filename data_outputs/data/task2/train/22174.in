@@ -1,0 +1,122 @@
+{
+  "text": "We note that the contribution of the language model to the overall translation score cannot be calculated in this scheme, since the language model score cannot be factored in terms of rules. To obtain the language model contribution, we simply carry out WFST composition [CITATION_1] ) between an unweighted acceptor of the target sentences and the n-gram language model used in translation. After determinization, the cost of each path in the acceptor is then the desired LM feature contribution.",
+  "citation_candidates": [
+    "284436",
+    "62276728",
+    "2216180",
+    "10869889",
+    "207624",
+    "6677774",
+    "11706155",
+    "2424275",
+    "384994",
+    "17912603",
+    "3714809",
+    "18366823",
+    "11217962",
+    "7061405",
+    "14570741",
+    "5548799",
+    "26255400",
+    "1607750",
+    "3505719",
+    "2494079",
+    "8884845",
+    "7657227",
+    "16512120"
+  ],
+  "bib_entries": {
+    "384994": {
+      "title": "A hierarchical phrase-based model for statistical machine translation",
+      "abstract": "We present a statistical phrase-based translation model that uses hierarchical phrases---phrases that contain subphrases. The model is formally a synchronous context-free grammar but is learned from a bitext without any syntactic information. Thus it can be seen as a shift to the formal machinery of syntax-based translation systems without any linguistic commitment. In our experiments using BLEU as a metric, the hierarchical phrase-based model achieves a relative improvement of 7.5% over Pharaoh, a state-of-the-art phrase-based system."
+    },
+    "8884845": {
+      "title": "Statistical phrase-based translation",
+      "abstract": "We propose a new phrase-based translation model and decoding algorithm that enables us to evaluate and compare several, previously proposed phrase-based translation models. Within our framework, we carry out a large number of experiments to understand better and explain why phrase-based models out-perform word-based models. Our empirical results, which hold for all examined language pairs, suggest that the highest levels of performance can be obtained through relatively simple means: heuristic learning of phrase translations from word-based alignments and lexical weighting of phrase translations. Surprisingly, learning phrases longer than three words and learning phrases from high-accuracy word-level alignment models does not have a strong impact on performance. Learning only syntactically motivated phrases degrades the performance of our systems."
+    },
+    "3505719": {
+      "title": "Hierarchical phrase-based translation",
+      "abstract": "We present a statistical machine translation model that uses hierarchical phrases---phrases that contain subphrases. The model is formally a synchronous context-free grammar but is learned from a parallel text without any syntactic annotations. Thus it can be seen as combining fundamental ideas from both syntax-based translation and phrase-based translation. We describe our system's training and decoding methods in detail, and evaluate it for translation speed and translation accuracy. Using BLEU as a metric of translation accuracy, we find that our system performs significantly better than the Alignment Template System, a state-of-the-art phrase-based system."
+    },
+    "17912603": {
+      "title": "The HiFST system for the Europarl Spanish-to-English task",
+      "abstract": "In this paper we present results for the Europarl Spanish-to-English translation task. We use HiFST, a novel hierarchical phrase-based translation system implemented with finite-state technology that creates target lattices rather than k-best lists."
+    },
+    "11706155": {
+      "title": "Minimum Bayes-risk decoding for statistical machine translation",
+      "abstract": "Abstract : We present Minimum Bayes-Risk (MBR) decoding for statistical machine translation. This statistical approach aims to minimize expected loss of translation errors under loss functions that measure translation performance. We describe a hierarchy of loss functions that incorporate different levels of linguistic information from word strings, word-to-word alignments from an MT system, and syntactic structure from parse-trees of source and target language sentences. We report the performance of the MBR decoders on a Chinese-to-English translation task. Our results show that MBR decoding can be used to tune statistical MT performance for specific loss functions."
+    },
+    "7657227": {
+      "title": "Lattice Minimum Bayes-Risk decoding for statistical machine translation",
+      "abstract": "We present Minimum Bayes-Risk (MBR) decoding over translation lattices that compactly encode a huge number of translation hypotheses. We describe conditions on the loss function that will enable efficient implementation of MBR decoders on lattices. We introduce an approximation to the BLEU score (Papineni et al., 2001) that satisfies these conditions. The MBR decoding under this approximate BLEU is realized using Weighted Finite State Automata. Our experiments show that the Lattice MBR decoder yields moderate, consistent gains in translation performance over N-best MBR decoding on Arabic-to-English, Chinese-to-English and English-to-Chinese translation tasks. We conduct a range of experiments to understand why Lattice MBR improves upon N-best MBR and study the impact of various parameters on MBR performance."
+    },
+    "2424275": {
+      "title": "Minimum Bayes-Risk combination of translation hypotheses from alternative morphological decompositions",
+      "abstract": "We describe a simple strategy to achieve translation performance improvements by combining output from identical statistical machine translation systems trained on alternative morphological decompositions of the source language. Combination is done by means of Minimum Bayes Risk decoding over a shared N-best list. When translating into English from two highly inflected languages such as Arabic and Finnish we obtain significant improvements over simply selecting the best morphological decomposition."
+    },
+    "14570741": {
+      "title": "Combining outputs from multiple machine translation systems",
+      "abstract": "Currently there are several approaches to machine translation (MT) based on different paradigms; e.g., phrasal, hierarchical and syntax-based. These three approaches yield similar translation accuracy despite using fairly different levels of linguistic knowledge. The availability of such a variety of systems has led to a growing interest toward finding better translations by combining outputs from multiple systems. This paper describes three different approaches to MT system combination. These combination methods operate on sentence, phrase and word level exploiting information from -best lists, system scores and target-to-source phrase alignments. The word-level combination provides the most robust gains but the best results on the development test sets (NIST MT05 and the newsgroup portion of GALE 2006 dry-run) were achieved by combining all three methods."
+    },
+    "7061405": {
+      "title": "Consensus network decoding for statistical machine translation system combination",
+      "abstract": "This paper presents a simple and robust consensus decoding approach for combining multiple machine translation (MT) system outputs. A consensus network is constructed from an N-best list by aligning the hypotheses against an alignment reference, where the alignment is based on minimising the translation edit rate (TER). The minimum Bayes risk (MBR) decoding technique is investigated for the selection of an appropriate alignment reference. Several alternative decoding strategies proposed to retain coherent phrases in the original translations. Experimental results are presented primarily based on three-way combination of Chinese-English translation outputs, and also presents results for six-way system combination. It is shown that worthwhile improvements in translation performance can be obtained using the methods discussed."
+    },
+    "62276728": {
+      "title": "Hierarchical phrase-based translation with weighted finite state transducers",
+      "abstract": "This paper describes a lattice-based decoder for hierarchical phrase-based translation. The decoder is implemented with standard WFST operations as an alternative to the well-known cube pruning procedure. We find that the use of WFSTs rather than k-best lists requires less pruning in translation search, resulting in fewer search errors, direct generation of translation lattices in the target language, better parameter optimization, and improved translation performance when rescoring with long-span language models and MBR decoding. We report translation experiments for the Arabic-to-English and Chinese-to-English NIST translation tasks and contrast the WFST-based hierarchical decoder with hierarchical translation under cube pruning."
+    },
+    "10869889": {
+      "title": "OpenFst: A general and efficient weighted finite-state transducer library",
+      "abstract": "We describe OpenFst, an open-source library for weighted finite-state transducers (WFSTs). OpenFst consists of a C++ template library with efficient WFST representations and over twenty-five oper- ations for constructing, combining, optimizing, and searching them. At the shell-command level, there are corresponding transducer file repre- sentations and programs that operate on them. OpenFst is designed to be both very efficient in time and space and to scale to very large problems. This library has key applications speech, image, and natural language processing, pattern and string matching, and machine learning. We give an overview of the library, examples of its use, details of its design that allow customizing the labels, states, and weights and the lazy evaluation of many of its operations. Further information and a download of the OpenFst library can be obtained from http://www.openfst.org."
+    },
+    "2494079": {
+      "title": "A generalized CYK algorithm for parsing stochastic CFG",
+      "abstract": "We present a bottom-up parsing algorithm for stochastic context-free grammars that is able (1) to deal with multiple interpretations of sentences containing compound words; (2) to extract N-most probable parses in O(n 3 ) and compute at the same time all possible parses of any portion of the input sequence with their probabilities; (3) to deal with out of vocabulary words. Explicitly extracting all the parse trees associated to a given input sentence depends on the complexity of the grammar, but even in the case where this number is exponential in n, the chart used by the algorithm for the representation is of O(n 2 ) space complexity."
+    },
+    "1607750": {
+      "title": "Generalized algorithms for constructing statistical language models",
+      "abstract": "Recent text and speech processing applications such as speech mining raise new and more general problems related to the construction of language models. We present and describe in detail several new and efficient algorithms to address these more general problems and report experimental results demonstrating their usefulness. We give an algorithm for computing efficiently the expected counts of any sequence in a word lattice output by a speech recognizer or any arbitrary weighted automaton; describe a new technique for creating exact representations of n-gram language models by weighted automata whose size is practical for offline use even for a vocabulary size of about 500,000 words and an n-gram order n = 6; and present a simple and more general technique for constructing class-based language models that allows each class to represent an arbitrary weighted automaton. An efficient implementation of our algorithms and techniques has been incorporated in a general software library for language modeling, the GRM Library, that includes many other text and grammar processing functionalities."
+    },
+    "3714809": {
+      "title": "The design principles of a weighted finite-state transducer library",
+      "abstract": "Abstract We describe the algorithmic and software design principles of an object-oriented library for weighted finite-state transducers. By taking advantage of the theory of rational power series, we were able to achieve high degrees of generality, modularity and irredundancy, while attaining competitive efficiency in demanding speech processing applications involving weighted automata of more than 10 7 states and transitions. Besides its mathematical foundation, the design also draws from important ideas in algorithm design and programming languages: dynamic programming and shortest-paths algorithms over general semirings, object-oriented programming, lazy evaluation and memoization."
+    },
+    "18366823": {
+      "title": "Transition network grammars for natural language analysis",
+      "abstract": "The use of augmented transition network grammars for the analysis of natural language sentences is described. Structure-building actions associated with the arcs of the grammar network allow for the reordering, restructuring, and copying of constituents necessary to produce deep-structure representations of the type normally obtained from a transformational analysis, and conditions on the arcs allow for a powerful selectivity which can rule out meaningless analyses and take advantage of semantic information to guide the parsing. The advantages of this model for natural language analysis are discussed in detail and illustrated by examples. An implementation of an experimental parsing system for transition network grammars is briefly described."
+    },
+    "5548799": {
+      "title": "Finite-state transducers in language and speech processing",
+      "abstract": "Finite-machines have been used in various domains of natural language processing. We consider here the use of a type of transducer that supports very efficient programs: sequential transducers. We recall classical theorems and give new ones characterizing sequential string-to-string transducers. Transducers that outpur weights also play an important role in language and speech processing. We give a specific study of string-to-weight transducers, including algorithms for determinizing and minizizing these transducers very efficiently, and characterizations of the transducers admitting determinization and the corresponding algorithms. Some applications of these algorithms in speech recognition are described and illustrated."
+    },
+    "284436": {
+      "title": "Discriminative training and maximum entropy models for statistical machine translation",
+      "abstract": "We present a framework for statistical machine translation of natural languages based on direct maximum entropy models, which contains the widely used source-channel approach as a special case. All knowledge sources are treated as feature functions, which depend on the source language sentence, the target language sentence and possible hidden variables. This approach allows a baseline machine translation system to be extended easily by adding new feature functions. We show that a baseline statistical machine translation system is significantly improved using this approach."
+    },
+    "207624": {
+      "title": "HMM word and phrase alignment for statistical machine translation",
+      "abstract": "Estimation and alignment procedures for word and phrase alignment hidden Markov models (HMMs) are developed for the alignment of parallel text. The development of these models is motivated by an analysis of the desirable features of IBM Model 4, one of the original and most effective models for word alignment. These models are formulated to capture the desirable aspects of Model 4 in an HMM alignment formalism. Alignment behavior is analyzed and compared to human-generated reference alignments, and the ability of these models to capture different types of alignment phenomena is evaluated. In analyzing alignment performance, Chinese-English word alignments are shown to be comparable to those of IBM Model 4 even when models are trained over large parallel texts. In translation performance, phrase-based statistical machine translation systems based on these HMM alignments can equal and exceed systems based on Model 4 alignments, and this is shown in Arabic-English and Chinese-English translation. These alignment models can also be used to generate posterior statistics over collections of parallel text, and this is used to refine and extend phrase translation tables with a resulting improvement in translation quality."
+    },
+    "11217962": {
+      "title": "The RWTH Arabic-to-English spoken language translation system",
+      "abstract": "We present the RWTH phrase-based statistical machine translation system designed for the translation of Arabic speech into English text. This system was used in the Global Autonomous Language Exploitation (GALE) Go/No-Go Translation Evaluation 2007. Using a two-pass approach, we first generate n-best translation candidates and then rerank these candidates using additional models. We give a short review of the decoder as well as of the models used in both passes. We stress the difficulties of spoken language translation, i.e. how to combine the recognition and translation systems and how to compensate for missing punctuation. In addition, we cover our work on domain adaptation for the applied language models. We present translation results for the official GALE 2006 evaluation set and the GALE 2007 development set."
+    },
+    "6677774": {
+      "title": "A discriminative latent variable model for statistical machine translation",
+      "abstract": "Large-scale discriminative machine translation promises to further the state-of-the-art, but has failed to deliver convincing gains over current heuristic frequency count systems. We argue that a principle reason for this failure is not dealing with multiple, equivalent translations. We present a translation model which models derivations as a latent variable, in both training and decoding, and is fully discriminative and globally optimised. Results show that accounting for multiple derivations does indeed improve performance. Additionally, we show that regularisation is essential for maximum conditional likelihood models in order to avoid degenerate solutions."
+    },
+    "2216180": {
+      "title": "Arabic tokenization, part-of-speech tagging and morphological disambiguation in one fell swoop",
+      "abstract": "We present an approach to using a morphological analyzer for tokenizing and morphologically tagging (including part-of-speech tagging) Arabic words in one process. We learn classifiers for individual morphological features, as well as ways of using these classifiers to choose among entries from the output of the analyzer. We obtain accuracy rates on all tasks in the high nineties."
+    },
+    "26255400": {
+      "title": "Further meta-evaluation of machine translation",
+      "abstract": "This paper analyzes the translation quality of machine translation systems for 10 language pairs translating between Czech, English, French, German, Hungarian, and Spanish. We report the translation quality of over 30 diverse translation systems based on a large-scale manual evaluation involving hundreds of hours of effort. We use the human judgments of the systems to analyze automatic evaluation metrics for translation quality, and we report the strength of the correlation with human judgments at both the system-level and at the sentence-level. We validate our manual evaluation methodology by measuring intra- and inter-annotator agreement, and collecting timing information."
+    },
+    "16512120": {
+      "title": "Syntax-directed transduction",
+      "abstract": "A transduction is a mapping from one set of sequences to another. A syntax-directed transduction is a particular type of transduction which is defined on the grammar of a context-free language and which is meant to be a model of part of the translation process used in many compilers. The transduction is considered from an automata theory viewpoint as specifying the input-output relation of a machine. Special consideration is given to machines called translators which both transduce and recognize. In particular, some special conditions are investigated under which syntax-directed translations can be performed on (deterministic) pushdown machines. In addition, some time bounds for translations on Turing machines are derived."
+    }
+  }
+}

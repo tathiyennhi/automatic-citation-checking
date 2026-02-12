@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Structured Element Extraction.To evaluate the fidelity of structured element preservation, we employ specialized metrics for each element type.",
+    "For code blocks and mathematical formulas, we use normalized edit distance (Levenshtein distance):EditSim(s 1, s 2) = 1 - EditDist(s 1, s 2) max(|s 1 |, |s 2 |)where s 1 and s 2 are the predicted and ground-truth element strings, and |s 1 | and |s 2 | represent corresponding string length.",
+    "This metric captures character-level accuracy while normalizing for length variations.",
+    "For tables, we compute the TEDS (Tree-Edit Distance based Similarity) score [32], which measures structural similarity by computing tree edit distance on the HTML DOM representation:TEDS(T a, T b) = 1 - EditDist(T a, T b) max(|T a |, |T b |)where T a and T b are DOM trees of the predicted and ground-truth tables.",
+    "TEDS is particularly effective for evaluating table structure preservation, as it penalizes row/column misalignment and cell boundary errors."
+  ]
+}

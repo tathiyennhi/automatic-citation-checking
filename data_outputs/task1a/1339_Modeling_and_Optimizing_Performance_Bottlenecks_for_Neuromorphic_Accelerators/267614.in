@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Note that the prior 'voluntary' parallelization can be applied on top of this forced utilization.We re-define N to be the maximum number of neurons that fit in a single neurocore.",
+    "The new neuron dimension for all l is xN, where x > 1.",
+    "Due to the fully connected weight layers, scaling neuron dimension by x leads to a x 2 scaling in number of synaptic weights, which leads to quadratic scaling in the number of neurocores necessary to minimally map each layer l: C i-1,i,i+1 = O(x 2).",
+    "This quadratic scaling of neurocores leads to a decrease in the number of neurons per neurocore in each layer, each neurocore maps xN/x 2 = N/x neurons.Counting operations for l i, in each neurocore, each of the mxN inputs fetches wN/x synaptic weights for accumulation, and activation computes remain linear to the number of neurons N/x.",
+    "Message traffic of l i, which we consider across all neurocores, is mxN messages duplicated to x 2 neurocores in l i+1."
+  ]
+}

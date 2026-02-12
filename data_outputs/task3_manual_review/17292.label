@@ -1,0 +1,29 @@
+{
+  "doc_id": "17292",
+  "text": "We have implemented and tested multiresolution priority queues to improve the performance of Bro, an event-driven application which enables deep network analytics [CITATION_1] . Bro uses a standard priority queue implemented as a binary heap to manage the system's timers. While binary heaps are excellent implementations of priority queues, we find that when dealing with very high speed traffic (e.g., at rates of 10Gbps), they become a system bottleneck. This is illustrated in Fig. 3, which shows a call As shown, the function PriorityQueue::BubbleDown takes the top spot with a cost of 6.5% of the total processing cost. This function implements the standard bubble down operation (sometimes also know as heapify [CITATION_2] ) part of the binary heap based implementation of a priority queue. Specifically, Bro uses this method every time it needs to fetch the next element from the queue of timers.",
+  "correct_citation": {
+    "[CITATION_1]": "1731734",
+    "[CITATION_2]": "2941443"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We have implemented and tested multiresolution priority queues to improve the performance of Bro, an event-driven application which enables deep network analytics"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This function implements the standard bubble down operation (sometimes also know as heapify ) part of the binary heap based implementation of a priority queue."
+    }
+  ],
+  "bib_entries": {
+    "1731734": {
+      "title": "Bro: a system for detecting network intruders in real-time",
+      "abstract": "Abstract We describe Bro, a stand-alone system for detecting network intruders in real-time by passively monitoring a network link over which the intruder's traffic transits. We give an overview of the system's design, which emphasizes high-speed (FDDI-rate) monitoring, real-time notification, clear separation between mechanism and policy, and extensibility. To achieve these ends, Bro is divided into an `event engine' that reduces a kernel-filtered network traffic stream into a series of higher-level events, and a `policy script interpreter' that interprets event handlers written in a specialized language used to express a site's security policy. Event handlers can update state information, synthesize new events, record information to disk, and generate real-time notifications via syslog. We also discuss a number of attacks that attempt to subvert passive monitoring systems and defenses against these, and give particulars of how Bro analyzes the six applications integrated into it so far: Finger, FTP, Portmapper, Ident, Telnet and Rlogin. The system is publicly available in source code form."
+    },
+    "2941443": {
+      "title": "Introduction to Algorithms",
+      "abstract": "From the Publisher: ::: The updated new edition of the classic Introduction to Algorithms is intended primarily for use in undergraduate or graduate courses in algorithms or data structures. Like the first edition,this text can also be used for self-study by technical professionals since it discusses engineering issues in algorithm design as well as the mathematical aspects. ::: In its new edition,Introduction to Algorithms continues to provide a comprehensive introduction to the modern study of algorithms. The revision has been updated to reflect changes in the years since the book's original publication. New chapters on the role of algorithms in computing and on probabilistic analysis and randomized algorithms have been included. Sections throughout the book have been rewritten for increased clarity,and material has been added wherever a fuller explanation has seemed useful or new information warrants expanded coverage. ::: As in the classic first edition,this new edition of Introduction to Algorithms presents a rich variety of algorithms and covers them in considerable depth while making their design and analysis accessible to all levels of readers. Further,the algorithms are presented in pseudocode to make the book easily accessible to students from all programming language backgrounds. ::: Each chapter presents an algorithm,a design technique,an application area,or a related topic. The chapters are not dependent on one another,so the instructor can organize his or her use of the book in the way that best suits the course's needs. Additionally,the new edition offers a 25% increase over the first edition in the number of problems,giving the book 155 problems and over 900 exercises thatreinforcethe concepts the students are learning."
+    }
+  },
+  "generator": "fallback"
+}

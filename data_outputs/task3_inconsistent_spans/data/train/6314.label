@@ -1,0 +1,33 @@
+{
+  "doc_id": "6314",
+  "text": "Since a looser mapping function leads to a larger number of bundled tags and makes the model slower, we implement a paralleled training procedure based on Algorithm 1, and run each experiment with five threads. However, it still takes about 20 hours for one iteration when using the complete mapping function; whereas the other three mapping functions need about 6, 2, and 1 hours respectively. Therefore, as a compromise, we adopt the relaxed mapping function in the fol- lowing experiments, which achieves slightly lower accuracy than the complete mapping function, but is much faster. Effect of weighting CTB and PD is investigated in Figure 4 and 5. Since the scale of PD is much larger than CTB, we adopt Algorithm 1 to merge the training data in a certain proportion (N ′ CTB sentences and M ′ PD sentences) at each iteration. We use N ′ = 5K, and vary M ′ = 1K/5K/20K/100K. Figure 4 shows the accuracy curves on CTB development data. We find that when M ′ = 100K, our coupled model achieve very low accuracy, which is even worse than the baseline model. The reason should be that the training instances in CTB are overwhelmed by those in PD when M ′ is large. In contrast, when M ′ = 1K, the accuracy is also inferior to the case of M ′ = 5K, which indicates that PD is not effectively utilized in this setting. Our model works best when M ′ = 5K, which is slightly better than the case of M ′ = 1K/20K. Figure 5 shows the accuracy curves on PD development data. The baseline model is trained using 100K sentences in one iteration. We find that when M ′ = 100K, our coupled model achieves similar accuracy with the baseline model. When M ′ becomes smaller, our coupled model becomes inferior to the baseline model. Particularly, when M ′ = 1K, the model converges very slowly. However, from the trend of the curves, we expect that the accuracy gap between our coupled model with M ′ = 5K/20K and the baseline model should be much smaller when reaching convergence. Based on the above observation, we adopt N ′ = 5K and M ′ = 5K in the following experiments. Moreover, we select the best iteration on the development data, and use the corresponding model to parse the test data. Table 3 shows the final results on the CTB test data. We re-implement the guide-feature based method of [CITATION_1] , referred to as twostage CRF. [CITATION_2] jointly models Chinese POS tagging and dependency parsing, and report the best tagging accuracy on CTB. The results show that our coupled model outperforms the baseline model by large margin, and also achieves slightly higher accuracy than the guide-feature based method.",
+  "correct_citation": {
+    "[CITATION_1]": "15016194",
+    "[CITATION_2]": "2063580"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We re-implement the guide-feature based method of  , referred to as twostage CRF.  jointly models Chinese POS tagging and dependency parsing, and report the best tagging accuracy on CTB. The results show that our coupled model outperforms the baseline model by large margin, and also achieves slightly higher accuracy than the guide-feature based method.",
+      "s_span": 2239,
+      "e_span": 2617
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We re-implement the guide-feature based method of  , referred to as twostage CRF.  jointly models Chinese POS tagging and dependency parsing, and report the best tagging accuracy on CTB. The results show that our coupled model outperforms the baseline model by large margin, and also achieves slightly higher accuracy than the guide-feature based method.",
+      "s_span": 2239,
+      "e_span": 2617
+    }
+  ],
+  "bib_entries": {
+    "15016194": {
+      "title": "Automatic adaptation of annotation standards: Chinese word segmentation and POS tagging -a case study",
+      "abstract": "Manually annotated corpora are valuable but scarce resources, yet for many annotation tasks such as treebanking and sequence labeling there exist multiple corpora with different and incompatible annotation guidelines or standards. This seems to be a great waste of human efforts, and it would be nice to automatically adapt one annotation standard to another. We present a simple yet effective strategy that transfers knowledge from a differently annotated corpus to the corpus with desired annotation. We test the efficacy of this method in the context of Chinese word segmentation and part-of-speech tagging, where no segmentation and POS tagging standards are widely accepted due to the lack of morphology in Chinese. Experiments show that adaptation from the much larger People's Daily corpus to the smaller but more popular Penn Chinese Treebank results in significant improvements in both segmentation and tagging accuracies (with error reductions of 30.2% and 14%, respectively), which in turn helps improve Chinese parsing accuracy."
+    },
+    "2063580": {
+      "title": "A separately passive-aggressive training algorithm for joint POS tagging and dependency parsing",
+      "abstract": "Recent study shows that parsing accuracy can be largely improved by the joint optimization of part-of-speech (POS) tagging and dependency parsing. However, the POS tagging task does not benefit much from the joint framework. We argue that the fundamental reason behind is because the POS features are overwhelmed by the syntactic features during the joint optimization, and the joint models only prefer such POS tags that are favourable solely from the parsing viewpoint. To solve this issue, we propose a separately passive-aggressive learning algorithm (SPA), which is designed to separately update the POS features weights and the syntactic feature weights under the joint optimization framework. The proposed SPA is able to take advantage of previous joint optimization strategies to significantly improve the parsing accuracy, but also overcome their shortages to significantly boost the tagging accuracy by effectively solving the syntax-insensitive POS ambiguity issues. Experiments on the Chinese Penn Treebank 5.1 (CTB5) and the English Penn Treebank (PTB) demonstrate the effectiveness of our proposed methodology and empirically verify our observations as discussed above. We achieve the best tagging and parsing accuracies on both datasets, 94.60% in tagging accuracy and 81.67% in parsing accuracy on CTB5, and 97.62% and 93.52% on PTB."
+    }
+  },
+  "generator": "fallback_v4"
+}

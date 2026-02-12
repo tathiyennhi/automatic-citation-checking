@@ -1,0 +1,29 @@
+{
+  "doc_id": "60788",
+  "text": "Structure of the paper. We start by recalling in § 2 the syntax and semantics of cCSP and Sagas from [CITATION_1] [CITATION_2] . Then, we outline the conceptual and stylistic similarities and differences between the two approaches in § 3. The more technical contribution starts in § 4, where we focus on the key aspects for the sequential case, by taking the corresponding fragments of the calculi associated with sequential processes, for which we prove the correspondence of both semantics by means of two straightforward encodings. The different policies implemented by the two approaches emerge in § 5, where we analyse the case of parallel processes in transactions. The formal comparison of compensation policies is summarised in § 6. Finally, in § 7 we draw some conclusions and discuss future work. Due to space limitation most proofs are omitted and some just sketched.",
+  "correct_citation": {
+    "[CITATION_1]": "7055151",
+    "[CITATION_2]": "11349961"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We start by recalling in § 2 the syntax and semantics of cCSP and Sagas from   ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We start by recalling in § 2 the syntax and semantics of cCSP and Sagas from   ."
+    }
+  ],
+  "bib_entries": {
+    "11349961": {
+      "title": "A trace semantics for long-running transactions",
+      "abstract": "A long-running transaction is an interactive component of a distributed system which must be executed as if it were a single atomic action. In principle, it should not be interrupted or fail in the middle, and it must not be interleaved with other atomic actions of other concurrently executing components of the system. In practice, the illusion of atomicity for a long-running transaction is achieved with the aid of compensation actions supplied by the original programmer: because the transaction is interactive, familiar automatic techniques of check-pointing and rollback are no longer adequate. This paper constructs a model of long-running transactions within the framework of the CSP process algebra, showing how the compensations are orchestrated to achieve the illusion of atomicity. It introduces a method for declaring that a process is a transaction, and for declaring a compensation for it in case it needs to be rolled back after it has committed. The familiar operator of sequential composition is redefined to ensure that all necessary compensations will be called in the right order if a later failure makes this necessary. The techniques are designed to work well in a highly concurrent and distributed setting. In addition we define an angelic choice operation, implemented by speculative execution of alternatives; its judicious use can improve responsiveness of a system in the face of the unpredictable latencies of remote communication. Many of the familiar properties of process algebra are preserved by these new definitions, on reasonable assumptions of the correctness and independence of the programmer-declared compensations."
+    },
+    "7055151": {
+      "title": "Theoretical foundations for compensations in flow composition languages",
+      "abstract": "A key aspect when aggregating business processes and web services is to assure transactional properties of process executions. Since transactions in this context may require long periods of time to complete, traditional mechanisms for guaranteeing atomicity are not always appropriate. Generally the concept of long running transactions relies on a weaker notion of atomicity based on compensations. For this reason, programming languages for service composition cannot leave out two key aspects: compensations, i.e. ad hoc activities that can undo the effects of a process that fails to complete, and transactional boundaries to delimit the scope of a transactional flow. This paper presents a hierarchy of transactional calculi with increasing expressiveness. We start from a very small language in which activities can only be composed sequentially. Then, we progressively introduce parallel composition, nesting, programmable compensations and exception handling. A running example illustrates the main features of each calculus in the hierarchy."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,33 @@
+{
+  "doc_id": "24013",
+  "text": "In Sections 4 and 5, we will discuss two distinct variance reduction approaches. The key idea is to use the same random input, as far as possible, for both Z and Z −1 . We explain the Split Propensity Method (SPM) [CITATION_1] in Section 4, the previous gold-standard for multi-level Monte Carlo. The Common Process Method (CPM) is explained in Section 5: this has been previously used to develop low-variance estimators for parameter sensitivity analysis [CITATION_2] , but, until now, has yet to be used for multi-level Monte Carlo simulation. Having outlined the multi-level method, we will compare the two different implementations. We assess each implementation for robustness and improvements in numerical performance.",
+  "correct_citation": {
+    "[CITATION_1]": "14533698",
+    "[CITATION_2]": "43507106"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We explain the Split Propensity Method (SPM)  in Section 4, the previous gold-standard for multi-level Monte Carlo.",
+      "s_span": 169,
+      "e_span": 296
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The Common Process Method (CPM) is explained in Section 5: this has been previously used to develop low-variance estimators for parameter sensitivity analysis  , but, until now, has yet to be used for multi-level Monte Carlo simulation.",
+      "s_span": 297,
+      "e_span": 545
+    }
+  ],
+  "bib_entries": {
+    "43507106": {
+      "title": "Efficient computation of parameter sensitivities of discrete stochastic chemical reaction networks",
+      "abstract": "Parametric sensitivity of biochemical networks is an indispensable tool for studying system robustness properties, estimating network parameters, and identifying targets for drug therapy. For discrete stochastic representations of biochemical networks where Monte Carlo methods are commonly used, sensitivity analysis can be particularly challenging, as accurate finite difference computations of sensitivity require a large number of simulations for both nominal and perturbed values of the parameters. In this paper we introduce the common random number (CRN) method in conjunction with Gillespie's stochastic simulation algorithm, which exploits positive correlations obtained by using CRNs for nominal and perturbed parameters. We also propose a new method called the common reaction path (CRP) method, which uses CRNs together with the random time change representation of discrete state Markov processes due to Kurtz to estimate the sensitivity via a finite difference approximation applied to coupled reaction paths that emerge naturally in this representation. While both methods reduce the variance of the estimator significantly compared to independent random number finite difference implementations, numerical evidence suggests that the CRP method achieves a greater variance reduction. We also provide some theoretical basis for the superior performance of CRP. The improved accuracy of these methods allows for much more efficient sensitivity estimation. In two example systems reported in this work, speedup factors greater than 300 and 10,000 are demonstrated."
+    },
+    "14533698": {
+      "title": "Multi-level Monte Carlo for continuous time Markov chains, with applications in biochemical kinetics",
+      "abstract": "We show how to extend a recently proposed multi-level Monte Carlo approach to the continuous time Markov chain setting, thereby greatly lowering the computational complexity needed to compute expected values of functions of the state of the system to a specified accuracy. The extension is non-trivial, exploiting a coupling of the requisite processes that is easy to simulate while providing a small variance for the estimator. Further, and in a stark departure from other implementations of multi-level Monte Carlo, we show how to produce an unbiased estimator that is significantly less computationally expensive than the usual unbiased estimator arising from exact algorithms in conjunction with crude Monte Carlo. We thereby dramatically improve, in a quantifiable manner, the basic computational complexity of current approaches that have many names and variants across the scientific literature, including the Bortz-Kalos-Lebowitz algorithm, discrete event simulation, dynamic Monte Carlo, kinetic Monte Carlo, the n-fold way, the next reaction method,the residence-time algorithm, the stochastic simulation algorithm, Gillespie's algorithm, and tau-leaping. The new algorithm applies generically, but we also give an example where the coupling idea alone, even without a multi-level discretization, can be used to improve efficiency by exploiting system structure. Stochastically modeled chemical reaction networks provide a very important application for this work. Hence, we use this context for our notation, terminology, natural scalings, and computational examples."
+    }
+  },
+  "generator": "fallback_v4"
+}

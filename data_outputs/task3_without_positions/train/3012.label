@@ -1,0 +1,34 @@
+{
+  "doc_id": "3012",
+  "text": "Learning the chromatin accessibility profile induced by each k-mer from hundreds of millions of examples is a challenging machine learning task. Previous approaches to learning regulatory sequences have restricted the genomic regions to a curated set [CITATION_1] . However, by carefully constructing our model to be tractable, we are able to avoid the use of any heuristic pruning or parameter selection and use a stochastic gradient descent algorithm [CITATION_2] to optimize the profile of every possible k-mer to predict the expected number of DNase-seq reads at every base of the genome. This optimization exercise is iterated under the influence of a penalty (L1 regularization) [CITATION_3] ) that acts to limit the number of k-mer profiles and the strength of each profile to avoid overfitting. SCM iteration continues under the L1 penalty until the model converges on the most accurate reproduction of the training data, and then SCM predictions of DNase-seq data are generated for held-out genomic regions to test for accuracy compared with previously unseen experimental data ( Fig. 1A ; see Supplemental Information for details about SCM implementation). A SCM has more than 40 million parameters, and thus several technical innovations and a parallel cloud-based implementation are required to yield practical run times (Supplemental Information). Since SCM models are convex (Supplemental Information), our gradient descent optimizer is guaranteed to find a unique solution that is insensitive to parameter initialization.",
+  "correct_citation": {
+    "[CITATION_1]": "23040938",
+    "[CITATION_2]": "538820",
+    "[CITATION_3]": "538820"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Previous approaches to learning regulatory sequences have restricted the genomic regions to a curated set  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "However, by carefully constructing our model to be tractable, we are able to avoid the use of any heuristic pruning or parameter selection and use a stochastic gradient descent algorithm  to optimize the profile of every possible k-mer to predict the expected number of DNase-seq reads at every base of the genome."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "This optimization exercise is iterated under the influence of a penalty (L1 regularization)  ) that acts to limit the number of k-mer profiles and the strength of each profile to avoid overfitting."
+    }
+  ],
+  "bib_entries": {
+    "538820": {
+      "title": "Adaptive subgradient methods for online learning and stochastic optimization",
+      "abstract": "We present a new family of subgradient methods that dynamically incorporate knowledge of the geometry of the data observed in earlier iterations to perform more informative gradient-based learning. Metaphorically, the adaptation allows us to find needles in haystacks in the form of very predictive but rarely seen features. Our paradigm stems from recent advances in stochastic optimization and online learning which employ proximal functions to control the gradient steps of the algorithm. We describe and analyze an apparatus for adaptively modifying the proximal function, which significantly simplifies setting a learning rate and results in regret guarantees that are provably as good as the best proximal function that can be chosen in hindsight. We give several efficient algorithms for empirical risk minimization problems with common and important regularization functions and domain constraints. We experimentally study our theoretical analysis and show that adaptive subgradient methods outperform state-of-the-art, yet non-adaptive, subgradient algorithms."
+    },
+    "23040938": {
+      "title": "Enhanced regulatory sequence prediction using gapped k-mer features",
+      "abstract": "Oligomers of length k, or k-mers, are convenient and widely used features for modeling the properties and functions of DNA and protein sequences. However, k-mers suffer from the inherent limitation that if the parameter k is increased to resolve longer features, the probability of observing any specific k-mer becomes very small, and k-mer counts approach a binary variable, with most k-mers absent and a few present once. Thus, any statistical learning approach using k-mers as features becomes susceptible to noisy training set k-mer frequencies once k becomes large. To address this problem, we introduce alternative feature sets using gapped k-mers, a new classifier, gkm-SVM, and a general method for robust estimation of k-mer frequencies. To make the method applicable to large-scale genome wide applications, we develop an efficient tree data structure for computing the kernel matrix. We show that compared to our original kmer-SVM and alternative approaches, our gkm-SVM predicts functional genomic regulatory elements and tissue specific enhancers with significantly improved accuracy, increasing the precision by up to a factor of two. We then show that gkm-SVM consistently outperforms kmer-SVM on human ENCODE ChIP-seq datasets, and further demonstrate the general utility of our method using a Naïve-Bayes classifier. Although developed for regulatory sequence analysis, these methods can be applied to any sequence classification problem."
+    }
+  },
+  "generator": "fallback_v4"
+}

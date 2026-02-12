@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The FSM enforces strict control over the generation of structured output, which follows a JSON-like format (e.g., {\"1\": \"main\", \"2\": \"other\",...}).",
+    "The processor deterministically manages all syntactic tokens-including braces, quotes, colons, and numeric keys-by masking the logits at each decoding step to permit only valid continuations according to the current state.The model is granted probabilistic choice exclusively at the critical decision points of block classification, where the vocabulary is restricted to only two tokens: \"main\" and \"other\".",
+    "This constraint effectively transforms the task into a sequence of binary classification decisions, each made with high confidence over a minimal vocabulary.",
+    "By eliminating all degrees of freedom except for the semantic classification choices, this mechanism guarantees syntactically valid output and fundamentally precludes both format errors and hallucinated content.Scalability Advantages of Model-Based Extraction.",
+    "Crucially, MinerU-HTML's approach-grounded in the semantic understanding ability of MinerU-HTML-Classifier is inherently scalable: performance can improve with more training data and stronger base models (Figure 2)."
+  ],
+  "correct_citations": []
+}

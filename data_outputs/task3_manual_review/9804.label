@@ -1,0 +1,20 @@
+{
+  "doc_id": "9804",
+  "text": "The BVH (Biovision hierarchical data) file consist of two parts: skeleton part and motion data. The skeleton part of BVH described the hierarchy and initial pose of the skeleton. The motion part contains the rotation and translation of skeleton joins. The root of BVH skeleton contains is zero. All other non-root joints has three Euler angle rotation data of joints. Then we need to calculate the rotation matrix and translation matrix of every joint relative to its parent joint. The rotation matrix of the joint along the Z-axis, X-axis and Y-axis are computed by using [CITATION_1] . The offset value of joints described the translation value of every joint according to its parent joints. Let the Left_knee ( P Lknee ) joint rotation are calculated as: T Similarly, we calculated the every joint rotation and translation relative to the parents' joint. The conversion result of of Kinect captured data into a BVH skeleton motion with different poses as shown in Fig. 7 .",
+  "correct_citation": {
+    "[CITATION_1]": "16614593"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The rotation matrix of the joint along the Z-axis, X-axis and Y-axis are computed by using"
+    }
+  ],
+  "bib_entries": {
+    "16614593": {
+      "title": "Kinematic skeleton extraction from 3D articulated models",
+      "abstract": "We propose a method to extract a kinematic skeleton from an articulated 3D model. Unlike the curve skeleton which concentrates on the abstract structure of given model, we aim to obtain the skeleton with accurate joint positions, which can be directly used for character rigging and animation. Restricting our focus on the articulated body, we construct its skeleton in a bottom-up manner starting from a set of automatically obtained feature points. Our method is a hybrid approach combining the advantages of topology-based and geometry-based methods using the Morse theory and the shape descriptor. It does not require manually-chosen feature points or markers, and is independent of both postures and the number of branches of the given model. Experiments show that our method can efficiently extract kinematic skeletons of various kinds of articulated bodies, and also that the results can be directly applied to the character rigging."
+    }
+  },
+  "generator": "fallback"
+}

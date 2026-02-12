@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "A continuous-time SSM maps a 1D input signal x(t) ∈ R to an output y(t) ∈ R via a latent state h(t) ∈ R N. The system is governed by a set of linear ordinary differential equations:h ′ (t) = Ah(t) + Bx(t) (1) y(t) = Ch(t) + Dx(t)(2)where A ∈ R N ×N is the state matrix andB ∈ R N ×1, C ∈ R 1×N, D ∈ R are projection matrices.A crucial characteristic of modern SSMs, including Mamba, is that they operate as single-input single-output (SISO) systems.",
+    "To handle the multi-channel feature maps common in computer vision, where an input can be considered x(t) ∈ R D, the SSM processes each of the D channels independently.",
+    "This results in a much larger effective state size of N × D, where N is the state expansion factor.",
+    "This expansion of the latent state is a key element that allows the model to capture complex relationships within informationdense data like images [14].To be used in deep learning, this system must be discretized.",
+    "Using a timestep ∆, the continuous parameters are transformed into discrete counterparts Ā, B via a dis-cretization rule like the Zero-Order Hold (ZOH):Ā = exp(∆A) (3) B = (∆A) -1 (exp(∆A) -I)B(4)The discrete-time SSM is then given by:h t = Āh t-1 + Bx t (5) y t = Ch t i (6)Following the convention in recent works [14,22], we omit the direct feedthrough matrix D as its function is captured by residual connections in the overall block architecture.Mamba enhances this formulation with a selective scan mechanism, where the B, C matrices and the timestep ∆ are dynamically generated from the input data itself."
+  ],
+  "correct_citations": [
+    "This expansion of the latent state is a key element that allows the model to capture complex relationships within informationdense data like images [14].To be used in deep learning, this system must be discretized.",
+    "Using a timestep ∆, the continuous parameters are transformed into discrete counterparts Ā, B via a dis-cretization rule like the Zero-Order Hold (ZOH):Ā = exp(∆A) (3) B = (∆A) -1 (exp(∆A) -I)B(4)The discrete-time SSM is then given by:h t = Āh t-1 + Bx t (5) y t = Ch t i (6)Following the convention in recent works [14,22], we omit the direct feedthrough matrix D as its function is captured by residual connections in the overall block architecture.Mamba enhances this formulation with a selective scan mechanism, where the B, C matrices and the timestep ∆ are dynamically generated from the input data itself."
+  ]
+}

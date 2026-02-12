@@ -1,0 +1,83 @@
+{
+  "doc_id": "18321",
+  "text": "Video Instance Segmentation and Multi-Object Tracking and Segmentation. Recently, the related tasks of Video Instance Segmentation (VIS) [CITATION_1] and Multi-Object Tracking and Segmentation (MOTS) [CITATION_2] has been proposed. These tasks are similar to UVOS in that objects need to be tracked and segmented without being given guidance on which particular instances are to be tracked. However, these tasks differs from UVOS in that only objects belonging to a specified categories need to be tracked and segmented, as well as these being classified correctly. This significantly simplifies the task, and limits the applicability of methods that tackle these tasks. MOTS differs from VIS in that in MOTS sequences are much longer and many more instances are present with objects disappearing and reappearing much more often. MOTS is evaluated on the KITTI and MOTChallenge datasets [CITATION_3] . VIS on the YouTubeVIS benchmark [CITATION_4] . We extend UnOVOST from the UVOS task to the VIS task by classifying our resulting tracks, and also achieve state-of-the-art performance on this task. Category Agnostic Multi-Object Tracking. Previously, a number of methods [CITATION_5] [CITATION_6] have attempted to extent multiobject tracking methods beyond tracking objects from a predefined set of object categories. These methods [CITATION_7] [CITATION_8] have typically relied on the presence of stereo-camera input to obtain 3D information for evaluating the objectness of generic object proposals. These methods also make no attempt to create a set of object tracks without overlapping segment masks, instead they create a large set of track proposals that have large overlap with one-another, often tracking the same object multiple times on different scales. Our method by contrast works on monocular video and creates a set of segmentation tracks without overlapping segment masks.",
+  "correct_citation": {
+    "[CITATION_1]": "152282473",
+    "[CITATION_2]": "60440659",
+    "[CITATION_3]": "60440659",
+    "[CITATION_4]": "152282473",
+    "[CITATION_5]": "6199842",
+    "[CITATION_6]": "67855436",
+    "[CITATION_7]": "6199842",
+    "[CITATION_8]": "67855436"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Recently, the related tasks of Video Instance Segmentation (VIS)  and Multi-Object Tracking and Segmentation (MOTS)  has been proposed.",
+      "s_span": 72,
+      "e_span": 231
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Recently, the related tasks of Video Instance Segmentation (VIS)  and Multi-Object Tracking and Segmentation (MOTS)  has been proposed.",
+      "s_span": 72,
+      "e_span": 231
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "MOTS is evaluated on the KITTI and MOTChallenge datasets  .",
+      "s_span": 830,
+      "e_span": 901
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "VIS on the YouTubeVIS benchmark  .",
+      "s_span": 902,
+      "e_span": 948
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Previously, a number of methods   have attempted to extent multiobject tracking methods beyond tracking objects from a predefined set of object categories.",
+      "s_span": 1140,
+      "e_span": 1319
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Previously, a number of methods   have attempted to extent multiobject tracking methods beyond tracking objects from a predefined set of object categories.",
+      "s_span": 1140,
+      "e_span": 1319
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "These methods   have typically relied on the presence of stereo-camera input to obtain 3D information for evaluating the objectness of generic object proposals.",
+      "s_span": 1320,
+      "e_span": 1504
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "These methods   have typically relied on the presence of stereo-camera input to obtain 3D information for evaluating the objectness of generic object proposals.",
+      "s_span": 1320,
+      "e_span": 1504
+    }
+  ],
+  "bib_entries": {
+    "67855436": {
+      "title": "Large-scale object mining for object discovery from unlabeled video",
+      "abstract": "This paper addresses the problem of object discovery from unlabeled driving videos captured in a realistic automotive setting. Identifying recurring object categories in such raw video streams is a very challenging problem. Not only do object candidates first have to be localized in the input images, but many interesting object categories occur relatively infrequently. Object discovery will therefore have to deal with the difficulties of operating in the long tail of the object distribution. We demonstrate the feasibility of performing fully automatic object discovery in such a setting by mining object tracks using a generic object tracker. In order to facilitate further research in object discovery, we release a collection of more than 360,000 automatically mined object tracks from 10+ hours of video data (560,000 frames). We use this dataset to evaluate the suitability of different feature representations and clustering strategies for object discovery."
+    },
+    "60440659": {
+      "title": "MOTS: Multi-object tracking and segmentation",
+      "abstract": "This paper extends the popular task of multi-object tracking to multi-object tracking and segmentation (MOTS). Towards this goal, we create dense pixel-level annotations for two existing tracking datasets using a semi-automatic annotation procedure. Our new annotations comprise 65,213 pixel masks for 977 distinct objects (cars and pedestrians) in 10,870 video frames. For evaluation, we extend existing multi-object tracking metrics to this new task. Moreover, we propose a new baseline method which jointly addresses detection, tracking, and segmentation with a single convolutional network. We demonstrate the value of our datasets by achieving improvements in performance when training on MOTS annotations. We believe that our datasets, metrics and baseline will become a valuable resource towards developing multi-object tracking approaches that go beyond 2D bounding boxes. We make our annotations, code, and models available at this https URL."
+    },
+    "6199842": {
+      "title": "Track, then decide: Category-agnostic vision-based multi-object tracking",
+      "abstract": "The most common paradigm for vision-based multi-object tracking is tracking-by-detection, due to the availability of reliable detectors for several important object categories such as cars and pedestrians. However, future mobile systems will need a capability to cope with rich human-made environments, in which obtaining detectors for every possible object category would be infeasible. In this paper, we propose a model-free multi-object tracking approach that uses a category-agnostic image segmentation method to track objects. We present an efficient segmentation mask-based tracker which associates pixel-precise masks reported by the segmentation. Our approach can utilize semantic information whenever it is available for classifying objects at the track level, while retaining the capability to track generic unknown objects in the absence of such information. We demonstrate experimentally that our approach achieves performance comparable to state-of-the-art tracking-by-detection methods for popular object categories such as cars and pedestrians. Additionally, we show that the proposed method can discover and robustly track a large variety of other objects."
+    },
+    "152282473": {
+      "title": "Video instance segmentation",
+      "abstract": "In this paper we present a new computer vision task, named video instance segmentation. The goal of this new task is simultaneous detection, segmentation and tracking of instances in videos. In words, it is the first time that the image instance segmentation problem is extended to the video domain. To facilitate research on this new task, we propose a large-scale benchmark called YouTube-VIS, which consists of 2883 high-resolution YouTube videos, a 40-category label set and 131k high-quality instance masks. In addition, we propose a novel algorithm called MaskTrack R-CNN for this task. Our new method introduces a new tracking branch to Mask R-CNN to jointly perform the detection, segmentation and tracking tasks simultaneously. Finally, we evaluate the proposed method and several strong baselines on our new dataset. Experimental results clearly demonstrate the advantages of the proposed algorithm and reveal insight for future improvement. We believe the video instance segmentation task will motivate the community along the line of research for video understanding."
+    }
+  },
+  "generator": "fallback_v4"
+}

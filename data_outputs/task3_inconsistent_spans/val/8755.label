@@ -1,0 +1,44 @@
+{
+  "doc_id": "8755",
+  "text": "As described in Section I and demonstrated in Figure 1 , current optimization techniques on join executions in the data management domain only focus on application-level data movement, but have not considered the impacts of underlying data communications. On the other hand, current research on coflow scheduling in data communication domain assumes that the detailed information (i.e., [src, des, v]) of each data flow is known before a coflow starts [CITATION_1] , [CITATION_2] , [CITATION_3] . Namely, they have not realized that high-level scheduling of data movement could actually impact the final communication performance.",
+  "correct_citation": {
+    "[CITATION_1]": "7268046",
+    "[CITATION_2]": "7016925",
+    "[CITATION_3]": "587619"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "On the other hand, current research on coflow scheduling in data communication domain assumes that the detailed information (i.e., [src, des, v]) of each data flow is known before a coflow starts  ,  ,  .",
+      "s_span": 256,
+      "e_span": 496
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "On the other hand, current research on coflow scheduling in data communication domain assumes that the detailed information (i.e., [src, des, v]) of each data flow is known before a coflow starts  ,  ,  .",
+      "s_span": 256,
+      "e_span": 496
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "On the other hand, current research on coflow scheduling in data communication domain assumes that the detailed information (i.e., [src, des, v]) of each data flow is known before a coflow starts  ,  ,  .",
+      "s_span": 256,
+      "e_span": 496
+    }
+  ],
+  "bib_entries": {
+    "7016925": {
+      "title": "RAPIER: Integrating routing and scheduling for coflow-aware data center networks",
+      "abstract": "In the data flow models of today's data center applications such as MapReduce, Spark and Dryad, multiple flows can comprise a coflow group semantically. Only completing all flows in a coflow is meaningful to an application. To optimize application performance, routing and scheduling must be jointly considered at the level of a coflow rather than individual flows. However, prior solutions have significant limitation: they only consider scheduling, which is insufficient. To this end, we present Rapier, a coflow-aware network optimization framework that seamlessly integrates routing and scheduling for better application performance. Using a small-scale testbed implementation and large-scale simulations, we demonstrate that Rapier significantly reduces the average coflow completion time (CCT) by up to 79.30% compared to the state-of-the-art scheduling-only solution, and it is readily implementable with existing commodity switches."
+    },
+    "587619": {
+      "title": "Efficient online coflow routing and scheduling",
+      "abstract": "A coflow is a collection of related parallel flows that occur typically between two stages of a multi-stage compute task in a network, such as shuffle flows in MapReduce. The coflow abstraction allows applications to convey their semantics to the network so that application-level requirements (e.g., minimizing the completion time of the slowest flow) can be better satisfied. In this paper, we study the routing and scheduling of multiple coflows to minimize the average coflow completion time (CCT). We first propose a rounding-based randomized approximation algorithm, called OneCoflow, for single coflow routing and scheduling. The multiple coflow problem is more challenging as coexisting coflows will compete for the same network resources such as link bandwidths. To minimize the average CCT, we derive an online multiple coflow routing and scheduling algorithm, called OMCoflow, and prove that it has a reasonably good competitive ratio. To the best of our knowledge, this is the first online algorithm with theoretical performance guarantees which considers routing and scheduling simultaneously for multi-coflows. Compared with existing methods, OMCoflow runs more efficiently, and it avoids the problem of frequently rerouting the flows. Extensive simulations on a Facebook data trace show that OMCoflow outperforms the state-of-the-art heuristic schemes significantly (e.g., reducing the average CCT by up to 41.8% and the execution time by up to 99.2% against RAPIER [28])."
+    },
+    "7268046": {
+      "title": "Efficient coflow scheduling with Varys",
+      "abstract": "Communication in data-parallel applications often involves a collection of parallel flows. Traditional techniques to optimize flow-level metrics do not perform well in optimizing such collections, because the network is largely agnostic to application-level requirements. The recently proposed coflow abstraction bridges this gap and creates new opportunities for network scheduling. In this paper, we address inter-coflow scheduling for two different objectives: decreasing communication time of data-intensive jobs and guaranteeing predictable communication time. We introduce the concurrent open shop scheduling with coupled resources problem, analyze its complexity, and propose effective heuristics to optimize either objective. We present Varys, a system that enables data-intensive frameworks to use coflows and the proposed algorithms while maintaining high network utilization and guaranteeing starvation freedom. EC2 deployments and trace-driven simulations show that communication stages complete up to 3.16X faster on average and up to 2X more coflows meet their deadlines using Varys in comparison to per-flow mechanisms. Moreover, Varys outperforms non-preemptive coflow schedulers by more than 5X."
+    }
+  },
+  "generator": "fallback_v4"
+}

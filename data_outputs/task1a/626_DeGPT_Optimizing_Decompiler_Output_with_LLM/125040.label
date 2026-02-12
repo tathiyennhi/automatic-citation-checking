@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The rationale behind MSSC is to simulate the execution of the function and check the changes of return values and side effects of the code before and after optimization to finally check the behavioral equivalence.",
+    "In detail, MSSC simulates the function execution by assigning symbols like variables and callees (arguments of the callees are also considered) with unique random numbers and updating the symbols' values along the statements in execution paths.",
+    "So we can get comparable values of symbols like the returned variable for later comparison, which addresses the aforementioned first challenge.",
+    "Moreover, MSSC represents the invocations with unique random numbers during the simulation instead of tracing the long call chains, which addresses the aforementioned second challenge.",
+    "The main insufficiency of this method is that in theory, different random numbers that experience different statements may lead to the same final values, making a symbol that has changed be mistaken for unchanged."
+  ],
+  "correct_citations": []
+}

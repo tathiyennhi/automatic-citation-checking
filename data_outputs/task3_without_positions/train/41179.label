@@ -1,0 +1,29 @@
+{
+  "doc_id": "41179",
+  "text": "There have been many optimizations to R-Trees for spatio-temporal data, including TB-Trees [CITATION_1] and SEBTrees [CITATION_2] . TB-Trees are optimized R-Tree indices with special support for temporal predicates. They also do not deal well with very long 3D trajectories that tend to have very large bounding rectangles, and can include a high number of I/Os per lookup. SEB-Trees segment space and time, but are not specifically designed for indexing trajectories. Research on TB-trees and SEB-trees does not explicitly discuss how to cluster data, and both are non-adaptive (i.e. they do not reorganize previously added pages as new data arrives).",
+  "correct_citation": {
+    "[CITATION_1]": "1265013",
+    "[CITATION_2]": "26389825"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "There have been many optimizations to R-Trees for spatio-temporal data, including TB-Trees  and SEBTrees  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "There have been many optimizations to R-Trees for spatio-temporal data, including TB-Trees  and SEBTrees  ."
+    }
+  ],
+  "bib_entries": {
+    "1265013": {
+      "title": "Novel approaches to the indexing of moving object trajectories",
+      "abstract": "The domain of spatiotemporal applications is a treasure trove of new types of data and queries. However, work in this area is guided by related research from the spatial and temporal domains, so far, with little attention towards the true nature of spatiotemporal phenomena. In this work, the focus is on a spatiotemporal sub-domain, namely the trajectories of moving point objects. We present new types of spatiotemporal queries, as well as algorithms to process those. Further, we introduce two access methods this kind of data, namely the Spatio-Temporal R-tree (STR-tree) and the Trajectory-Bundle tree (TB-tree). The former is an R-tree based access method that considers the trajectory identity in the index as well, while the latter is a hybrid structure, which preserves trajectories as well as allows for R-tree typical range search in the data. We present performance studies that compare the two indices with the R-tree (appropriately modified, for a fair comparison) under a varying set of spatiotemporal queries, and we provide guidelines for a successful choice among them."
+    },
+    "26389825": {
+      "title": "SEB-tree: an approach to index continuously moving objects",
+      "abstract": "Recently, the requirement for storing the locations of continuously moving objects arises in many applications. The paper extends our previous work on zoning based index updating policy [1]. In the paper, we give the data format of object movement under the policy. Then, we propose the SEB-tree (Start/End time stamp B-tree). This index structure has fast insertion and query algorithm, and it outperforms the existing structures in the experimental evaluations."
+    }
+  },
+  "generator": "fallback_v4"
+}

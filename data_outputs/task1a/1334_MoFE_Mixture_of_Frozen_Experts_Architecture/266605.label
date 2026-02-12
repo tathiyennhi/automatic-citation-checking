@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "These FFN layers, which follow the attention layers in the Transformer architecture (Vaswani et al., 2023), primarily serve to maintain the isotropy of token embeddings (Sonkar and Baraniuk, 2023).",
+    "As the FFN layers of TinyLlama comprise 0.76 billion parameters, integrating one expert model adds 0.76 billion, rather than the entire 1.1 billion parameters.",
+    "As the FFN layers are frozen in MoFE, only the parameters located before the FFN blocks, which include the embeddings and self-attention layers provided by the base model, and the router, are updated.",
+    "The router, or gate, includes a linear layer that determines which FFN block to activate for each token at every time step.",
+    "This research uses a common gating method that leverages hidden state representations of positive and negative prompts, assigned during model merging."
+  ],
+  "correct_citations": [
+    "These FFN layers, which follow the attention layers in the Transformer architecture (Vaswani et al., 2023), primarily serve to maintain the isotropy of token embeddings (Sonkar and Baraniuk, 2023)."
+  ]
+}

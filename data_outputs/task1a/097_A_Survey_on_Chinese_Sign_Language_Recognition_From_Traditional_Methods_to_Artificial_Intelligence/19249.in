@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Compared with 2D convolution, 3D convolution adds the time dimension, and its frame structure is shown in Fig. 10.",
+    "Figure 10: 3D convolution and 2D convolution frame structuresThe network structure of 3D-CNN mainly consists of the following: i) 3D convolution layer: 3D convolution is implemented by convolving a 3D kernel into a temporal cube formed by stacking multiple consecutive frames together.",
+    "With this structure, the feature maps are connected to the previous multiple consecutive frames, and motion information is captured.Among them, the 3D convolution calculation formula is as follows:I xyt = f n i=0 n j=0 m k=0 w ijk v (x+i)(y+j)(t+k) + b (8)Among them, f (•) indicates the neural activation function, such as Tanh, Sigmoid, or Relu, etc., I xyt denotes the feature map value, w ijk denotes the (i, j, k)th value of the kernel connected to the previous feature map, and m denotes the size of the 3D kernel along the time dimension, v (x+i)(y+j)(t+k) indicates the input unit at position (x + i, y + j, t + k), and b is the deviation of the graph.ii) The related technologies and calculation formulas used in the batch normalization, ReLU, and pooling layers are the same as those used in two-dimensional CNN.As early as the CVPR2015 conference, Molchanov et al.",
+    "of the NVIDIA Research Institute first proposed using 3D-CNN for dynamic gesture recognition [67].",
+    "A bidirectional sub-network is constructed using multi-scale data as the network input to extract spatio-temporal feature sets of gestures."
+  ]
+}

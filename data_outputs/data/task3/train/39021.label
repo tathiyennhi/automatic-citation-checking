@@ -1,0 +1,20 @@
+{
+  "doc_id": "39021",
+  "text": "The best performing model trained in this study begins by taking a normalized, 100 × 100 grayscale image (zoomed in on the hit pixel cluster) as input. The input is then transformed via data augmentation (Section 4.2), cropped to 64 × 64, and subjected to dropout with a probability P = 0.2. Next, feature extraction is performed using four three-layer-deep blocks, each of which consists of the following operations: 3 × 3 convolution followed by a leaky ReLU activation, a second identical 3 × 3 convolution with leaky ReLU, and, lastly, 2 × 2 max pooling. For the leaky ReLU non-linearity, a constant multiplier α = 0.3 is applied for all negative inputs. Following max pooling in each block, dropout is applied with probability P = 0.2. For each of the four blocks, the number of feature maps is doubled, starting with 64 in the first block and ending with 512 in the last. The model structure is loosely based on the VGG-16 network [CITATION_1] , which used only 3 × 3 convolutional filters and 2 × 2 max-pooling throughout the network. Following feature extraction, the feature maps are flattened to a single, one-dimensional vector that is used as input for a three-layer fully connected network (Section 3.1). The first two layers are identical dense (fully connected) layers with 2048 neurons, leaky ReLU activation with α = 0.3, and a max-norm constraint with r = 3 (see Section 4.3). Each dense layer is also followed by dropout with a probability P = 0.4. Finally, the output layer performs softmax regression, which outputs the probability for each of the 4 categories in the model (track, spot, worm, and noise). Figure 7 shows a block diagram of the model structure and workflow. Specific details for each layer are summarized in Table 1 .",
+  "correct_citation": {
+    "[CITATION_1]": "14124313"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The model structure is loosely based on the VGG-16 network  , which used only 3 × 3 convolutional filters and 2 × 2 max-pooling throughout the network."
+    }
+  ],
+  "bib_entries": {
+    "14124313": {
+      "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+      "abstract": "In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision."
+    }
+  },
+  "generator": "fallback_v4"
+}

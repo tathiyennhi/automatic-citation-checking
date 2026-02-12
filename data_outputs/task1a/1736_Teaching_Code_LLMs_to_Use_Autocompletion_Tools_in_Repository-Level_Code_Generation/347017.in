@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Second, it verifies that t is not a built-in attribute, such as \"__dict__\" in Python, using the ISBUILTIN procedure.",
+    "These conditions are essential because dependency errors often arise from user-defined attributes categorized as identifiers rather than other AST-tokens like language keywords.",
+    "Additionally, these checks prevent the insertion of <COMP> at positions where the code LLM can confidently predict the following tokens, thus minimizing unnecessary tool invocations.",
+    "When both conditions are met, the algorithm updates the caret position P to the start position of t (line 4) and invokes the autocompletion tool to obtain a list of completion suggestions, denoted as C (line 5).",
+    "If C contains t, indicating that the tool can propose the desired identifier, the special token <COMP> is inserted before t to mark the position for triggering the autocompletion tool (lines 6-7)."
+  ]
+}

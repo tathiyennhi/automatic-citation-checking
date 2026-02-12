@@ -1,0 +1,44 @@
+{
+  "doc_id": "24510",
+  "text": "Some popular approaches to non-stationary learning utilise ensembles [CITATION_1] . Ensembles are committees of base learners that are trained together and have their predictions combined. With such an approach, we hope to distill the learning problem into multiple base learners in such a way that, following concept change, some base learners will remain relevant to the new concept. Dynamic Weighted Majority [CITATION_2] works on this basis, evaluating the performance of each learner and updating its combination weight accordingly, adding or removing classifiers based on ensemble performance. Learn ++ [CITATION_3] is similar, but keeps an ensemble of static base learners, adding a new learner with each new batch of data, and reweighting existing learners using boosting principles. Both of these techniques monitor the error rate to implicitly detect change, and update the ensemble to accommodate this.",
+  "correct_citation": {
+    "[CITATION_1]": "53605988",
+    "[CITATION_2]": "13177510",
+    "[CITATION_3]": "10725353"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Some popular approaches to non-stationary learning utilise ensembles [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 83
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Dynamic Weighted Majority [CITATION_2] works on this basis, evaluating the performance of each learner and updating its combination weight accordingly, adding or removing classifiers based on ensemble performance.",
+      "s_span": 386,
+      "e_span": 599
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Learn ++ [CITATION_3] is similar, but keeps an ensemble of static base learners, adding a new learner with each new batch of data, and reweighting existing learners using boosting principles.",
+      "s_span": 600,
+      "e_span": 791
+    }
+  ],
+  "bib_entries": {
+    "53605988": {
+      "title": "Classifier ensembles for detecting concept change in streaming data: Overview and perspectives",
+      "abstract": "We address adaptive classification of streaming data in the presence of concept change. An overview of the machine learning approaches reveals a deficit of methods for explicit change detection. Typically, classifier ensembles designed for changing environments do not have a bespoke change detector. Here we take a systematic look at the types of changes in streaming data and at the current approaches and techniques in online classification. Classifier ensembles for change detection are discussed. An example is carried through to illustrate individual and ensemble change detectors for both unlabelled and labelled data. While this paper does not offer ready-made solutions, it outlines possibilities for novel approaches to classification of streaming data."
+    },
+    "13177510": {
+      "title": "Dynamic weighted majority: An ensemble method for drifting concepts",
+      "abstract": "We present an ensemble method for concept drift that dynamically creates and removes weighted experts in response to changes in performance. The method, dynamic weighted majority (*DWM*), uses four mechanisms to cope with concept drift: It trains online learners of the ensemble, it weights those learners based on their performance, it removes them, also based on their performance, and it adds new experts based on the global performance of the ensemble. After an extensive evaluation---consisting of five experiments, eight learners, and thirty data sets that varied in type of target concept, size, presence of noise, and the like---we concluded that *DWM* outperformed other learners that only incrementally learn concept descriptions, that maintain and use previously encountered examples, and that employ an unweighted, fixed-size ensemble of experts."
+    },
+    "10725353": {
+      "title": "Learn ++ .nc: Combining ensemble of classifiers with dynamically weighted consult-and-vote for efficient incremental learning of new classes",
+      "abstract": "We have previously introduced an incremental learning algorithm Learn++, which learns novel information from consecutive data sets by generating an ensemble of classifiers with each data set, and combining them by weighted majority voting. However, Learn++ suffers from an inherent ldquooutvotingrdquo problem when asked to learn a new class omeganew introduced by a subsequent data set, as earlier classifiers not trained on this class are guaranteed to misclassify omeganew instances. The collective votes of earlier classifiers, for an inevitably incorrect decision, then outweigh the votes of the new classifiers' correct decision on omeganew instances-until there are enough new classifiers to counteract the unfair outvoting. This forces Learn++ to generate an unnecessarily large number of classifiers. This paper describes Learn++ .NC, specifically designed for efficient incremental learning of multiple new classes using significantly fewer classifiers. To do so, Learn ++.NC introduces dynamically weighted consult and vote (DW-CAV) , a novel voting mechanism for combining classifiers: individual classifiers consult with each other to determine which ones are most qualified to classify a given instance, and decide how much weight, if any, each classifier's decision should carry. Experiments on real-world problems indicate that the new algorithm performs remarkably well with substantially fewer classifiers, not only as compared to its predecessor Learn++, but also as compared to several other algorithms recently proposed for similar problems."
+    }
+  },
+  "generator": "fallback_v4"
+}

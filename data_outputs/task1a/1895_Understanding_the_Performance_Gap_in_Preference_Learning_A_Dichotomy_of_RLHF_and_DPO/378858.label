@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We set the regularization parameter to β \" 0.1.",
+    "Since r R F Π, we have F Π Ă F, and thus Condition 7 holds.Under this setup, RLHF first learns the reward model by optimizing the MLE objective over the larger class F and selects r, which achieves strictly higher likelihood than any element in F Π.",
+    "In the policy learning stage, RLHF computes the policy π RLHF \" π θRLHF by solving:π θRLHF \" argmax π θ PΠ V π θ r \" argmax π θ PΠ ␣ 2 `πθ pa 1 q `πθ pa 2 q ˘´β KL pπ θ }π ref q (.In contrast, DPO directly optimizes the reward via MLE: rDPO \" argmax rθ PFΠ E y,y 1 \"π ref \" p ‹ py ą y 1 q log σpr θ pyq ´r θ py 1 qq `p‹ py 1 ą yq log σpr θ py 1 q ´r θ pyqq ‰, whose optimal solution corresponds to θ satisfying θ J \" 1 ´1ȷ \" 20.",
+    "Therefore, the learned policy isπ DPO \" π θDPO with θ J DPO \" 1 ´1ȷ \" 20.To compare the values V πRLHF r ‹ and V πDPO r ‹, we rewrite the value function for any π θ as:V π θ r ‹ \" π θ pa 1 q `πθ pa 2 q ´β KL pπ θ }π ref q \" e x{2 `e´x{2 Zpxq ´β \" e x{2 Zpxq log ˆex{2 Zpxq ˙`e ´x{2 Zpxq log ˆe´x{2 Zpxq ˙`1 Zpxq log ˆ1 Zpxq ˙ȷ `(constant), where x:\" θ J \" 1 ´1ȷ and Zpxq:\" e x{2 `e´x{2 `1.It can be verified that V π θ r ‹ is strictly decreasing in x for x ě 20.",
+    "Since RLHF learns x RLHF « 40 and DPO learns x DPO \" 20, we conclude thatV πRLHF r ‹ ă V πDPO r ‹, demonstrating that a more expressive reward model class may lead RLHF to overfitting in the presence of a constrained policy class, resulting in inferior performance compared to DPO."
+  ],
+  "correct_citations": []
+}

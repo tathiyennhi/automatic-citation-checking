@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Extracting descriptions for code blocks outside functions for model training and evaluation is challenging, due to the difficulty in determining the scope of line comments [34], [35].",
+    "Therefore, we solely consider function bodies, where corresponding descriptions can be readily obtained from function docstrings.Example: In Figure 4, we showcase an augmented function that contains four instances of the special token <COMP>.",
+    "These tokens have been inserted at positions where the desired identifiers, namely \"updates\", \"_registered_updates\", \"add\", and \"update\", are found within the suggestion lists of the autocompletion tool.2) Model Fine-tuning: During the fine-tuning process, we supply the collected descriptions and augmented functions to optimize the parameters of the employ code LLM (base model), adhering to established practices in code generation tasks.",
+    "Specifically, for each pair consisting of a description D and an augmented function F aug, both are tokenized into sequences of tokens and subsequently fed into the base model to undergo the token-by-token generation process described in Section II-A.",
+    "At each step, a cross-entropy loss is computed between the predicted probability distribution of the next token and the ground-truth next token present in F aug.In the case of code LLMs with an extensive number of parameters, such as CodeLlama-7B with 7 billion parameters, finetuning all parameters becomes computationally challenging due to resource limitations."
+  ]
+}

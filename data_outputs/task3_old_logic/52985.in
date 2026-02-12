@@ -1,0 +1,12 @@
+{
+  "text": "The application starts by building a syscall-index hash map from the syscalllist file. The hash map stores distinct system calls as the key, and a corresponding index as the value. A system call that appears in the whole trace less than the total number of distinct system calls is stored in the map as \"other\". Using \"other\" for relatively rarely-used system calls saves space, memory, and computation time, as described in [CITATION_1] . By using a hash map, looking up the index of a system call is an O(1) operation.",
+  "correct_citation": {
+    "[CITATION_1]": "1640292"
+  },
+  "bib_entries": {
+    "1640292": {
+      "title": "Detecting anomalies in IaaS environments through virtual machine host system call analysis",
+      "abstract": "Providers and consumers of Infrastructure-as-a-Service (IaaS) virtual machine resources may be the subject of a number of attacks, particularly in public cloud environments. Detecting anomalies is hence critical both to protect against misuse and attacks, but is subject to constraints. These include primarily efficiency, but also legal and contractual restrictions limiting the depth of intrusiveness, which can be achieved by an intrusion detection system. In many cases, the IaaS provider will also have very limited insights into the actual workloads used by clients. In this paper we therefore propose to monitor system calls at the VM host level without requiring any instrumentation within VMs and argue that this level of granularity is sufficient to capture a number of relevant attack classes. This, together with the efficiency and efficacy of the approach is shown through experiments and statistical analysis in a Linux KVM-based reference scenario. The proposed system, unlike other systems such as VM Introspection (VMI), does not require any knowledge about VMs from inside nor requiring any OS or hypervisor modifications."
+    }
+  }
+}

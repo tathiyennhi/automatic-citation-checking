@@ -1,0 +1,44 @@
+{
+  "doc_id": "11522",
+  "text": "High range resolution with slower detectors. When planar facets are separated by distances that correspond to time differences greater than the pulse width of the source, the time shift information can be trivially separated. The more challenging case is when facets are closely spaced or there are large number of distinct facets. A detailed analysis of these cases for recovering depth information can be found in [CITATION_1] . However, in this paper we focus on well-separated fronto-parallel planar facets. We briefly address the case where our scenes are illuminated by a system with longer source pulse width. This results in time shift information from planar facets bleeding into each other, that is, peaks that are not well separated in the returned signal. The use of a parametric signal modeling and recovery framework [CITATION_2] enables us to achieve high depth resolution relative to the speed of the sampling at the photodetector. We demonstrate this through simulating longer source pulse width by smearing the timing histograms to correspond to a source four Figure 7 . Depth map reconstruction with simulated scene response to longer source pulse width. We simulate poor temporal resolution by lowpass filtering the captured intensity profiles so that the Gaussian pulses overlap and interfere with the signal amplitudes. The effectiveness of the parametric deconvolution technique is demonstrated by accurate recovery of the depth map times as slow as the source in the experiments. Additionally, we address the case of recovering depth information when the pulse width of the source is longer than the time-difference corresponding to the minimum distance between objects. Techniques such as those implemented in [CITATION_3] will fail to resolve depth values from a returned signal that suffers interference of information between nearby objects. Achieving range resolution higher than that possible with inherent source bandwidth limitations is an important contribution made possible by the parametric recovery process introduced in this work.",
+  "correct_citation": {
+    "[CITATION_1]": "18133413",
+    "[CITATION_2]": "14636642",
+    "[CITATION_3]": "3041358"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A detailed analysis of these cases for recovering depth information can be found in [CITATION_1] .",
+      "s_span": 332,
+      "e_span": 430
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The use of a parametric signal modeling and recovery framework [CITATION_2] enables us to achieve high depth resolution relative to the speed of the sampling at the photodetector.",
+      "s_span": 768,
+      "e_span": 947
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Techniques such as those implemented in [CITATION_3] will fail to resolve depth values from a returned signal that suffers interference of information between nearby objects.",
+      "s_span": 1695,
+      "e_span": 1869
+    }
+  ],
+  "bib_entries": {
+    "14636642": {
+      "title": "Sampling signals with finite rate of innovation",
+      "abstract": "The authors consider classes of signals that have a finite number of degrees of freedom per unit of time and call this number the rate of innovation. Examples of signals with a finite rate of innovation include streams of Diracs (e.g., the Poisson process), nonuniform splines, and piecewise polynomials. Even though these signals are not bandlimited, we show that they can be sampled uniformly at (or above) the rate of innovation using an appropriate kernel and then be perfectly reconstructed. Thus, we prove sampling theorems for classes of signals and kernels that generalize the classic \"bandlimited and sinc kernel\" case. In particular, we show how to sample and reconstruct periodic and finite-length streams of Diracs, nonuniform splines, and piecewise polynomials using sinc and Gaussian kernels. For infinite-length signals with finite local rate of innovation, we show local sampling and reconstruction based on spline kernels. The key in all constructions is to identify the innovative part of a signal (e.g., time instants and weights of Diracs) using an annihilating or locator filter: a device well known in spectral analysis and error-correction coding. This leads to standard computational procedures for solving the sampling problem, which we show through experimental results. Applications of these new sampling results can be found in signal processing, communications systems, and biological systems."
+    },
+    "3041358": {
+      "title": "Photoncounting compressive sensing laser radar for 3d imaging",
+      "abstract": "We experimentally demonstrate a photon-counting, single-pixel, laser radar camera for 3D imaging where transverse spatial resolution is obtained through compressive sensing without scanning. We use this technique to image through partially obscuring objects, such as camouflage netting. Our implementation improves upon pixel-array based designs with a compact, resource-efficient design and highly scalable resolution."
+    },
+    "18133413": {
+      "title": "Exploiting sparsity in time-of-flight range acquisition using a single time-resolved sensor",
+      "abstract": "Range acquisition systems such as light detection and ranging (LIDAR) and time-of-flight (TOF) cameras operate by measuring the time difference of arrival between a transmitted pulse and the scene reflection. We introduce the design of a range acquisition system for acquiring depth maps of piecewise-planar scenes with high spatial resolution using a single, omnidirectional, time-resolved photodetector and no scanning components. In our experiment, we reconstructed 64 × 64-pixel depth maps of scenes comprising two to four planar shapes using only 205 spatially-patterned, femtosecond illuminations of the scene. The reconstruction uses parametric signal modeling to recover a set of depths present in the scene. Then, a convex optimization that exploits sparsity of the Laplacian of the depth map of a typical scene determines correspondences between spatial positions and depths. In contrast with 2D laser scanning used in LIDAR systems and low-resolution 2D sensor arrays used in TOF cameras, our experiment demonstrates that it is possible to build a non-scanning range acquisition system with high spatial resolution using only a standard, low-cost photodetector and a spatial light modulator."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Specifically, an accordance dataset is first produced by manually comparing the results for each label pair in the 100 papers, in which a score of 1 is assigned if the labels from both researchers matched (indicating agreement), and a score of 0 if they differed (indicating disagreement).",
+    "Subsequently, each evaluator would compute the similarity for each pair of labels, which will then be compared against the true accordance data to assess the consistency.During this process, we also calculated threshold values for the metric score produced by the evaluators for each element category, in order to define what constitutes an acceptable level of agreement.",
+    "Specifically, we iterate over the potential threshold value from 0 to 1 with stepsize of 0.01, and assign a True prediction for metric scores above the threshold, False for scores below.",
+    "Then, we determine which threshold yields the highest accuracy rate of F1-score across all comparisons between the evaluators and the accordance ground truth, and select it as the eventual standard.To assess the overall performance of the models, we employed this predefined threshold to calculate the accuracy, sensitivity and specificity in GPT's information extraction results.We defined the accuracy rate ‫‬ ௧ as the proportion of GPT's outputs that align with the ground truth in the five repetitive trials.",
+    "It is calculated separately across the 100 papers as followsԛ‫‬ ௧ ൌ ԛ 1 100 ԛ ∑ max ௦‫א‬ௌ ሺ0, ሺ‫ݏ‬ ௧, െ threshold ௦ ሻሻ ହ ௧ୀଵ 5 ଵ ୀଵwhere ‫ݏ‬ ௧, is the metric score for the ݅ ௧ paper in trial ‫,ݐ‬ and threshold s is the threshold calculated for the specific element nature."
+  ]
+}

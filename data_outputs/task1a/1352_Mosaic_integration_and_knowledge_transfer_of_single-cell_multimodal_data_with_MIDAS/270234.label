@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This can be achieved by using the stochastic gradient variational Bayes 41, which maximizes the expected evidence lower bound (ELBO) for individual data points.",
+    "The ELBO for each individual data point {x n, s n } can be written asELBO (θ θ θ, ϕ ϕ ϕ; x x x n, s n) ≜ 𝔼𝔼 q ϕ ϕ ϕ (c c c, u u u|x x x n, s n) [log p θ θ θ (x x x n, s n, c c c, u u u) q ϕ ϕ ϕ (c c c, u u u|x x x n, s n)] 𝒩 𝔼𝔼 q ϕ ϕ ϕ (c c c, u u u|x x x n, s n) [log p θ θ θ (x x x n, s n |c c c, u u u)] -KL [q ϕ ϕ ϕ (c c c, u u u|x x x n, s n) ∥ p(c c c, u u u)] 𝒩 𝔼𝔼 q ϕ ϕ ϕ (c c c, u u u|x x x n, s n) [log p θ θ θ (s n |u u u) + ∑ m∈ℳ n log p θ θ θ (x x x m n |c c c, u u u)] -KL [q ϕ ϕ ϕ (c c c, u u u|x x x n, s n) ∥ p(c c c, u u u)] (8)where q ϕ (c, u|x n, s n), with learnable parameters ϕ, is the variational approximation of the true posterior p(c, u|x n, s n) and is typically implemented by neural networks, and KL( ⋅ ∥ ⋅) is the Kullback-Leibler divergence between two distributions.",
+    "Scalable variational inference via the product of expertsLet M 𝒩 |ℳ| be the total modality number.",
+    "Because there are (2 M - 1) possible modality combinations for the count data x x x n 𝒩 𝒩x x x m n } m∈ℳ n ⊆ℳ, naively implementing q ϕ (c, u|x n, s n) in Eq.",
+    "( 8) requires (2 M - 1) different neural networks to handle different cases of input (x n, s n), making inference unscalable."
+  ],
+  "correct_citations": []
+}

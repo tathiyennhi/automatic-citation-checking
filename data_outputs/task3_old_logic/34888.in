@@ -1,0 +1,12 @@
+{
+  "text": "Our approach learns detectors for objects with no or few training examples by augmenting the training data with synthetic 3D CAD images. An overview of the approach is shown in Figure 2 . Given a set of 3D CAD models for each object, it generates a synthetic 2D image training dataset by simulating various low-level cues (Section 3.1). It then extracts positive and negative patches for each object from the synthetic images (and an optional small number of real images). Each patch is fed into a deep neural network that computes feature activations, which are used to train the final classifier, as in the deep detection method of RCNN [CITATION_1] (Section 3.2). We explore the cue invariance of networks trained in different ways, as described in Section 3.3.",
+  "correct_citation": {
+    "[CITATION_1]": "1241368"
+  },
+  "bib_entries": {
+    "1241368": {
+      "title": "Rich feature hierarchies for accurate object detection and semantic segmentation",
+      "abstract": "Object detection performance, as measured on the canonical PASCAL VOC dataset, has plateaued in the last few years. The best-performing methods are complex ensemble systems that typically combine multiple low-level image features with high-level context. In this paper, we propose a simple and scalable detection algorithm that improves mean average precision (mAP) by more than 30% relative to the previous best result on VOC 2012 -- achieving a mAP of 53.3%. Our approach combines two key insights: (1) one can apply high-capacity convolutional neural networks (CNNs) to bottom-up region proposals in order to localize and segment objects and (2) when labeled training data is scarce, supervised pre-training for an auxiliary task, followed by domain-specific fine-tuning, yields a significant performance boost. Since we combine region proposals with CNNs, we call our method R-CNN: Regions with CNN features. We also present experiments that provide insight into what the network learns, revealing a rich hierarchy of image features. Source code for the complete system is available at http://www.cs.berkeley.edu/~rbg/rcnn."
+    }
+  }
+}

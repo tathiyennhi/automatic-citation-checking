@@ -1,0 +1,33 @@
+{
+  "doc_id": "17499",
+  "text": "Theorems 1 and 2 guarantee the statistical efficiency of UCBVI. In addition, both UCBVI-CH and UCBVI-BF are computationally tractable. Each episode both algorithms perform an optimistic value iteration with computational cost of the same order as solving a known MDP. In fact, the computational cost of these algorithms can be further reduced by only selectively recomputing UCBVI after sufficiently many observations. This technique is common to the literature Jaksch et al. (2010); [CITATION_1] and would not affect theÕ statistical efficiency. The computational cost of this variant of UCBVI then amounts to O(SA min(SA, T ) min(T, S)) as it only needs to update the model O(SA) times [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "148691",
+    "[CITATION_2]": "247490"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This technique is common to the literature Jaksch et al. (2010); [CITATION_1] and would not affect theÕ statistical efficiency.",
+      "s_span": 419,
+      "e_span": 546
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The computational cost of this variant of UCBVI then amounts to O(SA min(SA, T ) min(T, S)) as it only needs to update the model O(SA) times [CITATION_2] .",
+      "s_span": 547,
+      "e_span": 702
+    }
+  ],
+  "bib_entries": {
+    "148691": {
+      "title": "Sample complexity of episodic fixed-horizon reinforcement learning",
+      "abstract": "Recently, there has been significant progress in understanding reinforcement learning in discounted infinite-horizon Markov decision processes (MDPs) by deriving tight sample complexity bounds. However, in many real-world applications, an interactive learning agent operates for a fixed or bounded period of time, for example tutoring students for exams or handling customer service requests. Such scenarios can often be better treated as episodic fixed-horizon MDPs, for which only looser bounds on the sample complexity exist. A natural notion of sample complexity in this setting is the number of episodes required to guarantee a certain performance with high probability (PAC guarantee). In this paper, we derive an upper PAC bound $\\tilde O(\\frac{|\\mathcal S|^2 |\\mathcal A| H^2}{\\epsilon^2} \\ln\\frac 1 \\delta)$ and a lower PAC bound $\\tilde \\Omega(\\frac{|\\mathcal S| |\\mathcal A| H^2}{\\epsilon^2} \\ln \\frac 1 {\\delta + c})$ that match up to log-terms and an additional linear dependency on the number of states $|\\mathcal S|$. The lower bound is the first of its kind for this setting. Our upper bound leverages Bernstein's inequality to improve on previous bounds for episodic finite-horizon MDPs which have a time-horizon dependency of at least $H^3$."
+    },
+    "247490": {
+      "title": "Near-optimal regret bounds for reinforcement learning",
+      "abstract": "For undiscounted reinforcement learning in Markov decision processes (MDPs) we consider the total regret of a learning algorithm with respect to an optimal policy. In order to describe the transition structure of an MDP we propose a new parameter: An MDP has diameter D if for any pair of states s, s' there is a policy which moves from s to s' in at most D steps (on average). We present a reinforcement learning algorithm with total regret O(DS √AT) after T steps for any unknown MDP with S states, A actions per state, and diameter D. This bound holds with high probability. We also present a corresponding lower bound of Ω(√DSAT) on the total regret of any learning algorithm."
+    }
+  },
+  "generator": "fallback_v4"
+}

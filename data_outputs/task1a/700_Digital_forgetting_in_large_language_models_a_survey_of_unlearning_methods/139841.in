@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "5, the training dataset is divided into S non-overlapping shards, each containing R slices.",
+    "For each shard, an independent model is trained by processing the data slice by slice, saving a model checkpoint after each slice has been processed.",
+    "During inference, the predicted label is obtained by aggregating the individual predictions of each model, such as in ensemble methods.",
+    "When an unlearning request is received, the shard and slice where the data point is located are identified.",
+    "The data point (typically a sequence of tokens in NLP tasks) is then removed from the this slice, and the model is retrained starting from the last unaffected checkpoint onward."
+  ]
+}

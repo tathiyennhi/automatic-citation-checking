@@ -1,0 +1,20 @@
+{
+  "doc_id": "31444",
+  "text": "Recurrent networks have the advantage over feed-forward networks that they can compute mappings from arbitrarily many input patterns to arbitrarily many output patterns. The work presented in this article focuses on the issues that arise with arbitrarily many output patters. In particular, we are concerned with the problem of estimating a probability distribution over an unbounded set of mutually exclusive categories. We propose two output activation functions which can be used for such tasks, and in each case derive the statistical assumptions which are necessary to prove that training networks which use these functions will result in estimates of the desired probability distributions. We then experimentally evaluate these activation functions in an application of a recurrent network architecture (Simple Synchrony Networks [CITATION_1] ) to probabilistic parsing of real natural language sentences. We find that both of these activation functions perform better than the standard approach of converting the task to a sequence of bounded categorization problems. The main disadvantage of this method is that the sequential ordering chosen for the conditioning biases the estimate. When the estimates are smoothed, as with neural networks, then small probabilities will tend to be overestimated, thereby reducing the probability assigned to categories later in the sequence, due to the D © & ¦ ¨ terms. This will bias the estimates towards categories earlier in the sequence, and this bias will be detrimental for most tasks no matter what ordering we choose. In the next section we will propose methods which do not require any ordering, and thus do not introduce this bias.",
+  "correct_citation": {
+    "[CITATION_1]": "10294441"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We then experimentally evaluate these activation functions in an application of a recurrent network architecture (Simple Synchrony Networks  ) to probabilistic parsing of real natural language sentences."
+    }
+  ],
+  "bib_entries": {
+    "10294441": {
+      "title": "Incremental syntactic parsing of natural language corpora with simple synchrony networks",
+      "abstract": "The article explores the use of Simple Synchrony Networks (SSNs) for learning to parse English sentences drawn from a corpus of naturally occurring text. Parsing natural language sentences requires taking a sequence of words and outputting a hierarchical structure representing how those words fit together to form constituents. Feedforward and simple recurrent networks have had great difficulty with this task, in part because the number of relationships required to specify a structure is too large for the number of unit outputs they have available. SSNs have the representational power to output the necessary O(n/sup 2/) possible structural relationships because SSNs extend the O(n) incremental outputs of simple recurrent networks with the O(n) entity outputs provided by temporal synchrony variable binding. The article presents an incremental representation of constituent structures which allows SSNs to make effective use of both these dimensions. Experiments on learning to parse naturally occurring text show that this output format supports both effective representation and effective generalization in SSNs. To emphasize the importance of this generalization ability, the article also proposes a short-term memory mechanism for retaining a bounded number of constituents during parsing. This mechanism improves the O(n/sup 2/) speed of the basic SSN architecture to linear time, but experiments confirm that the generalization ability of SSN networks is maintained."
+    }
+  },
+  "generator": "fallback_v4"
+}

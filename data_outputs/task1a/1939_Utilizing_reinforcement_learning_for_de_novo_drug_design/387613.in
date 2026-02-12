@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The value function V (s t) is a neural network with (non-shared) parameters.",
+    "It has the same network architecture as the actor, but the output layer only consists of one output, i.e., the value, and uses no softmax layer.",
+    "The output layer is reset at initialization, while the initial embedding and long shortterm memory (LSTM) (Hochreiter & Schmidhuber, 1997) layer are the same as the pretrained policy network.",
+    "The value network is trained by minimizing the following mean squared error loss For each batch of sequences, the actor and critic loss are minimized over 4 epochs, each doing minibatch updates where sequences are shuffled into 4 mini-batches.",
+    "It is possible for the actor to diverge from the pre-trained actor (policy), which has learned how to sample a valid SMILES string."
+  ]
+}

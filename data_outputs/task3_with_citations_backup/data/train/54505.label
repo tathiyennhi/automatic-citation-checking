@@ -1,0 +1,77 @@
+{
+  "doc_id": "54505",
+  "text": "(1) Predistribution. Based on the expected locations of sensor nodes, the setup server predistributes pairwise keys for each sensor node to facilitate the pairwise key establishment during the normal operation. Specifically, for each sensor node u, the setup server first discovers a set S of c other sensor nodes whose expected locations are closest to the expected location of u, where c is a system parameter determined by the memory constraint. For each node v in S, the setup server randomly generates a unique pairwise key K u,v if no pairwise key between u and v has been assigned. The setup server then assigns (v, K u,v ) and (u, K u,v [CITATION_1] and [CITATION_2] ). (4) Sensor Addition and Revocation. During the lifetime of a sensor network, new sensor nodes may be added to replace damaged or compromised sensor nodes. To add a new node, the setup server performs the above predistribution process for the new sensor node, and then informs the deployed sensor nodes chosen for the new sensor node the corresponding pairwise keys through secure channels. (Here we assume the communication between each sensor node and the setup server is secured with a unique pairwise key shared between the node and the setup server.) The setup server may know the deployment locations of the deployed sensor nodes. In this case, the setup server may use these deployment locations (instead of their expected locations) to select neighbors for the new sensor node. The detection of compromised nodes is generally a difficult problem, which is beyond the scope of this article. However, there are several methods that could be used to identify compromised sensor nodes to revoke (e.g., [CITATION_3] , [CITATION_4] , [CITATION_5] , and [CITATION_6] ). Once the compromised nodes are detected, it is usually necessary to revoke them from the network. To revoke a sensor node, each sensor node that shares a pairwise key with the revoked node simply deletes the corresponding key from its memory.",
+  "correct_citation": {
+    "[CITATION_1]": "4540744",
+    "[CITATION_2]": "2086986",
+    "[CITATION_3]": "314926",
+    "[CITATION_4]": "13085396",
+    "[CITATION_5]": "45421407",
+    "[CITATION_6]": "6546013"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The setup server then assigns (v, K u,v ) and (u, K u,v [CITATION_1] and [CITATION_2] ). (4) Sensor Addition and Revocation.",
+      "s_span": 589,
+      "e_span": 713
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The setup server then assigns (v, K u,v ) and (u, K u,v [CITATION_1] and [CITATION_2] ). (4) Sensor Addition and Revocation.",
+      "s_span": 589,
+      "e_span": 713
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "However, there are several methods that could be used to identify compromised sensor nodes to revoke (e.g., [CITATION_3] , [CITATION_4] , [CITATION_5] , and [CITATION_6] ).",
+      "s_span": 1575,
+      "e_span": 1747
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "However, there are several methods that could be used to identify compromised sensor nodes to revoke (e.g., [CITATION_3] , [CITATION_4] , [CITATION_5] , and [CITATION_6] ).",
+      "s_span": 1575,
+      "e_span": 1747
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "However, there are several methods that could be used to identify compromised sensor nodes to revoke (e.g., [CITATION_3] , [CITATION_4] , [CITATION_5] , and [CITATION_6] ).",
+      "s_span": 1575,
+      "e_span": 1747
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "However, there are several methods that could be used to identify compromised sensor nodes to revoke (e.g., [CITATION_3] , [CITATION_4] , [CITATION_5] , and [CITATION_6] ).",
+      "s_span": 1575,
+      "e_span": 1747
+    }
+  ],
+  "bib_entries": {
+    "314926": {
+      "title": "Mitigating routing misbehavior in mobile ad hoc networks",
+      "abstract": "This paper describes two techniques that improve throughput in an ad hoc network in the presence of nodes that agree to forward packets but fail to do so. To mitigate this problem, we propose categorizing nodes based upon their dynamically measured behavior. We use a watchdog that identifies misbehaving nodes and a pathrater that helps routing protocols avoid these nodes. Through simulation we evaluate watchdog and pathrater using packet throughput, percentage of overhead (routing) transmissions, and the accuracy of misbehaving node detection. When used together in a network with moderate mobility, the two techniques increase throughput by 17% in the presence of 40% misbehaving nodes, while increasing the percentage of overhead transmissions from the standard routing protocol's 9% to 17%. During extreme mobility, watchdog and pathrater can increase network throughput by 27%, while increasing the overhead transmissions from the standard routing protocol's 12% to 24%."
+    },
+    "2086986": {
+      "title": "A key-management scheme for distributed sensor networks",
+      "abstract": "Distributed Sensor Networks (DSNs) are ad-hoc mobile networks that include sensor nodes with limited computation and communication capabilities. DSNs are dynamic in the sense that they allow addition and deletion of sensor nodes after deployment to grow the network or replace failing and unreliable nodes. DSNs may be deployed in hostile areas where communication is monitored and nodes are subject to capture and surreptitious use by an adversary. Hence DSNs require cryptographic protection of communications, sensor-capture detection, key revocation and sensor disabling. In this paper, we present a key-management scheme designed to satisfy both operational and security requirements of DSNs. The scheme includes selective distribution and revocation of keys to sensor nodes as well as node re-keying without substantial computation and communication capabilities. It relies on probabilistic key sharing among the nodes of a random graph and uses simple protocols for shared-key discovery and path-key establishment, and for key revocation, re-keying, and incremental addition of nodes. The security and network connectivity characteristics supported by the key-management scheme are discussed and simulation experiments presented."
+    },
+    "13085396": {
+      "title": "Performance analysis of the CONFIDANT protocol (cooperation of nodes: Fairness in dynamic ad-hoc networks)",
+      "abstract": "Mobile ad-hoc networking works properly only if the participating nodes cooperate in routing and forwarding. However, it may be advantageous for individual nodes not to cooperate. We propose a protocol, called CONFIDANT, for making misbehavior unattractive; it is based on selective altruism and utilitarianism. It aims at detecting and isolating misbehaving nodes, thus making it unattractive to deny cooperation. Trust relationships and routing decisions are based on experienced, observed, or reported routing and forwarding behavior of other nodes. The detailed implementation of CONFIDANT in this paper assumes that the network layer is based on the Dynamic Source Routing (DSR) protocol. We present a performance analysis of DSR fortified by CONFIDANT and compare it to regular defenseless DSR. It shows that a network with CONFIDANT and up to 60% of misbehaving nodes behaves almost as well as a benign network, in sharp contrast to a defenseless network. All simulations have been implemented and performed in GloMoSim."
+    },
+    "6546013": {
+      "title": "Detecting malicious beacon nodes for secure location discovery in wireless sensor networks",
+      "abstract": "Sensors' locations play a critical role in many sensor network applications. A number of techniques have been proposed recently to discover the locations of regular sensors based on a few special nodes called beacon nodes, which are assumed to know their locations (e.g., through GPS receivers or manual configuration). However, none of these techniques can work properly when there are malicious attacks, especially when some of the beacon nodes are compromised. This paper introduces a suite of techniques to detect and remove compromised beacon nodes that supply misleading location information to the regular sensors, aiming at providing secure location discovery services in wireless sensor networks. These techniques start with a simple but effective method to detect malicious beacon signals. To identify malicious beacon nodes and avoid false detection, this paper also presents several techniques to detect replayed beacon signals. This paper then proposes a method to reason about the suspiciousness of each beacon node at the base station based on the detection results collected from beacon nodes, and then revoke malicious beacon nodes accordingly. Finally, this paper provides detailed analysis and simulation to evaluate the proposed techniques. The results show that our techniques are practical and effective in detecting malicious beacon nodes"
+    },
+    "4540744": {
+      "title": "Random key predistribution schemes for sensor networks",
+      "abstract": "Key establishment in sensor networks is a challenging problem because asymmetric key cryptosystems are unsuitable for use in resource constrained sensor nodes, and also because the nodes could be physically compromised by an adversary. We present three new mechanisms for key establishment using the framework of pre-distributing a random set of keys to each node. First, in the q-composite keys scheme, we trade off the unlikeliness of a large-scale network attack in order to significantly strengthen random key predistribution's strength against smaller-scale attacks. Second, in the multipath-reinforcement scheme, we show how to strengthen the security between any two nodes by leveraging the security of other links. Finally, we present the random-pairwise keys scheme, which perfectly preserves the secrecy of the rest of the network when any node is captured, and also enables node-to-node authentication and quorum-based revocation."
+    },
+    "45421407": {
+      "title": "Lad: Localization anomaly detection for wireless sensor networks",
+      "abstract": "In wireless sensor networks (WSNs), sensors' locations play a critical role in many applications. Having a GPS receiver on every sensor node is costly. In the past, a number of location discovery (localization) schemes have been proposed. Most of these schemes share a common feature: they use some special nodes, called beacon nodes, which are assumed to know their own locations (e.g., through GPS receivers or manual configuration). Other sensors discover their locations based on the reference information provided by these beacon nodes. Most of the beacon-based localization schemes assume a benign environment, where all beacon nodes are supposed to provide correct reference information. However, when the sensor networks are deployed in a hostile environment, where beacon nodes can be compromised, such an assumption does not hold anymore. In this paper, we propose a general scheme to detect localization anomalies that are caused by adversaries. Our scheme is independent from the localization schemes. We formulate the problem as an anomaly intrusion detection problem, and we propose a number of ways to detect localization anomalies. We have conducted simulations to evaluate the performance of our scheme, including the false positive rates, the detection rates, and the resilience to node compromises."
+    }
+  },
+  "generator": "fallback_v4"
+}

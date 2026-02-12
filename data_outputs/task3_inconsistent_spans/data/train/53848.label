@@ -1,0 +1,22 @@
+{
+  "doc_id": "53848",
+  "text": "During the preprocessing, for each vertex with degree at least 3, we ensure that the second and third elements in its adjacency list encode the bit 0 (to mark it unvisited). We maintain the invariant that for any vertex with degree at least 3, as long as it is not visited, the second and third elements in its adjacency array encode the bit 0; and after the vertex is visited, its parent (in the DFS tree) is at the front of its adjacency array, and the second and third elements in its adjacency array encode the bit 1. Thus, when we visit a node v with degree at least 3 for the first time, we bring its parent to the front, and then swap the second and third elements in the adjacency list, if needed, to mark it as visited. The total running time of this algorithm is bounded by v∈V d 2 v = O(m 2 /n). We can implement the above DFS algorithm even faster when the input graph is given in an adjacency array representation. We deal with vertices with degree at most 2 exactly as before. For a vertex v with degree at least 3, we bring its parent to the front and swap the second and third elements to mark the node as visited (as before) whenever v is visited for the first time. We then sort the remaining elements, if any, in the adjacency array, in-place (using the linear-time in-place radix sort algorithm [CITATION_1] ), and implement the rotations on the remaining part of the array as described in Section 4. The total running time of this algorithm is bounded by",
+  "correct_citation": {
+    "[CITATION_1]": "8582000"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We then sort the remaining elements, if any, in the adjacency array, in-place (using the linear-time in-place radix sort algorithm  ), and implement the rotations on the remaining part of the array as described in Section 4.",
+      "s_span": 1184,
+      "e_span": 1420
+    }
+  ],
+  "bib_entries": {
+    "8582000": {
+      "title": "Radix sorting with no extra space",
+      "abstract": "It is well known that n integers in the range [1,n^c] can be sorted in O(n) time in the RAM model using radix sorting. More generally, integers in any range [1,U] can be sorted in O(n sqrt{loglog n}) time. However, these algorithms use O(n) words of extra memory. Is this necessary? ::: We present a simple, stable, integer sorting algorithm for words of size O(log n), which works in O(n) time and uses only O(1) words of extra memory on a RAM model. This is the integer sorting case most useful in practice. We extend this result with same bounds to the case when the keys are read-only, which is of theoretical interest. Another interesting question is the case of arbitrary c. Here we present a black-box transformation from any RAM sorting algorithm to a sorting algorithm which uses only O(1) extra space and has the same running time. This settles the complexity of in-place sorting in terms of the complexity of sorting."
+    }
+  },
+  "generator": "fallback_v4"
+}

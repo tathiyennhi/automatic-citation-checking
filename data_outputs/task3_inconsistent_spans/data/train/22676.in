@@ -1,0 +1,12 @@
+{
+  "text": "where f in and f out are the input and output feature map, respectively. B(v ti ) is the neighbor set of a node v ti , where the 1-distance neighbors of the target node v ti are considered. w is the weight function which provides a weight vector to compute inner product with the input feature map. Because the number of the weight vectors is fixed, strategies to partition B(v ti ) into a fixed number of subsets have to be designed. l ti is a function mapping each node in neighborhood of v ti to its subset label. To prevent the different subsets from unbalancing the output, the cardinality of the subset Z ti (v tj ) is used as the normalizing term. In ST-GCN, many partitioning strategies are introduced, such as uni-labeling, distance partitioning, and spatial configuration. Among them, spatial configuration has achieved best performance, as it consider the gravity center of the human body. This strategy divide the neighboring nodes of target node into three subsets: 1) the target node itself; 2) centripetal subset: the nodes that are closer to the gravity center; 3) otherwise centrifugal subset. The implementation of the graph convolution [CITATION_1] is adopted for ST-GCN. A is the N \u00d7 N adjacency matrix where a graph structure is represented as matrix form by indicating connections between nodes. To implement ST-GCN with the spatial configuration partitioning, the Eq. ( 1) is transformed into",
+  "correct_citation": {
+    "[CITATION_1]": "3144218"
+  },
+  "bib_entries": {
+    "3144218": {
+      "title": "Semi-supervised classification with graph convolutional networks",
+      "abstract": "We present a scalable approach for semi-supervised learning on graph-structured data that is based on an efficient variant of convolutional neural networks which operate directly on graphs. We motivate the choice of our convolutional architecture via a localized first-order approximation of spectral graph convolutions. Our model scales linearly in the number of graph edges and learns hidden layer representations that encode both local graph structure and features of nodes. In a number of experiments on citation networks and on a knowledge graph dataset we demonstrate that our approach outperforms related methods by a significant margin."
+    }
+  }
+}

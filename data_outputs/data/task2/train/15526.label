@@ -1,0 +1,17 @@
+{
+  "text": "The batch size B of the optimizer corresponds to the number of examples used in every gradient update step of the backpropagation algorithm. For time-series dataset consisting of recordings of extracellular voltage from neurons, we found that it was important to relate B to the expected number of spikes in each batch. We can estimate the expected number of spikes in a window given its length N and the firing rate of neurons. In turn, this calculation yields the expected number of spikes in each batch. In our experiments, we chose B so as to have enough spikes in each mini-batch but still have a large number of batches in each epoch to take advantage of stochasticity during training. Augmentation: We used two forms of augmentation: flipping and circular rotation. Neither flipping nor circular rotation change the generative model (Eq. 2). However, these forms of data augmentation can be useful as the training is done through mini-batch gradient descent on noisy data [CITATION_1] . In our model, augmentation by flipping, which changes the sign of the sparse codes, does not increase the complexity of the model, as the encoder uses two-sided shrinkage (Eq. 21), i.e. as opposed to one-sided ReLU [CITATION_2] . In augmentation by circular rotation, the sparse code positions are shifted. This augmentation is done by circularly rotating each example by an integer delay randomly generated between 1 to N .",
+  "correct_citation": {
+    "[CITATION_1]": "207763512",
+    "[CITATION_2]": "2239473"
+  },
+  "bib_entries": {
+    "207763512": {
+      "title": "Imagenet classification with deep convolutional neural networks",
+      "abstract": "We trained a large, deep convolutional neural network to classify the 1.2 million high-resolution images in the ImageNet LSVRC-2010 contest into the 1000 different classes. On the test data, we achieved top-1 and top-5 error rates of 37.5% and 17.0%, respectively, which is considerably better than the previous state-of-the-art. The neural network, which has 60 million parameters and 650,000 neurons, consists of five convolutional layers, some of which are followed by max-pooling layers, and three fully connected layers with a final 1000-way softmax. To make training faster, we used non-saturating neurons and a very efficient GPU implementation of the convolution operation. To reduce overfitting in the fully connected layers we employed a recently developed regularization method called \"dropout\" that proved to be very effective. We also entered a variant of this model in the ILSVRC-2012 competition and achieved a winning top-5 test error rate of 15.3%, compared to 26.2% achieved by the second-best entry."
+    },
+    "2239473": {
+      "title": "Deep sparse rectifier neural networks",
+      "abstract": "While logistic sigmoid neurons are more biologically plausible than hyperbolic tangent neurons, the latter work better for training multi-layer neural networks. This paper shows that rectifying neurons are an even better model of biological neurons and yield equal or better performance than hyperbolic tangent networks in spite of the hard non-linearity and non-dierentiabil ity"
+    }
+  }
+}

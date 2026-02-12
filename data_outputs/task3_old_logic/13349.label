@@ -1,0 +1,20 @@
+{
+  "doc_id": "13349",
+  "text": "The candidate routes are generated with a modified A * algorithm, which punishes changing direction, to minimize turns. The A * algorithm is a best-first search algorithm, commonly used for path finding [CITATION_1] . In this case, both the robot's position r i and target destination d i are passed to the A * implementation, which generates a number of different routes. {j 1 , j 2 , . . . , j n } are used to represent the number of candidate routes per robot. A binary variable, q i j where i is the robot index and j is the candidate route index, represents whether or not the route was taken by the robot i. q i j is set to 1 if the route is chosen or 0 if the route is not chosen. In order to reduce the number of binary variables, initially only four candidate routes are generated per robot, however if there is a collision, the number of routes for the colliding robots has to be increased to increase the chance that there is a non-colliding route. The details are shown in Section 2.4. Figure 2 shows an example of the different paths that can be generated for a single robot, while avoiding out of bounds points.",
+  "correct_citation": {
+    "[CITATION_1]": "206799161"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The A * algorithm is a best-first search algorithm, commonly used for path finding"
+    }
+  ],
+  "bib_entries": {
+    "206799161": {
+      "title": "A formal basis for the heuristic determination of minimum cost paths",
+      "abstract": "Although the problem of determining the minimum cost path through a graph arises naturally in a number of interesting applications, there has been no underlying theory to guide the development of efficient search procedures. Moreover, there is no adequate conceptual framework within which the various ad hoc search strategies proposed to date can be compared. This paper describes how heuristic information from the problem domain can be incorporated into a formal mathematical theory of graph searching and demonstrates an optimality property of a class of search strategies."
+    }
+  },
+  "generator": "fallback"
+}

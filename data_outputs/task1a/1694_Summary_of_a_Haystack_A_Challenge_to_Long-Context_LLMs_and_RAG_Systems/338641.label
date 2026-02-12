@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "When generating documents given a set of insights, we do not want other insights to \"leak\" into the document, as that would reduce the quality of the Haystack and task.",
+    "Below we list the verification steps taken across the conversation and news domain.",
+    "Differences in domain characteristics and the seed used to generate Haystacks necessitate per-domain verification steps.",
+    "A.1.1 Subtopic VerificationIn the news domain, to ensure distinct insights and subtopics we first prompt an LLM to identify any overlapping or duplicate subtopics and remove these subtopics.",
+    "This helps ensure that when querying relevant insights for a subtopic, insights can only belong to one of the distinct subtopics generated.In the conversation domain, we use manual inspection to verify the distinctness of the subtopics and regenerate subtopic candidates (at temperature T = 1) until obtaining a list where each subtopic feels qualitatively unique."
+  ],
+  "correct_citations": []
+}

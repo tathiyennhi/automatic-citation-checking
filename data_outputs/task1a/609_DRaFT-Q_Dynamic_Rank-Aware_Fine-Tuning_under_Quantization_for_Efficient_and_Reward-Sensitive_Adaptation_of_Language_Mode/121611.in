@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In PEFT settings, only a small fraction of model parameters are updated, which makes it crucial to allocate gradient updates effectively to maximize the impact of limited trainable capacity.",
+    "Incorporating reward weights into the supervised loss allows the fine-tuning process to emphasize semantically important tokens-such as correct answers in multiple-choice QA, key reasoning steps in chain-of-thought tasks, or factual spans in scientific text-so that the model can learn from the most informative parts of the data.Reward-weighted learning introduces a form of fine-grained adaptivity at the token level, complementing rank-level adaptation mechanisms.",
+    "This approach accelerates convergence, improves reasoning accuracy, and makes better use of small compute budgets.",
+    "In resource-constrained scenarios (such as LoRA or QLoRA training on 4/8-bit hardware), reward-weighted learning enables the model to focus limited updates on the parts of the input that matter most, leading to superior generalization and robustness without increasing the overall parameter count.",
+    "Mathematical formulation.Formally, for a sequence of tokens x = (x 1,..., x T) with labels y t, we modify the standard cross-entropy loss L by introducing reward weights w t:L = 1 T T ∑ t=1 w t • CE(z t, y t),where z t are the model logits and w t > 1 for tokens that are semantically critical (e.g., final answers or key reasoning steps)."
+  ]
+}

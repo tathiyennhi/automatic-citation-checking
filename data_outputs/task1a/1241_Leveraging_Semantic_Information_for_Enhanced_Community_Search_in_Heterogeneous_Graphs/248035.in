@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The weight of edges in type (e(m, f)) is determined by counting the number of instances of the sub-meta-structure where the meta-structure bifurcations.",
+    "As an example, m 2 from Fig. 7a has four possible meta- structure instances.",
+    "However, without repeated edges, there are only two meta-structure instances (s 1 = m 2 → c 2 &&t 1 → m 1, s 2 = m 2 → c 1 &&t 2 → m 3) connected to vertices of type (m 2)from m 2, so the weight of edge e 2 (m 2, f 2) is 2 (e.g., w(e 2) = 2).",
+    "Based on the above discussion, we introduce \"flow constrained vertices\" in Algorithm 2 to capture the number of instances of the meta-structure.Algorithm 2 Edge-weighted graph reconstruction algorithm Input: HG (H), meta-structure(S) Output: A new graph H with weight 1 //Replace lines 8-13 in Alg.",
+    "1 by the following: for u in M.keys() do 2 set C u: all vertices combinations in M.get(u) min s: number of instances of meta-structure with disjoint edges create a new vertex f i and connect it to u w(e(f i, u) = min s for each vertex v in C u do 3 connect f i and v update the type of e(u, f i), e(f i, v), v, f i 4 end 5 end 6 return: a new edge weighted graph HWe replace lines 15-21 in Algorithm 1 by the following: For each vertex u in the key set of Map M, we capture the number of meta-structure bifurcation instances connected to u as follows: First, we combine its neighbors based on their vertex types at the bifurcation (lines 2-3)."
+  ]
+}

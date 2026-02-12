@@ -1,0 +1,87 @@
+{
+  "text": "For a Boolean function of n inputs, there are 2 n+1 n! distinct NPN transformations. We denote a transformation by a vector of literals to indicate the permutation and phases of the inputs and a indicating the polarity of the output. For example, applying transformation \u03c4 = ( , , , \u0305 ) to function ( , , ) = + results in a new function \u2218 \u03c4 = + , which replaces with , and with respectively, while also negating the output. [CITATION_1] . There are a number of efficient algorithms in the literatures for symmetry detection [CITATION_2] [CITATION_3] .",
+  "citation_candidates": [
+    "8731487",
+    "36004682",
+    "1678207",
+    "7093800",
+    "2605361",
+    "61497567",
+    "21944094",
+    "10029375",
+    "14599897",
+    "10070504",
+    "1393277",
+    "1087847",
+    "3513449",
+    "2430277",
+    "15880007",
+    "119440379"
+  ],
+  "bib_entries": {
+    "14599897": {
+      "title": "Efficient FPGA resynthesis using precomputed LUT structures",
+      "abstract": "The ability to efficiently match logic functions to structures of K-input look-up tables (K-LUTs) is a central problem in FPGA resynthesis algorithms. This paper addresses the problem of matching logic functions of ~ 9 to 12 inputs to K-LUT structures. Our method is based on the off-line generation of libraries of LUT structures. During resynthesis, matching is accomplished efficiently using NPN encoding and hash table look-ups. Generating an effective library of LUT structures may seem prohibitive due to the overwhelming number of logic functions which must be considered and represented in the library. We show that, by careful consideration of which logic functions and LUT structures to keep, it is possible to generate useful, compact libraries. We present numerical results demonstrating the effectiveness of our ideas when used during area-oriented resynthesis after FPGA technology mapping."
+    },
+    "10070504": {
+      "title": "Generating efficient libraries for use in FPGA resynthesis lgorithms",
+      "abstract": "The ability to efficiently match completelyspecified logic functions to structures of K-input look-up tables (K-LUTs) is a central problem in FPGA resynthesis algorithms. We address the problem of matching completely-specified logic functions of 9 to 12 inputs in K-LUT structures. Our method is based on the off-line generation of libraries of LUT structures. During resynthesis, matching is performed efficiently using NPN encoding and hash table look-ups to find alternative LUT structures for the implementation of logic functions. Generating an effective library of LUT structures may seem prohibitive due to the overwhelming number of potential logic functions which must be considered and represented. We show that, by careful consideration of which logic functions and LUT structures to keep in the library, it is, indeed, possible to generate useful, compact libraries. Numerical results are presented to support our proposed use of precomputed libraries."
+    },
+    "61497567": {
+      "title": "Reducing structural bias in technology mapping",
+      "abstract": "Technology mapping based on DAG-covering suffers from the problem of structural bias: the structure of the mapped netlist depends strongly on the subject graph. In this paper we present a new mapper aimed at mitigating structural bias. It is based on a simplified cut-based Boolean matching algorithm, and using the speed afforded by this simplification we explore two ideas to reduce structural bias. The first, called lossless synthesis, leverages recent advances in structure-based combinational equivalence checking to combine the different networks seen during technology independent synthesis into a single network with choices in a scalable manner. We show how cut based mapping extends naturally to handle such networks with choices. The second idea is to combine several library gates into a single gate (called a supergate) in order to make the matching process less local. We show how supergates help address the structural bias problem, and how they fit naturally into the cut-based Boolean matching scheme. An implementation based on these ideas significantly outperforms state-of-the-art mappers in terms of delay, area and run-time on academic and industrial benchmarks."
+    },
+    "3513449": {
+      "title": "Improving FPGA performance with a S44 LUT structure",
+      "abstract": "FPGA performance depends in part on the choice of basic logic cell. Previous work dating back to 1999-2005 found that the best look-up table (LUT) sizes for area-delay product are 4-6, with 4 better for area and 6 for performance. Since that time several things have changed. A new 'LUT structure' mapping technique can target cells with a larger number of inputs (cut size) without assuming that the cell implements all possible functions of those inputs. We consider in particular a 7-input function composed of two tightly-coupled 4-input LUTs. Changes in process technology have increased the relative importance of wiring delay and configuration memory area. Finally, modern benchmark applications include carry chains, math and memory blocks. Due to these changes, we show that mapping to a 7-input LUT structure can approach the performance of 6-input LUTs while retaining the area and static power advantage of 4-input LUTs."
+    },
+    "1393277": {
+      "title": "Lazy man's logic synthesis",
+      "abstract": "Deriving a circuit for a Boolean function or improving an available circuit are typical tasks solved by logic synthesis. Numerous algorithms in this area have been proposed and implemented over the last 50 years. This paper presents a \"lazy\" approach to logic synthesis based on the following observations: (a) optimal or near-optimal circuits for many practical functions are already derived by the tools, making it unnecessary to implement new algorithms or even run the old ones repeatedly; (b) larger circuits are composed of smaller ones, which are often isomorphic up to a permutation/negation of inputs/outputs. Experiments confirm these observations. Moreover, a case-study shows that logic level minimization using lazy man's synthesis improves delay after LUT mapping into 4- and 6-input LUTs, compared to earlier work on high-effort delay optimization."
+    },
+    "7093800": {
+      "title": "Mapping into LUT structures",
+      "abstract": "Mapping into K-input lookup tables (K-LUTs) is an important step in synthesis for Field-Programmable Gate Arrays (FPGAs). The traditional FPGA architecture assumes all interconnects between individual LUTs are \"routable\". This paper proposes a modified FPGA architecture which allows for direct (non-routable) connections between adjacent LUTs. As a result, delay can be reduced but area may increase. This paper investigates two types of LUT structures and the associated tradeoffs. A new mapping algorithm is developed to handle such structures. Experimental results indicate that even when regular LUT structures are used, area and delay can be improved 7.4% and 11.3%, respectively, compared to the high-effort technology mapping with structural choices. When the dedicated architecture is used, the delay can be improved up to 40% at the cost of some area increase."
+    },
+    "2430277": {
+      "title": "Boolean matching for large libraries",
+      "abstract": "Boolean matching tackles the problem whether a subcircuit of a boolean network can be substituted by a cell from a cell library. In previous approaches [7, 10, 8] each pair of a subcircuit and a cell is tested for NPN equivalence. This becomes very expensive if the cell library is large. In our approach the time complexity for matching a subcircuit against a library L is almost independent of the size of L . CPU time also remains small for matching a subcircuit against the huge set of functions obtained by bridging and fixing cell inputs; but the use of these functions in technology mapping is very profitable. Our method is based on a canonical representative for each NPN equivalence class. We show how this representative can be computed efficiently and how it can be used for matching a boolcan function against a set of library functions."
+    },
+    "1087847": {
+      "title": "Symmetry detection and Boolean matching utilizing a signature-based canonical form of Boolean functions",
+      "abstract": "A compact canonical form and a computational procedure for solving the Boolean matching problem under permutation and complementation of variables are presented. The proposed approach, which utilizes generalized signatures and variable symmetries, can handle combinational functions with no limitation on the number of input variables. Experimental results demonstrate the generality and effectiveness of the proposed canonical form and the associated Boolean matching algorithm."
+    },
+    "21944094": {
+      "title": "Boolean function classification via fixed polarity Reed-Muller forms",
+      "abstract": "In this paper, we present a new method to characterize completely specified Boolean functions. The central theme of the classification is the functional equivalence (a.k.a. Boolean matching). Two Boolean functions are equivalent if there exists input permutation, input negation, or output negation that can transform one function to the other. We have derived a method that can efficiently identify equivalence classes of Boolean functions. The well-known canonical Fixed Polarity Reed-Muller (FPRM) forms are used as a powerful analysis tool. The necessary transformations to derive one function from the other are inherent in the FPRM representations. To identify uniquely each equivalence class, a set of well-known characteristics of Boolean functions and their variables (including linearity, symmetry, total symmetry, self-complement, and self-duality) are employed. It is shown that all the equivalence classes of four-variable functions are uniquely identified where majority of the classes have a single FPRM form as their representative. The Boolean matching has applications in technology mapping and in design of standard cell libraries."
+    },
+    "10029375": {
+      "title": "Fast Boolean matching based on NPN classification",
+      "abstract": "This paper proposes a fast algorithm for Boolean matching of completely specified Boolean functions. The algorithm is based on the NPN classification and can be applied on-the-fly to millions of small practical functions appearing in industrial designs, leading to runtime and memory reduction in logic synthesis and technology mapping. The algorithm is conceptually simpler, faster, and more scalable than previous work."
+    },
+    "2605361": {
+      "title": "Fast hierarchical NPN classification",
+      "abstract": "Classifying functions according to some common properties into libraries of functions is an important step in many logic synthesis and technology mapping algorithms used in FPGA design flows. NPN classification is one of the frequently used classifications. Existing algorithms for NPN classification perform a sequence of steps to derive the resulting NPN class, but discard the intermediate results produced at the end of each step. The hierarchical method introduced in this paper uses the same sequence of steps, but it saves the intermediate results at each step and reuses them when classifying other functions. It is, on average, 3.7 times faster compared to a state-of-the-art non-hierarchical method, at the cost of a modest increase in memory needed to save the class hierarchy. The hierarchical approach enables a rapid exact NPN classification for functions up to 10 inputs\u2014it exactly classifies one million 6-input functions in the same time as the heuristic state-of-the-art algorithm."
+    },
+    "36004682": {
+      "title": "Generalized Reed-Muller Forms as a Tool to Detect Symmetries",
+      "abstract": "In this paper, we present a new method for detecting groups of symmetric variables of completely specified Boolean functions. The canonical Generalized Reed-Muller (GRM) forms are used as a powerful analysis tool. To reduce the search space we have developed a set of signatures that allow us to identify quickly sets of potentially symmetric variables. Our approach allows for detecting symmetries of any number of inputs simultaneously. Totally symmetric functions can be detected very quickly. The traditional definitions of symmetry have also been extended to include more types. This extension has the advantage of grouping input variables into more classes. Experiments have been performed on MCNC benchmark cases and the results verify the efficiency of our method."
+    },
+    "8731487": {
+      "title": "An anytime symmetry detection algorithm for ROBDDs",
+      "abstract": "Detecting symmetries is crucial to logic synthesis, technology mapping, detecting function equivalence under unknown input correspondence, and ROBDD minimization. State-of-the-art is represented by Mishchenko's algorithm. In this paper, we present an efficient anytime algorithm for detecting symmetries in Boolean functions represented as ROBDDs, that output pairs of symmetric variables until a prescribed time bound is exceeded. The algorithm is complete in that given sufficient time it is guaranteed to find all symmetric pairs. The complexity of this algorithm is in O(n/sup 4/ + n|G| + |G|/sup 3/ ) where n is the number of variables and |G| the number of nodes in the ROBDD, and it is thus competitive with Mishchenko's O(|G|/sup 3/) algorithm in the worst-case since n /spl Lt/ |G|. However, our algorithm performs significantly better because the anytime approach only requires lightweight data structure support and it offers unique opportunities for optimization."
+    },
+    "15880007": {
+      "title": "Generalized symmetries in Boolean functions",
+      "abstract": "In this paper we take a fresh look at the notion of symmetries in Boolean functions. Our studies are motivated by the fact that the classical characterization of symmetries based on invariance under variable swaps is a special case of a more general invariance based on unrestricted variable permutations. We propose a generalization of classical symmetry that allows for the simultaneous swap of ordered and unordered groups of variables, and show that it captures more of a function's invariant permutations without undue computational requirements. We apply the new symmetry definition to analyze a large set of benchmark circuits and provide extensive data showing the existence of substantial symmetries in those circuits. Specific case studies of several of these benchmarks reveal additional insights about their functional structure and how it might be related to their circuit structure."
+    },
+    "1678207": {
+      "title": "Building a better Boolean matcher and symmetry detector",
+      "abstract": "Boolean matching is a powerful technique that has been used in technology mapping to overcome the limitations of structural pattern matching. The current basis for performing Boolean matching is the computation of a canonical form to represent functions that are equivalent under negation and permutation of inputs and outputs. In this paper, we first present a detailed analysis of previous techniques for Boolean matching. We then describe a novel combination of existing methods and new ideas that results in a matcher which is dramatically faster than previous work. We point out that the presented algorithm is equally relevant for detecting generalized functional symmetries, which has broad applications in logic optimization and verifi cation."
+    },
+    "119440379": {
+      "title": "Generation of permutations by adjacent transposition",
+      "abstract": "1. RICHARD S. VARGA, Matrix Iterative Analysis, Prentice-Hall, Inc., 1962. 2. E. G. D'YAKONOV, \"On a Method of Solving the Poisson Equation,\" Dokl. Akad. Nauk SSSR 143 (1962), 21-24, the same paper appears in English in Soviet Math.-Doklady 3, 1962, p. 320-323. 3. R. B. KELLOGG, \"Another Alternating-Direction-Implicit Method,\" to appear in J. Soc. Ind. Appi. Math. 4. A. M. OsTRowshI \"Iterative Solution of Linear Systems of Functional Equations,\" J. Math. Anal. Apple , 2, 1961, p. 351-369. 5. L. COLLATZ, \"Fehlerabschatzung fur das Iterationsverfahren zur Aufl6sung linearer Gleichungssysteme,\" Z. Angew. Math. Mech., 22, 1942, p. 357-361. 6. DAVID G. FEINGOLD, & R. S. VARGA, \"Block diagonally dominant matrices and generalizations of the Gerschgorin circle theorem,\" to appear in the Pacific J. Math. 7. J. DOUGLAS, JR., and H. H. RACHFORD, JR., \"On the numerical solution of heat conduction problems in two or three space variables,\" Trans. Amer. Math. Soc., 82, 1956, p. 421-439. 8. J. DOUGLAS, JR., \"Alternating direction methods for three space variables,\" Numer. Math., 4, 1962, p. 41-63."
+    }
+  }
+}

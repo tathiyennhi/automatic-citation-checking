@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This delay provides an opportunity to batch multiple small write requests into a single message transfer between the frontend and backend.",
+    "To achieve this, a batch buffer (64 pages per DPU in the current design) accumulates small write-to-rank requests received from the SDK.",
+    "Once the buffer is full or when a non-write-to-rank request is received, all the buffered write requests are flushed collectively to the backend for processing.Although this batching mechanism does not reduce the total data writing time, it minimizes virtualization overhead by merging multiple requests into a single interrupt.",
+    "This reduces the number of frontend-backend interactions, enhancing performance by avoiding frequent VMEXITs.Memory Overhead.",
+    "The overhead of the frontend comparing to the native involves the memory use to serialize the matrix, and the buffers for prefetched data and batched requests."
+  ],
+  "correct_citations": []
+}

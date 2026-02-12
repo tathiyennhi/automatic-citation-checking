@@ -1,0 +1,55 @@
+{
+  "doc_id": "41399",
+  "text": "Aiming at exploration tasks in littoral regions, a smallscale amphibious spherical robot was proposed by our team in 2012. [CITATION_1] Given the characteristics of the robot and the amphibious environments, a camera is important for it in executing observation and investigation tasks autonomously. [CITATION_2] [CITATION_3] Focusing on vision applications of our amphibious spherical robot, a low-power real-time detection and tracking system was designed and implemented in this article. Gaussian background model was adopted to detect moving target entering the field of view. Then, compressive tracking (CT) algorithm was used to track the detected target successively. [CITATION_4] Given the limited load space and potential application functions of the robot, a novel architecture of heterogeneous computing systems combining advanced Reduced Instruction-Set Computer (RISC) machine (ARM) and field programmable gate array (FPGA) was proposed on the basis of Xilinx Zynq-7000 SoC (system on chip) to implement the detection and tracking system. Under the proposed architecture, the main part of vision algorithms was running on the ARM-Linux embedded subsystem as software. And customized image accelerators designed with high-level synthesis (HLS) tools were deployed on the FPGA subsystem to speed up compute-intensive processes of vision algorithms. Moreover, dynamic reconfiguration was used to switch accelerators running on the programmable logic (PL), which reduced consumption of FPGA resources and provided an extendable acceleration mechanism for embedded image processing. Besides, the word length of image accelerators was optimized with simulated annealing algorithm to make a compromise between numerical calculation accuracy and resource consumption of the PL. Various experiments were conducted to verify the validation of the proposed heterogeneous architecture and the practicality of the tracking system. Test results indicated that the system was able to provide a detection rate of up to 88.3 frames per second (fps) and a tracking rate of up to 89.2 fps at the resolution of 320 Â 240, which could meet the application requirements of our robot. Its good real-time performance could also meet future demands of the robot in biological monitoring and multirobot collaboration.",
+  "correct_citation": {
+    "[CITATION_1]": "28249230",
+    "[CITATION_2]": "2676234",
+    "[CITATION_3]": "45657575",
+    "[CITATION_4]": "2539545"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Aiming at exploration tasks in littoral regions, a smallscale amphibious spherical robot was proposed by our team in 2012.  Given the characteristics of the robot and the amphibious environments, a camera is important for it in executing observation and investigation tasks autonomously.",
+      "s_span": 0,
+      "e_span": 299
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Given the characteristics of the robot and the amphibious environments, a camera is important for it in executing observation and investigation tasks autonomously.   Focusing on vision applications of our amphibious spherical robot, a low-power real-time detection and tracking system was designed and implemented in this article.",
+      "s_span": 123,
+      "e_span": 490
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Focusing on vision applications of our amphibious spherical robot, a low-power real-time detection and tracking system was designed and implemented in this article.",
+      "s_span": 300,
+      "e_span": 490
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Then, compressive tracking (CT) algorithm was used to track the detected target successively.  Given the limited load space and potential application functions of the robot, a novel architecture of heterogeneous computing systems combining advanced Reduced Instruction-Set Computer (RISC) machine (ARM) and field programmable gate array (FPGA) was proposed on the basis of Xilinx Zynq-7000 SoC (system on chip) to implement the detection and tracking system.",
+      "s_span": 581,
+      "e_span": 1051
+    }
+  ],
+  "bib_entries": {
+    "2676234": {
+      "title": "A Kinect-based real-time compressive tracking prototype system for amphibious spherical robots",
+      "abstract": "A visual tracking system is essential as a basis for visual servoing, autonomous navigation, path planning, robot-human interaction and other robotic functions. To execute various tasks in diverse and ever-changing environments, a mobile robot requires high levels of robustness, precision, environmental adaptability and real-time performance of the visual tracking system. In keeping with the application characteristics of our amphibious spherical robot, which was proposed for flexible and economical underwater exploration in 2012, an improved RGB-D visual tracking algorithm is proposed and implemented. Given the limited power source and computational capabilities of mobile robots, compressive tracking (CT), which is the effective and efficient algorithm that was proposed in 2012, was selected as the basis of the proposed algorithm to process colour images. A Kalman filter with a second-order motion model was implemented to predict the state of the target and select candidate patches or samples for the CT tracker. In addition, a variance ratio features shift (VR-V) tracker with a Kalman estimation mechanism was used to process depth images. Using a feedback strategy, the depth tracking results were used to assist the CT tracker in updating classifier parameters at an adaptive rate. In this way, most of the deficiencies of CT, including drift and poor robustness to occlusion and high-speed target motion, were partly solved. To evaluate the proposed algorithm, a Microsoft Kinect sensor, which combines colour and infrared depth cameras, was adopted for use in a prototype of the robotic tracking system. The experimental results with various image sequences demonstrated the effectiveness, robustness and real-time performance of the tracking system."
+    },
+    "45657575": {
+      "title": "Development of a biomimetic underwater microrobot for a father-son robot system",
+      "abstract": "Conventional underwater intervention tasks are performed by underwater vehicles equipped with rigid multi-link arms. However, the movements of conventional mechanical arms exert reactive force on the vehicle platform due to their enormous bulk. Additionally, they cannot be used for small object recovery. In this paper, an ionic conducting polymer film (ICPF) actuator-based crayfish-inspired microrobot is designed and developed as a son robot for object recovery, which is connected to the amphibious father robot by copper wires. The crayfish-like son robot is used as the mechanical arm of the father---son robot system, which can grasp the small object especially in restricted spaces. The crayfish-inspired son robot actuated by ten ICPF actuators can realize underwater basic motions. The father robot can emit the son robot for object recovery. A proximity sensor is mounted in front of the microrobot between the two ICPF hands to implement the autonomous grasping motion. And we designed a blue LED-based underwater optical communication system to realize the communication between the father robot and the son robot for microrobot recovery. We carried out the experiments to confirm the basic operations of the microrobot, evaluate the performance of the communication system, and verify the blue LED tracking mechanism for microrobot recovery."
+    },
+    "2539545": {
+      "title": "Real-time compressive tracking",
+      "abstract": "It is a challenging task to develop effective and efficient appearance models for robust object tracking due to factors such as pose variation, illumination change, occlusion, and motion blur. Existing online tracking algorithms often update models with samples from observations in recent frames. While much success has been demonstrated, numerous issues remain to be addressed. First, while these adaptive appearance models are data-dependent, there does not exist sufficient amount of data for online algorithms to learn at the outset. Second, online tracking algorithms often encounter the drift problems. As a result of self-taught learning, these mis-aligned samples are likely to be added and degrade the appearance models. In this paper, we propose a simple yet effective and efficient tracking algorithm with an appearance model based on features extracted from the multi-scale image feature space with data-independent basis. Our appearance model employs non-adaptive random projections that preserve the structure of the image feature space of objects. A very sparse measurement matrix is adopted to efficiently extract the features for the appearance model. We compress samples of foreground targets and the background using the same sparse measurement matrix. The tracking task is formulated as a binary classification via a naive Bayes classifier with online update in the compressed domain. The proposed compressive tracking algorithm runs in real-time and performs favorably against state-of-the-art algorithms on challenging sequences in terms of efficiency, accuracy and robustness."
+    },
+    "28249230": {
+      "title": "Development of an amphibious mother spherical robot used as the carrier for underwater microrobots",
+      "abstract": "Nowadays, smart materials actuated microrobots are widely used when dealing with complicated missions in limited spaces. But problems still exist in this kind of solutions, such as low locomotion speed and short operating time. To solve these problems, we propose a mother-son multi-robots cooperation system, named GSL system, which included several microrobots as son robots, and a novel designed amphibious spherical robot as the mother robot. The mother robot, called GSLMom, was designed to be able to carry microrobots and provide power supply for them. This paper will talk about the structure and mechanism of the GSLMom robot. The GSLMom robot was designed as an amphibious spherical one. The robot was equipped with a 4 unit locomotion system, and each unit consists of a water-jet propeller and two servo motors. Each servo motor could rotate 90° in horizontal and 120° in vertical direction respectively. When moving in water, servo motors controlled the directions of water jet propellers and the 4 propellers work to actuate the robot. In the ground situation, propellers were used as legs, and servo motors actuated these legs to realize walking mechanism. After discussed structures, experiments were conducted to evaluate performance of the actuators."
+    }
+  },
+  "generator": "fallback_v4"
+}

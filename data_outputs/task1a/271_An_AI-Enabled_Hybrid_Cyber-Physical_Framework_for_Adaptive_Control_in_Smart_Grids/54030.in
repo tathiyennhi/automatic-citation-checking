@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Unlike classical policy gradient methods, PPO constrains policy updates using a clipped surrogate objective designed to prevent large detrimental gradient steps.",
+    "The clipped objective for PPO is:L clip (θ) = E t min r t (θ) Ât, clip r t (θ), 1 -ϵ, 1 + ϵ Ât, (26) where r t (θ) = π θ (u t |x t) π θold (u t |x t)is the likelihood ratio and Ât is the advantage estimate computed using generalized advantage estimation (GAE).",
+    "The clipping threshold ϵ limits how far the new policy can deviate from the old one at each update, significantly improving stability under noisy smart-grid measurements.The agent uses a parameterized policy network (actor) to output continuous control actions:u t = π θ (x t),and a value network (critic) to approximate the state-value function:V ψ (x t) ≈ V (x t) = E ∞ k=t γ k-t r(x k, u k).In smart grid applications, the state vector includes bus voltages, angles, renewable power availability, SOC of batteries, EV charging levels, and cyber-layer indicators such as delay and packet loss.",
+    "PPO updates both the actor and critic networks with batched trajectory data from the cyber -physical simulation environment.",
+    "This leads to a robust controller that is able to compensate the renewable intermittency and measure corruption and stabilize system frequency.To specialize PPO to perform grid control, the reward function is defined as follows:r(x k, u k) = -ω 2 k + β v (V k -1) 2 + α∥u k ∥ 2, (27)where ω k is the frequency deviation, V k is the voltage magnitude and α, β v > 0 are the penalties for excessive control effort and voltage deviations."
+  ]
+}

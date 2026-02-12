@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Problem FormulationFor the scope of this paper, we only focus on scenarios considering 3D parallelism combined with stage-1 (optimizer partitioning across data-parallel ranks), which corresponds to a configuration in which DeepSpeed and Megatron were successfully used to train the largest LLM models, such as BLOOM [44] (up to 175 billion parameters).",
+    "Our goal is to design scalable multi-level asynchronous checkpointing solutions that: (1) capture a globally consistent checkpoint of LLMs that includes all shards of all GPUs corresponding to both the model parameters and the optimizer state (which is needed to successfully restart the training); ( 2) maximize the checkpointing throughput in order to reduce the amount of time during which the training is blocked by checkpointing; and (3) minimize the contention for resources and interference between the training and the overlapped background data transfer tasks for reducing the end-to-end training duration.",
+    "RELATED WORK 3.1 Checkpointing in Deep LearningCheckpointing techniques have been extensively explored in the specific context of deep learning for minimizing the I/O overheads on training.",
+    "Systems such as CheckFreq [24] aim at performing fine-grained iteration-level checkpoints and overlap checkpoint flushes with the training phases, but do not support checkpointing in pipeline parallel training setups and are inefficient in utilizing the available network and PCIe interconnect and memory subsystems, showing only up to 40% peak efficient checkpointing throughput across data-parallel replicas.",
+    "Approaches such as DeepFreeze [25], TorchSnapshot [30], and LightCheck [4] attempt to mitigate the checkpointing overheads by both overlapping transfers with training and partitioning checkpoints across data-parallel replicas, but do not support hybrid pipeline, tensor, data-parallel training setups."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Let M be the number of attention layers and h l the number of heads at layer l. For each timestep t, we obtain a single SA/CA pair by averaging the attention maps over all layers and heads:SA t = 1 N l,h SA h l (X t), CA t = 1 N l,h CA h l (X t, T)(1)where N = M l=1 h l. For U-Nets where attention maps vary in spatial resolution, we bilinearly upsample each map to the highest resolution and take the average (See Appendix A).",
+    "Phase 1: Instance FormationWe hypothesize that pixels belonging to the same instance exhibit higher mutual attention, whereas pixels from different instances attend to each other less.",
+    "This suggests that the N most discriminative pixel clusters reveal N disjoint instance layouts.",
+    "We translate this property into a guidance objective by (i) clustering self-attention into N groups and (ii) penalizing overlap between the resulting masks.",
+    "This loss strengthens attention within each instance and suppresses attention outside its boundary.Self-attention to N clusters Self-attention (SA) encodes instance structure, but also assigns non-trivial mass to background regions, so clustering it over the whole image can split or merge instances."
+  ],
+  "correct_citations": []
+}

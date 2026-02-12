@@ -1,0 +1,42 @@
+{
+  "text": "Skeleton-driven Animation: Skeleton-driven animation techniques are frequently used to animate 3D characters. In character rigging skeleton is binded to mesh. When the skeleton is moved the character animated automatically. Llya and Jovan [CITATION_1] proposed an automatic rigging method attach a generic skeleton to 3D characters for animation. They fitted template skeleton to mesh. However, this method depends upon complex mathematics computation while embedding a skeleton for character animation. Similarly, an automatic rigging of multi-component characters based on animated skeleton is proposed by [CITATION_2] . They decomposed character according to motion skeleton. This method taken an input of mesh model and kinematic skeleton with associated motion. Nevertheless, the method assumed a standard format of the skeleton.",
+  "citation_candidates": [
+    "228886",
+    "14890635",
+    "6920955",
+    "31747017",
+    "22079530",
+    "16614593",
+    "1664563"
+  ],
+  "bib_entries": {
+    "31747017": {
+      "title": "Skeleton extraction by mesh contraction",
+      "abstract": "Extraction of curve-skeletons is a fundamental problem with many applications in computer graphics and visualization. In this paper, we present a simple and robust skeleton extraction method based on mesh contraction. The method works directly on the mesh domain, without pre-sampling the mesh model into a volumetric representation. The method first contracts the mesh geometry into zero-volume skeletal shape by applying implicit Laplacian smoothing with global positional constraints. The contraction does not alter the mesh connectivity and retains the key features of the original mesh. The contracted mesh is then converted into a 1D curve-skeleton through a connectivity surgery process to remove all the collapsed faces while preserving the shape of the contracted mesh and the original topology. The centeredness of the skeleton is refined by exploiting the induced skeleton-mesh mapping. In addition to producing a curve skeleton, the method generates other valuable information about the object's geometry, in particular, the skeleton-vertex correspondence and the local thickness, which are useful for various applications. We demonstrate its effectiveness in mesh segmentation and skinning animation."
+    },
+    "16614593": {
+      "title": "Kinematic skeleton extraction from 3D articulated models",
+      "abstract": "We propose a method to extract a kinematic skeleton from an articulated 3D model. Unlike the curve skeleton which concentrates on the abstract structure of given model, we aim to obtain the skeleton with accurate joint positions, which can be directly used for character rigging and animation. Restricting our focus on the articulated body, we construct its skeleton in a bottom-up manner starting from a set of automatically obtained feature points. Our method is a hybrid approach combining the advantages of topology-based and geometry-based methods using the Morse theory and the shape descriptor. It does not require manually-chosen feature points or markers, and is independent of both postures and the number of branches of the given model. Experiments show that our method can efficiently extract kinematic skeletons of various kinds of articulated bodies, and also that the results can be directly applied to the character rigging."
+    },
+    "22079530": {
+      "title": "Automatic rigging and animation of 3D characters",
+      "abstract": "Animating an articulated 3D character currently requires manual rigging to specify its internal skeletal structure and to define how the input motion deforms its surface. We present a method for animating characters automatically. Given a static character mesh and a generic skeleton, our method adapts the skeleton to the character and attaches it to the surface, allowing skeletal motion data to animate the character. Because a single skeleton can be used with a wide range of characters, our method, in conjunction with a library of motions for a few skeletons, enables a user-friendly animation system for novices and children. Our prototype implementation, called Pinocchio, typically takes under a minute to rig a character on a modern midrange PC."
+    },
+    "14890635": {
+      "title": "Automatically rigging multi-component characters",
+      "abstract": "Rigging an arbitrary 3D character by creating an animation skeleton is a time-consuming process even for experienced animators. In this paper, we present an algorithm that automatically creates animation rigs for multi-component 3D models, as they are typically found in online shape databases. Our algorithm takes as input a multi-component model and an input animation skeleton with associated motion data. It then creates a target skeleton for the input model, calculates the rigid skinning weights, and a mapping between the joints of the target skeleton and the input animation skeleton. The automatic approach does not need additional semantic information, such as component labels or user-provided correspondences, and succeeds on a wide range of models where the number of components is significantly different. It implicitly handles large scale and proportional differences between input and target skeletons and can deal with certain morphological differences, e.g., if input and target have different numbers of limbs. The output of our algorithm can be directly used in a retargeting system to create a plausible animated character. \u00a9 2012 Wiley Periodicals, Inc."
+    },
+    "6920955": {
+      "title": "Least-squares meshes",
+      "abstract": "In this paper we introduce least-squares meshes: meshes with a prescribed connectivity that approximate a set of control points in a least-squares sense. The given mesh consists of a planar graph with arbitrary connectivity and a sparse set of control points with geometry. The geometry of the mesh is reconstructed by solving a sparse linear system. The linear system not only defines a surface that approximates the given control points, but it also distributes the vertices over the surface in a fair way. That is, each vertex lies as close as possible to the center of gravity of its immediate neighbors. The least-squares meshes (LS-meshes) are a visually smooth and fair approximation of the given control points. We show that the connectivity of the mesh contains geometric information that affects the shape of the reconstructed surface. Finally, we discuss the applicability of LS-meshes to approximation of given surfaces, smooth completion and mesh editing."
+    },
+    "1664563": {
+      "title": "Curve skeleton extraction from incomplete point cloud",
+      "abstract": "We present an algorithm for curve skeleton extraction from imperfect point clouds where large portions of the data may be missing. Our construction is primarily based on a novel notion of generalized rotational symmetry axis (ROSA) of an oriented point set. Specifically, given a subset S of oriented points, we introduce a variational definition for an oriented point that is most rotationally symmetric with respect to S. Our formulation effectively utilizes normal information to compensate for the missing data and leads to robust curve skeleton computation over regions of a shape that are generally cylindrical. We present an iterative algorithm via planar cuts to compute the ROSA of a point cloud. This is complemented by special handling of non-cylindrical joint regions to obtain a centered, topologically clean, and complete 1D skeleton. We demonstrate that quality curve skeletons can be extracted from a variety of shapes captured by incomplete point clouds. Finally, we show how our algorithm assists in shape completion under these challenges by developing a skeleton-driven point cloud completion scheme."
+    },
+    "228886": {
+      "title": "Using an intermediate skeleton and inverse kinematics for motion retargeting",
+      "abstract": "In this paper, we present a new method for solving the Motion Retargeting Problem, by using an intermediate skeleton. This allows us to convert movements between hierarchically and geometrically different characters. An Inverse Kinematics engine is then used to enforce Cartesian constraints while staying as close as possible to the captured motion."
+    }
+  }
+}

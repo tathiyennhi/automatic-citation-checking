@@ -1,0 +1,29 @@
+{
+  "doc_id": "25474",
+  "text": "The numerator in the above expression is the available capacity of the bottleneck link in a given path π z . Therefore, the WBLU strategy routes bursts along the path with the highest ratio of available bottleneck link capacity to path length. By taking the number of hops into account as in (2), we ensure that if the bottleneck link utilization is similar for two paths, then the shortest path is selected for routing; the longer path is preferred only if the utilization of its bottleneck link is significantly lower than that of the shorter one. We note that a similar metric for ranking paths was used in [CITATION_1] as part of a routing and wavelength assignment algorithm for wavelength-routed networks. We note that it is possible to either reset the utilization values periodically or not. The latter approach is easier to implement, but it is not adaptive to load fluctuation. Resetting the values periodically provides better performance under dynamically changing traffic since they more accurately reflect the recent state of the network. In this case, the length τ of the update period is an important parameter that must be carefully selected to balance a set of conflicting requirements. A small update interval period may cause path oscillations and lead to unstable network behavior, whereas with a very long interval, this strategy may fail to react to changing demands in a timely manner. In general, the length of the update interval will be a function of the diameter of the network and the specific algorithm used to disseminate the link congestion information. For a discussion of the factors that need to be considered in selecting the update interval, the reader is referred to [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "2308045",
+    "[CITATION_2]": "2412111"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We note that a similar metric for ranking paths was used in as part of a routing and wavelength assignment algorithm for wavelength-routed networks."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For a discussion of the factors that need to be considered in selecting the update interval, the reader is referred to"
+    }
+  ],
+  "bib_entries": {
+    "2412111": {
+      "title": "Dynamic congestionbased load balanced routing in optical burst-switched networks",
+      "abstract": "In optical burst-switched networks, data loss may occur when bursts contend for network resources. There have been several proposed solutions to resolve contentions in order to minimize loss. These localized contention resolution techniques react to contention, but do not address the more fundamental problem of congestion. Hence, there is a need for network level contention avoidance using load balanced routing techniques in order to minimize the loss. In this paper, we propose two dynamic congestion-based load balanced routing techniques to avoid congestion. Our simulation results show that the proposed contention avoidance techniques improve the network utilization and reduce the packet loss probability."
+    },
+    "2308045": {
+      "title": "A dynamic RWA algorithm in a wavelength-routed all-optical network with wavelength converters",
+      "abstract": "Existing research demonstrated that an effective routing and wavelength assignment (RWA) scheme and a wavelength converter placement algorithm are the two primary vehicles for improving the blocking performance in a wavelength-routed all-optical network. However, these issues have largely been investigated separately, in particular, the RWA has seldom considered the existence of wavelength converters. In this paper, we argue perhaps for the first time, that an effective RWA algorithm needs to take into account the presence of wavelength conversion as the latter is usually done at much earlier stage during the capacity planning. We proceed to show that existing dynamic RWA algorithms largely fail in the presence of wavelength conversion. We then propose a weighted least-congestion routing and first-fit wavelength assignment (WLCR-FF) RWA algorithm in conjunction with a simple heuristic wavelength converter placement algorithm called minimum blocking probability first (MBPF) that considers both the distribution of free wavelengths and the lengths of each route jointly. We further introduce an analytical model that can obtain the blocking performance of the proposed WLCR routing algorithm. Using both analysis and simulation, we carry out extensive numerical studies over the typical topologies including the ring, mesh-torus, and two mesh topologies, the 14-node NSFNET and the 19-node European Optical Network (EON); we compare the performance of proposed algorithm with a wide variety of existing routing algorithms including static routing, fixed-alternate routing and least-loaded routing algorithms. The results conclusively demonstrate that the proposed WLCR-FF algorithm can achieve much better blocking performance in the environment of sparse or/and full wavelength conversion."
+    }
+  },
+  "generator": "fallback"
+}

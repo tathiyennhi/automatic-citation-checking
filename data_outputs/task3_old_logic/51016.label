@@ -1,0 +1,47 @@
+{
+  "doc_id": "51016",
+  "text": "Attacker Strategy. The goal of the attacker within the privacy setting, is to use inference attacks to leak training data details resulting in privacy violation where the training data is sensitive. Membership inference attacks are used to infer whether a given data point was used in the training data or not based on the difference in model predictions on training data and testing data [CITATION_1] ). On the other hand, attribute inference attacks aim to extract particular features of the training data [CITATION_2] or the reconstruct the entire training data [CITATION_3] . Another class of attacks, exploits the memorisation capacity of the model to extract the sensitive attributes in the data by querying the model [CITATION_4] .",
+  "correct_citation": {
+    "[CITATION_1]": "91184074",
+    "[CITATION_2]": "207229839",
+    "[CITATION_3]": "3488815",
+    "[CITATION_4]": "170076423"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Membership inference attacks are used to infer whether a given data point was used in the training data or not based on the difference in model predictions on training data and testing data"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "On the other hand, attribute inference attacks aim to extract particular features of the training data"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "On the other hand, attribute inference attacks aim to extract particular features of the training data or the reconstruct the entire training data"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Another class of attacks, exploits the memorisation capacity of the model to extract the sensitive attributes in the data by querying the model"
+    }
+  ],
+  "bib_entries": {
+    "3488815": {
+      "title": "Towards deep learning models resistant to adversarial attacks",
+      "abstract": "Recent work has demonstrated that neural networks are vulnerable to adversarial examples, i.e., inputs that are almost indistinguishable from natural data and yet classified incorrectly by the network. In fact, some of the latest findings suggest that the existence of adversarial attacks may be an inherent weakness of deep learning models. To address this problem, we study the adversarial robustness of neural networks through the lens of robust optimization. This approach provides us with a broad and unifying view on much of the prior work on this topic. Its principled nature also enables us to identify methods for both training and attacking neural networks that are reliable and, in a certain sense, universal. In particular, they specify a concrete security guarantee that would protect against any adversary. These methods let us train networks with significantly improved resistance to a wide range of adversarial attacks. They also suggest the notion of security against a first-order adversary as a natural and broad security guarantee. We believe that robustness against such well-defined classes of adversaries is an important stepping stone towards fully resistant deep learning models."
+    },
+    "207229839": {
+      "title": "Model inversion attacks that exploit confidence information and basic countermeasures",
+      "abstract": "Machine-learning (ML) algorithms are increasingly utilized in privacy-sensitive applications such as predicting lifestyle choices, making medical diagnoses, and facial recognition. In a model inversion attack, recently introduced in a case study of linear classifiers in personalized medicine by Fredrikson et al., adversarial access to an ML model is abused to learn sensitive genomic information about individuals. Whether model inversion attacks apply to settings outside theirs, however, is unknown. We develop a new class of model inversion attack that exploits confidence values revealed along with predictions. Our new attacks are applicable in a variety of settings, and we explore two in depth: decision trees for lifestyle surveys as used on machine-learning-as-a-service systems and neural networks for facial recognition. In both cases confidence values are revealed to those with the ability to make prediction queries to models. We experimentally show attacks that are able to estimate whether a respondent in a lifestyle survey admitted to cheating on their significant other and, in the other context, show how to recover recognizable images of people's faces given only their name and access to the ML model. We also initiate experimental exploration of natural countermeasures, investigating a privacy-aware decision tree training algorithm that is a simple variant of CART learning, as well as revealing only rounded confidence values. The lesson that emerges is that one can avoid these kinds of MI attacks with negligible degradation to utility."
+    },
+    "91184074": {
+      "title": "Updates-leak: Data set inference and reconstruction attacks in online learning",
+      "abstract": "Machine learning (ML) has progressed rapidly during the past decade and the major factor that drives such development is the unprecedented large-scale data. As data generation is a continuous process, this leads to ML model owners updating their models frequently with newly-collected data in an online learning scenario. In consequence, if an ML model is queried with the same set of data samples at two different points in time, it will provide different results. ::: ::: In this paper, we investigate whether the change in the output of a black-box ML model before and after being updated can leak information of the dataset used to perform the update, namely the updating set. This constitutes a new attack surface against black-box ML models and such information leakage may compromise the intellectual property and data privacy of the ML model owner. We propose four attacks following an encoder-decoder formulation, which allows inferring diverse information of the updating set. Our new attacks are facilitated by state-of-the-art deep learning techniques. In particular, we propose a hybrid generative model ({\\UGAN}) that is based on generative adversarial networks (GANs) but includes a reconstructive loss that allows reconstructing accurate samples. Our experiments show that the proposed attacks achieve strong performance."
+    },
+    "170076423": {
+      "title": "The secret sharer: Evaluating and testing unintended memorization in neural networks",
+      "abstract": "This paper describes a testing methodology for quantitatively assessing the risk that rare or unique training-data sequences are unintentionally memorized by generative sequence models---a common type of machine-learning model. Because such models are sometimes trained on sensitive data (e.g., the text of users' private messages), this methodology can benefit privacy by allowing deep-learning practitioners to select means of training that minimize such memorization. In experiments, we show that unintended memorization is a persistent, hard-to-avoid issue that can have serious consequences. Specifically, for models trained without consideration of memorization, we describe new, efficient procedures that can extract unique, secret sequences, such as credit card numbers. We show that our testing strategy is a practical and easy-to-use first line of defense, e.g., by describing its application to quantitatively limit data exposure in Google's Smart Compose, a commercial text-completion neural network trained on millions of users' email messages."
+    }
+  },
+  "generator": "fallback"
+}

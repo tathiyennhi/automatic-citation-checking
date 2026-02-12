@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Prediction Generation:To predict an outcome for new data, the algorithm journeys from the root to a leaf node, adhering to decisions enacted at each split.",
+    "The foreseen result materializes as either the dominant class (for classification) or the mean value (for regression) of samples in that leaf node.Mathematical Equation (Classification via Gini Impurity): Let's consider a binary classification problem with two classes: 0 and 1.Gini Impurity for node N: Gini(N) = 1 -(p_0^2 + p_1^2)where:• p_0 signifies the proportion of class 0 samples within node N.• p_1 signifies the proportion of class 1 samples within node N.Gini Impurity for a Split: Gini_split = (n_left /n_total) * Gini(left) + (n_right / n_total) * Gini(right)where:• n_left denotes the count of samples in the left child node.• n_right denotes the count of samples in the right child node.• n_total indicates the total sample count in the parent node.Information Gain: Information Gain = Gini(parent) -Gini_splitThe algorithm chooses the feature and split that maximize information gain, ultimately leading to lower Gini impurity and improved class separation.",
+    "Remember that DT can grapple with overfitting unless controlled suitably [108].",
+    "Techniques like Random Forests and Gradient Boosting (GB), working as ensembles, are often employed to address this concern.",
+    "Furthermore, variations of decision trees exist, utilizing diverse split criteria such as entropy for information gain, along with distinct strategies for handling continuous and categorical features."
+  ],
+  "correct_citations": [
+    "Remember that DT can grapple with overfitting unless controlled suitably [108]."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "27842",
+  "text": "The simple manner in which we can adapt the memory model for RSP illustrates the elegance of an axiomatic memory model. Our extension is conservative in the sense that it does not affect the semantics of OpenCL programs that do not exploit RSP. It is significantly simpler than a previous outline formalisation [CITATION_1] , and is further distinguished by being founded on an existing, comprehensive formalisation of OpenCL [CITATION_2] . Although the details of implementing RSP are rather involved (as we discuss in detail in §5), the [CITATION_3] We initially sought to encode RSP by instead adding an extra disjunct to the",
+  "correct_citation": {
+    "[CITATION_1]": "2724982",
+    "[CITATION_2]": "1342216",
+    "[CITATION_3]": "208003238"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our extension is conservative in the sense that it does not affect the semantics of OpenCL programs that do not exploit RSP. It is significantly simpler than a previous outline formalisation [CITATION_1] , and is further distinguished by being founded on an existing, comprehensive formalisation of OpenCL [CITATION_2] .",
+      "s_span": 120,
+      "e_span": 440
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our extension is conservative in the sense that it does not affect the semantics of OpenCL programs that do not exploit RSP. It is significantly simpler than a previous outline formalisation [CITATION_1] , and is further distinguished by being founded on an existing, comprehensive formalisation of OpenCL [CITATION_2] .",
+      "s_span": 120,
+      "e_span": 440
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Although the details of implementing RSP are rather involved (as we discuss in detail in §5), the [CITATION_3] We initially sought to encode RSP by instead adding an extra disjunct to the",
+      "s_span": 441,
+      "e_span": 628
+    }
+  ],
+  "bib_entries": {
+    "208003238": {
+      "title": "Herding cats: Modelling, simulation, testing, and data-mining for weak memory",
+      "abstract": "There is a joke where a physicist and a mathematician are asked to herd cats. The physicist starts with an infinitely large pen which he reduces until it is of reasonable diameter yet contains all the cats. The mathematician builds a fence around himself and declares the outside to be the inside. Defining memory models is akin to herding cats: both the physicist's or mathematician's attitudes are tempting, but neither can go without the other."
+    },
+    "2724982": {
+      "title": "Synchronization using remote-scope promotion",
+      "abstract": "Heterogeneous system architecture (HSA) and OpenCL define scoped synchronization to facilitate low overhead communication across a subset of threads. Scoped synchronization works well for static sharing patterns, where consumer threads are known a priori. It works poorly for dynamic sharing patterns (e.g., work stealing) where programmers cannot use a faster small scope due to the rare possibility that the work is stolen by a thread in a distant slower scope. This puts programmers in a conundrum: optimize the common case by synchronizing at a faster small scope or use work stealing at a slower large scope. In this paper, we propose to extend scoped synchronization with remote-scope promotion. This allows the most frequent sharers to synchronize through a small scope. Infrequent sharers synchronize by promoting that remote small scope to a larger shared scope. Synchronization using remote-scope promotion provides performance robustness for dynamic workloads, where the benefits provided by scoped synchronization and work stealing are hard to anticipate. Compared to a naive baseline, static scoped synchronization alone achieves a 1.07x speedup on average and dynamic work stealing alone achieves a 1.18x speedup on average. In contrast, synchronization using remote-scope promotion achieves a robust 1.25x speedup on average, across a diverse set of graph benchmarks and inputs."
+    },
+    "1342216": {
+      "title": "Overhauling SC atomics in C11 and OpenCL",
+      "abstract": "Despite the conceptual simplicity of sequential consistency (SC), the semantics of SC atomic operations and fences in the C11 and OpenCL memory models is subtle, leading to convoluted prose descriptions that translate to complex axiomatic formalisations. We conduct an overhaul of SC atomics in C11, reducing the associated axioms in both number and complexity. A consequence of our simplification is that the SC operations in an execution no longer need to be totally ordered. This relaxation enables, for the first time, efficient and exhaustive simulation of litmus tests that use SC atomics. We extend our improved C11 model to obtain the first rigorous memory model formalisation for OpenCL (which extends C11 with support for heterogeneous many-core programming). In the OpenCL setting, we refine the SC axioms still further to give a sensible semantics to SC operations that employ a ‘memory scope’ to restrict their visibility to specific threads. Our overhaul requires slight strengthenings of both the C11 and the OpenCL memory models, causing some behaviours to become disallowed. We argue that these strengthenings are natural, and that all of the formalised C11 and OpenCL compilation schemes of which we are aware (Power and x86 CPUs for C11, AMD GPUs for OpenCL) remain valid in our revised models. Using the HERD memory model simulator, we show that our overhaul leads to an exponential improvement in simulation time for C11 litmus tests compared with the original model, making *exhaustive* simulation competitive, time-wise, with the *non-exhaustive* CDSChecker tool."
+    }
+  },
+  "generator": "fallback_v4"
+}

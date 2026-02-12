@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "These Python thread-based implementations are prone to inefficiencies arising from Python Global Interpreter Lock (GIL), lack of stream-based copies through GPU-copy engines supporting DMA, and host buffer re-allocation overheads.Given a Python object (composed of tensors on both GPU and host memory, arrays, objects, and other data structures) that needs to be checkpointed, our checkpointing engine decomposes this operation into three phases as follows: (1) recursively parse the Python object, and create a list of large arrays and tensors (across both GPU and host memory) by storing their memory pointers and sizes; (2) create a header by computing the file offsets for each tensor/object marked for asynchronous transfer in step (1); and (3) enqueue asynchronous device-to-host transfer (if required) and host-to-disk writes of headers, tensors and large objects (obtained in step-1).",
+    "PERFORMANCE EVALUATION 6.1 Experimental SetupPlatform: We conduct our experiments on ALCF's Polarisfoot_1 HPC testbed.",
+    "It consists of 560 nodes, each equipped with 512 GB of DDR4 memory (aggregated from four NUMA domains), a 32-core AMD Zen 3 (Milan) (64 threads), two 1.6 TB SSDs (2 GB/s) and four Nvidia A100 GPUs aggregating to a total of 160 GB HBM memory.",
+    "On each node, the four A100 GPUs are connected with each other using four NVLinks and with the host memory through a PCIe Gen 4 interface.",
+    "The peak unidirectional Device-to-Device (D2D), and pinned Device-to-Host (D2H) (and vice versa) bandwidths on each GPU are 85 GB/s and 25 GB/s, respectively."
+  ],
+  "correct_citations": []
+}

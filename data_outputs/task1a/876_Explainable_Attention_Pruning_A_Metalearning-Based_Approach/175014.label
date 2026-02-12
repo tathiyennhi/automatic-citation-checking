@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This metric gives the dimension of the attention weight vector which is used to calculate the attention score, and this attention score is used to determine the importance of different parts of the input sequence in generating the output.",
+    "The attention head size is the dimension of the attention weight vector that is used to calculate the attention score and the attention score is used to determine the importance of different parts of the input sequence in generating the output.Given a sequence of n tokens, X ∈ R n * d with each token represented by a d-dimensional feature vector, self-attention aims to discover the correlations of all token pairs, where X is first linearly projected into three d e dimensional spaces and generate Q, K and V as represented in Equation 3. where W q, W k and W v ∈ R n×de are learnable weight matrices, and Q, K and V matrices are of size (batch size, sequence length, d e).Q = XW q ∈ R n×de K = XW k ∈ R n×de V = XW v ∈ R n×de (3)Self-attention can be expressed in a generic equation as in Equation 4, where i, j ∈ 1,.., n index the tokens.",
+    "The selfattention function α: R de × R de → R is composed of a nonlinear function β: R → R and a relation function γ: R de × R de → R as in Equation 5.y i,: = n j=1 α(Q i,:, K j,:) • V j,:(4)β(•) = sof tmax(•) γ(Q i,:, K j,:) = 1 (d e) • Q T i,: K j,: •(5)Therefore, as indicated in Equation 4, the attention weights generated from α(Q • W) are then used to weigh V in the self-attention layer.",
+    "Hence, the final output of the attention head is a representation of the input sequence that has been weighted by the attention scores.",
+    "This representation captures the most important relationships between the tokens in the input sequence and thus, it helps the model to attend to different aspects of input for different tasks."
+  ],
+  "correct_citations": []
+}

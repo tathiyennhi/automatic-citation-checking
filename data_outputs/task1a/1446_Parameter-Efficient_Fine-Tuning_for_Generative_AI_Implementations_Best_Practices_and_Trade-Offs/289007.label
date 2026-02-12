@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "During training, only these prompt embeddings are adjusted, while the original model weights remain frozen.",
+    "This approach can be particularly useful when you want to reduce compute, avoid overfitting on small datasets, or quickly adapt a large model to a new task.Architecture: With Model Tuning, each new task duplicates the large pretrained model's parameters, leading to huge storage and memory demands.",
+    "By contrast, Prompt Tuning retains a single frozen backbone and learns only a small prompt embedding (20K parameters), reducing the trainable parameter count by several orders of magnitude.",
+    "This also supports mixed-task inference, where multiple prompts can be batched together on a single forward pass.Key Insights from Lester et al. [5]:• Scalability: As model size increases (e. g., T5-XXL), Prompt Tuning's performance can approach full finetuning.",
+    "• Minimal Memory Footprint: Only a small prompt embedding is updated, lowering compute/storage costs for each downstream task.• Domain Transfer & Robustness: Freezing the main model can reduce overfitting, improving zero-shot transfer to out-of-domain data."
+  ],
+  "correct_citations": [
+    "This also supports mixed-task inference, where multiple prompts can be batched together on a single forward pass.Key Insights from Lester et al. [5]:• Scalability: As model size increases (e. g., T5-XXL), Prompt Tuning's performance can approach full finetuning."
+  ]
+}

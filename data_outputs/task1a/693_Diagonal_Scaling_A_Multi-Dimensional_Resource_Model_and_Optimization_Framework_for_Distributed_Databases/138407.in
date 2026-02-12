@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "While real systems contain many second-order effects, the Scaling Plane provides a sufficiently accurate baseline for optimization and autoscaling.",
+    "Resource Space DefinitionA distributed database configuration is represented as a point (H, V), where:• H ∈ N is the number of nodes.• V = (c, r, b, s) is the vector of per-node CPU, RAM, network bandwidth, and storage IOPS.We define the resource space:S = { (H, V): H ≥ 1, c, r, b, s > 0 }.This models the elasticity region exposed by cloud providers: H is discrete (integer node counts), while V is chosen from a small finite set of instance types.",
+    "B. Node-Intrinsic LatencyNode latency arises from processing requests using CPU, memory, network stack, and storage engine.",
+    "We approximate it with a weighted harmonic form:L node (V) = α c + β r + γ b + δ s,where α, β, γ, δ are sensitivity constants.",
+    "This form captures:• the strong impact of CPU on compute-bound operations,• the influence of RAM on working-set and caching behavior, • the role of network bandwidth in replication and RPC,• the effect of storage IOPS on LSM-tree compaction and log flushes."
+  ]
+}

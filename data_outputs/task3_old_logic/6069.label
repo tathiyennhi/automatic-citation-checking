@@ -1,0 +1,20 @@
+{
+  "doc_id": "6069",
+  "text": "Generally, particle methods require less memory than grid based methods, when the dimensions of the velocity space is d > 2. However, it is possible to improve the efficiency of grid based methods. In particular, the memory demand of our hybrid algorithm, and other direct methods, can be reduced by storing the density distribution f in a sparse array; that is, a tolerance is set as input and all values of the density distribution below the prescribed tolerance at the initial time are treated as zero entries. For instance, the tolerance can be set to machine precision. During the transport step, however, the array storing the density distribution fills in, so after a certain number of time steps a new check should be performed automatically by the algorithm to clean the array from all the elements below the memorization tolerance. We plan to explore this strategy in future work. We think that this technique would provide a sharp improvement in the amount of memory required and in computational time. For other techniques to improve the efficiency of grid based methods, see [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "3002718"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For other techniques to improve the efficiency of grid based methods, see"
+    }
+  ],
+  "bib_entries": {
+    "3002718": {
+      "title": "Unified solver for rarefied and continuum flows with adaptive mesh and algorithm refinement",
+      "abstract": "This paper describes a Unified Flow Solver (UFS) for rarefied and continuum gas flows. The UFS separates the rarefied and continuum flow domains and selects appropriate solvers to combine the efficiency of continuum models with the accuracy of kinetic models. The direct numerical solution of the Boltzmann transport equation is used in rarefied regions, while kinetic schemes of continuum fluid dynamics are used elsewhere. Using similar computational techniques for the kinetic and continuum solvers, and employing intelligent domain decomposition algorithms attain the efficiency and numerical stability of the UFS. Solutions of test problems are presented to illustrate the capabilities of the UFS for high and low speed flows. It is shown that the UFS can dynamically adapt the computational mesh and automatically introduce and remove kinetic patches to provide significant savings by limiting molecular scale solutions only to the regions where they are needed."
+    }
+  },
+  "generator": "fallback"
+}

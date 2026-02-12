@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Let the ground-truth reward function satisfy: r \" r ‹ pa 1 q \" r ‹ pa 2 q ě r ‹ pa 3 q \" 0.Assume the linear feature mapping ψ: Y Ñ R d satisfies: ψpa 1 q ‰ ψpa 2 q, ψpa 3 q \" 1 2 ψpa 1 q `1 2 ψpa 2 q.The key difference from the earlier construction lies in the choice of model classes.",
+    "We define: the linear reward class F \" tr ϕ: ϕ P R d u by r ϕ paq:\" ϕ J ψpaq, and the policy class Π \" ∆pYq with reference policy π ref \" UnifpYq.",
+    "This setup satisfies Condition 3 because r ‹ R F: for any ϕ, the constraint on ψ implies r ϕ pa 3 q \" 1 2 pr ϕ pa 1 q `rϕ pa 2 qq so r ϕ pa 3 q \" r whenever r ϕ pa 1 q \" r ϕ pa 2 q \" r, contradicting the ground-truth reward r ‹ 3 q \" 0.In RLHF, the reward model is learned by solving the population MLE objective:r RLHF \" argmax r ϕ PF ÿ a‰a 1 \" σpr ‹ paq ´r‹ pa 1 qq log σpβϕ J pψpaq ´ψpa 1 qqq ‰ \" argmax r ϕ PF´1 2 log σpβ∆ J ϕq ´1 2 log σp´β∆ J ϕq ´log σp 1 2 β∆ J ϕq ´log σp´1 2 β∆ J ϕq, where ∆:\" ψpa 1 q ´ψpa 2 q.",
+    "This expression is minimized maximized at ∆ J ϕ \" 0, which implies r ϕ pa 1 q \" r ϕ pa 2 q and r ϕ pa 3 q \" r ϕ pa 1 q, i.e., the learned reward is constant: r RLHF paq \" C for all a P Y.The policy learning stage then solves:π RLHF \" argmax πP∆pYq E a\"π rCs ´β KL pπ}π ref qq,whose solution is simply π RLHF \" π ref, independent of r and β.In contrast, DPO directly optimizes the policy using preference comparisons.",
+    "Since Π \" ∆pYq and the preferences are consistent with the ground-truth reward r ‹, DPO can recover the optimal policy π ‹ 9 exppr ‹ {βq, which is not uniform."
+  ],
+  "correct_citations": []
+}

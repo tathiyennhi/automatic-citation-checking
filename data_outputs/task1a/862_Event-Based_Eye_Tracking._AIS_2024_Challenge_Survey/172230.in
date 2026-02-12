@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "By adding this regularization loss with a weighing factor of 0.1 to the total loss function, the network can achieve a sparsity of 90% while suffering little performance drop.The final output feature of the network is a 3 × 4 grid overlaid on top of the event frames, each grid-cell in each frame containing a prediction of: 1) the probability of a pupil being inside the cell, and 2) the relative x and 3) y offset of the pupil in the cell.",
+    "We apply the following loss function to each grid-cellloss = -(1 -p) γ log(p) + regression loss if p = 1 pγ log(1 -p) if p = 0,where the focal loss parameter γ = 2 and p is the predicted probability of pupil presence and p is the ground truth presence.",
+    "The regression loss is the summed SmoothL1Loss for the x and ŷ offset predictions of the network in each grid cell.",
+    "For example, the SmoothL1Loss between the x prediction and the x ground truth is,SmoothL1Loss = 0.5 × (x-x) 2 β if |x -x| < β |x -x| -0.5 × β otherwise,where β = 0.11.",
+    "The total loss is computed by averaging over all grid-cells and valid frames (where the eye is open and within bounds)."
+  ]
+}

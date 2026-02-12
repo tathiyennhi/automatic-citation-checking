@@ -1,0 +1,20 @@
+{
+  "doc_id": "31309",
+  "text": "The input x, correctly classified by the classifier f , is perturbed with r such that the resulting adversarial example x+r remains in the input domain D, but is assigned a different label than x. To solve Equation 5, we need to transform the constraint f (x+r) = f (x) to into an optimizable formulation. Then we can easily use the Lagrange multiplier to solve it. To do this, we define a loss function Loss(), to quantify this constraint. This loss function can be the same as the training loss, or it can be chosen differently, e.g. hinge loss or cross entropy loss. When dealing with malware classification tasks, differentiating between malicious (f (x) = 1) and benign (f (x) = −1), e.g. SVM, [CITATION_1] suggested solving Equation 5 through gradient ascent. To minimize the size of the perturbation and maximize the adversarial effect, the white-box perturbation should follow the gradient direction (i.e., the direction providing the largest increase of model value, from one label to another). Therefore, the perturbation r in each iteration is calculated as:",
+  "correct_citation": {
+    "[CITATION_1]": "18716873"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "SVM, suggested solving Equation 5 through gradient ascent."
+    }
+  ],
+  "bib_entries": {
+    "18716873": {
+      "title": "Evasion attacks against machine learning at test time",
+      "abstract": "In security-sensitive applications, the success of machine learning depends on a thorough vetting of their resistance to adversarial data. In one pertinent, well-motivated attack scenario, an adversary may attempt to evade a deployed system at test time by carefully manipulating attack samples. In this work, we present a simple but effective gradient-based approach that can be exploited to systematically assess the security of several, widely-used classification algorithms against evasion attacks. Following a recently proposed framework for security evaluation, we simulate attack scenarios that exhibit different risk levels for the classifier by increasing the attacker's knowledge of the system and her ability to manipulate attack samples. This gives the classifier designer a better picture of the classifier performance under evasion attacks, and allows him to perform a more informed model selection (or parameter setting). We evaluate our approach on the relevant security task of malware detection in PDF files, and show that such systems can be easily evaded. We also sketch some countermeasures suggested by our analysis."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For instance, a question asking for singers born in 1948 or 1949 might fetch a training question about an artist who sang the most songs, due to shared references to \"singers and songs\".To avoid overemphasizing entities, we focus on the question's core structure by stripping its entities.",
+    "For example, we aim to enable the most suitable demonstration question for the question about singers born in 1948 or 1949 as \"Show the names of members from either 'United States' or 'Canada'\" without being limited to \"singers and songs\".Formally, we define the similarity score between the test question 𝑡 𝑞 and the training question 𝑑 𝑞 𝑖 as:𝑚𝑎𝑥 (𝑠𝑒𝑛𝑡𝑠𝑖𝑚(𝑡 𝑞, 𝑑 𝑞 𝑖), 𝑠𝑒𝑛𝑡𝑠𝑖𝑚(𝑡 𝑞𝑠, 𝑑 𝑞𝑠 𝑖)),(4)where 𝑡 𝑞𝑠 and 𝑑 𝑞𝑠 𝑖 represent the extracted question patterns from 𝑡 𝑞 and 𝑑 𝑞 𝑖, respectively.",
+    "Using nltk's tool, we identify and remove entities from questions to get their patterns.",
+    "We then use SimCSE [23], a sentence similarity model, to compute sequence similarities.",
+    "We term this enhanced retrieval approach the \"question-pattern-aware demonstration retriever\".Finally, after selecting the 𝐾 most relevant examples, we merge them with the test sample, creating a unified input sequence, which is then fed into the pre-trained model to derive the SQL query."
+  ]
+}

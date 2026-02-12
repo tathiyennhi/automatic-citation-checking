@@ -1,0 +1,22 @@
+{
+  "doc_id": "33786",
+  "text": "In this experiment, we also evaluate the robustness of the controller to changes in the system dynamics. To this end, we generated demonstrations on a linear double-link system, i.e. without gravity, centripetal, and Coriolis forces taken into account, using the optimal controller. Subsequently, we executed the learned trajectory distribution on the non-linear dynamical system using the ProMP controller that uses the linearization of the real dynamics. The linearization is performed in an online manner at the current state of the system for each of the reproductions, resulting in statedependent gains and a non-linear control architecture. Our results are presented in Fig. 11 . The reproduced trajectory distribution matches the demonstrations, despite the drastic change in the dynamics of the system. Additionally, we compare to the ProMP controller if we use a pre-linearization of the system dynamics along the mean trajectory, which is given in Fig. 11 (second row). Linearizing at the mean trajectory results in a linear feedback controller with state-independent gains and, hence, the resulting controller can not reproduce the demonstrated trajectory distribution. Moreover, we evaluated the reproduction a learned linear Gaussian controller per time-step which is learned from data obtained from the ProMP controller. We used the ProMP reproductions as our classical optimal control method [CITATION_1] failed to find a solution that was minimizing the given cost function. This approach is a linearized version of the non-linear ProMP controller. Our results in Fig. 11 show that the tracking performance reduces significantly, which proofs that the non-linearities of the ProMP controller are essential for accurate distribution tracking in non-linear systems.",
+  "correct_citation": {
+    "[CITATION_1]": "838406"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We used the ProMP reproductions as our classical optimal control method [CITATION_1] failed to find a solution that was minimizing the given cost function.",
+      "s_span": 1335,
+      "e_span": 1490
+    }
+  ],
+  "bib_entries": {
+    "838406": {
+      "title": "Robot Trajectory Optimization using Approximate Inference",
+      "abstract": "The general stochastic optimal control (SOC) problem in robotics scenarios is often too complex to be solved exactly and in near real time. A classical approximate solution is to first compute an optimal (deterministic) trajectory and then solve a local linear-quadratic-gaussian (LQG) perturbation model to handle the system stochasticity. We present a new algorithm for this approach which improves upon previous algorithms like iLQG. We consider a probabilistic model for which the maximum likelihood (ML) trajectory coincides with the optimal trajectory and which, in the LQG case, reproduces the classical SOC solution. The algorithm then utilizes approximate inference methods (similar to expectation propagation) that efficiently generalize to non-LQG systems. We demonstrate the algorithm on a simulated 39-DoF humanoid robot."
+    }
+  },
+  "generator": "fallback_v4"
+}

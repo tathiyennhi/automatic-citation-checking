@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Parameter-Efficient Fine-Tuning (PEFT)Since FL requires each participant to be affordable for training and involves server-client communication, the aspects of computational efficiency and communication efficiency emerge as critical considerations.",
+    "Fortunately, off-the-shelf parameter-efficient fine-tuning (PEFT) techniques such as LoRA [28] can help alleviate computational and communication burdens, as they enable training and communicating a small number of model parameters.Despite the fact that our framework can support many PEFT techniques such as Prefix-Tuning [62], P-Tuning [63], and IA3 [64], we are more inclined to employ LoRA [28] as it requires few trainable parameters for adaptation and introduces no additional inference latency.",
+    "Specifically, denote W ∈ R d×m as one weight matrix of the base model, its update is denoted as W + ∆W = W + AB, where A ∈ R d×r, B ∈ R r×m, and r ≪ min(d, m).",
+    "Therefore, in our OpenFedLLM framework, the model θ is actually the composition of multiple A and B.",
+    "In this way, the number of learnable parameters θ could be less than 1% compared to the base model, promoting computational and communication efficiency."
+  ],
+  "correct_citations": [
+    "Fortunately, off-the-shelf parameter-efficient fine-tuning (PEFT) techniques such as LoRA [28] can help alleviate computational and communication burdens, as they enable training and communicating a small number of model parameters.Despite the fact that our framework can support many PEFT techniques such as Prefix-Tuning [62], P-Tuning [63], and IA3 [64], we are more inclined to employ LoRA [28] as it requires few trainable parameters for adaptation and introduces no additional inference latency."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "A minimal-premise-extraction algorithm is necessary to avoid superfluous auxiliary constructions that contribute to the proof through unnecessary transitivity.",
+    "For example, 'a = b' and 'b = c' might not be necessary if 'a = c' can be obtained directly through other reasoning chains.",
+    "To do this, we record the equality transitivity graph.",
+    "For example, if 'a = b', 'b = c', 'c = d' and 'a = d' are deduced, which results in nodes a, b, c and d being connected to the same 'equality node' e, we maintain a graph within e that has edges [(a, b), (b, c), (c, d), (a, d)].",
+    "This allows the traceback algorithm to perform a breadth-first search to find the shortest path of transitivity of equality between any pair of variables among a, b, c and d. For collinearity and concyclicity, however, the representation is more complex."
+  ]
+}

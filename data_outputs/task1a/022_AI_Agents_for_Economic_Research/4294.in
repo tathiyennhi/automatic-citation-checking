@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Unlike our simple economic data agent, which maintains minimal state variables between steps, the Deep Research agent tracks a rich state object that includes the research plan, multiple subtasks, accumulated search results, analyses from different perspectives, and the evolving synthesis.",
+    "This state flows through the graph, with each node reading from and contributing to the collective understanding.",
+    "The formal definition of the system's state looks as follows (see lines lines 37-47 in the full code in the appendix): class ResearchState ( TypedDict): question: str research_plan: Dict[str, List[str]] subtasks: List[Dict[str, str]] search_results: List[Dict[str, any]] analysis_results: List[Dict[str, str]] final_report: str The code below constructs the graph.",
+    "It shows how LangGraph allows users to orchestrate a complex research workflow (see lines 82-108 in the full code): def _build_graph (self) -> StateGraph: \"\"\" Construct the research workflow graph \"\"\" workflow = StateGraph ( ResearchState) # Add nodes workflow.",
+    "add_node (\" lead_researcher \", self."
+  ]
+}

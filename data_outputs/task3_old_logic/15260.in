@@ -1,0 +1,12 @@
+{
+  "text": "model. The networks make heavy use of volumetric convolutions with 3 × 3 × 3 kernels and use ReLU non-linearities. Regularization is provided by dropout [CITATION_1] and, for two of the architectures, batch normalization. Each network was trained until convergence using stochastic gradient descent with a momentum of 0.9 and an initial learning rate of 0.006 (0.003 for vanilla C3D), which is halved every 30 epochs. Figure 9 shows accuracy results for the classification networks when isolated from the other stages (i.e. using ground truth labels for diver locations). Despite halving the number of feature maps in order to fit batch normalization, we observe that doing so still leads to a marked improvement in accuracy. We suspect that the increased regularization provided by batch normalization is contributing a lot to the performance of the network, as our data set is relatively small in comparison to existing large-scale public image data sets.",
+  "correct_citation": {
+    "[CITATION_1]": "14832074"
+  },
+  "bib_entries": {
+    "14832074": {
+      "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+      "abstract": "When a large feedforward neural network is trained on a small training set, it typically performs poorly on held-out test data. This \"overfitting\" is greatly reduced by randomly omitting half of the feature detectors on each training case. This prevents complex co-adaptations in which a feature detector is only helpful in the context of several other specific feature detectors. Instead, each neuron learns to detect a feature that is generally helpful for producing the correct answer given the combinatorially large variety of internal contexts in which it must operate. Random \"dropout\" gives big improvements on many benchmark tasks and sets new records for speech and object recognition."
+    }
+  }
+}

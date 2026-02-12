@@ -1,0 +1,48 @@
+{
+  "doc_id": "35128",
+  "text": "Inspired by recent works [CITATION_1] , [CITATION_2] , [CITATION_3] , we incorporates an autoencoder into the categorical discriminator in ArtGAN for additional complementary information. The core idea of using the autoencoder in the discriminator is that reconstructionbased output offers diverse targets, which produce very different gradient directions within the minibatch. This conceptually improves the efficiency and effectiveness when training a GAN model. Rather than deploying two separate computationally expensive networks (a categorical discriminator and an autoencoder separately), our networks partly share the same architecture and weights. In specific, the encoder in the autoencoder is shared by the categorical discriminator, as shown in Figure 1 . The formulations of the categorical autoencoder-based discriminators are described in three ways. The first two types, namely as the ArtGAN-EB and the ArtGAN-AE are implemented using the pixel-level autoencoder, similar to the EBGAN [CITATION_4] . However, these two models are differed by the discriminator loss functions formulation. The third type, namely the ArtGAN-DFM is an extension of the Denoising Feature Matching (DFM) [CITATION_5] to a conditional setup, forming a Conditional DFM. The ArtGAN variants are summarized in Figure 2 and the detailed loss functions formulations for each of them are described next. Meanwhile, analysis and comparisons between these ArtGAN variants will be discussed in the experimental section.",
+  "correct_citation": {
+    "[CITATION_1]": "15876696",
+    "[CITATION_2]": "9957731",
+    "[CITATION_3]": "57832010",
+    "[CITATION_4]": "15876696",
+    "[CITATION_5]": "57832010"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Inspired by recent works  ,  ,  , we incorporates an autoencoder into the categorical discriminator in ArtGAN for additional complementary information."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Inspired by recent works  ,  ,  , we incorporates an autoencoder into the categorical discriminator in ArtGAN for additional complementary information."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Inspired by recent works  ,  ,  , we incorporates an autoencoder into the categorical discriminator in ArtGAN for additional complementary information."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The first two types, namely as the ArtGAN-EB and the ArtGAN-AE are implemented using the pixel-level autoencoder, similar to the EBGAN  ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "The third type, namely the ArtGAN-DFM is an extension of the Denoising Feature Matching (DFM)  to a conditional setup, forming a Conditional DFM. The ArtGAN variants are summarized in Figure 2 and the detailed loss functions formulations for each of them are described next."
+    }
+  ],
+  "bib_entries": {
+    "9957731": {
+      "title": "Began: Boundary equilibrium generative adversarial networks",
+      "abstract": "We propose a new equilibrium enforcing method paired with a loss derived from the Wasserstein distance for training auto-encoder based Generative Adversarial Networks. This method balances the generator and discriminator during training. Additionally, it provides a new approximate convergence measure, fast and stable training and high visual quality. We also derive a way of controlling the trade-off between image diversity and visual quality. We focus on the image generation task, setting a new milestone in visual quality, even at higher resolutions. This is achieved while using a relatively simple model architecture and a standard training procedure."
+    },
+    "15876696": {
+      "title": "Energy-based generative adversarial network",
+      "abstract": "We introduce the \"Energy-based Generative Adversarial Network\" model (EBGAN) which views the discriminator as an energy function that attributes low energies to the regions near the data manifold and higher energies to other regions. Similar to the probabilistic GANs, a generator is seen as being trained to produce contrastive samples with minimal energies, while the discriminator is trained to assign high energies to these generated samples. Viewing the discriminator as an energy function allows to use a wide variety of architectures and loss functionals in addition to the usual binary classifier with logistic output. Among them, we show one instantiation of EBGAN framework as using an auto-encoder architecture, with the energy being the reconstruction error, in place of the discriminator. We show that this form of EBGAN exhibits more stable behavior than regular GANs during training. We also show that a single-scale architecture can be trained to generate high-resolution images."
+    },
+    "57832010": {
+      "title": "Improving generative adversarial networks with denoising feature matching",
+      "abstract": "We propose an augmented training procedure for generative adversarial networks designed to address shortcomings of the original by directing the generator towards probable configurations of abstract discriminator features. We estimate and track the distribution of these features, as computed from data, with a denoising auto-encoder, and use it to propose high-level targets for the generator. We combine this new loss with the original and evaluate the hybrid criterion on the task of unsupervised image synthesis from datasets comprising a diverse set of visual categories, noting a qualitative and quantitative improvement in the ``objectness'' of the resulting samples."
+    }
+  },
+  "generator": "fallback_v4"
+}

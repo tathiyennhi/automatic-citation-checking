@@ -1,0 +1,20 @@
+{
+  "doc_id": "9157",
+  "text": "The computation of the SIFT descriptor is basically the same as described by Lowe [CITATION_1] . In order to find reference orientations for the patch, gradients are computed and a histogram of gradient directions, with N b bins, is formed. The orientation peaks are found as the maxima of a 3-tap quadratic polynomial fit, at local maxima of the histogram. The gradient votes in the histogram are weighted with the gradient magnitude, and a spatial Gaussian weight of σ h . A reference orientation is formed for each local maximum that is above 80% of the highest peak value. This gives on average 1.6 peaks per patch. After this the gradients are resampled in an orientation normalised frame, i.e.x = Rx r . Then the patch is divided into 4 × 4 squares, and gradient direction histograms are computed for each of them, with linear interpolation between the spatial locations. Just like in the orientation histogram, the votes are weighted with the gradient magnitude, and a Gaussian with scale σ d . The number of orientation directions in the histogram is set to 8, giving 4 × 4 × 8 = 128 values for the descriptor. Finally, the descriptor is normalised to unit length.",
+  "correct_citation": {
+    "[CITATION_1]": "130535382"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The computation of the SIFT descriptor is basically the same as described by Lowe"
+    }
+  ],
+  "bib_entries": {
+    "130535382": {
+      "title": "Distinctive image features from scale-invariant keypoints",
+      "abstract": "The Scale-Invariant Feature Transform (or SIFT) algorithm is a highly robust method to extract and consequently match distinctive invariant features from images. These features can then be used to reliably match objects in diering images. The algorithm was rst proposed by Lowe [12] and further developed to increase performance resulting in the classic paper [13] that served as foundation for SIFT which has played an important role in robotic and machine vision in the past decade."
+    }
+  },
+  "generator": "fallback"
+}

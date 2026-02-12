@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The concept vector is the baseline-subtracted, normalized activation:v c = h (-1) l * (c) - h ∥h (-1) l * (c) -h∥ 2(3)Normalization ensures that injection strength α has consistent meaning across concepts.Layer Selection.",
+    "Following Lindsey [2025], we inject at layer l * = ⌊2L/3⌋, approximately two-thirds through the model.",
+    "This layer balances two considerations: (1) concepts are well-formed by this depth, and(2) sufficient layers remain for the model to process the injected activation.",
+    "For our 32-layer model, we use l * = 20.",
+    "Injection MechanismWe implement a Transient Single-Token Injection protocol, adding the concept vector v c to the hidden state at layer l * for only the final token of the prompt-the position immediately before generation begins.h (t *) l * ← h (t *) l * + α • v c where t * = T prompt(4)This design choice distinguishes our approach from persistent injection methods."
+  ]
+}

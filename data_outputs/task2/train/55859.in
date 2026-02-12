@@ -1,0 +1,47 @@
+{
+  "text": "Serial tissue sections are typically mounted to glass slides at random locations and orientations. To facilitate full tissue registration, we first pre-align each tissue section to a reference section based on their contour principal axes [CITATION_1] . Registration is computed between each sequential pair of images within the volume. Low resolution serial images are first converted to grayscale and recognized for tissue components with adaptive global thresholding. We denote the tissue contours as C = {x i = (x i1 , x i2 ) T , \u2200i}. With detected C, we next compute the centroid, \u00b5 \u2208 R 2 , and construct the scatter ma-",
+  "citation_candidates": [
+    "1857296",
+    "330039",
+    "5382788",
+    "52800435",
+    "24690119",
+    "130535382",
+    "17299837",
+    "37580850"
+  ],
+  "bib_entries": {
+    "24690119": {
+      "title": "The principal axes transformation-a method for image registration",
+      "abstract": "We havedevelopeda computationaltechniquesuitablefor registrationof sets of imagedata coveringthe whole brain volume which are translated and rotated with respect to one another. The same computational method may be used to register pairs of tomographicbrain imageswhich are rotated and translatedin the transversesection plane. The technique is based on the classical theory of rigid bodies,employing as its basistheprincipalaxestransfor mation. The performanceof the method was studied by simulationand with imagedata from PET,XCT, and MRI. It was found that random errors in determiningthe brain contour are well tolerated. Progressively coarser axial samplingof data sets led to some degradation, but ac ceptable performancewas obtained with axial sampling distances up to 10 mm. Given adequatedigital sampling of the object volume,we concludethat registrationby the principal axes transformation can be accomplishedwith typical errors in the range of -@4 mm. The advantagesof the techniqueare simplicityand speedof computation. JNucIMed 1990;31:1717\u00e2\u20ac\u201d1722"
+    },
+    "17299837": {
+      "title": "A comparison of sift and surf",
+      "abstract": "Accurate, robust and automatic image registration is critical task in many applications. To perform image registration/alignment, required steps are: Feature detection, Feature matching, derivation of transformation function based on corresponding features in images and reconstruction of images based on derived transformation function. Accuracy of registered image depends on accurate feature detection and matching. So these two intermediate steps are very important in many image applications: image registration, computer vision, image mosaic etc. This paper presents two different methods for scale and rotation invariant interest point/feature detector and descriptor: Scale Invariant Feature Transform (SIFT) and Speed Up Robust Features (SURF). It also presents a way to extract distinctive invariant features from images that can be used to perform reliable matching between different views of an object/scene."
+    },
+    "130535382": {
+      "title": "Distinctive image features from scaleinvariant keypoints",
+      "abstract": "The Scale-Invariant Feature Transform (or SIFT) algorithm is a highly robust method to extract and consequently match distinctive invariant features from images. These features can then be used to reliably match objects in diering images. The algorithm was rst proposed by Lowe [12] and further developed to increase performance resulting in the classic paper [13] that served as foundation for SIFT which has played an important role in robotic and machine vision in the past decade."
+    },
+    "52800435": {
+      "title": "Fusion of autoradiographs with an mr volume using 2-d and 3-d linear transformations",
+      "abstract": "Abstract In the past years, the development of 3-D medical imaging has enabled the 3-D imaging of in vivo tissues, from an anatomical (MR, CT) or even functional (fMRI, PET, SPECT) point of view. However, despite immense technological progress, the resolution of these images is still short of the level of anatomical or functional details that in vitro imaging (e.g., histology, autoradiography) permits. The motivation of this work is to compare fMRI activations to activations observed in autoradiographic images from the same animals. We aim to fuse post-mortem autoradiographic data with a pre-mortem anatomical MR image. We first reconstruct a 3-D volume from the 2-D autoradiographic sections, coherent both in geometry and intensity. Then, this volume is fused with the MR image. This way, we ensure that the reconstructed 3-D volume can be superimposed onto the MR image that represents the reference anatomy. We demonstrate that this fusion can be achieved by using only simple global transformations (rigid and/or affine, 2-D and 3-D), while yielding very satisfactory results."
+    },
+    "37580850": {
+      "title": "Point-based registration with known correspondence: Closed form optimal solutions and properties",
+      "abstract": "Point-based registration with known correspondence is often used as either a stand-alone method or a part of a more complex algorithm. The goal of this type of registration is to align two sets of points with the same number of corresponding points using a selected transformation type. Presented are closed form solutions for the transformation parameters that optimally align two point sets in the least squares sense for the following transformation types: rigid, similarity, rigid with nonuniform scales, and a linear combination of basis functions. It is shown that those registration methods whose underlying transformations form a group satisfy the identity, symmetry, transitivity, and distortion properties."
+    },
+    "330039": {
+      "title": "Nonrigid registration using free-form deformations: application to breast mr images",
+      "abstract": "In this paper the authors present a new approach for the nonrigid registration of contrast-enhanced breast MRI. A hierarchical transformation model of the motion of the breast has been developed. The global motion of the breast is modeled by an affine transformation while the local breast motion is described by a free-form deformation (FFD) based on B-splines. Normalized mutual information is used as a voxel-based similarity measure which is insensitive to intensity changes as a result of the contrast enhancement. Registration is achieved by minimizing a cost function, which represents a combination of the cost associated with the smoothness of the transformation and the cost associated with the image similarity. The algorithm has been applied to the fully automated registration of three-dimensional (3-D) breast MRI in volunteers and patients. In particular, the authors have compared the results of the proposed nonrigid registration algorithm to those obtained using rigid and affine registration techniques. The results clearly indicate that the nonrigid registration algorithm is much better able to recover the motion and deformation of the breast than rigid or affine registration algorithms."
+    },
+    "1857296": {
+      "title": "Tracking and motion analysis of the left ventricle with deformable superquadrics",
+      "abstract": "We present a new approach to analyse the deformation of the left ventricle of the heart based on a parametric model that gives a compact representation of a set of points in a 3-D image. We present a strategy for tracking surfaces in a sequence of 3-D cardiac images. Following tracking, we then infer quantitative parameters which characterize: left ventricle motion, volume of left ventricle, ejection fraction, amplitude and twist component of cardiac motion. We explain the computation of these parameters using our model. Experimental results are shown in time sequences of two modalities of medical images, nuclear medicine and X-ray computed tomography (CT). Video sequences presenting these results are on the CD-ROM."
+    },
+    "5382788": {
+      "title": "Openslide: A vendor-neutral software foundation for digital pathology",
+      "abstract": "Although widely touted as a replacement for glass slides and microscopes in pathology, digital slides present major challenges in data storage, transmission, processing and interoperability. Since no universal data format is in widespread use for these images today, each vendor defines its own proprietary data formats, analysis tools, viewers and software libraries. This creates issues not only for pathologists, but also for interoperability. In this paper, we present the design and implementation of OpenSlide, a vendor-neutral C library for reading and manipulating digital slides of diverse vendor formats. The library is extensible and easily interfaced to various programming languages. An application written to the OpenSlide interface can transparently handle multiple vendor formats. OpenSlide is in use today by many academic and industrial organizations world-wide, including many research sites in the United States that are funded by the National Institutes of Health."
+    }
+  }
+}

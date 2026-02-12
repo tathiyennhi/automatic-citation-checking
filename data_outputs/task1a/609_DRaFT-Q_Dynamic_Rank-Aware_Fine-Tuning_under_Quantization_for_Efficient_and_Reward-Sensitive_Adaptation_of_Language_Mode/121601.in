@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Among these, LoRA inserts trainable low-rank matrices into linear layers, while QLoRA combines LoRA with 4-bit quantization to further reduce memory usage.",
+    "These innovations have enabled fine-tuning of models like LLaMA-2-7B and even 13B variants on GPUs with under 40 GB VRAM, thus democratizing access to LLM fine-tuning.Despite these advances, most PEFT approaches share two key limitations:• Static Adapter Ranks: LoRA-based methods typically use a fixed adapter rank (e.g., r = 8 or r = 32) throughout training and across all layers.",
+    "This uniform allocation does not account for variation in layer difficulty or stage-specific learning needs.",
+    "It may lead to overfitting in shallow layers or underfitting in deeper, more expressive ones, ultimately wasting parameter capacity.• Uniform Token Treatment: Standard fine-tuning applies uniform tokenlevel loss weighting (e.g., cross-entropy), which treats all output tokens equally.",
+    "This is suboptimal for structured tasks such as multiple-choice QA or chain-of-thought reasoning, where certain tokens-like correct answers or key reasoning steps-should receive stronger gradient signals.To address these gaps, we introduce DRaFT-Q (Dynamic Rank-Aware Fine-Tuning under Quantization), a novel PEFT method that introduces two orthogonal enhancements:1."
+  ]
+}

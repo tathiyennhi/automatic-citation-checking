@@ -1,0 +1,122 @@
+{
+  "doc_id": "53866",
+  "text": "Two recent works have shown that this challenge is currently generating a lot of interest and can now be tackled thanks to progresses in computing power [CITATION_1] [CITATION_2] [CITATION_3] developed a wrapper Perl script to produce option files to run PAML and test various partitions of branches in order to find branches showing similar dN/dS. Their most accurate algorithm starts by building a cluster around the single branch whose dN/dS is most different from the dN/dS of other branches. To find this branch, all models in which a branch is set apart from all other branches have to be optimized using PAML. The algorithm then clusters branches one at a time. Both the initial step and the recursive step can be long when the number of branches is large, and overall O(n 2 ) models are optimized, with n the number of branches. We applied our methods to the lysozyme data set, originally studied by [CITATION_4] and reanalyzed by [CITATION_5] . Using AIC, the free approach recovers their partition of the branches (not shown). Using BIC yields a lower number of clusters. However, branch-wise dN/dS values estimated using either AIC or BIC, and using either the free or join approaches, are robust and consistent with previous results [CITATION_6] . [CITATION_7] developed a heuristic algorithm in R to cluster branches based on the pattern of nucleotide substitutions rather than based on dN/dS. They use another type of algorithm, which starts from the most complex model in which each branch of the phylogenetic tree is associated to its own substitution matrix. Then, they iteratively cluster short branches or branches that have similar substitution matrices. In the end, models ranging from the most complex, with one substitution matrix per branch, to the simplest, with one substitution matrix for all branches, are available, and the model providing the highest AIC or BIC is returned. This algorithm may be faster than Zhang et al.'s method as it requires optimizing only O(n) models. However, the initial optimization of the parameters of the most complex model, the very same type of model discouraged in PAML's manual, may be difficult and costly. Both [CITATION_8] [CITATION_9] approaches rely on a greedy heuristic algorithm to cluster branches, which cannot correct a mistake made at an early step. Therefore, if the initial decision to build clusters starting from the most distinct branch is not correct, or the estimation of substitution matrices in the most complex model is faulty, the resulting partition may not be correct. Our approach improves upon these two early attempts in several respects. First, we cluster branches of the phylogenetic tree based on the substitution mapping procedure [CITATION_10] [CITATION_11] , which has the advantage of being fast and robust to model misspecification [CITATION_12] . Substitution mapping provides counts of each type of substitution for each branch of the tree, based on a substitution model. [CITATION_13] have shown that substitution mapping was robust to the model used for mapping: even a simple homogeneous substitution model, where all branches share the same substitution matrix, can uncover accurate patterns of heterogeneity in the substitution process. Such a homogeneous substitution model also offers the advantage of being fast to fit, compared with parameter-rich, nonhomogeneous models used in the initial steps of the two previously mentioned approaches. The robustness of the mapping and subsequent clustering approach can be assessed a posteriori using the selected model in order to generate a new substitution map. In the data sets exemplified in this work, we showed that the resulting parameter estimates are quite robust to the initial model used for mapping substitution. However, it remains possible that for some data sets parameter estimates may be sensitive to the initial model. In such cases, successive iterations of mapping and model selection can be used to assess the uncertainty in branch-specific model attributions. Such an iterative approach can easily be performed with the TestNH package.",
+  "correct_citation": {
+    "[CITATION_1]": "17684617",
+    "[CITATION_2]": "37210404",
+    "[CITATION_3]": "17684617",
+    "[CITATION_4]": "18608269",
+    "[CITATION_5]": "17684617",
+    "[CITATION_6]": "18608269",
+    "[CITATION_7]": "37210404",
+    "[CITATION_8]": "17684617",
+    "[CITATION_9]": "37210404",
+    "[CITATION_10]": "1457695",
+    "[CITATION_11]": "16652766",
+    "[CITATION_12]": "16652766",
+    "[CITATION_13]": "16652766"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Two recent works have shown that this challenge is currently generating a lot of interest and can now be tackled thanks to progresses in computing power [CITATION_1] [CITATION_2] [CITATION_3] developed a wrapper Perl script to produce option files to run PAML and test various partitions of branches in order to find branches showing similar dN/dS. Their most accurate algorithm starts by building a cluster around the single branch whose dN/dS is most different from the dN/dS of other branches.",
+      "s_span": 0,
+      "e_span": 496
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Two recent works have shown that this challenge is currently generating a lot of interest and can now be tackled thanks to progresses in computing power [CITATION_1] [CITATION_2] [CITATION_3] developed a wrapper Perl script to produce option files to run PAML and test various partitions of branches in order to find branches showing similar dN/dS. Their most accurate algorithm starts by building a cluster around the single branch whose dN/dS is most different from the dN/dS of other branches.",
+      "s_span": 0,
+      "e_span": 496
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Two recent works have shown that this challenge is currently generating a lot of interest and can now be tackled thanks to progresses in computing power [CITATION_1] [CITATION_2] [CITATION_3] developed a wrapper Perl script to produce option files to run PAML and test various partitions of branches in order to find branches showing similar dN/dS. Their most accurate algorithm starts by building a cluster around the single branch whose dN/dS is most different from the dN/dS of other branches.",
+      "s_span": 0,
+      "e_span": 496
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "We applied our methods to the lysozyme data set, originally studied by [CITATION_4] and reanalyzed by [CITATION_5] .",
+      "s_span": 837,
+      "e_span": 953
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "We applied our methods to the lysozyme data set, originally studied by [CITATION_4] and reanalyzed by [CITATION_5] .",
+      "s_span": 837,
+      "e_span": 953
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "However, branch-wise dN/dS values estimated using either AIC or BIC, and using either the free or join approaches, are robust and consistent with previous results [CITATION_6] .",
+      "s_span": 1082,
+      "e_span": 1259
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "However, branch-wise dN/dS values estimated using either AIC or BIC, and using either the free or join approaches, are robust and consistent with previous results [CITATION_6] . [CITATION_7] developed a heuristic algorithm in R to cluster branches based on the pattern of nucleotide substitutions rather than based on dN/dS. They use another type of algorithm, which starts from the most complex model in which each branch of the phylogenetic tree is associated to its own substitution matrix.",
+      "s_span": 1082,
+      "e_span": 1575
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Both [CITATION_8] [CITATION_9] approaches rely on a greedy heuristic algorithm to cluster branches, which cannot correct a mistake made at an early step.",
+      "s_span": 2171,
+      "e_span": 2324
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "Both [CITATION_8] [CITATION_9] approaches rely on a greedy heuristic algorithm to cluster branches, which cannot correct a mistake made at an early step.",
+      "s_span": 2171,
+      "e_span": 2324
+    },
+    {
+      "citation_id": "[CITATION_10]",
+      "span_text": "First, we cluster branches of the phylogenetic tree based on the substitution mapping procedure [CITATION_10] [CITATION_11] , which has the advantage of being fast and robust to model misspecification [CITATION_12] .",
+      "s_span": 2630,
+      "e_span": 2846
+    },
+    {
+      "citation_id": "[CITATION_11]",
+      "span_text": "First, we cluster branches of the phylogenetic tree based on the substitution mapping procedure [CITATION_10] [CITATION_11] , which has the advantage of being fast and robust to model misspecification [CITATION_12] .",
+      "s_span": 2630,
+      "e_span": 2846
+    },
+    {
+      "citation_id": "[CITATION_12]",
+      "span_text": "First, we cluster branches of the phylogenetic tree based on the substitution mapping procedure [CITATION_10] [CITATION_11] , which has the advantage of being fast and robust to model misspecification [CITATION_12] .",
+      "s_span": 2630,
+      "e_span": 2846
+    },
+    {
+      "citation_id": "[CITATION_13]",
+      "span_text": "Substitution mapping provides counts of each type of substitution for each branch of the tree, based on a substitution model. [CITATION_13] have shown that substitution mapping was robust to the model used for mapping: even a simple homogeneous substitution model, where all branches share the same substitution matrix, can uncover accurate patterns of heterogeneity in the substitution process.",
+      "s_span": 2847,
+      "e_span": 3242
+    }
+  ],
+  "bib_entries": {
+    "37210404": {
+      "title": "Reducing model complexity of the general Markov model of evolution",
+      "abstract": "The selectionof anoptimalmodel fordataanalysisisanimportantcomponentofmodel-based molecularphylogeneticstudies. Owing to the large number of Markov models that can be used for data analysis, model selection is a combinatorial problem thatcannotbesolved by performinganexhaustivesearch ofallpossiblemodels. Currently,model selectionisbased on a smallsubset of the availableMarkov models, namely those that assume the evolutionaryprocess to be globally stationary, reversible, and homogeneous. This forces the optimal model to be time reversible even though the actual data may not satisfytheseassumptions.This problemcanbealleviatedby includingmore complexmodels during themodel selection.We presenta novelheuristic that evaluatesa smallfractionofthese complex models and identifiesthe optimalmodel."
+    },
+    "18608269": {
+      "title": "Likelihood ratio tests for detecting positive selection and application to primate lysozyme evolution",
+      "abstract": "An excess of nonsynonymous substitutions over synonymous ones is an important indicator of positive selection at the molecular level. A lineage that underwent Darwinian selection may have a nonsynonymous/synonymous rate ratio (dN/dS) that is different from those of other lineages or greater than one. In this paper, several codon-based likelihood models that allow for variable dN/dS ratios among lineages were developed. They were then used to construct likelihood ratio tests to examine whether the dN/dS ratio is variable among evolutionary lineages, whether the ratio for a few lineages of interest is different from the background ratio for other lineages in the phylogeny, and whether the dN/dS ratio for the lineages of interest is greater than one. The tests were applied to the lysozyme genes of 24 primate species. The dN/dS ratios were found to differ significantly among lineages, indicating that the evolution of primate lysozymes is episodic, which is incompatible with the neutral theory. Maximum-likelihood estimates of parameters suggested that about nine nonsynonymous and zero synonymous nucleotide substitutions occurred in the lineage leading to hominoids, and the dN/dS ratio for that lineage is significantly greater than one. The corresponding estimates for the lineage ancestral to colobine monkeys were nine and one, and the dN/dS ratio for the lineage is not significantly greater than one, although it is significantly higher than the background ratio. The likelihood analysis thus confirmed most, but not all, conclusions Messier and Stewart reached using reconstructed ancestral sequences to estimate synonymous and nonsynonymous rates for different lineages."
+    },
+    "16652766": {
+      "title": "Fast, accurate and simulation-free stochastic mapping",
+      "abstract": "Mapping evolutionary trajectories of discrete traits onto phylogenies receives considerable attention in evolutionary biology. Given the trait observations at the tips of a phylogenetic tree, researchers are often interested where on the tree the trait changes its state and whether some changes are preferential in certain parts of the tree. In a model-based phylogenetic framework, such questions translate into characterizing probabilistic properties of evolutionary trajectories. Current methods of assessing these properties rely on computationally expensive simulations. In this paper, we present an efficient, simulation-free algorithm for computing two important and ubiquitous evolutionary trajectory properties. The first is the mean number of trait changes, where changes can be divided into classes of interest (e.g. synonymous/non-synonymous mutations). The mean evolutionary reward, accrued proportionally to the time a trait occupies each of its states, is the second property. To illustrate the usefulness of our results, we first employ our simulation-free stochastic mapping to execute a posterior predictive test of correlation between two evolutionary traits. We conclude by mapping synonymous and non-synonymous mutations onto branches of an HIV intrahost phylogenetic tree and comparing selection pressure on terminal and internal tree branches."
+    },
+    "17684617": {
+      "title": "Dynamic programming procedure for searching optimal models to estimate substitution rates based on the maximum-likelihood method",
+      "abstract": "The substitution rate in a gene can provide valuable information for understanding its functionality and evolution. A widely used method to estimate substitution rates is the maximum-likelihood method implemented in the CODEML program in the PAML package. A limited number of branch models, chosen based on a priori information or an interest in a particular lineage(s), are tested, whereas a large number of potential models are neglected. A complementary approach is also needed to test all or a large number of possible models to search for the globally optional model(s) of maximum likelihood. However, the computational time for this search even in a small number of sequences becomes impractically long. Thus, it is desirable to explore the most probable spaces to search for the optimal models. Using dynamic programming techniques, we developed a simple computational method for searching the most probable optimal branch-specific models in a practically feasible computational time. We propose three search methods to find the optimal models, which explored O(n) (method 1) to O(n2) (method 2 and method 3) models when the given phylogeny has n branches. In addition, we derived a formula to calculate the number of all possible models, revealing the complexity of finding the optimal branch-specific model. We show that in a reanalysis of over 50 previously published studies, the vast majority obtained better models with significantly higher likelihoods than the conventional hypothesis model methods."
+    },
+    "1457695": {
+      "title": "Mapping mutations on phylogenies",
+      "abstract": "Mapping of mutations on a phylogeny has been a commonly used analytical tool in phylogenetics and molecular evolution. However, the common approaches for mapping mutations based on parsimony have lacked a solid statistical foundation. Here, I present a Bayesian method for mapping mutations on a phylogeny. I illustrate some of the common problems associated with using parsimony and suggest instead that inferences in molecular evolution can be made on the basis of the posterior distribution of the mappings of mutations. A method for simulating a mapping from the posterior distribution of mappings is also presented, and the utility of the method is illustrated on two previously published data sets. Applications include a method for testing for variation in the substitution rate along the sequence and a method for testing whether the d(N)/d(S) ratio varies among lineages in the phylogeny."
+    }
+  },
+  "generator": "fallback_v4"
+}

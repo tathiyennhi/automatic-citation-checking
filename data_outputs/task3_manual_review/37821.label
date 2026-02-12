@@ -1,0 +1,75 @@
+{
+  "doc_id": "37821",
+  "text": "Joint Segmentation, POS tagging and Syntactic Parsing It has been widely recognized that joint prediction is an appealing alternative for pipeline architectures [CITATION_1] [CITATION_2] Habash and Rambow, 2005; GahbicheBraham et al., 2012; [CITATION_3] [CITATION_4] . These approaches have been particularly prominent for languages with difficult preprocessing, such as morphologically rich languages (e.g., Arabic and Hebrew) and languages that require word segmentation (e.g., Chinese). For the former, joint prediction models typically rely on a lattice structure to represent alternative morphological analyses [CITATION_5] [CITATION_6] [CITATION_7] . For instance, transitionbased models intertwine operations on the lattice with operations on a dependency tree. Other joint architectures are more decoupled: in [CITATION_8] , a lattice is used to derive the best morphological analysis for each part-of-speech alternative, which is in turn provided to the parsing algorithm. In both cases, tractable inference is achieved by limiting the representation power of the scoring function. Our model also uses a lattice to encode alternative analyses. However, we employ this structure in a different way. The model samples the full path from the lattice, which corresponds to a valid segmentation and POS tagging assignment. Then the model improves the path and the corresponding tree via a hill-climbing strategy. This architecture allows us to incorporate arbitrary features for segmentation, POS tagging and parsing.",
+  "correct_citation": {
+    "[CITATION_1]": "2216180",
+    "[CITATION_2]": "10011032",
+    "[CITATION_3]": "105219",
+    "[CITATION_4]": "1500270",
+    "[CITATION_5]": "2216180",
+    "[CITATION_6]": "832839",
+    "[CITATION_7]": "905345",
+    "[CITATION_8]": "2216180"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Joint Segmentation, POS tagging and Syntactic Parsing It has been widely recognized that joint prediction is an appealing alternative for pipeline architectures Habash and Rambow, 2005; GahbicheBraham et al., 2012;."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Joint Segmentation, POS tagging and Syntactic Parsing It has been widely recognized that joint prediction is an appealing alternative for pipeline architectures Habash and Rambow, 2005; GahbicheBraham et al., 2012;."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Joint Segmentation, POS tagging and Syntactic Parsing It has been widely recognized that joint prediction is an appealing alternative for pipeline architectures Habash and Rambow, 2005; GahbicheBraham et al., 2012;."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Joint Segmentation, POS tagging and Syntactic Parsing It has been widely recognized that joint prediction is an appealing alternative for pipeline architectures Habash and Rambow, 2005; GahbicheBraham et al., 2012;."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "For the former, joint prediction models typically rely on a lattice structure to represent alternative morphological analyses."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "For the former, joint prediction models typically rely on a lattice structure to represent alternative morphological analyses."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "For the former, joint prediction models typically rely on a lattice structure to represent alternative morphological analyses."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Other joint architectures are more decoupled: in, a lattice is used to derive the best morphological analysis for each part-of-speech alternative, which is in turn provided to the parsing algorithm."
+    }
+  ],
+  "bib_entries": {
+    "1500270": {
+      "title": "A transitionbased system for joint part-of-speech tagging and labeled non-projective dependency parsing",
+      "abstract": "Most current dependency parsers presuppose that input words have been morphologically disambiguated using a part-of-speech tagger before parsing begins. We present a transition-based system for joint part-of-speech tagging and labeled dependency parsing with non-projective trees. Experimental evaluation on Chinese, Czech, English and German shows consistent improvements in both tagging and parsing accuracy when compared to a pipeline system, which lead to improved state-of-the-art results for all languages."
+    },
+    "905345": {
+      "title": "Joint morphological and syntactic disambiguation",
+      "abstract": "In morphologically rich languages, should morphological and syntactic disambiguation be treated sequentially or as a single problem? We describe several efficient, probabilisticallyinterpretable ways to apply joint inference to morphological and syntactic disambiguation using lattice parsing. Joint inference is shown to compare favorably to pipeline parsing methods across a variety of component models. State-of-the-art performance on Hebrew Treebank parsing is demonstrated using the new method. The benefits of joint inference are modest with the current component models, but appear to increase as components themselves improve."
+    },
+    "2216180": {
+      "title": "Arabic tokenization, part-of-speech tagging and morphological disambiguation in one fell swoop",
+      "abstract": "We present an approach to using a morphological analyzer for tokenizing and morphologically tagging (including part-of-speech tagging) Arabic words in one process. We learn classifiers for individual morphological features, as well as ways of using these classifiers to choose among entries from the output of the analyzer. We obtain accuracy rates on all tasks in the high nineties."
+    },
+    "105219": {
+      "title": "Joint word segmentation and pos tagging using a single perceptron",
+      "abstract": "For Chinese POS tagging, word segmentation is a preliminary step. To avoid error propagation and improve segmentation by utilizing POS information, segmentation and tagging can be performed simultaneously. A challenge for this joint approach is the large combined search space, which makes efficient decoding very hard. Recent research has explored the integration of segmentation and POS tagging, by decoding under restricted versions of the full combined search space. In this paper, we propose a joint segmentation and POS tagging model that does not impose any hard constraints on the interaction between word and POS information. Fast decoding is achieved by using a novel multiple-beam search algorithm. The system uses a discriminative statistical model, trained using the generalized perceptron algorithm. The joint model gives an error reduction in segmentation accuracy of 14.6% and an error reduction in tagging accuracy of 12.2%, compared to the traditional pipeline approach."
+    },
+    "832839": {
+      "title": "A cross-task flexible transition model for arabic tokenization, affix detection, affix labeling, pos tagging, and dependency parsing",
+      "abstract": "This paper describes cross-task flexible transition models (CTF-TMs) and demonstrates their effectiveness for Arabic natural language processing (NLP). NLP pipelines often suffer from error propagation, as errors committed in lower-level tasks cascade through the remainder of the processing pipeline. By allowing a flexible order of operations across and within multiple NLP tasks, a CTF-TM can mitigate both cross-task and within-task error propagation. Our Arabic CTF-TM models tokenization, affix detection, affix labeling, partof-speech tagging, and dependency parsing, achieving state-of-the-art results. We present the details of our general framework, our Arabic CTF-TM, and the setup and results of our experiments."
+    },
+    "10011032": {
+      "title": "Incremental joint approach to word segmentation, pos tagging, and dependency parsing in chinese",
+      "abstract": "We propose the first joint model for word segmentation, POS tagging, and dependency parsing for Chinese. Based on an extension of the incremental joint model for POS tagging and dependency parsing (Hatori et al., 2011), we propose an efficient character-based decoding method that can combine features from state-of-the-art segmentation, POS tagging, and dependency parsing models. We also describe our method to align comparable states in the beam, and how we can combine features of different characteristics in our incremental framework. In experiments using the Chinese Treebank (CTB), we show that the accuracies of the three tasks can be improved significantly over the baseline models, particularly by 0.6% for POS tagging and 2.4% for dependency parsing. We also perform comparison experiments with the partially joint models."
+    }
+  },
+  "generator": "fallback"
+}

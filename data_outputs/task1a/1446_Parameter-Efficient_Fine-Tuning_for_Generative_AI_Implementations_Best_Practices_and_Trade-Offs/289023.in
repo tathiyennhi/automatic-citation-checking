@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This resulted in 2.1M trainable parameters (1.89% of total parameters).",
+    "2) Low-Rank Adaptation (LoRA):LoRA applies low-rank decomposition to weight matrices in the model, particularly in the attention mechanism: lora_config = LoraConfig ( r=8, # Rank of update matrices lora_alpha=16, # Scaling factor target_modules= [\"query\", \"value\"], # Apply to specific matrices lora_dropout=0.1, # Regularization bias=\"none\", task_type=TaskType.",
+    "SEQ_CLS) model = get_peft_model (model, lora_config)Our implementation used a rank of 8 and targeted the query and value matrices in the attention layers, resulting in 0.297M trainable parameters (0.27% of total parameters).3) Prompt Tuning: Prompt Tuning prepends trainable \"soft prompts\" to the input while keeping the model frozen: prompt_config = PromptTuningConfig ( task_type=TaskType.",
+    "SEQ_CLS, num_virtual_tokens=10, tokenizer_name_or_path=\"bert-base-uncased\", prompt_tuning_init=\"RANDOM\" model = get_peft_model (model, prompt_config)We implemented prompt tuning with 10 virtual tokens, resulting in just 9, 987 trainable parameters (0.009% of total parameters).",
+    "To accommodate these virtual tokens, we reduced the maximum sequence length for actual tokens to 502.Note that we increased the training epochs to 10 for Prompt Tuning (compared to 3 epochs for other methods) to give this lightweight approach more opportunity to learn."
+  ]
+}

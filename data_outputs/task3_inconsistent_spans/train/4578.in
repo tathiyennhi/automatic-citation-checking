@@ -1,0 +1,22 @@
+{
+  "text": "In ongoing work, we are developing Reo compilers (Reo-to-Java [CITATION_1] , Reo-to-C [CITATION_2] ) according to the centralized approach based on Reo's formal automata semantics [CITATION_3] . On input of a graphical connector specification (as an Xml file), these tools automatically generate code in four steps. First, they extract from the specification a list of the channels and nodes constituting the specified connector. Second, they consult a database to find for every channel and node in the list a \"small\" automaton that formally describes the behavior of that particular channel. Third, they compute the product of the automata in the constructed collection to obtain one \"big\" automaton that describes the behavior of the whole connector. Fourth, they feed a data structure representing that big automaton to a template. Essentially, this template is an incomplete fragment of sequential code with \"holes\" that need be \"filled\" (with information from the data structure). At run-time, the generated code simulates the big automaton computed in the third step: it runs sequentially in its own protocol process and responds to events (i.e., i/o operations) coming from the computation processes under coordination that perform the real work (i.e., its environment).",
+  "correct_citation": {
+    "[CITATION_1]": "2798469",
+    "[CITATION_2]": "14019841",
+    "[CITATION_3]": "17153962"
+  },
+  "bib_entries": {
+    "14019841": {
+      "title": "Reo: a dataflow inspired language for multicore",
+      "abstract": "The Reo language has been well documented to address difficulties in parallel programming. It separates interaction protocol from computation code, which allows separate development, reuse, and formal proofs about the protocol correctness. Modules of computation can be composed by externally defining a protocol, without concern for their internal details. Achieving acceptable performance for code generated from Reo specifications has been a major challenge. In this paper, we address this with a combination of implementing the circuit splitting optimization and using the proto-runtime approach as a base platform for the runtime system of the Reo language. Our results show that the overhead when running Reo is so low that the performance of a k-tuple benchmark protocol compiled from its Reo specification is now up to six times faster than a straightforward hand-written thread implementation and nearly equal to a carefully optimized thread implementation of the same protocol."
+    },
+    "17153962": {
+      "title": "Modeling component connectors in Reo by constraint automata",
+      "abstract": "Reo is an exogenous coordination language for compositional construction of component connectors based on a calculus of channels. Building automated tools to address such concerns as equivalence or containment of the behavior of two given connectors, verification of the behavior of a connector, etc. requires an operational semantic model suitable for model checking. In this paper we introduce constraint automata and propose them as a semantic model for Reo."
+    },
+    "2798469": {
+      "title": "Modularizing and specifying protocols among threads",
+      "abstract": "We identify three problems with current techniques for implementing protocols among threads, which complicate and impair the scalability of multicore software development: implementing synchronization, implementing coordination, and modularizing protocols. To mend these deficiencies, we argue for the use of domain-specific languages (DSL) based on existing models of concurrency. To demonstrate the feasibility of this proposal, we explain how to use the model of concurrency Reo as a high-level protocol DSL, which offers appropriate abstractions and a natural separation of protocols and computations. We describe a Reo-to-Java compiler and illustrate its use through examples."
+    }
+  }
+}

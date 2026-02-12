@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To address this, we employ Low-Rank Adaptation (LoRA) [36] as a parameter-efficient fine-tuning technique.",
+    "LoRA relies on low-dimensional representations and a freeze-and-inject strategy, where the majority of the model parameters remain fixed, and trainable low-rank matrices are introduced into specific transformer layers, particularly the projection matrices within the attention module, to approximate weight updates.",
+    "C. Tool-integrated Code GenerationBased on the fine-tuned code LLM and the employed autocompletion tool, we perform a tool-integrated code generation process that is aware to the repository-level dependencies.1) Overall Process: Algorithm 2 outlines the overall toolintegrated generation process, comprising three crucial parts based on the fine-tuned code LLM and the employed autocompletion tool: ❶ Next Token Prediction, ❷ Code Autocompletion, and ❸ Suggestion Selection.",
+    "This algorithm takes a code repository R, an insertion position P, and a description D as inputs and follows an iterative process to generate a token sequence, ultimately constructing a function denoted as F.Here, the tokens are drawn from the expanded vocabulary V defined in Equation 1.The iterative process commences with the <BOS> token (representing the beginning of the sequence), i.e., F ← [<BOS>] in line 2, and proceeds by iteratively updating F until it reaches the <EOS> token (representing the end of the sequence).",
+    "During each iteration step, the algorithm utilizes the description D and the current incomplete function F as inputs for the finetuned code LLM to execute the LLM-PREDICT procedure."
+  ]
+}

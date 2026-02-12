@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Algorithm 3.1 requires higher computational resources during the training phase due to the double sum i j of interaction in the score computation, which has a complexity of O(N 2), while Algorithm 3.2 avoids this by excluding the interaction term in the score computation, resulting in a complexity of O(N).",
+    "However, during the propagation step, This manuscript is for review purposes only.",
+    "Algorithm 3.2 Sequential Lévy score-based mean-field transport modelingInput: An initial time t 0.",
+    "A set of N samples {x (i) } N i=1 from the initial distribution p t0.",
+    "A time step ∆t and the number of steps N T. Initialize sample locationsX (i) t0 = x (i) for i = 1, • • •, N. for k = 0: N T -1 doOptimize:s θ k (•) = argmin s θ k (•) 1 N N i=1 s θ k (X (i) t k) 2 + ∇ • Σ(X (i) t k, t k)s θ k (X (i) t k) +2 |r|<1 1 0 s θ k (X (i) t k + λF (r, t k)) • F (r, t k) dλν( dr) +2 |r|≥1 1 0 s θ k (X (i) t k + λG(r, t k)) • G(r, t k) dλν( dr); Propagate the samples for i = 1, • • •, N: X (i) t k+1 = X (i) t k + ∆t b(X (i) t k, t k) + 1 N N j=1 K(X (i) t k -X (j) t k) -|r|<1 F (r, t)ν( dr) - 1 2 ∇ • Σ(X (i) t k, t k) -s θ k (X (i) t k); Set t k+1 = t k + ∆t; end for return Output: Samples {X (i) t k } N i=1 from p t k and {s θ k (X (i) t k)} N i=1 for all {t k } N T k=0.Algorithm 3.2 still requires the double sum i j to compute the interaction term in (2.10), leading to a complexity of O(N 2)."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "doc_id": "53547",
+  "text": "Before any signal processing can be performed, the captured blocks must be re-aligned in the digital domain. The data is then parallel processed offline in a distributed DSP cloud, where it is down sampled to 20 GS/s and optical front-end impairments are compensated. Unraveling the 20 data channels is achieved using a 20x20 minimum mean squared error (MMSE) time domain equalizer (TDE). With respect to TDE, a frequency domain equalizer (FDE) can reduce the computational complexity [CITATION_1] . However, TDE is employed in this work due to the available capture window (which is intrinsically limited by the fiber lengths employed for the 10 spatial mode TDM-SDM receiver). Due to the lower adaptation gain FDE is too slow for stabile convergence while still maintaining enough symbols for accurate BER analysis. The weight matrix uses the least means squares (LMS) update algorithm for convergence, and switches after 40k symbols to decision directed least means squares (DD-LMS). Both algorithms have variable step-sizes [CITATION_2] . In order to corroborate the impact of impulse response changes during the change from data-aided to decision-directed mode, we reprocessed a capture without any updates to the weight matrix after 40k symbols. Our results from this test, showed that after initial convergence, the BER values remains the same. Furthermore, we observed stable BER for multiple captures. From this we can conclude that the impulse response is stable for the used capture length.",
+  "correct_citation": {
+    "[CITATION_1]": "58443607",
+    "[CITATION_2]": "2331840"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "With respect to TDE, a frequency domain equalizer (FDE) can reduce the computational complexity [CITATION_1] .",
+      "s_span": 389,
+      "e_span": 499
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Both algorithms have variable step-sizes [CITATION_2] .",
+      "s_span": 987,
+      "e_span": 1042
+    }
+  ],
+  "bib_entries": {
+    "2331840": {
+      "title": "MIMO equalization with adaptive step size for few-mode fiber transmission systems",
+      "abstract": "Optical multiple-input multiple-output (MIMO) transmission systems generally employ minimum mean squared error time or frequency domain equalizers. Using an experimental 3-mode dual polarization coherent transmission setup, we show that the convergence time of the MMSE time domain equalizer (TDE) and frequency domain equalizer (FDE) can be reduced by approximately 50% and 30%, respectively. The criterion used to estimate the system convergence time is the time it takes for the MIMO equalizer to reach an average output error which is within a margin of 5% of the average output error after 50,000 symbols. The convergence reduction difference between the TDE and FDE is attributed to the limited maximum step size for stable convergence of the frequency domain equalizer. The adaptive step size requires a small overhead in the form of a lookup table. It is highlighted that the convergence time reduction is achieved without sacrificing optical signal-to-noise ratio performance."
+    },
+    "58443607": {
+      "title": "Algorithms for Communications Systems and their Applications",
+      "abstract": "Preface. Acknowledgements. Elements of signal theory. The Wiener filter and linear prediction. Adaptive transversal filters. Transmission media. Digital representation of waveforms. Modulation theory. Transmission over dispersive channels. Channel equilization and symbol detection. Orthogonal frequency division multiplexing. Spread spectrum systems. Channel codes. Trellis coded modulation. Precoding and coding techniques for dispersive channels. Synchronization. Self--training equalization. Applications of interference cancellation. Wired and wireless network technologies. Modulation techniques for wireless systems. Design of high speed transmission systems over unshielded twisted pair cables. Index."
+    }
+  },
+  "generator": "fallback_v4"
+}

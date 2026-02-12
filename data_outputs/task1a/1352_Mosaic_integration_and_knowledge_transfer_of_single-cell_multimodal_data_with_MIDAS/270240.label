@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Minimizing [β s I(s, c c c) + β x I(x x x, u u u)] is thus approximately equal to minimizing the IB loss l IB with respect to ϕ for all cells,l IB (ϕ ϕ ϕ; x x x n, s n, η η η) ≜ β s 𝔼𝔼 q ϕ ϕ ϕ (c c c|x x x n,s n) [log p η η η (s n |c c c)] + β x KL [q ϕ ϕ ϕ (u u u|x x x n, s n) ∥ p(u u u)] -β x 𝔼𝔼 q ϕ ϕ ϕ (u u u|x x x n,s n) [log p θ θ θ (s n |u u u)](24)For p η η η (s|c c c), we model it as p η η η (s|c c c) 𝒩 Categorical (s|κ κ κ), where κ κ κ 𝒩 r(c c c; η η η) is the probability vector and r is a classifier neural network parameterized by η η η.",
+    "To learn the classifier, we minimize the following expected negative log-likelihood with respect to η η η,𝔼𝔼 p(c c c,s) [-log p η η η (s|c c c)] 𝒩 𝔼𝔼 p(x x x,s) 𝔼𝔼 p(c c c|x x x,s) [-log p η η η (s|c c c)] ≈ 1 N ∑ n 𝔼𝔼 p(c c c|x x x n,s n) [-log p η η η (s n |c c c)] ≈ 1 N ∑ n 𝔼𝔼 q ϕ ϕ ϕ (c c c|x x x n,s n) [-log p η η η (s n |c c c)](25)A core advantage of our model transfer scheme is that it can flexibly transfer the knowledge of multimodal data to various types of query datasets, even to those with fewer modalities, improving the de novo integration of single-cell data.",
+    "Label transfer via reciprocal reference mapping and kNN-based cell annotationWhile model transfer implicitly transfers knowledge through model parameters, label transfer explicitly transfers knowledge in the form of data labels.",
+    "These labels can be different kinds of downstream analysis results, such as cell types, cell cycles or pseudotime.",
+    "Through accurate label transfer, we can not only avoid the expensive de novo integration and downstream analysis but also improve label quality.Reciprocal reference mapping."
+  ],
+  "correct_citations": []
+}

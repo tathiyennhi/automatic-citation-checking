@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Once the meta-controller is trained, it can be used to generate attention masks for any new task, without the need for further training.",
+    "To do this, the meta-controller is simply given the new task as input, and it produces a set of attention masks that are tailored to that task.Let X, Y and T be the input to the model, the output of the model, and the task, respectively.",
+    "Meta-controller takes the input X from task T and generates attention masks M that will lead to generating the new attention weights of the model.",
+    "We implemented the meta-controller as a Feed-forward Neural Network, represented in Equation 7, with parameters Φ and θ.Y = f (X, θ, M) M = g(T, Φ)(7)The function g(T, Φ) represents the meta-controller's ability to generate attention masks based on the input task T and its parameters Φ, where Φ represents the hyper-parameters of the BERT model.",
+    "The function f (X, θ, M) produce an output Y, which is the pruning mask for the BERT model, based on the input X, its parameters θ that represent the parameters of the feed-forward layer in the meta-controller, and the attention masks M. Train the meta-controller to generate pruning masks that minimize the loss of the pruned model on the training tasks by updating the meta-controller's parameters Φ to improve its ability to generate attention masks that improve the performance of the model on the input task T.In this paper, we mainly focus on single-sentence prediction tasks, but the same procedure can be applied to language generation tasks as well."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,77 @@
+{
+  "doc_id": "34436",
+  "text": "Since the 1960's [CITATION_1] , the dynamics of Boolean models of biological control have been based on the synchronous update rule: At each point in time, all variables that are logically able to change are updated simultaneously at the next time step. This approach has yielded many interesting results, but it allows no variation in timing, and consequently makes examination of timing robustness impossible. There are many ways to introduce varying amounts of freedom in the timing of reactions. A model that makes weaker assumptions about timing is more conservative, in that it is more likely to violate a given specification than a model with stronger timing assumptions. For example, the model could allow variables to change in one or two steps after they are enabled [CITATION_2] [CITATION_3] , or variables could change within a continuous but bounded window, as can be specified with timed automata [CITATION_4] , or reactions could be classified as ''fast'' and ''slow'' reactions, with ''fast'' reactions occurring (effectively) infinitely faster than slow reactions [CITATION_5] [CITATION_6] . One of the most conservative models, which we call fully asynchronous, assumes nothing about the timing of reactions. The delay of a transition could be any finite time. A system that has a desired property in a fully asynchronous model is speed-independent. Speed independence implies timing robustness in most other plausible models. In particular, if the cell cycle works correctly in the fully asynchronous model, it also works in a synchronous model. This paper explores the timing robustness of several Boolean models of the cell cycles of budding yeast (S. Cerevisiae) and fission yeast (S. Pombe). The Boolean model of budding yeast was published previously, and we derived the fission yeast models from published differential equations models. To test for timing robustness, our approach was to begin with a fully asynchronous model in each case, examine the cases where the models fail to be robust, and either change the model or introduce additional constraints on timing (making the model less-than-fully asynchronous) as necessary. Surprisingly, it was not necessary to weaken the assumption of full asynchrony. With changes that are either justified from the literature or at least as plausible as the original model, the cell cycle models could be made fully speedindependent. These results indicate that (1) the cell cycle is highly timing-robust, and (2) analyzing models for timing robustness can generate testable predictions about the details of cell cycle control.",
+  "correct_citation": {
+    "[CITATION_1]": "16927629",
+    "[CITATION_2]": "8079719",
+    "[CITATION_3]": "364564",
+    "[CITATION_4]": "18129339",
+    "[CITATION_5]": "16851968",
+    "[CITATION_6]": "9617443"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Since the 1960's [CITATION_1] , the dynamics of Boolean models of biological control have been based on the synchronous update rule: At each point in time, all variables that are logically able to change are updated simultaneously at the next time step.",
+      "s_span": 0,
+      "e_span": 253
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For example, the model could allow variables to change in one or two steps after they are enabled [CITATION_2] [CITATION_3] , or variables could change within a continuous but bounded window, as can be specified with timed automata [CITATION_4] , or reactions could be classified as ''fast'' and ''slow'' reactions, with ''fast'' reactions occurring (effectively) infinitely faster than slow reactions [CITATION_5] [CITATION_6] .",
+      "s_span": 679,
+      "e_span": 1108
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "For example, the model could allow variables to change in one or two steps after they are enabled [CITATION_2] [CITATION_3] , or variables could change within a continuous but bounded window, as can be specified with timed automata [CITATION_4] , or reactions could be classified as ''fast'' and ''slow'' reactions, with ''fast'' reactions occurring (effectively) infinitely faster than slow reactions [CITATION_5] [CITATION_6] .",
+      "s_span": 679,
+      "e_span": 1108
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "For example, the model could allow variables to change in one or two steps after they are enabled [CITATION_2] [CITATION_3] , or variables could change within a continuous but bounded window, as can be specified with timed automata [CITATION_4] , or reactions could be classified as ''fast'' and ''slow'' reactions, with ''fast'' reactions occurring (effectively) infinitely faster than slow reactions [CITATION_5] [CITATION_6] .",
+      "s_span": 679,
+      "e_span": 1108
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "For example, the model could allow variables to change in one or two steps after they are enabled [CITATION_2] [CITATION_3] , or variables could change within a continuous but bounded window, as can be specified with timed automata [CITATION_4] , or reactions could be classified as ''fast'' and ''slow'' reactions, with ''fast'' reactions occurring (effectively) infinitely faster than slow reactions [CITATION_5] [CITATION_6] .",
+      "s_span": 679,
+      "e_span": 1108
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "For example, the model could allow variables to change in one or two steps after they are enabled [CITATION_2] [CITATION_3] , or variables could change within a continuous but bounded window, as can be specified with timed automata [CITATION_4] , or reactions could be classified as ''fast'' and ''slow'' reactions, with ''fast'' reactions occurring (effectively) infinitely faster than slow reactions [CITATION_5] [CITATION_6] .",
+      "s_span": 679,
+      "e_span": 1108
+    }
+  ],
+  "bib_entries": {
+    "364564": {
+      "title": "Bounded Asynchrony: Concurrency for Modeling Cell-Cell Interactions",
+      "abstract": "We introduce bounded asynchrony, a notion of concurrency tailored to the modeling of biological cell-cell interactions. Bounded asynchrony is the result of a scheduler that bounds the number of steps that one process gets ahead of other processes; this allows the components of a system to move independently while keeping them coupled. Bounded asynchrony accurately reproduces the experimental observations made about certain cell-cell interactions: its constrained nondeterminism captures the variability observed in cells that, although equally potent, assume distinct fates. Real-life cells are not \"scheduled\", but we show that distributed real-time behavior can lead to component interactions that are observationally equivalent to bounded asynchrony; this provides a possible mechanistic explanation for the phenomena observed during cell fate specification. ::: ::: We use model checking to determine cell fates. The nondeterminism of bounded asynchrony causes state explosion during model checking, but partial-order methods are not directly applicable. We present a new algorithm that reduces the number of states that need to be explored: our optimization takes advantage of the bounded-asynchronous progress and the spatially local interactions of components that model cells. We compare our own communication-based reduction with partial-order reduction (on a restricted form of bounded asynchrony) and experiments illustrate that our algorithm leads to significant savings."
+    },
+    "18129339": {
+      "title": "A theory of timed automata",
+      "abstract": "Alur, R. and D.L. Dill, A theory of timed automata, Theoretical Computer Science 126 (1994) 183-235. We propose timed (j&e) automata to model the behavior of real-time systems over time. Our definition provides a simple, and yet powerful, way to annotate state-transition graphs with timing constraints using finitely many real-valued clocks. A timed automaton accepts timed words-infinite sequences in which a real-valued time of occurrence is associated with each symbol. We study timed automata from the perspective of formal language theory: we consider closure properties, decision problems, and subclasses. We consider both nondeterministic and deterministic transition structures, and both Biichi and Muller acceptance conditions. We show that nondeterministic timed automata are closed under union and intersection, but not under complementation, whereas deterministic timed Muller automata are closed under all Boolean operations. The main construction of the paper is an (PSPACE) algorithm for checking the emptiness of the language of a (nondeterministic) timed automaton. We also prove that the universality problem and the language inclusion problem are solvable only for the deterministic automata: both problems are undecidable (II i-hard) in the nondeterministic case and PSPACE-complete in the deterministic case. Finally, we discuss the application of this theory to automatic verification of real-time requirements of finite-state systems."
+    },
+    "9617443": {
+      "title": "Architecture and inherent robustness of a bacterial cell-cycle control system",
+      "abstract": "A closed-loop control system drives progression of the coupled stalked and swarmer cell cycles of the bacterium Caulobacter crescentus in a near-mechanical step-like fashion. The cell-cycle control has a cyclical genetic circuit composed of four regulatory proteins with tight coupling to processive chromosome replication and cell division subsystems. We report a hybrid simulation of the coupled cell-cycle control system, including asymmetric cell division and responses to external starvation signals, that replicates mRNA and protein concentration patterns and is consistent with observed mutant phenotypes. An asynchronous sequential digital circuit model equivalent to the validated simulation model was created. Formal model-checking analysis of the digital circuit showed that the cell-cycle control is robust to intrinsic stochastic variations in reaction rates and nutrient supply, and that it reliably stops and restarts to accommodate nutrient starvation. Model checking also showed that mechanisms involving methylation-state changes in regulatory promoter regions during DNA replication increase the robustness of the cell-cycle control. The hybrid cell-cycle simulation implementation is inherently extensible and provides a promising approach for development of whole-cell behavioral models that can replicate the observed functionality of the cell and its responses to changing environmental conditions."
+    },
+    "8079719": {
+      "title": "Predictive modeling of signaling crosstalk during C. elegans vulval development",
+      "abstract": "Caenorhabditis elegans vulval development provides an important paradigm for studying the process of cell fate determination and pattern formation during animal development. Although many genes controlling vulval cell fate specification have been identified, how they orchestrate themselves to generate a robust and invariant pattern of cell fates is not yet completely understood. Here, we have developed a dynamic computational model incorporating the current mechanistic understanding of gene interactions during this patterning process. A key feature of our model is the inclusion of multiple modes of crosstalk between the epidermal growth factor receptor (EGFR) and LIN-12/Notch signaling pathways, which together determine the fates of the six vulval precursor cells (VPCs). Computational analysis, using the model-checking technique, provides new biological insights into the regulatory network governing VPC fate specification and predicts novel negative feedback loops. In addition, our analysis shows that most mutations affecting vulval development lead to stable fate patterns in spite of variations in synchronicity between VPCs. Computational searches for the basis of this robustness show that a sequential activation of the EGFR-mediated inductive signaling and LIN-12 / Notch-mediated lateral signaling pathways is key to achieve a stable cell fate pattern. We demonstrate experimentally a time-delay between the activation of the inductive and lateral signaling pathways in wild-type animals and the loss of sequential signaling in mutants showing unstable fate patterns; thus, validating two key predictions provided by our modeling work. The insights gained by our modeling study further substantiate the usefulness of executing and analyzing mechanistic models to investigate complex biological behaviors."
+    },
+    "16927629": {
+      "title": "Metabolic stability and epigenesis in randomly constructed genetic nets",
+      "abstract": "Abstract Proto-organisms probably were randomly aggregated nets of chemical reactions. The hypothesis that contemporary organisms are also randomly constructed molecular automata is examined by modeling the gene as a binary (on-off) device and studying the behavior of large, randomly constructed nets of these binary “genes”. The results suggest that, if each “gene” is directly affected by two or three other “genes”, then such random nets: behave with great order and stability; undergo behavior cycles whose length predicts cell replication time as a function of the number of genes per cell; possess different modes of behavior whose number per net predicts roughly the number of cell types in an organism as a function of its number of genes; and under the stimulus of noise are capable of differentiating directly from any mode of behavior to at most a few other modes of behavior. Cellular differentation is modeled as a Markov chain among the modes of behavior of a genetic net. The possibility of a general theory of metabolic behavior is suggested."
+    },
+    "16851968": {
+      "title": "Dynamical analysis of a generic Boolean model for the control of the mammalian cell cycle",
+      "abstract": "Motivation: To understand the behaviour of complex biological regulatory networks, a proper integration of molecular data into a full-fledge formal dynamical model is ultimately required. As most available data on regulatory interactions are qualitative, logical modelling offers an interesting framework to delineate the main dynamical properties of the underlying networks. Results: Transposing a generic model of the core network controlling the mammalian cell cycle into the logical framework, we compare different strategies to explore its dynamical properties. In particular, we assess the respective advantages and limits of synchronous versus asynchronous updating assumptions to delineate the asymptotical behaviour of regulatory networks. Furthermore, we propose several intermediate strategies to optimize the computation of asymptotical properties depending on available knowledge. Availability: The mammalian cell cycle model is available in a dedicated XML format (GINML) on our website, along with our logical simulation software GINsim ( ). Higher resolution state transitions graphs are also found on this web site (Model Repository page). Contact: thieffry@ibdm.univ-mrs.fr"
+    }
+  },
+  "generator": "fallback_v4"
+}

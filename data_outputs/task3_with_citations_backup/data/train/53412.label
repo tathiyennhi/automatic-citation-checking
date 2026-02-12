@@ -1,0 +1,55 @@
+{
+  "doc_id": "53412",
+  "text": "We have successfully used the above synchronization methods (first introduced by Singer in [CITATION_1] ) to solve the graph realization problem in the context of sensor network localization [CITATION_2] , and the molecule problem in structural biology [CITATION_3] . Another recent application of synchronization is to the Structure from Motion problem [CITATION_4] , a fundamental task in computer vision where one is asked to recover three-dimensional structure from a collection of images. In general, the synchronization problem can be applied in such settings where the underlying problem exhibits a group structure, and one has readily available (possibly noisy) pairwise measurements of ratios of the group elements.",
+  "correct_citation": {
+    "[CITATION_1]": "12654525",
+    "[CITATION_2]": "12541600",
+    "[CITATION_3]": "5992773",
+    "[CITATION_4]": "8569690"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We have successfully used the above synchronization methods (first introduced by Singer in [CITATION_1] ) to solve the graph realization problem in the context of sensor network localization [CITATION_2] , and the molecule problem in structural biology [CITATION_3] .",
+      "s_span": 0,
+      "e_span": 267
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We have successfully used the above synchronization methods (first introduced by Singer in [CITATION_1] ) to solve the graph realization problem in the context of sensor network localization [CITATION_2] , and the molecule problem in structural biology [CITATION_3] .",
+      "s_span": 0,
+      "e_span": 267
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We have successfully used the above synchronization methods (first introduced by Singer in [CITATION_1] ) to solve the graph realization problem in the context of sensor network localization [CITATION_2] , and the molecule problem in structural biology [CITATION_3] .",
+      "s_span": 0,
+      "e_span": 267
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Another recent application of synchronization is to the Structure from Motion problem [CITATION_4] , a fundamental task in computer vision where one is asked to recover three-dimensional structure from a collection of images.",
+      "s_span": 268,
+      "e_span": 493
+    }
+  ],
+  "bib_entries": {
+    "8569690": {
+      "title": "Global motion estimation from point matches",
+      "abstract": "Multiview structure recovery from a collection of images requires the recovery of the positions and orientations of the cameras relative to a global coordinate system. Our approach recovers camera motion as a sequence of two global optimizations. First, pair wise Essential Matrices are used to recover the global rotations by applying robust optimization using either spectral or semi definite programming relaxations. Then, we directly employ feature correspondences across images to recover the global translation vectors using a linear algorithm based on a novel decomposition of the Essential Matrix. Our method is efficient and, as demonstrated in our experiments, achieves highly accurate results on collections of real images for which ground truth measurements are available."
+    },
+    "5992773": {
+      "title": "Eigenvector synchronization, graph rigidity and the molecule problem",
+      "abstract": "The graph realization problem has received a great deal of attention in recent years, due to its importance in applications such as wireless sensor networks and structural biology. In this paper, we extend the previous work and propose the 3D-As-Synchronized-As-Possible (3D-ASAP) algorithm, for the graph realization problem in ℝ3, given a sparse and noisy set of distance measurements. 3D-ASAP is a divide and conquer, non-incremental and non-iterative algorithm, which integrates local distance information into a global structure determination. Our approach starts with identifying, for every node, a subgraph of its 1-hop neighborhood graph, which can be accurately embedded in its own coordinate system. In the noise-free case, the computed coordinates of the sensors in each patch must agree with their global positioning up to some unknown rigid motion, that is, up to translation, rotation and possibly reflection. In other words, to every patch, there corresponds an element of the Euclidean group, Euc(3), of rigid transformations in ℝ3, and the goal was to estimate the group elements that will properly align all the patches in a globally consistent way. Furthermore, 3D-ASAP successfully incorporates information specific to the molecule problem in structural biology, in particular information on known substructures and their orientation. In addition, we also propose 3D-spectral-partitioning (SP)-ASAP, a faster version of 3D-ASAP, which uses a spectral partitioning algorithm as a pre-processing step for dividing the initial graph into smaller subgraphs. Our extensive numerical simulations show that 3D-ASAP and 3D-SP-ASAP are very robust to high levels of noise in the measured distances and to sparse connectivity in the measurement graph, and compare favorably with similar state-of-the-art localization algorithms."
+    },
+    "12541600": {
+      "title": "Sensor network localization by eigenvector synchronization over the Euclidean group",
+      "abstract": "We present a new approach to localization of sensors from noisy measurements of a subset of their Euclidean distances. Our algorithm starts by finding, embedding, and aligning uniquely realizable subsets of neighboring sensors called patches. In the noise-free case, each patch agrees with its global positioning up to an unknown rigid motion of translation, rotation, and possibly reflection. The reflections and rotations are estimated using the recently developed eigenvector synchronization algorithm, while the translations are estimated by solving an overdetermined linear system. The algorithm is scalable as the number of nodes increases and can be implemented in a distributed fashion. Extensive numerical experiments show that it compares favorably to other existing algorithms in terms of robustness to noise, sparse connectivity, and running time. While our approach is applicable to higher dimensions, in the current article, we focus on the two-dimensional case."
+    },
+    "12654525": {
+      "title": "Angular synchronization by eigenvectors and semidefinite programming",
+      "abstract": "The angular synchronization problem is to obtain an accurate estimation (up to a constant additive phase) for a set of unknown angles $\\theta_1,...,\\theta_n$ from $m$ noisy measurements of their offsets $\\theta_i-\\theta_j \\mod 2\\pi$. Of particular interest is angle recovery in the presence of many outlier measurements that are uniformly distributed in $[0,2\\pi)$ and carry no information on the true offsets. We introduce an efficient recovery algorithm for the unknown angles from the top eigenvector of a specially designed Hermitian matrix. The eigenvector method is extremely stable and succeeds even when the number of outliers is exceedingly large. For example, we successfully estimate $n=400$ angles from a full set of $m={400 \\choose 2}$ offset measurements of which 90% are outliers in less than a second on a commercial laptop. The performance of the method is analyzed using random matrix theory and information theory. We discuss the relation of the synchronization problem to the combinatorial optimization problem \\textsc{Max-2-Lin mod} $L$ and present a semidefinite relaxation for angle recovery, drawing similarities with the Goemans-Williamson algorithm for finding the maximum cut in a weighted graph. We present extensions of the eigenvector method to other synchronization problems that involve different group structures and their applications, such as the time synchronization problem in distributed networks and the surface reconstruction problems in computer vision and optics."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,73 @@
+{
+  "doc_id": "54219",
+  "text": "Advances in the methods for image segmentation and matting [CITATION_1] [CITATION_2] , and cutout have motivated the researchers to provide similar techniques for videos. Chaung et al. proposed video matting [CITATION_3] , where they propagate the user given trimaps for the key frames to the intermediate frames and apply image matting technique on each frame. As discussed by Li et al. [CITATION_4] the dense optical flow can not be accurate determined for all the pixels and therefore errors creep in. Other advanced techniques like Interactive Video Cutout [CITATION_5] , Video Object Cut and Paste [CITATION_6] allow extraction of the object from a video.",
+  "correct_citation": {
+    "[CITATION_1]": "2062421",
+    "[CITATION_2]": "27763245",
+    "[CITATION_3]": "3020591",
+    "[CITATION_4]": "195711992",
+    "[CITATION_5]": "1942508",
+    "[CITATION_6]": "195711992"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Advances in the methods for image segmentation and matting [CITATION_1] [CITATION_2] , and cutout have motivated the researchers to provide similar techniques for videos.",
+      "s_span": 0,
+      "e_span": 170
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Advances in the methods for image segmentation and matting [CITATION_1] [CITATION_2] , and cutout have motivated the researchers to provide similar techniques for videos.",
+      "s_span": 0,
+      "e_span": 170
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Chaung et al. proposed video matting [CITATION_3] , where they propagate the user given trimaps for the key frames to the intermediate frames and apply image matting technique on each frame.",
+      "s_span": 171,
+      "e_span": 361
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "As discussed by Li et al. [CITATION_4] the dense optical flow can not be accurate determined for all the pixels and therefore errors creep in.",
+      "s_span": 362,
+      "e_span": 504
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Other advanced techniques like Interactive Video Cutout [CITATION_5] , Video Object Cut and Paste [CITATION_6] allow extraction of the object from a video.",
+      "s_span": 505,
+      "e_span": 660
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Other advanced techniques like Interactive Video Cutout [CITATION_5] , Video Object Cut and Paste [CITATION_6] allow extraction of the object from a video.",
+      "s_span": 505,
+      "e_span": 660
+    }
+  ],
+  "bib_entries": {
+    "27763245": {
+      "title": "Poisson matting",
+      "abstract": "In this paper, we formulate the problem of natural image matting as one of solving Poisson equations with the matte gradient field. Our approach, which we call Poisson matting, has the following advantages. First, the matte is directly reconstructed from a continuous matte gradient field by solving Poisson equations using boundary information from a user-supplied trimap. Second, by interactively manipulating the matte gradient field using a number of filtering tools, the user can further improve Poisson matting results locally until he or she is satisfied. The modified local result is seamlessly integrated into the final result. Experiments on many complex natural images demonstrate that Poisson matting can generate good matting results that are not possible using existing matting techniques."
+    },
+    "1942508": {
+      "title": "Interactive video cutout",
+      "abstract": "We present an interactive system for efficiently extracting foreground objects from a video. We extend previous min-cut based image segmentation techniques to the domain of video with four new contributions. We provide a novel painting-based user interface that allows users to easily indicate the foreground object across space and time. We introduce a hierarchical mean-shift preprocess in order to minimize the number of nodes that min-cut must operate on. Within the min-cut we also define new local cost functions to augment the global costs defined in earlier work. Finally, we extend 2D alpha matting methods designed for images to work with 3D video volumes. We demonstrate that our matting approach preserves smoothness across both space and time. Our interactive video cutout system allows users to quickly extract foreground objects from video sequences for use in a variety of applications including compositing onto new backgrounds and NPR cartoon style rendering."
+    },
+    "3020591": {
+      "title": "Video matting of complex scenes",
+      "abstract": "This paper describes a new framework for video matting, the process of pulling a high-quality alpha matte and foreground from a video sequence. The framework builds upon techniques in natural image matting, optical flow computation, and background estimation. User interaction is comprised of garbage matte specification if background estimation is needed, and hand-drawn keyframe segmentations into \"foreground,\" \"background\" and \"unknown\". The segmentations, called trimaps, are interpolated across the video volume using forward and backward optical flow. Competing flow estimates are combined based on information about where flow is likely to be accurate. A Bayesian matting technique uses the flowed trimaps to yield high-quality mattes of moving foreground elements with complex boundaries filmed by a moving camera. A novel technique for smoke matte extraction is also demonstrated."
+    },
+    "195711992": {
+      "title": "Video object cut and paste",
+      "abstract": "In this paper, we present a system for cutting a moving object out from a video clip. The cutout object sequence can be pasted onto another video or a background image. To achieve this, we first apply a new 3D graph cut based segmentation approach on the spatial-temporal video volume. Our algorithm partitions watershed presegmentation regions into foreground and background while preserving temporal coherence. Then, the initial segmentation result is refined locally. Given two frames in the video sequence, we specify two respective windows of interest which are then tracked using a bi-directional feature tracking algorithm. For each frame in between these two given frames, the segmentation in each tracked window is refined using a 2D graph cut that utilizes a local color model. Moreover, we provide brush tools for the user to control the object boundary precisely wherever needed. Based on the accurate binary segmentation result, we apply coherent matting to extract the alpha mattes and foreground colors of the object."
+    },
+    "2062421": {
+      "title": "A bayesian approach to digital matting",
+      "abstract": "This paper proposes a new Bayesian framework for solving the matting problem, i.e. extracting a foreground element from a background image by estimating an opacity for each pixel of the foreground element. Our approach models both the foreground and background color distributions with spatially-varying sets of Gaussians, and assumes a fractional blending of the foreground and background colors to produce the final output. It then uses a maximum-likelihood criterion to estimate the optimal opacity, foreground and background simultaneously. In addition to providing a principled approach to the matting problem, our algorithm effectively handles objects with intricate boundaries, such as hair strands and fur, and provides an improvement over existing techniques for these difficult cases."
+    }
+  },
+  "generator": "fallback_v4"
+}

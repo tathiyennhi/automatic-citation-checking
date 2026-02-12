@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "PTQ-based methodsIn PTQ-based methods, we first quantize an LLM and then fine-tune the quantized model, namely quantization and finetuning are sequentially conducted.",
+    "QLoRA [91] is the first PTQ-based quantization-aware LoRA method.",
+    "In the finetuning stage, it first quantizes an LLM to 4 bits and then finetunes a LoRA module on it with a higher precision, such as BFloat16 or Float16.",
+    "In the inference stage, it dequantizes the LLM to the same precision as LoRA and then adds the LoRA updates to the LLM.Although QLoRA can significantly reduce memory cost for fine-tuning, it does not bring benefits for inference, because it requires dequantizing the LLM to high precision again.",
+    "To solve this problem, QA-LoRA [92] is proposed to reduce memory cost for both the fine-tuning and inference stages."
+  ]
+}

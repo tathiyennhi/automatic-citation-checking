@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In this paper, we propose DataStates-LLM, a novel asynchronous checkpointing technique that overcomes the limitations of the aforementioned state-of-theart approaches.",
+    "Our key idea is to leverage the observation that the model parameters and optimizer state remain immutable for extended periods of time during an iteration (i.e., during the forward pass and backward pass) and are updated in bulk at specific points.",
+    "Specifically, we can copy the model state (parameters, optimizer state) during the forward and backward pass from the GPU to the host memory without blocking the training iteration.",
+    "At the same time, we can hide the overhead of contention for the memory and storage tiers and guarantee the consistency of checkpoints asynchronously once the checkpointing data is available on the host memory.",
+    "We summarize our contributions as follows:(1) We perform a gap analysis that highlights the checkpoint sizes, load-balancing among the checkpoint shards corresponding to 3D parallelism, and when the LLM model parameters and optimizer state remain immutable during each training iteration."
+  ]
+}

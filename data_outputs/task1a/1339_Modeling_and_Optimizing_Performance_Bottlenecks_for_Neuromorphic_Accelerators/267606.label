@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "For feedfor-ward ML networks, all neurons in a neurocore belong to the same algorithmic network layer.The timestep duration is the time required for the slowest neurocore to complete its assigned computation, establishing the accelerator's throughput bottleneck.",
+    "Since neurocores operate in parallel but barrier synchronize at each timestep, the maximum processing time across all active neurocores determines overall accelerator performance.",
+    "This creates a load balancing challenge where uneven computational workload distribution across neurocores directly impacts accelerator throughput, regardless of total computational capacity.The event-driven execution paradigm naturally exploits sparsity through two mechanisms.",
+    "Weight sparsity reduces memory access and synop accumulation requirements within each neurocore, while activation sparsity reduces NoC message traffic and downstream synop requirements.",
+    "Unlike conventional accelerators that may require structured sparsity, neuromorphic accelerators can natively leverage unstructured sparsity through their per-message weight fetching and activation message passing approaches, though our analysis reveals architecture-specific limitations for certain sparsity types.The neuromorphic spatially expanded approach, where each logical neuron maps to a dedicated physical location in a neurocore [24], contrasts with conventional accelerators (GPUs, TPUs) that achieve parallelism through time-multiplexed execution across shared arithmetic units."
+  ],
+  "correct_citations": [
+    "Unlike conventional accelerators that may require structured sparsity, neuromorphic accelerators can natively leverage unstructured sparsity through their per-message weight fetching and activation message passing approaches, though our analysis reveals architecture-specific limitations for certain sparsity types.The neuromorphic spatially expanded approach, where each logical neuron maps to a dedicated physical location in a neurocore [24], contrasts with conventional accelerators (GPUs, TPUs) that achieve parallelism through time-multiplexed execution across shared arithmetic units."
+  ]
+}

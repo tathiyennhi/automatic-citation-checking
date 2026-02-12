@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "In addition, batch normalization and dropout were applied to further improve generalization and reduce overfitting.The refined hidden representation produced by successive GRBs was mapped to a single scalar output by the regression layer, representing the corrective adjustment applied to the initial fault location estimate.",
+    "Model Training ParametersThe training process employed the Mean Absolute Error (MAE) as the loss function, defined in Equation (3).",
+    "MAE was selected for its robustness to outliers and its direct interpretability in regression tasks [21].MAE = 1 n n i=1 |y i -f (x i)|,(3)where y i is the ground-truth value, f (x i) is the model prediction, and n denotes the total number of samples.",
+    "Compared to squared-error-based losses, MAE reduces the influence of large deviations, making it more robust to outliers in the training data.Model optimization was carried out using the AdamW algorithm [22],which extends Adam by decoupling weight decay from the gradient-based update rule, thereby enhancing convergence stability.",
+    "The parameter update at iteration t is expressed in Equation ( 4).θ t+1 = θ t -η mt √ vt + ϵ + λθ t,(4)where θ represents model parameters, η the learning rate, mt and vt the biascorrected first and second moment estimates, λ the weight decay coefficient, and ϵ a small constant for numerical stability."
+  ],
+  "correct_citations": [
+    "MAE was selected for its robustness to outliers and its direct interpretability in regression tasks [21].MAE = 1 n n i=1 |y i -f (x i)|,(3)where y i is the ground-truth value, f (x i) is the model prediction, and n denotes the total number of samples.",
+    "Compared to squared-error-based losses, MAE reduces the influence of large deviations, making it more robust to outliers in the training data.Model optimization was carried out using the AdamW algorithm [22],which extends Adam by decoupling weight decay from the gradient-based update rule, thereby enhancing convergence stability."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This corpus consists of both positive and negative pairs of masked conversations.",
+    "We consider a masked conversation pair as a positive example if both conversations pertain to the same target word, and a negative example if they pertain to a different target word.",
+    "We then perform contrastive learning between the frozen representation of the masked en-US conversation ([MASK] US) and the trainable representation of the masked en-IN/en-NG conversation ([MASK] X), using cosine embedding loss.",
+    "This allows the adapters to learn from both positive and negative examples present in the pseudo-parallel corpus.",
+    "Here, X represents dialect in focus (either en-IN or en-NG), sim(•) calculates the cosine similarity, 'd' is the margin, and 'y' is the label (1 for a positive example, and -1 otherwise)."
+  ]
+}

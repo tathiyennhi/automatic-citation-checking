@@ -1,0 +1,79 @@
+{
+  "doc_id": "51219",
+  "text": "Among text-first approaches, the work is split between developing systems which focus specifically on disfluency detection and those which couple disfluency detection with parsing. For the former, [CITATION_1] employ a linear classifier to predict the edited phrases in Switchboard corpus [CITATION_2] . [CITATION_3] use a TAG-based noisy channel model to detect disfluencies while parsing with getting nbest parses from each sentence and re-ranking with a language model. The original TAG parser is not used for parsing itself and it is used just to find rough copies in the sentence. Their method achieves promising results on detecting edited words but at the expense of speed (the parser has a complexity of O(N 5 ). [CITATION_4] use the same TAG model and add semi-automatically extracted prosodic features. [CITATION_5] improve the performance of TAG model by adding external language modeling information from data sets such as Gigaword in addition to using minimal expected Floss in n-best re-ranking. [CITATION_6] uses integer linear programming combined with CRF for learning disfluencies. That work shows that ILP can learn local and global constraints to improve the performance significantly. [CITATION_7] achieve the best performance on the Switchboard corpus [CITATION_8] without any additional data. They use three steps for detecting disfluencies using weighted Max-Margin Markov (M 3 ) network: detecting fillers, detecting edited words, and refining errors in previous steps.",
+  "correct_citation": {
+    "[CITATION_1]": "5454540",
+    "[CITATION_2]": "61412708",
+    "[CITATION_3]": "18837411",
+    "[CITATION_4]": "18275488",
+    "[CITATION_5]": "12782131",
+    "[CITATION_6]": "14902521",
+    "[CITATION_7]": "6193081",
+    "[CITATION_8]": "61412708"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For the former, employ a linear classifier to predict the edited phrases in Switchboard corpus. use a TAG-based noisy channel model to detect disfluencies while parsing with getting nbest parses from each sentence and re-ranking with a language model."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "employ a linear classifier to predict the edited phrases in Switchboard corpus"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "e which couple disfluency detection with parsing. For the former, employ a linear classifier to predict the edited phrases in Switchboard corpus. use a TAG-based noisy channel model to detect disfluencies while parsing with getting nbest parses from each sentence and re-ranking with a language model. The original TAG parser is not used for parsing i"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Their method achieves promising results on detecting edited words but at the expense of speed (the parser has a complexity of O(N 5 )."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "use the same TAG model and add semi-automatically extracted prosodic features."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "improve the performance of TAG model by adding external language modeling information from data sets such as Gigaword in addition to using minimal expected Floss in n-best re-ranking."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "That work shows that ILP can learn local and global constraints to improve the performance significantly."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "achieve the best performance on the Switchboard corpus"
+    }
+  ],
+  "bib_entries": {
+    "14902521": {
+      "title": "Using integer linear programming for detecting speech disfluencies",
+      "abstract": "We present a novel two-stage technique for detecting speech disfluencies based on Integer Linear Programming (ILP). In the first stage we use state-of-the-art models for speech disfluency detection, in particular, hidden-event language models, maximum entropy models and conditional random fields. During testing each model proposes possible disfluency labels which are then assessed in the presence of local and global constraints using ILP. Our experimental results show that by using ILP we can improve the performance of our models with negligible cost in processing time. The less training data is available the larger the improvement due to ILP."
+    },
+    "61412708": {
+      "title": "Switchboard: Telephone speech corpus for research and development",
+      "abstract": "SWITCHBOARD is a large multispeaker corpus of conversational speech and text which should be of interest to researchers in speaker authentication and large vocabulary speech recognition. About 2500 conversations by 500 speakers from around the US were collected automatically over T1 lines at Texas Instruments. Designed for training and testing of a variety of speech processing algorithms, especially in speaker verification, it has over an 1 h of speech from each of 50 speakers, and several minutes each from hundreds of others. A time-aligned word for word transcription accompanies each recording. >"
+    },
+    "18837411": {
+      "title": "A tag-based noisy channel model of speech repairs",
+      "abstract": "This paper describes a noisy channel model of speech repairs, which can identify and correct repairs in speech transcripts. A syntactic parser is used as the source model, and a novel type of TAG-based transducer is the channel model. The use of TAG is motivated by the intuition that the reparandum is a \"rough copy\" of the repair. The model is trained and tested on the Switchboard disfluency-annotated corpus."
+    },
+    "5454540": {
+      "title": "Edit detection and parsing for transcribed speech",
+      "abstract": "We present a simple architecture for parsing transcribed speech in which an edited-word detector first removes such words from the sentence string, and then a standard statistical parser trained on transcribed speech parses the remaining words. The edit detector achieves a misclassification rate on edited words of 2.2%. (The NULL-model, which marks everything as not edited, has an error rate of 5.9%.) To evaluate our parsing results we introduce a new evaluation metric, the purpose of which is to make evaluation of a parse tree relatively indifferent to the exact tree position of EDITED nodes. By this metric the parser achieves 85.3% precision and 86.5% recall."
+    },
+    "18275488": {
+      "title": "Effective use of prosody in parsing conversational speech",
+      "abstract": "We identify a set of prosodic cues for parsing conversational speech and show how such features can be effectively incorporated into a statistical parsing model. On the Switchboard corpus of conversational speech, the system achieves improved parse accuracy over a state-of-the-art system which uses only lexical and syntactic features. Since removal of edit regions is known to improve downstream parse accuracy, we explore alternatives for edit detection and show that PCFGs are not competitive with more specialized techniques."
+    },
+    "6193081": {
+      "title": "Disfluency detection using multi-step stacked learning",
+      "abstract": "In this paper, we propose a multi-step stacked learning model for disfluency detection. Our method incorporates refined n-gram features step by step from different word sequences. First, we detect filler words. Second, edited words are detected using n-gram features extracted from both the original text and filler filtered text. In the third step, additional n-gram features are extracted from edit removed texts together with our newly induced in-between features to improve edited word detection. We use Max-Margin Markov Networks (M 3 Ns) as the classifier with the weighted hamming loss to balance precision and recall. Experiments on the Switchboard corpus show that the refined n-gram features from multiple steps and M 3 Ns with weighted hamming loss can significantly improve the performance. Our method for disfluency detection achieves the best reported F-score 0.841 without the use of additional resources. 1"
+    },
+    "12782131": {
+      "title": "The impact of language models and loss functions on repair disfluency detection",
+      "abstract": "Unrehearsed spoken language often contains disfluencies. In order to correctly interpret a spoken utterance, any such disfluencies must be identified and removed or otherwise dealt with. Operating on transcripts of speech which contain disfluencies, we study the effect of language model and loss function on the performance of a linear reranker that rescores the 25-best output of a noisy-channel model. We show that language models trained on large amounts of non-speech data improve performance more than a language model trained on a more modest amount of speech data, and that optimising f-score rather than log loss improves disfluency detection performance. ::: ::: Our approach uses a log-linear reranker, operating on the top n analyses of a noisy channel model. We use large language models, introduce new features into this reranker and examine different optimisation strategies. We obtain a disfluency detection f-scores of 0.838 which improves upon the current state-of-the-art."
+    }
+  },
+  "generator": "fallback"
+}

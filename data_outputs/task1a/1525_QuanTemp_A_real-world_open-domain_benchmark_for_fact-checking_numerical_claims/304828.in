@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For each question/claim, we retrieve the top-100 documents using BM25 and re-rank them with paraphrase-MiniLM-L6-v2 from sentence-transformers library [33], selecting the top 3 snippets for the NLI task.",
+    "We experiment with different values of 𝑘 ∈ [1, 3, 5, 7] for top-k snippets.",
+    "We observe that k=3 at claim level works best for our setup.",
+    "Hence, for the \"Original Claim\" baseline, we use the top 3 evidences using the claim, and for other methods, we use the top-1 evidence per question, ensuring three evidences per claim for fair comparison.",
+    "We experiment with different encoder models in huggingface such as Deberta-base, Deberta-large, Roberta family of models and observe that the 6layer MiniLM model [51] (paraphrase-MiniLM-L6-v2) provides the best evidence ranking for downstream fact-verification.After retrieving evidence, we fine-tune a three-class classifier for veracity prediction."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "14107",
+  "text": "Our implementation features a layered system architecture depicted in Figure 8 . We ported a commonly used real-time operating system, MicroC OS II [21] , which supports fixed-priority preemptive scheduling. We then implemented a scheduler based on rate-monotonic analysis (RMA) [CITATION_1] on top of MicroC OS II. This scheduler supports threads of arbitrary periods imposing strict execution time control. Failure to complete by a deadline results in preemption and rescheduling during the next period. Most hard real-time systems use similar schedulers in order to guarantee deadline constraints on periodic tasks. We also provide synchronous application checkpoint calls for implementing T-ProT and monitoring of aggregate execution time per task with a one microsecond precision, but we exclude the time spent inside interrupt service routines and scheduler overheads (due to the complexity of measuring these). ",
+  "correct_citation": {
+    "[CITATION_1]": "207669821"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We then implemented a scheduler based on rate-monotonic analysis (RMA)  on top of MicroC OS II. This scheduler supports threads of arbitrary periods imposing strict execution time control."
+    }
+  ],
+  "bib_entries": {
+    "207669821": {
+      "title": "Scheduling algorithms for multiprogramming in a hard-real-time environment",
+      "abstract": "The problem of multiprogram scheduling on a single processor is studied from the viewpoint of the characteristics peculiar to the program functions that need guaranteed service. It is shown that an optimum fixed priority scheduler possesses an upper bound to processor utilization which may be as low as 70 percent for large task sets. It is also shown that full processor utilization can be achieved by dynamically assigning priorities on the basis of their current deadlines. A combination of these two scheduling techniques is also discussed."
+    }
+  },
+  "generator": "fallback_v4"
+}

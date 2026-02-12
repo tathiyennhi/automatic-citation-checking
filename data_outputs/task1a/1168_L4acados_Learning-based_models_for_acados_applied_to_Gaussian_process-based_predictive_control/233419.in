@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In the following, we discuss these differences in detail and attribute them to method-specific implementation details.",
+    "Parallelized model evaluations: Executing all sensitivity computations on a single CPU core, the \"CPU-T1-A0\" scenario highlights lower computation times for NN inference with PyTorch, for both L4CasADi and L4acados compared with CasADi, which could be attributed to efficient vectorization of layer-wise NN evaluations in PyTorch.",
+    "In particular, CasADi exhibits strikingly similar computation times for both \"large\" models, whose matching number of parameters can be seen as a proxy for the number of atomic operations for automatic differentiation.",
+    "In contrast, the PyTorch implementation of the \"wide\" NN architecture in L4CasADi and L4acados leads to lower inference times than the \"deep\" one enforcing sequential layer-by-layer computations.Batched sensitivity computations: By batching the sensitivity evaluations in Python, L4acados performs a single function call for the residual model's sensitivities instead of N separate calls for each stage of the OCP.",
+    "This avoids computational overheads and, in case of GPU parallelization, reduces the number of memory transfers between devices."
+  ]
+}

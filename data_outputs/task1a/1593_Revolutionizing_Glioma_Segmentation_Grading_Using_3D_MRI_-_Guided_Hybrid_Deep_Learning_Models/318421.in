@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Higher attention values indicate more importance for classification.Channel Attention: Recalibrates feature importance across channels:A channel = sigmoid(W 2 ReLU(W 1 (AvgPool(F)+MaxPool(F))))(14)where W 1, W 2 are learnable fully-connected layer weights.",
+    "Channel attention enables selective emphasis on feature channels maximally informative for glioma grading.Combined spatial-channel attention applies multiplicative interaction:F refined = (A spatial ⊙ A channel) ⊙ F(15)This two-attention approach allows full calibration of the features along both spatial and channel dimensions to focus on clinical characteristics of the tumor that are relevant.4) Classification Output and Prediction: Following feature refinement, global average pooling aggregates spatial information:GAP(F) = 1 H × W × D H i=1 W j=1 D k=1 F (i, j, k)(16)where H, W, D denote spatial dimensions of feature maps.",
+    "This operation converts spatial feature maps to vector representations, providing position-invariant features essential for classification.The final classification layer applies softmax activation:Output = softmax (W c • GAP(F) + b c) = exp(z i) j exp(z j)(17)where W c, b c are learnable classification weights and biases.",
+    "Softmax normalization ensures output values represent valid probability distributions.",
+    "The network outputs two probabilities: P (HGG) and P (LGG), with the higher probability determining final grade prediction."
+  ]
+}

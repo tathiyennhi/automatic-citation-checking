@@ -1,0 +1,22 @@
+{
+  "doc_id": "49187",
+  "text": "In general the construction algorithm follows the map partition 2 (MP2) procedure described in [CITATION_1] . The local placement function can place any rectangle next to another rectangle as it is demonstrated in Figure 3 . The current implementation starts with the original bearing α of the two map region centers (see Figure 3 where β = 0). If the placement does not lead to a feasible solution, the angle β is added to α. β is iterating between [0, π] with step size of π 180 and a changing sign until a placement without overlap has been found. If no placement can be found, the algorithm considers all adjacent placed map regions. If also in a later step during the DFS a map region can not be placed, a non feasible solution is accepted. This situation is often caused because the construction algorithm is hampered by the input configuration of the map regions. Solving this can be very compute expensive and often the procedure leads to a solution which will be rejected by the metaheuristic due to the bad fitness value. (this is the initial relative position in the input map). Since the rectangle can not be placed without overlap (indicated by red) an angle β is added.",
+  "correct_citation": {
+    "[CITATION_1]": "14266549"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In general the construction algorithm follows the map partition 2 (MP2) procedure described in  .",
+      "s_span": 0,
+      "e_span": 109
+    }
+  ],
+  "bib_entries": {
+    "14266549": {
+      "title": "RecMap: Rectangular Map Approximations",
+      "abstract": "In many application domains, data is collected and referenced by its geospatial location. Nowadays, different kinds of maps are used to emphasize the spatial distribution of one or more geospatial attributes. The nature of geospatial statistical data is the highly nonuniform distribution in the real world data sets. This has several impacts on the resulting map visualizations. Classical area maps tend to highlight patterns in large areas, which may, however, be of low importance. Cartographers and geographers used cartograms or value-by-area maps to address this problem long before computers were available. Although many automatic techniques have been developed, most of the value-by-area cartograms are generated manually via human interaction. In this paper, we propose a novel visualization technique for geospatial data sets called RecMap. Our technique approximates a rectangular partition of the (rectangular) display area into a number of map regions preserving important geospatial constraints. It is a fully automatic technique with explicit user control over all exploration constraints within the exploration process. Experiments show that our technique produces visualizations of geospatial data sets, which enhance the discovery of global and local correlations, and demonstrate its performance in a variety of applications"
+    }
+  },
+  "generator": "fallback_v4"
+}

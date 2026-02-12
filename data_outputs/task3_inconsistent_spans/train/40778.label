@@ -1,0 +1,22 @@
+{
+  "doc_id": "40778",
+  "text": "Blackburn and McKinley [CITATION_1] implemented a uniprocessor stop-the-world generational collector with reference counting for the old generation and copying for the young. Their goal was to shorten the pauses a stop-the-world reference counting incurs, while obtaining good throughput. They run part of the old generation collection together with the young collection in order to avoid the need for a full collection that requires a long pause. The (controlled) pause times they obtain are an order of magnitude larger than those obtained by on-the-fly collectors.",
+  "correct_citation": {
+    "[CITATION_1]": "57524118"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Blackburn and McKinley  implemented a uniprocessor stop-the-world generational collector with reference counting for the old generation and copying for the young.",
+      "s_span": 0,
+      "e_span": 174
+    }
+  ],
+  "bib_entries": {
+    "57524118": {
+      "title": "Ulterior reference counting: Fast garbage collection without a long wait",
+      "abstract": "General purpose garbage collectors have yet to combine short pause times with high throughput. For example, generational collectors can achieve high throughput. They have modest average pause times, but occasionally collect the whole heap and consequently incur long pauses. At the other extreme, concurrent collectors, including reference counting, attain short pause times but with significant performance penalties. This paper introduces a new hybrid collector that combines copying generational collection for the young objects and reference counting the old objects to achieve both goals. It restricts copying and reference counting to the object demographics for which they perform well. Key to our algorithm is a generalization of deferred reference counting we call Ulterior Reference Counting. Ulterior reference counting safely ignores mutations to select heap objects. We compare a generational reference counting hybrid with pure reference counting, pure mark-sweep, and hybrid generational mark-sweep collectors. This new collector combines excellent throughput, matching a high performance generational mark-sweep hybrid, with low maximum pause times."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Using ST-code to formulate the test cases allows for a simpler execution chain and can improve later maintainability since the test cases can be handled in a PLC IDE side-by-side with the code to be tested.PLC Integrated Development Environment Test Case Generator ST-code to test Test Program Template Required Lib ST-Code MATIEC ST-to-C Transpiler GCC Compiler Test Coverage Report Minimal PLC Runtime with Test Program GCOV (code coverage analysis) Executable SoftPLC Test Program Large Language Model Generated Test Cases (CSV Table) Prompt Generate Import Start with self-contained ST test program C code C-code Minimal PLC Runtime C code Compile / Link Execute In step (4), the Test Case Generator assembles the generated test cases with the test program template and the ST-code of required functions into a self-contained ST-program and calls the MATIEC ST-to-C code transpiler.",
+    "We chose MATIEC to improve the reproducibility of our method since it is available as open-source.",
+    "The result of the transpilation is several Ccode files and CSV tables storing variable declarations.",
+    "Combined with the C-code of a minimal PLC runtime (i.e., a simple timer that executes the code cyclicly), the GCC compiler can translate the transpilation result into a self-contained binary that mimics a soft controller (step 5).",
+    "We call the compiler with flags to enable instrumenting the code for coverage analysis."
+  ]
+}

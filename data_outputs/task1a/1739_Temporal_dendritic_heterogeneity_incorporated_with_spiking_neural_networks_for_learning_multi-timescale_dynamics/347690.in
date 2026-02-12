@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For the self-designed spiking XOR problems and the NeuroVPR dataset, the readout layer is a simple linear layer that decodes the spike output of the last SNN layer into the possibility ŷt i of the i-th class at the t-th timestep.",
+    "On SHD, SSC, GSC, TIMIT, and DEAP datasets, the readout layer is a nonspiking SNN layer with leaky membrane potentials and generates the possibility ŷi of the i-th class by decoding the membrane potentials as ŷi = P t sof tmaxðu i,out ½tÞ on SHD and GSC, and ŷi = sof tmaxð P t u i,out ½tÞ on SSC, TIMIT, and DEAP.",
+    "In the above tasks, we used a multi-Gaussian curve 33 following γ, h, σ, s = 0.5, 0.15, 0.5, 6 to approximate the gradient of the non-differentiable spike activity.",
+    "On S-MNIST and PS-MNIST datasets, the readout layer is a vanilla SNN layer that decodes the spike output by counting spikes of each class, i.e., ŷi = sof tmaxð P t o i,out ½tÞ.",
+    "On these two datasets, the hyperparameters of the multi-Gaussian approximation curve are γ, h, σ, s = 0.5, 0, 0.5, 0."
+  ]
+}

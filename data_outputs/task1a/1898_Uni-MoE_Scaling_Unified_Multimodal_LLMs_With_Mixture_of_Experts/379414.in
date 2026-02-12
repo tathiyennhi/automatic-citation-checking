@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Following a strategy akin to the Qformer approach [50], we then distil fixed-length speech and audio feature vectors respectively and subsequently map them into soft audio and speech tokens via a linear projection layer.",
+    "The specific workflow is given in:X Input = [I, V, A, S, T],(1) I = MLP(CLIP-V(I)),(2) V = Mean(CLIP-V([I 1,..., I 8])),(3) A = Audio-Qformer(BEATs(A)), (4) S = Speech-Qformer(Whisper(S)),(5)T = Word-Embedding(T),(6)where [I, V, A, S, T] represents the image, video, audio, speech, and Text, respectively.",
+    "\"MLP\" is the learnable visuallanguage projection layer.",
+    "Audio/Speech-Qformer is a fourlayer transformer block, where we feed learnable fixed-length query vectors into them and the corresponding audio/speech hidden states as the key and value in the cross-attention layer.By doing such a four-layer calculation, the final outputs can be regarded as the representations of audio and speech inputs.",
+    "Take the Audio-QFormer as an example, the detailed calculation progress is presented as the following equation:X A Q = (h 1 Q,..., h AM Q),(7)h A B = BEATs(A),(8)h A S = MSA(LN(X A Q)) + X A Q,(9)h A C = MCA(LN(h A S), h A B) + h A S,(10)h A 1 = MLP(h A C),(11)where h A B is the top output of pretrained audio encoder BEATs and h A S is the multi-head self-attention calculation for the fixed-length query vectors X A Q, where AM refers to the total number of initial vectors."
+  ]
+}

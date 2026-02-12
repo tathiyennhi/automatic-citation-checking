@@ -1,0 +1,87 @@
+{
+  "text": "Text simplification systems differ primarily in the level of linguistic knowledge they encode. Phrase Based Machine Translation (PBMT) systems [CITATION_1] [CITATION_2] [CITATION_3] use the least knowledge, and as such are ill equipped to handle simplifications that require morphological changes, syntactic reordering, sentence splitting or insertions. While syntax based MT approaches use syntactic knowledge, existing systems do not offer a treatment of morphology [CITATION_4] [CITATION_5] [CITATION_6] . This means that while some syntactic reordering operations can be performed well, others requiring morphological changes cannot. Consider converting passive to active voice (e.g., from \"trains are liked by John\" to \"John likes trains\"). Besides deleting auxiliaries and reordering the arguments of the verb, there is also a requirement to modify the verb to make it agree in number with the new subject \"John\", and take the tense of the auxiliary \"are\".",
+  "citation_candidates": [
+    "9945908",
+    "6077146",
+    "15636533",
+    "7418660",
+    "2245040",
+    "1762277",
+    "10425985",
+    "741354",
+    "141120",
+    "9363872",
+    "9871276",
+    "6429026",
+    "4896510",
+    "679599",
+    "17335786",
+    "15489071"
+  ],
+  "bib_entries": {
+    "9871276": {
+      "title": "Translating from complex to simplified sentences",
+      "abstract": "We address the problem of simplifying Portuguese texts at the sentence level by treating it as a \u201ctranslation task\u201d. We use the Statistical Machine Translation (SMT) framework to learn how to translate from complex to simplified sentences. Given a parallel corpus of original and simplified texts, aligned at the sentence level, we train a standard SMT system and evaluate the \u201ctranslations\u201d produced using both standard SMT metrics like BLEU and manual inspection. Results are promising according to both evaluations, showing that while the model is usually overcautious in producing simplifications, the overall quality of the sentences is not degraded and certain types of simplification operations, mainly lexical, are appropriately captured."
+    },
+    "141120": {
+      "title": "Sentence simplification by monolingual machine translation",
+      "abstract": "In this paper we describe a method for simplifying sentences using Phrase Based Machine Translation, augmented with a re-ranking heuristic based on dissimilarity, and trained on a monolingual parallel corpus. We compare our system to a word-substitution baseline and two state-of-the-art systems, all trained and tested on paired sentences from the English part of Wikipedia and Simple Wikipedia. Human test subjects judge the output of the different systems. Analysing the judgements shows that by relatively careful phrase-based paraphrasing our model achieves similar simplification results to state-of-the-art systems, while generating better formed output. We also argue that text readability metrics such as the Flesch-Kincaid grade level should be used with caution when evaluating the output of simplification systems."
+    },
+    "4896510": {
+      "title": "Learning to simplify sentences using wikipedia",
+      "abstract": "In this paper we examine the sentence simplification problem as an English-to-English translation problem, utilizing a corpus of 137K aligned sentence pairs extracted by aligning English Wikipedia and Simple English Wikipedia. This data set contains the full range of transformation operations including rewording, reordering, insertion and deletion. We introduce a new translation model for text simplification that extends a phrase-based machine translation approach to include phrasal deletion. Evaluated based on three metrics that compare against a human reference (BLEU, word-F1 and SSA) our new approach performs significantly better than two text compression techniques (including T3) and the phrase-based translation system without deletion."
+    },
+    "15636533": {
+      "title": "A monolingual tree-based translation model for sentence simplification",
+      "abstract": "In this paper, we consider sentence simplification as a special form of translation with the complex sentence as the source and the simple sentence as the target. We propose a Tree-based Simplification Model (TSM), which, to our knowledge, is the first statistical simplification model covering splitting, dropping, reordering and substitution integrally. We also describe an efficient method to train our model with a large-scale parallel dataset obtained from the Wikipedia and Simple Wikipedia. The evaluation shows that our model achieves better readability scores than a set of baseline systems."
+    },
+    "9945908": {
+      "title": "Learning to simplify sentences with quasi-synchronous grammar and integer programming",
+      "abstract": "Text simplification aims to rewrite text into simpler versions, and thus make information accessible to a broader audience. Most previous work simplifies sentences using handcrafted rules aimed at splitting long sentences, or substitutes difficult words using a predefined dictionary. This paper presents a data-driven model based on quasi-synchronous grammar, a formalism that can naturally capture structural mismatches and complex rewrite operations. We describe how such a grammar can be induced from Wikipedia and propose an integer linear programming model for selecting the most appropriate simplification from the space of possible rewrites generated by the grammar. We show experimentally that our method creates simplifications that significantly reduce the reading difficulty of the input, while maintaining grammaticality and preserving its meaning."
+    },
+    "17335786": {
+      "title": "Text simplification as tree transduction",
+      "abstract": "Lexical and syntactic simplification aim to make texts more accessible to certain audiences. Syntactic simplification uses either hand-crafted linguis- tic rules for deep syntactic transformations, or machine learning techniques to model simpler transformations. Lexical simplification performs a lookup for synonyms followed by context and/or frequency-based models. In this paper we investigate modelling both syntactic and lexical simplification through the learning of general tree transduction rules. Experiments with the Simple En- glish Wikipedia corpus show promising results but highlight the need for clever filtering strategies to remove noisy transformations."
+    },
+    "6077146": {
+      "title": "Complex lexico-syntactic reformulation of sentences using typed dependency representations",
+      "abstract": "We present a framework for reformulating sentences by applying transfer rules on a typed dependency representation. We specify a list of operations that the framework needs to support and argue that typed dependency structures are currently the most suitable formalism for complex lexico-syntactic paraphrasing. We demonstrate our approach by reformulating sentences expressing the discourse relation of causation using four lexico-syntactic discourse markers -- \"cause\" as a verb and as a noun, \"because\" as a conjunction and \"because of\" as a preposition."
+    },
+    "2245040": {
+      "title": "Text simplification using typed dependencies: a comparison of the robustness of different generation strategies",
+      "abstract": "We present a framework for text simplification based on applying transformation rules to a typed dependency representation produced by the Stanford parser. We test two approaches to regeneration from typed dependencies: (a) gen-light, where the transformed dependency graphs are linearised using the word order and morphology of the original sentence, with any changes coded into the transformation rules, and (b) gen-heavy, where the Stanford dependencies are reduced to a DSyntS representation and sentences are generating formally using the RealPro surface realiser. The main contribution of this paper is to compare the robustness of these approaches in the presence of parsing errors, using both a single parse and an n-best parse setting in an overgenerate and rank approach. We find that the gen-light approach is robust to parser error, particularly in the n-best parse setting. On the other hand, parsing errors cause the realiser in the gen-heavy approach to order words and phrases in ways that are disliked by our evaluators."
+    },
+    "9363872": {
+      "title": "Statistics-based summarization -step one: Sentence compression",
+      "abstract": "When humans produce summaries of documents, they do not simply extract sentences and concatenate them. Rather, they create new sentences that are grammatical, that cohere with one another, and that capture the most salient pieces of information in the original document. Given that large collections of text/abstract pairs are available online, it is now possible to envision algorithms that are trained to mimic this process. In this paper, we focus on sentence compression, a simpler version of this larger challenge. We aim to achieve two goals simultaneously:our compressions should be grammatical, and they should retain the most important pieces of information. These two goals can conflict. We devise both noisy-channel and decision-tree approaches to the problem, and we evaluate results against manual compressions and a simple baseline."
+    },
+    "1762277": {
+      "title": "Lexicalized Markov grammars for sentence compression",
+      "abstract": "We present a sentence compression system based on synchronous context-free grammars (SCFG), following the successful noisy-channel approach of (Knight and Marcu, 2000). We define a headdriven Markovization formulation of SCFG deletion rules, which allows us to lexicalize probabilities of constituent deletions. We also use a robust approach for tree-to-tree alignment between arbitrary document-abstract parallel corpora, which lets us train lexicalized models with much more data than previous approaches relying exclusively on scarcely available document-compression corpora. Finally, we evaluate different Markovized models, and find that our selected best model is one that exploits head-modifier bilexicalization to accurately distinguish adjuncts from complements, and that produces sentences that were judged more grammatical than those generated by previous work."
+    },
+    "7418660": {
+      "title": "Statistical sentence condensation using ambiguity packing and stochastic disambiguation methods for lexical-functional grammar",
+      "abstract": "We present an application of ambiguity packing and stochastic disambiguation techniques for Lexical-Functional Grammars (LFG) to the domain of sentence condensation. Our system incorporates a linguistic parser/generator for LFG, a transfer component for parse reduction operating on packed parse forests, and a maximum-entropy model for stochastic output selection. Furthermore, we propose the use of standard parser evaluation methods for automatically evaluating the summarization quality of sentence condensation systems. An experimental evaluation of summarization quality shows a close correlation between the automatic parse-based evaluation and a manual evaluation of generated strings. Overall summarization quality of the proposed system is state-of-the-art, with guaranteed grammaticality of the system output due to the use of a constraint-based parser/generator."
+    },
+    "6429026": {
+      "title": "Sentence compression as tree transduction",
+      "abstract": "This paper presents a tree-to-tree transduction method for sentence compression. Our model is based on synchronous tree substitution grammar, a formalism that allows local distortion of the tree topology and can thus naturally capture structural mismatches. We describe an algorithm for decoding in this framework and show how the model can be trained discriminatively within a large margin framework. Experimental results on sentence compression bring significant improvements over a state-of-the-art model."
+    },
+    "10425985": {
+      "title": "A generic sentence trimmer with CRFs",
+      "abstract": "The paper presents a novel sentence trimmer in Japanese, which combines a non-statistical yet generic tree generation model and Conditional Random Fields (CRFs), to address improving the grammaticality of compression while retaining its relevance. Experiments found that the present approach outperforms in grammaticality and in relevance a dependency-centric approach (Oguro et al., 2000; Morooka et al., 2004; Yamagata et al., 2006; Fukutomi et al., 2007) \u2212 the only line of work in prior literature (on Japanese compression) we are aware of that allows replication and permits a direct comparison."
+    },
+    "741354": {
+      "title": "Quasi-synchronous grammars: Alignment by soft projection of syntactic dependencies",
+      "abstract": "Many syntactic models in machine translation are channels that transform one tree into another, or synchronous grammars that generate trees in parallel. We present a new model of the translation process: quasi-synchronous grammar (QG). Given a source-language parse tree T1, a QG defines a monolingual grammar that generates translations of T1. The trees T2 allowed by this monolingual grammar are inspired by pieces of substructure in T1 and aligned to T1 at those points. We describe experiments learning quasi-synchronous context-free grammars from bitext. As with other monolingual language models, we evaluate the cross-entropy of QGs on unseen text and show that a better fit to bilingual data is achieved by allowing greater syntactic divergence. When evaluated on a word alignment task, QG matches standard baselines."
+    },
+    "15489071": {
+      "title": "Hybrid simplification using deep semantics and machine translation",
+      "abstract": "We present a hybrid approach to sentence simplification which combines deep semantics and monolingual machine translation to derive simple sentences from complex ones. The approach differs from previous work in two main ways. First, it is semantic based in that it takes as input a deep semantic representation rather than e.g., a sentence or a parse tree. Second, it combines a simplification model for splitting and deletion with a monolingual translation model for phrase substitution and reordering. When compared against current state of the art methods, our model yields significantly simpler output that is both grammatical and meaning preserving."
+    },
+    "679599": {
+      "title": "Machine translation using probabilistic synchronous dependency insertion grammars",
+      "abstract": "Syntax-based statistical machine translation (MT) aims at applying statistical models to structured data. In this paper, we present a syntax-based statistical machine translation system based on a probabilistic synchronous dependency insertion grammar. Synchronous dependency insertion grammars are a version of synchronous grammars defined on dependency trees. We first introduce our approach to inducing such a grammar from parallel corpora. Second, we describe the graphical model for the machine translation task, which can also be viewed as a stochastic tree-to-tree transducer. We introduce a polynomial time decoding algorithm for the model. We evaluate the outputs of our MT system using the NIST and Bleu automatic MT evaluation software. The result shows that our system outperforms the baseline system based on the IBM models in both translation speed and quality."
+    }
+  }
+}

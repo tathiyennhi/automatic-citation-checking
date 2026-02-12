@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The posterior distribution in a VAE is denoted by q(z | x), where x ∈ X and z ∈ Z, 1) Diffusion Collapse: (for objective 1)We witness diffusion collapse when the posterior distribution becomes overly dispersed:q(z | x) ≈ U(Z) as σ 2 → ∞,(6)where U (Z) denotes the uniform distribution over Z.In this case, the encoder produces highly uncertain latent representations for all inputs.",
+    "This can be done by maximizing the KL divergence between N (0, I) (i.e., setting v = 1 in the Equation 12), which can be formulated as:L KL (x) = 1 2 d i=1 -ln σ 2 i -1 + µ 2 i + σ 2 i.",
+    "(7)2) Concentration Collapse: (for objective 2) In this scenario, the posterior distribution becomes excessively concentrated, approaching a Dirac delta function:q(z | x) → δ(z -µ 0) as µ, σ 2 → 0, (8)where δ is the Dirac delta function, and µ 0 is typically the mean of the prior distribution.",
+    "This collapse results in the encoder mapping all inputs to nearly identical latent representations.",
+    "This can be done by minimizing the KL divergence between N (0, diag(c)), where c is some arbitrary small number (i.e., setting v → 0 in theEquation 12), and the KL divergence can be formulated as:L KL (x) = 1 2 d i=1 ln c σ 2 i -1 + µ 2 i + σ 2 i c.(9)Both forms can be derived from the general case, we aim to leverage the divergence measure between q(z|x) and a target distribution p * (z)."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We introduce RL for training the Edit Model because we observe that the SFT-only Edit frequently (around 30%) leaves the response entirely unchanged, even though clear areas for improvement are mentioned in the provided feedback.",
+    "Post-RL, we see that such plain repetition no longer occur, which also leads to an increase in mean response length on MT Bench (from 2284.4 to 2614.4 characters).",
+    "We see that the medium-difficulty MT Bench increases from 9.12 to 9.16 and high-difficulty Arena Hard increases from 86.4 to 87.0 while the low-difficulty AlpacaEval slightly drops from 64.4 to 62.8, which is likely an effect of the length-correction penalty due to the slightly longer length.",
+    "Importance of Feedback Finally, we want to understand whether feedback is helpful for grounding edits, drawing from Ji et al. (2024).",
+    "We train an Edit SFT foot_0 model using exactly the same data and hyper-parameters while excluding feedback and slightly changing the prompt template accordingly (see Appendix B)."
+  ]
+}

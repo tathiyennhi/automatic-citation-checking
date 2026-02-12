@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The development of all models was carried out using TensorFlow.",
+    "For each experiment, the pre-training was done with 300 epochs and a batch size of 128.",
+    "We implemented early stopping, where after 15 epochs of no further decrease in loss, we stopped the training and took the model with the lowest loss on the pre-training validation set.",
+    "During the fine-tuning phase, we performed 100 epochs with a batch size of 64 on the left-out datasets.",
+    "For the downstream environment, we only take the feature extractor of the pre-trained model and attach a dense layer of shape 1024, followed by the classification heads."
+  ]
+}

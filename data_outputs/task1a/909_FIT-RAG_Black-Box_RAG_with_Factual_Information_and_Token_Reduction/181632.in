@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Based on 𝐷 𝑛 (𝑞), we design a score to measure self-knowledge of the question's nearest neighbors for the given question.",
+    "The score is defined as follows.𝑆 𝑛𝑛 (𝑞) = 1 |𝐷 𝑛 (𝑞)| ∑︁ 𝑥 ∈𝐷 𝑛 (𝑞) 1 [𝑙 𝑥 =𝑐𝑜𝑟𝑟𝑒𝑐𝑡 _𝑤/𝑜_𝑟𝑒𝑡𝑟𝑖𝑒𝑣𝑒] (𝑥),(13)where 1 [𝑙 𝑥 =𝑐𝑜𝑟𝑟𝑒𝑐𝑡 _𝑤/𝑜_𝑟𝑒𝑡𝑟𝑖𝑒𝑣𝑒] (𝑥) is an indicator function which equals to 1 if the label of x is correct_w/o_retrieve otherwise 0. 𝑙 𝑥 is the label of the corresponding question.",
+    "Combining the above two facets, this paper constructs a bi-faceted self-knowledge recognizer K (𝑞) as follows.K (𝑞) =        No_Retrieve, if 𝑆 𝑙𝑡𝑜𝑑 (𝑞) > 𝑠 𝑙 and 𝑆 𝑛𝑛 (𝑞) > 𝑠 𝑛, Retrieve, otherwise,(14)where Retrieve means the given question requires Retrieval and vice versa.",
+    "𝑠 𝑙 and 𝑠 𝑛 are hyperparameters.",
+    "Sub-document-level Token ReducerIn the Retrieve case, we first rerank the candidate documents using a bi-criteria reranker and select the Top-10 documents.Then, we further eliminate the redundant tokens by adopting our proposed sub-document-level token reducer."
+  ]
+}

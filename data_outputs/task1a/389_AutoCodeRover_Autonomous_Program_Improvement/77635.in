@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This large code context can be difficult for an LLM to comprehend, or may even exceed its context window.The second observation is that some of the API invocation results provide more elements to build new possible API invocations, which means the process of invoking retrieval APIs should be iterative.",
+    "For example, the result of a search_class call returns the method signatures within the searched class, and an LLM can iteratively invoke method-related APIs afterwards.With these two observations, we propose a stratified search process for invoking context retrieval APIs, as illustrated in Figure 5.",
+    "From a problem statement, stratified search iteratively invokes retrieval APIs to gather project code context, and finally outputs a list of potentially buggy locations to be fixed.",
+    "In each stratum, we prompt the LLM agent to select a set of necessary API invocations, based on the current context.",
+    "In stratum 1, the current context only contains the problem statement; in the following strata, the context contains both the problem statement and the code searched so far."
+  ]
+}

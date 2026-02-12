@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "ArchitectureTemporal Visual Encoder.",
+    "We model the temporal dynamics for the frames of both the sub-global feature xg and the local feature x l using two learnable positional embeddings q g ∈ R F ×d and q l ∈ R P ×d, and a vision transformer [5] f t, which results in the final visual embeddings z g and z l:z g = f t ( xg + q g) ∈ R F ×d(5)z l = f t (x l + q l) ∈ R P ×d(6)Generation Output Control.",
+    "We make use of how the transformer decoder uses the multi-head attention layer to attend to the input of the encoders and design the conditional module in a way that allows the model to learn the condition itself.",
+    "Simply, for both targets vehicle and pedestrian, we add the additional learnable conditional embeddings z c v ∈ R k×d and z c p ∈ R k×d, where k is the extended dimension of the embeddings.Text Decoder.",
+    "To generate the output sequences, we employ T5-Base [26] as our transformer decoder h. The output sequences contain both the pseudo-timestamps and the textual descriptions for all phases:ṽ = { ṽi } L v i=1 = h(z g, z l, z c v)(7)p = { pi } L p i=1 = h(z g, z l, z c p),(8)where L v and L p are the lengths of the vehicle and pedestrian sequences correspondingly."
+  ],
+  "correct_citations": [
+    "We model the temporal dynamics for the frames of both the sub-global feature xg and the local feature x l using two learnable positional embeddings q g ∈ R F ×d and q l ∈ R P ×d, and a vision transformer [5] f t, which results in the final visual embeddings z g and z l:z g = f t ( xg + q g) ∈ R F ×d(5)z l = f t (x l + q l) ∈ R P ×d(6)Generation Output Control.",
+    "To generate the output sequences, we employ T5-Base [26] as our transformer decoder h. The output sequences contain both the pseudo-timestamps and the textual descriptions for all phases:ṽ = { ṽi } L v i=1 = h(z g, z l, z c v)(7)p = { pi } L p i=1 = h(z g, z l, z c p),(8)where L v and L p are the lengths of the vehicle and pedestrian sequences correspondingly."
+  ]
+}

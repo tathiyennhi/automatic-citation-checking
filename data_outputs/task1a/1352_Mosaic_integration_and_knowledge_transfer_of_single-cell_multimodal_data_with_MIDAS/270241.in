@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Typically, the first step of label transfer is reference mapping, which aligns the query cells with the reference cells so that labels can be transferred reliably.",
+    "For MIDAS, we can naively achieve reference mapping in two ways: (1) mapping the query data onto the reference space (that is, applying the model pretrained on the reference data to infer the biological states for the query data 50,51) and ( 2) mapping the reference data onto the query space (that is, applying the model fine-tuned on the query data (see 'Model transfer via transfer learning') to infer the biological states for the reference data 14,52).",
+    "However, the first way suffers from the 'generalization problem' because the pretrained model is hard to generalize to the query data, which usually contains unseen technical variations, whereas the second way suffers from the 'forgetting problem' because the fine-tuned model may lose information learned on the reference data, affecting the inferred biological states.To tackle both problems, we propose a reciprocal reference mapping scheme, where we fine-tune the pretrained model on the query dataset to avoid the generalization problem and meanwhile feed the model with the historical data sampled from the reference dataset to prevent forgetting.",
+    "In doing this, the model can find a mapping suitable for both reference and query datasets and can then align them on the latent space by inferring their biological states.",
+    "kNN-based cell annotation with novel cell-type identification.Based on the aligned latent representations (embeddings), the kNN classifier is used to transfer the reference labels to the query dataset."
+  ]
+}

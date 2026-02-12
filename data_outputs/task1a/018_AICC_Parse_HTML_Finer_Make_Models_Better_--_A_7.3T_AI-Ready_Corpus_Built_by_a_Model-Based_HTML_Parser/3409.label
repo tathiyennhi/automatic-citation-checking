@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "By clustering pages generated from similar templates and distilling the language model's decisions into reusable extraction rules, we achieve web-scale processing efficiency while preserving the quality of the core extraction pipeline.",
+    "① PRE-PROCESSING Raw HTMLTransformations:• Remove non-content tags• Simplify attributes • Block-level chunking • Partial truncation Mapping HTML Original structure Key Design: Dual representation ensures compact model input while preserving faithful reconstruction capability Simplified HTML Compact input for model <html> <Block 1>XXX</Block 1> <Block 2>XXX</Block 2> <Block 3>XXX</Block 3> </html> MinerU-HTML-Classifier 0.6B Decoder-only LM Sequential Classification Constrained Decoding Structured JSON Response{ \"block1\": \"other\", \"block2\": \"main\", \"block3\": \"other\", } ③ POST-PROCESSING ② CLASSIFICATION Structured JSON ResponseMain/other JSON Operations:• Project labels to Mapping HTML blocks • Prune blocks labeled as \"other\"• Assemble valid DOM subtree Main-HTML• Clean main-content only • Sub DOM-tree of raw HTML We first describe the single-document extraction framework (2.1.1), then present the scaling strategy (2.1.2).",
+    "Core Extraction PipelineMinerU-HTML transforms raw HTML documents into clean Main-HTML through a three-stage pipeline, as illustrated in Figure 1.",
+    "The architecture is designed to address two key challenges: (1) reducing the computational burden of processing lengthy HTML markup, and (2) ensuring that the extracted content remains faithful to the original document without hallucination.The pipeline operates as follows.",
+    "In the pre-processing stage, the input HTML is partitioned into semantic blocks, generating two synchronized representations: Simplified HTML, which strips away rendering-oriented markup to create compact input for the language model, and Mapping HTML, which preserves the original block structure to enable faithful reconstruction."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Multi-objective alignment is typically achieved by aggregating various reward models as a single one, also known as scalarization [6,47], or by averaging individually trained LLMs to capture the diversity of human preferences [36].",
+    "Although these methods help improve the optimality across multiple reward models, they require manually selecting weights for scalarization or averaging, which is dataset-specific and time-consuming [31], and offer no guarantee of satisfying reward constraints when requirements are imposed [29].",
+    "In practice, different rewards often conflict with each others (e.g., helpful and harmful rewards [2,11]), making it natural to incorporate them into the alignment problems by imposing constraints on LLMs.Constrained alignment not only maximizes a primary reward model but also respects requirements on secondary utility models, e.g., ensuring LLMs are helpful while preserving safety [11] or keeping LLMs close to a reference model while maintaining usefulness [31].",
+    "Recently, safe RLHF [11], constrained RLHF [31], and rectified policy optimization [33] apply constrained Markov decision processes (MDPs) [1] to RLHF by imposing constraints on LLMs through secondary utility models.A key idea in these extended RLHF methods is the use of an iterative policy gradient primal-dual method [13], which simultaneously updates an LLM as a policy and a dual variable associated with the utility constraints.",
+    "In practice, such primal-dual methods can suffer from policy nonconvergence [30,31]."
+  ]
+}

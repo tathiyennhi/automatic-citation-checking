@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "A notable change from the previous works is that we do not use readout error mitigation in the main text.",
+    "Instead, we perform tomographic fitting assuming ideal measurements, which attributes any undetectable measurement errors to errors in the reconstructed quantum state.",
+    "For physical tomography, we use the cvxpy_gaussian_lstsq fitter with measurement data using the default Pauli-measurement basis on each physical qubit to obtain a weighted maximum-likelihood estimate, constrained to the space of positive, semi-definite, unit trace density matrices.",
+    "For logical tomography, we use the cvxpy_linea_lstsq fitter with a custom measurement basis using Pauli expectation values, rather than Pauli eigenstate probabilities.",
+    "In this case, the custom fitter weights are calculated from the inverse of the standard error in the Pauli expectation value estimates for each post-selected logical Pauli operator measurement.Susceptibility to measurement error is a common issue in tomographic methods."
+  ],
+  "correct_citations": []
+}

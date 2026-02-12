@@ -1,0 +1,20 @@
+{
+  "doc_id": "17985",
+  "text": "these subscript indices are redundant given the string positions of the constituents, which means we do not need to track the index u in L u and u R but can parse with just the two categories L and R, and determine the index from the constituent's span when required. It is straight-forward to extend the split-head CFG to encode the additional state information required by the head automata of [CITATION_1] ; this corresponds to splitting the non-terminals L u and u R. For simplicity we work with PBDGs in this paper, but all of the Unfold-Fold transformations described below extend to split-head grammars with the additional state structure required by head automata. Implementation note: it is possible to directly parse the \"undoubled\" input string w by modifying both the CKY algorithm and the CFGs described in this paper. Modify L u and u R so they both ultimately expand to the same terminal u, and specialcase the implementation of production X u → L u u R and all productions derived from it to permit L u and u R to overlap by the terminal u. The split-head formulation explains what initially seem unusual properties of existing PBDG algorithms. For example, one of the standard \"sanity checks\" for the Inside-Outside algorithm-that the outside probability of each terminal is equal to the sentence's inside probability-fails for these algorithms. In fact, the outside probability of each terminal is double the sentence's inside probability because these algorithms implicitly collapse the two terminals u l and u r into a single terminal u.",
+  "correct_citation": {
+    "[CITATION_1]": "333410"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "It is straight-forward to extend the split-head CFG to encode the additional state information required by the head automata of; this corresponds to splitting the non-terminals L u and u R."
+    }
+  ],
+  "bib_entries": {
+    "333410": {
+      "title": "Efficient parsing for bilexical context-free grammars and head automaton grammars",
+      "abstract": "Several recent stochastic parsers use bilexical grammars, where each word type idiosyncratically prefers particular complements with particular head words. We present O(n4) parsing algorithms for two bilexical formalisms, improving the prior upper bounds of O(n5). For a common special case that was known to allow O(n3) parsing (Eisner, 1997), we present an O(n3) algorithm with an improved grammar constant."
+    }
+  },
+  "generator": "fallback"
+}

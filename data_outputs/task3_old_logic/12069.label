@@ -1,0 +1,20 @@
+{
+  "doc_id": "12069",
+  "text": "Handlers NullAway provides an internal extension mechanism called handlers. A handler implements a known interface to interpose itself at specific plug-in points during the analysis process and alter the nullability information available to NullAway. The following two features are implemented as handlers. Pre-and post-conditions NullAway supports simple pre-and post-condition specifications via partial support for @Contract annotations [7] . Here are some example usages of @Contract supported by NullAway: The @Contract annotations document that isNonNull returns false when passed null, and that assertNonNull fails when passed null. The annotation on id indicates that if passed a non-null value, a non-null value is returned, yielding some support for parametric polymorphism (like @PolyNull in CFNullness [CITATION_1] ). Currently, NullAway trusts @Contract annotations, but we plan to add checking for them soon. Streams While NullAway's general type inference/refinement is strictly intra-procedural, handlers can propagate nullability information inter-procedurally for a few well-understood APIs. At Uber we do this mostly for stream APIs like RxJava [11] . Consider the following code using a common filter and map pattern: In the above example, there are three separate procedures: foo, and the two lambdas passed to the filter and map method calls. The lambda for filter will filter out any value in the stream for which v.f is null. For the lambda inside map, NullAway's usual analysis would emit an error, due to the call of toString() on the @Nullable field v.f. But this code is safe, as objects with a null f field were already filtered out. NullAway includes a handler that analyzes the exit statements of every lambda passed to Observable.filter, and the entry statement of every lambda passed to Observable.map. If the map call is chained immediately after the filter call (as in the previous example), this handler propagates the nullability information for the parameter of the filter lambda on exit (conditioned on the return value being true) to the parameter of the map lambda. In the example above, when the filter lambda returns true, v.f must be @NonNull. This fact gets preserved at the entry of the map lambda, and hence NullAway no longer reports a warning at the toString() call. This heuristic handles common cases observed in the Uber code base and reduces the need for warning suppressions, without introducing any new unsoundness.",
+  "correct_citation": {
+    "[CITATION_1]": "14533693"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The annotation on id indicates that if passed a non-null value, a non-null value is returned, yielding some support for parametric polymorphism (like @PolyNull in CFNullness"
+    }
+  ],
+  "bib_entries": {
+    "14533693": {
+      "title": "Practical pluggable types for Java",
+      "abstract": "This paper introduces the Checker Framework, which supports adding pluggable type systems to the Java language in a backward-compatible way. A type system designer defines type qualifiers and their semantics, and a compiler plug-in enforces the semantics. Programmers can write the type qualifiers in their programs and use the plug-in to detect or prevent errors. The Checker Framework is useful both to programmers who wish to write error-free code, and to type system designers who wish to evaluate and deploy their type systems. The Checker Framework includes new Java syntax for expressing type qualifiers; declarative and procedural mechanisms for writing type-checking rules; and support for flow-sensitive local type qualifier inference and for polymorphism over types and qualifiers. The Checker Framework is well-integrated with the Java language and toolset. We have evaluated the Checker Framework by writing 5 checkers and running them on over 600K lines of existing code. The checkers found real errors, then confirmed the absence of further errors in the fixed code. The case studies also shed light on the type systems themselves."
+    }
+  },
+  "generator": "fallback"
+}

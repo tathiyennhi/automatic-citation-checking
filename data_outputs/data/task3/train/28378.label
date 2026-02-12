@@ -1,0 +1,20 @@
+{
+  "doc_id": "28378",
+  "text": "Third, the number of matches (A and B) in SampEn is determined by the cumulative number of matches found between the possible permutations of vector comparisons. The quotient for A and B is subsequently entered into the logarithmic calculations to find SampEn. This approach is inherently different than that taken by approximate entropy (ApEn), the predecessor for SampEn. ApEn relies on determining the probability of matches found for each vector and then entering this probability into the logarithmic function. As a result, a time series with 100 data points would be associated with 99 such probabilities and, by extension, 99 logarithmic calculations for m = 2 (and 98 probabilities and 98 logarithmic calculations for m = 3). In stark contrast, SampEn has only one logarithmic calculation. To obtain ApEn, the logarithmic terms are summed respectively for m = 2 and m = 3, and the difference of the two sums would equal ApEn. The unintended consequence of the ApEn approach is that smaller time series and highly irregular time series may encounter zero matches which would subsequently yield an undefined ApEn since the logarithm of 0 cannot be Figure 1 . Demonstration of SampEn calculation with m = 2. The dashed line is the tolerance about the first point and highlights matching points to the first point with ∆ markers. Likewise the dash-dot line and dotted line highlight matches of the second and third points with andˆmarkers respectively. Points which do not match any of the template points are marked by symbols. SampEn is calculated from the ratio of sequences of length m and length m + 1 which match m and m + 1 length templates. The first templates are represented by the first 2 (m) and 3 (m + 1) points. We observe 2 ∆-template matches to the m length template and one ∆--ˆtemplate match to the m + 1 length template. The template is then stepped one sample at a time and the process repeated until the end of the waveform is reached. SampEn can then be calculated from the ratio of the total number of m + 1 to m length template matches. Adapted from [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "136785"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Adapted from  ."
+    }
+  ],
+  "bib_entries": {
+    "136785": {
+      "title": "Multiscale entropy analysis of biological signals",
+      "abstract": "Traditional approaches to measuring the complexity of biological signals fail to account for the multiple time scales inherent in such time series. These algorithms have yielded contradictory findings when applied to real-world datasets obtained in health and disease states. We describe in detail the basis and implementation of the multiscale entropy (MSE) method. We extend and elaborate previous findings showing its applicability to the fluctuations of the human heartbeat under physiologic and pathologic conditions. The method consistently indicates a loss of complexity with aging, with an erratic cardiac arrhythmia (atrial fibrillation), and with a life-threatening syndrome (congestive heart failure). Further, these different conditions have distinct MSE curve profiles, suggesting diagnostic uses. The results support a general \"complexity-loss\" theory of aging and disease. We also apply the method to the analysis of coding and noncoding DNA sequences and find that the latter have higher multiscale entropy, consistent with the emerging view that so-called \"junk DNA\" sequences contain important biological information."
+    }
+  },
+  "generator": "fallback_v4"
+}

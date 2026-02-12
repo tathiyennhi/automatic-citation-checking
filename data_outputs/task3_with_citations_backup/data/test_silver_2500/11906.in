@@ -1,0 +1,12 @@
+{
+  "text": "Granullar [CITATION_1] inserts runtime checks at the unannotated code boundary to guarantee soundness of checked code annotations. We did not investigate this approach due to potential runtime overhead and the riskiness of shipping modified code.",
+  "correct_citation": {
+    "[CITATION_1]": "11231611"
+  },
+  "bib_entries": {
+    "11231611": {
+      "title": "Granullar: gradual nullable types for Java",
+      "abstract": "Object-oriented languages like Java and C# allow the null value for all references. This supports many flexible patterns, but has led to many errors, security vulnerabilities, and system crashes. % Static type systems can prevent null-pointer exceptions at compile time, but require annotations, in particular for used libraries. Conservative defaults choose the most restrictive typing, preventing many errors, but requiring a large annotation effort. Liberal defaults choose the most flexible typing, requiring less annotations, but giving weaker guarantees. Trusted annotations can be provided, but are not checked and require a large manual effort. None of these approaches provide a strong guarantee that the checked part of the program is isolated from the unchecked part: even with conservative defaults, null-pointer exceptions can occur in the checked part. This paper presents Granullar, a gradual type system for null-safety. Developers start out verifying null-safety for the most important components of their applications. At the boundary to unchecked components, runtime checks are inserted by Granullar to guard the verified system from being polluted by unexpected null values. This ensures that null-pointer exceptions can only occur within the unchecked code or at the boundary to checked code; the checked code is free of null-pointer exceptions. We present Granullar for Java, define the checked-unchecked boundary, and how runtime checks are generated. We evaluate our approach on real world software annotated for null-safety. We demonstrate the runtime checks, and acceptable compile-time and run-time performance impacts. Granullar enables combining a checked core with untrusted libraries in a safe manner, improving on the practicality of such a system."
+    }
+  }
+}

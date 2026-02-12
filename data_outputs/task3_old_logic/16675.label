@@ -1,0 +1,38 @@
+{
+  "doc_id": "16675",
+  "text": "The AS is sensing the spectrum in order to perform reactive jamming, e.g., to jam BPSK modulated waveforms that are part of traffic signaling (preambles, control-plane packets), which if corrupted makes the rest of communication meaningless. Note that many preambles are BPSK-modulated, as well as the packets in the control plane of most protocols (such as acknowledgments), and if the they get corrupted by jamming the whole data packet is lost [CITATION_1] . Hence, the DLA would want to create the AdEx that disguises BPSK as QPSK (or other) to avoid the EW attack by the DL-based reactive jammer (i.e., AS) [CITATION_2] . Note that reactive jamming is very difficult to detect [CITATION_3] , but it heavily relies on the inference based on spectrum sensing. If the inference is adversarially attacked, the jammer will be mitigated (by failing to reactively transmit a jamming signal). We here take the side of the jammer in attempting to detect such adversarial attacks.",
+  "correct_citation": {
+    "[CITATION_1]": "8110924",
+    "[CITATION_2]": "6395990",
+    "[CITATION_3]": "867555"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Note that many preambles are BPSK-modulated, as well as the packets in the control plane of most protocols (such as acknowledgments), and if the they get corrupted by jamming the whole data packet is lost"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Hence, the DLA would want to create the AdEx that disguises BPSK as QPSK (or other) to avoid the EW attack by the DL-based reactive jammer (i.e., AS)"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Note that reactive jamming is very difficult to detect, but it heavily relies on the inference based on spectrum sensing."
+    }
+  ],
+  "bib_entries": {
+    "6395990": {
+      "title": "Short paper: Reactive jamming in wireless networks: How realistic is the threat?",
+      "abstract": "In this work, we take on the role of a wireless adversary and investigate one of its most powerful tools---radio frequency jamming. Although different jammer designs are discussed in the literature, reactive jamming, i.e., targeting only packets that are already on the air, is generally recognized as a stepping stone in implementing optimal jamming strategies. The reason is that, while destroying only selected packets, the adversary minimizes its risk of being detected. One might hope for reactive jamming to be too challenging or uneconomical for an attacker to conceive and implement due to its strict real-time requirements. Yet, in this work we disillusion from such hopes as we demonstrate that flexible and reliable software-defined reactive jamming is feasible by designing and implementing a reactive jammer against IEEE 802.15.4 networks. First, we identify the causes of loss at the physical layer of 802.15.4 and show how to achieve the best performance for reactive jamming. Then, we apply these insights to our USRP2-based reactive jamming prototype, enabling a classification of transmissions in real-time, and reliable and selective jamming. The prototype achieves a reaction time in the order of microseconds, a high precision (such as targeting individual symbols), and a 97.6% jamming rate in realistic indoor scenarios for a single reactive jammer, and over 99.9% for two concurrent jammers."
+    },
+    "867555": {
+      "title": "The feasibility of launching and detecting jamming attacks in wireless networks",
+      "abstract": "Wireless networks are built upon a shared medium that makes it easy for adversaries to launch jamming-style attacks. These attacks can be easily accomplished by an adversary emitting radio frequency signals that do not follow an underlying MAC protocol. Jamming attacks can severely interfere with the normal operation of wireless networks and, consequently, mechanisms are needed that can cope with jamming attacks. In this paper, we examine radio interference attacks from both sides of the issue: first, we study the problem of conducting radio interference attacks on wireless networks, and second we examine the critical issue of diagnosing the presence of jamming attacks. Specifically, we propose four different jamming attack models that can be used by an adversary to disable the operation of a wireless network, and evaluate their effectiveness in terms of how each method affects the ability of a wireless node to send and receive packets. We then discuss different measurements that serve as the basis for detecting a jamming attack, and explore scenarios where each measurement by itself is not enough to reliably classify the presence of a jamming attack. In particular, we observe that signal strength and carrier sensing time are unable to conclusively detect the presence of a jammer. Further, we observe that although by using packet delivery ratio we may differentiate between congested and jammed scenarios, we are nonetheless unable to conclude whether poor link utility is due to jamming or the mobility of nodes. The fact that no single measurement is sufficient for reliably classifying the presence of a jammer is an important observation, and necessitates the development of enhanced detection schemes that can remove ambiguity when detecting a jammer. To address this need, we propose two enhanced detection protocols that employ consistency checking. The first scheme employs signal strength measurements as a reactive consistency check for poor packet delivery ratios, while the second scheme employs location information to serve as the consistency check. Throughout our discussions, we examine the feasibility and effectiveness of jamming attacks and detection schemes using the MICA2 Mote platform."
+    },
+    "8110924": {
+      "title": "On the vulnerabilities of CSI in MIMO wireless communication systems",
+      "abstract": "Multiple-input multiple-output (MIMO) technologies are a popular choice for emerging wireless systems due to their promised gains in throughput and reliability. In order to realize any gains over traditional non-MIMO communication systems, these systems must possess accurate knowledge of the wireless channel. In this paper, we investigate strategies for disrupting MIMO communications by developing attacks that target the often overlooked, but essential, channel estimation procedure. Our study focuses on the two most popular and well-known MIMO techniques: the capacity achieving SVD-based MIMO scheme, and the Alamouti space-time block code (STBC), which spans many protocols including 802.11n, WiMAX, and 3GPP. We augment theoretical and simulation results with real-world experimentation using the USRP/GNU Radio software defined radio platform. We also present novel methodology to protect the channel estimation procedure from such attacks by embedding authentication messages into physical layer features of the transmissions."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,15 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "A.1.2 Convergence of Splitting Conic SolversThe optimization is solved using Splitting Conic Solver (SCS) [42], which employs a primal-dual operator-splitting scheme based on the homogeneous self-dual embedding of the problem.",
+    "SCS guarantees global convergence:(x k, y k) → (x ⋆, y ⋆),(8)with an ergodic rate of O(1/k) [40,42] in objective and feasibility residuals.",
+    "Its efficiency benefits from the sparsity of the constraint matrix A.The second-order conic programs, have a theoretical complexity per iteration of O(n) for sparse systems [42], this mean that even when the number of constraints increased, the formulation of A makes it suitable to perform these computations.Sparsity Structure of A The constraint matrix A exhibits natural sparsity arising from the local connectivity of the mesh topology.",
+    "Each vertex in the input mesh is typically connected to a small, bounded neighborhood, ensuring that each row of A contains only O(1) non-zero entries.",
+    "Additionally, the discrete differential operator L encodes only pairwise differences between adjacent vertices, yielding a sparse banded structure with nnz(A) = O(n), where n is the number of vertices.This sparsity pattern ensures that even as the number of constraints grows proportionally with the number of edges |E| = O(n) (for bounded-degree meshes), the computational cost per iteration remains linear: O(nnz(A)) = O(n)."
+  ],
+  "correct_citations": [
+    "A.1.2 Convergence of Splitting Conic SolversThe optimization is solved using Splitting Conic Solver (SCS) [42], which employs a primal-dual operator-splitting scheme based on the homogeneous self-dual embedding of the problem.",
+    "SCS guarantees global convergence:(x k, y k) → (x ⋆, y ⋆),(8)with an ergodic rate of O(1/k) [40,42] in objective and feasibility residuals.",
+    "Its efficiency benefits from the sparsity of the constraint matrix A.The second-order conic programs, have a theoretical complexity per iteration of O(n) for sparse systems [42], this mean that even when the number of constraints increased, the formulation of A makes it suitable to perform these computations.Sparsity Structure of A The constraint matrix A exhibits natural sparsity arising from the local connectivity of the mesh topology."
+  ]
+}

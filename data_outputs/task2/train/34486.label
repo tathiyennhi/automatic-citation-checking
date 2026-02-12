@@ -1,0 +1,39 @@
+{
+  "text": "In [CITATION_1] , [CITATION_2] , we see experimental evaluation of high speed TCP variants. The reference [CITATION_3] compares the performance of CUBIC, HSTCP and TCP SACK in a 10 Gbps optical network. In [CITATION_4] , the authors perform an experimental evaluation of CUBIC TCP in a small buffer regime. The reference [CITATION_5] is a comprehensive simulation based analysis of high speed TCP variants, where they compare the protocols for intra-protocol and inter-protocol fairness. There are many references on simulation/experimental analysis of TCP CUBIC, however there are fewer analytical results. In [CITATION_6] and [CITATION_7] , the authors use Markov chain based models for TCP CUBIC throughput computations. In [CITATION_8] , the authors analyze performance of TCP CUBIC in a cloud networking environment using mean-field.",
+  "correct_citation": {
+    "[CITATION_1]": "13219892",
+    "[CITATION_2]": "12722637",
+    "[CITATION_3]": "13219892",
+    "[CITATION_4]": "12722637",
+    "[CITATION_5]": "14676506",
+    "[CITATION_6]": "7934244",
+    "[CITATION_7]": "7963566",
+    "[CITATION_8]": "15903414"
+  },
+  "bib_entries": {
+    "7934244": {
+      "title": "Analytical Model for Congestion Control and Throughput with TCP CUBIC Connections",
+      "abstract": "We develop a Markov model for a TCP CUBIC connection. Next we use it to obtain approximate expressions for throughput when there may be queuing in the network. Finally we provide the throughputs different TCP CUBIC and TCP NewReno connections obtain while sharing a channel when they may have different round trip delays and packet loss probabilities."
+    },
+    "7963566": {
+      "title": "A Model for Steady State Throughput of TCP CUBIC",
+      "abstract": "For transmission control protocol (TCP), CUBIC is a TCP-friendly high-speed variant, in which the window size is a cubic function of time since the last loss event. TCP CUBIC is implemented in Linux operating systems and performs well in wired networks with large bandwidth-delay product. Most of the evaluations of TCP CUBIC are conducted via simulations or experiments. Analytical models for TCP CUBIC are few. In this paper, we propose a Markovian model to determine the steady state throughput of TCP CUBIC in wireless environment. The proposed model considers both congestion loss and random packet loss due to fading. We derive the stationary distribution of the Markov chain and obtain the average throughput based on the stationary distribution. Simulations are carried out to validate the analytical model. Results show that the simulated stationary distribution and the average throughput are both very close to our analytical results. Furthermore, we analyze the throughput performance of TCP CUBIC. Results show that random packet loss reduces the normalized average throughput more for end-to-end flow with large bandwidth-delay product. We propose an improvement to increase the throughput performance of TCP CUBIC by moderately increasing the window growth factor and the multiplicative decrease factor."
+    },
+    "14676506": {
+      "title": "Performance of competing high-speed TCP flows",
+      "abstract": "The goal of recent high-speed TCP implementations is to allow scientists who have access to new high-speed networks to efficiently transfer large datasets to their remote colleagues. As of yet, there is no standard high-speed TCP . Because of this, scientists using one high-speed protocol may find themselves sharing a link with scientists using a different high-speed protocol. Previous work has evaluated such inter-protocol performance, but only with both flows starting at the same time \u2013 an unlikely situation. We perform an evaluation study using ns-2 to investigate the performance of competing high-speed TCP flows where one flow enters a network in which another high-speed flow has already reached its maximum data rate. The fairest result would be for the existing flow to cede half of its bandwidth to the new flow in order to allow both flows to evenly share the link. Our results show that in most cases this does not happen, but rather one high-speed flow dominates the other. Surprisingly, it is not always the existing flow that dominates."
+    },
+    "15903414": {
+      "title": "Understanding tcp cubic performance in the cloud: A mean-field approach",
+      "abstract": "Cloud networking typically leads to scenarii where a large number of TCP connections share a common bottleneck link. In this paper, we focus on the case of TCP Cubic, which is the default TCP version in the Linux kernel. TCP Cubic is designed to better utilize high bandwidth-delay product path in an IP network. To do so, Cubic modifies the linear window growth function of legacy TCP standards, e.g., New Reno, to be a cubic function. Our objective in this work is to assess the performance of TCP Cubic in a cloud setting with a large number of long-lived TCP flows.We rely on a mean-field approach leading to a fluid model to analyze the performance of Cubic. After a careful validation of the model through comparisons with ns-2, we evaluate the efficiency and fairness of Cubic as compared to that of New Reno for a set of typical cloud networking scenarii."
+    },
+    "13219892": {
+      "title": "A study of fairness among heterogeneous TCP variants over 10Gbps high-speed optical networks",
+      "abstract": "Several high-speed TCP variants are adopted by end users and therefore, heterogeneous congestion control has become the characteristic of newly emerging high-speed optical networks. In contrast to homogeneous TCP flows, fairness among heterogeneous TCP flows now depends on router parameters such as queue management scheme and buffer size. To the best of our knowledge, this is the first study of fairness performance among heterogeneous TCP variants over a 10 Gbps high-speed optical network environment. Our evaluation scenarios for heterogeneous TCP flows consist of TCP variants with substantial presence in current Internet; therefore, TCP-SACK, CUBIC TCP (CUBIC) and HighSpeed TCP (HSTCP) compete for bottleneck bandwidth. Experimental results for fairness are presented for different queue management schemes, such as Drop-tail, Random Early Detection (RED), CHOose and Keep for responsive flows CHOose and Kill for unresponsive flows (CHOKe), and Approximate Fair Dropping (AFD), with varying degree of buffer sizes. We observe heterogeneous TCP flows induce more unfairness than homogeneous ones. Active queue management (AQM) schemes, RED, CHOKe, and AFD, improve fairness for large buffer sizes as compared to Drop-tail, whereas AQM schemes lose the fairness advantage for small buffer sizes. This study provides preliminary results for fairness challenges to deploy all-optical routers with limited buffer size."
+    },
+    "12722637": {
+      "title": "An experimental evaluation of CUBIC TCP in a small buffer regime",
+      "abstract": "CUBIC TCP is an enhancement over BIC (Binary Increase Congestion Control) with a cubic window growth function. It has been optimized for high bandwidth-delay product environments and has been the default TCP implementation in Linux since kernel-2.6.18."
+    }
+  }
+}

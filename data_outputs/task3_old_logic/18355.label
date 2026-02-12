@@ -1,0 +1,20 @@
+{
+  "doc_id": "18355",
+  "text": "The NVE measures how good a NND, trained at a particular SNR, is compared to MAP decoding over a range of different SNRs. Obviously, for NVE = 1, the NN achieves MAP performance, but is generally greater. In the sequel, we compute the NVE over S = 20 different SNR points from 0 dB to 5 dB with a validation set size of 20000 examples for each SNR. We train our NN decoder in so-called \"epochs\". In each epoch, the gradient of the loss function is calculated over the entire training set X using Adam', a method for stochastic gradient descent optimization [CITATION_1] . Since the noise layer in our architecture generates a new noise realization each time it is used, the NN decoder will never see the same input twice. For this reason, although the training set has a limited size of 2 k codewords, we can train on an essentially unlimited training set by simply increasing the number of epochs M ep . However, this makes it impossible to distinguish whether the NN is improved by a larger amount of training samples or more optimization iterations.",
+  "correct_citation": {
+    "[CITATION_1]": "6628106"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In each epoch, the gradient of the loss function is calculated over the entire training set X using Adam', a method for stochastic gradient descent optimization"
+    }
+  ],
+  "bib_entries": {
+    "6628106": {
+      "title": "Adam: A method for stochastic optimization",
+      "abstract": "We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm."
+    }
+  },
+  "generator": "fallback"
+}

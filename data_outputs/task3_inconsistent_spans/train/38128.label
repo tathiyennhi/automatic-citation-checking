@@ -1,0 +1,88 @@
+{
+  "doc_id": "38128",
+  "text": "Recently, topic models are increasingly used in various text analysis tasks including topic segmentation. Previous work [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] has shown that using topic assignments or topic distributions instead of word frequency can significantly improve segmentation performance. Here we consider more advanced topic models that model dependencies between (sub-)sections in a document, such as structured topic models (STMs) presented in [CITATION_6] [CITATION_7] . STMs treat each text as a sequence of segments, each of which is a set of text passages (e.g., a paragraph or sentence). Text passages in a segment share the same prior distribution on their topics. The topic distributions of segments in a single document are then encouraged to be similar via a hierarchical prior. This gives a substantial improvement in modelling accuracy. However, instead of explicitly learning the segmentation, STMs just leverage the existing structure of documents from the given segmentation.",
+  "correct_citation": {
+    "[CITATION_1]": "3077921",
+    "[CITATION_2]": "1080758",
+    "[CITATION_3]": "15853016",
+    "[CITATION_4]": "3063495",
+    "[CITATION_5]": "8279425",
+    "[CITATION_6]": "19847761",
+    "[CITATION_7]": "16891148"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Previous work      has shown that using topic assignments or topic distributions instead of word frequency can significantly improve segmentation performance.",
+      "s_span": 106,
+      "e_span": 324
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Previous work      has shown that using topic assignments or topic distributions instead of word frequency can significantly improve segmentation performance.",
+      "s_span": 106,
+      "e_span": 324
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Previous work      has shown that using topic assignments or topic distributions instead of word frequency can significantly improve segmentation performance.",
+      "s_span": 106,
+      "e_span": 324
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Previous work      has shown that using topic assignments or topic distributions instead of word frequency can significantly improve segmentation performance.",
+      "s_span": 106,
+      "e_span": 324
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Previous work      has shown that using topic assignments or topic distributions instead of word frequency can significantly improve segmentation performance.",
+      "s_span": 106,
+      "e_span": 324
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Here we consider more advanced topic models that model dependencies between (sub-)sections in a document, such as structured topic models (STMs) presented in   .",
+      "s_span": 325,
+      "e_span": 510
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Here we consider more advanced topic models that model dependencies between (sub-)sections in a document, such as structured topic models (STMs) presented in   .",
+      "s_span": 325,
+      "e_span": 510
+    }
+  ],
+  "bib_entries": {
+    "3077921": {
+      "title": "Unsupervised topic modelling for multi-party spoken discourse",
+      "abstract": "We present a method for unsupervised topic modelling which adapts methods used in document classification (Blei et al., 2003; Griffiths and Steyvers, 2004) to unsegmented multi-party discourse transcripts. We show how Bayesian inference in this generative model can be used to simultaneously address the problems of topic segmentation and topic identification: automatically segmenting multi-party meetings into topically coherent segments with performance which compares well with previous unsupervised segmentation-only methods (Galley et al., 2003) while simultaneously extracting topics which rate highly when assessed for coherence by human judges. We also show that this method appears robust in the face of off-topic dialogue and speech recognition errors."
+    },
+    "15853016": {
+      "title": "Text segmentation with LDA-based Fisher kernel",
+      "abstract": "In this paper we propose a domain-independent text segmentation method, which consists of three components. Latent Dirichlet allocation (LDA) is employed to compute words semantic distribution, and we measure semantic similarity by the Fisher kernel. Finally global best segmentation is achieved by dynamic programming. Experiments on Chinese data sets with the technique show it can be effective. Introducing latent semantic information, our algorithm is robust on irregular-sized segments."
+    },
+    "3063495": {
+      "title": "Text segmentation via topic modeling: an analytical study",
+      "abstract": "In this paper, the task of text segmentation is approached from a topic modeling perspective. We investigate the use of latent Dirichlet allocation (LDA) topic model to segment a text into semantically coherent segments. A major benefit of the proposed approach is that along with the segment boundaries, it outputs the topic distribution associated with each segment. This information is of potential use in applications like segment retrieval and discourse analysis. The new approach outperforms a standard baseline method and yields significantly better performance than most of the available unsupervised methods on a benchmark dataset."
+    },
+    "8279425": {
+      "title": "How text segmentation algorithms gain from topic models",
+      "abstract": "This paper introduces a general method to incorporate the LDA Topic Model into text segmentation algorithms. We show that semantic information added by Topic Models significantly improves the performance of two word-based algorithms, namely TextTiling and C99. Additionally, we introduce the new TopicTiling algorithm that is designed to take better advantage of topic information. We show consistent improvements over word-based methods and achieve state-of-the art performance on a standard dataset."
+    },
+    "19847761": {
+      "title": "A segmented topic model based on the two-parameter Poisson-Dirichlet process",
+      "abstract": "Documents come naturally with structure: a section contains paragraphs which itself contains sentences; a blog page contains a sequence of comments and links to related blogs. Structure, of course, implies something about shared topics. In this paper we take the simplest form of structure, a document consisting of multiple segments, as the basis for a new form of topic model. To make this computationally feasible, and to allow the form of collapsed Gibbs sampling that has worked well to date with topic models, we use the marginalized posterior of a two-parameter Poisson-Dirichlet process (or Pitman-Yor process) to handle the hierarchical modelling. Experiments using either paragraphs or sentences as segments show the method significantly outperforms standard topic models on either whole document or segment, and previous segmented models, based on the held-out perplexity measure."
+    },
+    "16891148": {
+      "title": "Sequential latent Dirichlet allocation",
+      "abstract": "Understanding how topics within a document evolve over the structure of the document is an interesting and potentially important problem in exploratory and predictive text analytics. In this article, we address this problem by presenting a novel variant of latent Dirichlet allocation (LDA): Sequential LDA (SeqLDA). This variant directly considers the underlying sequential structure, i.e. a document consists of multiple segments (e.g. chapters, paragraphs), each of which is correlated to its antecedent and subsequent segments. Such progressive sequential dependency is captured by using the hierarchical two-parameter Poisson–Dirichlet process (HPDP). We develop an efficient collapsed Gibbs sampling algorithm to sample from the posterior of the SeqLDA based on the HPDP. Our experimental results on patent documents show that by considering the sequential structure within a document, our SeqLDA model has a higher fidelity over LDA in terms of perplexity (a standard measure of dictionary-based compressibility). The SeqLDA model also yields a nicer sequential topic structure than LDA, as we show in experiments on several books such as Melville’s ‘Moby Dick’."
+    },
+    "1080758": {
+      "title": "Using LDA to detect semantically incoherent documents",
+      "abstract": "Detecting the semantic coherence of a document is a challenging task and has several applications such as in text segmentation and categorization. This paper is an attempt to distinguish between a 'semantically coherent' true document and a 'randomly generated' false document through topic detection in the framework of latent Dirichlet analysis. Based on the premise that a true document contains only a few topics and a false document is made up of many topics, it is asserted that the entropy of the topic distribution will be lower for a true document than that for a false document. This hypothesis is tested on several false document sets generated by various methods and is found to be useful for fake content detection applications."
+    }
+  },
+  "generator": "fallback_v4"
+}

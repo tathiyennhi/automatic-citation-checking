@@ -1,0 +1,38 @@
+{
+  "doc_id": "15275",
+  "text": "We implemented CRsAE on Keras with TensorFlow as a backend and trained it on a GPU (NVIDIA Tesla V100) provided by AWS. The number of trainable parameters is K ×C +1. We used the ADAM optimizer [CITATION_1] to solve for the parameters by mini-batch gradient descent where the gradients are computed using the back-propagation algorithms described in the previous section. For faster convergence, we used the AMSGrad variant of ADAM [CITATION_2] . The learned parameters are the ones minimizing the validation loss over all epochs. Gamma Hyper-prior Parameters: Given a dense dictionary, a suggested value for the regularization parameter motivated by theory [CITATION_3] is λ = √ 2 log(C×Ne) σ",
+  "correct_citation": {
+    "[CITATION_1]": "6628106",
+    "[CITATION_2]": "65455367",
+    "[CITATION_3]": "2429822"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We used the ADAM optimizer to solve for the parameters by mini-batch gradient descent where the gradients are computed using the back-propagation algorithms described in the previous section."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For faster convergence, we used the AMSGrad variant of ADAM"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Gamma Hyper-prior Parameters: Given a dense dictionary, a suggested value for the regularization parameter motivated by theory is λ = √ 2 log(C×Ne) σ"
+    }
+  ],
+  "bib_entries": {
+    "65455367": {
+      "title": "On the convergence of adam and beyond",
+      "abstract": "Several recently proposed stochastic optimization methods that have been successfully used in training deep networks such as RMSProp, Adam, Adadelta, Nadam are based on using gradient updates scaled by square roots of exponential moving averages of squared past gradients. In many applications, e.g. learning with large output spaces, it has been empirically observed that these algorithms fail to converge to an optimal solution (or a critical point in nonconvex settings). We show that one cause for such failures is the exponential moving average used in the algorithms. We provide an explicit example of a simple convex optimization setting where Adam does not converge to the optimal solution, and describe the precise problems with the previous analysis of Adam algorithm. Our analysis suggests that the convergence issues can be fixed by endowing such algorithms with `long-term memory' of past gradients, and propose new variants of the Adam algorithm which not only fix the convergence issues but often also lead to improved empirical performance."
+    },
+    "2429822": {
+      "title": "Atomic decomposition by basis pursuit",
+      "abstract": "The time-frequency and time-scale communities have recently developed a large number of overcomplete waveform dictionaries --- stationary wavelets, wavelet packets, cosine packets, chirplets, and warplets, to name a few. Decomposition into overcomplete systems is not unique, and several methods for decomposition have been proposed, including the method of frames (MOF), Matching pursuit (MP), and, for special dictionaries, the best orthogonal basis (BOB). ::: Basis Pursuit (BP) is a principle for decomposing a signal into an \"optimal\" superposition of dictionary elements, where optimal means having the smallest l1 norm of coefficients among all such decompositions. We give examples exhibiting several advantages over MOF, MP, and BOB, including better sparsity and superresolution. BP has interesting relations to ideas in areas as diverse as ill-posed problems, in abstract harmonic analysis, total variation denoising, and multiscale edge denoising. ::: BP in highly overcomplete dictionaries leads to large-scale optimization problems. With signals of length 8192 and a wavelet packet dictionary, one gets an equivalent linear program of size 8192 by 212,992. Such problems can be attacked successfully only because of recent advances in linear programming by interior-point methods. We obtain reasonable success with a primal-dual logarithmic barrier method and conjugate-gradient solver."
+    },
+    "6628106": {
+      "title": "Adam: A method for stochastic optimization",
+      "abstract": "We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "HAP: 688 proteins PDB Baseline IF-SitePred FPocket P2Rank DeepPocket AF2 Baseline IF-SitePred FPocket P2Rank DeepPocket Top 1 0.12 0.76 0.75 0.81 0.78 Top 1 0.09 0.77 0.50 0.81 0.78 Top 2 0.17 0.89 0.81 0.90 0.87 Top 2 0.17 0.89 0.60 0.88 0.87 Top 3 0.22 0.93 0.83 0.93 0.89 Top 3 0.20 0.94 0.67 0.89 0.90 HAP-small: 280 proteins PDB Baseline IF-SitePred FPocket P2Rank DeepPocket AF2 Baseline IF-SitePred FPocket P2Rank DeepPocket Top 1 0.12 0.75 0.73 0.78 0.75 Top 1 0.10 0.76 0.48 0.76 0.75 Top 2 0.18 0.89 0.80 0.86 0.85 Top 2 0.17 0.88 0.58 0.85 0.86 Top 3 0.24 0.92 0.82 0.91 0.88 Top 3 0.20 0.94 0.65 0.88 0.90those where similar ligands were present in the training set.",
+    "We did not see this trend in the IF-SitePred results, so we can be confident that our predictions do not rely on ligand similarity to the training set.",
+    "P2Rank also does not exhibit a significant bias towards proteins that have ligands that bound to training set proteins.",
+    "However, where a site binds a ligand with only dissimilar ligands in the training set (USRCAT similarity lower than 0.4), DeepPocket and FPocket are significantly less able to correctly predict the binding site at the highest rank.In our tests IF-SitePred and P2Rank are not affected by similar ligands being available in the training set, whereas DeepPocket and FPocket are, meaning that they may not generalise well to the prediction of binding sites of novel ligands.",
+    "IF-SitePred outperforms other methods in top-3 binding site prediction on MD structuresWhen verifying the binding site alignment of the AF2 counterparts of the test set proteins, we observed that only 11 proteins in the final HAP set had backbone RMSD to the PDB structure above 2Å (Fig. 3)."
+  ],
+  "correct_citations": []
+}

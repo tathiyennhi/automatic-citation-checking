@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "At the same time, each attention coefficient |x T i Wx j | 2 is computed on the quantum circuit, which is further postprocessed column-wise with the softmax function to obtain the A ′ ij.",
+    "The two parts can then be classically combined to compute eachy i = j A ′ ij Vx j.In this approach, the attention mechanism is implemented by using hamming weight preserving parametrised quantum circuits to compute the weight matrices V and W separately.",
+    "For computing |x T i Wx j | 2, we would require two data loaders (2 × (d -1) gates) for x i and x j, and one Quantum Orthogonal Layer (d log d gates in the case of Butterfly layer) for W. To obtain Vx j, we require d -1 gates to load each x j and a Quantum Orthogonal Layer (d log d gates in the case of Butterfly layer) for the matrix V.Transformer architecture # Qubits Circuit depth # Trainable parameters # Fixed parameters # Distinct circuits A -Orthogonal Patch-wise d O(log d) O(d log d) d -1 n B -Quantum Orthogonal Transformer d O(log d) O(d log d) 3(d -1) n + n 2 C -Quantum Attention Mechanism n + d O(log n + n log d + log d) O(d log d) n -1 + (2n -1)(d -1) n D -Compound Transformer n + d O(log n + n log d + log(n + d)) O((n + d) log(n + d))) n -1 + (2n -1)(d -1) 1 Classical Transformer - O(nd 2 + n 2 d) O(2d 2) - -Table 2: Comparison of different quantum methods to perform a single attention layer of a transformer network.",
+    "n and d stand respectively for the number of patches and their individual dimension.",
+    "All quantum orthogonal layers are implemented using the butterfly circuits."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "L CE = - C i=1 y i log(ŷ i)(18)where C = 2 (binary classification: HGG or LGG), y i denotes one-hot encoded ground truth (1 for true class, 0 otherwise), and ŷi is softmax-normalized prediction.The classification network is trained using the Adam optimizer with learning rate α = 0.0005, batch size 8, and up to 150 epochs.",
+    "The lower learning rate compared to segmentation training enables more careful feature learning.",
+    "Early stopping based on validation accuracy prevents overfitting.E.",
+    "Quantitative Evaluation Framework 1) Classification Performance Metrics: Classification quality is comprehensively assessed using multiple metrics:Accuracy: Overall fraction of correct predictions:Accuracy = TP + TN TP + TN + FP + FN(19)Precision: Fraction of positive predictions that are correct:Precision = TP TP + FP(20)High precision indicates few false alarms (false HGG diagnoses).Recall (Sensitivity): Fraction of actual positive cases correctly identified:Recall = TP TP + FN(21)High recall indicates the model detects most actual HGG cases, critical for clinical safety.Specificity: Fraction of negative cases correctly identified:Specificity = TN TN + FP(22)F1-Score: Harmonic mean of precision and recall, balancing both metrics:F1 = 2 • Precision × Recall Precision + Recall (23)where TP (true positives), TN (true negatives), FP (false positives), and FN (false negatives) are computed from validation predictions versus ground truth labels.2) Segmentation Performance Metrics: Segmentation quality employs previously defined Dice coefficient and mean Intersection over Union metrics, evaluated on validation tumor masks.",
+    "F. Evaluation MetricsModel performance is assessed using standard metrics:Accuracy = b (T P b + T N b) b (T P b + T N b + F P b + F N b) (24) Precision = b T P b b (T P b + F P b) (25) Recall = b T P b b (T P b + F N b)(26)F 1 = 2 • Precision • Recall Precision + Recall (27) Specificity = T N T N + F P(28)The Dice coefficient and mIoU are used as metrics to evaluate segmentation and the hybrid model shows exceptional HGG versus LGG classification and accurate glioma region localization from preprocessed 3D MRI data."
+  ],
+  "correct_citations": []
+}

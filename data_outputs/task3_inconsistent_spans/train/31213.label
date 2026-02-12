@@ -1,0 +1,22 @@
+{
+  "doc_id": "31213",
+  "text": "By the results, shown in Figure 5 , we see how both the restore cost and the event processing cost do not show significant variations in any of the considered configurations. At the same time, the log cost provided by the multi-threaded architecture is fairly comparable to the one achieved by the single-threaded architecture for a number of worker threads up to 4 per kernel. On the other hand, an increase of the log latency is noted for the case of 8 or more worker threads. This denotes a slightly reduced locality and/or an increase of thread contention while accessing the malloc library for allocating log buffers, impacting this type of operation. However, this operation is typically executed infrequently (by properly optimizing the tradeoff between checkpointing overhead and restore overhead [CITATION_1] ), thus leading the increased latency to be likely affordable.",
+  "correct_citation": {
+    "[CITATION_1]": "14476851"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, this operation is typically executed infrequently (by properly optimizing the tradeoff between checkpointing overhead and restore overhead  ), thus leading the increased latency to be likely affordable.",
+      "s_span": 657,
+      "e_span": 880
+    }
+  ],
+  "bib_entries": {
+    "14476851": {
+      "title": "Autonomic log/restore for advanced optimistic simulation systems",
+      "abstract": "In this paper we address state recoverability in optimistic simulation systems by presenting an autonomic log/restore architecture. Our proposal is unique in that it jointly provides the following features: (i) log/restore operations are carried out in a completely transparent manner to the application programmer, (ii) the simulation-object state can be scattered across dynamically allocated non-contiguous memory chunks, (iii) two differentiated operating modes, incremental vs non-incremental, coexist via transparent, optimized run-time management of dual versions of the same application layer, with dynamic selection of the best suited operating mode in different phases of the optimistic simulation run, and (iv) determination of the best suited mode for any time frame is carried out on the basis of an innovative modeling/optimization approach that takes into account stability of each operating mode vs variations of the model execution parameters."
+    }
+  },
+  "generator": "fallback_v4"
+}

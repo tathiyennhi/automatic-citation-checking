@@ -1,0 +1,65 @@
+{
+  "doc_id": "16996",
+  "text": "how to include domain-specific knowledge and category information, satisfying the other portions of Criterion 4. One way to include domain-specific knowledge is to encode it in the feature image prior. For example, [CITATION_1] showed that the initial model did not infer contiguous features (which was shown by [CITATION_2] , to be a human perceptual bias in feature learning). When this model is given the images in Figure  4A (Set 1a from Experiment 1 of [CITATION_3] , it infers features with \"speckled holes\" when the independent feature image prior is used (see Figure 4B ). To address this issue, they defined a feature image prior P(Y) to favor adjacent pixels to share the same value (called the Ising model; [CITATION_4] . When the Ising model is used as the feature image prior, the resulting model infers more psychologically valid features that are contiguous (see Figure 4C ). As both conceptual and perceptual biases can be incorporated in the model, it satisfies the Criterion 4. Although models defined by Austerweil and Griffiths (2011) satisfy the first four criteria, they do not satisfy the last three criteria. These are the simplest models that can be constructed from the proposed framework, suggesting that other models in the framework should satisfy these first four criteria. In the remainder of the article, we develop new models in the proposed framework that satisfy the other three criteria (transformation invariance, category sensitivity, and incremental learning). We first demonstrate how to learn transformation-invariant features and incorporate various expectations about how the transformations of different features are related (Criterion 5). Then we explore how to account for the effect of categorization on the learned features (Criterion 6). Afterward, we tackle one issue with models in the computational framework, which is that the probability distribution over feature representations is order invariant, meaning they infer the same features regardless of the order that objects are presented. This is not consistent with Criterion 7 (incremental learning), as there are reported effects of the order of object presentation on the features learned by people [CITATION_5] . We address this issue by formulating a rational process model for feature learning (in the spirit of [CITATION_6] . This model is an incremental form of the transformation-invariant model and appropriately infers different features depending on the order that objects are presented.",
+  "correct_citation": {
+    "[CITATION_1]": "1233287",
+    "[CITATION_2]": "7404604",
+    "[CITATION_3]": "60813110",
+    "[CITATION_4]": "120489597",
+    "[CITATION_5]": "204323315",
+    "[CITATION_6]": "5839957"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For example,  showed that the initial model did not infer contiguous features (which was shown by  , to be a human perceptual bias in feature learning)."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For example,  showed that the initial model did not infer contiguous features (which was shown by  , to be a human perceptual bias in feature learning)."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "When this model is given the images in Figure  4A (Set 1a from Experiment 1 of  , it infers features with \"speckled holes\" when the independent feature image prior is used (see Figure 4B )."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "To address this issue, they defined a feature image prior P(Y) to favor adjacent pixels to share the same value (called the Ising model;  ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This is not consistent with Criterion 7 (incremental learning), as there are reported effects of the order of object presentation on the features learned by people  ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "We address this issue by formulating a rational process model for feature learning (in the spirit of  ."
+    }
+  ],
+  "bib_entries": {
+    "204323315": {
+      "title": "Categorization creates functional features",
+      "abstract": "Many theories of object recognition and categorization claim that complex objects are represented in terms of characteristic features. The origin of these features has been neglected in theories of object categorization. Do they form a fixed and independent set that exists before experience with objects, or are features progressively extracted and developed as an organism categorizes its world? This paper maintains that features can be flexibly learned, as a consequence of categorizing and representing objects. All three experiments reported in this paper used categories of unfamiliar computer-synthesized two-dimensional objects (\"Martian cells\"). The results showed that varying order of category learning induced the creation of different features that changed the perceptual appearance and the featural representation of identical category exemplars. Network simulations supported a flexible, rather than a fixed feature interpretation of the data."
+    },
+    "7404604": {
+      "title": "Unitization during category learning",
+      "abstract": "Five experiments explored the question of whether new perceptual units can be developed if they are diagnostic for a category learning task, and if so, what are the constraints on this unitization process? During category learning, participants were required to attend either a single component or a conjunction of five components in order to correctly categorize an object. In Experiments 1-4, some evidence for unitization was found in that the conjunctive task becomes much easier with practice, and this improvement was not found for the single component task, or for conjunctive tasks where the components cannot be unitized. Influences of component order (Experiment 1), component contiguity (Experiment 2), component proximity (Experiment 3), and number of components (Experiment 4) on practice effects were found. Using a Fourier Transformation method for deconvolving response times (Experiment 5), prolonged practice effects yielded responses that were faster than expected by analytic model that integrate evidence from independently perceived components."
+    },
+    "1233287": {
+      "title": "A rational model of the effects of distributional information on feature learning",
+      "abstract": "Most psychological theories treat the features of objects as being fixed and immediately available to observers. However, novel objects have an infinite array of properties that could potentially be encoded as features, raising the question of how people learn which features to use in representing those objects. We focus on the effects of distributional information on feature learning, considering how a rational agent should use statistical information about the properties of objects in identifying features. Inspired by previous behavioral results on human feature learning, we present an ideal observer model based on nonparametric Bayesian statistics. This model balances the idea that objects have potentially infinitely many features with the goal of using a relatively small number of features to represent any finite set of objects. We then explore the predictions of this ideal observer model. In particular, we investigate whether people are sensitive to how parts co-vary over objects they observe. In a series of four behavioral experiments (three using visual stimuli, one using conceptual stimuli), we demonstrate that people infer different features to represent the same four objects depending on the distribution of parts over the objects they observe. Additionally in all four experiments, the features people infer have consequences for how they generalize properties to novel objects. We also show that simple models that use the raw sensory data as inputs and standard dimensionality reduction techniques (principal component analysis and independent component analysis) are insufficient to explain our results."
+    },
+    "120489597": {
+      "title": "Stochastic relaxation, Gibbs distributions, and the Bayesian restoration of images",
+      "abstract": "We make an analogy between images and statistical mechanics systems. Pixel gray levels and the presence and orientation of edges are viewed as states of atoms or molecules in a lattice-like physical system. The assignment of an energy function in the physical system determines its Gibbs distribution. Because of the Gibbs distribution, Markov random field (MRF) equivalence, this assignment also determines an MRF image model. The energy function is a more convenient and natural mechanism for embodying picture attributes than are the local characteristics of the MRF. For a range of degradation mechanisms, including blurring, non-linear deformations, and multiplicative or additive noise, the posterior distribution is an MRF with a structure akin to the image model. By the analogy, the posterior distribution defines another (imaginary) physical system. Gradual temperature reduction in the physical system isolates low-energy states (‘annealing’), or what is the same thing, the most probable states under the Gib..."
+    },
+    "5839957": {
+      "title": "Rational approximations to rational models: Alternative algorithms for category learning",
+      "abstract": "Rational models of cognition typically consider the abstract computational problems posed by the environment, assuming that people are capable of optimally solving those problems. This differs from more traditional formal models of cognition, which focus on the psychological processes responsible for behavior. A basic challenge for rational models is thus explaining how optimal solutions can be approximated by psychological processes. We outline a general strategy for answering this question, namely to explore the psychological plausibility of approximation algorithms developed in computer science and statistics. In particular, we argue that Monte Carlo methods provide a source of rational process models that connect optimal solutions to psychological processes. We support this argument through a detailed example, applying this approach to Anderson's (1990, 1991) rational model of categorization (RMC), which involves a particularly challenging computational problem. Drawing on a connection between the RMC and ideas from nonparametric Bayesian statistics, we propose 2 alternative algorithms for approximate inference in this model. The algorithms we consider include Gibbs sampling, a procedure appropriate when all stimuli are presented simultaneously, and particle filters, which sequentially approximate the posterior distribution with a small number of samples that are updated as new data become available. Applying these algorithms to several existing datasets shows that a particle filter with a single particle provides a good description of human inferences."
+    },
+    "60813110": {
+      "title": "Perceptual learning of alphanumeric-like characters",
+      "abstract": "This chapter reviews that in using vision, audition, touch, or other senses to take in information from the world, it is unaware how universally that world is partitioned into objects. If it were not for this fact the world might appear as a blooming, buzzing confusion of a myriad of more primitive features, such as colors, sounds of different frequencies, shapes, slants, and so forth. Almost all of the objects are of course learned through experience. It is natural to suppose that an early stage in the learning of an alphanumeric character involves its transition from a collection of disparate features into a holistic unit. However, typical tasks in which alphanumeric characters participate, such as reading and arithmetic, involve many types of learning beyond unitization. The chapter also discusses that novel characters start as a collection of features, and the task is arranged so that more than one of these features must be compared to identify the presence or absence of a target in a given display position. Then the rate of search should be slowed relative to a situation in which comparison of a single feature or the entire character can occur in a single step."
+    }
+  },
+  "generator": "fallback_v4"
+}

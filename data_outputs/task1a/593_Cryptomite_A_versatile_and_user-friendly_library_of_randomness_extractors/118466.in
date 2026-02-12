@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "r: float, the min-entropy rate of the extractor (now weak) seed.",
+    "---------list of bits, the extracted output (i.e.",
+    "the shared secret key). \"\"\"",
+    "# Calculate the input min-entropy from the given extractor # output length and extractor error: k_1 = m -2*log2(epsilon) # To use Circulant, the seed length needs to be a prime with # primitive root 2, we find the one larger than or equal to # n_1 + 1 (see Def.",
+    "9): n_adjusted = cryptomite.utils.next_na_set(n_1 + 1) # If n_adjusted > n_1 + 1, we increase the length of # the raw key to n_adjusted -1 by padding 0's to it: if n_adjusted > n_1 + 1: Parameters Returnsraw_key_bits += [0]*(n_adjusted -n_1 -1) # Take the correct number of seed bits (less than with Toeplitz): seed_bits = seed_bits[:n_adjusted] # Compute the new weak seed's min-entropy, given its # min-entropy rate r: k_2 = r * n_adjusted # Compute the extractor's output length (product source # model, see Fig. 3): m = floor(k_1 + k_2 -n_adjusted + 2*log2(epsilon)) # Initialise the Circulant extractor with the appropriate parameters: circulant = cryptomite.Circulant(n_adjusted -1, m) # Perform extraction and return the output: return circulant.extract(raw_key_bits, seed_bits) Figure 6: Improved implementation of privacy amplification for [64] using the Circulant extractor with a weak seed."
+  ]
+}

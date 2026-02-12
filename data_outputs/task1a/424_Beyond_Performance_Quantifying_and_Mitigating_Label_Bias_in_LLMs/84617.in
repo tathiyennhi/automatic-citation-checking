@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Contextual calibration (CC) Zhao et al. (2021) proposed to use calibration in order to remove the label bias arising from the context prompt C and the model's pretraining.",
+    "Inspired by confidence calibration methods (Guo et al., 2017), they define a matrix W that is applied to the model's original output probabilities p during inference to obtain calibrated, debiased probabilities q \" softmaxpW pq.",
+    "To determine the calibration parameters W, they first estimate the bias by computing the model's average predicted probabilities p on a small set of \"placeholder\" content-free input strings, such as \"N/A\", which replace the ordinary task input that follows C. 4 Finally, they set W \" diagppq ´1, which ensures that the output class probabilities for the average content-free input are uniform, aiming to reduce bias on unseen examples.",
+    "Following CC, Fei et al. (2023) proposed to estimate and mitigate the label bias arising from the textual distribution of the task's domain, by using task-specific content-free inputs to compute p. They construct such inputs by sampling and concatenating L random words from the test set, where L is the average instance input length in the data.",
+    "They repeat this process 20 times, and set p to be the average output probabilities over all examples."
+  ]
+}

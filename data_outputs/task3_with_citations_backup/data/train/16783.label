@@ -1,0 +1,44 @@
+{
+  "doc_id": "16783",
+  "text": "We are left with the case of Fig. 5 (c) when modifications happen for all links. In that case, the basic assumptions of B modularity are obviously not met, hence apart from the full use of consistency checking techniques from [CITATION_1] , one would have to use an extension of B allowing such modularity links. We can surmise that the \"invariant ownership\" approach of [CITATION_2] or the \"rely-guarantee\" approach of [CITATION_3] would fit. Given that Boulmé concludes that [21, conclusion, third paragraph] the rely-guarantee approach is more modular, we suggest that using Büchi's extension of B as a replacement for classical B would bring what is needed for such an architectural case. As this extension impacts mostly the modularity of B and not its core (set theory and substitutions), we think the changes needed at the level of CSP B would be minor.",
+  "correct_citation": {
+    "[CITATION_1]": "2136946",
+    "[CITATION_2]": "17692492",
+    "[CITATION_3]": "1581237"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In that case, the basic assumptions of B modularity are obviously not met, hence apart from the full use of consistency checking techniques from [CITATION_1] , one would have to use an extension of B allowing such modularity links.",
+      "s_span": 81,
+      "e_span": 312
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We can surmise that the \"invariant ownership\" approach of [CITATION_2] or the \"rely-guarantee\" approach of [CITATION_3] would fit.",
+      "s_span": 313,
+      "e_span": 443
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We can surmise that the \"invariant ownership\" approach of [CITATION_2] or the \"rely-guarantee\" approach of [CITATION_3] would fit.",
+      "s_span": 313,
+      "e_span": 443
+    }
+  ],
+  "bib_entries": {
+    "1581237": {
+      "title": "Compositional symmetric sharing in B",
+      "abstract": "Sharing between B constructs is limited, both on the specification and the implementation level. The limitations stem from the single writer/multiple readers paradigm, restricted visibility of shared variables, and structural constraints to prevent interference. As a consequence, applications with inherent sharing requirements have to either be described as large monolithic constructs or be underspecified, leading to a loss of modularity respectively certain desirable properties being unprovable. ::: ::: We propose a new compositional symmetric shared access mechanism based on roles describing rely/guarantee conditions. The mechanism provides for multiple writers on shared constructs, visibility of shared variables in the accessors' invariants, and controlled aliasing. Use is uniform in machines, refinements, and implementations. Sharing is compositional: all proof obligations are local and do not require knowledge of the other accessors' specifications, let alone their or the shared construct's implementation. ::: ::: Soundness of the mechanism is established by flattening."
+    },
+    "2136946": {
+      "title": "Interactive tool support for CSP || B consistency checking",
+      "abstract": "CSP || B is an integration of two well known formal notations: CSP and B. It provides a method for modelling systems with both complex state (described in B machines) and control flow (described as CSP processes). Consistency checking within this approach verifies that a controller process never calls a B operation outside its precondition. Otherwise the behaviour of the operation cannot be predicted. In previous work, this check was carried out by manually decomposing the model before preprocessing the CSP processes to perform a hand-written weakest precondition proof. In this paper, a framework is described that mechanises consistency checking in a theorem prover and removes the need for preprocessing. This work is based on an existing PVS embedding of the CSP traces model, but it is extended by introducing a notion of state so that the interaction between processes and machines can be analysed. Numerous rules have been defined (and proved) which enable consistency checking and decomposition via PVS proof. These rules also formally justify the relaxation of previous constraints on CSP || B architectures, thereby widening the scope of CSP || B modelling. The PVS embedding and rules presented in this paper are not only applicable to CSP || B specifications, but to other combined approaches which use a non-blocking semantics for the state-based operations."
+    },
+    "17692492": {
+      "title": "Interpreting invariant composition in the B method using the spec# ownership relation: A way to explain and relax B restrictions",
+      "abstract": "In the B method, the invariant of a component cannot be violated outside its own operations. This approach has a great advantage: the users of a component can assume its invariant without having to prove it. But, B users must deal with important architecture restrictions that ensure the soundness of reasonings involving invariants. Moreover, understanding how these restrictions ensure soundness is not trivial. This paper studies a meta-model of invariant composition, inspired from the Spec# approach. Basically, in this model, invariant violations are monitored using ghost variables. The consistency of assumptions about invariants is controlled by very simple proof obligations. Hence, this model provides a simple framework to understand B composition rules and to study some conservative extensions of B authorizing more architectures and providing more control on components initialization."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "48423",
+  "text": "expressed as a percentage error value, with respect to expert annotation of disc center D gt , macula center M gt and disc diameter disc dia.We consider a detection as true-positive if ξ ≤ 40%. Our integrated method achieves an overall sensitivity of 99.13% and 99.65% for OD detection and macula detection respectively in Combined, which is comparable with [CITATION_1] and state-of-the-art [CITATION_2] . We get ξ disc (D * ) and ξ mac (M * ) values of 3.74% and 3.94%, which is considerably lower than 7% reported in [CITATION_3] . On STARE dataset alone, the overall sensitivity of OD detection is 95%, comparable to reported results of [CITATION_4] , whereas in macula detection, our method achieves sensitivity 97.53%, an improvement over the best published results of [CITATION_5] . Based on our extensive evaluation and results of the intermediate stages of our integration method, we tabulate the error percentages observed among true-positives in each dataset of our collection, along with Combined (shown in On pathological datasets such as DMED (macular edema), DIARETDB1, MESSIDOR (DR), our method shows low error for M * with nil false-positives, indicating its potential in disease grading applications. In disc-centered images, the estimate M 2 is more reliable than M 1 , as evident from table.1, since twin parabolas would fit the retinal arcades better than ellipse. Among the true positives, the error values appear to be relatively high in STARE, since it has images with indistinct or partial OD compounded by absence of parabolic focal chord vessels ( fig.6(3) ), disproportionate distance between OD and macula due to varied angles of acquisition. From the evaluation, we observe that our method performs satisfactorily with low ξ disc (D * ) and ξ mac (M * ) even in case of imaging artifacts, presence of macular pathologies such as GA, bright lesion clusters and disc pathologies such as bleeding, hemorrhage on disc ( fig. 6 (1 and 2) ) and localizes macula accurately even with imprecise OD localization ( fig. 6 (3) ).",
+  "correct_citation": {
+    "[CITATION_1]": "296715",
+    "[CITATION_2]": "8799970",
+    "[CITATION_3]": "3253411",
+    "[CITATION_4]": "7094320",
+    "[CITATION_5]": "10225135"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our integrated method achieves an overall sensitivity of 99.13% and 99.65% for OD detection and macula detection respectively in Combined, which is comparable with"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our integrated method achieves an overall sensitivity of 99.13% and 99.65% for OD detection and macula detection respectively in Combined, which is comparable with and state-of-the-art"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We get ξ disc (D * ) and ξ mac (M * ) values of 3.74% and 3.94%, which is considerably lower than 7% reported in"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "On STARE dataset alone, the overall sensitivity of OD detection is 95%, comparable to reported results of"
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "On STARE dataset alone, the overall sensitivity of OD detection is 95%, comparable to reported results of, whereas in macula detection, our method achieves sensitivity 97.53%, an improvement over the best published results of"
+    }
+  ],
+  "bib_entries": {
+    "296715": {
+      "title": "Automated feature extraction in color retinal images by a model based approach",
+      "abstract": "Color retinal photography is an important tool to detect the evidence of various eye diseases. Novel methods to extract the main features in color retinal images have been developed in this paper. Principal component analysis is employed to locate optic disk; A modified active shape model is proposed in the shape detection of optic disk; A fundus coordinate system is established to provide a better description of the features in the retinal images; An approach to detect exudates by the combined region growing and edge detection is proposed. The success rates of disk localization, disk boundary detection, and fovea localization are 99%, 94%, and 100%, respectively. The sensitivity and specificity of exudate detection are 100 % and 71 %, correspondingly. The success of the proposed algorithms can be attributed to the utilization of the model-based methods. The detection and analysis could be applied to automatic mass screening and diagnosis of the retinal diseases."
+    },
+    "7094320": {
+      "title": "Detection of anatomic structures in human retinal imagery",
+      "abstract": "The widespread availability of electronic imaging devices throughout the medical community is leading to a growing body of research on image processing and analysis to diagnose retinal disease such as diabetic retinopathy (DR). Productive computer-based screening of large, at-risk populations at low cost requires robust, automated image analysis. In this paper we present results for the automatic detection of the optic nerve and localization of the macula using digital red-free fundus photography. Our method relies on the accurate segmentation of the vasculature of the retina followed by the determination of spatial features describing the density, average thickness, and average orientation of the vasculature in relation to the position of the optic nerve. Localization of the macula follows using knowledge of the optic nerve location to detect the horizontal raphe of the retina using a geometric model of the vasculature. We report 90.4% detection performance for the optic nerve and 92.5% localization performance for the macula for red-free fundus images representing a population of 345 images corresponding to 269 patients with 18 different pathologies associated with DR and other common retinal diseases such as age-related macular degeneration."
+    },
+    "3253411": {
+      "title": "Fast and robust optic disc detection using pyramidal decomposition and hausdorff-based template matching",
+      "abstract": "We report about the design and test of an image processing algorithm for the localization of the optic disk (OD) in low-resolution (about 20 micro/pixel) color fundus images. The design relies on the combination of two procedures: 1) a Hausdorff-based template matching technique on edge map, guided by 2) a pyramidal decomposition for large scale object tracking. The two approaches are tested against a database of 40 images of various visual quality and retinal pigmentation, as well as of normal and small pupils. An average error of 7% on OD center positioning is reached with no false detection. In addition, a confidence level is associated to the final detection that indicates the \"level of difficulty\" the detector has to identify the OD position and shape."
+    },
+    "8799970": {
+      "title": "Fast detection of the optic disc and fovea in color fundus photographs",
+      "abstract": "A fully automated, fast method to detect the fovea and the optic disc in digital color photographs of the retina is presented. The method makes few assumptions about the location of both structures in the image. We define the problem of localizing structures in a retinal image as a regression problem. A kNN regressor is utilized to predict the distance in pixels in the image to the object of interest at any given location in the image based on a set of features measured at that location. The method combines cues measured directly in the image with cues derived from a segmentation of the retinal vasculature. A distance prediction is made for a limited number of image locations and the point with the lowest predicted distance to the optic disc is selected as the optic disc center. Based on this location the search area for the fovea is defined. The location with the lowest predicted distance to the fovea within the foveal search area is selected as the fovea location. The method is trained with 500 images for which the optic disc and fovea locations are known. An extensive evaluation was done on 500 images from a diabetic retinopathy screening program and 100 specially selected images containing gross abnormalities. The method found the optic disc in 99.4% and the fovea in 96.8% of regular screening images and for the images with abnormalities these numbers were 93.0% and 89.0% respectively."
+    },
+    "10225135": {
+      "title": "Automatic macula detection from retinal images by a line operator",
+      "abstract": "This paper presents an automatic macula detection technique that makes use of the circular brightness profile of the macula: the macula is usually darker than the surrounding pixels whose intensities increase gradually with their distances from the macula center. A line operator is designed to capture the macula circular brightness profile, which evaluates the image brightness variation along multiple line segments of specific orientations that pass through each retinal image pixel. The orientation of the line segment with the minimum/ maximum variation has specific patterns that indicate the position of the macula efficiently. The proposed technique has been tested over DRIVE project's dataset and the STARE project's dataset. Experiments show that the accuracies reach up to 100% and 95.45%, respectively, based on 35 and 44 retinal images having discernible macula within the two public datasets."
+    }
+  },
+  "generator": "fallback"
+}

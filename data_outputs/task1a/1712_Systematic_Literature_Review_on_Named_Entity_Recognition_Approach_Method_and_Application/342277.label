@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "AL 929 Calculation of the adjusted momentum estimate mt and the adjusted RMSProp estimate ṽt, as shown in formulas 36 and 37. mt = m t 1 -β t 1 (36)ṽt = v t 1 -β t 2 (37)Where β 1 and β 2 are the momentum reduction factor and RMSProp, by using the momentum estimation and RMSProp estimation as formulas 36 and 37, Adam can adjust the learning rate adaptively for each model parameter so that it can help the algorithm quickly learn when approaching the minimum loss function and slow down when approaching the optimum point.The next RMSProp variant is AdaDelta, which Zeiler developed with additional adjustments [263].",
+    "AdaDelta replaces the global learning rate with the difference from the previous model parameters to calculate the adaptive learning rate.",
+    "Prop E[g 2] t calculation is based on the g 2 t gradient, as in formula 38.E[g 2] t = ρE[g 2] t-1 + (1 -ρ)g 2 t (38)where ρ is the RMSProp reduction factor.",
+    "Then the adjusted model parameter changes are calculated using the formula 39.δw t = -(E[δw 2] ( t -1) + ϵ) (E[g 2] t + ϵ) • g t(39)Then the model updates the adjusted model parameters, namely.",
+    "w t+1 = w t + δw t. Of the various learning rate optimization methods described above, the Adam and SGD methods are the most widely used by NER researchers."
+  ],
+  "correct_citations": [
+    "AL 929 Calculation of the adjusted momentum estimate mt and the adjusted RMSProp estimate ṽt, as shown in formulas 36 and 37. mt = m t 1 -β t 1 (36)ṽt = v t 1 -β t 2 (37)Where β 1 and β 2 are the momentum reduction factor and RMSProp, by using the momentum estimation and RMSProp estimation as formulas 36 and 37, Adam can adjust the learning rate adaptively for each model parameter so that it can help the algorithm quickly learn when approaching the minimum loss function and slow down when approaching the optimum point.The next RMSProp variant is AdaDelta, which Zeiler developed with additional adjustments [263]."
+  ]
+}

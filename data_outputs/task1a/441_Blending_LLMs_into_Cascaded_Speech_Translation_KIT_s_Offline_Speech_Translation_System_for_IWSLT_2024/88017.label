@@ -1,0 +1,14 @@
+{
+  "style": "APA",
+  "texts": [
+    "We go through each talk and divide the transcripts into chunks, each chunk containing a maximum of 256 tokens corresponding to the LLM tokenizer.",
+    "Then for each chunk, we use the transcript, hypothesis and reference to transform them into the format below and train the LLM to predict the gold reference given the noisy transcript and sentence-level hypothesis.",
+    "We use the delimiter \"<SS>\" to align with the input and perform sentence-level evaluation.",
+    "Then, we again fine-tune the Mistral 7B Instruction-tuned LLM (Jiang et al., 2023) using QLoRA (Dettmers et al., 2024), training it to predict the gold reference given the noisy transcript and translations.",
+    "We employ the sliding window with payload strategy during decoding as described in Koneru et al. (2023)."
+  ],
+  "correct_citations": [
+    "Then, we again fine-tune the Mistral 7B Instruction-tuned LLM (Jiang et al., 2023) using QLoRA (Dettmers et al., 2024), training it to predict the gold reference given the noisy transcript and translations.",
+    "We employ the sliding window with payload strategy during decoding as described in Koneru et al. (2023)."
+  ]
+}

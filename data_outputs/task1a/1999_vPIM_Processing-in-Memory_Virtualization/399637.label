@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "2 ○ When a read request below the cache size is received, the frontend checks the cache for the data's availability and validity.",
+    "If found, it is directly served from the cache, avoiding further backend communication.",
+    "3 ○ If a cache miss occurs or the cache is invalidated, the frontend requests a data segment, starting at the request address and matching the cache size, from the backend to repopulate the cache.The cache remains valid unless the rank is released, data is written to the MRAM (write-to-rank), or DPU programs are launched (via CI operations).",
+    "Only in these cases is the cache invalidated, prompting a subsequent small read-from-rank to update the cache.Request Batching.",
+    "Similarly, to efficiently handle write-to-rank operations with frequent small-size data transfers, a request batching mechanism is introduced in the frontend.In the UPMEM PIM programming model, data written to the MRAM from the host is not immediately utilized until either a DPU program is launched or a read-from-rank operation is performed."
+  ],
+  "correct_citations": []
+}

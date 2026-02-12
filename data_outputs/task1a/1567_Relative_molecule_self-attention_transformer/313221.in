@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Each attention layer is followed by a position-wise feed-forward Network (similar as in the classical transformer model [9]), which consists of 2 linear layers with a leaky-ReLU nonlinearity between them.After processing the input using attention layers, we pool the representation into a constant-sized vector.",
+    "We replace simple mean pooling with an attention-based pooling layer.",
+    "After applying N self-attention layers, we use the following self-attention pooling [46] in order to get the graph-level embedding of the molecule:(4)e ij = (x i W Q)(x j W K) T vanilla self-attention + (x i W Q)b K ij content-dependent positional bias for query + (x j W K)b K ij content-dependent positional biasfor key+ u T (x j W K) global content bias + v T b K ij global positional bias, (5) A(X) i = n j=1 Softmax e ij √ d z T (x j W V + b V ij).where H is the hidden state obtained from self-attention layers, W 1 ∈ R P×D and W 2 ∈ R S×P are pooling attention weights, with P equal to the pooling hidden dimension and S equal to the number of pooling attention heads.",
+    "Finally, the graph embedding g is then passed to the two- layer MLP, with leaky-ReLU activation, in order to make the prediction.Pretraining.",
+    "We used a two-step pretraining procedure."
+  ]
+}

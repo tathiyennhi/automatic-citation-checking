@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Inspired by the simple gate in NAFNet, we divide them into two equal parts for 3×3 depth-wise convolution.",
+    "Each feature is multiplied by the sigmoid change of the other feature, and finally the two parts of the features are transformed into the required enhancement features using 1×1 convolution.",
+    "Formally, the MCGM at the shallowest scale can be presented asF = Conv (Concat([(T B out 1), (T B out 2) ↑, (T B out 3) ↑])), F 1, F 2 = Split(DConv(F)), F 1 = Sigmoid(F 1) × F 2, F 2 = Sigmoid(F 2) × F 1, F e = Conv(Concat([F 1, F 2])),(5)where T B out i, i = 1, 2, 3 denotes the output of the n th scale transformer block, ↑ denotes the up-sampling operation, Concat(•) denotes the concatenation operation along the channel dimension, Dconv(•) denotes the depth-wise Joint Training of DemosaicFormerGiven the intrinsic interdependence of coarse demosaicing and pixel correction, it is impractical to disentangle them completely into separate subtasks.",
+    "Hence, in our Demo-saicFormer, we employ a joint training approach which will be discussed in Section 4.4.",
+    "We utilize ℓ 1 loss, which is widely used in many image restoration and enhancement tasks [2,13,[27][28][29]36]."
+  ],
+  "correct_citations": [
+    "We utilize ℓ 1 loss, which is widely used in many image restoration and enhancement tasks [2,13,[27][28][29]36]."
+  ]
+}

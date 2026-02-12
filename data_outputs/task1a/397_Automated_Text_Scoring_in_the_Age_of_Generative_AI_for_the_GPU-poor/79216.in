@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We seek to update the weight matrix, W → W in a single step byW = W 0 + δW = W 0 + BA(2)where A ∈ R r×k and B ∈ R d×k.In this setting, it is expected that r ≪ min(d, k) so that the number of trainable parameters is r (d + k).",
+    "Typical values of r (e.g., 2 ≤ r ≤ 32) are chosen such that the number of trainable parameters is far fewer than full-parameter fine-tuning.The advantages of LoRA include reduced memory requirements for saving fine-tuned models, more efficient training, no impact on inference speed, and the capacity for combination with other parameter efficient fine-tuning methods.",
+    "The Ormerod & Kwako memory requirements for saving a fine-tuned large language model with LoRA are limited to the size of the pairs of update matrices, which are orders of magnitude smaller than the original model.",
+    "Training is also more efficient and requires less GPU memory since gradients only need to be calculated for the update matrices.",
+    "The impact on inference latency can be reduced to zero if the update matrices are added to the pretrained weights and subsequently removed from the model after loading."
+  ]
+}

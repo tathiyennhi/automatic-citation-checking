@@ -1,0 +1,94 @@
+{
+  "doc_id": "61196",
+  "text": "Bartz et al. [CITATION_1] presented an solution which utilize a STN [CITATION_2] to circularly attend to each word in the input image, and then recognize them separately. The united network is trained in a weakly-supervised manner that no word bounding box labels are used. Li an encoder-decoder based text recognition model and make up their text spotting system. Lui et al. [CITATION_3] , Busta et al. [CITATION_4] and He et al. [CITATION_5] developed a unified text detection and recognition systems with a very similar overall architecture which consist of a detection branch and a recognition branch. Liu et al. [CITATION_6] and Busta et al. [CITATION_7] adopt EAST [CITATION_8] and YOLOv2 [CITATION_9] as their detection branch respectively, and have a similar text recognition branch in which text proposals are mapped into fixed height tensor by bilinear sampling and then transcribe in to strings by a CTC-based recognition module. He et al. [CITATION_10] also adopted EAST [CITATION_11] to generate text proposals, and they introduced character spatial information as explicit supervision in the attentionbased recognition branch.",
+  "correct_citation": {
+    "[CITATION_1]": "19240646",
+    "[CITATION_2]": "6099034",
+    "[CITATION_3]": "9858530",
+    "[CITATION_4]": "5592192",
+    "[CITATION_5]": "3801827",
+    "[CITATION_6]": "9858530",
+    "[CITATION_7]": "5592192",
+    "[CITATION_8]": "706860",
+    "[CITATION_9]": "786357",
+    "[CITATION_10]": "3801827",
+    "[CITATION_11]": "706860"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Bartz et al. presented an solution which utilize a STN to circularly attend to each word in the input image, and then recognize them separately."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "presented an solution which utilize a STN"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Lui et al., Busta et al. and He et al. developed a unified text detection and recognition systems with a very similar overall architecture which consist of a detection branch and a recognition branch."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Lui et al., Busta et al. and He et al. developed a unified text detection and recognition systems with a very similar overall architecture which consist of a detection branch and a recognition branch."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "and He et al."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Liu et al. and Busta et al. adopt EAST and YOLOv2 as their detection branch respectively, and have a similar text recognition branch in which text proposals are mapped into fixed height tensor by bilinear sampling and then transcribe in to strings by a CTC-based recognition module."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Liu et al. and Busta et al. adopt EAST and YOLOv2 as their detection branch respectively, and have a similar text recognition branch in which text proposals are mapped into fixed height tensor by bilinear sampling and then transcribe in to strings by a CTC-based recognition module."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Liu et al. and Busta et al. adopt EAST and YOLOv2 as their detection branch respectively, and have a similar text recognition branch in which text proposals are mapped into fixed height tensor by bilinear sampling and then transcribe in to strings by a CTC-based recognition module."
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "and YOLOv2"
+    },
+    {
+      "citation_id": "[CITATION_10]",
+      "span_text": "He et al. also adopted EAST to generate text proposals, and they introduced character spatial information as explicit supervision in the attentionbased recognition branch."
+    },
+    {
+      "citation_id": "[CITATION_11]",
+      "span_text": "also adopted EAST"
+    }
+  ],
+  "bib_entries": {
+    "786357": {
+      "title": "Yolo9000: better, faster, stronger",
+      "abstract": "We introduce YOLO9000, a state-of-the-art, real-time object detection system that can detect over 9000 object categories. First we propose various improvements to the YOLO detection method, both novel and drawn from prior work. The improved model, YOLOv2, is state-of-the-art on standard detection tasks like PASCAL VOC and COCO. Using a novel, multi-scale training method the same YOLOv2 model can run at varying sizes, offering an easy tradeoff between speed and accuracy. At 67 FPS, YOLOv2 gets 76.8 mAP on VOC 2007. At 40 FPS, YOLOv2 gets 78.6 mAP, outperforming state-of-the-art methods like Faster RCNN with ResNet and SSD while still running significantly faster. Finally we propose a method to jointly train on object detection and classification. Using this method we train YOLO9000 simultaneously on the COCO detection dataset and the ImageNet classification dataset. Our joint training allows YOLO9000 to predict detections for object classes that dont have labelled detection data. We validate our approach on the ImageNet detection task. YOLO9000 gets 19.7 mAP on the ImageNet detection validation set despite only having detection data for 44 of the 200 classes. On the 156 classes not in COCO, YOLO9000 gets 16.0 mAP. YOLO9000 predicts detections for more than 9000 different object categories, all in real-time."
+    },
+    "6099034": {
+      "title": "Spatial transformer networks",
+      "abstract": "Convolutional Neural Networks define an exceptionally powerful class of models, but are still limited by the lack of ability to be spatially invariant to the input data in a computationally and parameter efficient manner. In this work we introduce a new learnable module, the Spatial Transformer, which explicitly allows the spatial manipulation of data within the network. This differentiable module can be inserted into existing convolutional architectures, giving neural networks the ability to actively spatially transform feature maps, conditional on the feature map itself, without any extra training supervision or modification to the optimisation process. We show that the use of spatial transformers results in models which learn invariance to translation, scale, rotation and more generic warping, resulting in state-of-the-art performance on several benchmarks, and for a number of classes of transformations."
+    },
+    "3801827": {
+      "title": "An end-to-end textspotter with explicit alignment and attention",
+      "abstract": "Text detection and recognition in natural images have long been considered as two separate tasks that are processed sequentially. Training of two tasks in a unified framework is non-trivial due to significant dif- ferences in optimisation difficulties. In this work, we present a conceptually simple yet efficient framework that simultaneously processes the two tasks in one shot. Our main contributions are three-fold: 1) we propose a novel text-alignment layer that allows it to precisely compute convolutional features of a text instance in ar- bitrary orientation, which is the key to boost the per- formance; 2) a character attention mechanism is introduced by using character spatial information as explicit supervision, leading to large improvements in recognition; 3) two technologies, together with a new RNN branch for word recognition, are integrated seamlessly into a single model which is end-to-end trainable. This allows the two tasks to work collaboratively by shar- ing convolutional features, which is critical to identify challenging text instances. Our model achieves impressive results in end-to-end recognition on the ICDAR2015 dataset, significantly advancing most recent results, with improvements of F-measure from (0.54, 0.51, 0.47) to (0.82, 0.77, 0.63), by using a strong, weak and generic lexicon respectively. Thanks to joint training, our method can also serve as a good detec- tor by achieving a new state-of-the-art detection performance on two datasets."
+    },
+    "19240646": {
+      "title": "See: Towards semi-supervised end-to-end scene text recognition",
+      "abstract": "Detecting and recognizing text in natural scene images is a challenging, yet not completely solved task. In recent years several new systems that try to solve at least one of the two sub-tasks (text detection and text recognition) have been proposed. In this paper we present SEE, a step towards semi-supervised neural networks for scene text detection and recognition, that can be optimized end-to-end. Most existing works consist of multiple deep neural networks and several pre-processing steps. In contrast to this, we propose to use a single deep neural network, that learns to detect and recognize text from natural images, in a semi-supervised way. SEE is a network that integrates and jointly learns a spatial transformer network, which can learn to detect text regions in an image, and a text recognition network that takes the identified text regions and recognizes their textual content. We introduce the idea behind our novel approach and show its feasibility, by performing a range of experiments on standard benchmark datasets, where we achieve competitive results."
+    },
+    "706860": {
+      "title": "EAST: An efficient and accurate scene text detector",
+      "abstract": "Previous approaches for scene text detection have already achieved promising performances across various benchmarks. However, they usually fall short when dealing with challenging scenarios, even when equipped with deep neural network models, because the overall performance is determined by the interplay of multiple stages and components in the pipelines. In this work, we propose a simple yet powerful pipeline that yields fast and accurate text detection in natural scenes. The pipeline directly predicts words or text lines of arbitrary orientations and quadrilateral shapes in full images, eliminating unnecessary intermediate steps (e.g., candidate aggregation and word partitioning), with a single neural network. The simplicity of our pipeline allows concentrating efforts on designing loss functions and neural network architecture. Experiments on standard datasets including ICDAR 2015, COCO-Text and MSRA-TD500 demonstrate that the proposed algorithm significantly outperforms state-of-the-art methods in terms of both accuracy and efficiency. On the ICDAR 2015 dataset, the proposed algorithm achieves an F-score of 0.7820 at 13.2fps at 720p resolution."
+    },
+    "5592192": {
+      "title": "Deep textspotter: An end-to-end trainable scene text localization and recognition framework",
+      "abstract": "A method for scene text localization and recognition is proposed. The novelties include: training of both text detection and recognition in a single end-to-end pass, the structure of the recognition CNN and the geometry of its input layer that preserves the aspect of the text and adapts its resolution to the data.,,The proposed method achieves state-of-the-art accuracy in the end-to-end text recognition on two standard datasets – ICDAR 2013 and ICDAR 2015, whilst being an order of magnitude faster than competing methods - the whole pipeline runs at 10 frames per second on an NVidia K80 GPU."
+    },
+    "9858530": {
+      "title": "Fots: Fast oriented text spotting with a unified network",
+      "abstract": "Incidental scene text spotting is considered one of the most difficult and valuable challenges in the document analysis community. Most existing methods treat text detection and recognition as separate tasks. In this work, we propose a unified end-to-end trainable Fast Oriented Text Spotting (FOTS) network for simultaneous detection and recognition, sharing computation and visual information among the two complementary tasks. Specially, RoIRotate is introduced to share convolutional features between detection and recognition. Benefiting from convolution sharing strategy, our FOTS has little computation overhead compared to baseline text detection network, and the joint training method learns more generic features to make our method perform better than these two-stage methods. Experiments on ICDAR 2015, ICDAR 2017 MLT, and ICDAR 2013 datasets demonstrate that the proposed method outperforms state-of-the-art methods significantly, which further allows us to develop the first real-time oriented text spotting system which surpasses all previous state-of-the-art results by more than 5% on ICDAR 2015 text spotting task while keeping 22.6 fps."
+    }
+  },
+  "generator": "fallback"
+}

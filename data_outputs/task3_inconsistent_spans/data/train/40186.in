@@ -1,0 +1,49 @@
+{
+  "text": "In order to statistically separate the effects of the number of parameters of the model versus classification performance, we generated 12 different models, all having the same number of parameters, using the model framework described in Table 2 . We generated the 12 models by setting the convolutional kernel sizes in Layer 2 to be one of 4 different values: [CITATION_1] [CITATION_2] , [CITATION_3] [CITATION_4] , [CITATION_5] [CITATION_6] and [CITATION_7] [CITATION_8] and the kernel sizes in Layer 3 to be one of 3 different values: [CITATION_9] [CITATION_10] , [CITATION_11] [CITATION_12] and [CITATION_13] [CITATION_14] , respectively. Each configuration emphasizes different spatial/temporal aspects of the EEG signal. We also compare EEGNet to a recent convolutional network model for EEG presented by Manor and Geva in [CITATION_15] with some minor modifications. First, since the model in [CITATION_16] was designed using EEG data sampled at 64Hz, we appropriately scaled the length of the temporal kernels to match the rate of our data (128Hz for the P300, Feedback ERN and MRCP, 160Hz for SMR) to model the same amount of time temporally. Second, [CITATION_17] uses Dropout after fully-connected layers only, however the dropout fraction was not specified. Therefore, we set it to 0.5 for our comparison. Also note that the rectified linear unit (ReLU) activation function was used in [CITATION_18] , in contrast to the ELU that is used in EEGNet. Note that this model has approximately 11.8M parameters, which represents more than a 5000-fold increase in parameter size when compared to EEGNet. This model will be referred to as the \"MG\" model for the remainder of the manuscript.",
+  "correct_citation": {
+    "[CITATION_1]": "1890318",
+    "[CITATION_2]": "16206461",
+    "[CITATION_3]": "4718878",
+    "[CITATION_4]": "4718878",
+    "[CITATION_5]": "16206461",
+    "[CITATION_6]": "1890318",
+    "[CITATION_7]": "7610581",
+    "[CITATION_8]": "17267607",
+    "[CITATION_9]": "4718878",
+    "[CITATION_10]": "16206461",
+    "[CITATION_11]": "16206461",
+    "[CITATION_12]": "4718878",
+    "[CITATION_13]": "7610581",
+    "[CITATION_14]": "1890318",
+    "[CITATION_15]": "13636456",
+    "[CITATION_16]": "13636456",
+    "[CITATION_17]": "13636456",
+    "[CITATION_18]": "13636456"
+  },
+  "bib_entries": {
+    "7610581": {
+      "title": "Brain-controlled interfaces: Movement restoration with neural prosthetics",
+      "abstract": "Brain-controlled interfaces are devices that capture brain transmissions involved in a subject's intention to act, with the potential to restore communication and movement to those who are immobilized. Current devices record electrical activity from the scalp, on the surface of the brain, and within the cerebral cortex. These signals are being translated to command signals driving prosthetic limbs and computer displays. Somatosensory feedback is being added to this control as generated behaviors become more complex. New technology to engineer the tissue-electrode interface, electrode design, and extraction algorithms to transform the recorded signal to movement will help translate exciting laboratory demonstrations to patient practice in the near future."
+    },
+    "1890318": {
+      "title": "Cortically coupled computer vision for rapid image search",
+      "abstract": "We describe a real-time electroencephalography (EEG)-based brain-computer interface system for triaging imagery presented using rapid serial visual presentation. A target image in a sequence of nontarget distractor images elicits in the EEG a stereotypical spatiotemporal response, which can be detected. A pattern classifier uses this response to reprioritize the image sequence, placing detected targets in the front of an image stack. We use single-trial analysis based on linear discrimination to recover spatial components that reflect differences in EEG activity evoked by target versus nontarget images. We find an optimal set of spatial weights for 59 EEG sensors within a sliding 50-ms time window. Using this simple classifier allows us to process EEG in real time. The detection accuracy across five subjects is on average 92%, i.e., in a sequence of 2500 images, resorting images based on detector output results in 92% of target images being moved from a random position in the sequence to one of the first 250 images (first 10% of the sequence). The approach leverages the highly robust and invariant object recognition capabilities of the human visual system, using single-trial EEG analysis to efficiently detect neural signatures correlated with the recognition event."
+    },
+    "16206461": {
+      "title": "Cortically coupled computing: A new paradigm for synergistic human-machine interaction",
+      "abstract": "Unlike traditional brain-computer interfaces that use brain signals for direct control of computers and robotics, a cortically coupled computer system opportunistically senses the brain state, capturing a user's implicit or explicit computation, and then communicates this information to a traditional computer system via a neural interface."
+    },
+    "17267607": {
+      "title": "Learning representations from EEG with deep recurrent-convolutional neural networks",
+      "abstract": "One of the challenges in modeling cognitive events from electroencephalogram (EEG) data is finding representations that are invariant to inter- and intra-subject differences, as well as to inherent noise associated with such data. Herein, we propose a novel approach for learning such representations from multi-channel EEG time-series, and demonstrate its advantages in the context of mental load classification task. First, we transform EEG activities into a sequence of topology-preserving multi-spectral images, as opposed to standard EEG analysis techniques that ignore such spatial information. Next, we train a deep recurrent-convolutional network inspired by state-of-the-art video classification to learn robust representations from the sequence of images. The proposed approach is designed to preserve the spatial, spectral, and temporal structure of EEG which leads to finding features that are less sensitive to variations and distortions within each dimension. Empirical evaluation on the cognitive load classification task demonstrated significant improvements in classification accuracy over current state-of-the-art approaches in this field."
+    },
+    "13636456": {
+      "title": "Convolutional neural network for multi-category rapid serial visual presentation bci",
+      "abstract": "Brain computer interfaces rely on machine learning algorithms to decode the brain's electrical activity into decisions. For example, in rapid serial visual presentation (RSVP) tasks, the subject is presented with a continuous stream of images containing rare target images among standard images, while the algorithm has to detect brain activity associated with target images. Here, we continue our previous work, presenting a deep neural network model for the use of single trial EEG classification in RSVP tasks. Deep neural networks have shown state of the art performance in computer vision and speech recognition and thus have great promise for other learning tasks, like classification of EEG samples. In our model, we introduce a novel spatio-temporal regularization for EEG data to reduce overfitting. We show improved classification performance compared to our earlier work on a five categories RSVP experiment. In addition, we compare performance on data from different sessions and validate the model on a public benchmark data set of a P300 speller task. Finally, we discuss the advantages of using neural network models compared to manually designing feature extraction algorithms."
+    },
+    "4718878": {
+      "title": "Towards an independent braincomputer interface using steady state visual evoked potentials",
+      "abstract": "Abstract Objective Brain\u2013computer interface (BCI) systems using steady state visual evoked potentials (SSVEPs) have allowed healthy subjects to communicate. However, these systems may not work in severely disabled users because they may depend on gaze shifting. This study evaluates the hypothesis that overlapping stimuli can evoke changes in SSVEP activity sufficient to control a BCI. This would provide evidence that SSVEP BCIs could be used without shifting gaze. Methods Subjects viewed a display containing two images that each oscillated at a different frequency. Different conditions used overlapping or non-overlapping images to explore dependence on gaze function. Subjects were asked to direct attention to one or the other of these images during each of 12 one-minute runs. Results Half of the subjects produced differences in SSVEP activity elicited by overlapping stimuli that could support BCI control. In all remaining users, differences did exist at corresponding frequencies but were not strong enough to allow effective control. Conclusions The data demonstrate that SSVEP differences sufficient for BCI control may be elicited by selective attention to one of two overlapping stimuli. Thus, some SSVEP-based BCI approaches may not depend on gaze control. The nature and extent of any BCI\u2019s dependence on muscle activity is a function of many factors, including the display, task, environment, and user. Significance SSVEP BCIs might function in severely disabled users unable to reliably control gaze. Further research with these users is necessary to explore the optimal parameters of such a system and validate online performance in a home environment."
+    }
+  }
+}

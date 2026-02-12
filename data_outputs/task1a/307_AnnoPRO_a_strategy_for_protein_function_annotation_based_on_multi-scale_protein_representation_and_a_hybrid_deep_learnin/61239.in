@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "As shown in Fig. 3a, the descriptors of all CAFA4 proteins were first calculated using PROFEAT [34], which offered a total of 1,484 descriptors of seven classes: amphiphilic pseudo amino acid composition, amino acid composition, molecular interaction, amino acid autocorrelation, quasi-sequence-order, physicochemical property and pseudo amino acid composition (the descriptions on each class were shown in Supplementary Table S2).",
+    "Second, a new protein-descriptor matrix (PM) was generated (provided in Fig. 3a), and any original number ( x orig ij) in this matrix was normalized to x norm ij using following equation, where f i denoted the i th feature, minf i and maxf i indicated the min and max value of i th feature among all proteins, respectively.Third, the feature distance matrix (FDM) was produced by calculating pair-wise distances among 1,484 features using the newly generated protein-descriptor matrix (PM, each feature such as f a and f b, was represented by a vector of 92,120 length) based on the following equation: FDM was then adopted to reset the locations of protein features in a map (named 'template map'), which is considered as one of the key steps in the image-like protein representation (as shown in Fig.",
+    "Particularly, the process of \"feature reset\" based on FDM consisted of two key steps: 'dimensionality reduction' (by applying UMAP [36] or PCA [37] for reducing the dimensionality of each feature from 1,484D to 2D) and 'coordinate allocation' (by applying J-V algorithms [38] to allocate all those 1,484 features to distinct coordinates in a 39 × 39 map, named 'template map').",
+    "The details on the \"feature reset\" process were further given in Supplementary Method S2.",
+    "Based on the 'template map' generated in Fig. 3a, the ProMAP was produced for each protein by mapping the intensities of all protein features to the corresponding locations in 'template map'."
+  ]
+}

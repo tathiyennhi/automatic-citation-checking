@@ -1,0 +1,29 @@
+{
+  "doc_id": "42077",
+  "text": "In our first experiment, we aim to directly compare to the results of [CITATION_1] which use the second-order scattering. Thus we use the same structure that applies K = 2 layer groups on the scattering input instead of the typical 4. This architecture was called the ScatResNet-10 [CITATION_2] , and has [2, 2] layers of width [256, 512] . The number of parameters is about 12M in both cases. Notice that the number of parameters varies only since the initial number of input channels change. Table 1 reports similar accuracy for order 1 and order 2 scattering, which indicates that if enough data is available and there is a small invariance to translation J, then for natural image classification, the order 2 does not provide significantly more information that can be exploited by a CNN. Now we demonstrate that the scattering first-order transform continues to scale further when applying more sophisticated networks. Note that this would not have been possible with a second-order scattering in a reasonable time. In our case, we avoid computing many convolutions. Scaling to these modern networks permits us to apply the scattering in the subsequent section to common computer vision tasks that require a base network from ImageNet, and where the smaller input size leads to gains in speed and memory.",
+  "correct_citation": {
+    "[CITATION_1]": "2079551",
+    "[CITATION_2]": "2079551"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In our first experiment, we aim to directly compare to the results of  which use the second-order scattering.",
+      "s_span": 0,
+      "e_span": 121
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This architecture was called the ScatResNet-10  , and has [2, 2] layers of width [256, 512] .",
+      "s_span": 235,
+      "e_span": 340
+    }
+  ],
+  "bib_entries": {
+    "2079551": {
+      "title": "Scaling the scattering transform: Deep hybrid networks",
+      "abstract": "We use the scattering network as a generic and fixed initialization of the first layers of a supervised hybrid deep network. We show that early layers do not necessarily need to be learned, providing the best results to-date with pre-defined representations while being competitive with Deep CNNs. Using a shallow cascade of 1 × 1 convolutions, which encodes scattering coefficients that correspond to spatial windows of very small sizes, permits to obtain AlexNet accuracy on the imagenet ILSVRC2012. We demonstrate that this local encoding explicitly learns invariance w.r.t. rotations. Combining scattering networks with a modern ResNet, we achieve a single-crop top 5 error of 11.4% on imagenet ILSVRC2012, comparable to the Resnet-18 architecture, while utilizing only 10 layers. We also find that hybrid architectures can yield excellent performance in the small sample regime, exceeding their end-to-end counterparts, through their ability to incorporate geometrical priors. We demonstrate this on subsets of the CIFAR-10 dataset and on the STL-10 dataset."
+    }
+  },
+  "generator": "fallback_v4"
+}

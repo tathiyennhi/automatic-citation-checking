@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "To remove redundant information, we extract our main video feature at a sub-global level by cropping each frame equally to a target segment that contains all local pedestrian features across T frames.",
+    "Explicitly, we select a segment (x st min, x ed max, y st min, y ed max) from the bounding box information b and extend the shorter dimension to lengthW = max(y ed max -y st min, x ed max -x st min)(1)to make the selected segment square.",
+    "We crop all T frames to this area, which results in Ṽ ∈ R T × W × W ×C.",
+    "Our visual feature extractor, which is denoted as f e, is a frozen CLIP ViT-L/14 [25] that processes at resolution 224 × 224 pixels.",
+    "We resize each cropped frame to the target resolution and encode it independently to get the visual embedding for the entire video:x g = {f e ( Ṽi)| Ṽi ∈ Ṽ } ∈ R T ×d,(2)with d being the dimension of the embedding."
+  ],
+  "correct_citations": [
+    "Our visual feature extractor, which is denoted as f e, is a frozen CLIP ViT-L/14 [25] that processes at resolution 224 × 224 pixels."
+  ]
+}

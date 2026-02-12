@@ -1,0 +1,22 @@
+{
+  "doc_id": "32535",
+  "text": "Since relocating a region of program code into SPM can break the control flow of the program, code-patching is needed at several places to ensure that the code with SPM allocation is functionally correct. Figure 8 shows the patching needed. At embedded loading time, for each code region that is transferred to SPM, our method inserts a jump instruction at the original DRAM address of the start of this region. The copy of this region in DRAM becomes unused DRAM space [CITATION_1] . Upon reaching this loading-time inserted instruction, execution will jump to the SPM address this region is assigned, thereby, redirecting all incoming execution paths of this regions to the correct address in SPM.",
+  "correct_citation": {
+    "[CITATION_1]": "15108983"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The copy of this region in DRAM becomes unused DRAM space  .",
+      "s_span": 412,
+      "e_span": 484
+    }
+  ],
+  "bib_entries": {
+    "15108983": {
+      "title": "Polynomial-time algorithm for on-chip scratchpad memory partitioning",
+      "abstract": "Focusing on embedded applications, scratchpad memories (SPMs) look like a best-compromise solution when taking into account performance, energy consumption and die area. The main challenge in SPM design is mapping memory locations to scratchpad locations. This paper describes an algorithm to optimally solve such a mapping problem by means of Dynamic Programming applied to a synthesizable hardware architecture. The algorithm works by mapping segments of external memory to physically partitioned banks of an on-chip SPM; this architecture provides significant energy savings. The algorithm does not require any user-set bound on the number of partitions and takes into account partitioning overhead. Improving on previous solutions, execution time is polynomial in the input size. Strategies to optimize memory requirements and speed of the algorithm are exploited. Additionally, we integrate this algorithm in a complete and automated design, simulation and synthesis flow."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Mesh storage.",
+    "The large number of L2 IDs (>10 9) translates into a large number of L2 meshes, which would be expensive to store as individual files on GCS because of the high cost of write operations (for example, GCS charges $0.005 per 1,000 write operations).",
+    "For the initial meshing of all segments in the ChunkedGraph after ingest, we store meshes in sharded files.",
+    "For each L2 chunk, we store all meshes in one sharded file using cloudfiles (https://github.com/seung-lab/cloud-files).",
+    "This pattern is repeated for higher layers, where stitched versions of meshes are stored, reducing the number of files that need to be downloaded for any given neuron."
+  ]
+}

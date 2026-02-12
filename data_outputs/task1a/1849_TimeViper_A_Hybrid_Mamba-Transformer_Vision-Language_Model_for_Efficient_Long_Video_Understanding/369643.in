@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Tokens are grouped into instruction, vision, and response categories: T ins, T vis, and T res.",
+    "Let a ij denote the attention score from token t i to token t j, averaged over all attention heads.",
+    "For two token categories A, B ∈ {T ins, T vis, T res }, we define their category-level attention score as:Attn(A → B) = ti∈A tj ∈B a ij t i ∈ A tj ∈B a ij > 0.",
+    "(9)The denominator counts the number of tokens in A that attend to any token in B with non-zero weight, ensuring that tokens masked by the causal attention mask are excluded.In Figure 10, we analyze the overall attention scores from the entire sequence T = T ins ∪ T vis ∪ T res to a target category LLaVA-Video (1.3M) [113]; Kinetics400 & WebVid (253K) [8,13] (recaptioned via ShareGemini [71] & ShareGPT-4 [17]); VideoGPT-Plus (112K) [59]; ET-Instruct (100K) [57]; LongVid [50] & MovieChat (11K) [76] Dense video captioning (26K) ActivityNet [12], COIN [78], HiREST [105], ViTT [37], YouCook2 [117] Temporal video grounding (250K) YT-Temporal [95], DiDeMo [6], QuerYD [62], InternVid [88], HowTo100M [61] (Annotated by VTG-IT [34], TimeIT [69], TimePro [106], HTStep [2], LongVid [50]) B.",
+    "To ensure equal contribution from each category, we compute the arithmetic mean of the scores:Attn(T → B) = 1 3 Attn(T ins → B) +Attn(T vis → B) +Attn(T res → B)."
+  ]
+}

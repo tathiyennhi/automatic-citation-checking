@@ -1,0 +1,20 @@
+{
+  "doc_id": "23477",
+  "text": "In each VMX transition, we retrieve the CR3 value of a VM using a new tracepoint. We added a new tracepoint, vcpu_enter_guest, to extract the CR3 register from the guest area of the VMCS. Then, in order to detect the level of code execution, we exploit the Nested VM Detection Algorithm (NDA) by mapping the information coming from the VMCS and running thread. The pseudocode of the NDA Algorithm is shown in Algorithm 1. It receives an event as input and updates the State History Tree (SHT) [CITATION_1] with meaningful information as output (Line 1). As mentioned before, all the events that cause a kvm_exit are handled by L 0 and the state of the nested VM changes to VMX root mode (Line 3). When the NDA algorithm receives the vcpu_enter_guest event, it queries the last exit reason from the SHT. If the last exit is VMLAUNCH or VMRESUME, it pushes the CR3 value to a candidate nested VM process stack (Line 9). In other cases, the CR3 value is pushed to the The kvm_nested_guest is the most important event, since it shows that either the running vCPU thread is a nested vCPU or VM vCPU. When the NDA algorithm detects the event on a pCPU, it marks the thread as a nested VM vCPU, the CR3 value in the candidate nested VM process stack as a nested VM process, and the CR3 value in the candidate nested VM hypervisor stack as a VM hypervisor. (Line 18-18). When receiving vm_entry, the NDA algorithm queries if the CR3 value is marked as either a nested VM process, VM hypervisor, or VM process. Based on the outcome, it modifies the Status attribute of the vCPU corresponding to the level of code execution (Line 19-30).",
+  "correct_citation": {
+    "[CITATION_1]": "15883965"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "It receives an event as input and updates the State History Tree (SHT) with meaningful information as output (Line 1)."
+    }
+  ],
+  "bib_entries": {
+    "15883965": {
+      "title": "State History Tree: An Incremental Disk-Based Data Structure for Very Large Interval Dat",
+      "abstract": "In this paper, we propose the State History Tree, a disk-based data structure to manage large streaming interval data. The State History Tree provides an efficient way to store interval data on permanent storage with a logarithmic access time. The disk-based structure ensures that extremely large data sets can be accommodated. The State History Tree stores intervals in blocks on disk in a tree organization. Unlike other interval management data structures like R-Trees, our solution avoids re-balancing the nodes, speeding up the tree construction. The proposed method is implemented in Java, and evaluated using large data sets (up to one terabyte). Those data sets were obtained from the state intervals computed from system events traced with the LTTng kernel tracer. The evaluation results demonstrate the performance and efficiency of the method, as compared with other solutions to managing huge interval data sets."
+    }
+  },
+  "generator": "fallback"
+}

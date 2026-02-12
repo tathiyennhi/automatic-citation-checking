@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To support the aggregate request rate of 200 FPS of 8 clients with 75ms SLO, the scheduler must select the smallest DNN on each GPU with batch size 4 (the DNN latency and throughput being 32ms and 124 FPS, respectively).",
+    "That means the clients require a time budget of at least 64ms for computing, which is impossible when the client's bandwidth is low (i.e., 7.5Mbps).",
+    "Thus, the scheduler often selects the batch size of 4 and 3 on each GPU, with the total inference throughput being slightly lower than the aggregate request rate, leaving one client unmapped to any of the DNNs.",
+    "Overall, Jellyfish delivers an extremely low miss rate (≤ 1 %) when the system is not overloaded.",
+    "Furthermore, we expect the miss rates (and accuracy) for the 1 client and 2 clients settings to be comparable due to the similarity in the distributions of DNNs selected by the scheduler."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "(6)The frequency mask M ∈ {0, 1} H×W is defined by:M(u, v) = 1, if max(|u -H 2 |, |v -W 2 |) ≤ ρ H 2 0, otherwise(7)Thereafter, the LF and HF features are independently passed through two distinct low-rank linear projection layers, generating frequency adaptation adjustments:∆F low i = Adapter i 2 (F low i),(8)∆F high i = Adapter i 3 (F high i).",
+    "(9) The Frequency Adapters shares the same structure as the Spatial Adapter, as defined in Equation 4.Dynamic Router.",
+    "We implement dynamic feature aggregation through a Router that learns optimal combinations of feature adjustment according to the original visual features.",
+    "The Router weight is computed by channel-wise attention:w i = Softmax(R ξ (F i)),(10) where w i represents weights for spatial, LF, and HF components.",
+    "The final feature adjustment is calculated as:∆F i = α i 3 k=1 w (k) i ∆F (k) i,(11)where α i is a learnable scaling parameter with small initial value, and k ∈ {spatial, low, high}."
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "doc_id": "43643",
+  "text": "To make LDA robust against noisy data, Fidler et al. [CITATION_1] estimate a robust basis, which consists all the discriminative information for classification or regression. In the testing phase, the estimated basis identifies the outliers in samples (images in their case) and then calculates the coefficients using a subsampling approach. On the other hand, Huang et al. [CITATION_2] proposed a general formulation for Robust Regression (RR) and classification (i.e., Robust LDA or RLDA), where, they first denoise the training feature values using a strategy similar to RPCA [CITATION_3] , and then build the above LS-LDA model using the denoised data. In the testing stage, they denoise the testing samples using the denoised training data. This separate denoising procedure could not effectively form the underlying geometry of sample space to denoise the data. Furthermore, RR [CITATION_4] only accounts for feature-noises by imposing a sparse noise model constraint on the features matrix, despite the fact that the least-squares data fitting term in (1) is vulnerable to large sample-outliers.",
+  "correct_citation": {
+    "[CITATION_1]": "7847226",
+    "[CITATION_2]": "700982",
+    "[CITATION_3]": "7128002",
+    "[CITATION_4]": "700982"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To make LDA robust against noisy data, Fidler et al. estimate a robust basis, which consists all the discriminative information for classification or regression."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "On the other hand, Huang et al. proposed a general formulation for Robust Regression (RR) and classification (i.e., Robust LDA or RLDA), where, they first denoise the training feature values using a strategy similar to RPCA, and then build the above LS-LDA model using the denoised data."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "proposed a general formulation for Robust Regression (RR) and classification (i.e., Robust LDA or RLDA), where, they first denoise the training feature values using a strategy similar to RPCA"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Furthermore, RR only accounts for feature-noises by imposing a sparse noise model constraint on the features matrix, despite the fact that the least-squares data fitting term in (1) is vulnerable to large sample-outliers."
+    }
+  ],
+  "bib_entries": {
+    "7847226": {
+      "title": "Combining reconstructive and discriminative subspace methods for robust classification and regression by subsampling",
+      "abstract": "Linear subspace methods that provide sufficient reconstruction of the data, such as PCA, offer an efficient way of dealing with missing pixels, outliers, and occlusions that often appear in the visual data. Discriminative methods, such as LDA, which, on the other hand, are better suited for classification tasks, are highly sensitive to corrupted data. We present a theoretical framework for achieving the best of both types of methods: an approach that combines the discrimination power of discriminative methods with the reconstruction property of reconstructive methods which enables one to work on subsets of pixels in images to efficiently detect and reject the outliers. The proposed approach is therefore capable of robust classification with a high-breakdown point. We also show that subspace methods, such as CCA, which are used for solving regression tasks, can be treated in a similar manner. The theoretical results are demonstrated on several computer vision tasks showing that the proposed approach significantly outperforms the standard discriminative methods in the case of missing pixels and images containing occlusions and outliers."
+    },
+    "7128002": {
+      "title": "Robust principal component analysis?",
+      "abstract": "This paper is about a curious phenomenon. Suppose we have a data matrix, which is the superposition of a low-rank component and a sparse component. Can we recover each component individually? We prove that under some suitable assumptions, it is possible to recover both the low-rank and the sparse components exactly by solving a very convenient convex program called Principal Component Pursuit; among all feasible decompositions, simply minimize a weighted combination of the nuclear norm and of the L1 norm. This suggests the possibility of a principled approach to robust principal component analysis since our methodology and results assert that one can recover the principal components of a data matrix even though a positive fraction of its entries are arbitrarily corrupted. This extends to the situation where a fraction of the entries are missing as well. We discuss an algorithm for solving this optimization problem, and present applications in the area of video surveillance, where our methodology allows for the detection of objects in a cluttered background, and in the area of face recognition, where it offers a principled way of removing shadows and specularities in images of faces."
+    },
+    "700982": {
+      "title": "Robust regression",
+      "abstract": "Discriminative methods (e.g., kernel regression, SVM) have been extensively used to solve problems such as object recognition, image alignment and pose estimation from images. Regression methods typically map image features (X) to continuous (e.g., pose) or discrete (e.g., object category) values. A major drawback of existing regression methods is that samples are directly projected onto a subspace and hence fail to account for outliers which are common in realistic training sets due to occlusion, specular reflections or noise. It is important to notice that in existing regression methods, and discriminative methods in general, the regressor variables X are assumed to be noise free. Due to this assumption, discriminative methods experience significant degrades in performance when gross outliers are present. ::: ::: Despite its obvious importance, the problem of robust discriminative learning has been relatively unexplored in computer vision. This paper develops the theory of Robust Regression (RR) and presents an effective convex approach that uses recent advances on rank minimization. The framework applies to a variety of problems in computer vision including robust linear discriminant analysis, multi-label classification and head pose estimation from images. Several synthetic and real world examples are used to illustrate the benefits of RR."
+    }
+  },
+  "generator": "fallback"
+}

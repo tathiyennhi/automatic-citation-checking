@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We show significant speed-up of end-to-end runtime and up to 4× higher checkpointing throughput in a variety of configurations ( § 6).Limitations of the Proposed Approach.",
+    "By leveraging the fact that the LLM remains immutable during a significant part of each training iteration, we can perform lazy device-to-host copies of the tensors that make up the LLM model state, which reduces the time each iteration is blocked while waiting for device-to-host I/O related to checkpointing to finish.",
+    "This accelerates the training iterations during which a checkpoint is taken, but at the cost of accumulating checkpointing data on the host memory faster, especially for high checkpoint frequencies.",
+    "Thus, if the asynchronous flushes of the checkpointing data from the host memory to the lower-level storage tiers, e.g., node-local NVMe storage and parallel file systems (PFS), are not fast enough to keep up with the device-to-host lazy copies, this will eventually become a bottleneck.",
+    "In this case, our approach needs to be complemented with other techniques, e.g., compression, for reducing the bottleneck caused by the flushes."
+  ]
+}

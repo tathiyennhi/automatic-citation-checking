@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Unlike the previous implementation [1], which assigned a uniform label to all frames within a gesture, the current approach distinguishes between frames that exhibit active gesture performance and those that do not, as discussed in the \"Refining Time-Domain Gesture Data\" section.",
+    "The modified processing approach can be summarized as follows:(1) The processed time-domain data obtained from the \"Refining Time-Domain Gesture Data\" section consists of a sequence of 100 frames, representing a single gesture.",
+    "These frames serve as the temporal input steps for the SCNN during its forward pass.",
+    "(2) The membrane potentials of the six LIF neurons in the final layer following the FC layer in the SCNN model are stacked for each frame, as illustrated in Fig. 6.",
+    "(3) The stacked membrane potentials of size (100, 6) undergo processing through the LogSoftMax function [31], resulting in predicted log probabilities for each frame within the gesture."
+  ],
+  "correct_citations": [
+    "Unlike the previous implementation [1], which assigned a uniform label to all frames within a gesture, the current approach distinguishes between frames that exhibit active gesture performance and those that do not, as discussed in the \"Refining Time-Domain Gesture Data\" section.",
+    "(3) The stacked membrane potentials of size (100, 6) undergo processing through the LogSoftMax function [31], resulting in predicted log probabilities for each frame within the gesture."
+  ]
+}

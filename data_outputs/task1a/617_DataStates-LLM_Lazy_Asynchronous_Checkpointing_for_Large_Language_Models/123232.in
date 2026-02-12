@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "DataStates-LLM DeepSpeed runtime TorchSnapshot More modules..... remote GPUs (through NVLinks and/or GPUDirect RDMA [29]), do not compete with the copies of the shards.",
+    "Likewise, flushing from host memory to persistent storage uses an entirely different I/O path that does not interfere with the GPUs.",
+    "As a consequence, our approach maximizes the use of the I/O paths needed for checkpointing, while it maximizes the overlapping with the training iterations without slowing them down due to interference or contention for shared resources.",
+    "Thanks to this approach, except for unavoidable waits not sufficiently postponed by lazy non-blocking copies, training iterations can effectively progress almost undisturbed by checkpointing.",
+    "Asynchronous Distributed Consolidation of Model andOptimizer Shards: While often overlooked, a significant source of overhead in the case of synchronous checkpointing is the consensus needed among the GPUs to validate all shards as being successfully saved to the persistent storage."
+  ]
+}

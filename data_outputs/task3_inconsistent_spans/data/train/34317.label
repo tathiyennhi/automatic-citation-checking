@@ -1,0 +1,44 @@
+{
+  "doc_id": "34317",
+  "text": "To this end, we propose a novel Generative Adversarial Network, namely as the ArtGAN 1 . We anticipate that a good way to look at this problem is to understand how human learns to draw. An artist teacher wrote an online article [CITATION_1] and pointed out that an effective learning requires to focus on a particular type of skills at a time, e.g. practice to draw a particular object or one kind of movement. Accordingly, ArtGAN takes a randomly chosen label information and a noise vector as inputs. The chosen label is used as the true label when computing the loss function for the generated image. The idea is to allow the generator to learn better by leveraging the feedback information from the labels. Inspired by recent works [CITATION_2] , [CITATION_3] , a categorical autoencoder-based discriminator that incorporates an autoencoder into the categorical discriminator for additional complementary information is also introduced. Rather than deploying two separate computationally expensive networks (a categorical discriminator and an autoencoder), our categorical autoencoder-based discriminator partly shares the same architecture and weights. In specific, the encoder in the autoencoder is shared by the categorical discriminator. The overall architecture of the ArtGAN is illustrated in Figure 1 .",
+  "correct_citation": {
+    "[CITATION_1]": "14124313",
+    "[CITATION_2]": "15876696",
+    "[CITATION_3]": "9957731"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "An artist teacher wrote an online article  and pointed out that an effective learning requires to focus on a particular type of skills at a time, e.g. practice to draw a particular object or one kind of movement.",
+      "s_span": 186,
+      "e_span": 410
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Inspired by recent works  ,  , a categorical autoencoder-based discriminator that incorporates an autoencoder into the categorical discriminator for additional complementary information is also introduced.",
+      "s_span": 711,
+      "e_span": 940
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Inspired by recent works  ,  , a categorical autoencoder-based discriminator that incorporates an autoencoder into the categorical discriminator for additional complementary information is also introduced.",
+      "s_span": 711,
+      "e_span": 940
+    }
+  ],
+  "bib_entries": {
+    "9957731": {
+      "title": "Began: Boundary equilibrium generative adversarial networks",
+      "abstract": "We propose a new equilibrium enforcing method paired with a loss derived from the Wasserstein distance for training auto-encoder based Generative Adversarial Networks. This method balances the generator and discriminator during training. Additionally, it provides a new approximate convergence measure, fast and stable training and high visual quality. We also derive a way of controlling the trade-off between image diversity and visual quality. We focus on the image generation task, setting a new milestone in visual quality, even at higher resolutions. This is achieved while using a relatively simple model architecture and a standard training procedure."
+    },
+    "14124313": {
+      "title": "Very deep convolutional networks for large-scale image recognition",
+      "abstract": "In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision."
+    },
+    "15876696": {
+      "title": "Energy-based generative adversarial network",
+      "abstract": "We introduce the \"Energy-based Generative Adversarial Network\" model (EBGAN) which views the discriminator as an energy function that attributes low energies to the regions near the data manifold and higher energies to other regions. Similar to the probabilistic GANs, a generator is seen as being trained to produce contrastive samples with minimal energies, while the discriminator is trained to assign high energies to these generated samples. Viewing the discriminator as an energy function allows to use a wide variety of architectures and loss functionals in addition to the usual binary classifier with logistic output. Among them, we show one instantiation of EBGAN framework as using an auto-encoder architecture, with the energy being the reconstruction error, in place of the discriminator. We show that this form of EBGAN exhibits more stable behavior than regular GANs during training. We also show that a single-scale architecture can be trained to generate high-resolution images."
+    }
+  },
+  "generator": "fallback_v4"
+}

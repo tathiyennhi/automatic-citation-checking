@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "After a certain number of steps, as the smoothed loss stabilizes, rank growth slows down and eventually plateaus, resulting in a balanced final configuration.",
+    "This dynamic behavior was observed in all models, from Falcon-RW-1B to LLaMA-2-13B, with especially pronounced growth in mid-layer ranks on complex reasoning tasks such as GSM8K and UltraChat.0 20 40 60 80 100 0 4 8 12 16 20 24 28 32 Training Steps Adapter Rank Dynamic Rank Evolution Advantages Over Existing MethodsThe results from our experiments and ablations demonstrate that the combination of dynamic rank allocation and reward-weighted learning offers a robust and scalable solution to the limitations of prior PEFT techniques.",
+    "Compared to AdaLoRA, which relies on expensive Hessian estimation and SVD computations, DRaFT-Q uses simple yet effective exponential moving averages over loss and curvature metrics to update ranks, introducing minimal overhead.",
+    "Unlike LongLoRA and DoRA, which rely on static heuristic schedules, DRaFT-Q operates adaptively at runtime, responding to real training signals from gradients and loss dynamics.DRaFT-Q was tested under extreme low-resource settings on single T4 GPUs.",
+    "It was able to scale to models as large as LLaMA-2-13B using 4/8-bit mixed precision, something not feasible with full backprop-based fine-tuning."
+  ]
+}

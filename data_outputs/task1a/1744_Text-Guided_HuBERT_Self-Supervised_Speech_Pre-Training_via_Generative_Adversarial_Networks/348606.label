@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "C. Multi-Unit and Multi-Layer Supervision ObjectiveOur model architecture design mainly follows the HuBERTbase model, consisting of a convolutional feature encoder and a transformer encoder.",
+    "The convolutional encoder is composed of seven temporal convolution blocks, which have 512 channels with strides (5, 2, 2, 2, 2, 2, 2) and kernel widths (10, 3, 3, 3, 3, 2, 2), resulting in a 20ms frame rate for audio sampled at 16kHz.",
+    "The transformer encoder contains 12 blocks, with model dimension 768, feed-forward dimension 3072, and 12 attention heads.",
+    "Before these features are fed to the transformer encoder, we randomly mask them in time dimension with a probability of 0.8.",
+    "For the transformer encoder, instead of the simple relative position embedding used in HuBERT, we use a bucket relative position embedding [18], which generates different learned embeddings based on the offset between the \"key\" and the \"query\" in the vanilla selfattention.To leverage the HuBERT-based and GAN-based targets, we further propose a multi-unit and multi-layer supervision objective, which could effectively guide the pre-trained model to learn rich phonetic information, thus benefiting downstream tasks."
+  ],
+  "correct_citations": [
+    "For the transformer encoder, instead of the simple relative position embedding used in HuBERT, we use a bucket relative position embedding [18], which generates different learned embeddings based on the offset between the \"key\" and the \"query\" in the vanilla selfattention.To leverage the HuBERT-based and GAN-based targets, we further propose a multi-unit and multi-layer supervision objective, which could effectively guide the pre-trained model to learn rich phonetic information, thus benefiting downstream tasks."
+  ]
+}

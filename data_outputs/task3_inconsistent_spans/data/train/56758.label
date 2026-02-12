@@ -1,0 +1,55 @@
+{
+  "doc_id": "56758",
+  "text": "Deep FAM methods conditioned on extra attribute vectors alter desired attributes with given conditional attribute vectors, such as one-hot vectors indicating the presence of corresponding facial attributes. During the training process, the conditional vectors are concatenated with the to-bemanipulated images in latent encoding spaces. Moreover, conditional generative frameworks dominate the model construction of deep FAM. Various efforts have been made to edit facial attributes based on autoencoders (AEs), VAEs, and GANs. [CITATION_1] propose a conditional adversarial autoencoder (CAAE) for age progression and regression. CAAE first maps a face image to a latent vector through an encoder. Then, the obtained latent vector concatenated with an age label vector is fed into a generator for learning a face manifold. The age label condition controls altering the age. Meanwhile, the latent vector ensures that the personalized face features are preserved. [CITATION_2] introduce a conditional variational autoencoder (CVAE) to generate images from visual attributes. CVAE disentangles an image into the foreground and the background parts, where each part is combined with the defined attribute vector. Consequently, the quality of generated complex images can be significantly improved when the foreground areas attract more attention. [CITATION_3] propose an invertible conditional GAN (IcGAN) to edit multiple facial attributes with determined specific representations of generated images. Given an input image, IcGAN first learns a representation consisting of a latent variable and a conditional vector via an encoder. Then, IcGAN modifies the latent variable and conditional vector to regenerate the original input image through the conditional GAN [CITATION_4] . In this way, by changing the encoded conditional vector, IcGAN can achieve arbitrary attribute manipulation.",
+  "correct_citation": {
+    "[CITATION_1]": "810708",
+    "[CITATION_2]": "7577075",
+    "[CITATION_3]": "18500294",
+    "[CITATION_4]": "12803511"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Moreover, conditional generative frameworks dominate the model construction of deep FAM. Various efforts have been made to edit facial attributes based on autoencoders (AEs), VAEs, and GANs.  propose a conditional adversarial autoencoder (CAAE) for age progression and regression.",
+      "s_span": 337,
+      "e_span": 629
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Meanwhile, the latent vector ensures that the personalized face features are preserved.  introduce a conditional variational autoencoder (CVAE) to generate images from visual attributes.",
+      "s_span": 874,
+      "e_span": 1072
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Consequently, the quality of generated complex images can be significantly improved when the foreground areas attract more attention.  propose an invertible conditional GAN (IcGAN) to edit multiple facial attributes with determined specific representations of generated images.",
+      "s_span": 1209,
+      "e_span": 1498
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Then, IcGAN modifies the latent variable and conditional vector to regenerate the original input image through the conditional GAN  .",
+      "s_span": 1630,
+      "e_span": 1775
+    }
+  ],
+  "bib_entries": {
+    "18500294": {
+      "title": "Invertible conditional gans for image editing",
+      "abstract": "Generative Adversarial Networks (GANs) have recently demonstrated to successfully approximate complex data distributions. A relevant extension of this model is conditional GANs (cGANs), where the introduction of external information allows to determine specific representations of the generated images. In this work, we evaluate encoders to inverse the mapping of a cGAN, i.e., mapping a real image into a latent space and a conditional representation. This allows, for example, to reconstruct and modify real images of faces conditioning on arbitrary attributes. Additionally, we evaluate the design of cGANs. The combination of an encoder with a cGAN, which we call Invertible cGAN (IcGAN), enables to re-generate real images with deterministic complex modifications."
+    },
+    "12803511": {
+      "title": "Conditional generative adversarial nets",
+      "abstract": "Generative Adversarial Nets [8] were recently introduced as a novel way to train generative models. In this work we introduce the conditional version of generative adversarial nets, which can be constructed by simply feeding the data, y, we wish to condition on to both the generator and discriminator. We show that this model can generate MNIST digits conditioned on class labels. We also illustrate how this model could be used to learn a multi-modal model, and provide preliminary examples of an application to image tagging in which we demonstrate how this approach can generate descriptive tags which are not part of training labels."
+    },
+    "810708": {
+      "title": "Age progression/regression by conditional adversarial autoencoder",
+      "abstract": "If I provide you a face image of mine (without telling you the actual age when I took the picture) and a large amount of face images that I crawled (containing labeled faces of different ages but not necessarily paired), can you show me what I would look like when I am 80 or what I was like when I was 5? The answer is probably a No. Most existing face aging works attempt to learn the transformation between age groups and thus would require the paired samples as well as the labeled query image. In this paper, we look at the problem from a generative modeling perspective such that no paired samples is required. In addition, given an unlabeled image, the generative model can directly produce the image with desired age attribute. We propose a conditional adversarial autoencoder (CAAE) that learns a face manifold, traversing on which smooth age progression and regression can be realized simultaneously. In CAAE, the face is first mapped to a latent vector through a convolutional encoder, and then the vector is projected to the face manifold conditional on age through a deconvolutional generator. The latent vector preserves personalized face features (i.e., personality) and the age condition controls progression vs. regression. Two adversarial networks are imposed on the encoder and generator, respectively, forcing to generate more photo-realistic faces. Experimental results demonstrate the appealing performance and flexibility of the proposed framework by comparing with the state-of-the-art and ground truth."
+    },
+    "7577075": {
+      "title": "Attribute2image: Conditional image generation from visual attributes",
+      "abstract": "This paper investigates a problem of generating images from visual attributes. Given the prevalent research for image recognition, the conditional image generation problem is relatively under-explored due to the challenges of learning a good generative model and handling rendering uncertainties in images. To address this, we propose a variety of attribute-conditioned deep variational auto-encoders that enjoy both effective representation learning and Bayesian modeling, from which images can be generated from specified attributes and sampled latent factors. We experiment with natural face images and demonstrate that the proposed models are capable of generating realistic faces with diverse appearance. We further evaluate the proposed models by performing attribute-conditioned image progression, transfer and retrieval. In particular, our generation method achieves superior performance in the retrieval experiment against traditional nearest-neighbor-based methods both qualitatively and quantitatively."
+    }
+  },
+  "generator": "fallback_v4"
+}

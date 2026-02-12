@@ -1,0 +1,33 @@
+{
+  "doc_id": "20726",
+  "text": "The training data is then split into a training and crossvalidation set in the ratio of 90:10, which is given to the DNN training framework used in [CITATION_1] . The DNN training procedure performs 10 epochs of stochastic gradient descent using momentum. The training hyper-parameters like learning rate are not changed for the experiments. The best result is selected as the model that gives the minimum frame level error on the cross-validation data. All hidden layers were rectified linear units (ReLU) [CITATION_2] with a soft-max output layer. Typically, the training takes an average of 10 hours for 10 epochs.",
+  "correct_citation": {
+    "[CITATION_1]": "18921109",
+    "[CITATION_2]": "15539264"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The training data is then split into a training and crossvalidation set in the ratio of 90:10, which is given to the DNN training framework used in [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 162
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "All hidden layers were rectified linear units (ReLU) [CITATION_2] with a soft-max output layer.",
+      "s_span": 454,
+      "e_span": 549
+    }
+  ],
+  "bib_entries": {
+    "15539264": {
+      "title": "Rectified linear units improve restricted boltzmann machines",
+      "abstract": "Restricted Boltzmann machines were developed using binary stochastic hidden units. These can be generalized by replacing each binary unit by an infinite number of copies that all have the same weights but have progressively more negative biases. The learning and inference rules for these \"Stepped Sigmoid Units\" are unchanged. They can be approximated efficiently by noisy, rectified linear units. Compared with binary units, these units learn features that are better for object recognition on the NORB dataset and face verification on the Labeled Faces in the Wild dataset. Unlike binary units, rectified linear units preserve information about relative intensities as information travels through multiple layers of feature detectors."
+    },
+    "18921109": {
+      "title": "Deep recurrent neural networks for acoustic modelling",
+      "abstract": "We present a novel deep Recurrent Neural Network (RNN) model for acoustic modelling in Automatic Speech Recognition (ASR). We term our contribution as a TC-DNN-BLSTM-DNN model, the model combines a Deep Neural Network (DNN) with Time Convolution (TC), followed by a Bidirectional Long Short-Term Memory (BLSTM), and a final DNN. The first DNN acts as a feature processor to our model, the BLSTM then generates a context from the sequence acoustic signal, and the final DNN takes the context and models the posterior probabilities of the acoustic states. We achieve a 3.47 WER on the Wall Street Journal (WSJ) eval92 task or more than 8% relative improvement over the baseline DNN models."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The goal is to pull out the material coefficients of the integration, leading to the following assembly of the global stiffness matrix:K i j = M e=1 α e W e i j with W e i j = w e i j if i, j ∈ e 0 else.",
+    "(65)Fig. 9 Finite element NNs, prediction of forces b i from material coefficients α e via assembly of global stiffness matrix K i j, and evaluations of equations with the displacements u j [498] Inserting the assembly into the system of equations from Eq.",
+    "( 64) yieldsN j=1 M e=1 α e W e i j u j -b i = 0, i = 1, 2,..., N. (66)The nested summation has a similar structure of a FC-NN, a(l) i = σ (z (l) i) = σ ( N (l) j=1 a (l-1) j + b (l) i), (wherez (l) i = N (l) j=1 a (l-1) j + b (l)i) without activation σ and bias b (see Fig. 9):a (2) i = N (2) j=1 W (1) i j a (1) j = N (2) j=1 W (1) i j ⎛ ⎝ N (1) k=1 W (0) jk a (0) k ⎞ ⎠.",
+    "(67)Thus, the stiffness matrix K i j is the hidden layer.",
+    "In a forward problem, W e i j are non-learnable weights, while u j contains a mixture of learnable weights and non-learnable weights coming from the imposed Dirichlet boundary conditions."
+  ]
+}

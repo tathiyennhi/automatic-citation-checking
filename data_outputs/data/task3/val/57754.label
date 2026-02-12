@@ -1,0 +1,29 @@
+{
+  "doc_id": "57754",
+  "text": "Simulations were performed on GPUs using the CUDA version of PMEMD (Particle Mesh Ewald Molecular Dynamics) in Amber14 (Case, 2014; [CITATION_1] [CITATION_2] . Prepared systems were minimized, then equilibrated as follows: The system was heated using the Langevin thermostat from 0 to 100 K in the NVT ensemble over 12.5 ps with harmonic restraints of 10.0 kcal$mol À1 $Å À2 on the non-hydrogen atoms of lipid, protein, and ligand, and initial velocities sampled from the Boltzmann distribution. The system was then heated to 310 K over 125 ps in the NPT ensemble with semi-isotropic pressure coupling and a pressure of one bar. Further equilibration was performed at 310 K with harmonic restraints on the protein and ligand starting at 5.0 kcal$mol À1 $Å À2 and reduced by 1.0 kcal$mol À1 $Å À2 in a stepwise fashion every 2 ns, for a total of 10 ns of additional restrained equilibration. We performed nine simulations of cholesterol-bound CD81, and another nine simulations of unliganded CD81, for a total of 18 simulations. These simulations were conducted in the NPT ensemble at 310 K and 1 bar, using a Langevin thermostat and Monte Carlo barostat. In each of these simulations, we performed 5 ns of unrestrained equilibration followed by a production run of 1.0-2.5 ms. Simulations initiated with cholesterol bound totaled 13.7 ms, and simulations initiated with cholesterol removed totaled 14.8 ms.",
+  "correct_citation": {
+    "[CITATION_1]": "12647230",
+    "[CITATION_2]": "20439973"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Simulations were performed on GPUs using the CUDA version of PMEMD (Particle Mesh Ewald Molecular Dynamics) in Amber14 (Case, 2014;   ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Simulations were performed on GPUs using the CUDA version of PMEMD (Particle Mesh Ewald Molecular Dynamics) in Amber14 (Case, 2014;   ."
+    }
+  ],
+  "bib_entries": {
+    "12647230": {
+      "title": "SPFP: Speed without compromise-A mixed precision model for GPU accelerated molecular dynamics simulations",
+      "abstract": "Abstract A new precision model is proposed for the acceleration of all-atom classical molecular dynamics (MD) simulations on graphics processing units (GPUs). This precision model replaces double precision arithmetic with fixed point integer arithmetic for the accumulation of force components as compared to a previously introduced model that uses mixed single/double precision arithmetic. This significantly boosts performance on modern GPU hardware without sacrificing numerical accuracy. We present an implementation for NVIDIA GPUs of both generalized Born implicit solvent simulations as well as explicit solvent simulations using the particle mesh Ewald (PME) algorithm for long-range electrostatics using this precision model. Tests demonstrate both the performance of this implementation as well as its numerical stability for constant energy and constant temperature biomolecular MD as compared to a double precision CPU implementation and double and mixed single/double precision GPU implementations."
+    },
+    "20439973": {
+      "title": "Routine microsecond molecular dynamics simulations with AMBER on GPUs. 2. Explicit solvent particle mesh Ewald",
+      "abstract": "We present an implementation of explicit solvent all atom classical molecular dynamics (MD) within the AMBER program package that runs entirely on CUDA-enabled GPUs. First released publicly in April 2010 as part of version 11 of the AMBER MD package and further improved and optimized over the last two years, this implementation supports the three most widely used statistical mechanical ensembles (NVE, NVT, and NPT), uses particle mesh Ewald (PME) for the long-range electrostatics, and runs entirely on CUDA-enabled NVIDIA graphics processing units (GPUs), providing results that are statistically indistinguishable from the traditional CPU version of the software and with performance that exceeds that achievable by the CPU version of AMBER software running on all conventional CPU-based clusters and supercomputers. We briefly discuss three different precision models developed specifically for this work (SPDP, SPFP, and DPDP) and highlight the technical details of the approach as it extends beyond previously r..."
+    }
+  },
+  "generator": "fallback_v4"
+}

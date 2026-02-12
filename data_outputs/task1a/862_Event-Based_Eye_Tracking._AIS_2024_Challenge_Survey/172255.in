@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The baseline, convolutional LSTM, spiking LSTM will be discussed below with different emphasis.The baseline, as shown in Fig. 10 consists of three layers of 2D convolution as the backbone and one layer of GRU to extract the semantic information and further the temporal dependency between adjacent timestamps.",
+    "Finally, one fully connected layer regress the pupil center coordinates.",
+    "As mentioned above, a set of grid search has been performed and it shows that 6 time dimension channels in the voxel representation can yield best p10 performance for the baseline with L1 loss.The second model we reported here is convolutional LSTM model in Fig. 11, with convolutional LSTM layer as its fundamental building block, which takes in the feature maps at the current timestamp from the previous layer (voxel representation if it is the first layer) and the previous hidden feature (a list of zero tensors if it is the first layer), utilizes 2D convolution layers to extract high-level feature maps given to the LSTM to generate new hidden features.",
+    "The newly generated hidden features will be used for regressing the coordinates as well as input to the next convolutional LSTM cell sequentially.",
+    "We experimented with different structures for the feature map (2D convolution and 3D convolution) and temporal dependency extraction (LSTM, Bi-LSTM), different number of convolutional LSTM layers (2,3, 4) and loss functions (MSE, Weighted MSE, L1) and finally found that 4 layers with each consisting of 2D convolution and uni-directional LSTM gives the best p10 performance with 3 time channels in the voxel representation and Weighted MSE loss.We also explored the spiking LSTM model as shown in Fig. 12, which shares a similar structure with the baseline but uses a spiking LSTM instead of GRU to extract the temporal dependency."
+  ]
+}

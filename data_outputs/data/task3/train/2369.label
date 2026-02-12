@@ -1,0 +1,20 @@
+{
+  "doc_id": "2369",
+  "text": "Binding skills learning and exploration. For two reasons, we claim that skill learning can be an important source of improvement for the exploration issue. We already have investigated the direct interest of skill learning to explore ( §3.1) and found that it can reduce the noise of standard exploration methods resulting in a faster access to the sparse reward. In addition to that, we saw that skill learning makes the credit assignment more effective and faster. This is extremely important since an intrinsic reward can be a fast moving non stationary reward. If the long-term attenuation parameter γ is high, such a reward function could propagate along different states very slowly since the state sequence between the state we want to value and the rewarded state is very large. It results that the policy is improved very slowly. This is why pseudo-count methods use a mixed Monte Carlo update [CITATION_1] , which consists in using a soft interpolation between Monte Carlo and TD method to update values. However their method only partially solves the problem on the cost of a higher variance. In a different way, if the fast moving non stationary intrinsic reward changes an abstract policy option, it can propagate to every states much faster without any additional cost. To illustrate this, let's assume that options of length 20 are available, and that the target state (with the highest intrinsic reward) is 1000 states away from the initial state. In a tabular setting, it would take at least 1000 updates with a γ of 0.998, whereas it would take only, at least, 50 updates to the option policy with a γ of 0.98.",
+  "correct_citation": {
+    "[CITATION_1]": "6933296"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This is why pseudo-count methods use a mixed Monte Carlo update  , which consists in using a soft interpolation between Monte Carlo and TD method to update values."
+    }
+  ],
+  "bib_entries": {
+    "6933296": {
+      "title": "What is intrinsic motivation? a typology of computational approaches",
+      "abstract": "Intrinsic motivation, the causal mechanism for spontaneous exploration and curiosity, is a central concept in developmental psychology. It has been argued to be a crucial mechanism for open-ended cognitive development in humans, and as such has gathered a growing interest from developmental roboticists in the recent years. The goal of this paper is threefold. First, it provides a synthesis of the different approaches of intrinsic motivation in psychology. Second, by interpreting these approaches in a computational reinforcement learning framework, we argue that they are not operational and even sometimes inconsistent. Third, we set the ground for a systematic operational study of intrinsic motivation by presenting a formal typology of possible computational approaches. This typology is partly based on existing computational models, but also presents new ways of conceptualizing intrinsic motivation. We argue that this kind of computational typology might be useful for opening new avenues for research both in psychology and developmental robotics."
+    }
+  },
+  "generator": "fallback_v4"
+}

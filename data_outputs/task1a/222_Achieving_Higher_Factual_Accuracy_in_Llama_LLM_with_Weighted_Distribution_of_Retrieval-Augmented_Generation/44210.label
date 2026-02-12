@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "While the extensive training data improves the model's fluency and versatility, it does not inherently guarantee factual correctness.",
+    "Addressing this limitation requires augmenting the model with mechanisms that ground its outputs in verifiable knowledge,Algorithm 1 Retrieval-Augmented Generation (RAG) Require: Query q, Corpus C Ensure: Generated Output o 1: Retrieval Step 2: Compute similarity scores S (q, d i) for each document d i ∈ C 3: Select top-k documents D = {d 1, d 2,..., d k } based on S (q, d i) 4: Generation Step 5:Initialize hidden state h 0 with q 6: for t = 1 to T do 7:Compute context vector c t using attention mechanism: 8:c t = k i=1 α t,i d i 9: α t,i = exp(e t,i) k j=1 exp(e t, j), where e t,i = h t-1 • d i 10:Update hidden stateh t = f (h t-1, c t) 11:Generate output token o t based on h t 12: end for 13: Output o = {o 1, o 2,..., o T } thus enhancing its reliability in tasks demanding high factual accuracy.",
+    "Retrieval-Augmented Generation (RAG)Retrieval-Augmented Generation (RAG) is a hybrid approach that integrates the advantages of retrieval-based and generative models to enhance the factual accuracy of language model outputs.",
+    "RAG functions by initially retrieving relevant documents D = {d 1, d 2,..., d k } from a large corpus C based on the input query q, and subsequently utilizing this retrieved information to guide the generation process G. The retrieved documents serve as a contextual and factual foundation, which assists the model in generating more accurate and contextually relevant responses.",
+    "Previous implementations of RAG have demonstrated its efficacy in various applications, including question answering and dialogue systems, where grounding responses in external knowledge is critical."
+  ],
+  "correct_citations": []
+}

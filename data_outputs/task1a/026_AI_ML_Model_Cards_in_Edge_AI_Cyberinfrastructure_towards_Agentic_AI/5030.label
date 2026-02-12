@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "• Native MCP: the MCP server executes queries directly against the Neo4j database using the Bolt protocol, bypassing the REST layer entirely.",
+    "• Layered MCP: MCP server interacts through the Patra REST layer, translating calls from the MCP tools to their correpsonding REST endpoints.",
+    "Where MCP is involved, both functions are implemented as MCP tools in Python, following the standard @mcp.tool decorator pattern.",
+    "The Native MCP implements the same logic as the REST endpoint does with respect to requiring multiple database queries but then wraps the response in JSON-RPC 2.0 message framing.",
+    "Layered MCP adds a third layer: the MCP tool internally calls the REST endpoint which introduces a HTTP client-server handshake and duplicate JSON serialization (once for the REST response, again for the MCP JSON-RPC envelope).a) Test Environment: We carry out two experiments: a microbenchmark experiment and a real world experiment."
+  ],
+  "correct_citations": []
+}

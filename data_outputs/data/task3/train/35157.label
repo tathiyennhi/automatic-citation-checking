@@ -1,0 +1,74 @@
+{
+  "doc_id": "35157",
+  "text": "Some methods also improve a coarse 3d fluid simulation by solving the wave equation on the animated surface (using a grid representation [CITATION_1] [CITATION_2] or a Lagrangian representation [CITATION_3] [CITATION_4] [CITATION_5] [CITATION_6] [CITATION_7] ) to add high-frequency turbulence.",
+  "correct_citation": {
+    "[CITATION_1]": "17943200",
+    "[CITATION_2]": "2408906",
+    "[CITATION_3]": "13916776",
+    "[CITATION_4]": "2036802",
+    "[CITATION_5]": "122648399",
+    "[CITATION_6]": "4837061",
+    "[CITATION_7]": "13173799"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Some methods also improve a coarse 3d fluid simulation by solving the wave equation on the animated surface (using a grid representation   or a Lagrangian representation      ) to add high-frequency turbulence."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Some methods also improve a coarse 3d fluid simulation by solving the wave equation on the animated surface (using a grid representation   or a Lagrangian representation      ) to add high-frequency turbulence."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Some methods also improve a coarse 3d fluid simulation by solving the wave equation on the animated surface (using a grid representation   or a Lagrangian representation      ) to add high-frequency turbulence."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Some methods also improve a coarse 3d fluid simulation by solving the wave equation on the animated surface (using a grid representation   or a Lagrangian representation      ) to add high-frequency turbulence."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Some methods also improve a coarse 3d fluid simulation by solving the wave equation on the animated surface (using a grid representation   or a Lagrangian representation      ) to add high-frequency turbulence."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Some methods also improve a coarse 3d fluid simulation by solving the wave equation on the animated surface (using a grid representation   or a Lagrangian representation      ) to add high-frequency turbulence."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Some methods also improve a coarse 3d fluid simulation by solving the wave equation on the animated surface (using a grid representation   or a Lagrangian representation      ) to add high-frequency turbulence."
+    }
+  ],
+  "bib_entries": {
+    "2408906": {
+      "title": "Closest Point Turbulence for Liquid Surfaces",
+      "abstract": "We propose a method of increasing the apparent spatial resolution of an existing liquid simulation. Previous approaches to this “up-resing” problem have focused on increasing the turbulence of the underlying velocity field. Motivated by measurements in the free surface turbulence literature, we observe that past certain frequencies, it is sufficient to perform a wave simulation directly on the liquid surface, and construct a reduced-dimensional surface-only simulation. We sidestep the considerable problem of generating a surface parameterization by employing an embedding technique known as the Closest Point Method (CPM) that operates directly on a 3D extension field. The CPM requires 3D operators, and we show that for surface operators with no natural 3D generalization, it is possible to construct a viable operator using the inverse Abel transform. We additionally propose a fast, frozen core closest point transform, and an advection method for the extension field that reduces smearing considerably. Finally, we propose two turbulence coupling methods that seed the high-resolution wave simulation in visually expected regions."
+    },
+    "2036802": {
+      "title": "Surface Turbulence for Particle-based Liquid Simulations",
+      "abstract": "We present a method to increase the apparent resolution of particle-based liquid simulations. Our method first outputs a dense, temporally coherent, regularized point set from a coarse particle-based liquid simulation. We then apply a surface-only Lagrangian wave simulation to this high-resolution point set. We develop novel methods for seeding and simulating waves over surface points, and use them to generate high-resolution details. We avoid error-prone surface mesh processing, and robustly propagate waves without the need for explicit connectivity information. Our seeding strategy combines a robust curvature evaluation with multiple bands of seeding oscillators, injects waves with arbitrarily fine-scale structures, and properly handles obstacle boundaries. We generate detailed fluid surfaces from coarse simulations as an independent post-process that can be applied to most particle-based fluid solvers."
+    },
+    "17943200": {
+      "title": "Liquid surface tracking with error compensation",
+      "abstract": "Our work concerns the combination of an Eulerian liquid simulation with a high-resolution surface tracker (e.g. the level set method or a Lagrangian triangle mesh). The naive application of a high-resolution surface tracker to a low-resolution velocity field can produce many visually disturbing physical and topological artifacts that limit their use in practice. We address these problems by defining an error function which compares the current state of the surface tracker to the set of physically valid surface states. By reducing this error with a gradient descent technique, we introduce a novel physics-based surface fairing method. Similarly, by treating this error function as a potential energy, we derive a new surface correction force that mimics the vortex sheet equations. We demonstrate our results with both level set and mesh-based surface trackers."
+    },
+    "4837061": {
+      "title": "Enriching SPH Simulation by Approximate Capillary Waves",
+      "abstract": "Capillary waves are difficult to simulate due to their fast traveling speed and high frequency. In this paper, we propose to approximate capillary wave effects by surface compression waves under the SPH framework. To achieve this goal, we present a method to convert surface tension energy changes measured from SPH simulation into high-frequency density variations. Based on the compression wave propagation model, we present an approximate technique to simulate capillary wave propagation in a high-frequency particle density field. To address noise issues in wave simulation, we develop a simple way to apply the zero pressure condition on free surfaces in projection-based incompressible SPH. Our experiment shows that the developed algorithm can produce realistic capillary wave effects on both thin liquid features and large liquid bodies. Its computational overhead is also small."
+    },
+    "122648399": {
+      "title": "A multiscale approach to mesh-based surface tension flows",
+      "abstract": "We present an approach to simulate flows driven by surface tension based on triangle meshes. Our method consists of two simulation layers: the first layer is an Eulerian method for simulating surface tension forces that is free from typical strict time step constraints. The second simulation layer is a Lagrangian finite element method that simulates sub-grid scale wave details on the fluid surface. The surface wave simulation employs an unconditionally stable, symplectic time integration method that allows for a high propagation speed due to strong surface tension. Our approach can naturally separate the grid- and sub-grid scales based on a volume-preserving mean curvature flow. As our model for the sub-grid dynamics enforces a local conservation of mass, it leads to realistic pinch off and merging effects. In addition to this method for simulating dynamic surface tension effects, we also present an efficient non-oscillatory approximation for capturing damped surface tension behavior. These approaches allow us to efficiently simulate complex phenomena associated with strong surface tension, such as Rayleigh-Plateau instabilities and crown splashes, in a short amount of time."
+    },
+    "13173799": {
+      "title": "Explicit mesh surfaces for particle based fluids",
+      "abstract": "We introduce the idea of using an explicit triangle mesh to track the air/fluid interface in a smoothed particle hydrodynamics (SPH) simulator. Once an initial surface mesh is created, this mesh is carried forward in time using nearby particle velocities to advect the mesh vertices. The mesh connectivity remains mostly unchanged across time-steps; it is only modified locally for topology change events or for the improvement of triangle quality. In order to ensure that the surface mesh does not diverge from the underlying particle simulation, we periodically project the mesh surface onto an implicit surface defined by the physics simulation. The mesh surface gives us several advantages over previous SPH surface tracking techniques. We demonstrate a new method for surface tension calculations that clearly outperforms the state of the art in SPH surface tension for computer graphics. We also demonstrate a method for tracking detailed surface information (like colors) that is less susceptible to numerical diffusion than competing techniques. Finally, our temporally-coherent surface mesh allows us to simulate high-resolution surface wave dynamics without being limited by the particle resolution of the SPH simulation. © 2012 Wiley Periodicals, Inc."
+    },
+    "13916776": {
+      "title": "Tracking surfaces with evolving topology",
+      "abstract": "We present a method for recovering a temporally coherent, deforming triangle mesh with arbitrarily changing topology from an incoherent sequence of static closed surfaces. We solve this problem using the surface geometry alone, without any prior information like surface templates or velocity fields. Our system combines a proven strategy for triangle mesh improvement, a robust multi-resolution non-rigid registration routine, and a reliable technique for changing surface mesh topology. We also introduce a novel topological constraint enforcement algorithm to ensure that the output and input always have similar topology. We apply our technique to a series of diverse input data from video reconstructions, physics simulations, and artistic morphs. The structured output of our algorithm allows us to efficiently track information like colors and displacement maps, recover velocity information, and solve PDEs on the mesh as a post process."
+    }
+  },
+  "generator": "fallback_v4"
+}

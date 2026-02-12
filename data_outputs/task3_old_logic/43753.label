@@ -1,0 +1,29 @@
+{
+  "doc_id": "43753",
+  "text": "Ideally, we would want to take a gray-box approach that models the parts of the system for which we believe that models are accurate, while capturing the difficult-to-model system dynamics by training a highly expressive function class such as a neural network from data. However, typical approaches to fitting system dynamics with neural networks do not allow us to easily incorporate prior knowledge. Although there have been proposals to learn offset functions that correct for model bias, they are still restricted to specific use cases [CITATION_1] , [CITATION_2] . In this work, we propose a structured approach to graybox modeling of mechanical systems. Instead of treating the equations of motion governing the system as an arbitrary functional mapping, we make the single assumption that the system conforms to Lagrangian dynamics. Consequently, we propose to learn the Lagrangian of the system, as well as a structured representation of the forces that act on the system. By doing so, we can parameterize the space of all mechanical systems in a structured and modular manner. From these two functions, we can evaluate the accelerations acting on the system by using the Euler-Lagrange equation.",
+  "correct_citation": {
+    "[CITATION_1]": "12898863",
+    "[CITATION_2]": "1072303"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Although there have been proposals to learn offset functions that correct for model bias, they are still restricted to specific use cases"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Although there have been proposals to learn offset functions that correct for model bias, they are still restricted to specific use cases,"
+    }
+  ],
+  "bib_entries": {
+    "12898863": {
+      "title": "Doomed: Direct online optimization of modeling errors in dynamics",
+      "abstract": "It has long been hoped that model-based control will improve tracking performance while maintaining or increasing compliance. This hope hinges on having or being able to estimate an accurate inverse dynamics model. As a result, substantial effort has gone into modeling and estimating dynamics (error) models. Most recent research has focused on learning the true inverse dynamics using data points mapping observed accelerations to the torques used to generate them. Unfortunately, if the initial tracking error is bad, such learning processes may train substantially off-distribution to predict well on actual observed acceleration rather then the desired accelerations. This work takes a different approach. We define a class of gradient-based online learning algorithms we term Direct Online Optimization for Modeling Errors in Dynamics (DOOMED) that directly minimize an objective measuring the divergence between actual and desired accelerations. Our objective is defined in terms of the true system's unknown dynamics and is therefore impossible to evaluate. However, we show that its gradient is measurable online from system data. We develop a novel adaptive control approach based on running online learning to directly correct (inverse) dynamics errors in real time using the data stream from the robot to accurately achieve desired accelerations during execution."
+    },
+    "1072303": {
+      "title": "Using model knowledge for learning inverse dynamics",
+      "abstract": "In recent years, learning models from data has become an increasingly interesting tool for robotics, as it allows straightforward and accurate model approximation. However, in most robot learning approaches, the model is learned from scratch disregarding all prior knowledge about the system. For many complex robot systems, available prior knowledge from advanced physics-based modeling techniques can entail valuable information for model learning that may result in faster learning speed, higher accuracy and better generalization. In this paper, we investigate how parametric physical models (e.g., obtained from rigid body dynamics) can be used to improve the learning performance, and, especially, how semiparametric regression methods can be applied in this context. We present two possible semiparametric regression approaches, where the knowledge of the physical model can either become part of the mean function or of the kernel in a nonparametric Gaussian process regression. We compare the learning performance of these methods first on sampled data and, subsequently, apply the obtained inverse dynamics models in tracking control on a real Barrett WAM. The results show that the semiparametric models learned with rigid body dynamics as prior outperform the standard rigid body dynamics models on real data while generalizing better for unknown parts of the state space."
+    }
+  },
+  "generator": "fallback"
+}

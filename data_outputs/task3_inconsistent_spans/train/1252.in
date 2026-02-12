@@ -1,0 +1,12 @@
+{
+  "text": "Sparse matrix-vector product computations are at the heart of many modern scientific applications; however, they often perform poorly on modern computer systems. Poor performance results from several factors. First, unlike dense matrices, sparse matrices require an explicit representation of the coordinates of non-zero elements. Manipulating this coordinate representation when computing a sparse matrix-vector product consumes memory bandwidth, which is a scarce commodity in computer systems based on modern microprocessors. Secondly, sparse matrix computations have less temporal reuse of values than dense matrix computations; this makes it hard to use registers and caches effectively. Thirdly, the loop structure of a matrix-vector product computation using a sparse matrix is significantly less regular than one using a dense matrix; this leads to less efficient compilergenerated code. [CITATION_1] report a factor of 2 performance penalty for computing a matrix-vector product on dense matrices using a sparse matrix representation rather than a dense matrix representation.",
+  "correct_citation": {
+    "[CITATION_1]": "9580801"
+  },
+  "bib_entries": {
+    "9580801": {
+      "title": "Optimizing sparse matrix computations for register reuse in SPARSITY",
+      "abstract": "Sparse matrix-vector multiplication is an important computational kernel that tends to perform poorly on modern processors, largely because of its high ratio of memory operations to arithmetic operations. Optimizing this algorithm is difficult, both because of the complexity of memory systems and because the performance is highly dependent on the nonzero structure of the matrix. The Sparsity system is designed to address these problem by allowing users to automatically build sparse matrix kernels that are tuned to their matrices and machines. The most difficult aspect of optimizing these algorithms is selecting among a large set of possible transformations and choosing parameters, such as block size. In this paper we discuss the optimization of two operations: a sparse matrix times a dense vector and a sparse matrix times a set of dense vectors. Our experience indicates that for matrices arising in scientific simulations, register level optimizations are critical, and we focus here on the optimizations and parameter selection techniques used in Sparsity for register-level optimizations. We demonstrate speedups of up to 2\u00d7 for the single vector case and 5\u00d7 for the multiple vector case."
+    }
+  }
+}

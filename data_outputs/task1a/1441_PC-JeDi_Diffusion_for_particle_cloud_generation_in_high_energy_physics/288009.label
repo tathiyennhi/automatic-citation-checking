@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We define a maximum and a minimum signal rate, σ max and σ min, and use them to define the schedules withλ a = arccos(σ max), (6)λ b = arccos(σ min),(7)γ(t) = cos λ a + t(λ b -λ a),(8)σ(t) = sin λ a + t(λ b -λ a).",
+    "(9)We find the best results with σ max = 0.999 and σ min = 0.02.",
+    "Since σ max ≈ 1, we can use a simple approximation for β(t), withβ(t) ≈ 2(λ b -λ a) tan λ a + t(λ b -λ a).",
+    "(10)We can sample from p(x t |x 0) using the re-parametrisation trick x t = γ(t)x 0 + σ(t)ε, where ε ∼ N (0, I), and we can easily take the gradient of its logarithm leading to a tractable expression for the conditional score function ∇ x t log p(x t |x 0) = -ε/σ(t).",
+    "Using this, the optimization problem becomes min θ t∼U (0,1) x 0 ∼p(x 0) ε∼N (0,I)1 σ(t) 2 ∥ε θ (x t, t) -ε∥ 2, (11)where εθ (x t, t) = -σ(t)s θ (x t, t) is a re-parametrization of the score-based model."
+  ],
+  "correct_citations": []
+}

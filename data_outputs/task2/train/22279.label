@@ -1,0 +1,12 @@
+{
+  "text": "None of these errors can produce a transition of the coded data from a 0 to a 1. Thus, a weak bit error can never turn a 0 into a 1; it can only turn a 1 into a 0 or produce an invalid code space output. Additional consistency checks could potentially detect errors such as the transition of 0[00] to 1[00], but the previous 1 bit could not be the result of a Unfortunately, depending on their design, floppy controllers do not always produce error outputs for non-existent transitions. Figure 4 shows the finite state machine for producing output bits based on the current state [CITATION_1] . Note the lack of state transitions for the 0/11 and 0/01 cases and the 1/10 and 1/11 cases. They are typically designated as \"Don't Care\" (DC) values, which leaves the designer free to optimize the electronics by ignoring outputs that in theory cannot happen. In practice, a weak transition could produce a change from 0/10 to 0/11; however, the controller would be in State A and this is only identified as a transition for State B. The incomplete specification of error states produces arbitrary behavior depending on the design choice. Fortunately, the CRC code used in floppy disks can compensate for most errors.",
+  "correct_citation": {
+    "[CITATION_1]": "109959299"
+  },
+  "bib_entries": {
+    "109959299": {
+      "title": "Recording codes for digital magnetic storage",
+      "abstract": "This paper provides a tutorial introduction to recording codes for magnetic disk storage devices and a review of progress in code construction algorithms. Topics covered include: a brief description of typical magnetic recording channels; motivation for use of recording codes; methods of selecting codes to maximize data density and reliability; and techniques for code design and implementation."
+    }
+  }
+}

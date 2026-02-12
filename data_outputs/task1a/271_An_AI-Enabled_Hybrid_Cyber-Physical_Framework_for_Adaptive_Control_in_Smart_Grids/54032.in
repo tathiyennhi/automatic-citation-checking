@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The network parameters are updated by minimizing the temporaldifference loss:L(θ) = r t + γ max u ′ Q θ -(x t+1, u ′) -Q θ (x t, u t) 2,(29)where Q θ -is the target network, updated slowly to improve training stability.",
+    "Experience replay buffers further decorrelate training samples, preventing divergence and enabling stable learning even when the environment is highly nonlinear and stochastic.",
+    "In the context of the proposed smart grid architecture, the state x t contains voltage profiles, renewable forecasts, load levels, SOC of batteries, and cyber-health indicators (latency, packet success rate).",
+    "The discrete action set includes:• battery mode selection (charge/discharge/idle),• EV charging priority states,• inverter tap or mode changes,• load-shedding or restoration triggers.To tailor the DQN controller for grid stability, the reward function is defined as:r(x k, u k) = -ω 2 k + λ I{voltage violation} + α∥u k ∥ 2, (30)where I{•} denotes an indicator function and λ penalizes actions that result in unacceptable voltage profiles.",
+    "This reward formulation encourages DQN to select discrete operational modes that indirectly support frequency and voltage stability, especially during fast renewable ramps or cyber-induced disturbances."
+  ]
+}

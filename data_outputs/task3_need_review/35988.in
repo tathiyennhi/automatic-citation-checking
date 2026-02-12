@@ -1,0 +1,47 @@
+{
+  "text": "5.34 ± 0.05 BEGAN [CITATION_1] 5.62 GMAN [CITATION_2] 6.00 ± 0.19 EGAN-Ent-VI [CITATION_3] 7.07 ± 0.10 LR-GAN [CITATION_4] 7.17 ± 0.07 Denoising feature matching [CITATION_5] 7 6.58 Improved GAN [CITATION_6] 8.09 ± 0.07 AC-GAN [CITATION_7] 8.25 ± 0.07 SGAN [CITATION_8] 8.59 ± 0.12 Proposed methods",
+  "correct_citation": {
+    "[CITATION_1]": "9957731",
+    "[CITATION_2]": "16367617",
+    "[CITATION_3]": "13619197",
+    "[CITATION_4]": "1840346",
+    "[CITATION_5]": "57832010",
+    "[CITATION_6]": "1687220",
+    "[CITATION_7]": "1099052",
+    "[CITATION_8]": "14803274"
+  },
+  "bib_entries": {
+    "1840346": {
+      "title": "Lr-gan: Layered recursive generative adversarial networks for image generation",
+      "abstract": "We present LR-GAN: an adversarial image generation model which takes scene structure and context into account. Unlike previous generative adversarial networks (GANs), the proposed GAN learns to generate image background and foregrounds separately and recursively, and stitch the foregrounds on the background in a contextually relevant manner to produce a complete natural image. For each foreground, the model learns to generate its appearance, shape and pose. The whole model is unsupervised, and is trained in an end-to-end manner with conventional gradient descent methods. The experiments demonstrate that LR-GAN can generate more natural images with objects that are more human recognizable than baseline GANs."
+    },
+    "16367617": {
+      "title": "Generative multi-adversarial networks",
+      "abstract": "Generative adversarial networks (GANs) are a framework for producing a generative model by way of a two-player minimax game. In this paper, we propose the \\emph{Generative Multi-Adversarial Network} (GMAN), a framework that extends GANs to multiple discriminators. In previous work, the successful training of GANs requires modifying the minimax objective to accelerate training early on. In contrast, GMAN can be reliably trained with the original, untampered objective. We explore a number of design perspectives with the discriminator role ranging from formidable adversary to forgiving teacher. Image generation tasks comparing the proposed framework to standard GANs demonstrate GMAN produces higher quality samples in a fraction of the iterations when measured by a pairwise GAM-type metric."
+    },
+    "57832010": {
+      "title": "Improving generative adversarial networks with denoising feature matching",
+      "abstract": "We propose an augmented training procedure for generative adversarial networks designed to address shortcomings of the original by directing the generator towards probable configurations of abstract discriminator features. We estimate and track the distribution of these features, as computed from data, with a denoising auto-encoder, and use it to propose high-level targets for the generator. We combine this new loss with the original and evaluate the hybrid criterion on the task of unsupervised image synthesis from datasets comprising a diverse set of visual categories, noting a qualitative and quantitative improvement in the ``objectness'' of the resulting samples."
+    },
+    "9957731": {
+      "title": "Began: Boundary equilibrium generative adversarial networks",
+      "abstract": "We propose a new equilibrium enforcing method paired with a loss derived from the Wasserstein distance for training auto-encoder based Generative Adversarial Networks. This method balances the generator and discriminator during training. Additionally, it provides a new approximate convergence measure, fast and stable training and high visual quality. We also derive a way of controlling the trade-off between image diversity and visual quality. We focus on the image generation task, setting a new milestone in visual quality, even at higher resolutions. This is achieved while using a relatively simple model architecture and a standard training procedure."
+    },
+    "14803274": {
+      "title": "Stacked generative adversarial networks",
+      "abstract": "In this paper, we propose a novel generative model named Stacked Generative Adversarial Networks (SGAN), which is trained to invert the hierarchical representations of a bottom-up discriminative network. Our model consists of a top-down stack of GANs, each learned to generate lower-level representations conditioned on higher-level representations. A representation discriminator is introduced at each feature hierarchy to encourage the representation manifold of the generator to align with that of the bottom-up discriminative network, leveraging the powerful discriminative representations to guide the generative model. In addition, we introduce a conditional loss that encourages the use of conditional information from the layer above, and a novel entropy loss that maximizes a variational lower bound on the conditional entropy of generator outputs. We first train each stack independently, and then train the whole model end-to-end. Unlike the original GAN that uses a single noise vector to represent all the variations, our SGAN decomposes variations into multiple levels and gradually resolves uncertainties in the top-down generative process. Based on visual inspection, Inception scores and visual Turing test, we demonstrate that SGAN is able to generate images of much higher quality than GANs without stacking."
+    },
+    "13619197": {
+      "title": "Calibrating energy-based generative adversarial networks",
+      "abstract": "In this paper, we propose to equip Generative Adversarial Networks with the ability to produce direct energy estimates for samples. ::: Specifically, we propose a flexible adversarial training framework, and prove this framework not only ensures the generator converges to the true data distribution, but also enables the discriminator to retain the density information at the global optimal. ::: We derive the analytic form of the induced solution, and analyze the properties. ::: In order to make the proposed framework trainable in practice, we introduce two effective approximation techniques. ::: Empirically, the experiment results closely match our theoretical analysis, verifying the discriminator is able to recover the energy of data distribution."
+    },
+    "1687220": {
+      "title": "Improved techniques for training gans",
+      "abstract": "We present a variety of new architectural features and training procedures that we apply to the generative adversarial networks (GANs) framework. We focus on two applications of GANs: semi-supervised learning, and the generation of images that humans find visually realistic. Unlike most work on generative models, our primary goal is not to train a model that assigns high likelihood to test data, nor do we require the model to be able to learn well without using any labels. Using our new techniques, we achieve state-of-the-art results in semi-supervised classification on MNIST, CIFAR-10 and SVHN. The generated images are of high quality as confirmed by a visual Turing test: our model generates MNIST samples that humans cannot distinguish from real data, and CIFAR-10 samples that yield a human error rate of 21.3%. We also present ImageNet samples with unprecedented resolution and show that our methods enable the model to learn recognizable features of ImageNet classes."
+    },
+    "1099052": {
+      "title": "Conditional image synthesis with auxiliary classifier gans",
+      "abstract": "Synthesizing high resolution photorealistic images has been a long-standing challenge in machine learning. In this paper we introduce new methods for the improved training of generative adversarial networks (GANs) for image synthesis. We construct a variant of GANs employing label conditioning that results in 128x128 resolution image samples exhibiting global coherence. We expand on previous work for image quality assessment to provide two new analyses for assessing the discriminability and diversity of samples from class-conditional image synthesis models. These analyses demonstrate that high resolution samples provide class information not present in low resolution samples. Across 1000 ImageNet classes, 128x128 samples are more than twice as discriminable as artificially resized 32x32 samples. In addition, 84.7% of the classes have samples exhibiting diversity comparable to real ImageNet data."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In this case, the LLM (CodeGen2) only generates tests for the two most common uses, where the input is either a directory or a file.",
+    "Our approach works in three steps: (i) Collecting Approximate Path Constraints.",
+    "This step is the core to our approach.",
+    "Figure 2 shows how path constraints are collected and used tofrom pathlib import PosixPath, WindowsPath _PATH = Union[ PosixPath, WindowsPath, str,] def normalize_path(path): <normalize_path implementation> def exists_as(path: _PATH) -> str: path = normalize_path(path) <other implementation> Type Context Focal Method Dependency Context def test_case_1(): \"\"\" Testcase 1 for exists_as(path: _PATH) -> str: test case where path.is_dir() returns: 'directory' \"\"\" <generate> prompt an LLM to generate high coverage tests.",
+    "Possible execution paths in the focal method are collected by traversing the method's abstract syntax tree (AST) in preorder and recording branch conditions on each possible execution path, where if a branch is not taken its branch condition is inverted on a given path."
+  ]
+}

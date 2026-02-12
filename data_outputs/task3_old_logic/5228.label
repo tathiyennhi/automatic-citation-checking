@@ -1,0 +1,52 @@
+{
+  "doc_id": "5228",
+  "text": "One category is the ones via Decomposition [CITATION_1] [CITATION_2] . The idea is to decompose the multiple field search into instances of single field searches, and perform independent searches on each packet field, then combine the results. The latest work on this category is the DCFL (Distributed Crossproducting of Field Labels) [CITATION_3] , which presents a combination of new and existing packet classification techniques that leverages observations of the structure of real filter sets and takes advantage of the capabilities of modern hardware technology. High performance is achieved at the cost of high implementation complexity. Another category is the hardware based ones [CITATION_4] [CITATION_5] , in which TCAM is adopted. High performance is gained at the cost of high price and low power efficiency, supposing that the range matching problem of TCAM can be perfectly solved. However, the major problem of such algorithms/schemes is not their performance, but their flexibility for the NP environments, that they can hardly be transplanted smoothly from one system to the other, and is with much higher re-developing cost and longer time-to-market. These are the reasons why we based our work on the Decision Tree based software algorithms, as far as the NP environment is concerned.",
+  "correct_citation": {
+    "[CITATION_1]": "1376904",
+    "[CITATION_2]": "1653546",
+    "[CITATION_3]": "1376904",
+    "[CITATION_4]": "10754645",
+    "[CITATION_5]": "3143012"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "One category is the ones via Decomposition."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "One category is the ones via Decomposition."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The latest work on this category is the DCFL (Distributed Crossproducting of Field Labels), which presents a combination of new and existing packet classification techniques that leverages observations of the structure of real filter sets and takes advantage of the capabilities of modern hardware technology."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Another category is the hardware based ones, in which TCAM is adopted."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Another category is the hardware based ones, in which TCAM is adopted."
+    }
+  ],
+  "bib_entries": {
+    "1376904": {
+      "title": "Scalable Packet Classification using Distributed Crossproducting of Field Labels",
+      "abstract": "A wide variety of packet classification algorithms and devices exist in the research literature and commercial market. The existing solutions exploit various design tradeoffs to provide high search rates, power and space efficiency, fast incremental updates, and the ability to scale to large numbers of filters. There remains a need for techniques that achieve a favorable balance among these tradeoffs and scale to support classification on additional fields beyond the standard 5-tuple. We introduce distributed crossproducing of field labels (DCFL), a novel combination of new and existing packet classification techniques that leverages key observations of the structure of real filter sets and takes advantage of the capabilities of modern hardware technology. Using a collection of real and synthetic filter sets, we provide analyses of DCFL performance and resource requirements on filter sets of various sizes and compositions. An optimized implementation of DCFL can provide over 100 million searches per second and storage for over 200 thousand filters in a current generation FPGA or ASIC without the need for external memory devices."
+    },
+    "10754645": {
+      "title": "Algorithms for Advanced Packet Classification with Ternary CAMs",
+      "abstract": "Ternary content-addressable memories (TCAMs) have gained wide acceptance in the industry for storing and searching Access Control Lists (ACLs). In this paper, we propose algorithms for addressing two important problems that are encountered while using TCAMs: reducing range expansion and multi-match classification.Our first algorithm addresses the problem of expansion of rules with range fields to represent range rules in TCAMs, a single range rule is mapped to multiple TCAM entries, which reduces the utilization of TCAMs. We propose a new scheme called Database Independent Range PreEncoding (DIRPE) that, in comparison to earlier approaches, reduces the worst-case number of TCAM entries a single rule maps on to. DIRPE works without prior knowledge of the database, scales when a large number of ranges is present, and has good incremental update properties.Our second algorithm addresses the problem of finding multiple matches in a TCAM. When searched, TCAMs return the first matching entry; however, new applications require either the first few or all matching entries. We describe a novel algorithm, called Multi-match Using Discriminators (MUD), that finds multiple matches without storing any per-search state information in the TCAM, thus making it suitable for multi-threaded environments. MUD does not increase the number of TCAM entries needed, and hence scales to large databases.Our algorithms do not require any modifications to existing TCAMs and are hence relatively easy to deploy. We evaluate the algorithms using real-life and random databases."
+    },
+    "3143012": {
+      "title": "TCAM-based Distributed Parallel Packet Classification Algorithm with Range-Matching Solution",
+      "abstract": "Packet classification (PC) has been a critical data path function for many emerging networking applications. An interesting approach is the use of TCAM to achieve deterministic, high speed PC However, apart from high cost and power consumption, due to slow growing clock rate for memory technology in general, PC based on the traditional single TCAM solution has difficulty to keep up with fast growing line rates. Moreover, the TCAM storage efficiency is largely affected by the need to support rules with ranges, or range matching. In this paper, a distributed TCAM scheme that exploits chip-level-parallelism is proposed to greatly improve the PC throughput. This scheme seamlessly integrates with a range encoding scheme, which not only solves the range matching problem but also ensures a balanced high throughput performance. Using commercially available TCAM chips, the proposed scheme achieves PC performance of more than 100 million packets per second (Mpps), matching OC768 (40 Gbps) line rate."
+    },
+    "1653546": {
+      "title": "Scalable packet classification",
+      "abstract": "Packet classification is important for applications such as firewalls, intrusion detection, and differentiated services. Existing algorithms for packet classification reported in the literature scale poorly in either time or space as filter databases grow in size. Hardware solutions such as TCAMs do not scale to large classifiers. However, even for large classifiers (say 100,000 rules), any packet is likely to match a few (say 10) rules. Our paper seeks to exploit this observation to produce a scalable packet classification scheme called Aggregated Bit Vector (ABV). Our paper takes the bit vector search algorithm (BV) described in [11] (which takes linear time) and adds two new ideas, recursive aggregation of bit maps and filter rearrangement, to create ABV (which can take logarithmic time for many databases). We show that ABV outperforms BV by an order of magnitude using simulations on both industrial firewall databases and synthetically generated databases."
+    }
+  },
+  "generator": "fallback"
+}

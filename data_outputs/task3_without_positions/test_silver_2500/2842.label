@@ -1,0 +1,29 @@
+{
+  "doc_id": "2842",
+  "text": "We reasoned that if a DNA logic for chromatin accessibility exists, then we could discover a general model that predicts chromatin accessibility directly from DNA sequence. Although prior work has focused upon prediction of regulatory sequences using bags of k-mers [CITATION_1] or identification of motifs enriched in regulatory regions [CITATION_2] ), our goal is to construct a generative model of the DNase-seq assay directly linking DNA sequence to DNase-seq read count. Such a model should predict the expected number of reads observed at any base in a DNase-seq assay and the locations of all accessible chromatin regions in the genome, including promoters and enhancers. If the computational model is sufficiently accurate at predicting sequence-dependent chromatin accessibility on novel sequences, we can expect this framework to yield testable hypotheses of how pioneers and other regulatory mechanisms control chromatin accessibility. To minimize bias from incomplete biological understanding, we utilized a computational framework that ignores any preconceptions of what factors or motifs might be involved in this regulatory process and that makes predictions genome-wide rather than over some curated functional subset.",
+  "correct_citation": {
+    "[CITATION_1]": "23040938",
+    "[CITATION_2]": "15622287"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Although prior work has focused upon prediction of regulatory sequences using bags of k-mers  or identification of motifs enriched in regulatory regions  ), our goal is to construct a generative model of the DNase-seq assay directly linking DNA sequence to DNase-seq read count."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Although prior work has focused upon prediction of regulatory sequences using bags of k-mers  or identification of motifs enriched in regulatory regions  ), our goal is to construct a generative model of the DNase-seq assay directly linking DNA sequence to DNase-seq read count."
+    }
+  ],
+  "bib_entries": {
+    "15622287": {
+      "title": "Developmental fate and cellular maturity encoded in human regulatory DNA landscapes",
+      "abstract": "Cellular-state information between generations of developing cells may be propagated via regulatory regions. We report consistent patterns of gain and loss of DNase I-hypersensitive sites (DHSs) as cells progress from embryonic stem cells (ESCs) to terminal fates. DHS patterns alone convey rich information about cell fate and lineage relationships distinct from information conveyed by gene expression. Developing cells share a proportion of their DHS landscapes with ESCs; that proportion decreases continuously in each cell type as differentiation progresses, providing a quantitative benchmark of developmental maturity. Developmentally stable DHSs densely encode binding sites for transcription factors involved in autoregulatory feedback circuits. In contrast to normal cells, cancer cells extensively reactivate silenced ESC DHSs and those from developmental programs external to the cell lineage from which the malignancy derives. Our results point to changes in regulatory DNA landscapes as quantitative indicators of cell-fate transitions, lineage relationships, and dysfunction."
+    },
+    "23040938": {
+      "title": "Enhanced regulatory sequence prediction using gapped k-mer features",
+      "abstract": "Oligomers of length k, or k-mers, are convenient and widely used features for modeling the properties and functions of DNA and protein sequences. However, k-mers suffer from the inherent limitation that if the parameter k is increased to resolve longer features, the probability of observing any specific k-mer becomes very small, and k-mer counts approach a binary variable, with most k-mers absent and a few present once. Thus, any statistical learning approach using k-mers as features becomes susceptible to noisy training set k-mer frequencies once k becomes large. To address this problem, we introduce alternative feature sets using gapped k-mers, a new classifier, gkm-SVM, and a general method for robust estimation of k-mer frequencies. To make the method applicable to large-scale genome wide applications, we develop an efficient tree data structure for computing the kernel matrix. We show that compared to our original kmer-SVM and alternative approaches, our gkm-SVM predicts functional genomic regulatory elements and tissue specific enhancers with significantly improved accuracy, increasing the precision by up to a factor of two. We then show that gkm-SVM consistently outperforms kmer-SVM on human ENCODE ChIP-seq datasets, and further demonstrate the general utility of our method using a Naïve-Bayes classifier. Although developed for regulatory sequence analysis, these methods can be applied to any sequence classification problem."
+    }
+  },
+  "generator": "fallback_v4"
+}

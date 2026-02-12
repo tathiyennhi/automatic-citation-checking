@@ -1,0 +1,44 @@
+{
+  "doc_id": "29480",
+  "text": "Consider the first bracketed term of [CITATION_1] . Taking logs yields a sum over terms of the form log p(ψ i |β) and terms of the form log p(w jt |ψ z jt ). Noting that the latter of these is a multinomial distribution, and thus a member of the exponential family, we can appeal to the results in [CITATION_2] [CITATION_3] to introduce a new parameter for scaling the variance. In particular, we can write p(w jt |ψ z jt ) in its Bregman divergence form exp(−KL(w jt , ψ z jt )), where KL refers to the discrete KL-divergence, andw jt is an indicator vector for the word at token w jt . It is straightforward to verify that KL(w jt , ψ z jt ) = − log ψ z jt ,w jt . Next, introduce a new parameter η that scales the variance appropriately, and write the resulting distribution as proportional to exp(−η · KL(w jt , ψ z jt )). As η → ∞, the expected value of the distribution remains fixed while the variance goes to zero, exactly what we require.",
+  "correct_citation": {
+    "[CITATION_1]": "9220219",
+    "[CITATION_2]": "8197416",
+    "[CITATION_3]": "17715309"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Consider the first bracketed term of  .",
+      "s_span": 0,
+      "e_span": 51
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Noting that the latter of these is a multinomial distribution, and thus a member of the exponential family, we can appeal to the results in   to introduce a new parameter for scaling the variance.",
+      "s_span": 158,
+      "e_span": 378
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Noting that the latter of these is a multinomial distribution, and thus a member of the exponential family, we can appeal to the results in   to introduce a new parameter for scaling the variance.",
+      "s_span": 158,
+      "e_span": 378
+    }
+  ],
+  "bib_entries": {
+    "17715309": {
+      "title": "Small-variance asymptotics for exponential family Dirichlet process mixture models",
+      "abstract": "Sampling and variational inference techniques are two standard methods for inference in probabilistic models, but for many problems, neither approach scales effectively to large-scale data. An alternative is to relax the probabilistic model into a non-probabilistic formulation which has a scalable associated algorithm. This can often be fulfilled by performing small-variance asymptotics, i.e., letting the variance of particular distributions in the model go to zero. For instance, in the context of clustering, such an approach yields connections between the k-means and EM algorithms. In this paper, we explore small-variance asymptotics for exponential family Dirichlet process (DP) and hierarchical Dirichlet process (HDP) mixture models. Utilizing connections between exponential family distributions and Bregman divergences, we derive novel clustering algorithms from the asymptotic limit of the DP and HDP mixtures that features the scalability of existing hard clustering methods as well as the flexibility of Bayesian nonparametric models. We focus on special cases of our analysis for discrete-data problems, including topic modeling, and we demonstrate the utility of our results by applying variants of our algorithms to problems arising in vision and document analysis."
+    },
+    "8197416": {
+      "title": "Clustering with Bregman divergences",
+      "abstract": "A wide variety of distortion functions, such as squared Euclidean distance, Mahalanobis distance, Itakura-Saito distance and relative entropy, have been used for clustering. In this paper, we propose and analyze parametric hard and soft clustering algorithms based on a large class of distortion functions known as Bregman divergences. The proposed algorithms unify centroid-based parametric clustering approaches, such as classical kmeans , the Linde-Buzo-Gray (LBG) algorithm and information-theoretic clustering, which arise by special choices of the Bregman divergence. The algorithms maintain the simplicity and scalability of the classical kmeans algorithm, while generalizing the method to a large class of clustering loss functions. This is achieved by first posing the hard clustering problem in terms of minimizing the loss in Bregman information, a quantity motivated by rate distortion theory, and then deriving an iterative algorithm that monotonically decreases this loss. In addition, we show that there is a bijection between regular exponential families and a large class of Bregman divergences, that we call regular Bregman divergences. This result enables the development of an alternative interpretation of an efficient EM scheme for learning mixtures of exponential family distributions, and leads to a simple soft clustering algorithm for regular Bregman divergences. Finally, we discuss the connection between rate distortion theory and Bregman clustering and present an information theoretic analysis of Bregman clustering algorithms in terms of a trade-off between compression and loss in Bregman information."
+    },
+    "9220219": {
+      "title": "A practical algorithm for topic modeling with provable guarantees",
+      "abstract": "Topic models provide a useful method for dimensionality reduction and exploratory data analysis in large text corpora. Most approaches to topic model inference have been based on a maximum likelihood objective. Efficient algorithms exist that approximate this objective, but they have no provable guarantees. Recently, algorithms have been introduced that provide provable bounds, but these algorithms are not practical because they are inefficient and not robust to violations of model assumptions. In this paper we present an algorithm for topic model inference that is both provable and practical. The algorithm produces results comparable to the best MCMC implementations while running orders of magnitude faster."
+    }
+  },
+  "generator": "fallback_v4"
+}

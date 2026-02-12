@@ -1,0 +1,29 @@
+{
+  "doc_id": "44593",
+  "text": "whereq ′ k ,q ′ k are predicted using RK4 applied to the model dynamics with inputs q k ,q k , u k and parameters θ. We then minimize this loss using gradient descent methods such as Adam [CITATION_1] . We use the loss presented in Equation (14) as opposed to that presented in Equation (9) for two reasons. Firstly, accelerationsq k are often not directly measured, and rather estimated by finite-difference approximation in practice, which amplifies high-frequency noise present in the data samples. By opting for the loss we presented, we do not need to estimateq as the regression target. Secondly, we have observed that minimizing prediction error is a better metric to optimize a model against than aligning accelerations predicted by the model with those estimated in the data. The down-side of our approach, however, is that differentiating through RK4 in order to compute parameter gradients is a constant-factor more expensive than computing gradients for the loss presented in Equation [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "6628106",
+    "[CITATION_2]": "1072303"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We then minimize this loss using gradient descent methods such as Adam"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The down-side of our approach, however, is that differentiating through RK4 in order to compute parameter gradients is a constant-factor more expensive than computing gradients for the loss presented in Equation"
+    }
+  ],
+  "bib_entries": {
+    "1072303": {
+      "title": "Using model knowledge for learning inverse dynamics",
+      "abstract": "In recent years, learning models from data has become an increasingly interesting tool for robotics, as it allows straightforward and accurate model approximation. However, in most robot learning approaches, the model is learned from scratch disregarding all prior knowledge about the system. For many complex robot systems, available prior knowledge from advanced physics-based modeling techniques can entail valuable information for model learning that may result in faster learning speed, higher accuracy and better generalization. In this paper, we investigate how parametric physical models (e.g., obtained from rigid body dynamics) can be used to improve the learning performance, and, especially, how semiparametric regression methods can be applied in this context. We present two possible semiparametric regression approaches, where the knowledge of the physical model can either become part of the mean function or of the kernel in a nonparametric Gaussian process regression. We compare the learning performance of these methods first on sampled data and, subsequently, apply the obtained inverse dynamics models in tracking control on a real Barrett WAM. The results show that the semiparametric models learned with rigid body dynamics as prior outperform the standard rigid body dynamics models on real data while generalizing better for unknown parts of the state space."
+    },
+    "6628106": {
+      "title": "Adam: A method for stochastic optimization",
+      "abstract": "We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm."
+    }
+  },
+  "generator": "fallback"
+}

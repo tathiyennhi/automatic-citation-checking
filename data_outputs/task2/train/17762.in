@@ -1,0 +1,112 @@
+{
+  "text": "We assume that the source and target functions f and g are given as a set of samples at locations xi and yj, that is, we know a set of values f (xi) and g(yj). We do not require that the xi and yj points be the same or that they be regularly spaced. These samples could be used directly as particles for mass transport, but this yields highly discontinuous interpolated results that are not desirable for most applications. We address this issue by associating a smooth kernel with each sample point. We choose Gaussian radial basis functions (RBFs) as our kernel. They will also serve as the particles for the formulation of the mass transport problem. Each particle is represented by w G\u03c3, where w is the mass associated with the particle, and G\u03c3 is a normalized Gaussian kernel with variance \u03c3 2 and centered at the sample point. This representation is different from Gaussian Mixture Models used for density estimation with Expectation-Maximization techniques [CITATION_1] : while Expectation-Maximization gives higher values where the density of samples is higher, our RBF decomposition interpolates values stored at arbitrarily scattered sample points.",
+  "citation_candidates": [
+    "3571438",
+    "8470776",
+    "1402433",
+    "4670980",
+    "34714218",
+    "125674804",
+    "14106275",
+    "122512473",
+    "6409840",
+    "30941837",
+    "13924103",
+    "12577796",
+    "3069954",
+    "7993169",
+    "362915",
+    "28191017",
+    "59894965",
+    "13932586",
+    "118448577",
+    "10394814",
+    "712399"
+  ],
+  "bib_entries": {
+    "14106275": {
+      "title": "The Earth Mover's Distance as a metric for image retrieval",
+      "abstract": "We investigate the properties of a metric between two distributions, the Earth Mover's Distance (EMD), for content-based image retrieval. The EMD is based on the minimal cost that must be paid to transform one distribution into the other, in a precise sense, and was first proposed for certain vision problems by Peleg, Werman, and Rom. For image retrieval, we combine this idea with a representation scheme for distributions that is based on vector quantization. This combination leads to an image comparison framework that often accounts for perceptual similarity better than other previously proposed methods. The EMD is based on a solution to the transportation problem from linear optimization, for which efficient algorithms are available, and also allows naturally for partial matching. It is more robust than histogram matching techniques, in that it can operate on variable-length representations of the distributions that avoid quantization and other binning problems typical of histograms. When used to compare distributions with the same overall mass, the EMD is a true metric. In this paper we focus on applications to color and texture, and we compare the retrieval performance of the EMD with that of other distances."
+    },
+    "4670980": {
+      "title": "Earth mover's morphing: topology-free shape morphing using cluster-based emd flows",
+      "abstract": "This paper describes a method for topology-free shape morphing based on region cluster-based Earth Mover's Distance (EMD) flows, since existing methods for closed curve/surface-based shape morphing are inapplicable to regions with different genera. First, the shape region is decomposed into a number of small clusters by Fuzzy C-Means clustering. Next, the EMD between the clusters of two key shapes is calculated and the resultant EMD flows are exploited as a weighted manyto-many correspondence among the clusters. Then, the fuzzy clusters are transported based on the EMD flows and a transition control parameter. Unlike the closed curve/surface-based methods, the morphs using cluster transportation are not guaranteed to be a binary image, and hence graph cut-based binary denoising is applied to a volumetric image of the two-dimensional position and the one-dimensional transition control parameter. The experiments demonstrate that the proposed method can perform morphing between shapes with different genera, such as walking silhouettes or alphabetical characters."
+    },
+    "362915": {
+      "title": "Differential earth mover's distance with its applications to visual tracking",
+      "abstract": "The Earth mover's distance (EMD) is a similarity measure that captures perceptual difference between two distributions. Its computational complexity, however, prevents a direct use in many applications. This paper proposes a novel differential EMD (DEMD) algorithm based on the sensitivity analysis of the simplex method and offers a speedup at orders of magnitude compared with its brute-force counterparts. The DEMD algorithm is discussed and empirically verified in the visual tracking context. The deformations of the distributions for objects at different time instances are accommodated well by the EMD, and the differential algorithm makes the use of EMD in real-time tracking possible. To further reduce the computation, signatures, i.e., variable-size descriptions of distributions, are employed as an object representation. The new algorithm models and estimates local background scenes as well as foreground objects to handle scale changes in a principled way. Extensive quantitative evaluation of the proposed algorithm has been carried out using benchmark sequences and the improvement over the standard mean shift tracker is demonstrated."
+    },
+    "6409840": {
+      "title": "Multiresolution reflectance filtering",
+      "abstract": "Physically-based reflectance models typically represent light scattering as a function of surface geometry at the pixel level. With changes in viewing resolution, the geometry imaged within a pixel can undergo significant variations that result in changing reflectance characteristics. To address these transformations, we present a multiresolution reflectance framework based on microfacet normal distributions within a pixel over different scales. Since these distributions must be efficiently determined with respect to resolution, they are recorded at multiple resolution levels in mipmaps. The main contribution of this work is a real-time mipmap filtering technique for these distribution-based parameters that not only provides smooth reflectance transitions in scale, but also minimizes aliasing. With this multiresolution reflectance technique, our system can rapidly and accurately incorporate fine reflectance detail that is customarily disregarded in multiresolution rendering methods."
+    },
+    "10394814": {
+      "title": "Frequency domain normal map filtering",
+      "abstract": "Filtering is critical for representing detail, such as color textures or normal maps, across a variety of scales. While MIP-mapping texture maps is commonplace, accurate normal map filtering remains a challenging problem because of nonlinearities in shading---we cannot simply average nearby surface normals. In this paper, we show analytically that normal map filtering can be formalized as a spherical convolution of the normal distribution function (NDF) and the BRDF, for a large class of common BRDFs such as Lambertian, microfacet and factored measurements. This theoretical result explains many previous filtering techniques as special cases, and leads to a generalization to a broader class of measured and analytic BRDFs. Our practical algorithms leverage a significant body of work that has studied lighting-BRDF convolution. We show how spherical harmonics can be used to filter the NDF for Lambertian and low-frequency specular BRDFs, while spherical von Mises-Fisher distributions can be used for high-frequency materials."
+    },
+    "712399": {
+      "title": "Optimal transportation, topology and uniqueness",
+      "abstract": "The Monge-Kantorovich transportation problem involves optimizing with respect to a given a cost function. Uniqueness is a fundamental open question about which little is known when the cost function is smooth and the landscapes containing the goods to be transported possess (non-trivial) topology. This question turns out to be closely linked to a delicate problem (# 111) of Birkhoff [14]: give a necessary and sufficient condition on the support of a joint probability to guarantee extremality among all measures which share its marginals. Fifty years of progress on Birkhoff's question culminate in Hestir and Williams' necessary condition which is nearly sufficient for extremality; we relax their subtle measurability hypotheses separating necessity from sufficiency slightly, yet demonstrate by example that to be sufficient certainly requires some measurability. Their condition amounts to the vanishing of the measure \\gamma outside a countable alternating sequence of graphs and antigraphs in which no two graphs (or two antigraphs) have domains that overlap, and where the domain of each graph / antigraph in the sequence contains the range of the succeeding antigraph (respectively, graph). Such sequences are called numbered limb systems. We then explain how this characterization can be used to resolve the uniqueness of Kantorovich solutions for optimal transportation on a manifold with the topology of the sphere."
+    },
+    "122512473": {
+      "title": "Linear interpolation of histograms",
+      "abstract": "A prescription is defined for the interpolation of probability distributions that are assumed to have a linear dependence on a parameter of the distributions. The distributions may be in the form of continuous functions or histograms. The prescription is based on the weighted mean of the inverses of the cumulative distributions between which the interpolation is made. The result is particularly elegant for a certain class of distributions, including the normal and exponential distributions, and is useful for the interpolation of Monte Carlo simulation results which are time-consuming to obtain. ( 1999 Elsevier Science B.V. All rights reserved."
+    },
+    "30941837": {
+      "title": "Texture design using a simplicial complex of morphable textures",
+      "abstract": "We present a system for designing novel textures in the space of textures induced by an input database. We capture the structure of the induced space by a simplicial complex where vertices of the simplices represent input textures. A user can generate new textures by interpolating within individual simplices. We propose a morphable interpolation for textures, which also defines a metric used to build the simplicial complex. To guarantee sharpness in interpolated textures, we enforce histograms of high-frequency content using a novel method for histogram interpolation. We allow users to continuously navigate in the simplicial complex and design new textures using a simple and efficient user interface. We demonstrate the usefulness of our system by integrating it with a 3D texture painting application, where the user interactively designs desired textures."
+    },
+    "118448577": {
+      "title": "Topics in Optimal Transportation",
+      "abstract": "Introduction The Kantorovich duality Geometry of optimal transportation Brenier's polar factorization theorem The Monge-Ampere equation Displacement interpolation and displacement convexity Geometric and Gaussian inequalities The metric side of optimal transportation A differential point of view on optimal transportation Entropy production and transportation inequalities Problems Bibliography Table of short statements Index."
+    },
+    "12577796": {
+      "title": "Network Flows: Theory, Algorithms, and Applications",
+      "abstract": "A comprehensive introduction to network flows that brings together the classic and the contemporary aspects of the field, and provides an integrative view of theory, algorithms, and applications. presents in-depth, self-contained treatments of shortest path, maximum flow, and minimum cost flow problems, including descriptions of polynomial-time algorithms for these core models. emphasizes powerful algorithmic strategies and analysis tools such as data scaling, geometric improvement arguments, and potential function arguments. provides an easy-to-understand descriptions of several important data structures, including d-heaps, Fibonacci heaps, and dynamic trees. devotes a special chapter to conducting empirical testing of algorithms. features over 150 applications of network flows to a variety of engineering, management, and scientific domains. contains extensive reference notes and illustrations."
+    },
+    "8470776": {
+      "title": "Content based image retrieval using multiscale top points a feasibility study",
+      "abstract": "A feasibility study for a new method for content based image retrieval is presented. First, an image representation using multiscale top points is introduced. This representation is validated using a minimal variance reconstruction algorithm. The image retrieval problem can now be translated into comparing distances between point sets. For this purpose the proportional transportation distance (PTD) is used. A method is proposed using multiscale top points and their reconstruction coefficients in the PTD to define these distances between images. We present some experiments with promising results on a database with face images."
+    },
+    "13932586": {
+      "title": "Accurate 3D image colour histogram transformation",
+      "abstract": "A method for transforming an image's 3D colour histogram to make it accurately match a predetermined target state is described here. This method involves colour quantisation, clustering and the EMD histogram difference metric to provide a transformation LUT between original and target histograms."
+    },
+    "1402433": {
+      "title": "A new change of variables for efficient BRDF representation",
+      "abstract": "We describe an idea for making decomposition of Bidirectional Reflectance Distribution Functions into basis functions more efficient, by performing a change-of-variables transformation on the BRDFs. In particular, we propose a reparameterization of the BRDF as a function of the halfangle (i.e. the angle halfway between the directions of incidence and reflection) and a difference angle instead of the usual parameterization in terms of angles of incidence and reflection. Because features in common BRDFs, including specular and retroreflective peaks, are aligned with the transformed coordinate axes, the change of basis reduces storage requirements for a large class of BRDFs. We present results derived from analytic BRDFs and measured data."
+    },
+    "59894965": {
+      "title": "Physically Based Rendering, Second Edition: From Theory To Implementation",
+      "abstract": "Physically Based Rendering, 2nd Edition describes both the mathematical theory behind a modern photorealistic rendering system as well as its practical implementation. A method - known as 'literate programming'- combines human-readable documentation and source code into a single reference that is specifically designed to aid comprehension. The result is a stunning achievement in graphics education. Through the ideas and software in this book, you will learn to design and employ a full-featured rendering system for creating stunning imagery. New sections on subsurface scattering, Metropolis light transport, precomputed light transport, multispectral rendering, and much more.Includes a companion site complete with source code for the rendering system described in the book, with support for Windows, OS X, and Linux. Please visit, www.pbrt.org. Code and text are tightly woven together through a unique indexing feature that lists each function, variable, and method on the page that they are first described."
+    },
+    "34714218": {
+      "title": "Linear Bellman combination for control of character animation",
+      "abstract": "Controllers are necessary for physically-based synthesis of character animation. However, creating controllers requires either manual tuning or expensive computer optimization. We introduce linear Bellman combination as a method for reusing existing controllers. Given a set of controllers for related tasks, this combination creates a controller that performs a new task. It naturally weights the contribution of each component controller by its relevance to the current state and goal of the system. We demonstrate that linear Bellman combination outperforms naive combination often succeeding where naive combination fails. Furthermore, this combination is provably optimal for a new task if the component controllers are also optimal for related tasks. We demonstrate the applicability of linear Bellman combination to interactive character control of stepping motions and acrobatic maneuvers."
+    },
+    "3069954": {
+      "title": "Fast primitive distribution for illustration",
+      "abstract": "In this paper we present a high-quality, image-space approach to illustration that preserves continuous tone by probabilistically distributing primitives while maintaining interactive rates. Our method allows for frame-to-frame coherence by matching movements of primitives with changes in the input image. It can be used to create a variety of drawing styles by varying the primitive type or direction. We show that our approach is able to both preserve tone and (depending on the drawing style) high-frequency detail. Finally, while our algorithm requires only an image as input, additional 3D information enables the creation of a larger variety of drawing styles."
+    },
+    "125674804": {
+      "title": "Introduction to Operations Research",
+      "abstract": "Overview of the operations research modelling approach introduction to linear programming solving linear programming problems - the Simplex Method the theory of the Simplex Method duality theory and sensitivity analysis other algorithms for linear programming the transportation and assignment problems network analysis, including Pert-CPM dynamic programming game theory integer programming non-linear programming Markov chains queueing theory the application of queueing theory inventory theory forecasting Markovian decision processes and applications decision analysis simulation."
+    },
+    "13924103": {
+      "title": "Fast hierarchical importance sampling with blue noise properties",
+      "abstract": "This paper presents a novel method for efficiently generating a good sampling pattern given an importance density over a 2D domain. A Penrose tiling is hierarchically subdivided creating a sufficiently large number of sample points. These points are numbered using the Fibonacci number system, and these numbers are used to threshold the samples against the local value of the importance density. Pre-computed correction vectors, obtained using relaxation, are used to improve the spectral characteristics of the sampling pattern. The technique is deterministic and very fast; the sampling time grows linearly with the required number of samples. We illustrate our technique with importance-based environment mapping, but the technique is versatile enough to be used in a large variety of computer graphics applications, such as light transport calculations, digital halftoning, geometry processing, and various rendering techniques."
+    },
+    "7993169": {
+      "title": "A practical analytic model for daylight",
+      "abstract": "Sunlight and skylight are rarely rendered correctly in computer graphics. A major reason for this is high computational expense. Another is that precise atmospheric data is rarely available. We present an inexpensive analytic model that approximates full spectrum daylight for various atmospheric conditions. These conditions are parameterized using terms that users can either measure or estimate. We also present an inexpensive analytic model that approximates the effects of atmosphere (aerial perspective). These models are fielded in a number of conditions and intermediate results verified against standard literature from atmospheric science. Our goal is to achieve as much accuracy as possible without sacrificing usability."
+    },
+    "28191017": {
+      "title": "Edge-preserving multiscale image decomposition based on local extrema",
+      "abstract": "We propose a new model for detail that inherently captures oscillations, a key property that distinguishes textures from individual edges. Inspired by techniques in empirical data analysis and morphological image analysis, we use the local extrema of the input image to extract information about oscillations: We define detail as oscillations between local minima and maxima. Building on the key observation that the spatial scale of oscillations are characterized by the density of local extrema, we develop an algorithm for decomposing images into multiple scales of superposed oscillations. Current edge-preserving image decompositions assume image detail to be low contrast variation. Consequently they apply filters that extract features with increasing contrast as successive layers of detail. As a result, they are unable to distinguish between high-contrast, fine-scale features and edges of similar contrast that are to be preserved. We compare our results with existing edge-preserving image decomposition algorithms and demonstrate exciting applications that are made possible by our new notion of detail."
+    },
+    "3571438": {
+      "title": "Wasserstein Barycenter and its Application to Texture Mixing",
+      "abstract": "This paper proposes a new definition of the averaging of discrete probability distributions as a barycenter over the Monge-Kantorovich optimal transport space. To overcome the time complexity involved by the numerical solving of such problem, the original Wasserstein metric is replaced by a sliced approximation over 1D distributions. This enables us to introduce a new fast gradient descent algorithm to compute Wasserstein barycenters of point clouds. ::: ::: This new notion of barycenter of probabilities is likely to find applications in computer vision where one wants to average features defined as distributions. We show an application to texture synthesis and mixing, where a texture is characterized by the distribution of the response to a multi-scale oriented filter bank. This leads to a simple way to navigate over a convex domain of color textures."
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "text": "Another closely related work developed concurrently and independently to this work is that of Lutter, et al. [CITATION_1] . Akin to our work, the authors encode the physical prior of Lagrangian mechanics into the model architecture. However, there are key distinctions between the approaches that allow our work to serve a greater scope than that presented by Lutter, et al. [CITATION_2] . Firstly, they propose to directly model the conservative forces acting on the system by using a neural network. In contrast, we choose to model the system's potential energy and derive the conservative forces from it, thereby guaranteeing that the forces are conservative. Further, by explicitly modeling the potential energy, we are able to use variational integrators that are appropriate for contact-rich simulation. Secondly, Lutter, et al. [CITATION_3] make the limiting assumption that all generalized torques are directly measurable (which requires precise knowledge of the control input Jacobian) as opposed to learned functions of the system's state and input. We instead explicitly model generalized forces in a manner flexible enough to encode prior knowledge regarding their structure, but general enough to capture complex phenomena such as dissipative friction. These key distinctions make our methodology more generally applicable to a wider range of robotic settings.",
+  "correct_citation": {
+    "[CITATION_1]": "53366105",
+    "[CITATION_2]": "53366105",
+    "[CITATION_3]": "53366105"
+  },
+  "bib_entries": {
+    "53366105": {
+      "title": "Deep Lagrangian networks: Using physics as model prior for deep learning",
+      "abstract": "Deep learning has achieved astonishing results on many tasks with large amounts of data and generalization within the proximity of training data. For many important real-world applications, these requirements are unfeasible and additional prior knowledge on the task domain is required to overcome the resulting problems. In particular, learning physics models for model-based control requires robust extrapolation from fewer samples - often collected online in real-time - and model errors may lead to drastic damages of the system. Directly incorporating physical insight has enabled us to obtain a novel deep model learning approach that extrapolates well while requiring fewer samples. As a first example, we propose Deep Lagrangian Networks (DeLaN) as a deep network structure upon which Lagrangian Mechanics have been imposed. DeLaN can learn the equations of motion of a mechanical system (i.e., system dynamics) with a deep network efficiently while ensuring physical plausibility. The resulting DeLaN network performs very well at robot tracking control. The proposed method did not only outperform previous model learning approaches at learning speed but exhibits substantially improved and more robust extrapolation to novel trajectories and learns online in real-time"
+    }
+  }
+}

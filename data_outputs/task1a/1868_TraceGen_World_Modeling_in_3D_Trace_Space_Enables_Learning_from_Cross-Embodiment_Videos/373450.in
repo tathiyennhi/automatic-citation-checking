@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Overview ofTraceGen.",
+    "Given language, RGB, and depth inputs, text is encoded by a frozen T5 encoder, RGB images are processed by DINOv3 and SigLIP, and depth maps are passed through a SigLIP encoder with a learnable stem adapter.",
+    "The resulting visual features (RGB + depth) are concatenated and linearly projected to form unified visual tokens.",
+    "Together with text tokens, these serve as conditioning inputs to a CogVideoX-based flow model, which predicts a velocity field that transforms Gaussian noise into trace patches via ODE integration.",
+    "X 1 represents the velocity-like 3D keypoint increments across frames predicted by the flow decoder, where 0, • • • τi, τi+1, • • •, 1 denote the continuous interpolation times from pure noise to the clean trace increments."
+  ]
+}

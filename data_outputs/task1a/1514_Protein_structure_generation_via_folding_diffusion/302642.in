@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To convert the transformer's final per-position representations to our six outputs, we apply a regression head consisting of a densely connected layer, followed by GELU activation 62, layer normalization, and finally a fully connected layer outputting our six values.",
+    "In total, our model has 14.56 million trainable parameters.",
+    "As is typical of transformer architectures, we use attention masking to allow our model to batch across inputs of variable lengths (both during training and generation).",
+    "We train this network with the AdamW optimizer 63 over 10,000 epochs, with a learning rate that linearly scales from 0 to 5 × 10 À5 over 1000 epochs, and back to 0 over the final 9000 epochs.",
+    "Validation loss appears to plateau after ≈ 1400 epochs; additional training does not improve validation loss, but appears to lead to a poorer diversity of generated structures."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "doc_id": "48908",
+  "text": "PCI is a powerful system identification technique that aims to build a mimetic dynamic nonlinear model given the input and output data from a real system. Interested readers are directed to ref [CITATION_1] for a detailed description of the algorithm. A PCI model consists of a parallel arrangement of cascade models. Training the i th cascade path begins with fitting the (R+S+1) taps of the FIR filter in the L component. These values are taken from cross-correlations between the input data, x [n], and the desired cascade output, y i [n], computed for offsets in the range [-S, +R]. If a higher order cross-correlation is computed, then a one-dimensional slice is used in combination with strategically placed Kronecker delta functions [CITATION_2] . The output of the i th L component, u i [n], is computed via a convolution of the FIR filter and the input data. To overcome transient effects introduced by the convolution of the FIR filters with a protein chain input, each protein chain was first zero-padded by R residues at the start of each chain, and by S residues at the end of each chain, after each cross-correlation (to obtain the FIR filter) was computed [CITATION_3] . multi-input single-output (MISO) PCI model, as is used throughout this study, the cross-correlations to fit the FIR filter are computed between the desired cascade output and one or more inputs selected randomly with replacement [CITATION_4] .",
+  "correct_citation": {
+    "[CITATION_1]": "11500518",
+    "[CITATION_2]": "11500518",
+    "[CITATION_3]": "15335423",
+    "[CITATION_4]": "11500518"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Interested readers are directed to ref  for a detailed description of the algorithm."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "If a higher order cross-correlation is computed, then a one-dimensional slice is used in combination with strategically placed Kronecker delta functions  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "at the start of each chain, and by S residues at the end of each chain, after each cross-correlation (to obtain the FIR filter) was computed  . multi-input single-output (MISO) PCI model, as is used throughout this study, the cross-correlations to fit the FIR filter are"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "cross-correlations to fit the FIR filter are computed between the desired cascade output and one or more inputs selected randomly with replacement"
+    }
+  ],
+  "bib_entries": {
+    "15335423": {
+      "title": "Nonlinear System Identification Provides Insight Into Protein Folding",
+      "abstract": "Much like the shape of a tool suggests its intended purpose, knowledge of a protein's structure can provide substantial insight into its function. Therefore, computational prediction of protein structure based solely on protein sequence data is a challenge of fundamental importance to biomedical research. An effective solution promises significant advances in computational drug discovery and an increased understanding of complex disease processes such as cancer. We have recently developed a novel approach to determining the secondary structure of proteins from protein sequence data which makes use of parallel cascade identification (PCI), a powerful method of nonlinear system identification. PCI is used to create two layers of dynamic nonlinear systems that map divergent evolutionary profile input data into secondary structure assignment output data. PCI prediction accuracy compares well with eleven top contemporary methods over a dataset of new protein structures. Furthermore, PCI is a highly effective means to combine multiple experts achieving the highest observed accuracy over two test datasets and also the lowest rate of occurrence of a particularly detrimental class of errors. One limitation of the PCI classifiers is that approximately 13% of all amino acids cannot readily be assigned predictions due to settling times introduced by the dynamic linear component in each cascade model. In this paper we describe a number of methods designed to overcome this limitation. While zero-padding of the input sequence data proved to be the most effective solution in terms of prediction accuracy, an analysis of causal, anti-causal, and mixed cascades provides interesting insights into the biological mechanism of protein folding"
+    },
+    "11500518": {
+      "title": "Parallel cascade identification and kernel estimation for nonlinear systems",
+      "abstract": "We consider the representation and identification of nonlinear systems through the use of parallel cascades of alternating dynamic linear and static nonlinear elements. Building on the work of Palm and others, we show that any discrete-time finite-memory nonlinear system having a finite-order Volterra series representation can be exactly represented by a finite number of parallel LN cascade paths. Each LN path consists of a dynamic linear system followed by a static nonlinearity (which can be a polynomial). In particular, we provide an upper bound for the number of parallel LN paths required to represent exactly a discrete-time finite-memory Volterra functional of a given order. Next, we show how to obtain a parallel cascade representation of a nonlinear system from a single input-output record. The input is not required to be Gaussian or white, nor to have special autocorrelation properties. Next, our parallel cascade identification is applied to measure accurately the kernels of nonlinear systems (even those with lengthy memory), and to discover the significant terms to include in a nonlinear difference equation model for a system. In addition, the kernel estimation is used as a means of studying individual signals to distinguish deterministic from random behaviour, in an alternative to the use of chaotic dynamics. Finally, an alternate kernel estimation scheme is presented."
+    }
+  },
+  "generator": "fallback_v4"
+}

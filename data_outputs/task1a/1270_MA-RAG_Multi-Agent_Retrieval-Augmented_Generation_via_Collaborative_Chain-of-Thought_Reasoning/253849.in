@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We use NQ, TriviaQA, HotpotQA, and FEVER from the KILT benchmark (Petroni et al., 2021).",
+    "We report accuracy for the FEVER dataset and exact match for the others.",
+    "TriviaQA HotpotQA 2WikimQA FEVER Metric EM EM EM EM Acc Without Retrieval-augmented Generation Llama3-Instruct 8B (2024) 30.9 70.7 26.0 9.6 88.9 Llama3-Instruct 70B (2024) 42.7 82.4 35.5 13.5 91.4 GPT-3.5-turbo-1106 (2022) 38.6 82.9 29.9 23.9 82.7 GPT-4-0613 (2024) 40.3 84.8 34.5 29.8 87.7 With Retrieval-augmented Generation SmartRAG 7B (2025) --26.0 --Atlas 11B (2023) 26.7 56.9 34.7 -77.0 RECOMP 20B (2024) 37.0 59.0 30.4 --REPLUG 65B (2024) 28.8 72.6 32.0 -73.3 RA-DIT 65B (2024) 35.2 75.4 39.7 -80.7 Self-RAG 8B (2024) 39.6 78.2 24.3 25.1 -ChatQA-1.5 8B (2024b) 42.4 81.0 33.4 26.8 90.9 ChatQA-1.5 70B (2024b) 47.0 85.6 42.2 34.9 92.7 RankRAG 8B (2024) 50.6 82.9 35.3 31.4 92.0 RankRAG 70B (2024) 54.2 86.5 42.7 38.2 93.8 ReAct (70B) (2023) 43.9 84.5 39.2 32.6 92.0 Adaptive-RAG (GPT-3.5) (2024) 36.8 -40.4 46.6 -Self-Ask (GPT-3) (2023) ---40.1 -Ours MA-RAG (Llama3-8B) 52.5 82.6 40.3 31.8 91.4 MA-RAG (Llama3-70B) 58.1 85.4 50.7 43.1 93.1 MA-RAG (GPT-4o-mini) 59.5 87.2 52.1 47.5 93.3",
+    "MA-RAG achieves competitive performance on both TriviaQA and FEVER, with GPT-4o-mini reaching 87.2 EM and 93.3 accuracy, respectively, on par with or surpassing strong finetuned baselines such as RankRAG.",
+    "Notably, unlike these methods, MA-RAG is fully training-free, relying solely on agent-based reasoning and chain-of-thought prompting without any gradient-based updates to the underlying LLMs."
+  ]
+}

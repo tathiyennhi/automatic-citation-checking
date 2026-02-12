@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We now illustrate how we transform the N ×(M + 1)×P embeddings into the N × 1 logits.One-hot Coding Reshape Surgical VQA Tasks Multimodal LLM Original Labels x ( vector) 1 N × t C Transformed Label x ( matrix) () 1 N M P + × T t C Embeddings ( matrix) () 1 N M P × + × LLM e Reshaped embeddings xx ( matrix) R LLM e () 1 N M P + × Col.",
+    "Reciprocal Transformed Logits x ( vector) 1 N × LLM z Reshape Intermediate Cross Entropy Loss ( vector)()1 1 N M + × I CE L Intermediate Variable x ( matrix)() As in Fig. 2, we first reshape the extracted embeddings and obtain a new matrix e R LLM.",
+    "We conduct one-hot encoding and tokenization on the classification label set C t. Note that e R LLM and C T have the size of N (M + 1) × P. We then calculate the cross-entropy loss between e R LLM and C T by1 N M × + U Intermediate Variable x ( vector) 1 N × V TokenizationL I CE (i) = LCE e R LLM (i), C T (i)(5)The resulting vector L I CE has a size of N (M + 1) × 1.",
+    "We next reshape the vector to a N × (M + 1) matrix and conduct column summation to obtain the cross entropy corresponding to each label.",
+    "In the resulting N × 1 vector V, element V (j) represents the expected loss of label c t,j, which is negatively related to the probability of label c t,j being selected as the final classification result."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "39902",
+  "text": "The sliding-views collector [CITATION_1] is an on-the-fly collector. It is a referencecounting collector that eliminates many of the reference count updates by the following coalescing strategy. Consider a pointer slot p that is assigned the values o 0 , o 1 , o 2 , . . . , o n between two garbage collections. All previous reference counting collectors execute 2n reference count updates for these assignments: Suppose the reference counts we have represent the heap view at the previous collection time and we would like to update them for the current collection time. In light of the observation above, it suffices to do the following. For each pointer p that was modified between the two collections:",
+  "correct_citation": {
+    "[CITATION_1]": "53223694"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The sliding-views collector is an on-the-fly collector."
+    }
+  ],
+  "bib_entries": {
+    "53223694": {
+      "title": "An on-the-fly reference counting garbage collector for Java",
+      "abstract": "Reference counting is not naturally suitable for running on multiprocessors. The update of pointers and reference counts requires atomic and synchronized operations. We present a novel reference counting algorithm suitable for a multiprocessor that does not require any synchronized operation in its write barrier (not even a compare-and-swap type of synchronization). The algorithm is efficient and may complete with any tracing algorithm."
+    }
+  },
+  "generator": "fallback"
+}

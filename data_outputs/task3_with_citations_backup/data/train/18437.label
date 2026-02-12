@@ -1,0 +1,33 @@
+{
+  "doc_id": "18437",
+  "text": "1) E b /N 0 → ∞; train without noise, the NN is not trained to handle noise. 2) E b /N 0 → 0; train only with noise, the NN can not learn the code structure. This clearly indicates an optimum somewhere in between these two cases. From now on, a training E b /N 0 of 1 dB and 4 dB is chosen for polar and random codes, respectively. Fig. 3 shows the BER achieved by a very small NN of dimensions 128-64-32 as a function of the number of training epochs ranging from M ep = 2 10 , . . . , 2 18 . For BER simulations, we use 1 million codewords per SNR point. For both code families, the larger the number of training epochs, the closer is the gap between MAP and NND performance. [CITATION_1] It would also be possible to have a training data set which contains a mix of different SNR values, but we have not investigated this option here. Recently, the authors in [CITATION_2] observed that starting at a high training SNR and then gradually reducing the SNR works well. However, for polar codes, close to MAP performance is already achieved for M ep = 2 18 epochs, while we may need a larger NN or more training epochs for random codes.",
+  "correct_citation": {
+    "[CITATION_1]": "16146870",
+    "[CITATION_2]": "3593238"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For both code families, the larger the number of training epochs, the closer is the gap between MAP and NND performance. [CITATION_1] It would also be possible to have a training data set which contains a mix of different SNR values, but we have not investigated this option here.",
+      "s_span": 557,
+      "e_span": 837
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Recently, the authors in [CITATION_2] observed that starting at a high training SNR and then gradually reducing the SNR works well.",
+      "s_span": 838,
+      "e_span": 969
+    }
+  ],
+  "bib_entries": {
+    "16146870": {
+      "title": "Neural networks, error-correcting codes, and polynomials over the binary n-cube",
+      "abstract": "Several ways of relating the concept of error-correcting codes to the concept of neural networks are presented. Performing maximum-likelihood decoding in a linear block error-correcting code is shown to be equivalent to finding a global maximum of the energy function of a certain neural network. Given a linear block code, a neural network can be constructed in such a way that every codeword corresponds to a local maximum. The connection between maximization of polynomials over the n-cube and error-correcting codes is also investigated; the results suggest that decoding techniques can be a useful tool for solving such maximization problems. The results are generalized to both nonbinary and nonlinear codes. >"
+    },
+    "3593238": {
+      "title": "Deep Neural Networks to Enable Realtime Multimessenger Astrophysics",
+      "abstract": "We introduce a new method for time-domain signal processing, based on deep learning neural networks, which has the potential to revolutionize data analysis in engineering and science. To demonstrate how this enables real-time multimessenger astrophysics, we designed two deep convolutional neural networks that can analyze time-series data from observatories including advanced LIGO. The first neural network recognizes the presence of gravitational waves from binary black hole mergers, and the second one estimates the mass of each black hole, given weak signals hidden in extremely noisy time-series inputs. We highlight the advantages offered by this novel method, which outperforms matched-filtering or conventional machine learning techniques, and propose strategies to extend our implementation for simultaneously targeting different classes of gravitational wave sources while ignoring anomalous noise transients. Our results strongly indicate that deep neural networks are highly efficient and versatile tools for directly processing any raw noisy data streams. We also pioneer a new paradigm to accelerate scientific discovery by combining high-performance simulations on traditional supercomputers and artificial intelligence algorithms that exploit innovative hardware architectures such as deep-learning-optimized GPUs. This unique approach immediately provides a natural framework to unify multi-spectrum observations in real-time thus enabling coincident detection campaigns of gravitational waves sources and their electromagnetic counterparts."
+    }
+  },
+  "generator": "fallback_v4"
+}

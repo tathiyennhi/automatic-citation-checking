@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Management ComponentsFigure 3 visualizes the flow between microservices and layers described in the following subsections, which are ordered in the way the components interact with each other, starting from the Job Worker.",
+    "The Job Worker functions as an intermediary between our Kubernetes-based microservices and the Slurmmanaged HPC infrastructure.",
+    "It is implemented as a long-running background process, responsible for scheduling new vLLM instances via Slurm and removing expired jobs.",
+    "Each run, it compares the entries in the ai_model_endpoint_jobs table with the configurations specified in the ai_model_configurations table, for example number of requested model instances.",
+    "If no matching endpoint job is found, configuration parameters are passed to the Slurm Submit, which requests ressourcess for a job with the corresponding model."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Furthermore, we devise the Multi-Scale Gating Module (MSGM) to transfer the feature information flow among the Transformer Blocks of cross scales.",
+    "Following this, we present detailed explanations of our pipeline and the key components encompassed within proposed approach.",
+    "Overall PipelineIn some learning ISP methods [9,13,16], defect pixel removal and demosaicing are often implemented in one stage due to the relatives between them.",
+    "So we first feed the original raw image into the coarse demosaicing network to get In detail, for coarse demosaicing stage, given a Hy-bridEVS raw image of I raw ∈ R H×W ×1, we extend it to RGB space I RGB raw ∈ R H×W ×3, a coarse demosaicing network noted as F cd is employed to simply eliminate the defect pixels and restore the raw image to RGB space I RGB rest.I RGB rest = F cd (Extend(I raw))(1)After that, I RGB rest is taken as the input of pixel correction stage and a pixel correction network noted as F pc is adopted to correct pixel and refine the imperfect image.I RGB output = F pc (I RGB rest)(2)Finally, we get the desired images I RGB output ∈ R H×W ×3.",
+    "The whole two-stage framework can be formulated as:I RGB output = F pc (F cd (Extend(I raw), θ cd), θ pc)(3)Here θ cd, θ pc denote the learnable parameters in F cd and F pc."
+  ],
+  "correct_citations": [
+    "Overall PipelineIn some learning ISP methods [9,13,16], defect pixel removal and demosaicing are often implemented in one stage due to the relatives between them."
+  ]
+}

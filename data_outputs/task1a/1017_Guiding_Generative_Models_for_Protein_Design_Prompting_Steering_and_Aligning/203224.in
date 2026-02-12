@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Given preferred (x w) and dispreferred (x l) samples, the objective is:L DPO = -E (xw,x l) log σ β[log π θ (x w) -log π θ (x l)],where σ is the sigmoid function and β controls the strength of preference separation.Group Relative Policy Optimization (GRPO).",
+    "GRPO extends PPO by organizing responses into |o| groups and computing advantages relative to each group's mean performance, thereby reducing variance of each update and improving stability.",
+    "It does not require a separate value model.",
+    "The objective is:L GRPO = - 1 G G i=1 1 |o i | |oi| t=1min r i,t (θ) Âi,t, clip(r i,t (θ), 1 -ϵ, 1 + ϵ) Âi,t + β D KL (π θ ∥π ref), where each group o i contains trajectories with similar characteristics.",
+    "Âi,t denotes the group-relative advantage, which is computed as, Âi,t = r i -mean t (r) std t (r)with the mean t and std t being computed over the group response.Figure 1:1Figure 1: Generative modeling approaches and schematic illustrations of protein fitness landscapes."
+  ]
+}

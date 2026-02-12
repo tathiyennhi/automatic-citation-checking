@@ -1,0 +1,29 @@
+{
+  "doc_id": "26732",
+  "text": "For those middle level target parts that were matched strongly onto candidates in the new frame, the feature models are updated according to new observations. Note that any kind of target model relearning is potentially dangerous, since even small tracking errors can easily cause background pixels to be learned into the target model, leading to instability with exponentially increasing errors. Early colour particle filter work [CITATION_1] , and recent state-of-the-art patch-based methods [CITATION_2] , perform model relearning at a fixed update speed. In contrast, we continuously recompute individual update speeds for each middle level target part at each frame. Our premise is that parts can be relearned rapidly when there is a high confidence in their matching, whereas the relearning rate should be reduced under conditions of uncertainty. We therefore update each patch, using a continuously relearned parameter, µ i mid (p) k , according to the following update rule:",
+  "correct_citation": {
+    "[CITATION_1]": "2560955",
+    "[CITATION_2]": "8190372"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Early colour particle filter work  , and recent state-of-the-art patch-based methods  , perform model relearning at a fixed update speed."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Early colour particle filter work  , and recent state-of-the-art patch-based methods  , perform model relearning at a fixed update speed."
+    }
+  ],
+  "bib_entries": {
+    "8190372": {
+      "title": "Robust visual tracking using an adaptive coupled-layer visual model",
+      "abstract": "This paper addresses the problem of tracking objects which undergo rapid and significant appearance changes. We propose a novel coupled-layer visual model that combines the target's global and local appearance by interlacing two layers. The local layer in this model is a set of local patches that geometrically constrain the changes in the target's appearance. This layer probabilistically adapts to the target's geometric deformation, while its structure is updated by removing and adding the local patches. The addition of these patches is constrained by the global layer that probabilistically models the target's global visual properties, such as color, shape, and apparent local motion. The global visual properties are updated during tracking using the stable patches from the local layer. By this coupled constraint paradigm between the adaptation of the global and the local layer, we achieve a more robust tracking through significant appearance changes. We experimentally compare our tracker to 11 state-of-the-art trackers. The experimental results on challenging sequences confirm that our tracker outperforms the related trackers in many cases by having a smaller failure rate as well as better accuracy. Furthermore, the parameter analysis shows that our tracker is stable over a range of parameter values."
+    },
+    "2560955": {
+      "title": "An adaptive color-based particle filter",
+      "abstract": "Abstract Robust real-time tracking of non-rigid objects is a challenging task. Particle filtering has proven very successful for non-linear and non-Gaussian estimation problems. The article presents the integration of color distributions into particle filtering, which has typically been used in combination with edge-based image features. Color distributions are applied, as they are robust to partial occlusion, are rotation and scale invariant and computationally efficient. As the color of an object can vary over time dependent on the illumination, the visual angle and the camera parameters, the target model is adapted during temporally stable image observations. An initialization based on an appearance condition is introduced since tracked objects may disappear and reappear. Comparisons with the mean shift tracker and a combination between the mean shift tracker and Kalman filtering show the advantages and limitations of the new approach."
+    }
+  },
+  "generator": "fallback_v4"
+}

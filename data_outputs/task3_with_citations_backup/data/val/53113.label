@@ -1,0 +1,22 @@
+{
+  "doc_id": "53113",
+  "text": "The evaluation of distance constraints D inside a query Q is performed as a post filtering step after the pattern S evaluation. The intuition is that the spatial predicates in S will greatly reduce the number of candidate trajectories which need to be examined by the distance-based algorithm. Nevertheless, since the distance terms contain variables, there are still many possibilities to bound the values of these variables. The IJP algorithm has the advantage of re-using the variable lists created during the spatial predicate search. These lists effectively enumerate all possible value bindings. However, instead of using a brute force approach that will examine all possible bindings, the IJP approach uses a variation of the Threshold Algorithm [CITATION_1] and examines these possibilities in an incremental ordered fashion. As a result, it avoids examining all possible bindings.",
+  "correct_citation": {
+    "[CITATION_1]": "37107413"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, instead of using a brute force approach that will examine all possible bindings, the IJP approach uses a variation of the Threshold Algorithm [CITATION_1] and examines these possibilities in an incremental ordered fashion.",
+      "s_span": 602,
+      "e_span": 833
+    }
+  ],
+  "bib_entries": {
+    "37107413": {
+      "title": "Optimal aggregation algorithms for middleware",
+      "abstract": "Assume that each object in a database has m grades, or scores, one for each of m attributes. For example, an object can have a color grade, that tells how red it is, and a shape grade, that tells how round it is. For each attribute, there is a sorted list, which lists each object and its grade under that attribute, sorted by grade (highest grade first). Each object is assigned an overall grade, that is obtained by combining the attribute grades using a fixed monotone aggregation function, or combining rule, such as min or average. To determine the top k objects, that is, k objects with the highest overall grades, the naive algorithm must access every object in the database, to find its grade under each attribute. Fagin has given an algorithm (\"Fagin's Algorithm\", or FA) that is much more efficient. For some monotone aggregation functions, FA is optimal with high probability in the worst case. We analyze an elegant and remarkably simple algorithm (\"the threshold algorithm\", or TA) that is optimal in a much stronger sense than FA. We show that TA is essentially optimal, not just for some monotone aggregation functions, but for all of them, and not just in a high-probability worst-case sense, but over every database. Unlike FA, which requires large buffers (whose size may grow unboundedly as the database size grows), TA requires only a small, constant-size buffer. TA allows early stopping, which yields, in a precise sense, an approximate version of the top k answers. We distinguish two types of access: sorted access (where the middleware system obtains the grade of an object in some sorted list by proceeding through the list sequentially from the top), and random access (where the middleware system requests the grade of object in a list, and obtains it in one step). We consider the scenarios where random access is either impossible, or expensive relative to sorted access, and provide algorithms that are essentially optimal for these cases as well."
+    }
+  },
+  "generator": "fallback_v4"
+}

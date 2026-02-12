@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Similar to No-vaFlow, which computes a single scaling factor based on the median depth of the initial ground-truth map, we also begin by estimating a global scaling factor between the predicted depth and the sensor depth.However, unlike the environments used in NovaFlow, our settings exhibit much larger variations and more frequent movements along the depth axis.",
+    "We observed that using a single median-based scalar often leads to substantial depth estimation errors in such scenarios.To address this, instead of relying on a single global statistic, we compute a pixel-wise depth rescaling map by directly comparing the predicted and sensor depth maps across all pixels.",
+    "We then apply a Gaussian blur to this map to obtain a smooth depth-rescaling field, and multiply this smoothed map with the predicted 3D trace to correct its zvalues.",
+    "Implementation details for the baselines 3DFlowactionThe official 3DFlowAction implementation relies on a filtering pipeline to extract object masks.",
+    "This pipeline combines a language-conditioned object detector with a heuristic process designed to remove the robot gripper."
+  ]
+}

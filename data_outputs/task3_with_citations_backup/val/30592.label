@@ -1,0 +1,22 @@
+{
+  "doc_id": "30592",
+  "text": "In our current implementation, handling a new context requires re-training a new classifier with the appropriate binary mask. One drawback of this approach is that when we seek to handle combinations of contexts (e.g. person talking with head tilted downwards while emoting happiness), it results in a combinatorial increase in the number of classifiers to train. A more scalable alternative would be to have a classification mechanism which can handle weighted features [CITATION_1] . In this scheme, the weights could indicate feature component reliability as expressed by concurrence of simultaneously active contexts. Alternatively, if each pose context mask is designed to capture local feature variations(e.g. by clustering head poses observed during typical interactions), the number of masks which arise can be greatly reduced.",
+  "correct_citation": {
+    "[CITATION_1]": "125633336"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A more scalable alternative would be to have a classification mechanism which can handle weighted features [CITATION_1] .",
+      "s_span": 364,
+      "e_span": 485
+    }
+  ],
+  "bib_entries": {
+    "125633336": {
+      "title": "Enhancing generalization capability of svm classifiers with feature weight adjustment",
+      "abstract": "A SVM constructs an optimal separating hyper-plane through maximizing the margin between two classes in high-dimensional feature space.Based on statistical learning theory,the margin scale reflects the generalization capability to a great extent.The bigger the margin scale takes,the better the generalization capability of SVMs will have.This paper makes an attempt to enlarge the margin between two support vector hyper-planes by feature weight adjustment.The experiments demonstrate that our proposed techniques in this paper can enhance the generalization capability of the original SVM classifiers."
+    }
+  },
+  "generator": "fallback_v4"
+}

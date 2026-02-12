@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "These initializations ensure that pretrained models with LoRA-FA modules maintain their model predictions before fine-tuning.It's worth noting that LoRA-FA doesn't alter the feed-forward and back-propagation computations of LoRA, and thus, it doesn't introduce additional computational overhead during the fine-tuning phase.",
+    "During inference, similar to LoRA, it can merge low-rank weights by adding 𝑨, 𝑩 into 𝑾, which means that it doesn't introduce any extra inference latency compared to a fully fine-tuned model.The advantage of LoRA-FA lies in maintaining a certain level of accuracy while significantly decreasing computational requirements and reducing GPU consumption compared to the original LoRA.",
+    "However, due to the condition where 𝑟 ≪ 𝑑, while the improvements of LoRA-FA over Full Fine-Tuning are evident, its enhancement compared to LoRA is not substantial enough.",
+    "Additionally, due to limited training parameters, it may exhibit slightly poorer performance on certain downstream tasks compared to LoRA.Another approach in the realm of model efficiency is model quantization.",
+    "Model quantization involves approximating the continuous-valued floating-point model weights or tensors used in a model with fixed-point approximations, often using a limited set of discrete values, such as int8."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,12 @@
+{
+  "text": "Each Gibbs sampling operation requires estimating the probability of choosing every target word e \u2208 V E , which requires O(V) operations. To address this issue, [CITATION_1] proposed a slice sampling approach with precomputed top-K lists for p(e| f ) and p(e 1 e 2 ). Slice sampling involves selecting a threshold T between 0 and the probability of the current sample, and then uniformly picking a random new sample from all candidates with probability greater than T. Using sorted top-K lists makes this faster than Gibbs sampling on average, although sometimes the top-K lists fail to provide all the candidates, in which case the method has to fall back to sampling from the entire vocabulary, which requires O(V) operations.",
+  "correct_citation": {
+    "[CITATION_1]": "5727182"
+  },
+  "bib_entries": {
+    "5727182": {
+      "title": "Large scale decipherment for out-of-domain machine translation",
+      "abstract": "We apply slice sampling to Bayesian decipherment and use our new decipherment framework to improve out-of-domain machine translation. Compared with the state of the art algorithm, our approach is highly scalable and produces better results, which allows us to decipher ciphertext with billions of tokens and hundreds of thousands of word types with high accuracy. We decipher a large amount of monolingual data to improve out-of-domain translation and achieve significant gains of up to 3.8 BLEU points."
+    }
+  }
+}

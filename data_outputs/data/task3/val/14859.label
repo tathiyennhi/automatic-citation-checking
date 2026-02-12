@@ -1,0 +1,70 @@
+{
+  "doc_id": "14859",
+  "text": "Reasoning about privacy, however, is fraught with pitfalls. One of the most significant difficulties is the auxiliary information (also called external knowledge, background knowledge, or side information) that an adversary gleans from other channels such as the web or public records. For example, simply removing obviously identifying information such as names and address does not suffice to protect privacy since the remaining information (such as zip code, gender and date of birth [CITATION_1] ) may still identify a person uniquely when combined with auxiliary information (such as voter registration records). Schemes that resist such linkage have been the focus of extensive investigation, starting with work on publishing contingency tables [1] , and more recently, in a line of techniques based on \"k-anonymity\" [CITATION_2] . This paper explores how one can reason about privacy in the face of rich, realistic sources of auxiliary information. This follows lines of work in both the data mining [CITATION_3] [CITATION_4] [CITATION_5] and cryptography [CITATION_6] [CITATION_7] communities that have sought principled ways to incorporate unknown auxiliary information into anonymization schemes.",
+  "correct_citation": {
+    "[CITATION_1]": "361794",
+    "[CITATION_2]": "361794",
+    "[CITATION_3]": "679934",
+    "[CITATION_4]": "7216177",
+    "[CITATION_5]": "7499625",
+    "[CITATION_6]": "599605",
+    "[CITATION_7]": "2565493"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For example, simply removing obviously identifying information such as names and address does not suffice to protect privacy since the remaining information (such as zip code, gender and date of birth  ) may still identify a person uniquely when combined with auxiliary information (such as voter registration records)."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Schemes that resist such linkage have been the focus of extensive investigation, starting with work on publishing contingency tables [1] , and more recently, in a line of techniques based on \"k-anonymity\"  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "This follows lines of work in both the data mining    and cryptography   communities that have sought principled ways to incorporate unknown auxiliary information into anonymization schemes."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "This follows lines of work in both the data mining    and cryptography   communities that have sought principled ways to incorporate unknown auxiliary information into anonymization schemes."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This follows lines of work in both the data mining    and cryptography   communities that have sought principled ways to incorporate unknown auxiliary information into anonymization schemes."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "This follows lines of work in both the data mining    and cryptography   communities that have sought principled ways to incorporate unknown auxiliary information into anonymization schemes."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "This follows lines of work in both the data mining    and cryptography   communities that have sought principled ways to incorporate unknown auxiliary information into anonymization schemes."
+    }
+  ],
+  "bib_entries": {
+    "7216177": {
+      "title": "Worst-case background knowledge for privacy-preserving data publishing",
+      "abstract": "Recent work has shown the necessity of considering an attacker's background knowledge when reasoning about privacy in data publishing. However, in practice, the data publisher does not know what background knowledge the attacker possesses. Thus, it is important to consider the worst-case. In this paper, we initiate a formal study of worst-case background knowledge. We propose a language that can express any background knowledge about the data. We provide a polynomial time algorithm to measure the amount of disclosure of sensitive information in the worst case, given that the attacker has at most k pieces of information in this language. We also provide a method to efficiently sanitize the data so that the amount of disclosure in the worst case is less than a specified threshold."
+    },
+    "361794": {
+      "title": "k-anonymity: A model for protecting privacy",
+      "abstract": "Consider a data holder, such as a hospital or a bank, that has a privately held collection of person-specific, field structured data. Suppose the data holder wants to share a version of the data with researchers. How can a data holder release a version of its private data with scientific guarantees that the individuals who are the subjects of the data cannot be re-identified while the data remain practically useful? The solution provided in this paper includes a formal protection model named k-anonymity and a set of accompanying policies for deployment. A release provides k-anonymity protection if the information for each person contained in the release cannot be distinguished from at least k-1 individuals whose information also appears in the release. This paper also examines re-identification attacks that can be realized on releases that adhere to k- anonymity unless accompanying policies are respected. The k-anonymity protection model is important because it forms the basis on which the real-world systems known as Datafly, µ-Argus and k-Similar provide guarantees of privacy protection."
+    },
+    "7499625": {
+      "title": "Privacy skyline: Privacy with multidimensional adversarial knowledge",
+      "abstract": "Privacy is an important issue in data publishing. Many organizations distribute non-aggregate personal data for research, and they must take steps to ensure that an adversary cannot predict sensitive information pertaining to individuals with high confidence. This problem is further complicated by the fact that, in addition to the published data, the adversary may also have access to other resources (e.g., public records and social networks relating individuals), which we call external knowledge. A robust privacy criterion should take this external knowledge into consideration. ::: ::: In this paper, we first describe a general framework for reasoning about privacy in the presence of external knowledge. Within this framework, we propose a novel multidimensional approach to quantifying an adversary's external knowledge. This approach allows the publishing organization to investigate privacy threats and enforce privacy requirements in the presence of various types and amounts of external knowledge. Our main technical contributions include a multidimensional privacy criterion that is more intuitive and flexible than previous approaches to modeling background knowledge. In addition, we provide algorithms for measuring disclosure and sanitizing data that improve computational efficiency several orders of magnitude over the best known techniques."
+    },
+    "599605": {
+      "title": "Revealing information while preserving privacy",
+      "abstract": "We examine the tradeoff between privacy and usability of statistical databases. We model a statistical database by an n-bit string d 1 ,..,d n , with a query being a subset q ⊆ [n] to be answered by Σ ieq d i . Our main result is a polynomial reconstruction algorithm of data from noisy (perturbed) subset sums. Applying this reconstruction algorithm to statistical databases we show that in order to achieve privacy one has to add perturbation of magnitude (Ω√n). That is, smaller perturbation always results in a strong violation of privacy. We show that this result is tight by exemplifying access algorithms for statistical databases that preserve privacy while adding perturbation of magnitude O(√n).For time-T bounded adversaries we demonstrate a privacypreserving access algorithm whose perturbation magnitude is ≈ √T."
+    },
+    "679934": {
+      "title": "l-diversity: Privacy beyond k-anonymity",
+      "abstract": "Publishing data about individuals without revealing sensitive information about them is an important problem. In recent years, a new definition of privacy called k-anonymity has gained popularity. In a k-anonymized dataset, each record is indistinguishable from at least k − 1 other records with respect to certain identifying attributes. In this article, we show using two simple attacks that a k-anonymized dataset has some subtle but severe privacy problems. First, an attacker can discover the values of sensitive attributes when there is little diversity in those sensitive attributes. This is a known problem. Second, attackers often have background knowledge, and we show that k-anonymity does not guarantee privacy against attackers using background knowledge. We give a detailed analysis of these two attacks, and we propose a novel and powerful privacy criterion called e-diversity that can defend against such attacks. In addition to building a formal foundation for e-diversity, we show in an experimental evaluation that e-diversity is practical and can be implemented efficiently."
+    },
+    "2565493": {
+      "title": "Differential privacy",
+      "abstract": "In 1977 Dalenius articulated a desideratum for statistical databases: nothing about an individual should be learnable from the database that cannot be learned without access to the database. We give a general impossibility result showing that a formalization of Dalenius' goal along the lines of semantic security cannot be achieved. Contrary to intuition, a variant of the result threatens the privacy even of someone not in the database. This state of affairs suggests a new measure, differential privacy, which, intuitively, captures the increased risk to one's privacy incurred by participating in a database. The techniques developed in a sequence of papers [8, 13, 3], culminating in those described in [12], can achieve any desired level of privacy under this measure. In many cases, extremely accurate information about the database can be provided while simultaneously ensuring very high levels of privacy"
+    }
+  },
+  "generator": "fallback_v4"
+}

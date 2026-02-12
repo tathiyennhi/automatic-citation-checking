@@ -1,0 +1,22 @@
+{
+  "doc_id": "29487",
+  "text": "The SVD engineering technique is similar in function to a voting scheme. Evidence for this is provided in Figure 3 . The voting technique takes the top 5 to 10 proportionally selected individuals and calculates a vote for which side of the bisection each vertex should belong. Before the vote is counted, every bit in an individual's representation is flipped if and only if the first bit is zero. This helps account for the symmetrical nature of candidate solutions for the graph bisection problem. Next, the vote is taken and a new individual is engineered from the resulting votes. It can be seen from Figure 3 that the cut solution qualities of the generated individuals are similar, but that the SVD engineering performs better. In addition, the average generated cut size increases rapidly in the first 10 generations, and then rapidly decreases. This indicates that the GA needs some time to discover good basis individuals for engineering. Finally, the hypothesis that the SVD engineering technique acts as a shared approximate vote is validated by the similarities between the optimization curves for voting and SVD. Figure 4 depicts the results from an experiment that compares most of the described heuristics. In addition, local searches are performed at each generation. Spectral injection, subproblem restriction and rotation [CITATION_1] , engineering, and schema reordering are all verified to positively influence the performance of the genetic algorithm separately for this graph. Figure 5 shows that the performance increase is much more dramatic when the the local search operator is not performed. However, Figure 6 shows that when the Kernighan-Lin local improvement is used with graphs for which KL does not perform well (caterpillars), the SVD techniques outperform the plain GA by a more significant margin. This indicates that SVD may be a viable alternative to KL and that it can be successfully paired with KL to provide additional performance.",
+  "correct_citation": {
+    "[CITATION_1]": "17642650"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Spectral injection, subproblem restriction and rotation  , engineering, and schema reordering are all verified to positively influence the performance of the genetic algorithm separately for this graph.",
+      "s_span": 1284,
+      "e_span": 1498
+    }
+  ],
+  "bib_entries": {
+    "17642650": {
+      "title": "Subproblem optimization by gene correlation with singular value decomposition",
+      "abstract": "Several ways of using singular value decomposition (SVD), a linear algebra technique typically used for information retrieval, to decompose problems into subproblems are investigated in the genetic algorithm setting. Empirical evidence, concerning document comparison, indicates that using SVD results both in a savings in storage space and an improvement in information retrieval. Combining theoretical results and algorithms discovered by others, several problems are identified that the SVD can be used with to determine a substructure. Subproblems are discovered by projecting vectors representing the genes of highly fit individuals into a new low-dimensional space, obtained by truncating the SVD of a strategically chosen gene x individual matrix. Techniques are proposed and evaluated that use the subproblems identified by SVD to influence the evolution of the genetic algorithm. By restricting the locus of optimization to the substructure of highly fit individuals, the performance of the genetic algorithm was improved. Performance was also improved by using SVD to genetically engineer individuals out of the subproblems."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,47 @@
+{
+  "doc_id": "48701",
+  "text": "In order to compare PCI-based classifiers with contemporary classifiers based on different approaches, a common dataset of 125 protein chains that were guaranteed to be non-homologous to all protein data used to train all eight methods was extracted from the EVA system [CITATION_1] (see Methods for details). This dataset provides a unique opportunity to directly compare PCI's performance with eight leading methods in a fair and objective way. The benefit of using results from the EVA system is that we are guaranteed that all test proteins are dissimilar to all training proteins for all methods. No such guarantee is available if non-EVA methods are applied to the test dataset now, since there is no way to ensure that these same proteins were not used in the training of each method. We therefore restrict our comparison to methods evaluated by the EVA system. Excluded methods of interest include one based on support vector machines which appears to achieve similar prediction accuracy to PSIPRED [CITATION_2] , Proteus [CITATION_3] , and Yaspin [CITATION_4] , which uses a hidden Markov model to refine the 7-state predictions from a neural network. Although Yaspin was included in EVA for a short time, unfortunately, archived EVA results were only available for a small number of the 125 test proteins and therefore this method was excluded. Results over those proteins for which archived Yaspin were available showed performance on par with cascaded PCI.",
+  "correct_citation": {
+    "[CITATION_1]": "12768920",
+    "[CITATION_2]": "1133173",
+    "[CITATION_3]": "14364393",
+    "[CITATION_4]": "9502825"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In order to compare PCI-based classifiers with contemporary classifiers based on different approaches, a common dataset of 125 protein chains that were guaranteed to be non-homologous to all protein data used to train all eight methods was extracted from the EVA system  (see Methods for details)."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Excluded methods of interest include one based on support vector machines which appears to achieve similar prediction accuracy to PSIPRED  , Proteus  , and Yaspin  , which uses a hidden Markov model to refine the 7-state predictions from a neural network."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Excluded methods of interest include one based on support vector machines which appears to achieve similar prediction accuracy to PSIPRED  , Proteus  , and Yaspin  , which uses a hidden Markov model to refine the 7-state predictions from a neural network."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Excluded methods of interest include one based on support vector machines which appears to achieve similar prediction accuracy to PSIPRED  , Proteus  , and Yaspin  , which uses a hidden Markov model to refine the 7-state predictions from a neural network."
+    }
+  ],
+  "bib_entries": {
+    "12768920": {
+      "title": "EVA: continuous automatic evaluation of protein structure prediction servers",
+      "abstract": "Summary: Evaluation of protein structure prediction methods is difficult and time-consuming. Here, we describe EVA, a web server for assessing protein structure prediction methods, in an automated, continuous and large-scale fashion. Currently, EVA evaluates the performance of a variety of prediction methods available through the internet. Every week, the sequences of the latest experimentally determined protein structures are sent to prediction servers, results are collected, performance is evaluated, and a summary is published on the web. EVA has so far collected data for more than 3000 protein chains. These results may provide valuable insight to both developers and users of prediction methods. Availability: http://cubic.bioc.columbia.edu/eva."
+    },
+    "9502825": {
+      "title": "A simple and fast secondary structure prediction method using hidden neural networks",
+      "abstract": "Motivation: In this paper, we present a secondary structure prediction method YASPIN that unlike the current state-of-the-art methods utilizes a single neural network for predicting the secondary structure elements in a 7-state local structure scheme and then optimizes the output using a hidden Markov model, which results in providing more information for the prediction. ::: ::: Results: YASPIN was compared with the current top-performing secondary structure prediction methods, such as PHDpsi, PROFsec, SSPro2, JNET and PSIPRED. The overall prediction accuracy on the independent EVA5 sequence set is comparable with that of the top performers, according to the Q3, SOV and Matthew's correlations accuracy measures. YASPIN shows the highest accuracy in terms of Q3 and SOV scores for strand prediction. ::: ::: Availability: YASPIN is available on-line at the Centre for Integrative Bioinformatics website (http://ibivu.cs.vu.nl/programs/yaspinwww/) at the Vrije University in Amsterdam and will soon be mirrored on the Mathematical Biology website (http://www.mathbio.nimr.mrc.ac.uk) at the NIMR in London. ::: ::: Contact: kxlin@nimr.mrc.ac.uk"
+    },
+    "14364393": {
+      "title": "Improving the accuracy of protein secondary structure prediction using structural alignment",
+      "abstract": "BackgroundThe accuracy of protein secondary structure prediction has steadily improved over the past 30 years. Now many secondary structure prediction methods routinely achieve an accuracy (Q3) of about 75%. We believe this accuracy could be further improved by including structure (as opposed to sequence) database comparisons as part of the prediction process. Indeed, given the large size of the Protein Data Bank (>35,000 sequences), the probability of a newly identified sequence having a structural homologue is actually quite high.ResultsWe have developed a method that performs structure-based sequence alignments as part of the secondary structure prediction process. By mapping the structure of a known homologue (sequence ID >25%) onto the query protein's sequence, it is possible to predict at least a portion of that query protein's secondary structure. By integrating this structural alignment approach with conventional (sequence-based) secondary structure methods and then combining it with a \"jury-of-experts\" system to generate a consensus result, it is possible to attain very high prediction accuracy. Using a sequence-unique test set of 1644 proteins from EVA, this new method achieves an average Q3 score of 81.3%. Extensive testing indicates this is approximately 4–5% better than any other method currently available. Assessments using non sequence-unique test sets (typical of those used in proteome annotation or structural genomics) indicate that this new method can achieve a Q3 score approaching 88%.ConclusionBy using both sequence and structure databases and by exploiting the latest techniques in machine learning it is possible to routinely predict protein secondary structure with an accuracy well above 80%. A program and web server, called PROTEUS, that performs these secondary structure predictions is accessible at http://wishart.biology.ualberta.ca/proteus. For high throughput or batch sequence analyses, the PROTEUS programs, databases (and server) can be downloaded and run locally."
+    },
+    "1133173": {
+      "title": "Secondary structure prediction with support vector machines",
+      "abstract": "Motivation: A new method that uses support vector machines (SVMs) to predict protein secondary structure is described and evaluated. The study is designed to develop a reliable prediction method using an alternative technique and to investigate the applicability of SVMs to this type of bioinformatics problem. Methods: Binary SVMs are trained to discriminate between two structural classes. The binary classifiers are combined in several ways to predict multi-class secondary structure. Results: The average three-state prediction accuracy per protein (Q3) is estimated by cross-validation to be 77.07 ± 0.26% with a segment overlap (Sov) score of 73.32± 0.39%. The SVM performs similarly to the ‘state-of-the-art’ PSIPRED prediction method on a non-homologous test set of 121 proteins despite being trained on substantially fewer examples. A simple consensus of the SVM, PSIPRED and PROFsec achieves significantly higher prediction accuracy than the individual methods. Availability: The SVM classifier is available from the authors. Work is in progress to make the method available on-line and to integrate the SVM predictions into the PSIPRED server."
+    }
+  },
+  "generator": "fallback_v4"
+}

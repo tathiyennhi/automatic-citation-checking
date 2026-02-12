@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The smoothness of the dual function D(λ) is due to that the boundedness of all entries of the Hessian matrix.To establish strong convexity of the dual function D(λ), it is sufficient to find a quadratic lower bound on D(λ).",
+    "To get such a quadratic lower bound, we can take the smallest singular value of the Hessian matrix (11) that is strictly positive:D(λ) ≥ D(λ ′) + δ ⊤ E x ∼ D E y ∼ π ⋆ (• | x;λ ′) [h(x, y)] + 1 2 σ min E x ∼ D Cov y ∼ π ⋆ (• | x;λ ′) [h(x, y)] ∥δ∥ 2 +... ≥ D(λ ′) + δ ⊤ E x ∼ D E y ∼ π ⋆ (• | x;λ ′) [h(x, y)] + 1 2 σ min E x ∼ D Cov y ∼ π ⋆ (• | x;λ ′) [h(x, y)] ∥δ∥ 2where the second inequality is due to that the ∥δ∥ 2 -quadratic term above dominates all terms with higher orders when λ is close to λ ′, which completes the proof.",
+    "B Algorithm Implementations and Proofs in Section 3 B.1 Practical implementations of CAIDWe present two practical implementations of CAID in Algorithm 1, one in a model-based setting and the other in a preference-based setting: Algorithm 2 and Algorithm 3.",
+    "These implementations build on the one-shot algorithms [21] to address constrained alignment via iterative dualization.In the model-based setting, we are given the downstream reward and utility models (r, {g i } m i = 1) and a prompt dataset D. We present a model-based constrained alignment method (MoCAID) in Algorithm 2.",
+    "To perform the dual subgradient step of Algorithm 1, at time t, we collect an online dataset of (x, y) ∼ D • π θ(t) and use it to estimate a subgradient u(λ(t)) = ∂ λ L(π θ(t), λ(t)): u(λ(t)) = E (x,y) ∼ D•π θ(t) [ h(x, y)]where h(x, y):= g(x, y) -E πref [ g(x, y)] -b.To implement the LLM policy optimization step in Algorithm 1, we use the formulation of RLHF as maximum likelihood in direct preference optimization (DPO) [35]."
+  ],
+  "correct_citations": [
+    "These implementations build on the one-shot algorithms [21] to address constrained alignment via iterative dualization.In the model-based setting, we are given the downstream reward and utility models (r, {g i } m i = 1) and a prompt dataset D. We present a model-based constrained alignment method (MoCAID) in Algorithm 2.",
+    "To perform the dual subgradient step of Algorithm 1, at time t, we collect an online dataset of (x, y) ∼ D • π θ(t) and use it to estimate a subgradient u(λ(t)) = ∂ λ L(π θ(t), λ(t)): u(λ(t)) = E (x,y) ∼ D•π θ(t) [ h(x, y)]where h(x, y):= g(x, y) -E πref [ g(x, y)] -b.To implement the LLM policy optimization step in Algorithm 1, we use the formulation of RLHF as maximum likelihood in direct preference optimization (DPO) [35]."
+  ]
+}

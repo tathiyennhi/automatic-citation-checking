@@ -1,0 +1,115 @@
+{
+  "doc_id": "61199",
+  "text": "SynthText [CITATION_1] [CITATION_2] first proposes to embed text in natural scene images for training of text detection, while most previous work only print text on a cropped region and these synthetic data are only for text recognition. Printing text on the whole natural images poses new challenges, as it needs to maintain semantic coherence. To produce more realistic data, SynthText makes use of depth prediction [CITATION_3] and semantic segmentation [CITATION_4] . Semantic segmentation groups pixels together as semantic clusters, and each text instance is printed on one semantic surface, not overlapping multiple ones. Dense depth map is further used to determine the orientation and distortion of the text instance. Model trained only on SynthText achieves state-of-the-art on many text detection datasets. It's later used in other works [CITATION_5] , [CITATION_6] as well for initial pre-training. [CITATION_7] In contrast to (a), some methods crop from the feature maps and feed them to the recognition branch [CITATION_8] , [CITATION_9] , [CITATION_10] , [CITATION_11] . (c): While frameworks (a) and (b) utilize CTC-based and attention-based recognition branch, it's also possible to retrieve each character as generic objects and compose the text [CITATION_12] .",
+  "correct_citation": {
+    "[CITATION_1]": "206593628",
+    "[CITATION_2]": "14057168",
+    "[CITATION_3]": "13153",
+    "[CITATION_4]": "206764694",
+    "[CITATION_5]": "545733",
+    "[CITATION_6]": "706860",
+    "[CITATION_7]": "14057168",
+    "[CITATION_8]": "5592192",
+    "[CITATION_9]": "3801827",
+    "[CITATION_10]": "627305",
+    "[CITATION_11]": "9858530",
+    "[CITATION_12]": "49651094"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "SynthText   first proposes to embed text in natural scene images for training of text detection, while most previous work only print text on a cropped region and these synthetic data are only for text recognition."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "SynthText   first proposes to embed text in natural scene images for training of text detection, while most previous work only print text on a cropped region and these synthetic data are only for text recognition."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "To produce more realistic data, SynthText makes use of depth prediction  and semantic segmentation  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "To produce more realistic data, SynthText makes use of depth prediction  and semantic segmentation  ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "It's later used in other works  ,  as well for initial pre-training."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "It's later used in other works  ,  as well for initial pre-training."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "It's later used in other works  ,  as well for initial pre-training.  In contrast to (a), some methods crop from the feature maps and feed them to the recognition branch  ,  ,  ,  . (c): While frameworks (a) and (b) utilize CTC-based and attention-based recognition branch, it's also possible to retrieve each character as generic objects and compose the text  ."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "In contrast to (a), some methods crop from the feature maps and feed them to the recognition branch  ,  ,  ,  . (c): While frameworks (a) and (b) utilize CTC-based and attention-based recognition branch, it's also possible to retrieve each character as generic objects and compose the text  ."
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "In contrast to (a), some methods crop from the feature maps and feed them to the recognition branch  ,  ,  ,  . (c): While frameworks (a) and (b) utilize CTC-based and attention-based recognition branch, it's also possible to retrieve each character as generic objects and compose the text  ."
+    },
+    {
+      "citation_id": "[CITATION_10]",
+      "span_text": "In contrast to (a), some methods crop from the feature maps and feed them to the recognition branch  ,  ,  ,  . (c): While frameworks (a) and (b) utilize CTC-based and attention-based recognition branch, it's also possible to retrieve each character as generic objects and compose the text  ."
+    },
+    {
+      "citation_id": "[CITATION_11]",
+      "span_text": "In contrast to (a), some methods crop from the feature maps and feed them to the recognition branch  ,  ,  ,  . (c): While frameworks (a) and (b) utilize CTC-based and attention-based recognition branch, it's also possible to retrieve each character as generic objects and compose the text  ."
+    },
+    {
+      "citation_id": "[CITATION_12]",
+      "span_text": "In contrast to (a), some methods crop from the feature maps and feed them to the recognition branch  ,  ,  ,  . (c): While frameworks (a) and (b) utilize CTC-based and attention-based recognition branch, it's also possible to retrieve each character as generic objects and compose the text  ."
+    }
+  ],
+  "bib_entries": {
+    "545733": {
+      "title": "Detecting oriented text in natural images by linking segments",
+      "abstract": "Most state-of-the-art text detection methods are specific to horizontal Latin text and are not fast enough for real-time applications. We introduce Segment Linking (SegLink), an oriented text detection method. The main idea is to decompose text into two locally detectable elements, namely segments and links. A segment is an oriented box covering a part of a word or text line, A link connects two adjacent segments, indicating that they belong to the same word or text line. Both elements are detected densely at multiple scales by an end-to-end trained, fully-convolutional neural network. Final detections are produced by combining segments connected by links. Compared with previous methods, SegLink improves along the dimensions of accuracy, speed, and ease of training. It achieves an f-measure of 75.0% on the standard ICDAR 2015 Incidental (Challenge 4) benchmark, outperforming the previous best by a large margin. It runs at over 20 FPS on 512x512 images. Moreover, without modification, SegLink is able to detect long lines of non-Latin text, such as Chinese."
+    },
+    "206593628": {
+      "title": "Synthetic data for text localisation in natural images",
+      "abstract": "In this paper we introduce a new method for text detection in natural images. The method comprises two contributions: First, a fast and scalable engine to generate synthetic images of text in clutter. This engine overlays synthetic text to existing background images in a natural way, accounting for the local 3D scene geometry. Second, we use the synthetic images to train a Fully-Convolutional Regression Network (FCRN) which efficiently performs text detection and bounding-box regression at all locations and multiple scales in an image. We discuss the relation of FCRN to the recently-introduced YOLO detector, as well as other end-toend object detection systems based on deep learning. The resulting detection network significantly out performs current methods for text detection in natural images, achieving an F-measure of 84.2% on the standard ICDAR 2013 benchmark. Furthermore, it can process 15 images per second on a GPU."
+    },
+    "3801827": {
+      "title": "An end-to-end textspotter with explicit alignment and attention",
+      "abstract": "Text detection and recognition in natural images have long been considered as two separate tasks that are processed sequentially. Training of two tasks in a unified framework is non-trivial due to significant dif- ferences in optimisation difficulties. In this work, we present a conceptually simple yet efficient framework that simultaneously processes the two tasks in one shot. Our main contributions are three-fold: 1) we propose a novel text-alignment layer that allows it to precisely compute convolutional features of a text instance in ar- bitrary orientation, which is the key to boost the per- formance; 2) a character attention mechanism is introduced by using character spatial information as explicit supervision, leading to large improvements in recognition; 3) two technologies, together with a new RNN branch for word recognition, are integrated seamlessly into a single model which is end-to-end trainable. This allows the two tasks to work collaboratively by shar- ing convolutional features, which is critical to identify challenging text instances. Our model achieves impressive results in end-to-end recognition on the ICDAR2015 dataset, significantly advancing most recent results, with improvements of F-measure from (0.54, 0.51, 0.47) to (0.82, 0.77, 0.63), by using a strong, weak and generic lexicon respectively. Thanks to joint training, our method can also serve as a good detec- tor by achieving a new state-of-the-art detection performance on two datasets."
+    },
+    "706860": {
+      "title": "EAST: An efficient and accurate scene text detector",
+      "abstract": "Previous approaches for scene text detection have already achieved promising performances across various benchmarks. However, they usually fall short when dealing with challenging scenarios, even when equipped with deep neural network models, because the overall performance is determined by the interplay of multiple stages and components in the pipelines. In this work, we propose a simple yet powerful pipeline that yields fast and accurate text detection in natural scenes. The pipeline directly predicts words or text lines of arbitrary orientations and quadrilateral shapes in full images, eliminating unnecessary intermediate steps (e.g., candidate aggregation and word partitioning), with a single neural network. The simplicity of our pipeline allows concentrating efforts on designing loss functions and neural network architecture. Experiments on standard datasets including ICDAR 2015, COCO-Text and MSRA-TD500 demonstrate that the proposed algorithm significantly outperforms state-of-the-art methods in terms of both accuracy and efficiency. On the ICDAR 2015 dataset, the proposed algorithm achieves an F-score of 0.7820 at 13.2fps at 720p resolution."
+    },
+    "206764694": {
+      "title": "Contour detection and hierarchical image segmentation",
+      "abstract": "This paper investigates two fundamental problems in computer vision: contour detection and image segmentation. We present state-of-the-art algorithms for both of these tasks. Our contour detector combines multiple local cues into a globalization framework based on spectral clustering. Our segmentation algorithm consists of generic machinery for transforming the output of any contour detector into a hierarchical region tree. In this manner, we reduce the problem of image segmentation to that of contour detection. Extensive experimental evaluation demonstrates that both our contour detection and segmentation methods significantly outperform competing algorithms. The automatically generated hierarchical segmentations can be interactively refined by user-specified annotations. Computation at multiple image resolutions provides a means of coupling our system to recognition applications."
+    },
+    "13153": {
+      "title": "Deep convolutional neural fields for depth estimation from a single image",
+      "abstract": "We consider the problem of depth estimation from a single monocular image in this work. It is a challenging task as no reliable depth cues are available, e.g., stereo correspondences, motions etc. Previous efforts have been focusing on exploiting geometric priors or additional sources of information, with all using hand-crafted features. Recently, there is mounting evidence that features from deep convolutional neural networks (CNN) are setting new records for various vision applications. On the other hand, considering the continuous characteristic of the depth values, depth estimations can be naturally formulated into a continuous conditional random field (CRF) learning problem. Therefore, we in this paper present a deep convolutional neural field model for estimating depths from a single image, aiming to jointly explore the capacity of deep CNN and continuous CRF. Specifically, we propose a deep structured learning scheme which learns the unary and pairwise potentials of continuous CRF in a unified deep CNN framework. The proposed method can be used for depth estimations of general scenes with no geometric priors nor any extra information injected. In our case, the integral of the partition function can be analytically calculated, thus we can exactly solve the log-likelihood optimization. Moreover, solving the MAP problem for predicting depths of a new image is highly efficient as closed-form solutions exist. We experimentally demonstrate that the proposed method outperforms state-of-the-art depth estimation methods on both indoor and outdoor scene datasets."
+    },
+    "5592192": {
+      "title": "Deep textspotter: An end-to-end trainable scene text localization and recognition framework",
+      "abstract": "A method for scene text localization and recognition is proposed. The novelties include: training of both text detection and recognition in a single end-to-end pass, the structure of the recognition CNN and the geometry of its input layer that preserves the aspect of the text and adapts its resolution to the data.,,The proposed method achieves state-of-the-art accuracy in the end-to-end text recognition on two standard datasets – ICDAR 2013 and ICDAR 2015, whilst being an order of magnitude faster than competing methods - the whole pipeline runs at 10 frames per second on an NVidia K80 GPU."
+    },
+    "627305": {
+      "title": "Towards end-to-end text spotting with convolutional recurrent neural networks",
+      "abstract": "In this work, we jointly address the problem of text detection and recognition in natural scene images based on convolutional recurrent neural networks. We propose a unified network that simultaneously localizes and recognizes text with a single forward pass, avoiding intermediate processes like image cropping and feature re-calculation, word separation, or character grouping. In contrast to existing approaches that consider text detection and recognition as two distinct tasks and tackle them one by one, the proposed framework settles these two tasks concurrently. The whole framework can be trained end-to-end, requiring only images, the ground-truth bounding boxes and text labels. Through end-to-end training, the learned features can be more informative, which improves the overall performance. The convolutional features are calculated only once and shared by both detection and recognition, which saves processing time. Our proposed method has achieved competitive performance on several benchmark datasets."
+    },
+    "49651094": {
+      "title": "Mask textspotter: An end-to-end trainable neural network for spotting text with arbitrary shapes",
+      "abstract": "Recently, models based on deep neural networks have dominated the fields of scene text detection and recognition. In this paper, we investigate the problem of scene text spotting, which aims at simultaneous text detection and recognition in natural images. An end-to-end trainable neural network model for scene text spotting is proposed. The proposed model, named as Mask TextSpotter, is inspired by the newly published work Mask R-CNN. Different from previous methods that also accomplish text spotting with end-to-end trainable deep neural networks, Mask TextSpotter takes advantage of simple and smooth end-to-end learning procedure, in which precise text detection and recognition are acquired via semantic segmentation. Moreover, it is superior to previous methods in handling text instances of irregular shapes, for example, curved text. Experiments on ICDAR2013, ICDAR2015 and Total-Text demonstrate that the proposed method achieves state-of-the-art results in both scene text detection and end-to-end text recognition tasks."
+    },
+    "9858530": {
+      "title": "Fots: Fast oriented text spotting with a unified network",
+      "abstract": "Incidental scene text spotting is considered one of the most difficult and valuable challenges in the document analysis community. Most existing methods treat text detection and recognition as separate tasks. In this work, we propose a unified end-to-end trainable Fast Oriented Text Spotting (FOTS) network for simultaneous detection and recognition, sharing computation and visual information among the two complementary tasks. Specially, RoIRotate is introduced to share convolutional features between detection and recognition. Benefiting from convolution sharing strategy, our FOTS has little computation overhead compared to baseline text detection network, and the joint training method learns more generic features to make our method perform better than these two-stage methods. Experiments on ICDAR 2015, ICDAR 2017 MLT, and ICDAR 2013 datasets demonstrate that the proposed method outperforms state-of-the-art methods significantly, which further allows us to develop the first real-time oriented text spotting system which surpasses all previous state-of-the-art results by more than 5% on ICDAR 2015 text spotting task while keeping 22.6 fps."
+    },
+    "14057168": {
+      "title": "Extracting and segmenting container name from container images",
+      "abstract": "Container name extraction is very important to the modern container management system.Similar techniques have been suggested for vehicle license plate recognition in past decades.Container name extraction has more complexity from license plate extraction because of the severity of nonuniform illumination and invalidation of color information.The main purpose of this paper is to propose a new methodology for text extraction,segmenting text characters and removing non text,background from images. Existing text extraction methods do not work efficiently in case of images with noice and complex background. Documents with only text work efficiently in OCR.The approach used is based on edge detection,close operation,detecting connected components,removing non text regions and character segmentation. General Terms Pattern Recognition,Image Processing,OCR,Character Segmentation."
+    }
+  },
+  "generator": "fallback_v4"
+}

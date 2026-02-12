@@ -1,0 +1,22 @@
+{
+  "doc_id": "19879",
+  "text": "Extending the algorithm suggested by Grassberger (1994) for efficient simulation of the model (for a detailed description see, e.g. [CITATION_1] ) is straightforward, so that the modified model can be simulated as efficiently as the original OFC model. However, analyzing the behavior in dependence of the parameter τ requires a high computational effort since a large sequence of events must be simulated for each value of τ in order to obtain reliable statistics. We therefore use a simplified approximation to this model, based on simulations of the original OFC model. First, the original model is simulated until transient components have vanished in order to achieve a quasi-steady state. Then, a sequence of 10 9 events is computed and stored, including time of occurrence t i , size s i , and number of relaxation cycles c i (number of runs of the inner loop in Fig. 2 ) needed until the system comes to rest again for each event i. In a second step, a value of the parameter τ is chosen, and it is assumed that the duration of each event is τ c i , so that this event ends at the time e i =t i +τ c i . If the next event starts before this one has ended, i.e. if t i+1 ≤e i , it is assumed that both events are not separated. In this case, the two events i and i+1 are joined to one new event which starts at the time t i , ends at the time max{e i , e i+1 } and has the size s i +s i+1 . This procedure is applied to the following events, too, so that a set of events is joined if they overlap in time.",
+  "correct_citation": {
+    "[CITATION_1]": "118949106"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Extending the algorithm suggested by Grassberger (1994) for efficient simulation of the model (for a detailed description see, e.g.  ) is straightforward, so that the modified model can be simulated as efficiently as the original OFC model.",
+      "s_span": 0,
+      "e_span": 252
+    }
+  ],
+  "bib_entries": {
+    "118949106": {
+      "title": "Self-Organized Criticality in Earth Systems",
+      "abstract": "1. Fractals and Fractal Distributions.- 2. Recognizing Power-Law Distributions.- 3. Self-Affine Time Series.- 4. Deterministic Chaos.- 5. Self-Organized Criticality.- 6. The Forest-Fire Model - Tuning and Universality.- 7. Earthquakes and Stick-Slip Motion.- 8. Landslides.- 9. Drainage Networks.- 10. SOC and Nothing Else?.- 11. Where do we Stand?.- A. Numerics of Ordinary Differential Equations.- References."
+    }
+  },
+  "generator": "fallback_v4"
+}

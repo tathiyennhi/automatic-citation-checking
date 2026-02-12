@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The sentence vectors u s are first projected into multi-head format, as formulated below,u s ′ = reshape (u s) ∈ R h×n×z (15)here, h denotes the number of attention heads, n is the number of sentences, and z represents the dimension of each input feature, where z = d/h.",
+    "Next, the sentence representations are multiplied with MDEM to obtain the sentencelevel scores under each readability category across different heads a = [a 1,..., a h] ∈ R h×n×Y.Finally, a summation is performed across the multi-head dimension to obtain the aggregated sentence-level score matrix A,A = h i=1 a i (16)A reflects the difficulty scores of each sentence across different readability categories.The prediction result of the sentence label is not provided directly, but the information of the document-level label is propagated to the sentence level through the reverse label, and finally obtained through the MDEM module.",
+    "In order to ensure the accuracy and consistency of the sentence label, the experiment introduced the KL divergence to measure the probability consistency between the sentence label and the document label.",
+    "First, the sentence score matrix A is weighted summed to obtain the text score vector r, and the weight comes from the \"source2token\" self-attention mechanism at the document word level.",
+    "Then, the text score vector r is processed by LogSoftmax and compared with the document prediction probability d obtained in supervised learning."
+  ],
+  "correct_citations": []
+}

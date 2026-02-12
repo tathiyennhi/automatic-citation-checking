@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Meshing procedure.",
+    "We use zmesh (https://github.com/seung-lab/ zmesh) for meshing of the segmentation.",
+    "Every L2 chunk component is meshed at MIP 2, and the mesh is stored on GCS.",
+    "Some L2 components only consist of a few pixels and might not be meshed at all.",
+    "L2 meshes are then stitched on the layers above following the ChunkedGraph's hierarchy up to a stop layer (for example, 6), at which many meshes are too large to be held in the memory of a worker node or time constraints of queueing systems (for example, Amazon SQS) are surpassed."
+  ]
+}

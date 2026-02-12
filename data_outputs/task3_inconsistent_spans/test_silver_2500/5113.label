@@ -1,0 +1,38 @@
+{
+  "doc_id": "5113",
+  "text": "Our goal is to learn a compressible representation of the features in the bottleneck of the autoencoder. Because we do not expect the features from different bottleneck channels to be identically distributed, we model each channel's distribution with a different histogram and entropy loss, adding each entropy term to the total loss using the same β parameter. To encode a channel into symbols, we separate the channel matrix into a sequence of p w × p h -dimensional patches. These patches (vectorized) form the columns of Z ∈ R d/m×m , where m = d/(p w p h ), such that Z contains m (p w p h )-dimensional points. Having p h or p w greater than one allows symbols to capture local correlations in the bottleneck, which is desirable since we model the symbols as i.i.d. random variables for entropy coding. At test time, the symbol encoder E then determines the symbols in the channel by performing a nearest neighbor assignment over a set of L centers C ⊂ R pwp h , resulting inẐ, as described above. During training we instead use the soft quantizedZ, also w.r.t. the centers C. We trained different models using Adam [CITATION_1] , see Appendix A.2. Our training set is composed similarly to that described in [CITATION_2] . We used a subset of 90,000 images from ImageNET [CITATION_3] , which we downsampled by a factor 0.7 and trained on crops of 128 × 128 pixels, with a batch size of 15.",
+  "correct_citation": {
+    "[CITATION_1]": "6628106",
+    "[CITATION_2]": "9241804",
+    "[CITATION_3]": "206597351"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "During training we instead use the soft quantizedZ, also w.r.t. the centers C. We trained different models using Adam  , see Appendix A.2."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our training set is composed similarly to that described in  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We used a subset of 90,000 images from ImageNET  , which we downsampled by a factor 0.7 and trained on crops of 128 × 128 pixels, with a batch size of 15."
+    }
+  ],
+  "bib_entries": {
+    "9241804": {
+      "title": "End-to-end optimization of nonlinear transform codes for perceptual quality",
+      "abstract": "We introduce a general framework for end-to-end optimization of the rate-distortion performance of nonlinear transform codes assuming scalar quantization. The framework can be used to optimize any differentiable pair of analysis and synthesis transforms in combination with any differentiable perceptual metric. As an example, we consider a code built from a linear transform followed by a form of multi-dimensional local gain control. Distortion is measured with a state-of-the-art perceptual metric. When optimized over a large database of images, this representation offers substantial improvements in bitrate and perceptual appearance over fixed (DCT) codes, and over linear transform codes optimized for mean squared error."
+    },
+    "6628106": {
+      "title": "Adam: A method for stochastic optimization",
+      "abstract": "We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm."
+    },
+    "206597351": {
+      "title": "ImageNet: A Large-Scale Hierarchical Image Database",
+      "abstract": "The explosion of image data on the Internet has the potential to foster more sophisticated and robust models and algorithms to index, retrieve, organize and interact with images and multimedia data. But exactly how such data can be harnessed and organized remains a critical problem. We introduce here a new database called “ImageNet”, a large-scale ontology of images built upon the backbone of the WordNet structure. ImageNet aims to populate the majority of the 80,000 synsets of WordNet with an average of 500-1000 clean and full resolution images. This will result in tens of millions of annotated images organized by the semantic hierarchy of WordNet. This paper offers a detailed analysis of ImageNet in its current state: 12 subtrees with 5247 synsets and 3.2 million images in total. We show that ImageNet is much larger in scale and diversity and much more accurate than the current image datasets. Constructing such a large-scale database is a challenging task. We describe the data collection scheme with Amazon Mechanical Turk. Lastly, we illustrate the usefulness of ImageNet through three simple applications in object recognition, image classification and automatic object clustering. We hope that the scale, accuracy, diversity and hierarchical structure of ImageNet can offer unparalleled opportunities to researchers in the computer vision community and beyond."
+    }
+  },
+  "generator": "fallback_v4"
+}

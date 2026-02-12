@@ -1,0 +1,29 @@
+{
+  "doc_id": "14721",
+  "text": "For univariate and multivariate analyses, we used a gene expression profile from CRC patients [CITATION_1] , which we obtained from the GEO database (ID: GSE41258). This dataset includes gene expression in 54 normal colons, 49 adenomatous polyps and 186 primary CRC tissue samples. Before using gene expression profiles to distinguish among tissue types, we performed gene-wise normalization on the profile using Z score transformation. In univariate analysis, the ability of each gene's expression to distinguish normal colon and primary CRC tissues was assessed by Student's t-test. We also calculated the statistical significance of the shifted p-value distribution of genes of interest against a background p-value distribution using the two-sample Kolmogorov-Smirnov one-sided test with the support of R package, stats. In multivariate analysis, we identified a bridge protein's discriminative ability, at the transcriptome level, using a logistic regression model with the support of java machine learning API, Weka [CITATION_2] . Multivariate features were cumulatively selected from top-ranked bridge proteins of networks. The ability of each selection to classify samples as normal colon or primary CRC was evaluated using the five-fold cross-validation method with five repeats. The ability of each to distinguish between normal colon and polyp tissues, and between polyps and primary CRCs tissues, was assessed using the same features. We also simultaneously evaluated randomly selected proteins with an equal number of features. At each evaluation step, classification accuracy (i.e. accuracy = TPzTN TPzFPzTNzFN ) was measured and averaged after five repeats. In assessing features of randomly selected proteins, we calculated the mean classification accuracy after 100 repeats of selections and afterward calculated a 95% confidence interval of mean classification accuracies.",
+  "correct_citation": {
+    "[CITATION_1]": "1187919",
+    "[CITATION_2]": "13861754"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For univariate and multivariate analyses, we used a gene expression profile from CRC patients  , which we obtained from the GEO database (ID: GSE41258)."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In multivariate analysis, we identified a bridge protein's discriminative ability, at the transcriptome level, using a logistic regression model with the support of java machine learning API, Weka  ."
+    }
+  ],
+  "bib_entries": {
+    "1187919": {
+      "title": "Association of survival and disease progression with chromosomal instability: a genomic exploration of colorectal cancer",
+      "abstract": "During disease progression the cells that comprise solid malignancies undergo significant changes in gene copy number and chromosome structure. Colorectal cancer provides an excellent model to study this process. To indentify and characterize chromosomal abnormalities in colorectal cancer, we performed a statistical analysis of 299 expression and 130 SNP arrays profiled at different stages of the disease, including normal tissue, adenoma, stages 1–4 adenocarcinoma, and metastasis. We identified broad (> 1/2 chromosomal arm) and focal (< 1/2 chromosomal arm) events. Broad amplifications were noted on chromosomes 7, 8q, 13q, 20, and X and broad deletions on chromosomes 4, 8p, 14q, 15q, 17p, 18, 20p, and 22q. Focal events (gains or losses) were identified in regions containing known cancer pathway genes, such as VEGFA, MYC, MET, FGF6, FGF23, LYN, MMP9, MYBL2, AURKA, UBE2C, and PTEN. Other focal events encompassed potential new candidate tumor suppressors (losses) and oncogenes (gains), including CCDC68, CSMD1, POLR1D, and PMEPA1. From the expression data, we identified genes whose expression levels reflected their copy number changes and used this relationship to impute copy number changes to samples without accompanying SNP data. This analysis provided the statistical power to show that deletions of 8p, 4p, and 15q are associated with survival and disease progression, and that samples with simultaneous deletions in 18q, 8p, 4p, and 15q have a particularly poor prognosis. Annotation analysis reveals that the oxidative phosphorylation pathway shows a strong tendency for decreased expression in the samples characterized by poor prognosis."
+    },
+    "13861754": {
+      "title": "The WEKA data mining software: an update",
+      "abstract": "More than twelve years have elapsed since the first public release of WEKA. In that time, the software has been rewritten entirely from scratch, evolved substantially and now accompanies a text on data mining [35]. These days, WEKA enjoys widespread acceptance in both academia and business, has an active community, and has been downloaded more than 1.4 million times since being placed on Source-Forge in April 2000. This paper provides an introduction to the WEKA workbench, reviews the history of the project, and, in light of the recent 3.6 stable release, briefly discusses what has been added since the last stable version (Weka 3.4) released in 2003."
+    }
+  },
+  "generator": "fallback_v4"
+}

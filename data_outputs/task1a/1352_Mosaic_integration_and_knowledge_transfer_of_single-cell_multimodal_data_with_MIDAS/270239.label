@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Information-theoretic disentanglement of latent variablesTo better disentangle the biological state c and the technical noise u, we adopt an information-theoretic approach, the information bottleneck (IB) 34, to control information flow during inference.",
+    "We define two types of IB, where the technical IB prevents batch-specific information being encoded into c by minimizing the mutual information (MI) between s and c, and the biological IB prevents biological information being encoded into u by minimizing the MI between x and u (Fig. 1b, bottom right).",
+    "Let I( ⋅, ⋅) denote the MI between two variables.",
+    "We implement both IBs by minimizing the weighted sum of I(s, c) and I(x, u),β s I(s, c c c) + β x I(x x x, u u u) 𝒩 β s 𝔼𝔼 p(s, c c c) [log p(s, c c c) p(s)p(c c c)] + β x 𝔼𝔼 p(x x x, u u u) [log p(x x x, u u u) p(x x x)p(u u u)] ≈ 1 N ∑ n [β s 𝔼𝔼 q ϕ ϕ ϕ (c c c|x x x n, s n) [log p η η η (s n |c c c)] + β x KL [q ϕ ϕ ϕ (u u u|x x x n, s n) ∥ p(u u u)] -β x 𝔼𝔼 q ϕ ϕ ϕ (u u u|x x x n, s n) [log p θ θ θ (s n |u u u)]] + const.",
+    "(23)where β s, β x > 0 are the weights, and p η η η (s|c c c) is a learned likelihood with parameters η η η (see Supplementary Note 4 for the detailed derivation)."
+  ],
+  "correct_citations": []
+}

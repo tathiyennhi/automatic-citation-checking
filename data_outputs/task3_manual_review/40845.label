@@ -1,0 +1,34 @@
+{
+  "doc_id": "40845",
+  "text": "Varying λ while training with base class-identity functions: When we retain the class-identity function for each of the base classes, we can maintain a trade-off between the knowledge distillation loss and the standard meta-learning loss. This is controlled by the λ parameter as specified in eq. 6. In this experiment, we investigate how changing the value of λ affects the model's meta-learning ability on base, incremental and the meta-test set. We investigated this in the 5-shot 5-way setup for mini-ImageNet using [CITATION_1] . We chose λ ∈ {0.0, 0.25, 0.5, 0.75, 1.0, 2.0, 5.0, 10.0}. In our original experiments, we used λ = 1.0. Outcome of this experiment can be visualized in Figure 3 where we can see that as λ is increased, the model's performance on base set improves while its performance deteriorates on the incremental set. This is intuitive as knowledge distillation loss adds additional constraint for the incremental model to be similar to the model learnt on base set and increasing its contribution in the overall loss enhances model's ability to perform better on base set. However, for the same reason, it diminishes the impact of standard meta-learning loss on the overall loss and hence, performance on incremental set Table 1 : Results of classification accuracy on different sets of mini-ImageNet using our method and meta-training using [CITATION_2] . The evaluation is performed on 2000 episodes and we report the mean and the 95% confidence interval. Table 2 : Results of classification accuracy on different sets of mini-ImageNet using our method and meta-training using [CITATION_3] . The evaluation is performed on 2000 episodes and we report the mean and the 95% confidence interval.",
+  "correct_citation": {
+    "[CITATION_1]": "309759",
+    "[CITATION_2]": "309759",
+    "[CITATION_3]": "152282585"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We investigated this in the 5-shot 5-way setup for mini-ImageNet using"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "However, for the same reason, it diminishes the impact of standard meta-learning loss on the overall loss and hence, performance on incremental set Table 1: Results of classification accuracy on different sets of mini-ImageNet using our method and meta-training using"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Table 2: Results of classification accuracy on different sets of mini-ImageNet using our method and meta-training using"
+    }
+  ],
+  "bib_entries": {
+    "309759": {
+      "title": "Prototypical networks for few-shot learning",
+      "abstract": "A recent approach to few-shot classification called matching networks has demonstrated the benefits of coupling metric learning with a training procedure that mimics test. This approach relies on a complicated fine-tuning procedure and an attention scheme that forms a distribution over all points in the support set, scaling poorly with its size. We propose a more streamlined approach, prototypical networks, that learns a metric space in which few-shot classification can be performed by computing Euclidean distances to prototype representations of each class, rather than individual points. Our method is competitive with state-of-the-art one-shot classification approaches while being much simpler and more scalable with the size of the support set. We empirically demonstrate the performance of our approach on the Omniglot and mini-ImageNet datasets. We further demonstrate that a similar idea can be used for zero-shot learning, where each class is described by a set of attributes, and achieve state-of-the-art results on the Caltech UCSD bird dataset."
+    },
+    "152282585": {
+      "title": "Few-shot learning with embedded class models and shot-free meta training",
+      "abstract": "We propose a method for learning embeddings for few-shot learning that is suitable for use with any number of ways and any number of shots (shot-free). Rather than fixing the class prototypes to be the Euclidean average of sample embeddings, we allow them to live in a higher-dimensional space (embedded class models) and learn the prototypes along with the model parameters. The class representation function is defined implicitly, which allows us to deal with a variable number of shots per each class with a simple constant-size architecture. The class embedding encompasses metric learning, that facilitates adding new classes without crowding the class representation space. Despite being general and not tuned to the benchmark, our approach achieves state-of-the-art performance on the standard few-shot benchmark datasets."
+    }
+  },
+  "generator": "fallback"
+}

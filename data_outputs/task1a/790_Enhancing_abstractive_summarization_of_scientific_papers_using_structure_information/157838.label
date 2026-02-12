@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "For models such as BART, where the input length is exceeded model's capacity to process the full text, we use a divide-and-conquer approach to generate short summary for each section, which are then concatenated to create the final summary.",
+    "For https://huggingface.co/allenai/scibert_scivocab_uncased Longformer, we input both the chapter structure information and the content of the sections together for abstractive summarization.",
+    "We conducted a preliminary with different values to balance the trade-off between summary quality and computational cost.",
+    "For the n-gram repeat limit, we tested values ranging from 2 to 4 to control repetition in the generated summaries, and obtain the best results at 2.",
+    "In beam search, we experimented with the number of beams from 3 to 7 and achieved the best results with 5, while other parameters were set to default values."
+  ],
+  "correct_citations": []
+}

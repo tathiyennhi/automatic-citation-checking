@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "We developed MLFS for such edge deployment scenarios.",
+    "We demonstrate its benefits on encoder LLMs.",
+    "We show the limitation of compressing decoder LLMs to a comparable degree; however, MLFS offers significant gains for smaller decoder training/fine-tuning by slicing from a larger pre-trained teacher.Algorithm 11Multistage Low-rank Fine-tuning of Super-transformers (MLFS)Input: Transformer model (teacher) with configuration Φ Tch & off-the-shelf pre-trained weights W pretrain Tch, model configuration space A consisting of smaller (than Φ Tch) transformer architectures of interest, D train: fine-tuning data set for the target task, r: rank of the low-rank matrices to be learned and distillation factor α ∈ [0, 1].",
+    "Loss functions: Target task loss ℓ task, knowledge distillation loss ℓ KD, feature distillation loss ℓ FD.Multistage Training:1: for stage s = 0, 1, 2 do 2: 3: 4: 5:345for iteration = 1,... do Get a mini-batch B of training examples: {(x i, y i) ∈ D train | i ∈ B}.",
+    "Load the super-transformer model with weights W Sup ← W pretrain Tch + s l=0 A l * B l. 6: 1:1where A 1, B 1 are LoRA matrices of low rank (typically rank r is chosen between 4 and 16)."
+  ],
+  "correct_citations": [
+    "We show the limitation of compressing decoder LLMs to a comparable degree; however, MLFS offers significant gains for smaller decoder training/fine-tuning by slicing from a larger pre-trained teacher.Algorithm 11Multistage Low-rank Fine-tuning of Super-transformers (MLFS)Input: Transformer model (teacher) with configuration Φ Tch & off-the-shelf pre-trained weights W pretrain Tch, model configuration space A consisting of smaller (than Φ Tch) transformer architectures of interest, D train: fine-tuning data set for the target task, r: rank of the low-rank matrices to be learned and distillation factor α ∈ [0, 1]."
+  ]
+}

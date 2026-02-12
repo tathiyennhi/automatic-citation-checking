@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "• GarganText maps and data (Interactive state-of-the-art phylomemy and gexf sources of maps)",
+    "• Source code in Julia for reproducing the simulations",
+    "• Initial data for agents' opinions and properties • Raw outputs of the simulations • Political retweet networks • Code for assigning opinions based on the retweet network • Code for generating the plots Here is the pseudo-code of the model for easier understanding 1 function main(n _ iter) 2... #initialization 3 for i in 1..n _ iter 4 global _ step 5 end 6 end 7 8 function global _ step 9 #Produce the tweets 10 for agent in population 11 agent.max _ daily _ rt _ tweet = sample(Exponential _ distribution(agent.Θ s)) 12 agent.nb _ daily _ published _ tweets = sample(Exponential _ distribution(agent.Θ p)) 13 for i in 1..agent.nb _ daily _ published _ tweets 14 create tweet 15 if rand<agent.neg 16 tweet.is _ negative = true 17 else 18 tweet.is _ negative = true 19 end 20 add tweet to agent.published _ tweets 21 end 22 end 23 #Simulate a day of interaction 24 for agent in population 25 agent _ step(agent) 26 end 27 update popularity # average number of retweet by message of each agent 28 disagreement * =γ #Decays all disagreement 29 retrain recommender _ system #based on new interactions 30 end 31 32 function recommender _ system(agent) 33 create set _ tweet void 34 create proba _ rt _ tweet void 35 for friend in agent.list _ friends 36 for tweet in friend.published _ tweets 37 add tweet to set _ tweet 38 add probability _ retweet(tweet,agent) to proba _ rt _ tweet 39 end 40 end 41 return set _ tweet sorted by proba _ rt _ tweet 42 end 43",
+    "To verify the sanity of the opinion update parameter fitting procedure, we considered another time period, Spring 2020 in addition to Autumn 2021, as well as other spatialization settings.",
+    "Gephi (Bastian et al. 2009) Force Atlas2 setting used by default were modified -stronger gravity coupled to gravity sets to 0.001 and a scale sets to 5-leading to the Twittersphere depicted in Figure 15."
+  ],
+  "correct_citations": [
+    "Gephi (Bastian et al. 2009) Force Atlas2 setting used by default were modified -stronger gravity coupled to gravity sets to 0.001 and a scale sets to 5-leading to the Twittersphere depicted in Figure 15."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Theoretical Motivation and Proof SketchDRaFT-Q's dynamic rank system can be framed as a feedback controller minimizing a time-varying error (loss).",
+    "Let L t be the loss at step t, and define the smoothed loss via exponential moving average:Lt = β Lt-1 + (1 -β)L tThen, the rank update becomes:r t+1 = clip ( r t + η • 1[ Lt > τ ↑] -η • 1[ Lt < τ ↓], r min, r max)This forms a bounded, discrete-time control process with the following properties:• Convergence: When Lt stabilizes within [τ ↓, τ ↑], ranks freeze.",
+    "The model structurally stabilizes.• Stability: EMA smoothing reduces noise sensitivity, preventing overreaction to stochastic gradients.• Boundedness: Ranks remain within predefined limits and total adapter size obeys VRAM constraints.This behavior is analogous to a proportional controller with thresholded step changes-simpler than a PID controller but similarly effective at convergence and load balancing.",
+    "Reward-Weighted LossDRaFT-Q modifies the token-wise loss to prioritize semantically critical tokens.",
+    "The loss is computed as:L = 1 T T ∑ t=1 w t • CE(z t, y t), w t = 1 + α tHere, z t are logits, y t are labels, and α t is a reward coefficient, typically:• > 0 for important tokens (e.g., correct answer).• = 0 for normal tokens.Reward annotations can be derived from task metadata (e.g., correct option index) or heuristics (e.g., last CoT token)."
+  ]
+}

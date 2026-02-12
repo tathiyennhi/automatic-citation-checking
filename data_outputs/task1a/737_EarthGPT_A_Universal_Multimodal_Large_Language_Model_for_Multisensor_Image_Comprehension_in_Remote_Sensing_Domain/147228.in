@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Subsequently, overall visual embeddings V p are concatenated with the language instruction embeddings L p to create LLM input tokens X asX = Concat[ visual tokens Vp V 1 p, V 2 p,..., V Nv p, L 1 p, L 2 p,..., L N l p language tokens Lp],(8)where N v represents the token length of visual features, N l represents the token length of language features, (V 1 p, V 2 p,..., V Nv p) are the mixed visual tokens from V p, (L 1 p, L 2 p,..., L N l p) are the language instruction tokens from L p. Then, multi-modal input X is fed into LLM for fusion and integration.In current MLLMs [4]- [7], [9], vision-language understanding is achieved through training on a frozen LLM, designed to avoid expensive full-parameter fine-tuning.",
+    "However, freezing all the LLM's weights significantly limits its potential for comprehensive cross-modal learning.",
+    "To cope with the challenge of the knowledge gap from different modalities and realize multimodal mutual comprehension, an unfrozen vision-language alignment strategy is designed.",
+    "Specifically, the self-attention and normalization layers are unfrozen for training on the most common domain data (LAION-400M [60], COCO Caption [61]).",
+    "This strategy aids the LLM in thoroughly understanding multi-modal representations and simultaneously preserves the inherent language response capabilities of LLM through the partly frozen modules."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The Tensorboard logs, final and (if applicable) intermediate models, experiment JSON files, and GIFs from the evaluation run are stored in respective sub-folders in algorithm by default.The algorithm scripts make use of Stable Baselines 3 and especially the built-in callback functionality.",
+    "An evaluation callback will assess the training performance every 10,000 steps for 10 episodes and save a checkpoint of the model if a new best mean reward has been achieved.",
+    "In the script's evaluation process, the model at the end of training and the best model are used simultaneously.Since RL algorithms are generally prone to be sample-inefficient and training can take a long time, especially on large problem sets or if parallelisation is not possible, we included the StopTrainingOnNoModelImprovement callback which observes the results of the evaluation callback and will abort the training run if no new best model could be found within a predefined time frame (default: three consecutive evaluations).",
+    "Experiment Input Options OverviewGym supports passing optional arguments to the environment.",
+    "We make use of this opportunity to provide the FLP researcher with more flexibility and less need to access the environments' code for changes."
+  ],
+  "correct_citations": []
+}

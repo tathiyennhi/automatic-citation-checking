@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Directly applying three optimizations on all decompiler outputs will lead to unnecessary API token costs.",
+    "For example, when we ask LLM to perform structure simplification, for the functions that don't require structure simplification, LLM will simply return the same functions as input functions, which consumes additional API tokens.",
+    "Considering this, DeGPT leverages the R_ref to check whether each optimization is necessary for the decompiler output.",
+    "Specifically, the R_ref will query LLM with the following promptfoot_4 in the box.The response of LLM is a list of Yes and No, which costs a small number of tokens and indicates the necessity of the corresponding optimizations.",
+    "The R_ref then sends the required optimizations, which we call optimization scheme, to the R_adv for the rectification measures to achieve the corresponding optimizations."
+  ]
+}

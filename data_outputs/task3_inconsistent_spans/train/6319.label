@@ -1,0 +1,33 @@
+{
+  "doc_id": "6319",
+  "text": "• on genome level with the use of mutation, crossover and selection mechanisms as usual in genetic algorithms; • on the level of belief space being the representation of common consciousness storing the knowledge gathered by all individuals and influencing their behavior. Both of these levels are able to communicate each other. A given number (fulfilling given conditions) of (best) individuals influences the belief space. Specimens belonging to such a group are chosen with the use of acceptation() function. Function direction() works in a different way-it influences genetic operators in such a way to maximize the number of individuals with expected features-where \"expected features\" are defined on the basis of the knowledge stored in the belief space. Approaches utilizing ideas of cultural algorithm have been successfully applied to solving many optimization problems (Jin & Reynolds, n.d.; [CITATION_1] . And what is more important from our point of view, cultural-like approaches have been also successfully applied to solving MOOPs (Coello & Becerra, 2003; [CITATION_2] . In our EMAS-based realization of cultural mechanisms, belief space has been introduced on the level of each island. Similarly, to some extent, to solutions proposed in (Coello & Becerra, 2003) as the knowledge stored in the belief space-localization of (non-dominated) individuals in particular areas of search space was chosen. During the initialization, extreme values of each objective function for initial population is determined. Next, each found interval is divided into N d subintervals. Those subranges divide belief space into Cultural mechanisms are used during crossover process. In simple EMAS, during reproduction one single offspring is created which is automatically added to the population. Now, after introducing cultural-oriented mechanisms, the process of reproduction looks as follows. First of all, making the use of crossover and mutation operators the number of N P pretenders are being created. For each of them, their localization in belief space is being determined but in this moment they are not added to the belief space. First the tournament is being performed and only its winner is being added to the belief space and to the population-the rest of pretenders are destroyed. During the tournament each pretender meets all the others. During each meeting (compare Alg. 1) firstly relation of domination is evaluated. If one of them dominates the other, the value of p v counter is being increased. If pretenders are mutually non-dominated their localization in the belief space is being checked. If one of them is located outside the borders of the belief space-it wins, else the numbers of individuals located in represented by both agents cells are being checked and the winner is the one representing less crowded cell. After performing such a tournament pretender with the highest number of victories becomes the descendant (the rest-as it was mentioned-is being destroyed).",
+  "correct_citation": {
+    "[CITATION_1]": "61446049",
+    "[CITATION_2]": "27356146"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Approaches utilizing ideas of cultural algorithm have been successfully applied to solving many optimization problems (Jin & Reynolds, n.d.;  .",
+      "s_span": 762,
+      "e_span": 917
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "And what is more important from our point of view, cultural-like approaches have been also successfully applied to solving MOOPs (Coello & Becerra, 2003;  .",
+      "s_span": 918,
+      "e_span": 1086
+    }
+  ],
+  "bib_entries": {
+    "27356146": {
+      "title": "Solving hard multiobjective optimization problems using econstraint with cultured differential evolution",
+      "abstract": "In this paper, we propose the use of a mathematical programming technique called the e-constraint method, hybridized with an evolutionary single-objective optimizer: the cultured differential evolution. The e-constraint method uses the cultured differential evolution to produce one point of the Pareto front of a multiobjective optimization problem at each iteration. This approach is able to solve difficult multiobjective problems, relying on the efficiency of the single-objective optimizer, and on the fact that none of the two approaches (the mathematical programming technique or the evolutionary algorithm) are required to generate the entire Pareto front at once. The proposed approach is validated using several difficult multiobjective test problems, and our results are compared with respect to a multi-objective evolutionary algorithm representative of the state-of-the-art in the area: the NSGA-II."
+    },
+    "61446049": {
+      "title": "Using knowledge-based evolutionary computation to solve nonlinear constraint optimization problems: a cultural algorithm approach",
+      "abstract": "The key idea behind cultural algorithms is to acquire problem solving knowledge (beliefs) from the evolving population and in return apply that knowledge to guide the search (R.G. Reynolds et al., 1993; 1996), In solving nonlinear constraint optimization problems, the key problem is how to represent and store the knowledge about the constraints. Previously, Chung (Chan-Jin Chung and R.G. Reynolds, 1996; 1998) used cultural algorithms to solve unconstraint optimization problems. Use was made of interval schemata proposed by L.J. Eshelman and J.D. Schaffer (1992) to represent global knowledge about the independent problem parameters. However, in constraint optimization, the problem intervals generally must be modified dependently. In order to solve constraint optimization problems, we need to extend the interval representation to allow for the representation of constraints. We define an n-dimensional regional based schema, called belief cell, which can provide an explicit mechanism to support the acquisition, storage and integration of knowledge about the constraints. In a cultural algorithm framework, the belief space can \"contain\" a set of these schemata, each of them can be used to guide the search of the evolving population, i.e. these kind of region based schemata can be used to guide the optimization search in a direct way by pruning the unfeasible regions and promoting the promising regions. We compared the results of 4 CA configurations that manipulate these schemata for an example problem."
+    }
+  },
+  "generator": "fallback_v4"
+}

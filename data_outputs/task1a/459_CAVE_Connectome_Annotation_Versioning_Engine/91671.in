@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The live database is the one written to by the Annotation service and is actively managed by the Materialization service to keep root IDs up to date for all BoundSpatialPoints in all tables (Extended Data Fig. 5).",
+    "The data written by the Materialization service (segmentation data are in Extended Data Fig. 5) are stored in a separate table to separate concerns and to allow the same annotation data to be used by different Materialization services.",
+    "Snapshotted databases are copies of a time-locked state of the 'live' database's segmentation and annotation information used to facilitate consistent querying.",
+    "To keep the data in sync, the backend leverages Celery, a Python-based distributed task queue, which allows for scaling and distributing parallel workloads.",
+    "Using dynamic Celery-based workflows, the Materialization Engine runs periodic tasks to keep the segmentation information up to date from the proofreading efforts and provides copies of snapshotted databases at a fixed interval for analysis."
+  ]
+}

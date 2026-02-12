@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The grid tree, similar to a kd-tree index, partitions the space along selected dimensions, creating disjoint regions that minimize query skewness within each partition (e.g., R 1 ∼ R 3 in Fig. 8).",
+    "Each region is then augmented with a grid structure as follows.Unlike Flood, where grid cells are independently determined by CDF models on each dimension, Tsunami captures correlations via functional dependencies (e.g., f: y → x in R 1) and conditional CDF models (e.g., cdf(x|y) in R 2).",
+    "Grid granularity is tuned based on historical workloads, with frequently queried areas being intensively partitioned (e.g., R 2) while less-frequent areas being more coarsely partitioned (e.g., R 1 and R 3).",
+    "Range queries in Tsunami are processed similarly to those in Flood, by locating the intersected regions and grids and then refining the results.",
+    "Additionally, both Flood and Tsunami include a periodical mechanism to monitor workload shifts, enabling them to recalibrate the grid layout and models in response to significant shifts in query distribution."
+  ]
+}

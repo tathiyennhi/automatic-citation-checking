@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "In the cross-modality alignment phase, we utilize 2 A100 GPUs to separately process 1.7 million short-speech data and 194K short audio captioning data with a global batch size of 32 and a base learning rate of 2e-5.",
+    "Notably, during this stage, only the Qudio/Speech Q-former and projection layer are trained.",
+    "Subsequently, we train our model to handle specific tasks using various combinations of data on the same devices, employing a global batch size of 16 and a base learning rate of 4e-5.",
+    "During fine-tuning audio connectors with audio captioning data, we apply 4e-4 as the LoRA learning rate and 3e-5 as the learning rate of the audio projection layer.",
+    "In our implementation, we set the LoRA rank to 64 and alpha to 16, and only apply it to tune the MLP in LLMs."
+  ],
+  "correct_citations": []
+}

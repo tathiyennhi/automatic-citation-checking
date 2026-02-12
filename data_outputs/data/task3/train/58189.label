@@ -1,0 +1,47 @@
+{
+  "doc_id": "58189",
+  "text": "KTH action dataset [CITATION_1] and MSR action dataset [CITATION_2] are both used for evaluating video prediction methods. Actions in the traditional KTH dataset are simpler (walking, jogging, running, boxing, handwaving, handclapping) with more solid background therefore are suitable for predicting longer sequences, i.e. using first 10 frames to predict the rest 20. Following [CITATION_3] , we apply person 1-16 for training and person 17-25 for test. The size of the input video is resized to 128 × 128. We set learning rate as 1 × 10 −5 , λ 2 = 1, λ 4 = 1 and β = 0.001 for training. MSR action dataset, in comparison, is closer to realistic scenarios with more cluttered background. We adopt a similar setting as that of KTH dataset and apply person 2 and person 6 for test. Following Mathieu et al. [CITATION_4] , the input frames is also 10 and the goal is to predict the rest 10 future frames.",
+  "correct_citation": {
+    "[CITATION_1]": "8777811",
+    "[CITATION_2]": "4333408",
+    "[CITATION_3]": "24069181",
+    "[CITATION_4]": "205514"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "KTH action dataset  and MSR action dataset  are both used for evaluating video prediction methods."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "KTH action dataset  and MSR action dataset  are both used for evaluating video prediction methods."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Following  , we apply person 1-16 for training and person 17-25 for test."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Following Mathieu et al.  , the input frames is also 10 and the goal is to predict the rest 10 future frames."
+    }
+  ],
+  "bib_entries": {
+    "4333408": {
+      "title": "Action recognition based on a bag of 3d points",
+      "abstract": "This paper presents a method to recognize human actions from sequences of depth maps. Specifically, we employ an action graph to model explicitly the dynamics of the actions and a bag of 3D points to characterize a set of salient postures that correspond to the nodes in the action graph. In addition, we propose a simple, but effective projection based sampling scheme to sample the bag of 3D points from the depth maps. Experimental results have shown that over 90% recognition accuracy were achieved by sampling only about 1% 3D points from the depth maps. Compared to the 2D silhouette based recognition, the recognition errors were halved. In addition, we demonstrate the potential of the bag of points posture model to deal with occlusions through simulation."
+    },
+    "8777811": {
+      "title": "Recognizing human actions: a local svm approach",
+      "abstract": "Local space-time features capture local events in video and can be adapted to the size, the frequency and the velocity of moving patterns. In this paper, we demonstrate how such features can be used for recognizing complex motion patterns. We construct video representations in terms of local space-time features and integrate such representations with SVM classification schemes for recognition. For the purpose of evaluation we introduce a new video database containing 2391 sequences of six human actions performed by 25 people in four different scenarios. The presented results of action recognition justify the proposed method and demonstrate its advantage compared to other relative approaches for action recognition."
+    },
+    "205514": {
+      "title": "Deep multi-scale video prediction beyond mean square error",
+      "abstract": "Learning to predict future images from a video sequence involves the construction of an internal representation that models the image evolution accurately, and therefore, to some degree, its content and dynamics. This is why pixel-space video prediction may be viewed as a promising avenue for unsupervised feature learning. In addition, while optical flow has been a very studied problem in computer vision for a long time, future frame prediction is rarely approached. Still, many vision applications could benefit from the knowledge of the next frames of videos, that does not require the complexity of tracking every pixel trajectories. In this work, we train a convolutional network to generate future frames given an input sequence. To deal with the inherently blurry predictions obtained from the standard Mean Squared Error (MSE) loss function, we propose three different and complementary feature learning strategies: a multi-scale architecture, an adversarial training method, and an image gradient difference loss function. We compare our predictions to different published results based on recurrent neural networks on the UCF101 dataset"
+    },
+    "24069181": {
+      "title": "Decomposing motion and content for natural video sequence prediction",
+      "abstract": "We propose a deep neural network for the prediction of future frames in natural video sequences. To effectively handle complex evolution of pixels in videos, we propose to decompose the motion and content, two key components generating dynamics in videos. Our model is built upon the Encoder-Decoder Convolutional Neural Network and Convolutional LSTM for pixel-level prediction, which independently capture the spatial layout of an image and the corresponding temporal dynamics. By independently modeling motion and content, predicting the next frame reduces to converting the extracted content features into the next frame content by the identified motion features, which simplifies the task of prediction. Our model is end-to-end trainable over multiple time steps, and naturally learns to decompose motion and content without separate training. We evaluate the proposed network architecture on human activity videos using KTH, Weizmann action, and UCF-101 datasets. We show state-of-the-art performance in comparison to recent approaches. To the best of our knowledge, this is the first end-to-end trainable network architecture with motion and content separation to model the spatiotemporal dynamics for pixel-level future prediction in natural videos."
+    }
+  },
+  "generator": "fallback_v4"
+}

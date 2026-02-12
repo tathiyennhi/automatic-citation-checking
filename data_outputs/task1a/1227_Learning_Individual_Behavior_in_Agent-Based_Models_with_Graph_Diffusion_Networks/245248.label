@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "At each training step, the loss in equation ( 5) is calculated over the batch made of all agents i ∈ A and gradients are backward propagated.",
+    "First, the optimizer for ϕ is applied, and then the optimizer for ω.",
+    "Thus, the GNN is trained by inheriting the gradients from the loss of the conditional diffusion model, through the learned condition representation c (i) t. A.4 GenerationThe generation ofZ (i)t+1 starts from the last latent of the denoising diffusion process, which is a sample of Gaussian noiseZ(i) t+1 (τ max) ∼ N (0, I).The Message Passing GNN takes in input the current state Z (i) t and the states of its neighbors {Z (j) t } j∈N (i) t and forms the embedding g (i) t. Then, iteratively over τ = τ max,..., 1, the conditional diffusion model takes in input the sinusoidal positional embedding τ emb, the current agent state Z (i) t and the embedding vector g (i) t, and forms the condition vector c (i) t. Lastly, the previous latent Z(i) t+1 (τ -1) is calculated given Z(i) t+1 (τ) and the output of the Graph Diffusion Network ϵ ϕ ( Z(i) t+1 (τ), c (i) t) as in lines 7-8 in Algorithm 1.",
+    "Algorithm 1 Generation 1:Z (i) t, {Z (j) t } j∈N (i) t ← Data 2: g t (i) = f ω (Z (i) t, j∈N (i) t (Z (i) t, Z(j)t))3:Z(i) t+1 (τ max) ∼ N (0, I) 4: for τ = τ max,..., 1 do 5:τ emb = SinusoidalPositionEmbedding(τ) 6: c (i) t = MLP(Z (i) t) + MLP(g (i) t) + MLP(τ emb) 7: z ∼ N (0, I), if t > 1 else z = 0 8: Z(i) t+1 (τ -1) = 1 √ ατ ( Z(i) t+1 (τ) -1-ατ √ 1-ᾱτ ϵ ϕ ( Z(i) t+1 (τ), c (i) t)) + σ τ z 9: end for 10: return Z(i) t+1 (0) ≈ Z (i) t+1We set σ τ = 1-ᾱτ-1 1-ᾱτ β τ.",
+    "This choice of σ τ is optimal for deterministically set points [14], which is the case for some update rules in ABMs (e.g."
+  ],
+  "correct_citations": [
+    "This choice of σ τ is optimal for deterministically set points [14], which is the case for some update rules in ABMs (e.g."
+  ]
+}

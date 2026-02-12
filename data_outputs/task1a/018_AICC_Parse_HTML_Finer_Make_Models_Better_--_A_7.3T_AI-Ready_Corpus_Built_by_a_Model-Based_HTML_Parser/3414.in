@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "First, the pre-processing transformations substantially reduce the token load imposed on the model, enabling efficient processing of web documents.",
+    "Second, by constraining the task to discrete block classification rather than free-form text generation, we limit the output to a compact sequence of binary labels.",
+    "This design inherently eliminates hallucination risks, as the model can only select from existing content rather than generate novel text, thereby guaranteeing that the extracted content constitutes a faithful subset of the original document.While the sequence labeling framework provides a strong foundation, standard language model decoding could still produce malformed outputs or introduce spurious tokens.",
+    "To ensure perfect adherence to the required output format, we employ a constrained decoding mechanism that we describe next.",
+    "Constrained DecodingTo guarantee valid output formatting and completely eliminate the possibility of hallucination or format errors, we implement a custom logits processor that operates as a deterministic finite state machine (FSM) during decoding."
+  ]
+}

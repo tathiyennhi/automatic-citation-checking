@@ -1,0 +1,20 @@
+{
+  "doc_id": "49398",
+  "text": "In order to define AD for our herbicide and fungicide models, the k-nearest neighbours method [CITATION_1] (k-NN, k=5 in our work) was employed. For all the target classes, the dataset was divided into five sections as done in five-fold cross validation. For each fold -as a test set, the final model was applied to predict activity class (active/inactive). Each prediction was then analysed for prediction error, where for each false prediction the prediction error was counted. Further, for each test compound, distance was calculated by averaging similarities (in terms of Tanimoto coefficient) of five nearest training neighbours (NN) and computing 1-NN. Theoretically, lower distance values correspond to a higher similarity, whereas the increasing distances indicate higher levels of structural difference. These calculations were performed for all the five folds and merged for each target class. The distances were binned into thresholds (nbins = 40) and frequencies of number of compounds along with number of prediction errors at the distance were estimated. Plotting prediction error against the distance assisted in defining the maximum acceptable prediction error and also aided in deriving the maximum allowed distance for the new test compounds.",
+  "correct_citation": {
+    "[CITATION_1]": "10294386"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In order to define AD for our herbicide and fungicide models, the k-nearest neighbours method (k-NN, k=5 in our work) was employed."
+    }
+  ],
+  "bib_entries": {
+    "10294386": {
+      "title": "Defining a Novel K-Nearest Neighbours Approach to Assess the Applicability Domain of a QSAR Model for Reliable Predictions",
+      "abstract": "With the growing popularity of using QSAR predictions towards regulatory purposes, such predictive models are now required to be strictly validated, an essential feature of which is to have the model’s Applicability Domain (AD) defined clearly. Although in recent years several different approaches have been proposed to address this goal, no optimal approach to define the model’s AD has yet been recognized. This study proposes a novel descriptor-based AD method which accounts for the data distribution and exploits k-Nearest Neighbours (kNN) principle to derive a heuristic decision rule. The proposed method is a three-stage procedure to address several key aspects relevant in judging the reliability of QSAR predictions. Inspired from the adaptive kernel method for probability density function estimation, the first stage of the approach defines a pattern of thresholds corresponding to the various training samples and these thresholds are later used to derive the decision rule. Criterion deciding if a given test sample will be retained within the AD is defined in the second stage of the approach. Finally, the last stage tries reflecting upon the reliability in derived results taking model statistics and prediction error into account. The proposed approach addressed a novel strategy that integrated the kNN principle to define the AD of QSAR models. Relevant features that characterize the proposed AD approach include: a) adaptability to local density of samples, useful when the underlying multivariate distribution is asymmetric, with wide regions of low data density; b) unlike several kernel density estimators (KDE), effectiveness also in high-dimensional spaces; c) low sensitivity to the smoothing parameter k; and d) versatility to implement various distances measures. The results derived on a case study provided a clear understanding of how the approach works and defines the model’s AD for reliable predictions."
+    }
+  },
+  "generator": "fallback"
+}

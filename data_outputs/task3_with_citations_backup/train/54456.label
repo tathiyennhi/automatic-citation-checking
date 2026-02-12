@@ -1,0 +1,44 @@
+{
+  "doc_id": "54456",
+  "text": "Our work focuses on detection using 2D images, but deep learning architectures exist which benefit from 3D information in point clouds. The big problem is that, unlike images which have their structure predetermined by the pixel grid, raw 3D point clouds do not have structure. The input has to be properly structured so that the neural network is able to process it. Many ways exist to overcome this problem, one is to apply structure to 3D data using a voxel grid. This idea was used in [CITATION_1] to introduce 3D Shapenets. The authors translate multiview 2.5D depth maps into voxel representations, which serve as input for a CNN that classifies and autocompletes the 3D object. Networks like PointNet++ [CITATION_2] are capable of using 3D point clouds directly as an input. PointNet++ is the successor of PointNet, which had issues if applied on data with a non-consistent point density. PointNet++ addresses this problem by extracting spherical point neighborhoods and applying PointNet on each hierarchical level. Another network for processing point cloud data is SPLATNet [CITATION_3] . It uses sparse bilateral convolutional layers as building blocks.",
+  "correct_citation": {
+    "[CITATION_1]": "206592833",
+    "[CITATION_2]": "1745976",
+    "[CITATION_3]": "3525655"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This idea was used in [CITATION_1] to introduce 3D Shapenets.",
+      "s_span": 467,
+      "e_span": 528
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Networks like PointNet++ [CITATION_2] are capable of using 3D point clouds directly as an input.",
+      "s_span": 685,
+      "e_span": 781
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Another network for processing point cloud data is SPLATNet [CITATION_3] .",
+      "s_span": 1024,
+      "e_span": 1098
+    }
+  ],
+  "bib_entries": {
+    "206592833": {
+      "title": "3d shapenets: A deep representation for volumetric shapes",
+      "abstract": "3D shape is a crucial but heavily underutilized cue in today's computer vision systems, mostly due to the lack of a good generic shape representation. With the recent availability of inexpensive 2.5D depth sensors (e.g. Microsoft Kinect), it is becoming increasingly important to have a powerful 3D shape representation in the loop. Apart from category recognition, recovering full 3D shapes from view-based 2.5D depth maps is also a critical part of visual understanding. To this end, we propose to represent a geometric 3D shape as a probability distribution of binary variables on a 3D voxel grid, using a Convolutional Deep Belief Network. Our model, 3D ShapeNets, learns the distribution of complex 3D shapes across different object categories and arbitrary poses from raw CAD data, and discovers hierarchical compositional part representation automatically. It naturally supports joint object recognition and shape completion from 2.5D depth maps, and it enables active object recognition through view planning. To train our 3D deep learning model, we construct ModelNet - a large-scale 3D CAD model dataset. Extensive experiments show that our 3D deep representation enables significant performance improvement over the-state-of-the-arts in a variety of tasks."
+    },
+    "3525655": {
+      "title": "Splatnet: Sparse lattice networks for point cloud processing",
+      "abstract": "We present a network architecture for processing point clouds that directly operates on a collection of points represented as a sparse set of samples in a high-dimensional lattice. Naively applying convolutions on this lattice scales poorly, both in terms of memory and computational cost, as the size of the lattice increases. Instead, our network uses sparse bilateral convolutional layers as building blocks. These layers maintain efficiency by using indexing structures to apply convolutions only on occupied parts of the lattice, and allow flexible specifications of the lattice structure enabling hierarchical and spatially-aware feature learning, as well as joint 2D-3D reasoning. Both point-based and image-based representations can be easily incorporated in a network with such layers and the resulting model can be trained in an end-to-end manner. We present results on 3D segmentation tasks where our approach outperforms existing state-of-the-art techniques."
+    },
+    "1745976": {
+      "title": "Pointnet++: Deep hierarchical feature learning on point sets in a metric space",
+      "abstract": "Few prior works study deep learning on point sets. PointNet by Qi et al. is a pioneer in this direction. However, by design PointNet does not capture local structures induced by the metric space points live in, limiting its ability to recognize fine-grained patterns and generalizability to complex scenes. In this work, we introduce a hierarchical neural network that applies PointNet recursively on a nested partitioning of the input point set. By exploiting metric space distances, our network is able to learn local features with increasing contextual scales. With further observation that point sets are usually sampled with varying densities, which results in greatly decreased performance for networks trained on uniform densities, we propose novel set learning layers to adaptively combine features from multiple scales. Experiments show that our network called PointNet++ is able to learn deep point set features efficiently and robustly. In particular, results significantly better than state-of-the-art have been obtained on challenging benchmarks of 3D point clouds."
+    }
+  },
+  "generator": "fallback_v4"
+}

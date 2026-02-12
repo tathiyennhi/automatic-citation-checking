@@ -1,0 +1,16 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "We compare our approach with a non-iterative, dual-based method [21], referred to as one-shot.Dataset and models.",
+    "We use the Alpaca-7b-reproduced model [11] as the pretrained reference model π ref, and optimize the LLM using DPO [35]; see Appendix B.1 for implementation detail.",
+    "For both dual and model updates, we use the PKU-SafeRLHF-30K dataset [23].",
+    "We use the Beaver-7b-v1.0reward and Beaver-7b-v1.0-cost models [11] as our scoring functions r and g, respectively, where a negation is applied to the cost model outputs.In each dual subgradient step, we sample 600 prompts from the training split and generate 64 responses using the updated model from the previous iteration to compute the subgradient direction.",
+    "To make a fair comparison, we set the total number of iterations T to be the number of epochs used in the LLM policy optimization step (i.e., DPO) of the one-shot method; in our method, we perform one epoch per iteration, and initialize the dual variable by an one-shot solution as a practical, zero-cost warm start."
+  ],
+  "correct_citations": [
+    "We compare our approach with a non-iterative, dual-based method [21], referred to as one-shot.Dataset and models.",
+    "We use the Alpaca-7b-reproduced model [11] as the pretrained reference model π ref, and optimize the LLM using DPO [35]; see Appendix B.1 for implementation detail.",
+    "For both dual and model updates, we use the PKU-SafeRLHF-30K dataset [23].",
+    "We use the Beaver-7b-v1.0reward and Beaver-7b-v1.0-cost models [11] as our scoring functions r and g, respectively, where a negation is applied to the cost model outputs.In each dual subgradient step, we sample 600 prompts from the training split and generate 64 responses using the updated model from the previous iteration to compute the subgradient direction."
+  ]
+}

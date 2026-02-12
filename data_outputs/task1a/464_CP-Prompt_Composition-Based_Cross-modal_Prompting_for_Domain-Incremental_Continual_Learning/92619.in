@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "(8)After feature extraction by the frozen pre-trained transformer's multi-head attention mechanism, the classification token 𝒕 𝑠 ℎ is obtained by:𝒕 𝑠 ℎ = 𝑔 M (𝒆 𝑠 • 𝑾 𝑠 + 𝒃 𝑠),(9)where 𝑾 𝑠 denotes the fixed parameters of the text pre-trained model, and 𝒃 𝑠 represents the associated bias values, and the rest of this structure for text is the same as image one.",
+    "Overall Objective for CP-PromptFinally, the logits 𝒛 𝑠 ∈ R 𝑈, are computed by matrix multiplication of the high-dimensional projections from the image and text sides:𝒛 𝑠 = 𝒉 (𝑅) 𝑚 • (𝒕 𝑠 ℎ) ⊤.",
+    "(10)It should be noted that, after continual training on 𝑠-th domain, 𝑷 𝑠 C is not only used as common prompts for the current domain, but also the initialization for the next one.",
+    "However, the deep domainspecific knowledge-oriented personalized prompts 𝑷 𝑠 P are isolated and optimized in different domains.During the inference stage, we adopt a simple yet effective unsupervised clustering, 𝐾-Means, as domain selector to assign model extracted features with 𝐾 domain centroids F = {𝒎 the most relevant personalized prompts for inference by measuring the distance between 𝒙 𝑛𝑒𝑤 and F. Following the multimodal pre-training setting [44], the model's inferences prediction 𝒛 𝑠 ′ is derived by freezing prompts parameters and untrained pre-trained model:𝒛 𝑠 ′ = 𝑓 𝑃𝑟𝑒 -𝑂𝑛𝑒 (𝑷 𝑠 C, 𝑷 𝑠 P,𝑖𝑚𝑔) × 𝑔 𝑀 𝑝𝑟𝑒 (𝑷 𝑠 P,𝑡𝑒𝑥).",
+    "(11)The goal of the model is to optimize the following loss function by tuning the tiny-sized prompts parameters 𝑷 𝑠 C, 𝑷 𝑠 P,𝑖𝑚𝑔, 𝑷 𝑠 P,𝑡𝑒𝑥:L = - 1 2𝑛 𝑛 ∑︁ 𝑖=1 𝑦 log(𝒛 𝑠 ′) + (1 -𝑦) log(1 -𝒛 𝑠 ′)."
+  ]
+}

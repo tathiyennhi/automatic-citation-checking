@@ -1,0 +1,38 @@
+{
+  "doc_id": "33658",
+  "text": "Distillation ( [CITATION_1] ) is a mechanism designed to compress large models into smaller ones while preserving prediction accuracy. In order to do that, the large model labels data with class probabilities, which are then used to train the small model. Instead of compression, the authors apply distillation to increase the robustness of DNNs to adversarial samples. They report that the additional entropy in probability vectors (compared to labels) yields models with smoother output surfaces. However, [CITATION_2] showed that defensive distillation can be evaded using a black-box attack. We would not show that our attack is also immune to distillation, due to space limits. This would be detailed in our future work. However, the reason for our attack immunity is explained in [CITATION_3] : When applying defense methods that smooth a model's output surface, the adversary cannot craft adversarial examples because the gradients it needs to compute (e.g., the derivative of the model output with respect to its input) have values close to zero. However, in this paper, we use a surrogate model to craft adversarial examples. The surrogate model is not impacted by the defensive mechanism and will still have the gradients necessary to find adversarial directions. Due to the adversarial example transferability property, the adversarial examples crafted using the surrogate would also be misclassified by the black-box model.",
+  "correct_citation": {
+    "[CITATION_1]": "2672720",
+    "[CITATION_2]": "14321358",
+    "[CITATION_3]": "6726938"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Distillation (  ) is a mechanism designed to compress large models into smaller ones while preserving prediction accuracy."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "However,  showed that defensive distillation can be evaded using a black-box attack."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "However, the reason for our attack immunity is explained in  : When applying defense methods that smooth a model's output surface, the adversary cannot craft adversarial examples because the gradients it needs to compute (e.g., the derivative of the model output with respect to its input) have values close to zero."
+    }
+  ],
+  "bib_entries": {
+    "2672720": {
+      "title": "Distillation as a Defense to Adversarial Perturbations against Deep Neural Networks",
+      "abstract": "Deep learning algorithms have been shown to perform extremely well on many classical machine learning problems. However, recent studies have shown that deep learning, like other machine learning techniques, is vulnerable to adversarial samples: inputs crafted to force a deep neural network (DNN) to provide adversary-selected outputs. Such attacks can seriously undermine the security of the system supported by the DNN, sometimes with devastating consequences. For example, autonomous vehicles can be crashed, illicit or illegal content can bypass content filters, or biometric authentication systems can be manipulated to allow improper access. In this work, we introduce a defensive mechanism called defensive distillation to reduce the effectiveness of adversarial samples on DNNs. We analytically investigate the generalizability and robustness properties granted by the use of defensive distillation when training DNNs. We also empirically study the effectiveness of our defense mechanisms on two DNNs placed in adversarial settings. The study shows that defensive distillation can reduce effectiveness of sample creation from 95% to less than 0.5% on a studied DNN. Such dramatic gains can be explained by the fact that distillation leads gradients used in adversarial sample creation to be reduced by a factor of 10^30. We also find that distillation increases the average minimum number of features that need to be modified to create adversarial samples by about 800% on one of the DNNs we tested."
+    },
+    "6726938": {
+      "title": "Towards the science of security and privacy in machine learning",
+      "abstract": "Advances in machine learning (ML) in recent years have enabled a dizzying array of applications such as data analytics, autonomous systems, and security diagnostics. ML is now pervasive---new systems and models are being deployed in every domain imaginable, leading to rapid and widespread deployment of software based inference and decision making. There is growing recognition that ML exposes new vulnerabilities in software systems, yet the technical community's understanding of the nature and extent of these vulnerabilities remains limited. We systematize recent findings on ML security and privacy, focusing on attacks identified on these systems and defenses crafted to date. We articulate a comprehensive threat model for ML, and categorize attacks and defenses within an adversarial framework. Key insights resulting from works both in the ML and security communities are identified and the effectiveness of approaches are related to structural elements of ML algorithms and the data used to train them. We conclude by formally exploring the opposing relationship between model accuracy and resilience to adversarial manipulation. Through these explorations, we show that there are (possibly unavoidable) tensions between model complexity, accuracy, and resilience that must be calibrated for the environments in which they will be used."
+    },
+    "14321358": {
+      "title": "Practical black-box attacks against deep learning systems using adversarial examples",
+      "abstract": "Advances in deep learning have led to the broad adoption of Deep Neural Networks (DNNs) to a range of important machine learning problems, e.g., guiding autonomous vehicles, speech recognition, malware detection. Yet, machine learning models, including DNNs, were shown to be vulnerable to adversarial samples-subtly (and often humanly indistinguishably) modified malicious inputs crafted to compromise the integrity of their outputs. Adversarial examples thus enable adversaries to manipulate system behaviors. Potential attacks include attempts to control the behavior of vehicles, have spam content identified as legitimate content, or have malware identified as legitimate software. Adversarial examples are known to transfer from one model to another, even if the second model has a different architecture or was trained on a different set. We introduce the first practical demonstration that this cross-model transfer phenomenon enables attackers to control a remotely hosted DNN with no access to the model, its parameters, or its training data. In our demonstration, we only assume that the adversary can observe outputs from the target DNN given inputs chosen by the adversary. We introduce the attack strategy of fitting a substitute model to the input-output pairs in this manner, then crafting adversarial examples based on this auxiliary model. We evaluate the approach on existing DNN datasets and real-world settings. In one experiment, we force a DNN supported by MetaMind (one of the online APIs for DNN classifiers) to mis-classify inputs at a rate of 84.24%. We conclude with experiments exploring why adversarial samples transfer between DNNs, and a discussion on the applicability of our attack when targeting machine learning algorithms distinct from DNNs."
+    }
+  },
+  "generator": "fallback_v4"
+}

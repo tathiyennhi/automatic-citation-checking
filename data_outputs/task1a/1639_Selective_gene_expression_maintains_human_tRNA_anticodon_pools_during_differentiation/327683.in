@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Analysis of tRNA expression and modification was performed with v1.2 of the mim-tRNAseq computational package (https://mim-trnaseq.readthedocs.io/ en/latest/index.html) 21.",
+    "Briefly, the full set of 619 predicted tRNA genes for the hg38 human genome assembly were downloaded from GtRNAdb 93 and the 22 mitochondrially encoded human tRNA genes were fetched from mitotRNAdb 94.",
+    "After intron removal and the addition of 5′-G (for tRNA-His) and 3′-CCA (for nuclear-encoded transcripts), a curated set of 599 nuclear-encoded tRNA sequences (excluding tRNAs with non-canonical secondary structure alignments or undetermined anticodons) and 22 mitochondrially encoded tRNA sequences was compiled as an alignment reference (--species Hsap).",
+    "The reads were aligned to this reference with a cluster ID of 0.97, maximum mismatch tolerance at a number of nucleotides equal to 7.5% read length for the first alignment round and 5% read length for realignment, a deconvolution coverage ratio of 0.4 at mismatch sites to allow accurate cluster deconvolution and a minimum coverage threshold of 0.05% total reads per transcript for low coverage transcript filtering.",
+    "The following command was used: mimseq --species Hsap --cluster-id 0.97 --threads 40 --min-cov 0.0005 --max-mismatches 0.075 --control-condition kiPSC --deconv-cov-ratio 0.4 -n hg38_diff --out-dir hg38_WTdiff_2rep_deconv0.4_ID0.97_0.075_remap0.05_v12/ --max-multi 6 -remap --remap-mismatches 0.05 sampleData_ht_ diff_2rep.txt.In addition, DESeq2 was run on tRNA transcripts with single-transcript resolution by first removing those still in clusters from the counts table (evidenced by the presence of multiple transcripts in the name, separated by '/') and repeating DESeq2 analysis on these."
+  ]
+}

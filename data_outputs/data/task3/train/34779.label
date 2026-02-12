@@ -1,0 +1,38 @@
+{
+  "doc_id": "34779",
+  "text": ". This expression is valid given that the fixed point equation, (4) has a global attractor. We prove this in Proposition 1. We ignore the slow start phase and ignore that there may be an upper bound on the maximum window size. These assumptions are also made by [CITATION_1] , [CITATION_2] and [CITATION_3] .",
+  "correct_citation": {
+    "[CITATION_1]": "9391153",
+    "[CITATION_2]": "1741788",
+    "[CITATION_3]": "1894993"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "These assumptions are also made by  ,  and  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "These assumptions are also made by  ,  and  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "These assumptions are also made by  ,  and  ."
+    }
+  ],
+  "bib_entries": {
+    "9391153": {
+      "title": "CUBIC: a new TCP-friendly high-speed TCP variant",
+      "abstract": "CUBIC is a congestion control protocol for TCP (transmission control protocol) and the current default TCP algorithm in Linux. The protocol modifies the linear window growth function of existing TCP standards to be a cubic function in order to improve the scalability of TCP over fast and long distance networks. It also achieves more equitable bandwidth allocations among flows with different RTTs (round trip times) by making the window growth to be independent of RTT -- thus those flows grow their congestion window at the same rate. During steady state, CUBIC increases the window size aggressively when the window is far from the saturation point, and the slowly when it is close to the saturation point. This feature allows CUBIC to be very scalable when the bandwidth and delay product of the network is large, and at the same time, be highly stable and also fair to standard TCP flows. The implementation of CUBIC in Linux has gone through several upgrades. This paper documents its design, implementation, performance and evolution as the default TCP algorithm of Linux."
+    },
+    "1741788": {
+      "title": "A Compound TCP Approach for High-Speed and Long Distance Networks",
+      "abstract": "Many applications require fast data transfer over high speed and long distance networks. However, standard TCP fails to fully utilize the network capacity due to the limitation in its conservative congestion control (CC) algorithm. Some works have been proposed to improve the connection 鈂s throughput by adopt- ing more aggressive loss-based CC algorithms. These algorithms, although can effectively improve the link utilization, have the weakness of poor RTT fairness. Further, they may severely de- crease the performance of regular TCP flows that traverse the same network path. On the other hand, pure delay-based ap- proaches that improve the throughput in high-speed networks may not work well when the traffic is mixed with both delay- based and greedy loss-based flows. In this paper, we propose a novel Compound TCP (CTCP) approach, which is a synergy of delay-based and loss-based approach. Specifically, we add a scal- able delay-based component into the standard TCP Reno conges- tion avoidance algorithm (a.k.a., the loss-based component). The sending rate of CTCP is controlled by both components. This new delay-based component can rapidly increase sending rate when network path is under utilized, but gracefully retreat in a busy network when bottleneck queue is built. Augmented with this delay-based component, CTCP provides very good bandwidth scalability with improved RTT fairness, and at the same time achieves good TCP-fairness, irrelevant to the windows size. We developed an analytical model of CTCP and implemented it on the Windows operating system. Our analysis and experiment results verify the properties of CTCP."
+    },
+    "1894993": {
+      "title": "The macroscopic behavior of the TCP congestion avoidance algorithm",
+      "abstract": "In this paper, we analyze a performance model for the TCP Congestion Avoidance algorithm. The model predicts the bandwidth of a sustained TCP connection subjected to light to moderate packet losses, such as loss caused by network congestion. It assumes that TCP avoids retransmission timeouts and always has sufficient receiver window and sender data. The model predicts the Congestion Avoidance performance of nearly all TCP implementations under restricted conditions and of TCP with Selective Acknowledgements over a much wider range of Internet conditions.We verify the model through both simulation and live Internet measurements. The simulations test several TCP implementations under a range of loss conditions and in environments with both drop-tail and RED queuing. The model is also compared to live Internet measurements using the TReno diagnostic and real TCP implementations.We also present several applications of the model to problems of bandwidth allocation in the Internet. We use the model to analyze networks with multiple congested gateways; this analysis shows strong agreement with prior work in this area. Finally, we present several important implications about the behavior of the Internet in the presence of high load from diverse user communities."
+    }
+  },
+  "generator": "fallback_v4"
+}

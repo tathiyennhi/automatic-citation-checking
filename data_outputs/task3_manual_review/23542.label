@@ -1,0 +1,20 @@
+{
+  "doc_id": "23542",
+  "text": "In the first step, we loaded and pre-processed the corpus data. Uppercase and capitalized words needed to be annotated (during text tokenization) with respectively _up_ and _cap_ tokens. After tokenization the entire training text was lowercased. Our specialized stemmer program was used to divide the corpus into sub-word units [CITATION_1] , the tool was implemented by us especially for such purposes (it supports only Polish language). The program is a proprietary solution performing multiple operations to segment Polish texts into suffix, prefix, core and syllables. Moreover, it annotates texts with grammatical groups and tags it with part of speech (POS) tags. We used the application to split text in Polish into sub-word units. The program was run with the '7683' option, a combination of stemming and division options. According to the application documentation: 7683=1+2+512+1024+2048+4096 (divide (more) words with dictionary, then algorithmically and unknown words), where: 1 -stem \"nie\" prefix and 2 -stem extra prefixes are stemming options, 512 -divide words, 1024 -divide with dictionary, 2048 -divide algorithmically, 4096 -divide unknown words that belong to division options category.",
+  "correct_citation": {
+    "[CITATION_1]": "52164279"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our specialized stemmer program was used to divide the corpus into sub-word units, the tool was implemented by us especially for such purposes (it supports only Polish language)."
+    }
+  ],
+  "bib_entries": {
+    "52164279": {
+      "title": "Survey on Neural Machine Translation into Polish",
+      "abstract": "In this article we try to survey most modern approaches to machine translation. To be more precise we apply state of the art statistical machine translation and neural machine translation using recurrent and convolutional neural networks on Polish data set. We survey current toolkits that can be used for such purpose like Tensorflow, ModernMT, OpenNMT, MarianMT and FairSeq by doing experiments on Polish to English and English to Polish translation task. We do proper hyperparameter search for Polish language as well as we facilitate in our experiments sub-word units like syllables and stemming. We also augment our data with POS tags and polish grammatical groups. The results are being compared to SMT as well as to Google Translate engine. In both cases we success in reaching higher BLEU score."
+    }
+  },
+  "generator": "fallback"
+}

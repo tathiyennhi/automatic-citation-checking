@@ -1,0 +1,44 @@
+{
+  "doc_id": "15960",
+  "text": "We now turn to how the marginals µ(x, h, m, l) are defined and computed. A simple approach would be to use a conditional log-linear model [CITATION_1] , with features as defined by [CITATION_2] , to define a distribution P (y|x) where the parse structures y are dependency structures with labels that are triples of nonterminals. In this case we could define µ(x, h, m, l) = y:(h,m,l)∈y P (y|x) which can be computed with inside-outside style algorithms, applied to the data structures from [CITATION_3] . The complexity of training and applying such a model is again O (Gn 3 ) , where G is the number of possible labels, and the number of possible labels (triples of non-terminals) is around G = 1000 in the case of treebank parsing; this value for G is still too large for the method to be efficient. Instead, we train three separate models µ 1 , µ 2 , and µ 3 for the three different positions in the non-terminal triples. We then take µ(x, h, m, l) to be a product of these three models, for example we would calculate",
+  "correct_citation": {
+    "[CITATION_1]": "277918",
+    "[CITATION_2]": "12926517",
+    "[CITATION_3]": "5897173"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A simple approach would be to use a conditional log-linear model  , with features as defined by  , to define a distribution P (y|x) where the parse structures y are dependency structures with labels that are triples of nonterminals.",
+      "s_span": 73,
+      "e_span": 329
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A simple approach would be to use a conditional log-linear model  , with features as defined by  , to define a distribution P (y|x) where the parse structures y are dependency structures with labels that are triples of nonterminals.",
+      "s_span": 73,
+      "e_span": 329
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In this case we could define µ(x, h, m, l) = y:(h,m,l)∈y P (y|x) which can be computed with inside-outside style algorithms, applied to the data structures from  .",
+      "s_span": 330,
+      "e_span": 505
+    }
+  ],
+  "bib_entries": {
+    "277918": {
+      "title": "Conditonal random fields: Probabilistic models for segmenting and labeling sequence data",
+      "abstract": "We present conditional random fields , a framework for building probabilistic models to segment and label sequence data. Conditional random fields offer several advantages over hidden Markov models and stochastic grammars for such tasks, including the ability to relax strong independence assumptions made in those models. Conditional random fields also avoid a fundamental limitation of maximum entropy Markov models (MEMMs) and other discriminative Markov models based on directed graphical models, which can be biased towards states with few successor states. We present iterative parameter estimation algorithms for conditional random fields and compare the performance of the resulting models to HMMs and MEMMs on synthetic and natural-language data."
+    },
+    "12926517": {
+      "title": "Online large-margin training of dependency parsers",
+      "abstract": "We present an effective training algorithm for linearly-scored dependency parsers that implements online large-margin multi-class training (Crammer and Singer, 2003; Crammer et al., 2003) on top of efficient parsing techniques for dependency trees (Eisner, 1996). The trained parsers achieve a competitive dependency accuracy for both English and Czech with no language specific enhancements."
+    },
+    "5897173": {
+      "title": "Bilexical grammars and their cubic-time parsing algorithms",
+      "abstract": "This chapter introduces weighted bilexical grammars, a formalism in which individual lexical items, such as verbs and their arguments, can have idiosyncratic selectional influences on each other. Such ‘bilexicalism’ has been a theme of much current work in parsing. The new formalism can be used to describe bilexical approaches to both dependency and phrase-structure grammars, and a slight modification yields link grammars. Its scoring approach is compatible with a wide variety of probability models."
+    }
+  },
+  "generator": "fallback_v4"
+}

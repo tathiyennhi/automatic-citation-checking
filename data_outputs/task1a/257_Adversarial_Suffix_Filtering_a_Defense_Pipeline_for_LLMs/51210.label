@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "We formalize the threat model as follows: an adversary can supply an input consisting of an unrestricted user query x (e.g., a harmless instruction, or a malicious request) concatenated with an attack suffix s. The suffix s is a sequence of tokens (often gibberish or specially crafted instructions) whose purpose is to jailbreak an aligned language model's safeguards, causing it to produce disallowed or harmful content that it would normally refuse [4].",
+    "Notably, these adversarial suffixes frequently consist of semantically meaningless or out-of-distribution tokens [3].",
+    "Our defense focuses on identifying and removing the appended suffix s. The attacker is assumed to have no direct interaction with the model other than the ability to query any plain text.Pipeline Given an input text x * (potentially containing a malicious prompt plus an adversarial suffix), our pipeline performs the following steps: (1) Segmentation: We split x * into a sequence of sentence-like segments using a state-of-the-art segmentation model.",
+    "(2) Segment Classification: Each segment is fed into a binary classifier that predicts whether it is part of an adversarial suffix.",
+    "(3) Post-processing: We smooth the classifier's predictions to ensure contiguous malicious segments are grouped, and apply heuristic checks to reduce false positives."
+  ],
+  "correct_citations": [
+    "We formalize the threat model as follows: an adversary can supply an input consisting of an unrestricted user query x (e.g., a harmless instruction, or a malicious request) concatenated with an attack suffix s. The suffix s is a sequence of tokens (often gibberish or specially crafted instructions) whose purpose is to jailbreak an aligned language model's safeguards, causing it to produce disallowed or harmful content that it would normally refuse [4].",
+    "Notably, these adversarial suffixes frequently consist of semantically meaningless or out-of-distribution tokens [3]."
+  ]
+}

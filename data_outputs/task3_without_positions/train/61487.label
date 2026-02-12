@@ -1,0 +1,43 @@
+{
+  "doc_id": "61487",
+  "text": "Based on the statistics of the depth image gradient, we are surprised to find that the sparse gradient model is not accurate enough [CITATION_1] . In the depth image, although more than 80% pixels have zero gradients (see Fig. 1 ), there is a non-ignorable part of pixels whose horizontal or vertical derivatives are equal to ±1 (their proportion is about 15%, see Fig. 1 ). In other words, at many places, gradients of the depth map do not vanish but are very small [CITATION_2] . This property has not been considered for depth image upsampling because it is not universal in natural images. Hence, we develop a specific gradient regularization which is denoted as l t 0 gradient regularization. Unlike the l 0 norm which penalizes the nonzero elements equally (the norm is always 1 if the element is not 0) [CITATION_3] [CITATION_4] , our proposed l t 0 measure reduces the penalty for horizontal or vertical derivative ±1 and thus allows for gradual depth changes.",
+  "correct_citation": {
+    "[CITATION_1]": "9068366",
+    "[CITATION_2]": "9068366",
+    "[CITATION_3]": "9043354",
+    "[CITATION_4]": "14235354"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Based on the statistics of the depth image gradient, we are surprised to find that the sparse gradient model is not accurate enough  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In other words, at many places, gradients of the depth map do not vanish but are very small  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Unlike the l 0 norm which penalizes the nonzero elements equally (the norm is always 1 if the element is not 0)   , our proposed l t 0 measure reduces the penalty for horizontal or vertical derivative ±1 and thus allows for gradual depth changes."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Unlike the l 0 norm which penalizes the nonzero elements equally (the norm is always 1 if the element is not 0)   , our proposed l t 0 measure reduces the penalty for horizontal or vertical derivative ±1 and thus allows for gradual depth changes."
+    }
+  ],
+  "bib_entries": {
+    "14235354": {
+      "title": "Fast and effective l0 gradient minimization by region fusion",
+      "abstract": "L_0 gradient minimization can be applied to an input signal to control the number of non-zero gradients. This is useful in reducing small gradients generally associated with signal noise, while preserving important signal features. In computer vision, L_0 gradient minimization has found applications in image denoising, 3D mesh denoising, and image enhancement. Minimizing the L_0 norm, however, is an NP-hard problem because of its non-convex property. As a result, existing methods rely on approximation strategies to perform the minimization. In this paper, we present a new method to perform L_0 gradient minimization that is fast and effective. Our method uses a descent approach based on region fusion that converges faster than other methods while providing a better approximation of the optimal L_0 norm. In addition, our method can be applied to both 2D images and 3D mesh topologies. The effectiveness of our approach is demonstrated on a number of examples."
+    },
+    "9043354": {
+      "title": "Image smoothing via l0, gradient minimization",
+      "abstract": "We present a new image editing method, particularly effective for sharpening major edges by increasing the steepness of transition while eliminating a manageable degree of low-amplitude structures. The seemingly contradictive effect is achieved in an optimization framework making use of L0 gradient minimization, which can globally control how many non-zero gradients are resulted in to approximate prominent structure in a sparsity-control manner. Unlike other edge-preserving smoothing approaches, our method does not depend on local features, but instead globally locates important edges. It, as a fundamental tool, finds many applications and is particularly beneficial to edge extraction, clip-art JPEG artifact removal, and non-photorealistic effect generation."
+    },
+    "9068366": {
+      "title": "Depth image inpainting: improving low rank matrix completion with low gradient regularization",
+      "abstract": "We address the task of single depth image inpainting. Without the corresponding color images, previous or next frames, depth image inpainting is quite challenging. One natural solution is to regard the image as a matrix and adopt the low rank regularization just as color image inpainting. However, the low rank assumption does not make full use of the properties of depth images. A shallow observation inspires us to penalize the nonzero gradients by sparse gradient regularization. However, statistics show that though most pixels have zero gradients, there is still a non-ignorable part of pixels, whose gradients are small but nonzero. Based on this property of depth images, we propose a low gradient regularization method in which we reduce the penalty for small gradients while penalizing the nonzero gradients to allow for gradual depth changes. The proposed low gradient regularization is integrated with the low rank regularization into the low rank low gradient approach for depth image inpainting. We compare our proposed low gradient regularization with the sparse gradient regularization. The experimental results show the effectiveness of our proposed approach."
+    }
+  },
+  "generator": "fallback_v4"
+}

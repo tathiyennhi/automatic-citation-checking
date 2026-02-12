@@ -1,0 +1,29 @@
+{
+  "doc_id": "35623",
+  "text": "After the character probabilities are calculated, the CTC loss is calculated next [CITATION_1] . The CTC loss function is used to integrate over all possible alignments of characters. Thus, given the output of the network, the CTC loss function calculates the error of the predicted output as the negative log likelihood of the probability of the target. For this, the network output from Equation 17, the probabilities of the alphabet over each time frame, is the input to the CTC loss function. Given the definition of the CTC loss, the gradient of the loss according to its inputs have to be calculated. This loss can then be 'backpropagated' to the weights of Figure 1 . RNN Architecture the network. The ADAM optimization algorithm [CITATION_2] has been used for the backpropagation training since this training algorithm is very tolerant to learning rate as well as to other training parameters, and thus, requires less fine-tuning.",
+  "correct_citation": {
+    "[CITATION_1]": "16979536",
+    "[CITATION_2]": "6628106"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "After the character probabilities are calculated, the CTC loss is calculated next"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The ADAM optimization algorithm has been used for the backpropagation training since this training algorithm is very tolerant to learning rate as well as to other training parameters, and thus, requires less fine-tuning."
+    }
+  ],
+  "bib_entries": {
+    "16979536": {
+      "title": "Deep speech: Scaling up end-to-end speech recognition",
+      "abstract": "We present a state-of-the-art speech recognition system developed using end-to-end deep learning. Our architecture is significantly simpler than traditional speech systems, which rely on laboriously engineered processing pipelines; these traditional systems also tend to perform poorly when used in noisy environments. In contrast, our system does not need hand-designed components to model background noise, reverberation, or speaker variation, but instead directly learns a function that is robust to such effects. We do not need a phoneme dictionary, nor even the concept of a \"phoneme.\" Key to our approach is a well-optimized RNN training system that uses multiple GPUs, as well as a set of novel data synthesis techniques that allow us to efficiently obtain a large amount of varied data for training. Our system, called Deep Speech, outperforms previously published results on the widely studied Switchboard Hub5'00, achieving 16.0% error on the full test set. Deep Speech also handles challenging noisy environments better than widely used, state-of-the-art commercial speech systems."
+    },
+    "6628106": {
+      "title": "Adam: A method for stochastic optimization",
+      "abstract": "We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm."
+    }
+  },
+  "generator": "fallback"
+}

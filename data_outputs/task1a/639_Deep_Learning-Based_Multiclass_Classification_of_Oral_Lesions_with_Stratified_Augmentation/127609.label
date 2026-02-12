@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Such diversity allows for a thorough examination of computer-aided diagnostic methods for oral pathology.",
+    "The dataset is notable for its class imbalance: certain lesion types are represented by a great number of photos, whereas rare lesions have fewer than 10 samples.",
+    "To alleviate this limitation and prevent the models from leaning towards a specific bias, augmentation and oversampling strategies were implemented during training as well.For the sake of consistency and comparability with prior work, the dataset was split into training, validation, and test set based on the original method laid out by Al-Ali et al. [1].",
+    "Lesion(a) Lesion example Lesion (b) Lesion example Dataset PreProcessingIn order to standardize input representations and facilitate more efficient model training, a variety of preprocessing techniques were applied to the raw images prior to training the models.The images were resized to the appropriate resolution required by the different models (e.g., 224×224 for ResNet, VGG, DenseNet, AlexNet, MobileNet; 240×240 to 380×380 for EfficientNet versions).Normalization Pixel intensity values were scaled to a range of 0 to 1, and then standardized with the corresponding ImageNet mean and standard deviation.",
+    "This normalization significantly improved convergence and maintained the stability of the processes during optimization.Each image pixel (x) was normalized to the range [0,1] using the following formula:x ′ = x 255(1)Furthermore, standardization with ImageNet statistics was used:x ′′ = x ′ -µ σ(2)Here are channel-wise mean and standard deviation: Data Augmentation: In order to minimize the effects of class imbalance and enhance generalization, augmentation strategies were adopted."
+  ],
+  "correct_citations": [
+    "To alleviate this limitation and prevent the models from leaning towards a specific bias, augmentation and oversampling strategies were implemented during training as well.For the sake of consistency and comparability with prior work, the dataset was split into training, validation, and test set based on the original method laid out by Al-Ali et al. [1].",
+    "This normalization significantly improved convergence and maintained the stability of the processes during optimization.Each image pixel (x) was normalized to the range [0,1] using the following formula:x ′ = x 255(1)Furthermore, standardization with ImageNet statistics was used:x ′′ = x ′ -µ σ(2)Here are channel-wise mean and standard deviation: Data Augmentation: In order to minimize the effects of class imbalance and enhance generalization, augmentation strategies were adopted."
+  ]
+}

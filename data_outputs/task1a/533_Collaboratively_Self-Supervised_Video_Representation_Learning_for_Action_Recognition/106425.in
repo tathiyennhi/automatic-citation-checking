@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Inspired by the prior work [118], [119], we adopt Adaptive Instance Normalization (AdaIN) for feature fusion.",
+    "We firstly align the dimensions of the dynamic motion feature f d from the pose prediction branch and static context feature f s from V-network by adding convolutional layers and MLPs after the encoder of G p. Then, the fusion of f d and f s is accomplished through a denormalization process.",
+    "The detailed structure of the feature integration layer is shown in Fig. 2.Specifically, we perform batch normalization [51] on the static context feature f s:fs = f s -µ σ(3)where µ and σ are the means and standard deviations of the channel-wise activations within an input minibatch.",
+    "Then, we design two parallel branches from fs for dynamic motion integration and adaptive attention mask.For dynamic motion integration, we compute the factor D by denormalizing the normalized fs, formulated as:D = γ d ⊗ fs + β d(4)where γ d and β d are modulation parameters obtained through convolution of the dynamic motion feature f d. They share the same tensor dimensions with fs.",
+    "The core issue of the integration layer is how to adaptively adjust the integration ratio of dynamic motion feature and static context feature to collaboratively facilitate network training."
+  ]
+}

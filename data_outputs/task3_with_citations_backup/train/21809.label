@@ -1,0 +1,44 @@
+{
+  "doc_id": "21809",
+  "text": "Any change of network reachability will be reflected in the Loc-RIB of some BGP speaker. BGP will then propagate this change via Update messages through the entire network, like a wave. The convergence time measures the length of time for this wave of announcements to die out completely-in other words, for the network to reach a stable state. During the transient period before convergence, the continual changing of preferred routes degrades the effectiveness of packet forwarding. Longer convergence times thus reflect increased network instability and may cause severe network performance problems. Studies of BGP [CITATION_1] [CITATION_2] [CITATION_3] have considered convergence and possible optimizations to control and accelerate it.",
+  "correct_citation": {
+    "[CITATION_1]": "1371747",
+    "[CITATION_2]": "174801970",
+    "[CITATION_3]": "912489"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Studies of BGP [CITATION_1] [CITATION_2] [CITATION_3] have considered convergence and possible optimizations to control and accelerate it.",
+      "s_span": 604,
+      "e_span": 742
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Studies of BGP [CITATION_1] [CITATION_2] [CITATION_3] have considered convergence and possible optimizations to control and accelerate it.",
+      "s_span": 604,
+      "e_span": 742
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Studies of BGP [CITATION_1] [CITATION_2] [CITATION_3] have considered convergence and possible optimizations to control and accelerate it.",
+      "s_span": 604,
+      "e_span": 742
+    }
+  ],
+  "bib_entries": {
+    "1371747": {
+      "title": "An Analysis of BGP Convergence Properties",
+      "abstract": "The Border Gateway Protocol (BGP) is the de facto inter-domain routing protocol used to exchange reachability information between Autonomous Systems in the global Internet. BGP is a path-vector protocol that allows each Autonomous System to override distance-based metrics with policy-based metrics when choosing best routes. Varadhan et al. [18] have shown that it is possible for a group of Autonomous Systems to independently define BGP policies that together lead to BGP protocol oscillations that never converge on a stable routing. One approach to addressing this problem is based on static analysis of routing policies to determine if they are safe. We explore the worst-case complexity for convergence-oriented static analysis of BGP routing policies. We present an abstract model of BGP and use it to define several global sanity conditions on routing policies that are related to BGP convergence/divergence. For each condition we show that the complexity of statically checking it is either NP-complete or NP-hard."
+    },
+    "912489": {
+      "title": "Route Flap Damping Exacerbates Internet Routing Convergence",
+      "abstract": "Route flap damping is considered to be a widely deployed mechanism in core routers that limits the widespread propagation of unstable BGP routing information. Originally designed to suppress route changes caused by link flaps, flap damping attempts to distinguish persistently unstable routes from routes that occasionally fail. It is considered to be a major contributor to the stability of the Internet routing system.We show in this paper that, surprisingly, route flap damping can significantly exacerbate the convergence times of relatively stable routes. For example, a route to a prefix that is withdrawn exactly once and re-announced can be suppressed for up to an hour (using the current RIPE recommended damping parameters). We show that such abnormal behavior fundamentally arises from the interaction of flap damping with BGP path exploration during route withdrawal. We study this interaction using a simple analytical model and understand the impact of various BGP parameters on its occurrence using simulations. Finally, we outline a preliminary proposal to modify route flap damping scheme that removes the undesired interaction in all the topologies we studied. ."
+    },
+    "174801970": {
+      "title": "Delayed Internet Routing Convergence",
+      "abstract": "This paper examines the latency in Internet path failure, failover and repair due to the convergence properties of inter-domain routing. Unlike switches in the public telephony network which exhibit failover on the order of milliseconds, our experimental measurements show that inter-domain routers in the packet switched Internet may take tens of minutes to reach a consistent view of the network topology after a fault. These delays stem from temporary routing table oscillations formed during the operation of the BGP path selection process on Internet backbone routers. During these periods of delayed convergence, we show that end-to-end Internet paths will experience intermittent loss of connectivity, as well as increased packet loss and latency. We present a two-year study of Internet routing convergence through the experimental instrumentation of key portions of the Internet infrastructure, including both passive data collection and fault-injection machines at major Internet exchange points. Based on data from the injection and measurement of several hundred thousand inter-domain routing faults, we describe several unexpected properties of convergence and show that the measured upper bound on Internet inter-domain routing convergence delay is an order of magnitude slower than previously thought. Our analysis also shows that the upper theoretic computational bound on the number of router states and control messages exchanged during the process of BGP convergence is factorial with respect to the number of autonomous systems in the Internet. Finally, we demonstrate that much of the observed convergence delay stems from specific router vendor implementation decisions and ambiguity in the BGP specification."
+    }
+  },
+  "generator": "fallback_v4"
+}

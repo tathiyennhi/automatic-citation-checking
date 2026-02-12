@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Had the giantstep been used, we would train and test directly on the sensor values in column labeled LIT101 instead of column labeled LIT101Diff, in TABLE 2 and TABLE 3, respectively.",
+    "Set1: Attack SWaT dataset (ASD).",
+    "Set2: Sensor label s and time index i. Set3: Sensors-actuators relationship graph RG and training bounds lists.",
+    "Output: The state bounds [LB, UB] for the sensor.",
+    "Def BoundsCheck(i, s, senval, actstate, RG, BoundList):NSDdonnActs:= NearestNeighbors(s, RG)senval:= FindSensorVal(NSD, i, s)actstate:= FindAllActState(i, s, NSD)sb:=SwitchBoardState(i, s, actstate, RG)LSG[sb]:= AppendRow(i, s, senval, nnActs, sb)endreturn LSG// Linearized State GroupDef DetermineBounds(LSG):for Each linearized state group LSG do LB:= min(senval i)∀ i ∈ LSG UB:= max(senval i)∀ i ∈ LSG LSGBoundList:= AppendRow(s, sb, LB,UB) end return LSGBoundList Def GiantStepTrain(s, NSD, RG): LSG:=LinearizeStates(s, NSD, RG) GiBoundList:= DetermineBounds(LSG) return GiBoundList Def BabyStepTrain(s, NSD, RG): NSDdiff:= DatasetDiff(NSD,s) LSG:=LinearizeStates(s, NSDdi f f, RG) ByBoundList:= DetermineBounds(LSG) return ByBoundList Algorithm 1: Giant-step Baby-step Training btr step computes the min and max boundaries, [LB,UB] btr sb=11 = [0.0011, 0.1570] and [LB,UB] btr sb=01 = [0.0785, 0.4711] (see For other sensors such as FIT201 (see Fig. 5), it is of interest to find the giant and baby-step training bounds."
+  ],
+  "correct_citations": []
+}

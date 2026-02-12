@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Description of the dataset used for analysisThe resulting dataset was converted to a wide format with the number of rows equal to the number of patients, binary columns corresponding to stressful life events detected in the notes, columns corresponding to time indication of when each event happened (could be one of 4-digit year when the event happened, 4-digit year corresponding to the year of note for recent events, \"no date\") and whether the corresponding patient was screened positive or negative, along with the screening date.",
+    "If the event happened more than 5 years before the date of screening or if the event happened after the screening, it was excluded from analysis as it was considered not to have an impact on screening.Since we excluded events for screened patients (as described above), we had to account for possible imbalance for unscreened patients as they would have a longer tail of events than the screened patients would have.",
+    "To equalize the potential imbalance, we first calculated the meantime interval for screened patients from their first visit to their screening.",
+    "We then excluded events for unscreened patients that occurred after this mean time interval and all events 5 years prior to their first visit.Each row in the dataset also contained demographic information like age, race, and gender.",
+    "This dataset was used in a logistic regression model, which allows for easy interpretation of odds ratios [38], where screened status was a binary dependent variable (ever screened/never screened), and binary variables (event occurred/event not occurred) corresponding to the occurrence of each type of stressful life event, along with age, race, and gender were independent variables."
+  ],
+  "correct_citations": [
+    "This dataset was used in a logistic regression model, which allows for easy interpretation of odds ratios [38], where screened status was a binary dependent variable (ever screened/never screened), and binary variables (event occurred/event not occurred) corresponding to the occurrence of each type of stressful life event, along with age, race, and gender were independent variables."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "( 9) is utilized as an attention mechanism to convey the semantic importance of correlated words.",
+    "Sentence RepresentationThe sentence representation is formed by the linear superposition of correlated states of adjacent words.|T = n-1 i=1 p i,i+1 |w i w i+1 = n-1 i=1 T i,i+1 × S i,i+1 |w i w i+1, (10)where p i,i+1 represents the semantic weight of the correlated words |w i and |w i+1 in the sentence |T.",
+    "Sentence SimilarityThe semantic similarity between the two sentences is determined by calculating the cosine similarity between the sentence vectors |T 1 and |T 2.Sim(|T 1, T 2) = T 1 |T 2 ||T 1 | • ||T 2 |, (11)where the definitions ofT 1 |T 2, ||T 1 |, ||T 2 | and T 1 | are identical to the definitions of w i |w i+1, ||w i |, ||w i+1 | and w i |, respectively.",
+    "Tensor CompressionWe utilize the mean squared error (MSE) and Pearson correlation coefficient (Pcc) to validate the experimental effect.M SE = N i=1 (x i -y i) 2 N, (12) 1 Pcc = N i=1 (x i -x)(y i -y) δ x δ y, (13)where N denotes the total number of sentence pairs in a corpus, x i and y i represent, respectively, the experimental similarity and the annotated similarity of the ith sentence pair, x stands for the set of x i (x = {x i }, i = 1, 2,..., N), and y signifies the set of y i (y = {y i }, i = 1, 2,..., N).",
+    "δ x and δ y are the respective standard deviation of x and y.To minimize the semantic discrepancies between x i and y i, we introduce a relative error threshold λ to constrain the validity of the calculation results.minimi ze M S E subject to x i -(1 + λ)y i ≤ 0 i = 1,..., N (1 -λ)y i -x i ≤ 0 i = 1,..., N(14)ormaximi ze Pcc subject to x i -(1 + λ)y i ≤ 0 i = 1,..., N (1 -λ)y i -x i ≤ 0 i = 1,..., N. (15)There are 2N inequality constraints."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,34 @@
+{
+  "doc_id": "23681",
+  "text": "The DeconvNet [CITATION_1] is learned on top of the VGG-16 network [CITATION_2] and takes 2D images 224 × 224 pixels in size. The deconvolutional part is a mirrored version of the convolutional part and contains 13 layers on both the convolutional and deconvolutional side. The convolutional part is converged into two fully connected layers augmented at the end to impose class-specific projections. It is trained using a two-stage training procedure in which the first step involves training with easy examples. The second stage involves fine-tuning of the network learned in first stage with more challenging images. Our light-weight network consists of seven convolutional layers and three pooling layers towards the convolutional side. The deconvolutional network is the mirrored version of the convolutional network. The major modification in architecture [CITATION_3] is the removal of some intermediate layers, including fully connected layers, which improves the computational complexity of the network. Both the architectures, DeconvNet and light-weight, are called encoder-decoder-based architectures, in which the convolutional part downsamples and the deconvolutional part upsamples the feature maps. Such architectures allow the use of max-pooling indices during upsampling which helps to obtain better segmentation maps with preserved global context information. However, the use of max-pooling indices slightly increases the computational cost. The original DeconvNet architecture and proposed light-weight network architectures are shown in Figure 1 . The details, including each layer's output and the kernel size of our light-weight network architecture, are shown in Table 1 . In the following two sections, we do a comparative study of the original and proposed network in terms of computational complexity and latency.",
+  "correct_citation": {
+    "[CITATION_1]": "623137",
+    "[CITATION_2]": "14124313",
+    "[CITATION_3]": "623137"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The DeconvNet is learned on top of the VGG-16 network and takes 2D images 224 × 224 pixels in size."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "is learned on top of the VGG-16 network"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The major modification in architecture is the removal of some intermediate layers, including fully connected layers, which improves the computational complexity of the network."
+    }
+  ],
+  "bib_entries": {
+    "623137": {
+      "title": "Learning deconvolution network for semantic segmentation",
+      "abstract": "We propose a novel semantic segmentation algorithm by learning a deep deconvolution network. We learn the network on top of the convolutional layers adopted from VGG 16-layer net. The deconvolution network is composed of deconvolution and unpooling layers, which identify pixelwise class labels and predict segmentation masks. We apply the trained network to each proposal in an input image, and construct the final semantic segmentation map by combining the results from all proposals in a simple manner. The proposed algorithm mitigates the limitations of the existing methods based on fully convolutional networks by integrating deep deconvolution network and proposal-wise prediction, our segmentation method typically identifies detailed structures and handles objects in multiple scales naturally. Our network demonstrates outstanding performance in PASCAL VOC 2012 dataset, and we achieve the best accuracy (72.5%) among the methods trained without using Microsoft COCO dataset through ensemble with the fully convolutional network."
+    },
+    "14124313": {
+      "title": "Very deep convolutional networks for large-scale image recognition. arXiv",
+      "abstract": "In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision."
+    }
+  },
+  "generator": "fallback"
+}

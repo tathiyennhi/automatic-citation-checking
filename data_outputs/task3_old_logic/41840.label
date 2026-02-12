@@ -1,0 +1,29 @@
+{
+  "doc_id": "41840",
+  "text": "We model our system as a large set of nodes that communicate via message passing. In this study, we evaluate our protocols assuming a reliable transfer protocol, which implies that we do not consider message drop failure. However, the protocols themselves do not require this assumption. Nodes are allowed to leave the network at any time and node failures are also permitted. We do not require time to be synchronized over the nodes. At every point in time each node is assumed to have a set of neighbors, typically a small subset of the nodes. We assume that the failure of a neighbor is detected by the node. The neighbor set can change over time, but nodes can send messages only to their current Algorithm 1 Gossip Learning Framework 1: (x, y) ← local training example 2: currentModel ← initModel() 3: loop 4: wait(Δ) 5: p ← selectPeer() 6: send currentModel to p 7: procedure ONMODEL(m) 8: m ←updateModel(m, x, y) 9: currentModel ← m neighbors. The set of neighbors might be a uniform random sample from the network or it might be defined by any fixed overlay network, depending on the application. When sending a message, nodes access their neighbors through the peer sampling service using the method SELECTPEER(). In this study we treat this method as a black box, noting that many implementations are available [CITATION_1] , [CITATION_2] that might depend on the given networking environment and the application requirements as well.",
+  "correct_citation": {
+    "[CITATION_1]": "15023406",
+    "[CITATION_2]": "6266183"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In this study we treat this method as a black box, noting that many implementations are available"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "r sampling service using the method SELECTPEER(). In this study we treat this method as a black box, noting that many implementations are available, that might depend on the given networking environment and the application requirements as well."
+    }
+  ],
+  "bib_entries": {
+    "15023406": {
+      "title": "Through the wormhole: Low cost, fresh peer sampling for the internet",
+      "abstract": "State of the art gossip protocols for the Internet are based on the assumption that connection establishment between peers comes at negligible cost. Our experience with commercially deployed P2P systems has shown that this cost is much higher than generally assumed. As such, peer sampling services often cannot provide fresh samples because the service would require too high a connection establishment rate. In this paper, we present the wormhole-based peer sampling service (WPSS). WPSS overcomes the limitations of existing protocols by executing short random walks over a stable topology and by using shortcuts (wormholes), thus limiting the rate of connection establishments and guaranteeing freshness of samples, respectively.We show that our approach can decrease the connection establishment rate by one order of magnitude compared to the state of the art while providing the same levels of freshness of samples. This, without sacrificing the desirable properties of a PSS for the Internet, such as robustness to churn and NAT-friendliness. We support our claims with a thorough measurement study in our deployed commercial system as well as in simulation."
+    },
+    "6266183": {
+      "title": "Gossip-based peer sampling",
+      "abstract": "Gossip-based communication protocols are appealing in large-scale distributed applications such as information dissemination, aggregation, and overlay topology management. This paper factors out a fundamental mechanism at the heart of all these protocols: the peer-sampling service. In short, this service provides every node with peers to gossip with. We promote this service to the level of a first-class abstraction of a large-scale distributed system, similar to a name service being a first-class abstraction of a local-area system. We present a generic framework to implement a peer-sampling service in a decentralized manner by constructing and maintaining dynamic unstructured overlays through gossiping membership information itself. Our framework generalizes existing approaches and makes it easy to discover new ones. We use this framework to empirically explore and compare several implementations of the peer-sampling service. Through extensive simulation experiments we show that---although all protocols provide a good quality uniform random stream of peers to each node locally---traditional theoretical assumptions about the randomness of the unstructured overlays as a whole do not hold in any of the instances. We also show that different design decisions result in severe differences from the point of view of two crucial aspects: load balancing and fault tolerance. Our simulations are validated by means of a wide-area implementation."
+    }
+  },
+  "generator": "fallback"
+}

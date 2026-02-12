@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We first use SAM to obtain different patches in the background image, then identify patches that overlap with the foreground objects.",
+    "Using the sparse depth map derived from the point clouds, we calculate the average sparse depth within these patches as the depth of each patch.",
+    "Since the segmentation results of patches often represent a complete instance, and occlusion occurs between instances, it is reasonable to calculate the depth for the entire instance represented by a patch.",
+    "Subsequently, we create the background's depth map from the depths of these patches and perform occlusion calculations with the depth map rendered for the foreground, presenting each pixel with the lesser depth to finalize the occlusion computation.",
+    "The results of the occlusion calculation, as shown in Fig. 17, illustrate that the added vehicles are occluded by those with shallower depths."
+  ],
+  "correct_citations": []
+}

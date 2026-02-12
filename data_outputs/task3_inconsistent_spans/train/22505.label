@@ -1,0 +1,22 @@
+{
+  "doc_id": "22505",
+  "text": "Lattice/k-best Quality Large LMs and MBR both benefit from the richer space of translation hypotheses contained in the lattices. Relative to the first-pass baseline in MT08, rescoring HiFST lattices yields a gain of 2.1 BLEU, compared to a gain of 0.7 BLEU with HCP k-best lists. [CITATION_1] ) is driven mainly by the presence of high posterior n-grams in the lattice; the low posterior n-grams have poor discriminatory power. In the following experiment, we show that high posterior n-grams are more likely to be found in the references, and that using the full evidence space of the lattice is much better than even very large k-best lists for computing posterior probabilities. Let N i = {w 1 , . . ., w |N i | } denote the set of n-grams of order i in the first-pass translation 1-best, and let R i = {w 1 , . . ., w |R i | } denote the set of n-grams of order i in the union of the references. For confidence threshold β, let N i,β = {w ∈ N i : p(w|L) ≥ β} denote the set of all n-grams in N i with posterior probability greater than or equal to β, where p(w|L) is the posterior probability of the n-gram w, that is, the sum of the posterior probabilities of all translations containing at least one occurrence of w. The precision at order i for threshold β is the proportion of n-grams in N i,β found in the references:",
+  "correct_citation": {
+    "[CITATION_1]": "7657227"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Relative to the first-pass baseline in MT08, rescoring HiFST lattices yields a gain of 2.1 BLEU, compared to a gain of 0.7 BLEU with HCP k-best lists.  ) is driven mainly by the presence of high posterior n-grams in the lattice; the low posterior n-grams have poor discriminatory power.",
+      "s_span": 129,
+      "e_span": 427
+    }
+  ],
+  "bib_entries": {
+    "7657227": {
+      "title": "Lattice Minimum Bayes-Risk decoding for statistical machine translation",
+      "abstract": "We present Minimum Bayes-Risk (MBR) decoding over translation lattices that compactly encode a huge number of translation hypotheses. We describe conditions on the loss function that will enable efficient implementation of MBR decoders on lattices. We introduce an approximation to the BLEU score (Papineni et al., 2001) that satisfies these conditions. The MBR decoding under this approximate BLEU is realized using Weighted Finite State Automata. Our experiments show that the Lattice MBR decoder yields moderate, consistent gains in translation performance over N-best MBR decoding on Arabic-to-English, Chinese-to-English and English-to-Chinese translation tasks. We conduct a range of experiments to understand why Lattice MBR improves upon N-best MBR and study the impact of various parameters on MBR performance."
+    }
+  },
+  "generator": "fallback_v4"
+}

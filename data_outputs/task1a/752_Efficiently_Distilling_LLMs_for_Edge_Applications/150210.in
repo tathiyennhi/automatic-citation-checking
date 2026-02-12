@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "(2)The aim of a weight-sharing super-transformer is to simultaneously train all the transformer models {f Φ (•; Π Φ (W)): X → Y | Φ ∈ A} through the shared weights W Sup.",
+    "A typical training objective for super-transformers is the training loss averaged over all model configurations in A:argmin WSup L Sup (W Sup):= E L Φ Π Φ (W Sup),(3)where E denotes expectation over model configuration Φ drawn uniformly at random from A and L Φ, as defined in (1), is averaged training loss for configuration Φ. Super-transformer weights, W Sup, are learnt with stochastic gradient (denoted ∇) of the super-transformer's loss L Sup estimated as∇W L Sup (W Sup) = 1 K K j=1 ∇W L Φj Π Φj (W Sup),(4)∇W L Φ (W Φ) = 1 |B| i∈B ∇ W ℓ f Φ x i; W Φ, y i,(5)where {Φ 1, • • •, Φ K } are K sub-transformer configurations sampled from A to approximate the expectation in (3) and B is a mini-batch of training examples sampled from D train to approximate the expectation in (1).",
+    "Fine-tuning LLM super-transformers is computationally challenging in enterprise use cases as it involves computing gradients of sub-transformers' loss functions with respect to a huge number of parameters.",
+    "Multistage Low-rank Fine-tuning of Super-transformersWe therefore developed Multistage Low-rank Fine-tuning of Super-transformers (MLFS).",
+    "Given a teacher model with configuration Φ Tch and pre-trained weights W pretrain Tch, we assume that its weights (denoted W Tch) can be fine-tuned on the given task by learning low-rank matrices A 0, B 0 on top of pre-trained weights W pretrain Tch:W Tch:= W pretrain Tch + A 0 * B 0,(6)where A 0, B 0 are of (low) rank r. Note that pre-trained weights W pretrain Tch remain unchanged during super-transformer fine-tuning."
+  ]
+}

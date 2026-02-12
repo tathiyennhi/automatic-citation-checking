@@ -1,0 +1,38 @@
+{
+  "doc_id": "26679",
+  "text": "Next, we examine the estimation performance of the SMUCHES method as a function of SNR. In this example, the simulated signal contains only a single chirp component, with starting frequency , frequency rate , amplitude , and a uniformly distributed random phase , which was randomized for each simulation. The sample length is set to . Figs. 4 and 5 show the RMSE of the SMUCHES estimator, where and were selected using [CITATION_1] and (17), as well as the discrete chirp Fourier transform algorithm (DCFT) [CITATION_2] , the algorithm presented by Djuric and Kay in [CITATION_3] , both being allowed oracle knowledge of the number of chirps in the signal, and the CRLB. It should be noted that the proposed methods do not assume any model order information, as they are estimating this as part of the optimization; clearly, this also implies that the method may estimate the wrong model orders. However, the proposed SMUCHES method only estimated the wrong number of components in 1 out of the 1000 simulations, and this at the Fig. 6 . Performance of the proposed SMUCHES method when estimating the starting frequencies (top curves) and the frequency rates (bottom curves) of two non-crossing linear chirps, as compared to the CRLB. dB level. For the other SNR levels, the order estimations were without any errors. To assert a fair comparison, the simulation where the proposed method estimated the wrong model order was removed from all methods, and is thus not included in the RMSE graphs. As is clear from Figs. 4 and 5, the SMUCHES method, without using any prior knowledge about the number of chirps, manages to attain the CRLB, as well as outperforming the Djuric-Kay algorithm, even though the latter has been allowed oracle model order information. Furthermore, it can be seen that the DCFT algorithm is stuck to its initial grid, which suggests why it does not manage to improve beyond a certain limit when the SNR increases. Examining the computational complexities, it was found that the Djuric-Kay and the DCFT algorithms (given oracle model orders) are notably faster to compute than the presented SMUCHES implementation, requiring on average (computed over 1000 simulations on a regular PC, for dB) , and seconds to execute, respectively.",
+  "correct_citation": {
+    "[CITATION_1]": "14611492",
+    "[CITATION_2]": "3016264",
+    "[CITATION_3]": "15883569"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "randomized for each simulation. The sample length is set to . Figs. 4 and 5 show the RMSE of the SMUCHES estimator, where and were selected using  and (17), as well as the discrete chirp Fourier transform algorithm (DCFT)  , the algorithm presented by Djuric and Kay in"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "RMSE of the SMUCHES estimator, where and were selected using  and (17), as well as the discrete chirp Fourier transform algorithm (DCFT)  , the algorithm presented by Djuric and Kay in  , both being allowed oracle knowledge of the number of chirps in the signal,"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "and (17), as well as the discrete chirp Fourier transform algorithm (DCFT)  , the algorithm presented by Djuric and Kay in  , both being allowed oracle knowledge of the number of chirps in the signal, and the CRLB. It should be noted that the proposed methods"
+    }
+  ],
+  "bib_entries": {
+    "3016264": {
+      "title": "Discrete chirp-fourier transform and its application to chirp rate estimation",
+      "abstract": "The discrete Fourier transform (DFT) has found tremendous applications in almost all fields, mainly because it can be used to match the multiple frequencies of a stationary signal with multiple harmonics. In many applications, wideband and nonstationary signals, however, often occur. One of the typical examples of such signals is chirp-type signals that are usually encountered in radar signal processing, such as synthetic aperture radar (SAR) and inverse SAR imaging. Due to the motion of a target, the radar return signals are usually chirps, and their chirp rates include the information about the target, such as the location and the velocity. In this paper, we study discrete chirp-Fourier transform (DCFT), which is analogous to the DFT. Besides the multiple frequency matching similar to the DFT, the DCFT can be used to match the multiple chirp rates in a chirp-type signal with multiple chirp components. We show that when the signal length N is prime, the magnitudes of all the sidelobes of the DCFT of a quadratic chirp signal are 1, whereas the magnitude of the mainlobe of the DCFT is /spl radic/N. With this result, an upper bound for the number of the detectable chirp components using the DCFT is provided in terms of signal length and signal and noise powers. We also show that the N-point DCFT performs optimally when N is a prime."
+    },
+    "14611492": {
+      "title": "Multitaper time-frequency reassignment for nonstationary spectrum estimation and chirp enhancement",
+      "abstract": "A method is proposed for obtaining time-frequency distributions of chirp signals embedded in nonstationary noise, with the two-fold objective of a sharp localization for the chirp components and a reduced level of statistical fluctuations for the noise. The technique consists in combining time-frequency reassignment with multitapering, and two variations are proposed. The first one, primarily aimed at nonstationary spectrum estimation, is based on sums of estimates with different tapers, whereas the second one makes use of differences between the same estimates for the sake of chirp enhancement. The principle of the technique is outlined, its implementation based on Hermite functions is justified and discussed, and some examples are provided for supporting the efficiency of the approach, both qualitatively and quantitatively"
+    },
+    "15883569": {
+      "title": "Parameter estimation of chirp signals",
+      "abstract": "The problem of the parameter estimation of chirp signals is addressed. Several closely related estimators are proposed whose main characteristics are simplicity, accuracy, and ease of online or offline implementation. For moderately high signal-to-noise ratios they are unbiased and attain the Cramer-Rao bound. Monte Carlo simulations verify the expected performance of the estimators. It should be easy to extend this approach to signals having polynomials of any degree in the exponent. All the derivations will be done under the assumption that the signal-to-noise ratio is sufficiently high. >"
+    }
+  },
+  "generator": "fallback_v4"
+}

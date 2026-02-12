@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This is because implicitly, a typical delayed MDP subverts the Markov property, as the past measurements and actions encapsulate only partial information.Therefore, combining the ideas of augmenting past measurements and past actions, we form a sufficient statistic (Bertsekas 2012) for reducing the POMDP problem to an MDP, defined asI k = [ p 0,..., p k, a 0,..., a k-1], (2.27)which consists of the time history of pressure measurements p 0,..., p k and control actions a 0,..., a k-1 at time steps 0,..., k. This enlarged state at time k contains all the information known to the controller at time k. However, the size of the sufficient statistic in (2.27) grows over time, leading to a non-stationary closed-loop system, and introducing a challenge in RL since the number of inputs to the networks varies over time.",
+    "This problem can be solved by reducingFull-state control a t a t a t P wake P surf P surf (a t-1, p t) ( a t-1, p t) (a t-1,..., a t-N fs, p t,..., p t-N fs) Partial-state control NARX FM-static PM-static PM-dynamic (2.27) to a finite-history approximation (White & Scherer 1994).",
+    "The controller using this finite-history approximation of the sufficient statistic is usually known as a 'finite-state' controller, and the error of this approximation converges as the size of the finite history increases (Yu & Bertsekas 2008).",
+    "The trade-off is that the dimension of the input increases based on the history length required.",
+    "The nonlinear policy, which is parametrised by a neural network controller, has an algebraic descriptiona t ∼ π φ (a t | a t-1, a t-2,..., a t-N fs -1 past actions, p t, p t-1, p t-2,..., p t-N fs past measurements),(2.28)where p t represents pressure measurements at time step t, and N fs denotes the size of the finite history."
+  ],
+  "correct_citations": []
+}

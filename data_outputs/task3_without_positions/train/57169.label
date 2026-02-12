@@ -1,0 +1,20 @@
+{
+  "doc_id": "57169",
+  "text": "Analysis of specimen motion in DDD frames. To detect the movement between each frame in a movie, we used a script to align any potential translational motion of each particle. In this alignment protocol, we ignored potential translational motion along the direction parallel to the electron beam (z-direction), as well as any potential particle rotation. To improve the accuracy of alignments, we used a box size twice the diameter for each particle, and we summed the boxed particles of every three consecutive frame for the alignment search. Thus, the translational alignment of the i th frame was based on the sum of frames i-1, i and i þ 1. For each sum of three consecutive frames, the summed particle image was filtered in Fourier space based on the corresponding dark reference image to reduce possible artifacts from fixed pattern noise, and then downsampled by 5 Â . Cross-correlation based alignment was calculated based on the tiltxcorr program in IMOD [CITATION_1] Damage compensation for DDD frames. Since CMOS-based direct detection cameras provide continuous streaming with negligible dead time between frames, the set of frames acquired with each movie represents an exposure series, where each subsequent frame has an incrementally higher cumulative exposure on the specimen. We therefore applied a Gaussian low-pass filter to the Fourier transform of each individual frame (prior to summing multiple frames). The strength of the filter (Gaussian width) applied to each frame was based on the cumulative exposure of the frame. Previous radiation damage studies have deduced the optimal exposure to maximize the SSNR at each spatial frequency for cryo-EM imaging of frozen-hydrated catalase crystal at liquid nitrogen temperature 47 . To be conservative in filtering our data in this study, we arbitrarily added 30% to the exposures determined for catalase crystal. For example, in catalase crystal imaged at 300 kV, the SSNR at 3 Å is maximized at an exposure of B14 e À Å À 2 . Thus, we applied a low-pass filter with a Gaussian width of 1/3 Å À 1 to frame 12 (corresponding to a cumulative exposure of B14 Â 1.3 ¼ 18 e À Å À 2 ). Each subsequent frame was low-pass filtered with increasing strength, according to the spatial frequency optimized at the corresponding cumulative exposure. After all frames from each DDD movie were low-pass filtered according to this procedure, they were summed to generate a single image. In theory, the resulting image had maximized SSNR (with respect to radiation damage) over a broad range of spatial frequencies with a relatively high cumulative exposure.",
+  "correct_citation": {
+    "[CITATION_1]": "4608130"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Cross-correlation based alignment was calculated based on the tiltxcorr program in IMOD  Damage compensation for DDD frames."
+    }
+  ],
+  "bib_entries": {
+    "4608130": {
+      "title": "Computer visualization of three-dimensional image data using IMOD",
+      "abstract": "Abstract We have developed a computer software package, IMOD, as a tool for analyzing and viewing three-dimensional biological image data. IMOD is useful for studying and modeling data from tomographic, serial section, and optical section reconstructions. The software allows image data to be visualized by several different methods. Models of the image data can be visualized by volume or contour surface rendering and can yield quantitative information."
+    }
+  },
+  "generator": "fallback_v4"
+}

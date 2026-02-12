@@ -1,0 +1,22 @@
+{
+  "doc_id": "36477",
+  "text": "Since the proposed method is composed of four components (LBN-AA, DASPP, SPN and FFN), we investigate and describe the effectiveness of each component step by step in this subsection. 1) Ablation For LBN-AA: We use the modified Mo-bileNetV2 with atrous convolution and attention (LBN-AA) as our feature extraction baseline network. To evaluate the effectiveness and efficiency of LBN-AA, we compare it with the following two different baseline networks, including the original MobileNetV2 and VGG16, where atrous convolution and attention are not used. We also compare LBN-AA with LBN-A (denotes the modified MobileNetV2 with only atrous convolution) and LBN-ASE (denotes the modified MobileNetV2 with atrous convolution and the SE block). The only difference between LBN-AA and LBN-A is that CAM is adopted or not. LBN-ASE is used to compare the performance difference between the SE block and the proposed CAM. All the baseline networks are pretrained on the ImageNet dataset and adopt the structure similar to FCN-8s [CITATION_1] . The input images are firstly downsampled to a uniform size (448 × 896). Then, we feed the images into above three baseline networks and upsample the final output feature maps to the size of original input images. For MobileNetV2 and VGG16, we directly combine the feature maps which are 1/8, 1/16 and 1/32 of the original input image size by skip connections. Here, bilinear interpolation is used to ensure the same size (1/8) of all feature maps. We evaluate these baseline networks on the Cityscapes validation dataset and report the results in Table  III . Besides, Fig. 9 presents some visual examples obtained by these different baseline networks.",
+  "correct_citation": {
+    "[CITATION_1]": "56507745"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "LBN-ASE is used to compare the performance difference between the SE block and the proposed CAM. All the baseline networks are pretrained on the ImageNet dataset and adopt the structure similar to FCN-8s [CITATION_1] .",
+      "s_span": 816,
+      "e_span": 1034
+    }
+  ],
+  "bib_entries": {
+    "56507745": {
+      "title": "Fully convolutional networks for semantic segmentation",
+      "abstract": "Convolutional networks are powerful visual models that yield hierarchies of features. We show that convolutional networks by themselves, trained end-to-end, pixels-to-pixels, exceed the state-of-the-art in semantic segmentation. Our key insight is to build “fully convolutional” networks that take input of arbitrary size and produce correspondingly-sized output with efficient inference and learning. We define and detail the space of fully convolutional networks, explain their application to spatially dense prediction tasks, and draw connections to prior models. We adapt contemporary classification networks (AlexNet [20], the VGG net [31], and GoogLeNet [32]) into fully convolutional networks and transfer their learned representations by fine-tuning [3] to the segmentation task. We then define a skip architecture that combines semantic information from a deep, coarse layer with appearance information from a shallow, fine layer to produce accurate and detailed segmentations. Our fully convolutional network achieves state-of-the-art segmentation of PASCAL VOC (20% relative improvement to 62.2% mean IU on 2012), NYUDv2, and SIFT Flow, while inference takes less than one fifth of a second for a typical image."
+    }
+  },
+  "generator": "fallback_v4"
+}

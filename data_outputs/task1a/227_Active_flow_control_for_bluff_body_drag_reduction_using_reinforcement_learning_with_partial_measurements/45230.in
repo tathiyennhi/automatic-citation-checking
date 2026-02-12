@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The probability distribution (Gaussian by default) of a stochastic policy is denoted by π(• | s t).The entropy of π( • | s t) is by definition (Shannon 1948)H(π( • | s t)) = E[-log π( • | s t)] = - ât π(â t | s t) log π(â t | s t) dâ t, (2.9)where the termlog π quantifies the uncertainty contained in the probability distribution, and ât is a distribution variable of the action a t. Therefore, by calculating the expectation oflog π, the entropy increases when the policy has more uncertainties, i.e.",
+    "the variance of π(â t | s t) increases.We develop SAC based on soft policy iteration (Haarnoja et al. 2018b), which uses a soft Q-function to evaluate the value of a policy, and optimises the policy based on its value.",
+    "The soft Q-function is calculated by applying a Bellman backup operator T π asT π Q(s t, a t) r t (s t, a t) + γ E s t+1 ∼P [V(s t+1)],(2.10)where γ is a discount factor (here γ = 0.99), and V(s t+1) satisfiesV(s t) = E a t ∼π [Q(s t, a t) -log π(a t | s t)].",
+    "(2.11)The target soft Q-function can be obtained by repeating Q = T π Q, and the proof of convergence can be referred to as soft policy evaluation (Lemma 1 in Haarnoja et al. 2018b).",
+    "With soft Q-function rendering values for the policy, the policy optimisation is given as soft policy improvement (Lemma 2 in Haarnoja et al. 2018b).In SAC, a stochastic soft Q-function Q θ (s t, a t) and a policy π φ (a t | s t) are parametrised by artificial neural networks θ (critic) and φ (actor), respectively."
+  ]
+}

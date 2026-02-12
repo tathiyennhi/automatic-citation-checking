@@ -1,0 +1,27 @@
+{
+  "text": "Word-level translation models are typically learned by applying statistical word alignment algorithms on large-scale bilingual parallel corpora . Building a parallel corpus, however, is expensive and time-consuming. As a result, parallel data are limited or even unavailable for many language pairs. In the absence of a sufficient amount of parallel data, the accuracy of standard word alignment algorithms drops significantly. This is also true of supervised neural methods: Even with hundreds of thousands of parallel training sentences, neural methods only achieve modest results [CITATION_1] . Low-and no-resource languages generally do not have parallel corpora, and even their monolingual corpora tend to be small. However, these monolingual corpora can often be downloaded from the Internet, and are much easier to obtain or produce than parallel corpora. Leveraging useful information from monolingual corpora can be extremely helpful for learning translation models for low-and no-resource language pairs. Decipherment algorithms (so-called because of the assumption that one language is a cipher for the other) aim to exploit such monolingual corpora in order to learn translation model parameters, when parallel data are limited or unavailable [CITATION_2] [CITATION_3] [CITATION_4] . The key intuition is that similar words and n-grams tend to have similar distributional properties across languages. For example, if a bigram appears frequently in the monolingual source corpus, its translation is likely to appear frequently in the monolingual target corpus, and vice versa. This is especially true when the corpora share similar topics and context. Furthermore, for many such language pairs, we observe similar monotonic word ordering-that is, the translation of a bigram is often the same as the concatenation of the translations of individual unigrams (consider the shared use of postnominal adjectives in the French maison bleu and Spanish casa azul). Although this certainly is not always true, we assume that it is common enough to provide a useful signal. The goal of decipherment algorithms is to leverage such statistical similarities across languages, and effectively learn word-level translation probabilities from monolingual data.",
+  "correct_citation": {
+    "[CITATION_1]": "16631020",
+    "[CITATION_2]": "13508959",
+    "[CITATION_3]": "6060648",
+    "[CITATION_4]": "11791923"
+  },
+  "bib_entries": {
+    "6060648": {
+      "title": "Deciphering foreign language",
+      "abstract": "In this work, we tackle the task of machine translation (MT) without parallel training data. We frame the MT problem as a decipherment task, treating the foreign text as a cipher for English and present novel methods for training translation models from non-parallel text."
+    },
+    "11791923": {
+      "title": "Beyond parallel data: Joint word alignment and decipherment improves machine translation",
+      "abstract": "Inspired by previous work, where decipherment is used to improve machine translation, we propose a new idea to combine word alignment and decipherment into a single learning process. We use EM to estimate the model parameters, not only to maximize the probability of parallel corpus, but also the monolingual corpus. We apply our approach to improve Malagasy-English machine translation, where only a small amount of parallel data is available. In our experiments, we observe gains of 0.9 to 2.1 Bleu over a strong baseline."
+    },
+    "13508959": {
+      "title": "Estimating word translation probabilities from unrelated monolingual corpora using the EM algorithm",
+      "abstract": "Selecting the right word translation among several options in the lexicon is a core problem for machine translation. We present a novel approach to this problem that can be trained using only unrelated monolingual corpora and a lexicon. By estimating word translation probabilities using the EM algorithm, we extend upon target language modeling. We construct a word translation model for 3830 German and 6147 English noun tokens, with very promising results."
+    },
+    "16631020": {
+      "title": "Transfer learning for low-resource neural machine translation",
+      "abstract": "The encoder-decoder framework for neural machine translation (NMT) has been shown effective in large data scenarios, but is much less effective for low-resource languages. We present a transfer learning method that significantly improves Bleu scores across a range of low-resource languages. Our key idea is to first train a high-resource language pair (the parent model), then transfer some of the learned parameters to the low-resource pair (the child model) to initialize and constrain training. Using our transfer learning method we improve baseline NMT models by an average of 5.6 Bleu on four low-resource language pairs. Ensembling and unknown word replacement add another 2 Bleu which brings the NMT performance on low-resource machine translation close to a strong syntax based machine translation (SBMT) system, exceeding its performance on one language pair. Additionally, using the transfer learning model for re-scoring, we can improve the SBMT system by an average of 1.3 Bleu, improving the state-of-the-art on low-resource machine translation."
+    }
+  }
+}

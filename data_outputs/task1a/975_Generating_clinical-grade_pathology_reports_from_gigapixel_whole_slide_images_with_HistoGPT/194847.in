@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For training, we use the AdamW optimizer with betas of (0.9, 0.95), a weight decay of 0.1, and epsilon of 1e-8.",
+    "The learning rate starts at zero and warms up linearly over 10 epochs to 1e-4 before decaying tenfold according to a cosine-annealing scheduler.",
+    "We use a gradient accumulation of 32 to simulate a larger batch size.",
+    "Both PR and VLM are trained for 100 epochs using mixed precision training and gradient clipping to a Euclidean norm of 1.0.",
+    "For contrastive learning, we use the same hyperparameters proposed by 12 and 48."
+  ]
+}

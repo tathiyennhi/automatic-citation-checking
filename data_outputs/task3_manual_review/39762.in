@@ -1,0 +1,17 @@
+{
+  "text": "Training and testing. We randomly split the dataset into 89 training classes and 11 testing classes. For augmentation purpose, we perform a random temporal flip and a spatial crop with size 40 × 40. The sample clip will then experience event frame simulaltion and DMR using a random setting according to Table 1 . Note that we enforce generated event frames to contain less than 20% of events. This is according to a statistical analysis of the DAVIS dataset [CITATION_1] . We generate 100K image pairs of size 40 × 40 pixels; 80% of the sample dataset are randomly chosen as training samples and the rest 20% are used for validation. We use a batch size of 128, which results in 2K batches per epoch. We use mini-batch stochastic gradient descent with an Adam optimizer (β 1 = 0.9, β 2 = 0.999). Note that the same optimizer has been used in the DMR process, but the optimization of DMR does not involve training. The learning rate is scheduled as 1 × 10 −3 for the initial 30 epochs, then 1 × 10 −4 for the following 30 epochs and 5 × 10 −5 afterwards. We use an NVIDIA TITAN X GPU for parallelization. Each epoch takes approximately 6 minutes training on our machine. We Figure 8 : Frame prediction. Given a start frame (a) and the future events (b) happened after (a), we predict the end frame (ground truth omitted). Our results using DMR alone outperforms existing algorithm, Complementary Filters (CF) [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "6267598",
+    "[CITATION_2]": "53182986"
+  },
+  "bib_entries": {
+    "6267598": {
+      "title": "Hierarchical model-based motion estimation",
+      "abstract": "This paper describes a hierarchical estimation framework for the computation of diverse representations of motion information. The key features of the resulting framework (or family of algorithms) are a global model that constrains the overall structure of the motion estimated, a local model that is used in the estimation process, and a coarse-fine refinement strategy. Four specific motion models: affine flow, planar surface flow, rigid body motion, and general optical flow, are described along with their application to specific examples."
+    },
+    "53182986": {
+      "title": "Continuous-time intensity estimation using event cameras",
+      "abstract": "Event cameras provide asynchronous, data-driven measurements of local temporal contrast over a large dynamic range with extremely high temporal resolution. Conventional cameras capture low-frequency reference intensity information. These two sensor modalities provide complementary information. We propose a computationally efficient, asynchronous filter that continuously fuses image frames and events into a single high-temporal-resolution, high-dynamic-range image state. In absence of conventional image frames, the filter can be run on events only. We present experimental results on high-speed, high-dynamic-range sequences, as well as on new ground truth datasets we generate to demonstrate the proposed algorithm outperforms existing state-of-the-art methods."
+    }
+  }
+}

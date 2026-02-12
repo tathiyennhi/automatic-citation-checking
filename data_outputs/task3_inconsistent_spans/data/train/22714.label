@@ -1,0 +1,33 @@
+{
+  "doc_id": "22714",
+  "text": "We then trained a log-linear model using the standard feature functions: language model probability, word penalty, distortion costs (we tried distance based and lexicalized reordering models), and the parameters from the phrase table. We set all feature weights by optimizing Bleu [CITATION_1] directly using minimum error rate training (MERT) [CITATION_2] on the tuning part of the development set (dev-test2009a). We used these weights in a beam search decoder to translate the test sentences (the English part of dev-test2009b, tokenized and lowercased). We then recased the output using a monotone model that translates from lowercase to uppercase Spanish, we post-cased it using a simple heuristic, de-tokenized the result, and compared it to the gold standard (the Spanish part of dev-test2009b) using Bleu and NIST.",
+  "correct_citation": {
+    "[CITATION_1]": "11080756",
+    "[CITATION_2]": "5474833"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We set all feature weights by optimizing Bleu  directly using minimum error rate training (MERT)  on the tuning part of the development set (dev-test2009a).",
+      "s_span": 235,
+      "e_span": 415
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We set all feature weights by optimizing Bleu  directly using minimum error rate training (MERT)  on the tuning part of the development set (dev-test2009a).",
+      "s_span": 235,
+      "e_span": 415
+    }
+  ],
+  "bib_entries": {
+    "11080756": {
+      "title": "Bleu: a method for automatic evaluation of machine translation",
+      "abstract": "Human evaluations of machine translation are extensive but expensive. Human evaluations can take months to finish and involve human labor that can not be reused. We propose a method of automatic machine translation evaluation that is quick, inexpensive, and language-independent, that correlates highly with human evaluation, and that has little marginal cost per run. We present this method as an automated understudy to skilled human judges which substitutes for them when there is need for quick or frequent evaluations."
+    },
+    "5474833": {
+      "title": "Minimum error rate training in statistical machine translation",
+      "abstract": "Often, the training procedure for statistical machine translation models is based on maximum likelihood or related criteria. A general problem of this approach is that there is only a loose relation to the final translation quality on unseen text. In this paper, we analyze various training criteria which directly optimize translation quality. These training criteria make use of recently proposed automatic evaluation metrics. We describe a new algorithm for efficient training an unsmoothed error count. We show that significantly better results can often be obtained if the final evaluation criterion is taken directly into account as part of the training procedure."
+    }
+  },
+  "generator": "fallback_v4"
+}

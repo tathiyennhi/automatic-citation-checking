@@ -1,0 +1,22 @@
+{
+  "doc_id": "17385",
+  "text": "A system with m-dimensional measurement vector y and n-dimensional input vector s given by y = As where A is the system (sensing) matrix relating the input vector s and the measurement vector y. If A is a tall or square matrix, meaning that the dimension of y is larger than or equal to the dimension of s (m ≥ n), one can recover s using the conventional techniques (e.g., Gaussian elimination) as long as the sensing matrix is a full rank. However, if the matrix A is fat (m < n), meaning that the number of unknowns is larger than the dimension of observation vector, it is in general not possible to find out the unique solution since there exist infinitely many possible solutions. In this pathological scenario where the inverse problem is ill-posed, sparsity of an input vector comes to the rescue. A vector s is called sparse if the number of nonzero entries is sufficiently smaller than the dimension of the vector. If a vector s is k-sparse, meaning that there are k nonzero elements in s, the measurement vector y is expressed as a linear combination of k columns of A associated with the nonzero entries of s. If the support Ω s (set of nonzero indices in s) is known a priori by any chance, then by removing columns corresponding to the zero entries in s, we can convert the underdetermined system into over-determined one and thus can find out the solution using the standard technique. CS theory asserts that as long as the sensing matrix is generated at random, k-sparse vector can be recovered with m ≈ ck log(n/k) measurements (c is a constant). In performing the recovery task, 1 -norm minimization technique and greedy sparse recovery algorithm (e.g., orthogonal matching pursuit (OMP)) have been popularly used (see, e.g., [CITATION_1] ).",
+  "correct_citation": {
+    "[CITATION_1]": "1234760"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In performing the recovery task, 1 -norm minimization technique and greedy sparse recovery algorithm (e.g., orthogonal matching pursuit (OMP)) have been popularly used (see, e.g., [CITATION_1] ).",
+      "s_span": 1564,
+      "e_span": 1759
+    }
+  ],
+  "bib_entries": {
+    "1234760": {
+      "title": "Compressed sensing for wireless communications: Useful tips and tricks",
+      "abstract": "As a paradigm to recover the sparse signal from a small set of linear measurements, compressed sensing (CS) has stimulated a great deal of interest in recent years. In order to apply the CS techniques to wireless communication systems, there are a number of things to know and also several issues to be considered. However, it is not easy to grasp simple and easy answers to the issues raised while carrying out research on CS. The main purpose of this paper is to provide essential knowledge and useful tips and tricks that wireless communication researchers need to know when designing CS-based wireless systems. First, we present an overview of the CS technique, including basic setup, sparse recovery algorithm, and performance guarantee. Then, we describe three distinct subproblems of CS, viz., sparse estimation, support identification, and sparse detection, with various wireless communication applications. We also address main issues encountered in the design of CS-based wireless communication systems. These include potentials and limitations of CS techniques, useful tips that one should be aware of, subtle points that one should pay attention to, and some prior knowledge to achieve better performance. Our hope is that this paper will be a useful guide for wireless communication researchers and even non-experts to get the gist of CS techniques."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,33 @@
+{
+  "doc_id": "37841",
+  "text": "Self-Supervision via Geometry: We briefly present the performance of models trained from our pixel-level optimization in context of self-supervision. The task of surface normal estimation does not require any human-labels, and is primarily about capturing geometric information. In this section, we explore the applicability of fine-tuning a geometry model (trained from scratch) for more semantic tasks (such as semantic segmentation and object detection). Table 5 (last row) and Table 6 shows the performance of our approach on semantic segmentation and object detection respectively. Note that the NYU depth dataset is a small indoor scene dataset and does not contain most of the categories present in PASCAL VOC dataset. Despite this, it shows 4% (segmentation) and 9% (detection) improvement over naive scratch models. It is best known result for semantic segmentation in an unsupervised/self-supervised manner, and is competitive with the previous unsupervised work [CITATION_1] on object detection 2 that uses ImageNet (without labels), particularly on indoor scene furniture categories (e.g., chairs, sofa, table, tv, bottle). We posit that geometry is a good cue for unsupervised representation learning as it can learn from a few examples and can even generalize to previously unseen categories. Future work may utilize depth information from videos (c.f. [CITATION_2] ) and use them to train models for surface normal estimation. This can potentially provide knowledge about more general categories. Finally, we add a minor supervision by taking the geometrybased model fine-tuned for segmentation, and further finetuning it for object detection. We get an extra 5% boost over the performance.",
+  "correct_citation": {
+    "[CITATION_1]": "9062671",
+    "[CITATION_2]": "6041424"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "It is best known result for semantic segmentation in an unsupervised/self-supervised manner, and is competitive with the previous unsupervised work  on object detection 2 that uses ImageNet (without labels), particularly on indoor scene furniture categories (e.g., chairs, sofa, table, tv, bottle).",
+      "s_span": 825,
+      "e_span": 1135
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Future work may utilize depth information from videos (c.f.  ) and use them to train models for surface normal estimation.",
+      "s_span": 1307,
+      "e_span": 1441
+    }
+  ],
+  "bib_entries": {
+    "9062671": {
+      "title": "Unsupervised visual representation learning by context prediction",
+      "abstract": "This work explores the use of spatial context as a source of free and plentiful supervisory signal for training a rich visual representation. Given only a large, unlabeled image collection, we extract random pairs of patches from each image and train a convolutional neural net to predict the position of the second patch relative to the first. We argue that doing well on this task requires the model to learn to recognize objects and their parts. We demonstrate that the feature representation learned using this within-image context indeed captures visual similarity across images. For example, this representation allows us to perform unsupervised visual discovery of objects like cats, people, and even birds from the Pascal VOC 2011 detection dataset. Furthermore, we show that the learned ConvNet can be used in the R-CNN framework [19] and provides a significant boost over a randomly-initialized ConvNet, resulting in state-of-the-art performance among algorithms which use only Pascal-provided training set annotations."
+    },
+    "6041424": {
+      "title": "Consistent depth maps recovery from a video sequence",
+      "abstract": "This paper presents a novel method for recovering consistent depth maps from a video sequence. We propose a bundle optimization framework to address the major difficulties in stereo reconstruction, such as dealing with image noise, occlusions, and outliers. Different from the typical multi-view stereo methods, our approach not only imposes the photo-consistency constraint, but also explicitly associates the geometric coherence with multiple frames in a statistical way. It thus can naturally maintain the temporal coherence of the recovered dense depth maps without over-smoothing. To make the inference tractable, we introduce an iterative optimization scheme by first initializing the disparity maps using a segmentation prior and then refining the disparities by means of bundle optimization. Instead of defining the visibility parameters, our method implicitly models the reconstruction noise as well as the probabilistic visibility. After bundle optimization, we introduce an efficient space-time fusion algorithm to further reduce the reconstruction noise. Our automatic depth recovery is evaluated using a variety of challenging video examples."
+    }
+  },
+  "generator": "fallback_v4"
+}

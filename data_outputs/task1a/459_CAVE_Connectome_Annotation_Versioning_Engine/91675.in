@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This translated query is then executed against the materialized database to retrieve all the annotations that are potentially related to the user's query.",
+    "For all the segment IDs that are not valid at the user-provided timestamp, the ChunkedGraph API is then queried using the associated supervoxel IDs to determine the correct segment ID for those BoundS-patialPoints.",
+    "This covers any changes that might have happened in the segmentation data between materialization and the queried time point but does not account for changes in the annotation data that might have happened in that interval.",
+    "Therefore, a second query is executed on the 'live' database using a filter on the created and deleted columns to extract any annotation rows that were added or removed on the queried tables.",
+    "Note, if the closest materialization point is in fact in the future, then the meaning of addition and removal is inverted with respect to this step."
+  ]
+}

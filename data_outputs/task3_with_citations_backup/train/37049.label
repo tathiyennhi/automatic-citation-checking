@@ -1,0 +1,40 @@
+{
+  "doc_id": "37049",
+  "text": "• Performance of DDoS Detection: Figure 6 depicts the false positive ratios for the four periods in a day. The result indicates that the false positive ratio ranges from 1.2% (bed time) to 2.4% (morning). In [CITATION_1] , the false positive ratio ranges from 1% to 8% depending on the background traffic. However, it is not clear the amount of attack traffic in [CITATION_2] . In D-WARD [CITATION_3] , the false positive ratio (which is called false alarm) is about 2%. However, it is clear about the amount of attack and normal traffic. Figure 7 , Figure 8 , and Figure 9 depict the false negative ratios of TCP SYN flooding, UDP flooding, and ICMP flooding, respectively. Because the sending rates in the ICMP flooding attack and the UDP flooding attack are the same, the results in ICMP and UDP flooding attacks are similar. When the attack rate is 150 packets per second (note that in the training phase the attack rate is 150 packets per second), the false negative ratio ranges from 5% to 10% for UDP and ICMP flooding. The false negative ratio is 2% to 3% for the TCP SYN flooding. Figure 10 , Figure 11 , and Figure 12 depict the results in the false classification ratios. The results show that the false classification ratio for the TCP SYN attacks is lower than that for ICMP and UDP flooding attacks. Nearly 40% to 50% of ICMP attacks may be mistaken as UDP attacks. Similarly, nearly 40% to 50% of UDP attacks may be mistaken as ICMP attacks. On the other hand, TCP SYN attacks are seldom mis-classified. Another important issue in DDoS detection is the detection latency, that is, how soon the system will claim an attack after the attack traffic reaches the victim. In our system, time is sliced into 1-minute slots. According to the results in Figure 13 , Figure 14 , and Figure 15 , our system could claim an attack within 1 to 1.4 minutes under different attack rates.",
+  "correct_citation": {
+    "[CITATION_1]": "19789228",
+    "[CITATION_2]": "19789228",
+    "[CITATION_3]": "665674"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In [CITATION_1] , the false positive ratio ranges from 1% to 8% depending on the background traffic.",
+      "s_span": 205,
+      "e_span": 305
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "However, it is not clear the amount of attack traffic in [CITATION_2] .",
+      "s_span": 306,
+      "e_span": 377
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In D-WARD [CITATION_3] , the false positive ratio (which is called false alarm) is about 2%.",
+      "s_span": 378,
+      "e_span": 470
+    }
+  ],
+  "bib_entries": {
+    "665674": {
+      "title": "Source-end DDoS defense",
+      "abstract": "A successful source-end DDoS (distributed denial-of-service) defense enables early suppression of the attack and minimizes collateral damage. However, such an approach faces many challenges: (a) distributing the attack hinders detection; (b) defense systems must guarantee good service to legitimate traffic during the attack; and (c) deployment costs and false alarm levels must be sufficiently small and effectiveness must be high to provide deployment incentive. We discuss each of the challenges and describe one successful design of a source-end DDoS defense system-the D-WARD system. D-WARD was implemented in a Linux router. We include experimental results to illustrate D-WARD's performance."
+    },
+    "19789228": {
+      "title": "Detecting distributed denial of service (DDoS) attacks through inductive learning",
+      "abstract": "As the complexity of Internet is scaled up, it is likely for the Internet resources to be exposed to Distributed Denial of Service (DDoS) flooding attacks on TCP-based Web servers. There has been a lot of related work which focuses on analyzing the pattern of the DDoS attacks to protect users from them. However, none of these studies takes all the flags within TCP header into account, nor do they analyze relationship between the flags and the TCP packets. To analyze the features of the DDoS attacks, therefore, this paper presents a network traffic analysis mechanism which computes the ratio of the number of TCP flags to the total number of TCP packets. Based upon the calculation of TCP flag rates, we compile a pair of the TCP flag rates and the presence (or absence) of the DDoS attack into state-action rules using machine learning algorithms. We endow alarming agents with a tapestry of the compiled rules. The agents can then detect network flooding attacks against a Web server. We validate our framework with experimental results in a simulated TCP-based network setting. The experimental results show a distinctive and predictive pattern of the DDoS attacks, and our alarming agents can successfully detect various DDoS attacks."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,29 @@
+{
+  "doc_id": "18256",
+  "text": "Several options exist for the feature extraction step depending on the nature of the time-series. For example, each raw multi-dimensional point of the time-series can be considered as a separate feature vector, e.g., the raw multi-channel measurements from an EEG device can be used. On the other hand, hand-crafted features can be also utilized. For example, if limit order book data are used, then the feature extraction procedure proposed in [CITATION_1] , can be used to extract a 144-dimensional feature vector from each block of 100 order book records. It should be also noted that it is straightforward to combine the proposed approach with trainable recurrent feature extractors, such as Gated Recurrent Units (GRUs) [CITATION_2] , to further increase the ability of the proposed method to capture complex dynamic phenomena. In this work, all the extracted feature vectors were normalized to have unit variance and zero mean (z-score standardization).",
+  "correct_citation": {
+    "[CITATION_1]": "153110192",
+    "[CITATION_2]": "9668607"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For example, if limit order book data are used, then the feature extraction procedure proposed in, can be used to extract a 144-dimensional feature vector from each block of 100 order book records."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "It should be also noted that it is straightforward to combine the proposed approach with trainable recurrent feature extractors, such as Gated Recurrent Units (GRUs), to further increase the ability of the proposed method to capture complex dynamic phenomena."
+    }
+  ],
+  "bib_entries": {
+    "153110192": {
+      "title": "Modelling high-frequency limit order book dynamics with support vector machines",
+      "abstract": "We propose a machine learning framework to capture the dynamics of high-frequency limit order books in financial equity markets and automate real-time prediction of metrics such as mid-price movement and price spread crossing. By characterizing each entry in a limit order book with a vector of attributes such as price and volume at different levels, the proposed framework builds a learning model for each metric with the help of multi-class support vector machines. Experiments with real data establish that features selected by the proposed framework are effective for short-term price movement forecasts."
+    },
+    "9668607": {
+      "title": "An empirical exploration of recurrent network architectures",
+      "abstract": "The Recurrent Neural Network (RNN) is an extremely powerful sequence model that is often difficult to train. The Long Short-Term Memory (LSTM) is a specific RNN architecture whose design makes it much easier to train. While wildly successful in practice, the LSTM's architecture appears to be ad-hoc so it is not clear if it is optimal, and the significance of its individual components is unclear. ::: ::: In this work, we aim to determine whether the LSTM architecture is optimal or whether much better architectures exist. We conducted a thorough architecture search where we evaluated over ten thousand different RNN architectures, and identified an architecture that outperforms both the LSTM and the recently-introduced Gated Recurrent Unit (GRU) on some but not all tasks. We found that adding a bias of 1 to the LSTM's forget gate closes the gap between the LSTM and the GRU."
+    }
+  },
+  "generator": "fallback"
+}

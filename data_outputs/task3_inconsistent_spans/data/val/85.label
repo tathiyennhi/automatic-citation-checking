@@ -1,0 +1,65 @@
+{
+  "doc_id": "85",
+  "text": "Unfortunately, the state-of-the-art multi-camera 3D pose estimation algorithms tend to be computationally expensive because they rely on deep networks that operate on volumetric grids [CITATION_1] , or volumetric Pictorial Structures [CITATION_2] [CITATION_3] , to combine features coming from different views in accordance with epipolar geometry. Fig. 1 Figure 1 . Overview of 3D pose estimation from multi-view images. The state-of-the-art approaches project 2D detections to 3D grids and reason jointly across views through computationally intensive volumetric convolutional neural networks [CITATION_4] or Pictorial Structures (PSM) [CITATION_5] [CITATION_6] . This yields accurate predictions but is computationally expensive. We design a lightweight architecture that predicts 2D joint locations from a learned camera-independent representation of 3D pose and then lifts them to 3D via an efficient formulation of differentiable triangulation (DLT). Our method achieves performance comparable to volumetric methods, while, unlike them, working in real-time.",
+  "correct_citation": {
+    "[CITATION_1]": "153312868",
+    "[CITATION_2]": "201891326",
+    "[CITATION_3]": "16383951",
+    "[CITATION_4]": "153312868",
+    "[CITATION_5]": "201891326",
+    "[CITATION_6]": "16383951"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Unfortunately, the state-of-the-art multi-camera 3D pose estimation algorithms tend to be computationally expensive because they rely on deep networks that operate on volumetric grids  , or volumetric Pictorial Structures   , to combine features coming from different views in accordance with epipolar geometry.",
+      "s_span": 0,
+      "e_span": 347
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Unfortunately, the state-of-the-art multi-camera 3D pose estimation algorithms tend to be computationally expensive because they rely on deep networks that operate on volumetric grids  , or volumetric Pictorial Structures   , to combine features coming from different views in accordance with epipolar geometry.",
+      "s_span": 0,
+      "e_span": 347
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Unfortunately, the state-of-the-art multi-camera 3D pose estimation algorithms tend to be computationally expensive because they rely on deep networks that operate on volumetric grids  , or volumetric Pictorial Structures   , to combine features coming from different views in accordance with epipolar geometry.",
+      "s_span": 0,
+      "e_span": 347
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The state-of-the-art approaches project 2D detections to 3D grids and reason jointly across views through computationally intensive volumetric convolutional neural networks  or Pictorial Structures (PSM)   .",
+      "s_span": 421,
+      "e_span": 664
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "The state-of-the-art approaches project 2D detections to 3D grids and reason jointly across views through computationally intensive volumetric convolutional neural networks  or Pictorial Structures (PSM)   .",
+      "s_span": 421,
+      "e_span": 664
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "The state-of-the-art approaches project 2D detections to 3D grids and reason jointly across views through computationally intensive volumetric convolutional neural networks  or Pictorial Structures (PSM)   .",
+      "s_span": 421,
+      "e_span": 664
+    }
+  ],
+  "bib_entries": {
+    "201891326": {
+      "title": "Cross view fusion for 3d human pose estimation",
+      "abstract": "We present an approach to recover absolute 3D human poses from multi-view images by incorporating multi-view geometric priors in our model. It consists of two separate steps: (1) estimating the 2D poses in multi-view images and (2) recovering the 3D poses from the multi-view 2D poses. First, we introduce a cross-view fusion scheme into CNN to jointly estimate 2D poses for multiple views. Consequently, the 2D pose estimation for each view already benefits from other views. Second, we present a recursive Pictorial Structure Model to recover the 3D pose from the multi-view 2D poses. It gradually improves the accuracy of 3D pose with affordable computational cost. We test our method on two public datasets H36M and Total Capture. The Mean Per Joint Position Errors on the two datasets are 26mm and 29mm, which outperforms the state-of-the-arts remarkably (26mm vs 52mm, 29mm vs 35mm). Our code is released at \\url{this https URL}."
+    },
+    "16383951": {
+      "title": "Harvesting multiple views for marker-less 3D human pose annotations",
+      "abstract": "Recent advances with Convolutional Networks (ConvNets) have shifted the bottleneck for many computer vision tasks to annotated data collection. In this paper, we present a geometry-driven approach to automatically collect annotations for human pose prediction tasks. Starting from a generic ConvNet for 2D human pose, and assuming a multi-view setup, we describe an automatic way to collect accurate 3D human pose annotations. We capitalize on constraints offered by the 3D geometry of the camera setup and the 3D structure of the human body to probabilistically combine per view 2D ConvNet predictions into a globally optimal 3D pose. This 3D pose is used as the basis for harvesting annotations. The benefit of the annotations produced automatically with our approach is demonstrated in two challenging settings: (i) fine-tuning a generic ConvNet-based 2D pose predictor to capture the discriminative aspects of a subject's appearance (i.e.,\"personalization\"), and (ii) training a ConvNet from scratch for single view 3D human pose prediction without leveraging 3D pose groundtruth. The proposed multi-view pose estimator achieves state-of-the-art results on standard benchmarks, demonstrating the effectiveness of our method in exploiting the available multi-view information."
+    },
+    "153312868": {
+      "title": "Learnable triangulation of human pose",
+      "abstract": "We present two novel solutions for multi-view 3D human pose estimation based on new learnable triangulation methods that combine 3D information from multiple 2D views. The first (baseline) solution is a basic differentiable algebraic triangulation with an addition of confidence weights estimated from the input images. The second solution is based on a novel method of volumetric aggregation from intermediate 2D backbone feature maps. The aggregated volume is then refined via 3D convolutions that produce final 3D joint heatmaps and allow modelling a human pose prior. Crucially, both approaches are end-to-end differentiable, which allows us to directly optimize the target metric. We demonstrate transferability of the solutions across datasets and considerably improve the multi-view state of the art on the Human3.6M dataset. Video demonstration, annotations and additional materials will be posted on our project page (this https URL)."
+    }
+  },
+  "generator": "fallback_v4"
+}

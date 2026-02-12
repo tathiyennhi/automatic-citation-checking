@@ -1,0 +1,12 @@
+{
+  "text": "The tag-based case. We define PKENO-compatible tag-based ECCA encryption TB-PKE = (Kg, Enc, Dec, pRec, Cons, Inval) analogously, where all algorithms except Kg now take an additional input t called the tag. The completeness and soundness definitions quantify over all tags t, and the scheme is required to satisfy the tag-based ECCA definition where Rec is replaced with pRec. One can convert any PKENOcompatible tag-based ECCA encryption scheme into a PEKNO-compatible (non-tag-based) ECCA encryption scheme by using BCHK transform [CITATION_1] , which preserves both partial-randomness recovery and ciphertext verifiability. Either version of the BCHK transform works, though it is interesting to that that ciphertext verifiability when using the \"more-efficient\" version based on symmetric-key primitives uses the fact that the Inval algorithm take as input partial randomness (since unlike the version using one-time signatures the symmetric-key primitives are not publicly verifiable). Details are in Appendix C. Hence, as per the above, PKENO-compatible tag-based ECCA encryption also yields PKENO. Looking ahead, using tag-based constructions will lead to our most efficient PKENO schemes.",
+  "correct_citation": {
+    "[CITATION_1]": "41844176"
+  },
+  "bib_entries": {
+    "41844176": {
+      "title": "Chosen-ciphertext security from identity-based encryption",
+      "abstract": "We propose simple and efficient CCA-secure public-key encryption schemes (i.e., schemes secure against adaptive chosen-ciphertext attacks) based on any identity-based encryption (IBE) scheme. Our constructions have ramifications of both theoretical and practical interest. First, our schemes give a new paradigm for achieving CCA-security; this paradigm avoids \u201cproofs of well-formedness\u201d that have been shown to underlie previous constructions. Second, instantiating our construction using known IBE constructions we obtain CCA-secure encryption schemes whose performance is competitive with the most efficient CCA-secure schemes to date. Our techniques extend naturally to give an efficient method for securing IBE schemes (even hierarchical ones) against adaptive chosen-ciphertext attacks. Coupled with previous work, this gives the first efficient constructions of CCA-secure IBE schemes."
+    }
+  }
+}

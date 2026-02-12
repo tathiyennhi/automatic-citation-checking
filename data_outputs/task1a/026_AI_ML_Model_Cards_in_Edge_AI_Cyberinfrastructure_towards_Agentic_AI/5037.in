@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Native MCP servers perform all operations within the MCP tool abstraction, handling JSON-RPC message parsing, state management, and response serialization directly.",
+    "The resulting simplicity in data flow can reduce latency but requires re-implementation of existing REST logic and errorhandling layers, increasing development complexity.",
+    "In contrast, the layered MCP architecture applies an adapter pattern where MCP acts as a proxy wrapping existing REST endpoints.",
+    "This approach leverages REST's mature API contracts and established tooling while exposing equivalent functionality through MCP's tool and resource schemas.Layering preserves backward compatibility and accelerates adoption but introduces double serialization costs and compounded transport overhead.",
+    "The choice between the two approaches, therefore, reflects a tradeoff between architectural purity and integration pragmatism-native designs favor performance and stability within agentic infrastructures, while layered designs favor interoperability and evolutionary system transitions.In wide-area scenarios, connection time escalates, suggesting that SSE connection setup involves multiple network round-trips."
+  ]
+}

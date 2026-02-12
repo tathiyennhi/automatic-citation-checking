@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In the pre-training stage I, we set to 1.0 after exploring values in {0.1, 0.5, 1.0} (see \"Both Align and Contrast operations are indispensable for the selfsupervised pre-training\" Section for details).",
+    "In the pretraining stage II, we use a regression head that takes the concatenation of the outputs from the sequence encoder (10) e 0 u = embedding(I u),e ℓ u = MLP v f e ℓ-1 v, r u, r v, e K u = MLP e K -1 u, h m i = 1 n u e K u,(11)f (e v, r u, r v) = e v • exp -γ ��r v -r u � 2 -µ k � 2and conformer encoder (see \"Multi-view learning excels over single-view methods on most splits\" Section for details).",
+    "During the fine-tuning stage, we perform a grid search for hyper-parameters, including the learning rate in {3e-4, 1e-3, 3e-3}, the dropout ratio in {0.1, 0.3}, the weight decay in {0, 1e-4, 1e-5}, and the loss function in {MSE, MAE}.",
+    "ReaMVP demonstrates superior generalization capability compared to SOTA modelsTo evaluate the effectiveness of ReaMVP, we compare its performance with three state-of-the-art DL yield prediction methods as listed below.• YieldBERT [3] adapts a pre-trained BERT encoder [19] to predict chemical reaction yields via reaction SMILES.",
+    "• YieldBERT-DA [24] is an extension of YieldBERT, which uses the same pre-trained BERT encoder and adds SMILES randomization and permutation as data augmentation.• UA-GNN [25] aggregates molecular embeddings learned by graph neural networks using a set of molecular graphs with permutation invariance and utilizes uncertainty-aware learning and inference.To perform a rigorous assessment of model generalization capability to unseen data, we experiment with the out-of-sample splits (as described in \"Downstream datasets\" Section), i.e., the reactions for test include molecules that are not present in the training set."
+  ]
+}

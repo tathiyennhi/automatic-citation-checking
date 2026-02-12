@@ -1,0 +1,43 @@
+{
+  "text": "Layer extraction has been a topic of research in recent years. Many techniques have been proposed for automatic segmentation of layers [6, [CITATION_1] [CITATION_2] [CITATION_3] . Though automatic segmentation of video is useful in many application like compression, coding, recognition etc. [CITATION_4] , Interactive segmentation of images [CITATION_5] [CITATION_6] and videos [CITATION_7] [CITATION_8] has developed recently. The superior quality they achieve with minimal user interaction makes them very attractive. These approaches have objectives similar to those of layer extraction. The extracted layers can be used in many applications of advanced video editing including Matting and Composition. The problem is also closely related to the object tracking problem which in itself has received lot of attention over the years.",
+  "correct_citation": {
+    "[CITATION_1]": "9804657",
+    "[CITATION_2]": "5556692",
+    "[CITATION_3]": "8279614",
+    "[CITATION_4]": "8279614",
+    "[CITATION_5]": "53235845",
+    "[CITATION_6]": "22886446",
+    "[CITATION_7]": "195711992",
+    "[CITATION_8]": "1942508"
+  },
+  "bib_entries": {
+    "53235845": {
+      "title": "Lazy snapping",
+      "abstract": "In this paper, we present Lazy Snapping, an interactive image cutout tool. Lazy Snapping separates coarse and fine scale processing, making object specification and detailed adjustment easy. Moreover, Lazy Snapping provides instant visual feedback, snapping the cutout contour to the true object boundary efficiently despite the presence of ambiguous or low contrast edges. Instant feedback is made possible by a novel image segmentation algorithm which combines graph cut with pre-computed over-segmentation. A set of intuitive user interface (UI) tools is designed and implemented to provide flexible control and editing for the users. Usability studies indicate that Lazy Snapping provides a better user experience and produces better segmentation results than the state-of-the-art interactive image cutout tool, Magnetic Lasso in Adobe Photoshop."
+    },
+    "1942508": {
+      "title": "Interactive video cutout",
+      "abstract": "We present an interactive system for efficiently extracting foreground objects from a video. We extend previous min-cut based image segmentation techniques to the domain of video with four new contributions. We provide a novel painting-based user interface that allows users to easily indicate the foreground object across space and time. We introduce a hierarchical mean-shift preprocess in order to minimize the number of nodes that min-cut must operate on. Within the min-cut we also define new local cost functions to augment the global costs defined in earlier work. Finally, we extend 2D alpha matting methods designed for images to work with 3D video volumes. We demonstrate that our matting approach preserves smoothness across both space and time. Our interactive video cutout system allows users to quickly extract foreground objects from video sequences for use in a variety of applications including compositing onto new backgrounds and NPR cartoon style rendering."
+    },
+    "5556692": {
+      "title": "Layered representation for motion analysis",
+      "abstract": "Standard approaches to motion analysis assume that the optic flow is smooth; such techniques have trouble dealing with occlusion boundaries. The image sequence can be decomposed into a set of overlapping layers, where each layer's motion is described by a smooth flow field. The discontinuities in the description are then attributed to object opacities rather than to the flow itself, mirroring the structure of the scene. A set of techniques is devised for segmenting images into coherently moving regions using affine motion analysis and clustering techniques. It is possible to decompose an image into a set of layers along with information about occlusion and depth ordering. The techniques are applied to a flower garden sequence. The scene can be analyzed into four layers, and, the entire 30-frame sequence can be represented with a single image of each layer, along with associated motion parameters. >"
+    },
+    "22886446": {
+      "title": "grabcut\": Interactive foreground extraction using iterated graph cuts",
+      "abstract": "The problem of efficient, interactive foreground/background segmentation in still images is of great practical importance in image editing. Classical image segmentation tools use either texture (colour) information, e.g. Magic Wand, or edge (contrast) information, e.g. Intelligent Scissors. Recently, an approach based on optimization by graph-cut has been developed which successfully combines both types of information. In this paper we extend the graph-cut approach in three respects. First, we have developed a more powerful, iterative version of the optimisation. Secondly, the power of the iterative algorithm is used to simplify substantially the user interaction needed for a given quality of result. Thirdly, a robust algorithm for \"border matting\" has been developed to estimate simultaneously the alpha-matte around an object boundary and the colours of foreground pixels. We show that for moderately difficult examples the proposed method outperforms competitive tools."
+    },
+    "9804657": {
+      "title": "Motion segmentation and tracking using normalized cuts",
+      "abstract": "We propose a motion segmentation algorithm that aims to break a scene into its most prominent moving groups. A weighted graph is constructed on the image sequence by connecting pixels that are in the spatiotemporal neighborhood of each other. At each pixel, we define motion profile vectors which capture the probability distribution of the image velocity. The distance between motion profiles is used to assign a weight on the graph edges. Using normalised cuts we find the most salient partitions of the spatiotemporal graph formed by the image sequence. For segmenting long image sequences, we have developed a recursive update procedure that incorporates knowledge of segmentation in previous frames for efficiently finding the group correspondence in the new frame."
+    },
+    "195711992": {
+      "title": "Video object cut and paste",
+      "abstract": "In this paper, we present a system for cutting a moving object out from a video clip. The cutout object sequence can be pasted onto another video or a background image. To achieve this, we first apply a new 3D graph cut based segmentation approach on the spatial-temporal video volume. Our algorithm partitions watershed presegmentation regions into foreground and background while preserving temporal coherence. Then, the initial segmentation result is refined locally. Given two frames in the video sequence, we specify two respective windows of interest which are then tracked using a bi-directional feature tracking algorithm. For each frame in between these two given frames, the segmentation in each tracked window is refined using a 2D graph cut that utilizes a local color model. Moreover, we provide brush tools for the user to control the object boundary precisely wherever needed. Based on the accurate binary segmentation result, we apply coherent matting to extract the alpha mattes and foreground colors of the object."
+    },
+    "8279614": {
+      "title": "Motion layer extraction in the presence of occlusion using graph cuts",
+      "abstract": "Extracting layers from video is very important for video representation, analysis, compression, and synthesis. Assuming that a scene can be approximately described by multiple planar regions, this paper describes a robust and novel approach to automatically extract a set of affine or projective transformations induced by these regions, detect the occlusion pixels over multiple consecutive frames, and segment the scene into several motion layers. First, after determining a number of seed regions using correspondences in two frames, we expand the seed regions and reject the outliers employing the graph cuts method integrated with level set representation. Next, these initial regions are merged into several initial layers according to the motion similarity. Third, an occlusion order constraint on multiple frames is explored, which enforces that the occlusion area increases with the temporal order in a short period and effectively maintains segmentation consistency over multiple consecutive frames. Then, the correct layer segmentation is obtained by using a graph cuts algorithm and the occlusions between the overlapping layers are explicitly determined. Several experimental results are demonstrated to show that our approach is effective and robust."
+    }
+  }
+}

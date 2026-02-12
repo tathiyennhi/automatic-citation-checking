@@ -1,0 +1,29 @@
+{
+  "doc_id": "9513",
+  "text": "select * from CUSTOMER C join ORDER O on C.CUSTKEY = O.CUSTKEY 2) Datasets: The scaling factor of TPC-H is set to 600. The number of tuples in the two input relations is 90 millions and 900 millions correspondingly. In the meantime, the payload in each tuple is set to 1000 Bytes 8 , leading to around 1TB input size. The generated data is evenly distributed, resulting in that the size of data chunks in each partition is very closed to each other. To evaluate our approach in more complex conditions, we make the difference of the size more obvious: for each partition, we let the size of included data chunks follow the Zipfian distribution over the n nodes (referred to as zipf ). Moreover, as data skew (referred to as skew) is quit common in join executions, in order to control the skewness in our tests, similar to current work [CITATION_1] , [CITATION_2] , we randomly choose a portion of data and change their custkey to a specified value. For example, we randomly choose 20% of the tuples and set their key to 1, which will make the skewness to 20%. In this way, we can easily identify on-going experiments and capture the essence of a skew distribution.",
+  "correct_citation": {
+    "[CITATION_1]": "6308511",
+    "[CITATION_2]": "498379"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Moreover, as data skew (referred to as skew) is quit common in join executions, in order to control the skewness in our tests, similar to current work  ,  , we randomly choose a portion of data and change their custkey to a specified value."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Moreover, as data skew (referred to as skew) is quit common in join executions, in order to control the skewness in our tests, similar to current work  ,  , we randomly choose a portion of data and change their custkey to a specified value."
+    }
+  ],
+  "bib_entries": {
+    "498379": {
+      "title": "Efficient data redistribution to speedup big data analytics in large systems",
+      "abstract": "The performance of parallel data analytics systems becomes increasingly important with the rise of Big Data. An essential operation in such environment is parallel join, which always incurs significant cost on network communication. State-of-the-art approaches have achieved performance improvements over conventional implementations through minimizing network traffic or communication time. However, these approaches still face performance issues in the presence of big data and/or large-scale systems, due to their heavy overhead of data redistribution scheduling. In this paper, we propose near-join, a network-aware redistribution approach targeting to efficiently reduce both network traffic and communication time of join executions. Particularly, near-join is lightweight and adaptable to processing large datasets over large systems. We present the details of our algorithm and its implementation. The experiments performed on a cluster of up to 400 nodes and datasets of about 100GB have demonstrated that our scheduling algorithm is much faster than the state-of-the-art methods. Moreover, our join implementation can also achieve speedups over the conventional approaches."
+    },
+    "6308511": {
+      "title": "Handling data skew in parallel joins in shared-nothing systems",
+      "abstract": "Parallel processing continues to be important in large data warehouses. The processing requirements continue to expand in multiple dimensions. These include greater volumes, increasing number of concurrent users, more complex queries, and more applications which define complex logical, semantic, and physical data models. Shared nothing parallel database management systems [16] can scale up \"horizontally\" by adding more nodes. Most parallel algorithms, however, do not take into account data skew. Data skew occurs naturally in many applications. A query processing skewed data not only slows down its response time, but generates hot nodes, which become a bottleneck throttling the overall system performance. Motivated by real business problems, we propose a new join geography called PRPD (Partial Redistribution & Partial Duplication) to improve the performance and scalability of parallel joins in the presence of data skew in a shared-nothing system. Our experimental results show that PRPD significantly speeds up query elapsed time in the presence of data skew. Our experience shows that eliminating system bottlenecks caused by data skew improves the throughput of the whole system which is important in parallel data warehouses that often run high concurrency workloads."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The output is an m × d dimensional matrix A i = [e 1,..., e m], where d is the embedding dimension and m is the number of words in the i th sentence.Due to the orderliness of text sequences, we use a bidirectional recurrent neural network, such as LSTM or GRU, to capture the order information between words.",
+    "Specifically, the word vectors of A i are sequentially input into the Bi-LSTM.",
+    "By connecting the forward hidden state and the backward hidden state, a new word-level representation h t i is produced, denoted ash t i = [h t i,1,..., h t i,m] ∈ R m×d, i.e., h t i = Bi -LS T M(A i).Multidimensional context weights.",
+    "The multi-head self-attention mechanism is used to learn the interaction between words as the attention coefficient.",
+    "Then, a multi-channel two-dimensional convolutional network is used to learn the multi-dimensional context vector of the sentence, and the attention coefficient and the multi-dimensional context vector are multiplied as the final multi-dimensional context weight of the word."
+  ],
+  "correct_citations": []
+}

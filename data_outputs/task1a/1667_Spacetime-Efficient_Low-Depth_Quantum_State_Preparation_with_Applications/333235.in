@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "(15)The total number of angles is then N -M. The states |θ(k)s,p ⟩ are then defined as in Eq.",
+    "( 9), and the product states |Θ (k) s ⟩ and |Θ (k) ⟩ as in Eq.",
+    "We document the pseudocode of the CSP circuit implementation in Algorithm 2.Algorithm 2 CSP Circuit (see Fig. 8)1: procedure CSP(m, n, D, B, F) ▷ D: data register of size m -n ▷ B: buffer register of size N M -1 ▷ F: flag register of size N M -1 2:for k in range(2 m) do3: for s in range(n -m) and p in range(2 s) do 4: Classically compute θ (k) s,p from x ▷ Use Eq.",
+    "(15) 5: end for 6: end for 7: for s in range(n -m) and p in range(2 s) do 8: X(F s,p) onto fresh \"flag\" ancilla 9: end for 10: LOADF(D, B, F)[θ (k) s,p] load angles into buffer ancillae ▷ O(n) 11: SPF(D, B, n-m) to prepare n-m qubit state with garbage ▷ O(n -m) 12:FLAG(D, F, n -m) ▷ O(n -m) 13: LOADF † (D, B, F)[θ (k) s,p] to unload angles in buffer ancillae ▷ O(n) 14: FLAG † (D, F, n -m) ▷ O(n -m) 15:for s in range(n -m) and p in range(2 s) do 16:X(F s,p) to reset \"flag\" ancilla 17:end for 18: end procedure▷ Total D exact: O(n) ▷ Total D approx: O(n + log(n/ϵ)) ▷ Total SA exact: O(2 n) ▷ Total SA approx: O((n -m)2 n-m + 2 n log(n/ϵ))The controlled state preparation circuit, shown in Fig. 8, is a generalized version of the controlled state preparation circuit proposed in Clader et al.",
+    "The general idea of the CSP circuit is to first, controlled on the control register being |k⟩, load in the correct state |Θ (k) ⟩."
+  ]
+}

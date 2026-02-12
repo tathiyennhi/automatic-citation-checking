@@ -1,0 +1,33 @@
+{
+  "doc_id": "47496",
+  "text": "One major difference between our tracking algorithm and other data association based trackers is that, the input to our tracker is dense candidate windows instead of human detection output. When pedestrians with similar appearance and motion are walking next to each other, it is very likely to have ID-Switches in tracking results. Also when a pedestrian becomes partially occluded, the track for that person tend to pick candidates that highly overlap with other nearby pedestrians ( see Fig. 4 ). This issue is addressed by non-maximum suppression in human detection [CITATION_1] or by using other techniques like the one in [CITATION_2] , where the objects are forced to keep the spatial configurations between consecutive frames. Instead we introduce a soft-spatial constraint which penalizes the tracks that highly overlap. Our spatial constraint can be easily integrated into our iterative optimization. Similar to our Lagrange multipliers, we introduce a new set of variables that penalizes the cost of observation edges that highly overlap. Now the cost associated to each observation edge becomes c k ij + λ ij + ρ ij . ρ is a vector which has the same size as the number of observation edges in the graph. It is initialized with a zero vector in the first iteration and is updated according to Eq. 14.",
+  "correct_citation": {
+    "[CITATION_1]": "3198903",
+    "[CITATION_2]": "14138179"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This issue is addressed by non-maximum suppression in human detection  or by using other techniques like the one in  , where the objects are forced to keep the spatial configurations between consecutive frames.",
+      "s_span": 500,
+      "e_span": 734
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This issue is addressed by non-maximum suppression in human detection  or by using other techniques like the one in  , where the objects are forced to keep the spatial configurations between consecutive frames.",
+      "s_span": 500,
+      "e_span": 734
+    }
+  ],
+  "bib_entries": {
+    "14138179": {
+      "title": "Structure Preserving Object Tracking",
+      "abstract": "Model-free trackers can track arbitrary objects based on a single (bounding-box) annotation of the object. Whilst the performance of model-free trackers has recently improved significantly, simultaneously tracking multiple objects with similar appearance remains very hard. In this paper, we propose a new multi-object model-free tracker (based on tracking-by-detection) that resolves this problem by incorporating spatial constraints between the objects. The spatial constraints are learned along with the object detectors using an online structured SVM algorithm. The experimental evaluation of our structure-preserving object tracker (SPOT) reveals significant performance improvements in multi-object tracking. We also show that SPOT can improve the performance of single-object trackers by simultaneously tracking different parts of the object."
+    },
+    "3198903": {
+      "title": "Object detection with discriminatively trained partbased models",
+      "abstract": "We describe an object detection system based on mixtures of multiscale deformable part models. Our system is able to represent highly variable object classes and achieves state-of-the-art results in the PASCAL object detection challenges. While deformable part models have become quite popular, their value had not been demonstrated on difficult benchmarks such as the PASCAL data sets. Our system relies on new methods for discriminative training with partially labeled data. We combine a margin-sensitive approach for data-mining hard negative examples with a formalism we call latent SVM. A latent SVM is a reformulation of MI--SVM in terms of latent variables. A latent SVM is semiconvex, and the training problem becomes convex once latent information is specified for the positive examples. This leads to an iterative training algorithm that alternates between fixing latent values for positive examples and optimizing the latent SVM objective function."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "48804",
+  "text": "In this experiment, we compare the performance of the DS-TD [CITATION_1] and the proposed ODDS-TD algorithm. We test the performances of the two algorithms on the 20-state corrupted chain domain, wherein the two goal- states are s ∈ [1, 20] with the reward signal +1, and the probability transition to the nearest goal-state is 0.9. The features are constructed as follows. 5 radial basis functions (RBF) are constructed, and one constant is used as an offset, and all other noisy features are randomly drawn from Gaussian distribution. So for each sample s t , the feature vector φ(s) = [1, RBF(1), · · · , RBF(5), s 1 , · · · , s n ]. 200 off-policy samples are collected via randomly sampling the state space. Two comparison studies are carried out. In the first experiment, there are 300 noisy features, so altogether there are 306 features, and the value function approximation result is shown in the first subfigure of Figure 5 , where v ODDS and v DS are the value function approximation results of ODDS and regular DS. From the figures, one can see that the v ODDS is much more accurate than that of v DS . The second experiment poses an even more challenging task, where the number of noisy features is set to be 600, so altogether there are 606 features, which makes the feature selection task much more difficult, and the result is shown in the second subfigure of Figure 5 . We can see that v DS has been severely distorted, whereas v ODDS is still able to well preserve the topology of the value function, and is able to generate the right policy.",
+  "correct_citation": {
+    "[CITATION_1]": "12136901"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In this experiment, we compare the performance of the DS-TD [CITATION_1] and the proposed ODDS-TD algorithm.",
+      "s_span": 0,
+      "e_span": 108
+    }
+  ],
+  "bib_entries": {
+    "12136901": {
+      "title": "A Dantzig Selector Approach to Temporal Difference Learning",
+      "abstract": "LSTD is a popular algorithm for value function approximation. Whenever the number of features is larger than the number of samples, it must be paired with some form of regularization. In particular, l1-regularization methods tend to perform feature selection by promoting sparsity, and thus, are well-suited for high-dimensional problems. However, since LSTD is not a simple regression algorithm, but it solves a fixed-point problem, its integration with l1-regularization is not straightforward and might come with some drawbacks (e.g., the P-matrix assumption for LASSO-TD). In this paper, we introduce a novel algorithm obtained by integrating LSTD with the Dantzig Selector. We investigate the performance of the proposed algorithm and its relationship with the existing regularized approaches, and show how it addresses some of their drawbacks."
+    }
+  },
+  "generator": "fallback_v4"
+}

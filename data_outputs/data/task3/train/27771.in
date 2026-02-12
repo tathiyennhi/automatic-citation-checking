@@ -1,0 +1,17 @@
+{
+  "text": "Even for random inputs, these algorithm become slow for small inputs, where their running time is dominated by a large number of message startup overheads. Note that sorting small inputs becomes important for the performance of parallel applications when it is needed in some frequently repeated coordination step between the PEs. For example, many applications perform load (re)balancing by mapping objects to space filling curves and sorting them with respect to this ordering [CITATION_1] . The scalability of the sorting algorithm may then become the limiting factor for the number of time steps we can do per second. Note that in this case it is of secondary importance whether the sorting algorithm itself is efficient compared to a sequential one -what matters is that it is faster than the local computations between rebalancing steps. Siebert and Wolf [CITATION_2] gives another rather extreme example, pointing out that the MPI_Comm_Split operation requires sorting with exactly one input per PE.",
+  "correct_citation": {
+    "[CITATION_1]": "35253108",
+    "[CITATION_2]": "2649627"
+  },
+  "bib_entries": {
+    "2649627": {
+      "title": "Parallel sorting with minimal data",
+      "abstract": "For reasons of efficiency, parallel methods are normally used to work with as many elements as possible. Contrary to this preferred situation, some applications need the opposite. This paper presents three parallel sorting algorithms suited for the extreme case where every process contributes only a single element. Scalable solutions for this case are needed for the communicator constructor MPI Comm split. Compared to previous approaches requiring O(p) memory, we introduce two new parallel sorting algorithms working with a minimum of O(1) memory. One method is simple to implement and achieves a running time of O(p). Our scalable algorithm solves this sorting problem in O(log2 p) time."
+    },
+    "35253108": {
+      "title": "Space-filling curves: an introduction with applications in scientific computing",
+      "abstract": "The present book provides an introduction to using space-filling curves (SFC) as tools in scientific computing. Special focus is laid on the representation of SFC and on resulting algorithms. For example, grammar-based techniques are introduced for traversals of Cartesian and octree-type meshes, and arithmetisation of SFC is explained to compute SFC mappings and indexings. The locality properties of SFC are discussed in detail, together with their importance for algorithms. Templates for parallelisation and cache-efficient algorithms are presented to reflect the most important applications of SFC in scientific computing. Special attention is also given to the interplay of adaptive mesh refinement and SFC, including the structured refinement of triangular and tetrahedral grids. For each topic, a short overview is given on the most important publications and recent research activities."
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Let ∆ (1) be the d + 1 × d + 1 matrix with ∆ ij = 1/(2d + i + 1).",
+    "And as β 1 → ∞, S(MASK(XA (1) X ⊤)) =   ∆ (1) 0 0 0 d×1 I d 0 0 0 d×1 ∆ (2) • • • • • •  We will write dots when the values in a block do not matter for subsequent computations.",
+    "This yields layer 1 outputs: S(MASK(XA (1) X ⊤))X =     ∆ (1) [0 1×d; P] 0 1×d 0 1×d 0 1×d• • • • • • • • • • • • P 0 d×d 0 d×d 0 d×d 0 d • • • • • • • • •     ∈ R T ×(d+T)The second layer will produce P ⊤ in the activations so that Y is written to the residual stream.",
+    "Recall:h (1) =    0 1×d 0 1×d 0 1×d 0 1×d ∆ (1) [0 1×d; P] 0 1×d 0 1×d 0 1×dP I d 0 d 0 d • • • • • • • • • • • • Y P 0 d I d 0 d P 0 d×d 0 d×d 0 d×d 0 d 0 d 0 d I d 0 d • • • • • • • • •    For constant β 2, we will have attention weights represented by the following block matrixA (2) = β 2            0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 I d 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0           This implies pre-activations Now, notice that all entries of ∆ (1) [0 1×d; P] are less than 1, since all non-zero entries of P are 1 and all entries below the first row of ∆ (1) are less than 1.",
+    "Thus, as β 2 → ∞, we have activations This implies layer-2 outputs: S(MASK(h (1) A (2) h (1)⊤))h (1) =     0 1×d 0 1×d 0 1×d 0 1×d 0 1×d 0 1×d 0 1×d 0 1×d...h (1) A (2) h (1)⊤ = β 2     0 1×d 0 d 0 d I d     0 d×1 ∆( S(MASK(h............................................. Y.....................     which recovers Y as desired.Figure 1:1Figure1: Visualizing inverse permutation learning."
+  ]
+}

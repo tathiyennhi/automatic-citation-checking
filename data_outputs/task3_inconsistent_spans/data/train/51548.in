@@ -1,0 +1,12 @@
+{
+  "text": "At each configuration, there might be several candidates for being a prn, intj or reparandum, and one regular candidate. The candidates for being a reparandum are a set of words outside the lookahead buffer and the candidates for being an intj or prn are a set of words beginning from the head of the look-ahead buffer. If the parser decides regular as the correct action, the second classifier predicts the best parsing transition, based on arc-eager parsing [CITATION_1] . Training A transition-based parser action (our second-level classifier) is sensitive to the words in the buffer and stack. The problem is that we do not have gold dependencies for edited words in our data. Therefore, we need a parser to remove reparandum words from the buffer and push them into the stack. Since our parser cannot be trained on disfluent sentences from scratch, the first step is to train it on clean treebank data.",
+  "correct_citation": {
+    "[CITATION_1]": "14358598"
+  },
+  "bib_entries": {
+    "14358598": {
+      "title": "Incrementality in deterministic dependency parsing",
+      "abstract": "Deterministic dependency parsing is a robust and efficient approach to syntactic parsing of unrestricted natural language text. In this paper, we analyze its potential for incremental processing and conclude that strict incrementality is not achievable within this framework. However, we also show that it is possible to minimize the number of structures that require non-incremental processing by choosing an optimal parsing algorithm. This claim is substantiated with experimental evidence showing that the algorithm achieves incremental parsing for 68.9% of the input when tested on a random sample of Swedish text. When restricted to sentences that are accepted by the parser, the degree of incrementality increases to 87.9%."
+    }
+  }
+}

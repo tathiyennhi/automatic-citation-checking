@@ -1,0 +1,56 @@
+{
+  "doc_id": "2377",
+  "text": "We then performed subcortical measurements and calculated volumes of the thalamus, caudate, putamen, pallidum, hippocampus, amygdala, and accumbens, using FIRST (part of FSL v5.0.8), FreeSurfer (v5.1.0), and multi-atlas segmentation. FIRST: We registered all T1-weighted images to the standard 1 mm MNI template in FSL. FIRST was applied to detect subcortical volumes using prior shape models [14, [CITATION_1] . We compared the FIRST subcortical volumes between ADNI1, PPMI1, and PPMI2 using a similar permutations-testing approach as for the cortical thickness measurements. FreeSurfer: We used the automated subcortical parcellation in FreeSurfer to detect all the above subcortical structures based on a probabilistic atlas [CITATION_2] [CITATION_3] . Multi-atlas segmentations: The multi-atlas segmentation pipeline by Asman et al. uses 15 atlases to resolve voxel assignments to pre-labeled brain regions [CITATION_4] [CITATION_5] .",
+  "correct_citation": {
+    "[CITATION_1]": "6178557",
+    "[CITATION_2]": "9629554",
+    "[CITATION_3]": "2995286",
+    "[CITATION_4]": "206869502",
+    "[CITATION_5]": "23896777"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "FIRST was applied to detect subcortical volumes using prior shape models [14,"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "FreeSurfer: We used the automated subcortical parcellation in FreeSurfer to detect all the above subcortical structures based on a probabilistic atlas."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "FreeSurfer: We used the automated subcortical parcellation in FreeSurfer to detect all the above subcortical structures based on a probabilistic atlas."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Multi-atlas segmentations: The multi-atlas segmentation pipeline by Asman et al. uses 15 atlases to resolve voxel assignments to pre-labeled brain regions."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Multi-atlas segmentations: The multi-atlas segmentation pipeline by Asman et al. uses 15 atlases to resolve voxel assignments to pre-labeled brain regions."
+    }
+  ],
+  "bib_entries": {
+    "6178557": {
+      "title": "A Bayesian model of shape and appearance for subcortical brain segmentation",
+      "abstract": "Abstract Automatic segmentation of subcortical structures in human brain MR images is an important but difficult task due to poor and variable intensity contrast. Clear, well-defined intensity features are absent in many places along typical structure boundaries and so extra information is required to achieve successful segmentation. A method is proposed here that uses manually labelled image data to provide anatomical training information. It utilises the principles of the Active Shape and Appearance Models but places them within a Bayesian framework, allowing probabilistic relationships between shape and intensity to be fully exploited. The model is trained for 15 different subcortical structures using 336 manually-labelled T1-weighted MR images. Using the Bayesian approach, conditional probabilities can be calculated easily and efficiently, avoiding technical problems of ill-conditioned covariance matrices, even with weak priors, and eliminating the need for fitting extra empirical scaling parameters, as is required in standard Active Appearance Models. Furthermore, differences in boundary vertex locations provide a direct, purely local measure of geometric change in structure between groups that, unlike voxel-based morphometry, is not dependent on tissue classification methods or arbitrary smoothing. In this paper the fully-automated segmentation method is presented and assessed both quantitatively, using Leave-One-Out testing on the 336 training images, and qualitatively, using an independent clinical dataset involving Alzheimer's disease. Median Dice overlaps between 0.7 and 0.9 are obtained with this method, which is comparable or better than other automated methods. An implementation of this method, called FIRST, is currently distributed with the freely-available FSL package."
+    },
+    "206869502": {
+      "title": "Non-local statistical label fusion for multi-atlas segmentation",
+      "abstract": "Multi-atlas segmentation provides a general purpose, fully-automated approach for transferring spatial information from an existing dataset (“atlases”) to a previously unseen context (“target”) through image registration. The method to resolve voxelwise label conflicts between the registered atlases (“label fusion”) has a substantial impact on segmentation quality. Ideally, statistical fusion algorithms (e.g., STAPLE) would result in accurate segmentations as they provide a framework to elegantly integrate models of rater performance. The accuracy of statistical fusion hinges upon accurately modeling the underlying process of how raters err. Despite success on human raters, current approaches inaccurately model multi-atlas behavior as they fail to seamlessly incorporate exogenous intensity information into the estimation process. As a result, locally weighted voting algorithms represent the de facto standard fusion approach in clinical applications. Moreover, regardless of the approach, fusion algorithms are generally dependent upon large atlas sets and highly accurate registration as they implicitly assume that the registered atlases form a collectively unbiased representation of the target. Herein, we propose a novel statistical fusion algorithm, Non-Local STAPLE (NLS). NLS reformulates the STAPLE framework from a non-local means perspective in order to learn what label an atlas would have observed, given perfect correspondence. Through this reformulation, NLS (1) seamlessly integrates intensity into the estimation process, (2) provides a theoretically consistent model of multi-atlas observation error, and (3) largely diminishes the need for large atlas sets and very high-quality registrations. We assess the sensitivity and optimality of the approach and demonstrate significant improvement in two empirical multi-atlas experiments."
+    },
+    "9629554": {
+      "title": "Whole brain segmentation: Automated labeling of neuroanatomical structures in the human brain",
+      "abstract": "An icecraft has a base provided with a plurality of ice-engaging runners. A sail-surfing rig including an articulated mast carrying a triangular sail held in place by means of a bow-type boom is fitted to this support plate so that a user can stand on the support plate and ice sail in much the same manner as in surf sailing. A standard surfboard can constitute the base plate for such an icecraft, and the runners can be replaced by wheels or the like if desired for summer use of the arrangement on land."
+    },
+    "2995286": {
+      "title": "A nonparametric method for automatic correction of intensity nonuniformity in MRI data",
+      "abstract": "A novel approach to correcting for intensity nonuniformity in magnetic resonance (MR) data is described that achieves high performance without requiring a model of the tissue classes present. The method has the advantage that it can be applied at an early stage in an automated data analysis, before a tissue model is available. Described as nonparametric nonuniform intensity normalization (N3), the method is independent of pulse sequence and insensitive to pathological data that might otherwise violate model assumptions. To eliminate the dependence of the field estimate on anatomy, an iterative approach is employed to estimate both the multiplicative bias field and the distribution of the true tissue intensities. The performance of this method is evaluated using both real and simulated MR data."
+    },
+    "23896777": {
+      "title": "Formulating spatially varying performance in the statistical fusion framework",
+      "abstract": "To date, label fusion methods have primarily relied either on global [e.g., simultaneous truth and performance level estimation (STAPLE), globally weighted vote] or voxelwise (e.g., locally weighted vote) performance models. Optimality of the statistical fusion framework hinges upon the validity of the stochastic model of how a rater errs (i.e., the labeling process model). Hitherto, approaches have tended to focus on the extremes of potential models. Herein, we propose an extension to the STAPLE approach to seamlessly account for spatially varying performance by extending the performance level parameters to account for a smooth, voxelwise performance level field that is unique to each rater. This approach, Spatial STAPLE, provides significant improvements over state-of-the-art label fusion algorithms in both simulated and empirical data sets."
+    }
+  },
+  "generator": "fallback"
+}

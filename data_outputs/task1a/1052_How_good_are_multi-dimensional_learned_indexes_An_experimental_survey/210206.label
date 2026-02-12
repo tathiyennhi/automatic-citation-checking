@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "For two points x 1, x 2, we definex 1 x 2 if x i 1 ≤ x i 2 for ∀i = 1, • • •, d.Definition 2 (Bounding Box) A box is defined as a ddimensional hyper-rectangle R = (x ℓ, x h), where x ℓ, x h ∈ R d denote the bottom-left and top-right corner points of R, respectively.",
+    "A box R degenerates to a point when x ℓ = x h (i.e., area(R) = 0).Definition 3 (Range Query) Given a collection of geometries G and a query box R Q = (x Q ℓ, x Q h), a range query retrieves all geometries (points or boxes) covered by R Q, i.e., range(RQ) = {g | g ∈ G ∧ R Q covers g}.",
+    "If g is a point x, R Q covers g = x Q ℓ x x Q h; and if g is a box R = (x ℓ, x h), R Q covers g = x Q ℓ x ℓ ∧ x h x Q h.Definition 4 (k-Nearest Neighbor Query) Given a distance metric between two geometries dist(•, •), a k-nearest neighbor query kNN(q, k) retrieves k geometries from G whose distances to q are ranked in ascending order.",
+    "Formally, for ∀g ∈ kNN(q, k), g ∈ G\\kNN(q, k) such that dist(g, q) ≤ dist(g, q).Notably, all of the multi-dimensional learned indexes discussed and evaluated in this work adopt point geometry as the data model.",
+    "However, extending indexes designed for points to support boxes, which can be regarded as a generalization to points, is straightforward, as each box can be represented by two corner points, x ℓ and x h. Queries involving boxes (e.g., range queries) can be processed by first retrieving candidate boxes using the index, then refining the results by applying spatial predicates such as covers, touch, and intersects [12]."
+  ],
+  "correct_citations": [
+    "However, extending indexes designed for points to support boxes, which can be regarded as a generalization to points, is straightforward, as each box can be represented by two corner points, x ℓ and x h. Queries involving boxes (e.g., range queries) can be processed by first retrieving candidate boxes using the index, then refining the results by applying spatial predicates such as covers, touch, and intersects [12]."
+  ]
+}

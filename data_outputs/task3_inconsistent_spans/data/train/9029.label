@@ -1,0 +1,33 @@
+{
+  "doc_id": "9029",
+  "text": "The algorithmic efficiency presented in Figure 8 is expressed in the relative number of calls of FEM-DSA and cannot directly be translated into a gain in computation time, as the computation time for a single DSA depends strongly on the amount of plastic yielding to be accounted for in the computation. For stable slopes (with little yielding) the convergence of the numerical solution is efficient; for failing slopes, the modified Newton-Raphson algorithm that is employed does not converge to a solution and the maximum prescribed number of plastic iterations is required for the analysis. The number of times a DSA is performed up to the maximum number of iterations is significantly higher for SS than for direct MCS as more slope failures are evaluated in SS. Figure 10 shows the average computation time required for 1000 FEM calls in MCS-SSR, MCS-DSA and SS for different levels of f s . The computation time for MCS-SSR includes the iterations to find the FOS , here at an accuracy of 1 × 10 −3 . The computation times for SS represent simulations up to the given f s , thereby including the required DSA at higher f s for the intermediate subsets. The relative difference between the computation time in subset simulation and MCS-DSA is given in Figure 11 . This relative difference can be used as a correction factor on the algorithmic efficiency to obtain the computation time efficiency of the methods. Table 3 gives the computation time efficiency of SS relative to MCS, corrected for relative computation time with respect to algorithmic efficiencies presented in s . This choice was not adapted afterwards, although a possible gain in efficiency can be made by optimizing it. The efficiency of subset simulation is further determined by the efficient sampling of uncorrelated realizations in the Markov chains, which also could be optimized [CITATION_1] [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "62131656",
+    "[CITATION_2]": "5636060"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The efficiency of subset simulation is further determined by the efficient sampling of uncorrelated realizations in the Markov chains, which also could be optimized   .",
+      "s_span": 1693,
+      "e_span": 1885
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The efficiency of subset simulation is further determined by the efficient sampling of uncorrelated realizations in the Markov chains, which also could be optimized   .",
+      "s_span": 1693,
+      "e_span": 1885
+    }
+  ],
+  "bib_entries": {
+    "5636060": {
+      "title": "Markov chain Monte Carlo simulation using the DREAM software package: Theory, concepts, and matlab implementation",
+      "abstract": "© 2015 Elsevier Ltd. Bayesian inference has found widespread application and use in science and engineering to reconcile Earth system models with data, including prediction in space (interpolation), prediction in time (forecasting), assimilation of observations and deterministic/stochastic model output, and inference of the model parameters. Bayes theorem states that the posterior probability, p(H|Y~) of a hypothesis, H is proportional to the product of the prior probability, p( H) of this hypothesis and the likelihood, L(H|Y~) of the same hypothesis given the new observations, Y~, or p(H|Y~)∝p(H)L(H|Y~). In science and engineering, H often constitutes some numerical model, ℱ(x) which summarizes, in algebraic and differential equations, state variables and fluxes, all knowledge of the system of interest, and the unknown parameter values, x are subject to inference using the data Y~. Unfortunately, for complex system models the posterior distribution is often high dimensional and analytically intractable, and sampling methods are required to approximate the target. In this paper I review the basic theory of Markov chain Monte Carlo (MCMC) simulation and introduce a MATLAB toolbox of the DiffeRential Evolution Adaptive Metropolis (DREAM) algorithm developed by Vrugt et al. (2008a, 2009a) and used for Bayesian inference in fields ranging from physics, chemistry and engineering, to ecology, hydrology, and geophysics. This MATLAB toolbox provides scientists and engineers with an arsenal of options and utilities to solve posterior sampling problems involving (among others) bimodality, high-dimensionality, summary statistics, bounded parameter spaces, dynamic simulation models, formal/informal likelihood functions (GLUE), diagnostic model evaluation, data assimilation, Bayesian model averaging, distributed computation, and informative/noninformative prior distributions. The DREAM toolbox supports parallel computing and includes tools for convergence analysis of the sampled chain trajectories and post-processing of the results. Seven different case studies illustrate the main capabilities and functionalities of the MATLAB toolbox."
+    },
+    "62131656": {
+      "title": "Accelerated subset simulation with neural networks for reliability analysis",
+      "abstract": "Subset Simulation (SS) is a powerful tool, simple to implement and capable of solving a broad range of reliability analysis problems. In many cases however, SS leads to reliability predictions that exhibit a large variability due to the fact that the robustness of the SS prediction depends on the selection of an adequate width of the proposal distribution when applying the modified Metropolis algorithm. In this work a Neural Network-based SS (SS-NN) methodology is proposed in which NN are effectively trained over smaller sub-domains of the total random variable space which are generated progressively at each SS level by the modified Metropolis algorithm. NN are then used as robust meta-models in order to increase the efficiency of SS by increasing significantly the samples per SS level with a minimum additional computational effort. In the numerical examples considered, it is demonstrated that the training of a sufficiently accurate NN meta-model in the context of SS simulation leads to more robust estimations of the probability of failure both in terms of mean and variance of the estimator."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Therefore, this ambiguity in the schema caused the LLM to get confused and project a column instead of doing the join correctly.",
+    "Listing 4: A common error in the SQL generated for LLM in the Mondial database.",
+    "CREATE TABLE country (name VARCHAR (50 CHAR) NOT NULL, code VARCHAR(4 CHAR) NOT NULL, capital VARCHAR (50 CHAR), province VARCHAR (50 CHAR), area NUMBER, population NUMBER, CONSTRAINT countrykey PRIMARY KEY (code), CONSTRAINT countryarea CHECK (Area >= 0), CONSTRAINT countrypop CHECK (Population >= 0)) CREATE TABLE language (country VARCHAR(4 CHAR) NOT NULL, name VARCHAR (50 CHAR) NOT NULL, percentage NUMBER, CONSTRAINT languagekey PRIMARY KEY (name, country), CONSTRAINT language_country_fk FOREIGN KEY(country) REFERENCES country (code), CONSTRAINT languagepercent CHECK ((Percentage > 0) AND (Percentage <= 100))) In some cases, samples of instances from the database were passed and LLM was able to capture the semantics of the data in the database, correctly identifying that country refers to the country's acronym.",
+    "Listing 5.5 shows a correctly generated SQL query, although a join was expected: A limited experiment was done by changing the country column to code_country.",
+    "As a result, the LLM was able to generate the SQL query correctly."
+  ]
+}

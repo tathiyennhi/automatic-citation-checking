@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We compute feature based distillation loss by projecting features h i,l Φj ∈ R dj to a low-dimensional space R d low:ℓ FD [h i Φj, h i Φ1] = l β l j ∥U l j h i,l Φj -U l 1 h i,gj (l) Φ1 ∥ 2 2,where g j maps each layer index of the sub-transformer configuration Φ j to that of the supertransformer ( / maxnet Φ 1).",
+    "In this paper, we propose to share the maxnet's feature projection matrices {U l 1 ∈ R d low ×d1 } across all sub-transformer models.",
+    "We do so by slicing the matrices {U l 1 }:U l j:= [ U gj (l) 1] Φj ∈ R d low ×dj,(11)where the operation [] Φj selects appropriate subset of columns depending on the configuration Φ j.To reduce the number of user-chosen hyper-parameters, we propose the following hyper-parameter sharing: β l j:= β gj (l), ∀j, l = 1, 2,....",
+    "Thus, apart from setting fewer hyper-parameters, one needs to learn only maxnet's feature projection matrices {U l 1: l = 1, 2,...}, making feature distillation in a super-transformer setting computationally efficient.",
+    "Additionally, we save computation through use of features only from a fixed subset of maxnet layers for distillation across all sub-transformers: i.e., we use the following subset of maxnet layers: { g min (l): l = 1,..., L min }, where L min denotes the number of transformer layers in the smallest sub-transformer Φ min and g min maps layer indices of Φ min to that of maxnet Φ 1.6 Low-rank approach for Distilling an LLM onto a Pre-trained studentIn this section, we considerthe standard single-stage distillation approach for training a smaller (student) model on a target task with help from a larger fine-tuned (teacher) model."
+  ]
+}

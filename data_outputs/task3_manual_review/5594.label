@@ -1,0 +1,20 @@
+{
+  "doc_id": "5594",
+  "text": "Specifically, in the augmentation stage at any time , a pair of samples can be obtained by sampling from the conditional prior density function . Thus, each particle will be augmented to . In the rejuvenation stage at time , they use three types of moves 1) Rescaling: All coordinates and velocities representing the ship's trajectory are reduced or amplified by the same factor. For the specification, they implemented this move according to a Metropolis-Hastings scheme by using a symmetric proposal distribution. 2) Local perturbation: This is the key step to implement resampling-move algorithm. The particle trajectory is perturbed by moving a block of consecutive points of the trajectory to a new position while the remaining part of the trajectory is not changed. This move also follows a Metropolis-Hastings scheme. The move is applied to the vector first and then the vector . For any given block currently at value , a new candidate can be drawn from the proposal distribution. 3) -move: Update the value of . The parameter is updated by a standard Gibbs move. For the details of the earlier moves, see [CITATION_1] and [11Ch. 6].",
+  "correct_citation": {
+    "[CITATION_1]": "124058301"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For the details of the earlier moves, see and [11Ch. 6]."
+    }
+  ],
+  "bib_entries": {
+    "124058301": {
+      "title": "Following a moving target: Monte Carlo inference for dynamic Bayesian models",
+      "abstract": "Markov chain Monte Carlo (MCMC) sampling is a numerically intensive simulation technique which has greatly improved the practicality of Bayesian inference and prediction. However, MCMC sampling is too slow to be of practical use in problems involving a large number of posterior (target) distributions, as in dynamic modelling and predictive model selection. Alternative simulation techniques for tracking moving target distributions, known as particle filters, which combine importance sampling, importance resampling and MCMC sampling, tend to suffer from a progressive degeneration as the target sequence evolves. We propose a new technique, based on these same simulation methodologies, which does not suffer from this progressive degeneration."
+    }
+  },
+  "generator": "fallback"
+}

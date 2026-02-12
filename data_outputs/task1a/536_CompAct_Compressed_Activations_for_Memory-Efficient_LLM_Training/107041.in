@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Further, compressing the shared activation between these two layers would introduce errors in the gradient with respect to the FlashAttention input, potentially causing error accumulation across layers.",
+    "Addressing this issue lies outside the current scope of CompAct.",
+    "As a result, we left the output-projection layer uncompressed in our experiments.",
+    "In future work, a custom CUDA kernel for FlashAttention may allow compression of this layer without introducing errors.",
+    "However, not compressing this layer introduced instability in the pretraining experiments when training with larger learning rates, due to the inconsistent learning rate across different linear layers induced by the scale α."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "text": "Na\u00efve computation of the canonical form requires exhaustive enumeration of all the possible transformations. For NPN classification of n input Boolean functions, n! permutations and 2 n+1 negations should be enumerated. Various methods based on signatures [CITATION_1] [11] and variable symmetry [CITATION_2] [11] [CITATION_3] - [CITATION_4] are used to reduce the computation cost. However, none of the method works well for all functions. In some cases, semi-canonical form can be used instead of the exact canonical form [CITATION_5] [CITATION_6] in order to get practical runtime.",
+  "correct_citation": {
+    "[CITATION_1]": "2430277",
+    "[CITATION_2]": "2430277",
+    "[CITATION_3]": "1087847",
+    "[CITATION_4]": "21944094",
+    "[CITATION_5]": "10029375",
+    "[CITATION_6]": "2605361"
+  },
+  "bib_entries": {
+    "2605361": {
+      "title": "Fast hierarchical NPN classification",
+      "abstract": "Classifying functions according to some common properties into libraries of functions is an important step in many logic synthesis and technology mapping algorithms used in FPGA design flows. NPN classification is one of the frequently used classifications. Existing algorithms for NPN classification perform a sequence of steps to derive the resulting NPN class, but discard the intermediate results produced at the end of each step. The hierarchical method introduced in this paper uses the same sequence of steps, but it saves the intermediate results at each step and reuses them when classifying other functions. It is, on average, 3.7 times faster compared to a state-of-the-art non-hierarchical method, at the cost of a modest increase in memory needed to save the class hierarchy. The hierarchical approach enables a rapid exact NPN classification for functions up to 10 inputs\u2014it exactly classifies one million 6-input functions in the same time as the heuristic state-of-the-art algorithm."
+    },
+    "10029375": {
+      "title": "Fast Boolean matching based on NPN classification",
+      "abstract": "This paper proposes a fast algorithm for Boolean matching of completely specified Boolean functions. The algorithm is based on the NPN classification and can be applied on-the-fly to millions of small practical functions appearing in industrial designs, leading to runtime and memory reduction in logic synthesis and technology mapping. The algorithm is conceptually simpler, faster, and more scalable than previous work."
+    },
+    "21944094": {
+      "title": "Boolean function classification via fixed polarity Reed-Muller forms",
+      "abstract": "In this paper, we present a new method to characterize completely specified Boolean functions. The central theme of the classification is the functional equivalence (a.k.a. Boolean matching). Two Boolean functions are equivalent if there exists input permutation, input negation, or output negation that can transform one function to the other. We have derived a method that can efficiently identify equivalence classes of Boolean functions. The well-known canonical Fixed Polarity Reed-Muller (FPRM) forms are used as a powerful analysis tool. The necessary transformations to derive one function from the other are inherent in the FPRM representations. To identify uniquely each equivalence class, a set of well-known characteristics of Boolean functions and their variables (including linearity, symmetry, total symmetry, self-complement, and self-duality) are employed. It is shown that all the equivalence classes of four-variable functions are uniquely identified where majority of the classes have a single FPRM form as their representative. The Boolean matching has applications in technology mapping and in design of standard cell libraries."
+    },
+    "1087847": {
+      "title": "Symmetry detection and Boolean matching utilizing a signature-based canonical form of Boolean functions",
+      "abstract": "A compact canonical form and a computational procedure for solving the Boolean matching problem under permutation and complementation of variables are presented. The proposed approach, which utilizes generalized signatures and variable symmetries, can handle combinational functions with no limitation on the number of input variables. Experimental results demonstrate the generality and effectiveness of the proposed canonical form and the associated Boolean matching algorithm."
+    },
+    "2430277": {
+      "title": "Boolean matching for large libraries",
+      "abstract": "Boolean matching tackles the problem whether a subcircuit of a boolean network can be substituted by a cell from a cell library. In previous approaches [7, 10, 8] each pair of a subcircuit and a cell is tested for NPN equivalence. This becomes very expensive if the cell library is large. In our approach the time complexity for matching a subcircuit against a library L is almost independent of the size of L . CPU time also remains small for matching a subcircuit against the huge set of functions obtained by bridging and fixing cell inputs; but the use of these functions in technology mapping is very profitable. Our method is based on a canonical representative for each NPN equivalence class. We show how this representative can be computed efficiently and how it can be used for matching a boolcan function against a set of library functions."
+    }
+  }
+}

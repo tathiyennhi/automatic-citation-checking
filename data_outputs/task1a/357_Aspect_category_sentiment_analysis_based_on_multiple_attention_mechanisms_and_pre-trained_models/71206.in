@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For each word, its input representation is constructed by adding corresponding word, segment, and position embeddings bitwise.",
+    "For classification tasks, the first token position of each sentence sequence is a special token ([CLS]).",
+    "Use the first special token [CLS] of the final hidden state layer as the final vector representation of the input sequence.",
+    "The document attention can be represented as follows:𝑢 𝑡 = tanh(𝑑 𝑡 𝑊 𝑤 + 𝑏 𝑤)(1)𝛼 𝑡 = exp(𝑢 𝑡 𝑢 𝑤) ∑ exp(𝑢 𝑡 𝑢 𝑤) 𝑛 𝑡=0(2)𝑠 = ∑ 𝛼 𝑡 𝑑 𝑡 𝑛 𝑡=0(3)In this formula, we utilize a module composed of attention weights and parameters 𝑊 𝑤 and 𝑏 𝑤, which constitute the bias terms, to extract output weights for various features, integrating them into a vector 𝑠 ∈ 𝑅 𝐻.",
+    "For each different aspect category, we have a corresponding document attention layer, which, through a cross-attention mechanism, guides the network to focus on key parts of the comment text related to the aspect category."
+  ]
+}

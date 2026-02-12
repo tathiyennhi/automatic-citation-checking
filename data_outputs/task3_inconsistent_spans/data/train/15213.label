@@ -1,0 +1,33 @@
+{
+  "doc_id": "15213",
+  "text": "In the second step, accurate data association is essential for the tracking process. In both LIDAR and vision-based tracking tasks, Multiple Hypothesis Tracking (MHT) is a promising solution. In MHT, the possible track hypotheses for every candidate track form a tree structure. To select the best track hypothesis and prune other invalid hypotheses, a likelihood of each track is calculated accordingly [CITATION_1] . In contrast, the joint probabilistic data association (JPDA) method considers all the potential hypotheses. In each time frame, a joint probability score is calculated to associate the measurement with confirmed tracks [CITATION_2] . MHT and JPDA are widely used, but they suffer from the similar limitation that the computation complexity is relatively large for on-board computation. In our proposed method, we view the data association step as an integer programming problem. In order to solve the problem of the deformation and missing objects caused by occlusions and sparsity of the low-cost sensor, we keep a list of previously confirmed trackers and apply the Hungarian algorithm to find the optimal assignment.",
+  "correct_citation": {
+    "[CITATION_1]": "8671079",
+    "[CITATION_2]": "16580825"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To select the best track hypothesis and prune other invalid hypotheses, a likelihood of each track is calculated accordingly  .",
+      "s_span": 279,
+      "e_span": 418
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In each time frame, a joint probability score is calculated to associate the measurement with confirmed tracks  .",
+      "s_span": 527,
+      "e_span": 652
+    }
+  ],
+  "bib_entries": {
+    "16580825": {
+      "title": "Joint probabilistic data association revisited",
+      "abstract": "In this paper, we revisit the joint probabilistic data association (JPDA) technique and propose a novel solution based on recent developments in finding the m-best solutions to an integer linear program. The key advantage of this approach is that it makes JPDA computationally tractable in applications with high target and/or clutter density, such as spot tracking in fluorescence microscopy sequences and pedestrian tracking in surveillance footage. We also show that our JPDA algorithm embedded in a simple tracking framework is surprisingly competitive with state-of-the-art global tracking methods in these two applications, while needing considerably less processing time."
+    },
+    "8671079": {
+      "title": "Multiple hypothesis tracking revisited",
+      "abstract": "This paper revisits the classical multiple hypotheses tracking (MHT) algorithm in a tracking-by-detection framework. The success of MHT largely depends on the ability to maintain a small list of potential hypotheses, which can be facilitated with the accurate object detectors that are currently available. We demonstrate that a classical MHT implementation from the 90's can come surprisingly close to the performance of state-of-the-art methods on standard benchmark datasets. In order to further utilize the strength of MHT in exploiting higher-order information, we introduce a method for training online appearance models for each track hypothesis. We show that appearance models can be learned efficiently via a regularized least squares framework, requiring only a few extra operations for each hypothesis branch. We obtain state-of-the-art results on popular tracking-by-detection datasets such as PETS and the recent MOT challenge."
+    }
+  },
+  "generator": "fallback_v4"
+}

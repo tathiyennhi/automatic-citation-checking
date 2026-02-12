@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To understand the pattern of information flow within the hybrid model, we investigate the mechanism of information exchange among vision, instruction, and response tokens in attention layers during autoregressive generation, following the methodology of [42].",
+    "We apply attention masks L and set the corresponding matrix values to 0 to block information exchange among different types of tokens.",
+    "For clarity, we illustrate our two information-blocking configurations, i.e., vision-to-instruction (V2I) and vision-toresponse (V2R), by assuming that X 0, X 1, and Y each contain only a single token at the l-th layer:• block the information from vision to instruction tokens:X l+1 0, X l+1 1, Y l+1:t =   1 0 0 0 1 0 1 1 1   • X l 0, X l 1, Y l:t(3)• block the information from vision to response tokens:X l+1 0, X l+1 1, Y l+1:t =   1 0 0 1 1 0 0 1 1   • X l 0, X l 1, Y l:t(4)As shown in Figure 3, we observe a consistent vision-totext aggregation phenomenon: in instruction-centric tasks, visual information is progressively absorbed into instruction tokens until deeper layers, whereas in vision-centric tasks, vision tokens directly contribute to response generation.",
+    "Blocking V2I drastically degrades performance in early layers for MCQ and TVG, but has negligible impact in later layers, confirming that instruction tokens eventually internalize visual cues.",
+    "Conversely, in VDC, blocking V2R causes a sharp drop in shallow layers, highlighting the dominant role of vision tokens in direct response generation."
+  ]
+}

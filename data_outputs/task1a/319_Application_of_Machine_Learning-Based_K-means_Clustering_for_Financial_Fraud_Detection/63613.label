@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Undersampling -Splitting the data 65% -35%Undersampling method consists of keeping all available fraud transactions, while undersampling the non-fraud transactions to around the same number.the split is made so that proportions within the data for age, gender, category, amount_thresh and merchant remain the same final table dimension is fraud data: 7,160 and non fraud data: 9,647 we split 65%-35% to be sure that the model classifies as correct as possible non frauds as well (very important for the relationship with the customer) Modeling and Evaluation # --------------------Inspect resultsresamples <-resamples(model_list) dotplot(resamples, metric = \"Sens\") Figure 4.",
+    "Cross-validation results model 2By evaluating the two models (xgbTree and fda) on test data, we found that:1.",
+    "On the test data set, the sensitivity of xgbTree model was 98.28%, while the sensitivity of fda model was 99.72%.",
+    "This suggests that the fda model is better at identifying fraudulent transactions.2.",
+    "Through visualization of Confusion Matrix, we can further analyze the model's performance on test data."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "An ImageNet pre-trained model expects images of higher resolution, specifically 224 × 224 in our case; therefore the cell crops are first resized.",
+    "The pixel values are then rescaled using min-max normalization and adjusted to have values [-1:1] to match the required input range.",
+    "As Cell Painting images are five-channel and ImageNet pre-trained models expect three-channel (RGB) images, we follow the well established practice of computing a pseudo RGB image for each grayscale fluorescent channel by replicating it three times before passing it through the model (thus each cell requires five inference passes).",
+    "Features extracted for each channel are concatenated and the resulting feature vector size is 3,360 (672 is the size of the block6a-activation layer of the EfficientNet used in our experiments).",
+    "Multiple instance learning (MIL) is a learning technique for datasets with weak labels, where the training examples are assorted into sets of examplesbags, and each bag has a single label 54."
+  ]
+}

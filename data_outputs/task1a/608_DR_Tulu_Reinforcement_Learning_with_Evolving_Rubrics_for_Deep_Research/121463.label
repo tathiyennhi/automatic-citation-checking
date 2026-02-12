@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Specifically, we run our trained model on randomly sampled prompts, apply rejection sampling to discard trajectories that do not achieve high scores on search-based rubric verification and citation verification (details in Appendix C.3), and then use the remaining trajectories for further SFT.",
+    "While this slightly boosts SFT model performance, we find it ultimately weakens performance later on during RL training, underperforming using our regular SFT mixture on Healthbench and SQAv2.",
+    "We also found that extended RL training was crucial to performance: in some cases, evaluations that initially seemed flat (e.g., DRB) improved with extended RL training up to 1000 and even 1900 steps.",
+    "We also note that we found that higher train reward (i.e., reward during RL training) did not necessarily match with higher downstream reward, see Appendix F.5 for details.",
+    "Finally, we also find that our training is robust to tool errors, with the model improving in performance even after training for an extended time with a tool consistently erroring -see Appendix F.1 for details and the full RL training curves."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,38 @@
+{
+  "doc_id": "55653",
+  "text": "RaMBO O(n log n) Mohapatra et al. [CITATION_1] O(n log p) x Chen et al. [CITATION_2] O(np) Yue et al. [CITATION_3] O(n 2 )",
+  "correct_citation": {
+    "[CITATION_1]": "3621892",
+    "[CITATION_2]": "119286900",
+    "[CITATION_3]": "7423459"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "RaMBO O(n log n) Mohapatra et al."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "O(n log p) x Chen et al."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "RaMBO O(n log n) Mohapatra et al. O(n log p) x Chen et al. O(np) Yue et al."
+    }
+  ],
+  "bib_entries": {
+    "3621892": {
+      "title": "Efficient optimization for rank-based loss functions",
+      "abstract": "The accuracy of information retrieval systems is often measured using complex loss functions such as the average precision (AP) or the normalized discounted cumulative gain (NDCG). Given a set of positive (relevant) and negative (non-relevant) samples, the parameters of a retrieval system can be estimated by minimizing these loss functions. However, the non-differentiability and non-decomposability of these loss functions does not allow for simple gradient based optimization algorithms. This issue is generally circumvented by either optimizing a structured hinge-loss upper bound to the loss function or by using asymptotic methods like the direct-loss minimization framework. Yet, the high computational complexity of loss-augmented inference, which is necessary for both the frameworks, prohibits its use in large training data sets. To alleviate this deficiency, we present a novel quicksort flavored algorithm for a large class of non-decomposable loss functions. We provide a complete characterization of the loss functions that are amenable to our algorithm, and show that it includes both AP and NDCG based loss functions. Furthermore, we prove that no comparison based algorithm can improve upon the computational complexity of our approach asymptotically. We demonstrate the effectiveness of our approach in the context of optimizing the structured hinge loss upper bound of AP and NDCG loss for learning models for a variety of vision tasks. Using the CIFAR-10 data set and the PASCAL VOC action recognition and object detection data sets, we show that our approach provides significantly better results than simpler decomposable loss functions, while requiring a comparable training time."
+    },
+    "7423459": {
+      "title": "A support vector method for optimizing average precision",
+      "abstract": "Machine learning is commonly used to improve ranked retrieval systems. Due to computational difficulties, few learning techniques have been developed to directly optimize for mean average precision (MAP), despite its widespread use in evaluating such systems. Existing approaches optimizing MAP either do not find a globally optimal solution, or are computationally expensive. In contrast, we present a general SVM learning algorithm that efficiently finds a globally optimal solution to a straightforward relaxation of MAP. We evaluate our approach using the TREC 9 and TREC 10 Web Track corpora (WT10g), comparing against SVMs optimized for accuracy and ROCArea. In most cases we show our method to produce statistically significant improvements in MAP scores."
+    },
+    "119286900": {
+      "title": "Towards accurate one-stage object detection with ap-loss",
+      "abstract": "One-stage object detectors are trained by optimizing classification-loss and localization-loss simultaneously, with the former suffering much from extreme foreground-background class imbalance issue due to the large number of anchors. This paper alleviates this issue by proposing a novel framework to replace the classification task in one-stage detectors with a ranking task, and adopting the Average-Precision loss (AP-loss) for the ranking problem. Due to its non-differentiability and non-convexity, the AP-loss cannot be optimized directly. For this purpose, we develop a novel optimization algorithm, which seamlessly combines the error-driven update scheme in perceptron learning and backpropagation algorithm in deep networks. We verify good convergence property of the proposed algorithm theoretically and empirically. Experimental results demonstrate notable performance improvement in state-of-the-art one-stage detectors based on AP-loss over different kinds of classification-losses on various benchmarks, without changing the network architectures."
+    }
+  },
+  "generator": "fallback"
+}

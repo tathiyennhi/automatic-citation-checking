@@ -1,0 +1,32 @@
+{
+  "text": "Although the three pieces of my work above look very different superficially, they are actually closely related by the \"scoring\" formulation and, more specifically, by the equations introduced in Section 2. In other words, they all compute a linear classifier. 4 The only differences among them are: (1) What features are used? (2) How are the parameters i estimated? A general perspective I bring to my investigation is the desire to delineate the effects of domain engineering (choosing good features for representing and learning parsing models) from the general machine learning principles (training criteria, regularization and smoothing techniques) that permit good results. In fact, combined features have been proved to be useful in dependency parsing with support vector machines [CITATION_1] , and I have already obtained some preliminary results on generating useful feature combinations via boosting. Therefore, I will consider combining all the projects I presented above. That is, I plan to incorporate all the useful features, the morphological features and the combined features as discussed above, into the training algorithms presented in Section 4 or Section 5, to train a dependency parser globally. Then I am going to augment the training with the existing smoothing and regularization techniques (as described in Section 4), or new developed ones. I expect the resulting parser to have better performance than those I have presented above.",
+  "citation_candidates": [
+    "13163488",
+    "15698938",
+    "11091754",
+    "2621606",
+    "6713452"
+  ],
+  "bib_entries": {
+    "6713452": {
+      "title": "Distributional clustering of English words",
+      "abstract": "We describe and evaluate experimentally a method for clustering words according to their distribution in particular syntactic contexts. Words are represented by the relative frequency distributions of contexts in which they appear, and relative entropy between those distributions is used as the similarity measure for clustering. Clusters are represented by average context distributions derived from the given words according to their probabilities of cluster membership. In many cases, the clusters can be thought of as encoding coarse sense distinctions. Deterministic annealing is used to find lowest distortion sets of clusters: as the annealing parameter increases, existing clusters become unstable and subdivide, yielding a hierarchical \"soft\" clustering of the data. Clusters are used as the basis for class models of word coocurrence, and the models evaluated with respect to held-out test data."
+    },
+    "11091754": {
+      "title": "Corpus-derived first, second and thirdorder word affinities",
+      "abstract": "A number of corpus-based extraction techniques have been successfully implemented which derive lists of similar words, based on some definition of the context in which they are found, from a corpus. We present here the results of affining such a list in order to extract semantic axes expressing nuances of a word's meaning. These semantic axes represent corpus-based meaning distinctions that are based on the word's usage in the corpus."
+    },
+    "15698938": {
+      "title": "Automatic retrieval and clustering of similar words",
+      "abstract": "Bootstrapping semantics from text is one of the greatest challenges in natural language learning. We first define a word similarity measure based on the distributional pattern of words. The similarity measure allows us to construct a thesaurus using a parsed corpus. We then present a new evaluation methodology for the automatically constructed thesaurus. The evaluation results show that the thesaurus is significantly closer to WordNet than Roget Thesaurus is."
+    },
+    "2621606": {
+      "title": "Simple training of dependency parsers via structured boosting",
+      "abstract": "Recently, significant progress has been made on learning structured predictors via coordinated training algorithms such as conditional random fields and maximum margin Markov networks. Unfortunately, these techniques are based on specialized training algorithms, are complex to implement, and expensive to run. We present a much simpler approach to training structured predictors by applying a boosting-like procedure to standard supervised training methods. The idea is to learn a local predictor using standard methods, such as logistic regression or support vector machines, but then achieve improved structured classification by \"boosting\" the influence of misclassified components after structured prediction, re-training the local predictor, and repeating. Further improvement in structured prediction accuracy can be achieved by incorporating \"dynamic\" features--i.e. an extension whereby the features for one predicted component can depend on the predictions already made for some other components. ::: ::: We apply our techniques to the problem of learning dependency parsers from annotated natural language corpora. By using logistic regression as an efficient base classifier (for predicting dependency links between word pairs), we are able to efficiently train a dependency parsing model, via structured boosting, that achieves state of the art results in English, and surpasses state of the art in Chinese."
+    },
+    "13163488": {
+      "title": "Statistical dependency analysis with support vector machines",
+      "abstract": "In this paper, we propose a method for analyzing word-word dependencies using deterministic bottom-up manner using Support Vector machines. We experimented with dependency trees converted from Penn treebank data, and achieved over 90% accuracy of word-word dependency. Though the result is little worse than the most up-to-date phrase structure based parsers, it looks satisfactorily accurate considering that our parser uses no information from phrase structures."
+    }
+  }
+}

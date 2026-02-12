@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "7 8 Each test case must be formatted for a CSV file as follows, do not include any headings: 9 10 test0, state0, i, function_block_name.inputl, test input value 11 test0, state0, i, function_block_name.input2, test input value 12 test0, state0, i, function_block_name.input3, test input value 13... *** for all inputs of the function block in state0 *** 14 test0, state0, o, function_block_name.outputl, expected output value 15 test0, state0, o, function_block_name.output2, expected output value 16 test0, state0, o, function_block_name.output3, expected output value 17... *** for all outputs of the function block in state0 *** 18 test0, statel, i, function_block_name.inputl, test input value 19 test0, statel, i, function_block_name.input2, test input value 20 test0, statel, i, function_block_name.input3, test input value 21... *** for all inputs of the function block in statel *** 22 test0, statel, o, function_block_name.outputl, expected output value 23 test0, statel, o, function_block_name.output2, expected output value 24 test0, statel, o, function_block_name.output3, expected output value 25... *** for all outputs of the function block in statel *** 26... *** for all states of test0 *** 27 testl, state0, i, function_block_name.inputl, test input value 28 testl, state0, i, function_block_name.input2, test input value 29... *** and so on *** 30 31 32The function block to tests is the following: Fig. 2.",
+    "Test Case Generation PromptOur prompt first provides instructions specifically for test case generation.",
+    "We ask the LLM to aim for statement coverage of the code, although this is unlikely to be achieved for any non-trivial code.",
+    "In the second part of the prompt, we provide formatting instructions for the test case as a CSV file.",
+    "Notice that the parts that shall be adapted by the LLM are marked with \"*** instruction ***\"."
+  ],
+  "correct_citations": []
+}

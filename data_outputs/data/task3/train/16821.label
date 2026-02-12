@@ -1,0 +1,65 @@
+{
+  "doc_id": "16821",
+  "text": "Achieving the radiometric correction quality necessary to compare areas that are separated in space and/or time is not a trivial task, especially given the discrepancy between the spatial and spectral resolutions of the hyperspectral data and the high-quality satellite data. Spatial resampling is not a new idea and major ideas in this paper were borrowed from digital photography. More advanced resampling techniques such as edge sampling [CITATION_1] , new edge-directed interpolation [CITATION_2] , error-amended sharp edge [CITATION_3] , soft-decision adaptive interpolation [CITATION_4] , and Gaussian radial basis function [CITATION_5] could improve the spatial quality of the final data. The best technique may be landscape dependent, however, and care should be taken in choosing resampling algorithms. Even with the relatively simple bicubic resampling used here (Section III-G), the agreement between the LaSRC data and the calibrated hyperspectral data improved substantially, even down to the 1-m resolution scale, as shown in Fig. 15 . The spectral resampling presented here is quite basic and could improve upon by more sophisticated models [CITATION_6] . While the data appear to have a degraded spatial resolution (Fig. 13 ) upon closer examination (Fig. 17) , it becomes obvious that the spatial resolution is unchanged and in some areas details emerge which were not readily visible before correction. However, in other areas, such as the fields in the left center of Fig. 13 , the local contrast is reduced, leading to the overall appearance of blurring or loss of spatial resolution.",
+  "correct_citation": {
+    "[CITATION_1]": "15697443",
+    "[CITATION_2]": "6627072",
+    "[CITATION_3]": "14001356",
+    "[CITATION_4]": "828625",
+    "[CITATION_5]": "11651366",
+    "[CITATION_6]": "43903912"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "More advanced resampling techniques such as edge sampling  , new edge-directed interpolation  , error-amended sharp edge  , soft-decision adaptive interpolation  , and Gaussian radial basis function  could improve the spatial quality of the final data."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "More advanced resampling techniques such as edge sampling  , new edge-directed interpolation  , error-amended sharp edge  , soft-decision adaptive interpolation  , and Gaussian radial basis function  could improve the spatial quality of the final data."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "More advanced resampling techniques such as edge sampling  , new edge-directed interpolation  , error-amended sharp edge  , soft-decision adaptive interpolation  , and Gaussian radial basis function  could improve the spatial quality of the final data."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "More advanced resampling techniques such as edge sampling  , new edge-directed interpolation  , error-amended sharp edge  , soft-decision adaptive interpolation  , and Gaussian radial basis function  could improve the spatial quality of the final data."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "More advanced resampling techniques such as edge sampling  , new edge-directed interpolation  , error-amended sharp edge  , soft-decision adaptive interpolation  , and Gaussian radial basis function  could improve the spatial quality of the final data."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "The spectral resampling presented here is quite basic and could improve upon by more sophisticated models  ."
+    }
+  ],
+  "bib_entries": {
+    "15697443": {
+      "title": "Image upsampling via imposed edge statistics",
+      "abstract": "In this paper we propose a new method for upsampling images which is capable of generating sharp edges with reduced input-resolution grid-related artifacts. The method is based on a statistical edge dependency relating certain edge features of two different resolutions, which is generically exhibited by real-world images. While other solutions assume some form of smoothness, we rely on this distinctive edge dependency as our prior knowledge in order to increase image resolution. In addition to this relation we require that intensities are conserved; the output image must be identical to the input image when downsampled to the original resolution. Altogether the method consists of solving a constrained optimization problem, attempting to impose the correct edge relation and conserve local intensities with respect to the low-resolution input image. Results demonstrate the visual importance of having such edge features properly matched, and the method's capability to produce images in which sharp edges are successfully reconstructed."
+    },
+    "43903912": {
+      "title": "Transformation from hyperspectral radiance data to data of other sensors based on spectral superresolution",
+      "abstract": "Hyperspectral radiance spectra are the sensor's response, through its spectral response functions (SRFs), to the at-sensor radiance field. As the SRFs vary with sensors, hyperspectral radiance data need to be transformed for cross-calibration with another sensor or data simulation of a future sensor. In fact, the hyperspectral radiance data are composed of average radiance in the sensor's passbands and bear a spectral smoothing effect. Current data transformation methods do not fully consider this spectral response effect in hyperspectral data, and it restricts the accuracy of the transformation and, hence, the accuracy of the cross-calibration and data simulation. The spectral response effect is modeled as a correlation-sampling process instead of convolution sampling to fit all the hyperspectral, multispectral, and panchromatic sensors. An iterative method is proposed to get a superresolution spectrum from the hyperspectral radiance spectrum according to the response model. Data of another sensor are simulated by responding to the superresolution spectrum. Validation experiments are performed using MODTRAN4-simulated spectrum, coincident Earth Observing-1 Hyperion and Advanced Land Imager (ALI) radiance data, and nearly coincident Hyperion and Landsat-7 Enhanced Thematic Mapper Plus data. For transformations from the MODTRAN4-simulated spectrum to the hyperspectral spectrum of different spectral resolutions, the proposed transformation method achieves the least root mean square relative error (RMSRE) compared with the linear interpolation, the cubic spline interpolation, and the deconvolution-sampling method. For transformation from the Hyperion data to the ALI multispectral and panchromatic data, the RMSRE is less than 9% and 4%, respectively."
+    },
+    "828625": {
+      "title": "Image interpolation by adaptive 2-D autoregressive modeling and soft-decision estimation",
+      "abstract": "The challenge of image interpolation is to preserve spatial details. We propose a soft-decision interpolation technique that estimates missing pixels in groups rather than one at a time. The new technique learns and adapts to varying scene structures using a 2-D piecewise autoregressive model. The model parameters are estimated in a moving window in the input low-resolution image. The pixel structure dictated by the learnt model is enforced by the soft-decision estimation process onto a block of pixels, including both observed and estimated. The result is equivalent to that of a high-order adaptive nonseparable 2-D interpolation filter. This new image interpolation approach preserves spatial coherence of interpolated images better than the existing methods, and it produces the best results so far over a wide range of scenes in both PSNR measure and subjective visual quality. Edges and textures are well preserved, and common interpolation artifacts (blurring, ringing, jaggies, zippering, etc.) are greatly reduced."
+    },
+    "11651366": {
+      "title": "Nonlinear image upsampling method based on radial basis function interpolation",
+      "abstract": "In this paper, we present a novel edge-directed upsampling method based on radial basis function (RBF) interpolation. In order to remove artifacts such as blurred edges or blocking effects, we suggest a nonlinear method capable of taking edge information into account. The resampling evaluation is determined according to the edge orientation. The proposed scheme is as simple to implement as linear methods but it demonstrates improved visual quality by preserving the edge features better than the classical linear interpolation methods. The algorithm is compared with some well-known linear schemes as well as recently developed nonlinear schemes. The resulting images demonstrate the new algorithm's ability to magnify an image while preserving the edge features."
+    },
+    "14001356": {
+      "title": "The error-amended sharp edge (EASE) scheme for image zooming",
+      "abstract": "This paper proposes a new interpolation method, called the error-amended sharp edge (EASE) scheme, which is a modified bilinear method. In order to remove/reduce interpolation artifacts such as image blur and the checkerboard effect (ringing), EASE tries to amend the interpolation error by employing the classical interpolation error theorem in an edge-adaptive fashion. EASE is applied for image zooming by both integer and noninteger magnification factors. The new interpolation scheme has proved to result in high-resolution images having clearer and sharper edges than linear interpolation methods, for all synthetic and natural images we have tested. EASE can be implemented with ease; it turns out to be similarly efficient as cubic interpolation schemes"
+    },
+    "6627072": {
+      "title": "New edge-directed interpolation",
+      "abstract": "The rendering of lower resolution image data on higher resolution displays has become a very common task, in particular because of the increasing popularity of webcams, camera phones, and low-bandwidth video streaming. Thus, there is a strong demand for real-time, high-quality image magnification. In this work, we suggest to exploit the high performance of programmable graphics processing units (GPUs) for an adaptive image magnification method. To this end, we propose a GPU-friendly algorithm for image up-sampling by edge-directed image interpolation, which avoids ringing artifacts, excessive blurring, and staircasing of oblique edges. At the same time it features gray-scale invariance, is applicable to color images, and allows for real-time processing of full-screen images on today's GPUs."
+    }
+  },
+  "generator": "fallback_v4"
+}

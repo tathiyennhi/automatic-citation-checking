@@ -1,0 +1,55 @@
+{
+  "doc_id": "18806",
+  "text": "The second one is hierarchical clustering, including condensed and split clustering algorithms. The third one is neural network clustering based on model method, such as SOM (Self-organizing Mapping) algorithm. The fourth one is fuzzy clustering, such as FCM (Fuzzy C-means) algorithm [CITATION_1] . The methods commonly used in practice include K-means clustering and related improved algorithms, hierarchical clustering, and so on. According to the characteristics of stereo vision, some clustering-based indexing structures and related methods are applied to indexing on stereoscopic image/video features to improve retrieval efficiency. Xu et al. [CITATION_2] propose the approximate nearest neighbor (ANN) indexing structure algorithm based on cluster locality sensitive hashing for stereoscopic vision image features. It is an improved typical cluster indexing algorithm for stereoscopic vision image features, which improves the retrieval efficiency effectively. However, it is difficult to extend and apply in practice and the indexing reconstruction complexity is high when features are increasing. Ahmed et al. [CITATION_3] propose the indexing multidimensional feature vectors based on locality sensitive hashing by partitioning the data space into zones and blocks, and the indexing locations are divided into nine sub-locations in maximum to store the data. But the fixed number of classifications will greatly increase the complexity when the number of images increases. Many indexing structure algorithms can better realize the indexing of high dimensional features and improve the efficiency of retrieval. The traditional indexing structures are usually suitable for the original data, such as the structured or semi-structured data. However, with the development and application of network and new media technologies, the data presents new characteristics, such as complexity, diversity, large volume and personalization. Traditional indexing structures are often lack of analysis, processing and application to the characteristics of data content, which results in the inaccuracy and inefficiency of retrieval. Moreover, at present there are few methods for stereoscopic image/video feature indexing. Generally, there are two ways to improve the efficiency of high dimensional indexing, which are the dimensionality reduction and the indexing algorithm improvement [CITATION_4] . In this paper, according to the principle and characteristics of binocular stereoscopic vision, the shape features of depth map obtained from the matching of binocular stereoscopic vision left image and right image and the color features of left image are extracted respectively. With the extracted features, we propose an indexing structure algorithm based on hybrid grid multiple suffix tree and hierarchical clustering (HGMST-HC) for binocular stereoscopic images. Compared with the existing typical indexing algorithms, the proposed algorithm in this paper can better achieve feature indexing of binocular stereoscopic images/videos and improve the efficiency of matching and retrieval. The contributions are as follows: 1) the memory consumption of indexing construction is smaller and the space complexity is lower; 2) the time required for indexing construction is less, and the maintenance of increasing, deleting and modifying is simpler by using hierarchical structure, which reduces the time complexity; 3) the efficiency of matching and retrieval can be improved greatly, and the construction as well as application of index has little impact on the retrieval accuracy, which can obtain a higher recall. The flow chart of the proposed indexing algorithm in this paper is shown in Fig. 1 .",
+  "correct_citation": {
+    "[CITATION_1]": "191396",
+    "[CITATION_2]": "17737176",
+    "[CITATION_3]": "49228384",
+    "[CITATION_4]": "1321278"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The fourth one is fuzzy clustering, such as FCM (Fuzzy C-means) algorithm  .",
+      "s_span": 211,
+      "e_span": 299
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Xu et al.  propose the approximate nearest neighbor (ANN) indexing structure algorithm based on cluster locality sensitive hashing for stereoscopic vision image features.",
+      "s_span": 641,
+      "e_span": 823
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Ahmed et al.  propose the indexing multidimensional feature vectors based on locality sensitive hashing by partitioning the data space into zones and blocks, and the indexing locations are divided into nine sub-locations in maximum to store the data.",
+      "s_span": 1108,
+      "e_span": 1370
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Generally, there are two ways to improve the efficiency of high dimensional indexing, which are the dimensionality reduction and the indexing algorithm improvement  .",
+      "s_span": 2219,
+      "e_span": 2397
+    }
+  ],
+  "bib_entries": {
+    "17737176": {
+      "title": "OBSIR: Object-based stereo image retrieval",
+      "abstract": "Recent years, the stereo image has become an emerging media in the field of 3D technology, which leads to an urgent demand of stereo image retrieval. In this paper, we attempt to introduce a framework for object-based stereo image retrieval (OBSIR), which retrieves images containing the similar objects to the one captured in the query image by the user. The proposed approach consists of both online and offline procedures. In the offline procedure, we propose a salient object segmentation method making use of both color and depth to extract objects from each image. The extracted objects are then represented by multiple visual feature descriptors. In order to improve the image search efficiently, we construct an approximate nearest neighbor (ANN) index using cluster-based locality sensitive hashing (LSH). In the online stage, the user may supply the query object by selecting a region of interest (ROI) in the query image, or clicking one of the objects recommended by the salient object detector. For the image retrieval evaluation we build a new dataset containing over 10K stereo images. The experiments on this dataset show that the proposed method can effectively recommend the correct object and the final retrieval result is also better than other baseline methods."
+    },
+    "1321278": {
+      "title": "Adaptive cluster distance bounding for highdimensional indexing",
+      "abstract": "We consider approaches for similarity search in correlated, high-dimensional data sets, which are derived within a clustering framework. We note that indexing by “vector approximation” (VA-File), which was proposed as a technique to combat the “Curse of Dimensionality,” employs scalar quantization, and hence necessarily ignores dependencies across dimensions, which represents a source of suboptimality. Clustering, on the other hand, exploits interdimensional correlations and is thus a more compact representation of the data set. However, existing methods to prune irrelevant clusters are based on bounding hyperspheres and/or bounding rectangles, whose lack of tightness compromises their efficiency in exact nearest neighbor search. We propose a new cluster-adaptive distance bound based on separating hyperplane boundaries of Voronoi clusters to complement our cluster based index. This bound enables efficient spatial filtering, with a relatively small preprocessing storage overhead and is applicable to euclidean and Mahalanobis similarity measures. Experiments in exact nearest-neighbor set retrieval, conducted on real data sets, show that our indexing method is scalable with data set size and data dimensionality and outperforms several recently proposed indexes. Relative to the VA-File, over a wide range of quantization resolutions, it is able to reduce random IO accesses, given (roughly) the same amount of sequential IO operations, by factors reaching 100X and more."
+    },
+    "191396": {
+      "title": "Survey of clustering algorithms",
+      "abstract": "Data analysis plays an indispensable role for understanding various phenomena. Cluster analysis, primitive exploration with little or no prior knowledge, consists of research developed across a wide variety of communities. The diversity, on one hand, equips us with many tools. On the other hand, the profusion of options causes confusion. We survey clustering algorithms for data sets appearing in statistics, computer science, and machine learning, and illustrate their applications in some benchmark data sets, the traveling salesman problem, and bioinformatics, a new field attracting intensive efforts. Several tightly related topics, proximity measure, and cluster validation, are also discussed."
+    },
+    "49228384": {
+      "title": "Locality sensitive hashing based space partitioning approach for indexing multidimensional feature vectors of fingerprint image data",
+      "abstract": "In recent years, biometric applications have significantly gained popularity. Such applications involve voluminous databases of high dimensional data. These enormous databases increase the cost of identification and degrade the system performance. To resolve such an issue a plethora of algorithms based on geometric hashing, k–d tree, k-means clustering, etc., have been proposed in the literature. Although, these algorithms solve a number of concomitant challenges of multi-dimensional data, yet, they fail to present a universal solution. In this study, we propose an indexing mechanism, which partitions the data space effectively into zones and blocks using a set of hash functions. Furthermore, the index locations are divided into maximum nine sub-locations to store data. This helps in carrying out an efficient search of the queried data, thereby minimising the false acceptance and rejection rate. To validate the proposed approach, the mechanism has been applied to the fingerprint verification competition and National Institute of Standards and Technology fingerprint image databases. The experimental results substantiate the efficacy of our approach in terms of accuracy, speed, reduction of search space and the number of comparisons to store and retrieve data."
+    }
+  },
+  "generator": "fallback_v4"
+}

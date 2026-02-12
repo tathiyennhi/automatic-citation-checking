@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "A and B are the rank decomposition matrices, and x is the input to the layer i. α is the adaptation scale which controls the deviation of the tuned model from the original model.",
+    "During training, only parameters of A, B, and potentially b i are trained, significantly reducing the memory footprint and leading to faster training.",
+    "During inference, the A and B matrices can be merged into W i, ensuring that the introduction of low-rank decomposition does not add any extra latency to the inference process.",
+    "For Hierarchical Vision transformers, several locations within the architecture are identified as suitable for the application of low-rank matrices, enhancing task adaptability as shown in Figure 3a.• QKV Computation in Attention Layers: The Query, Key, Value (QKV) computation, the main components of the attention mechanism, represents a prime candidate for low-rank adaptation.",
+    "Fine-tuning this computation allows for modifications to the attention mechanism, making it more suited for specific downstream tasks, which can improve the model's ability to process visual inputs in a task-specific manner."
+  ],
+  "correct_citations": []
+}

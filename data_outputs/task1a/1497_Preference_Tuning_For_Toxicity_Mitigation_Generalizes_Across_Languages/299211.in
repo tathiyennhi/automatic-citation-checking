@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Specifically, we perform Direct Preference Optimization (DPO) (Rafailov et al., 2023) with Lee et al.'s (2024) preference dataset that consists of 24,576 instances of prompts as well as pairs of toxic (dispreferred) and non-toxic (preferred) continuations in English.",
+    "We finetune five different base LLMs: (1) mGPT, a multilingual GPT with 1.3B parameters (Shliazhko et al., 2024); (2) BLOOM, a multilingual language model with 1.7B and 7.1B parameters (BigScience Workshop et al., 2022); (3) Aya-23, a multilingual language model with 8B parameters (Aryabumi et al., 2024); (4) Llama2-7B (Touvron et al., 2023); and (5) Llama3-8B (AI@Meta, 2024).",
+    "We perform full finetuning for mGPT and BLOOM-1.7B, and we use QLoRA adapters (Dettmers et al., 2023) for finetuning models at 7B and 8B parameter sizes.",
+    "We use HuggingFace trl library and follow Lee et al.'s (2024) hyperparameters (except learning rate) for full model finetuning of mGPT and BLOOM-1.7B.",
+    "For QLoRA finetuning of Aya-23, LLama2, and Llama3, we apply QLoRA (Dettmers et al., 2023) on each model layer, with a rank of 64, a scaling parameter of 16 and a dropout of 0.05."
+  ]
+}

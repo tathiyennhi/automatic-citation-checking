@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "This significantly reduces the cost of transferring model parameters since the adapter constitutes only a small portion of the original model parameters.",
+    "(4) Federated Aggregation: In this step, the central server aggregates the adapter parameters received from all clients into a global adapter 𝚫𝑾 𝑮 using aggregation algorithms such as federated averaging (FedAvg) [63]:𝚫𝑾 𝒈 = 𝑩 𝒈 𝑨 𝒈 = 1 𝑛 𝐾 ∑︁ 𝑘=1 𝑛 𝑘 𝑩 * 𝒌 𝑨 * 𝒌 (6)where 𝑛 = 𝐾 𝑘=1 𝑛 𝑘.",
+    "(5) Aggregated Model Download: The aggregated adapter 𝚫𝑾 𝒈 is dispatched back to all clients.",
+    "Each client updates the local adapter with the downloaded global adapter:𝚫𝑾 ′ 𝒌 = W0 + 𝚫𝑾 𝒈(7)The updated model 𝑊 ′ 𝑘 serves as the starting point for the next round of federated fine-tuning.",
+    "The global model obtained after a total of 𝑇 rounds of fine-tuning is the final model, which can be further applied to corresponding downstream tasks.Throughout the entire federated fine-tuning process, parameter efficiency is achieved by quantization, significantly reducing storage costs for each client and the overhead of parameter transfer in federated learning system."
+  ],
+  "correct_citations": [
+    "(4) Federated Aggregation: In this step, the central server aggregates the adapter parameters received from all clients into a global adapter 𝚫𝑾 𝑮 using aggregation algorithms such as federated averaging (FedAvg) [63]:𝚫𝑾 𝒈 = 𝑩 𝒈 𝑨 𝒈 = 1 𝑛 𝐾 ∑︁ 𝑘=1 𝑛 𝑘 𝑩 * 𝒌 𝑨 * 𝒌 (6)where 𝑛 = 𝐾 𝑘=1 𝑛 𝑘."
+  ]
+}

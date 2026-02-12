@@ -1,0 +1,20 @@
+{
+  "doc_id": "16714",
+  "text": "• Fixed-point and minimal residual Krylov iterations preconditioned with a 2 × 2 block-triangular, block-diagonal, or approximate block-LDU preconditioner converge to a given tolerance Cρ after n iterations if and only if an equivalent method applied to the underlying preconditioned Schur complement converges to tolerance ρ after n iterations, for constant C (section 3). • A symmetric block-triangular or approximate block-LDU preconditioner offers little to no improvement in convergence over block-triangular preconditioners, when one diagonal block is inverted exactly (subsection 2.1.1). Numerical results demonstrate the same behaviour for inexact inverses, suggesting that symmetric block-triangular or block-LDU preconditioners are probably not worth the added computational cost in practice. • The worst-case number of iterations for a block-diagonal preconditioner to converge to a given tolerance ρ is twice the number of iterations for a blocktriangular preconditioner to converge to Cρ, for some constant factor C (subsection 3.3). Numerical results suggest that for non-saddle point problems (nonzero (2,2)-block), this double in iteration count is not due to the staircasing effect introduced in [CITATION_1] for saddle-point problems. • With an exact Schur complement inverse, a fixed-point iteration with a blocktriangular preconditioner converges in two iterations, while a fixed-point iteration with a block-diagonal preconditioner does not converge (section 2).",
+  "correct_citation": {
+    "[CITATION_1]": "121617480"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Numerical results suggest that for non-saddle point problems (nonzero (2,2)-block), this double in iteration count is not due to the staircasing effect introduced in  for saddle-point problems."
+    }
+  ],
+  "bib_entries": {
+    "121617480": {
+      "title": "Minimum residual methods for augmented systems",
+      "abstract": "For large systems of linear equations, iterative methods provide attractive solution techniques. We describe the applicability and convergence of iterative methods of Krylov subspace type for an important class of symmetric and indefinite matrix problems, namely augmented (or KKT) systems. Specifically, we consider preconditioned minimum residual methods and discuss indefinite versus positive definite preconditioning. For a natural choice of starting vector we prove that when the definite and indenfinite preconditioners are related in the obvious way, MINRES (which is applicable in the case of positive definite preconditioning) and full GMRES (which is applicable in the case of indefinite preconditioning) give residual vectors with identical Euclidean norm at each iteration. Moreover, we show that the convergence of both methods is related to a system of normal equations for which the LSQR algorithm can be employed. As a side result, we give a rare example of a non-trivial normal(1) matrix where the corresponding inner product is explicitly known: a conjugate gradient method therefore exists and can be employed in this case."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Table 1:1Representative Experiential Terms by Category.",
+    "The full lexicon is provided in Appendix A.Category Sample TermsEmotional joy, fear, euphoria, sadness, compassionSensoryvisual, sound, fractal, shimmering, synesthesiaCognitive thought, clarity, ego, looping, interpretationPhysicalbody, tingling, nausea, heartbeat, chillsMysticalunity, transcend, ego death, nirvana, divineTemporalonset, peak, comedown, wave, time distortion Table 2:2Hyperparameter Configuration and Tuning Ranges for Each Model.ModelParameterSearch RangeM1 (LexRank)compression_ratio{0.22, 0.25, 0.28, 0.30}similarity_threshold{0.15, 0.25, 0.35}damping_factor{0.85, 0.90}M2 (LSA + HDBSCAN) n_components{16, 24, 32, 40, 48, 64}min_cluster_size{3, 4, 5, 6, 7, 8}min_samples{1, 2, 3, 4, 5}top_k_ratio[0.15, 0.25] (step 0.02)pos_bias[0.00, 0.08] (step 0.02)M3 (SBERT + MMR)relevance_weight{0.6, 0.7, 0.8}diversity_weight{0.2, 0.3, 0.4, 0.5}position_bias{0.05, 0.10, 0.15, 0.20}similarity_threshold{0.25, 0.35, 0.45, 0.55, 0.60}aggregation strategy (agg) {\"mean\", \"first\"} Table 4:4Optimal hyperparameter settings with average Custom Score on test data.ModelHyperparametersFigure2presents radar chart visualizations, comparing the relative strengths and weaknesses of each model across evaluation dimensions by substance.",
+    "SBERT showed high content coverage and experiential preservation but lower coherence, while LexRank maintained moderate scores across dimensions, and LSA excelled primarily in compression quality.",
+    "Table6reports the TOPSIS closeness coefficients, synthesizing the multi-criteria evaluation scores into a ranked perspective across substances as well as overall.",
+    "The results indicate that LexRank achieved the highest overall score, followed by SBERT and then LSA."
+  ]
+}

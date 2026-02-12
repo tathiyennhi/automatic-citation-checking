@@ -1,0 +1,22 @@
+{
+  "doc_id": "56882",
+  "text": "Considering that GeneGAN only transfers one attribute in a single manipulation process, [CITATION_1] construct an ELEGANT model to exchange latent encodings for transferring multiple facial attributes by exemplars. Specifically, since all the attributes are encoded in the latent space in a disentangled manner, one can exchange the specific part of encodings and manipulate several attributes simultaneously. Besides, the residual image learning and the multi-scale discriminators for adversarial training enable the proposed model to generate high-quality images with more delicate details and fewer artifacts. At the beginning of training, ELEGANT receives two sets of training images as inputs, i.e., a positive set and a negative set, which do not need to be paired. Second, an encoder is utilized to obtain the latent encodings of both positive and negative images. Then, if the i-th attribute is required to be transferred, the only step is to exchange the i-th element in the latent encodings of positive and negative images. Once the encoding step is finished, ELEGANT constructs an image generator that consists of a decoder and the encoder from the previous step to decode recombined latent encodings into images. Finally, two discriminators with identical network structures work at different scales to obtain manipulated attribute images.",
+  "correct_citation": {
+    "[CITATION_1]": "4393808"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Considering that GeneGAN only transfers one attribute in a single manipulation process,  construct an ELEGANT model to exchange latent encodings for transferring multiple facial attributes by exemplars.",
+      "s_span": 0,
+      "e_span": 214
+    }
+  ],
+  "bib_entries": {
+    "4393808": {
+      "title": "Elegant: Exchanging latent encodings with gan for transferring multiple face attributes",
+      "abstract": "Recent studies on face attribute transfer have achieved great success. A lot of models are able to transfer face attributes with an input image. However, they suffer from three limitations: (1) incapability of generating image by exemplars; (2) being unable to transfer multiple face attributes simultaneously; (3) low quality of generated images, such as low-resolution or artifacts. To address these limitations, we propose a novel model which receives two images of opposite attributes as inputs. Our model can transfer exactly the same type of attributes from one image to another by exchanging certain part of their encodings. All the attributes are encoded in a disentangled manner in the latent space, which enables us to manipulate several attributes simultaneously. Besides, our model learns the residual images so as to facilitate training on higher resolution images. With the help of multi-scale discriminators for adversarial training, it can even generate high-quality images with finer details and less artifacts. We demonstrate the effectiveness of our model on overcoming the above three limitations by comparing with other methods on the CelebA face database. A pytorch implementation is available at https://github.com/Prinsphield/ELEGANT."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "7219",
+  "text": "Invariants (5)- (7) (8)- (12) directly follow from the definitions of the individual automata in the network. For invariant [CITATION_1] , observe that since the tick?-transition from WAIT to GO SEND may synchronize with the tick?-transition from S1 to S0, the value of clk[i] in GO SEND i is potentially g+1. In order to be able to state more interesting invariants, we introduce two auxiliary global history (or ghost) variables. Clock y records the time that has elapsed since the last synchronization message (or the beginning of the protocol). Variable last records the last slot in which a synchronization message has been sent (initially last = −1). Figure 10 shows the version of the WSN(i) automaton obtained after adding these variables. The only change is that upon occurrence of a synchronization start message[i]! clock y is reset to 0 and variable last is reset to csn[i]. We first state a few basic invariants which restrict the values of the new variables. ",
+  "correct_citation": {
+    "[CITATION_1]": "1397736"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For invariant [CITATION_1] , observe that since the tick?-transition from WAIT to GO SEND may synchronize with the tick?-transition from S1 to S0, the value of clk[i] in GO SEND i is potentially g+1.",
+      "s_span": 110,
+      "e_span": 309
+    }
+  ],
+  "bib_entries": {
+    "1397736": {
+      "title": "Analysis of a clock synchronization protocol for wireless sensor networks",
+      "abstract": "We study a clock synchronization protocol for the Chess WSN. First, we model the protocol as a network of timed automata and verify various instances using the Uppaal model checker. Next, we present a full parametric analysis of the protocol for the special case of cliques (networks with full connectivity), that is, we give constraints on the parameters that are both necessary and sufficient for correctness. These results have been checked using the proof assistant Isabelle. Finally, we present a negative result for the special case of line topologies: for any instantiation of the parameters, the protocol will eventually fail if the network grows. This result suggests a variation of the fundamental result of Fan and Lynch on gradient clock synchronization, where the synchronization eventually fails as the network diameter grows, for a setting with logical clocks whose value may also decrease."
+    }
+  },
+  "generator": "fallback_v4"
+}

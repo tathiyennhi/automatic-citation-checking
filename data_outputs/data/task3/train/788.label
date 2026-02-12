@@ -1,0 +1,20 @@
+{
+  "doc_id": "788",
+  "text": "p in the proximal step [CITATION_1] and consider both p = 1.5 and p = 2. It can be verified that ∇F (x) is (N + 1)-continuous and F (x) is 2-strongly convex, both with respect to · 2 , and that the optimizer for the problem is x ⋆ = max(0,c−λ1) 3 e 1 , where e n denotes the n th basis vector. Moreover, it can be shown that if p ∈ (1, 2] , then µ ω = 1 and L ω = N 2/p−1 satisfy (13) with respect to · 2 . We select the problem parameters N = 100, c = 3 and λ 1 = 1. We simulate solving the problem with W = 4 workers, where at each iteration k, a worker w is selected uniformly at random to return their gradient, information evaluated on stale information x k−τ w k , to the master. Here, at time k, τ w k is simply the number of iterations since the last time worker w was selected. Each worker holds N/W = 25 component functions, and we tune step-size based on the assumption thatτ = W . Figure 1 shows the results of a representative simulation. As can be observed, the iterates converge to the optimizer and the theoretical bound derived is valid. 0 3,000 6,000 9,000 12,000 15,000 10 ",
+  "correct_citation": {
+    "[CITATION_1]": "5095654"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "p in the proximal step  and consider both p = 1.5 and p = 2."
+    }
+  ],
+  "bib_entries": {
+    "5095654": {
+      "title": "Minimizing Finite Sums with the Stochastic Average Gradient",
+      "abstract": "We analyze the stochastic average gradient (SAG) method for optimizing the sum of a finite number of smooth convex functions. Like stochastic gradient (SG) methods, the SAG method's iteration cost is independent of the number of terms in the sum. However, by incorporating a memory of previous gradient values the SAG method achieves a faster convergence rate than black-box SG methods. The convergence rate is improved from $$O(1/\\sqrt{k})$$O(1/k) to O(1 / k) in general, and when the sum is strongly-convex the convergence rate is improved from the sub-linear O(1 / k) to a linear convergence rate of the form $$O(\\rho ^k)$$O(?k) for $$\\rho < 1$$?<1. Further, in many cases the convergence rate of the new method is also faster than black-box deterministic gradient methods, in terms of the number of gradient evaluations. This extends our earlier work Le Roux et al. (Adv Neural Inf Process Syst, 2012), which only lead to a faster rate for well-conditioned strongly-convex problems. Numerical experiments indicate that the new algorithm often dramatically outperforms existing SG and deterministic gradient methods, and that the performance may be further improved through the use of non-uniform sampling strategies."
+    }
+  },
+  "generator": "fallback_v4"
+}

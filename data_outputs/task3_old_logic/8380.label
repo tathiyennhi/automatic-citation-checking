@@ -1,0 +1,52 @@
+{
+  "doc_id": "8380",
+  "text": "Reducing the volume of transferred data over networks is an efficient way to speedup the operators [CITATION_1] . Based on this, various advanced approaches [CITATION_2] and strategies [CITATION_3] have been proposed in the data management domain. Their philosophy is generally to move small data chunks instead of large data chunks during their executions. For example, track-join [CITATION_4] , has adopted a very fine-grained way, which can search all possible opportunities on reducing data movement, and consequently minimize the network traffic in join executions. Although all the approaches are shown to be very efficient, minimizing communication traffic does not necessarily lead to minimal communication time. This is because when computing nodes use the network without any coordination, utilization of network bandwidth could be very poor. For instance, for a join implementation, if all computing nodes first send their data to the first node, then to the second node, and so on, then there will be significant network congestion, since the nodes will compete for the bandwidth of a single link while other links are not fully utilized [CITATION_5] .",
+  "correct_citation": {
+    "[CITATION_1]": "2031022",
+    "[CITATION_2]": "14451209",
+    "[CITATION_3]": "9735286",
+    "[CITATION_4]": "2031022",
+    "[CITATION_5]": "13559646"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Reducing the volume of transferred data over networks is an efficient way to speedup the operators"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Based on this, various advanced approaches"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "and strategies"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "For example, track-join, has adopted a very fine-grained way, which can search all possible opportunities on reducing data movement, and consequently minimize the network traffic in join executions."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "For instance, for a join implementation, if all computing nodes first send their data to the first node, then to the second node, and so on, then there will be significant network congestion, since the nodes will compete for the bandwidth of a single link while other links are not fully utilized"
+    }
+  ],
+  "bib_entries": {
+    "2031022": {
+      "title": "Track join: distributed joins with minimal network traffic",
+      "abstract": "Network communication is the slowest component of many operators in distributed parallel databases deployed for large-scale analytics. Whereas considerable work has focused on speeding up databases on modern hardware, communication reduction has received less attention. Existing parallel DBMSs rely on algorithms designed for disks with minor modifications for networks. A more complicated algorithm may burden the CPUs, but could avoid redundant transfers of tuples across the network. We introduce track join, a novel distributed join algorithm that minimizes network traffic by generating an optimal transfer schedule for each distinct join key. Track join extends the trade-off options between CPU and network. Our evaluation based on real and synthetic data shows that track join adapts to diverse cases and degrees of locality. Considering both network traffic and execution time, even with no locality, track join outperforms hash join on the most expensive queries of real workloads."
+    },
+    "13559646": {
+      "title": "Locality-sensitive operators for parallel main-memory database clusters",
+      "abstract": "The growth in compute speed has outpaced the growth in network bandwidth over the last decades. This has led to an increasing performance gap between local and distributed processing. A parallel database cluster thus has to maximize the locality of query processing. A common technique to this end is to co-partition relations to avoid expensive data shuffling across the network. However, this is limited to one attribute per relation and is expensive to maintain in the face of updates. Other attributes often exhibit a fuzzy co-location due to correlations with the distribution key but current approaches do not leverage this. In this paper, we introduce locality-sensitive data shuffling, which can dramatically reduce the amount of network communication for distributed operators such as join and aggregation. We present four novel techniques: (i) optimal partition assignment exploits locality to reduce the network phase duration; (ii) communication scheduling avoids bandwidth underutilization due to cross traffic; (iii) adaptive radix partitioning retains locality during data repartitioning and handles value skew gracefully; and (iv) selective broadcast reduces network communication in the presence of extreme value skew or large numbers of duplicates. We present comprehensive experimental results, which show that our techniques can improve performance by up to factor of 5 for fuzzy co-location and a factor of 3 for inputs with value skew."
+    },
+    "14451209": {
+      "title": "Robust and skew-resistant parallel joins in shared-nothing systems",
+      "abstract": "The performance of joins in parallel database management systems is critical for data intensive operations such as querying. Since data skew is common in many applications, poorly engineered join operations result in load imbalance and performance bottlenecks. State-of-the-art methods designed to handle this problem offer significant improvements over naive implementations. However, performance could be further improved by removing the dependency on global skew knowledge and broadcasting. In this paper, we propose PRPQ (partial redistribution & partial query), an efficient and robust join algorithm for processing large-scale joins over distributed systems. We present the detailed implementation and a quantitative evaluation of our method. The experimental results demonstrate that the proposed PRPQ algorithm is indeed robust and scalable under a wide range of skew conditions. Specifically, compared to the state-of-art PRPD method, we achieve 16% - 167% performance improvement and 24% - 54% less network communication under different join workloads."
+    },
+    "9735286": {
+      "title": "Advanced join strategies for large-scale distributed computation",
+      "abstract": "Companies providing cloud-scale data services have increasing needs to store and analyze massive data sets (e.g., search logs, click streams, and web graph data). For cost and performance reasons, processing is typically done on large clusters of thousands of commodity machines by using high level scripting languages. In the recent past, there has been significant progress in adapting well-known techniques from traditional relational DBMSs to this new scenario. However, important challenges remain open. In this paper we study the very common join operation, discuss some unique challenges in the large-scale distributed scenario, and explain how to efficiently and robustly process joins in a distributed way. Specifically, we introduce novel execution strategies that leverage opportunities not available in centralized scenarios, and others that robustly handle data skew. We report experimental validations of our approaches on Scope production clusters, which power the Applications and Services Group at Microsoft."
+    }
+  },
+  "generator": "fallback"
+}

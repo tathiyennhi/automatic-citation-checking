@@ -1,0 +1,33 @@
+{
+  "doc_id": "55149",
+  "text": "Static semantics We've given syntax and dynamic semantics for PAL as well as an informal description of \"proper usage\", which includes ensuring that modifiables are always written before being read, and that each modifiable is written at most once. Future work should include a static semantics which ensures that these conventions are followed and an associated soundness result. We suspect a substructural type system which gives unwritten modifiables linear types will suffice for this, which may resemble type systems used for ensuring safe but explicit memory management in other work [CITATION_1] [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "8103128",
+    "[CITATION_2]": "283023"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We suspect a substructural type system which gives unwritten modifiables linear types will suffice for this, which may resemble type systems used for ensuring safe but explicit memory management in other work [CITATION_1] [CITATION_2] .",
+      "s_span": 381,
+      "e_span": 617
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We suspect a substructural type system which gives unwritten modifiables linear types will suffice for this, which may resemble type systems used for ensuring safe but explicit memory management in other work [CITATION_1] [CITATION_2] .",
+      "s_span": 381,
+      "e_span": 617
+    }
+  ],
+  "bib_entries": {
+    "283023": {
+      "title": "Typed memory management in a calculus of capabilities",
+      "abstract": "An increasing number of systems rely on programming language technology to ensure safety and security of low-level code. Unfortunately, these systems typically rely on a complex, trusted garbage collector. Region-based type systems provide an alternative to garbage collection by making memory management explicit but verifiably safe. However, it has not been clear how to use regions in low-level, type-safe code.We present a compiler intermediate language, called the Capability Calculus, that supports region-based memory management, enjoys a provably safe type system, and is straightforward to compile to a typed assembly language. Source languages may be compiled to our language using known region inference algorithms. Furthermore, region lifetimes need not be lexically scoped in our language, yet the language may be checked for safety without complex analyses. Finally, our soundness proof is relatively simple, employing only standard techniques.The central novelty is the use of static capabilities to specify the permissibility of various operations, such as memory access and deallocation. In order to ensure capabilities are relinquished properly, the type system tracks aliasing information using a form of bounded quantification."
+    },
+    "8103128": {
+      "title": "Alias types for recursive data structures",
+      "abstract": "Linear type systems permit programmers to deallocate or explicitly recycle memory, but are severely restricted by the fact that they admit no aliasing. This paper describes a pseudo-linear type system that allows a degree of aliasing and memory reuse as well as the ability to define complex recursive data structures. Our type system can encode conventional linear data structures such as linear lists and trees as well as more sophisticated data structures including cyclic and doubly-linked lists and trees. In the latter cases, our type system is expressive enough to represent pointer aliasing and yet safely permit destructive operations such as object deallocation. We demonstrate the flexibility of our type system by encoding two common space-conscious algorithms: destination-passing style and Deutsch-Schorr-Waite or \"link-reversal\" traversal algoithms."
+    }
+  },
+  "generator": "fallback_v4"
+}

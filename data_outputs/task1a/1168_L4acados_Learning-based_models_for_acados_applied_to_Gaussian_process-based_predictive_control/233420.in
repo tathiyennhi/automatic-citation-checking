@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Towards the largest horizon length tested, N = 1000, the achieved speedup converges to a constant factor due to the limited amount of workers available for parallelization, recovering the linear scaling observed for L4CasADi and CasADi in the \"-A0\" parallelization scenarios.",
+    "The benefit of parallelizing sensitivity computations along the prediction horizon is also evident for CasADi with acados' OpenMP parallelization in the \"CPU-T1-A10\" scenario, which shows a similar sublinear scaling compared to L4acados.",
+    "For L4CasADi, the \"-A10\" scenarios with acados' OpenMP parallelization generally resulted in larger runtimes compared to compiling acados without OpenMP parallelization, which could be due to interference with OpenMP parallelization in PyTorchfoot_1.",
+    "While implementing batch-wise sensitivity evaluations in acados in principle could lead to similar speedups when using L4CasADi, this feature is difficult to realize in acados due to its stage-wise-modular architecture geared towards dynamic optimization problems.Just-in-time (JIT) compilation: While in L4CasADi, the PyTorch model is just-in-time (JIT) compiled to TorchScript at initialization, the current implementation of L4acados does not employ JIT-compilation and uses the interpreted, yet heavily-optimized, PyTorch implementation.",
+    "In particular for small prediction horizons N < 10, this explains in part the difference in computation times between L4CasADi and L4acados, and highlights potential for future improvement of L4acados.In summary, this benchmark demonstrates that for increasing horizon lengths N and model complexities, and in particular for easy-to-parallelize model evaluations, L4acados constitutes a competitive tool for incorporating learning-based models into acados."
+  ]
+}

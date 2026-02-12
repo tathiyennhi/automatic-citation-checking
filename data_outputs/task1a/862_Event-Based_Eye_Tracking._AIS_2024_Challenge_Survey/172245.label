@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Contrary to the original Recurrent Vision Transformer, we find that the model performs significantly better without completely separating spatial and temporal feature extraction.",
+    "Thus, each stage ends with a ConvLSTM that aggregates the information extracted at the current timestamp with the information from the previous timestamp.The model is trained from scratch on the dataset provided by the competition.",
+    "Similarly to the baseline provided by the organizers, we pre-process the event stream into a voxel grid representation with T = 3 discretizationConv Layer Norm Self Attention Layer Norm MLP LSTM Conv Layer Norm Self Attention Layer Norm MLP LSTM Prediction Head Conv Layer Norm Self Attention Layer Norm MLP LSTM Conv Layer Norm Self Attention Layer Norm MLP LSTM Prediction Head steps of time to make it compatible with the convolutions required for ERVT.",
+    "During training, we split the dataset in sequences of 30 frames (voxel grids) corresponding to 50ms of accumulated events.",
+    "To alleviate the problem of exploding/vanishing gradients specific to RNNs, we use a Truncated Backpropagation Through Time (TBPTT) optimization technique."
+  ],
+  "correct_citations": []
+}

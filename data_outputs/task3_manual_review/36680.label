@@ -1,0 +1,66 @@
+{
+  "doc_id": "36680",
+  "text": "Pose estimation accuracy. Pose estimation accuracy is quantitatively evaluated on the public HumanEva-I dataset, where ground-truth data is available, see Table 3 . We tested the method on the designated validation sequences Walk and Fig. 7 . Overlap of the estimated shape in Stages I and II for an input frame of Box (left) and Walk (right) sequences [CITATION_1] . Note how the white area (correct estimated shape) significantly increases between Stage I and II, while blue (overestimation) and red (underestimation) areas decrease. Box of subject S1. Reconstruction quality is measured as the average Euclidean distance of estimated and ground-truth joint locations, frames with ground truth inaccuracies are excluded by the provided scripts. Our pose estimation results are on par with state-of-the-art methods with 6-7 cm average accuracy [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] . In particular, we obtain comparable results to Elhayek et al. [CITATION_6] , which however requires a separately initialized actor model. Please note that Amin et al. [CITATION_7] specifically trained their model on manually annotated sequences of the same subject in the same room. For best tracking performance, the ideal joint placement and bone lengths of the virtual skeleton may deviate from the real human anatomy, and may generally vary for different tracking approaches. To compensate differences in the skeleton structure, we also report results where the offset between ground truth and estimated joint locations is estimated in the first frame and compensated in the remaining frames, reducing the reconstruction error to 3-5 cm. Datasets without ground-truth data cannot be quantitatively evaluated; however, our shape overlap evaluation results suggest that pose estimation is generally accurate. In summary, pose estimation is reliable, with only occasional failures in Stage I, although the main focus of our work is on the combination with shape estimation.",
+  "correct_citation": {
+    "[CITATION_1]": "11279201",
+    "[CITATION_2]": "7877423",
+    "[CITATION_3]": "8474682",
+    "[CITATION_4]": "8958791",
+    "[CITATION_5]": "13076993",
+    "[CITATION_6]": "13076993",
+    "[CITATION_7]": "8474682"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Overlap of the estimated shape in Stages I and II for an input frame of Box (left) and Walk (right) sequences"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our pose estimation results are on par with state-of-the-art methods with 6-7 cm average accuracy."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Our pose estimation results are on par with state-of-the-art methods with 6-7 cm average accuracy."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Our pose estimation results are on par with state-of-the-art methods with 6-7 cm average accuracy."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Our pose estimation results are on par with state-of-the-art methods with 6-7 cm average accuracy."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "In particular, we obtain comparable results to Elhayek et al., which however requires a separately initialized actor model."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Please note that Amin et al. specifically trained their model on manually annotated sequences of the same subject in the same room."
+    }
+  ],
+  "bib_entries": {
+    "8474682": {
+      "title": "Multi-view pictorial structures for 3D human pose estimation",
+      "abstract": "Pictorial structure models are the de facto standard for 2D human pose estimation. Numerous refinements and improvements have been proposed such as discriminatively trained body part detectors, flexible body models, and local and global mixtures. While these techniques allow to achieve state-of-the-art performance for 2D pose estimation, they have not yet been extended to enable pose estimation in 3D. This paper thus proposes a multi-view pictorial structures model that builds on recent advances in 2D pose estimation and incorporates evidence across multiple viewpoints to allow for robust 3D pose estimation. We evaluate our multi-view pictorial structures approach on the HumanEva-I and MPII Cooking dataset. In comparison to related work for 3D pose estimation our approach achieves similar or better results while operating on single-frames only and not relying on activity specific motion models or tracking. Notably, our approach outperforms state-of-the-art for activities with more complex motions."
+    },
+    "11279201": {
+      "title": "HumanEva: Synchronized video and motion capture dataset and baseline algorithm for evaluation of articulated human motion",
+      "abstract": "While research on articulated human motion and pose estimation has progressed rapidly in the last few years, there has been no systematic quantitative evaluation of competing methods to establish the current state of the art. We present data obtained using a hardware system that is able to capture synchronized video and ground-truth 3D motion. The resulting HumanEva datasets contain multiple subjects performing a set of predefined actions with a number of repetitions. On the order of 40,000 frames of synchronized motion capture and multi-view video (resulting in over one quarter million image frames in total) were collected at 60 Hz with an additional 37,000 time instants of pure motion capture data. A standard set of error measures is defined for evaluating both 2D and 3D pose estimation and tracking algorithms. We also describe a baseline algorithm for 3D articulated tracking that uses a relatively standard Bayesian framework with optimization in the form of Sequential Importance Resampling and Annealed Particle Filtering. In the context of this baseline algorithm we explore a variety of likelihood functions, prior models of human motion and the effects of algorithm parameters. Our experiments suggest that image observation models and motion priors play important roles in performance, and that in a multi-view laboratory environment, where initialization is available, Bayesian filtering tends to perform well. The datasets and the software are made available to the research community. This infrastructure will support the development of new articulated motion and pose estimation algorithms, will provide a baseline for the evaluation and comparison of new methods, and will help establish the current state of the art in human pose estimation and tracking."
+    },
+    "7877423": {
+      "title": "Loose-limbed people: Estimating 3D human pose and motion using non-parametric belief propagation",
+      "abstract": "We formulate the problem of 3D human pose estimation and tracking as one of inference in a graphical model. Unlike traditional kinematic tree representations, our model of the body is a collection of loosely-connected body-parts. In particular, we model the body using an undirected graphical model in which nodes correspond to parts and edges to kinematic, penetration, and temporal constraints imposed by the joints and the world. These constraints are encoded using pair-wise statistical distributions, that are learned from motion-capture training data. Human pose and motion estimation is formulated as inference in this graphical model and is solved using Particle Message Passing (PaMPas). PaMPas is a form of non-parametric belief propagation that uses a variation of particle filtering that can be applied over a general graphical model with loops. The loose-limbed model and decentralized graph structure allow us to incorporate information from \"bottom-up\" visual cues, such as limb and head detectors, into the inference process. These detectors enable automatic initialization and aid recovery from transient tracking failures. We illustrate the method by automatically tracking people in multi-view imagery using a set of calibrated cameras and present quantitative evaluation using the HumanEva dataset."
+    },
+    "13076993": {
+      "title": "Efficient ConvNet-based marker-less motion capture in general scenes with a low number of cameras",
+      "abstract": "We present a novel method for accurate marker-less capture of articulated skeleton motion of several subjects in general scenes, indoors and outdoors, even from input filmed with as few as two cameras. Our approach unites a discriminative image-based joint detection method with a model-based generative motion tracking algorithm through a combined pose optimization energy. The discriminative part-based pose detection method, implemented using Convolutional Networks (ConvNet), estimates unary potentials for each joint of a kinematic skeleton model. These unary potentials are used to probabilistically extract pose constraints for tracking by using weighted sampling from a pose posterior guided by the model. In the final energy, these constraints are combined with an appearance-based model-to-image similarity term. Poses can be computed very efficiently using iterative local optimization, as ConvNet detection is fast, and our formulation yields a combined pose estimation energy with analytic derivatives. In combination, this enables to track full articulated joint angles at state-of-the-art accuracy and temporal stability with a very low number of cameras."
+    },
+    "8958791": {
+      "title": "3D pictorial structures for multiple human pose estimation",
+      "abstract": "In this work, we address the problem of 3D pose estimation of multiple humans from multiple views. This is a more challenging problem than single human 3D pose estimation due to the much larger state space, partial occlusions as well as across view ambiguities when not knowing the identity of the humans in advance. To address these problems, we first create a reduced state space by triangulation of corresponding body joints obtained from part detectors in pairs of camera views. In order to resolve the ambiguities of wrong and mixed body parts of multiple humans after triangulation and also those coming from false positive body part detections, we introduce a novel 3D pictorial structures (3DPS) model. Our model infers 3D human body configurations from our reduced state space. The 3DPS model is generic and applicable to both single and multiple human pose estimation. In order to compare to the state-of-the art, we first evaluate our method on single human 3D pose estimation on HumanEva-I [22] and KTH Multiview Football Dataset II [8] datasets. Then, we introduce and evaluate our method on two datasets for multiple human 3D pose estimation."
+    }
+  },
+  "generator": "fallback"
+}

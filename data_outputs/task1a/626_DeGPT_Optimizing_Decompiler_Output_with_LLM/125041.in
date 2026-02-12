@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "But that is with small probability, and we don't meet this case during the evaluation of MSSC.",
+    "Other common issues of static program analysis such as point-to issue may also harm the performance of MSSC, as discussed in Section V-E. We evaluate MSSC in Section V-E and it achieves an accuracy of 84% and a recall of 85%, showing it can effectively help filter out unreasonable optimization.",
+    "MSSC consists of two phases: the calculation and comparison phases.",
+    "The former calculates each code fragment to collect the necessary information, while the latter compares the computation results of two code fragments to check for function semantic changes.",
+    "Algorithm 1: Calculation Stage Input: Code: Code snippet; Output: SymT ables: A set storing the symbol value tables of different paths; CallLogs: A set storing the invocations with the argument values of different paths; 1 SymT ables ← ∅; 2 CallLogs ← ∅; 3 P aths = getExecutionP ath(Code) 4 SymT able = N ewT able(); 5 Syms = CollectSymbols(Code); 6 foreach S of Syms do SetRandomV alue(SymT able, S); 7 for P ath in P aths do 8 ST = CopyT able(SymT able); 9 CL = N ewCallLog(); 10 for Statement in P ath do 11 U pdateSymT able(ST, Statement); 12 if hasInvocation(Statement) then 13 LogInvocation(CL, Statement); 14 end 15 end 16Calculation Phase."
+  ]
+}

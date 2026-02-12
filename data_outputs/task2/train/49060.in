@@ -1,0 +1,57 @@
+{
+  "text": "To conclude with the VP-LBM, it can be noticed that it is physically meaningful, and easy to implement. Indeed, the computational domain where the Navier-Stokes equations (and thus the Lattice Boltzmann equation) are solved consists of the fluid and the solid media, and the volume force that is introduced into the Navier-Stokes equations, is applied on the whole solid domain thanks to a mask function, and it considers the obstacle as a porous medium. In addition, the convergence of the volume penalization method has been mathematically proved [CITATION_1] . In the context of the Lattice Boltzmann method, many researchers apply the immersed boundary method. The immersed boundary method consists in applying in the Navier-Stokes equations a volume force located on the surface of the obstacle and in spreading forces on the lattice nodes near the interface . With this method, the surface of the obstacle must be tracked during the computation, and it is less easy to implement this method in a highly parallelizable method such as the LBM. Even if the surface of the obstacle is modeled in a staircase manner with the volume penalization method, it enables to calculate flows around complex boundaries, and coupling this method with LBM makes the VP LBM an efficient parallel computing tool.",
+  "citation_candidates": [
+    "121083096",
+    "44260485",
+    "118138705",
+    "35422227",
+    "119784616",
+    "121457558",
+    "30006252",
+    "28081622",
+    "5619837",
+    "17681995"
+  ],
+  "bib_entries": {
+    "17681995": {
+      "title": "Lattice Boltzmann Method for Fluid Flows",
+      "abstract": "We present an overview of the lattice Boltzmann method (LBM), a parallel and efficient algorithm for simulating single-phase and multiphase fluid flows and for incorporating additional physical complexities. The LBM is especially useful for modeling complicated boundary conditions and multiphase interfaces. Recent extensions of this method are described, including simulations of fluid turbulence, suspension flows, and reaction diffusion systems."
+    },
+    "118138705": {
+      "title": "Lattice Boltzmann Method and its Applications in Engineering",
+      "abstract": "Introduction Initial and Boundary Conditions for Lattice Boltzmann Method Improved Lattice Boltzmann Models Sample Applications of LBE for Isothermal Flows LBE for Low Speed Flows with Heat Transfer LBE for Compressible Flows LBE for Multiphase and Multi-component Flows LBE for Microscale Gas Flows Other Applications of LBE."
+    },
+    "35422227": {
+      "title": "Discrete lattice effects on the forcing term in the lattice boltzmann method",
+      "abstract": "We show that discrete lattice effects must be considered in the introduction of a force into the lattice Boltzmann equation. A representation of the forcing term is then proposed. With the representation, the Navier-Stokes equation is derived from the lattice Boltzmann equation through the Chapman-Enskog expansion. Several other existing force treatments are also examined."
+    },
+    "5619837": {
+      "title": "Multireflection boundary conditions for lattice boltzmann models",
+      "abstract": "We present a general framework for several previously introduced boundary conditions for lattice Boltzmann models, such as the bounce-back rule and the linear and quadratic interpolations. The objectives are twofold: first to give theoretical tools to study the existing link-type boundary conditions and their corresponding accuracy; second to design boundary conditions for general flows which are third-order kinetic accurate. Using these new boundary conditions, Couette and Poiseuille flows are exact solutions of the lattice Boltzmann models for a Reynolds number Re=0 (Stokes limit) for arbitrary inclination with the lattice directions. Numerical comparisons are given for Stokes flows in periodic arrays of spheres and cylinders, linear periodic array of cylinders between moving plates, and for Navier-Stokes flows in periodic arrays of cylinders for Re<200. These results show a significant improvement of the overall accuracy when using the linear interpolations instead of the bounce-back reflection (up to an order of magnitude on the hydrodynamics fields). Further improvement is achieved with the new multireflection boundary conditions, reaching a level of accuracy close to the quasianalytical reference solutions, even for rather modest grid resolutions and few points in the narrowest channels. More important, the pressure and velocity fields in the vicinity of the obstacles are much smoother with multireflection than with the other boundary conditions. Finally the good stability of these schemes is highlighted by some simulations of moving obstacles: a cylinder between flat walls and a sphere in a cylinder."
+    },
+    "30006252": {
+      "title": "Immersed boundary lattice Boltzmann model based on multiple relaxation times",
+      "abstract": "As an alterative version of the lattice Boltzmann models, the multiple relaxation time (MRT) lattice Boltzmann model introduces much less numerical boundary slip than the single relaxation time (SRT) lattice Boltzmann model if some special relationship between the relaxation time parameters is chosen. On the other hand, most current versions of the immersed boundary lattice Boltzmann method, which was first introduced by Feng and improved by many other authors, suffer from numerical boundary slip as has been investigated by Le and Zhang. To reduce such a numerical boundary slip, an immerse boundary lattice Boltzmann model based on multiple relaxation times is proposed in this paper. A special formula is given between two relaxation time parameters in the model. A rigorous analysis and the numerical experiments carried out show that the numerical boundary slip reduces dramatically by using the present model compared to the single-relaxation-time-based model."
+    },
+    "44260485": {
+      "title": "Boundary slip from the immersed boundary lattice boltzmann models",
+      "abstract": "We report an interesting and important observation of the velocity fields from immersed boundary lattice Boltzmann methods (IB-LBM). The computed velocity profiles can deviate from theoretical predictions greatly even for very simple flow situations, both in the immersed boundary layer and the bulk region. A rigorous analysis of the IB-LBM simulated velocity for a symmetric shear flow is carried out, and the analytical solutions indicate a strong dependence of velocity on the relaxation parameter (kinetic viscosity). Also our simulations demonstrate that simply increasing the immersed boundary layer thickness is not an efficient approach to reduce such velocity discrepancy. We hope this work will bring the awareness of this essential issue to people using IB-LBM for various flow situations."
+    },
+    "121457558": {
+      "title": "Comparison of boundary slip for two variants of immersed boundary method in lattice Boltzmann framework",
+      "abstract": "In this paper, the Immersed Moving Boundary-Lattice Boltzmann (IMB-LB) method is compared with the single relaxation time and multiple-relaxation-time versions of the Immersed Boundary-Lattice Boltzmann (IB-LB) method in terms of the amount of numerical velocity slip produced on solid boundaries. The comparisons are performed for both straight and curved boundaries based on the effects of thickness of virtual domain used in the IB method for the first time, and relaxation time parameter(s) of the LB method. For the straight boundaries, a shear flow problem is studied while for the curved boundaries, a falling circular cylinder in an infinite channel is investigated. First, sensitivities of the IB-LB and IMB-LB methods to the relaxation time parameter(s) and thickness of virtual domain are presented. Then, the interaction of two solid particles in a shear flow is studied to assess the validity of arguments presented in solving a typical practical problem."
+    },
+    "119784616": {
+      "title": "Two-dimensional vortex shedding of a circular cylinder",
+      "abstract": "The Strouhal\u2013Reynolds number relationship for the two-dimensional (2-D) vortex shedding of a circular cylinder at low to medium Reynolds numbers (Re, ranging from 45 to 560) is investigated experimentally. Both horizontal and vertical soap film tunnels are used to set up a truly 2-D experiment. It is found that two separate 3-D instabilities of the natural wake at Re\u2245180 and 260 disappear. The Strouhal\u2013Reynolds number curve is in good agreement with the 2-D computations of Barkley and Henderson [J. Fluid Mech. 322, 215 (1996)]. The 2-D asymptote of 0.2417 of Strouhal number is also approached."
+    },
+    "121083096": {
+      "title": "On the drag of two-dimensional flow about a circular cylinder",
+      "abstract": "The drag force experienced by a circular cylinder in a two-dimensional (2D) flow is investigated experimentally. Both horizontal and vertical soap film tunnels are used to set up the 2D flow with Reynolds numbers Re ranging from 35 to 560 (based on the diameter of the circular cylinder). Momentum defect measurements are used to obtain the time averaged drag coefficients, via laser Doppler velocimetry. It is found that the drag curve is in good agreement with the 2D computations of Henderson [Phys. Fluids 7, 2102 (1995)]. Two separate three-dimensional instabilities of the natural wake at Re\u2245180 and 260 are not observed in the present data. Flow visualization of the characteristic wake patterns behind a circular cylinder, as Reynolds number increases, is also presented.The drag force experienced by a circular cylinder in a two-dimensional (2D) flow is investigated experimentally. Both horizontal and vertical soap film tunnels are used to set up the 2D flow with Reynolds numbers Re ranging from 35 to 560 (based on the diameter of the circular cylinder). Momentum defect measurements are used to obtain the time averaged drag coefficients, via laser Doppler velocimetry. It is found that the drag curve is in good agreement with the 2D computations of Henderson [Phys. Fluids 7, 2102 (1995)]. Two separate three-dimensional instabilities of the natural wake at Re\u2245180 and 260 are not observed in the present data. Flow visualization of the characteristic wake patterns behind a circular cylinder, as Reynolds number increases, is also presented."
+    },
+    "28081622": {
+      "title": "A penalization method to take into account obstacles in incompressible viscous flows",
+      "abstract": "From the Navier-Stokes/Brinkman model, a penalization method has been derived by several authors to compute incompressible Navier-Stokes equations around obstacles. In this paper, convergence theorems and error estimates are derived for two kinds of penalization. The first one corresponds to \\(L^2\\) penalization inducing a Darcy equation in the solid body, the second one corresponds to a \\(H^1\\) penalization and induces a Brinkman equation in the body. Numerical tests are performed to confirm the efficiency and accuracy of the method."
+    }
+  }
+}

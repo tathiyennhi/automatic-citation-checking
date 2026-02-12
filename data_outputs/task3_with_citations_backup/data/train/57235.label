@@ -1,0 +1,44 @@
+{
+  "doc_id": "57235",
+  "text": "FastQC was used to check Fastq files for quality. Reads were trimmed using Cutadapt [CITATION_1] (with parameters -g GATC GTCGGACTGTAGAACTCTGAACGTGTAGATCTCGGTGGTCG CCGTATCATT -a AGATCGGAAGAGCACACGTCTGAACTCCA GTCACATCACGATCTCGTATGCCGTCTTCTGCTTG -minimumlength 2) and Trimmomatic (Bolger et al., 2014) (with TRAILING: 30) to remove adaptors and portions of reads of low quality, respectively. Read pairs were then aligned to the human genome build hg38 using an annotation file from Ensembl (described below) with the splice-aware RNA-seq aligner STAR [CITATION_2] using -alignIntronMax 1250000, all other parameters at default values. Reads not aligned using STAR were aligned once again using Bowtie v2 [CITATION_3] , which performs well for the alignment of shorter reads. Bowtie parameters were the following: -local, -p 24, -q, -I 13. Read pairs successfully aligned by STAR/Bowtie were merged into a BAM file and separated into two groups: those that align to one genomic position and those that align to more than one position (Fig. 1F ).",
+  "correct_citation": {
+    "[CITATION_1]": "84784389",
+    "[CITATION_2]": "6662517",
+    "[CITATION_3]": "205420407"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Reads were trimmed using Cutadapt [CITATION_1] (with parameters -g GATC GTCGGACTGTAGAACTCTGAACGTGTAGATCTCGGTGGTCG CCGTATCATT -a AGATCGGAAGAGCACACGTCTGAACTCCA GTCACATCACGATCTCGTATGCCGTCTTCTGCTTG -minimumlength 2) and Trimmomatic (Bolger et al., 2014) (with TRAILING: 30) to remove adaptors and portions of reads of low quality, respectively.",
+      "s_span": 50,
+      "e_span": 390
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Read pairs were then aligned to the human genome build hg38 using an annotation file from Ensembl (described below) with the splice-aware RNA-seq aligner STAR [CITATION_2] using -alignIntronMax 1250000, all other parameters at default values.",
+      "s_span": 391,
+      "e_span": 633
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Reads not aligned using STAR were aligned once again using Bowtie v2 [CITATION_3] , which performs well for the alignment of shorter reads.",
+      "s_span": 634,
+      "e_span": 773
+    }
+  ],
+  "bib_entries": {
+    "84784389": {
+      "title": "Cutadapt removes adapter sequences from high-throughput sequencing reads",
+      "abstract": "When small RNA is sequenced on current sequencing machines, the resulting reads are usually longer than the RNA and therefore contain parts of the 3' adapter. That adapter must be found and removed error-tolerantly from each read before read mapping. Previous solutions are either hard to use or do not offer required features, in particular support for color space data. As an easy to use alternative, we developed the command-line tool cutadapt, which supports 454, Illumina and SOLiD (color space) data, offers two adapter trimming algorithms, and has other useful features. Cutadapt, including its MIT-licensed source code, is available for download at http://code.google.com/p/cutadapt/"
+    },
+    "205420407": {
+      "title": "Fast gapped-read alignment with Bowtie 2",
+      "abstract": "As the rate of sequencing increases, greater throughput is demanded from read aligners. The full-text minute index is often used to make alignment very fast and memory-efficient, but the approach is ill-suited to finding longer, gapped alignments. Bowtie 2 combines the strengths of the full-text minute index with the flexibility and speed of hardware-accelerated dynamic programming algorithms to achieve a combination of high speed, sensitivity and accuracy."
+    },
+    "6662517": {
+      "title": "Optimizing RNA-Seq mapping with STAR",
+      "abstract": "Recent advances in high-throughput sequencing technology made it possible to probe the cell transcriptomes by generating hundreds of millions of short reads which represent the fragments of the transcribed RNA molecules. The first and the most crucial task in the RNA-seq data analysis is mapping of the reads to the reference genome. STAR (Spliced Transcripts Alignment to a Reference) is an RNA-seq mapper that performs highly accurate spliced sequence alignment at an ultrafast speed. STAR alignment algorithm can be controlled by many user-defined parameters. Here, we describe the most important STAR options and parameters, as well as best practices for achieving the maximum mapping accuracy and speed."
+    }
+  },
+  "generator": "fallback_v4"
+}

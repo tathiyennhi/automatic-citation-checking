@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The generation probability p gen ∈ [0, 1] for timestep t is calculated from the con- text vector h * t, the decoder state s t and the decoder input x t:In the formula ( 14), W h *, W s, W x and scalar b ptr are learn- able parameters and σ is the sigmoid function.",
+    "Next, p gen will decide whether to generate words from the vocabulary by sampling from P vocab, or copy words from the input sequence by sampling from attention distribution a t. The probability distribution over the extended vocabulary can be specified as:To reduce the repetition problem, the coverage mechanism is introduced.",
+    "In each decoding process, PGN calculates a new coverage vector, which represents the cumulative total of attention distributions from all preceding steps.",
+    "Subsequently, in the loss function computation, a coverage loss is also factored in, which is the sum of the minimum values of the coverage vector and the attention distribution of the current step.",
+    "Coverage loss encourages PGN to avoid giving too much attention to the same input vocabulary as much as possible."
+  ],
+  "correct_citations": [
+    "The generation probability p gen ∈ [0, 1] for timestep t is calculated from the con- text vector h * t, the decoder state s t and the decoder input x t:In the formula ( 14), W h *, W s, W x and scalar b ptr are learn- able parameters and σ is the sigmoid function."
+  ]
+}

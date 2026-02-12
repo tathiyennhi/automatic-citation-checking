@@ -1,0 +1,38 @@
+{
+  "doc_id": "46011",
+  "text": "The standard co-training algorithm [CITATION_1] requires two sufficient and redundant views, that is, the attributes be naturally partitioned into two sets, each of which is sufficient for learning and conditionally independent to the other given the class label. Dasgupta et al. [CITATION_2] have shown that when the requirement is met, the cotrained classifiers could make fewer generalization errors by maximizing their agreement over the unlabeled data. Unfortunately, such a requirement can hardly be met in most scenarios. Goldman and Zhou [CITATION_3] proposed an algorithm which does not exploit attribute partition. However, it requires using two different supervised learning algorithms that partition the instance space into a set of equivalence classes, and employing the time-consuming cross-validation technique to determine how to label the unlabeled examples and how to produce the final hypothesis.",
+  "correct_citation": {
+    "[CITATION_1]": "207228399",
+    "[CITATION_2]": "280438",
+    "[CITATION_3]": "1215747"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The standard co-training algorithm  requires two sufficient and redundant views, that is, the attributes be naturally partitioned into two sets, each of which is sufficient for learning and conditionally independent to the other given the class label."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Dasgupta et al.  have shown that when the requirement is met, the cotrained classifiers could make fewer generalization errors by maximizing their agreement over the unlabeled data."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Goldman and Zhou  proposed an algorithm which does not exploit attribute partition."
+    }
+  ],
+  "bib_entries": {
+    "1215747": {
+      "title": "Enhancing Supervised Learning with Unlabeled Data",
+      "abstract": "In a wide variety of supervised learning scenarios, there is a small set of labeled data, along with a large pool of unlabeled data. In this thesis, we present a new semi-supervised learning method called co-learning that is designed to use unlabeled data to enhance standard supervised learning algorithms. The idea is that two or more standard supervised learning algorithms can leverage off the fact that they have different representations of the hypotheses and they are likely to detect different patterns in labeled data. We also design an active co-learning strategy to bootstrap our co-leaning procedure when the originally labeled data set is too small to provide accurate confidence estimate for the learned hypotheses. We provide a priority sampling technique as the selection component in our active co-learning method. We evaluate our co-learning algorithms on several datasets from a commonly used data repository in the machine learning community. We also test our co-learning method on text categorization. The contribution of this research is to put forward a new semi-supervised learning approach for learning with a small number of labeled examples, and explore the applicability of our co-learning strategy in real world applications."
+    },
+    "207228399": {
+      "title": "Combining Labeled and Unlabeled Data with Co-Training",
+      "abstract": "We consider the problem of using a large unlabeled sample to boost performance of a learning algorit,hrn when only a small set of labeled examples is available. In particular, we consider a problem setting motivated by the task of learning to classify web pages, in which the description of each example can be partitioned into two distinct views. For example, the description of a web page can be partitioned into the words occurring on that page, and the words occurring in hyperlinks t,hat point to that page. We assume that either view of the example would be sufficient for learning if we had enough labeled data, but our goal is to use both views together to allow inexpensive unlabeled data to augment, a much smaller set of labeled examples. Specifically, the presence of two distinct views of each example suggests strategies in which two learning algorithms are trained separately on each view, and then each algorithm’s predictions on new unlabeled examples are used to enlarge the training set of the other. Our goal in this paper is to provide a PAC-style analysis for this setting, and, more broadly, a PAC-style framework for the general problem of learning from both labeled and unlabeled data. We also provide empirical results on real web-page data indicating that this use of unlabeled examples can lead to significant improvement of hypotheses in practice. *This research was supported in part by the DARPA HPKB program under contract F30602-97-1-0215 and by NSF National Young investigator grant CCR-9357793. Permission to make digital or hard copies of all or part of this work for personal or classroom use is granted without fee provided that copies are not made or distributed for profit or commercial advantage and that copies bear this notice and the full citation on the first page. TO copy otherwise, to republish, to post on servers or to redistribute to lists, requires prior specific permission and/or a fee. COLT 98 Madison WI USA Copyright ACM 1998 l-58113-057--0/98/ 7...%5.00 92 Tom Mitchell School of Computer Science Carnegie Mellon University Pittsburgh, PA 15213-3891 mitchell+@cs.cmu.edu"
+    },
+    "280438": {
+      "title": "PAC Generalization Bounds for Co-Training",
+      "abstract": "The rule-based bootstrapping introduced by Yarowsky, and its co-training variant by Blum and Mitchell, have met with considerable empirical success. Earlier work on the theory of co-training has been only loosely related to empirically useful co-training algorithms. Here we give a new PAC-style bound on generalization error which justifies both the use of confidences — partial rules and partial labeling of the unlabeled data — and the use of an agreement-based objective function as suggested by Collins and Singer. Our bounds apply to the multiclass case, i.e., where instances are to be assigned one of labels for k ≥ 2."
+    }
+  },
+  "generator": "fallback_v4"
+}

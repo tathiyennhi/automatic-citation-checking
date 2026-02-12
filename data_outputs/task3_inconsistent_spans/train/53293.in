@@ -1,0 +1,27 @@
+{
+  "text": "We study some basic and fundamental graph problems in these models. In what follows we provide the definitions and state the computational complexity of some these problems. For the DFS problem, there have been two versions studied in the literature. In the lexicographically smallest DFS or lex-DFS problem, when DFS looks for an unvisited vertex to visit in an adjacency list, it picks the \"first\" unvisited vertex where the \"first\" is with respect to the appearance order in the adjacency list. The resulting DFS tree will be unique. In contrast to lex-DFS, an algorithm that outputs some DFS numbering of a given graph, treats an adjacency list as a set, ignoring the order of appearance of vertices in it, and outputs a vertex ordering T such that there exists some adjacency ordering R such that T is the DFS numbering with respect to R. We say that such a DFS algorithm performs general-DFS. Reif [CITATION_1] has shown that lex-DFS is P-complete (with respect to log-space reductions) implying that a logspace algorithm for lex-DFS results in the collapse of complexity classes P and L. Anderson et al. [CITATION_2] have shown that even computing the leftmost root-to-leaf path of the lex-DFS tree is P-complete. For many years, these results seemed to imply that the general-DFS problem, that is, the computation of any DFS tree is also inherently sequential. However, Aggarwal et al. [CITATION_3] [CITATION_4] proved that the general-DFS problem can be solved much more efficiently, and it is in RNC. Whether the general-DFS problem is in NC is still open.",
+  "correct_citation": {
+    "[CITATION_1]": "8308276",
+    "[CITATION_2]": "35728622",
+    "[CITATION_3]": "13846456",
+    "[CITATION_4]": "207778063"
+  },
+  "bib_entries": {
+    "8308276": {
+      "title": "Depth-first search is inherently sequential",
+      "abstract": "Abstract This paper concerns the computational complexity of depth-first search. Suppose we are given a rooted graph G with fixed adjacency lists and vertices u, v. We wish to test if u is first visited before v in depth-first search order of G. We show that this problem, for undirected and directed graphs, is complete in deterministic polynomial time with respect to deterministic log-space reductions. This gives strong evidence that depth-first search ordering can be done neither in deterministic space (log n) c nor in parallel time (log n) c , for any constant c > 0."
+    },
+    "207778063": {
+      "title": "Parallel depth-first search in general directed graphs",
+      "abstract": "A directed cycle separator of an n-vertex directed graph is a vertex-simple directed cycle such that when the vertices of the cycle are deleted, the resulting graph has no strongly connected component with more than ${n / 2}$ vertices. It is shown that the problem of finding a directed cycle separator is in randomized NC. It is also proved that computing cycle separators and conducting depth-first search in directed graphs are deterministically NC-equivalent. These two results together yield the first randomized NC algorithm for depth-first search in general directed graphs."
+    },
+    "35728622": {
+      "title": "Parallelism and the maximal path problem",
+      "abstract": "The maximal path problem is the following: Given a graph G = (V, E) and a vertex r, find a path starting at r that cannot be extended without encountering a node that is already on the path. We shall show that if all nodes have degree at most D(n), the problem can be solved in O(D(n) log3 n) time using O(n2) processors. We also obtain an NC algorithm for the maximal path problem in planar graphs. Finally, we show that the problem of computing the lexicographically minimal maximal path is P-complete, even when restricted to planar graphs."
+    },
+    "13846456": {
+      "title": "A random NC algorithm for depth first search",
+      "abstract": "In this paper we present a fast parallel algorithm for constructing a depth first search tree for an undirected graph. The algorithm is an RNC algorithm, meaning that it is a probabilistic algorithm that runs in polylog time using a polynomial number of processors on a P-RAM. The run time of the algorithm is O ( T MM ( n )log 3 n ), and the number of processors used is P MM ( n ) where T MM ( n ) and P MM ( n ) are the time and number of processors needed to find a minimum weight perfect matching on an n vertex graph with maximum edge weight n ."
+    }
+  }
+}

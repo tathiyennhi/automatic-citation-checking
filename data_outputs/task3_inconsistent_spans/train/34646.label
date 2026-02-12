@@ -1,0 +1,22 @@
+{
+  "doc_id": "34646",
+  "text": "Given the robust tendency to undergeneralize in Experiments 1 and 2 (where there was a true underlying level of spatial correlation), we ran one last simulation to examine how adaptive participant λ estimates were in the real-world datasets used in 24/33 Experiment 3, compared to other possible λ values. Figure S4c shows the performance of different student λ values in the range {0.1, 0.2, · · · , 3} simulated over 10,000 replications sampled (with replacement) from the set of 20 natural environments. Red lines show performance in terms of average cumulative reward (Accumulation criterion) and blue lines show performance in terms of maximum reward (Maximization criterion). Vertical dashed lines indicate the interquartile range of participant λ estimates. As student λ values increase, performance by both metrics typically peaks within the range of human λ estimates, with performance largely staying constant or decreasing for larger levels of λ (with the exception of average reward at t = 40). Thus, we find that the extent of generalization observed in participants is generally adaptive to the real-world environments they encountered. It should also be noted that higher levels of generalization beyond what we observed in participant data have only marginal benefits, yet could potentially come with additional computational costs (depending on how it is implemented). Recall that a λ of 1 corresponds to assuming the correlation of rewards effectively decays to 0 for options with a distance greater than 3. If we assume a computational implementation where information about uncorrelated options is disregarded (e.g., in a sparse GP [CITATION_1] ), then the range of participant λ estimates could suggest a tendency towards lower complexity and memory requirements, while sacrificing only marginal benefits in terms of either average cumulative reward or maximum reward.",
+  "correct_citation": {
+    "[CITATION_1]": "12555103"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "If we assume a computational implementation where information about uncorrelated options is disregarded (e.g., in a sparse GP  ), then the range of participant λ estimates could suggest a tendency towards lower complexity and memory requirements, while sacrificing only marginal benefits in terms of either average cumulative reward or maximum reward.",
+      "s_span": 1526,
+      "e_span": 1889
+    }
+  ],
+  "bib_entries": {
+    "12555103": {
+      "title": "Fast sparse gaussian process methods: The informative vector machine",
+      "abstract": "We present a framework for sparse Gaussian process (GP) methods which uses forward selection with criteria based on information-theoretic principles, previously suggested for active learning. Our goal is not only to learn d-sparse predictors (which can be evaluated in O(d) rather than O(n), d ≪ n, n the number of training points), but also to perform training under strong restrictions on time and memory requirements. The scaling of our method is at most O(n · d2), and in large real-world classification experiments we show that it can match prediction performance of the popular support vector machine (SVM), yet can be significantly faster in training. In contrast to the SVM, our approximation produces estimates of predictive probabilities ('error bars'), allows for Bayesian model selection and is less complex in implementation."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,34 @@
+{
+  "doc_id": "30448",
+  "text": "where . is the DD geometric distance, a is the troposphere mapping function coefficient, ZTD is the tropospheric zenith total delay, P is the DD pseudo-range, and f 1 denotes the first used frequency. The mathematical model is applied for both reference and user solutions. The model is filtered using the leastsquares adjustment with a priori parameter constraints [CITATION_1] [CITATION_2] . The applied observational model assumes modeling several parameters such as reference station and rover coordinates, DD ambiguities, and ZTDs. For every DD epoch, a new DD ionospheric delay parameter is introduced. Introduction of the DD ionospheric delays into the state vector causes the degrees of freedom of the filter to decrease. In order to increase the observational model redundancy, stochastic constraints are applied. The constraint equations are treated in the model as pseudo-observations with weights computed from the a priori variance-covariance estimate. In the algorithm, the a priori reference and rover stations coordinates, ZTDs, and DD ionospheric delays are stochastically constrained. Thus, the total observational model consist of two groups of observation equations: linearized observational equations with the respective design matrix, observed minus computed vector, and weight matrix (A, L, P L , respectively), and the pseudo-observation equations with their design matrix, observed minus computed vector, and weight matrix (B, W, P W , respectively). Combining both the equation groups, the adjustment model can expressed as follows [CITATION_3] :",
+  "correct_citation": {
+    "[CITATION_1]": "9892829",
+    "[CITATION_2]": "60506204",
+    "[CITATION_3]": "60506204"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The model is filtered using the leastsquares adjustment with a priori parameter constraints."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The model is filtered using the leastsquares adjustment with a priori parameter constraints."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Combining both the equation groups, the adjustment model can expressed as follows"
+    }
+  ],
+  "bib_entries": {
+    "9892829": {
+      "title": "A performance evaluation of the operational Jet Propulsion Laboratory/University of Southern California Global Assimilation Ionospheric Model (JPL/USC GAIM)",
+      "abstract": "[1] The Jet Propulsion Laboratory/University of Southern California Global Assimilation Ionospheric Model (JPL/USC GAIM) uses two data assimilation techniques to optimally combine ionospheric measurements with the physics model: a sparse, traditional Kalman filter to estimate the three-dimensional density state, and a four-dimensional variational approach (4DVAR) to estimate ionospheric drivers such as the equatorial E × B drift or neutral winds. In this paper we study a specific implementation of the JPL/USC GAIM Kalman filter (single ion, low-resolution, and input data from 200 ground GPS sites) and validate its global accuracy over 137 days by comparisons to independent GPS slant total electron content (TEC) observations (“missing site” tests) and independent JASON vertical TEC observations. The assimilation accuracy is robust with a slant TEC spatial prediction RMS error of 4 TECU (Total Electron Content Unit, 1 × 1016 e-/m2) on average and a vertical TEC JASON RMS error of 7 TECU. Removing what appears to be a positive ≈4.4 TECU bias from the JASON observations, we obtain an improved performance of 5.3 TECU over the oceans. Comparisons with a single, thin shell global ionospheric map model and the International Reference Ionosphere and Bent ionospheric models are also provided."
+    },
+    "60506204": {
+      "title": "GPS: theory, algorithms and applications",
+      "abstract": "This reference and handbook describes theory, algorithms and applications of the Global Positioning System (GPS/Glonass/Galileo/Compass). It is primarily based on source-code descriptions of the KSGsoft program developed at the GFZ in Potsdam. The theory and algorithms are extended and verified for a new development of a multi-functional GPS/Galileo software. Besides the concepts such as the unified GPS data processing method, the diagonalisation algorithm, the adaptive Kalman filter, the general ambiguity search criteria, and the algebraic solution of variation equation reported in the first edition, the equivalence theorem of the GPS algorithms, the independent parameterisation method, and the alternative solar radiation model reported in the second edition, the modernisation of the GNSS system, the new development of the theory and algorithms, and research in broad applications are supplemented in this new edition. Mathematically rigorous, the book begins with the introduction, the basics of coordinate and time systems and satellite orbits, as well as GPS observables, and deals with topics such as physical influences, observation equations and their parameterisation, adjustment and filtering, ambiguity resolution, software development and data processing and the determination of perturbed orbits."
+    }
+  },
+  "generator": "fallback"
+}

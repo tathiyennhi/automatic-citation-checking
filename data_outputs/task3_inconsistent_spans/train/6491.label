@@ -1,0 +1,44 @@
+{
+  "doc_id": "6491",
+  "text": "In the following we show that the results of our method do not depend critically on the precise composition of the test group, and are robust with respect to a high portion of genes which are accidentally assigned to the group. Here we assume that the falsely assigned genes are randomly distributed on the microarray. This assumption does not necessarily hold for gene lists obtained with rather naive microarray analysis, since e.g. the absolute signal or cross hybribridization might induce a bias. However, there are approaches to limit such a bias, for example by estimating the variance for each gene from replications [CITATION_1] , or by variance stabilization [CITATION_2] . We address the robustness by profiling the gene group of 221 cell-cycle regulated genes expressed in the Sphase [CITATION_3] , and adding randomly selected genes to this group. Initially, 37 terms are reported to be significant (FDR<0.05). Subsequently 10, 20, 50, 100, 200, 500, and 750 randomly selected genes from the reference group are added to the initial test group and the resulting groups are profiled. We repeated this procedure 100 times and determined how much of the initial profile is preserved. Figure 4A shows that the number of significantly enriched terms decreases if we add more and more random genes. However, the profile is remarkable robust: even if we add 200 randomly selected genes, we can still detect 17 of the initially 37 significant terms. Interestingly, from the difference between the solid and dashed line we see that only about 5% of the terms in the resulting profiles are not contained in the initial profile for the S-phase, regardless of the number of randomly selected genes added. These are potentially falsely discovered terms confirming our criterion of the adjusted p-value to control the FDR<0.05. Figure 4B shows the robustness of terms with different initial FDR. As expected, terms with a FDR just below the threshold of 0.05, like adenyl nucleotide binding (id 30554, FDR=0.044), are unlikely to be detected after adding many randomly selected genes. However, terms with intermediate significance, like nucleosome assembly (id 6334, FDR=0.0091), and DNA repair (id 6281, FDR=0.00099), can still be detected nearly always after adding 100 randomly selected genes. Remarkably, highly significant terms like DNA metabolism, (id 6259, FDR=5.2·10 −8 ), are found in 99% of all cases even after adding 500 randomly selected genes. These results show that our framework performs reasonably well even if many randomly selected genes are in the gene groups. Especially intermediate and highly significant terms will persist. Furthermore, the framework controls the number of falsely discovered terms reliably.",
+  "correct_citation": {
+    "[CITATION_1]": "122005211",
+    "[CITATION_2]": "12512098",
+    "[CITATION_3]": "2584774"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, there are approaches to limit such a bias, for example by estimating the variance for each gene from replications  , or by variance stabilization  .",
+      "s_span": 502,
+      "e_span": 683
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "However, there are approaches to limit such a bias, for example by estimating the variance for each gene from replications  , or by variance stabilization  .",
+      "s_span": 502,
+      "e_span": 683
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We address the robustness by profiling the gene group of 221 cell-cycle regulated genes expressed in the Sphase  , and adding randomly selected genes to this group.",
+      "s_span": 684,
+      "e_span": 860
+    }
+  ],
+  "bib_entries": {
+    "2584774": {
+      "title": "Identification of genes periodically expressed in the human cell cycle and their expression in tumors",
+      "abstract": "The genome-wide program of gene expression during the cell division cycle in a human cancer cell line (HeLa) was characterized using cDNA microarrays. Transcripts of >850 genes showed periodic variation during the cell cycle. Hierarchical clustering of the expression patterns revealed coexpressed groups of previously well-characterized genes involved in essential cell cycle processes such as DNA replication, chromosome segregation, and cell adhesion along with genes of uncharacterized function. Most of the genes whose expression had previously been reported to correlate with the proliferative state of tumors were found herein also to be periodically expressed during the HeLa cell cycle. However, some of the genes periodically expressed in the HeLa cell cycle do not have a consistent correlation with tumor proliferation. Cell cycle-regulated transcripts of genes involved in fundamental processes such as DNA replication and chromosome segregation seem to be more highly expressed in proliferative tumors simply because they contain more cycling cells. The data in this report provide a comprehensive catalog of cell cycle regulated genes that can serve as a starting point for functional discovery. The full dataset is available at http://genome-www.stanford.edu/Human-CellCycle/HeLa/."
+    },
+    "122005211": {
+      "title": "Statistical methods for identifying differentially expressed genes in replicated cdna microarray experiments",
+      "abstract": "DNA microarrays are a new and promising biotechnology which allows the monitoring of expression levels in cells for thousands of genes simultaneously. The present paper describes statistical methods for the identification of differentially expressed genes in replicated cDNA microarray experiments. Although it is not the main focus of the paper, new methods for the important pre-processing steps of image analysis and normalization are proposed. Given suitably normalized data, the biological question of differential expression is restated as a problem in multiple hypothesis testing: the simultaneous test for each gene of the null hypothesis of no association between the expression levels and responses or covariates of interest. Differentially expressed genes are identified based on adjusted p-values for a multiple testing procedure which strongly controls the family-wise Type I error rate and takes into account the dependence structure between the gene expression levels. No specific parametric form is assumed for the distribution of the test statistics and a permutation procedure is used to estimate adjusted p-values. Several data displays are suggested for the visual identification of differentially expressed genes and of important features of these genes. The above methods are applied to microarray data from a study of gene expression in the livers of mice with very low HDL cholesterol levels. The genes identified using data from multiple slides are compared to those identified by recently published single-slide methods."
+    },
+    "12512098": {
+      "title": "Variance stabilization applied to microarray data calibration and to the quantification of differential expression",
+      "abstract": "We introduce a statistical model for microarray gene expression data that comprises data calibration, the quantification of differential expression, and the quantification of measurement error. In particular, we derive a transformation h for intensity measurements, and a difference statistic Deltah whose variance is approximately constant along the whole intensity range. This forms a basis for statistical inference from microarray data, and provides a rational data pre-processing strategy for multivariate analyses. For the transformation h, the parametric form h(x)=arsinh(a+bx) is derived from a model of the variance-versus-mean dependence for microarray intensity data, using the method of variance stabilizing transformations. For large intensities, h coincides with the logarithmic transformation, and Deltah with the log-ratio. The parameters of h together with those of the calibration between experiments are estimated with a robust variant of maximum-likelihood estimation. We demonstrate our approach on data sets from different experimental platforms, including two-colour cDNA arrays and a series of Affymetrix oligonucleotide arrays."
+    }
+  },
+  "generator": "fallback_v4"
+}

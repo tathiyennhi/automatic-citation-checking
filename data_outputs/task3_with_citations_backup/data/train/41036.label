@@ -1,0 +1,77 @@
+{
+  "doc_id": "41036",
+  "text": "There is has been a significant amount of previous work on automated property inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] and anomaly detection [CITATION_5] [CITATION_6] on many different levels, both static and dynamic, all with their relative strengths and weaknesses. Many of those approaches could be integrated into our generic architecture defined in Section 3. We decided to define our own set of three behavior abstractions because this setup would allow us to evaluate the relative properties of those abstractions. Our approach extends all previous approaches to anomaly detection by allowing anomalies to be identified in a distributed but trustworthy manner.",
+  "correct_citation": {
+    "[CITATION_1]": "2061682",
+    "[CITATION_2]": "13930648",
+    "[CITATION_3]": "955913",
+    "[CITATION_4]": "621511",
+    "[CITATION_5]": "6578083",
+    "[CITATION_6]": "195861919"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "There is has been a significant amount of previous work on automated property inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] and anomaly detection [CITATION_5] [CITATION_6] on many different levels, both static and dynamic, all with their relative strengths and weaknesses.",
+      "s_span": 0,
+      "e_span": 288
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "There is has been a significant amount of previous work on automated property inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] and anomaly detection [CITATION_5] [CITATION_6] on many different levels, both static and dynamic, all with their relative strengths and weaknesses.",
+      "s_span": 0,
+      "e_span": 288
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "There is has been a significant amount of previous work on automated property inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] and anomaly detection [CITATION_5] [CITATION_6] on many different levels, both static and dynamic, all with their relative strengths and weaknesses.",
+      "s_span": 0,
+      "e_span": 288
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "There is has been a significant amount of previous work on automated property inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] and anomaly detection [CITATION_5] [CITATION_6] on many different levels, both static and dynamic, all with their relative strengths and weaknesses.",
+      "s_span": 0,
+      "e_span": 288
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "There is has been a significant amount of previous work on automated property inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] and anomaly detection [CITATION_5] [CITATION_6] on many different levels, both static and dynamic, all with their relative strengths and weaknesses.",
+      "s_span": 0,
+      "e_span": 288
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "There is has been a significant amount of previous work on automated property inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] and anomaly detection [CITATION_5] [CITATION_6] on many different levels, both static and dynamic, all with their relative strengths and weaknesses.",
+      "s_span": 0,
+      "e_span": 288
+    }
+  ],
+  "bib_entries": {
+    "195861919": {
+      "title": "Tracking down software bugs using automatic anomaly detection",
+      "abstract": "Introduces DIDUCE, a practical and effective tool that aids programmers in detecting complex program errors and identifying their root causes. By instrumenting a program and observing its behavior as it runs, DIDUCE dynamically formulates hypotheses of invariants obeyed by the program. DIDUCE hypothesizes the strictest invariants at the beginning, and gradually relaxes the hypothesis as violations are detected to allow for new behavior. The violations reported help users to catch software bugs as soon as they occur. They also give programmers new visibility into the behavior of the programs such as identifying rare corner cases in the program logic or even locating hidden errors that corrupt the program's results. We implemented the DIDUCE system for Java programs and applied it to four programs of significant size and complexity. DIDUCE succeeded in identifying the root causes of programming errors in each of the programs quickly and automatically. In particular, DIDUCE is effective in isolating a timing-dependent bug in a released JSSE (Java Secure Socket Extension) library, which would have taken an experienced programmer days to find. Our experience suggests that detecting and checking program invariants dynamically is a simple and effective methodology for debugging many different kinds of program errors across a wide variety of application domains."
+    },
+    "13930648": {
+      "title": "Automatic generation of object usage specifications from large method traces",
+      "abstract": "Formal specifications are used to identify programming errors, verify the correctness of programs, and as documentation. Unfortunately, producing them is error-prone and time-consuming, so they are rarely used in practice. Inferring specifications from a running application is a promising solution. However, to be practical, such an approach requires special techniques to treat large amounts of runtime data. We present a scalable dynamic analysis that infers specifications of correct method call sequences on multiple related objects. It preprocesses method traces to identify small sets of related objects and method calls which can be analyzed separately. We implemented our approach and applied the analysis to eleven real-world applications and more than 240 million runtime events. The experiments show the scalability of our approach. Moreover, the generated specifications describe correct and typical behavior, and match existing API usage documentation."
+    },
+    "621511": {
+      "title": "Mining exception-handling rules as sequence association rules",
+      "abstract": "Programming languages such as Java and C++ provide exception-handling constructs to handle exception conditions. Applications are expected to handle these exception conditions and take necessary recovery actions such as releasing opened database connections. However, exception-handling rules that describe these necessary recovery actions are often not available in practice. To address this issue, we develop a novel approach that mines exception-handling rules as sequence association rules of the form “(FC1 c 1…FC c n) ∧ FC a ⇒ (FC e 1…FC e m)”. This rule describes that function call FCa should be followed by a sequence of function calls (FC e 1…FC e m) when FC a is preceded by a sequence of function calls (FC e 1…FC c n). Such form of rules is required to characterize common exception-handling rules. We show the usefulness of these mined rules by applying them on five real-world applications (including 285 KLOC) to detect violations in our evaluation. Our empirical results show that our approach mines 294 real exception-handling rules in these five applications and also detects 160 defects, where 87 defects are new defects that are not found by a previous related approach."
+    },
+    "2061682": {
+      "title": "Dynamically discovering likely program invariants to support program evolution",
+      "abstract": "Explicitly stated program invariants can help programmers by identifying program properties that must be preserved when modifying code. In practice, however, these invariants are usually implicit. An alternative to expecting programmers to fully annotate code with invariants is to automatically infer likely invariants from the program itself. This research focuses on dynamic techniques for discovering invariants from execution traces. This article reports three results. First, it describes techniques for dynamically discovering invariants, along with an implementation, named Daikon, that embodies these techniques. Second, it reports on the application of Daikon to two sets of target programs. In programs from Gries's work (1981) on program derivation, the system rediscovered predefined invariants. In a C program lacking explicit invariants, the system discovered invariants that assisted a software evolution task. These experiments demonstrate that, at least for small programs, invariant inference is both accurate and useful. Third, it analyzes scalability issues, such as invariant detection runtime and accuracy, as functions of test suites and program points instrumented."
+    },
+    "955913": {
+      "title": "Alattin: Mining alternative patterns for detecting neglected conditions",
+      "abstract": "To improve software quality, static or dynamic verification tools accept programming rules as input and detect their violations in software as defects. As these programming rules are often not well documented in practice, previous work developed various approaches that mine programming rules as frequent patterns from program source code. Then these approaches use static defect-detection techniques to detect pattern violations in source code under analysis. These existing approaches often produce many false positives due to various factors. To reduce false positives produced by these mining approaches, we develop a novel approach, called Alattin, that includes a new mining algorithm and a technique for detecting neglected conditions based on our mining algorithm. Our new mining algorithm mines alternative patterns in example form \"P1 or P2\", where P1 and P2 are alternative rules such as condition checks on method arguments or return values related to the same API method. We conduct two evaluations to show the effectiveness of our Alattin approach. Our evaluation results show that (1) alternative patterns reach more than 40% of all mined patterns for APIs provided by six open source libraries; (2) the mining of alternative patterns helps reduce nearly 28% of false positives among detected violations."
+    },
+    "6578083": {
+      "title": "Learning from 6,000 projects: Lightweight cross-project anomaly detection",
+      "abstract": "Real production code contains lots of knowledge - on the domain, on the architecture, and on the environment. How can we leverage this knowledge in new projects? Using a novel lightweight source code parser, we have mined more than 6,000 open source Linux projects (totaling 200,000,000 lines of code) to obtain 16,000,000 temporal properties reflecting normal interface usage. New projects can be checked against these rules to detect anomalies - that is, code that deviates from the wisdom of the crowds. In a sample of 20 projects, ~25% of the top-ranked anomalies uncovered actual code smells or defects."
+    }
+  },
+  "generator": "fallback_v4"
+}

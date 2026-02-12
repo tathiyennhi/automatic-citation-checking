@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Algorithm 11Hybrid CNN-Attention Model for Glioma Classification Require: Segmented 3D brain MRI volumes X, ground truth labels Y Ensure: Resulting trained model M 1: Input: Preprocessed and segmented MRI scans of glioma regions.",
+    "2: Base Model Initialization: Load weights of U-Net backbone for feature extraction.",
+    "3: Dense Block Construction: Each layer receives output from all previous layers concatenated together: 8:8Fully Connected Layer: Combine the high-level learned features for the classification task: Output = Dense(n classes, activation=softmax)(GAP3D(x)) 9: Loss Function: Categorical cross-entropy is calculated as: L(y, ŷ) =i y i log(ŷ i) 10: Optimization: Parameters are updated using Adam as: Fig. 3.3Fig.",
+    "Research Methodology Process Diagram)Data Augmentation: To enhance model robustness on limited training data (335 total subjects), comprehensive augmentation is applied exclusively to training data during each epoch: • Spatial Augmentation: Random 3D rotations (±15) and translations (±10 voxels) account for natural anatomical variations and scanner positioning differences • Elastic Deformation: B-spline-based spatial deformations simulate morphological variations in tumor presentation • Intensity Augmentation: Random multiplicative scaling (0.95-1.05) and additive Gaussian noise (σ = 0.02) simulate scanner variability • Contrast Stretching: Random contrast enhancement simulates different reconstruction algorithms The entirety of the dataset is divided into training (75%, n = 251 patients) and validation (25%, n = 84 patient) sets via stratified random sampling at the level of the patient.",
+    "Notably, all the MRI slices associated with a single patient will reside either in the training or validation set ensuring that there is no information leakage that would overly inflate performance estimates."
+  ],
+  "correct_citations": []
+}

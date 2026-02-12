@@ -1,0 +1,22 @@
+{
+  "doc_id": "54441",
+  "text": "Signal generation is based on FingerIO [CITATION_1] with modifications tailored to our device and application scenario. We introduce some additional processing and filtering steps. Identical to FingerIO, 48 kHz is used as the sampling frequency. According to Nyquist theorem, this supports a sound wave of up to 24 kHz. This importantly supports frequencies above 18 kHz, which is the highest frequency most adults can hear. A vector comprising 64 subcarriers, each covering 375 Hz, is composed. All subcarriers outside of the intended band (18-20 kHz) are set to 0, and all others are set to 1. The next signal generation steps are in addition to the mechanism used by FingerIO and are used to adjust to our phone and application scenario. A copy of the vector is reverse ordered, and the two vectors concatenated, resulting in the vector shown in Fig. 2a . The 128-sample time domain signal is generated using the inverse fast Fourier transform (IFFT). The real part is divided in half and the first half used as the signal. As this introduces spectral leakage into the audible hearing range, we remove unwanted low frequencies using a Hanning window. The final signal in the time domain is shown in Fig. 2b . The signal is padded with silence to introduce a 264-sample interval and a duration of 5.5 ms. This ensures that all echoes are captured before the next pulse is emitted. The frame is repeated continuously, producing a signal as shown in Fig. 3 .",
+  "correct_citation": {
+    "[CITATION_1]": "14629673"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Signal generation is based on FingerIO  with modifications tailored to our device and application scenario.",
+      "s_span": 0,
+      "e_span": 119
+    }
+  ],
+  "bib_entries": {
+    "14629673": {
+      "title": "FingerIO: Using active sonar for fine-grained finger tracking",
+      "abstract": "We present fingerIO, a novel fine-grained finger tracking solution for around-device interaction. FingerIO does not require instrumenting the finger with sensors and works even in the presence of occlusions between the finger and the device. We achieve this by transforming the device into an active sonar system that transmits inaudible sound signals and tracks the echoes of the finger at its microphones. To achieve sub-centimeter level tracking accuracies, we present an innovative approach that use a modulation technique commonly used in wireless communication called Orthogonal Frequency Division Multiplexing (OFDM). Our evaluation shows that fingerIO can achieve 2-D finger tracking with an average accuracy of 8 mm using the in-built microphones and speaker of a Samsung Galaxy S4. It also tracks subtle finger motion around the device, even when the phone is in the pocket. Finally, we prototype a smart watch form-factor fingerIO device and show that it can extend the interaction space to a 0.5×0.25 m2 region on either side of the device and work even when it is fully occluded from the finger."
+    }
+  },
+  "generator": "fallback_v4"
+}

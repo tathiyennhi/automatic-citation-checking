@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Let v ∈ C l be a semantic vector (see Eq. 14) in cluster C l. First, we define a(v) as the mean distance between v and all other data points in the same cluster, and b(v) as the mean distance of v to the nearest other cluster as Then, the Silhouette score for v ∈ C l is defined as:a(v) = 1 |C l | -1 k∈C l,k =v d(v, k) (16) b(v) = min l =l ⎧ ⎨ ⎩ 1 |C l | k∈C l d(v, k) ⎫ ⎬ ⎭(17)s(v) = b(v)-a(v) max{a(v),b(v)} if |C l | > 1 0 i f |C l | = 1 (18)As a distance metric d, we use semantic_relatedness as defined in Eq.",
+    "Now, we can compute the Silhouette score for a cluster C l as the arithmetic mean of all Silhouette scores in this cluster:s(C l) = 1 |C l | v∈C l s(v)(19)A positive Silhouette coefficient indicates that objects homogeneously lie well within the cluster and do not interfere with other clusters, while a negative score indicates that the objects are merely somewhere in between clusters.",
+    "Table 7 shows the Silhouette scores [68] for each cluster.",
+    "This evaluation uses our assignment of the datasets' annotation classes to one of the six core clusters identified based on the respective annotation guidelines.",
+    "It can be seen that MULT ALL has the highest Silhouette coefficient (SC) and thus forms better clusters than SciBERT-HSLN and MULT GRP."
+  ],
+  "correct_citations": [
+    "Table 7 shows the Silhouette scores [68] for each cluster."
+  ]
+}

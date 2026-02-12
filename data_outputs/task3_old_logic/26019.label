@@ -1,0 +1,29 @@
+{
+  "doc_id": "26019",
+  "text": "Dataset and preprocessing: We demonstrate our method on two datasets. We use the FLAIR data of the Ischemic Lesion Segmentation (ISLES) 2015 dataset [CITATION_1] , which contains images of 28 volumes that are skull stripped and re-sampled to an isotropic spacing of 1mm 3 (SISS) resp. We also use FLAIR data from MRI scans of glioblastoma (GBM/HGG), made available in the Brain Tumour Segmentation (BraTS) 2018 [CITATION_2] challenge. The BraTS data contain images of 79 volumes that are skull-striped, and interpolated to 1mm 3 resolution. Both datasets are released with segmentation masks of the pathological regions. For each dataset, we normalize each volume by clipping the intensities to [0, V 99.5 ], where V 99.5 is the 99.5% largest pixel value of the corresponding volume, then we normalize the resulting intensities to [0, 1] . We choose the middle 60 slices from each volume and label a slice as 'healthy' if its corresponding pathology mask is black, and as 'pathological' otherwise. We divide the datasets into a training and a testing set of 22 and 6 volumes for ISES, and 50 and 29 volumes for BraTS respectively. Training and implementation details: The method is implemented in Python using Keras (Chollet et al., 2015) . The loss function for the paired data option is defined as",
+  "correct_citation": {
+    "[CITATION_1]": "206870364",
+    "[CITATION_2]": "1739295"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We use the FLAIR data of the Ischemic Lesion Segmentation (ISLES) 2015 dataset, which contains images of 28 volumes that are skull stripped and re-sampled to an isotropic spacing of 1mm 3 (SISS) resp."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We also use FLAIR data from MRI scans of glioblastoma (GBM/HGG), made available in the Brain Tumour Segmentation (BraTS) 2018"
+    }
+  ],
+  "bib_entries": {
+    "206870364": {
+      "title": "ISLES 2015 -A public evaluation benchmark for ischemic stroke lesion segmentation from multispectral MRI",
+      "abstract": "&NA; Ischemic stroke is the most common cerebrovascular disease, and its diagnosis, treatment, and study relies on non‐invasive imaging. Algorithms for stroke lesion segmentation from magnetic resonance imaging (MRI) volumes are intensely researched, but the reported results are largely incomparable due to different datasets and evaluation schemes. We approached this urgent problem of comparability with the Ischemic Stroke Lesion Segmentation (ISLES) challenge organized in conjunction with the MICCAI 2015 conference. In this paper we propose a common evaluation framework, describe the publicly available datasets, and present the results of the two sub‐challenges: Sub‐Acute Stroke Lesion Segmentation (SISS) and Stroke Perfusion Estimation (SPES). A total of 16 research groups participated with a wide range of state‐of‐the‐art automatic segmentation algorithms. A thorough analysis of the obtained data enables a critical evaluation of the current state‐of‐the‐art, recommendations for further developments, and the identification of remaining challenges. The segmentation of acute perfusion lesions addressed in SPES was found to be feasible. However, algorithms applied to sub‐acute lesion segmentation in SISS still lack accuracy. Overall, no algorithmic characteristic of any method was found to perform superior to the others. Instead, the characteristics of stroke lesion appearances, their evolution, and the observed challenges should be studied in detail. The annotated ISLES image datasets continue to be publicly available through an online evaluation system to serve as an ongoing benchmarking resource (www.isles‐challenge.org). HighlightsEvaluation framework for automatic stroke lesion segmentation from MRIPublic multi‐center, multi‐vendor, multi‐protocol databases releasedOngoing fair and automated benchmark with expert created ground truth setsComparison of 14+7 groups who responded to an open challenge in MICCAISegmentation feasible in acute and unsolved in sub‐acute cases Graphical abstract Figure. No caption available."
+    },
+    "1739295": {
+      "title": "The Multimodal Brain Tumor Image Segmentation Benchmark (BRATS)",
+      "abstract": "In this paper we report the set-up and results of the Multimodal Brain Tumor Image Segmentation Benchmark (BRATS) organized in conjunction with the MICCAI 2012 and 2013 conferences. Twenty state-of-the-art tumor segmentation algorithms were applied to a set of 65 multi-contrast MR scans of low- and high-grade glioma patients - manually annotated by up to four raters - and to 65 comparable scans generated using tumor image simulation software. Quantitative evaluations revealed considerable disagreement between the human raters in segmenting various tumor sub-regions (Dice scores in the range 74-85%), illustrating the difficulty of this task. We found that different algorithms worked best for different sub-regions (reaching performance comparable to human inter-rater variability), but that no single algorithm ranked in the top for all subregions simultaneously. Fusing several good algorithms using a hierarchical majority vote yielded segmentations that consistently ranked above all individual algorithms, indicating remaining opportunities for further methodological improvements. The BRATS image data and manual annotations continue to be publicly available through an online evaluation system as an ongoing benchmarking resource."
+    }
+  },
+  "generator": "fallback"
+}

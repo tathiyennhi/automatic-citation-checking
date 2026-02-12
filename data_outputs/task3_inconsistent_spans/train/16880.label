@@ -1,0 +1,51 @@
+{
+  "doc_id": "16880",
+  "text": "Assessing the accuracy of an existing recorder. Recently, a number of lineaging approaches using CRISPR recorders have been tested in the nematode Caenorhabditis elegans and the zebrafish Danio rerio, as well as in cultured human cells [CITATION_1] [CITATION_2] [CITATION_3] . We have used our simulation approach to assess the accuracy of GESTALT, one of the first and most ambitious approaches, which aimed to reconstruct the cell lineage of the tens of thousands of cells of the zebrafish embryo [CITATION_4] . It is important to note that in GESTALT the cell lineage is reconstructed at a coarse-grained level, with clones (instead of cells) as nodes in the tree, whereas our measure of success assesses the ability to reconstruct the complete cell lineage at a single-cell level. GESTALT uses arrays of 10 different CRISPR targets, mutated by injecting fertilised eggs with 10 corresponding sgR-NAs and Cas9. The mutated targets are then sequenced at different developmental stages. We based our simulations on the mutational outcomes derived from the GESTALT recorder v7 at 30 hours post-fertilisation (downloaded from the Dryad repository). At this stage the zebrafish embryo consists of approximately 25,000 cells, resulting from ∼15 rounds of cell division. In our simulations, we assumed a constant mutation rate (per cell division), which, as we have shown, will probably overestimate of the accuracy of the inferred lineage. For each of the 10 CRISPR targets, we estimated the mutation rate (µ d ) necessary to obtain the fraction of mutated targets observed D R A F T after 15 cell divisions ( Figure Suppl. 3) . The estimated mutation rate ranges from ∼0.01 (for target 10) to ∼0.23 (for target 7) per cell division. The v7 GESTALT construct shows a high incidence of target dropouts which were modelled as previously described. The mutational process was modelled as a gamma distribution of 60 possible mutated states ( Figure Suppl. 3) , with frequencies closely approximating the observed distribution of mutations reported in the GESTALT publication (see Methods for detail). We compared the number of different alleles (i.e., unique combinations of mutated targets) obtained in the simulated and the experimental results; the mutational complexity used in our simulations generated a number of alleles that closely approximates the experimentally observed number (see Methods for more details). We performed 1,000 simulations and inferred the cell lineage of 1,000 randomly sampled cells from each simulation. We find that the mean accuracy of the GESTALT approach is just 14% after 16 cell divisions ( Figure 6B ). This means that this implementation of GESTALT is not suited for reconstructing a complete, accurate cell lineage.",
+  "correct_citation": {
+    "[CITATION_1]": "14737005",
+    "[CITATION_2]": "4400673",
+    "[CITATION_3]": "46820312",
+    "[CITATION_4]": "14737005"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Recently, a number of lineaging approaches using CRISPR recorders have been tested in the nematode Caenorhabditis elegans and the zebrafish Danio rerio, as well as in cultured human cells    .",
+      "s_span": 48,
+      "e_span": 276
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Recently, a number of lineaging approaches using CRISPR recorders have been tested in the nematode Caenorhabditis elegans and the zebrafish Danio rerio, as well as in cultured human cells    .",
+      "s_span": 48,
+      "e_span": 276
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Recently, a number of lineaging approaches using CRISPR recorders have been tested in the nematode Caenorhabditis elegans and the zebrafish Danio rerio, as well as in cultured human cells    .",
+      "s_span": 48,
+      "e_span": 276
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "We have used our simulation approach to assess the accuracy of GESTALT, one of the first and most ambitious approaches, which aimed to reconstruct the cell lineage of the tens of thousands of cells of the zebrafish embryo  .",
+      "s_span": 277,
+      "e_span": 513
+    }
+  ],
+  "bib_entries": {
+    "14737005": {
+      "title": "Whole-organism lineage tracing by combinatorial and cumulative genome editing",
+      "abstract": "Multicellular systems develop from single cells through distinct lineages. However, current lineage-tracing approaches scale poorly to whole, complex organisms. Here, we use genome editing to progressively introduce and accumulate diverse mutations in a DNA barcode over multiple rounds of cell division. The barcode, an array of clustered regularly interspaced short palindromic repeats (CRISPR)/Cas9 target sites, marks cells and enables the elucidation of lineage relationships via the patterns of mutations shared between cells. In cell culture and zebrafish, we show that rates and patterns of editing are tunable and that thousands of lineage-informative barcode alleles can be generated. By sampling hundreds of thousands of cells from individual zebrafish, we find that most cells in adult organs derive from relatively few embryonic progenitors. In future analyses, genome editing of synthetic target arrays for lineage tracing (GESTALT) can be used to generate large-scale maps of cell lineage in multicellular systems for normal development and disease."
+    },
+    "4400673": {
+      "title": "Synthetic recording and in situ readout of lineage information in single cells",
+      "abstract": "Reconstructing the lineage relationships and dynamic event histories of individual cells within their native spatial context is a long-standing challenge in biology. Many biological processes of interest occur in optically opaque or physically inaccessible contexts, necessitating approaches other than direct imaging. Here we describe a synthetic system that enables cells to record lineage information and event histories in the genome in a format that can be subsequently read out of single cells in situ. This system, termed memory by engineered mutagenesis with optical in situ readout (MEMOIR), is based on a set of barcoded recording elements termed scratchpads. The state of a given scratchpad can be irreversibly altered by CRISPR/Cas9-based targeted mutagenesis, and later read out in single cells through multiplexed single-molecule RNA fluorescence hybridization (smFISH). Using MEMOIR as a proof of principle, we engineered mouse embryonic stem cells to contain multiple scratchpads and other recording components. In these cells, scratchpads were altered in a progressive and stochastic fashion as the cells proliferated. Analysis of the final states of scratchpads in single cells in situ enabled reconstruction of lineage information from cell colonies. Combining analysis of endogenous gene expression with lineage reconstruction in the same cells further allowed inference of the dynamic rates at which embryonic stem cells switch between two gene expression states. Finally, using simulations, we show how parallel MEMOIR systems operating in the same cell could enable recording and readout of dynamic cellular event histories. MEMOIR thus provides a versatile platform for information recording and in situ, single-cell readout across diverse biological systems."
+    },
+    "46820312": {
+      "title": "Quantitative analysis of synthetic cell lineage tracing using nuclease barcoding",
+      "abstract": "Lineage tracing by the determination and mapping of progeny arising from single cells is an important approach enabling the elucidation of mechanisms underlying diverse biological processes ranging from development to disease. We developed a dynamic sequence-based barcode system for synthetic lineage tracing and have demonstrated its performance in C. elegans, a model organism whose lineage tree is well established. The strategy we use creates lineage trees based upon the introduction of synthetically controlled mutations into cells and the propagation of these mutations to daughter cells at each cell division. We analyzed this experimental proof of concept along with a corresponding simulation and analytical model to gain a deeper understanding of the coding capacity of the system. Our results provide specific bounds on the fidelity of lineage tracing using such approaches."
+    }
+  },
+  "generator": "fallback_v4"
+}

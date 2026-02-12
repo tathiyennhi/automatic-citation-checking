@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "DeepSpeed also offers additional tunable optimizations such as out-of-core management of shards using the host memory for swapping.",
+    "Implications of State Sharding on CheckpointingFor conventional DNN models, the state captured in the checkpoint (typically model parameters and optimizer state) is usually serialized as a single file, as depicted in Figure 2(a).",
+    "When using data parallelism, since there are many identical DNN model replicas available, it is possible to split the model into shards and parallelize the I/O by ensuring each worker captures and flushes a different shard as a separate file, as shown in Figure 2(b).",
+    "This approach is adopted by DeepFreeze [25], TorchSnapshot [30], and LightCheck [4].",
+    "In the case of LLMs, sharding can be exploited even without data parallelism to enable parallel writes of different layers into different files, as shown in Figure 2(c)."
+  ]
+}

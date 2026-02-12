@@ -1,0 +1,29 @@
+{
+  "doc_id": "55724",
+  "text": "In order to mitigate the negative impact of small batch sizes on approximating the dataset-wide loss (P1) we introduce a simple running memory. It stores the scores for elements of the last τ previous batches, thereby reducing the bias of the estimate. All entries are concatenated for loss evaluation, but the gradients only flow through the current batch. This is a simpler variant of \"batch-extension\" mechanisms introduced in [CITATION_1] [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "196183153",
+    "[CITATION_2]": "190001714"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This is a simpler variant of \"batch-extension\" mechanisms introduced in   ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This is a simpler variant of \"batch-extension\" mechanisms introduced in   ."
+    }
+  ],
+  "bib_entries": {
+    "190001714": {
+      "title": "Learning with Average Precision: Training image retrieval with a listwise loss",
+      "abstract": "Image retrieval can be formulated as a ranking problem where the goal is to order database images by decreasing similarity to the query. Recent deep models for image retrieval have outperformed traditional methods by leveraging ranking-tailored loss functions, but important theoretical and practical problems remain. First, rather than directly optimizing the global ranking, they minimize an upper-bound on the essential loss, which does not necessarily result in an optimal mean average precision (mAP). Second, these methods require significant engineering efforts to work well, e.g. special pre-training and hard-negative mining. In this paper we propose instead to directly optimize the global mAP by leveraging recent advances in listwise loss formulations. Using a histogram binning approximation, the AP can be differentiated and thus employed to end-to-end learning. Compared to existing losses, the proposed method considers thousands of images simultaneously at each iteration and eliminates the need for ad hoc tricks. It also establishes a new state of the art on many standard retrieval benchmarks. Models and evaluation scripts have been made available at this https URL"
+    },
+    "196183153": {
+      "title": "Deep Metric Learning to Rank",
+      "abstract": "We propose a novel deep metric learning method by revisiting the learning to rank approach. Our method, named FastAP, optimizes the rank-based Average Precision measure, using an approximation derived from distance quantization. FastAP has a low complexity compared to existing methods, and is tailored for stochastic gradient descent. To fully exploit the benefits of the ranking formulation, we also propose a new minibatch sampling scheme, as well as a simple heuristic to enable large-batch training. On three few-shot image retrieval datasets, FastAP consistently outperforms competing methods, which often involve complex optimization heuristics or costly model ensembles."
+    }
+  },
+  "generator": "fallback_v4"
+}

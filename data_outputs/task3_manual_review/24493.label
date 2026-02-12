@@ -1,0 +1,29 @@
+{
+  "doc_id": "24493",
+  "text": "• Why and how a weakly supervised model can outperform the weak labeler? • What properties should the weakly supervised models have to perform effectively? Our recent work [CITATION_1] studies weak supervision for information retrieval with a focus on learning to rank and models weak supervision as a noisy channel that introduces some noise to the true labels. Motivated by the symmetry condition defined for classification [CITATION_2] , we define symmetric ranking loss function as follows. where c is a constant number and Y is a finite and discrete output space. In case of binary relevance judgments, the output space Y is {0, 1} n for a rank list of n items.",
+  "correct_citation": {
+    "[CITATION_1]": "51833505",
+    "[CITATION_2]": "8774197"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our recent work studies weak supervision for information retrieval with a focus on learning to rank and models weak supervision as a noisy channel that introduces some noise to the true labels."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Motivated by the symmetry condition defined for classification, we define symmetric ranking loss function as follows. where c is a constant number and Y is a finite and discrete output space."
+    }
+  ],
+  "bib_entries": {
+    "51833505": {
+      "title": "On the Theory of Weak Supervision for Information Retrieval",
+      "abstract": "Neural network approaches have recently shown to be effective in several information retrieval (IR) tasks. However, neural approaches often require large volumes of training data to perform effectively, which is not always available. To mitigate the shortage of labeled data, training neural IR models with weak supervision has been recently proposed and received considerable attention in the literature. In weak supervision, an existing model automatically generates labels for a large set of unlabeled data, and a machine learning model is further trained on the generated \"weak\" data. Surprisingly, it has been shown in prior art that the trained neural model can outperform the weak labeler by a significant margin. Although these obtained improvements have been intuitively justified in previous work, the literature still lacks theoretical justification for the observed empirical findings. In this paper, we provide a theoretical insight into weak supervision for information retrieval, focusing on learning to rank. We model the weak supervision signal as a noisy channel that introduces noise to the correct ranking. Based on the risk minimization framework, we prove that given some sufficient constraints on the loss function, weak supervision is equivalent to supervised learning under uniform noise. We also find an upper bound for the empirical risk of weak supervision in case of non-uniform noise. Following the recent work on using multiple weak supervision signals to learn more accurate models, we find an information theoretic lower bound on the number of weak supervision signals required to guarantee an upper bound for the pairwise error probability. We empirically verify a set of presented theoretical findings, using synthetic and real weak supervision data."
+    },
+    "8774197": {
+      "title": "Making risk minimization tolerant to label noise",
+      "abstract": "In many applications, the training data, from which one needs to learn a classifier, is corrupted with label noise. Many standard algorithms such as SVM perform poorly in presence of label noise. In this paper we investigate the robustness of risk minimization to label noise. We prove a sufficient condition on a loss function for the risk minimization under that loss to be tolerant to uniform label noise. We show that the $0-1$ loss, sigmoid loss, ramp loss and probit loss satisfy this condition though none of the standard convex loss functions satisfy it. We also prove that, by choosing a sufficiently large value of a parameter in the loss function, the sigmoid loss, ramp loss and probit loss can be made tolerant to non-uniform label noise also if we can assume the classes to be separable under noise-free data distribution. Through extensive empirical studies, we show that risk minimization under the $0-1$ loss, the sigmoid loss and the ramp loss has much better robustness to label noise when compared to the SVM algorithm."
+    }
+  },
+  "generator": "fallback"
+}

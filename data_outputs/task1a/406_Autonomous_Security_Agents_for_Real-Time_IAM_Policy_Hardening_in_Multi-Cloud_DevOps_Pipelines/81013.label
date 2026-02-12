@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "In the beginning, the agent mainly worked by reviewing broad permissions and noticing the \"*\" rule in AWS or \"Owner\" role in GCP.",
+    "Still, because cloud systems are not constant, sometimes fixed rules did not work well.To take care of this, the RL engine relied on using Q-learning which was trained using past rulings and results.",
+    "The encoded permission type, scope and how often something is used were in the state and the system gave the same given penalty for excessive privileges and failing an activity.",
+    "After three weeks, the model started to take over 72% of decisions in QA, making those choices with 93% certainty.As one can see in the code example, if permissions have not been used for more than 30 days, the system shows them as flagged and automatically cuts their scope, unless they are connected to important systems: ___________________________________________________________________________ for permission in user_policy.permissions: if is_unused(permission, days=30) and not is_critical(permission):Vol: 2019 | Iss: 10 | 2019 suggest_removal(permission) ___________________________________________________________________________ Because of this approach, the agent could read behavioral log data (such as CloudTrail or Azure Activity Logs) and propose the best ways to reduce privileges.",
+    "With the help of machine learning, the process of manually going over cases took up 68% less time, so the security team could focus on other important tasks."
+  ],
+  "correct_citations": []
+}

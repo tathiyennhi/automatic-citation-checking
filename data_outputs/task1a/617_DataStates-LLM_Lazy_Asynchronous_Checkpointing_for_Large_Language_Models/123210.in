@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Then, during the backward pass, the model parameters are updated based on the average gradients of all replicas (instead of the local gradients), which effectively synchronizes all replicas to learn the same patterns from all partitions.",
+    "Data parallelism leads to accelerated training because the partitioning of the input data results in fewer iterations per epoch.",
+    "Pipeline and Tensor ParallelismPipeline and tensor parallelism are two complementary techniques that enable the training of large learning models that do not fit in the memory of a single GPU.",
+    "Pipeline parallelism leverages the idea that learning models can be split into stages, each of which can placed on a separate GPU.",
+    "Then, the forward and backward pass corresponding to different mini-batches can be overlapped by activating all stages in parallel: as soon as the forward pass of one mini-batch has been moved to the next stage, another mini-batch can be processed in the current stage."
+  ]
+}

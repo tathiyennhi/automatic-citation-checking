@@ -1,0 +1,30 @@
+{
+  "text": "We include POS tags and the top n-gram features as described in prior work [CITATION_1] [CITATION_2] . The DAL and other dictionaries are used along with a negation state machine [CITATION_3] ) to determine the polarity for each word in the sentence. We include all the features described in the original system [CITATION_4] DAL scores, polar chunk n-grams, and count of syntactic chunks with their prior polarity based on the chunks position. Finally, we include several lexical-stylistic features that can occur in all datasets. We divide these features into two groups, general: ones that are common across online and traditional genres (e.g. exclamation points), and social media: one that are far more common in online genres (e.g. emoticons). The features are described in further detail in the precursor to this work [CITATION_5] . Feature selection was performed using chi-square in Weka [CITATION_6] ). In addition we introduce some new features that were not used in the prior year. SentiWordNet [CITATION_7] ) is a sentiment dictionary built upon WordNet that contains scores for each word where scores > 0 indicate the word is positive and scores < 0 indicate the word is negative. We sum the scores for each word in the phrase and use this as a single polarity feature. We found that this feature alone gave us a 2% improvement over our best results from last year. We also include some other minor features: tweet and phrase length and the position of the phrase within the tweet.",
+  "correct_citation": {
+    "[CITATION_1]": "1515014",
+    "[CITATION_2]": "1821766",
+    "[CITATION_3]": "1515014",
+    "[CITATION_4]": "1515014",
+    "[CITATION_5]": "1821766",
+    "[CITATION_6]": "13861754",
+    "[CITATION_7]": "13886408"
+  },
+  "bib_entries": {
+    "1515014": {
+      "title": "Contextual phrase-level polarity analysis using lexical affect scoring and syntactic ngrams",
+      "abstract": "We present a classifier to predict contextual polarity of subjective phrases in a sentence. Our approach features lexical scoring derived from the Dictionary of Affect in Language (DAL) and extended through WordNet, allowing us to automatically score the vast majority of words in our input avoiding the need for manual labeling. We augment lexical scoring with n-gram analysis to capture the effect of context. We combine DAL scores with syntactic constituents and then extract n-grams of constituents from all sentences. We also use the polarity of all syntactic constituents within the sentence as features. Our results show significant improvement over a majority class baseline as well as a more difficult baseline consisting of lexical n-grams."
+    },
+    "13886408": {
+      "title": "Sentiwordnet 3.0: An enhanced lexical resource for sentiment analysis and opinion mining",
+      "abstract": "In this work we present SENTIWORDNET 3.0, a lexical resource explicitly devised for supporting sentiment classification and opinion mining applications. SENTIWORDNET 3.0 is an improved version of SENTIWORDNET 1.0, a lexical resource publicly available for research purposes, now currently licensed to more than 300 research groups and used in a variety of research projects worldwide. Both SENTIWORDNET 1.0 and 3.0 are the result of automatically annotating all WORDNET synsets according to their degrees of positivity, negativity, and neutrality. SENTIWORDNET 1.0 and 3.0 differ (a) in the versions of WORDNET which they annotate (WORDNET 2.0 and 3.0, respectively), (b) in the algorithm used for automatically annotating WORDNET, which now includes (additionally to the previous semi-supervised learning step) a random-walk step for refining the scores. We here discuss SENTIWORDNET 3.0, especially focussing on the improvements concerning aspect (b) that it embodies with respect to version 1.0. We also report the results of evaluating SENTIWORDNET 3.0 against a fragment of WORDNET 3.0 manually annotated for positivity, negativity, and neutrality; these results indicate accuracy improvements of about 20% with respect to SENTIWORDNET 1.0."
+    },
+    "13861754": {
+      "title": "The weka data mining software: an update",
+      "abstract": "More than twelve years have elapsed since the first public release of WEKA. In that time, the software has been rewritten entirely from scratch, evolved substantially and now accompanies a text on data mining [35]. These days, WEKA enjoys widespread acceptance in both academia and business, has an active community, and has been downloaded more than 1.4 million times since being placed on Source-Forge in April 2000. This paper provides an introduction to the WEKA workbench, reviews the history of the project, and, in light of the recent 3.6 stable release, briefly discusses what has been added since the last stable version (Weka 3.4) released in 2003."
+    },
+    "1821766": {
+      "title": "Columbia nlp: Sentiment detection of subjective phrases in social media",
+      "abstract": "We present a supervised sentiment detection system that classifies the polarity of subjective phrases as positive, negative, or neutral. It is tailored towards online genres, specifically Twitter, through the inclusion of dictionaries developed to capture vocabulary used in online conversations (e.g., slang and emoticons) as well as stylistic features common to social media. We show how to incorporate these new features within a state of the art system and evaluate it on subtask A in SemEval-2013 Task 2: Sentiment Analysis in Twitter."
+    }
+  }
+}

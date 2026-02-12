@@ -1,0 +1,22 @@
+{
+  "doc_id": "57173",
+  "text": "To increase the overall accuracy of RNA quantification and monitor the expression pattern of overlapping and repetitive genes, we developed a count corrector (CoCo) pipeline that rescues and correctly assigns otherwise ambiguous sequencing reads. CoCo employs the read assignment function featureCounts from Subread [CITATION_1] , providing it with a modified annotation file that highlights nested genes, while ensuring appropriate distribution of multimapped reads. CoCo salvages and/or reassigns over 15% of aligned RNA-seq reads, significantly changing the abundance estimates for several classes of RNA and providing insight into the expression dynamics of often ignored classes of repetitive and overlapping genes. We investigated the performance of the main available read assignment pipelines, comparing their accuracy to digital PCR abundance values and bedgraph estimates, showing that CoCo performs best using these metrics while requiring reasonable runtime and memory.",
+  "correct_citation": {
+    "[CITATION_1]": "6214091"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "CoCo employs the read assignment function featureCounts from Subread [CITATION_1] , providing it with a modified annotation file that highlights nested genes, while ensuring appropriate distribution of multimapped reads.",
+      "s_span": 247,
+      "e_span": 467
+    }
+  ],
+  "bib_entries": {
+    "6214091": {
+      "title": "The Subread aligner: fast, accurate and scalable read mapping by seed-and-vote",
+      "abstract": "Read alignment is an ongoing challenge for the analysis of data from sequencing technologies. This article proposes an elegantly simple multi-seed strategy, called seed-and-vote, for mapping reads to a reference genome. The new strategy chooses the mapped genomic location for the read directly from the seeds. It uses a relatively large number of short seeds (called subreads) extracted from each read and allows all the seeds to vote on the optimal location. When the read length is <160 bp, overlapping subreads are used. More conventional alignment algorithms are then used to fill in detailed mismatch and indel information between the subreads that make up the winning voting block. The strategy is fast because the overall genomic location has already been chosen before the detailed alignment is done. It is sensitive because no individual subread is required to map exactly, nor are individual subreads constrained to map close by other subreads. It is accurate because the final location must be supported by several different subreads. The strategy extends easily to find exon junctions, by locating reads that contain sets of subreads mapping to different exons of the same gene. It scales up efficiently for longer reads."
+    }
+  },
+  "generator": "fallback_v4"
+}

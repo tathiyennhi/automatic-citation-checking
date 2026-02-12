@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The next example illustrates the use of data gathering and code execution.",
+    "The reasoning engine is asked to produce a plot and has access to a data-gathering tool from FRED (Federal Reserve Economic Data, St. Louis Fed) as well as to a python code interpreter that can execute computer code.",
+    "When the reasoning engine has produced the respective \"Action\" commands, the orchestrator interrupts the token generation to call the indicated external tools, passes the results back to the reasoning engine, and lets it decide how to continue in order to satisfy the initial request.",
+    "Note that the computer code that is passed on to the second \"Action\" was written by the reasoning engine on the fly -modern LLMs are excellent at writing computer code and, if the orchestrator enables them to execute code, they can code and perform a wide range of computer-based actions that they want to pursue.Chat 3 (Schematic Agent Workflow): Plot the US unemployment rate and inflation over the past 20 years.Thought: To answer this, I will retrieve the unemployment rate (series ID: UNRATE) and consumer price inflation (series ID: FPCPITOTLZGUSA), both from FRED.",
+    "Action: fred_data:get_series([\"UNRATE\", \"FPCPITOTLZGUSA\"], start=\"2005-07-01\", end=\"2025-07-01\", frequency=\"monthly\")# [Orchestrator calls FRED API and returns data] Observation: Data retrieved and stored in economic_data.csv (240 rows, columns: date, unemployment, inflation) Thought: Now I have the merged data with YoY inflation already calculated."
+  ],
+  "correct_citations": []
+}

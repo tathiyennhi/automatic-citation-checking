@@ -1,0 +1,33 @@
+{
+  "text": "where denotes the state vector. The weight matrix needs to satisfy the following necessary and sufficient conditions to ensure asymptotic average consensus [CITATION_1] : [CITATION_2] where is the averaging matrix [CITATION_3] and denotes the spectral radius of a matrix [CITATION_4] Here, denote the eigenvalues of . Algorithms have been identified for generating weight matrices that satisfy the required convergence conditions if the underlying graph is connected, e.g., maximum-degree and Metropolis weights [CITATION_5] , [CITATION_6] .",
+  "correct_citation": {
+    "[CITATION_1]": "2066416",
+    "[CITATION_2]": "2171087",
+    "[CITATION_3]": "39824034",
+    "[CITATION_4]": "124743369",
+    "[CITATION_5]": "561285",
+    "[CITATION_6]": "2066416"
+  },
+  "bib_entries": {
+    "2066416": {
+      "title": "Distributed average consensus with least-mean-square deviation",
+      "abstract": "We consider a stochastic model for distributed average consensus, which arises in applications such as load balancing for parallel processors, distributed coordination of mobile autonomous agents, and network synchronization. In this model, each node updates its local variable with a weighted average of its neighbors' values, and each new value is corrupted by an additive noise with zero mean. The quality of consensus can be measured by the total mean-square deviation of the individual variables from their average, which converges to a steady-state value. We consider the problem of finding the (symmetric) edge weights that result in the least mean-square deviation in steady state. We show that this problem can be cast as a convex optimization problem, so the global solution can be found efficiently. We describe some computational methods for solving this problem, and compare the weights and the mean-square deviations obtained by this method and several other weight design methods."
+    },
+    "2171087": {
+      "title": "Robust aggregation protocols for large-scale overlay networks",
+      "abstract": "Aggregation refers to a set of functions that provide global information about a distributed system. These junctions operate on numeric values distributed over the system and can be used to count network size, determine extremal values and compute averages, products or sums. Aggregation allows important basic functionality to be achieved in fully distributed and peer-to-peer networks. For example, in a monitoring application, some aggregate reaching a specific value may trigger the execution of certain operations; distributed storage systems may need to know the total free space available; load-balancing protocols may benefit from knowing the target average load so as to minimize the transfered load. Building on the simple but efficient idea of antientropy aggregation (a scheme based on the antientropy epidemic communication model), in this paper we introduce practically applicable robust and adaptive protocols for proactive aggregation, including the calculation of average, product and extremal values. We show how the averaging protocol can be applied to compute further aggregates like sum, variance and the network size. We present theoretical and empirical evidence supporting the robustness of the averaging protocol under different scenarios."
+    },
+    "124743369": {
+      "title": "Fast linear iterations for distributed averaging",
+      "abstract": "We consider the problem of finding a linear iteration that yields distributed averaging consensus over a network, i.e., that asymptotically computes the average of some initial values given at the nodes. When the iteration is assumed symmetric, the problem of finding the fastest converging linear iteration can be cast as a semidefinite program, and therefore efficiently and globally solved. These optimal linear iterations are often substantially faster than several simple heuristics that are based on the Laplacian matrix of the associated graph."
+    },
+    "561285": {
+      "title": "A scheme for robust distributed sensor fusion based on average consensus",
+      "abstract": "We consider a network of distributed sensors, where where each sensor takes a linear measurement of some unknown parameters, corrupted by independent Gaussian noises. We propose a simple distributed iterative scheme, based on distributed average consensus in the network, to compute the maximum-likelihood estimate of the parameters. This scheme doesn't involve explicit point-to-point message passing or routing; instead, it diffuses information across the network by updating each node's data with a weighted average of its neighbors' data (they maintain the same data structure). At each step, every node can compute a local weighted least-squares estimate, which converges to the global maximum-likelihood solution. This scheme is robust to unreliable communication links. We show that it works in a network with dynamically changing topology, provided that the infinitely occurring communication graphs are jointly connected."
+    },
+    "39824034": {
+      "title": "Problems in decentralized decision making and computation",
+      "abstract": "Abstract : This thesis investigates certain fundamental problems in decentralized decision making and computation. We study the problem of whether a set of decision makers (or processors) with different (but related) information may make compatible decisions without communication and we characterize the computational complexity of this problem. We also analyze the complexity of other basic problems of decentralized decision making, such as decentralized detection (hypothesis testing). We then consider a scheme whereby a set of decision makers (processors) exchange and update tentative decisions which minimize a common cost function, given information they possess; we show that they are guaranteed to converge to consensus. Finally, we consider a broad class of asynchronous distributed (deterministic and stochastic) iterative optimization algorithms tolerating communication delays. We associate communication requirements with such algorithms and show that they converge appropriately under certain conditions which are no more severe than those required for their centralized counterparts. Several applications in human organizations, parallel computation and distributed signal processing are indicated. Additional keywords: decision theory. (Author)."
+    }
+  }
+}

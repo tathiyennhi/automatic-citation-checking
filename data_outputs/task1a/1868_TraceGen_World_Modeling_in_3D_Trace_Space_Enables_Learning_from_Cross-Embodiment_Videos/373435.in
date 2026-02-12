@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Evaluation setupWe evaluate whether 3D traces predicted by TraceGen enable effective robot manipulation.",
+    "Experiments are conducted on a Franka Research 3 robot across four tasks: • folding a garment (Clothes) • inserting a tennis ball into a box (Ball) • sweeping trash into a dustpan with a brush (Brush) • placing a LEGO block in the purple region (Block)Given a single RGB-D observation and a text instruction, TraceGen predicts trajectories using 100-step ODE integration with classifier-free guidance (guidance scale 2) for Brush and Clothes, and without guidance for Block and Ball.",
+    "The predicted trajectories are converted into jointspace commands through inverse kinematics after transforming them from the camera frame to the robot base frame T base←cam ref.",
+    "For all methods, the predicted z values are rescaled to match the measured depth maps.",
+    "Depth rescalingTo align the predicted trace depths with the original sensor depth, we apply a depth-rescaling procedure."
+  ]
+}

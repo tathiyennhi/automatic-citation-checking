@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Comparison to Regression-based ModelsIn this section, we compare the accuracy of the finetuned Llama3-MetRex-8b (with a LoRA rank of 128 and 256 for area and static power, respectively) against regression-based machine learning approaches to highlight the opportunities and challenges of using LLMs for this task.",
+    "We specifically compare to MasterRTL [11], which first converts the HDL code to a simple-operator graph (SOG) using Yosys, from which it extracts feature vectors for regression analysis.Fig. 4 shows the comparative performance for the area and static power estimation, highlighting the percentage of designs with MRE less than 5%, 10%, and 20% across the three levels of complexity within our evaluation set.",
+    "The data illustrates that the Llama3-MetRex-8b model can frequently generate more accurate answers than the regression-based model in less complex designs (level-1 and level-2) under the 5% and 10% error margins.",
+    "However, it underperforms in level-3 primarily due to the increased reasoning complexity.MasterRTL performs better under more relaxed error margins (20%), mainly because it utilizes detailed gate-type features from the extracted SOG, which helps stabilize the performance of the regression model across a broad range of problem complexities.",
+    "However, the Llama3-MetRex-8b model operates directly on Verilog code, resulting in higher(a) Area (b) Static Power 0 100 200 300 400 500 600 700 Running Time (seconds) Llama3-8b MasterRTL Preprocessing Regression Model Yosys+OpenSTA Figure 5."
+  ],
+  "correct_citations": [
+    "We specifically compare to MasterRTL [11], which first converts the HDL code to a simple-operator graph (SOG) using Yosys, from which it extracts feature vectors for regression analysis.Fig. 4 shows the comparative performance for the area and static power estimation, highlighting the percentage of designs with MRE less than 5%, 10%, and 20% across the three levels of complexity within our evaluation set."
+  ]
+}

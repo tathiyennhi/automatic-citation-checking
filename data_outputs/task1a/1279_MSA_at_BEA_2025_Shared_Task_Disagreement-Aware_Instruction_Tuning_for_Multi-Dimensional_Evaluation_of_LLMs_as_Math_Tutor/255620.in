@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Each model in the ensemble predicts a class independently using greedy decoding.",
+    "During inference, we collect all five predictions for a given sample and apply a filtering policy: if the predictions exhibit full agreement, the class is retained.",
+    "If the ensemble disagrees, we analyze the class distribution and prefer predictions that preserve the relative frequency of \"To some extent\" observed in the development set.",
+    "This is crucial because \"Yes\" labels are dominant in both the training and validation sets, potentially leading to biased predictions under a naïve voting scheme.",
+    "Our design choice is motivated by the use of macro-F1 as the primary evaluation metric in the BEA 2025 Shared Task."
+  ]
+}

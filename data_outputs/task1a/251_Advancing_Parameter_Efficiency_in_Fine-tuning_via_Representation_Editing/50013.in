@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Specifically, LoRA (Hu et al., 2021) incorporates learnable bottleneck-shaped modules through the connections parallel to the W q and W v matrices of attention blocks, as illustrated in Figure 1 (a), and models the weight changes of these two matrices in a low-rank manner.",
+    "Given a pre-trained weight matrix W ∈ R d×k, LoRA represents its changes, denoted as ∆W, through two low-rank decomposition matrices: ∆W = α • W down W up, where W down ∈ R d×r and W up ∈ R r×k (the value of r is typically much smaller than both d and k).",
+    "The coefficient α is a hyperparameter that determines the significance of ∆W relative to the original W. Given an input x, LoRA produces the result of the forward pass as follows:",
+    "In the initial version of the Adapter, Houlsby et al. (2019) suggested the insertion of trainable adapter modules between two sub-layers within the transformer architecture.",
+    "These adapter modules are structured to include a down-projection matrix, denoted as W down ∈ R d×r, which transforms a hidden representation h 1 ∈ R d to a lower-dimensional space with a pre-specified dimensionality r. Subsequently, this dimensionally reduced vector undergoes a nonlinear activation function f (•) and an additional up-projection matrix W up ∈ R r×d to revert it to its original dimension d. The adapter module also incorporates a residual connection."
+  ]
+}

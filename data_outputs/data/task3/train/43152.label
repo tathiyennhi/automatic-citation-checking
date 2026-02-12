@@ -1,0 +1,38 @@
+{
+  "doc_id": "43152",
+  "text": "where σ min is the minimum small-scale signal deviation (in dB) for i's LOS type (LOS, NLOSv, or NLOSb), σ max is the maximum deviation value for i's LOS type, N V i is the number of vehicles per unit area in i's ellipse, N V max is the maximum number of vehicles per unit area, AS i is the area of static objects per unit area in i's ellipse, and AS max is the maximum area of static objects per unit area. The value of N V max can be calculated a priori from historical data (e.g., maximum number of vehicles per area in a given city or a highway), whereas AS max can be calculated from geographical databases, such as [CITATION_1] . In our calculations, we used N V max and AS max derived from the Porto dataset, with references defined on a square kilometer (i.e., maximum number of vehicles and maximum area of static objects in a square kilometer). For each of its constituents (vehicleinduced and static objects-induced signal variation), eq. 10 is essentially a square interpolation between minimum smallscale signal variation in an environment (e.g., open space without any objects other than communicating vehicles) and maximum variation (e.g., the downtown of a city during rush hour with a high density of vehicles and buildings/foliage). The square root in eq. 10 is taken to give comparatively more significance to lower number of vehicles than the higher number, because previous studies have shown that the difference between having no vehicles near the communicating pair and having a few vehicles nearby is more pronounced than the difference between a few and many vehicles [CITATION_2] , [CITATION_3] . Similar reasoning is applied to buildings and foliage. Furthermore, as shown in eq. 10, due to the lack of a better classification, we give equal weights to the number of vehicles and the area of static objects when calculating the small-scale signal variation. Once σ i is calculated for pair i, we combine the results of the small-and large-scale signal variation model by adding a normally distributed random variable N (0, σ i ) to the previously calculated received power (eq. 9): P r T OTi = 10 log 10 (P r i ) + N (0, σ i ).",
+  "correct_citation": {
+    "[CITATION_1]": "16588111",
+    "[CITATION_2]": "731078",
+    "[CITATION_3]": "206839413"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The value of N V max can be calculated a priori from historical data (e.g., maximum number of vehicles per area in a given city or a highway), whereas AS max can be calculated from geographical databases, such as  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "10 is taken to give comparatively more significance to lower number of vehicles than the higher number, because previous studies have shown that the difference between having no vehicles near the communicating pair and having a few vehicles nearby is more pronounced than the difference between a few and many vehicles  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "10 is taken to give comparatively more significance to lower number of vehicles than the higher number, because previous studies have shown that the difference between having no vehicles near the communicating pair and having a few vehicles nearby is more pronounced than the difference between a few and many vehicles  ,  ."
+    }
+  ],
+  "bib_entries": {
+    "731078": {
+      "title": "Experimental study on the impact of vehicular obstructions in VANETs",
+      "abstract": "Channel models for vehicular networks typically disregard the effect of vehicles as physical obstructions for the wireless signal. We aim to clarify the validity of this simplification by quantifying the impact of obstructions through a series of wireless experiments. Using two cars equipped with Dedicated Short Range Communications (DSRC) hardware designed for vehicular use, we perform experimental measurements in order to collect received signal power and packet delivery ratio information in a multitude of relevant scenarios: parking lot, highway, suburban and urban canyon. Upon separating the data into line of sight (LOS) and non-line of sight (NLOS) categories, our results show that obstructing vehicles cause significant impact on the channel quality. A single obstacle can cause a drop of over 20 dB in received signal strength when two cars communicate at a distance of 10 m. At longer distances, NLOS conditions affect the usable communication range, effectively halving the distance at which communication can be achieved with 90% chance of success. The presented results motivate the inclusion of vehicles in the radio propagation models used for VANET simulation in order to increase the level of realism."
+    },
+    "206839413": {
+      "title": "Directional analysis of vehicle-to-vehicle propagation channels",
+      "abstract": "This paper presents a double directional analysis of vehicle-to-vehicle channel measurements conducted in three different traffic scenarios. Using a high- resolution algorithm, we derive channel parameters like Angle-of-Arrival (AOA), Angleof- Departure (AOD), propagation delay and Doppler shift and identify underlying propagation mechanisms by combining these estimates with maps of the measurement sites. The results show that first-order reflections from a small number of interacting objects can account for a large part of the received signal in the absence of line-of-sight (LOS). This effect is especially pronounced in the two traffic scenarios where the road is not lined with buildings. We also found that the direction spread is low (and conversely that the antenna correlation is high) in such scenarios, which suggests that beam forming rather than diversity-based methods should be used if multiple antenna elements are available. The situation is reversed, however, in the third scenario, a narrow urban intersection, where a larger number of higher-order reflections is found to result in a higher direction spread."
+    },
+    "16588111": {
+      "title": "OpenStreetMap: User-generated street maps",
+      "abstract": "The OpenStreetMap project is a knowledge collective that provides user-generated street maps. OSM follows the peer production model that created Wikipedia; its aim is to create a set of map data that's free to use, editable, and licensed under new copyright schemes. A considerable number of contributors edit the world map collaboratively using the OSM technical infrastructure, and a core group, estimated at approximately 40 volunteers, dedicate their time to creating and improving OSM's infrastructure, including maintaining the server, writing the core software that handles the transactions with the server, and creating cartographical outputs. There's also a growing community of software developers who develop software tools to make OSM data available for further use across different application domains, software platforms, and hardware devices. The OSM project's hub is the main OSM Web site."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,47 @@
+{
+  "doc_id": "7757",
+  "text": "Although the algorithms we describe are new, the overall approach of starting with a geometric description of an active site, searching through a protein scaffold for positions where it can be placed, and designing the surrounding residues has been used in previous studies [CITATION_1] [CITATION_2] . The algorithms described here have several advantages over previously described methods. The inverse rotamer tree-based search complexity does not depend on the number of scaffolds searched, whereas previous methods scale at least linearly with the number of positions (and, consequently, scaffolds searched). Dezymer [CITATION_3] , for example, places all rotamers for the anchor residue at each position, thereby scaling at least proportionally with the number of positions considered. The approach taken by [CITATION_4] also places an extended rotamer (that includes the TS model) on each search position, leading to the same dependence. The computational efficiency of the inverse rotamer tree-based algorithm can be a tremendous advantage if large-scale enzyme site searches are required. The algorithm, however, is limited by its exponential dependence on the number of rotamer combinations considered. In the case of active sites with four or more active site residues, the algorithm performs poorly. Since it is not possible to use large rotamer libraries, the use of this algorithm is limited to a more coarse-grained search. The RosettaMatch method avoids the combinatorial explosion by treating each catalytic side chain independently in building up the hash table. It thus scales linearly with the number of rotamer combinations considered. Once the hash maps have been built up, the complexity of the look-up step is constant time on average. In the worsecase scenario (i.e., when many TS models placed in different boxes map to the same hash key), the hash look up scales as O(N), where N is the number of entries for the box. Although it is not easy to directly compare the complexity of the algorithm with Hellinga's Dezymer, the RosettaMatch method has the advantage that the algorithm complexity depends only linearly on the number of residues making up the active site and the total number of rotamers used.",
+  "correct_citation": {
+    "[CITATION_1]": "5580288",
+    "[CITATION_2]": "15643357",
+    "[CITATION_3]": "5580288",
+    "[CITATION_4]": "15643357"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Although the algorithms we describe are new, the overall approach of starting with a geometric description of an active site, searching through a protein scaffold for positions where it can be placed, and designing the surrounding residues has been used in previous studies   .",
+      "s_span": 0,
+      "e_span": 301
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Although the algorithms we describe are new, the overall approach of starting with a geometric description of an active site, searching through a protein scaffold for positions where it can be placed, and designing the surrounding residues has been used in previous studies   .",
+      "s_span": 0,
+      "e_span": 301
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Dezymer  , for example, places all rotamers for the anchor residue at each position, thereby scaling at least proportionally with the number of positions considered.",
+      "s_span": 612,
+      "e_span": 789
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The approach taken by  also places an extended rotamer (that includes the TS model) on each search position, leading to the same dependence.",
+      "s_span": 790,
+      "e_span": 942
+    }
+  ],
+  "bib_entries": {
+    "5580288": {
+      "title": "Construction of new ligand binding sites in proteins of known structure. I. Computer-aided modeling of sites with pre-defined geometry",
+      "abstract": "Abstract We have devised a molecular model building computer program ( DEZYMER ) which builds new ligand binding sites into a protein of known three-dimensional structure. It alters only the sequence and the side-chain structure of the protein, leaving the protein backbone fold intact by definition. The program searches for a constellation of backbone positions arranged such that if appropriate side-chains were placed there, they would bind the ligand according to a pre-defined geometry of interaction specified by the experimentalist. These binding sites are introduced by the program by taking into account simple rules such as steric hindrance, atomic close-packing and hydrogen bond patterns, which are known to maintain the integrity of a protein structure to a first approximation. A test case is presented in this paper where the copper binding site found in blue-copper proteins such as plastocyanin, azurin and cupredoxin is introduced into Escherichia coli thioredoxin. The model building of one of the solutions found by the program is presented in some detail. The experimental construction and properties of this new protein are described in an accompanying paper. It is hoped that this program provides a general method for the design of ligand binding sites and enzyme active sites, which can then be tested experimentally."
+    },
+    "15643357": {
+      "title": "Enzyme-like proteins by computational design",
+      "abstract": "We report the development and initial experimental validation of a computational design procedure aimed at generating enzyme-like protein catalysts called “protozymes.” Our design approach utilizes a “compute and build” strategy that is based on the physical/chemical principles governing protein stability and catalytic mechanism. By using the catalytically inert 108-residue Escherichia coli thioredoxin as a scaffold, the histidine-mediated nucleophilic hydrolysis of p-nitrophenyl acetate as a model reaction, and the ORBIT protein design software to compute sequences, an active site scan identified two promising catalytic positions and surrounding active-site mutations required for substrate binding. Experimentally, both candidate protozymes demonstrated catalytic activity significantly above background. One of the proteins, PZD2, displayed “burst” phase kinetics at high substrate concentrations, consistent with the formation of a stable enzyme intermediate. The kinetic parameters of PZD2 are comparable to early catalytic Abs. But, unlike catalytic Ab design, our design procedure is independent of fold, suggesting a possible mechanism for examining the relationships between protein fold and the evolvability of protein function."
+    }
+  },
+  "generator": "fallback_v4"
+}

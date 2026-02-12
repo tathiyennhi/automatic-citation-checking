@@ -1,0 +1,27 @@
+{
+  "text": "Beyond the checks shown in \u011f2, to fully prevent NPEs a nullness type checker must ensure that objects are properly initialized. Sound type systems for checking object initialization have been a subject of much previous research [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] . In this section, we present NullAway's approach to initialization checking. Though unsound, our technique has a low annotation burden and has caught nearly all initialization errors in our experience at Uber. Figure 1 gives a code example we will use to illustrate our initialization checking. We first describe how NullAway checks that @NonNull fields are initialized (\u011f3.1), then discuss checking for uses before initialization (\u011f3.2), and then compare with CFNullness and Eradicate (\u011f3.3). ",
+  "correct_citation": {
+    "[CITATION_1]": "61281439",
+    "[CITATION_2]": "7793196",
+    "[CITATION_3]": "12624227",
+    "[CITATION_4]": "7631191"
+  },
+  "bib_entries": {
+    "12624227": {
+      "title": "Masked types for sound object initialization",
+      "abstract": "This paper presents a type-based solution to the long-standing problem of object initialization. Constructors, the conventional mechanism for object initialization, have semantics that are surprising to programmers and that lead to bugs. They also contribute to the problem of null-pointer exceptions, which make software less reliable. Masked types are a new type-state mechanism that explicitly tracks the initialization state of objects and prevents reading from uninitialized fields. In the resulting language, constructors are ordinary methods that operate on uninitialized objects, and no special default value (null) is needed in the language. Initialization of cyclic data structures is achieved with the use of conditionally masked types. Masked types are modular and compatible with data abstraction. The type system is presented in a simplified object calculus and is proved to soundly prevent reading from uninitialized fields. Masked types have been implemented as an extension to Java, in which compilation simply erases extra type information. Experience using the extended language suggests that masked types work well on real code."
+    },
+    "61281439": {
+      "title": "Declaring and checking non-null types in an object-oriented language",
+      "abstract": "Distinguishing non-null references from possibly-null references at the type level can detect null-related errors in object-oriented programs at compile-time. This paper gives a proposal for retrofitting a language such as C# or Java with non-null types. It addresses the central complications that arise in constructors, where declared non-null fields may not yet have been initialized, but the partially constructed object is already accessible. The paper reports experience with an implementation for annotating and checking null-related properties in C# programs."
+    },
+    "7631191": {
+      "title": "Freedom before commitment: a lightweight type system for object initialisation",
+      "abstract": "One of the main purposes of object initialisation is to establish invariants such as a field being non-null or an immutable data structure containing specific values. These invariants are then implicitly assumed by the rest of the implementation, for instance, to ensure that a field may be safely dereferenced or that immutable data may be accessed concurrently. Consequently, letting an object escape from its constructor is dangerous; the escaping object might not yet satisfy its invariants, leading to errors in code that relies on them. Nevertheless, preventing objects entirely from escaping from their constructors is too restrictive; it is often useful to call auxiliary methods on the object under initialisation or to pass it to another constructor to set up mutually-recursive structures. We present a type system that tracks which objects are fully initialised and which are still under initialisation. The system can be used to prevent objects from escaping, but also to allow safe escaping by making explicit which objects might not yet satisfy their invariants. We designed, formalised and implemented our system as an extension to a non-null type system, but it is not limited to this application. Our system is conceptually simple and requires little annotation overhead; it is sound and sufficiently expressive for many common programming idioms. Therefore, we believe it to be the first such system suitable for mainstream use."
+    },
+    "7793196": {
+      "title": "Establishing object invariants with delayed types",
+      "abstract": "Mainstream object-oriented languages such as C# and Java provide an initialization model for objects that does not guarantee programmer controlled initialization of fields. Instead, all fields are initialized to default values (0 for scalars and null for non-scalars) on allocation. This is in stark contrast to functional languages, where all parts of an allocation are initialized to programmer-provided values. These choices have a direct impact on two main issues: 1) the prevalence of null in object oriented languages (and its general absence in functional languages), and 2) the ability to initialize circular data structures. This paper explores connections between these differing approaches and proposes a fresh look at initialization. Delayed types are introduced to express and formalize prevalent initialization patterns in object-oriented languages."
+    }
+  }
+}

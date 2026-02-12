@@ -1,0 +1,20 @@
+{
+  "doc_id": "21224",
+  "text": "in our experiments). There are l = n − |S| unobserved offsets and estimated unobserved instances of tuple t iq for each t iq ∈ T i . We adopt a maximum-entropy (maxEnt) approach and assume that all assignments of unobserved tuple instances to unobserved offsets are equally likely. Denote by B the set of segment indexes and by B ij the subset of indexes corresponding to segments with at least one observation of t ij . Also, for k ∈ B, let l k be the number of unobserved offsets in the kth segment and N ijk the random number of unobserved instances of t ij assigned to the k th segment (N ijk ≤ l k ). Set Y ijk = 1 if N ijk > 0 and Y ijk = 0 otherwise. Then we estimate b ij by its expected value E[b ij ] under our maxEnt model: [CITATION_1] where is a hypergeometric probability. Note that for , where is the value of when and |B ij | = 0. Thus our estimate of the term in (1) is . Number of non-zero tuples. We estimate the number of non-zero tuples as , where is an estimate of the number of zero tuples in . Denote by F i0 the number of zero tuples in the sample. If F i0 > 0, we can proceed as above and set , where is (4). If F i0 = 0, then we set ; this estimate maximizes and hence per our conservative estimation strategy.",
+  "correct_citation": {
+    "[CITATION_1]": "145173"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Then we estimate b ij by its expected value E[b ij ] under our maxEnt model:  where is a hypergeometric probability."
+    }
+  ],
+  "bib_entries": {
+    "145173": {
+      "title": "Approximate Kernel k-means: Solution to large scale Kernel clustering",
+      "abstract": "Digital data explosion mandates the development of scalable tools to organize the data in a meaningful and easily accessible form. Clustering is a commonly used tool for data organization. However, many clustering algorithms designed to handle large data sets assume linear separability of data and hence do not perform well on real world data sets. While kernel-based clustering algorithms can capture the non-linear structure in data, they do not scale well in terms of speed and memory requirements when the number of objects to be clustered exceeds tens of thousands. We propose an approximation scheme for kernel k-means, termed approximate kernel k-means, that reduces both the computational complexity and the memory requirements by employing a randomized approach. We show both analytically and empirically that the performance of approximate kernel k-means is similar to that of the kernel k-means algorithm, but with dramatically reduced run-time complexity and memory requirements."
+    }
+  },
+  "generator": "fallback_v4"
+}

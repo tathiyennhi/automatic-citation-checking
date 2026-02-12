@@ -1,0 +1,29 @@
+{
+  "doc_id": "13253",
+  "text": "Edge-preserving smoothing can be achieved by local filtering methods. BLF is widely used in many applications for its simplicity and effectiveness and received much attention in the literature. BLF assigns the low weights to the pixels across the edge to preserve the salient edges. However, as the weights never goes to zero, the pixels at the discontinuous region will more or less affected by the pixels across the edge. As a local smoothing operator, BLF involves a tradeoff between edge preservation and data smoothing. Applying BLF iteratively can achieve a stronger smoothing result, however, this operation tends to introduce the staircase effect [CITATION_1] . BLF is generalized to the joint bilateral filter in [CITATION_2] , in which the weights are computed from another guidance image rather than the filter input. The joint bilateral filter is particular favored when the filter input is not reliable to provide edge information.",
+  "correct_citation": {
+    "[CITATION_1]": "5638497",
+    "[CITATION_2]": "53230037"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Applying BLF iteratively can achieve a stronger smoothing result, however, this operation tends to introduce the staircase effect"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "BLF is generalized to the joint bilateral filter in, in which the weights are computed from another guidance image rather than the filter input."
+    }
+  ],
+  "bib_entries": {
+    "5638497": {
+      "title": "The staircasing effect in neighborhood filters and its solution",
+      "abstract": "Many classical image denoising methods are based on a local averaging of the color, which increases the signal/noise ratio. One of the most used algorithms is the neighborhood filter by Yaroslavsky or sigma filter by Lee, also called in a variant \"SUSAN\" by Smith and Brady or \"Bilateral filter\" by Tomasi and Manduchi. These filters replace the actual value of the color at a point by an average of all values of points which are simultaneously close in space and in color. Unfortunately, these filters show a \"staircase effect,\" that is, the creation in the image of flat regions separated by artifact boundaries. In this paper, we first explain the staircase effect by finding the subjacent partial differential equation (PDE) of the filter. We show that this ill-posed PDE is a variant of another famous image processing model, the Perona-Malik equation, which suffers the same artifacts. As we prove, a simple variant of the neighborhood filter solves the problem. We find the subjacent stable PDE of this variant. Finally, we apply the same correction to the recently introduced NL-means algorithm which had the same staircase effect, for the same reason."
+    },
+    "53230037": {
+      "title": "Joint bilateral upsampling",
+      "abstract": "Image analysis and enhancement tasks such as tone mapping, colorization, stereo depth, and photomontage, often require computing a solution (e.g., for exposure, chromaticity, disparity, labels) over the pixel grid. Computational and memory costs often require that a smaller solution be run over a downsampled image. Although general purpose upsampling methods can be used to interpolate the low resolution solution to the full resolution, these methods generally assume a smoothness prior for the interpolation. We demonstrate that in cases, such as those above, the available high resolution input image may be leveraged as a prior in the context of a joint bilateral upsampling procedure to produce a better high resolution solution. We show results for each of the applications above and compare them to traditional upsampling methods."
+    }
+  },
+  "generator": "fallback"
+}

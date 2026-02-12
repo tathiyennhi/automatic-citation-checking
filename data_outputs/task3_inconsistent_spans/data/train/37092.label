@@ -1,0 +1,44 @@
+{
+  "doc_id": "37092",
+  "text": "For the past decade, researchers developed a variety of constraint solvers [CITATION_1] . Among them, Z3 [CITATION_2] is one of the most powerful constraint solvers with features of supporting linear real and integer arithmetic, fixed-size bit-vector, uninterpreted functions, extensional arrays, quantifiers, multiple input formats, and extensive APIs (including C/C ++/.NET/Java/Python APIs). Z3-str [CITATION_3] is an extension of Z3 supporting combined logics over strings and non-string operations. It supports three sorts of logic: (i) string-sorted terms include string constants and variables of arbitrary length; (ii) integer-sorted terms are standard, with the exception of the length function over string terms; (iii) Boolean operators are used to combine atomic formulas which are equations over string terms and equalities or inequalities over integer terms. In this paper, we leverage advances in constraint solvers and use Z3 and Z3-str as constraint solver to generate the relevant input values of a path condition, which is to be discussed later.",
+  "correct_citation": {
+    "[CITATION_1]": "1937437",
+    "[CITATION_2]": "15912959",
+    "[CITATION_3]": "14896703"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For the past decade, researchers developed a variety of constraint solvers  .",
+      "s_span": 0,
+      "e_span": 89
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Among them, Z3  is one of the most powerful constraint solvers with features of supporting linear real and integer arithmetic, fixed-size bit-vector, uninterpreted functions, extensional arrays, quantifiers, multiple input formats, and extensive APIs (including C/C ++/.NET/Java/Python APIs).",
+      "s_span": 90,
+      "e_span": 394
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Z3-str  is an extension of Z3 supporting combined logics over strings and non-string operations.",
+      "s_span": 395,
+      "e_span": 503
+    }
+  ],
+  "bib_entries": {
+    "15912959": {
+      "title": "Z3: An efficient SMT solver",
+      "abstract": "Satisfiability Modulo Theories (SMT) problem is a decision problem for logical first order formulas with respect to combinations of background theories such as: arithmetic, bit-vectors, arrays, and uninterpreted functions. Z3 is a new and efficient SMT Solver freely available from Microsoft Research. It is used in various software verification and analysis applications."
+    },
+    "14896703": {
+      "title": "Z3-STR: A Z3-based string solver for web application analysis",
+      "abstract": "Analyzing web applications requires reasoning about strings and non-strings cohesively. Existing string solvers either ignore non-string program behavior or support limited set of string operations. In this paper, we develop a general purpose string solver, called Z3-str, as an extension of the Z3 SMT solver through its plug-in interface. Z3-str treats strings as a primitive type, thus avoiding the inherent limitations observed in many existing solvers that encode strings in terms of other primitives. The logic of the plug-in has three sorts, namely, bool, int and string. The string-sorted terms include string constants and variables of arbitrary length, with functions such as concatenation, sub-string, and replace. The int-sorted terms are standard, with the exception of the length function over string terms. The atomic formulas are equations over string terms, and (in)-equalities over integer terms. Not only does our solver have features that enable whole program symbolic, static and dynamic analysis, but also it performs better than other solvers in our experiments. The application of Z3-str in remote code execution detection shows that its support of a wide spectrum of string operations is key to reducing false positives."
+    },
+    "1937437": {
+      "title": "Evaluation of string constraint solvers in the context of symbolic execution",
+      "abstract": "Symbolic execution tools query constraint solvers for tasks such as determining the feasibility of program paths. Therefore, the effectiveness of such tools depends on their constraint solvers. Most modern constraint solvers for primitive types are efficient and accurate. However, research on constraint solvers for complex types, such as strings, is less converged. In this paper, we introduce two new solver adequacy criteria, modeling cost and accuracy, to help the user identify an adequate solver. Using these metrics and performance criterion, we evaluate four distinct string constraint solvers in the context of symbolic execution. Our results show that, depending on the needs of the user and composition of the program, one solver might be more appropriate than another. Yet, none of the solvers exhibit the best results for all programs. Hence, if resources permit, the user will benefit the most from executing all solvers in parallel and enabling communication between solvers."
+    }
+  },
+  "generator": "fallback_v4"
+}

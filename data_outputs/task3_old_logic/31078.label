@@ -1,0 +1,20 @@
+{
+  "doc_id": "31078",
+  "text": "In an off-line measurement phase, we determine the workloads of a host when (1) it is idle, and (2) has reached a stage after which further execution of even a small job takes an excessive processing time. These workloads will be referred to as low and max, respectively. For determining the low workload we run a sample algorithm that measures how fast the CPU is when no jobs are executing, i.e. when only the basic services are active (cf. the concept of relaxation [CITATION_1] ). For determining the max workload we progressively increase the load by executing a known job an increasing number of times, until the execution time of the sample algorithm is considered too costly. The job we use to load the host consists of an active object whose class has a high pu. The number of times the job has to be executed to reach the max workload is stored as n2max. Our sample algorithm executes in 10 milliseconds on a idle 2GHz Pentium processor with 512MB of RAM. We consider that such a host has reached the max workload when the execution time of the sample algorithm is 100 times longer than on the idle host (1 second in our case).",
+  "correct_citation": {
+    "[CITATION_1]": "22528507"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For determining the low workload we run a sample algorithm that measures how fast the CPU is when no jobs are executing, i.e. when only the basic services are active (cf. the concept of relaxation"
+    }
+  ],
+  "bib_entries": {
+    "22528507": {
+      "title": "Factors Affecting the Design of Load Balancing Algorithms in Distributed Systems",
+      "abstract": "Abstract In a distributed environment made up of several computing units, it is necessary to exploit the system's greater calculation resources more efficiently by distributing the workload over the various machines in the system. The aim of distributed allocation can therefore be to balance the load generated in the single machines so as to improve the response time and throughput of the system as a whole. This paper deals with the problem of allocating processes with the aim of achieving load balancing in a heterogeneous distributed system. Some strategies are proposed based on adaptive heuristic approaches which can be followed in real systems. The aim is to point out which factors mainly influence a good workload distribution and which parameters can be tuned to achieve the best allocation. In order to measure the host's workload here the concept of relaxation is introduced, and some algorithms which take this parameter into account are discussed. In addition, the contribution of the knowledge of the process nature to the allocation strategy has been investigated too. The solutions proposed have all been implemented and evaluated on a real heterogeneous distributed system in order to assess how each parameter, in combination with the others, contributes to determining the best allocation decision."
+    }
+  },
+  "generator": "fallback"
+}

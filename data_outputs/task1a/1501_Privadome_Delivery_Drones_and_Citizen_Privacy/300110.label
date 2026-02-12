@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Input: From regulatory authority, identity, position and -→ D vector for all drones: (Id 𝑖, Γ 𝑖 𝑡, 𝜆 𝑖 𝑡, -→ D 𝑖) for all drones in city (𝑖=1...𝑛).",
+    "Input: Publicly-known: 𝜃 1,..., 𝜃 𝑛 for all drones.",
+    "Output: Revealed to citizen: ⟨DotP 𝑖, NormSquare 𝑖 ⟩ for drones in vicinity.GC1 [Γdiff] = LatitudeDiff(Γ 1 𝑡,..., Γ 𝑛 𝑡, Γ 𝑐) GC2 [𝜆diff] = LongitudeDiff(𝜆 1 𝑡,..., 𝜆 𝑛 𝑡, 𝜆 𝑐) GC3 for 𝑖 ← 1 to 𝑛 do GC4 if (Γdiff[𝑖] ≤ LatVicinity and 𝜆diff[𝑖] ≤ LongVicinity) then GC5 - → C 𝑖 = Vectorize(Γ 𝑖 𝑡, 𝜆 𝑖 𝑡, Γ 𝑐, 𝜆 𝑐) GC6 DotP 𝑖 = -→ D 𝑖 • -→ C 𝑖 GC7 NormSquare 𝑖 = ( | -→ D 𝑖 |) 2 × ( | -→ C 𝑖 |)2 GC8 Result.add( ⟨Id 𝑖, DotP 𝑖, NormSquare 𝑖 ⟩) GC9 end GC10 end GC11 return Result (revealed only to citizen) // Steps below happen on citizen's phone (not as MPC) GC12 for each ⟨Id 𝑖, DotP 𝑖, NormSquare 𝑖 ⟩ ∈ Result do GC13 𝜙 𝑖 = arccos(DotP 𝑖 / √︁ NormSquare 𝑖) GC14 if (𝜙 𝑖 ≤ 𝜃 𝑖) then shortlist the drone Id 𝑖. GC15 endblocks of code are executed regardless of the value of the conditional [108].",
+    "While some MPC frameworks provide such an oblivious if statement construct (e.g., Obliv-C [108]), many others do not (e.g., EMP does not), and the onus is on the algorithm designer to ensure that both branches of the conditional contain identical amount of computation (with identical timing and network communication).",
+    "Moreover, making the conditional oblivious has the drawback of requiring dummy code blocks to be executed regardless of the conditional, and the encoding of these code blocks adds to the circuit size."
+  ],
+  "correct_citations": [
+    "Output: Revealed to citizen: ⟨DotP 𝑖, NormSquare 𝑖 ⟩ for drones in vicinity.GC1 [Γdiff] = LatitudeDiff(Γ 1 𝑡,..., Γ 𝑛 𝑡, Γ 𝑐) GC2 [𝜆diff] = LongitudeDiff(𝜆 1 𝑡,..., 𝜆 𝑛 𝑡, 𝜆 𝑐) GC3 for 𝑖 ← 1 to 𝑛 do GC4 if (Γdiff[𝑖] ≤ LatVicinity and 𝜆diff[𝑖] ≤ LongVicinity) then GC5 - → C 𝑖 = Vectorize(Γ 𝑖 𝑡, 𝜆 𝑖 𝑡, Γ 𝑐, 𝜆 𝑐) GC6 DotP 𝑖 = -→ D 𝑖 • -→ C 𝑖 GC7 NormSquare 𝑖 = ( | -→ D 𝑖 |) 2 × ( | -→ C 𝑖 |)2 GC8 Result.add( ⟨Id 𝑖, DotP 𝑖, NormSquare 𝑖 ⟩) GC9 end GC10 end GC11 return Result (revealed only to citizen) // Steps below happen on citizen's phone (not as MPC) GC12 for each ⟨Id 𝑖, DotP 𝑖, NormSquare 𝑖 ⟩ ∈ Result do GC13 𝜙 𝑖 = arccos(DotP 𝑖 / √︁ NormSquare 𝑖) GC14 if (𝜙 𝑖 ≤ 𝜃 𝑖) then shortlist the drone Id 𝑖. GC15 endblocks of code are executed regardless of the value of the conditional [108].",
+    "While some MPC frameworks provide such an oblivious if statement construct (e.g., Obliv-C [108]), many others do not (e.g., EMP does not), and the onus is on the algorithm designer to ensure that both branches of the conditional contain identical amount of computation (with identical timing and network communication)."
+  ]
+}

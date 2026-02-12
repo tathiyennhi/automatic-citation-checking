@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Imagine a collection of images, each encoded as a vector reflecting its color distribution, textures, and shapes.",
+    "Given a new image (another vector), Faiss helps us find images most similar to it -perhaps those depicting the same object from different angles.",
+    "We have used langchain a python library to implement faiss indexing to make vector store for Gemini Model to get the context.",
+    "Here is the code snippets for doing the same -# read all pdf files and return text def get_pdf_text(pdf_docs): text = \"\" for pdf in pdf_docs: pdf_reader = PdfReader(pdf) for page in pdf_reader.pages: text += page.extract_text() return text # split text into chunks def get_text_chunks(text): splitter = RecursiveCharacterTextSplitter( chunk_size=10000, chunk_overlap=1000) chunks = splitter.split_text(text) return chunks # creating vector store def get_vector_store(chunks): embeddings = GoogleGenerativeAIEmbeddings( model=\"models/embedding-001\") vector_store = FAISS.from_texts(chunks, embedding=embeddings) vector_store.save_local(\"faiss_index\") D. Streamlit for creating user interfaceStreamlit is a Python framework designed specifically to help data scientists and machine learning engineers quickly develop and share interactive web apps.",
+    "Unlike traditional web development, Streamlit requires minimal coding knowledge beyond Python itself."
+  ],
+  "correct_citations": []
+}

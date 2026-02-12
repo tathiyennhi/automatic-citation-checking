@@ -1,0 +1,48 @@
+{
+  "doc_id": "61205",
+  "text": "https://github.com/fnzhan/ Verisimilar-Image-Synthesis-for-Accurate-Detection-and-Recognition-of-Texts-in-Sc Bootstrapping for character-box Character level annotations are more accurate and better. However, most existing datasets do not provide character-level annotating. Since character is smaller and close to each other, character-level annotation is more costly and inconvenient. There have been some work on semi-supervised character detection [CITATION_1] , [CITATION_2] . The basic idea is to initialize a character-detector, and applies rules or threshold to pick the most reliable predicted candidates. These reliable candidates are then used as additional supervision source to refine the characterdetector. Both of them aim to augment existing datasets with character level annotations. They only differ in details. [CITATION_3] which assumes that text are straight lines, and use a eigenvalue-based metric to measure its straightness; Rong et al. [CITATION_4] evaluate each predicted text region with MSER features combined with SLC algotirhm. WordSup [CITATION_5] first initializes the character detector by training 5K warm-up iterations on synthetic dataset, as shown in Fig.10 (b) . For each image, WordSup generates character candidates, which are then filtered with wordboxes. For characters in each word box, the following score is computed to select the most possible character list:",
+  "correct_citation": {
+    "[CITATION_1]": "12318201",
+    "[CITATION_2]": "22703312",
+    "[CITATION_3]": "12318201",
+    "[CITATION_4]": "24301089",
+    "[CITATION_5]": "12318201"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "There have been some work on semi-supervised character detection"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "There have been some work on semi-supervised character detection,"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "They only differ in details. which assumes that text are straight lines, and use a eigenvalue-based metric to measure its straightness; Rong et al. evaluate each predicted text region with MSER features combined with SLC algotirhm."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "which assumes that text are straight lines, and use a eigenvalue-based metric to measure its straightness; Rong et al."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "WordSup first initializes the character detector by training 5K warm-up iterations on synthetic dataset, as shown in Fig.10 (b)."
+    }
+  ],
+  "bib_entries": {
+    "22703312": {
+      "title": "Wetext: Scene text detection under weak supervision",
+      "abstract": "The requiring of large amounts of annotated training data has become a common constraint on various deep learning systems. In this paper, we propose a weakly supervised scene text detection method (WeText) that trains robust and accurate scene text detection models by learning from unannotated or weakly annotated data. With a \"light\" supervised model trained on a small fully annotated dataset, we explore semi-supervised and weakly supervised learning on a large unannotated dataset and a large weakly annotated dataset, respectively. For the unsupervised learning, the light supervised model is applied to the unannotated dataset to search for more character training samples, which are further combined with the small annotated dataset to retrain a superior character detection model. For the weakly supervised learning, the character searching is guided by high-level annotations of words/text lines that are widely available and also much easier to prepare. In addition, we design an unified scene character detector by adapting regression based deep networks, which greatly relieves the error accumulation issue that widely exists in most traditional approaches. Extensive experiments across different unannotated and weakly annotated datasets show that the scene text detection performance can be clearly boosted under both scenarios, where the weakly supervised learning can achieve the state-of-the-art performance by using only 229 fully annotated scene text images."
+    },
+    "24301089": {
+      "title": "weakly supervised text attention network for generating text proposals in scene images",
+      "abstract": "Detection and recognition of textual information in scene images is useful but challenging tasks. Numerous methods have been proposed to solve the problem. Recently the best results are attained by deep neural network based methods. Training such networks needs large amounts of bounding box-level or pixel-level annotated data. Generating large amounts of such data always requires huge amounts of labor which can be expensive and time consuming. In this paper we explore the utilization of weakly supervised deep neural network for generating text proposals in natural scene images. The network allows multi-scale inputs and is trained to perform whole image binary classification to tell whether an image contains text or not. After training the network acquired learning of powerful discriminated features that are capable of distinguishing text from other objects. To get the text location, text confidence score map is generated based on feature maps from the top two convolutional layers by extracting class activation map. Value of each pixel in the score map denotes the confidence score of whether the pixel belongs to text or not. By setting a threshold the score map is converted to a binary mask map. Foregrounds of the mask map are probable text areas. Then Maximally Stable Extremal Regions (MSERs) are extracted from these probable text areas and are aggregated as groups. By processing these groups, text proposals are obtained. Experimental results show that without using any bounding boxes or pixel-level annotation, the algorithm achieves recall rate comparable to some fully supervised methods in ICDAR 2013 focused text dataset and In ICDAR 2015 incidental text dataset."
+    },
+    "12318201": {
+      "title": "Wordsup: Exploiting word annotations for character based text detection",
+      "abstract": "Imagery texts are usually organized as a hierarchy of several visual elements, i.e. characters, words, text lines and text blocks. Among these elements, character is the most basic one for various languages such as Western, Chinese, Japanese, mathematical expression and etc. It is natural and convenient to construct a common text detection engine based on character detectors. However, training character detectors requires a vast of location annotated characters, which are expensive to obtain. Actually, the existing real text datasets are mostly annotated in word or line level. To remedy this dilemma, we propose a weakly supervised framework that can utilize word annotations, either in tight quadrangles or the more loose bounding boxes, for character detector training. When applied in scene text detection, we are thus able to train a robust character detector by exploiting word annotations in the rich large-scale real scene text datasets, e.g. ICDAR15 and COCO-text. The character detector acts as a key role in the pipeline of our text detection engine. It achieves the state-of-the-art performance on several challenging scene text detection benchmarks. We also demonstrate the flexibility of our pipeline by various scenarios, including deformed text detection and math expression recognition."
+    }
+  },
+  "generator": "fallback"
+}

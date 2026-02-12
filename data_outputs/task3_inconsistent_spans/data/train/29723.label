@@ -1,0 +1,29 @@
+{
+  "doc_id": "29723",
+  "text": "HARP's Scheduler is responsible for managing data transfer executions between source and destination end points. It first partitions files into clusters according to the file size (i.e., Tiny, Small, Medium, and Large) (line 3 of Algorithm 1). Then, it runs a sample transfer for each file cluster to determine the cluster's achievable throughput under current network load. Each sample transfer may move one or more files depending on file size. ST refers to sample transfer throughput for a file cluster. In order to minimize the overhead of the sample transfers (step 2 in Fig. 1 ), Scheduler takes advantage of the heuristic algorithm [CITATION_1] to determine the parameter values of the sample transfers. Although the heuristic algorithm may pick sub-optimal values, it generally perform better than using default or random values. We assess the cost of the sample transfers in detail in Section 2. After real-time probing is completed, Scheduler passes throughput information to Optimizer along with the dataset characteristics and network settings (line 11). Optimizer calculates and returns the values of the protocol parameters ðcc est ; p est ; ppq est Þ along with unit throughput, UT (line 11). UT refers to throughput of a file cluster if it is run with concurrency value 1. It is used to determine the concurrency values of the clusters when they are transferred simultaneously. While Optimizer finds the optimal values assuming that each cluster will run separately, Scheduler prefers to run multiple clusters simultaneously to benefit from multi-cluster approach as presented in our earlier work [CITATION_2] . As opposed to parallelism and pipelining, concurrency values estimated by Optimizer may need to be adapted to multi-cluster transfer scheme. Even though concurrency has significant impact on throughput (especially when parallel file systems are in use), it incurs the highest overhead at the end systems and network by creating many processes and data channels. Thus, it may not be desirable to open as many channels (concurrency) as each cluster asks. To overcome this inconsistency, Scheduler computes the maximum concurrency (maxCC) of all clusters (line 13) which is then distributed among the clusters based on their weights (line 20). Weight of a cluster is proportional to its size and inversely proportional to its unit throughput (line 16) such that clusters that are large in total size or inherently slow would receive more channels.",
+  "correct_citation": {
+    "[CITATION_1]": "29017019",
+    "[CITATION_2]": "29017019"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In order to minimize the overhead of the sample transfers (step 2 in Fig. 1 ), Scheduler takes advantage of the heuristic algorithm  to determine the parameter values of the sample transfers.",
+      "s_span": 507,
+      "e_span": 710
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "While Optimizer finds the optimal values assuming that each cluster will run separately, Scheduler prefers to run multiple clusters simultaneously to benefit from multi-cluster approach as presented in our earlier work  .",
+      "s_span": 1394,
+      "e_span": 1627
+    }
+  ],
+  "bib_entries": {
+    "29017019": {
+      "title": "Dynamic protocol tuning algorithms for high performance data transfers",
+      "abstract": "Obtaining optimal data transfer performance is of utmost importance to today's data-intensive distributed applications and wide-area data replication services. Doing so necessitates effectively utilizing available network bandwidth and resources, yet in practice transfers seldom reach the levels of utilization they potentially could. Tuning protocol parameters such as pipelining, parallelism, and concurrency can significantly increase utilization and performance, however determining the best settings for these parameters is a difficult problem, as network conditions can vary greatly between sites and over time. In this paper, we present four application-level algorithms for heuristically tuning protocol parameters for data transfers in wide-area networks. Our algorithms dynamically tune the number of parallel data streams per file, the level of control channel pipelining, and the number of concurrent file transfers to fill network pipes. The presented algorithms are implemented as a standalone service as well as being used in interaction with external data scheduling tools such as Stork. The experimental results are very promising, and our algorithms outperform existing solutions in this area."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "SDNE is composed of a decoder part and an encoder, where the decoder maps the input network with multiple nonlinear functions and the decoder applies multiple nonlinear functions to reconstruct the network.",
+    "In I net = (V, E), the adjacency matrix of the network is denoted by M, V denotes the collection of lncRNA nodes within the network, where |V | = N l. Then, the mapping and reconstruction of the network is performed as follows:where M i denotes the initial feature of the ith lncRNA in the network, σ(•) denotes the activation function,W (1) l ∈ R n 1 ×N l, b (1) ∈ R n 1,W (k) l ∈ R n k ×n k-1 and b (k) ∈ R n kare the trainable parameters, and K is the number of layers of the decoder and encoder hidden layers.",
+    "When y (k) i is obtained, the encoder will be reused to map to obtain the output M i.",
+    "To make SDNE capture a more accurate network structure, second-order similarity and firstorder similarity are used here to construct the loss function of SDNE so that the error between the reconstructed network and the original network is smaller, and the SDNE loss function L sdne is calculated as follows:(22) Ẑ′ L (i) = W LD ẐL (i) + b LD (23) y (1) i = σ (W (1) l M i + b (1)) y (k) i = σ (W (k) l y (k-1) i + b (k)), k = 2, L, K(24)L 2nd = N l i=1 P( Mi -M i)e b i P 2 2 = P( M -M)e BP 2 F.Here, ⊙ represents the Hadamard product.b i = {b i,j } N l j=1, if M(i, j)=0, b i,j =1; otherwise, b i,j = β > 1.M represents the adjacency matrix of the network, M(i, j) represents the value of the ith row and jth col- umn of the association matrix, and α is the hyperpa- rameter.",
+    "L reg is a regularization term proposed to avoid overfitting, which is calculated as follows:We input a network G = (V, E), where V denotes the set of nodes and E denotes the set of edges."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "32843",
+  "text": "The occupancy-bound execution model does not guarantee fair scheduling between workgroups: if all compute units are occupied then a not-yet-occupant workgroup will not be scheduled until some occupant workgroup completes execution. Yet the execution model does provide fair scheduling between occupant workgroups, which are bound to separate compute units that operate in parallel. Current GPU implementations of blocking algorithms assume the occupancy-bound execution model, which they exploit by launching no more workgroups than there are available compute units [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "15164830"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Current GPU implementations of blocking algorithms assume the occupancy-bound execution model, which they exploit by launching no more workgroups than there are available compute units  .",
+      "s_span": 382,
+      "e_span": 581
+    }
+  ],
+  "bib_entries": {
+    "15164830": {
+      "title": "A study of persistent threads style GPU programming for GPGPU workloads",
+      "abstract": "In this paper, we characterize and analyze an increasingly popular style of programming for the GPU called Persistent Threads (PT). We present a concise formal definition for this programming style, and discuss the difference between the traditional GPU programming style (nonPT) and PT, why PT is attractive for some high-performance usage scenarios, and when using PT may or may not be appropriate. We identify limitations of the nonPT style and identify four primary use cases it could be useful in addressing—CPU-GPU synchronization, load balancing/irregular parallelism, producer-consumer locality, and global synchronization. Through micro-kernel benchmarks we show the PT approach can achieve up to an order-of-magnitude speedup over nonPT kernels, but can also result in performance loss in many cases. We conclude by discussing the hardware and software fundamentals that will influence the development of Persistent Threads as a programming style in future systems."
+    }
+  },
+  "generator": "fallback_v4"
+}

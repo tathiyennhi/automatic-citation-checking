@@ -1,0 +1,20 @@
+{
+  "doc_id": "34238",
+  "text": "where q(x) is the predicted value of each option x for a given model (e.g., q(x) = UCB(x) for the UCB model), and τ is the temperature parameter. Lower values of τ indicate more concentrated probability distributions, corresponding to more precise predictions. All models include τ as a free parameter. Additionally, Function Learning models estimate λ (length-scale), Option Learning models estimate θ 2 ε (error variance), and Upper Confidence Bound sampling models estimate β (exploration bonus). Cross Validation. We fit all models-per participant-using cross-validated MLE, with either a Differential Evolution algorithm [CITATION_1] or a grid search if the model contained only a single parameter. Parameter estimates are constrained to positive values in the range [exp(−5), exp(5)]. Cross-validation is performed by first separating participant data according to horizon length, which alternated between rounds (within subjects). For each participant, half of the rounds corresponded to a short horizon and the other half corresponded to a long horizon. Within all rounds of each horizon length, we use leave-one-out cross-validation to iteratively form a training set by leaving out a single round, computing a MLE on the training set, and then generating out-of-sample predictions on the remaining round. This is repeated for all combinations of training set and test set, and for both short and long horizon sets. The cross-validation procedure yielded one set of parameter estimates per round, per participant, and out-of-sample predictions for 120 choices in Experiment 1 and 240 choices in Experiments 2 and 3 (per participant). Figure S1 . Full model comparison of all 27 models. The learning model is indicated above (or lack of in the case of simple heuristic strategies), and sampling strategy are along the x-axis. Bars indicate predictive accuracy (group mean) along with standard error, and are separated by payoff condition (colour) and environment type (darkness), with individual participants overlaid as dots. Icon arrays (right) show the number participants best described (out of the full 27 models) and are aggregated over payoff conditions, environment types, and sampling strategy. Table S3 provides more detail about the number of participants best described by each model as well as the protected probability of exceedance.",
+  "correct_citation": {
+    "[CITATION_1]": "56299005"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We fit all models-per participant-using cross-validated MLE, with either a Differential Evolution algorithm or a grid search if the model contained only a single parameter."
+    }
+  ],
+  "bib_entries": {
+    "56299005": {
+      "title": "DEoptim: An R package for global optimization by differential evolution",
+      "abstract": "This article describes the R package DEoptim which implements the differential evolution algorithm for the global optimization of a real-valued function of a real-valued parameter vector. The implementation of differential evolution in DEoptim interfaces with C code for efficiency. The utility of the package is illustrated via case studies in fitting a Parratt model for X-ray reflectometry data and a Markov-Switching Generalized AutoRegressive Conditional Heteroskedasticity (MSGARCH) model for the returns of the Swiss Market Index."
+    }
+  },
+  "generator": "fallback"
+}

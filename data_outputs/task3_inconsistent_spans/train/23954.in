@@ -1,0 +1,12 @@
+{
+  "text": "Haghighi, Berg-Kirkpatrick, and Klein (2008) proposed a canonical correlation analysisbased model for automatically learning the mapping between the words in two languages from monolingual corpora only. They used orthographic information (character substring features) and context information (co-occurrence statistics within a window) for their features; we use edit distance as our orthographic information, and we operate on bigrams for our context information. Although their model uses an EM-style algorithm, it does not iterate over the corpus data. [CITATION_1] proposed a Bayesian decipherment model based on hash sampling, which takes advantage of feature-based similarities between source and target words. However, the feature representation was not integrated with their decipherment model, and was only used for efficiently sampling candidate target translations for each source word. Furthermore, the feature-based hash sampling included only contextual features (in the form of n-gram co-occurrence information), and did not consider orthographic features. In contrast, our log-linear model integrates both type-level orthographic features and token-level bigram frequencies.",
+  "correct_citation": {
+    "[CITATION_1]": "532096"
+  },
+  "bib_entries": {
+    "532096": {
+      "title": "Scalable decipherment for machine translation via hash sampling",
+      "abstract": "In this paper, we propose a new Bayesian inference method to train statistical machine translation systems using only nonparallel corpora. Following a probabilistic decipherment approach, we first introduce a new framework for decipherment training that is flexible enough to incorporate any number/type of features (besides simple bag-of-words) as side-information used for estimating translation models. In order to perform fast, efficient Bayesian inference in this framework, we then derive a hash sampling strategy that is inspired by the work of Ahmed et al. (2012). The new translation hash sampler enables us to scale elegantly to complex models (for the first time) and large vocabulary/corpora sizes. We show empirical results on the OPUS data\u2014our method yields the best BLEU scores compared to existing approaches, while achieving significant computational speedups (several orders faster). We also report for the first time\u2014BLEU score results for a largescale MT task using only non-parallel data (EMEA corpus)."
+    }
+  }
+}

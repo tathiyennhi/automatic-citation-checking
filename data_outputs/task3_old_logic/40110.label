@@ -1,0 +1,20 @@
+{
+  "doc_id": "40110",
+  "text": "The original reference counting collector of [CITATION_1] iterates over all the young objects recorded in the YoungObjects buffer, incrementing the reference counts of their descendants, only to find out later that most of them are dead (assuming the weak generational hypothesis). Thus, it then decrements the reference counts of all their descendants (before deleting them). The source of this inefficiency is that the collector does not know in advance which of the young objects are dead, and which are reachable. The age-oriented collector avoids this problem by wisely detecting the roots of the young generation and tracing only the small number of reachable young objects, updating the reference counts of reachable young objects and their descendants during the trace.",
+  "correct_citation": {
+    "[CITATION_1]": "53223694"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The original reference counting collector of iterates over all the young objects recorded in the YoungObjects buffer, incrementing the reference counts of their descendants, only to find out later that most of them are dead (assuming the weak generational hypothesis)."
+    }
+  ],
+  "bib_entries": {
+    "53223694": {
+      "title": "An on-the-fly reference counting garbage collector for Java",
+      "abstract": "Reference counting is not naturally suitable for running on multiprocessors. The update of pointers and reference counts requires atomic and synchronized operations. We present a novel reference counting algorithm suitable for a multiprocessor that does not require any synchronized operation in its write barrier (not even a compare-and-swap type of synchronization). The algorithm is efficient and may complete with any tracing algorithm."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,29 @@
+{
+  "doc_id": "15034",
+  "text": "The M-step is a two-stage back-propagation procedure ( Figure 3 ) that is the subject of the next sub-section. Here, we argue that the two-stage back-propagation procedure is the natural consequence of using Eqs. 19 and 20 to augment the encoder described previously. M-step/H update: The least-squares objective from Eq. 19 motivates a linear decoder that applies H to the output of the encoder to reconstruct y: the weights in the encoder and decoder are tied to each other. This is the CRsAE architecture previously introduced in [CITATION_1] . Hence, the AE is constructed as Figure 2 is the block diagram of CRsAE. We refer to z (1) T as the sparse code (output of the encoder). Constraining the encoder and decoder makes the filters interpretable in terms of the model in Eq. 2 and also the DL optimization problem in Eq. 8. Moreover, it reduces the number of trainable parameters by a factor of 1 3 compared to the AE in [CITATION_2] . Eq. 19 suggests the following loss function to learn H: M-step/λ update: The objective function from Eq. 20 suggests that we can update λ by augmenting the encoder with the loss function from Eq. 20. Therefore, we use the following loss function to learn λ:",
+  "correct_citation": {
+    "[CITATION_1]": "49670566",
+    "[CITATION_2]": "52284824"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This is the CRsAE architecture previously introduced in"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Moreover, it reduces the number of trainable parameters by a factor of 1 3 compared to the AE in"
+    }
+  ],
+  "bib_entries": {
+    "52284824": {
+      "title": "Learned convolutional sparse coding",
+      "abstract": "We propose a convolutional recurrent sparse auto-encoder model. The model consists of a sparse encoder, which is a convolutional extension of the learned ISTA (LISTA) method, and a linear convolutional decoder. Our strategy offers a simple method for learning a task-driven sparse convolutional dictionary (CD), and producing an approximate convolutional sparse code (CSC) over the learned dictionary. We trained the model to minimize reconstruction loss via gradient decent with back-propagation and have achieved competitive results to KSVD image denoising and to leading CSC methods in image inpainting requiring only a small fraction of their run-time."
+    },
+    "49670566": {
+      "title": "Scalable convolutional dictionary learning with constrained recurrent sparse auto-encoders",
+      "abstract": "Given a convolutional dictionary underlying a set of observed signals, can a carefully designed auto-encoder recover the dictionary in the presence of noise? We introduce an auto-encoder architecture, termed constrained recurrent sparse auto-encoder (CRsAE), that answers this question in the affirmative. Given an input signal and an approximate dictionary, the encoder finds a sparse approximation using FISTA. The decoder reconstructs the signal by applying the dictionary to the output of the encoder. The encoder and decoder in CRsAE parallel the sparse-coding and dictionary update steps in optimization-based alternating-minimization schemes for dictionary learning. As such, the parameters of the encoder and decoder are not independent, a constraint which we enforce for the first time. We derive the back-propagation algorithm for CRsAE. CRsAE is a framework for blind source separation that, only knowing the number of sources (dictionary elements), and assuming sparsely-many can overlap, is able to separate them. We demonstrate its utility in the context of spike sorting, a source separation problem in computational neuroscience. We demonstrate the ability of CRsAE to recover the underlying dictionary and characterize its sensitivity as a function of SNR."
+    }
+  },
+  "generator": "fallback"
+}

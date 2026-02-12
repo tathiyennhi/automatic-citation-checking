@@ -1,0 +1,84 @@
+{
+  "doc_id": "42385",
+  "text": "Furthermore, semantic metrics define a coupling for classes based on textual information extracted from source code identifiers and comments [CITATION_1] . One such semantic metric, CCBC (Conceptual Coupling Between Classes) [CITATION_2] , captures a new dimension of coupling not addressed by structural or dynamic measures. Logical (or evolutionary) coupling [CITATION_3] , [CITATION_4] , [CITATION_5] utilizes information from repositories to capture the strength of relations among the artifacts (including source code) that are frequently co-changed. Such logical coupling metrics have been used for impact analysis [CITATION_6] , much like structural coupling metrics. Finally, Arisholm et al. [CITATION_7] introduced dynamic import (i.e., object calls) and export (i.e., called by) metrics to capture the coupling between classes and objects at runtime.",
+  "correct_citation": {
+    "[CITATION_1]": "206856132",
+    "[CITATION_2]": "206856132",
+    "[CITATION_3]": "11683526",
+    "[CITATION_4]": "1168238",
+    "[CITATION_5]": "47037250",
+    "[CITATION_6]": "14904753",
+    "[CITATION_7]": "3074827"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Furthermore, semantic metrics define a coupling for classes based on textual information extracted from source code identifiers and comments  .",
+      "s_span": 0,
+      "e_span": 155
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "One such semantic metric, CCBC (Conceptual Coupling Between Classes)  , captures a new dimension of coupling not addressed by structural or dynamic measures.",
+      "s_span": 156,
+      "e_span": 325
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Logical (or evolutionary) coupling  ,  ,  utilizes information from repositories to capture the strength of relations among the artifacts (including source code) that are frequently co-changed.",
+      "s_span": 326,
+      "e_span": 555
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Logical (or evolutionary) coupling  ,  ,  utilizes information from repositories to capture the strength of relations among the artifacts (including source code) that are frequently co-changed.",
+      "s_span": 326,
+      "e_span": 555
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Logical (or evolutionary) coupling  ,  ,  utilizes information from repositories to capture the strength of relations among the artifacts (including source code) that are frequently co-changed.",
+      "s_span": 326,
+      "e_span": 555
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Such logical coupling metrics have been used for impact analysis  , much like structural coupling metrics.",
+      "s_span": 556,
+      "e_span": 674
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Finally, Arisholm et al.  introduced dynamic import (i.e., object calls) and export (i.e., called by) metrics to capture the coupling between classes and objects at runtime.",
+      "s_span": 675,
+      "e_span": 860
+    }
+  ],
+  "bib_entries": {
+    "1168238": {
+      "title": "Predicting source code changes by mining change history",
+      "abstract": "Software developers are often faced with modification tasks that involve source which is spread across a code base. Some dependencies between source code, such as those between source code written in different languages, are difficult to determine using existing static and dynamic analyses. To augment existing analyses and to help developers identify relevant source code during a modification task, we have developed an approach that applies data mining techniques to determine change patterns - sets of files that were changed together frequently in the past - from the change history of the code base. Our hypothesis is that the change patterns can be used to recommend potentially relevant source code to a developer performing a modification task. We show that this approach can reveal valuable dependencies by applying the approach to the Eclipse and Mozilla open source projects and by evaluating the predictability and interestingness of the recommendations produced for actual modification tasks on these systems."
+    },
+    "14904753": {
+      "title": "Empirical software change impact analysis using singular value decomposition",
+      "abstract": "Verification and validation techniques often generate various forms of software development artifacts. Change records created from verification and validation efforts show how files in the system tend to change together in response to fixes for identified faults and failures. We propose a methodology for determining the impact of a new system modification by analyzing software change records through singular value decomposition. This methodology generates clusters of files that historically tend to change together to address faults and failures found in the code base. We performed a post hoc case study using this technique on five open source software systems. We determined that our technique was effective in identifying impacted files in a system from an introduced change when the developers tended to make small, targeted updates to the source system regularly. We further compared our technique against two other impact analysis techniques (Pathlmpact and Coveragelmpact) and found that our technique provided comparable results, while also identifying non-source files that could be impacted by the change."
+    },
+    "47037250": {
+      "title": "Mining version histories to guide software changes",
+      "abstract": "We apply data mining to version histories in order to guide programmers along related changes: \"Programmers who changed these functions also changed. . . \". Given a set of existing changes, such rules (a) suggest and predict likely further changes, (b) show up item coupling that is indetectable by program analysis, and (c) prevent errors due to incomplete changes. After an initial change, our ROSE prototype can correctly predict 26% of further files to be changed - and 15% of the precise functions or variables. The topmost three suggestions contain a correct location with a likelihood of 64%."
+    },
+    "3074827": {
+      "title": "Dynamic coupling measurement for object-oriented software",
+      "abstract": "The relationships between coupling and external quality factors of object-oriented software have been studied extensively for the past few years. For example, several studies have identified clear empirical relationships between class-level coupling and class fault-proneness. A common way to define and measure coupling is through structural properties and static code analysis. However, because of polymorphism, dynamic binding, and the common presence of unused (\"dead\") code in commercial software, the resulting coupling measures are imprecise as they do not perfectly reflect the actual coupling taking place among classes at runtime. For example, when using static analysis to measure coupling, it is difficult and sometimes impossible to determine what actual methods can be invoked from a client class if those methods are overridden in the subclasses of the server classes. Coupling measurement has traditionally been performed using static code analysis, because most of the existing work was done on nonobject oriented code and because dynamic code analysis is more expensive and complex to perform. For modern software systems, however, this focus on static analysis can be problematic because although dynamic binding existed before the advent of object-orientation, its usage has increased significantly in the last decade. We describe how coupling can be defined and precisely measured based on dynamic analysis of systems. We refer to this type of coupling as dynamic coupling. An empirical evaluation of the proposed dynamic coupling measures is reported in which we study the relationship of these measures with the change proneness of classes. Data from maintenance releases of a large Java system are used for this purpose. Preliminary results suggest that some dynamic coupling measures are significant indicators of change proneness and that they complement existing coupling measures based on static analysis."
+    },
+    "206856132": {
+      "title": "The conceptual coupling metrics for object-oriented systems",
+      "abstract": "Coupling in software has been linked with maintainability and existing metrics are used as predictors of external software quality attributes such as fault-proneness, impact analysis, ripple effects of changes, changeability, etc. Many coupling measures for object-oriented (OO) software have been proposed, each of them capturing specific dimensions of coupling. This paper presents a new set of coupling measures for OO systems - named conceptual coupling, based on the semantic information obtained from the source code, encoded in identifiers and comments. A case study on open source software systems is performed to compare the new measures with existing structural coupling measures. The case study shows that the conceptual coupling captures new dimensions of coupling, which are not captured by existing coupling measures; hence it can be used to complement the existing metrics."
+    },
+    "11683526": {
+      "title": "CVS release history data for detecting logical couplings",
+      "abstract": "The dependencies and interrelations between classes and modules affect the maintainability of object-oriented systems. It is therefore important to capture weaknesses of the software architecture to make necessary corrections. We describe a method for software evolution analysis. It consists of three complementary steps, which form an integrated approach for the reasoning about software structures based on historical data: 1) the quantitative analysis uses version information for the assessment of growth and change behavior; 2) the change sequence analysis identifies common change patterns across all system parts; and 3) the relation analysis compares classes based on CVS release history data and reveals the dependencies within the evolution of particular entities. We focus on the relation analysis and discuss its results; it has been validated based on empirical data collected from a concurrent versions system (CVS) covering 28 months of a picture archiving and communication system (PACS). Our software evolution analysis approach enabled us to detect shortcomings of PACS such as architectural weaknesses, poorly designed inheritance hierarchies, or blurred interfaces of modules."
+    }
+  },
+  "generator": "fallback_v4"
+}

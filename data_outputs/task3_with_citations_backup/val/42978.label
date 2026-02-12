@@ -1,0 +1,44 @@
+{
+  "doc_id": "42978",
+  "text": "Once we have responses to our questionnaire, we use basic scripts to infer some basic verbalization rules from the responses, e.g. in \"#twitter\", we determine what the verbalization for \"#\" is based on the verbalization entered by the consultant (in this case, hashtag in English). Then, we insert these newly gathered values into our Thrax-based text normalization grammars [CITATION_1] [CITATION_2] [CITATION_3] . Other, more complex examples that we gather are added as unit tests so our in-house linguists can quickly iterate on the grammars to achieve the correct output. All of this improves development turn-around times by days, especially for languages without in-house linguistic expertise.",
+  "correct_citation": {
+    "[CITATION_1]": "9257301",
+    "[CITATION_2]": "13567148",
+    "[CITATION_3]": "8694257"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Then, we insert these newly gathered values into our Thrax-based text normalization grammars [CITATION_1] [CITATION_2] [CITATION_3] .",
+      "s_span": 282,
+      "e_span": 415
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Then, we insert these newly gathered values into our Thrax-based text normalization grammars [CITATION_1] [CITATION_2] [CITATION_3] .",
+      "s_span": 282,
+      "e_span": 415
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Then, we insert these newly gathered values into our Thrax-based text normalization grammars [CITATION_1] [CITATION_2] [CITATION_3] .",
+      "s_span": 282,
+      "e_span": 415
+    }
+  ],
+  "bib_entries": {
+    "8694257": {
+      "title": "The Kestrel TTS text normalization system",
+      "abstract": "This paper describes the Kestrel text normalization system, a component of the Google text-to-speech synthesis (TTS) system. At the core of Kestrel are text-normalization grammars that are compiled into libraries of weighted finite-state transducers (WFSTs). While the use of WFSTs for text normalization is itself not new, Kestrel differs from previous systems in its separation of the initial tokenization and classification phase of analysis from verbalization . Input text is first tokenized and different tokens classified using WFSTs. As part of the classification, detected semiotic classes – expressions such as currency amounts, dates, times, measure phases, are parsed into protocol buffers ( https://code.google.com/p/protobuf/ ). The protocol buffers are then verbalized, with possible reordering of the elements, again using WFSTs. This paper describes the architecture of Kestrel, the protocol buffer representations of semiotic classes, and presents some examples of grammars for various languages. We also discuss applications and deployments of Kestrel as part of the Google TTS system, which runs on both server and client side on multiple devices, and is used daily by millions of people in nineteen languages and counting."
+    },
+    "13567148": {
+      "title": "Language model verbalization for automatic speech recognition",
+      "abstract": "Transcribing speech in properly formatted written language presents some challenges for automatic speech recognition systems. The difficulty arises from the conversion ambiguity between verbal and written language in both directions. Non-lexical vocabulary items such as numeric entities, dates, times, abbreviations and acronyms are particularly ambiguous. This paper describes a finite-state transducer based approach that improves proper transcription of these entities. The approach involves training a language model in the written language domain, and integrating verbal expansions of vocabulary items as a finite-state model into the decoding graph construction. We build an inverted finite-state transducer to map written vocabulary items to alternate verbal expansions using rewrite rules. Then, this verbalizer transducer is composed with the n-gram language model to obtain a verbalized language model, whose input labels are in the verbal language domain while output labels are in the written language domain. We show that the proposed approach is very effective in improving the recognition accuracy of numeric entities."
+    },
+    "9257301": {
+      "title": "The OpenGrm open-source finite-state grammar software libraries",
+      "abstract": "In this paper, we present a new collection of open-source software libraries that provides command line binary utilities and library classes and functions for compiling regular expression and context-sensitive rewrite rules into finite-state transducers, and for n-gram language modeling. The OpenGrm libraries use the OpenFst library to provide an efficient encoding of grammars and general algorithms for building, modifying and applying models."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "There are at least two separate meanings that may be relevantthe ability of the system to retrieve the most appropriate context from the background information for a given query, and the computational complexity of that retrieval.For course-level chatbots, where the number of documents to be searched may be quite low (in our case, we used approximately 10 documents per course, totalling no more than 1500 pages altogether), the search and retrieval steps were not computationally intensive.",
+    "However, the ingestion of documents into the database, which required running the embedding network on all the chunks of text in a document, and the conversion of a query into its embedding, can become computationally expensive if large neural networks are used.",
+    "This step can be sped up significantly by using a GPU (we were able to achieve between 5 and 20 times speedup when we tested on a GPU machine compared to a CPU machine), but resource limitations often necessitate the use of cheaper hardware.",
+    "For this reason, the choice of embedding neural network comes down to one of computational efficiency rather than retrieval optimality.",
+    "We opted to use the default, 45-million parameter model All-MiniLM-L6-v2, which comes prepackaged with ChromaDB and runs efficiently on CPU.A consequence of using a simpler model over a larger one is that subtle semantic differences are not always captured."
+  ],
+  "correct_citations": []
+}

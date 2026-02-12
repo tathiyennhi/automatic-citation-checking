@@ -1,0 +1,55 @@
+{
+  "doc_id": "60377",
+  "text": "In order to get a super-resolved output from a single LR depth map, the method ATGV-Net [CITATION_1] 18 attempts to combine CNN with an energy minimization model, in the form of a powerful variational model. They improvise SRCNN to estimate, in addition to refining the depth map, the locations of discontinuities in the HR output depth maps. The refined depths and the located discontinuities serve as input to a variational model wherein pairwise regularization is carried out via anisotropic Total Generalized Variation (TGV) [CITATION_2] , with weights dependent on the network output. The output is the final HR estimate of the depth map. The authors train their model entirely on their own synthetic depth data. For benchmarking however, they use four different datasets; two derived from Middlebury and one each from Laserscan and ToFMark. The method is demonstrated to show better results in comparison to different state of the art methods, especially [CITATION_3] which is shown to be second best. Fig. 21 : Depth SR by [CITATION_4] .",
+  "correct_citation": {
+    "[CITATION_1]": "49642",
+    "[CITATION_2]": "6650697",
+    "[CITATION_3]": "15039048",
+    "[CITATION_4]": "12175498"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In order to get a super-resolved output from a single LR depth map, the method ATGV-Net  18 attempts to combine CNN with an energy minimization model, in the form of a powerful variational model.",
+      "s_span": 0,
+      "e_span": 207
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The refined depths and the located discontinuities serve as input to a variational model wherein pairwise regularization is carried out via anisotropic Total Generalized Variation (TGV)  , with weights dependent on the network output.",
+      "s_span": 343,
+      "e_span": 589
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The method is demonstrated to show better results in comparison to different state of the art methods, especially  which is shown to be second best.",
+      "s_span": 847,
+      "e_span": 1007
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Fig. 21 : Depth SR by  .",
+      "s_span": 1008,
+      "e_span": 1044
+    }
+  ],
+  "bib_entries": {
+    "15039048": {
+      "title": "Image guided depth upsampling using anisotropic total generalized variation",
+      "abstract": "In this work we present a novel method for the challenging problem of depth image up sampling. Modern depth cameras such as Kinect or Time-of-Flight cameras deliver dense, high quality depth measurements but are limited in their lateral resolution. To overcome this limitation we formulate a convex optimization problem using higher order regularization for depth image up sampling. In this optimization an an isotropic diffusion tensor, calculated from a high resolution intensity image, is used to guide the up sampling. We derive a numerical algorithm based on a primal-dual formulation that is efficiently parallelized and runs at multiple frames per second. We show that this novel up sampling clearly outperforms state of the art approaches in terms of speed and accuracy on the widely used Middlebury 2007 datasets. Furthermore, we introduce novel datasets with highly accurate ground truth, which, for the first time, enable to benchmark depth up sampling methods using real sensor data."
+    },
+    "12175498": {
+      "title": "Depth image super-resolution via multi-frame registration and deep learning",
+      "abstract": "In this paper, we develop an algorithm for depth image super-resolution from RGB-D images, which are acquired under different imaging conditions so that we can combine them to improve the image quality with precise 3D registration. We focus on how to increase the resolution and quality of depth images by combining multiple RGB-D images and using the deep learning technique. In the proposed solution, we combine multiple RGB-D images by 3D alignment from 3D feature point correspondences and apply the guided filter as the input to SRCNN to obtain the up-sampled depth images. We show depth quality improvement of the up-sampled depth maps by using the proposed algorithm over the traditional methods through experimental results on some public-domain RGB-D datasets."
+    },
+    "6650697": {
+      "title": "Total generalized variation",
+      "abstract": "The novel concept of total generalized variation of a function $u$ is introduced, and some of its essential properties are proved. Differently from the bounded variation seminorm, the new concept involves higher-order derivatives of $u$. Numerical examples illustrate the high quality of this functional as a regularization term for mathematical imaging problems. In particular this functional selectively regularizes on different regularity levels and, as a side effect, does not lead to a staircasing effect."
+    },
+    "49642": {
+      "title": "ATGV-Net: Accurate Depth Super-Resolution",
+      "abstract": "In this work we present a novel approach for single depth map super-resolution. Modern consumer depth sensors, especially Time-of-Flight sensors, produce dense depth measurements, but are affected by noise and have a low lateral resolution. We propose a method that combines the benefits of recent advances in machine learning based single image super-resolution, i.e. deep convolutional networks, with a variational method to recover accurate high-resolution depth maps. In particular, we integrate a variational method that models the piecewise affine structures apparent in depth data via an anisotropic total generalized variation regularization term on top of a deep network. We call our method ATGV-Net and train it end-to-end by unrolling the optimization procedure of the variational method. To train deep networks, a large corpus of training data with accurate ground-truth is required. We demonstrate that it is feasible to train our method solely on synthetic data that we generate in large quantities for this task. Our evaluations show that we achieve state-of-the-art results on three different benchmarks, as well as on a challenging Time-of-Flight dataset, all without utilizing an additional intensity image as guidance."
+    }
+  },
+  "generator": "fallback_v4"
+}

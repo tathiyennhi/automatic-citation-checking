@@ -1,0 +1,20 @@
+{
+  "doc_id": "38668",
+  "text": "For verification purposes, the expressions of the specification language must be encoded in a program logic. To handle method calls in specifications, side-effect free methods can be encoded as mathematical functions and axioms that specify these functions [CITATION_1] . The axioms reflect the behavior of the methods as expressed by their interface specifications. Generating these axioms is difficult for the following reasons. First, weak purity must be modeled explicitly in the logic because object allocation and initialization may have an effect on whether an assertion holds or not. For instance the expression m()==m() is not trivially true if m is a weakly-pure method because m might create and return a new object. Second, the axiomatization of the functions has to be consistent to avoid unsound reasoning. In particular, unsatisfiable specifications of pure methods must not lead to inconsistencies.",
+  "correct_citation": {
+    "[CITATION_1]": "1814666"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To handle method calls in specifications, side-effect free methods can be encoded as mathematical functions and axioms that specify these functions  ."
+    }
+  ],
+  "bib_entries": {
+    "1814666": {
+      "title": "Reasoning with specifications containing method calls and model fields",
+      "abstract": "Allowing abstraction in program specifications increases modularity and comprehen- sibility and is as important in specifications as it is in the program itself; two such abstraction mechanisms are method invocations and model fields. However, method invocations do not map neatly into the first-order logics that are often used for assuring the correctness of specifications. One problem is translating specifications in a way that acknowledges the potential for exceptional behavior. Furthermore, translating model fields into verification conditions exposes the non-trivial interactions between frame conditions and the model representations. The ESC/Java2 tool has been able to achieve a practical translation of method invocations and model fields within the design constraints of its parent tool, ESC/Java. Furthermore, the techniques used are applicable to other specification constructs such as generalized quantifiers."
+    }
+  },
+  "generator": "fallback_v4"
+}

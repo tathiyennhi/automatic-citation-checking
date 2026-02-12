@@ -1,0 +1,18 @@
+{
+  "text": "We next turn our attention to global broadcast. We consider a straightforward global broadcast algorithm that uses our local broadcast strategy as a subroutine. We prove that this algorithm solves global broadcast with probability at least 1 − , in O(D + log(n/ )) · ∆ 1/ττ 2 / log ∆) rounds, where D is the diameter of G, andτ = min{τ, log ∆}. Notice, for τ ≥ log ∆ this bound reduces to O(D log ∆ + log ∆ log (1/ )), matching the near optimal result from the standard radio network model. As with local broadcast, we also prove the degradation of this performance as τ shrinks to be near optimal. (See Table 1 for a summary of these results and pointers to where they are proved [CITATION_1] The broadcast algorithm from [CITATION_2] requires O(D log n + log 2 n) rounds, whereas the corresponding lower bound is Ω(D log (n/D) + log 2 n). This gap was subsequently closed by a tighter analysis of a natural variation of the simple Decay strategy used in [CITATION_3] 2 To make it match exactly, set ∆ = n and = 1/n, as is often assumed in this prior work.",
+  "correct_citation": {
+    "[CITATION_1]": "6190847",
+    "[CITATION_2]": "10965994",
+    "[CITATION_3]": "10965994"
+  },
+  "bib_entries": {
+    "10965994": {
+      "title": "On the time-complexity of broadcast in multi-hop radio networks: An exponential gap between determinism and randomization",
+      "abstract": "The time-complexity of deterministic and randomized protocols for achieving broadcast (distributing a message from a source to all other nodes) in arbitrary multi-hop radio networks is investigated. In many such networks, communication takes place in synchronous time-slots. A processor receives a message at a certain time-slot if exactly one of its neighbors transmits at that time-slot. We assume no collision-detection mechanism; i.e., it is not always possible to distinguish the case where no neighbor transmits from the case where several neighbors transmit simultaneously. We present a randomized protocol that achieves broadcast in time which is optimal up to a logarithmic factor. In particular, with probability 1 --E, the protocol achieves broadcast within O((D + log n/s) ‘log n) time-slots, where n is the number of processors in the network and D its diameter. On the other hand, we prove a linear lower bound on the deterministic time-complexity of broadcast in this model. Namely, we show that any deterministic broadcast protocol requires 8(n) time-slots, even if the network has diameter 3, and n is known to all processors. These two results demonstrate an exponential gap in complexity between randomization and determinism."
+    },
+    "6190847": {
+      "title": "A Lower Bound for Radio Broadcast",
+      "abstract": "A radio network is a synchronous network of processors that communicate by transmitting messages to their neighbors, where a processor receives a message in a given step if and only if it is silent in this step and precisely one of its neighbors transmits. In this paper we prove the existence of a family of radius-2 networks on n vertices for which any broadcast schedule requires at least Omega((log n/ log log n)2) rounds of transmissions. This almost matches an upper bound of O(log2 n) rounds for networks of radius 2 proved earlier by Bar-Yehuda, Goldreich, and Itai."
+    }
+  }
+}

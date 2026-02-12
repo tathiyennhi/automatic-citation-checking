@@ -1,0 +1,38 @@
+{
+  "doc_id": "19419",
+  "text": "where z n is the vector of feature ownership for object n before adding these new features. The Gibbs sampler for binary feature images using the noisy-OR likelihood and the knowledge-less feature image prior is We refer the reader to [CITATION_1] for a general derivation of the Gibbs sampler for the IBP and [CITATION_2] for the derivation specific to noisy-OR likelihood function. After a number of iterations of resampling the elements of each matrix with the above Gibbs sampler, the distribution over resampled elements approximates the true posterior distribution. Following [CITATION_3] , we use simulated annealing to aid inference, which samples from P (Z|X,Y) 1/t , and use a logarithmic cooling schedule (t ϭ min(1, log(i ϩ 1)/T), where i is the iteration number and T depends on the dimensionality of X). This helps the Gibbs sampler get out of bad local minima early on by sampling more uniformly at first and results in P (Z|X,Y) 1/t still converging to P(Z|X,Y) as t ¡ 1.",
+  "correct_citation": {
+    "[CITATION_1]": "9768803",
+    "[CITATION_2]": "5954159",
+    "[CITATION_3]": "1233287"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The Gibbs sampler for binary feature images using the noisy-OR likelihood and the knowledge-less feature image prior is We refer the reader to"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "for a general derivation of the Gibbs sampler for the IBP and"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Following, we use simulated annealing to aid inference, which samples from P (Z|X,Y) 1/t, and use a logarithmic cooling schedule (t ϭ min(1, log(i ϩ 1)/T), where i is the iteration number and T depends on the dimensionality of X)."
+    }
+  ],
+  "bib_entries": {
+    "9768803": {
+      "title": "The Indian buffet process: An introduction and review",
+      "abstract": "The Indian buffet process is a stochastic process defining a probability distribution over equivalence classes of sparse binary matrices with a finite number of rows and an unbounded number of columns. This distribution is suitable for use as a prior in probabilistic models that represent objects using a potentially infinite array of features, or that involve bipartite graphs in which the size of at least one class of nodes is unknown. We give a detailed derivation of this distribution, and illustrate its use as a prior in an infinite latent feature model. We then review recent applications of the Indian buffet process in machine learning, discuss its extensions, and summarize its connections to other stochastic processes."
+    },
+    "5954159": {
+      "title": "A non-parametric Bayesian method for inferring hidden causes",
+      "abstract": "We present a non-parametric Bayesian approach to structure learning with hidden causes. Previous Bayesian treatments of this problem define a prior over the number of hidden causes and use algorithms such as reversible jump Markov chain Monte Carlo to move between solutions. In contrast, we assume that the number of hidden causes is unbounded, but only a finite number influence observable variables. This makes it possible to use a Gibbs sampler to approximate the distribution over causal structures. We evaluate the performance of both approaches in discovering hidden causes in simulated data, and use our non-parametric approach to discover hidden causes in a real medical dataset."
+    },
+    "1233287": {
+      "title": "A rational model of the effects of distributional information on feature learning",
+      "abstract": "Most psychological theories treat the features of objects as being fixed and immediately available to observers. However, novel objects have an infinite array of properties that could potentially be encoded as features, raising the question of how people learn which features to use in representing those objects. We focus on the effects of distributional information on feature learning, considering how a rational agent should use statistical information about the properties of objects in identifying features. Inspired by previous behavioral results on human feature learning, we present an ideal observer model based on nonparametric Bayesian statistics. This model balances the idea that objects have potentially infinitely many features with the goal of using a relatively small number of features to represent any finite set of objects. We then explore the predictions of this ideal observer model. In particular, we investigate whether people are sensitive to how parts co-vary over objects they observe. In a series of four behavioral experiments (three using visual stimuli, one using conceptual stimuli), we demonstrate that people infer different features to represent the same four objects depending on the distribution of parts over the objects they observe. Additionally in all four experiments, the features people infer have consequences for how they generalize properties to novel objects. We also show that simple models that use the raw sensory data as inputs and standard dimensionality reduction techniques (principal component analysis and independent component analysis) are insufficient to explain our results."
+    }
+  },
+  "generator": "fallback"
+}

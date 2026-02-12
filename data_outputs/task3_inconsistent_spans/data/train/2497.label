@@ -1,0 +1,22 @@
+{
+  "doc_id": "2497",
+  "text": "Adapting thresholds. The BART models allow us to estimate the mean and standard deviation of the patient's vital signs, given the characteristics available at the time of admission. Once the patient has had their vital signs monitored for 2 hours, we have additional data to inform the expected distribution of vital signs. This 2-hour period length was chosen to give enough time for the patient's condition to begin to stabilize after being admitted, while still ensuring that the personalized thresholds are available as quickly as possible. We can use the output from the BART models to define the prior on each parameter of interest and update this distribution using the data observed, resulting in an expected distribution that has been informed by the patient's own data. Using the 1st and 99th percentiles of this distribution as vital sign alarm thresholds ensures highly personalized thresholds. Our prior distribution is defined in equation [CITATION_1] . To ensure that the posterior distribution is of the same form, we model the mean using a normal distribution and model the variance using an inverse-gamma distribution.",
+  "correct_citation": {
+    "[CITATION_1]": "4145712"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our prior distribution is defined in equation  .",
+      "s_span": 907,
+      "e_span": 967
+    }
+  ],
+  "bib_entries": {
+    "4145712": {
+      "title": "Association between exposure to nonactionable physiologic monitor alarms and response time in a children's hospital",
+      "abstract": "BACKGROUND ::: Alarm fatigue is reported to be a major threat to patient safety, yet little empirical data support its existence in the hospital. ::: ::: ::: OBJECTIVE ::: To determine if nurses exposed to high rates of nonactionable physiologic monitor alarms respond more slowly to subsequent alarms that could represent life-threatening conditions. ::: ::: ::: DESIGN ::: Observational study using video. ::: ::: ::: SETTING ::: Freestanding children's hospital. ::: ::: ::: PATIENTS ::: Pediatric intensive care unit (PICU) patients requiring inotropic support and/or mechanical ventilation, and medical ward patients. ::: ::: ::: INTERVENTION ::: None. ::: ::: ::: MEASUREMENTS ::: Actionable alarms were defined as correctly identifying physiologic status and warranting clinical intervention or consultation. We measured response time to alarms occurring while there were no clinicians in the patient's room. We evaluated the association between the number of nonactionable alarms the patient had in the preceding 120 minutes (categorized as 0-29, 30-79, or 80+ alarms) and response time to subsequent alarms in the same patient using a log-rank test that accounts for within-nurse clustering. ::: ::: ::: RESULTS ::: We observed 36 nurses for 210 hours with 5070 alarms; 87.1% of PICU and 99.0% of ward clinical alarms were nonactionable. Kaplan-Meier plots showed incremental increases in response time as the number of nonactionable alarms in the preceding 120 minutes increased (log-rank test stratified by nurse P < 0.001 in PICU, P = 0.009 in the ward). ::: ::: ::: CONCLUSIONS ::: Most alarms were nonactionable, and response time increased as nonactionable alarm exposure increased. Alarm fatigue could explain these findings. Future studies should evaluate the simultaneous influence of workload and other factors that can impact response time."
+    }
+  },
+  "generator": "fallback_v4"
+}

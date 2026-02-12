@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In contrast, in the case of the VAE, the real-world images have a chosen distribution, making the encoder and decoder probabilistic.",
+    "The encoder learns the distribution parameters of the input images, and latent samples are drawn during training by the re-parameterization trick, making it possible to compute the gradients for µ and σ.",
+    "Due to the stochasticity of the probabilistic decoder's input, the resulting images are generated rather than reconstructed, as they may differ from the original images.x ∈ X Encoder f ϕ (DCNN) Latent space Z ′ Latent sample z ′ ∈ Z ′ Decoder g θ (DCNN) Reconstructed image x ′ ∈ X ′ Real-world image x ∈ X, x ∼ p θ (x) Probabilistic Encoder q ϕ (•|x) (DCNN) Latent distribution ζ µ σ Random sample ε ∼ N (0, 1) Latent sample z ∼ q ϕ (z|x) Probabilistic Decoder p θ (•|z) (DCNN) Generated image x ∈ X µ + σ • ε VAE AE Figure 1: Comparison of the classicalAn autoencoder consists of two components -an encoder f: X → Z ′ and a decoder g: Z ′ → X ′ with X the space of real-world images, Z ′ the latent space and X ′ the space of reconstructed images.",
+    "In machine learning, both functions are represented by neural networks, and in our work specifically we use deep convolutional neural networks (DCNN), which are parameterized by weights ϕ and θ.",
+    "Due to the way an AE is implemented and the definition of its loss function, it can be trained end-to-end, meaning the encoder and decoder are optimized together in a single step, automatically learning useful internal representations without separate training."
+  ]
+}

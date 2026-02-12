@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "First, the layer's weights are transformed into the frequency domain using DHT, and the top frequencies, based on energy, are selected for fine-tuning, while the remaining frequencies are randomly chosen and kept frozen.",
+    "The trainable spectral coefficients are initialized using Kaiming initialization, and during backpropagation, only the selected frequencies have their gradients updated.",
+    "The inverse DHT is then applied to these updated spectral coefficients, scaled by a factor α, to obtain the transformed weights in the spatial domain.",
+    "These updates are merged with the original pretrained weights, resulting in the final transformed tensor.",
+    "This approach ensures that only the most informative frequency components are fine-tuned, significantly reducing the number of trainable parameters while maintaining model performance."
+  ],
+  "correct_citations": []
+}

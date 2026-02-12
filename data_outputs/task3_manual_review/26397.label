@@ -1,0 +1,20 @@
+{
+  "doc_id": "26397",
+  "text": "An overall schematic for the tracker is shown in Fig. 3 . The tracker is first propagated by information matching at the top level, which generates a candidate image region for the middle level. Next, this candidate region is segmented [CITATION_1] , into equally sized super-pixels. We next propose a continuously-adaptive clustered tree method, which efficiently associates middle level target parts (learned from super-pixels in the previous frame), onto candidate super-pixels in the new frame, using the minimum number of features for each part. Lastly, to cope with target deformation and appearance changes, well matched parts are adaptively updated, while parts which cannot be satisfactorily matched are deemed to no longer be visible (e.g. due to occlusion) and are temporarily \"switched off\", but stored in memory, from the mid-level model. The severely drifting parts, defined as those drifting far from the main body of the target, will be replaced by new candidates. In this case, another decision tree is then used to choose the best super-pixels for creating new middle level parts to replace those drifting parts.",
+  "correct_citation": {
+    "[CITATION_1]": "1806278"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Next, this candidate region is segmented, into equally sized super-pixels."
+    }
+  ],
+  "bib_entries": {
+    "1806278": {
+      "title": "SLIC superpixels compared to state-of-the-art superpixel methods",
+      "abstract": "Computer vision applications have come to rely increasingly on superpixels in recent years, but it is not always clear what constitutes a good superpixel algorithm. In an effort to understand the benefits and drawbacks of existing methods, we empirically compare five state-of-the-art superpixel algorithms for their ability to adhere to image boundaries, speed, memory efficiency, and their impact on segmentation performance. We then introduce a new superpixel algorithm, simple linear iterative clustering (SLIC), which adapts a k-means clustering approach to efficiently generate superpixels. Despite its simplicity, SLIC adheres to boundaries as well as or better than previous methods. At the same time, it is faster and more memory efficient, improves segmentation performance, and is straightforward to extend to supervoxel generation."
+    }
+  },
+  "generator": "fallback"
+}

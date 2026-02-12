@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "We first define F as the set of all video frames.",
+    "In the initial stage, each frame f i in F is converted to grayscale g i ∈ (1, H, W) to mitigate the influence of color on detection.",
+    "Subsequently, we calculate the pixel intensity difference D i,i+1 between consecutive frames, yielding the average pixel intensity S i,i+1:D i,i+1 = |g i -g i+1 |, for i = 1 to F -1(4)S i,i+1 = H h=1 W w=1 D i,i+1 (h, w), for i = 1 to F -1(5)if S i,i+1 > θ, then this position is defined as the transition point.",
+    "However, we noted that this simple method is prone to occasional errors.",
+    "Consequently, in stage two, we further employ CLIP [57] to detect transitions:S clip i,i+1 = cos(CLIP(f i), CLIP(f i+1)), for i = 1 to F -1 (6) if S clip i,i+1< ϑ, then this position is defined as the transition point."
+  ],
+  "correct_citations": [
+    "Consequently, in stage two, we further employ CLIP [57] to detect transitions:S clip i,i+1 = cos(CLIP(f i), CLIP(f i+1)), for i = 1 to F -1 (6) if S clip i,i+1< ϑ, then this position is defined as the transition point."
+  ]
+}

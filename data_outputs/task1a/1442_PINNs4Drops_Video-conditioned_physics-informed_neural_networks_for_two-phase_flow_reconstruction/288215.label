@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Additionally, the temporal coordinate t and the spatial coordinate z are given as inputs to the MLP.",
+    "On this basis, the MLP predicts the phase distribution ϕ, the three components of the dimensionless velocity vector u * = (u *, v *, w *) T, as well as the dimensionless pressure p * at x, y, z, t. The pointwise residuals of the single-field two-phase Navier-Stokes, continuity, and interface evolution equations are computed using automatic differentiation applied to the predicted output with respect to the spatio-temporal input coordinates.",
+    "These residuals form the basis for physics-informed loss terms, i.e., the continuity equation (L Conti), the advection equation governing the interface (L Adv) and the Navier-Stokes momentum equations (L NSE, j), with j = (x, y, z) (see equations S1 -S6 in the Supplementary Materials).",
+    "Each loss term is defined as the mean squared error (MSE) of the respective residuals.",
+    "In addition to these physics-informed losses, ground truth labels for the phase distribution, velocity, and pressure fields are extracted from numerical simulations to define data loss terms (L Data) for the predicted quantities ϕ, u *, v *, w *, p *, computed as the MSE between the predictions and ground truth."
+  ],
+  "correct_citations": []
+}

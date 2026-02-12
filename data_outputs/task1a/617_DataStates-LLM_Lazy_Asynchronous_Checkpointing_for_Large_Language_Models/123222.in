@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "As expected, the checkpoint sizes quickly grow to large sizes and exhibit similar checkpoint size per GPU for different model sizes, hinting at the fact that DeepSpeed achieves good load-balancing among the shards as highlighted by the minor y-axis.",
+    "Immutability of Model Parameters and Optimizer States During Each IterationWe also study the behavior of each training iteration at fine granularity by breaking down the runtime into forward pass, backward pass, and update duration.",
+    "The results are shown in Figure 4.",
+    "We observe that regardless of the model size, the forward and backward passes take up the majority of the training iteration duration.",
+    "In addition to the increasing computational complexity involved in training larger models, the long iteration duration can be attributed to operations, such as, send/recv of activations and gradients (pipeline and tensor parallelism) and gradient all-reduce (data parallelism), are expensive and become a bottleneck."
+  ]
+}

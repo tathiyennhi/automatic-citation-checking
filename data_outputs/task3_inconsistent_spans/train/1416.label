@@ -1,0 +1,51 @@
+{
+  "doc_id": "1416",
+  "text": "Previous research has shown that sparse matrix-vector product computations can be accelerated by exploiting local patterns of density to enable register blocking [CITATION_1] [CITATION_2] [CITATION_3] . Register blocking strategies for sparse matrix-vector product computations reduce the need to load indirection vectors and provide temporal register reuse of both non-zero matrix elements and the corresponding vector elements by which they are multiplied. Memory hierarchy blocking for cache and TLB reuse has also been shown to be profitable [CITATION_4] .",
+  "correct_citation": {
+    "[CITATION_1]": "1794629",
+    "[CITATION_2]": "14098147",
+    "[CITATION_3]": "9580801",
+    "[CITATION_4]": "14098147"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Previous research has shown that sparse matrix-vector product computations can be accelerated by exploiting local patterns of density to enable register blocking    .",
+      "s_span": 0,
+      "e_span": 202
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Previous research has shown that sparse matrix-vector product computations can be accelerated by exploiting local patterns of density to enable register blocking    .",
+      "s_span": 0,
+      "e_span": 202
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Previous research has shown that sparse matrix-vector product computations can be accelerated by exploiting local patterns of density to enable register blocking    .",
+      "s_span": 0,
+      "e_span": 202
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Memory hierarchy blocking for cache and TLB reuse has also been shown to be profitable  .",
+      "s_span": 459,
+      "e_span": 560
+    }
+  ],
+  "bib_entries": {
+    "9580801": {
+      "title": "Optimizing sparse matrix computations for register reuse in SPARSITY",
+      "abstract": "Sparse matrix-vector multiplication is an important computational kernel that tends to perform poorly on modern processors, largely because of its high ratio of memory operations to arithmetic operations. Optimizing this algorithm is difficult, both because of the complexity of memory systems and because the performance is highly dependent on the nonzero structure of the matrix. The Sparsity system is designed to address these problem by allowing users to automatically build sparse matrix kernels that are tuned to their matrices and machines. The most difficult aspect of optimizing these algorithms is selecting among a large set of possible transformations and choosing parameters, such as block size. In this paper we discuss the optimization of two operations: a sparse matrix times a dense vector and a sparse matrix times a set of dense vectors. Our experience indicates that for matrices arising in scientific simulations, register level optimizations are critical, and we focus here on the optimizations and parameter selection techniques used in Sparsity for register-level optimizations. We demonstrate speedups of up to 2× for the single vector case and 5× for the multiple vector case."
+    },
+    "14098147": {
+      "title": "Optimizing the performance of sparse matrixvector multiplication",
+      "abstract": "Sparse matrix operations dominate the performance of many scientific and engineering applications. In particular, iterative methods are commonly used in algorithms for linear systems, least squares problems, and eigenvalue problems, which involve a sparse matrix-vector product in the inner loop. The performance of sparse matrix algorithms is often disappointing on modern machines because the algorithms have poor temporal and spatial locality, and are therefore limited by the speed of main memory. Unfortunately, the performance gap between memory and processing is steadily increasing, as processor performance increases by roughly 60% every year, while memory latency drops by only 7%. Performance is also highly dependent on the nonzero structure of the sparse matrix, the organization of the data and its computation, and the exact parameters of the hardware memory system. This thesis presents a toolkit called Sparsity for the automatic optimization of sparse matrix-vector multiplication. We start with an extensive study of possible memory hierarchy optimizations, in particular, reorganization of the matrix and computation around blocks of the matrix. The research demonstrates that certain kinds of blocking can be effective for both registers and caches, although the nature of that tiling is quite different due to the differences in size between typical register sets and caches. Both types of blocking are shown to be highly effective in some matrices, but ineffective in others, and the choice of block size is also shown to be highly dependent on the matrix and the machine. Thus, to automatically determine when and how the optimizations should be applied, we employ a combination of search over a set of possible optimized versions, along with newly devised performance models to eliminate or constrain the search to make it practical. We also consider a common variation of basic sparse matrix-vector multiplication in which a sparse matrix is multiplied by a set of dense vectors. This operation arises, for example, when there are multiple right-hand sides in a linear solver, or when a higher level algorithm has been blocked. The introduction of multiple vectors offers enormous optimization opportunities, effectively changing a matrix-vector operation into a matrix-matrix operation. It is well known that for dense matrices, the latter algorithm has much higher data reuse than the former, and so can achieve much better performance; the same is true in the sparse case. The Sparsity system is designed as a web service, so scientists and engineers can easily obtain highly optimized sparse matrix routines without needing to understand the specifics of the optimization techniques or how they are selected. This thesis also reports on an extensive performance study of over 40 matrices on a variety of machines. The matrices are taken from various scientific and engineering problems, as well as from linear programming and data mining. The machines include the Alpha 21164, UltraSPARC I, MIPS R10000 and PowerPC 604e. These benchmark results are useful for understanding the performance differences across application domains, the effectiveness of the optimizations, and the costs associated with evaluating our performance models in applying the optimizations. The conclusion is that Sparsity is highly effective, producing routines that are up to 3.1 times faster for a single vector and 6.2 times faster for multiple vectors."
+    },
+    "1794629": {
+      "title": "Improving the memory-system performance of sparse-matrix vector multiplication",
+      "abstract": "Sparse-matrix vector multiplication is an important kernel that often runs inefficiently on superscalar RISC processors. This paper describes techniques that increase instruction-level parallelism and improve performance. The techniques include reordering to reduce cache misses (originally due to Das et al.), blocking to reduce load instructions, and prefetching to prevent multiple load-store units from stalling simultaneously. The techniques improve performance from about 40 MFLOPS (on a well-ordered matrix) to more than 100 MFLOPS on a 266-MFLOPS machine. The techniques are applicable to other superscalar RISC processors as well, and have improved performance on a Sun UItraSPARC I workstation, for example."
+    }
+  },
+  "generator": "fallback_v4"
+}

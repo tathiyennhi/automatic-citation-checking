@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "While this approach limits its applicability to acados in terms of solvers, L4acados can interface a larger variety of external models (see Section III-B4).",
+    "Additionally, the specialization to acados allows for enhancing the solverspecific computational efficiency of sensitivity evaluations in L4acados, as shown in the following comparison between both approaches.The benchmark is performed for a double-integrator system with added neural-network (NN) dynamics 1,x 1 (k + 1) x 2 (k + 1) = x 1 (t) + ∆T x 2 (t) x 2 (t) + ∆T u(t) + 1 1 g(x(t)) (12)where all weights of the NN have been set to zero, i.e., g(x(t)) = NN(x(t)) ≡ 0.",
+    "As similarly done in [22], this allows one to scale the number of hidden layers, the \"depth\" d, and number of neurons per hidden layer, the \"width\" w, of the multi-layer perceptron without affecting the MPC solution.",
+    "To cover different model architectures, a \"small\", a \"deep\", and a \"wide\" NN architecture is tested, with (d, w) ∈ {(1, 256), (16,256), (1, 1024)} and a total of {66817, 1053697, 1053697} internal model parameters, respectively.",
+    "To model the discrete-time dynamics (12) usingL4CasADi, the nominal integrator dynamics is augmented with the neural network in continuous-time and then integrated inside acados using Euler with time step ∆T = 0.05; using L4acados, the continuous-time nominal dynamics is integrated using the same integrator and then augmented using the neural network dynamics."
+  ],
+  "correct_citations": [
+    "As similarly done in [22], this allows one to scale the number of hidden layers, the \"depth\" d, and number of neurons per hidden layer, the \"width\" w, of the multi-layer perceptron without affecting the MPC solution."
+  ]
+}

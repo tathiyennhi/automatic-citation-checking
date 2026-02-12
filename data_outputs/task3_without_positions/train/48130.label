@@ -1,0 +1,38 @@
+{
+  "doc_id": "48130",
+  "text": "Using this framework, customized workflows can be created to enable the development of complex and streamlined algorithms. In these customized workflows, the output of one algorithm can be used as the input to another algorithm. Here we present an example of a customized workflow for Ictal-Interictal SPECT Analysis by SPM Half Normalized (ISASHN) algorithm [CITATION_1] ) used to assist image-guided surgery research. First, two SPECT images are linearly registered to each other and then nonlinearly registered into MNI (Montreal Neurological Institute) space. The registered images are then masked, smoothed, and intensity normalized. A t-test is performed comparing these images to a healthy normal population. The resul- Fig. 9 Customized workflow using the unified BioImage Suite framework. Here the algorithm modules are depicted in blue (with the actual script name below it). In this workflow, the interictal and ictal SPECT are first linearly registered and output is then non-linearly registered with the MNI Template SPECT. The result of the registration is then processed using various algorithms (mask, smooth and intensity normalized). Then a ttest is performed with the mean and standard deviation from a control population. The output tmap is then thresholded and clustered to get the final output image tant image, containing a t-value at each image location, is thresholded and clustered to produce the final output. This workflow can be implemented as a single algorithm object with its own GUI and testing protocol that sequentially calls other algorithm objects as presented in Fig. 9 . The algorithm object can be instantiated from our BioImage Suite VVLink gadget to connect to the BrainLAB Vector Vision Cranial system for integration into neurosurgical research [CITATION_2] . With the interoperability features that this new framework provides (Fig. 9) , we can create complex workflows, such as the one presented here, using a graphical tool such as the LONI Pipeline [CITATION_3] .",
+  "correct_citation": {
+    "[CITATION_1]": "7210685",
+    "[CITATION_2]": "8241755",
+    "[CITATION_3]": "25116375"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Here we present an example of a customized workflow for Ictal-Interictal SPECT Analysis by SPM Half Normalized (ISASHN) algorithm  ) used to assist image-guided surgery research."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The algorithm object can be instantiated from our BioImage Suite VVLink gadget to connect to the BrainLAB Vector Vision Cranial system for integration into neurosurgical research  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "With the interoperability features that this new framework provides (Fig. 9) , we can create complex workflows, such as the one presented here, using a graphical tool such as the LONI Pipeline  ."
+    }
+  ],
+  "bib_entries": {
+    "8241755": {
+      "title": "From medical image computing to computer-aided intervention: Development of a research interface for image-guided navigation",
+      "abstract": "Background ::: This paper describes the development and application of a research interface to integrate research image analysis software with a commercial image guided surgery navigation system. This interface enables bi-directional transfer of data such as images, visualizations and tool positions in real time."
+    },
+    "25116375": {
+      "title": "The LONI pipeline processing environment",
+      "abstract": "Abstract The analysis of raw data in neuroimaging has become a computationally entrenched process with many intricate steps run on increasingly larger datasets. Many software packages exist that provide either complete analyses or specific steps in an analysis. These packages often possess diverse input and output requirements, utilize different file formats, run in particular environments, and have limited abilities with certain types of data. The combination of these packages to achieve more sensitive and accurate results has become a common tactic in brain mapping studies but requires much work to ensure valid interoperation between programs. The handling, organization, and storage of intermediate data can prove difficult as well. The LONI Pipeline Processing Environment is a simple, efficient, and distributed computing solution to these problems enabling software inclusion from different laboratories in different environments. It is used here to derive a T1-weighted MRI atlas of the human brain from 452 normal young adult subjects with fully automated processing. The LONI Pipeline Processing Environment’s parallel processing efficiency using an integrated client/server dataflow model was 80.9% when running the atlas generation pipeline from a PC client (Acer TravelMate 340T) on 48 dedicated server processors (Silicon Graphics Inc. Origin 3000). The environment was 97.5% efficient when the same analysis was run on eight dedicated processors."
+    },
+    "7210685": {
+      "title": "An improved unbiased method for diffspect quantification in epilepsy",
+      "abstract": "Determining the region of seizure onset is of critical importance for treating medically intractable epilepsy. Comparisons between an ictal and interictal Single Photon Emission Computed Tomography (SPECT) images have been shown to be successful in localizing focal epilepsy. The Ictal-Interictal Subtraction Analysis by Statistical Parametric Mapping (ISAS) algorithm remains one the more successful algorithms for comparing these images. However ISAS is limited by its statistical design. This design introduces a scan order bias in the estimation of the normal variance of sequential SPECT images. We have corrected this bias by estimating the normal variance with a half-normal distribution. In this paper we present an updated algorithm (ISAS HN) based on the original ISAS algorithm with a corrected estimate of the normal variance and an open-source utility for ISAS HN."
+    }
+  },
+  "generator": "fallback_v4"
+}

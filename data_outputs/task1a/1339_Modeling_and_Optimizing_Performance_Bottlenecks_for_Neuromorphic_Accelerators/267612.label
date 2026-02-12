@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "As sparsity increases, and the synops are sufficiently scaled down, the system bottleneck may shift to activation computes or message traffic, which both scale linearly with N. C. Parallel Utilization of Multiple NeurocoresNext, we introduce parallelization to the model, addressing the synops bottleneck by sharing the load among multiple neurocores.",
+    "Here, we examine the case where a network layer is 'voluntarily' partitioned to multiple neurocores.",
+    "This type of utilization contrasts with the 'involuntary' case, where greater utilization is forced as a layer's weight parameters scale beyond the memory limits of a neurocore, addressed next.We retain neuron dimensions N and define the number of neurocores assigned to each layer C i-1, C i, and C i+1 of layers l i-1, l i, and l i+1, respectively.For the mN messages from l i-1, by default, all must be broadcast such that each of the neurocores in l i will receive them to update their mapped neurons.",
+    "Using an idealized hardware assumption that a message does not need to be sent to a neurocore if all of the corresponding synapses to the neurons are pruned, then the probability that an activation misses the N/C i neurons in a neurocore of l i is (1 -w)N C i.Again, in practice, this probability is very low, and the number of activations at each neurocore remains ∼ O(mN).",
+    "Since (approximately) every message is duplicated to each neurocore in l i+1, the partitioned operation costs are:(a) Synops per neurocore:O(mwN 2 /C i) (b) Act."
+  ],
+  "correct_citations": []
+}

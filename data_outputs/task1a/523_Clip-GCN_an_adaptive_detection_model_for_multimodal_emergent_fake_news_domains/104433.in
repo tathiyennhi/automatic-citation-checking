@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "First, the raw text information is transformed into a 512-dimensional vector after passing through the text coder.",
+    "The original image becomes a vector of 3 × 224 × 224 after embedding into the visual coder, and together with the text-embedded features, it enters into the cross-modal feature extraction module, and after the feature extraction of the Clip pre-training model to get the vectors whose dimensions are all 512 dimensions.",
+    "The CMA module effectively combines the image text features to obtain 1024-dimensional new semantic features.",
+    "In the feature extractor, the output of the feature extractor is set as a 512-dimensional vector to better extract the inter-domain invariant features, and the ReLU layer and the Dropout layer with a forgetting rate of 0.3 are added.",
+    "The domain discriminator is composed of two fully connected layers, and its output is a K-dimensional (domain type) feature vector."
+  ]
+}

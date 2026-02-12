@@ -1,0 +1,20 @@
+{
+  "doc_id": "51468",
+  "text": "As mentioned earlier, a shared DWR cell generally reuses the functional storage element of a registered input or output die terminal. One of the items under discussion in the IEEE Std P1838 Working Group is whether 'inland' wrapping should be allowed in this standard [CITATION_1] . This is a methodology used often on 2D wrapping of embedded cores to reduce test logic and to get true functional timing during test from the external logic to the internal logic through a minimal amount of combinational ('shore') logic. An example of an inland shared wrapper cell is shown in Figure 8 (a). The AND gate connected to the unregistered input terminal would be tested during EXTEST, rather than INTEST. Commercial ATPG tools know how to support inland wrapping automatically. The benefit of this methodology is that a dedicated wrapper cell (as shown in Figure 8(b) ) is not required. This reduces area and prevents test logic from being added into what can be a timing-critical functional path. In addition, during EXTEST mode, it allows the true flop-to-flop functional path to be tested enabling a more accurate at-speed test. Another place where a fully-provisioned DWR cell is required is the control signal of a three-state gate. It is also required that during shift, the state of the control signal of a three-state gate be persistent and a safe state should be maintained on the output of the three-state gate.",
+  "correct_citation": {
+    "[CITATION_1]": "28369808"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "One of the items under discussion in the IEEE Std P1838 Working Group is whether 'inland' wrapping should be allowed in this standard  ."
+    }
+  ],
+  "bib_entries": {
+    "28369808": {
+      "title": "At-Speed Testing of Inter-Die Connections of 3D-SICs in the Presence of Shore Logic",
+      "abstract": "Inter-die connections in 2.5D-and 3D-stacked ICs require at-speed testing as their dynamic performance is crucial to the performance of the stack as a whole. In order to test at mission-mode speed and benefit from the already existing clock distribution network, our at-speed test approach for inter-die connections targets the entire register-to-register path that includes the interconnect. This forces the launching and capturing wrapper cells to be shared with functional flip-flops. In some designs, this unavoidably leads to some 'shore logic': a, typically small, amount of combinational logic outside the die's wrapper boundary register. This paper describes how we have adapted a previously developed 3D-DfT architecture and corresponding EDA tool flows to support at-speed interconnect testing, also in the presence of such 'shore logic'. The adaptations affect the DfT insertion of wrapper cells, the boundary model extraction, and the interconnect test pattern generation."
+    }
+  },
+  "generator": "fallback_v4"
+}

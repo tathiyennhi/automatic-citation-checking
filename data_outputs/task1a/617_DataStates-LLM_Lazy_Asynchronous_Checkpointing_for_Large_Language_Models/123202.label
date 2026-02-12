@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Unicron [12], a recent effort from Alibaba, highlights a 43.4% failure rate of resource-intensive LLM training, out of which 37% were hardware failures, while the remainder 73% could be fixed by system restarts.",
+    "In both cases, a checkpoint is needed to effectively resume the LLM training.Even in the absence of failures, the training can take an undesirable trajectory that leads to dead-ends, e.g., slow or no convergence, undesirable learning patterns that need to be \"unlearned\", instability, etc.",
+    "For example, loss spikes are one type of an undesirable trajectory.",
+    "They were reported by PaLM [6] and GLM-130B [46] and were observed during the training of popular models such as BLOOM-175B and OPT-175B.",
+    "Since they are hard to predict and defend against, the only viable strategy is to roll back to a past checkpoint and try an alternative strategy, such as skipping over problematic mini-batches or reorganizing the model, e.g., by switching some parameters to higher precision or different floating point representation.Additionally, checkpointing of intermediate states during the training is a fundamental pattern used in several other scenarios: understanding the evolution of the learning patterns captured by the model, continuous testing of alternatives without disturbing production deployments, switching between divergent model states based on Reinforcement Learning from Human Feedback (RLHF).Challenges and Limitations of State of the Art."
+  ],
+  "correct_citations": [
+    "Unicron [12], a recent effort from Alibaba, highlights a 43.4% failure rate of resource-intensive LLM training, out of which 37% were hardware failures, while the remainder 73% could be fixed by system restarts.",
+    "They were reported by PaLM [6] and GLM-130B [46] and were observed during the training of popular models such as BLOOM-175B and OPT-175B."
+  ]
+}

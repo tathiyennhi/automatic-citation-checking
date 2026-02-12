@@ -1,0 +1,57 @@
+{
+  "text": "To deploy S-BGP, we must consider the memory overheads for all necessary data structures. One of them is the storage for certificates. In simulation, we assumed every path authentication scheme uses the same amount of memory for certificates as the common base for comparison. Now, we pay closer attention to this amount. As discussed in [CITATION_1] , the scale of the Internet in 2003 required 75-85MB memory on a BGP speaker to store all necessary public key certificates. Taking this amount into account, we conclude that the overall savings by GAS-V against all memory overheads by S-BGP is 60%.",
+  "citation_candidates": [
+    "9190611",
+    "20935583",
+    "6325877",
+    "175815",
+    "206578431",
+    "912489",
+    "6573315",
+    "174801970",
+    "1371747",
+    "18110508"
+  ],
+  "bib_entries": {
+    "20935583": {
+      "title": "Efficient Security Mechanisms for the Border Gateway Routing Protocol",
+      "abstract": "We analyze the security of the BGP routing protocol and identify a number of vulnerabilities in its design and the corresponding threats. We then present modifications to the protocol that minimize or eliminate the most significant threats. The innovation we introduce is the protection of the second-to-last hop information contained in the AS_PATH attributes by digital signatures, and the use of this predecessor information to verify the path of the selected route. With these techniques, we are able to secure complete path information in near constant space, avoiding the recursive protection mechanisms proposed for BGP in the past."
+    },
+    "1371747": {
+      "title": "An Analysis of BGP Convergence Properties",
+      "abstract": "The Border Gateway Protocol (BGP) is the de facto inter-domain routing protocol used to exchange reachability information between Autonomous Systems in the global Internet. BGP is a path-vector protocol that allows each Autonomous System to override distance-based metrics with policy-based metrics when choosing best routes. Varadhan et al. [18] have shown that it is possible for a group of Autonomous Systems to independently define BGP policies that together lead to BGP protocol oscillations that never converge on a stable routing. One approach to addressing this problem is based on static analysis of routing policies to determine if they are safe. We explore the worst-case complexity for convergence-oriented static analysis of BGP routing policies. We present an abstract model of BGP and use it to define several global sanity conditions on routing policies that are related to BGP convergence/divergence. For each condition we show that the complexity of statically checking it is either NP-complete or NP-hard."
+    },
+    "174801970": {
+      "title": "Delayed Internet Routing Convergence",
+      "abstract": "This paper examines the latency in Internet path failure, failover and repair due to the convergence properties of inter-domain routing. Unlike switches in the public telephony network which exhibit failover on the order of milliseconds, our experimental measurements show that inter-domain routers in the packet switched Internet may take tens of minutes to reach a consistent view of the network topology after a fault. These delays stem from temporary routing table oscillations formed during the operation of the BGP path selection process on Internet backbone routers. During these periods of delayed convergence, we show that end-to-end Internet paths will experience intermittent loss of connectivity, as well as increased packet loss and latency. We present a two-year study of Internet routing convergence through the experimental instrumentation of key portions of the Internet infrastructure, including both passive data collection and fault-injection machines at major Internet exchange points. Based on data from the injection and measurement of several hundred thousand inter-domain routing faults, we describe several unexpected properties of convergence and show that the measured upper bound on Internet inter-domain routing convergence delay is an order of magnitude slower than previously thought. Our analysis also shows that the upper theoretic computational bound on the number of router states and control messages exchanged during the process of BGP convergence is factorial with respect to the number of autonomous systems in the Internet. Finally, we demonstrate that much of the observed convergence delay stems from specific router vendor implementation decisions and ambiguity in the BGP specification."
+    },
+    "912489": {
+      "title": "Route Flap Damping Exacerbates Internet Routing Convergence",
+      "abstract": "Route flap damping is considered to be a widely deployed mechanism in core routers that limits the widespread propagation of unstable BGP routing information. Originally designed to suppress route changes caused by link flaps, flap damping attempts to distinguish persistently unstable routes from routes that occasionally fail. It is considered to be a major contributor to the stability of the Internet routing system.We show in this paper that, surprisingly, route flap damping can significantly exacerbate the convergence times of relatively stable routes. For example, a route to a prefix that is withdrawn exactly once and re-announced can be suppressed for up to an hour (using the current RIPE recommended damping parameters). We show that such abnormal behavior fundamentally arises from the interaction of flap damping with BGP path exploration during route withdrawal. We study this interaction using a simple analytical model and understand the impact of various BGP parameters on its occurrence using simulations. Finally, we outline a preliminary proposal to modify route flap damping scheme that removes the undesired interaction in all the topologies we studied. ."
+    },
+    "9190611": {
+      "title": "Secure Border Gateway Protocol (S-BGP) -Real World Performance and Deployment Issues",
+      "abstract": "The Border Gateway Protocol (BGP), which is used to distribute routing information between autonomous systems, is an important component of the Internet\u2019s routing infrastructure. Secure BGP (S-BGP) addresses critical BGP vulnerabilities by providing a scalable means of verifying the authenticity and authorization of BGP control traffic. To facilitate widespread adoption, S-BGP must avoid introducing undue overhead (processing, bandwidth, storage) and must be incrementally deployable, i.e., interoperable with BGP. To provide a proof of concept demonstration, we developed a prototype implementation of S-BGP and deployed it in DARPA\u2019s CAIRN testbed. Real Internet BGP traffic was fed to the testbed routers via replay of a recorded BGP peering session with an ISP\u2019s BGP router. This document describes the results of these experiments \u2010 examining interoperability, the efficacy of the S-BGP countermeasures in securing BGP control traffic, and their impact on BGP performance, and thus evaluating the feasibility of deployment in the Internet."
+    },
+    "206578431": {
+      "title": "Protocols for Public Key Cryptosystems",
+      "abstract": "New Cryptographic protocols which take full advantage of the unique properties of public key cryptosystems are now evolving. Several protocols for public key distribution and for digital signatures are briefly compared with each other and with the conventional alternative."
+    },
+    "175815": {
+      "title": "Sequential Aggregate Signatures from Trapdoor Permutations",
+      "abstract": "An aggregate signature scheme (recently proposed by Boneh, Gentry, Lynn, and Shacham) is a method for combining n signatures from n different signers on n different messages into one signature of unit length. We propose sequential aggregate signatures, in which the set of signers is ordered. The aggregate signature is computed by having each signer, in turn, add his signature to it. We show how to realize this in such a way that the size of the aggregate signature is independent of n. This makes sequential aggregate signatures a natural primitive for certificate chains, whose length can be reduced by aggregating all signatures in a chain. We give a construction in the random oracle model based on families of certified trapdoor permutations, and show how to instantiate our scheme based on RSA."
+    },
+    "6573315": {
+      "title": "Hardware Acceleration of the Tate Pairing in Characteristic Three",
+      "abstract": "Although identity based cryptography offers many functional advantages over conventional public key alternatives, the computational costs are significantly greater. The core computational task is evaluation of a bilinear map, or pairing, over elliptic curves. In this paper we prototype and evaluate polynomial and normal basis field arithmetic on an FPGA device and use it to construct a hardware accelerator for pairings over fields of characteristic three. The performance of our prototype improves roughly ten-fold on previous known hardware implementations and orders of magnitude on the fastest known software implementation. As a result we reason that even on constrained devices one can usefully evaluate the pairing, a fact that gives credence to the idea that identity based cryptography is an ideal partner for identity aware smart-cards."
+    },
+    "6325877": {
+      "title": "Efficient hardware for the Tate pairing calculation in characteristic three",
+      "abstract": "In this paper the benefits of implementation of the Tate pairing computation on dedicated hardware are discussed. The main observation lies in the fact that arithmetic architectures in the extension field GF(36m) are good candidates for parallelization, leading to a similar calculation time in hardware as for operations over the base field GF(3m). Using this approach, an architecture for the hardware implementation of the Tate pairing calculation based on a modified Duursma-Lee algorithm is proposed."
+    },
+    "18110508": {
+      "title": "Securing the Border Gateway Protocol: A Status Update",
+      "abstract": "The Border Gateway Protocol (BGP) is a critical component of the Internet routing infrastructure, used to distribute routing information between autonomous systems (ASes). It is highly vulnerable to a variety of malicious attacks and benign operator errors. Under DARPA sponsorship, BBN has developed a secure version of BGP (S-BGP) that addresses most of BGP\u2019s architectural security problems. This paper reviews BGP vulnerabilities and their implications, derives security requirements based on the semantics of the protocol, and describes the S-BGP architecture. Refinements to the original S-BGP design, based on interactions with ISP operations personnel and further experience with a prototype implementation are presented, including a heuristic for significantly improving performance. The paper concludes with a comparison of S-BGP to other proposed approaches."
+    }
+  }
+}

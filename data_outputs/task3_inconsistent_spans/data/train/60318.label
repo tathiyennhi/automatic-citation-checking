@@ -1,0 +1,44 @@
+{
+  "doc_id": "60318",
+  "text": "In 3DSRCN [CITATION_1] , the LR viewpoints in the 3D video are up-sampled. The resultant interpolated LR and a projected virtual view are fed to the first layer of a three-layered CNN, as shown in Fig. 19 . In the experimental set up, Layer-1 involves 2 × 64 filters (9x9), layer-2 involves 64x32 filters (1x1) and layer-3 contains and 32x1 filters (5X5), all with the convolution stride of 1. Layer-1 combines the two inputs to get a set of feature maps, layer-2 establishes the mapping from low to high resolution features, while layer-3 uses the ensued features to get the super-resolved image. The simulation results, on samples from Middlebury stereo 2014 [CITATION_2] , report a PSNR gain of about 1dB par rapport the SRCNN and another virtual-view assisted method reported in [CITATION_3] . The authors also claim empirical time efficiency.",
+  "correct_citation": {
+    "[CITATION_1]": "31429372",
+    "[CITATION_2]": "14915763",
+    "[CITATION_3]": "7443366"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In 3DSRCN  , the LR viewpoints in the 3D video are up-sampled.",
+      "s_span": 0,
+      "e_span": 74
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The simulation results, on samples from Middlebury stereo 2014  , report a PSNR gain of about 1dB par rapport the SRCNN and another virtual-view assisted method reported in  .",
+      "s_span": 598,
+      "e_span": 797
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The simulation results, on samples from Middlebury stereo 2014  , report a PSNR gain of about 1dB par rapport the SRCNN and another virtual-view assisted method reported in  .",
+      "s_span": 598,
+      "e_span": 797
+    }
+  ],
+  "bib_entries": {
+    "14915763": {
+      "title": "High-resolution stereo datasets with subpixel-accurate ground truth",
+      "abstract": "We present a structured lighting system for creating high-resolution stereo datasets of static indoor scenes with highly accurate ground-truth disparities. The system includes novel techniques for efficient 2D subpixel correspondence search and self-calibration of cameras and projectors with modeling of lens distortion. Combining disparity estimates from multiple projector positions we are able to achieve a disparity accuracy of 0.2 pixels on most observed surfaces, including in half-occluded regions. We contribute 33 new 6-megapixel datasets obtained with our system and demonstrate that they present new challenges for the next generation of stereo algorithms."
+    },
+    "7443366": {
+      "title": "Virtual-view-assisted video super-resolution and enhancement",
+      "abstract": "A 3-D multiview video gives users an experience that is different from that provided by a traditional video; however, it puts a huge burden on limited bandwidth resources. Mixed-resolution video in a multiview system can alleviate this problem by using different video resolutions for different views. However, to reduce visual uncomfortableness and to make this video format more suitable for free-viewpoint television, the low-resolution (LR) views need to be super-resolved to the target full resolution. In this paper, we propose a virtual-view-assisted super-resolution algorithm, where the inter-view similarity is used to determine whether the missing pixels in the super-resolved frame need to be filled by virtual-view pixels or by spatial interpolated pixels. The decision mechanism is steered by the texture characteristics of the neighbors of each missing pixel. Furthermore, the inter-view similarity is used, on the one hand, to enhance the quality of the virtual-view-copied pixels by compensating the luminance difference between different views and, on the other hand, to enhance the original LR pixels in the super-resolved frame by reducing their compression distortion. Thus, the proposed method can recover the details in regions with edges while maintaining good quality at smooth areas by properly exploiting the high-quality virtual-view pixels and the directional correlation of pixels. The experimental results demonstrate the effectiveness of the proposed approach with a peak signal-to-noise ratio gain of up to 3.85 dB."
+    },
+    "31429372": {
+      "title": "3d video super-resolution using fully convolutional neural networks",
+      "abstract": "Large amount of redundant information and huge data size have been a serious problem for multiview video systems. To address this problem, one popular solution is mixed-resolution, where only few viewpoints are kept with full resolution and other views are kept with lower resolution. In this paper, we propose a super-resolution (SR) method, where the low-resolution viewpoints in the 3D video are up-sampled using a fully convolutional neural network. By simply projecting the neighboring high resolution image to the position of the low resolution image, we learn the relationship of high and low resolution patches, and reconstruct the low resolution images into high resolution ones using the projected image information. We propose to use a fully convolutional neural network to establish a mapping between those images. The network is barely trained on 17 pairs of multiview images, and tested on other multiview images and video sequences. It is observed that our proposed method outperforms existing methods objectively and subjectively, with more than 1 dB average gain achieved. Meanwhile, our network training procedure is efficient, with less than 3 hours using one Titan X GPU."
+    }
+  },
+  "generator": "fallback_v4"
+}

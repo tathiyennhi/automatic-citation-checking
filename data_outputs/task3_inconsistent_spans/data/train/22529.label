@@ -1,0 +1,22 @@
+{
+  "doc_id": "22529",
+  "text": "The DFE implementation of the InfOli application depicted in Figure 4 is based on the design presented in [CITATION_1] . It incorporates 3 internal pipelines, one for each part of the neuron (Dendrite, Soma, Axon), each performing the respective computations. The state parameters for every neuron are stored in separate BRAM blocks (one per neuron) for faster and higher-bandwidth access. The input stream to the DFE kernel is written in the on-board DRAM and represents the evoked (external) inputs used in the dendritic computations comprising the network input. The initial state and neighboring (gap-junction) influence are streamed in the DFE from the onboard memory only once (initialization data) at the beginning of the simulation. During execution, the kernel output is streamed out to the on-board memory while also updated on the (on-chip) BRAM blocks of the DFE. The connectivity matrix weights are also sent to the DFE at every simulation step, for the use cases that include programmable connectivity. Using a memory-based connectivity matrix allows us to avoid the time-consuming process of resynthezing a new DFE for updating the connectivity density of an experiment.",
+  "correct_citation": {
+    "[CITATION_1]": "8279051"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The DFE implementation of the InfOli application depicted in Figure 4 is based on the design presented in  .",
+      "s_span": 0,
+      "e_span": 120
+    }
+  ],
+  "bib_entries": {
+    "8279051": {
+      "title": "Real-Time Olivary Neuron Simulations on Dataflow Computing Machines",
+      "abstract": "The Inferior-Olivary nucleus ION is a well-charted brain region, heavily associated with the sensorimotor control of the body. It comprises neural cells with unique properties which facilitate sensory processing and motor-learning skills. Simulations of such neurons become rapidly intractable when biophysically plausible models and meaningful network sizes at least in the order of some hundreds of cells are modeled. To overcome this problem, we accelerate a highly detailed ION network model using a Maxeler Dataflow Computing Machine. The design simulates a 330-cell network at real-time speed and achieves maximum throughputs of 24.7 GFLOPS. The Maxeler machine, integrating a Virtex-6 FPGA, yields speedups of ×92-102, and ×2-8 compared to a reference-C implementation, running on a Intel Xeon 2.66GHz, and a pure Virtex-7 FPGA implementation, respectively."
+    }
+  },
+  "generator": "fallback_v4"
+}

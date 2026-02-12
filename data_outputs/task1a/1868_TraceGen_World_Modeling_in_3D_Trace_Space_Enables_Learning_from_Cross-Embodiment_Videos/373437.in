@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "However, when only a single image is provided as input, the detector often fails to identify the target object reliably or to filter out the robot end-effector.",
+    "As a result, the predicted masks frequently include parts of the robot itself.To mitigate this issue, and consistent with the official implementation, we provide a short sequence of images containing minimal robot motion.",
+    "These slight temporal changes help the filtering pipeline correctly identify the robot gripper, allowing the final filtered region to closely match the ground-truth object mask.",
+    "To ensure the generated object mask aligned with the expected robot movement, we manually checked whether the detected bounding box is aligned with the ground truth bounding box of the target objects.NovaFlow The original NovaFlow pipeline includes a grasp-proposal module and a trajectory-planning module.",
+    "Since our tasks do not involve grasping, we remove the grasp-proposal stage and initialize the robot in a state where it is already holding the object, ensuring a fair comparison.In addition, the official NovaFlow implementation uses MegaSaM [29] with TAPIP3D for camera pose estimation and depth prediction."
+  ]
+}

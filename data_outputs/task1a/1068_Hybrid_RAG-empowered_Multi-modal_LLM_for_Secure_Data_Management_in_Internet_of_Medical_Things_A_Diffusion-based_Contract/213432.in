@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Observe the current environment s z.8Set a T z as Gaussian noise and generate contract design a 0 z by denoising a T z based on (17).9Execute contract design a 0 z and observe the reward r z (13).10 Store record (s z, a 0 z, r z, s z+1) into replay buffer D.11 Sample a random mini-batch of N records (s i, a 0 i, r i, s i+1) from replay buffer D.12 Update the contract quality network by minimizing (19).13Update the contract generation network by computing the policy gradient (18).14Update the target networks:ω ′ ← ηω + (1 -η)ω ′, φ ′ ← ηφ + (1 -η)φ ′.15 end 16 end 17 return The trained contract generation network ϵ ω.",
+    "18 ###### Phase 3: Inference 19 Input the environment vector s (11).",
+    "20 Generate the optimal contract design a 0 based on (17).21 return a 0 = {(f * k, R * k), k ∈ K}.policy π ω (a|s) designed to generate an optimal contract over multiple time steps can be expressed asπ ω (a|s) = p ω (a 0,..., a T |s) = N (a T; 0, I) T t=1 p ω (a t-1 |a t, s t),(14)Here, π ω (•) represents the reverse process of the conditional diffusion model and p ω (a t-1 |a t, s t) is modeled as a Gaussian distribution N (a t-1; µ ω (a t, s, t), Σ ω (a t, s, t)), where the covariance matrix Σ ω (a t, s, t) is formulated as [38] Σ ω (a t, s, t) = δ t I,where δ t ∈ (0, 1) is a hyperparameter determined before model training, and I is the identity matrix.",
+    "Consequently, the mean µ ω (a t, s, t) can be given by [38] µω (a t, s, t) = 1 √ χ t a t - δ t √ 1 -χt ϵ ω (a t, s, t),(16)where χ t = 1 -δ t, χt = t i=0 δ j, and ϵ ω denotes the contract generation network.",
+    "We first sample a T ∼ N (0, I) and then sample from the reverse diffusion chain parameterized by ω, which is given by [38] a t-1 |a t = a t √ χ t - δ t χ t (1 -χt) ϵ ω (a t, s, t) + δ t ϵ."
+  ]
+}

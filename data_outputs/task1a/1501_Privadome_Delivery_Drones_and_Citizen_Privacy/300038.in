@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Input: From regulatory authority: Γ 𝑡, 𝜆 𝑡, Γ 𝑡 +𝛿, 𝜆 𝑡 +𝛿, 𝜃.",
+    "Output: True if citizen in field of view, else False.",
+    "// Each (Γ, 𝜆) is a GPS latitude/longitude pair.1 Dist = Distance(Γ 𝑐, 𝜆 𝑐, Γ 𝑡, 𝜆 𝑡) 2 if (Dist > VicinityRadius) then return False 3 - → D = Vectorize(Γ 𝑡, 𝜆 𝑡, Γ 𝑡 +𝛿, 𝜆 𝑡 +𝛿) 4 - → C = Vectorize(Γ 𝑡, 𝜆 𝑡, Γ 𝑐, 𝜆 𝑐) 5 𝜙 = arccos(( - → D • - → C) / ( | - → D | × | - → C |))6 if (𝜙 ≤ 𝜃) then return True else return False 7 Procedure Vectorize (Snyder [88])Input: GPS coords of Origin & Target: (Γ 𝑜, 𝜆 𝑜, Γ 𝑡, 𝜆 𝑡).Output: Vector denoting Target in an equirectangular projection with Origin as origin.8 X = R × (𝜆 𝑡 -𝜆 𝑜) × cos (Γ 𝑜 × 𝜋 180) 9 Y = R × (Γ 𝑡 -Γ 𝑜) // R = Earth's radius 10 return the vector [X, Y]• Gimbal-mounted Cameras/Multiple Cameras.",
+    "The algorithm assumed a fixed camera, facing forward in the direction of motion of the drone.",
+    "On drones with a gimbal-mounted camera, the camera may not necessarily point forwards in the direction of the drone's motion."
+  ]
+}

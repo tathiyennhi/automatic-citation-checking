@@ -1,0 +1,20 @@
+{
+  "doc_id": "8984",
+  "text": "11.6ms 20μs 320μs For the an ss ge fi and an ms r1 nf solvers we used initialization times and spin update times reported by Isakov et al. [CITATION_1] (which were also measured on an Intel Xeon E5-2670). For the an ms r1 nf solver, samples are requested in batches of 64. For bookkeeping, we define the empirical success probability of a batch hitting the target energy asp t = 1 − (1 −p t ) 64 and the annealing time of a batch as the time required to anneal 64 samples. A \"spin flip\" corresponds to the cost of updating a single problem variable (a spin) in a single iteration of an inner loop; a \"sweep\" corresponds to a single iteration through all n problem variables. For SA the conversion from sweep time to total time is trivial since the number of sweeps is fixed. For HFS, on the other hand, the number of \"tree sweeps\" (i.e., low-treewidth updates) per sample is determined internally, as the algorithm simply descends to a local minimum using as many sweeps as it takes. In this case we measure the mean number of \"tree sweeps\" per sample returned.",
+  "correct_citation": {
+    "[CITATION_1]": "30596495"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "11.6ms 20μs 320μs For the an ss ge fi and an ms r1 nf solvers we used initialization times and spin update times reported by Isakov et al.  (which were also measured on an Intel Xeon E5-2670)."
+    }
+  ],
+  "bib_entries": {
+    "30596495": {
+      "title": "Optimized simulated annealing for Ising spin glasses",
+      "abstract": "Abstract We present several efficient implementations of the simulated annealing algorithm for Ising spin glasses on sparse graphs. In particular, we provide a generic code for any choice of couplings, an optimised code for bipartite graphs, and highly optimised implementations using multi-spin coding for graphs with small maximum degree and discrete couplings with a finite range. The latter codes achieve up to 50 spin flips per nanosecond on modern Intel CPUs. We also compare the performance of the codes to that of the special purpose D-Wave devices built for solving such Ising spin glass problems. Program summary Program title: SimAn v1.0 Catalogue identifier: AEVZ_v1_0 Program summary URL: http://cpc.cs.qub.ac.uk/summaries/AEVZ_v1_0.html Program obtainable from: CPC Program Library, Queen’s University, Belfast, N. Ireland Licensing provisions: GNU General Public License, version 3 No. of lines in distributed program, including test data, etc.: 14999 No. of bytes in distributed program, including test data, etc.: 26594 Distribution format: tar.gz Programming language: C++, OpenMP for parallelization. Computer: Any PC. Operating system: Linux/OS X/UNIX. Has the code been vectorised or parallelized?: Parallelized using OpenMP. RAM: Variable, from a few megabytes. Classification: 4.13, 6.5, 23. Nature of problem: Ising spin glass ground states on sparse graphs. Solution method: Simulated annealing. Running time: From milliseconds to seconds."
+    }
+  },
+  "generator": "fallback_v4"
+}

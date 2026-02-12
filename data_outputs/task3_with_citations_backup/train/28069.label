@@ -1,0 +1,22 @@
+{
+  "doc_id": "28069",
+  "text": "This section introduces the numerical method which will be used subsequently to find equilibrium shapes of thin drops by the approach described in §2. Numerical solution will also be verified against the analytical results obtained in the previous section. To solve (2.21) with the edge condition (2.22), which define Ψ over the drop surface S, the latter is tiled into triangular elements as shown in figure 3(a) . Triangulation is carried out as follows. Firstly, we take a regular hexagon inscribed in the unit circle and tile it using equilateral triangles with the side length 1/N. Secondly, the hexagon is stretched radially to fit the unit circle. Then six points are discarded from the perimeter and the remaining 6(N − 1) points are redistributed uniformly against the midpoints of the previous radial level. This produces a more regular triangulation at the edge, which yields a slightly higher numerical accuracy. As a result, we obtain a triangular mesh with 6N 2 − 6 elements and 3N × (N + 1) − 5 vertices. Following the finite element approach, Ψ is sought at the vertices and interpolated linearly within the elements. To determine Ψ at the vertices, we need a corresponding number of equations, which are obtained by numerically approximating (2.21) at the inner points and applying the edge condition (2.22) at the peripheral points. The integral in (2.21) is represented as a sum of Figure 4. The relative error in the magnetic energy of circular disk (3.11) against the radial number of elements N for four different Gaussian quadratures: (1) linear quadrature using only the centre point with the weight factor 1; (2a) and (2b) quadratic quadratures using three symmetric points with the barycentric coordinates (2/3, 1/6, 1/6) and (1/2, 1/2, 0), respectively, and the weight factors 1/3; (3) four-point cubic quadrature using the centre point with the weight factor −27/48 and three symmetric points with the barycentric coordinates (3/5, 1/5, 1/5) and weight factors 25/48 [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "122723485"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": " the centre point with the weight factor −27/48 and three symmetric points with the barycentric coordinates (3/5, 1/5, 1/5) and weight factors 25/48 [CITATION_1] ",
+      "s_span": 1846,
+      "e_span": 2008
+    }
+  ],
+  "bib_entries": {
+    "122723485": {
+      "title": "Gaussian quadrature formulas for triangles",
+      "abstract": "Several formulas are presented for the numerical integration of a function over a triangular area. The formulas are of the Gaussian type and are fully symmetric with respect to the three vertices of the triangle."
+    }
+  },
+  "generator": "fallback_v4"
+}

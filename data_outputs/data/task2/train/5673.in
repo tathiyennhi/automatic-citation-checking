@@ -1,0 +1,82 @@
+{
+  "text": "In order to avoid particle degeneracy, many methods have been proposed, e.g., Doucet et al. [CITATION_1] used an optimal importance density function; the resampling technique [CITATION_2] is applied to particle filters; or the resample-move algorithm [CITATION_3] is developed. All of these methods can reduce particle degeneracy at different levels for some models, but they introduce some practical problems described before. All of them are not effective in reducing sample variance which increases over time. If time lasts long enough, tracking trajectory of the ship will deviate from the true position significantly, which is not acceptable in practice. Thus, we propose a new method which considers both particle degeneracy and sample variance.",
+  "citation_candidates": [
+    "123545380",
+    "45904944",
+    "443192",
+    "16959056",
+    "1217127",
+    "60452662",
+    "1269989",
+    "124058301",
+    "123090298",
+    "16288401",
+    "3206422",
+    "123855600",
+    "29243761",
+    "115399067",
+    "122476255"
+  ],
+  "bib_entries": {
+    "115399067": {
+      "title": "Building robust simulation-based filters for evolving data sets",
+      "abstract": "The need for accurate monitoring and analysis of sequential data arises in many scientific, industrial and financial problems. Although the Kalman filter is effective in the linear-Gaussian case, new methods of dealing with sequential data are required with non-standard models. Recently, there has been renewed interest in simulation-based techniques. The basic idea behind these techniques is that the current state of knowledge is encapsulated in a representative sample from the appropriate posterior distribution. As time goes on, the sample evolves and adapts recursively in accordance with newly acquired data. We give a critical review of recent developments, by reference to oil well monitoring, ion channel monitoring and tracking problems, and propose some alternative algorithms that avoid the weaknesses of the current methods."
+    },
+    "122476255": {
+      "title": "Improved particle filter for nonlinear problems",
+      "abstract": "The Kalman filter provides an effective solution to the linear Gaussian filtering problem. However where there is nonlinearity, either in the model specification or the observation process, other methods are required. Methods known generically as 'particle filters' are considered. These include the condensation algorithm and the Bayesian bootstrap or sampling importance resampling (SIR) filter. These filters represent the posterior distribution of the state variables by a system of particles which evolves and adapts recursively as new information becomes available. In practice, large numbers of particles may be required to provide adequate approximations and for certain applications, after a sequence of updates, the particle system will often collapse to a single point. A method of monitoring the efficiency of these filters is introduced which provides a simple quantitative assessment of sample impoverishment and the authors show how to construct improved particle filters that are both structurally efficient in terms of preventing the collapse of the particle system and computationally efficient in their implementation. This is illustrated with the classic bearings-only tracking problem."
+    },
+    "124058301": {
+      "title": "Following a moving target: Monte Carlo inference for dynamic Bayesian models",
+      "abstract": "Markov chain Monte Carlo (MCMC) sampling is a numerically intensive simulation technique which has greatly improved the practicality of Bayesian inference and prediction. However, MCMC sampling is too slow to be of practical use in problems involving a large number of posterior (target) distributions, as in dynamic modelling and predictive model selection. Alternative simulation techniques for tracking moving target distributions, known as particle filters, which combine importance sampling, importance resampling and MCMC sampling, tend to suffer from a progressive degeneration as the target sequence evolves. We propose a new technique, based on these same simulation methodologies, which does not suffer from this progressive degeneration."
+    },
+    "16288401": {
+      "title": "On sequential Monte Carlo sampling methods for Bayesian filtering",
+      "abstract": "In this article, we present an overview of methods for sequential simulation from posterior distributions. These methods are of particular interest in Bayesian filtering for discrete time dynamic models that are typically nonlinear and non-Gaussian. A general importance sampling framework is developed that unifies many of the methods which have been proposed over the last few decades in several different scientific disciplines. Novel extensions to the existing methods are also proposed. We show in particular how to incorporate local linearisation methods similar to those which have previously been employed in the deterministic filtering literatures these lead to very effective importance distributions. Furthermore we describe a method which uses Rao-Blackwellisation in order to take advantage of the analytic structure present in some important classes of state-space models. In a final section we develop algorithms for prediction, smoothing and evaluation of the likelihood in dynamic models."
+    },
+    "123855600": {
+      "title": "Predictive updating methods with application to Bayesian classification",
+      "abstract": "We propose algorithms based on random draws from predictive distributions of unknown quantities (missing values, for instance). This procedure can either be iterative, which is a special variation of the Gibbs sampler, or be sequential, which is a variation of sequential imputation. In the latter case one can update the posterior distribution with new observations easily. The methods proposed have intuitive statistical implications and can be generalized to accommodate other Bayesian-like procedures. We display some applications of the method in connection with the Bayesian bootstrap, classification, hierarchical models and selection of variables. In particular, as an application of the method, we present a unified treatment of switching regression models driven by a general binary process, and we develop a Bayesian testing procedure. Some simulations and a real example are used to illustrate the methods proposed."
+    },
+    "16959056": {
+      "title": "Particle filters for state estimation of jump Markov linear systems",
+      "abstract": "Jump Markov linear systems (JMLS) are linear systems whose parameters evolve with time according to a finite state Markov chain. In this paper, our aim is to recursively compute optimal state estimates for this class of systems. We present efficient simulation-based algorithms called particle filters to solve the optimal filtering problem as well as the optimal fixed-lag smoothing problem. Our algorithms combine sequential importance sampling, a selection scheme, and Markov chain Monte Carlo methods. They use several variance reduction methods to make the most of the statistical structure of JMLS. Computer simulations are carried out to evaluate the performance of the proposed algorithms. The problems of on-line deconvolution of impulsive processes and of tracking a maneuvering target are considered. It is shown that our algorithms outperform the current methods."
+    },
+    "45904944": {
+      "title": "Sequential imputations and Bayesian missing data problems",
+      "abstract": "Abstract For missing data problems, Tanner and Wong have described a data augmentation procedure that approximates the actual posterior distribution of the parameter vector by a mixture of complete data posteriors. Their method of constructing the complete data sets is closely related to the Gibbs sampler. Both required iterations, and, similar to the EM algorithm, convergence can be slow. We introduce in this article an alternative procedure that involves imputing the missing data sequentially and computing appropriate importance sampling weights. In many applications this new procedure works very well without the need for iterations. Sensitivity analysis, influence analysis, and updating with new data can be performed cheaply. Bayesian prediction and model selection can also be incorporated. Examples taken from a wide range of applications are used for illustration."
+    },
+    "123090298": {
+      "title": "Blind deconvolution via sequential imputation",
+      "abstract": "Abstract The sequential imputation procedure is applied to adaptively and sequentially reconstruct discrete input signals that are blurred by an unknown linear moving average channel and contaminated by additive Gaussian noises, a problem known as blind deconvolution in digital communication. A rejuvenation procedure for improving the efficiency of sequential imputation is introduced and theoretically justified. The proposed method does not require the channel to be nonminimum phase and can be used in real time signal restoration. Two simulated systems are studied to illustrate the proposed method. Our result shows that the ideas of multiple imputations and flexible simulation techniques are as powerful in engineering as in survey sampling."
+    },
+    "29243761": {
+      "title": "Monte Carlo FEXT cancellers for DSL channels",
+      "abstract": "Crosstalk coupling is a severe impairment to transmission on twisted-pair copper cables such as digital subscriber telephone loops (DSLs). In this paper, we investigate the problem of far-end crosstalk (FEXT) cancellation for DSL. We propose a new soft interference canceller for coordinated self-FEXT cancellation across multiple twisted-pairs. The proposed receiver treats the FEXT-impaired channel as a multiple-input multiple-output (MIMO) channel; it uses the sequential Monte Carlo (SMC) technique to exploit the sequential structure inherent in iterative cancellation techniques for MIMO decoding. On telephone loops with strong FEXT, the proposed algorithm shows 0.5-dB coding gain with respect to previously proposed techniques. Furthermore, being soft-input-soft-output in nature, the proposed SMC receiver can iteratively exchange extrinsic information with a MAP decoder to successively cancel FEXT, leading to a turbo FEXT canceller."
+    },
+    "443192": {
+      "title": "A blind particle filtering detector of signals transmitted over flat fading channels",
+      "abstract": "A new particle filtering detector (PFD) is proposed for blind signal detection over flat Rayleigh fading channels whose model coefficients are unknown. The detector employs a hybrid importance function and a mixture Kalman filter. It also incorporates an auxiliary particle filtering strategy with a smoothing kernel in the resampling step. Further, by considering practical information of communication systems and the physical interpretation of the adopted second-order autoregressive (AR) channel model, a fully blind particle filtering implementation is developed. The structure of the proposed PFD can be easily adapted to other system requirements. Simulations are provided that demonstrate the performance of the new PFD."
+    },
+    "1269989": {
+      "title": "Real-time particle filters",
+      "abstract": "Particle filters estimate the state of dynamic systems from sensor information. In many real-time applications of particle filters, however, sensor information arrives at a significantly higher rate than the update rate of the filter. The prevalent approach to dealing with such situations is to update the particle filter as often as possible and to discard sensor information that cannot be processed in time. In this paper we present real-time particle filters, which make use of all sensor information even when the filter update rate is below the update rate of the sensors. This is achieved by representing posteriors as mixtures of sample sets, where each mixture component integrates one observation arriving during a filter update. The weights of the mixture components are set so as to minimize the approximation error introduced by the mixture representation. Thereby, our approach focuses computational resources on valuable sensor information. Experiments using data collected with a mobile robot show that our approach yields strong improvements over other approaches."
+    },
+    "123545380": {
+      "title": "Monte Carlo filter and smoother for non-Gaussian nonlinear state space models",
+      "abstract": "Abstract A new algorithm for the prediction, filtering, and smoothing of non-Gaussian nonlinear state space models is shown. The algorithm is based on a Monte Carlo method in which successive prediction, filtering (and subsequently smoothing), conditional probability density functions are approximated by many of their realizations. The particular contribution of this algorithm is that it can be applied to a broad class of nonlinear non-Gaussian higher dimensional state space models on the provision that the dimensions of the system noise and the observation noise are relatively low. Several numerical examples are shown."
+    },
+    "1217127": {
+      "title": "A statistical analysis of the affine projection algorithm for unity step size and autoregressive inputs",
+      "abstract": "This paper presents a new statistical analysis of the affine projection (AP) algorithm. An analytical model is derived for autoregressive (AR) inputs for unity step size (fastest con- vergence). Deterministic recursive equations are derived for the mean AP weight and mean-square error for large values of (the number of adaptive taps). The value of is also assumed large compared to the algorithm order (number of input vectors used to determine the weight update direction). The model predictions display better agreement with Monte Carlo simulations in both transient and steady-state than models previously presented in the literature. The model's accuracy is sufficient for most practical design purposes."
+    },
+    "60452662": {
+      "title": "Sequential Monte Carlo Methods in Practice",
+      "abstract": "A package for fragile articles is provided which includes a container having a bottom surface delimited by upright walls, and a plurality of article-loaded trays arranged in a compact, stacked, superposed relation and disposed within the container. Each tray has a plurality of article accommodating pockets separated by struts. The struts of a tray are in vertical alignment with the pockets of the trays disposed immediately above and below. The peripheries of the stacked trays are adapted to be vertically supported by the adjacent walls of the container thereby preventing sagging of certain of the peripheral pockets during storage or transporting of the loaded container."
+    },
+    "3206422": {
+      "title": "Quick fuzzy backpropagation algorithm",
+      "abstract": "A modification of the fuzzy backpropagation (FBP) algorithm called QuickFBP algorithm is proposed, where the computation of the net function is significantly quicker. It is proved that the FBP algorithm is of exponential time complexity, while the QuickFBP algorithm is of polynomial time complexity. Convergence conditions of the QuickFBP, resp. the FBP algorithm are defined and proved for: (1) single output neural networks in case of training patterns with different targets; and (2) multiple output neural networks in case of training patterns with equivalued target vector. They support the automation of the weights training process (quasi-unsupervised learning) establishing the target value(s) depending on the network's input values. In these cases the simulation results confirm the convergence of both algorithms. An example with a large-sized neural network illustrates the significantly greater training speed of the QuickFBP rather than the FBP algorithm. The adaptation of an interactive web system to users on the basis of the QuickFBP algorithm is presented. Since the QuickFBP algorithm ensures quasi-unsupervised learning, this implies its broad applicability in areas of adaptive and adaptable interactive systems, data mining, etc. applications."
+    }
+  }
+}

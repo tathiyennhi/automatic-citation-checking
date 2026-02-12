@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "B. Multi-agent Interaction ModuleIn KoMA, agents do not interact directly with each other; instead, agents infer their intentions just like real human drivers by analyzing the history and current state information of other vehicles.",
+    "For example, when the LLM-driven agent senses a vehicle on its left suddenly accelerating, it further analyzes and reasons about this, guesses the vehicle's intention to overtake, and then analyzes these guesses along with its own plan to determine if adjustments to its short-term plan are needed.",
+    "Ultimately, the agent aims to make rationalAlgorithm 1 Autonomous Driving with Multi-agent LLMs Input: Simulation scenario sce, simulation duration time T, current time t, decision interval time ∆t, reflection agent RA, driving agent DA, driving agent list DA list, sharedmemory M Initialize: t = 0, score list SL = [], decision list DL = [], document doc = [], plan = None while t < T do for DA in DA list: \\\\ Get the scenario description sce des = sce.describe(DA) \\\\ Retrive similar experience from shared-memory f ew-shot = M.retriveMemory(sce des) \\\\ Driving agent making action decision action, plan = DA.reason(sce des, f ew-shot, plan) DL.append(action) \\\\ Execute the action decision in environment score, done = env.step(action) SL.append(score) doc.append([DA, sce des, plan, action, score]) t = t + ∆t \\\\ Check whether the scene is finished if done: break \\\\ Reflection agent correct the wrong action corrected decision = RA.reflect(SL, DL) \\\\ Update the memory M.update(corrected decision)Output: Document doc, updated shared-memory M action decisions.",
+    "After receiving the text description from the environment module, the agent preliminarily processes the information using the multi-agent interaction module, analyzes and guesses the intentions of other vehicles before proceeding to the multi-step planning module with this information.",
+    "C. Multi-step PlanningThe Multi-step Planning Module serves as the cornerstone for LLMs' reasoning within KoMA."
+  ],
+  "correct_citations": []
+}

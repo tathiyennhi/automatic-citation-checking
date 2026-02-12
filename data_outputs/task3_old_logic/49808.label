@@ -1,0 +1,20 @@
+{
+  "doc_id": "49808",
+  "text": "GPipe GPipe leverages microbatching to reduce the number of bubbles in its pipeline. For GPipe, τ fwd = τ bkwd = 0, at the cost of lower throughput and additional activation memory. Each pipeline has to be filled and drained at a minibatch boundary to ensure weight synchronization between forward and backward pass, so the average bubble time is O( P −1 N +P −1 ) [CITATION_1] . Consequently, the normalized (relative to PipeDream) throughput of GPipe is N N +P −1 . GPipe does not store any additional weight parameters but does store additional memory for activations. Using the standard technique of gradient checkpointing, both PipeMare and GPipe can reduce their activation memory footprint (see Appendix A.2).",
+  "correct_citation": {
+    "[CITATION_1]": "53670168"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Each pipeline has to be filled and drained at a minibatch boundary to ensure weight synchronization between forward and backward pass, so the average bubble time is O( P −1 N +P −1 )"
+    }
+  ],
+  "bib_entries": {
+    "53670168": {
+      "title": "Efficient training of giant neural networks using pipeline parallelism",
+      "abstract": "Scaling up deep neural network capacity has been known as an effective approach to improving model quality for several different machine learning tasks. In many cases, increasing model capacity beyond the memory limit of a single accelerator has required developing special algorithms or infrastructure. These solutions are often architecture-specific and do not transfer to other machine learning tasks. To address the need for efficient and task-independent model parallelism, we introduce TensorPipe, a pipeline parallelism library that allows scaling any network that can be expressed as a sequence of layers. By pipelining different sub-sequences of layers on separate accelerators, TensorPipe provides the flexibility of scaling a variety of different networks to gigantic sizes efficiently. Moreover, TensorPipe utilizes a novel batch-splitting pipelining algorithm, resulting in almost linear speedup when a model is partitioned across multiple accelerators. We demonstrate the advantages of TensorPipe by training large-scale neural networks on two different tasks with distinct network architectures: (i)Image Classification: We train a 557-million-parameter AmoebaNet model and attain a top-1 accuracy of 84.4% on ImageNet-2012, (ii)Multilingual Neural Machine Translation: We train a single 6-billion-parameter, 128-layer Transformer model on a corpus spanning over 100 languages and achieve better quality than all bilingual models."
+    }
+  },
+  "generator": "fallback"
+}

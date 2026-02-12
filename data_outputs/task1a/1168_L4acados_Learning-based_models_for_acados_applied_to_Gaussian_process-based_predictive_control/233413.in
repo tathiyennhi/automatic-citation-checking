@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "First, the user defines an instance of a ResidualModel, returning the corresponding sensitivities in (11), evaluated on the batchy = ((x 0, û0) ⊤,..., (x N -1, ûN-1) ⊤) ∈ R N ×(nx+nu) oflinearization points at the current SQP iteration.",
+    "For common implementations, such as PyTorch residual models, at the time of this writing L4acados already provides the corresponding ResidualModel implementation.",
+    "import l4acados as l4a class MyResidualModel(l4a.ResidualModel): def __init__(self,...):... def value_and_jacobian(self, y) g =... dgdy =... return g, dgdy Second, the residual model is used to instantiate a ResidualLearningMPC object, which interfaces it with a user-defined acados_ocp object defining the OCP (4) for the nominal model (with nominal dynamics x k+1 = f (x k, u k) in Eq.",
+    "from acados_template import AcadosOcp acados_ocp = AcadosOcp()... # define acados_ocp residual_model = MyResidualModel(...) l4acados_solver = l4a.ResidualLearningMPC( ocp=acados_ocp, residual_model=residual_model,)The ResidualLearningMPC solver is designed to be interfaced in the same way as a standard AcadosSolver in acados.",
+    "With minimal L4acados-specific settings, this simplifies its usage by users familiar with acados while reducing the requirements for its own interface documentation.2) Parallelized sensitivity computations: To enable parallelization of the sensitivity computation across the prediction horizon, the ResidualModel is called once using a batch of the linearization points obtained from the previous SQP iteration."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "While datasets such as UltraFeedback (Cui et al., 2023) provide ratings in [1, 10] for chosen/rejected responses, other datasets such as TLDR (Stiennon et al., 2020a) and HH-RLHF (Bai et al., 2022) does not.",
+    "This makes methods such as filtering based on score difference (e.g., ARGILLA) not applicable.",
+    "To this end, we consider a simple approach to use Nexusflow/Starling-RM-34B (Banghua et al., 2023), the best reward model according rewardbench (Lambert et al., 2024), to provide a score prediction to all of our training data.",
+    "Specifically, we first used the reward model to compute a real value score for the prompt + chosen response and prompt + rejected response separately.",
+    "Next, since the predicted score is a real value, we 1) rescale it to [0, 1] to obtain s, and then 2) consider a least square solution to find a, b under the function:"
+  ]
+}

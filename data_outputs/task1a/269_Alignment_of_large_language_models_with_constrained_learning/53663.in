@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We denote the set of newly ranked triples (x, y +, y -) as D † λ(t+1).",
+    "By applying the maximum likelihood objective of DPO [35,Equation (7)] to the pseudo preference dataset D † λ(t+1), we reduce the LLM policy optimization step of CAID tomaximize θ ∈ Θ E (x,y +,y -) ∼ D † λ(t+1) log σ β log π θ (y + | x) π ref (y + | x) -β log π θ (y -| x) π ref (y -| x).The pseudo preference-based DPO is also employed in [26,21], albeit with different dual updates that are found to be biased or unstable when evaluated in practice.",
+    "We note that other DPO variants, such as SimPO [28], could also be used for the LLM policy optimization step in MoCAID, though this is beyond the scope of our work.",
+    "Dual subgradient step with an online dataset of (x, y) ∼ D • π θ(t):λ(t + 1) = λ(t) -η E (x,y) ∼ D•π θ(t) [ h(x, y)] +.",
+    "7:LLM policy optimization step with a pseudo preference dateset D † λ(t+1):θ(t + 1) ∈ argmax θ ∈ Θ E (x,y +,y -) ∼ D † λ(t+1) log σ β log π θ (y + | x) π ref (y + | x) -β log π θ (y -| x) π ref (y -| x).8: end for 9: Output: {θ ⋆ (t)} T t = 1.In the preference-based setting, we only have access to a human-annotated preference dataset D pref in format of (x, y 1, y 0, 1 r (y 1 ≻ y 0), {1 gi (y 1 ≻ y 0)} m i = 1), rather than reward and utility models (r, {g i } m i = 1)."
+  ]
+}

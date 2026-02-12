@@ -1,0 +1,29 @@
+{
+  "doc_id": "54478",
+  "text": "A time-consuming and important part in the algorithm shown in Table 3 is how to identify all direct-h-reachable subgoals from a given subgoal s (line 51), and this can be done by determining the direct-h-reachable area around s. As shown in Table 4 the algorithm proposed by Tansel Uras et al. [CITATION_1] works in two steps. The first step (line 56 to 58) identifies the closest subgoals in each of the eight cardinal and diagonal directions, and the second step (line 59 to 70) incrementally finds out the other subgoals that can be reached via moves in two directions (i.e., either a diagonal direction or one of its two corresponded cardinal directions). In order to meet the strong requirements of Definition 5, we replace the Clearance(R, V, s, d) function in the original algorithm with SafeClearance(R, V, s, d), thus the resulting direct-h-reachable paths between two subgoals can be collision-free when taking safety radius R into consideration (e.g., the tests in line 73 ensure that every step of the incremental exploration is collision-free). For more detail about the function GetDirectHReachable, please refer to Tansel Uras' work [CITATION_2] . max ← SafeClearance(R,V,s,c) 62",
+  "correct_citation": {
+    "[CITATION_1]": "15910194",
+    "[CITATION_2]": "15910194"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As shown in Table 4 the algorithm proposed by Tansel Uras et al. [CITATION_1] works in two steps.",
+      "s_span": 229,
+      "e_span": 326
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For more detail about the function GetDirectHReachable, please refer to Tansel Uras' work [CITATION_2] . max ← SafeClearance(R,V,s,c) 62",
+      "s_span": 1058,
+      "e_span": 1194
+    }
+  ],
+  "bib_entries": {
+    "15910194": {
+      "title": "Subgoal Graphs for Optimal Pathfinding in Eight-Neighbor Grids",
+      "abstract": "Grids are often used to represent maps in video games. In this paper, we propose a method for preprocessing eight-neighbor grids to generate subgoal graphs and show how subgoal graphs can be used to find shortest paths fast. We place subgoals at the corners of obstacles (similar to visibility graphs) and add those edges between subgoals that are necessary for finding shortest paths, while ensuring that each edge connects only subgoals that are easily reachable from one another. We describe a method for finding shortest paths by first finding high-level paths through subgoals and then shortest low-level paths between consecutive subgoals on the high-level path. Our method was one of ten entries in the Grid-Based Path Planning Competition 2012. Among all optimal path planners, ours was the fastest to find complete paths and required the least amount of memory."
+    }
+  },
+  "generator": "fallback_v4"
+}

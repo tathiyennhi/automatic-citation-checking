@@ -1,0 +1,38 @@
+{
+  "doc_id": "46841",
+  "text": "Since D is a diagonal matrix, exp(tD) is also a diagonal matrix whose i-th diagonal element is exp(tD ii ). In contrast to the diffusion kernel where the task is to predict the characteristics of the data in a network-structured feature space, we can consider the different problem of predicting the external structure (meaning the network structure) from the given feature spaces. In that case, the task is to predict pair-wise relationships (such as the existence of links) among data. The pair-wise kernel [CITATION_1] [CITATION_2] [CITATION_3] is can be used for such purposes. Let us denote byK a kernel matrix defined by a given feature space. Then the pair-wise kernel K is defined as",
+  "correct_citation": {
+    "[CITATION_1]": "64611884",
+    "[CITATION_2]": "5246854",
+    "[CITATION_3]": "7923324"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The pair-wise kernel    is can be used for such purposes."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The pair-wise kernel    is can be used for such purposes."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The pair-wise kernel    is can be used for such purposes."
+    }
+  ],
+  "bib_entries": {
+    "64611884": {
+      "title": "Using feature conjunctions across examples for learning pairwise classifiers",
+      "abstract": "We propose a kernel method for using combinations of features across example pairs in learning pairwise classifiers. Pairwise classifiers, which identify whether two examples belong to the same class or not, are important components in duplicate detection, entity matching, and other clustering applications. Existing methods for learning pairwise classifiers from labeled training data are based on string edit distance or common features between two examples. However, if two examples from the same class have few common features, these methods have difficulties in finding these pairs and achieving high recall. One typical example is to check whether two abbreviated author names in different citations refer to the same person or not. Since similarities between examples from the same class become close to zero, classifiers fail to distinguish positive pairs from negative pairs. One approach to avoiding the problem of zero similarities is using conjunctions of different features across examples, but implementing this idea straightforwardly makes the computational cost prohibitive for practical problems. Using a kernel on pair instances, our method can use feature conjunctions across examples without actually doing feature mappings, which are computationally expensive. The kernel is a tensor product of two inner products on the original feature space. The corresponding feature mapping generates conjunctions of features only across the two different examples while that of the conventional polynomial kernel also generates conjunctions of features from the same example, which are irrelevant to pairwise classification and cause deterioration of accuracy. Our experiments on the author matching problem show that this method can give a precision 4 to 8 times higher than that of previous methods at medium recall levels."
+    },
+    "5246854": {
+      "title": "Unifying collaborative and content-based filtering",
+      "abstract": "Collaborative and content-based filtering are two paradigms that have been applied in the context of recommender systems and user preference prediction. This paper proposes a novel, unified approach that systematically integrates all available training information such as past user-item ratings as well as attributes of items or users to learn a prediction function. The key ingredient of our method is the design of a suitable kernel or similarity function between user-item pairs that allows simultaneous generalization across the user and item dimensions. We propose an on-line algorithm (JRank) that generalizes perceptron learning. Experimental results on the EachMovie data set show significant improvements over standard approaches."
+    },
+    "7923324": {
+      "title": "Kernel methods for predicting protein-protein interactions",
+      "abstract": "Motivation: Despite advances in high-throughput methods for discovering protein--protein interactions, the interaction networks of even well-studied model organisms are sketchy at best, highlighting the continued need for computational methods to help direct experimentalists in the search for novel interactions. ::: ::: Results: We present a kernel method for predicting protein--protein interactions using a combination of data sources, including protein sequences, Gene Ontology annotations, local properties of the network, and homologous interactions in other species. Whereas protein kernels proposed in the literature provide a similarity between single proteins, prediction of interactions requires a kernel between pairs of proteins. We propose a pairwise kernel that converts a kernel between single proteins into a kernel between pairs of proteins, and we illustrate the kernel's effectiveness in conjunction with a support vector machine classifier. Furthermore, we obtain improved performance by combining several sequence-based kernels based on k-mer frequency, motif and domain content and by further augmenting the pairwise sequence kernel with features that are based on other sources of data. ::: ::: We apply our method to predict physical interactions in yeast using data from the BIND database. At a false positive rate of 1% the classifier retrieves close to 80% of a set of trusted interactions. We thus demonstrate the ability of our method to make accurate predictions despite the sizeable fraction of false positives that are known to exist in interaction databases. ::: ::: Availability: The classification experiments were performed using PyML available at http://pyml.sourceforge.net. Data are available at: http://noble.gs.washington.edu/proj/sppi ::: ::: Contact: asa@gs.washington.edu"
+    }
+  },
+  "generator": "fallback_v4"
+}

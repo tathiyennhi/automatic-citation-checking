@@ -1,0 +1,22 @@
+{
+  "doc_id": "33286",
+  "text": "Instead of multitasking multiple separate kernels, we merge a set of kernels into a megakernel-a single, monolithic kernel. The megakernel is launched with as many workgroups as can be occupant concurrently. One workgroup takes the role of the scheduler, [CITATION_1] and the scheduling logic is embedded as part of the megakernel. The remaining workgroups act as a pool of workers. A worker repeatedly queries the scheduler to be assigned a task. A task corresponds to executing a cooperative or non-cooperative kernel. In the noncooperative case, the workgroup executes the relevant kernel function uninterrupted, then awaits further work. In the cooperative case, the workgroup either starts from the kernel entry point or immediately jumps to a designated point within the kernel, depending on whether the workgroup is an initial workgroup of the kernel, or a forked workgroup. In the latter case, the new workgroup also receives a struct containing the values of all relevant transmit-annotated variables.",
+  "correct_citation": {
+    "[CITATION_1]": "12719078"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "One workgroup takes the role of the scheduler, [CITATION_1] and the scheduling logic is embedded as part of the megakernel.",
+      "s_span": 208,
+      "e_span": 331
+    }
+  ],
+  "bib_entries": {
+    "12719078": {
+      "title": "On dynamic load balancing on graphics processors",
+      "abstract": "To get maximum performance on the many-core graphics processors it is important to have an even balance of the workload so that all processing units contribute equally to the task at hand. This can be hard to achieve when the cost of a task is not known beforehand and when new sub-tasks are created dynamically during execution. With the recent advent of scatter operations and atomic hardware primitives it is now possible to bring some of the more elaborate dynamic load balancing schemes from the conventional SMP systems domain to the graphics processor domain. We have compared four different dynamic load balancing methods to see which one is most suited to the highly parallel world of graphics processors. Three of these methods were lock-free and one was lock-based. We evaluated them on the task of creating an octree partitioning of a set of particles. The experiments showed that synchronization can be very expensive and that new methods that take more advantage of the graphics processors features and capabilities might be required. They also showed that lock-free methods achieves better performance than blocking and that they can be made to scale with increased numbers of processing units."
+    }
+  },
+  "generator": "fallback_v4"
+}

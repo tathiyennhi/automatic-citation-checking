@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "A usage scenario and an expert study suggest that LightVA not only reduced the manual effort required but also provided new opportunities to leverage LLMs to facilitate visual data exploration.",
+    "This appendix introduces prompt examples and a history of analysis during the analysis process.",
+    "Task Planning and Execution AlgorithmHere is the task planning and execution algorithm we introduce in Section IV-A.",
+    "if T is empty then Algorithm 1 Task Planning and Execution3:T new ← Recommender(G, D)4: H ← Update(H, T new) ▷ Add new tasks to history 5: return T new, H 6: else 7: if k > k max then return {}, False 8: result ← Executor(T, D) 9: completed ← Decomposer(T, result) ▷ Evaluate if the task is completed and output score and explanation 10: if completed is False then 11: subtasks, logic ← Decomposer(T, D) 12: for each T sub in subtasks do 13: result[T sub], H ← TPE(G, T sub, D, H, k + 1) 14: completed ← logic(result) 15: return completed, H 16: else 17: T new ← Recommender(G, T, D, H) 18: H ← Update(H, T new) ▷ Add new tasks to history and update progress of tasks and goal 19: return T new, H 20:return completed, HThe algorithm aims to achieve a specified goal through recursive task decomposition and execution.",
+    "Given a Goal G, Task T, Data D, History H, and Decomposition depth k, the algorithm initially checks if the task is empty."
+  ]
+}

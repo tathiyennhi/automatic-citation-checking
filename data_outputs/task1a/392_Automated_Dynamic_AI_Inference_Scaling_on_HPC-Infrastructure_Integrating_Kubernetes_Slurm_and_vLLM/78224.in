@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The 500 concurrent request scenario stands out particularly for TTFT, where sending requests to vLLM directly is noticeably faster by about 500ms (23.34%).",
+    "GPU-L, in contrast, behaves more as expected, displaying slightly higher total request durations across all Web Gateway scenarios, with a higher E2EL and TTFT from 500 concurrent requests upward.",
+    "Curiously, TPOT is significantly lower in these cases (37.21% / 43.45%).",
+    "The reasons for this will need to be investigated in a more detailed system analysis in the future.",
+    "Inspecting the vLLM logs, the GPU-S configuration starts queuing requests from 255 concurrent requests onward, while the GPU-L configuration does not appear to queue requests in any of our scenarios."
+  ]
+}

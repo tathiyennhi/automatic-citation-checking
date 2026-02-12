@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The scheduler provides the intelligence of Jellyfish, where it takes the latency-accuracy profiles from the DNN zoo and the monitored information from the client daemon as input, and ❺ runs our scheduling algorithms periodically to decide the client-DNN mapping, DNN selection (adaptation), and batch size for each worker.",
+    "The scheduler then ❻ informs all the clients about the input size of their mapped DNNs to start sending new requests at that particular input size (i.e., data adaptation aligned with DNN adaptation).",
+    "While Jellyfish is an edge-centric inference serving system, it requires some basic support (as daemons) from clients: (1) a metadata exchange mechanism (piggybacked on the normal inference requests/responses) for sharing client side monitored information including the inference request rate and estimated network bandwidth, and the input size dictated by the client-DNN mapping from the scheduler, 1 3 Real-Time Systems (2024) 60:239-290",
+    "(2) a request preprocessing mechanism that adjusts the data to match the DNN input size or to the maximum possible size when matching exactly the DNN input size is impossible due to poor network conditions.",
+    "The end-to-end latency consists of two parts: network time (request and response) and compute time on the edge (for request dispatching and handling, request preprocessing if any, queuing, and DNN execution)."
+  ],
+  "correct_citations": []
+}

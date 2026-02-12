@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Equation 7 demands for n i 1 × ⋯ × n i N nodes, which indi- cates an exponential rate of computational cost growth with the number of dimensions.",
+    "Adaptive stochastic collocation targets the reduction of this computational effort through an adaptive sparse grid of collocation points: the objective is to wisely place more points of the grid in the important directions to prioritize the collection of highly informative data.",
+    "This adaptive sparse grid is defined through a subset of the full tensor product grid as follows:where i = (i 1,..., i N) ∈ ℝ N, |i| = i 1 +... + i N, q is the sparse- ness parameter, and the difference formulas are defined byU 0 = 0 and ΔU i = U i -U i-1.Equation 8 leverages the previous results to extend the interpolation from level q -1 to q through the evaluation of the multivariate function on the sparse grid:where Δ i = i � i-1 are the newly added set of univariate nodes i k for level i k in the k-th coordinate.This scheme adapts the sampling procedure through the knowledge acquired on the fly, and efficiently leverages data ( 6)I(f)(x k) = f (x k), 1 ≤ k ≤ P (7) I(f) = (U i 1 ⊗ ⋯ ⊗ U i N)(f) = n i 1 ∑ j 1 =1 ⋯ n i N ∑ j N =1 f (x i 1 j 1,..., x i N j N) ⋅ (L i 1 j 1 ⊗ ⋯ ⊗ L i N j N) (8) A q,N (f) = ∑ |i|≤q (ΔU i 1 ⊗ ⋯ ⊗ ΔU i N)(f) = A q-1,N (f) + ∑ |i|=q (ΔU i 1 ⊗ ⋯ ⊗ ΔU i N)(f)(9)H q,N = ⋃ |i|≤q (Δ i 1 × ⋯ × Δ i N) = H q-1,N + ⋃ |i|=q (Δ i 1 × ⋯ × Δ i N)to improve the quality of the interpolation function.",
+    "In this case, the selection of the collocation points is intended to compute an emulator of the target function, but the adaptive sampling is not driven by the information acquired from this emulator.",
+    "In addition, the acquisition of data is not used to learn and update the surrogate model."
+  ],
+  "correct_citations": []
+}

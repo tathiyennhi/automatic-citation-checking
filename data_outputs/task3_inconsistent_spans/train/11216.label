@@ -1,0 +1,66 @@
+{
+  "doc_id": "11216",
+  "text": "used in the offline system identification, the online stateand parameter-estimation, and the prediction of the dynamic optimization. The diffusion model, g(x(t), u(t); p), represents a convenient and powerful way of representing complex stochastic processes and model-plant mismatch as needed for the filtering and prediction algorithm in NMPC. [CITATION_1] Boiroux et al. ( ,b,c, 2010 and [CITATION_2] [CITATION_3] [CITATION_4] demonstrate systematic use of the continuous-discrete model (1) for system identification, nonlinear filtering and prediction, fault detection, and NMPC in an artificial pancreas for people with type 1 diabetes. [CITATION_5] uses a continuousdiscrete model (1) and a Lyapunov-based NMPC to stabilize a reaction model around an unstable equilibrium. Buehler et al. (2016) uses a similar setup where a bioreactor model is controlled according to a desired set-point probability density. Jørgensen and Jørgensen (2007a,b) apply the continuous-discrete stochastic model (1) for linear MPC using transfer function representations of the model. 2017) describe state-ofthe-art NMPC technology. A system for NMPC consists of an offline method for identification of the model as well as an online part -where the online part consists of a state-and parameter estimation algorithm and an algorithm for dynamic optimization. Fig. 1 schematically illustrates this structure. This tutorial fills a missing gap in existing NMPC literature, by systematically formulating all components in the NMPC software system based on the continuous-discrete model (1). All components in the NMPC, presented in this paper, use the same continuousdiscrete extended Kalman filter (CDEKF) for (1) in the one-step prediction of the offline system identification, in the online state-and parameter-estimation algorithm, and in the prediction of the dynamic optimization algorithm. Abstract: Using the Van der Pol oscillator model as an example, we provide a tutorial introduction to nonlinear model predictive control (NMPC) for systems governed by stochastic differential equations (SDEs) that are observed at discrete times. Such systems are called continuous-discrete systems and provides a natural representation of systems evolving in continuous-time. Furthermore, this representation directly facilities construction of the state estimator in the NMPC. We provide numerical details related to systematic model identification, state estimation, and optimization of dynamical systems that are relevant to the NMPC.",
+  "correct_citation": {
+    "[CITATION_1]": "31777195",
+    "[CITATION_2]": "43716728",
+    "[CITATION_3]": "23558048",
+    "[CITATION_4]": "54566023",
+    "[CITATION_5]": "7781452"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "and powerful way of representing complex stochastic processes and model-plant mismatch as needed for the filtering and prediction algorithm in NMPC.  Boiroux et al. ( ,b,c, 2010 and    demonstrate systematic use of the continuous-discrete model (1)",
+      "s_span": 195,
+      "e_span": 493
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "processes and model-plant mismatch as needed for the filtering and prediction algorithm in NMPC.  Boiroux et al. ( ,b,c, 2010 and    demonstrate systematic use of the continuous-discrete model (1) for system identification, nonlinear filtering",
+      "s_span": 247,
+      "e_span": 540
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "and model-plant mismatch as needed for the filtering and prediction algorithm in NMPC.  Boiroux et al. ( ,b,c, 2010 and    demonstrate systematic use of the continuous-discrete model (1) for system identification, nonlinear filtering and",
+      "s_span": 257,
+      "e_span": 544
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "mismatch as needed for the filtering and prediction algorithm in NMPC.  Boiroux et al. ( ,b,c, 2010 and    demonstrate systematic use of the continuous-discrete model (1) for system identification, nonlinear filtering and prediction, fault",
+      "s_span": 273,
+      "e_span": 562
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "for system identification, nonlinear filtering and prediction, fault detection, and NMPC in an artificial pancreas for people with type 1 diabetes.  uses a continuousdiscrete model (1) and a Lyapunov-based NMPC to stabilize a reaction model around an unstable equilibrium. Buehler et",
+      "s_span": 492,
+      "e_span": 789
+    }
+  ],
+  "bib_entries": {
+    "43716728": {
+      "title": "Application of the continuous-discrete extended Kalman filter for fault detection in continuous glucose monitors for type 1 diabetes",
+      "abstract": "The purpose of this study is the online detection of faults and anomalies of a continuous glucose monitor (CGM). We simulated a type 1 diabetes patient using the Medtronic virtual patient model. The model is a system of stochastic differential equations and includes insulin pharmacokinetics, insulin-glucose interaction, and carbohydrate absorption. We simulated and detected two types of CGM faults, i.e., spike and drift. A fault was defined as a CGM value in any of the zones C, D, and E of the Clarke error grid analysis classification. Spike was modelled by a binomial distribution, and drift was modelled by a Gaussian random walk. We used a continuous-discrete extended Kalman filter for the fault detection, based on the statistical tests of the filter innovation and the 90-min prediction residuals of the sensor measurements. The spike detection had a sensitivity of 93% and a specificity of 100%. Also, the drift detection had a sensitivity of 80% and a specificity of 85%. Furthermore, with 100% sensitivity the proposed method was able to detect if the drift overestimates or underestimates the interstitial glucose concentration."
+    },
+    "7781452": {
+      "title": "Lyapunov-based model predictive control of stochastic nonlinear systems",
+      "abstract": "In this work, we design a Lyapunov-based model predictive controller (LMPC) for nonlinear systems subject to stochastic uncertainty. The LMPC design provides an explicitly characterized region from where stability can be probabilistically obtained. The key idea is to use stochastic Lyapunov-based feedback controllers, with well characterized stabilization in probability, to design constraints in the LMPC that allow the inheritance of the stability properties by the LMPC. The application of the proposed LMPC method is illustrated using a nonlinear chemical process system example."
+    },
+    "23558048": {
+      "title": "Fault and meal detection by redundant continuous glucose monitors and the unscented kalman filter",
+      "abstract": "Abstract The purpose of this study is to develop a method for detecting and compensating the anomalies of continuous glucose monitoring (CGM) sensors as well as detecting unannounced meals. Both features, sensor fault detection/correction and meal detection, are necessary to have a reliable artificial pancreas. The aim is to investigate the best detection results achievable with the proposed detection configuration in a perfect situation, and to have the results as a benchmark against which the imperfect scenarios of the proposed fault detection can be compared. The perfect situation that we set up here is in terms of a patient simulation model, where the model in the detector is the same as the patient simulation model used for evaluation of the detector. The detection module consists of two CGM sensors, two fault detectors, a fault isolator, and an adaptive unscented Kalman filter (UKF). Two types of sensor faults, i.e., drift and pressure induced sensor attenuation (PISA), are simulated by a Gaussian random walk model. Each of the fault detectors has a local UKF that receives the signal from the associated sensor, detects faults, and finally tunes the adaptive UKF. A fault isolator that accepts data from the two fault detectors differentiates between a sensor fault and an unannounced meal appearing as an anomaly in the CGM data. If the fault isolator indicates a sensor fault, a method based on the covariance matching technique tunes the covariance of the measurement noise associated with the faulty sensor. The main UKF uses the tuned noise covariances and fuses the CGM data from the two sensors. The drift detection sensitivity and specificity are 80.9% and 92.6%, respectively. The sensitivity and specificity of PISA detection are 78.1% and 82.7%, respectively. The fault detectors can detect 100 out of 100 simulated drifts and 485 out of 500 simulated PISA events. Compared to a nonadaptive UKF, the adaptive UKF reduces the deviation of the CGM measurements from their paired blood glucose concentrations from 72.0% to 12.5% when CGM is corrupted by drift, and from 10.7% to 6.8% when CGM is corrupted by PISA. The fault isolator can detect 199 out of 200 unannounced meals. The average change in the glucose concentrations between the meals and the detection time points is 46.3 mg/dL."
+    },
+    "54566023": {
+      "title": "Comparison of three nonlinear filters for fault detection in continuous glucose monitors",
+      "abstract": "The purpose of this study is to compare the performance of three nonlinear filters in online drift detection of continuous glucose monitors. The nonlinear filters are the extended Kalman filter (EKF), the unscented Kalman filter (UKF), and the particle filter (PF). They are all based on a nonlinear model of the glucose-insulin dynamics in people with type 1 diabetes. Drift is modelled by a Gaussian random walk and is detected based on the statistical tests of the 90-min prediction residuals of the filters. The unscented Kalman filter had the highest average F score of 85.9%, and the smallest average detection delay of 84.1%, with the average detection sensitivity of 82.6%, and average specificity of 91.0%."
+    },
+    "31777195": {
+      "title": "An ensemble nonlinear model predictive control algorithm in an artificial pancreas for people with type 1 diabetes",
+      "abstract": "This paper presents a novel ensemble nonlinear model predictive control (NMPC) algorithm for glucose regulation in type 1 diabetes. In this approach, we consider a number of scenarios describing different uncertainties, for instance meals or metabolic variations. We simulate a population of 9 patients with different physiological parameters and a time-varying insulin sensitivity using the Medtronic Virtual Patient (MVP) model. We augment the MVP model with stochastic diffusion terms, time-varying insulin sensitivity and noise-corrupted CGM measurements. We consider meal challenges where the uncertainty in meal size is ± 50%. Numerical results show that the ensemble NMPC reduces the risk of hypoglycemia compared to standard NMPC in the case where the meal size is overestimated or correctly estimated at the expense of a slightly increased number of hyperglycemia. Therefore, ensemble MPC-based algorithms can improve the safety of the AP compared to the classical MPC-based algorithms."
+    }
+  },
+  "generator": "fallback_v4"
+}

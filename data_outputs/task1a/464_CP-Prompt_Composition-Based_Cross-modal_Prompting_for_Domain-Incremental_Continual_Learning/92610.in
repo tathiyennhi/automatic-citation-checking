@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To perform prompt tuning on CLIP, we can inject tiny-sized parameters into a pre-trained model and only train them to adapt to downstream tasks.",
+    "To formalize, the vector of image samples 𝒙 𝑒𝑚𝑏 is concatenated with soft prompts 𝑃 ∈ R 𝐿×𝐷,𝒙 𝑝 = [𝑃, 𝒙 𝑒𝑚𝑏] ∈ R (𝐸 𝐼 +𝐿) ×𝐷, (1)where 𝐿 is the prompts length.",
+    "Discovering the best prompts involves picking specific tokens, which can be achieved through either manual exploration or non-gradient-based search techniques [40].The vector 𝒙 𝑝 is then encoded by transformer layers, resulting in a high-dimensional projection 𝒙 ℎ ∈ R 𝐻 𝐼 ×𝐷, where 𝐻 𝐼 is the number of image features in high dimensional space.",
+    "Similarly, in the text encoder, we encode words through vocabulary and positional embedding 𝒕 𝑒𝑚𝑏 ∈ R 𝐸 𝑇 ×𝐷, which after transformer encoding also yields 𝒕 ℎ ∈ R 𝐻 𝑇 ×𝐷, where 𝐸 𝑇 is the feature size, and 𝐻 𝑇 is the number of text features in high dimensional space.",
+    "The CLIP model seeks the mapping relationship between the two high-dimensional embeddings 𝒙 ℎ and 𝒕 ℎ through a contrastive loss."
+  ]
+}

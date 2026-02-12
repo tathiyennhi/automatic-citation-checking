@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The model was implemented using the Hugging Face Transformers library.Computing Environment: Experiments were executed on a cloud instance with the following specifications:• GPU: 1× NVIDIA RTX A5000• vCPUs: 12• System Memory: 25 GB RAM • Storage: 20 GB • OS: Ubuntu 22.04 with CUDA 11.8.0 • Framework: PyTorch 2.1.0 Implementation Framework: We utilized Hugging Face's Transformers (v4.48.0) and PEFT (v0.7.1) libraries for model implementation, with the following additional libraries: • Accelerate (v0.26.0) for training optimization Volume 14 Issue 6, June 2025 Fully Refereed | Open Access | Double Blind Peer Reviewed Journal www.ijsr.net • Datasets (v2.14.5) for data processing • Evaluate (v0.4.1) for metrics calculation • Weights & Biases for experiment tracking Common Training Configuration: For consistent comparison, all methods used identical training parameters: • Maximum sequence length: 512 tokens (adjusted as needed for prompt-based methods) • Batch size: 8 • Learning rate: 5e-5 • Weight decay: 0.01 • Training epochs: 3 • Optimization: AdamW optimizer • Mixed precision (FP16): Enabled • Random seed: 42 B. PEFT Method Implementations 1) Adapters: Adapters insert small trainable bottleneck layers between the existing layers of a pre-trained model.",
+    "We implemented adapters using the Pfeiffer configuration: adapter_config = ADAPTER_CONFIG_MAP [\"pfeiffer\"] model.",
+    "add_adapter (\"pubmedqa_adapter\", config=adapter_config) model.",
+    "train_adapter (\"pubmedqa_adapter\") model.",
+    "set_active_adapters (\"pubmedqa_adapter\")The Pfeiffer adapter architecture adds bottleneck layers with a reduction factor of 16 after the attention and feedforward blocks in each transformer layer."
+  ],
+  "correct_citations": []
+}

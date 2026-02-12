@@ -1,0 +1,47 @@
+{
+  "doc_id": "53838",
+  "text": "For face detection, first recognize the gender attribute with a HyperFace detector that locates faces and landmarks, and then [CITATION_1] further extend this approach to predict 40 facial attributes simultaneously with the same HyperFace detector. In contrast, [CITATION_2] use a poselet part detector [CITATION_3] to detect different parts corresponding to different poses, where the face is an important part of the whole person image. Compared with the poselet detector operated over conventional features, [CITATION_4] propose a 'deep' version of the poselet, which trains a sliding window detector operated on deep feature pyramids. Specifically, the deep poselet detector divides the human body into three parts (head, torso, and legs) and clusters fiducial key points of each part into many different poselets. However, because all existing face detectors are used to find rough facial parts, facial attributes in more subtle areas, such as eyebrows, cannot be well predicted.",
+  "correct_citation": {
+    "[CITATION_1]": "6040311",
+    "[CITATION_2]": "945967",
+    "[CITATION_3]": "9320620",
+    "[CITATION_4]": "2863739"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For face detection, first recognize the gender attribute with a HyperFace detector that locates faces and landmarks, and then further extend this approach to predict 40 facial attributes simultaneously with the same HyperFace detector."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In contrast, use a poselet part detector to detect different parts corresponding to different poses, where the face is an important part of the whole person image."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "use a poselet part detector"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Compared with the poselet detector operated over conventional features, propose a 'deep' version of the poselet, which trains a sliding window detector operated on deep feature pyramids."
+    }
+  ],
+  "bib_entries": {
+    "6040311": {
+      "title": "AFFACT: Alignmentfree facial attribute classification technique",
+      "abstract": "Facial attributes are soft-biometrics that allow limiting the search space, e.g., by rejecting identities with non-matching facial characteristics such as nose sizes or eyebrow shapes. In this paper, we investigate how the latest versions of deep convolutional neural networks, ResNets, perform on the facial attribute classification task. We test two loss functions: the sigmoid cross-entropy loss and the Euclidean loss, and find that for classification performance there is little difference between these two. Using an ensemble of three ResNets, we obtain the new state-of-the-art facial attribute classification error of 8.00 % on the aligned images of the CelebA dataset. More significantly, we introduce the Alignment-Free Facial Attribute Classification Technique (AFFACT), a data augmentation technique that allows a network to classify facial attributes without requiring alignment beyond detected face bounding boxes. To our best knowledge, we are the first to report similar accuracy when using only the detected bounding boxes — rather than requiring alignment based on automatically detected facial landmarks — and who can improve classification accuracy with rotating and scaling test images. We show that this approach outperforms the CelebA baseline on unaligned images with a relative improvement of 36.8 %."
+    },
+    "2863739": {
+      "title": "Actions and attributes from wholes and parts",
+      "abstract": "We investigate the importance of parts for the tasks of action and attribute classification. We develop a part-based approach by leveraging convolutional network features inspired by recent advances in computer vision. Our part detectors are a deep version of poselets and capture parts of the human body under a distinct set of poses. For the tasks of action and attribute classification, we train holistic convolutional neural networks and show that adding parts leads to top-performing results for both tasks. We observe that for deeper networks parts are less significant. In addition, we demonstrate the effectiveness of our approach when we replace an oracle person detector, as is the default in the current evaluation protocol for both tasks, with a state-of-the-art person detection system."
+    },
+    "9320620": {
+      "title": "Poselets: Body part detectors trained using 3d human pose annotations",
+      "abstract": "We address the classic problems of detection, segmentation and pose estimation of people in images with a novel definition of a part, a poselet. We postulate two criteria (1) It should be easy to find a poselet given an input image (2) it should be easy to localize the 3D configuration of the person conditioned on the detection of a poselet. To permit this we have built a new dataset, H3D, of annotations of humans in 2D photographs with 3D joint information, inferred using anthropometric constraints. This enables us to implement a data-driven search procedure for finding poselets that are tightly clustered in both 3D joint configuration space as well as 2D image appearance. The algorithm discovers poselets that correspond to frontal and profile faces, pedestrians, head and shoulder views, among others. Each poselet provides examples for training a linear SVM classifier which can then be run over the image in a multiscale scanning mode. The outputs of these poselet detectors can be thought of as an intermediate layer of nodes, on top of which one can run a second layer of classification or regression. We show how this permits detection and localization of torsos or keypoints such as left shoulder, nose, etc. Experimental results show that we obtain state of the art performance on people detection in the PASCAL VOC 2007 challenge, among other datasets. We are making publicly available both the H3D dataset as well as the poselet parameters for use by other researchers."
+    },
+    "945967": {
+      "title": "Facetracer: A search engine for large collections of images with faces",
+      "abstract": "We have created the first image search engine based entirely on faces. Using simple text queries such as \"smiling men with blond hair and mustaches,\" users can search through over 3.1 million faces which have been automatically labeled on the basis of several facial attributes. Faces in our database have been extracted and aligned from images downloaded from the internet using a commercial face detector, and the number of images and attributes continues to grow daily. Our classification approach uses a novel combination of Support Vector Machines and Adaboost which exploits the strong structure of faces to select and train on the optimal set of features for each attribute. We show state-of-the-art classification results compared to previous works, and demonstrate the power of our architecture through a functional, large-scale face search engine. Our framework is fully automatic, easy to scale, and computes all labels off-line, leading to fast on-line search performance. In addition, we describe how our system can be used for a number of applications, including law enforcement, social networks, and personal photo management. Our search engine will soon be made publicly available."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We adopt a generic PGM-Index implementation, which involves two error parameters: the internal search error and the last-mile error.",
+    "For a given last-mile error, the internal error parameter is automatically configured by a recent work PGM++ [49], aimed at minimizing expected query costs.",
+    "Figure 15 shows the index construction time, range query processing time, and index memory footprint when varying the last-mile error parameter within the range [4,1024] on two real datasets.The index construction time is generally insensitive to as the optimal piece-wise linear fitting algorithm [62] adopted by PGM-Index requires only one pass of data (i.e., O(N) time), contributing a relatively minor part compared to the overhead from data partitioning and projection function computation.For range query processing, unlike 1-D learned indexes, the relationship between query time and is not monotonic and hard to predict.",
+    "The reason is that, a smaller reduces the overhead of a single point lookup; however, the most costly part of range query processing is whether the learned models and the underlying data layout can effectively filter unnecessary results.Regarding space cost, our findings align with the 1-D case reported in [25], where decreasing enlarges the space overhead as more line segments are required to satisfy the error constraint.",
+    "According to a recent theoretical analysis of PGM-Index [24], the space cost for a PGM-Index with error parameter is bounded by O(N / 2), consistent with the memory cost evaluation results as shown in Fig. 15."
+  ]
+}

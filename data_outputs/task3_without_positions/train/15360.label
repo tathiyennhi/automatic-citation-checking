@@ -1,0 +1,20 @@
+{
+  "doc_id": "15360",
+  "text": "We note that adopting a commercially available DSP chip is a lower cost option than developing a customized DSP chip. The commercial DSP chip consumes more power than a custom designed one dedicated to the CI, but it offers more flexibility and is vetted as fully reliable through extensive and widespread use. Fig. 2 shows a functional block diagram of the signal processing performed within the DSP hardware. After digitizing the speech signal, the DSP chip performs frequency analysis using a fast Fourier transform (FFT). The chip then computes the average power of each channel by simple summation and averaging, according to predetermined channel-frequency allocation. Bandpasses for the channels are formed by integration across FFT bins. As an alternative to the FFT method, digital filters could have been implemented using an infinite impulse response (IIR) or finite impulse response (FIR) filter with envelope detection. The FFT approach is more efficient, however, as the total number of computations is substantially lower than in the IIR or FIR approaches. The FFT option also offers flexibility because many functions can be implemented by simple arithmetic operations [CITATION_1] . For example, parameters such as channel-to-frequency allocation, the order of the filter and overlap of bands between neighboring channels, can be easily controlled by simply changing the number of FFT samples to be averaged and their weights.",
+  "correct_citation": {
+    "[CITATION_1]": "111302669"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The FFT option also offers flexibility because many functions can be implemented by simple arithmetic operations  ."
+    }
+  ],
+  "bib_entries": {
+    "111302669": {
+      "title": "Sound spectral processing based on fast Fourier transform applied to cochlear implant for the conception of a graphical spectrogram and for the generation of stimulating pulses",
+      "abstract": "This paper presents a sound spectral processing based on a fast Fourier transform (FFT), which is applied to cochlear prostheses, for conceiving graphical spectrogram and for generating stimulating pulses. The Sound Graphical-spectrogram is a simulation of electrical stimulating-pulses, recommended for cochlear prostheses, especially for performing experiments and clinical set-up during stimulation test and re-education. This spectral sound processing was implemented on a computer board for simulation, and on a 'DSP' board (digital signal processor) of GRAMS' cochlear prosthesis for stimulating current generation. The algorithm includes different desired specifications, which are designed to be adjustable. Our purpose is to satisfy auditory pathological constraints of cochlear implant recipients having unique and diverse needs. The stimulation algorithm conceived allows electrical stimulating pulse generation in real time with use flexibility thanks to DSP performance. Algorithm functionality was tested for different sounds (harmonics and composite sounds) and could be adapted to different cochlear prostheses for deafness rehabilitation."
+    }
+  },
+  "generator": "fallback_v4"
+}

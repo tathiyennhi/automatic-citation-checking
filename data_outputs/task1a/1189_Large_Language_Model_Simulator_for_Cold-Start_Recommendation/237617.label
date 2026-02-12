@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Embedding-based filtering models adaptly embed users and items into vectors but encounter difficulty in capturing users' content-level intent and items' high-level content information.",
+    "To address this, we initially enhance the filtering models with LLM-processed embeddings, and in the subsequent subsection, we present the coupled training of the filtering model.",
+    "Formally, we employ an LLM to extract the content embedding of an item and then apply a matching function to map this embedding for behavior filtering, which can be expressed as follows:𝒇 𝑖 = F I (𝐿𝐿𝑀 𝑒𝑚𝑏 (𝒄 𝑖)),(5)where 𝒇 𝑖 represents the filtering embedding for item 𝑖, F I (•) is the mapping function, and 𝐿𝐿𝑀 𝑒𝑚𝑏 (•) is the LLM embedding readout function.The embedding readout function is designed to extract the content embedding from the LLM.",
+    "Specifically, we first obtain the last layer embedding, which represents the processed token information, and then apply mean pooling to derive the content feature embedding for any given cold item:𝒇 𝑖 = F I 1 |𝒄 𝑖 | |𝒄 𝑖 | ∑︁ 𝑗=1 E (𝐿) (𝒄 𝑖) [ 𝑗],(6)where E (𝐿) (𝒄 𝑖) [ 𝑗] represents the 𝑗-th embedding of the 𝐿-th layer of the LLM.",
+    "Here, 𝒄 𝑖 stands for the content feature of the item, 𝒄 𝑖 [ 𝑗] refers to the 𝑗-th token in 𝒄 𝑖, and |𝒄 𝑖 | indicates the total number of tokens in 𝒄 𝑖.To filter users who are likely to interact with the cold item, we consider both content embeddings and behavioral embeddings."
+  ],
+  "correct_citations": []
+}

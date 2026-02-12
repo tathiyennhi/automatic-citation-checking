@@ -1,0 +1,44 @@
+{
+  "doc_id": "54898",
+  "text": "Classification is one of the most important area of machine learning. Similarity-based methods (SBL, [CITATION_1] [CITATION_2] ), including many variants of the k-nearest neighbor algorithms, belong to the most popular and simplest methods used for this purpose. Although such methods have many advantages, including an easy handling of unlimited number of classes and stability of solutions against small perturbations of data, their applications are limited, because their computation time scales like O(n 2 ) with the number of reference samples n. For large databases, especially in problems requiring real-time decisions, such \"lazy approaches\" relaying more on calculations performed at the time of actual classification rather than at the time of training are too slow. Training of all similarity-based methods, including kernel-based SVM approaches, also suffers from the same quadratic scaling problem. Fast methods for finding approximate neighbors can reduce this time to roughly O(log n) [CITATION_3] .",
+  "correct_citation": {
+    "[CITATION_1]": "5290969",
+    "[CITATION_2]": "10789767",
+    "[CITATION_3]": "6491916"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Similarity-based methods (SBL,   ), including many variants of the k-nearest neighbor algorithms, belong to the most popular and simplest methods used for this purpose.",
+      "s_span": 70,
+      "e_span": 262
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Similarity-based methods (SBL,   ), including many variants of the k-nearest neighbor algorithms, belong to the most popular and simplest methods used for this purpose.",
+      "s_span": 70,
+      "e_span": 262
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Fast methods for finding approximate neighbors can reduce this time to roughly O(log n)  .",
+      "s_span": 912,
+      "e_span": 1014
+    }
+  ],
+  "bib_entries": {
+    "5290969": {
+      "title": "Similarity based methods: a general framework for classification, approximation and association",
+      "abstract": "Similarity-based methods (SBM) are a generalization of the minimal distance (MD) methods which form a basis of several machine learning and pattern recognition methods. Investigation of similarity leads to a fruitful framework in which many classification, approximation and association methods are accommodated. Probability p(C|X; M) of assign- ing class C to a vector X, given a classification model M, depends on adap- tive parameters and procedures used in construction of the model. Sys- tematic overview of choices available for model building is described and numerous improvements suggested. Similarity-Based Methods have nat- ural neural-network type realizations. Such neural network models as the Radial Basis Functions (RBF) and the Multilayer Perceptrons (MLPs) are included in this framework as special cases. SBM may also include several different submodels and a procedure to combine their results. Many new versions of similarity-based methods are derived from this framework. A search in the space of all methods belonging to the SBM framework finds a particular combination of parameterizations and procedures that is most appropriate for a given data. No single classification method can beat this approach. Preliminary implementation of SBM elements tested on a real- world datasets gave very good results."
+    },
+    "6491916": {
+      "title": "Space-time tradeoffs for approximate nearest neighbor searching",
+      "abstract": "Nearest neighbor searching is the problem of preprocessing a set of <i>n</i> point points in <i>d</i>-dimensional space so that, given any query point <i>q</i>, it is possible to report the closest point to <i>q</i> rapidly. In approximate nearest neighbor searching, a parameter ϵ > 0 is given, and a multiplicative error of (1 + ϵ) is allowed. We assume that the dimension <i>d</i> is a constant and treat <i>n</i> and ϵ as asymptotic quantities. Numerous solutions have been proposed, ranging from low-space solutions having space <i>O</i>(<i>n</i>) and query time <i>O</i>(log <i>n</i> + 1/ϵ<sup><i>d</i>−1</sup>) to high-space solutions having space roughly <i>O</i>((<i>n</i> log <i>n</i>)/ϵ<sup><i>d</i></sup>) and query time <i>O</i>(log (<i>n</i>/ϵ)). ::: We show that there is a single approach to this fundamental problem, which both improves upon existing results and spans the spectrum of space-time tradeoffs. Given a tradeoff parameter γ, where 2 ≤ γ ≤ 1/ϵ, we show that there exists a data structure of space <i>O</i>(<i>n</i>γ<sup><i>d</i>−1</sup> log(1/ϵ)) that can answer queries in time <i>O</i>(log(<i>n</i>γ) + 1/(ϵγ)<sup>(<i>d</i>−1)/2</sup>. When γ = 2, this yields a data structure of space <i>O</i>(<i>n</i> log (1/ϵ)) that can answer queries in time <i>O</i>(log <i>n</i> + 1/ϵ<sup>(<i>d</i>−1)/2</sup>). When γ = 1/ϵ, it provides a data structure of space <i>O</i>((<i>n</i>/ϵ<sup><i>d</i>−1</sup>)log(1/ϵ)) that can answer queries in time <i>O</i>(log(<i>n</i>/ϵ)). ::: Our results are based on a data structure called a (<i>t</i>,ϵ)-AVD, which is a hierarchical quadtree-based subdivision of space into cells. Each cell stores up to <i>t</i> representative points of the set, such that for any query point <i>q</i> in the cell at least one of these points is an approximate nearest neighbor of <i>q</i>. We provide new algorithms for constructing AVDs and tools for analyzing their total space requirements. We also establish lower bounds on the space complexity of AVDs, and show that, up to a factor of <i>O</i>(log (1/ϵ)), our space bounds are asymptotically tight in the two extremes, γ = 2 and γ = 1/ϵ."
+    },
+    "10789767": {
+      "title": "Classification, association and pattern completion using neural similarity based methods",
+      "abstract": "A framework for Similarity-Based Methods (SBMs) includes many classification models as special cases: neural network of the Radial Basis Function Networks type, Feature Space Mapping neurofuzzy networks based on separable transfer functions, Learning Vector Quantization, variants of the k nearest neighbor methods and several new models that may be presented in a network form. Multilayer Perceptrons (MLPs) use scalar products to compute weighted activation of neurons, combining soft hyperplanes to provide decision borders. Distance-based multilayer perceptrons (D-MLPs) evaluate similarity of inputs to weights offering a natural generalization of standard MLPs . Cluster-based initialization procedure determining architecture and values of all adaptive parameters is described. Networks implementing SBM methods are useful not only for classification and approximation, but also as associative memories, in problems requiring pattern completion, offering an efficient way to deal with missing values. NonEuclidean distance functions may also be introduced by normalization of the input vectors in an extended feature space. Both approaches influence shapes of decision borders dramatically. An illustrative example showing these changes is provided."
+    }
+  },
+  "generator": "fallback_v4"
+}

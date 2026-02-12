@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This section presents implementation details and optimizations vPIM integrates into the frontend and the backend to minimize the para-virtualization overhead (𝑅 4).",
+    "FrontendData Transfer.",
+    "In rank operations (read-from-rank, write-to-rank), to facilitate data transfer between the guest and device, the frontend needs to send the transfer matrix to the backend.Fig. 6 provides an overview of this transfer matrix, sourced from the SDK.",
+    "It contains three components: the metadata for the entire transfer, the metadata for each DPU's the data transfer, and arrays of Linux page struct, each representing the data for one DPU in the rank.",
+    "A single rank can have up to 64 DPUs and each DPU has a memory bank of 64MB, so the transfer matrix can consist of at most 64 arrays, and each with up to 16,384 pages (64MB/4KB)."
+  ]
+}

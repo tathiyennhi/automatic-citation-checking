@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Specifically, for user 𝑢 𝑖 's interaction sequence S 𝑢 𝑖 = [𝑣𝑢 𝑖 1,..., 𝑣 𝑢 𝑖 𝑇 𝑢 𝑖], we first utilize the textual item embedding V 𝑙𝑙𝑚 obtained in Section 4.2 to map them into a sequence of vectors [v 𝑢 𝑖 𝑙𝑙𝑚,1,..., v 𝑢 𝑖 𝑙𝑙𝑚,𝑇 𝑢 𝑖].Then, for item v 𝑢 𝑖 𝑙𝑙𝑚,𝑡 in S 𝑢 𝑖, we add noise z to item's embedding vector:v𝑢 𝑖 𝑙𝑙𝑚,𝑡 = v 𝑢 𝑖 𝑙𝑙𝑚,𝑡 + z(7)where z is sampled from 𝑁 -dimension distribution with density 𝑒𝑥𝑝 (-𝜖 ∥z∥).",
+    "𝑁 is the dimension of v 𝑙𝑙𝑚.",
+    "After that, we replace the interacted item 𝑣 𝑢 𝑖 𝑡 with 𝑣 𝑢 𝑖 𝑡, which has the smallest distance (i.e., most similar) to its perturbed embedding vector.",
+    "In this paper, we utilize the widely used cosine similarity (denoted as 𝑠𝑖𝑚(•)) as the measure function:𝑣 𝑢 𝑖 𝑡 = 𝑎𝑟𝑔𝑚𝑎𝑥 𝑣 ∈ V 𝑠𝑖𝑚(v 𝑙𝑙𝑚, v𝑢 𝑖 𝑙𝑙𝑚,𝑡)(8)Algorithm 3 briefly summarizes the implementation of 𝑑 X -privacy perturbation.Theorem.",
+    "Denote the above implementation as mechanism A: S → S, let metric 𝑑 (𝑣, 𝑣) = 𝑇 𝑡 =1 𝑠𝑖𝑚(v 𝑙𝑙𝑚,𝑡, v 𝑙𝑙𝑚,𝑡), then, A satisfies 𝜖𝑑 X -privacy with respect to the metric 𝑑.Proof."
+  ]
+}

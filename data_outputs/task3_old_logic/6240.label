@@ -1,0 +1,29 @@
+{
+  "doc_id": "6240",
+  "text": "Overestimation Bias Reduction Q-learning's overestimation bias, due to the max operator, was first discussed in [CITATION_1] . It was later shown in van Hasselt, Guez, and Silver (2016) and [CITATION_2] that overestimation leads to the poor performance of DQNs in some Atari games. Following the same assumptions as van Hasselt, Guez, and Silver (2016), we can show the softmax operator reduces the overestimation bias. Theorem 3. Given the same assumptions as van Hasselt, Guez, and Silver (2016), where (A1) there exists some V * (s) such that the true state-action value function satisfies Q * (s, a) = V * (s), for different actions. (A2) the estimation error is modeled as Q t (s, a) = V * (s) + a , then (i) the overestimation errors from T soft are smaller or equal to those of T using the max operator, for any τ ≥ 0; (ii) the overestimation reduction by using T soft in lieu of T is within",
+  "correct_citation": {
+    "[CITATION_1]": "1115058",
+    "[CITATION_2]": "2215254"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Overestimation Bias Reduction Q-learning's overestimation bias, due to the max operator, was first discussed in"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "It was later shown in van Hasselt, Guez, and Silver (2016) and that overestimation leads to the poor performance of DQNs in some Atari games."
+    }
+  ],
+  "bib_entries": {
+    "1115058": {
+      "title": "Issues in using function approximation for reinforcement learning",
+      "abstract": "Reinforcement learning techniques address the problem of learning to select actions in unknown, dynamic environments. It is widely acknowledged that to be of use in complex domains, reinforcement learning techniques must be combined with generalizing function approximation methods such as artificial neural networks. Little, however, is understood about the theoretical properties of such combinations, and many researchers have encountered failures in practice. In this paper we identify a prime source of such failures—namely, a systematic overestimation of utility values. Using Watkins’ Q-Learning [18] as an example, we give a theoretical account of the phenomenon, deriving conditions under which one may expected it to cause learning to fail. Employing some of the most popular function approximators, we present experimental results which support the theoretical findings."
+    },
+    "2215254": {
+      "title": "Averaged-DQN: variance reduction and stabilization for deep reinforcement learning",
+      "abstract": "Instability and variability of Deep Reinforcement Learning (DRL) algorithms tend to adversely affect their performance. Averaged-DQN is a simple extension to the DQN algorithm, based on averaging previously learned Q-values estimates, which leads to a more stable training procedure and improved performance by reducing approximation error variance in the target values. To understand the effect of the algorithm, we examine the source of value function estimation errors and provide an analytical comparison within a simplified model. We further present experiments on the Arcade Learning Environment benchmark that demonstrate significantly improved stability and performance due to the proposed extension."
+    }
+  },
+  "generator": "fallback"
+}

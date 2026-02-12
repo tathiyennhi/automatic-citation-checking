@@ -1,0 +1,65 @@
+{
+  "doc_id": "53077",
+  "text": "In the image domain, fusion can be carried out in two main ways: single-scale-based and multi-scale-based. The former approach entails fusing multi-exposed images directly. Goshtasby [CITATION_1] proposed a fusion method based on the entropy of an image block and a Gaussian function is used to eliminate the seam between different blocks. But the blocks may overlap for different objects, which may lead to the luminance around the strong edges being inverted in the fused image. Li and Kang 7 used contrast and well-exposedness to calculate the fusion weight and used a recursive filter to smooth the weight map. Although the method is able to preserve most of the details, the resulting luminance distribution differs greatly from that of the input images, which is because the relative value of two pixels may be inversed. Such a phenomenon is called scene luminance inversion (SLI). Raman and Chaudhuri [CITATION_2] used bilateral filtering to calculate the fusion weight of which the value is larger in detail regions. But the fused image has a low contrast and the color is excessively pale because the weights in the smooth region are similar for different input images. Zhang et al. [CITATION_3] found that if a pixel gradually changes from underexposure to overexposure, it will inevitably pass the best exposure point. Consequently, the best exposure for every pixel can be determined by estimating the change curve of pixel intensity with different exposures. Unfortunately, the fused image regularly appears unnatural when composed of pixels with the best exposure. The gradient amplitude was applied to measure the visibility of details in the study by Zhang and Cham, [CITATION_4] after which a crossbilateral filter was used to purify the weight map constructed by gradient amplitude. Optimization-based methods, which are able to guarantee improved fusion performance, were proposed by Kotwal and Chaudhuri, [CITATION_5] and Shen et al. [CITATION_6] ; however, these methods are computationally intensive.",
+  "correct_citation": {
+    "[CITATION_1]": "15387478",
+    "[CITATION_2]": "8141089",
+    "[CITATION_3]": "57195624",
+    "[CITATION_4]": "10471913",
+    "[CITATION_5]": "2067016",
+    "[CITATION_6]": "17085839"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Goshtasby proposed a fusion method based on the entropy of an image block and a Gaussian function is used to eliminate the seam between different blocks."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Raman and Chaudhuri used bilateral filtering to calculate the fusion weight of which the value is larger in detail regions."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Zhang et al. found that if a pixel gradually changes from underexposure to overexposure, it will inevitably pass the best exposure point."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The gradient amplitude was applied to measure the visibility of details in the study by Zhang and Cham, after which a crossbilateral filter was used to purify the weight map constructed by gradient amplitude."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Optimization-based methods, which are able to guarantee improved fusion performance, were proposed by Kotwal and Chaudhuri,"
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "and Shen et al."
+    }
+  ],
+  "bib_entries": {
+    "15387478": {
+      "title": "Fusion of multi-exposure images",
+      "abstract": "A method for fusing multi-exposure images of a static scene taken by a stationary camera into an image with maximum information content is introduced. The method partitions the image domain into uniform blocks and for each block selects the image that contains the most information within that block. The selected images are then blended together using monotonically decreasing blending functions that are centered at the blocks and have a sum of 1 everywhere in the image domain. The optimal block size and width of the blending functions are determined using a gradient-ascent algorithm to maximize information content in the fused image."
+    },
+    "57195624": {
+      "title": "Directly fusion method for combining variable exposure value images",
+      "abstract": "In this paper, an efficient and robust image fusion method is proposed to extract pixel intensity under the best exposure value directly from a low dynamic range of images with variable exposure values. Using this method, the HDR (high dynamic range) image can be computed and shown on the traditional display device without any prior information on a camera or scene. The proposed image fusion method is based on a mathematical model of a pixel intensity curve, established by a special robust curve fitting arithmetic criteria to evaluate the image quality of each pixel. The sufficient experimentations on various scenes indicate that the proposed method is more efficient than traditional HDRI (high dynamic range imaging) technologies and more robust when imaging noise,"
+    },
+    "10471913": {
+      "title": "Gradient-directed multiexposure composition",
+      "abstract": "In this paper, we present a simple yet effective method that takes advantage of the gradient information to accomplish the multiexposure image composition in both static and dynamic scenes. Given multiple images with different exposures, the proposed approach is capable of producing a pleasant tone-mapped-like high-dynamic-range image by compositing them seamlessly with the guidance of gradient-based quality assessment. In particular, two novel quality measures, namely, visibility and consistency, are developed based on the observations of gradient changes among different exposures. Experiments in various static and dynamic scenes are conducted to demonstrate the effectiveness of the proposed method."
+    },
+    "17085839": {
+      "title": "Generalized random walks for fusion of multi-exposure images",
+      "abstract": "A single captured image of a real-world scene is usually insufficient to reveal all the details due to under- or over-exposed regions. To solve this problem, images of the same scene can be first captured under different exposure settings and then combined into a single image using image fusion techniques. In this paper, we propose a novel probabilistic model-based fusion technique for multi-exposure images. Unlike previous multi-exposure fusion methods, our method aims to achieve an optimal balance between two quality measures, i.e., local contrast and color consistency, while combining the scene details revealed under different exposures. A generalized random walks framework is proposed to calculate a globally optimal solution subject to the two quality measures by formulating the fusion problem as probability estimation. Experiments demonstrate that our algorithm generates high-quality images at low computational cost. Comparisons with a number of other techniques show that our method generates better results in most cases."
+    },
+    "8141089": {
+      "title": "Bilateral filter based compositing for variable exposure photography",
+      "abstract": "Compositing a scene from multiple images is of considerableinterest to graphics professionals. Typical compositing techniques involve estimation or explicit prepar ation of matte by an artist. In this article, we address the problem of automatic compositing of a scene from images o btained through variable exposure photography. We consider the High Dynamic Range Imaging (HDRI) problem an d review some of the existing approaches for directly generating a Low Dynamic Range (LDR) image from mul ti-exposure images. We propose a computationally efficient method of scene compositing using edge-prese rving filters such as bilateral filters. The key challenge is to composite the multi-exposure images in such a way so as t o preserve details in both brightly and poorly illuminated regions of the scene within the limited dynamicrange."
+    },
+    "2067016": {
+      "title": "An optimization-based approach to fusion of multi-exposure, low dynamic range images",
+      "abstract": "The problem of compositing a high dynamic range (HDR) image for display on a standard low dynamic range device involves matte-based fusion of multiple images captured with different camera exposures, followed by a suitable tone mapping of the fused HDR image. The fused image should represent the entire scene in a clear, well-exposed manner by bringing the under- and over-exposed regions from the input images into the display range of the device while preserving the local contrast. We define matting as a multi-objective optimization problem based on these desired characteristics of the output, and provide the solution using an Euler-Lagrange technique. The proposed technique yields visually appealing fused images with a high value of contrast. Our technique produces the fused image of a low dynamic range, and thus it eliminates the need for generation of an intermediate HDR image and associated tone mapping. Additionally, our technique does not require any knowledge of the camera response functions or exposure settings."
+    }
+  },
+  "generator": "fallback"
+}

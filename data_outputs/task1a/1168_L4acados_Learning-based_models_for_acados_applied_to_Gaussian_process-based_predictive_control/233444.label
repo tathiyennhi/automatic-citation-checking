@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The vehicle acceleration a x results from integrating the desired acceleration rate input and is send to the interface provided by the vehicle platform, neglecting the underlying dynamics.",
+    "The model is discretized for N = 20 steps using 4th-order Runge-Kutta integrator with step size 0.1 [s].",
+    "The motion control task is to comfortably track a given path with a reference velocity v ref, yielding the modified cost regressor y(µ x k, u k) = (e c (x k, y k, θ k), e l (x k, y k, θ k), v k, ω k, ȧk, δdes,k, θk, v ref) with diagonal penalty matrix Q y, subject to box constraints β ∈ [-0.17, 0.17] [rad], v ∈ [0.5, 40] [m/s], δ, δ des ∈ [0.61, 0.61] [rad], δdes ∈ [-0.35, 0.35] [rad/s], a x ∈ [-5, 5] [m/s 2], ȧx ∈ [-4, 4] [m/s 3].",
+    "The safety-critical constraint of staying within the track boundaries, i.e., |e c | ≤ 1 [m], is formulated as in (21) with half-track width w track = 1.",
+    "The GP is used to correct velocity predictions and the steering dynamics, i.e., B d. = 0 3×4 I 4×4 0 3×4, with GP input features (v, β, ω, δ, δ des, a x)."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The integration of DataStates-LLM was performed through DeepSpeed's fork of Megatron-LM, which contains ZeRObased optimizations for the Megatron framework and does not need any modifications to use our checkpointing approach.",
+    "ImplementationOur checkpointing engine 1, is written in C++/CUDA and is exposed to DeepSpeed through Python and C++ APIs.",
+    "The pinned host buffer is managed through a simple lightweight circular buffer manager, considering the producer-consumer pattern described in the design principles ( § 5.1).",
+    "Dedicated CUDA streams and threads are used for device-to-host and host-to-file transfers.",
+    "Such offloading of transfers and flushes in C++ enables our approach to overcome the limitations of the state-of-the-art asynchronous approaches (e.g., CheckFreq [24], LightCheck [4], and Lightning's AsyncCheck-pointIO [17]) which perform background checkpointing and flushes through Python threads."
+  ]
+}

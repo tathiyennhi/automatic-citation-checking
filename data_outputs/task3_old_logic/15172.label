@@ -1,0 +1,29 @@
+{
+  "doc_id": "15172",
+  "text": "As a point of comparison we implement a segment-based temporal action localization method based on the work of Shou et al. [CITATION_1] . We use a single C3D-based network to directly predict how well a particular segment matches any sort of dive. We incorporate batch normalization into the network in the same way as the classification network, and do not perform any pretraining. Although we did not explicitly gather time metrics, we will note that performing inference on multiple segment lengths did make the segment- based system very slow to evaluate. With the segment-based approach established as a baseline, we consider two of our own approaches to temporal action localization as discussed in Section 4. The first approach uses only a single probability signal indicating the middle of a dive (Figure 2a) , with the transition threshold set to 0.5. The second approach uses three probability signals for the start, middle, and end (Figure 2b ). Each network was trained to convergence using ADADELTA [CITATION_2] . A predicted dive interval is deemed \"correct\" if it matches a labeled dive interval with an IoU (intersection over union) above a certain threshold. A \"false positive\" is a predicted interval without a corresponding labeled dive, and a \"false negative\" is a labeled dive not predicted by the system. Figure 7 shows a plot of the F 1 score for the different approaches as the IoU threshold was varied. Both of our approaches (all probability signals and middle probability signal only) perform much better than the segment-based approach, which is unable to reach an F 1 score of 0.8 for any IoU threshold. Although the performance of our own two approaches are similar, we advocate using all three signals since doing so shows slightly better results, and in other situations it may be more difficult to threshold the middle probability signal. Table 3 shows the precision, accuracy, and F 1 score for our three-signal approach and the segment-based approach, with the IoU threshold set to 0.5. At first it seems as if the precision of the TALNN is much worse than its recall. However, upon examining the false positives it was found that the vast majority did in fact contain dives that were simply not labeled in the data set. During our manual inspection of the false positives we did not find a single example that wasn't a labeling mistake. On the other hand, dives which were missed by the TALNN were mostly legitimate oversights, with dives from the furthest springboard being the most common culprit.",
+  "correct_citation": {
+    "[CITATION_1]": "14602383",
+    "[CITATION_2]": "7365802"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As a point of comparison we implement a segment-based temporal action localization method based on the work of Shou et al."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Each network was trained to convergence using ADADELTA"
+    }
+  ],
+  "bib_entries": {
+    "14602383": {
+      "title": "Temporal Action Localization in Untrimmed Videos via Multi-stage CNNs",
+      "abstract": "We address temporal action localization in untrimmed long videos. This is important because videos in real applications are usually unconstrained and contain multiple action instances plus video content of background scenes or other activities. To address this challenging issue, we exploit the effectiveness of deep networks in temporal action localization via three segment-based 3D ConvNets: (1) a proposal network identifies candidate segments in a long video that may contain actions; (2) a classification network learns one-vs-all action classification model to serve as initialization for the localization network; and (3) a localization network fine-tunes on the learned classification network to localize each action instance. We propose a novel loss function for the localization network to explicitly consider temporal overlap and therefore achieve high temporal localization accuracy. Only the proposal network and the localization network are used during prediction. On two large-scale benchmarks, our approach achieves significantly superior performances compared with other state-of-the-art systems: mAP increases from 1.7% to 7.4% on MEXaction2 and increases from 15.0% to 19.0% on THUMOS 2014, when the overlap threshold for evaluation is set to 0.5."
+    },
+    "7365802": {
+      "title": "ADADELTA: An Adaptive Learning Rate Method",
+      "abstract": "We present a novel per-dimension learning rate method for gradient descent called ADADELTA. The method dynamically adapts over time using only first order information and has minimal computational overhead beyond vanilla stochastic gradient descent. The method requires no manual tuning of a learning rate and appears robust to noisy gradient information, different model architecture choices, various data modalities and selection of hyperparameters. We show promising results compared to other methods on the MNIST digit classification task using a single machine and on a large scale voice dataset in a distributed cluster environment."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Found 1 method validate in ModelChoiceField.",
+    "Implementation is:...2.",
+    "Found 1 method to_python in ModelChoiceField.",
+    "Implementation is: def to_python(self, value):... raise ValidationError(self.error_messages['invalid_choice'], code='invalid_choice')validate method simply calls the validate method of its parent class.-to_python method is responsible for converting the input into a Python object.The ValidationError raised in to_python does not include the invalid value in the error message (consistent with the issue).",
+    "-Proposed solution: Adjust the error message to incorporate the value dynamically, similar to how ModelMultipleChoiceField includes %(value)s in its error message."
+  ],
+  "correct_citations": []
+}

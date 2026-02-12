@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The result of the last graph convolutional layer is stored as the output of node aggregation on intra graphs, which is denoted asH (t)in.",
+    "t denotes the tth graph snapshot G (t).",
+    "Specifically, for bipartite graph A * bi that models the relation between the target node set V m and other types of node set V k, a dedicated bipartite GCN layer [39] is exploited to separately execute graph convolutional operations on V m and V k, as formulated in ( 7) and ( 8):H (l+1) m = σ D -1 m B m H (l) k W (l+1) m F m ω (l+1) j(7)H (l+1) k = σ D -1 k B k H (l) m W (l+1) k F k ω (l+1) k, (8)whereB m ∈ R V m × V k and B k ∈ R V k × V m are the incidence matrix for two node sets V m and V k in the bipar- tite graph A * bi, respectively, D m = Diag( i B m(1,i),..., i B m( V m,i)) and D k = Diag( i B k(1,i),..., i B k( V k,i))are the diagonal degree matrices of V m and V k, H (l) m and H (l) k are the learned node embedding matrix in the lth layer.W (l) m, W (l) k, ω (l) m,and ω (l) k are trainable parameters in the lth layer.",
+    "is the concatenation operation.",
+    "The BiGCN layer discards the result H (l) k of other node set, and only outputs the result H (l) m on the target node set V m. The result is denoted asH (t)bi, where t denotes the tth graph snapshot G (t)."
+  ],
+  "correct_citations": [
+    "Specifically, for bipartite graph A * bi that models the relation between the target node set V m and other types of node set V k, a dedicated bipartite GCN layer [39] is exploited to separately execute graph convolutional operations on V m and V k, as formulated in ( 7) and ( 8):H (l+1) m = σ D -1 m B m H (l) k W (l+1) m F m ω (l+1) j(7)H (l+1) k = σ D -1 k B k H (l) m W (l+1) k F k ω (l+1) k, (8)whereB m ∈ R V m × V k and B k ∈ R V k × V m are the incidence matrix for two node sets V m and V k in the bipar- tite graph A * bi, respectively, D m = Diag( i B m(1,i),..., i B m( V m,i)) and D k = Diag( i B k(1,i),..., i B k( V k,i))are the diagonal degree matrices of V m and V k, H (l) m and H (l) k are the learned node embedding matrix in the lth layer.W (l) m, W (l) k, ω (l) m,and ω (l) k are trainable parameters in the lth layer."
+  ]
+}

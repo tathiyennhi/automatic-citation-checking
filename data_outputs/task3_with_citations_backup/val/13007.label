@@ -1,0 +1,44 @@
+{
+  "doc_id": "13007",
+  "text": "An alternative approach to encoding temporal information in vector representations is to use vector binding based on high-dimensional random representations (for a review, see [CITATION_1] ). Two random binding models that have been successfully applied to language corpora are the bound encoding of the aggregate language environment model (BEAGLE; [CITATION_2] ) and the random permutation model (RPM; [CITATION_3] ). BEAGLE and RPM can both be loosely thought of as noisy -gram models. Each uses a dedicated function to associate two contiguous words in a corpus but may recursively apply the same function to create vectors representing multiple chunks. For example, in the short phrase \"Mary loves John, \" an associative operator can be used to create a new vector that represents the -grams Mary-loves and (Mary-loves)-John. The continuous binding of higher-order -grams from a single operator in this fashion is remarkably simple but produces very sophisticated vector representations that contain word transition information. In addition, the associative operations themselves may be inverted to retrieve from memory previously stored associations. Hence, given the probe Mary John, the operation can be inverted to retrieve plausible words that fit this temporal context from the training corpus that are stored in a distributed fashion in the vector. The applications of BEAGLE and RPM to natural language processing tasks have been studied extensively elsewhere. The focus of this current set of experiments is to study their respective association operators in depth.",
+  "correct_citation": {
+    "[CITATION_1]": "733980",
+    "[CITATION_2]": "7819391",
+    "[CITATION_3]": "17182082"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "An alternative approach to encoding temporal information in vector representations is to use vector binding based on high-dimensional random representations (for a review, see [CITATION_1] ).",
+      "s_span": 0,
+      "e_span": 191
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Two random binding models that have been successfully applied to language corpora are the bound encoding of the aggregate language environment model (BEAGLE; [CITATION_2] ) and the random permutation model (RPM; [CITATION_3] ).",
+      "s_span": 192,
+      "e_span": 419
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Two random binding models that have been successfully applied to language corpora are the bound encoding of the aggregate language environment model (BEAGLE; [CITATION_2] ) and the random permutation model (RPM; [CITATION_3] ).",
+      "s_span": 192,
+      "e_span": 419
+    }
+  ],
+  "bib_entries": {
+    "17182082": {
+      "title": "Permutations as a means to encode order in word space",
+      "abstract": "We show that sequence information can be encoded into high-dimensional fixed-width vectors using permutations of coordinates. Computational models of language often represent words with high-dimensional semantic vectors compiled from word-use statistics. A word's semantic vector usually encodes the contexts in which the word appears in a large body of text but ignores word order. However, word order often signals a word's grammatical role in a sentence and thus tells of the word's meaning. Jones and Mewhort (2007) show that word order can be included in the semantic vectors using holographic reduced representation and convolution. We show here that the order information can be captured also by permuting of vector coordinates, thus providing a general and computationally light alternative to convolution."
+    },
+    "7819391": {
+      "title": "Representing word meaning and order information in a composite holographic lexicon",
+      "abstract": "The authors present a computational model that builds a holographic lexicon representing both word meaning and word order from unsupervised experience with natural language. The model uses simple convolution and superposition mechanisms (cf. B. B. Murdock, 1982) to learn distributed holographic representations for words. The structure of the resulting lexicon can account for empirical data from classic experiments studying semantic typicality, categorization, priming, and semantic constraint in sentence completions. Furthermore, order information can be retrieved from the holographic representations, allowing the model to account for limited word transitions without the need for built-in transition rules. The model demonstrates that a broad range of psychological data can be accounted for directly from the structure of lexical representations learned in this way, without the need for complexity to be built into either the processing mechanisms or the representations. The holographic representations are an appropriate knowledge representation to be used by higher order models of language comprehension, relieving the complexity required at the higher level."
+    },
+    "733980": {
+      "title": "Hyperdimensional computing: an introduction to computing in distributed representation with high-dimensional random vectors",
+      "abstract": "The 1990s saw the emergence of cognitive models that depend on very high dimensionality and randomness. They include Holographic Reduced Representations, Spatter Code, Semantic Vectors, Latent Semantic Analysis, Context-Dependent Thinning, and Vector-Symbolic Architecture. They represent things in high-dimensional vectors that are manipulated by operations that produce new high-dimensional vectors in the style of traditional computing, in what is called here hyperdimensional computing on account of the very high dimensionality. The paper presents the main ideas behind these models, written as a tutorial essay in hopes of making the ideas accessible and even provocative. A sketch of how we have arrived at these models, with references and pointers to further reading, is given at the end. The thesis of the paper is that hyperdimensional representation has much to offer to students of cognitive science, theoretical neuroscience, computer science and engineering, and mathematics."
+    }
+  },
+  "generator": "fallback_v4"
+}

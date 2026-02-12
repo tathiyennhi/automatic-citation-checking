@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We treat all whole slide images (WSIs) belonging to a patient as one input.",
+    "In other words, we have patient-level samples, instead of slide-level or even patch-level data points.",
+    "These WSIs are tessellated at a total magnification of 100x (equivalent to an objective magnification of 10x or 1 micron per pixel) into non-overlapping image patches of 256 x 256 pixels and resized to 224 x 224 pixels using the Python library SlideIO.",
+    "The inputs are then converted into PyTorch tensor objects and normalized using a mean of (0.485, 0.456, 0.406) and a standard deviation of (0.229, 0.224, 0.225).",
+    "We use this specific image size and normalization parameter in accordance with most publicly available pre-trained histopathology image encoders."
+  ],
+  "correct_citations": []
+}

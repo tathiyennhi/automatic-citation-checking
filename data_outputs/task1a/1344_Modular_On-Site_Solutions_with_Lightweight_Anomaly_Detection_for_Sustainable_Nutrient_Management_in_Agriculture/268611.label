@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "(2) A high-resolution module using RF-estimated response variable trajectories as inputs to the AE model, generated using the daily-averaged VI-based feature dataset (not used for RF training) to produce pseudo-labels.",
+    "The models were each trained over 100 epochs on exclusively \"healthy\" T1 trajectories, VIbased feature trajectories for the early warning module or RF-estimated trajectories for the highresolution module, using the Adam optimizer with a learning rate of 0.001.",
+    "During inference, growth trajectories of lettuce heads (yt) at time t were reconstructed as ŷt with a reconstruction error threshold of 1.5 times the mean reconstruction error observed in the training dataset at the final training epoch, serving as the indicator for anomaly detection.",
+    "Windows from 6-22 days long, starting at 4 DAT, were used to evaluate the optimal length of time needed for the model to differentiate between healthy (T1) and deficient (T2) or highly deficient (T3) trajectories.",
+    "The models were each trained on the first 40 (or as many as available given destructive sampling) of the T1 trajectory segments of the same length, and then each window was tested on the remaining T1 trajectories along with the T2 and then T3 trajectories, respectively, to evaluate the net detection accuracy (true detection rate minus false detection rate)."
+  ],
+  "correct_citations": []
+}

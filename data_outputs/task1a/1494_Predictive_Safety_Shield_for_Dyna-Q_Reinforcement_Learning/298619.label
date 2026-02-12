@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We assume that for a given pair (s, a), a model M(s, a) returns a next step s ′ and a corresponding reward r ′ or an empty tuple if a situation (s, a) has not been modeled at all.",
+    "We then initialize a Q-table Q with the optimal action-value function Q * (s, a) learned during training.",
+    "At time step t, let an agent be at state s t and let it follow a deterministic greedy policy based Algorithm 1 SafetyFilter(α, γ, ε, K, N)1: Inputs: Q-table Q, Model M, Initial State s 0 2: t ← 0 3: while s t is not terminal do 4: if isVerifiedSafe(greedy policy(Q, s t), N) then 5: a ← greedy policy(Q,s t) 6: else 7:for s ′ ∈ Reach(s t, N + 1) do 8:Q W (s ′, a) ← Q(s ′, a) for all a ∈ A 9:for each of K planning steps do 10:(s', a') ← RandSample(M, Reach(s, N))11: if M(s ′, a saf e t (s ′, a ′)) is not empty then 12: (r ′, s ′′) ← from M(s ′, a saf e t (s ′, a ′)) 13: Update(Q W, s ′, a ′, s ′′, α, γ, r ′) 14:a ← ε-greedy policy(Q W, s t)15: s t+1, r ← Move(s t, a saf e t (s t, a)) 16: M(s t, a saf e t (s t, a)) ← (r, s t+1) 17:t ← t + 1 on Q-table Q.If this policy is verified safe for the next N steps, we use an action generated with this policy to move to the next step.",
+    "Otherwise, the generated action is replaced according to the procedure described in lines 7-14 of Algorithm 1.",
+    "We use the following function to verify that a policy π is safe for the next N:i ← t, S 0 ← {s t } while i ≤ t + N do S i+1 ← s∈Si a∈Enabπ(s) F (s, a) if S i+1 ⊆ Dom(C i+1) then i ← i + 1 elsereturn false return true If the policy was not verified safe, we first create a copy of a given Q function for all states that are reachable from state s t in no more then N+1 steps 7-8."
+  ],
+  "correct_citations": []
+}

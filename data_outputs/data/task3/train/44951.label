@@ -1,0 +1,20 @@
+{
+  "doc_id": "44951",
+  "text": "After extracting the nodule candidates, the true nodules should be distinguished from the nonnodule objects. The non-nodule structures mainly belong to natural small tissues in the lungs or be caused by redundant details or artifacts which have not yet removed by the previous pre-processing step. We propose to apply the SVM classifier in order to distinguish the nodules from the other non-nodule contents. To this end, the SVM is first trained using some training images in which the features of the true nodules and non-nodules have been already extracted. In the testing step, the 3D nodule candidates are classified into two classes using the trained SVM classifier. In this article, the Gaussian kernel is used for the SVM classification and the parameters of the kernel have been tuned using a 5-fold cross-validation. The implementation of the SVM classifier is done through using the LIBSVM package [CITATION_1] . In our research, we use three widely-used features for the training and testing stages. These features are the average and standard deviation of the pixels' gray-levels in each 3D object, as well as the volume of each 3D object. Our extensive sets of experiments show that using the three above-mentioned features usually results in accurate classification accuracies. In the process of calculating the 3D objects' volumes, the area of each pixel as well as the distance between each two consecutive slices are considered as one unit. As an example, two pixels which each of them is placed in similar locations in two adjacent slices constitute a cube with unit volume. As a result, the volume of a given 3D object can be easily calculated by counting the number of cubes that are surrounded by the boundaries of that object.",
+  "correct_citation": {
+    "[CITATION_1]": "961425"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The implementation of the SVM classifier is done through using the LIBSVM package  ."
+    }
+  ],
+  "bib_entries": {
+    "961425": {
+      "title": "LIBSVM: a library for support vector machines",
+      "abstract": "LIBSVM is a library for Support Vector Machines (SVMs). We have been actively developing this package since the year 2000. The goal is to help users to easily apply SVM to their applications. LIBSVM has gained wide popularity in machine learning and many other areas. In this article, we present all implementation details of LIBSVM. Issues such as solving SVM optimization problems theoretical convergence multiclass classification probability estimates and parameter selection are discussed in detail."
+    }
+  },
+  "generator": "fallback_v4"
+}

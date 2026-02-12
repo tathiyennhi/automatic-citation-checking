@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "By default, TAPM uses GPT-2 small as its story decoder.",
+    "Here, we replace this language model with LLAMA 2 (Touvron et al., 2023), an auto-regressive (decoder-only) large language model pre-trained via maximum likelihood objective for next-token prediction on massive amounts of publicly available online data.",
+    "Thanks to the large context window it can take as input and the Grouped Query Attention mechanism to speed up processing during decoding (Ainslie et al., 2023), this LM is currently the state-of-art on various downstream tasks in the MMLU benchmark (Hendrycks et al., 2021).",
+    "Here, we use the 4-bit quantized (Dettmers et al., 2023) pre-trained version of the LLAMA 2 7B model and adapt the parameter dimensions of TAPM's visual encoder component to match the updated language decoder.",
+    "To ensure computational and memory efficiency, we employ the LoRA (Low-rank Adapter; Hu et al., 2022) fine-tuning approach (that allows for updating only a subset of the model's parameters) and only target the multi-head self-attention blocks-W Q, W K, W V, W O (Vaswani et al., 2017) -of the language model during training."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Pairing each text embedding t k with f i, the visual embedding of test image x i, one could measure their cosine similarity, yielding a prediction logit:l i,k = f ⊤ i t k.(1)This also yields a probabilistic prediction, in the form of a posterior softmax probability of class k given test input x i:p i,k = exp(l i,k /τ) K j exp(l i,j /τ)(2)where τ is a softmax-temperature parameter 1.",
+    "Hence, zeroshot classification of image x i is done by finding the class with the highest posterior probability: k = argmax k p i,k.In the few-shot setting, and to further adapt these models, we assume that we have access to N/K labeled samples for each target class, the so-called support set.",
+    "N denotes the total number of support samples, and N/K (the number of shots per class) is typically small (less than 16).",
+    "Let y ik denotes the one-hot encoded label for a labeled support image x i, i.e., y ik = 1 if k is the class of image x i and 0 otherwise.",
+    "Then, we minimize the cross-entropy (CE) loss:- 1 N N i=1 K k=1 y ik ln p i,k(3)This is done either (i) by fine-tuning the input prompts, c k, k = 1,..., K, as in prompt-tuning methods following on from the pioneering work of CoOp [5,26,53,[62][63][64]; or (ii) by updating a set of additional parameters, as in adapters [14,55,61]."
+  ],
+  "correct_citations": [
+    "Then, we minimize the cross-entropy (CE) loss:- 1 N N i=1 K k=1 y ik ln p i,k(3)This is done either (i) by fine-tuning the input prompts, c k, k = 1,..., K, as in prompt-tuning methods following on from the pioneering work of CoOp [5,26,53,[62][63][64]; or (ii) by updating a set of additional parameters, as in adapters [14,55,61]."
+  ]
+}

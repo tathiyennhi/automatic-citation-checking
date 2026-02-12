@@ -1,0 +1,38 @@
+{
+  "doc_id": "46783",
+  "text": "It remains to find the spatial scale σ for the Laplacian. To adapt to the data, we leverage 1D persistent homology from TDA [CITATION_1] to find the scale at which the primary topological feature -the single cycle -exists. Specifically, we compute the 1D Vietoris Rips Filtration on our sliding window data Z, which tracks equivalence classes of loops, known as homology classes [31] . The algorithm returns a so-called persistence diagram, a multiset of points on a 2D birth/death grid, with each point corresponding to a loop class. The birth value b i indicates the scale at which the i th loop class forms, and the death value d i indicates the scale at which that class no longer exists. The difference d i − b i is known as the persistence of the i th class. For our scenario, one point in the diagram should have a much larger persistence than the others (e.g. Figure 1 ) [CITATION_2] [CITATION_3] , and this ideally reflects the single cycle of motion that we seek. We take our scale to be αb i + (1 − α)d i for the largest d i − b i , where α ∈ [0, 1] is a parameter which will be explored experimentally in Section 3.",
+  "correct_citation": {
+    "[CITATION_1]": "186755600",
+    "[CITATION_2]": "592832",
+    "[CITATION_3]": "1022312"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To adapt to the data, we leverage 1D persistent homology from TDA to find the scale at which the primary topological feature -the single cycle -exists."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Figure 1 ), and this ideally reflects the single cycle of motion that we seek."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Figure 1 ), and this ideally reflects the single cycle of motion that we seek."
+    }
+  ],
+  "bib_entries": {
+    "186755600": {
+      "title": "Computational topology: an introduction",
+      "abstract": "Combining concepts from topology and algorithms, this book delivers what its title promises: an introduction to the field of computational topology. Starting with motivating problems in both mathematics and computer science and building up from classic topics in geometric and algebraic topology, the third part of the text advances to persistent homology. This point of view is critically important in turning a mostly theoretical field of mathematics into one that is relevant to a multitude of disciplines in the sciences and engineering. The main approach is the discovery of topology through algorithms. The book is ideal for teaching a graduate or advanced undergraduate course in computational topology, as it develops all the background of both the mathematical and algorithmic aspects of the subject from first principles. Thus the text could serve equally well in a course taught in a mathematics department or computer science department."
+    },
+    "592832": {
+      "title": "Sliding windows and persistence: An application of topological methods to signal analysis",
+      "abstract": "We develop in this paper a theoretical framework for the topological study of time series data. Broadly speaking, we describe geometrical and topological properties of sliding window (or time-delay) embeddings, as seen through the lens of persistent homology. In particular, we show that maximum persistence at the point-cloud level can be used to quantify periodicity at the signal level, prove structural and convergence theorems for the resulting persistence diagrams, and derive estimates for their dependency on window size and embedding dimension. We apply this methodology to quantifying periodicity in synthetic data sets, and compare the results with those obtained using state-of-the-art methods in gene expression analysis. We call this new method SW1PerS which stands for Sliding Windows and 1-dimensional Persistence Scoring."
+    },
+    "1022312": {
+      "title": "(quasi)periodicity quantification in video data, using topology",
+      "abstract": "This work introduces a novel framework for quantifying the presence and strength of recurrent dynamics in video data. Specifically, we provide continuous measures of periodicity (perfect repetition) and quasiperiodicity (superposition of periodic modes with non-commensurate periods), in a way which does not require segmentation, training, object tracking or 1-dimensional surrogate signals. Our methodology operates directly on video data. The approach combines ideas from nonlinear time series analysis (delay embeddings) and computational topology (persistent homology), by translating the problem of finding recurrent dynamics in video data, into the problem of determining the circularity or toroidality of an associated geometric space. Through extensive testing, we show the robustness of our scores with respect to several noise models/levels, we show that our periodicity score is superior to other methods when compared to human-generated periodicity rankings, and furthermore, we show that our quasiperiodicity score clearly indicates the presence of biphonation in videos of vibrating vocal folds, which has never before been accomplished end to end quantitatively."
+    }
+  },
+  "generator": "fallback"
+}

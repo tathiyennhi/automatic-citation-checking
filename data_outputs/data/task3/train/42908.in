@@ -1,0 +1,37 @@
+{
+  "text": "When simulating a system using a compartment-based stochastic model (also known as a position-jump model), the computational cost of the simulations can become prohibitive if the number of particles in the system is high. A computationally efficient continuum model may be more appropriate in this scenario. Thus in situations where particle concentrations vary widely across the domain there may be advantages to using a continuum PDE model in the region of the spatial domain where particle numbers are high and a discrete stochastic model elsewhere. Moreover, detail is often only required in a certain part of the domain and thus a spatial-hybrid model may be most appropriate [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] [CITATION_6] . Such a hybrid model would allow an accurate representation of the reaction-diffusion dynamics in the region where this is required but minimises the computational resources needed to perform the calculation by using less detailed, more efficient methods in regions of the domain where detail is not required.",
+  "correct_citation": {
+    "[CITATION_1]": "207292368",
+    "[CITATION_2]": "2301703",
+    "[CITATION_3]": "20781604",
+    "[CITATION_4]": "7332359",
+    "[CITATION_5]": "34269565",
+    "[CITATION_6]": "13962422"
+  },
+  "bib_entries": {
+    "20781604": {
+      "title": "The two-regime method for optimizing stochastic reaction-diffusion simulations",
+      "abstract": "Spatial organization and noise play an important role in molecular systems biology. In recent years, a number of software packages have been developed for stochastic spatio-temporal simulation, ranging from detailed molecular-based approaches to less detailed compartment-based simulations. Compartment-based approaches yield quick and accurate mesoscopic results, but lack the level of detail that is characteristic of the computationally intensive molecular-based models. Often microscopic detail is only required in a small region (e.g. close to the cell membrane). Currently, the best way to achieve microscopic detail is to use a resource-intensive simulation over the whole domain. We develop the two-regime method (TRM) in which a molecular-based algorithm is used where desired and a compartment-based approach is used elsewhere. We present easy-to-implement coupling conditions which ensure that the TRM results have the same accuracy as a detailed molecular-based model in the whole simulation domain. Therefore, the TRM combines strengths of previously developed stochastic reaction\u2013diffusion software to efficiently explore the behaviour of biological models. Illustrative examples and the mathematical justification of the TRM are also presented."
+    },
+    "13962422": {
+      "title": "An adaptive algorithm for simulation of stochastic reaction-diffusion processes",
+      "abstract": "We propose an adaptive hybrid method suitable for stochastic simulation of diffusion dominated reaction-diffusion processes. For such systems, simulation of the diffusion requires the predominant part of the computing time. In order to reduce the computational work, the diffusion in parts of the domain is treated macroscopically, in other parts with the tau-leap method and in the remaining parts with Gillespie's stochastic simulation algorithm (SSA) as implemented in the next subvolume method (NSM). The chemical reactions are handled by SSA everywhere in the computational domain. A trajectory of the process is advanced in time by an operator splitting technique and the timesteps are chosen adaptively. The spatial adaptation is based on estimates of the errors in the tau-leap method and the macroscopic diffusion. The accuracy and efficiency of the method are demonstrated in examples from molecular biology where the domain is discretized by unstructured meshes."
+    },
+    "34269565": {
+      "title": "Hybrid method for simulating front propagation in reaction-diffusion systems",
+      "abstract": "We study the propagation of pulled fronts in the A<--> A+A microscopic reaction-diffusion process using Monte Carlo simulations. In the mean field approximation the process is described by the deterministic Fisher-Kolmogorov-Petrovsky-Piscounov equation. In particular, we concentrate on the corrections to the deterministic behavior due to the number of particles per correlated volume Omega. By means of a hybrid simulation scheme, we manage to reach large macroscopic values of Omega, which allows us to show the importance in the dynamics of microscopic pulled fronts of the interplay of microscopic fluctuations and their macroscopic relaxation."
+    },
+    "2301703": {
+      "title": "Multiscale reaction-diffusion algorithms: Pde-assisted brownian dynamics",
+      "abstract": "Two algorithms that combine Brownian dynamics (BD) simulations with mean-field partial differential equations (PDEs) are presented. This PDE-assisted Brownian dynamics (PBD) methodology provides exact particle tracking data in parts of the domain, whilst making use of a mean-field reaction-diffusion PDE description elsewhere. The first PBD algorithm couples BD simulations with PDEs by randomly creating new particles close to the interface which partitions the domain and by reincorporating particles into the continuum PDE-description when they cross the interface. The second PBD algorithm introduces an overlap region, where both descriptions exist in parallel. It is shown that to accurately compute variances using the PBD simulation requires the overlap region. Advantages of both PBD approaches are discussed and illustrative numerical examples are presented."
+    },
+    "207292368": {
+      "title": "Multiscale stochastic reaction-diffusion modeling: Application to actin dynamics in filopodia",
+      "abstract": "Two multiscale (hybrid) stochastic reaction\u2013diffusion models of actin dynamics in a filopodium are investigated. Both hybrid algorithms combine compartment-based and molecular-based stochastic reaction\u2013diffusion models. The first hybrid model is based on the models previously developed in the literature. The second hybrid model is based on the application of a recently developed two-regime method (TRM) to a fully molecular-based model, which is also developed in this paper. The results of hybrid models are compared with the results of the molecular-based model. It is shown that both approaches give comparable results, although the TRM model better agrees quantitatively with the molecular-based model."
+    },
+    "7332359": {
+      "title": "Coupling particles and fields in a diffusive hybrid model",
+      "abstract": "A general scheme to patch together discrete and continuous descriptions of diffusion within the same physical space is studied. In the discrete description, diffusion is described by microscopic random walkers on a lattice; in the continuous description, diffusion is described through the macroscopic diffusion equation. The coupling scheme is based on the mutual exchange of mass flux across the discrete-continuous interface. Detailed tests of the scheme, coupling particle, and field descriptions are particularly illustrative for the diffusion problem. Both the nonequilibrium transport behavior and the equilibrium fluctuations of the combined discrete-continuous system are in agreement with theoretical predictions."
+    }
+  }
+}

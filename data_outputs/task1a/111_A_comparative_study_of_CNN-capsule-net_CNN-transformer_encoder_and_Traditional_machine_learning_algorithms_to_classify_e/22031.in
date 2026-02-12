@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The network can learn features by chaining convolutional blocks whose layers learn simple features, but as the blocks are usually routed with pooling, they significantly improve the classification by discarding unimportant activations, which makes the classifier robust to small transformations in the input data [40].The algorithm for the Capsule-Net is the next:1. procedure ROUTING ( Ûj|i, r, l) 2. for all capsule i in layer l and capsule j in layer (l + 1): b ij ← 0.",
+    "3. for r iterations do: 4. for all capsule i in layer l:C i ← softmax(b i);where softmax is:c ij = exp(b ij) k exp(b ik)5. for all capsule j in layer (l + 1): s j ← i c ij Ûj|i.6.",
+    "for all capsule j in layer (l + 1): v j ← squash(s j); where squash is:v j = ||s j || 2 1+||s j || 2 s j ||s j ||7.",
+    "for all capsule i in layer 1 and capsule j in layer(l + 1): b ij ← b ij + Ûj|i • v j returnv j where s j = i c ij Ûj|i, Ûj|i = W ij U iThe vector output v j of capsule j represents its resulting output, while s j represents the total input received by that capsule.",
+    "In layers beyond the initial layer, the total input s j of a capsule is calculated as a weighted sum of the \"pre- diction vectors\" Ûj|i from the capsules in the layer below."
+  ]
+}

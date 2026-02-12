@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This framework scores a given model based on its win rate relative to a baseline model, which is often a well-performing model that is widely accessible and commonly used in practice [7,15,58].AlpacaEval was chosen over other frameworks as it handles some of the common challenges that come with using LLM judges, such as randomizing the order of the two models outputs so there is no positional bias in the evaluation (as was done in our survey with SME participants).Using the framework, the LLM judge model was provided the same twenty-five prompt instructions, the set candidate responses, and three ranking questions (one general preference question and two aspect questions) as provided to SMEs in the survey.",
+    "The LLM judge model will rank which model was preferred (response A or response B) for each question.It is important to note that we replace the original AlpacaEval instruction-following dataset with our own curated dataset.",
+    "We also modified the framework to allow for preferences to be evaluated relative to specific aspect questions and instructed the LLM judge model to provide an explanation for its choice between candidate responses.",
+    "This is done by simply adding, \"Why is {preference} chosen over the other output?",
+    "Provide a short 2-3 sentence explanation. \""
+  ]
+}

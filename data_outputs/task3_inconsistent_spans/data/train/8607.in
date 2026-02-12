@@ -1,0 +1,17 @@
+{
+  "text": "Following R\u00f8nnow et al. [CITATION_1] we carried out extensive pilot tests to find optimal parameter settings for (in-house) SA, and report the lowest computation time observed for each input and metric. See Appendix C for details. While our implementation of SA should be as good as any other in terms of solution quality, it is not the fastest. Isakov et al. [CITATION_2] developed highly optimized simulated annealing codes-one particularly effective technique they use is the recycling of randomly generated numbers; this leads to a significant speedup at the cost of introducing a small amount of correlation between the samples. Two of their specific SA codes are of interest in this study: an ms r1 nf (for RAN1 problems) and an ss ge fi (for other problem classes). The an ms r1 nf solver only works for one class of problems-RAN1 problems-but achieves a huge speed increase by exploiting word-level parallelism to run 64 replicas at a time using bitwise arithmetic.",
+  "correct_citation": {
+    "[CITATION_1]": "5596838",
+    "[CITATION_2]": "30596495"
+  },
+  "bib_entries": {
+    "5596838": {
+      "title": "Defining and detecting quantum speedup",
+      "abstract": "Quantum machines offer the possibility of performing certain computations much faster than their classical counterparts. However, how to define and measure quantum speedup is a topic of debate. Ronnow et al. describe methods for fairly evaluating the difference in computational power between classical and quantum processors. They define various types of quantum speedup and consider quantum processors that are designed to solve a specific class of problems. ::: ::: Science , this issue p. [420][1] ::: ::: [1]: /lookup/volpage/345/420?iss=6195"
+    },
+    "30596495": {
+      "title": "Optimized simulated annealing for Ising spin glasses",
+      "abstract": "Abstract We present several efficient implementations of the simulated annealing algorithm for Ising spin glasses on sparse graphs. In particular, we provide a generic code for any choice of couplings, an optimised code for bipartite graphs, and highly optimised implementations using multi-spin coding for graphs with small maximum degree and discrete couplings with a finite range. The latter codes achieve up to 50 spin flips per nanosecond on modern Intel CPUs. We also compare the performance of the codes to that of the special purpose D-Wave devices built for solving such Ising spin glass problems. Program summary Program title: SimAn v1.0 Catalogue identifier: AEVZ_v1_0 Program summary URL: http://cpc.cs.qub.ac.uk/summaries/AEVZ_v1_0.html Program obtainable from: CPC Program Library, Queen\u2019s University, Belfast, N. Ireland Licensing provisions: GNU General Public License, version 3 No. of lines in distributed program, including test data, etc.: 14999 No. of bytes in distributed program, including test data, etc.: 26594 Distribution format: tar.gz Programming language: C++, OpenMP for parallelization. Computer: Any PC. Operating system: Linux/OS X/UNIX. Has the code been vectorised or parallelized?: Parallelized using OpenMP. RAM: Variable, from a few megabytes. Classification: 4.13, 6.5, 23. Nature of problem: Ising spin glass ground states on sparse graphs. Solution method: Simulated annealing. Running time: From milliseconds to seconds."
+    }
+  }
+}

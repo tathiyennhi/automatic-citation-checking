@@ -1,0 +1,29 @@
+{
+  "doc_id": "26563",
+  "text": "After propagating the top level to give a candidate bounding box region, this is further enlarged to form a broader search region, which we then segment into super-pixels [CITATION_1] , which provide a pool of candidate image regions for matching to middle level target parts, using our proposed adaptive clustered decision A C C E P T E D M A N U S C R I P T tree method. Typically, the structures of decision trees are generated offline during training, e.g. [CITATION_2] [34], but such static trees would be unsuitable for tracking targets with dynamically changing appearances, against changing background scenes. Instead, we propose an adaptive tree structure, which is relearned online for each new image, by explicitly considering contextual information. Figure 4 : Clustered decision tree. Each tree-level represents a feature modality (e.g. color, motion etc.). The feature values of superpixels form leaves on a tree-level. If any two leaves are sufficiently similar in feature value then they are merged into a cluster. A new tree-level (using the next feature modality) is then used to try to disambiguate the members of such clusters. The tree continues growing (by adding more tree-levels of more features), until all target parts have been assigned to a unique choice of superpixel. Any remaining unmatched parts are assumed to have become occluded and are temporarily switched off.",
+  "correct_citation": {
+    "[CITATION_1]": "1806278",
+    "[CITATION_2]": "3116764"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "After propagating the top level to give a candidate bounding box region, this is further enlarged to form a broader search region, which we then segment into super-pixels, which provide a pool of candidate image regions for matching to middle level target parts, using our proposed adaptive clustered decision A C C E P T E D M A N U S C R I P T tree method."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Typically, the structures of decision trees are generated offline during training, e.g. [34], but such static trees would be unsuitable for tracking targets with dynamically changing appearances, against changing background scenes."
+    }
+  ],
+  "bib_entries": {
+    "1806278": {
+      "title": "SLIC superpixels compared to state-of-the-art superpixel methods",
+      "abstract": "Computer vision applications have come to rely increasingly on superpixels in recent years, but it is not always clear what constitutes a good superpixel algorithm. In an effort to understand the benefits and drawbacks of existing methods, we empirically compare five state-of-the-art superpixel algorithms for their ability to adhere to image boundaries, speed, memory efficiency, and their impact on segmentation performance. We then introduce a new superpixel algorithm, simple linear iterative clustering (SLIC), which adapts a k-means clustering approach to efficiently generate superpixels. Despite its simplicity, SLIC adheres to boundaries as well as or better than previous methods. At the same time, it is faster and more memory efficient, improves segmentation performance, and is straightforward to extend to supervoxel generation."
+    },
+    "3116764": {
+      "title": "Visual tracking by sampling tree-structured graphical models",
+      "abstract": "Probabilistic tracking algorithms typically rely on graphical models based on the first-order Markov assumption. Although such linear structure models are simple and reasonable, it is not appropriate for persistent tracking since temporal failures by short-term occlusion, shot changes, and appearance changes may impair the remaining frames significantly. More general graphical models may be useful to exploit the intrinsic structure of input video and improve tracking performance. Hence, we propose a novel offline tracking algorithm by identifying a tree-structured graphical model, where we formulate a unified framework to optimize tree structure and track a target in a principled way, based on MCMC sampling. To reduce computational cost, we also introduce a technique to find the optimal tree for a small number of key frames first and employ a semi-supervised manifold alignment technique of tree construction for all frames. We evaluated our algorithm in many challenging videos and obtained outstanding results compared to the state-of-the-art techniques quantitatively and qualitatively."
+    }
+  },
+  "generator": "fallback"
+}

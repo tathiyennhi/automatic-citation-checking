@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "GCO is a function that performs convolution on the interaction graphs to learn the local features of each node and its neighboring nodes (related learning activities).",
+    "GCO uses two kinds of filters: one for the self-connections (the diagonal entries of the adjacency matrix) and another for the other connections (the non-diagonal entries of the adjacency matrix).",
+    "The self-connection filter captures the inherent attributes of each node, while the other-connection filter captures the relational attributes of each node and its adjacent nodes.",
+    "GCO combines the results of both filters using a nonlinear activation function (ReLU) to obtain the hidden representation after the element-wise pooling of nodes (FFN-P).",
+    "Therefore, GCO plays a crucial role in handling an interaction-based graph G t from a specific period t ∈ T. The processes of GCO are formulated as follows:H 1 t = ReLU FFN-P D 1 2 t Â D 1 2 t X 0 t Ŵθ + D 1 2 t Ã D 1 2 t X 0 t Wθ, (10)where X 0(i) tdenotes the initial embedding of v i (t), H 1 t denotes the learned hidden representation for the interactionbased graph G(t), Ât = A t + I t, Ãt = A t -I t and A t denotes the adjacent of G(t), I t is a identity matrix with the shape as A t, Dt is the normalization matrix of the degree matrix D t of G(t), and Ŵθ, Wθ are shared learnable weights across different periods.Recurrent neural aggregator."
+  ],
+  "correct_citations": []
+}

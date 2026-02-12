@@ -1,0 +1,29 @@
+{
+  "doc_id": "4372",
+  "text": "We aligned the protein sequences for the genes that met our selection criteria using MUSCLE [CITATION_1] , because amino acid alignments are more reliable than nucleotide alignments for divergent sequences [CITATION_2] . We then threaded the nucleotide sequences back through the amino acid alignment, extracted the parts of the aligned sequences corresponding to third codon positions, and chose 100 samples of genes at random from each triple. In each of the 100 samples, we varied the number of genes n from 1 to 50. We inferred the rate matrix for each sample using the methods described above for simulated sequences (summing the counts within each sample, converting these counts to probabilities, taking the log of the probability matrix, and normalizing the trace to 1). We then measured the Euclidean distance between the rate matrices of pairs of samples. We expected that within-genome comparisons, in which both samples of genes came from the same genome, would yield pairs of rate matrices with smaller mean distances than would between-genome comparisons, in which the two samples came from different genomes.",
+  "correct_citation": {
+    "[CITATION_1]": "14012714",
+    "[CITATION_2]": "9060527"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We aligned the protein sequences for the genes that met our selection criteria using MUSCLE"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We aligned the protein sequences for the genes that met our selection criteria using MUSCLE, because amino acid alignments are more reliable than nucleotide alignments for divergent sequences"
+    }
+  ],
+  "bib_entries": {
+    "9060527": {
+      "title": "Conservation, regulation, synteny, and introns in a large-scale C. briggsae-C. elegans genomic alignment",
+      "abstract": "A new algorithm, WABA, was developed for doing large-scale alignments between genomic DNA of different species. WABA was used to align 8 million bases of Caenorhabditis briggsae genomic DNA against the entire 97-million-base Caenorhabditis elegans genome. The alignment, including C. briggsae homologs of 154 genetically characterized C. elegans genes and many times this number of largely uncharacterized ORFs, can be browsed and searched on the Web (http://www.cse.ucsc.edu/ approximately kent/intronerator). The alignment confirms that patterns of conservation can be useful in identifying regulatory regions and rarely expressed coding regions. Conserved regulatory elements can be identified inside coding exons by examining the level of divergence at the wobble position of codons. The alignment reveals a bimodal size distribution of syntenic regions. Over 250 introns are present in one species but not the other. The 3' and 5' intron splice sites have more similarity to each other in introns unique to one species than in C. elegans introns as a whole, suggesting a possible mechanism for intron removal."
+    },
+    "14012714": {
+      "title": "MUSCLE: a multiple sequence alignment method with reduced time and space complexity",
+      "abstract": "BackgroundIn a previous paper, we introduced MUSCLE, a new program for creating multiple alignments of protein sequences, giving a brief summary of the algorithm and showing MUSCLE to achieve the highest scores reported to date on four alignment accuracy benchmarks. Here we present a more complete discussion of the algorithm, describing several previously unpublished techniques that improve biological accuracy and / or computational complexity. We introduce a new option, MUSCLE-fast, designed for high-throughput applications. We also describe a new protocol for evaluating objective functions that align two profiles.ResultsWe compare the speed and accuracy of MUSCLE with CLUSTALW, Progressive POA and the MAFFT script FFTNS1, the fastest previously published program known to the author. Accuracy is measured using four benchmarks: BAliBASE, PREFAB, SABmark and SMART. We test three variants that offer highest accuracy (MUSCLE with default settings), highest speed (MUSCLE-fast), and a carefully chosen compromise between the two (MUSCLE-prog). We find MUSCLE-fast to be the fastest algorithm on all test sets, achieving average alignment accuracy similar to CLUSTALW in times that are typically two to three orders of magnitude less. MUSCLE-fast is able to align 1,000 sequences of average length 282 in 21 seconds on a current desktop computer.ConclusionsMUSCLE offers a range of options that provide improved speed and / or alignment accuracy compared with currently available programs. MUSCLE is freely available at http://www.drive5.com/muscle."
+    }
+  },
+  "generator": "fallback"
+}

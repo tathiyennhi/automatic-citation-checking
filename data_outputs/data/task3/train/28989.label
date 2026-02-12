@@ -1,0 +1,20 @@
+{
+  "doc_id": "28989",
+  "text": "We ran benchmarks with ten input instances of 64-bit floating point elements. We use the input instances proposed by Helman et al. [CITATION_1] : Uniform (independent random values), Gaussian (independent random values with Gaussian distribution), BucketSorted (locally random, globally sorted), DeterDupl (only log p different keys), RandDupl (32 local buckets of random size, each filled with an arbitrary value from 0..31), g-Group with g := √ p, and Staggered (both designed to be difficult for hypercube-like routing). We gratefully thank Helman et al. which provided generators for these instances. We also included the input instances Reverse (reverse sorted input) and AllToOne where the first n/p − 1 elements on PE i are random elements from the range [p+(p−i)(2 32 −p)/p, p+ (p− i + 1)(2 32 − p)/p] and the last element has the value p− i. At the first level of a naive implementation of k-way sample sort, the last min(p, n/p) PEs would send a message to PE 0.",
+  "correct_citation": {
+    "[CITATION_1]": "1552281"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We use the input instances proposed by Helman et al.  : Uniform (independent random values), Gaussian (independent random values with Gaussian distribution), BucketSorted (locally random, globally sorted), DeterDupl (only log p different keys), RandDupl (32 local buckets of random size, each filled with an arbitrary value from 0..31), g-Group with g := √ p, and Staggered (both designed to be difficult for hypercube-like routing)."
+    }
+  ],
+  "bib_entries": {
+    "1552281": {
+      "title": "A randomized parallel sorting algorithm with an experimental study",
+      "abstract": "Previous schemes for sorting on general-purpose parallel machines have had to choose between poor load balancing and irregular communication or multiple rounds of all-to-all personalized communication. In this paper, we introduce a novel variation on sample sort which uses only two rounds of regular all-to-all personalized communication in a scheme that yields very good load balancing with virtually no overhead. Moreover, unlike previous variations, our algorithm efficiently handles the presence of duplicate values without the overhead of tagging each element with a unique identifier. This algorithm was implemented in Split-C and run on a variety of platforms, including the Thinking Machines CM-5, the IBM SP-2, and the Cray Research T3D. We ran our code using widely different benchmarks to examine the dependence of our algorithm on the input distribution. Our experimental results illustrate the efficiency and scalability of our algorithm across different platforms. In fact, it seems to outperform all similar algorithms known to the authors on these platforms, and its performance is invariant over the set of input distributions unlike previous efficient algorithms. Our results also compare favorably with those reported for the simpler ranking problem posed by the NAS Integer Sorting (IS) Benchmark."
+    }
+  },
+  "generator": "fallback_v4"
+}

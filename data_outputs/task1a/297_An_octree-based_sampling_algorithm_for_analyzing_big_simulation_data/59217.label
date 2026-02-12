@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "To quantify how much the local approximation error contributes to the global approximation error in terms of a volume integral over the domain, the error is weighted by the child cells' volume V l+1.",
+    "The volume weighting also avoids large jumps in the refinement level between neighboring leaf cells, which in turn tends to improve interpolation errors when mapping fields between original and octree mesh.",
+    "Optionally, the implementation allows limiting the difference in refinement level between neighboring cells to one, which is useful, e.g., when computing gradients on the octree mesh.",
+    "Refining only the leaf cell with the highest gain value in each adaptive refinement results in the most efficient octree mesh, but it also leads to an impractically high iteration count.",
+    "Therefore, the current leaf cells are first sorted from the highest to the lowest gain value, and then the first Nc cells are marked for refinement."
+  ],
+  "correct_citations": []
+}

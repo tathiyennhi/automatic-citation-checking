@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "LLM 'self-plagiarism': Since an LLM is, at heart, a probabilistic inference engine, it can be expected that it may produce the same (or similar) responses for the same prompt over multiple samples.",
+    "We observed that both LLM1 and LLM2 often generated almost identical tests for the same prompt; different in name only.",
+    "This may also be a byproduct of the default temperature setting (zero), which is the most deterministic.Anecdotally, it seemed that tests generated were either almost verbatim copies of others previously generated, or very different.",
+    "They were never just 'somewhat different' on a 'sliding scale' of syntactic and semantic difference; the similarity between generated tests was 'all or nothing'.Perhaps the nature of the conditional probability sampling makes this behavior highly likely, and thus expected.",
+    "In later, more mature, versions of TestGen-LLM we doubled down on this observation and included an extra filter to remove previously seen test cases.The observation that similarity between generated tests was 'all or nothing' greatly simplified this filter, because it simply needed to check for syntactic equality of test bodies."
+  ]
+}

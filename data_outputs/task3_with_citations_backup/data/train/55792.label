@@ -1,0 +1,77 @@
+{
+  "doc_id": "55792",
+  "text": "Traditionally, classifying a problem as NP-hard was ultimately understood as evidence for its infeasibility. Sharply contrasting this view, we have today fast algorithms for many important computational tasks with underlying NP-hard problems. One particularly compelling example of tremendous success is the area of SAT solving [CITATION_1] where fast algorithms are being developed and tested for the classical NP-complete problem of satisfiability of propositional formulas (SAT). Modern SAT-solvers routinely solve industrial instances with even millions of variables. However, from a theoretical perspective, this success of SAT solvers is not well understood. The main theoretical approach to it comes via proof complexity. In particular, resolution and its subsystems have been very successfully analysed in terms of proof complexity and sharp bounds are known on the size and space for many important principles in resolution (cf. [CITATION_2] ). This is very important information as the main algorithmic approaches to SAT such as DPLL and CDCL are known to correspond to (systems of) resolution [CITATION_3] [CITATION_4] [CITATION_5] [CITATION_6] , and therefore bounds on size and space of proofs directly translate into bounds on running time and memory consumption of SAT solvers.",
+  "correct_citation": {
+    "[CITATION_1]": "1403165",
+    "[CITATION_2]": "2510615",
+    "[CITATION_3]": "541985",
+    "[CITATION_4]": "1335397",
+    "[CITATION_5]": "1384175",
+    "[CITATION_6]": "909230"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "One particularly compelling example of tremendous success is the area of SAT solving [CITATION_1] where fast algorithms are being developed and tested for the classical NP-complete problem of satisfiability of propositional formulas (SAT).",
+      "s_span": 243,
+      "e_span": 482
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In particular, resolution and its subsystems have been very successfully analysed in terms of proof complexity and sharp bounds are known on the size and space for many important principles in resolution (cf. [CITATION_2] ).",
+      "s_span": 729,
+      "e_span": 953
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "This is very important information as the main algorithmic approaches to SAT such as DPLL and CDCL are known to correspond to (systems of) resolution [CITATION_3] [CITATION_4] [CITATION_5] [CITATION_6] , and therefore bounds on size and space of proofs directly translate into bounds on running time and memory consumption of SAT solvers.",
+      "s_span": 954,
+      "e_span": 1292
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "This is very important information as the main algorithmic approaches to SAT such as DPLL and CDCL are known to correspond to (systems of) resolution [CITATION_3] [CITATION_4] [CITATION_5] [CITATION_6] , and therefore bounds on size and space of proofs directly translate into bounds on running time and memory consumption of SAT solvers.",
+      "s_span": 954,
+      "e_span": 1292
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This is very important information as the main algorithmic approaches to SAT such as DPLL and CDCL are known to correspond to (systems of) resolution [CITATION_3] [CITATION_4] [CITATION_5] [CITATION_6] , and therefore bounds on size and space of proofs directly translate into bounds on running time and memory consumption of SAT solvers.",
+      "s_span": 954,
+      "e_span": 1292
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "This is very important information as the main algorithmic approaches to SAT such as DPLL and CDCL are known to correspond to (systems of) resolution [CITATION_3] [CITATION_4] [CITATION_5] [CITATION_6] , and therefore bounds on size and space of proofs directly translate into bounds on running time and memory consumption of SAT solvers.",
+      "s_span": 954,
+      "e_span": 1292
+    }
+  ],
+  "bib_entries": {
+    "1384175": {
+      "title": "Clause learning can effectively p-simulate general propositional resolution",
+      "abstract": "Currently, the most effective complete SAT solvers are based on the DPLL algorithm augmented by clause learning. These solvers can handle many real-world problems from application areas like verification, diagnosis, planning, and design. Without clause learning, however, DPLL loses most of its effectiveness on real world problems. Recently there has been some work on obtaining a deeper understanding of the technique of clause learning. In this paper we utilize the idea of effective p-simulation, which is a new way of comparing clause learning with general resolution and other proof systems. We then show that pool proofs, a previously used characterization of clause learning, can effectively p-simulate general resolution. Furthermore, this result holds even for the more restrictive class of greedy, unit propagating, pool proofs, which more accurately characterize clause learning as it is used in practice. This result is surprising and indicates that clause learning is significantly more powerful than was previously known."
+    },
+    "1335397": {
+      "title": "Resolution trees with lemmas: Resolution refinements that characterize DLL algorithms with clause learning",
+      "abstract": "Resolution refinements called w-resolution trees with lemmas (WRTL) and with input lemmas (WRTI) are introduced. Dag-like resolution is equivalent to both WRTL and WRTI when there is no regularity condition. For regular proofs, an exponential separation between regular dag-like resolution and both regular WRTL and regular WRTI is given. It is proved that DLL proof search algorithms that use clause learning based on unit propagation can be polynomially simulated by regular WRTI. More generally, non-greedy DLL algorithms with learning by unit propagation are equivalent to regular WRTI. A general form of clause learning, called DLL-Learn, is defined that is equivalent to regular WRTL. A variable extension method is used to give simulations of resolution by regular WRTI, using a simplified form of proof trace extensions. DLL-Learn and non-greedy DLL algorithms with learning by unit propagation can use variable extensions to simulate general resolution without doing restarts. Finally, an exponential lower bound for WRTL where the lemmas are restricted to short clauses is shown."
+    },
+    "541985": {
+      "title": "Towards understanding and harnessing the potential of clause learning",
+      "abstract": "Effcient implementations of DPLL with the addition of clause learning are the fastest complete Boolean satisfiability solvers and can handle many significant real-world problems, such as verification, planning and design. Despite its importance, little is known of the ultimate strengths and limitations of the technique. This paper presents the first precise characterization of clause learning as a proof system (CL), and begins the task of understanding its power by relating it to the well-studied resolution proof system. In particular, we show that with a new learning scheme, CL can provide exponentially shorter proofs than many proper refinements of general resolution (RES) satisfying a natural property. These include regular and Davis-Putnam resolution, which are already known to be much stronger than ordinary DPLL. We also show that a slight variant of CL with unlimited restarts is as powerful as RES itself. Translating these analytical results to practice, however, presents a challenge because of the nondeterministic nature of clause learning algorithms. We propose a novel way of exploiting the underlying problem structure, in the form of a high level problem description such as a graph or PDDL specification, to guide clause learning algorithms toward faster solutions. We show that this leads to exponential speed-ups on grid and randomized pebbling problems, as well as substantial improvements on certain ordering formulas."
+    },
+    "909230": {
+      "title": "On the power of clause-learning SAT solvers as resolution engines",
+      "abstract": "In this work, we improve on existing results on the relationship between proof systems obtained from conflict-driven clause-learning SAT solvers and general resolution. Previous contributions such as those by Beame et al. (2004), Hertel et al. (2008), and Buss et al. (2008) demonstrated that variations on conflict-driven clause-learning SAT solvers corresponded to proof systems as powerful as general resolution. However, the models used in these studies required either an extra degree of non-determinism or a preprocessing step that is not utilized by state-of-the-art SAT solvers in practice. In this paper, we prove that conflict-driven clause-learning SAT solvers yield proof systems that indeed p-simulate general resolution without the need for any additional techniques. Moreover, we show that our result can be generalized to certain other practical variations of the solvers, which are based on different learning schemes and restart policies."
+    },
+    "1403165": {
+      "title": "Conflict-driven clause learning SAT solvers",
+      "abstract": "A method and apparatus for managing power consumption in a computer system wherein the method and apparatus is compliant with the proposed Advanced Configuration and Power Interface (ACPI) specification. In one embodiment, a power management processor is sandwiched between platform hardware and the ACPI register layer. The processor processes all operating power management commands and requests while remaining transparent to the user and the operating system. In so doing, routine power management functions, so classified by the operating system, are implemented by the operating system. Sophisticated power management features, on the other hand, are implemented by the present invention independent from operating system control. Accordingly, in the present invention, the operating system need not suspend processing of other threads to process sophisticated power management procedures."
+    },
+    "2510615": {
+      "title": "Towards NP-P via proof complexity and search",
+      "abstract": "Abstract This is a survey of work on proof complexity and proof search from a logico-algorithmic viewpoint, as motivated by the P versus NP problem. We discuss propositional proof complexity, Cook’s program, proof automatizability, proof search, algorithms for satisfiability, and the state of the art of our (in)ability to separate P and NP ."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "38503",
+  "text": "The uniaxial material Concrete01 available in the OpenSees (concrete model with zero tension) is used to model the concrete in zero length section. The Concrete04 has more parameters including tension branch. Changing these parameter and setting the tension branch of the Concrete04 to zero resulted in numerical instability. Therefore, a simpler model is used in the zero length section element. The stress-strain behaviour of this model is modified by multiplying the strain by dcomp. It should be noted that the whole zero length section was considered to be confined concrete. The confinement parameters are the same parameters as the concrete model used in the column. However, given the zero length section element is extremely confined in the foundation it was assumed that the post-peak branch of the concrete model deteriorates up to 80% of the maximum compressive strength of the confined concrete and then follows a perfectly plastic plateau [CITATION_1] . The stress-slip model of confined concrete model used in zero length section is shown in Fig. 12 . ",
+  "correct_citation": {
+    "[CITATION_1]": "134164404"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, given the zero length section element is extremely confined in the foundation it was assumed that the post-peak branch of the concrete model deteriorates up to 80% of the maximum compressive strength of the confined concrete and then follows a perfectly plastic plateau"
+    }
+  ],
+  "bib_entries": {
+    "134164404": {
+      "title": "Modelling of strain penetration effects in fiber-based analysis of reinforced concrete structures",
+      "abstract": "Focusing on the member end rotation due to strain penetration along reinforcing bars fully anchored in footings and bridge joints, this paper introduces a hysteretic model for the reinforcing bar stress versus slip response. This model can be integrated into fiber-based analysis of concrete structures using a zero-length section element. The authors demonstrate the ability of the proposed hysteretic model to capture the strain penetration effects by simulating the measured global and local responses of two concrete columns and a bridge T-joint system. Findings show that the analysis of concrete structures will appreciably underestimate the local response parameters that are used to quantify structural damage unless the strain penetration effects are satisfactorily modeled."
+    }
+  },
+  "generator": "fallback"
+}

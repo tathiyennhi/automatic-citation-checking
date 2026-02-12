@@ -1,0 +1,12 @@
+{
+  "text": "In the attention guided layer, we transform the original dependency tree into a fully connected edge-weighted graph by constructing an attention guided adjacency matrixÃ. EachÃ corresponds to a certain fully connected graph and each entrỹ A ij is the weight of the edge going from node i to node j. As shown in Figure 2 ,Ã (1) represents a fully connected graph G (1) .Ã can be constructed by using self-attention mechanism [CITATION_1] , which is an attention mechanism (Bahdanau et al., 2015) that captures the interactions between two arbitrary positions of a single sequence. Once we getÃ, we can use it as the input for the computation of the later graph convolutional layer. Note that the size ofÃ is the same as the original adjacency matrix A (n × n). Therefore, no additional computational overhead is involved. The key idea behind the attention guided layer is to use attention for inducing relations between nodes, especially for those connected by indirect, multi-hop paths. These soft relations can be captured by differentiable functions in the model.",
+  "correct_citation": {
+    "[CITATION_1]": "6506243"
+  },
+  "bib_entries": {
+    "6506243": {
+      "title": "Long short-term memory-networks for machine reading",
+      "abstract": "Machine reading, the automatic understanding of text, remains a challenging task of great value for NLP applications. We propose a machine reader which processes text incrementally from left to right, while linking the current word to previous words stored in memory and implicitly discovering lexical dependencies facilitating understanding. The reader is equipped with a Long Short-Term Memory architecture, which differs from previous work in that it has a memory tape (instead of a memory cell) for adaptively storing past information without severe information compression. We also integrate our reader with a new attention mechanism in encoder-decoder architecture. Experiments on language modeling, sentiment analysis, and natural language inference show that our model matches or outperforms the state of the art."
+    }
+  }
+}

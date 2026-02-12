@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Key statistics are summarized in Table 3.",
+    "Online Deployment and A/B Test ResultsWe deploy FITRep on Meituan's advertising system to support two key tasks: item deduplication (primary) and CTR prediction (auxiliary).For efficient online item deduplication, we leverage FITRep embeddings to cluster items during offline processing and store their cluster IDs in Redis.",
+    "At serving time, for each request, we retrieve the cluster IDs of all candidate items, group those sharing the same cluster ID as duplicates, and retain only the highest-ranked item per cluster, yielding the FITRep_ID strategy.To further enhance CTR prediction, we integrate FITRep-based semantic representations into the ranking model (CTR_FITRep_ID).",
+    "For comparison, we also evaluate a variant that uses FITRep embeddings without item deduplication (CTR_FITRep).We conducted an online A/B test from October 6-14, 2025.",
+    "As shown in Table 5, FITRep_ID improves user experience by eliminating redundant ads, achieving +2.15% CTR and +2.40% CPM over the Baseline with negligible latency overhead (21.5 ms vs. 21.1 ms)."
+  ],
+  "correct_citations": []
+}

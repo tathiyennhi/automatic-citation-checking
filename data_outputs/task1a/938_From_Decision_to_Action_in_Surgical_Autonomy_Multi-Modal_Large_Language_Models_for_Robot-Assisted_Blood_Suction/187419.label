@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The number of particles being removed during each step is used to determine the amount of blood being suctioned out.r(s t, a t, s t+1) = N t p -N t+1 p + C 1 δ(N t+1 p) -C 2 ∥a t ∥ (3)In the above equation, t is the time step, N t p is the number of active particles, δ(N t+1 p) denotes whether there are active particles remaining, and ∥a t ∥ is the norm of the actions.",
+    "The weighting factors C 1 = 5 and C 2 = 0.02 were chosen to balance task efficiency and control stability, emphasizing blood removal while discouraging excessive motion.",
+    "Specifically, C 1 is set to a higher value to prioritize the reward for full blood clearance, encouraging the agent to complete the task efficiently, while C 2 is relatively small, penalizing movements without restricting necessary adjustments.",
+    "The observation includes the tissue height map, the binary image mask of the blood (stacked with 3 from previous steps), and the suction tool location (stacked with 4 from previous steps).",
+    "The binary image mask of the blood is synthesized from the current positions of all active particles in the blood."
+  ],
+  "correct_citations": []
+}

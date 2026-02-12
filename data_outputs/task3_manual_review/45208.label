@@ -1,0 +1,65 @@
+{
+  "doc_id": "45208",
+  "text": "Our work is further related to the research area of object detection, which recently is dominated by deep neural network approaches, most prominently by region-based convolutional neural networks [CITATION_1] [CITATION_2] , which achieve very good results but are not applicable for real-time yet. An interesting extension to the region-based CNN detection approaches is the very recently introduced region-based fully convolutional neural network presented by Li et al. [CITATION_3] , which increases the test-time speed. Recently Redmon and Farhadi [CITATION_4] proposed an approach that formulates object detection as a regression problem. It can operate in realtime and achieves very impressive performance on several object detection benchmarks. We also employ a region-based convolutional neural network classifier and, to achieve a fast runtime, we combine it with our depth-based region proposal method. Recent work on multi-class object recognition and detection applied to mobile robot scenarios include a Lidarbased wheelchair/walker detector [CITATION_5] and a human gender recognition approach [CITATION_6] . To the best of our knowledge there exists no prior work that presents multi-class people detection applied to service robot scenarios.",
+  "correct_citation": {
+    "[CITATION_1]": "206770307",
+    "[CITATION_2]": "10328909",
+    "[CITATION_3]": "7428689",
+    "[CITATION_4]": "786357",
+    "[CITATION_5]": "4983652",
+    "[CITATION_6]": "14050446"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our work is further related to the research area of object detection, which recently is dominated by deep neural network approaches, most prominently by region-based convolutional neural networks, which achieve very good results but are not applicable for real-time yet."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our work is further related to the research area of object detection, which recently is dominated by deep neural network approaches, most prominently by region-based convolutional neural networks, which achieve very good results but are not applicable for real-time yet."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "An interesting extension to the region-based CNN detection approaches is the very recently introduced region-based fully convolutional neural network presented by Li et al., which increases the test-time speed."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Recently Redmon and Farhadi proposed an approach that formulates object detection as a regression problem."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Recent work on multi-class object recognition and detection applied to mobile robot scenarios include a Lidarbased wheelchair/walker detector"
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Recent work on multi-class object recognition and detection applied to mobile robot scenarios include a Lidarbased wheelchair/walker detector and a human gender recognition approach"
+    }
+  ],
+  "bib_entries": {
+    "786357": {
+      "title": "YOLO9000: Better, faster, stronger",
+      "abstract": "We introduce YOLO9000, a state-of-the-art, real-time object detection system that can detect over 9000 object categories. First we propose various improvements to the YOLO detection method, both novel and drawn from prior work. The improved model, YOLOv2, is state-of-the-art on standard detection tasks like PASCAL VOC and COCO. Using a novel, multi-scale training method the same YOLOv2 model can run at varying sizes, offering an easy tradeoff between speed and accuracy. At 67 FPS, YOLOv2 gets 76.8 mAP on VOC 2007. At 40 FPS, YOLOv2 gets 78.6 mAP, outperforming state-of-the-art methods like Faster RCNN with ResNet and SSD while still running significantly faster. Finally we propose a method to jointly train on object detection and classification. Using this method we train YOLO9000 simultaneously on the COCO detection dataset and the ImageNet classification dataset. Our joint training allows YOLO9000 to predict detections for object classes that dont have labelled detection data. We validate our approach on the ImageNet detection task. YOLO9000 gets 19.7 mAP on the ImageNet detection validation set despite only having detection data for 44 of the 200 classes. On the 156 classes not in COCO, YOLO9000 gets 16.0 mAP. YOLO9000 predicts detections for more than 9000 different object categories, all in real-time."
+    },
+    "206770307": {
+      "title": "Fast R-CNN",
+      "abstract": "This paper proposes a Fast Region-based Convolutional Network method (Fast R-CNN) for object detection. Fast R-CNN builds on previous work to efficiently classify object proposals using deep convolutional networks. Compared to previous work, Fast R-CNN employs several innovations to improve training and testing speed while also increasing detection accuracy. Fast R-CNN trains the very deep VGG16 network 9x faster than R-CNN, is 213x faster at test-time, and achieves a higher mAP on PASCAL VOC 2012. Compared to SPPnet, Fast R-CNN trains VGG16 3x faster, tests 10x faster, and is more accurate. Fast R-CNN is implemented in Python and C++ (using Caffe) and is available under the open-source MIT License at https://github.com/rbgirshick/fast-rcnn."
+    },
+    "7428689": {
+      "title": "R-FCN: Object detection via region-based fully convolutional networks",
+      "abstract": "We present region-based, fully convolutional networks for accurate and efficient object detection. In contrast to previous region-based detectors such as Fast/Faster R-CNN that apply a costly per-region subnetwork hundreds of times, our region-based detector is fully convolutional with almost all computation shared on the entire image. To achieve this goal, we propose position-sensitive score maps to address a dilemma between translation-invariance in image classification and translation-variance in object detection. Our method can thus naturally adopt fully convolutional image classifier backbones, such as the latest Residual Networks (ResNets), for object detection. We show competitive results on the PASCAL VOC datasets (e.g., 83.6% mAP on the 2007 set) with the 101-layer ResNet. Meanwhile, our result is achieved at a test-time speed of 170ms per image, 2.5-20 times faster than the Faster R-CNN counterpart. Code is made publicly available at: https://github.com/daijifeng001/r-fcn."
+    },
+    "10328909": {
+      "title": "Faster R-CNN: Towards realtime object detection with region proposal networks",
+      "abstract": "State-of-the-art object detection networks depend on region proposal algorithms to hypothesize object locations. Advances like SPPnet [1] and Fast R-CNN [2] have reduced the running time of these detection networks, exposing region proposal computation as a bottleneck. In this work, we introduce a Region Proposal Network (RPN) that shares full-image convolutional features with the detection network, thus enabling nearly cost-free region proposals. An RPN is a fully convolutional network that simultaneously predicts object bounds and objectness scores at each position. The RPN is trained end-to-end to generate high-quality region proposals, which are used by Fast R-CNN for detection. We further merge RPN and Fast R-CNN into a single network by sharing their convolutional features—using the recently popular terminology of neural networks with ’attention’ mechanisms, the RPN component tells the unified network where to look. For the very deep VGG-16 model [3] , our detection system has a frame rate of 5 fps ( including all steps ) on a GPU, while achieving state-of-the-art object detection accuracy on PASCAL VOC 2007, 2012, and MS COCO datasets with only 300 proposals per image. In ILSVRC and COCO 2015 competitions, Faster R-CNN and RPN are the foundations of the 1st-place winning entries in several tracks. Code has been made publicly available."
+    },
+    "4983652": {
+      "title": "DROW: Real-time deep learning-based wheelchair detection in 2D range data",
+      "abstract": "We introduce the DROW detector, a deep learning based detector for 2D range data. Laser scanners are lighting invariant, provide accurate range data, and typically cover a large field of view, making them interesting sensors for robotics applications. So far, research on detection in laser range data has been dominated by hand-crafted features and boosted classifiers, potentially losing performance due to suboptimal design choices. We propose a Convolutional Neural Network (CNN) based detector for this task. We show how to effectively apply CNNs for detection in 2D range data, and propose a depth preprocessing step and voting scheme that significantly improve CNN performance. We demonstrate our approach on wheelchairs and walkers, obtaining state of the art detection results. Apart from the training data, none of our design choices limits the detector to these two classes, though. We provide a ROS node for our detector and release our dataset containing 464k laser scans, out of which 24k were annotated."
+    },
+    "14050446": {
+      "title": "Real-time full-body human gender recognition in (RGB)-D data",
+      "abstract": "Understanding social context is an important skill for robots that share a space with humans. In this paper, we address the problem of recognizing gender, a key piece of information when interacting with people and understanding human social relations and rules. Unlike previous work which typically considered faces or frontal body views in image data, we address the problem of recognizing gender in RGB-D data from side and back views as well. We present a large, gender-balanced, annotated, multi-perspective RGB-D dataset with full-body views of over a hundred different persons captured with both the Kinect v1 and Kinect v2 sensor. We then learn and compare several classifiers on the Kinect v2 data using a HOG baseline, two state-of-the-art deep-learning methods, and a recent tessellation-based learning approach. Originally developed for person detection in 3D data, the latter is able to learn the best selection, location and scale of a set of simple point cloud features. We show that for gender recognition, it outperforms the other approaches for both standing and walking people while being very efficient to compute with classification rates up to 150 Hz."
+    }
+  },
+  "generator": "fallback"
+}

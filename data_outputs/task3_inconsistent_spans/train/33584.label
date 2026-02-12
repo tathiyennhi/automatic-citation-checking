@@ -1,0 +1,33 @@
+{
+  "doc_id": "33584",
+  "text": "GPU Multitasking and Scheduling. Hardware support for preemption has been proposed for Nvidia GPUs, as well as SM-draining whereby workgroups occupying a symmetric multiprocessor (SM; a compute unit using our terminology) are allowed to complete until the SM becomes free for other tasks [CITATION_1] . SM draining is limited the presence of blocking constructs, since it may not be possible to drain a blocked workgroup. A follow-up work adds the notion of SM flushing, where a workgroup can be re-scheduled from scratch if it has not yet committed side-effects [CITATION_2] . Both approaches have been evaluated using simulators, over sets of regular GPU kernels. Very recent Nvidia GPUs (i.e. the Pascal architecture) support preemption, though, as discussed in Sec. 1 and Sec. 5.5, it is not clear whether they guarantee fairness or allow tasks to share GPU resources at the workgroup level [17] .",
+  "correct_citation": {
+    "[CITATION_1]": "14406723",
+    "[CITATION_2]": "7937269"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Hardware support for preemption has been proposed for Nvidia GPUs, as well as SM-draining whereby workgroups occupying a symmetric multiprocessor (SM; a compute unit using our terminology) are allowed to complete until the SM becomes free for other tasks  .",
+      "s_span": 33,
+      "e_span": 302
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A follow-up work adds the notion of SM flushing, where a workgroup can be re-scheduled from scratch if it has not yet committed side-effects  .",
+      "s_span": 422,
+      "e_span": 577
+    }
+  ],
+  "bib_entries": {
+    "14406723": {
+      "title": "Enabling preemptive multiprogramming on GPUs",
+      "abstract": "GPUs are being increasingly adopted as compute accelerators in many domains, spanning environments from mobile systems to cloud computing. These systems are usually running multiple applications, from one or several users. However GPUs do not provide the support for resource sharing traditionally expected in these scenarios. Thus, such systems are unable to provide key multiprogrammed workload requirements, such as responsiveness, fairness or quality of service. In this paper, we propose a set of hardware extensions that allow GPUs to efficiently support multiprogrammed GPU workloads. We argue for preemptive multitasking and design two preemption mechanisms that can be used to implement GPU scheduling policies. We extend the architecture to allow concurrent execution of GPU kernels from different user processes and implement a scheduling policy that dynamically distributes the GPU cores among concurrently running kernels, according to their priorities. We extend the NVIDIA GK110 (Kepler) like GPU architecture with our proposals and evaluate them on a set of multiprogrammed workloads with up to eight concurrent processes. Our proposals improve execution time of high-priority processes by 15.6x, the average application turnaround time between 1.5x to 2x, and system fairness up to 3.4x"
+    },
+    "7937269": {
+      "title": "Chimera: Collaborative preemption for multitasking on a shared GPU",
+      "abstract": "The demand for multitasking on graphics processing units (GPUs) is constantly increasing as they have become one of the default components on modern computer systems along with traditional processors (CPUs). Preemptive multitasking on CPUs has been primarily supported through context switching. However, the same preemption strategy incurs substantial overhead due to the large context in GPUs. The overhead comes in two dimensions: a preempting kernel suffers from a long preemption latency, and the system throughput is wasted during the switch. Without precise control over the large preemption overhead, multitasking on GPUs has little use for applications with strict latency requirements. In this paper, we propose Chimera, a collaborative preemption approach that can precisely control the overhead for multitasking on GPUs. Chimera first introduces streaming multiprocessor (SM) flushing, which can instantly preempt an SM by detecting and exploiting idempotent execution. Chimera utilizes flushing collaboratively with two previously proposed preemption techniques for GPUs, namely context switching and draining to minimize throughput overhead while achieving a required preemption latency. Evaluations show that Chimera violates the deadline for only 0.2% of preemption requests when a 15us preemption latency constraint is used. For multi-programmed workloads, Chimera can improve the average normalized turnaround time by 5.5x, and system throughput by 12.2%."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Given an instruction that requires the use of API1 and API2, \"Not Pass & Match\" means that the model did not provide a valid answer due to length exceeding the limit or wrong judgment after correctly accessing API1 and API2, while \"Pass & Not Match\" means that the model provides a valid answer without proper access to API1 and API2.",
+    "If we punish \"Not Match\" less than \"Not Pass\", the model may tend to provide the answer immediately after successfully accessing the most related tool.",
+    "In fact, this is also a common situation for \"Pass & Not Match\" in the seed training data.",
+    "After annotating each node in the solution tree with a reward score, we can extract pairwise responses from it.",
+    "When training ToolPlanner, each positive step is used to calculate the cross-entropy loss to fine-tune the model."
+  ],
+  "correct_citations": []
+}

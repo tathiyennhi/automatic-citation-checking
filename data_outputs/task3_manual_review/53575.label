@@ -1,0 +1,20 @@
+{
+  "doc_id": "53575",
+  "text": "However, for all of the previously proposed algorithms, the propagation of the wavefronts simply expands all the neighbors of a processed cell without preference, and then inserts the newly affected neighbors into a priority queue, so as to prepare for the next round propagation. Such indiscriminate expansion results in a much longer priority queue and thus becomes an efficiency bottleneck. In order to reduce the number of elements which need to be sorted by the priority queue, a searching strategy, Canonical Ordering, is introduced by us to systematically choose a single route from the equivalent propagation paths. Figure 2 shows how our algorithm propagates the wavefront form the source blocked cell (denoted as yellow tiles), visiting each affected cell only once (where the red arrows denotes the propagation directions of the wavefronts). We choose the successors of an expanded cell, s, by following two basic rules described in Nathan R. Sturtevant and Steve Rabin's paper [CITATION_1] . That is, for a cell s, with the propagation direction c that was previously used to reach s, (1) If c to arrive at s is one of the four cardinal directions, the only legal direction at s for the next round propagation is c; (2) If the c to arrive at s is one of the four diagonal directions which can be decomposed into two perpendicular cardinal components c 1 and c 2 , the legal directions at s for the next round propagation are c, c 1 , and c 2 . We name our algorithm Canonical Ordering Dynamic Brushfire (abbreviated to CODB in the rest of this paper).",
+  "correct_citation": {
+    "[CITATION_1]": "2008797"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Sturtevant and Steve Rabin's paper"
+    }
+  ],
+  "bib_entries": {
+    "2008797": {
+      "title": "Canonical Orderings on Grids",
+      "abstract": "Jump Point Search, an algorithm developed for fast search on uniform cost grids, has successfully improved the performance of grid-based search. But, the approach itself is actually a set of diverse ideas applied together. This paper decomposes the algorithm and gradually re-constructs it, showing the component pieces from which the algorithm is constructed. In this process, we are able to define a spectrum of new algorithms that borrow and repurpose ideas from Jump Point Search. This decomposition opens the door for applying the ideas from Jump Point Search in other grid domains with significantly different characteristics from two dimensional grids."
+    }
+  },
+  "generator": "fallback"
+}

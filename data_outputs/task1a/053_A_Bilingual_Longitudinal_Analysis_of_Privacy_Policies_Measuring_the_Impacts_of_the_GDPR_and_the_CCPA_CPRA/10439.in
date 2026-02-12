@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In this method, each text is converted into vector embeddings using sentence-BERT [65], followed by reducing the dimensionality of these embeddings to cluster semantically similar texts.",
+    "Dimensionality reduction and clustering are performed using the UMAP [50] and HDBSCAN [49] algorithms, respectively.",
+    "To obtain the representative terms for each topic, a modified procedure for Term Frequency Inverse Document Frequency (TF-IDF) is applied that calculates the most important words per topic.",
+    "This procedure, class-based TF-IDF, treats the passages inside a cluster as a single text.",
+    "As a result, the score of each word 𝑥 within a class (cluster) 𝑐 is calculated as:𝑊 𝑥,𝑐 = 𝑡 𝑓 𝑥,𝑐 × log(1 + 𝐴 𝑓 𝑥)where 𝑡 𝑓 refers to the frequency of word 𝑥 within the cluster 𝑐, 𝐴 represents the average number of words per cluster, and 𝑓 indicates the frequency of word 𝑥 across all clusters.BERTopic allows for dynamic topic modeling that considers new topics appearing over time by first generating a general topic model."
+  ]
+}

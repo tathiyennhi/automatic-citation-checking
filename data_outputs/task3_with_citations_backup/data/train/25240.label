@@ -1,0 +1,69 @@
+{
+  "doc_id": "25240",
+  "text": "This suggests a two phase strategy for covering an \"almost\" supermodular function f . First, find a \"cheap\" edge set J such that the residual function f J will be independence-free so f J will have \"good uncrossing properties\". Second, use some \"known\" algorithms to cover f J . The idea is due to Jackson and Jordán [CITATION_1] , and it is also the basis of the algorithm of Cheriyan and Végh [CITATION_2] (see also [CITATION_3] where the same idea was used for a related problem). Specifically, if f is crossing supermodular, we will seek a cheap J that f -covers all bisets A with |A| ≤ k f − 1; by Lemma 4 the residual function f J will be positively skewsupermodular so we can use the 2-approximation algorithms of [CITATION_4] to cover f J . The algorithm of Cheriyan and Végh [CITATION_5] finds an edge J as above of cost ≤ 4τ (f ), by covering two fan functions. Our algorithm covers a pair of area functions. In fact, we will cover a sequence of ℓ ≥ ℓ pairs of area functions, and with the help of Lemma 3 will show that the sum of their costs is at most 2τ (ℓ ′ + 1); we choose the cheapest pair cover that will have cost ≤ 2τ (1 + 1/ℓ ′ ). For an integer p let U (f, p) = {A : f (A) > 0, |A| ≤ p} be the union of inner parts of size ≤ p of the f -positive bisets. Note that if R ⊆ V \\ U (f, p) and if I covers f R then f I (A) ≤ 0 whenever |A| ≤ p. Thus from Lemma 4 we get: Thus we just need to find R ⊆ V \\ U (f, k f ) with |R| ≥ k f and compute a 2-approximate cover of f R -the residual function will be independence-free and thus positively skew-supermodular. However, such R may not exist, e.g., for f = f k-CS we have U (f, k) = V . The idea of Cheriyan and Végh [CITATION_6] resolves this difficulty as follows: first find a \"cheap\" edge set I such that |U (f I , k f )| ≤ n − k f will hold for the residual function f I , and only then compute for f I an edge set I ′ as in Corollary 1. Then the function f I∪I ′ is independence-free and thus is positively skew-supermodular.",
+  "correct_citation": {
+    "[CITATION_1]": "46260369",
+    "[CITATION_2]": "2855834",
+    "[CITATION_3]": "18519216",
+    "[CITATION_4]": "43729",
+    "[CITATION_5]": "2855834",
+    "[CITATION_6]": "2855834"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The idea is due to Jackson and Jordán [CITATION_1] , and it is also the basis of the algorithm of Cheriyan and Végh [CITATION_2] (see also [CITATION_3] where the same idea was used for a related problem).",
+      "s_span": 279,
+      "e_span": 483
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The idea is due to Jackson and Jordán [CITATION_1] , and it is also the basis of the algorithm of Cheriyan and Végh [CITATION_2] (see also [CITATION_3] where the same idea was used for a related problem).",
+      "s_span": 279,
+      "e_span": 483
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The idea is due to Jackson and Jordán [CITATION_1] , and it is also the basis of the algorithm of Cheriyan and Végh [CITATION_2] (see also [CITATION_3] where the same idea was used for a related problem).",
+      "s_span": 279,
+      "e_span": 483
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Specifically, if f is crossing supermodular, we will seek a cheap J that f -covers all bisets A with |A| ≤ k f − 1; by Lemma 4 the residual function f J will be positively skewsupermodular so we can use the 2-approximation algorithms of [CITATION_4] to cover f J .",
+      "s_span": 484,
+      "e_span": 748
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "The algorithm of Cheriyan and Végh [CITATION_5] finds an edge J as above of cost ≤ 4τ (f ), by covering two fan functions.",
+      "s_span": 749,
+      "e_span": 871
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "The idea of Cheriyan and Végh [CITATION_6] resolves this difficulty as follows: first find a \"cheap\" edge set I such that |U (f I , k f )| ≤ n − k f will hold for the residual function f I , and only then compute for f I an edge set I ′ as in Corollary 1.",
+      "s_span": 1652,
+      "e_span": 1907
+    }
+  ],
+  "bib_entries": {
+    "18519216": {
+      "title": "Approximating minimum-cost connectivity problems via uncrossable bifamilies",
+      "abstract": "We give approximation algorithms for the Survivable Network problem. The input consists of a graph G = (V,E) with edge/node-costs, a node subset S ⊆ V, and connectivity requirements {r(s,t):s,t ∈ T ⊆ V}. The goal is to find a minimum cost subgraph H of G that for all s,t ∈ T contains r(s,t) pairwise edge-disjoint st-paths such that no two of them have a node in S s {s,t} in common. Three extensively studied particular cases are: Edge-Connectivity Survivable Network (S = ∅), Node-Connectivity Survivable Network (S = V), and Element-Connectivity Survivable Network (r(s,t) = 0 whenever s ∈ S or t ∈ S). Let k = maxs,t ∈ T r(s,t). In Rooted Survivable Network, there is s ∈ T such that r(u,t) = 0 for all u ≠ s, and in the Subset k-Connected Subgraph problem r(s,t) = k for all s,t ∈ T. For edge-costs, our ratios are O(k log k) for Rooted Survivable Network and O(k2 log k) for Subset k-Connected Subgraph. This improves the previous ratio O(k2 log n), and for constant values of k settles the approximability of these problems to a constant. For node-costs, our ratios are as follows. —O(k log |T|) for Element-Connectivity Survivable Network, matching the best known ratio for Edge-Connectivity Survivable Network. —O(k2 log |T|) for Rooted Survivable Network and O(k3 log |T|) for Subset k-Connected Subgraph, improving the ratio O(k8 log2 |T|). —O(k4 log2 |T|) for Survivable Network; this is the first nontrivial approximation algorithm for the node-costs version of the problem."
+    },
+    "43729": {
+      "title": "Iterative rounding 2-approximation algorithms for minimum-cost vertex connectivity problems",
+      "abstract": "The survivable network design problem (SNDP) is the following problem: given an undirected graph and values rij for each pair of vertices i and j, find a minimum-cost subgraph such that there are at least rij disjoint paths between vertices i and j. In the edge connected version of this problem (EC-SNDP), these paths must be edge-disjoint. In the vertex connected version of the problem (VC-SNDP), the paths must be vertex disjoint. The element connectivity problem (ELC-SNDP, or ELC) is a problem of intermediate difficulty. In this problem, the set of vertices is partitioned into terminals and nonterminals. The edges and nonterminals of the graph are called elements. The values rij are only specified for pairs of terminals i, j, and the paths from i to j must be element disjoint. Thus if rij-1 elements fail, terminals i and j are still connected by a path in the network.These variants of SNDP are all known to be NP-hard. The best known approximation algorithm for the EC-SNDP has performance guarantee of 2 and iteratively rounds solutions to a linear programming relaxation of the problem. ELC has a primal-dual O(log k)-approximation algorithm, where k = maxi,j rij. Since this work first appeared as an extended abstract, it has been shown that it is hard to approximate VC-SNDP to factor 2log1-en.In this paper we investigate applying iterative rounding to ELC and VC-SNDP We show that iterative rounding will not yield a constant factor approximation algorithm for general VC-SNDP. On the other hand, we show how to extend the analysis of iterative rounding applied to EC-SNDP to yield 2-approximation algorithms for both general ELC, and for the case of VC-SNDP when rij ∈ {0, 1, 2}. The latter result improves on an existing 3-approximation algorithm. The former is the first constant factor approximation algorithm for a general survivable network design problem that allows node failures."
+    },
+    "2855834": {
+      "title": "Approximating minimum-cost k-node connected subgraphs via independence-free graphs",
+      "abstract": "We present a 6-approximation algorithm for the minimum-cost k-node connected spanning sub graph problem, assuming that the number of nodes is at least k3(k-1)+k. We apply a combinatorial preprocessing, based on the Frank-Tardos algorithm for k-out connectivity, to transform any input into an instance such that the iterative rounding method gives a 2-approximation guarantee. This is the first constant-factor approximation algorithm even in the asymptotic setting of the problem, that is, the restriction to instances where the number of nodes is lower bounded by a function of k."
+    },
+    "46260369": {
+      "title": "Independence free graphs and vertex connectivity augmentation",
+      "abstract": "Given an undirected graph G and a positive integer k, the k-vertex-connectivity augmentation problem is to find a smallest set F of new edges for which G + F is k-vertex-connected. Polynomial algorithms for this problem have been found only for k ≤ 4 and a major open question in graph connectivity is whether this problem is solvable in polynomial time in general.In this paper, we develop an algorithm which delivers an optimal solution in polynomial time for every fixed k. In the case when the size of an optimal solution is large compared to k, our algorithm is polynomial for all k. We also derive a min-max formula for the size of a smallest augmenting set in this case. A key step in our proofs is a complete solution of the augmentation problem for a new family of graphs which we call k-independence free graphs. We also prove new splitting off theorems for vertex connectivity."
+    }
+  },
+  "generator": "fallback_v4"
+}

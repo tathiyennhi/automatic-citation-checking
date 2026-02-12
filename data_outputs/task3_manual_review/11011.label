@@ -1,0 +1,34 @@
+{
+  "doc_id": "11011",
+  "text": "Note that we train a single model for all the action classes unlike many other methods which trained a model for each action class. Our network significantly improves the state-of-the-art result of Sun et al. [CITATION_1] by approximately 12.1% (by 7.2 mm). The results under protocol #2, which aligns the predictions to the ground truth using a rigid body similarity transform before computing the error, is reported in Table 2 . Our network improves the reported state-of-the-art results by 8.09% (by 3.7 mm) and achieves the lowest error for each action in protocol #2 as well. From the results, we observe the effectiveness of exploiting temporal information across multiple sequences. By using the information of temporal context, our network reduced the overall error in estimating 3D joint locations, especially on actions like phone, photo, sit and sitting down on which most previous methods did not perform well due to heavy occlusion. We also observe that our method outperforms both the baselines by a large margin on both the protocols. This shows that our method learned the temporal context of the sequences and predicted temporally consistent 3D poses, which naive postprocessing techniques like temporal mean and median filters over frame-wise prediction failed to do. Like most previous methods, we report the results on action classes Walking and Jogging of the HumanEva [CITATION_2] dataset in Table 3 . We obtained the lowest error in four of the six cases and the lowest average error for the two actions. We also obtained the second best result on subject 2 of action Walking. However, HumanEva is a smaller dataset than Human3.6M and the same subjects appear in both training and testing. Table 3 . Results on the HumanEva [CITATION_3] dataset, and comparison with previous work. The bold-faced numbers represent the best result while underlined numbers represent the second best.",
+  "correct_citation": {
+    "[CITATION_1]": "206771057",
+    "[CITATION_2]": "11279201",
+    "[CITATION_3]": "11279201"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our network significantly improves the state-of-the-art result of Sun et al. by approximately 12.1% (by 7.2 mm)."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Like most previous methods, we report the results on action classes Walking and Jogging of the HumanEva dataset in Table 3."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Results on the HumanEva dataset, and comparison with previous work."
+    }
+  ],
+  "bib_entries": {
+    "11279201": {
+      "title": "Humaneva: Synchronized video and motion capture dataset and baseline algorithm for evaluation of articulated human motion",
+      "abstract": "While research on articulated human motion and pose estimation has progressed rapidly in the last few years, there has been no systematic quantitative evaluation of competing methods to establish the current state of the art. We present data obtained using a hardware system that is able to capture synchronized video and ground-truth 3D motion. The resulting HumanEva datasets contain multiple subjects performing a set of predefined actions with a number of repetitions. On the order of 40,000 frames of synchronized motion capture and multi-view video (resulting in over one quarter million image frames in total) were collected at 60 Hz with an additional 37,000 time instants of pure motion capture data. A standard set of error measures is defined for evaluating both 2D and 3D pose estimation and tracking algorithms. We also describe a baseline algorithm for 3D articulated tracking that uses a relatively standard Bayesian framework with optimization in the form of Sequential Importance Resampling and Annealed Particle Filtering. In the context of this baseline algorithm we explore a variety of likelihood functions, prior models of human motion and the effects of algorithm parameters. Our experiments suggest that image observation models and motion priors play important roles in performance, and that in a multi-view laboratory environment, where initialization is available, Bayesian filtering tends to perform well. The datasets and the software are made available to the research community. This infrastructure will support the development of new articulated motion and pose estimation algorithms, will provide a baseline for the evaluation and comparison of new methods, and will help establish the current state of the art in human pose estimation and tracking."
+    },
+    "206771057": {
+      "title": "Compositional human pose regression",
+      "abstract": "Regression based methods are not performing as well as detection based methods for human pose estimation. A central problem is that the structural information in the pose is not well exploited in the previous regression methods. In this work, we propose a structure-aware regression approach. It adopts a reparameterized pose representation using bones instead of joints. It exploits the joint connection structure to define a compositional loss function that encodes the long range interactions in the pose. It is simple, effective, and general for both 2D and 3D pose estimation in a unified setting. Comprehensive evaluation validates the effectiveness of our approach. It significantly advances the state-of-the-art on Human3.6M [20] and is competitive with state-of-the-art results on MPII [3]."
+    }
+  },
+  "generator": "fallback"
+}

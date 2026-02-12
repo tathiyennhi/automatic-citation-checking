@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This model dynamically scores and filters samples during training based on their gradient norms, which serve as a proxy for influence on the loss incurred.",
+    "In standard ML pipelines, the full dataset is used indiscriminately through randomized mini-batching, shuffling without regard to temporal structure, sequentially iterating over all samples in fixed-size batches, oversampling already well-represented periods, or repeatedly training on stable low-variance intervals.",
+    "This approach focuses instead on selectively training and prioritizing samples that drive meaningful parameter updates.",
+    "We validate this approach on multiple telecom datasets and show that models trained using only a fraction of the data can achieve comparable performance to those trained on the full dataset while reducing training time and compute cost.The key contributions of this paper are: (i) an analysis of per-sample gradient dynamics across training epochs using a real-world open telecom dataset, showing that depending on the dataset size, the influence of a significant portion of training data contributes minimally to loss reduction or generalization; (ii) the proposition of a lightweight, model-agnostic mechanism to estimate sample importance during training based on gradient norm behavior that dynamically filters or re-weights data based on gradient importance.",
+    "Unlike influence functions or forgetting metrics, our approach does not require retraining or access to ground truth labels; and (iii) Our framework supports goals of energy-efficient AI development by reducing redundant computation and data usage during training, which is especially relevant for large-scale network operators seeking to deploy AI models across distributed infrastructure."
+  ],
+  "correct_citations": []
+}

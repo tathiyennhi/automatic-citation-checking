@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The model parameters with the best validation F1 were saved as the final model.",
+    "We took care to ensure that there is no data leakage between any of the data splits that could contaminate results.Post-processing After the classifier labels each segment of an input, we apply two heuristic postprocessing steps to refine the predictions before removing any text: segment-level label smoothing, and keyword-based exclusion filter.",
+    "The smoothing is implemented as a simple gap-bridging rule: if a segment is labeled 1 (malicious) but is surrounded on both sides by segments labeled 0 (benign) in the sequence then we flip its label to 0.",
+    "This rule effectively bridges single-segment gaps in a contiguous benign sequence.",
+    "In our experiments, we found that genuine adversarial suffixes rarely appear between longer strings of benign segments -as it would render the attack ineffective -so a 0-1-0 pattern almost always indicated a misclassification of the middle segment."
+  ],
+  "correct_citations": []
+}

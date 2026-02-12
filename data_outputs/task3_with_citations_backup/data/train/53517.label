@@ -1,0 +1,22 @@
+{
+  "doc_id": "53517",
+  "text": "Upon examining the tuning process, we have reached two basic conclusions. First, due to the nature of the data, tuning must be an ongoing process. Because of the wide range of conditions, signal types, and scenarios, any system tuned on a finite amount of data will eventually encounter a new situation for which its performance is substandard. If the system cannot improve based on this experience, then it will repeat the same mistakes in the future. As an example, consider a system tuned under low-traffic conditions. When it first encounters high traffic, it will inevitably fail. The system must subsequently learn to handle high traffic or be considered inadequate. Figure 5 illustrates this approach to system development and the similarities between this approach and the way that human sonar analysts learn to perform the same task. This iterative approach to development as applied to selection of event detection rule thresholds is embodied by the windowing procedure described in Sections 2.1 and 3.3. The second conclusion is that there are two types of learning involved. The first is algorithmic tuning (a rough equivalent of knowledge acquisition). Playing data through the system will highlight shortcomings and conceptual bugs in the underlying algorithms which must be fixed. At the present time, this type of learning is best done by the human developers with the aid of tools on the machine. (In Section 5.3 we discuss one such tool.) The second type of learning is parameter tuning (a rough equivalent of skill refinement). Our system contains a large number of parameters whose settings greatly influence performance. Examples of such parameters are the thresholds in the event detection rules. The parameters settings not only need to improve (i.e., learn) with experience but also need to change (i.e., adapt) in response to changes in system specifications (see Section 2.2), underlying algorithms, and surrounding conditions (see Section 5.2). Choosing the best values for these parameters is generally a hard problem for a human for a number of reasons including the interaction between parameters and the difficulty of objectively comparing different sets of parameters (see Section 4.2). We have therefore been developing methods whereby the machine can learn appropriate parameter settings. Some of our work on learning the parameters of a neural network for texture characterization is described in [CITATION_1] . Optimizing the parameters of a signal tracking algorithm is discussed in (Montana, in press). In this paper we focus on how the system learns the thresholds for event detection rules.",
+  "correct_citation": {
+    "[CITATION_1]": "6336712"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Some of our work on learning the parameters of a neural network for texture characterization is described in [CITATION_1] .",
+      "s_span": 2323,
+      "e_span": 2446
+    }
+  ],
+  "bib_entries": {
+    "6336712": {
+      "title": "Training feedforward neural networks using genetic algorithms",
+      "abstract": "Multilayered feedforward neural networks possess a number of properties which make them particularly suited to complex pattern classification problems. However, their application to some realworld problems has been hampered by the lack of a training algonthm which reliably finds a nearly globally optimal set of weights in a relatively short time. Genetic algorithms are a class of optimization procedures which are good at exploring a large and complex space in an intelligent way to find values close to the global optimum. Hence, they are well suited to the problem of training feedforward networks. In this paper, we describe a set of experiments performed on data from a sonar image classification problem. These experiments both 1) illustrate the improvements gained by using a genetic algorithm rather than backpropagation and 2) chronicle the evolution of the performance of the genetic algorithm as we added more and more domain-specific knowledge into it."
+    }
+  },
+  "generator": "fallback_v4"
+}

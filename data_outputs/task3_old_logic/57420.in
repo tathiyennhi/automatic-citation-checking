@@ -1,0 +1,12 @@
+{
+  "text": "A number of our features are based on prior polarity of words. As in the phrase-based system we too build off of prior work [CITATION_1] by using the DAL and augmenting it with Wordnet. However, we do not follow the earlier method but use it as motivation. We consider words with with a polarity score (using the pleasantness metric from the DAL) of less than 0.5 as negative, higher than 0.8 as positive and the rest as neutral. If a word is not directly found in the dictionary, we retrieve all synonyms from Wordnet. We then look for each of the synonyms in the DAL. If any synonym is found in the DAL, we assign the original word the same pleasantness score as its synonym. If none of the synonyms is present in the DAL, the word is not associated with any prior polarity. For the given data we directly found the prior polarity of 50.1% of the words. We find the polarity of another 8.7% of the words by using WordNet. So we find prior polarity of about 58.7% of English language words.",
+  "correct_citation": {
+    "[CITATION_1]": "1515014"
+  },
+  "bib_entries": {
+    "1515014": {
+      "title": "Contextual phrase-level polarity analysis using lexical affect scoring and syntactic ngrams",
+      "abstract": "We present a classifier to predict contextual polarity of subjective phrases in a sentence. Our approach features lexical scoring derived from the Dictionary of Affect in Language (DAL) and extended through WordNet, allowing us to automatically score the vast majority of words in our input avoiding the need for manual labeling. We augment lexical scoring with n-gram analysis to capture the effect of context. We combine DAL scores with syntactic constituents and then extract n-grams of constituents from all sentences. We also use the polarity of all syntactic constituents within the sentence as features. Our results show significant improvement over a majority class baseline as well as a more difficult baseline consisting of lexical n-grams."
+    }
+  }
+}

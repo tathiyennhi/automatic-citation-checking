@@ -1,0 +1,32 @@
+{
+  "text": "Another idea in handling singularity was to eliminate the degenerate component(s) of motion and therefore, there will be no large joint velocity generated when the manipulator goes into the vicinity of singularity [CITATION_1] [4] [CITATION_2] . Chiaverini and Egeland [CITATION_3] used partial Jacobian matrix, with rows along the singular direction eliminated, was inverted using pseudo inverse to obtain joint velocity from velocity in task space. Aboaf and Paul [CITATION_4] bounded the rates of excessive joints and compensated for the error by a modified inverse Jacobian to calculate the remaining joint rates. Cheng et al [CITATION_5] analyzed the singularities in PUMA and decomposed the workspace into achievable and non-achievable directions. The non-achievable direction was released, Compact QP method was applied to minimize the tracking error of the end-effector, and SVD was used to obtain the Jacobian inverse and a weight system to regulate the trade off between exactness and feasibility of motion.",
+  "citation_candidates": [
+    "54456308",
+    "7687240",
+    "195867444",
+    "938523",
+    "206531862"
+  ],
+  "bib_entries": {
+    "938523": {
+      "title": "Manipulator Control at Kinematic Singularities: A dynamically consistent Strategy",
+      "abstract": "This paper presents a general strategy for manipulator control at kinematic singularities. When a manipulator is in the neighborhood of singular configurations, it is treated as a redundant mechanism in the subspace orthogonal to the singular directions of the end-effector. Control in this subspace is based on operational forces, while null space joint torques are used to deal with the control in the singular directions. Decoupled behavior is guaranteed by using the dynamically consistent force/torque relationship. Two different types of kinematic singularities are identified and strategies dealing with these singularities are developed. Experimental results of the implementation of this approach on a PUMA 560 manipulator are presented."
+    },
+    "54456308": {
+      "title": "A Solution to the Singularity Problem for Six-joint Manipulators",
+      "abstract": "A solution to the problem of singularities for six-joint manipulators is presented. By using this method, the unachievable components of the commanded motion are removed, while an exact inverse kinematic solution is used for the remaining motion components. At a singularity there are directions in Cartesian space where a differential translation or rotation cannot be specified. The underlying area is to identify these directions and then to eliminate the corresponding components of the commanded motion when the manipulator becomes singular using a pseudoinverse of the manipulator Jacobian. In order to avoid excessive joint velocities close to the singularities, the manipulator is treated as singular in the neighborhood of the singularity. A continuous solution is achieved by interpolation in the degenerate directions. >"
+    },
+    "206531862": {
+      "title": "Living with the Singularity of Robot Wrists",
+      "abstract": "Robot manipulator motions near the wrist degeneracy often cause excessive joint rates that cannot be satisfied by the joint actuators and thus result in both position and orientation errors. We have developed an inverse Jacobian control policy that bounds the excessive rates while guaranteeing the position accuracy and minimizing the orientation error of the end effector."
+    },
+    "195867444": {
+      "title": "Study and Resolution of Singularities for a 6-DOF PUMA Manipulator",
+      "abstract": "In this paper, the singularities of a 6-DOF PUMA manipulator are analyzed in detail and all the corresponding singular directions in task space are clearly identified. In order to resolve this singularity problem, an approach denoted Singularity Isolation plus Compact QP (SICQP) method is proposed. The SICQP method decomposes the work space into achievable and unachievable (i.e., singular) directions. Then, the exactness in the singular directions are released such that extra redundancy is provided to the achievable directions. Finally, the Compact QP method is applied to maintain the exactness in the achievable directions, and to minimize the tracking errors in the singular directions under the condition that feasible joint solutions must be obtained. In the end, simulation results for PUMA manipulator are given to demonstrate the effectiveness of the SICQP method."
+    },
+    "7687240": {
+      "title": "A Unified Approach for Motion and Force Control of Robot Manipulators: The Operational Space Formulation",
+      "abstract": "A framework for the analysis and control of manipulator systems with respect to the dynamic behavior of their end-effectors is developed. First, issues related to the description of end-effector tasks that involve constrained motion and active force control are discussed. The fundamentals of the operational space formulation are then presented, and the unified approach for motion and force control is developed. The extension of this formulation to redundant manipulator systems is also presented, constructing the end-effector equations of motion and describing their behavior with respect to joint forces. These results are used in the development of a new and systematic approach for dealing with the problems arising at kinematic singularities. At a singular configuration, the manipulator is treated as a mechanism that is redundant with respect to the motion of the end-effector in the subspace of operational space orthogonal to the singular direction."
+    }
+  }
+}

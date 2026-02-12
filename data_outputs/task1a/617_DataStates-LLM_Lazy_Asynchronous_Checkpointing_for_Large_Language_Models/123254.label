@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Therefore, this study captures the strong scalability of checkpoint performance, i.e., how well can various checkpointing approaches perform when the same checkpoint is distributed across multiple ranks, such that they can be flushed in parallel.",
+    "More specifically, the checkpoint size per GPU drops from ∼10.4 GB to ∼650 MB per GPU for the 13B model, and from ∼13.8 GB to ∼870 MB per GPU for the 30B model, when scaling the data parallel degree from 1 to 16.",
+    "When comparing the 13B and 30B models for the same number of GPUs (e.g., the 13B model with DP=4 and 30B model with DP=2 for 64 GPUs), we see that the checkpointing throughput of the 13B model is lower than the 30B model even though both approaches have the same number of parallel channels for flushing the checkpoint.",
+    "This is because the training iteration of the 13B model is significantly faster than the 30B model and therefore needs to stall training for checkpointing more frequently as compared to the long-running iteration of the 30B model.",
+    "While all approaches scale well to the increasing data parallel replicas due to concurrent flushes, our approach outperforms the DeepSpeed synchronous, Asynchronous checkpointing approach, and TorchSnapshot by 2.8×, 1.75×, and 1.78×, respectively for the 13B model; and for the 30B model by 48×, 4.12×, and 4.7×, respectively."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,15 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "IntroductionThe Multilevel Fast Multipole Algorithm (MLFMA) [2][3] is a cornerstone for accelerating large-scale N-body problems in computational electromagnetics [50], astrophysics [46], and other potential-based simulations.While the far-field operator of MLFMA has been extensively optimized for CPU clusters through hybrid, hierarchical and ternary parallelization [19] [14][15] [16] and heterogeneous clusters [17] [18], the near-field (P2P) operator -computationally similar to the original N-body problem-remains a performance bottleneck on single GPUs.",
+    "Given that GPU implementations offer superior energy efficiency and performance for N-body workloads [8], especially when leveraging low-level optimizations [5] and memory-centric techniques like thread tiling and data layout tuning [6] [7], we focus on accelerating the P2P operator using CUDA.",
+    "Our data redundancy approach enhances thread-level independence, making it compatible with existing hybrid or distributed MLFMA frameworks where reduced memory contention benefits large-scale GPU cluster execution.Near-Field matters more in N-body problems -e.g., chemical simulations [57], stellar dynamics [45], electrostatics [53] -where mesh Ewald or single-level FMM is used.",
+    "These involve sparse particle distributions in boxes during long MLFMA simulations, needing parallelization distinct from EM kernels (which handle dense, regular 3D meshes).",
+    "Yokota et al."
+  ],
+  "correct_citations": [
+    "IntroductionThe Multilevel Fast Multipole Algorithm (MLFMA) [2][3] is a cornerstone for accelerating large-scale N-body problems in computational electromagnetics [50], astrophysics [46], and other potential-based simulations.While the far-field operator of MLFMA has been extensively optimized for CPU clusters through hybrid, hierarchical and ternary parallelization [19] [14][15] [16] and heterogeneous clusters [17] [18], the near-field (P2P) operator -computationally similar to the original N-body problem-remains a performance bottleneck on single GPUs.",
+    "Given that GPU implementations offer superior energy efficiency and performance for N-body workloads [8], especially when leveraging low-level optimizations [5] and memory-centric techniques like thread tiling and data layout tuning [6] [7], we focus on accelerating the P2P operator using CUDA.",
+    "Our data redundancy approach enhances thread-level independence, making it compatible with existing hybrid or distributed MLFMA frameworks where reduced memory contention benefits large-scale GPU cluster execution.Near-Field matters more in N-body problems -e.g., chemical simulations [57], stellar dynamics [45], electrostatics [53] -where mesh Ewald or single-level FMM is used."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "doc_id": "37786",
+  "text": "Due to the visibility constraint, we are only able to obtain the depth values of the projected 2D locations u andv from the object surface. Thus Proj is a surjective map. Nevertheless, this serves our intention of sampling random features well. Following [CITATION_1] , a binary test is defined as a pair of elements, (φ, ), with φ being the feature function, and being a real-valued threshold. When an instance with pixel location x passes through a split node of our binary trees, it will be sent to the left branch if φ(x) > , and to the right side otherwise. Our random forest predictors are constructed based on these features and binary tests for split nodes. Similar to existing regression forests in literature including e.g. [CITATION_2] , at a split node, we randomly select a relatively small set of m distinct features Φ := {φ i } m n=1 as candidate features. For every candidate feature, a set of candidate thresholds Λ is uniformly selected over the range defined by the empirical set of training examples in the node. The best test (φ * , * ) is chosen from these features and accompanying thresholds by maximizing the following gain function. This procedure is then repeated until there are L levels in the tree or once the node contains fewer than l n training examples. More specifically, the above-mentioned split test is obtained by where the gain I(φ, ) is defined as:",
+  "correct_citation": {
+    "[CITATION_1]": "89141",
+    "[CITATION_2]": "8886546"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Following  , a binary test is defined as a pair of elements, (φ, ), with φ being the feature function, and being a real-valued threshold."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Similar to existing regression forests in literature including e.g.  , at a split node, we randomly select a relatively small set of m distinct features Φ := {φ i } m n=1 as candidate features."
+    }
+  ],
+  "bib_entries": {
+    "8886546": {
+      "title": "Efficient human pose estimation from single depth images",
+      "abstract": "We describe two new approaches to human pose estimation. Both can quickly and accurately predict the 3D positions of body joints from a single depth image without using any temporal information. The key to both approaches is the use of a large, realistic, and highly varied synthetic set of training images. This allows us to learn models that are largely invariant to factors such as pose, body shape, field-of-view cropping, and clothing. Our first approach employs an intermediate body parts representation, designed so that an accurate per-pixel classification of the parts will localize the joints of the body. The second approach instead directly regresses the positions of body joints. By using simple depth pixel comparison features and parallelizable decision forests, both approaches can run super-real time on consumer hardware. Our evaluation investigates many aspects of our methods, and compares the approaches to each other and to the state of the art. Results on silhouettes suggest broader applicability to other imaging modalities."
+    },
+    "89141": {
+      "title": "Random forests",
+      "abstract": "Random forests are a combination of tree predictors such that each tree depends on the values of a random vector sampled independently and with the same distribution for all trees in the forest. The generalization error for forests converges a.s. to a limit as the number of trees in the forest becomes large. The generalization error of a forest of tree classifiers depends on the strength of the individual trees in the forest and the correlation between them. Using a random selection of features to split each node yields error rates that compare favorably to Adaboost (Y. Freund & R. Schapire, Machine Learning: Proceedings of the Thirteenth International conference, aaa, 148–156), but are more robust with respect to noise. Internal estimates monitor error, strength, and correlation and these are used to show the response to increasing the number of features used in the splitting. Internal estimates are also used to measure variable importance. These ideas are also applicable to regression."
+    }
+  },
+  "generator": "fallback_v4"
+}

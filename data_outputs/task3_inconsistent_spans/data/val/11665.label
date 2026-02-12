@@ -1,0 +1,44 @@
+{
+  "doc_id": "11665",
+  "text": "A fundamental problem in multimodality image integration is to align images of the same scene observed from different positions, different time, and/or in different sensors. Registration between infrared and visible images is an important field of multi-sensor image registrations. The infrared image can record temperature distribution and radiation information of the scene, while the visible image records illumination distribution and reflection information. Consequently, the integration of images from multiple sensors can provide complementary information and therefore increase the accuracy of the overall decision. Additionally, the infrared and visible images are passive imaging and feature good security. These advantages make infrared and visible image registration techniques apply extensively in the fields of military intelligence acquisition, navigation and guidance, remote sensing image fusion, video surveillance and target tracking etc.. [CITATION_1] [CITATION_2] In accordance with most of the literature, infrared and visible image registration algorithm can be divided into two categories: region-based methods and feature-based methods. Region-based methods directly or indirectly use gray information to calculate space transformation relations between images in a certain similarity measurement. These methods can be further subdivided into gray correlation method, frequency domain method and mutual information method. The first two methods are widely used in single-mode image registration rather than multimodality registration. Mutual Information (MI) [CITATION_3] , which represents statistical correlation of intensity values between images, uses entropy or weighted entropy integrating direction information for judging whether the image is aligned. The method is applicable to various conditions because it does not need too much image pre-processing as well as assumptions on the gray-scale relationship between multi-modal images. The main disadvantage is that MI is intrinsically a global measurement and therefore its local estimation is difficult, which can lead to many false local optima. Moreover, the optimisation of MI is computationally complex and converges slower than simple intensity metrics, such as sum of squared differences (SSD). Feature-based registration method extracts stable geometric elements such as corners, straight, edge structures, contour shape, etc, using a certain number of correct association characteristics to deduce space transform relations, or defining the objective function based on feature attributes to identify optimal model parameters. Compared with the region-based method, feature-based methods are advanced in computational efficiency, adaptability and resistance to partial * E-mail: zhangyahong@sia.cn ; Phone: 024-23970404 ",
+  "correct_citation": {
+    "[CITATION_1]": "62123653",
+    "[CITATION_2]": "63092660",
+    "[CITATION_3]": "2499926"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "These advantages make infrared and visible image registration techniques apply extensively in the fields of military intelligence acquisition, navigation and guidance, remote sensing image fusion, video surveillance and target tracking etc..   In accordance with most of the literature, infrared and visible image registration algorithm can be divided into two categories: region-based methods and feature-based methods.",
+      "s_span": 717,
+      "e_span": 1161
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In accordance with most of the literature, infrared and visible image registration algorithm can be divided into two categories: region-based methods and feature-based methods.",
+      "s_span": 959,
+      "e_span": 1161
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Mutual Information (MI)  , which represents statistical correlation of intensity values between images, uses entropy or weighted entropy integrating direction information for judging whether the image is aligned.",
+      "s_span": 1560,
+      "e_span": 1784
+    }
+  ],
+  "bib_entries": {
+    "2499926": {
+      "title": "Alignment by maximization of mutual information",
+      "abstract": "A new information-theoretic approach is presented for finding the pose of an object in an image. The technique does not require information about the surface properties of the object, besides its shape, and is robust with respect to variations of illumination. In our derivation few assumptions are made about the nature of the imaging process. As a result the algorithms are quite general and may foreseeably be used in a wide variety of imaging situations. ::: ::: Experiments are presented that demonstrate the approach registering magnetic resonance (MR) images, aligning a complex 3D object model to real scenes including clutter and occlusion, tracking a human head in a video sequence and aligning a view-based 2D object model to real images. ::: ::: The method is based on a formulation of the mutual information between the model and the image. As applied here the technique is intensity-based, rather than feature-based. It works well in domains where edge or gradient-magnitude based methods have difficulty, yet it is more robust than traditional correlation. Additionally, it has an efficient implementation that is based on stochastic approximation."
+    },
+    "63092660": {
+      "title": "A Stereo Matching Algorithm under Outdoor Unideal Illumination Condition",
+      "abstract": "To solve the problem of poor stereo matching effect caused by unideal outdoor illumination conditions and low-texture or low-contrast areas,a new stereo matching algorithm is proposed based on edge-map guided segmentation method under HSL(Hue-Saturation-Luminosity) color space.Different from traditional pixel-intensity based measurement under RGB color space,an HSL-color-space based pixel dissimilarity measurement equation is used in the proposed algorithm to calculate matching costs,and then image region segmentation and stereo matching are completed based on the edge detection results of the left and right input images.A series of image sets with different illumination conditions and significant low-texture areas are used for comparison between the proposed algorithm and the existing methods.Experiment results show that the proposed algorithm can achieve ideal disparity maps,be robust for images with unideal illumination and low-texture areas,and run in near real-time."
+    },
+    "62123653": {
+      "title": "A novel localization approach for autonomous vehicles based on map matching with curvature features",
+      "abstract": "Using the curvature features,a novel map-matching based localization approach for autonomous vehicles is proposed.By computing the scale-invariant curvature integral and its correlation of autonomous vehicle's historical and reference trajectories for matching,the proposed approach can effectively eliminate the mismatch problem caused by odometer calibration parameters bias and azimuth estimation errors in dead-reckoning(DR).Firstly,we integrate the inertial measurement unit output,steering angles,and wheel speed measurements from four ABS(anti-lock braking system) sensors by using the extended Kalman filter in order to estimate the autonomous vehicle's position and orientation,which are then used to select the candidate matching segments from digital maps.Then,a map matching algorithm based on spatial curvature features is proposed to accomplish segment matching,and matching points are determined according to the changes in curvature and yaw.Finally,these matching points are further utilized as the measurements of the unscented Kalman filter to update the filter and achieve high-precision estimation of pose.The experimental results in the real road condition show that the proposed approach is able to realize map matching effectively,reduce the accumulative error of autonomous vehicles in DR,and estimate the pose of autonomous vehicles accurately for long-range navigation even if the GPS(global positioning system) signal occasionally fails."
+    }
+  },
+  "generator": "fallback_v4"
+}

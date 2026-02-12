@@ -1,0 +1,22 @@
+{
+  "doc_id": "56773",
+  "text": "Note that all the above methods edit attributes over the whole face images. Hence, attribute-irrelevant details might also be changed. To address this issue, [CITATION_1] introduce the spatial attention mechanism into GANs to locate attribute-relevant areas and propose a SaGAN for manipulating facial attributes more precisely. SaGAN follows the standard adversarial learning paradigm, where a generator and a discriminator play a min-max game. To keep attribute-irrelevant regions unchanged, SaGAN's generator consists of an attribute manipulation network (AMN) and a spatial attention network (SAN). Given a face image, SAN learns a spatial attention mask where attribute-relevant regions have non-zero attention values. In this way, the region where the desired attribute appears can be located. Then, AMN takes the face image and the attribute vector as inputs, yielding an image with the desired attribute in the specific region located by SAN.",
+  "correct_citation": {
+    "[CITATION_1]": "52959267"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To address this issue, [CITATION_1] introduce the spatial attention mechanism into GANs to locate attribute-relevant areas and propose a SaGAN for manipulating facial attributes more precisely.",
+      "s_span": 135,
+      "e_span": 328
+    }
+  ],
+  "bib_entries": {
+    "52959267": {
+      "title": "Generative adversarial network with spatial attention for face attribute editing",
+      "abstract": "Face attribute editing aims at editing the face image with the given attribute. Most existing works employ Generative Adversarial Network (GAN) to operate face attribute editing. However, these methods inevitably change the attribute-irrelevant regions, as shown in Fig. 1. Therefore, we introduce the spatial attention mechanism into GAN framework (referred to as SaGAN), to only alter the attribute-specific region and keep the rest unchanged. Our approach SaGAN consists of a generator and a discriminator. The generator contains an attribute manipulation network (AMN) to edit the face image, and a spatial attention network (SAN) to localize the attribute-specific region which restricts the alternation of AMN within this region. The discriminator endeavors to distinguish the generated images from the real ones, and classify the face attribute. Experiments demonstrate that our approach can achieve promising visual results, and keep those attribute-irrelevant regions unchanged. Besides, our approach can benefit the face recognition by data augmentation."
+    }
+  },
+  "generator": "fallback_v4"
+}

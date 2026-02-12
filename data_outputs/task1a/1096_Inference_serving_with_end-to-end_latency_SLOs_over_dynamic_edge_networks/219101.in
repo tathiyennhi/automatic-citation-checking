@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "However, in our current Python-based implementation, the miss rate for the 1 client setting is slightly higher.",
+    "In the 1 client setting, only one GPU (and the associated GPU worker) is active at any given moment, as dictated by the scheduler.",
+    "We observe that when a GPU worker on our multi-GPU setup is not active for an extended period of time, the few subsequent inference requests on that GPU worker experience occasional delays.",
+    "These delays occur during the retrieval of inference requests from the dispatch queue, fetching active model information from the loader thread, or executing the initial DNN inference on the GPU after a prolonged idle interval.",
+    "We attribute these delays to the internal operations of commodity servers, which employ besteffort process/queue management and scheduling."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "text": "To understand how an adversary can learn additional information from schemes without rigorous guarantees, consider the scheme of Liu and Wang [CITATION_1] , which works as follows. The secret key consists of two integers a and b and the encryption of a value v is av + b + noise, for some randomly chosen noise ∈ {0,...,a − 1}, small enough to preserve order. Note that a and b are the same across all encryptions. Intuitively, this scheme is insecure because a and b are a one-time pad that is being reused many times. To attack Liu and Wang's scheme, suppose an attacker obtains two pairs of plaintexts and ciphertexts: c 1 is the encryption of 0 (i.e., c 1 = b + n 1 for some noise n 1 ), and c 2 is the encryption of k, where k is some large value (i.e., c 2 = ak + b + n 2 ). By computing the difference between c 2 and c 1 , the attacker obtains c 2 − c 1 = ak + n 2 − n 1 , and since 0 ≤ n 1 , n 2 < a, the attacker learns that a is in the interval [CITATION_2] suffers from the same attack.",
+  "correct_citation": {
+    "[CITATION_1]": "18323475",
+    "[CITATION_2]": "30183786"
+  },
+  "bib_entries": {
+    "18323475": {
+      "title": "Programmable order-preserving secure index for encrypted database query",
+      "abstract": "The database services on cloud are appearing as an attractive way of outsourcing databases. When a database is deployed on a cloud database service, the data security and privacy becomes a big concern for users. A straightforward way to address this concern is to encrypt the database. However, an encrypted database cannot be easily queried. In this paper, we propose an order-preserving scheme for indexing encrypted data, which facilitates the range queries over encrypted databases. The scheme is secure since it randomizes each index with noises, such that the original data cannot be recovered from indexes. Moreover, our scheme allows the programmability of basic indexing expressions and thus the distribution of the original data can be hidden from the indexes."
+    },
+    "30183786": {
+      "title": "Nonlinear order preserving index for encrypted database query in service cloud environments",
+      "abstract": "SUMMARY ::: The database services on cloud are appearing as an attractive way of outsourcing databases. When a database is deployed on a cloud database service, the data security and privacy becomes a big concern for users. A straightforward way to address this concern is to encrypt the database. However, after encryption, the database cannot be easily queried. In this paper, we propose a nonlinear order preserving scheme for indexing encrypted data, which facilitates the range queries over encrypted databases. The scheme is secure even there are a large number of duplicates in plaintexts. Moreover, our scheme allows the programmability of basic indexing expressions and thus provides the capability of hiding the distribution of plaintexts from the distribution of indexes. This scheme is suitable for long-standing databases because its use does not need any assumption on the characteristics of database data, such as their distribution, range and number, which may change dramatically over time.Copyright © 2013 John Wiley & Sons, Ltd."
+    }
+  }
+}

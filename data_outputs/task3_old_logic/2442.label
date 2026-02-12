@@ -1,0 +1,74 @@
+{
+  "doc_id": "2442",
+  "text": "Schmidhuber (2008) postulates that the organism is guided by the desire to compress information it receives. Therefore, the more we manage to compress received data from the environment, the more the intrinsic reward is high. Nevertheless, he indicates that this is the improvement which is important, and not the compression degree in itself, or an agent could decide to stay inactive in front of the noise or an uniform darkness. As noticed by Schmidhuber (2007) , a breakthrough in the compression progress is called a discovery. Data compression is strongly linked to the observation of regularities in these very same data. For example, what we call a face is, in our environment, an ensemble appearing in a recurrent basis and composed of an oval shape containing two eyes, a nose and a mouth. Likewise, a state of the environment can be described with only some of the more pertinent features. Emphasizing this aspect makes this paradigm close to the minimum description length principle [CITATION_1] which considers learning as finding the shortest description of data. In our case, it implies that intrinsic motivation results in a search for new regularities in the environment. It has been shown that methods on information gain are directly linked to information compression progress [CITATION_2] . ECO [CITATION_3] tries to encode the environment by storing the more diverse states as possible; and predictive models [CITATION_4] encode environment dynamics in a parameterized model (often a neural network). The empowerment is similar, it should be recalled that this is about directing an agent towards areas in which it has control. i.e. in which states are determined by agent actions. It is possible to reformulate the empowerment as the interest of an agent for areas where its actions are a compression of the next states. Indeed, the empowerment is maximal if every path leads to their own states (always the same in the same order) distinct from those of other trajectories whereas it is minimal if all trajectories lead to the same state. Some work on skill abstraction explicitly tries to compress trajectories into a goal space. If they use the state space as goal space, we saw that the challenge was to correctly compress the space into a usable one. This leads to a part of work which rely on the quality of compression of the state space [CITATION_5] [CITATION_6] [CITATION_7] .",
+  "correct_citation": {
+    "[CITATION_1]": "396813",
+    "[CITATION_2]": "6060380",
+    "[CITATION_3]": "52920181",
+    "[CITATION_4]": "51979536",
+    "[CITATION_5]": "195833177",
+    "[CITATION_6]": "52909341",
+    "[CITATION_7]": "20045336"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Emphasizing this aspect makes this paradigm close to the minimum description length principle which considers learning as finding the shortest description of data."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "It has been shown that methods on information gain are directly linked to information compression progress"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "ECO tries to encode the environment by storing the more diverse states as possible; and predictive models encode environment dynamics in a parameterized model (often a neural network)."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "tries to encode the environment by storing the more diverse states as possible; and predictive models"
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This leads to a part of work which rely on the quality of compression of the state space."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "This leads to a part of work which rely on the quality of compression of the state space."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "This leads to a part of work which rely on the quality of compression of the state space."
+    }
+  ],
+  "bib_entries": {
+    "51979536": {
+      "title": "Large-scale study of curiosity-driven learning",
+      "abstract": "Reinforcement learning algorithms rely on carefully engineering environment rewards that are extrinsic to the agent. However, annotating each environment with hand-designed, dense rewards is not scalable, motivating the need for developing reward functions that are intrinsic to the agent. Curiosity is a type of intrinsic reward function which uses prediction error as reward signal. In this paper: (a) We perform the first large-scale study of purely curiosity-driven learning, i.e. without any extrinsic rewards, across 54 standard benchmark environments, including the Atari game suite. Our results show surprisingly good performance, and a high degree of alignment between the intrinsic curiosity objective and the hand-designed extrinsic rewards of many game environments. (b) We investigate the effect of using different feature spaces for computing prediction error and show that random features are sufficient for many popular RL game benchmarks, but learned features appear to generalize better (e.g. to novel game levels in Super Mario Bros.). (c) We demonstrate limitations of the prediction-based rewards in stochastic setups. Game-play videos and code are at https://pathak22.github.io/large-scale-curiosity/"
+    },
+    "6060380": {
+      "title": "Driven by compression progress: A simple principle explains essential aspects of subjective beauty, novelty, surprise, interestingness, attention, curiosity, creativity, art, science, music, jokes",
+      "abstract": "I argue that data becomes temporarily interesting by itself to some self-improving, but computationally limited, subjective observer once he learns to predict or compress the data in a better way, thus making it subjectively simpler and more beautiful. Curiosity is the desire to create or discover more non-random, non-arbitrary, regular data that is novel and surprising not in the traditional sense of Boltzmann and Shannon but in the sense that it allows for compression progress because its regularity was not yet known. This drive maximizes interestingness, the first derivative of subjective beauty or compressibility, that is, the steepness of the learning curve. It motivates exploring infants, pure mathematicians, composers, artists, dancers, comedians, yourself, and (since 1990) artificial systems."
+    },
+    "20045336": {
+      "title": "Curiosity-driven exploration by self-supervised prediction",
+      "abstract": "In many real-world scenarios, rewards extrinsic to the agent are extremely sparse, or absent altogether. In such cases, curiosity can serve as an intrinsic reward signal to enable the agent to explore its environment and learn skills that might be useful later in its life. We formulate curiosity as the error in an agent's ability to predict the consequence of its own actions in a visual feature space learned by a self-supervised inverse dynamics model. Our formulation scales to high-dimensional continuous state spaces like images, bypasses the difficulties of directly predicting pixels, and, critically, ignores the aspects of the environment that cannot affect the agent. The proposed approach is evaluated in two environments: VizDoom and Super Mario Bros. Three broad settings are investigated: 1) sparse extrinsic reward, where curiosity allows for far fewer interactions with the environment to reach the goal; 2) exploration with no extrinsic reward, where curiosity pushes the agent to explore more efficiently; and 3) generalization to unseen scenarios (e.g. new levels of the same game) where the knowledge gained from earlier experience helps the agent explore new places much faster than starting from scratch. Demo video and code available at this https URL"
+    },
+    "195833177": {
+      "title": "Self-supervised learning of distance functions for goal-conditioned reinforcement learning",
+      "abstract": "Goal-conditioned policies are used in order to break down complex reinforcement learning (RL) problems by using subgoals, which can be defined either in state space or in a latent feature space. This can increase the efficiency of learning by using a curriculum, and also enables simultaneous learning and generalization across goals. A crucial requirement of goal-conditioned policies is to be able to determine whether the goal has been achieved. Having a notion of distance to a goal is thus a crucial component of this approach. However, it is not straightforward to come up with an appropriate distance, and in some tasks, the goal space may not even be known a priori. In this work we learn a distance-to-goal estimate which is computed in terms of the number of actions that would need to be carried out in a self-supervised approach. Our method solves complex tasks without prior domain knowledge in the online setting in three different scenarios in the context of goal-conditioned policies a) the goal space is the same as the state space b) the goal space is given but an appropriate distance is unknown and c) the state space is accessible, but only a subset of the state space represents desired goals, and this subset is known a priori. We also propose a goal-generation mechanism as a secondary contribution."
+    },
+    "52920181": {
+      "title": "Episodic curiosity through reachability",
+      "abstract": "Rewards are sparse in the real world and most today's reinforcement learning algorithms struggle with such sparsity. One solution to this problem is to allow the agent to create rewards for itself - thus making rewards dense and more suitable for learning. In particular, inspired by curious behaviour in animals, observing something novel could be rewarded with a bonus. Such bonus is summed up with the real task reward - making it possible for RL algorithms to learn from the combined reward. We propose a new curiosity method which uses episodic memory to form the novelty bonus. To determine the bonus, the current observation is compared with the observations in memory. Crucially, the comparison is done based on how many environment steps it takes to reach the current observation from those in memory - which incorporates rich information about environment dynamics. This allows us to overcome the known\"couch-potato\"issues of prior work - when the agent finds a way to instantly gratify itself by exploiting actions which lead to hardly predictable consequences. We test our approach in visually rich 3D environments in ViZDoom, DMLab and MuJoCo. In navigational tasks from ViZDoom and DMLab, our agent outperforms the state-of-the-art curiosity method ICM. In MuJoCo, an ant equipped with our curiosity module learns locomotion out of the first-person-view curiosity only."
+    },
+    "396813": {
+      "title": "Intrinsically motivated general companion npcs via coupled empowerment maximisation",
+      "abstract": "Non-player characters (NPCs) in games are traditionally hard-coded or dependent on pre-specified goals, and consequently struggle to behave sensibly in ever-changing and possibly unpredictable game worlds. To make them fit for new developments in procedural content generation, we introduce the principle of Coupled Empowerment Maximisation as an intrinsic motivation for game NPCs. We focus on the development of a general game companion, designed to support the player in achieving their goals. We evaluate our approach against three intuitive and abstract companion duties. We develop dedicated scenarios for each duty in a dungeon-crawler game testbed, and provide qualitative evidence that the emergent NPC behaviour fulfils these duties. We argue that this generic approach can speed up NPC AI development, improve automatic game evolution and introduce NPCs to full game-generation systems."
+    },
+    "52909341": {
+      "title": "Near-optimal representation learning for hierarchical reinforcement learning",
+      "abstract": "We study the problem of representation learning in goal-conditioned hierarchical reinforcement learning. In such hierarchical structures, a higher-level controller solves tasks by iteratively communicating goals which a lower-level policy is trained to reach. Accordingly, the choice of representation -- the mapping of observation space to goal space -- is crucial. To study this problem, we develop a notion of sub-optimality of a representation, defined in terms of expected reward of the optimal hierarchical policy using this representation. We derive expressions which bound the sub-optimality and show how these expressions can be translated to representation learning objectives which may be optimized in practice. Results on a number of difficult continuous-control tasks show that our approach to representation learning yields qualitatively better representations as well as quantitatively better hierarchical policies, compared to existing methods (see videos at this https URL)."
+    }
+  },
+  "generator": "fallback"
+}

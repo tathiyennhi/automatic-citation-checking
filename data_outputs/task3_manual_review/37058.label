@@ -1,0 +1,20 @@
+{
+  "doc_id": "37058",
+  "text": "The writeback information that we monitor is based on the concepts of stack distance and stack property. Stack distance was introduced to study the behavior of storage hierarchies by [CITATION_1] . In a replacement policy that has the stack property, such as Least Recently Used (LRU) replacement, each set of a set-associative cache is viewed as a stack. All cache lines in the set are ordered by the last access time, where the top of the stack is the Most Recently Used (MRU) cache line, and the bottom is the LRU cache line. Stack distance is defined as the LRU recency position of a cache line when it is accessed again. It is critical for monitoring miss rate. An access is a hit if the cache associativity is no less than the stack distance. Figure 3 shows a sequence of references to an M-way set-associative cache. The five accesses are to the same cache line X. Assume that a write-back policy is used by the cache. A dirty cache line X exists in the cache after time t 1 when the first write access to X happens. Assume also that subsequent reads to the same cache line occur at t 2 , t 3 and t 4 , and another write access occurs at t 5 . The stack distances for these five accesses are 4, 3, 5, 2 and 7. For instance, the cache line X has a LRU recency position of 3 before the read access happens at t 2 and is promoted to the top of the LRU stack after t 2 . We make the following observations. -If 1 ≤ M < 3, then the dirty cache line X is evicted from the cache. The eviction causes a writeback to the next level cache/memory between t 1 and t 2 . -If 3 ≤ M < 5, then the writeback of cache line X happens between t 2 and t 3 . -Finally, if 5 ≤ M < 7, then cache line X is written back to the next level cache/memory between t 4 and t 5 .",
+  "correct_citation": {
+    "[CITATION_1]": "8989304"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Stack distance was introduced to study the behavior of storage hierarchies by"
+    }
+  ],
+  "bib_entries": {
+    "8989304": {
+      "title": "Evaluation techniques for storage hierarchies",
+      "abstract": "The design of efficient storage hierarchies generally involves the repeated running of \"typical\" program address traces through a simulated storage system while various hierarchy design parameters are adjusted. ::: ::: This paper describes a new and efficient method of determining, in one pass of an address trace, performance measures for a large class of demand-paged, multilevel storage systems utilizing a variety of mapping schemes and replacement algorithms. ::: ::: The technique depends on an algorithm classification, called \"stack algorithms,\" examples of which are \"least frequently used,\" \"least recently used,\" \"optimal,\" and \"random replacement\" algorithms. The techniques yield the exact access frequency to each storage device, which can be used to estimate the overall performance of actual storage hierarchies."
+    }
+  },
+  "generator": "fallback"
+}

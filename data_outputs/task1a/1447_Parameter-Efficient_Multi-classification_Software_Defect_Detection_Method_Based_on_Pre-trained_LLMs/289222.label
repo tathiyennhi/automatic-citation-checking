@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The self-attention layer introduces three distinct vectors: Query (Q), Key (K), and Value (V).",
+    "These vectors are obtained by multiplying the embedding vector X with three different weight matrices, W Q, W K, and W V. In the original self-attention layer, these weight matrices are initialized and continuously optimized through the training process.",
+    "The computation process is described as follows:MultiHead(Q, K, V) = Concat(head 1,..., head α)W o (5) head α = Attention(Q, K, V), for α = 1, 2,..., A (6) Q = X W Q α, K = X W K α, V = X W V α,(7)where W o denotes a linear transformation matrix applied to concatenate the outputs of all the attention heads, and α represents the index of the attention head.",
+    "Upon obtaining the Q, K, and V vectors, the relevance between two tokens is measured by computing the dot product of the Q and K vectors.",
+    "First, these relevance scores are scaled by dividing by √ d (where d represents the dimension of the K vector) to avoid large dimensions."
+  ],
+  "correct_citations": []
+}

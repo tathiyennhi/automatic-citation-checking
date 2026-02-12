@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This database prompt is crafted using our proposed strategy.",
+    "As seen, based on the user's question, a relevant database value, Sarah Martinez, is extracted from the reviewer.name column.",
+    "Then, the displayed primary and foreign keys further guide the language model in generating the JOIN ON clauses.Database prompt: table movie, columns = [ movie.mid ( int | primary key | comment: movie id | values: 101, 102), movie.title ( text | values: Gone with the Wind, Star Wars), movie.year ( int | values: 1939, 1977), movie.director ( text | values: Victor Fleming, George Lucas)] table reviewer, columns = [ reviewer.rid ( int | primary key | comment: reviewer id | values: 201, 202), reviewer.name ( text | values: Sarah Martinez, Daniel Lewis)] table rating, columns = [ rating.rid ( int | comment: reviewer id | values: 201, 202), rating.mid ( int | comment: movie id | values: 101,106), rating.stars ( int | comment: rating stars | values: 2, 4), rating.ratingdate ( date | values: 2011-01-22, 2011-01-27)] foreign keys: rating.rid = reviewer.rid rating.mid = movie.mid matched values: reviewer.name ( Sarah Martinez) Question: What are the names of all directors whose movies have been reviewed by Sarah Martinez?",
+    "INPUT OUTPUT SELECT DISTINCT movie.director FROM rating JOIN movie ON rating.mid = movie.mid JOIN reviewer ON rating.rid = reviewer.rid WHERE reviewer.name = 'Sarah Martinez' NEW DOMAIN ADAPTIONIn real-world scenarios, people usually have their own databases from various new domains such as finance, genes, biology, academia, and more.",
+    "However, developing a text-to-SQL model on these databases is challenging because of the lack of labeled training data."
+  ]
+}

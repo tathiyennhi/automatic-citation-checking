@@ -1,0 +1,20 @@
+{
+  "doc_id": "40620",
+  "text": "We then used ten-fold cross-validation [CITATION_1] to determine the false-positive rate that can be expected of the collected models. For each of the three file types, the 1,000 profiles were first divided into ten subsets of 100 profiles each. Then, each profile from one of the subsets was checked for compliance with application models derived from an increasing number of (randomly chosen) profiles in the other nine subsets, up to all 900 profiles in the end. Every compliance check yields either the answer \"compliant\" or an anomaly warning. Since we consider our training set to only contain compliant input documents, we consider all warnings to be false positives. Figure 4 shows the resulting false positive rates, averaged over the 10 subsets, for various training set sizes. Because we used ten-fold cross-validation, at most 900 out of the 1000 available inputs were used for model generation. As Figure 4 shows, for both the Function and Call Graph abstractions it suffices to use only a few hundred inputs for model generation to obtain a model with a false-positive rates below 5%. Using the calling-context-tree (CCT) abstraction, however, requires a larger number of inputs to achieve low false-positive rates. Even when using 900 inputs to generate the application model, an average of about 22%, 10%, and 3%, respectively, of the remaining 100 profiles are deemed non-compliant. We also observe that at least for the Calling Context Tree abstraction the false-positive rates very much depend on the program under evaluation.",
+  "correct_citation": {
+    "[CITATION_1]": "2702042"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We then used ten-fold cross-validation to determine the false-positive rate that can be expected of the collected models."
+    }
+  ],
+  "bib_entries": {
+    "2702042": {
+      "title": "A study of cross-validation and bootstrap for accuracy estimation and model selection",
+      "abstract": "We review accuracy estimation methods and compare the two most common methods crossvalidation and bootstrap. Recent experimental results on artificial data and theoretical re cults in restricted settings have shown that for selecting a good classifier from a set of classifiers (model selection), ten-fold cross-validation may be better than the more expensive leaveone-out cross-validation. We report on a largescale experiment--over half a million runs of C4.5 and a Naive-Bayes algorithm--to estimate the effects of different parameters on these algrithms on real-world datasets. For crossvalidation we vary the number of folds and whether the folds are stratified or not, for bootstrap, we vary the number of bootstrap samples. Our results indicate that for real-word datasets similar to ours, The best method to use for model selection is ten fold stratified cross validation even if computation power allows using more folds."
+    }
+  },
+  "generator": "fallback"
+}

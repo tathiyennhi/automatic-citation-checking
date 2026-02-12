@@ -1,0 +1,17 @@
+{
+  "text": "Other notable research by [CITATION_1] demonstrated pruning of redundant connections in AlexNet during training, thereby reducing the number of trainable parameters within AlexNet by almost a ten-fold to only 6.7 million without accuracy loss. Finally, [CITATION_2] introduced SqueezeNet, which employ squeeze layers consisting of 1x1 convolution filters before being passed onto expand layers with both 1x1 and 3x3 convolution filters, together called a Fire module. This innovation achieved results comparable to those achieved with AlexNet on the ImageNet dataset while requiring 50 times fewer parameters. The reduction in the number of parameters also greatly benefits model transferability between devices.",
+  "correct_citation": {
+    "[CITATION_1]": "2238772",
+    "[CITATION_2]": "14136028"
+  },
+  "bib_entries": {
+    "2238772": {
+      "title": "Learning both Weights and Connections for Efficient Neural Networks",
+      "abstract": "Neural networks are both computationally intensive and memory intensive, making them difficult to deploy on embedded systems. Also, conventional networks fix the architecture before training starts; as a result, training cannot improve the architecture. To address these limitations, we describe a method to reduce the storage and computation required by neural networks by an order of magnitude without affecting their accuracy by learning only the important connections. Our method prunes redundant connections using a three-step method. First, we train the network to learn which connections are important. Next, we prune the unimportant connections. Finally, we retrain the network to fine tune the weights of the remaining connections. On the ImageNet dataset, our method reduced the number of parameters of AlexNet by a factor of 9x, from 61 million to 6.7 million, without incurring accuracy loss. Similar experiments with VGG-16 found that the number of parameters can be reduced by 13x, from 138 million to 10.3 million, again with no loss of accuracy."
+    },
+    "14136028": {
+      "title": "SqueezeNet: AlexNet-Level Accuracy With 50x Fewer Parameters and <0.5MB Model Size",
+      "abstract": "Recent research on deep neural networks has focused primarily on improving accuracy. For a given accuracy level, it is typically possible to identify multiple DNN architectures that achieve that accuracy level. With equivalent accuracy, smaller DNN architectures offer at least three advantages: (1) Smaller DNNs require less communication across servers during distributed training. (2) Smaller DNNs require less bandwidth to export a new model from the cloud to an autonomous car. (3) Smaller DNNs are more feasible to deploy on FPGAs and other hardware with limited memory. To provide all of these advantages, we propose a small DNN architecture called SqueezeNet. SqueezeNet achieves AlexNet-level accuracy on ImageNet with 50x fewer parameters. Additionally, with model compression techniques we are able to compress SqueezeNet to less than 0.5MB (510x smaller than AlexNet)."
+    }
+  }
+}

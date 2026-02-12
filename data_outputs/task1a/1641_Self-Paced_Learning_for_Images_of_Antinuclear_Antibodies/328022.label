@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "To construct instances for multi-instance learning, we adopt a grid-based sliding window strategy to partition each input image x i into N i non-overlapping subregions, denoted as x j i.",
+    "Each sub-region is a fixed-size patch of 448 × 448 pixels.The idea is to encourage the selection of sub-regions in which the learner has developed higher confidence (from previous epochs) about ANA presence, while suppressing less confident ones.s j i = max k ReLU α j i,k t j i,k, with t j i ≡ t i.",
+    "(5)where ReLU(•) avoids negative weights.",
+    "The per-instance sampling score s j i is the maximum (over classes) of the masked weights.Then, the training instance x j i is sampled from the image using a weighted random sampling strategy based on s j i, which reflects the model's confidence in that region.",
+    "In other words, instances x j i with higher s j i values (indicating higher confidence of containing relevant labels) are more likely to be selected and contribute to training."
+  ],
+  "correct_citations": []
+}

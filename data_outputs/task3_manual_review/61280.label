@@ -1,0 +1,52 @@
+{
+  "doc_id": "61280",
+  "text": "One of the important trends is the simplification of the pipeline, as shown in Fig.4 . Most methods before the era of deep-learning, and some early methods that use deeplearning, have multi-step pipelines. More recent methods have simplified and much shorter pipelines, which is a key to reduce error propagation and simplify the training process. More recently, separately trained two-staged methods are surpassed by jointly trained ones. The main components of these methods are end-to-end differentiable modules, which is an outstanding characteristic. Multi-step methods: Early deep-learning based methods [CITATION_1] , [CITATION_2] 1 , [CITATION_3] cast the task of text detection into a multistep process. In [CITATION_4] , a convolutional neural network is used to predict whether each pixel in the input image (1) belongs to a character, (2) is inside the text region, and (3) the text orientation around the pixel. Connected positive responses are considered as a detection of character or text region. For characters belonging to the same text region, Delaunay triangulation [CITATION_5] is applied, after which graph partition based on the predicted orientation attribute groups characters into text lines.",
+  "correct_citation": {
+    "[CITATION_1]": "6427766",
+    "[CITATION_2]": "2214682",
+    "[CITATION_3]": "19413173",
+    "[CITATION_4]": "6427766",
+    "[CITATION_5]": "1138356"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Multi-step methods: Early deep-learning based methods"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "modules, which is an outstanding characteristic. Multi-step methods: Early deep-learning based methods, 1, cast the task of text detection into a multistep process. In, a convolutional neural network"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "modules, which is an outstanding characteristic. Multi-step methods: Early deep-learning based methods, 1, cast the task of text detection into a multistep process. In, a convolutional neural network"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In, a convolutional neural network is used to predict whether each pixel in the input image (1) belongs to a character, (2) is inside the text region, and (3) the text orientation around the pixel."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "For characters belonging to the same text region, Delaunay triangulation is applied, after which graph partition based on the predicted orientation attribute groups characters into text lines."
+    }
+  ],
+  "bib_entries": {
+    "19413173": {
+      "title": "Multi-scale fcn with cascaded instance aware segmentation for arbitrary oriented word spotting in the wild",
+      "abstract": "Scene text detection has attracted great attention these years. Text potentially exist in a wide variety of images or videos and play an important role in understanding the scene. In this paper, we present a novel text detection algorithm which is composed of two cascaded steps: (1) a multi-scale fully convolutional neural network (FCN) is proposed to extract text block regions, (2) a novel instance (word or line) aware segmentation is designed to further remove false positives and obtain word instances. The proposed algorithm can accurately localize word or text line in arbitrary orientations, including curved text lines which cannot be handled in a lot of other frameworks. Our algorithm achieved state-of-the-art performance in ICDAR 2013 (IC13), ICDAR 2015 (IC15) and CUTE80 and Street View Text (SVT) benchmark datasets."
+    },
+    "1138356": {
+      "title": "Orientation robust text line detection in natural images",
+      "abstract": "In this paper, higher-order correlation clustering (HOCC) is used for text line detection in natural images. We treat text line detection as a graph partitioning problem, where each vertex is represented by a Maximally Stable Extremal Region (MSER). First, weak hypothesises are proposed by coarsely grouping MSERs based on their spatial alignment and appearance consistency. Then, higher-order correlation clustering (HOCC) is used to partition the MSERs into text line candidates, using the hypotheses as soft constraints to enforce long range interactions. We further propose a regularization method to solve the Semidefinite Programming problem in the inference. Finally we use a simple texton-based texture classifier to filter out the non-text areas. This framework allows us to naturally handle multiple orientations, languages and fonts. Experiments show that our approach achieves competitive performance compared to the state of the art."
+    },
+    "6427766": {
+      "title": "Scene text detection via holistic, multi-channel prediction",
+      "abstract": "Recently, scene text detection has become an active research topic in computer vision and document analysis, because of its great importance and significant challenge. However, vast majority of the existing methods detect text within local regions, typically through extracting character, word or line level candidates followed by candidate aggregation and false positive elimination, which potentially exclude the effect of wide-scope and long-range contextual cues in the scene. To take full advantage of the rich information available in the whole natural image, we propose to localize text in a holistic manner, by casting scene text detection as a semantic segmentation problem. The proposed algorithm directly runs on full images and produces global, pixel-wise prediction maps, in which detections are subsequently formed. To better make use of the properties of text, three types of information regarding text region, individual characters and their relationship are estimated, with a single Fully Convolutional Network (FCN) model. With such predictions of text properties, the proposed algorithm can simultaneously handle horizontal, multi-oriented and curved text in real-world natural images. The experiments on standard benchmarks, including ICDAR 2013, ICDAR 2015 and MSRA-TD500, demonstrate that the proposed algorithm substantially outperforms previous state-of-the-art approaches. Moreover, we report the first baseline result on the recently-released, large-scale dataset COCO-Text."
+    },
+    "2214682": {
+      "title": "Multi-oriented text detection with fully convolutional networks",
+      "abstract": "In this paper, we propose a novel approach for text detection in natural images. Both local and global cues are taken into account for localizing text lines in a coarse-to-fine procedure. First, a Fully Convolutional Network (FCN) model is trained to predict the salient map of text regions in a holistic manner. Then, text line hypotheses are estimated by combining the salient map and character components. Finally, another FCN classifier is used to predict the centroid of each character, in order to remove the false hypotheses. The framework is general for handling text in multiple orientations, languages and fonts. The proposed method consistently achieves the state-of-the-art performance on three text detection benchmarks: MSRA-TD500, ICDAR2015 and ICDAR2013."
+    }
+  },
+  "generator": "fallback"
+}

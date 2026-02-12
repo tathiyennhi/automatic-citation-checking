@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The approximate posterior is defined as:q (z 0:T | x 0:T, a 1:T) = T t=0 q (z t | z <t, a ≤t, x t)(2)The conditioning on previous states z <t and actions a ≤t appears multiple times.",
+    "RSSM uses a shared GRU to compress z <t and a ≤t into a deterministic encoding h t:h t = GRU (h t-1, MLP (concat [z t-1, a t]))(3)This is then used to compute the sufficient statistics of the prior, likelihood, and posterior: The training objective is to maximize the evidence lower bound (ELBO):p (z t | z <t, a ≤t) = MLP (h t), p (x t | z ≤t, a ≤t) = N (x t, 1), xt = Decoder (concat [h t, z t]), q (z t | z <t, a ≤t, x t) = MLP (concat [h t, e t]), e t = Encoder (x t).",
+    "(4)log p (x 0:T | a 1:T) ≥ E q T t=0 log p (x t | z ≤t, a ≤t) -L KL (q (z t | z <t, a ≤t, x t), p (z t | z <t, a ≤t))(5)2) Joint-Embedding Predictive Architecture (JEPA) [1] marks a paradigm shift in predictive modeling by focusing on representation space rather than direct, detailed predictions.",
+    "As shown in Fig. 4, by abstracting input (x) and target (y) through dual encoders into representations (s x and s y), and leveraging a latent variable (z) for prediction, JEPA achieves a significant leap in efficiency and accuracy.",
+    "This model excels in filtering out noise and irrelevancies, concentrating on the essence of the predictive task."
+  ],
+  "correct_citations": [
+    "(4)log p (x 0:T | a 1:T) ≥ E q T t=0 log p (x t | z ≤t, a ≤t) -L KL (q (z t | z <t, a ≤t, x t), p (z t | z <t, a ≤t))(5)2) Joint-Embedding Predictive Architecture (JEPA) [1] marks a paradigm shift in predictive modeling by focusing on representation space rather than direct, detailed predictions."
+  ]
+}

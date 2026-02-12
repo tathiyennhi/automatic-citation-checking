@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The internal observation corresponds to the state output in human mode and is a vector of size 4×n that holds the coordinates and dimensions of each facility (see Section 5.3.1).",
+    "That information could be encoded differently outside gym-flp, e.g.",
+    "as chromosomes to make it useable with genetic algorithms.Algorithm 1 An algorithm with caption 1: Initialise gym and gym-flp 2: M ← Initialise instance of RL model class 3: env ← instance of class GymEnv Use env=gym.make(...) 4: T ← Number of train steps (int) 5: s 0 ← env.reset() obtain initial observation 6: for t = 1, T do 7: Sample random action a from action space A 8: Pass a to env and receive tuple return (o, r, d, i) env.step(a) 9: Pass tuple to RL algorithm (Update replay buffer, value function, network weights,...) and update M 10: end for 11: Save RL model, delete env 12: Start evaluation run: 13: Make new env 14: eval_env ← instance of class GymEnv 15: o ← eval_env.reset() obtain initial observation 16: M ← Load RL model 17: d ← False 18: mhc ← empty list 19: while d = T rue do 20: a ← predict a for o from M 21: Pass a to eval_env and receive tuple return (o, r, d, i) 22: Append i to mhc 23: end while 24: Plot/Interpret mhc Concluding RemarksIn this paper, we present a Python library intended to assist operations researchers in advancing the usage of Reinforcement Learning techniques for Facility Layout Problems.",
+    "As RL has gained traction as a methodology for related combinatorial optimisation problems, we firmly believe that this is a direction worth exploring.",
+    "As an initial stepping stone, we implemented three commonly used FLP problem definitions (QAP, FBS, and STS) plus an open-field layout problem (OFP) including the material handling cost computation."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "In this section, we only measure per kernel latency, as the end-to-end latency is heavily impacted by the use of the profiler.",
+    "Results are shown in Fig. 8 for the prefill, embed and decode operations.",
+    "We see that most of the execution is taken up by de-quantize and matrix multiplication fused operations for the prefill and decode operations, taking28.0% 20.0% 23.9% 28.1% embed fused_dequantize_take1 reshape14 vm.builtin.make_shape vm.builtin.match_shape (a) Embed 22.6% 6.6% 39.3% 24.4% 4.1% 3.0% prefill fused_dequantize1 _NT_matmul5 fused_dequantize2 _NT_matmul6 fused_dequantize3 _NT_matmul7 fused_dequantize4 _NT_matmul8 fused_dequantize_fused _NT_matmul14_cast2 vm.builtin.paged_attention _kv_cache_attention _with_fused_qkv (b) Prefill 12.6% 4.3% 22.5% 11.3% 45.0% 4.3% decode fused_dequantize1 _NT_matmul10 fused_dequantize2 _NT_matmul11 fused_dequantize3 _NT_matmul12 fused_dequantize4 _NT_matmul13 fused_dequantize_fused _NT_matmul14_cast2 vm.builtin.paged_attention _kv_cache_attention _with_fused_qkv (c) Decode (a) Temperature after a full conversation on Zephyr-3B (4-bit) on MLC-LLM 00:27.000 00:27.500 00:28.000 Allocations (density) GPU (active) Time (min:sec.ms) (b) Memory trace when running Zephyr-3B (4-bit) on LLMFarm (GPU)Figure 9: Thermal and memory behavior on iPhone 14 Pro up 97% and 95.7% of the total runtime, respectively.",
+    "We hypothesize that the dequantization operation is also why 3-bit quantized networks may have performed worse than their 4-bit counterparts, as we discussed in Sec. 5.2.2.",
+    "On the contrary, the embed operation seems mostly to be doing tensor conversion and retrieval operations."
+  ],
+  "correct_citations": []
+}

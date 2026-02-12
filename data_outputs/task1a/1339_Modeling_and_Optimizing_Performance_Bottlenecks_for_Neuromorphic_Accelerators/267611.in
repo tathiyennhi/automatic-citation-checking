@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Single Neurocore Per-Layer OperationWe first uncover the 'base case' bottleneck, by analyzing each layer mapped onto one neurocore without parallelization.Accounting for activation sparsity, the number of inputs to l i is mN, and each input triggers the sparse read of wN weights, leading to mwN 2 synops.",
+    "Next, to count the minimum number of activation computes, we make the idealized assumption that an activation compute is only necessary if the neuron in l i received at least one synop.",
+    "Under uniform sparsity, for each of the mN inputs a, and for each of the N neurons b:p(a does not message b) = 1 -w (1) p(b receives no message) = (1 -w) mN (2) p(b is messaged) = 1 -(1 -w) mN(3)Therefore, the minimum neurocore activation computes isN • (1 -(1 -w) mN).In practice, without extremely high sparsity, for the usual neuron dimensions of ML network layers, each neuron is expected to receive at least one message, so neuron updates and writeback remain ∼ O(N).",
+    "Thus, the sparsity-aware operation costs are:(a) Synops:O(mwN 2) (b) Act.",
+    "computes: ∼ O(N) (c) Messages traffic to l i+1: O(mN)This indicates an operation bottleneck: when sparsities are low, the quadratic N 2 scaling of synops will dominate."
+  ]
+}

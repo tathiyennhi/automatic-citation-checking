@@ -1,0 +1,10 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The output h is computed as the sum of the original pathway and the low-rank adaptation pathway.",
+    "Key Implementation Steps: • Freeze the original model weights W • Initialize A with random Gaussian weights and B with zeros, so ∆W = BA is zero at the beginning of training • Choose an appropriate rank r (typically 4-32) that determines the inner dimension of matrices A and B • Scale ∆W by α/r where α is a constant, helping to stabilize training across different rank values • Apply LoRA selectively to specific weight matrices (often query and value matrices in attention blocks) • Fine-tune only A and B, capturing the task-specific adaptations in a low-dimensional subspace • After training, the low-rank update can be merged with the original weights (W +BA) for inference, introducing no additional latency Figure 3:3Figure 3: Prompt Tuning (Adapted From [5]) •Figure 4:4Figure 4: Prefix Tuning (Adapted from Li and Liang [6]) Portfolio Management: Research by Konstantinidis et al."
+  ],
+  "correct_citations": [
+    "Key Implementation Steps: • Freeze the original model weights W • Initialize A with random Gaussian weights and B with zeros, so ∆W = BA is zero at the beginning of training • Choose an appropriate rank r (typically 4-32) that determines the inner dimension of matrices A and B • Scale ∆W by α/r where α is a constant, helping to stabilize training across different rank values • Apply LoRA selectively to specific weight matrices (often query and value matrices in attention blocks) • Fine-tune only A and B, capturing the task-specific adaptations in a low-dimensional subspace • After training, the low-rank update can be merged with the original weights (W +BA) for inference, introducing no additional latency Figure 3:3Figure 3: Prompt Tuning (Adapted From [5]) •Figure 4:4Figure 4: Prefix Tuning (Adapted from Li and Liang [6]) Portfolio Management: Research by Konstantinidis et al."
+  ]
+}

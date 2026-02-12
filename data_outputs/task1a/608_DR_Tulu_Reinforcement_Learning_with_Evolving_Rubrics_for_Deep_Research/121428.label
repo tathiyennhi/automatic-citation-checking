@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "We provide further hyperparameters in Appendix D.2.",
+    "After generating rollouts and computing rewards, we perform the rubric buffer management steps described in §3.2 before sending the completed samples and rewards to the trainer.",
+    "We also turned off the citation reward after 650 training steps, as we found it converged and did not further add to performance, whilst dramatically slowing down RL training (due to the large number of API calls required).",
+    "When performing tool calls during RL training, we use an asynchronous tool call setup similar to Jiang et al. (2025), wherein tool requests are sent the second a given rollout triggers them, as opposed to waiting for the full batch to finish generating before sending tool calls.",
+    "Once a tool call is sent, we place that given generation request to sleep, allowing the inference engine to potentially continue to work on generating other responses while waiting for the tool response."
+  ],
+  "correct_citations": [
+    "When performing tool calls during RL training, we use an asynchronous tool call setup similar to Jiang et al. (2025), wherein tool requests are sent the second a given rollout triggers them, as opposed to waiting for the full batch to finish generating before sending tool calls."
+  ]
+}

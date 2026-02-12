@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Then the contrastive loss for a positive pair (x i, a(x i)) can be formally expressed as:L i = -log exp (sim (z i, ẑi) /τ) N k=1 1 [k̸ =i] exp (sim (z k, ẑi) /τ)(2)where z i = g(f (x i)) is the projected feature for scene x i and ẑj = g(f (α(x j))) is the projected feature for scene x j where some missing modality happens, sim(•) is a function that calculates cosine similarity of two latent representations,1 [k̸ =i] ∈ {0, 1} is an indicator function evaluating to 1if k ̸ = i, and τ denotes a temperature hyper-parameter, whose appropriate tuning can help the model learn from hard negatives as it controls the penalties on hard negative sample.The final loss is computed across all positive pairs in a N size mini-batch.",
+    "Minimizing the contrastive fusion loss will force the projected features from the same scene but modalitymissing conditions are different (i.e., (z i, ẑi) pair) together, while pushing projected features from different scenes (i.e., (z k, ẑi), k ̸ = i pairs) apart.",
+    "A previously trained but not robust model is incorporated into the contrastive learning framework, during the subsequent adaptation phase, these additional components are removed.",
+    "The contrastive learning framework approximately doubles the forward propagation time, however, we find that a relatively small number of epochs is sufficient, and it remains completely transparent during inference.",
+    "Therefore, we consider it introduces an affordable computational cost."
+  ]
+}

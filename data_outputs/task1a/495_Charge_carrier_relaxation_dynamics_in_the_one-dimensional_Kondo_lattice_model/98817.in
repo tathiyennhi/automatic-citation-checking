@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This condition holds for the initial state |Ψ 0,F ⟩, two electrons with opposite spin (|Ψ (↑↑) 0 ⟩), and the chosen state for the Kondo-Heisenberg model (|Ψ 0,KHM ⟩), discussed in Sec.",
+    "V. As a special case, the dimension of the relevant Hilbert space is dim(H) = L+1 for the initial state |Ψ 0,F ⟩ since in that case, total S z total = L/2 -1, and we exploit translational invariance.In the time-dependent Lanczos method, we approximate the time-evolution operator e -i Ĥt in a Krylov subspace of typically a small dimension (we set h = 1).",
+    "When applied to an initial state |Ψ(t + ∆t)⟩, we obtain the expression|Ψ(t + ∆t)⟩ ≈ V † D e -i∆tT D V D |Ψ(t)⟩,(17)where V D maps from the original basis onto the Krylov basis and vice versa, ∆t is the time step, and T D is a tridiagonal representation of the Hamiltonian Ĥ in the Krylov subspace.For the propagation by one time step, we start by finding the Krylov subspace by iteratively applying the Hamiltonian to the current state |Ψ(t)⟩ D K -1 times, and construct the operator T D in the resulting Krylov basis.",
+    "We find that D K = 20 is usually sufficient, as we verified by varying D K. To diagonalize the matrix, we use the LAPACK package [61] and a self-written code for the matrix multiplication to get the time-evolved state|Ψ(t + ∆t)⟩ = V † D e -i∆tT D V D |Ψ(t)⟩.Next, we use the quantum state |Ψ(t + ∆t)⟩ to compute expectation values of operators at t + ∆t time.",
+    "Additional parameters used in this method are the time step, which has a range between ∆t/t 0 = 0.005 and ∆t/t 0 = 0.05 (depending on the regime and initial conditions), and a maximum system size of L = 226 for the initial state |Ψ 0,F ⟩."
+  ]
+}

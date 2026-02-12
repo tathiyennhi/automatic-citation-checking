@@ -1,0 +1,34 @@
+{
+  "doc_id": "13390",
+  "text": "For RNA-seq analysis, tartary buckwheat plants were treated with 50 μM Al for a short period of time (6 h). At this concentration root elongation was inhibited by 76% compared to the control (data not shown). Root tips and basal roots from both the control and + Al treatments were sampled for RNA isolation and Illumina paired-end RNA-seq. RNA-seq generated a range of 35.1~46.6 million clean reads on each sample (Additional file 1: Table S1 ). In total there were 267.4 million clean reads from all samples with an average length of 100 nucleotides per read and a GC content of 47.84% GC. These were used for the assembly of the transcripts. Because the genome sequence of buckwheat is not available, a de novo assembly method, the Trinity method [CITATION_1] [CITATION_2] , was used to construct the transcripts and 58,438 transcript contigs were assembled. In order to reduce the redundancy and chimeras of the transcripts, we used cap3 software to combine highly similar transcripts and retain the longest transcripts with the highest read coverage, and removed the transcripts with the lowest read coverage [CITATION_3] . As a result, the number of contigs was further reduced to 39,815 (Additional file 2: Table S2 ). The assembled contigs had a length distribution from 201 to 25,284 bp, with an average length of 1184 bp ( Figure 2 ). The average coverage for each assembled contig is 508 reads per base, indicating a high read coverage of the contigs.",
+  "correct_citation": {
+    "[CITATION_1]": "18112929",
+    "[CITATION_2]": "18144108",
+    "[CITATION_3]": "18112929"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Because the genome sequence of buckwheat is not available, a de novo assembly method, the Trinity method   , was used to construct the transcripts and 58,438 transcript contigs were assembled."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Because the genome sequence of buckwheat is not available, a de novo assembly method, the Trinity method   , was used to construct the transcripts and 58,438 transcript contigs were assembled."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In order to reduce the redundancy and chimeras of the transcripts, we used cap3 software to combine highly similar transcripts and retain the longest transcripts with the highest read coverage, and removed the transcripts with the lowest read coverage  ."
+    }
+  ],
+  "bib_entries": {
+    "18144108": {
+      "title": "Full-length transcriptome assembly from RNA-Seq data without a reference genome",
+      "abstract": "Massively parallel sequencing of cDNA has enabled deep and efficient probing of transcriptomes. Current approaches for transcript reconstruction from such data often rely on aligning reads to a reference genome, and are thus unsuitable for samples with a partial or missing reference genome. Here we present the Trinity method for de novo assembly of full-length transcripts and evaluate it on samples from fission yeast, mouse and whitefly, whose reference genome is not yet available. By efficiently constructing and analyzing sets of de Bruijn graphs, Trinity fully reconstructs a large fraction of transcripts, including alternatively spliced isoforms and transcripts from recently duplicated genes. Compared with other de novo transcriptome assemblers, Trinity recovers more full-length transcripts across a broad range of expression levels, with a sensitivity similar to methods that rely on genome alignments. Our approach provides a unified solution for transcriptome reconstruction in any sample, especially in the absence of a reference genome."
+    },
+    "18112929": {
+      "title": "Optimizing de novo assembly of short-read RNA-seq data for phylogenomics",
+      "abstract": "BackgroundRNA-seq has shown huge potential for phylogenomic inferences in non-model organisms. However, error, incompleteness, and redundant assembled transcripts for each gene in de novo assembly of short reads cause noise in analyses and a large amount of missing data in the aligned matrix. To address these problems, we compare de novo assemblies of paired end 90 bp RNA-seq reads using Oases, Trinity, Trans-ABySS and SOAPdenovo-Trans to transcripts from genome annotation of the model plant Ricinus communis. By doing so we evaluate strategies for optimizing total gene coverage and minimizing assembly chimeras and redundancy.ResultsWe found that the frequency and structure of chimeras vary dramatically among different software packages. The differences were largely due to the number of trans-self chimeras that contain repeats in the opposite direction. More than half of the total chimeras in Oases and Trinity were trans-self chimeras. Within each package, we found a trade-off between maximizing reference coverage and minimizing redundancy and chimera rate. In order to reduce redundancy, we investigated three methods: 1) using cap3 and CD-HIT-EST to combine highly similar transcripts, 2) only retaining the transcript with the highest read coverage, or removing the transcript with the lowest read coverage for each subcomponent in Trinity, and 3) filtering Oases single k-mer assemblies by number of transcripts per locus and relative transcript length, and then finding the transcript with the highest read coverage. We then utilized results from blastx against model protein sequences to effectively remove trans chimeras. After optimization, seven assembly strategies among all four packages successfully assembled 42.9–47.1% of reference genes to more than 200 bp, with a chimera rate of 0.92–2.21%, and on average 1.8–3.1 transcripts per reference gene assembled.ConclusionsWith rapidly improving sequencing and assembly tools, our study provides a framework to benchmark and optimize performance before choosing tools or parameter combinations for analyzing short-read RNA-seq data. Our study demonstrates that choice of assembly package, k-mer sizes, post-assembly redundancy-reduction and chimera cleanup, and strand-specific RNA-seq library preparation and assembly dramatically improves gene coverage by non-redundant and non-chimeric transcripts that are optimized for downstream phylogenomic analyses."
+    }
+  },
+  "generator": "fallback_v4"
+}

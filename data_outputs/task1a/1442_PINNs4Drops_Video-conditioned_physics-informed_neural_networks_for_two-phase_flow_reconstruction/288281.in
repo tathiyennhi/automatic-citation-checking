@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In the first \"warm-up\" stage, the optimization is focused on learning the phase distribution ϕ from the simulation data.",
+    "In the second \"data-guided\" stage, VcPINNs learn an initial approximation for the velocity and pressure distributions from the simulation data.",
+    "In the third \"full physics\" stage, VcPINNs are trained on the governing equations of the flow by increasing the weights of the physics-informed losses.",
+    "The identity loss of the chemical potential ψ is only calculated for PF-VcPINNs.stage loss type loss term global weight (w i)1 data ϕ 1 1 data u *, v *,w *, p * 0.1 -100 1 equations momentum x, y 10 -6 -10 -3 1 equations momentum z 10 -7 -10 -4 1 equations continuity 10 -6 -10 -3 1 equations interface 10 -6 -10 -3 1 identity ψ 10 -4 -0.1 2 data ϕ 1 2 data u *, v *, w *, p * 100 2 equations momentum x, y 10 -3 2 equations momentum z 10 -4 2 equations continuity 10 -3 2 equations interface 10 -3 2 identity ψ 0.1 3 data ϕ 1 3 data u *, v *, w *, p * 100 3 equations momentum x, y 0.1 3 equations momentum z 0.1 3 equations continuity 0.1 3 equations interface 0.1 3 identity ψ 0.1 mined dynamically.SoftAdapt significantly improves the training dynamics and enhances the accuracy of the trained model, all while incurring minimal computational costs.",
+    "We apply both static and adaptive loss weights in a multiplicative manner."
+  ]
+}

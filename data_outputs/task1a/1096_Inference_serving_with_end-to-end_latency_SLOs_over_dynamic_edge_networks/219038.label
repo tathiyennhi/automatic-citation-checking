@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Dispatcher The dispatcher distributes inference requests from clients to their respective workers.",
+    "It first fetches the client-DNN mapping from the scheduler and then redirects the requests to the workers running the corresponding DNNs.",
+    "The dispatcher also handles all the connections to clients and includes service endpoints to interact with the clients, e.g., to (de)register clients in the system.",
+    "Worker Each worker is statically allocated on one GPU and maintains a local queue to buffer incoming requests.",
+    "The worker process batches requests (resizing them if needed) in the queue and sends the request batches to the DNN deployed on the GPU for execution."
+  ],
+  "correct_citations": []
+}

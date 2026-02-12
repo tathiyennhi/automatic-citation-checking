@@ -1,0 +1,30 @@
+{
+  "doc_id": "45627",
+  "text": "Step 3 is much smaller than for previous statements and can thus be disregarded. The retrieve of unique t in Step 1 can be performed in O(n) using a hash-based algorithm [CITATION_1] , where n is the size of the dataset, C. The indexing can be done in time O(p log p) where p is the number of periods, and since p << n this cost can be disregarded. The major cost in Step 1 is the 8-way join, and since p << n this cost will be dominated by the cost of the join of 4 copies of C, and even this can be performed in time O(n) using hash-joins [CITATION_2] . Since the number of source measures are a small constant, Step 2 can also be done in O(n) using hash-aggregation [CITATION_3] . In summary, the whole algorithm can be done in time O(n), where n is the size of C, and the algorithm thus scales linearly.",
+  "correct_citation": {
+    "[CITATION_1]": "10675966",
+    "[CITATION_2]": "10675966",
+    "[CITATION_3]": "10675966"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The retrieve of unique t in Step 1 can be performed in O(n) using a hash-based algorithm  , where n is the size of the dataset, C. The indexing can be done in time O(p log p) where p is the number of periods, and since p << n this cost can be disregarded."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The major cost in Step 1 is the 8-way join, and since p << n this cost will be dominated by the cost of the join of 4 copies of C, and even this can be performed in time O(n) using hash-joins  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Since the number of source measures are a small constant, Step 2 can also be done in O(n) using hash-aggregation  ."
+    }
+  ],
+  "bib_entries": {
+    "10675966": {
+      "title": "Hash Joins and Hash Teams in Microsoft SQL Server",
+      "abstract": "The query execution engine in Microsoft SQL Server employs hash-based algorithms for inner and outer joins, semi-joins, set operations (such as intersection), grouping, and duplicate removal. The implementation combines many techniques proposed individually in the research literature but never combined in a single implementation, neither in a product nor in a research prototype. One of the paper’s contributions is a design that cleanly integrates most existing techniques. One technique, however, which we call hash teams and which has previously been described only in vague terms, has not been implemented in prior research or product work. It realizes in hash-based query processing many of the benefits of interesting orderings in sort-based query processing. Moreover, we describe how memory is managed in complex and bushy query evaluation plans with multiple sort and hash operations. Finally, we report on the effectiveness of hashing using two very typical database queries, including the performance effects of hash teams."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "58068",
+  "text": "CEL files from sorted cell type samples from IRIS (GSE22886 [CITATION_1] ) and the Human body index (GSE7307) were normalized separately using frma [CITATION_2] . In GSE7307, we extracted the profiles from all immune cells (32 profiles from monocyte, T cell and B cell lineages) and colon tissues (2 profiles). We created a combined cell type gene expression matrix, corrected for dataset of origin effects using Combat [CITATION_3] , and subsequently averaged probesets into genes. This resulted in the creation of an expression matrix of 130 expression profiles (Supplementary Table S2 ), which we then standardized using zscores and averaged into major cell lineages split into resting and activation/memory state.",
+  "correct_citation": {
+    "[CITATION_1]": "15386882",
+    "[CITATION_2]": "24979644",
+    "[CITATION_3]": "14297870"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "CEL files from sorted cell type samples from IRIS (GSE22886  ) and the Human body index (GSE7307) were normalized separately using frma  .",
+      "s_span": 0,
+      "e_span": 162
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "CEL files from sorted cell type samples from IRIS (GSE22886  ) and the Human body index (GSE7307) were normalized separately using frma  .",
+      "s_span": 0,
+      "e_span": 162
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We created a combined cell type gene expression matrix, corrected for dataset of origin effects using Combat  , and subsequently averaged probesets into genes.",
+      "s_span": 311,
+      "e_span": 482
+    }
+  ],
+  "bib_entries": {
+    "15386882": {
+      "title": "Immune response in silico (IRIS): immunespecific genes identified from a compendium of microarray expression data",
+      "abstract": "Immune cell-specific expression is one indication of the importance of a gene’s role in the immune response. We have compiled a compendium of microarray expression data for virtually all human genes from six key immune cell types and their activated and differentiated states. Immune Response In Silico (IRIS) is a collection of genes that have been selected for specific expression in immune cells. The expression pattern of IRIS genes recapitulates the phylogeny of immune cells in terms of the lineages of their differentiation. Gene Ontology assignments for IRIS genes reveal significant involvement in inflammation and immunity. Genes encoding CD antigens, cytokines, integrins and many other gene families playing key roles in the immune response are highly represented. IRIS also includes proteins of unknown function and expressed sequence tags that may not represent genes. The predicted cellular localization of IRIS proteins is evenly distributed between cell surface and intracellular compartments, indicating that immune specificity is important at many points in the signaling pathways of the immune response. IRIS provides a resource for further investigation into the function of the immune system and immune diseases."
+    },
+    "14297870": {
+      "title": "Adjusting batch effects in microarray expression data using empirical Bayes methods",
+      "abstract": "SUMMARY Non-biological experimental variation or “batch effects” are commonly observed across multiple batches of microarray experiments, often rendering the task of combining data from these batches difficult. The ability to combine microarray data sets is advantageous to researchers to increase statistical power to detect biological phenomena from studies where logistical considerations restrict sample size or in studies that require the sequential hybridization of arrays. In general, it is inappropriate to combine data sets without adjusting for batch effects. Methods have been proposed to filter batch effects from data, but these are often complicated and require large batch sizes (>25) to implement. Because the majority of microarray studies are conducted using much smaller sample sizes, existing methods are not sufficient. We propose parametric and non-parametric empirical Bayes frameworks for adjusting data for batch effects that is robust to outliers in small sample sizes and performs comparable to existing methods for large samples. We illustrate our methods using two example data sets and show that our methods are justifiable, easy to apply, and useful in practice. Software for our method is freely available at: http://biosun1.harvard.edu/complab/batch/."
+    },
+    "24979644": {
+      "title": "Frozen robust multiarray analysis (fRMA)",
+      "abstract": "Robust multiarray analysis (RMA) is the most widely used preprocessing algorithm for Affymetrix and Nimblegen gene expression microarrays. RMA performs background correction, normalization, and summarization in a modular way. The last 2 steps require multiple arrays to be analyzed simultaneously. The ability to borrow information across samples provides RMA various advantages. For example, the summarization step fits a parametric model that accounts for probe effects, assumed to be fixed across arrays, and improves outlier detection. Residuals, obtained from the fitted model, permit the creation of useful quality metrics. However, the dependence on multiple arrays has 2 drawbacks: (1) RMA cannot be used in clinical settings where samples must be processed individually or in small batches and (2) data sets preprocessed separately are not comparable. We propose a preprocessing algorithm, frozen RMA (fRMA), which allows one to analyze microarrays individually or in small batches and then combine the data for analysis. This is accomplished by utilizing information from the large publicly available microarray databases. In particular, estimates of probe-specific effects and variances are precomputed and frozen. Then, with new data sets, these are used in concert with information from the new arrays to normalize and summarize the data. We find that fRMA is comparable to RMA when the data are analyzed as a single batch and outperforms RMA when analyzing multiple batches. The methods described here are implemented in the R package fRMA and are currently available for download from the software section of http://rafalab.jhsph.edu."
+    }
+  },
+  "generator": "fallback_v4"
+}

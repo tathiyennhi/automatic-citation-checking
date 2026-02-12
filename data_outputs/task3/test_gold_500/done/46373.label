@@ -1,0 +1,47 @@
+{
+  "doc_id": "46373",
+  "text": "Using ChIP studies on diverse tissues, it may be possible to eventually identify all of the multiple enhancers that control each target gene in every context. While a valuable goal, such analyses are currently expensive and time consuming and often technically challenging where the number of cells available for analysis is limiting, as in many developmental contexts. Importantly, computational methods can reveal sequence features that characterize enhancer activity. We therefore asked whether analysis of all existing GLI ChIP data could reveal common sequence features that might be used to empirically and globally predict functional enhancers de novo. A publicly available machine learning approach, kmer-SVM [CITATION_1] , was used to predict novel Hh enhancer regions. This tool uses a support vector machine (SVM) to determine sequence features (k-mer frequencies) that identify positive genomic regulatory regions [CITATION_2] . SVMs are classifier algorithms that define a boundary between members of two different groups. Kmer-SVM calculates weights for sequence features that determine the effectiveness of that feature to distinguish between positive and negative regulatory regions. Once the features are determined, they can be used to identify novel enhancer regions not present in the original positive set. The strength of this approach is that it relies exclusively on short regions of DNA sequence (length 3-10 bp) which are in the size range of transcription factor binding sites (TFBS). Additionally, the organization of the k-mers within a sequence does not impact the score; this feature is consistent with the variable arrangement of TFBS in enhancers [CITATION_3] [CITATION_4] .",
+  "correct_citation": {
+    "[CITATION_1]": "11075375",
+    "[CITATION_2]": "2672075",
+    "[CITATION_3]": "205485256",
+    "[CITATION_4]": "8178184"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A publicly available machine learning approach, kmer-SVM [CITATION_1] , was used to predict novel Hh enhancer regions."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This tool uses a support vector machine (SVM) to determine sequence features (k-mer frequencies) that identify positive genomic regulatory regions [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Additionally, the organization of the k-mers within a sequence does not impact the score; this feature is consistent with the variable arrangement of TFBS in enhancers [CITATION_3] [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Additionally, the organization of the k-mers within a sequence does not impact the score; this feature is consistent with the variable arrangement of TFBS in enhancers [CITATION_3] [CITATION_4] ."
+    }
+  ],
+  "bib_entries": {
+    "11075375": {
+      "title": "kmer-SVM: a web server for identifying predictive regulatory sequence features in genomic data sets",
+      "abstract": "Massively parallel sequencing technologies have made the generation of genomic data sets a routine component of many biological investigations. For example, Chromatin immunoprecipitation followed by sequence assays detect genomic regions bound (directly or indirectly) by specific factors, and DNase-seq identifies regions of open chromatin. A major bottleneck in the interpretation of these data is the identification of the underlying DNA sequence code that defines, and ultimately facilitates prediction of, these transcription factor (TF) bound or open chromatin regions. We have recently developed a novel computational methodology, which uses a support vector machine (SVM) with kmer sequence features (kmer-SVM) to identify predictive combinations of short transcription factor-binding sites, which determine the tissue specificity of these genomic assays (Lee, Karchin and Beer, Discriminative prediction of mammalian enhancers from DNA sequence. Genome Res. 2011; 21:2167\u201380). This regulatory information can (i) give confidence in genomic experiments by recovering previously known binding sites, and (ii) reveal novel sequence features for subsequent experimental testing of cooperative mechanisms. Here, we describe the development and implementation of a web server to allow the broader research community to independently apply our kmer-SVM to analyze and interpret their genomic datasets. We analyze five recently published data sets and demonstrate how this tool identifies accessory factors and repressive sequence elements. kmer-SVM is available at http://kmersvm.beerlab.org."
+    },
+    "205485256": {
+      "title": "Transcription factors: from enhancer binding to developmental control",
+      "abstract": "Developmental progression is driven by specific spatiotemporal domains of gene expression, which give rise to stereotypically patterned embryos even in the presence of environmental and genetic variation. Views of how transcription factors regulate gene expression are changing owing to recent genome-wide studies of transcription factor binding and RNA expression. Such studies reveal patterns that, at first glance, seem to contrast with the robustness of the developmental processes they encode. Here, we review our current knowledge of transcription factor function from genomic and genetic studies and discuss how different strategies, including extensive cooperative regulation (both direct and indirect), progressive priming of regulatory elements, and the integration of activities from multiple enhancers, confer specificity and robustness to transcriptional regulation during development."
+    },
+    "2672075": {
+      "title": "Discriminative prediction of mammalian enhancers from DNA sequence",
+      "abstract": "Accurately predicting regulatory sequences and enhancers in entire genomes is an important but difficult problem, especially in large vertebrate genomes. With the advent of ChIP-seq technology, experimental detection of genome-wide EP300/CREBBP bound regions provides a powerful platform to develop predictive tools for regulatory sequences and to study their sequence properties. Here, we develop a support vector machine (SVM) framework which can accurately identify EP300-bound enhancers using only genomic sequence and an unbiased set of general sequence features. Moreover, we find that the predictive sequence features identified by the SVM classifier reveal biologically relevant sequence elements enriched in the enhancers, but we also identify other features that are significantly depleted in enhancers. The predictive sequence features are evolutionarily conserved and spatially clustered, providing further support of their functional significance. Although our SVM is trained on experimental data, we also predict novel enhancers and show that these putative enhancers are significantly enriched in both ChIP-seq signal and DNase I hypersensitivity signal in the mouse brain and are located near relevant genes. Finally, we present results of comparisons between other EP300/CREBBP data sets using our SVM and uncover sequence elements enriched and/or depleted in the different classes of enhancers. Many of these sequence features play a role in specifying tissue-specific or developmental-stage-specific enhancer activity, but our results indicate that some features operate in a general or tissue-independent manner. In addition to providing a high confidence list of enhancer targets for subsequent experimental investigation, these results contribute to our understanding of the general sequence structure of vertebrate enhancers."
+    },
+    "8178184": {
+      "title": "Absence of a simple code: how transcription factors read the genome",
+      "abstract": "Transcription factors (TFs) influence cell fate by interpreting the regulatory DNA within a genome. TFs recognize DNA in a specific manner; the mechanisms underlying this specificity have been identified for many TFs based on 3D structures of protein\u2013DNA complexes. More recently, structural views have been complemented with data from high-throughput in vitro and in vivo explorations of the DNA-binding preferences of many TFs. Together, these approaches have greatly expanded our understanding of TF\u2013DNA interactions. However, the mechanisms by which TFs select in vivo binding sites and alter gene expression remain unclear. Recent work has highlighted the many variables that influence TF\u2013DNA binding, while demonstrating that a biophysical understanding of these many factors will be central to understanding TF function."
+    }
+  },
+  "generator": "claude-sonnet-4-5"
+}

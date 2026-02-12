@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For all training and evaluation processes, videos are sampled at 1 frame per second.",
+    "During training, videos longer than 256 frames are uniformly sampled to 256 frames; during evaluation, we use at most the first 256 frames.",
+    "Each input frame is resized to 384×384 and initially encoded into 768 vision tokens.",
+    "After being projected with ToMe, each frame is compressed into 16 tokens [50, 120].",
+    "We apply TransV at the 7th shallow LLM layer with token dropping rate p = 50%, and the 39th deep LLM layer where TransV is applied using an attentionguided strategy with p = 90%."
+  ]
+}

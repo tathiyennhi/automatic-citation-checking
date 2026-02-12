@@ -1,0 +1,22 @@
+{
+  "doc_id": "1298",
+  "text": "We define the 2D filtering Gaussian G f in a manner similar to [CITATION_1] . The filtering Gaussian is defined by its variance matrix in screen space, Σ f,scr , which typically is σ 2 f,scr I with σ f,scr = 1/2, and it is propagated to tangent space, in which G f should integrate to one, using the local affine approximation of the mapping from screen space to tangent space Mscr→tan. The filtering Gaussian in tangent space is thus G f,tan (xtan; 0, Σ f,tan ) with Σ f,tan = Mscr→tanΣ f,scr M T scr→tan . We obtain Mscr→tan on the GPU using the local affine approximation of the mapping of screen space to texture space, Mscr→tex, which is the matrix determined by the vectors ∂xtex/∂xscr,x and ∂xtex/∂xscr,y. These are easily obtained using built-in derivative functions (e.g., dFdx() and dFdy() in GLSL). Note that this definition also supports anisotropic screen-space filtering Gaussians (e.g., for motion blur).",
+  "correct_citation": {
+    "[CITATION_1]": "118620997"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We define the 2D filtering Gaussian G f in a manner similar to [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 77
+    }
+  ],
+  "bib_entries": {
+    "118620997": {
+      "title": "Fundamentals of Texture Mapping and Image Warping",
+      "abstract": "The applications of texture mapping in computer graphics and image distortion (warping) in image processing share a core of fundamental techniques. We explore two of these techniques, the two-dimensional geometric mappings that arise in the parameterization and projection of textures onto surfaces, and the filters necessary to eliminate aliasing when an image is resampled during texture mapping or warping. With respect to mappings, this work presents a tutorial on three common classes of mapping: the affine, bilinear, and projective. For resampling, this work develops a new theory describing the ideal, space variant intialiazing filter for signals warped and resampled according to an arbitrary mapping. Efficient implementations of the mapping and filtering techniques are discussed and demonstrated."
+    }
+  },
+  "generator": "fallback_v4"
+}

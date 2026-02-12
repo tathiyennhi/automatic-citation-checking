@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We require such a condition as allowing for multiple sentences in the source subsequence would deviate from the fine-tuning setting, where only a single sentence was allowed at any time in the conversational prompt (a restriction by the dataset).",
+    "Once constructed, the prompt is provided to the LLM to produce a translation until it outputs the delimiting token </s>.",
+    "The output translation is added to a running translation to be reused in prompt construction for subsequent translation phases.",
+    "Upon completing the translation, if the sentence tokenizer determined there was more than a single sentence in the buffer, it would signify that the current sentence had completed translation.",
+    "As such, the translated sentence transcript is cached to be used as context for the subsequent sentence."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We rely, as is standard in all attestation protocols [85], on the integrity measurements being rooted (transitively) in trusted hardware, in our case, the ARM TrustZone.2 Verifying flow redirection.",
+    "The application launcher stores a copy of the manifest of the application that it launches in the secure world.",
+    "SROS enforces that all ROS applications communicate in accordance with their declared manifests.",
+    "Manifests are part of each application's X.509 certificates, and the SROS application launcher verifies the certificate of the application during launch, thereby ensuring that neither the application nor the manifest have been tampered with.Once the manifests are stored in the audit trail, a security analyst can use the stored manifests to determine that: a if an application publishes sensitive data, which we identify by their topic names, e.g., VideoFeed, then no application other than the trusted sanitizer's front-end subscribes to that topic; and b if an application must consume sensitive data, then it only consumes the sanitized data stream published by the trusted video sanitizer, e.g., PrivVideoFeed.Given the above discussion, the security provided by Pd-Ros relies on the following factors: • (F1) Reliability of attestation reports.",
+    "Pd-Ros verifies the integrity of the normal world, ROS, SROS, Sanitizer-FE and the application launcher via the attestation reports."
+  ]
+}

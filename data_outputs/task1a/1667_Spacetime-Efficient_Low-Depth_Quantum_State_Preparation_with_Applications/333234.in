@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "There, we illustrate how both subroutines can be performed in O(m) depth and O(m2 m) spacetime allocation using {U(2), CNOT} gate set and near-optimal costs for {H, S, T, CNOT} gate set.We document the pseudocode of the SP circuit implementation below in Algorithm 1.Algorithm 1 SP Circuit (see Fig. 7)1: procedure SP(m, D, A, F) ▷ D: data register of size m ▷ A: angle register of size M -1 ▷ F: flag register of size M -1 2:for s in range(m) and p in range(2 s) do3:Classically compute θ s,p from y ▷ Eq.",
+    "( 8)4:end for5:for s in range(m) and p in range(2 s) do6:R y (θ s,p, A s,p) onto fresh \"angle\" ancilla7:end for 8:SPF(D, A, m) subroutine ▷ O(m) 9:for s in range(m) and p in range(2 s) do 10:X(F s,p) onto fresh \"flag\" ancilla11: end for 12: FLAG(D, F, m) subroutine ▷ O(m) 13: for s in range(m) and p in range(2 s) do 14: CR y (-θ s,p, F s,p, A s,p) 15: end for 16: FLAG † (D, F, m) subroutine ▷ O(m) 17: for s in range(m) and p in range(2 s) do 18: X(F s,p) to reset \"flag\" ancilla to |0⟩ 19:end for 20: end procedure▷ Total D exact: O(m) ▷ Total D approx: O(m + log(m/ϵ)) ▷ Total SA exact: O(m2 m) ▷ Total SA approx: O(m2 m + 2 m log(m/ϵ)) CSP Circuit StructureThe controlled state preparation circuit prepares a different n -m qubit state for each of M possible settings |k⟩ ∈ {|0⟩,..., |M -1⟩} of an m-qubit control register.",
+    "Thus, for each k, there are 2 n-m -1 = N M -1 angles, which we denote by θ (k) s,p, for s = 0,..., n-m-1 and p = 0,..., 2 s -1.",
+    "These angles can be computed from the amplitudes of x by the equation (c.f.",
+    "(8))θ (k) s,p = 2 cos -1   2 n-m-s-1 -1 l=0 |x k2 n-m +p•2 n-m-s +l | 2 2 n-m-s -1 l=0 |x k2 n-m +p•2 n-m-s +l | 2  ."
+  ]
+}

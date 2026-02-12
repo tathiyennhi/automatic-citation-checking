@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "One key technique was to asynchronously launch requests to the judge LLM immediately after each response.",
+    "This contrasts with the typical two-stage approach of gathering all responses first, then judging them.",
+    "This technique is called \"LLM Judge Call Interweaving. \"",
+    "With the typical twostage implementation, it would be necessary to wait for the slowest response to be completed before judging any response, which is a significant bottleneck.",
+    "In contrast, launching judge tasks immediately for completed responses allows judge tasks to be completed while still generating responses.The pseudocode for this approach is shown below:LLMJudge Call Interweaving Pseudocode async function run_conversation_chain(model, persona): results = [] judge_tasks = [] messages = [persona] for each prompt in epistemic_prompts: messages.append(prompt) // Execute main LLM call result = await execute_call(model, messages) results.append(result) if result.response and not result.error: // Immediately spawn judge task (asynchronous) judge_task = async_spawn(judge_response(result)) judge_tasks.append(judge_task) // Continue building conversation history messages.append(result.response) else: break // Stop chain on error return results, judge_tasks async function main_experiment(): all_results = [] all_judge_tasks = [] // Execute all conversation chains concurrently for each (model, persona) combination: results, judge_tasks = await run_conversation_chain(model, persona) all_results.extend(results) all_judge_tasks.extend(judge_tasks) // Gather all judge results at the end judge_results = await gather_all(all_judge_tasks) return all_results, judge_results A.1 Performance MetricsThe implementation processed 30,120,383 tokens in 8.9 minutes (535.2 seconds) in a subset of the total 66,488,451 tokens, achieving a throughput of 56,068 tokens/sec when executed on a consumer laptop with a Snapdragon X Elite CPU."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "26810",
+  "text": "In this section, we first test the performance of our tracker on sequences from the publicly available datasets VOT 2013, VOT 2014 [2] and CVPR 2013 [CITATION_1] , which together comprise 70 sequences in total. These datasets are currently considered state-of-the-art benchmarks in the 2D visual object tracking community. More details of the datasets can be found on the web-pages of [2] and [1] . Note that the VOT and CVPR benchmarks [2] [39], also represent two different evaluation methodologies. We show that the proposed tracker is more robust than the best state-of-the-art methods from both of those tracking challenges, while also offering competitive tracking precision. Next, we carry out a decomposition analysis to understand which parts of the novel tracker contribute to this strong performance. The key elements of the tracker include i) the clustered decision tree, ii) the use of super-pixels to define middle-level target parts or patches, iii) the use of an adaptive target re-learning rate, which re-learns faster during periods of high confidence, and slows down target re-learning during periods of greater uncertainty. We decompose the performance by evaluating the tracker with and without each of these novel elements. The contribution of the clustered decision tree is evaluated, by replacing it with a more conventional parts matching method 20 A C C E P T E D M A N U S C R I P T from the literature and comparing performance. The contribution of super-pixels for determining mid-level target parts is evaluated by replacing it with a more conventional method from the literature (random assignments of target regions to be mid-level parts). The contribution of the variable adaptive re-learning rate is evaluated by replacing it with a fixed (mid-range) re-learning rate (as in most of the comparable literature). In each case, all other parts of the algorithm are kept constant. Furthermore, we also investigate how the noisy initialization conditions affect the tracking performance and show that the influence of noisy initialization is within an acceptable range.",
+  "correct_citation": {
+    "[CITATION_1]": "1660289"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In this section, we first test the performance of our tracker on sequences from the publicly available datasets VOT 2013, VOT 2014 [2] and CVPR 2013  , which together comprise 70 sequences in total.",
+      "s_span": 0,
+      "e_span": 210
+    }
+  ],
+  "bib_entries": {
+    "1660289": {
+      "title": "Online object tracking: A benchmark",
+      "abstract": "Object tracking is one of the most important components in numerous applications of computer vision. While much progress has been made in recent years with efforts on sharing code and datasets, it is of great importance to develop a library and benchmark to gauge the state of the art. After briefly reviewing recent advances of online object tracking, we carry out large scale experiments with various evaluation criteria to understand how these algorithms perform. The test image sequences are annotated with different attributes for performance evaluation and analysis. By analyzing quantitative results, we identify effective approaches for robust tracking and provide potential future research directions in this field."
+    }
+  },
+  "generator": "fallback_v4"
+}

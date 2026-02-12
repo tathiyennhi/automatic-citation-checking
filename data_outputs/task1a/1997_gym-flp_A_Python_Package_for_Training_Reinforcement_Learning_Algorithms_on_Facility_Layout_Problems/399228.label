@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Then, M HC best is overwritten accordingly.r M HC = 1, if M HC s(t+1) < M HC best 0, otherwise(3)For the OFP environment, layout feasibility needs to be taken into account.",
+    "In contrast to the environments where locations are determined, OFP needs to incorporate non-overlapping constraints.",
+    "We, therefore, define the penalty term p collision (see Eq. 4) that collects a penalty of 1 if one facility intersects the union of the remaining ones.",
+    "We choose a value of 2 to prevent a sparse reward signal for actions that improved MHC (+1) but resulted in a collision.p collision = 2 if F i ∩ i-1 j=1 F j ∪ n j=i+1 F j = ∅ 0 otherwise (4)Finally, the variants that rearrange facilities with a movement with a given step size (Discrete and MultiDiscrete) are at risk of moving facilities beyond the plant boundaries resulting in entering a state beyond the state space.",
+    "Such actions are penalised in two ways: the current episode is terminated (similar to a game-over situation in arcade games) and a penalty p of f -grid of 10 is assigned so as to overrule possible positive rewards from MHC and to be free of collisions, see Eq. 5.123p of f -grid = 10 if s t+1 / ∈ S 0 otherwise (5)In consequence, the total reward per step (in OFP) is given as:r = r M HC -p collision -p of f -grid(6)Reward engineering is said to be one of the most important tasks in RL research."
+  ],
+  "correct_citations": []
+}

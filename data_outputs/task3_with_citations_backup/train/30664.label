@@ -1,0 +1,22 @@
+{
+  "doc_id": "30664",
+  "text": "(The R functions outpro and outmgv use methods that perform relatively well.) Be aware that the choice of method can make a substantial difference. For example, non-significant results can become significant when switching from a method based on the mean to a 20% trimmed mean or median. The reverse can happen where methods based on means are significant but robust methods are not. In this latter situation, the reason might be that confidence intervals based on means are highly inaccurate. Resolving whether this is the case is difficult at best based on current technology. Consequently, it is prudent to consider the robust methods outlined in this paper. When dealing with regression or measures of association, use modern methods for checking on the impact of outliers. When using regression estimators, dealing with outliers among the independent variables is straightforward via the R functions mentioned here: set the argument xout = TRUE. As for outliers among the dependent variable, use some robust regression estimator. The Theil-Sen estimator is relatively good, but arguments can be made for using certain extensions and alternative techniques. When there are one or two independent variables, and the sample size is not too small, check the plots returned by smoothers. This can be done with the R functions rplot and lplot. Again, it can be crucial to check the impact of removing outlier among the independent variables by setting the argument xout = TRUE. Other possibilities and their relative merits are summarized in [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "122770702"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Again, it can be crucial to check the impact of removing outlier among the independent variables by setting the argument xout = TRUE. Other possibilities and their relative merits are summarized in [CITATION_1] .",
+      "s_span": 1343,
+      "e_span": 1555
+    }
+  ],
+  "bib_entries": {
+    "122770702": {
+      "title": "Introduction to robust estimation and hypothesis testing",
+      "abstract": "Practical Reasons for Using Robust Methods. A Foundation for Robust Methods. Estimating Measures of Location and Scale. Confidence Intervals in the One-Sample Case. Comparing Two Groups. One-Way and Higher Designs. Correlationand Related Issues. Robust Regression. More Regression Methods.Practical Reasons for Using Robust Methods: Problems with Assuming Normality. Transformations. The Influence Curve. Is the ANOVA F Robust? Regression. More Remarks. Using the Computer. A Foundation for Robust Methods: Basic Tools for Judging Robustness. Some Measures of Location and Their Influence Function. Measures of Scale. Scale Equivariant M-Measures of Location. Winsorized Expected Values. Estimating Measures of Location and Scale: The Sample Timmed Mean. The Finite Sample Breakdown Point. Estimating Quantiles. An M-Estimator of Location. One-Step M-estimator. W-estimators. Some Comparisons of the Locaiton Estimators. More Measures of Scale. Exercises. Confidence Intervals in the One-Sample Case: Problems When Working with Means. The g-and-h Distribution. Inferences About the Trimmed Mean. Inferences About M-Estimators. Confidence Intervals for Quantiles. Concluding Remarks. Exercises. Comparing Two Groups: The Shift Function. Student's Test. The Yuen-Welch Test. Comparing M-Estimators. Comparing Biweight Midvariances. Inferences about p. Comparing Dependent Groups. Exercises. One Way and Higher Dseigns: Trimmed Means in a One-Way Design. Multiple Comparisons and Linear Constrsts. A Random Effects Model forTrimmed Means. Comparing M-Measures of Location. A Ranked-Based Test. A One-Way Design with Dependent Groups. A split-Plot Design. Some Concluding Remarks. Exercises. Correlation and Related Issues: Problems with the Product Moemt Correlation. The Percentage Bend Correlation. The Biweight Midcovariance. Multivariate Measures of Location and Scatter. Minimum Volume Ellipsoid Estimator. Exercises. Robust Regression: Problems with Ordinary Least Squares. M-Estimator. The Hat Matrix. Generalized M-Estimators. The Coakley-Hettmansperger Estimator. A Criticism of Methods with a High Breakdown Point. The Biweight Midregression Method. Alternative Estimation Procedures. Exercises. More Regression Methods: Omnibus Tests for Regression Parameters.Comparing the Parameters of Two Independent Groups. Curvilinearity. ANCOVA. Exercises. Subject Index."
+    }
+  },
+  "generator": "fallback_v4"
+}

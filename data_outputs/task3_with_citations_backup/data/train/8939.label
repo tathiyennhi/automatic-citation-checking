@@ -1,0 +1,33 @@
+{
+  "doc_id": "8939",
+  "text": "Another non-texture based descriptor for MSER was recently introduced by Chum and Matas [CITATION_1] . Their approach relies on local affine frames (LAF). LAFs are defined from triplets of points affine-invariantly selected from the MSER contour and its centroid. The descriptor in their approach is based on two LAFs, one LAF is used as a reference frame, and one is used as a descriptor frame. The three points in the descriptor LAF are expressed in the reference frame and subsequently used to construct a descriptor. This descriptor is then used as an index to a hash-table. Their method is used to match planar scenes such as logos with different colours, from different view angles, and with and without transparency, and different spectral bands of satellite images, even though contrast is often inverted between the bands. Although these results are impressive, their method suffers from two serious limitations, which we amend in this paper. Firstly, the method requires that the two LAFs are co-planar (otherwise the descriptor will not be repeatable), which severely limits the applicability of the approach to full 3D scenes (especially scenes of non-man-made objects, where co-planarity is rare). Secondly, the use of only six scalars to describe the LAF pair effectively rules out the use of the descriptor for bag-of-features style object recognition (see e.g. [CITATION_2] ), since the frequency of hash-table collisions will become too high when many objects and views need to be stored.",
+  "correct_citation": {
+    "[CITATION_1]": "7593589",
+    "[CITATION_2]": "1486613"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Another non-texture based descriptor for MSER was recently introduced by Chum and Matas [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 102
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Secondly, the use of only six scalars to describe the LAF pair effectively rules out the use of the descriptor for bag-of-features style object recognition (see e.g. [CITATION_2] ), since the frequency of hash-table collisions will become too high when many objects and views need to be stored.",
+      "s_span": 1211,
+      "e_span": 1505
+    }
+  ],
+  "bib_entries": {
+    "7593589": {
+      "title": "Geometric hashing with local affine frames",
+      "abstract": "We propose a novel representation of local image structure and a matching scheme that are insensitive to a wide range of appearance changes. The representation is a collection of local affine frames that are constructed on outer boundaries of maximally stable extremal regions (MSERS) in an affine-covariant way. Each local affine frame is described by a relative location of other local affine frames in its neighborhood. The image is thus represented by quantities that depend only on the location of the boundaries of MSERs. Inter-image correspondences between local affine frames are formed in constant time by geometric hashing. Direct detection of local afine frames removes the requirement of a point-based hashing to establish reference frames in a combinatorial way, which has in the case of affine transform complexily that is cubic in the number of points. Local affine frames, which are also the quantities represented in the hash table, occupy a 6 0 space and hence data collisions are less likely compared with 2 0 point hashing. Experimentally, the robustness of the method and its insensitiviq to photometric changes is demonstrated on images from different spectral bands of satellite sensor; on images of a transparent object and on images of an object taken during day and night."
+    },
+    "1486613": {
+      "title": "Local features and kernels for classification of texture and object categories: A comprehensive study",
+      "abstract": "Recently, methods based on local image features have shown promise for texture and object recognition tasks. This paper presents a large-scale evaluation of an approach that represents images as distributions (signatures or histograms) of features extracted from a sparse set of keypoint locations and learns a Support Vector Machine classifier with kernels based on two effective measures for comparing distributions, the Earth Mover’s Distance and the ÷2 distance. We first evaluate the performance of our approach with different keypoint detectors and descriptors, as well as different kernels and classifiers. We then conduct a comparative evaluation with several state-of-the-art recognition methods on 4 texture and 5 object databases. On most of these databases, our implementation exceeds the best reported results and achieves comparable performance on the rest. Finally, we investigate the influence of background correlations on recognition performance."
+    }
+  },
+  "generator": "fallback_v4"
+}

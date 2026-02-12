@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Importantly, H and 𝑎 𝑢 are aligned based on items in the historical sequence.",
+    "Subsequently, we define the 𝑙-th layer attribute representation matrix asSequential𝒂 𝑙 𝑢 = {𝒂 𝑙 1, 𝒂 𝑙 2, • • •, 𝒂 𝑙 |𝑎 𝑢 | }.Similar to the pre-training approach, the attribute sequence representation 𝒂 𝑢 is learned as:𝒂 𝑢 = 𝑓 𝑎𝑡𝑡𝑟 (𝑎 𝑢 |𝛾) = 𝒂 𝐿 |𝑎 𝑢 |, 𝒂 𝑙+1 𝑢 = Transformer 𝑙 𝑎 (𝒂 𝑙 𝑢).",
+    "(2)We then incorporate a dense layer to encode the combination of attribute representation 𝒂 𝑢 and the frozen behavior representation H, resulting in a new user representation:u = Dense(𝒂 𝑢 ⊕ H, 𝜃),(3)where 𝛾 and 𝜃 are the trainable parameters in the tuning phase.The sequential recommender is trained by minimizing the BPR loss function:L 𝐵𝑃𝑅 = - ∑︁ ( H, 𝑣) ∈ O +,( H,𝑤) ∈ O -, log 𝜎 (𝜙 (u, 𝑣) -𝜙 (u, 𝑤)),(4)where O + and O -denote the positive samples and negative samples, 𝜙 (•) represents the inner-product layer, and 𝜎 (•) refers to the Sigmoid activation function.",
+    "During the pre-training phase, u is represented by H. The finetuned user embedding u is designed to be sensitive to the specific attribute, while maintaining the personalized sequential recommendation learned in the pre-training phase.",
+    "Memory StrategyThe vast number of items and the complex item names&IDs pose a challenge for LLMs when generating control commands or tool usages."
+  ]
+}

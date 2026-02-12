@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Head-Level Causal InfluenceTo refine our causal analysis, we next inspect the influence of each individual attention head.",
+    "Rather than patching an entire layer, we perform a sweep across all heads h in each layer: we inject its activations from the clean instance into the corrupt instance and measure the resulting true-class probability P (y true).The corrupt instance's baseline confidence is P (y true) = 0.1072.",
+    "Figure 3 presents a heatmap where each cell (ℓ, h) indicates the model's true-class probability change after patching head h in layer ℓ.",
+    "2A close examination of Figure 3 reveals that causal influence is heavily concentrated in the first encoder layer: patching Heads 0, 4, 5, 6, and 7 individually raises true-class confidence to above 0.78.",
+    "In particular, Head 6 boosts P (y true) from 0.1072 to approximately 0.7872 (∆P ≈ 0.68), echoing the strong Layer 0 effect observed earlier."
+  ]
+}

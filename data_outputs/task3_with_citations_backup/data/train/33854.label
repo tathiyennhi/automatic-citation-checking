@@ -1,0 +1,33 @@
+{
+  "doc_id": "33854",
+  "text": "In this paper, we propose a novel distributed asynchronous Q-learning framework we called BlockQNN to automatic generate block for convolutional networks (see Figure 1 ). The framework contains an agent, a block list controller and many child training environments. The agent samples layers of network block structures sequentially as actions in reinforcement learning by Q-value it learns, then the block list controller stores a batch of blocks and assign training task to different child environments. The environment constructs networks based on block structure codes it gets from the list controller, and train the network on classification task with early stop strategy for speeding up. With all blocks finished training, block list controller backward the early stop accuracy with redefined reward to the agent for updating Q-value. we also use experience replay [CITATION_1] ) and epsilon-greedy strategy [CITATION_2] to help the agent choose higher performing blocks.",
+  "correct_citation": {
+    "[CITATION_1]": "60875658",
+    "[CITATION_2]": "973101"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "With all blocks finished training, block list controller backward the early stop accuracy with redefined reward to the agent for updating Q-value. we also use experience replay [CITATION_1] ) and epsilon-greedy strategy [CITATION_2] to help the agent choose higher performing blocks.",
+      "s_span": 693,
+      "e_span": 976
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "With all blocks finished training, block list controller backward the early stop accuracy with redefined reward to the agent for updating Q-value. we also use experience replay [CITATION_1] ) and epsilon-greedy strategy [CITATION_2] to help the agent choose higher performing blocks.",
+      "s_span": 693,
+      "e_span": 976
+    }
+  ],
+  "bib_entries": {
+    "973101": {
+      "title": "Learning multi-domain convolutional neural networks for visual tracking",
+      "abstract": "We propose a novel visual tracking algorithm based on the representations from a discriminatively trained Convolutional Neural Network (CNN). Our algorithm pretrains a CNN using a large set of videos with tracking groundtruths to obtain a generic target representation. Our network is composed of shared layers and multiple branches of domain-specific layers, where domains correspond to individual training sequences and each branch is responsible for binary classification to identify target in each domain. We train each domain in the network iteratively to obtain generic target representations in the shared layers. When tracking a target in a new sequence, we construct a new network by combining the shared layers in the pretrained CNN with a new binary classification layer, which is updated online. Online tracking is performed by evaluating the candidate windows randomly sampled around the previous target state. The proposed algorithm illustrates outstanding performance in existing tracking benchmarks."
+    },
+    "60875658": {
+      "title": "Reinforcement learning for robots using neural networks",
+      "abstract": "Reinforcement learning agents are adaptive, reactive, and self-supervised. The aim of this dissertation is to extend the state of the art of reinforcement learning and enable its applications to complex robot-learning problems. In particular, it focuses on two issues. First, learning from sparse and delayed reinforcement signals is hard and in general a slow process. Techniques for reducing learning time must be devised. Second, most existing reinforcement learning methods assume that the world is a Markov decision process. This assumption is too strong for many robot tasks of interest. ::: This dissertation demonstrates how we can possibly overcome the slow learning problem and tackle non-Markovian environments, making reinforcement learning more practical for realistic robot tasks: (1) Reinforcement learning can be naturally integrated with artificial neural networks to obtain high-quality generalization, resulting in a significant learning speedup. Neural networks are used in this dissertation, and they generalize effectively even in the presence of noise and a large of binary and real-valued inputs. (2) Reinforcement learning agents can save many learning trials by using an action model, which can be learned on-line. With a model, an agent can mentally experience the effects of its actions without actually executing them. Experience replay is a simple technique that implements this idea, and is shown to be effective in reducing the number of action executions required. (3) Reinforcement learning agents can take advantage of instructive training instances provided by human teachers, resulting in a significant learning speedup. Teaching can also help learning agents avoid local optima during the search for optimal control. Simulation experiments indicate that even a small amount of teaching can save agents many learning trials. (4) Reinforcement learning agents can significantly reduce learning time by hierarchical learning--they first solve elementary learning problems and then combine solutions to the elementary problems to solve a complex problem. Simulation experiments indicate that a robot with hierarchical learning can solve a complex problem, which otherwise is hardly solvable within a reasonable time. (5) Reinforcement learning agents can deal with a wide range of non-Markovian environments by having a memory of their past. Three memory architectures are discussed. They work reasonably well for a variety of simple problems. One of them is also successfully applied to a nontrivial non-Markovian robot task. ::: The results of this dissertation rely on computer simulation, including (1) an agent operating in a dynamic and hostile environment and (2) a mobile robot operating in a noisy and non-Markovian environment. The robot simulator is physically realistic. This dissertation concludes that it is possible to build artificial agents than can acquire complex control policies effectively by reinforcement learning."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,29 @@
+{
+  "doc_id": "42219",
+  "text": "The controller is defined in terms of the following hierarchy (with decision variables (q, τ )) whereẍ b = (v,ẇ), a z is the angle (around the z-axis) of the base and K ω = 40, D ω = 10, D v = 30, D e = 10, D m = 5 are gains. J e denotes the Jacobian matrix of the \"end-effector\". Following the approach in [CITATION_1] , the torque τ ⋆ (obtained after resolving the above hierarchy) is modified to τ ⋆ −D mθ before applying it to the system (such joint damping can be achieved in alternative ways). The first, third and fourth hierarchical levels define tasks involving inequality constraints (however, the only \"hardconstraints\" are the simple bounds on τ , while the others can be violated depending on the conflicts in the hierarchy). The dynamics of the system is imposed at the second level (and, by design, it does not conflict with the torque limitations). The fifth and seventh task damp the motion of the endeffector and base (linear motion), respectively. The sixth task is dedicated to preserving zero base orientation, while the terminal objective states that obtaining a solution with minimal Euclidean norm ofθ is preferred. The bounds forθ and θ are formed in a standard way [CITATION_2] with the only difference that the feed-forward joint damping −D mθ has to be accounted for (the same applies for the bounds on τ ).",
+  "correct_citation": {
+    "[CITATION_1]": "33400878",
+    "[CITATION_2]": "3457993"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Following the approach in, the torque τ ⋆ (obtained after resolving the above hierarchy) is modified to τ ⋆ −D mθ before applying it to the system (such joint damping can be achieved in alternative ways)."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The bounds forθ and θ are formed in a standard way with the only difference that the feed-forward joint damping −D mθ has to be accounted for (the same applies for the bounds on τ )."
+    }
+  ],
+  "bib_entries": {
+    "3457993": {
+      "title": "Dynamic Whole-Body Motion Generation Under Rigid Contacts and Other Unilateral Constraints",
+      "abstract": "The most widely used technique for generating whole-body motions on a humanoid robot accounting for various tasks and constraints is inverse kinematics. Based on the task-function approach, this class of methods enables the coordination of robot movements to execute several tasks in parallel and account for the sensor feedback in real time, thanks to the low computation cost. To some extent, it also enables us to deal with some of the robot constraints (e.g., joint limits or visibility) and manage the quasi-static balance of the robot. In order to fully use the whole range of possible motions, this paper proposes extending the task-function approach to handle the full dynamics of the robot multibody along with any constraint written as equality or inequality of the state and control variables. The definition of multiple objectives is made possible by ordering them inside a strict hierarchy. Several models of contact with the environment can be implemented in the framework. We propose a reduced formulation of the multiple rigid planar contact that keeps a low computation cost. The efficiency of this approach is illustrated by presenting several multicontact dynamic motions in simulation and on the real HRP-2 robot."
+    },
+    "33400878": {
+      "title": "Reaction Null-Space Control of Flexible Structure Mounted Manipulator Systems",
+      "abstract": "A composite control law for end-effector path tracking with a flexible structure mounted manipulator system is proposed, such that no disturbances on the flexible base are induced. The control law is based on the reaction null-space concept introduced earlier to tackle dynamic interaction problems of free-floating robots, or moving base robots in general. The control law is called composite since it ensures base vibration suppression control as well, although independently of the reactionless motion control subtask. The requirement of task independence is essential to avoid the appearance of complex dynamics expressions in the control law, such as nonlinear velocity-dependent coupling terms and dependencies of inertias on the elastic coordinates. We present experimental data from computer simulations and the experimental test bed TREP developed at Tohoku university. The experimental data is shown to agree well with theory."
+    }
+  },
+  "generator": "fallback"
+}

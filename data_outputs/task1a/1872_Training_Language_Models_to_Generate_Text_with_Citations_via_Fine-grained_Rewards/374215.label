@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Following Wu et al. (2023), we optimize the policy LM using proximal policy optimization (PPO) (Schulman et al., 2017) with fine-grained rewards.",
+    "We adapt the token-level reward assignment in Wu et al. (2023) to our own fine-grained reward functions by assigning i) the sequence-level R 1 to the EOS token of each generated response; ii) the R 2 score for each sentence to the last token of that sentence; iii) the R 3 score for each bracketed citation to its end token (i.e., the right bracket).",
+    "If a token is assigned by multiple reward functions, we take their sum to be the final reward for that token.Formally, given a (prompt, response) pair (x, y), we denote the token time step of the EOS token of y as T 1 1, the time step of the end token of each sentence s i as T 2 i, and the time step of the end token for each citation c j as T 3 j.",
+    "We use θ and θ init to represent the current and initial policy respectively and refer to P as the probability distribution over the next token given the generation prefix g t at time step t. The reward for each token a t generated at time step t in y is:rt= 3 u=1 lu k=1 (1(t=T u k)R k u (x,y))-β log P θ (a t |g t) P θ init (a t |g t)(2)where l 1, l 2, and l 3 denote the number of sequences (which is 1), sentences, and citations in y and β is the coefficient for the KL penalty commonly used in PPO.",
+    "R k u denotes R u for the k th segment in y."
+  ],
+  "correct_citations": []
+}

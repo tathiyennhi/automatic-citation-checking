@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "These functions will vary depending on the application of the network, but are learnable, differentiable, and permutation invariant.",
+    "The message and update functions will run for a number of time steps T, passing messages between connected nodes of the graph.",
+    "These are used to update the hidden feature vectors of the nodes, which are then used to update the node feature vector, which in turn is used in the readout function.The messages are defined asm (t+1) v = u∈N (v) M t (h (t) v, h (t) u, e v,u), (1)where a message for a node at the next time step m (t+1) v is given by combining its current hidden state h (t) v with that of its neighbour h (t) u and any edge feature e v,u in a multilayer perceptron (MLP) M t (•).",
+    "Given that a message is an aggregation of all the connected nodes, the summation acts over the nodes connected to the node u ∈ N (v), i.e.",
+    "the neighbourhood of v.These messages are then used to update the hidden vectors by combining the node current state with the message in an MLP U t.h (t+1) v = U t (h t v, m (t+1) v)(2)Once the message passing phase has run for T time steps, a readout phase is then conducted using a readout function, R(•)."
+  ],
+  "correct_citations": []
+}

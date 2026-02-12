@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "A.1.2 Insight VerificationFor the news domain, we prompt the LLM to remove duplicate insights.",
+    "After producing an initial set of insights for the subtopics, we take all insights and prompt an LLM to categorize each insight into one of the subtopics.",
+    "As insights are initially generated for a particular subtopic, at this step we ensure that no insight can fit into another subtopic.",
+    "We thus remove any insights for which the categorized subtopic differs from the one it was initially generated for.In the conversation domain, we iterate over subtopics sequentially and use a prompt to generate the list of insights for one subtopic.",
+    "In the prompt, we provide not only the target subtopic but also all other subtopics and insights, instructing the LLM to avoid such subtopics and insights, and only propose insights that are distinct and unique in contrast to those."
+  ]
+}

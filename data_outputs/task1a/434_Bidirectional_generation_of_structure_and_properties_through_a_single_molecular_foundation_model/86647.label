@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Training for downstream tasks Supplementary Fig. 1 describes how we utilized our pre-trained model for downstream tasks.",
+    "For PV generation and SMILES generation (Supplementary Fig. 1a, b), we don't need additional fine-tuning since their training objectives are already included in the pre-training (NWP, NPP).",
+    "For the inference procedure, the model generates PV or SMILES with autoregressive sampling.",
+    "Specifically, starting from the [CLS] token of the modality that we want to generate, the model predicts the first component and repeats taking the previous outputs to predict the next component until it's done or meets a sign to stop.",
+    "For PV-to-SMILES generation, we used a beam search of k = 2 to help the model generate valid SMILES."
+  ],
+  "correct_citations": []
+}

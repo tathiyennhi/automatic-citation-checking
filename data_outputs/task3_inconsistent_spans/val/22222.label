@@ -1,0 +1,22 @@
+{
+  "doc_id": "22222",
+  "text": "In simulation, we model two versions of S-BGP. We use \"S-BGP\" to denote basic S-BGP, and \"S-BGP(CP)\" for S-BGP with caching optimization and using DSA pre-computation to speed up the signing process. Figure 2 and 3 present counting of verification and signing operations. All the schemes in this paper apply the same \"lazy verify\" optimization proposed by S-BGP [CITATION_1] , that is, the BGP speaker verifies signatures on the route only when it decides to install the route into its Loc-RIB. For verifications, caching optimization is quite effective to reduce the number. As for reducing signing operations, all of the aggregated path authentication schemes are effective. The number of signing operations for S-BGP and S-BGP(CP) are 22,072.3 and 11,521.9 respectively, which are too large to be shown in Figure 3 . Most aggregated path authentication schemes as well as S-A can reduce 98% of signings for S-BGP. Surprisingly, GAS-T(SW) is the least efficient construction for amortizing signing cost. The main reason is that GAS-T(SW) verification is much slower than that of hardware implementation and RSA verification. BGP speakers using GAS-T(SW) spend much longer time processing received routes. As the result, there are not many outgoing messages waiting for MRAI timers at a time. S-A amortizes more than 60 signings to one, while GAS-T(SW) only achieves the amortization degree of 28.2. Figure 4 presents the total CPU time spent for cryptographic operations. The CPU time for the different aggregated path authentication schemes varies greatly. GAS-V(HW) is the most efficient scheme of our new schemes, while GAS-T(SW) is the worst. The latency is mostly affected by number of operations and unit running times.",
+  "correct_citation": {
+    "[CITATION_1]": "9190611"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "All the schemes in this paper apply the same \"lazy verify\" optimization proposed by S-BGP  , that is, the BGP speaker verifies signatures on the route only when it decides to install the route into its Loc-RIB. For verifications, caching optimization is quite effective to reduce the number.",
+      "s_span": 272,
+      "e_span": 575
+    }
+  ],
+  "bib_entries": {
+    "9190611": {
+      "title": "Secure Border Gateway Protocol (S-BGP) -Real World Performance and Deployment Issues",
+      "abstract": "The Border Gateway Protocol (BGP), which is used to distribute routing information between autonomous systems, is an important component of the Internet’s routing infrastructure. Secure BGP (S-BGP) addresses critical BGP vulnerabilities by providing a scalable means of verifying the authenticity and authorization of BGP control traffic. To facilitate widespread adoption, S-BGP must avoid introducing undue overhead (processing, bandwidth, storage) and must be incrementally deployable, i.e., interoperable with BGP. To provide a proof of concept demonstration, we developed a prototype implementation of S-BGP and deployed it in DARPA’s CAIRN testbed. Real Internet BGP traffic was fed to the testbed routers via replay of a recorded BGP peering session with an ISP’s BGP router. This document describes the results of these experiments ‐ examining interoperability, the efficacy of the S-BGP countermeasures in securing BGP control traffic, and their impact on BGP performance, and thus evaluating the feasibility of deployment in the Internet."
+    }
+  },
+  "generator": "fallback_v4"
+}

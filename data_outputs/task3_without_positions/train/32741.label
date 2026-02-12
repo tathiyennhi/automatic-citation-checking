@@ -1,0 +1,20 @@
+{
+  "doc_id": "32741",
+  "text": "Several issues arise during this dataset analysis. One issue is that Cuckoo Sandbox is a tool known to malware writers, some of them write code to detect if the malware is running in a Cuckoo Sandbox (or any virtual machine, for that matter) and if so -quit immediately to prevent reversing efforts. In those cases, the file is malicious, but its behavior recorded in Cuckoo Sandbox, or API calls sequence in this case -isn't. To mitigate the contamination of our dataset, we used two counter-measures: 1) We applied Yara rules 5 to detect sandbox programs such as Cuckoo and omitted all samples using those techniques. 2) We considered only API call sequences with more than 15 API calls (as in [CITATION_1] ), to make sure there are enough API calls to make a valid classification. This filtering left us with 400,000 valid samples, after removing some benign samples to keep the dataset balanced. One might argue that those evasive malwares, which apply those techniques, are extremely challenging and relevant. However, in this paper we focus on the adversarial attack. This attack is generic enough to work for those evasive malware either, assuming that other mitigation techniques, such as anti-anti-VM, would be applied so one can successfully monitor their true API calls sequence.",
+  "correct_citation": {
+    "[CITATION_1]": "6780262"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "2) We considered only API call sequences with more than 15 API calls (as in  ), to make sure there are enough API calls to make a valid classification."
+    }
+  ],
+  "bib_entries": {
+    "6780262": {
+      "title": "Malware classification with recurrent networks",
+      "abstract": "Attackers often create systems that automatically rewrite and reorder their malware to avoid detection. Typical machine learning approaches, which learn a classifier based on a handcrafted feature vector, are not sufficiently robust to such reorderings. We propose a different approach, which, similar to natural language modeling, learns the language of malware spoken through the executed instructions and extracts robust, time domain features. Echo state networks (ESNs) and recurrent neural networks (RNNs) are used for the projection stage that extracts the features. These models are trained in an unsupervised fashion. A standard classifier uses these features to detect malicious files. We explore a few variants of ESNs and RNNs for the projection stage, including Max-Pooling and Half-Frame models which we propose. The best performing hybrid model uses an ESN for the recurrent model, Max-Pooling for non-linear sampling, and logistic regression for the final classification. Compared to the standard trigram of events model, it improves the true positive rate by 98.3% at a false positive rate of 0.1%."
+    }
+  },
+  "generator": "fallback_v4"
+}

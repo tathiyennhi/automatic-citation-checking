@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Built on top of this structure, in Phase 2, we apply a repel-and-bind loss L sem: tokens referring to different instances are pushed apart, while tokens describing the same instance are pulled together, reinforcing clean semantic separation per instance.Let P repel denote pairs of token indices that should remain distinct (e.g., different classes/instances), and P bind denote pairs that should co-activate (e.g., class/attribute within the same instance).",
+    "We use MPO as a sharp, local measure of overlap between the corresponding semantic maps:L repel (X t) = max (a,b)∈P repel + MPO CA ins t [:, a], CA ins t [:, b] L bind (X t) = max (a,b)∈P bind 1-MPO CA ins t [:, a], CA ins t [:, b]We combine them as a repel-and-bind objective:L sem (X t) = L repel (X t) + L bind (X t)(8)Note that such token relationships are standard in recent methods [17,18]; our contribution is to bind these relations to the instance-aware masks formed in Phase 1 (Sec. 3.2).",
+    "Instance-to-Semantic Loss ScheduleCombining both phases, we define the per-step loss asL t (X t) = λ ins (t) L ins (X t) + λ sem (t) L sem (X t),(9)where λ ins (t) and λ sem (t) control the relative emphasis on instance layout versus semantics over the diffusion trajectory; in practice, we simply set λ ins (t) = t/T and λ sem (t) = 1 -t/T so that early steps focus on instance formation and later steps focus on semantic refinement.",
+    "Following prior work [3,10,17,18], we primarily use ISAC for latent optimization as summarized in Algorithm 1.",
+    "ISAC is also compatible with other guidance schemes, such as latent selection (see Appendix C)."
+  ]
+}

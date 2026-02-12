@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "traj (s ref 0, s ref 1,...) in D ref do s 0 ← s ref 0 for t = 0 to T -1 do a t ∼ ϕ β • πref (s 0:t) if dist(s t, s ref t) > δ or r(s t, a t) < r c then break s t+1, r t ← Sim.step(s t, a t) o t ← 3DGS.Render(s t) Append (s t, a t, o t, r t) to D cf Diffusion-Based Policy AdaptationAs we can see in the Figure 4, the generated counterfactual actions fall into a multi-modal distribution.",
+    "To capture these counterfactual actions, we propose a diffusion-based policy adapter that refines the output of a frozen end-to-end (E2E) driving model by predicting residual trajectories ∆a = a * -a base, where a base ∈ R H×2 is the trajectory from a pretrained policy (e.g., UniAD) and a * is the most rewarding trajectory sample from the counterfactual rollout dataset.Training.",
+    "To model the distribution over residuals, we apply a latent diffusion process.",
+    "The forward step adds Gaussian noise over K steps:q(∆a (k) | ∆a (0)) = N ∆a (k); √ ᾱk ∆a (0), (1 -ᾱk)I,where ∆a (0) = ∆a and ᾱk is the cumulative noise schedule.",
+    "The denoising network f θ is a 1D U-Net that outputs multi-mode ∆a (0) from ∆a (k), conditioned on the scene encoding z = ϕ enc (o, s ego), ego history s ego, and base predicted trajectory a base."
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "text": "Segmentation Features For both Arabic and Chinese, each segmentation is represented by its score from the preprocessing system, and by the corresponding morphemes (or words in Chinese). Following previous work [CITATION_1] , we also add character-based features for Chinese word segmentation, including the first and the last characters in the word, and the length of the word. Table 1 summarizes the POS tag features employed by the model. First, we use the feature templates proposed in our previous work on Arabic joint parsing and POS correction [CITATION_2] . In addition, we incorporate character-based features specifically designed for Chinese. These features are mainly inspired by previous transition-based models on Chinese joint POS tagging and word segmentation [CITATION_3] .",
+  "citation_candidates": [
+    "2216180",
+    "5404235",
+    "905345",
+    "10528973",
+    "2712419",
+    "17830435",
+    "10011032",
+    "14410909",
+    "14747729",
+    "5859332",
+    "1260516",
+    "1500270",
+    "105219",
+    "16474892",
+    "832839",
+    "6640760",
+    "14040767",
+    "1992679",
+    "4337795",
+    "14697486",
+    "16636082"
+  ],
+  "bib_entries": {
+    "14410909": {
+      "title": "Joint models for chinese pos tagging and dependency parsing",
+      "abstract": "Part-of-speech (POS) is an indispensable feature in dependency parsing. Current research usually models POS tagging and dependency parsing independently. This may suffer from error propagation problem. Our experiments show that parsing accuracy drops by about 6% when using automatic POS tags instead of gold ones. To solve this issue, this paper proposes a solution by jointly optimizing POS tagging and dependency parsing in a unique model. We design several joint models and their corresponding decoding algorithms to incorporate different feature sets. We further present an effective pruning strategy to reduce the search space of candidate POS tags, leading to significant improvement of parsing speed. Experimental results on Chinese Penn Treebank 5 show that our joint models significantly improve the state-of-the-art parsing accuracy by about 1.5%. Detailed analysis shows that the joint method is able to choose such POS tags that are more helpful and discriminative from parsing viewpoint. This is the fundamental reason of parsing accuracy improvement."
+    },
+    "1992679": {
+      "title": "Joint morphological and syntactic analysis for richly inflected languages",
+      "abstract": "Joint morphological and syntactic analysis has been proposed as a way of improving parsing accuracy for richly inflected languages. Starting from a transition-based model for joint part-of-speech tagging and dependency parsing, we explore different ways of integrating morphological features into the model. We also investigate the use of rule-based morphological analyzers to provide hard or soft lexical constraints and the use of word clusters to tackle the sparsity of lexical features. Evaluation on five morphologically rich languages (Czech, Finnish, German, Hungarian, and Russian) shows consistent improvements in both morphological and syntactic accuracy for joint prediction over a pipeline model, with further improvements thanks to lexical constraints and word clusters. The final results improve the state of the art in dependency parsing for all languages."
+    },
+    "832839": {
+      "title": "A cross-task flexible transition model for arabic tokenization, affix detection, affix labeling, pos tagging, and dependency parsing",
+      "abstract": "This paper describes cross-task flexible transition models (CTF-TMs) and demonstrates their effectiveness for Arabic natural language processing (NLP). NLP pipelines often suffer from error propagation, as errors committed in lower-level tasks cascade through the remainder of the processing pipeline. By allowing a flexible order of operations across and within multiple NLP tasks, a CTF-TM can mitigate both cross-task and within-task error propagation. Our Arabic CTF-TM models tokenization, affix detection, affix labeling, partof-speech tagging, and dependency parsing, achieving state-of-the-art results. We present the details of our general framework, our Arabic CTF-TM, and the setup and results of our experiments."
+    },
+    "10011032": {
+      "title": "Incremental joint approach to word segmentation, pos tagging, and dependency parsing in chinese",
+      "abstract": "We propose the first joint model for word segmentation, POS tagging, and dependency parsing for Chinese. Based on an extension of the incremental joint model for POS tagging and dependency parsing (Hatori et al., 2011), we propose an efficient character-based decoding method that can combine features from state-of-the-art segmentation, POS tagging, and dependency parsing models. We also describe our method to align comparable states in the beam, and how we can combine features of different characteristics in our incremental framework. In experiments using the Chinese Treebank (CTB), we show that the accuracies of the three tasks can be improved significantly over the baseline models, particularly by 0.6% for POS tagging and 2.4% for dependency parsing. We also perform comparison experiments with the partially joint models."
+    },
+    "5859332": {
+      "title": "Character-level chinese dependency parsing",
+      "abstract": "Recent work on Chinese analysis has led to large-scale annotations of the internal structures of words, enabling characterlevel analysis of Chinese syntactic structures. In this paper, we investigate the problem of character-level Chinese dependency parsing, building dependency trees over characters. Character-level information can benefit downstream applications by offering flexible granularities for word segmentation while improving wordlevel dependency parsing accuracies. We present novel adaptations of two major shift-reduce dependency parsing algorithms to character-level parsing. Experimental results on the Chinese Treebank demonstrate improved performances over word-based parsing methods."
+    },
+    "17830435": {
+      "title": "Joint chinese word segmentation, pos tagging and parsing",
+      "abstract": "In this paper, we propose a novel decoding algorithm for discriminative joint Chinese word segmentation, part-of-speech (POS) tagging, and parsing. Previous work often used a pipeline method -- Chinese word segmentation followed by POS tagging and parsing, which suffers from error propagation and is unable to leverage information in later modules for earlier components. In our approach, we train the three individual models separately during training, and incorporate them together in a unified framework during decoding. We extend the CYK parsing algorithm so that it can deal with word segmentation and POS tagging features. As far as we know, this is the first work on joint Chinese word segmentation, POS tagging and parsing. Our experimental results on Chinese Tree Bank 5 corpus show that our approach outperforms the state-of-the-art pipeline system."
+    },
+    "1260516": {
+      "title": "Greed is good if randomized: New inference for dependency parsing",
+      "abstract": "Dependency parsing with high-order features results in a provably hard decoding problem. A lot of work has gone into developing powerful optimization methods for solving these combinatorial problems. In contrast, we explore, analyze, and demonstrate that a substantially simpler randomized greedy inference algorithm already suffices for near optimal parsing: a) we analytically quantify the number of local optima that the greedy method has to overcome in the context of first-order parsing; b) we show that, as a decoding algorithm, the greedy method surpasses dual decomposition in second-order parsing; c) we empirically demonstrate that our approach with up to third-order and global features outperforms the state-of-the-art dual decomposition and MCMC sampling methods when evaluated on 14 languages of non-projective CoNLL datasets. 1"
+    },
+    "10528973": {
+      "title": "Joint hebrew segmentation and parsing using a pcfg-la lattice parser",
+      "abstract": "We experiment with extending a lattice parsing methodology for parsing Hebrew (Goldberg and Tsarfaty, 2008; Golderg et al., 2009) to make use of a stronger syntactic model: the PCFG-LA Berkeley Parser. We show that the methodology is very effective: using a small training set of about 5500 trees, we construct a parser which parses and segments unsegmented Hebrew text with an F-score of almost 80%, an error reduction of over 20% over the best previous result for this task. This result indicates that lattice parsing with the Berkeley parser is an effective methodology for parsing over uncertain inputs."
+    },
+    "4337795": {
+      "title": "Overview of the SPMRL 2013 shared task: A cross-framework evaluation of parsing morphologically rich languages",
+      "abstract": "This paper reports on the first shared task on statistical parsing of morphologically rich languages (MRLs). The task features data sets from nine languages, each available both in constituency and dependency annotation. We report on the preparation of the data sets, on the proposed parsing scenarios, and on the evaluation metrics for parsing MRLs given different representation types. We present and analyze parsing results obtained by the task participants, and then provide an analysis and comparison of the parsers across languages and frameworks, reported for gold input as well as more realistic parsing scenarios."
+    },
+    "2216180": {
+      "title": "Arabic tokenization, part-of-speech tagging and morphological disambiguation in one fell swoop",
+      "abstract": "We present an approach to using a morphological analyzer for tokenizing and morphologically tagging (including part-of-speech tagging) Arabic words in one process. We learn classifiers for individual morphological features, as well as ways of using these classifiers to choose among entries from the output of the analyzer. We obtain accuracy rates on all tasks in the high nineties."
+    },
+    "105219": {
+      "title": "Joint word segmentation and pos tagging using a single perceptron",
+      "abstract": "For Chinese POS tagging, word segmentation is a preliminary step. To avoid error propagation and improve segmentation by utilizing POS information, segmentation and tagging can be performed simultaneously. A challenge for this joint approach is the large combined search space, which makes efficient decoding very hard. Recent research has explored the integration of segmentation and POS tagging, by decoding under restricted versions of the full combined search space. In this paper, we propose a joint segmentation and POS tagging model that does not impose any hard constraints on the interaction between word and POS information. Fast decoding is achieved by using a novel multiple-beam search algorithm. The system uses a discriminative statistical model, trained using the generalized perceptron algorithm. The joint model gives an error reduction in segmentation accuracy of 14.6% and an error reduction in tagging accuracy of 12.2%, compared to the traditional pipeline approach."
+    },
+    "1500270": {
+      "title": "A transitionbased system for joint part-of-speech tagging and labeled non-projective dependency parsing",
+      "abstract": "Most current dependency parsers presuppose that input words have been morphologically disambiguated using a part-of-speech tagger before parsing begins. We present a transition-based system for joint part-of-speech tagging and labeled dependency parsing with non-projective trees. Experimental evaluation on Chinese, Czech, English and German shows consistent improvements in both tagging and parsing accuracy when compared to a pipeline system, which lead to improved state-of-the-art results for all languages."
+    },
+    "905345": {
+      "title": "Joint morphological and syntactic disambiguation",
+      "abstract": "In morphologically rich languages, should morphological and syntactic disambiguation be treated sequentially or as a single problem? We describe several efficient, probabilisticallyinterpretable ways to apply joint inference to morphological and syntactic disambiguation using lattice parsing. Joint inference is shown to compare favorably to pipeline parsing methods across a variety of component models. State-of-the-art performance on Hebrew Treebank parsing is demonstrated using the new method. The benefits of joint inference are modest with the current component models, but appear to increase as components themselves improve."
+    },
+    "16636082": {
+      "title": "Joint pos tagging and transition-based constituent parsing in chinese with non-local features",
+      "abstract": "We propose three improvements to address the drawbacks of state-of-the-art transition-based constituent parsers. First, to resolve the error propagation problem of the traditional pipeline approach, we incorporate POS tagging into the syntactic parsing process. Second, to alleviate the negative influence of size differences among competing action sequences, we align parser states during beam-search decoding. Third, to enhance the power of parsing models, we enlarge the feature set with non-local features and semisupervised word cluster features. Experimental results show that these modifications improve parsing performance significantly. Evaluated on the Chinese TreeBank (CTB), our final performance reaches 86.3% (F1) when trained on CTB 5.1, and 87.1% when trained on CTB 6.0, and these results outperform all state-of-the-art parsers."
+    },
+    "2712419": {
+      "title": "A fast decoder for joint word segmentation and pos-tagging using a single discriminative model",
+      "abstract": "We show that the standard beam-search algorithm can be used as an efficient decoder for the global linear model of Zhang and Clark (2008) for joint word segmentation and POS-tagging, achieving a significant speed improvement. Such decoding is enabled by: (1) separating full word features from partial word features so that feature templates can be instantiated incrementally, according to whether the current character is separated or appended; (2) deciding the POS-tag of a potential word when its first character is processed. Early-update is used with perceptron training so that the linear model gives a high score to a correct partial candidate as well as a full output. Effective scoring of partial structures allows the decoder to give high accuracy with a small beam-size of 16. In our 10-fold cross-validation experiments with the Chinese Tree-bank, our system performed over 10 times as fast as Zhang and Clark (2008) with little accuracy loss. The accuracy of our system on the standard CTB 5 test was competitive with the best in the literature."
+    },
+    "6640760": {
+      "title": "Steps to excellence: Simple inference with refined scoring of dependency trees",
+      "abstract": "Much of the recent work on dependency parsing has been focused on solving inherent combinatorial problems associated with rich scoring functions. In contrast, we demonstrate that highly expressive scoring functions can be used with substantially simpler inference procedures. Specifically, we introduce a sampling-based parser that can easily handle arbitrary global features. Inspired by SampleRank, we learn to take guided stochastic steps towards a high scoring parse. We introduce two samplers for traversing the space of trees, Gibbs and Metropolis-Hastings with Random Walk. The model outperforms state-of-the-art results when evaluated on 14 languages of non-projective CoNLL datasets. Our sampling-based approach naturally extends to joint prediction scenarios, such as joint parsing and POS correction. The resulting method outperforms the best reported results on the CATiB dataset, approaching performance of parsing with gold tags. 1"
+    },
+    "14040767": {
+      "title": "Spmrl'13 shared task system: The cadim arabic dependency parser",
+      "abstract": "We describe the submission from the Columbia Arabic & Dialect Modeling group (CADIM) for the Shared Task at the Fourth Workshop on Statistical Parsing of Morphologically Rich Languages (SPMRL\u20192013). We participate in the Arabic Dependency parsing task for predicted POS tags and features. Our system is based on Marton et al. (2013)."
+    },
+    "14697486": {
+      "title": "Using stem-templates to improve arabic pos and gender/number tagging",
+      "abstract": "This paper presents an end-to-end automatic processing system for Arabic. The system performs: correction of common spelling errors pertaining to different forms of alef, ta marbouta and ha, and alef maqsoura and ya; context sensitive word segmentation into underlying clitics, POS tagging, and gender and number tagging of nouns and adjectives. We introduce the use of stem templates as a feature to improve POS tagging by 0.5% and to help ascertain the gender and number of nouns and adjectives. For gender and number tagging, we report accuracies that are significantly higher on previously unseen words compared to a state-of-the-art system."
+    },
+    "5404235": {
+      "title": "Incremental joint pos tagging and dependency parsing in chinese",
+      "abstract": "We address the problem of joint part-of-speech (POS) tagging and dependency parsing in Chinese. In Chinese, some POS tags are often hard to disambiguate without considering longrange syntactic information. Also, the traditional pipeline approach to POS tagging and dependency parsing may suffer from the problem of error propagation. In this paper, we propose the first incremental approach to the task of joint POS tagging and dependency parsing, which is built upon a shift-reduce parsing framework with dynamic programming. Although the incremental approach encounters difficulties with underspecified POS tags of look-ahead words, we overcome this issue by introducing so-called delayed features. Our joint approach achieved substantial improvements over the pipeline and baseline systems in both POS tagging and dependency parsing task, achieving the new state-of-the-art performance on this joint task."
+    },
+    "16474892": {
+      "title": "Joint evaluation of morphological segmentation and syntactic parsing",
+      "abstract": "We present novel metrics for parse evaluation in joint segmentation and parsing scenarios where the gold sequence of terminals is not known in advance. The protocol uses distance-based metrics defined for the space of trees over lattices. Our metrics allow us to precisely quantify the performance gap between non-realistic parsing scenarios (assuming gold segmented and tagged input) and realistic ones (not assuming gold segmentation and tags). Our evaluation of segmentation and parsing for Modern Hebrew sheds new light on the performance of the best parsing systems to date in the different scenarios."
+    },
+    "14747729": {
+      "title": "(re)ranking meets morphosyntax: State-of-the-art results from the SPMRL 2013 shared task",
+      "abstract": "This paper describes the IMS-SZEGED-CIS contribution to the SPMRL 2013 Shared Task. We participate in both the constituency and dependency tracks, and achieve state-of-theart for all languages. For both tracks we make significant improvements through high quality preprocessing and (re)ranking on top of strong baselines. Our system came out first for both tracks."
+    }
+  }
+}

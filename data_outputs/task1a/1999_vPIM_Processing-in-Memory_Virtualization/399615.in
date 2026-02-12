@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "2.a) runs on host CPUs.",
+    "It orchestrates the dataflow and the execution of DPU programs.",
+    "The typical workflow of a host program is as follows: (1) allocate the desired number of DPUs (line 7) and offload the DPU-side program binary to the hardware (line 8), (2) partition and distribute the input datasets across the DPUs (CPU→DPU, line 12-16), (3) launch the DPU-side program (line 17), (4) after the DPU program terminates, it retrieves the results from the memory bank of the DPUs (DPU→CPU, line [18][19][20][21][22], and (5) free the DPUs (line 23).",
+    "Similarly to GPUs, UPMEM PIM follows the offload model where the input data has to flow through the host CPU to the UPMEM PIM hardware before computation.The DPU program (Fig. 2.b) runs inside the UPMEM chips.",
+    "It manages the workload for each tasklet in one DPU (line 7-16), and defines computation to process the partition of the data loaded to the DPU (line [8][9][10][11]."
+  ]
+}

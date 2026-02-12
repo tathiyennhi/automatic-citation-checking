@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The networks are trained using three losses: the autoencoder reconstruction loss L A, the linear dynamics loss L R, and the future state prediction loss L F.L A = 1 2(n + 1) n+1 i=1 ||x(t i) -d N N (e N N (x(t i); θ e); θ d)|| 2 2 (21) L R = 1 2n n i=1 ||e N N (x(t i+1); θ e) -Ae N N (x(t i); θ e)|| 2 2 (22)L F = 1 2n n i=1 ||x(t i+1) -d N N ( Ae N N (x(t i); θ e); θ d)|| 2 2 (23)C = κ A L A + κ R L R + κ F L F (24)The cost function C is composed of a weighted sum of the loss terms L A, L R, L F and weighting terms κ A, κ R, κ F. Furthermore, [216] allows A to vary depending on the state.",
+    "This is achieved by predicting the eigenvalues of A with an auxiliary network and constructing the matrix from these.",
+    "Active learning and transfer learningFinally, an important machine learning technique independent of the NN architecture and applicable to both spacetime and time-stepping approaches is active learning [218].Instead of precomputing a labeled data set, data is only provided when the prediction quality of the NN is insufficient.",
+    "Furthermore, the data is not chosen arbitrarily, but only in the vicinity of the failed prediction.",
+    "In computational mechanics, the prediction of the NN can be assessed with an error indicator."
+  ]
+}

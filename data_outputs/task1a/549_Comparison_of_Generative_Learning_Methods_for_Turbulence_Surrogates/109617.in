@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We want to optimize the distribution parameters µ and σ of the latent distribution ζ from which we want to sample the inputs for the decoder.",
+    "The problem is that we can't backpropagate [87] through a stochastic sample, i.e., we cannot compute gradients of the loss with respect to network parameters if z is sampled directly.",
+    "Hence, the idea of reparameterization is to treat µ and σ as deterministic variables, sample a point ε from the standard normal distribution, and define a new latent sample z = µ + σ • ε.",
+    "This disentangles the stochasticity of the latent variable from the parameters, allowing gradients of µ and σ to be computed while preserving randomness through ε.",
+    "Importantly, since the decoder's inputs are stochastic, it does not merely reconstruct the original images pixel-by-pixel, but can generate new samples within the same domain (e.g., turbulent flow data), capturing the variability learned during training."
+  ]
+}

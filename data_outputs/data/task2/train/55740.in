@@ -1,0 +1,67 @@
+{
+  "text": "Our goal is to compile a set of diverse discourse-related tasks. We restrict ourselves to classification either of sentences or sentence pairs. We only use publicly available datasets and tasks that are absent from other benchmarks (SentEval/GLUE). As opposed to Glue [CITATION_1] , we do not keep test labels hidden in order to allow faster experiments. The scores in the task are not meant to be compared to previous work, since we alter some datasets to yield more meaningful evaluations (we perform duplicate removal or class subsampling when mentioned). We first present the tasks, and then propose a rudimentary taxonomy of how they fit into conceptions of meaning as use.",
+  "citation_candidates": [
+    "19047694",
+    "53898887",
+    "53221289",
+    "5034059",
+    "85543290",
+    "56657817",
+    "13374927",
+    "28971531",
+    "182952400",
+    "3432876",
+    "9124334",
+    "24461982"
+  ],
+  "bib_entries": {
+    "53898887": {
+      "title": "Illocutionary force and semantic content",
+      "abstract": "Illocutionary force and semantic content are widelyheld to occupy utterly different categories in atleast two ways: (1) any expression serving as anindicator of illocutionary force must be withoutsemantic content, and (2) no such expression canembed. A refined account of the force/contentdistinction is offered here that (a) does theexplanatory work that the standard distinction does,while, in accounting for the behavior of a range ofparenthetical expressions, (b) shows neither (1) nor(2) to be compulsory. The refined account alsomotivates a development of the ``scorekeeping model'' ofconversation, helps to isolate a distinction betweenillocutionary force and illocutionary commitment, andreveals one precise respect in which meaning is onlyexplicable in terms of use."
+    },
+    "19047694": {
+      "title": "DisSent: Sentence Representation Learning from Explicit Discourse Relations",
+      "abstract": "Sentence vectors represent an appealing approach to meaning: learn an embedding that encompasses the meaning of a sentence in a single vector, that can be used for a variety of semantic tasks. Existing models for learning sentence embeddings either require extensive computational resources to train on large corpora, or are trained on costly, manually curated datasets of sentence relations. We observe that humans naturally annotate the relations between their sentences with discourse markers like \"but\" and \"because\". These words are deeply linked to the meanings of the sentences they connect. Using this natural signal, we automatically collect a classification dataset from unannotated text. Training a model to predict these discourse markers yields high quality sentence embeddings. Our model captures complementary information to existing models and achieves comparable generalization performance to state of the art models."
+    },
+    "85543290": {
+      "title": "Mining discourse markers for unsupervised sentence representation learning",
+      "abstract": "Current state of the art systems in NLP heavily rely on manually annotated datasets, which are expensive to construct. Very little work adequately exploits unannotated data -- such as discourse markers between sentences -- mainly because of data sparseness and ineffective extraction methods. In the present work, we propose a method to automatically discover sentence pairs with relevant discourse markers, and apply it to massive amounts of data. Our resulting dataset contains 174 discourse markers with at least 10k examples each, even for rare markers such as coincidentally or amazingly We use the resulting data as supervision for learning transferable sentence embeddings. In addition, we show that even though sentence representation learning through prediction of discourse markers yields state of the art results across different transfer tasks, it is not clear that our models made use of the semantic relation between sentences, thus leaving room for further improvements. Our datasets are publicly available (this https URL)"
+    },
+    "13374927": {
+      "title": "The penn discourse treebank 2.0",
+      "abstract": "We present the second version of the Penn Discourse Treebank, PDTB-2.0, describing its lexically-grounded annotations of discourse relations and their two abstract object arguments over the 1 million word Wall Street Journal corpus. We describe all aspects of the annotation, including (a) the argument structure of discourse relations, (b) the sense annotation of the relations, and (c) the attribution of discourse relations and each of their arguments. We list the differences between PDTB-1.0 and PDTB-2.0. We present representative statistics for several aspects of the annotation in the corpus."
+    },
+    "24461982": {
+      "title": "What you can cram into a single vector: Probing sentence embeddings for linguistic properties",
+      "abstract": "Although much effort has recently been devoted to training high-quality sentence embeddings, we still have a poor understanding of what they are capturing. \"Downstream\" tasks, often based on sentence classification, are commonly used to evaluate the quality of sentence representations. The complexity of the tasks makes it however difficult to infer what kind of information is present in the representations. We introduce here 10 probing tasks designed to capture simple linguistic features of sentences, and we use them to study embeddings generated by three different encoders trained in eight distinct ways, uncovering intriguing properties of both encoders and training methods."
+    },
+    "56657817": {
+      "title": "Analysis methods in neural language processing: A survey",
+      "abstract": "The field of natural language processing has seen impressive progress in recent years, with neural network models replacing many of the traditional systems. A plethora of new models have been proposed, many of which are thought to be opaque compared to their feature-rich counterparts. This has led researchers to analyze, interpret, and evaluate neural networks in novel and more fine-grained ways. In this survey paper, we review analysis methods in neural language processing, categorize them according to prominent research trends, highlight existing limitations, and point to potential directions for future work."
+    },
+    "5034059": {
+      "title": "GLUE: A multi-task benchmark and analysis platform for natural language understanding",
+      "abstract": "For natural language understanding (NLU) technology to be maximally useful, both practically and as a scientific object of study, it must be general: it must be able to process language in a way that is not exclusively tailored to any one specific task or dataset. In pursuit of this objective, we introduce the General Language Understanding Evaluation benchmark (GLUE), a tool for evaluating and analyzing the performance of models across a diverse range of existing NLU tasks. GLUE is model-agnostic, but it incentivizes sharing knowledge across tasks because certain tasks have very limited training data. We further provide a hand-crafted diagnostic test suite that enables detailed linguistic analysis of NLU models. We evaluate baselines based on current methods for multi-task and transfer learning and find that they do not immediately give substantial improvements over the aggregate performance of training a separate model per task, indicating room for improvement in developing general and robust NLU systems."
+    },
+    "9124334": {
+      "title": "The icsi meeting recorder dialog act (mrda) corpus",
+      "abstract": "Abstract : We describe a new corpus of over 180,000 hand- annotated dialog act tags and accompanying adjacency pair annotations for roughly 72 hours of speech from 75 naturally-occurring meetings. We provide a brief summary of the annotation system and labeling procedure, inter-annotator reliability statistics, overall distributional statistics, a description of auxiliary files distributed with the corpus, and information on how to obtain the data."
+    },
+    "53221289": {
+      "title": "Sentence encoders on stilts: Supplementary training on intermediate labeled-data tasks",
+      "abstract": "Pretraining with language modeling and related unsupervised tasks has recently been shown to be a very effective enabling technology for the development of neural network models for language understanding tasks. In this work, we show that although language model-style pretraining is extremely effective at teaching models about language, it does not yield an ideal starting point for efficient transfer learning. By supplementing language model-style pretraining with further training on data-rich supervised tasks, we are able to achieve substantial additional performance improvements across the nine target tasks in the GLUE benchmark. We obtain an overall score of 76.9 on GLUE--a 2.3 point improvement over our baseline system adapted from Radford et al. (2018) and a 4.1 point improvement over Radford et al.'s reported score. We further use training data downsampling to show that the benefits of this supplementary training are even more pronounced in data-constrained regimes."
+    },
+    "3432876": {
+      "title": "A broad-coverage challenge corpus for sentence understanding through inference",
+      "abstract": "This paper introduces the Multi-Genre Natural Language Inference (MultiNLI) corpus, a dataset designed for use in the development and evaluation of machine learning models for sentence understanding. In addition to being one of the largest corpora available for the task of NLI, at 433k examples, this corpus improves upon available resources in its coverage: it offers data from ten distinct genres of written and spoken English--making it possible to evaluate systems on nearly the full complexity of the language--and it offers an explicit setting for the evaluation of cross-genre domain adaptation."
+    },
+    "182952400": {
+      "title": "Can you tell me how to get past sesame street? sentence-level pretraining beyond language modeling",
+      "abstract": "Natural language understanding has recently seen a surge of progress with the use of sentence encoders like ELMo (Peters et al., 2018a) and BERT (Devlin et al., 2019) which are pretrained on variants of language modeling. We conduct the first large-scale systematic study of candidate pretraining tasks, comparing 19 different tasks both as alternatives and complements to language modeling. Our primary results support the use language modeling, especially when combined with pretraining on additional labeled-data tasks. However, our results are mixed across pretraining tasks and show some concerning trends: In ELMo's pretrain-then-freeze paradigm, random baselines are worryingly strong and results vary strikingly across target tasks. In addition, fine-tuning BERT on an intermediate task often negatively impacts downstream transfer. In a more positive trend, we see modest gains from multitask training, suggesting the development of more sophisticated multitask and transfer learning techniques as an avenue for further research."
+    },
+    "28971531": {
+      "title": "Supervised Learning of Universal Sentence Representations from Natural Language Inference Data",
+      "abstract": "Many modern NLP systems rely on word embeddings, previously trained in an unsupervised manner on large corpora, as base features. Efforts to obtain embeddings for larger chunks of text, such as sentences, have however not been so successful. Several attempts at learning unsupervised representations of sentences have not reached satisfactory enough performance to be widely adopted. In this paper, we show how universal sentence representations trained using the supervised data of the Stanford Natural Language Inference datasets can consistently outperform unsupervised methods like SkipThought vectors on a wide range of transfer tasks. Much like how computer vision uses ImageNet to obtain features, which can then be transferred to other tasks, our work tends to indicate the suitability of natural language inference for transfer learning to other NLP tasks. Our encoder is publicly available."
+    }
+  }
+}

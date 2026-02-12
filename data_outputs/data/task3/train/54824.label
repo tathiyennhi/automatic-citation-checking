@@ -1,0 +1,74 @@
+{
+  "doc_id": "54824",
+  "text": "There is another group of study focusing on recovering keystrokes on physical or virtual keyboards via acoustics. Cai et al. [CITATION_1] surveyed potential attacks using microphones. Asonov et al. [CITATION_2] present an acoustic attack to classify key presses on a physical keyboard. Zhuang et al. [CITATION_3] further improved this work. Berger et al. [CITATION_4] present a dictionary attack based on keyboard acoustic emanations. Compagno et al. [CITATION_5] infer text typed on a keyboard through the acoustic signal captured via Skype chat. Liu et al. [CITATION_6] use two microphones on a smartphone to inference presses on a keyboard. Narain et al. [CITATION_7] use a gyroscope and microphones on a mobile phone to predict keystrokes on the virtual keyboard.",
+  "correct_citation": {
+    "[CITATION_1]": "9518861",
+    "[CITATION_2]": "216795",
+    "[CITATION_3]": "6742572",
+    "[CITATION_4]": "2596394",
+    "[CITATION_5]": "7902821",
+    "[CITATION_6]": "16463622",
+    "[CITATION_7]": "16791759"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Cai et al.  surveyed potential attacks using microphones."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Asonov et al.  present an acoustic attack to classify key presses on a physical keyboard."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Zhuang et al.  further improved this work."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Berger et al.  present a dictionary attack based on keyboard acoustic emanations."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Compagno et al.  infer text typed on a keyboard through the acoustic signal captured via Skype chat."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Liu et al.  use two microphones on a smartphone to inference presses on a keyboard."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Narain et al.  use a gyroscope and microphones on a mobile phone to predict keystrokes on the virtual keyboard."
+    }
+  ],
+  "bib_entries": {
+    "2596394": {
+      "title": "Dictionary attacks using keyboard acoustic emanations",
+      "abstract": "We present a dictionary attack that is based on keyboard acoustic emanations. We combine signal processing and efficient data structures and algorithms, to successfully reconstruct single words of 7-13 characters from a recording of the clicks made when typing them on a keyboard. Our attack does not require any training, and works on an individual recording of the typed word (may be under 5 seconds of sound). The attack is very efficient, taking under 20 seconds per word on a standard PC. We demonstrate a 90% or better success rate of finding the correct word in the top 50 candidates identified by the attack, for words of 10 or more characters, and a success rate of 73% over all the words we tested. We show that the dominant factors affecting the attack's success are the word length, and more importantly, the number of repeated characters within the word. Our attack can be used as an effective acoustic-based password cracker. Our attack can also be used as part of an acoustic long-text reconstruction method, that is much more efficient and requires much less text than previous approaches."
+    },
+    "7902821": {
+      "title": "Don't Skype & Type!: Acoustic eavesdropping in voice-over-IP",
+      "abstract": "Acoustic emanations of computer keyboards represent a serious privacy issue. As demonstrated in prior work, physical properties of keystroke sounds might reveal what a user is typing. However, previous attacks assumed relatively strong adversary models that are not very practical in many real-world settings. Such strong models assume: (i) adversary's physical proximity to the victim, (ii) precise profiling of the victim's typing style and keyboard, and/or (iii) significant amount of victim's typed information (and its corresponding sounds) available to the adversary. This paper presents and explores a new keyboard acoustic eavesdropping attack that involves Voice-over-IP (VoIP), called Skype & Type (S&T), while avoiding prior strong adversary assumptions. This work is motivated by the simple observation that people often engage in secondary activities (including typing) while participating in VoIP calls. As expected, VoIP software acquires and faithfully transmits all sounds, including emanations of pressed keystrokes, which can include passwords and other sensitive information. We show that one very popular VoIP software (Skype) conveys enough audio information to reconstruct the victim's input -- keystrokes typed on the remote keyboard. Our results demonstrate that, given some knowledge on the victim's typing style and keyboard model, the attacker attains top-5 accuracy of 91.7% in guessing a random key pressed by the victim. Furthermore, we demonstrate that S&T is robust to various VoIP issues (e.g., Internet bandwidth fluctuations and presence of voice over keystrokes), thus confirming feasibility of this attack. Finally, it applies to other popular VoIP software, such as Google Hangouts."
+    },
+    "16463622": {
+      "title": "Snooping keystrokes with mm-level audio ranging on a single phone",
+      "abstract": "This paper explores the limits of audio ranging on mobile devices in the context of a keystroke snooping scenario. Acoustic keystroke snooping is challenging because it requires distinguishing and labeling sounds generated by tens of keys in very close proximity. Existing work on acoustic keystroke recognition relies on training with labeled data, linguistic context, or multiple phones placed around a keyboard --- requirements that limit usefulness in an adversarial context. In this work, we show that mobile audio hardware advances can be exploited to discriminate mm-level position differences and that this makes it feasible to locate the origin of keystrokes from only a single phone behind the keyboard. The technique clusters keystrokes using time-difference of arrival measurements as well as acoustic features to identify multiple strokes of the same key. It then computes the origin of these sounds precise enough to identify and label each key. By locating keystrokes this technique avoids the need for labeled training data or linguistic context. Experiments with three types of keyboards and off-the-shelf smartphones demonstrate scenarios where our system can recover $94\\%$ of keystrokes, which to our knowledge, is the first single-device technique that enables acoustic snooping of passwords."
+    },
+    "6742572": {
+      "title": "Keyboard acoustic emanations revisited",
+      "abstract": "We examine the problem of keyboard acoustic emanations. We present a novel attack taking as input a 10-minute sound recording of a user typing English text using a keyboard, and then recovering up to 96% of typed characters. There is no need for a labeled training recording. Moreover the recognizer bootstrapped this way can even recognize random text such as passwords: In our experiments, 90% of 5-character random passwords using only letters can be generated in fewer than 20 attempts by an adversary; 80% of 10-character passwords can be generated in fewer than 75 attempts. Our attack uses the statistical constraints of the underlying content, English language, to reconstruct text from sound recordings without any labeled training data. The attack uses a combination of standard machine learning and speech recognition techniques, including cepstrum features, Hidden Markov Models, linear classification, and feedback-based incremental learning."
+    },
+    "216795": {
+      "title": "Keyboard acoustic emanations",
+      "abstract": "We show that PC keyboards, notebook keyboards, telephone and ATM pads are vulnerable to attacks based on differentiating the sound emanated by different keys. Our attack employs a neural network to recognize the key being pressed. We also investigate why different keys produce different sounds and provide hints for the design of homophonic keyboards that would be resistant to this type of attack."
+    },
+    "9518861": {
+      "title": "Defending against sensor-sniffing attacks on mobile phones",
+      "abstract": "Modern mobile phones possess three types of capabilities: computing, communication, and sensing. While these capabilities enable a variety of novel applications, they also raise serious privacy concerns. We explore the vulnerability where attackers snoop on users by sniffing on their mobile phone sensors, such as the microphone, camera, and GPS receiver. We show that current mobile phone platforms inadequately protect their users from this threat. To provide better privacy for mobile phone users, we analyze desirable uses of these sensors and discuss the properties of good privacy protection solutions. Then, we propose a general framework for such solutions and discuss various possible approaches to implement the framework's components."
+    },
+    "16791759": {
+      "title": "Single-stroke languageagnostic keylogging using stereo-microphones and domain specific machine learning",
+      "abstract": "Mobile phones are equipped with an increasingly large number of precise and sophisticated sensors. This raises the risk of direct and indirect privacy breaches. In this paper, we investigate the feasibility of keystroke inference when user taps on a soft keyboard are captured by the stereoscopic microphones on an Android smartphone. We developed algorithms for sensor-signals processing and domain specific machine learning to infer key taps using a combination of stereo-microphones and gyroscopes. We implemented and evaluated the performance of our system on two popular mobile phones and a tablet: Samsung S2, Samsung Tab 8 and HTC One. Based on our experiments, and to the best of our knowledge, our system (1) is the first to exceed 90% accuracy requiring a single attempt, (2) operates on the standard Android QWERTY and number keyboards, and (3) is language agnostic. We show that stereo-microphones are a much more effective side channel as compared to the gyroscope, however, their data can be combined to boost the accuracy of prediction. While previous studies focused on larger key sizes and repetitive attempts, we show that by focusing on the specifics of the keyboard and creating machine learning models and algorithms based on keyboard areas combined with adequate filtering, we can achieve an accuracy of 90% - 94% for much smaller key sizes in a single attempt. We also demonstrate how such attacks can be instrumentalized by a malicious application to log the keystrokes of other sensitive applications. Finally, we describe some techniques to mitigate these attacks."
+    }
+  },
+  "generator": "fallback_v4"
+}

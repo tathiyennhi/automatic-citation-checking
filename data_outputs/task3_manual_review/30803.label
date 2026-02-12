@@ -1,0 +1,38 @@
+{
+  "doc_id": "30803",
+  "text": "Among the main features offered by ROOT-Sim we can mention completely transparent recoverability of the state of the LPs achieved through proper hooking of dynamic memory allocation/release [CITATION_1] , plus ad-hoc code instrumentation schemes that allow incremental determination of dirty state portions [CITATION_2] and that, ultimately, allow dynamical switch between different state log/restore schemes depending on the proper dynamics of the application layer [CITATION_3] .",
+  "correct_citation": {
+    "[CITATION_1]": "714005",
+    "[CITATION_2]": "14399558",
+    "[CITATION_3]": "14476851"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Among the main features offered by ROOT-Sim we can mention completely transparent recoverability of the state of the LPs achieved through proper hooking of dynamic memory allocation/release"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": ", plus ad-hoc code instrumentation schemes that allow incremental determination of dirty state portions"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Among the main features offered by ROOT-Sim we can mention completely transparent recoverability of the state of the LPs achieved through proper hooking of dynamic memory allocation/release, plus ad-hoc code instrumentation schemes that allow incremental determination of dirty state portions and that, ultimately, allow dynamical switch between different state log/restore schemes depending on the proper dynamics of the application layer"
+    }
+  ],
+  "bib_entries": {
+    "714005": {
+      "title": "DyMeLoR: Dynamic Memory Logger and Restorer library for optimistic simulation objects with generic memory layout",
+      "abstract": "In this article we focus on checkpoint/restore facilities for optimistic simulation objects with generic memory layout. Specifically, we present the design and implementation of a {\\tt C} library, named DyMeLoR (Dynamic Memory Logger and Restorer), that, beyond offering traditional services for dynamic memory allocation/release, additionally supports transparent checkpoint/restore of scattered simulation objects' states. DyMeLoR is well suited for being integrated within optimistic simulation platforms relying on kernel processes, each managing one or more simulation objects, as typical in most implementations of general purpose optimistic simulation platforms. From the point of view of efficiency, DyMeLoR has been designed in order to minimize memory consumption for meta-data describing the current layout of the simulation object's state, and to provide good trade-offs between the cost of meta-data manipulation and the cost of memory-to-memory data copies associated with checkpoint/restore tasks. Also, the library exhibits Piece-Wise-Deterministic (PWD) behavior, thus allowing the employment of (optimized) sparse checkpointing strategies each timethe overlying application software complies with the PWD assumption. We also report the results of an experimental study where DyMeLoR is integrated within the ROme OpTimistic Simulator (ROOT-Sim), and is used to support optimistic simulation of a cellular system."
+    },
+    "14399558": {
+      "title": "Di-DyMeLoR: Logging only dirty chunks for efficient management of dynamic memory based optimistic simulation objects",
+      "abstract": "A recent work has presented the design and implementation of a software library, named DyMeLoR, supporting transparent log/restore facilities for optimistic simulation objects with generic memory layout. This library offers the possibility to allocate/deallocate memory chunks via standard API, and performs log/restore of the object state via pack/unpack techniques,exploiting ad-hoc meta-data concisely identifying the object state layout at each point in simulation time. In this paper we complement such a library with a software architecture offering the following additional advantages: (i) run-time identification of chunk updates within the dynamic memory map,(ii) reduced checkpoint latency and increased effectiveness in memory usage thanks to log/restore facilities based on (periodic) snapshots of the whole simulation object state, taken via the incremental copy of the modified (dirty) chunks only.Our approach is based on software instrumentation techniques (suited for LINUX and the ELF format), targeting memory update references performed by the application level software, and on a lightweight run-time monitoring mechanism providing minimal overhead while tracking the exact memory addresses and the size of memory areas dirtied by the execution of each event. Also,our design has been oriented to portability across 32-bit and64-bit Intel compliant architectures, thus covering a wide spectrum of off-the-shelf machines."
+    },
+    "14476851": {
+      "title": "Autonomic log/restore for advanced optimistic simulation systems",
+      "abstract": "In this paper we address state recoverability in optimistic simulation systems by presenting an autonomic log/restore architecture. Our proposal is unique in that it jointly provides the following features: (i) log/restore operations are carried out in a completely transparent manner to the application programmer, (ii) the simulation-object state can be scattered across dynamically allocated non-contiguous memory chunks, (iii) two differentiated operating modes, incremental vs non-incremental, coexist via transparent, optimized run-time management of dual versions of the same application layer, with dynamic selection of the best suited operating mode in different phases of the optimistic simulation run, and (iv) determination of the best suited mode for any time frame is carried out on the basis of an innovative modeling/optimization approach that takes into account stability of each operating mode vs variations of the model execution parameters."
+    }
+  },
+  "generator": "fallback"
+}

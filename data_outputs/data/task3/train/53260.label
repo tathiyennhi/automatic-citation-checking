@@ -1,0 +1,39 @@
+{
+  "doc_id": "53260",
+  "text": "The well-exposedness measures how well a pixel is exposed. The desired image should be exposed well (neither over-nor underexposed) and contain clear details. During fusion of the luminance channel Y, it is expected that the fusion weight would be suppressed if a pixel is either under-or overexposed, whereas it would remain large when the pixel is exposed well. The intensity of the over-and underexposed regions is close to 1 and 0, respectively. Thus, pixels with an intensity near the middle of the range should be assigned a large weight, whereas those close to either end of the range should be assigned a small weight. [CITATION_1] [CITATION_2] The Gaussian function is commonly used to calculate the well-exposedness [CITATION_3] where Y i ðx; yÞ is the luminance component of the ith input image and s is the standard deviation of the Gaussian function. A small s value will cause the weight the middle value to exceed that of other intensities by far, which would lead to severe luminance inversion and false contour in the fused image, whereas a large s will lead to a low contrast in detail region and under-and overexposed region in the fused image. A set of fused images by different values of s is shown in Figure 2 , and the fused images of which are obtained by simply weighted summation of the wellexposedness (see equation (6)). We can find that Figure  2 (a) suffers from severe luminance inversion, meanwhile the details in Figure 2 (c) are not clear. So, s is set to 0.2 in this work as in the study by Mertens et al. [CITATION_4] There is a certain extent luminance inversion in Figure 2 (b), which can be solved by the improved well-exposedness proposed in this section.",
+  "correct_citation": {
+    "[CITATION_1]": "30781162",
+    "[CITATION_2]": "13891701",
+    "[CITATION_3]": "30781162",
+    "[CITATION_4]": "30781162"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Thus, pixels with an intensity near the middle of the range should be assigned a large weight, whereas those close to either end of the range should be assigned a small weight.   The Gaussian function is commonly used to calculate the well-exposedness  where Y i ðx; yÞ is the luminance component of the ith input image and s is the standard deviation of the Gaussian function."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The Gaussian function is commonly used to calculate the well-exposedness  where Y i ðx; yÞ is the luminance component of the ith input image and s is the standard deviation of the Gaussian function."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The Gaussian function is commonly used to calculate the well-exposedness  where Y i ðx; yÞ is the luminance component of the ith input image and s is the standard deviation of the Gaussian function."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "So, s is set to 0.2 in this work as in the study by Mertens et al.  There is a certain extent luminance inversion in Figure 2 (b), which can be solved by the improved well-exposedness proposed in this section."
+    }
+  ],
+  "bib_entries": {
+    "30781162": {
+      "title": "Exposure fusion: a simple and practical alternative to high dynamic range photography",
+      "abstract": "We propose a technique for fusing a bracketed exposure sequence into a high quality image, without converting to High dynamic range (HDR) first. Skipping the physically based HDR assembly step simplifies the acquisition pipeline. This avoids camera response curve calibration and is computationally efficient. It also allows for including flash images in the sequence. Our technique blends multiple exposures, guided by simple quality measures like saturation and contrast. This is done in a multiresolution fashion to account for the brightness variation in the sequence. The resulting image quality is comparable to existing tone mapping operators."
+    },
+    "13891701": {
+      "title": "Fast HDR image generation technique based on exposure blending",
+      "abstract": "In the proposed work a method for generating HDR images based on exposure blending is described. Using three differently exposed images a single image with recovered details in shadows and highlights is generated. Input images are analyzed to locate over and underexposed regions based on pixels intensity. Local contrast of input images is also considered in order to generate the output image with correct color transactions between differently exposed areas. Then images are merged using blending function. The proposed method requires a single pass thru the image to generate the result, which allows to process one image for less than 100 milliseconds. The proposed method requires no information about camera or shutting conditions, such as shutter speed or aperture size."
+    }
+  },
+  "generator": "fallback_v4"
+}

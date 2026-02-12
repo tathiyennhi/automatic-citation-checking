@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This paper adaptively adjusts β and χ during the training process with the weight assignment approach described below and sets α as a hyperparameter.",
+    "Together the three items will jointly control the model optimization.During the model training at time t, the severity of the domain shift of a medical dataset can be assessed by the old model's classification accuracy on the training dataset D t. If the old CL model achieves high accuracy on D t, we infer it possesses familiarity with the knowledge in D t. In contrast, if it has poor accuracy on D t, say worse than the LLM teacher's accuracy, we conclude the old CL model lacks reliable expertise for this training iteration.",
+    "Given this rationale, we adjust β and χ based on the relative accuracies of the CL teacher and LLM teacher on D t. A greater accuracy differential indicates a more severe domain shift, so more weight should be assigned to the LLM to leverage its generalization ability and general knowledge in the medical domain.In addition to mitigating domain shift, we aim to address the data imbalance present in the surgical-related dataset via adaptive weight.",
+    "We observed a unique imbalance in the label distribution of the tested dataset, where some surgical operations and instruments were queried very frequently, while others were rarely mentioned.",
+    "For instance, in a surgical dataset pertaining to nephrectomies, the action of cutting is frequently referenced, while mentions of stapling are relatively rare because stapling is a specialized procedure performed only after vessel cutting, a niche operation within the broader context of nephrectomy."
+  ],
+  "correct_citations": []
+}

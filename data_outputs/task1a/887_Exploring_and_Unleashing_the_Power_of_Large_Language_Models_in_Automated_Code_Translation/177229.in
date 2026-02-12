@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "TransCoder's translation ability covers Python, Java, and C++.• TransCoder-IR [48]: It is an incremental work of TransCoder, introducing low-level compiler Intermediate Representation (IR) to improve the code translation performance.",
+    "Along with the pretraining tasks of TransCoder, TransCoder-IR involves extra pre-training tasks, such as translation language modeling, translation auto-encoding, and IR generation.",
+    "TransCoder-IR was trained for translation among Java, C++, Rust, and Go.• TransCoder-ST [47]: It is another augmented version based on TransCoder, which leverages automatically generated test cases to filter out invalid translations from the back-translation process, thereby improving the performance of unsupervised machine translation approaches in the code translation task.",
+    "Evaluation MetricsFollowing the previous studies in the code translation field [33,[46][47][48], we adopt Computational Accuracy (CA) and Exact Match Accuracy (EM Acc) to assess the performance of each model.Exact Match Accuracy (EM Acc): It computes the ratio of translations that exactly match ground truths, which can be formally defined as:𝐸𝑀 𝐴𝑐𝑐 = 𝑁 𝑘=1 𝑒𝑚(𝑦 𝑘, ŷ𝑘) 𝑁, where 𝑒𝑚(𝑦 𝑘, ŷ𝑘) = 1 𝑦 𝑘 = ŷ𝑘 0 𝑦 𝑘 ≠ ŷ𝑘(1)where 𝑁 denotes the total number of translation samples, 𝑦 𝑘 denotes the ground truth of the 𝑘-th sample, and ŷ𝑘 denotes the translated program via a certain transpiler for the 𝑘-th sample.",
+    "For example, given 𝑦 𝑘 and ŷ𝑘, only if they are exactly identical, they can be deemed a correct translation in EM Acc."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We used an embedding size of 256 and a hidden layer of size 32 and trained the model for 10 epochs using a batch size of 16, a learning rate of 0.001, a binary cross-entropy loss, and an AdamW optimizer.",
+    "To understand the relation between token distribution and their respective gradient information, we leverage the PyTorch Captum library during model training to retrieve the gradient values for each input token and store them after each epoch.",
+    "After the model training, we calculate the aggregated gradient magnitude (Γ) for each token in the dataset, and cluster them according to their respective token frequencies, and verify that the aggregated gradient value decreases as the token frequency increases (see Fig. 2).",
+    "The time complexity can be divided into two parts:",
+    "• Ranking Words (step 8 in the algorithm): This step depends on the dataset size and is a function of the number of sentences and the number of words per sentence."
+  ],
+  "correct_citations": []
+}

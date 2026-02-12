@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "When the query and reference datasets belong to the same tissue (for example, PBMCs), we train the kNN classifier using the reference embeddings and labels and then use it to classify the query cells.However, if the query and reference datasets are from distinct tissues (for example, BMMCs versus PBMCs), we might encounter new cell types in the query dataset that are not present in the reference dataset.",
+    "To address this issue, we propose a strategy for novel cell-type detection.",
+    "Specifically, we assign the label 'query' to all the query cells and use the cell embeddings and labels from both the query and reference datasets to train the kNN classifier.",
+    "Subsequently, we use the classifier to predict the class probabilities for the query cells.To detect new cell types, we use a thresholding approach on the predicted probabilities of the 'query' class, that is, we leverage a Gaussian mixture model with two components to group the probabilities into two distinct clusters.",
+    "This clustering process allows us to establish a suitable threshold for the probabilities."
+  ],
+  "correct_citations": []
+}

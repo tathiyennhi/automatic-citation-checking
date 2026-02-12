@@ -1,0 +1,17 @@
+{
+  "text": "We abstract from this specific problem and consider the more general problem of moving \"open code\" from its context, replacing it with an expression having the same behavior and, taking inspiration from work on dynamic binding, see [CITATION_1] and recent work by one of the author, we define a pair of boxing/unboxing constructs, that we call: code, and exc. The construct code wraps \"open code\" (in this case a sequence of expressions) providing the information on the environment needed for its execution, that is the mutable and immutable variables occurring in it. This construct defines a value, similar to a function closure. The construct exc is used to execute the code contained in code. To do this it must provide values for the immutable variables, in our example the variable z and bindings for the mutable variables to variables in the current environment, since when executing the code we have to modify the variable even.",
+  "citation_candidates": [
+    "59824908",
+    "14129996"
+  ],
+  "bib_entries": {
+    "59824908": {
+      "title": "A semantics of python in isabelle/hol",
+      "abstract": "A Semantics of Python in Isabelle/HOLJames F. Ranson,Howard J. Hamiltonand Philip W. L. FongTechnical Report CS-2008-04December 2008Copyright c 2008 J. F. Ranson, H. J. Hamilton, P. W. L. FongDepartment of Computer ScienceUniversity of ReginaRegina, Saskatchewan, S4S 0A2CanadaISBN 978-0-7731-0657-4 (print)ISBN 978-0-7731-0658-1 (online)"
+    },
+    "14129996": {
+      "title": "From dynamic binding to state via modal possibility",
+      "abstract": "In this paper we propose a typed, purely functional calculus for state (with second-class locations) in which types reflect the dichotomy between reading from and writing into the global store. This is in contrast to the usual formulation of state via monads, where the primitives for reading and writing introduce the same monadic type constructor. We hope to argue that making this distinction is useful, simple, and has strong logical foundations.Our type system is based on the proof-term calculus for constructive modal logic S4, which has two modal type operators: \u2423 for necessity and \u25ca for possibility. We extend this calculus with the notion of names (which stand for locations) and generalize to indexed families of modal operators (indexed by sets of names). Then, the modal type \u2423 C A classifies computations of type A which read from store locations listed in the set C. The dual type \u2423 C A classifies computations which first write into the locations from $C$ and than use the changed store to obtain a value of type A.There are several benefits to this development. First, the necessitation fragment of the language is interesting in its own: it formulates a calculus of dynamic binding. Second, the possibility operator \u25ca is a monad, thus forcing the single-threading of memory writes, but not of memory reads (as these are associated with \u2423). Finally, the different status of reads and writes gives rise to a natural way of expressing the allocation of uninitialized memory while also providing guarantees that only initialized locations are dereferenced."
+    }
+  }
+}

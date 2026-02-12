@@ -1,0 +1,22 @@
+{
+  "doc_id": "15781",
+  "text": "SNR Analysis: We simulated data at four different equallyspaced SNRs in a log-scale ranging from 7 to 16 dB. We trained CRsAE and computed the measure from Eq. 26, which quantifies its ability to recover the filters used in the simulation, as a function of SNR. For training, we initialized the filters (h Figure 4 depicts err(h c ,ĥ c ) as a function of SNR. The error was averaged over 20 independent experiments and is only shown for c = 4 as the curves for all the other filters were similar. The figure demonstrates that, compared to LCSC, CRsAE is able to recover the underlying filters and does so in a manner that is robust to noise. That is, as SNR increases, CRsAE learns filters that are closer to the true underlying ones. Interestingly, in spite of the fact that LCSC was able to reconstruct the noisy data very well, it failed to learn the underlying filters. Moreover, the filters that LCSC learned rarely correlated with the true filters as measured by Eq. 26. CRsAE, on the other hand, is able to perform denoising and learn the true filters. We attribute the success of CRsAE to two factors. First, it is well-known in the dictionary learning literature [CITATION_1] that, given a noisy initial dictionary, the success of dictionary learning depends on the ability of the sparse coding step to produce sparse codes that are close to those that generated the examples. In CRsAE, we ran T = 180 FISTA iterations, compared to LCSC that only ran on the order of < 10 iterations of ISTA. That's why, the CRsAE encoder yielded sparse codes close to the true ones, while LCSC did not. Second, the fact that the encoder and decoder weights are tied in CRsAE means that it has fewer parameters to learn than LCSC with the same amount of data.",
+  "correct_citation": {
+    "[CITATION_1]": "1478142"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "First, it is well-known in the dictionary learning literature [CITATION_1] that, given a noisy initial dictionary, the success of dictionary learning depends on the ability of the sparse coding step to produce sparse codes that are close to those that generated the examples.",
+      "s_span": 1110,
+      "e_span": 1385
+    }
+  ],
+  "bib_entries": {
+    "1478142": {
+      "title": "Learning sparsely used overcomplete dictionaries via alternating minimization",
+      "abstract": "We consider the problem of sparse coding, where each sample consists of a sparse linear combination of a set of dictionary atoms, and the task is to learn both the dictionary elements and the mixing coefficients. Alternating minimization is a popular heuristic for sparse coding, where the dictionary and the coefficients are estimated in alternate steps, keeping the other fixed. Typically, the coefficients are estimated via $\\ell_1$ minimization, keeping the dictionary fixed, and the dictionary is estimated through least squares, keeping the coefficients fixed. In this paper, we establish local linear convergence for this variant of alternating minimization and establish that the basin of attraction for the global optimum (corresponding to the true dictionary and the coefficients) is $\\mathcal{O}(1/s^{2})$, where $s$ is the sparsity level in each sample and the dictionary satisfies restricted isometry property. Combined with the recent results of approximate dictionary estimation, this yields provable guar..."
+    }
+  },
+  "generator": "fallback_v4"
+}

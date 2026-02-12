@@ -1,0 +1,94 @@
+{
+  "doc_id": "13807",
+  "text": "We compare the proposed approach with FCN [CITATION_1] (We trained the network on the CFD dataset) and four other crack detection methods tested on the CFD dataset: CrackForest [CITATION_2] , MFCD [CITATION_3] , Method [CITATION_4] , and Method [CITATION_5] . The result shown in TABLE I demonstrates that our approach outperforms the others. FPCNet achieves an F1 score of 96.93%, thereby exceeding the F1 score of Method [CITATION_6] by 4.49%, which is the current state-of-the-art approach on the CFD dataset and that of FCN by 1.03%. Fig. 5 shows the comparison of the proposed approach with Method [CITATION_7] and FCN [CITATION_8] . In this figure, wrong detection (FP) and missed detection (TN) are indicated by blue and green rectangles, respectively. As seen from the third row in the figure, several wrong detections and missed detections occur in the images predicted by Method [CITATION_9] because of the methods small context of the block for detection. The FCN with a large context size solves these problems to some extent. As shown in the fourth row, most of the noise (wrong detection) is eliminated and the situation of missed detections is also alleviated. However, owing to the FCNs single context size and because it treats all features equally during detection, a large number of missed detections (green rectangles in the fourth row) occur, especially for cracks having complex topologies. Compared with these two methods, the results predicted by FPCNet have fewer wrong detections and missed detections, as seen in the fifth row of Fig. 5 , indicating the robustness of our approach. This is because FPCNet can acquire the features of multiple context sizes via the MD module and treat them differently according to their respective contributions via the SEU module. The sixth row shows the probability images predicted by FPCNet, in which a darker pixel has a higher probability of being a crack. It can be observed that the noises and pixels near the outer sides of the crack edges have such a low prediction probability that they are barely noticeable. To illustrate these features clearly, we indicate the pixels with probabilities higher than 0.5 in red and those with probabilities lower than 0.5 in blue in the seventh row (all the following probability images are marked in a similar manner). After binarization, the noises and pixels on the outer sides, which have low probabilities (marked in blue), are erased. This indicates that, owing to the design of the MD module, FPCNet can obtain wide-ranging and multiple contextual information to effectively suppress noise and adapt to the different widths of the cracks.",
+  "correct_citation": {
+    "[CITATION_1]": "56507745",
+    "[CITATION_2]": "14220368",
+    "[CITATION_3]": "32363613",
+    "[CITATION_4]": "44158989",
+    "[CITATION_5]": "3655771",
+    "[CITATION_6]": "3655771",
+    "[CITATION_7]": "3655771",
+    "[CITATION_8]": "56507745",
+    "[CITATION_9]": "3655771"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We compare the proposed approach with FCN [CITATION_1] (We trained the network on the CFD dataset) and four other crack detection methods tested on the CFD dataset: CrackForest [CITATION_2] , MFCD [CITATION_3] , Method [CITATION_4] , and Method [CITATION_5] .",
+      "s_span": 0,
+      "e_span": 259
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We compare the proposed approach with FCN [CITATION_1] (We trained the network on the CFD dataset) and four other crack detection methods tested on the CFD dataset: CrackForest [CITATION_2] , MFCD [CITATION_3] , Method [CITATION_4] , and Method [CITATION_5] .",
+      "s_span": 0,
+      "e_span": 259
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We compare the proposed approach with FCN [CITATION_1] (We trained the network on the CFD dataset) and four other crack detection methods tested on the CFD dataset: CrackForest [CITATION_2] , MFCD [CITATION_3] , Method [CITATION_4] , and Method [CITATION_5] .",
+      "s_span": 0,
+      "e_span": 259
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "We compare the proposed approach with FCN [CITATION_1] (We trained the network on the CFD dataset) and four other crack detection methods tested on the CFD dataset: CrackForest [CITATION_2] , MFCD [CITATION_3] , Method [CITATION_4] , and Method [CITATION_5] .",
+      "s_span": 0,
+      "e_span": 259
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "We compare the proposed approach with FCN [CITATION_1] (We trained the network on the CFD dataset) and four other crack detection methods tested on the CFD dataset: CrackForest [CITATION_2] , MFCD [CITATION_3] , Method [CITATION_4] , and Method [CITATION_5] .",
+      "s_span": 0,
+      "e_span": 259
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "FPCNet achieves an F1 score of 96.93%, thereby exceeding the F1 score of Method [CITATION_6] by 4.49%, which is the current state-of-the-art approach on the CFD dataset and that of FCN by 1.03%.",
+      "s_span": 343,
+      "e_span": 537
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Fig. 5 shows the comparison of the proposed approach with Method [CITATION_7] and FCN [CITATION_8] .",
+      "s_span": 538,
+      "e_span": 638
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Fig. 5 shows the comparison of the proposed approach with Method [CITATION_7] and FCN [CITATION_8] .",
+      "s_span": 538,
+      "e_span": 638
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "As seen from the third row in the figure, several wrong detections and missed detections occur in the images predicted by Method [CITATION_9] because of the methods small context of the block for detection.",
+      "s_span": 760,
+      "e_span": 966
+    }
+  ],
+  "bib_entries": {
+    "3655771": {
+      "title": "Automatic pavement crack detection based on structured prediction with the convolutional neural network",
+      "abstract": "Automated pavement crack detection is a challenging task that has been researched for decades due to the complicated pavement conditions in real world. In this paper, a supervised method based on deep learning is proposed, which has the capability of dealing with different pavement conditions. Specifically, a convolutional neural network (CNN) is used to learn the structure of the cracks from raw images, without any preprocessing. Small patches are extracted from crack images as inputs to generate a large training database, a CNN is trained and crack detection is modeled as a multi-label classification problem. Typically, crack pixels are much fewer than non-crack pixels. To deal with the problem with severely imbalanced data, a strategy with modifying the ratio of positive to negative samples is proposed. The method is tested on two public databases and compared with five existing methods. Experimental results show that it outperforms the other methods."
+    },
+    "44158989": {
+      "title": "Automatic pixel-level pavement crack detection using information of multi-scale neighborhoods",
+      "abstract": "Robust automatic pavement crack detection is critical to automated road condition evaluation. However, research on crack detection is still limited and pixel-level automatic crack detection remains a challenging problem, due to heterogeneous pixel intensity, complex crack topology, poor illumination condition, and noisy texture background. In this paper, we propose a novel approach for automatically detecting pavement cracks at pixel level, leveraging on multi-scale neighborhood information, and pixel intensity. Using pixel intensity information, a probabilistic generative model (PGM) based method is developed to calculate the probability of a crack for each pixel. This produces a probability map consisting of the probability of each pixel being part of the crack. We demonstrate that the neighborhoods of each pixel contain critical information for crack detection, and propose a support vector machine (SVM) based method to calculate the probability maps using information of multi-scale neighborhoods. We develop a fusion algorithm to merge the multiple probability maps, obtained from both PGM and SVM approaches, into a fused map, which can detect cracks with accuracy higher than any of the original probability maps. We also propose a weighted dilation operation that relies on the fused probability map to enhance the recognition of borderline pixels and improve the crack continuity without increasing the crack width improperly. Experimental results demonstrate that our algorithm achieves better performance in terms of precision, recall, f1-score, and receiver operating characteristic, in comparison with the state-of-the-art pavement crack detection algorithms."
+    },
+    "14220368": {
+      "title": "Automatic road crack detection using random structured forests",
+      "abstract": "Cracks are a growing threat to road conditions and have drawn much attention to the construction of intelligent transportation systems. However, as the key part of an intelligent transportation system, automatic road crack detection has been challenged because of the intense inhomogeneity along the cracks, the topology complexity of cracks, the inference of noises with similar texture to the cracks, and so on. In this paper, we propose CrackForest, a novel road crack detection framework based on random structured forests, to address these issues. Our contributions are shown as follows: 1) apply the integral channel features to redefine the tokens that constitute a crack and get better representation of the cracks with intensity inhomogeneity; 2) introduce random structured forests to generate a high-performance crack detector, which can identify arbitrarily complex cracks; and 3) propose a new crack descriptor to characterize cracks and discern them from noises effectively. In addition, our method is faster and easier to parallel. Experimental results prove the state-of-the-art detection precision of CrackForest compared with competing methods."
+    },
+    "56507745": {
+      "title": "Fully convolutional networks for semantic segmentation",
+      "abstract": "Convolutional networks are powerful visual models that yield hierarchies of features. We show that convolutional networks by themselves, trained end-to-end, pixels-to-pixels, exceed the state-of-the-art in semantic segmentation. Our key insight is to build “fully convolutional” networks that take input of arbitrary size and produce correspondingly-sized output with efficient inference and learning. We define and detail the space of fully convolutional networks, explain their application to spatially dense prediction tasks, and draw connections to prior models. We adapt contemporary classification networks (AlexNet [20], the VGG net [31], and GoogLeNet [32]) into fully convolutional networks and transfer their learned representations by fine-tuning [3] to the segmentation task. We then define a skip architecture that combines semantic information from a deep, coarse layer with appearance information from a shallow, fine layer to produce accurate and detailed segmentations. Our fully convolutional network achieves state-of-the-art segmentation of PASCAL VOC (20% relative improvement to 62.2% mean IU on 2012), NYUDv2, and SIFT Flow, while inference takes less than one fifth of a second for a typical image."
+    },
+    "32363613": {
+      "title": "Automatic pavement crack detection by multi-scale image fusion",
+      "abstract": "Pavement crack detection from images is a challenging problem due to intensity inhomogeneity, topology complexity, low contrast, and noisy texture background. Traditional learning-based approaches have difficulties in obtaining representative training samples. We propose a new unsupervised multi-scale fusion crack detection (MFCD) algorithm that does not require training data. First, we develop a windowed minimal intensity path-based method to extract the candidate cracks in the image at each scale. Second, we find the crack correspondences across different scales. Finally, we develop a crack evaluation model based on a multivariate statistical hypothesis test. Our approach successfully combines strengths from both the large-scale detection (robust but poor in localization) and the small-scale detection (detail-preserving but sensitive to clutter). We analyze and experimentally test the computational complexity of our MFCD algorithm. We have implemented the algorithm and have it extensively tested on three public data sets, including two public pavement data sets and an airport runway data set. Compared with six existing methods, experimental results show that our method outperforms all counterparts. Specifically, it increases the precision, recall, and F1-measure over the state-of-the-art by 22%, 12%, and 19%, respectively, on one public data set."
+    }
+  },
+  "generator": "fallback_v4"
+}

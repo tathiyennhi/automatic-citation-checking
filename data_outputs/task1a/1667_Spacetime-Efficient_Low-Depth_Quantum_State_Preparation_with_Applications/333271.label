@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Here, the data qubits are only acting as controls, and there is no injection of angles into the data qubits.",
+    "Thus, we do not need to alternate between copying layers and CSWAP layers; we can simply perform all the copying at the beginning, then all the CSWAPs, and then all the uncopying.",
+    "The conceptual idea behind the FLAG implementation is that a flag is set in the p th flag qubit by first flagging qubit 0 and then swapping qubit 0 into the p th position using a sequence of CSWAP layers with different data qubits acting as the control.",
+    "We give an example of FLAG for m = 4 in Fig. 17 and pseudocode for FLAG in Algorithm 6.",
+    "Algorithm 6 FLAG Operation 1: procedure FLAG Subroutine(D, F, m) ▷ D = D 0,..., D m-1 is the data register, where D j has size max(1, 2 m-j-2) ▷ F = F 0,..., F m-1 is the flag register where F j has size 2 j 2: for j in range(m) do ▷ All values of j performed in parallel 3: X(F j,0) 4: end for 5: for i in range (m -1) do ▷ All values of i performed in parallel 6: COPY(D i) ▷ Occupies maximum of O(m) depth 7: end for 8: for i in range(m -1) do ▷ Each value of i occupies O(1) depth 9:= / 3 / 7 0 1 C 0 C 1 C 2 1 0 |0 3 ⟩ |0 3 ⟩ 0 C 0 C 1 0 |0⟩ |0⟩ C 0 FLAG X X S 0 X S 0 S 1 X S 0 S 1 S 2for q in range(m -i -1) do 10:CS i (D q, F q+1+i)11: end for 12: end for 13: for i in range (m -1) do ▷ All values of i performed in parallel 14: COPY † (D i) ▷ Occupies maximum of O(m) depth 15: end for 16: end procedure ▷ Total D exact: O(m) ▷ Total D approx: O(m) ▷ Total SA exact: O(m2 m) ▷ Total SA approx: O(m2 m) A.6 Copy Swap OperationTo simplify the circuit logic of the LOADF subroutines, we define another subroutine operation CopySwap."
+  ],
+  "correct_citations": []
+}

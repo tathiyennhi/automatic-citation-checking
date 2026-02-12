@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Throughout the entire federated learning process, all datasets are kept local and not shared with any other clients, thereby ensuring data privacy is protected.In our study, we utilize the efficient fine-tuning approach QLoRA, which is an extended version of LoRA in order to alleviate resource overhead in terms of GPU memory and parameter transfer in federated learning.",
+    "The work of QLoRA proposed a novel 4-bit normal float (NF4) data type to quantize the pre-trained weights and reduce additional storage cost of quantization constants by double quantization [17].In detail, the workflow mainly consists of the following steps: (1) Model Initialization: Initially, the pre-trained model weights 𝑾 0 ∈ R 𝑑 1 ×𝑑 2 on each client are quantized to 4-bit precision using the NF4 quantization format:W0 = 𝑄 𝑁 𝐹 4 (𝑾 0)(1)where 𝑄 𝑁 𝐹 4 denotes the quantization function and W0 represents the quantized pre-trained model weights.",
+    "The quantized weights W0 remain frozen during fine-tuning while the trainable adapter 𝚫𝑾 = 𝑩𝑨, where 𝑩 ∈ R 𝑑 1 ×𝑟 and 𝑨 ∈ R 𝑟 ×𝑑 2 are the low-rank decomposed matrices, is introduced into the model architecture.",
+    "𝑟 ≪ 𝑚𝑖𝑛(𝑑 1, 𝑑 2) is the rank of adaption and also a hyperparameter in our setting.",
+    "In order to preserve model consistency in federated fine-tuning, the random Gaussian initialization for 𝑨 is performed on the server and then it is downloaded by all clients as the initial parameters at the beginning of fine-tuning, except for 𝐵 whose initial weights are zero."
+  ],
+  "correct_citations": [
+    "The work of QLoRA proposed a novel 4-bit normal float (NF4) data type to quantize the pre-trained weights and reduce additional storage cost of quantization constants by double quantization [17].In detail, the workflow mainly consists of the following steps: (1) Model Initialization: Initially, the pre-trained model weights 𝑾 0 ∈ R 𝑑 1 ×𝑑 2 on each client are quantized to 4-bit precision using the NF4 quantization format:W0 = 𝑄 𝑁 𝐹 4 (𝑾 0)(1)where 𝑄 𝑁 𝐹 4 denotes the quantization function and W0 represents the quantized pre-trained model weights."
+  ]
+}

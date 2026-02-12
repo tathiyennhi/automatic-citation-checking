@@ -1,0 +1,44 @@
+{
+  "doc_id": "2141",
+  "text": "Count-based methods [CITATION_1] [CITATION_2] [CITATION_3] can only handle regular stochasticity. To illustrate the concept of regular stochasticity, let's assume that one (state,action) tuple can lead to two very different states with 50% chance each. The algorithm can count for both states the passage number, then the algorithm would take twice as long to avoid to be too much attracted. However if the state is a new randomly generated one every time, it is not clear how these methods could resist the temptation of going into this area.",
+  "correct_citation": {
+    "[CITATION_1]": "6933296",
+    "[CITATION_2]": "14357699",
+    "[CITATION_3]": "53115163"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Count-based methods    can only handle regular stochasticity.",
+      "s_span": 0,
+      "e_span": 97
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Count-based methods    can only handle regular stochasticity.",
+      "s_span": 0,
+      "e_span": 97
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Count-based methods    can only handle regular stochasticity.",
+      "s_span": 0,
+      "e_span": 97
+    }
+  ],
+  "bib_entries": {
+    "14357699": {
+      "title": "# exploration: A study of count-based exploration for deep reinforcement learning",
+      "abstract": "Count-based exploration algorithms are known to perform near-optimally when used in conjunction with tabular reinforcement learning (RL) methods for solving small discrete Markov decision processes (MDPs). It is generally thought that count-based methods cannot be applied in high-dimensional state spaces, since most states will only occur once. ::: Recent deep RL exploration strategies are able to deal with high-dimensional continuous state spaces through complex heuristics, often relying on optimism in the face of uncertainty or intrinsic motivation. ::: ::: In this work, we describe a surprising finding: a simple generalization of the classic count-based approach can reach near state-of-the-art performance on various high-dimensional and/or continuous deep RL benchmarks. States are mapped to hash codes, which allows to count their occurrences with a hash table. These counts are then used to compute a reward bonus according to the classic count-based exploration theory. We find that simple hash functions can achieve surprisingly good results on many challenging tasks. Furthermore, we show that a domain-dependent learned hash code may further improve these results. ::: ::: Detailed analysis reveals important aspects of a good hash function: 1) having appropriate granularity and 2) encoding information relevant to solving the MDP. This exploration strategy achieves near state-of-the-art performance on both continuous control tasks and Atari 2600 games, hence providing a simple yet powerful baseline for solving MDPs that require considerable exploration."
+    },
+    "6933296": {
+      "title": "What is intrinsic motivation? a typology of computational approaches",
+      "abstract": "Intrinsic motivation, the causal mechanism for spontaneous exploration and curiosity, is a central concept in developmental psychology. It has been argued to be a crucial mechanism for open-ended cognitive development in humans, and as such has gathered a growing interest from developmental roboticists in the recent years. The goal of this paper is threefold. First, it provides a synthesis of the different approaches of intrinsic motivation in psychology. Second, by interpreting these approaches in a computational reinforcement learning framework, we argue that they are not operational and even sometimes inconsistent. Third, we set the ground for a systematic operational study of intrinsic motivation by presenting a formal typology of possible computational approaches. This typology is partly based on existing computational models, but also presents new ways of conceptualizing intrinsic motivation. We argue that this kind of computational typology might be useful for opening new avenues for research both in psychology and developmental robotics."
+    },
+    "53115163": {
+      "title": "Exploration by random network distillation",
+      "abstract": "We introduce an exploration bonus for deep reinforcement learning methods that is easy to implement and adds minimal overhead to the computation performed. The bonus is the error of a neural network predicting features of the observations given by a fixed randomly initialized neural network. We also introduce a method to flexibly combine intrinsic and extrinsic rewards. We find that the random network distillation (RND) bonus combined with this increased flexibility enables significant progress on several hard exploration Atari games. In particular we establish state of the art performance on Montezuma's Revenge, a game famously difficult for deep reinforcement learning methods. To the best of our knowledge, this is the first method that achieves better than average human performance on this game without using demonstrations or having access to the underlying state of the game, and occasionally completes the first level."
+    }
+  },
+  "generator": "fallback_v4"
+}

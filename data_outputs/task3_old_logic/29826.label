@@ -1,0 +1,29 @@
+{
+  "doc_id": "29826",
+  "text": "The pump-wavelength generator sets pump-wavelengths that are determined by the controller in every time slot. Figure 2 shows a possible implementation approach to the generation of pump-wavelengths. Tunable laser diodes (TLDs) are used to generate pump-wavelengths for PWCs, one TLD for each PWC. A guard time is needed to separate the time slots considering the time needed for switching and for setting pump-wavelengths. A tunable external-cavity laser requires 0.8 ns for wavelength tuning [CITATION_1] , while a switch using PLZT optical switching technology [CITATION_2] requires 2.5 ns for optical switching. As the time for wavelength tuning is less than that for optical switching, the guard time is mainly determined by the optical switching technology adopted. With a transmission speed of 10 Gbps, the number of required guard-time bits is 25 bits (2.5 ns × 10 Gbps). Consider a fixed packet length of 64 bytes. The ratio of the guard-time bits to the number of packet bits is 25/(64 × 8) = 0.05. Therefore, the impact of the guard time on bandwidth utilization is not large in this example.",
+  "correct_citation": {
+    "[CITATION_1]": "699452",
+    "[CITATION_2]": "45339081"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A tunable external-cavity laser requires 0.8 ns for wavelength tuning"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": ", while a switch using PLZT optical switching technology"
+    }
+  ],
+  "bib_entries": {
+    "699452": {
+      "title": "16-Channel Digitally Tunable External-Cavity Laser with Nanosecond Switching Time",
+      "abstract": "We present a 16-channel 100-GHz-spacing digitally tunable packet-switching transmitter based on a novel external-cavity laser design. The transmitter can switch within 0.8 ns between its channels at 0-dBm output power and <0.7-dB penalty when switched from just above threshold and within 20 ns and 0.5-dB penalty when switched from below threshold. All 16 channels are within 2.1 GHz of the ITU grid."
+    },
+    "45339081": {
+      "title": "× 32λ × 10) Gbit/s Polarization-Multiplexed, Wide-Colored Optical Packet Switching Achieved by Polarization Independent High-Speed PLZT Switch",
+      "abstract": "We demonstrate 640 (2 x 32λ x 10) Gbit/s polarization-multiplexed, wide-colored optical packet switching by using a polarization-independent and high-speed (<; 2.5 ns) PLZT optical switch to attain error-free (bit-error-rate <; 10 ~ 9) operation for all 64 payload channels."
+    }
+  },
+  "generator": "fallback"
+}

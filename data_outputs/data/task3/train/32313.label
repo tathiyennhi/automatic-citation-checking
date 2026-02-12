@@ -1,0 +1,34 @@
+{
+  "doc_id": "32313",
+  "text": "Step 1 is composed of i-iv. (i) Location annotation of a single TM domain: A reliable annotation of the TM domains locations (start and end aa positions) is mostly missing. Exceptional are the TM domains defined by SwissProt provided in the FT-'feature' field. For consistency, we applied TMHMM Ver 2.0 [CITATION_1] for predicting the TM domains in the entire set of proteins under consideration. TMHMM is based on HMM for the prediction of TM domains locations in un-annotated proteins. Based on performance tests, this method is expected to reach a very high level of accurately [CITATION_2] (iii) Representation of a single TM domain in a functional family: Our underlying statistical assumption is this: The aa compositions of a particular TM domain in a specific protein from a given functional family is sampled out of a multi-normal distribution. This distribution is characteristic of that TM domain in that family. Accordingly, we construct a 20-dimensional Gaussian to represent each TM domain in a functional family. Each of the 20 dimensions represents a single aa. A Gaussian is uniquely specified by its mean and its co-variance matrix. These are set using maximum-likelihood estimates. The mean is the frequency count of all aa compositions in that specific TM domain in each of the proteins considered members of that family. The co-variance matrix is the co-variance of all those examples. Parameter estimation was achieved using Matlab version 6.5. (iv) Representation of dependencies among TM domains in a functional family of proteins: Since all proteins in a functional family share the same typical number, say X, of TM domains, each family is now represented by X Gaussians. On input a protein Y (Fig 1, step 2 ) with X annotated/predicted TM domains, we derive a score for each of the X TM domains in Y. Namely, the probability density function value of the 20-dimensional vector representing aa composition of that protein in that TM domain, according to the Gaussian for that TM domain. We now associate an X-dimensional vector with protein Y, the i th coordinate of which is the score to protein Y by the i th Gaussian. This vector encodes the dependencies between TM domains. The number of TM domains in the proteins we consider is one of 1, 4, 5, 6, 7, 8, 10, 12 . Other values of this parameter correspond to families that are too small to be statistically significant. Classification for one family: Our procedure to decide whether or not a given protein belongs to a certain family is based on SVM [CITATION_3] . The implementation of SVM we use is called mySVM version 2.1.3 (http://www-ai.cs.unidortmund.de/SOFTWARE/MYSVM/).",
+  "correct_citation": {
+    "[CITATION_1]": "15769874",
+    "[CITATION_2]": "15769874",
+    "[CITATION_3]": "36154022"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For consistency, we applied TMHMM Ver 2.0  for predicting the TM domains in the entire set of proteins under consideration."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Based on performance tests, this method is expected to reach a very high level of accurately  (iii) Representation of a single TM domain in a functional family: Our underlying statistical assumption is this: The aa compositions of a particular TM domain in a specific protein from a given functional family is sampled out of a multi-normal distribution."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Classification for one family: Our procedure to decide whether or not a given protein belongs to a certain family is based on SVM  ."
+    }
+  ],
+  "bib_entries": {
+    "15769874": {
+      "title": "Predicting transmembrane protein topology with a hidden Markov model: application to complete genomes",
+      "abstract": "We describe and validate a new membrane protein topology prediction method, TMHMM, based on a hidden Markov model. We present a detailed analysis of TMHMM’s performance, and show that it correctly predicts 97–98 % of the transmembrane helices. Additionally, TMHMM can discriminate between soluble and membrane proteins with both specificity and sensitivity better than 99 %, although the accuracy drops when signal peptides are present. This high degree of accuracy allowed us to predict reliably integral membrane proteins in a large collection of genomes. Based on these predictions, we estimate that 20–30 % of all genes in most genomes encode membrane proteins, which is in agreement with previous estimates. We further discovered that proteins with Nin-Cin topologies are strongly preferred in all examined organisms, except Caenorhabditis elegans, where the large number of 7TM receptors increases the counts for Nout-Cin topologies. We discuss the possible relevance of this finding for our understanding of membrane protein assembly mechanisms. A TMHMM prediction service is available at http://www.cbs.dtu.dk/services/TMHMM/."
+    },
+    "36154022": {
+      "title": "Support vector machine applications in bioinformatics",
+      "abstract": "The support vector machine (SVM) approach represents a data-driven method for solving classification tasks. It has been shown to produce lower prediction error compared to classifiers based on other methods like artificial neural networks, especially when large numbers of features are considered for sample description. In this review, the theory and main principles of the SVM approach are outlined, and successful applications in traditional areas of bioinformatics research are described. Current developments in techniques related to the SVM approach are reviewed which might become relevant for future functional genomics and chemogenomics projects. In a comparative study, we developed neural network and SVM models to identify small organic molecules that potentially modulate the function of G-protein coupled receptors. The SVM system was able to correctly classify approximately 90% of the compounds in a cross-validation study yielding a Matthews correlation coefficient of 0.78. This classifier can be used for fast filtering of compound libraries in virtual screening applications."
+    }
+  },
+  "generator": "fallback_v4"
+}

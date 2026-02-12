@@ -1,0 +1,20 @@
+{
+  "doc_id": "30009",
+  "text": "Our approach employs agglomerative hierarchical clustering to cluster similar individuals, which is a parametric unsupervised machine learning method. Each collection of profiles for a given k hyperparameter is referred to as a single model. The parameter k refers to the number of profiles to be used, dividing up the training data into k clusters, and matching the individuals in the test data to these clusters during profiling. A generalization of Gower's distance was used to measure individual dissimilarity, applying a standardization and normalization based on the data type of each element in the feature vectors agglomerated into clusters. Gower's distance is a harmonized dissimilarity metric, suitable for the mixed categorical and binary data types in individuals' survey response feature vectors [CITATION_1] . Features related to permissions preferences were transformed into range-normalized quantitative scales from 0 to 1, where 1 was most likely to allow, and 0 was most likely to deny. This transformation was necessary to aggregate the likelihood for an individual to allow a permission for a particular app category, rather than individual apps. Where users were shown multiple apps from the same Google Play Store category, the mean across all apps in the same category was used. Participants were surveyed about apps which were distributed uniformly randomly across all Google Play Store categories, thus, individuals were shown apps according to the same frequency as the distribution of categories in the Play Store. There are over 2 million apps in the Google Play Store, belonging to 25 mutually exclusive categories at the time of data collection. Since making predictions about individual apps would require information about all apps in the Play Store, we instead make generalized recommendations based on their categories. To arrive at a normalized measure of individual preference to allow/deny permissions based on app category, rather than for individual apps, between-subjects responses collected about multiple apps were bucketed based on their app categories and the resulting mean was used. Transformed and aggregated app category preferences are compared using Manhattan distance. For the remaining features (i.e. demographics, which are all mutually-exclusive nominal categorical responses), each feature is converted to mutually exclusive binary vectors and the Dice coefficient is used. The cluster hierar-chy is cut at the specified k, organizing all individuals into k separate clusters with minimal feature dissimilarity. Each participants' feature vector is labeled with their cluster number, 1 through k. Unique individual identifiers (i.e. survey completion codes) are omitted, clustered preferences are aggregated, and the result is k profiles. The agreement thresholds where the aggregated preferences for a cluster are sufficient to make a recommendation were tested at 70%, 80% and 90%. Individuals in the test set are profiled, queried, and the recommendations made by their profile are compared against the individual's expressed preferences from their survey responses to evaluate accuracy.",
+  "correct_citation": {
+    "[CITATION_1]": "14736197"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Gower's distance is a harmonized dissimilarity metric, suitable for the mixed categorical and binary data types in individuals' survey response feature vectors  ."
+    }
+  ],
+  "bib_entries": {
+    "14736197": {
+      "title": "A general coefficient of similarity and some of its properties",
+      "abstract": "A general coefficient measuring the similarity between two sampling units is defined. The matrix of similarities between all pairs of sample units is shown to be positive semidefinite (except possibly when there are missing values). This is important for the multidimensional Euclidean representation of the sample and also establishes some inequalities amongst the similarities relating three individuals. The definition is extended to cope with a hierarchy of characters."
+    }
+  },
+  "generator": "fallback_v4"
+}

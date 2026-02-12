@@ -1,0 +1,32 @@
+{
+  "text": "Behavior compliance control builds on techniques from dynamic anomaly detection [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] , a methodology that attempts to detect anomalous executions by comparing certain execution characteristics with those known to be characteristic for correct and \"compliant\" executions. Our technique significantly extends traditional anomaly detection by a means to conduct the detection process in a distributed but nevertheless trustworthy fashion. Yet, an important design decision that both previous approaches as well as ours have to make is how to best characterize an application's runtime behavior.",
+  "correct_citation": {
+    "[CITATION_1]": "15031377",
+    "[CITATION_2]": "206556577",
+    "[CITATION_3]": "1189805",
+    "[CITATION_4]": "6578083",
+    "[CITATION_5]": "195861919"
+  },
+  "bib_entries": {
+    "1189805": {
+      "title": "Gray-box extraction of execution graphs for anomaly detection",
+      "abstract": "Many host-based anomaly detection systems monitor a process by observing the system calls it makes, and comparing these calls to a model of behavior for the program that the process should be executing. In this paper we introduce a new model of system call behavior, called an execution graph. The execution graph is the first such model that both requires no static analysis of the program source or binary, and conforms to the control flow graph of the program. When used as the model in an anomaly detection system monitoring system calls, it offers two strong properties: (i) it accepts only system call sequences that are consistent with the control flow graph of the program; (ii) it is maximal given a set of training data, meaning that any extensions to the execution graph could permit some intrusions to go undetected. In this paper, we formalize and prove these claims. We additionally evaluate the performance of our anomaly detection technique."
+    },
+    "15031377": {
+      "title": "Anomaly detection using call stack information",
+      "abstract": "The call stack of a program execution can be a very good information source for intrusion detection. There is no prior work on dynamically extracting information from the call stack and effectively using it to detect exploits. In this paper we propose a new method to do anomaly detection using call stack information. The basic idea is to extract return addresses from the call stack, and generate an abstract execution path between two program execution points. Experiments show that our method can detect some attacks that cannot be detected by other approaches, while its convergence and false positive performance is comparable to or better than the other approaches. We compare our method with other approaches by analyzing their underlying principles and thus achieve a better characterization of their performance, in particular on what and why attacks will be missed by the various approaches."
+    },
+    "195861919": {
+      "title": "Tracking down software bugs using automatic anomaly detection",
+      "abstract": "Introduces DIDUCE, a practical and effective tool that aids programmers in detecting complex program errors and identifying their root causes. By instrumenting a program and observing its behavior as it runs, DIDUCE dynamically formulates hypotheses of invariants obeyed by the program. DIDUCE hypothesizes the strictest invariants at the beginning, and gradually relaxes the hypothesis as violations are detected to allow for new behavior. The violations reported help users to catch software bugs as soon as they occur. They also give programmers new visibility into the behavior of the programs such as identifying rare corner cases in the program logic or even locating hidden errors that corrupt the program's results. We implemented the DIDUCE system for Java programs and applied it to four programs of significant size and complexity. DIDUCE succeeded in identifying the root causes of programming errors in each of the programs quickly and automatically. In particular, DIDUCE is effective in isolating a timing-dependent bug in a released JSSE (Java Secure Socket Extension) library, which would have taken an experienced programmer days to find. Our experience suggests that detecting and checking program invariants dynamically is a simple and effective methodology for debugging many different kinds of program errors across a wide variety of application domains."
+    },
+    "206556577": {
+      "title": "A sense of self for Unix processes",
+      "abstract": "A method for anomaly detection is introduced in which ``normal'' is defined by short-range correlations in a process' system calls. Initial experiments suggest that the definition is stable during normal behavior for standard UNIX programs. Further, it is able to detect several common intrusions involving sendmail and lpr. This work is part of a research program aimed at building computer security systems that incorporate the mechanisms and algorithms used by natural immune systems."
+    },
+    "6578083": {
+      "title": "Learning from 6,000 projects: Lightweight cross-project anomaly detection",
+      "abstract": "Real production code contains lots of knowledge - on the domain, on the architecture, and on the environment. How can we leverage this knowledge in new projects? Using a novel lightweight source code parser, we have mined more than 6,000 open source Linux projects (totaling 200,000,000 lines of code) to obtain 16,000,000 temporal properties reflecting normal interface usage. New projects can be checked against these rules to detect anomalies - that is, code that deviates from the wisdom of the crowds. In a sample of 20 projects, ~25% of the top-ranked anomalies uncovered actual code smells or defects."
+    }
+  }
+}

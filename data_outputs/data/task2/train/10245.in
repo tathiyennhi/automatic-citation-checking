@@ -1,0 +1,37 @@
+{
+  "text": "We used a maximum entropy classifier [CITATION_1] to assign labels to the unlabeled dependencies produced by the Bayes Point Machine. We used the same training and development test split that was used to train the dependency parser. We chose to use maximum entropy classifiers because they can be trained relatively quickly while still offering reasonable classification accuracy and are robust in the face of large numbers of superfluous features, a desirable property given the requirement that the same parser handle multiple languages. Furthermore, maximum entropy classifiers provide good probability distributions over class labels. This was important to us because we had initially hoped to find the optimal set of dependency labels for the children of a given node by modeling the probability of each set of labels conditioned on the lemma and POS of the parent. For example, labeling each dependant of a parent node independently might result in three OBJECT relations dependent on a single verb; modeling sets of relations ought to prevent this. Unfortunately, this approach did not outperform labeling each node independently.",
+  "citation_candidates": [
+    "12926517",
+    "5989172",
+    "27781538",
+    "3262717",
+    "1085832",
+    "13075323"
+  ],
+  "bib_entries": {
+    "13075323": {
+      "title": "CoNLL-X shared task on multilingual dependency parsing",
+      "abstract": "Each year the Conference on Computational Natural Language Learning (CoNLL) features a shared task, in which participants train and test their systems on exactly the same data sets, in order to better compare systems. The tenth CoNLL (CoNLL-X) saw a shared task on Multilingual Dependency Parsing. In this paper, we describe how treebanks for 13 languages were converted into the same dependency format and how parsing performance was measured. We also give an overview of the parsing approaches that participants took and the results that they achieved. Finally, we try to draw general conclusions about multi-lingual parsing: What makes a particular language, treebank or annotation scheme easier or harder to parse and which phenomena are challenging for any dependency parser?"
+    },
+    "5989172": {
+      "title": "Multilingual dependency parsing using bayes point machines",
+      "abstract": "We develop dependency parsers for Arabic, English, Chinese, and Czech using Bayes Point Machines, a training algorithm which is as easy to implement as the perceptron yet competitive with large margin methods. We achieve results comparable to state-of-the-art in English and Czech, and report the first directed dependency parsing accuracies for Arabic and Chinese. Given the multilingual nature of our experiments, we discuss some issues regarding the comparison of dependency parsers for different languages."
+    },
+    "12926517": {
+      "title": "Online large-margin training of dependency parsers",
+      "abstract": "We present an effective training algorithm for linearly-scored dependency parsers that implements online large-margin multi-class training (Crammer and Singer, 2003; Crammer et al., 2003) on top of efficient parsing techniques for dependency trees (Eisner, 1996). The trained parsers achieve a competitive dependency accuracy for both English and Czech with no language specific enhancements."
+    },
+    "27781538": {
+      "title": "Online bayes point machines",
+      "abstract": "We present a new and simple algorithm for learning large margin classifiers that works in a truly online manner. The algorithm generates a linear classifier by averaging the weights associated with several perceptron-like algorithms run in parallel in order to approximate the Bayes point. A random subsample of the incoming data stream is used to ensure diversity in the perceptron solutions. We experimentally study the algorithm's performance on online and batch learning settings. The online experiments showed that our algorithm produces a low prediction error on the training sequence and tracks the presence of concept drift. On the batch problems its performance is comparable to the maximum margin algorithm which explicitly maximises the margin."
+    },
+    "3262717": {
+      "title": "Three new probabilistic models for dependency parsing: An exploration",
+      "abstract": "After presenting a novel O(n3) parsing algorithm for dependency grammar, we develop three contrasting ways to stochasticize it. We propose (a) a lexical affinity model where words struggle to modify each other, (b) a sense tagging model where words fluctuate randomly in their selectional preferences, and (c) a generative model where the speaker fleshes out each word's syntactic and conceptual structure without regard to the implications for the hearer. We also give preliminary empirical results from evaluating the three models' parsing performance on annotated Wall Street Journal training text (derived from the Penn Treebank). In these results, the generative model performs significantly better than the others, and does about equally well at assigning part-of-speech tags."
+    },
+    "1085832": {
+      "title": "A maximum entropy approach to natural language processing",
+      "abstract": "The concept of maximum entropy can be traced back along multiple threads to Biblical times. Only recently, however, have computers become powerful enough to permit the widescale application of this concept to real world problems in statistical estimation and pattern recognition. In this paper, we describe a method for statistical modeling based on maximum entropy. We present a maximum-likelihood approach for automatically constructing maximum entropy models and describe how to implement this approach efficiently, using as examples several problems in natural language processing."
+    }
+  }
+}

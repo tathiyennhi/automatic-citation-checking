@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We extend the classic RL optimization problem for FinAgent as follows:𝜋 𝜃 * = arg max 𝜋 𝜃 E 𝜋 𝜃 ∑︁ 𝑇 𝑖=0 𝛾 𝑖 𝑟 𝑡 +𝑖 |𝑠 𝑡 = 𝑠, 𝜇 𝑡 = 𝜇,(1)where 𝑟 𝑡 is the reward at the time step 𝑡 that depends on the environmental state 𝑠 𝑡 and action 𝑎 𝑡. 𝜇 (•) are specialized modules that encapsulate beneficial internal reasoning processes.",
+    "Note that a state contains multimodal information including textual, numerical, and visual data.",
+    "Faced with a task 𝜆 and equipped with a memory 𝑀𝑒𝑚 𝜆 𝑡 and a tool 𝑇𝑜𝑜𝑙 𝜆 𝑡, FinAgent acting as the multimodal LLM agent, determines its action 𝑎 𝑡 through the following process:𝜋 FinAgent (𝑎 𝑡 |𝑠 𝑡, 𝜇 𝑡) ≡ D 𝜆 𝐿𝐿𝑀 𝜙 𝜆 𝐷 (𝑠 𝑡, 𝜇 𝑡) 𝜇 𝑡 = 𝜇 (𝑠 𝑡, 𝑀𝑒𝑚 𝜆 𝑡,𝑇 𝑜𝑜𝑙 𝜆 𝑡)(2)where 𝜙 (•) is a task-relevant prompt generator.",
+    "The prompt is then passed to a multimodal LLM, from which a response is generated.",
+    "Finally, the response is parsed through the task-specific action parsing function D 𝜆 (•) to perform compatible actions in the environment.FinAgent is a multimodal LLMs agent in this framework specifically designed for financial trading, which contains five core modules, namely market intelligence module (M), memory module (Mem), low-level reflection module (L), high-level reflection module (H) and decision-making module (D)."
+  ]
+}

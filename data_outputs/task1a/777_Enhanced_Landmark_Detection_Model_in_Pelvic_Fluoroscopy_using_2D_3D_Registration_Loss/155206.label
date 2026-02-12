@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The magnitude ∥r∥ denotes the rotation angle, while the direction denotes the rotation axis.",
+    "The rotation matrix is defined as:R = I + sin(θ) • K + (1 -cos(θ)) • K 2(5)where θ = ∥r∥, I ∈ R 3×3 is the identity matrix, and K is the skew-symmetric matrix constructed from the unit axis r = r/θ:K =   0 -r z ry rz 0 -r x -r y rx 0  (6)This parameterization ensures that R fulfills the orthogonality constraint R T R = I with only three parameters.In the perspective projection calculation, 12 li (θ) transforms each 3D landmark p i ∈ L GT to its corresponding 2D image coordinates.",
+    "The camera intrinsic matrix K ∈ R 3×3 includes information about the source-to-detector distance (SDD) and principal point.",
+    "The projection is computed as the following:p ′ i = Rp i + t (7) li = 1 z ′ i K 11 x ′ i + K 13 z ′ i K 22 y ′ i + K 23 z ′ i (8)wherep ′ i = (x ′ i, y ′ i, z ′ i)T are the transformed 3D coordinates.",
+    "Further, the z ′ i are clamped to a minimum value of 10 -3 before performing the perspective division for numerical stability.We initialize the optimization with r (0) = 0 and t (0) = 0, corresponding to the identity transformation."
+  ],
+  "correct_citations": []
+}

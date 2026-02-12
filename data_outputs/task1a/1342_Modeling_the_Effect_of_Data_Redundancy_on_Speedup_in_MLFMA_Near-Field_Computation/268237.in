@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Consequently, the effective end-to-end speedup of the P2P operator ranges from 0.26× to 0.84× for smaller problems and 1.02× to 1.9× for larger ones.",
+    "When these values are scaled by the ratio of execution time relative to the base-level tree, the results reveal substantial variation but an overall increasing trend with both problem size and tree depth.",
+    "For largescale configurations, the total speedup reaches 1.03X,1.04× for the base tree and the less dense tree respectively.N L t Speed-Up of redundancy to base implementation, same level tree Speed-Up of redundancy to base implementation, base level tree, for MLFMA MLFMA Near-Field Transfer Kernel Dense Tree 65536 4 256 0.26 0.23 0.01 1.2 0.11 262144 5 256 0.57 0.54 0.02 1.17 0.22 1048576 6 256 0.88 0.87 0.05 1.14 0.36 4194304 7 256 1.03 1.04 0.21 1.12 0.4 1.09 1.11 0.54 1.12 0.41 Base Tree 65536 5 64 0.65 0.55 0.08 1.24 1.09 262144 6 64 0.92 0.88 0.23 1.14 0.68 1048576 7 64 1.01 1.03 0.49 1.1 0.79 4194304 8 64 1.05 1.09 0.93 1.11 1 16777216 9 64 1.06 1.11 1.29 1.1 1.04 Less Dense Tree 65536 6 16 0.84 0.61 0.28 1.16 0.88 262144 7 16 0.98 0.96 0.7 1.08 1.09 1048576 8 16 1.01 1.06 0.93 1.09 1.03 4194304 9 16 1.02 1.12 1.28 1.09 1.05 16777216 10 16 1.02 1.16 1.57 1.08 1.03 Table[3] Speed-up components for redundancy applied on work [50] Overall Speed-up of the ApplicationTo assess the real-world impact of our optimization, we integrated the redundant P2P operator into a full DBIM simulation loop.",
+    "The inner BiCGStab solver requires up to 300 iterations, each involving three MLFMA calls for matrix-vector products.",
+    "In the original work [50], this process is executed across 16 computing nodes, but at only 1 node it leads to up to 9900 MLFMA invocations.In our setup, we run a single-node version with 3 DBIM iterations (fixed for comparison), and compute the average execution time per MLFMA call over the entire DBIM loop."
+  ]
+}

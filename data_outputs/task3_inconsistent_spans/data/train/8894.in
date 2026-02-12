@@ -1,0 +1,18 @@
+{
+  "text": "To find node-disjoint routes, each node does not immediately reject duplicate RREQs (Route Request). Each RREQs arriving via a different neighbour of the source defines a node-disjoint path. This is because nodes cannot broadcast duplicate RREQs, so any two RREQs arriving at an intermediate node via a different neighbour of the source could not have traversed the same node. In an attempt to get multiple link-disjoint routes, the destination replies to duplicate RREQs, the destination only replies to RREQs arriving via unique neighbours. After the first hop, the RREPs follow the reverse paths, which are node disjoint and thus link-disjoint [CITATION_1] [CITATION_2] . The advantage of using AOMDV is that it allows intermediate nodes to reply to RREQs, while still selecting disjoint paths. AOMDV has more message overheads during route discovery due to increased flooding and multiple RREQs replies by the destination [CITATION_3] .",
+  "correct_citation": {
+    "[CITATION_1]": "11633502",
+    "[CITATION_2]": "1756454",
+    "[CITATION_3]": "11633502"
+  },
+  "bib_entries": {
+    "1756454": {
+      "title": "On-demand multipath distance vector routing in ad hoc networks",
+      "abstract": "We develop an on-demand multipath distance vector protocol for mobile ad hoc networks. Specifically, we propose multipath extensions to a well-studied single path routing protocol known as ad hoc on-demand distance vector (AODV). The resulting protocol is referred to as ad hoc on-demand multipath distance vector (AOMDV). The protocol computes multiple loop-free and link-disjoint paths. Loop-freedom is guaranteed by using a notion of \"advertised hopcount\". Link-disjointness of multiple paths is achieved by using a particular property of flooding. Performance comparison of AOMDV with AODV using ns-2 simulations shows that AOMDV is able to achieve a remarkable improvement in the end-to-end delay-often more than a factor of two, and is also able to reduce routing overheads by about 20%."
+    },
+    "11633502": {
+      "title": "Performance Evaluation and Comparison of AODV and AOMDV",
+      "abstract": "A Mobile Ad-hoc Network (MANET) is a dynamic wireless network that can be formed without the need for any pre-existing infrastructure in which each node can act as a router. One of the main challenges of MANET is the design of robust routing algorithms that adapt to the frequent and randomly changing network topology. A variety of routing protocols have been proposed and several of them have been extensively simulated or implemented as well. In this paper, we compare and evaluate the performance of two types of Ondemand routing protocols- Ad-hoc On-demand Distance Vector (AODV) routing protocol, which is unipath and Adhoc On-demand Multipath Distance Vector (AOMDV) routing protocol. In this paper we note that on comparing the performance of AODV and AOMDV, AOMDV incurs more routing overhead and packet delay than AODV but it had a better efficiency when it comes to number of packets dropped and packet delivery."
+    }
+  }
+}

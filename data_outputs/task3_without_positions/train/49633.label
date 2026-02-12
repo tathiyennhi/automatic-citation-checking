@@ -1,0 +1,20 @@
+{
+  "doc_id": "49633",
+  "text": "This gradient is the difference of two conditional expectations over the feature vector f: a \"clamped\" expectation that is conditioned on the observed words and tags (w, t) and a \"free\" expectation that is only conditioned on the words in the text, w, and ignores the sentence-level labels. To make the inference tractable, we use a Viterbi approximation that replaces the expectations with maximization. Because each sentence corresponds to more than one temporal tag, the maximization of the \"clamped\" maximization is somewhat challenging to compute. We use the approximate inference algorithm of [CITATION_1] , that views inference as a weighted set cover problem, with worst case running time (|T | · |W |), where |T | is the number of all possible temporal tag values and |W | is the number of words in a sentence.",
+  "correct_citation": {
+    "[CITATION_1]": "16483125"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We use the approximate inference algorithm of  , that views inference as a weighted set cover problem, with worst case running time (|T | · |W |), where |T | is the number of all possible temporal tag values and |W | is the number of words in a sentence."
+    }
+  ],
+  "bib_entries": {
+    "16483125": {
+      "title": "Knowledge-based weak supervision for information extraction of overlapping relations",
+      "abstract": "Information extraction (IE) holds the promise of generating a large-scale knowledge base from the Web's natural language text. Knowledge-based weak supervision, using structured data to heuristically label a training corpus, works towards this goal by enabling the automated learning of a potentially unbounded number of relation extractors. Recently, researchers have developed multi-instance learning algorithms to combat the noisy training data that can come from heuristic labeling, but their models assume relations are disjoint --- for example they cannot extract the pair Founded(Jobs, Apple) and CEO-of(Jobs, Apple). ::: ::: This paper presents a novel approach for multi-instance learning with overlapping relations that combines a sentence-level extraction model with a simple, corpus-level component for aggregating the individual facts. We apply our model to learn extractors for NY Times text using weak supervision from Free-base. Experiments show that the approach runs quickly and yields surprising gains in accuracy, at both the aggregate and sentence level."
+    }
+  },
+  "generator": "fallback_v4"
+}

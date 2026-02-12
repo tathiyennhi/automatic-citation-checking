@@ -1,0 +1,33 @@
+{
+  "doc_id": "12507",
+  "text": "where the hat denotes a normalised vector. Equation [CITATION_1] implies that the predicted force on an atom at the centre of a configuration ρ will be a sum of pairwise forces oriented along the directionsr i connecting the central atom with each of its neighbours (while each neighbour will experience a corresponding reaction force). The modulus of these forces will be a function of the interatomic distance completely determined by the training database, whose integral can be thought of as a pairwise energy potential. Clearly then, the resulting force field will be conservative: for any fixed database, the forces predicted by GP inference using this kernel will do zero work if integrated along any closed trajectory loop in configuration space. To test the relative performance of the learning models discussed above, we constructed training and test databases for a two-dimensional triangular lattice, sampled from a constant temperature molecular dynamics simulation of a 48-particle system interacting via standard Lennard-Jones forces, once more using periodic boundary conditions and a Langevin thermostat. As the chosen lattice has three-fold and six-fold symmetry, we can also examine the performance of covariant kernels that obey the two properties described above restricted to appropriate finite groups; these kernels are constructed as in Eq. [CITATION_2] . In this way we can monitor how imposing a progressively higher degree of symmetry on the kernel changes the rate at which forces in this system can be learned.",
+  "correct_citation": {
+    "[CITATION_1]": "16034340",
+    "[CITATION_2]": "28970251"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Equation  implies that the predicted force on an atom at the centre of a configuration ρ will be a sum of pairwise forces oriented along the directionsr i connecting the central atom with each of its neighbours (while each neighbour will experience a corresponding reaction force).",
+      "s_span": 43,
+      "e_span": 336
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "As the chosen lattice has three-fold and six-fold symmetry, we can also examine the performance of covariant kernels that obey the two properties described above restricted to appropriate finite groups; these kernels are constructed as in Eq.  .",
+      "s_span": 1122,
+      "e_span": 1379
+    }
+  ],
+  "bib_entries": {
+    "16034340": {
+      "title": "Molecular Dynamics with On-the-Fly Machine Learning of QuantumMechanical Forces",
+      "abstract": "We present a molecular dynamics scheme which combines first-principles and machine-learning (ML) techniques in a single information-efficient approach. Forces on atoms are either predicted by Bayesian inference or, if necessary, computed by on-the-fly quantum-mechanical (QM) calculations and added to a growing ML database, whose completeness is, thus, never required. As a result, the scheme is accurate and general, while progressively fewer QM calls are needed when a new chemical process is encountered for the second and subsequent times, as demonstrated by tests on crystalline and molten silicon."
+    },
+    "28970251": {
+      "title": "Moment Tensor Potentials: A Class of Systematically Improvable Interatomic Potentials",
+      "abstract": "Density functional theory offers a very accurate way of computing materials properties from first principles. However, it is too expensive for modelling large-scale molecular systems whose properties are, in contrast, computed using interatomic potentials. The present paper considers, from a mathematical point of view, the problem of constructing interatomic potentials that approximate a given quantum-mechanical interaction model. In particular, a new class of systematically improvable potentials is proposed, analyzed, and tested on an existing quantum-mechanical database."
+    }
+  },
+  "generator": "fallback_v4"
+}

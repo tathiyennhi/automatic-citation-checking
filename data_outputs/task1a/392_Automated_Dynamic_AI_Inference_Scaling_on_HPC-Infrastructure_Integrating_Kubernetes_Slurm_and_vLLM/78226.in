@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Management of vLLM instances in Slurm jobs has run successfully in this small-scale production setting for multiple months, across a variety of tested models, covering single-node single-GPU, single-node multi-GPU, and even multi-node multi-GPU configurations.Our benchmarks show that when scaling beyond a 1000 concurrent request scenario, improvements must be made to our benchmark setup and/or the Web Gateway.",
+    "The increase in TTFT degrades end-user experience, signaling a longer wait time between the user sending a prompt and the model starting to return a response.",
+    "However, TPOT remains consistent, which translates to smooth streaming and therefore 'typing'-animation for chatbot applications.",
+    "We identify several key areas that require further investigation to solve the arising bottleneck:Networking: since we run the vLLM benchmark suite from within a compute-node of the HPC system, high concurrency scenarios might be impacted by networking components, favoring a direct request from compute-node to compute-node.",
+    "Alternatively, improper request handling in the Web Gateway may contribute.Caching: as every request performs a database lookup for a matching model endpoint, implementing a caching mechanism could reduce database load and speed up request handling.Scaling: horizontal or vertical scaling of either the Web Gateway or PostgreSQL via Kubernetes could improve performance.Despite these necessary improvements, institutional provisioning of LLMs on sovereign infrastructure provides clear data privacy benefits, especially when handling sensitive data."
+  ]
+}

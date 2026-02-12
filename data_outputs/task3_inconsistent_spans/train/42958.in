@@ -1,0 +1,17 @@
+{
+  "text": "Another application area is decentralized replication schemes where the dominant approach used to be reactive (for example, replicate when the number of replicas is below a threshold). First, Sit et al. [CITATION_1] proposed a fully proactive scheme to deal with bursts, and this was followed by several hybrid proactive/reactive systems. For example, Duminuco et al. [CITATION_2] proposed an adaptive version of the proactive scheme as well as a hybrid scheme that switches to purely reactive operation when the availability of data is critically low. Controlling the available repair-budget with the help of a token account method is a promising approach in this area as well.",
+  "correct_citation": {
+    "[CITATION_1]": "9951931",
+    "[CITATION_2]": "11340408"
+  },
+  "bib_entries": {
+    "9951931": {
+      "title": "Proactive replication for data durability",
+      "abstract": "Many wide-area storage systems replicate data for durability. A common way of maintaining the replicas is to detect node failures and respond by creating additional copies of objects that were stored on failed nodes and hence suffered a loss of redundancy. Reactive techniques can minimize total bytes sent since they only create replicas as needed; however, they can create spikes in network use after a failure. These spikes may overwhelm application traffic and can make it difficult to provision bandwidth. This paper explores a proactive approach that creates additional copies not in response to failures, but periodically at a fixed low rate. We introduce Tempo, a distributed hash table that allows each user to specify a maximum maintenance bandwidth and uses it to perform proactive replication. Results from a simulation study suggest that Tempo can deliver high durability despite only using several kilobytes per second of bandwidth, comparable to state-ofthe-art reactive systems."
+    },
+    "11340408": {
+      "title": "Proactive replication in distributed storage systems using machine availability estimation",
+      "abstract": "Distributed storage systems provide data availability by means of redundancy. To assure a given level of availability in case of node failures, new redundant fragments need to be introduced. Since node failures can be either transient or permanent, deciding when to generate new fragments is non-trivial. An additional difficulty is due to the fact that the failure behavior in terms of the rate of permanent and transient failures may vary over time. To be able to adapt to changes in the failure behavior, many systems adopt a reactive approach, in which new fragments are created as soon as a failure is detected. However, reactive approaches tend to produce spikes in bandwidth consumption. Proactive approaches create new fragments at a fixed rate that depends on the knowledge of the failure behavior or is given by the system administrator. However, existing proactive systems are not able to adapt to a changing failure behavior, which is common in real world. We propose a new technique based on an ongoing estimation of the failure behavior that is obtained using a model that consists of a network of queues. This scheme combines the adaptiveness of reactive systems with the smooth bandwidth usage of proactive systems, generalizing the two previous approaches. Now, the duality reactive or proactive becomes a specific case of a wider approach tunable with respect to the dynamics of the failure behavior."
+    }
+  }
+}

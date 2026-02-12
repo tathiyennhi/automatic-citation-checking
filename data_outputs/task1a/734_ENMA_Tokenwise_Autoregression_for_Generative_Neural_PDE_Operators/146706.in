@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We evaluate ENMA's performance as we vary S from 1 to 16 in fig. 25, where S = 1 corresponds to generating all tokens at once, and S = 16 to generating one token per step.",
+    "We observe that performance is poor when S ≤ 4, but significantly improves at S = 6, after which it quickly plateaus.",
+    "This behavior reflects the masking ratio used during training: the model is trained to reconstruct frames with 75%-100% of tokens masked.",
+    "Hence, inference scenarios where a majority of tokens are already visible (i.e., large S values) fall outside the model's training regime, which may limit gains from further increasing S. These results suggest that a modest number of autoregressive steps-around 6-balances speed and accuracy.",
+    "Expanding the training schedule to include lower masking ratios could further improve performance for large S, but would increase training time due to the larger space of masking patterns."
+  ]
+}

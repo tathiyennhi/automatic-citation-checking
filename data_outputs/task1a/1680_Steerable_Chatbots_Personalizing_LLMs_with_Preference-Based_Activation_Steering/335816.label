@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Constructing Steering Vectors.",
+    "Steering vectors are typically computed by contrasting the intermediate LLM activations of a dataset representing the desirable (positive) concept from a dataset of the opposite (negative) concept.",
+    "Although many variations in the exact computation method exist -the simplest of which just involves subtracting the activations from each other -we follow von Rütte et al. 's more robust way of computing the steering vector by training layer-wise linear probes that can accurately separate the representations of the positive and negative examples.",
+    "The coefficients of the probe (a logistic regressor) is taken as the linear steering direction 𝑣 𝑖, which can then be applied to amplify, dampen, or negate the concept in the LLM's internal representations, along with the steering strength 𝑑 𝑖.",
+    "We also follow the subsequent parameter selection process outlined by von Rütte et al., including choosing the top-k layers to add the steering vector (where the k layers are selected based on the accuracy of the probe for the layer)."
+  ],
+  "correct_citations": []
+}

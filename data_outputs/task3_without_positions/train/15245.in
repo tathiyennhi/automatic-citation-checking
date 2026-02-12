@@ -1,0 +1,22 @@
+{
+  "text": "As a result, in spite of the potential advantages of these methods, there has been very little previous work on applying GLMs for full parsing without the use of fairly severe restrictions or approximations. For example, the model in [CITATION_1] is trained on only sentences of 15 words or less; reranking models [CITATION_2] [CITATION_3] restrict Y(x) to be a small set of parses from a first-pass parser; see section 1.1 for discussion of other related work.",
+  "correct_citation": {
+    "[CITATION_1]": "8313435",
+    "[CITATION_2]": "405878",
+    "[CITATION_3]": "11599080"
+  },
+  "bib_entries": {
+    "11599080": {
+      "title": "Coarse-to-fine n-best parsing and maxent discriminative reranking",
+      "abstract": "Discriminative reranking is one method for constructing high-performance statistical parsers (Collins, 2000). A discriminative reranker requires a source of candidate parses for each sentence. This paper describes a simple yet novel method for constructing sets of 50-best parses based on a coarse-to-fine generative parser (Charniak, 2000). This method generates 50-best lists that are of substantially higher quality than previously obtainable. We used these parses as the input to a MaxEnt reranker (Johnson et al., 1999; Riezler et al., 2002) that selects the best parse from the set of parses for each sentence, obtaining an f-score of 91.0% on sentences of length 100 or less."
+    },
+    "8313435": {
+      "title": "Max-margin parsing",
+      "abstract": "We present a novel discriminative approach to parsing inspired by the large-margin criterion underlying support vector machines. Our formulation uses a factorization analogous to the standard dynamic programs for parsing. In particular, it allows one to efficiently learn a model which discriminates among the entire space of parse trees, as opposed to reranking the top few candidates. Our models can condition on arbitrary features of input sentences, thus incorporating an important kind of lexical information without the added algorithmic complexity of modeling headedness. We provide an efficient algorithm for learning such models and show experimental evidence of the model\u2019s improved performance over a natural baseline model and a lexicalized probabilistic context-free grammar."
+    },
+    "405878": {
+      "title": "Discriminative reranking for natural language parsing",
+      "abstract": "This article considers approaches which rerank the output of an existing probabilistic parser. The base parser produces a set of candidate parses for each input sentence, with associated probabilities that define an initial ranking of these parses. A second model then attempts to improve upon this initial ranking, using additional features of the tree as evidence. The strength of our approach is that it allows a tree to be represented as an arbitrary set of features, without concerns about how these features interact or overlap and without the need to define a derivation or a generative model which takes these features into account. We introduce a new method for the reranking task, based on the boosting approach to ranking problems described in Freund et al. (1998). We apply the boosting method to parsing the Wall Street Journal treebank. The method combined the log-likelihood under a baseline model (that of Collins [1999]) with evidence from an additional 500,000 features over parse trees that were not included in the original model. The new model achieved 89.75% F-measure, a 13% relative decrease in F measure error over the baseline model's score of 88.2%. The article also introduces a new algorithm for the boosting approach which takes advantage of the sparsity of the feature space in the parsing data. Experiments show significant efficiency gains for the new algorithm over the obvious implementation of the boosting approach. We argue that the method is an appealing alternative\u2014in terms of both simplicity and efficiency\u2014to work on feature selection methods within log-linear (maximum-entropy) models. Although the experiments in this article are on natural language parsing (NLP), the approach should be applicable to many other NLP problems which are naturally framed as ranking tasks, for example, speech recognition, machine translation, or natural language generation."
+    }
+  }
+}

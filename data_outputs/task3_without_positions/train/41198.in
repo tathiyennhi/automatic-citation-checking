@@ -1,0 +1,17 @@
+{
+  "text": "In view of the shortcomings of using blob matching or particle filter independently for tracking, we propose an approach that combines these two methods to track multiple people. In our proposed method, the system can recognize persons even when they are partially occluded and keep track of them after merging. In addition, we initialise particle filtering by information obtained in the blob matching stage. Furthermore, a circular statistics method similar to the work by Seitner and Lovell [CITATION_1] is proposed to analyze the hue component in HSV color space for the background model and the appearance model of humans. Finally, we extend a hierarchical chamfer matching system to detect pedestrians [CITATION_2] through integration with particle filtering. Fig. 1 shows an overview of the proposed system. The remainder of this paper is organised as follows. In Section 2 we describe the combination of blob matching and particle filtering for robust multiple-person tracking. In Section 3 we describe the integration of particle filtering with hierarchical chamfer matching for commuter classification. Section 4 contains a preliminary evaluation of the proposed approaches on real-life surveillance footage obtained at a railway station. Concluding remarks and avenues for further exploration are given in Section 5.",
+  "correct_citation": {
+    "[CITATION_1]": "10956192",
+    "[CITATION_2]": "58411313"
+  },
+  "bib_entries": {
+    "58411313": {
+      "title": "Shape-based pedestrian detection and tracking",
+      "abstract": "This paper presents a large scale experimental study on pedestrian detection. The focus of the study is the Chamfer System, a generic system for shape-based object recognition. Matching involves a simultaneous coarse-to-fine approach over a template hierarchy and over the transformation parameters based on correlation with (chamfer) distance-transformed images. Candidate solutions are verified by a neural network with local receptive fields, using a richer set of texture features. Detection is supplemented by an alpha-beta tracker which integrates results over time; the tracker compensates for momentarily missing detections due to image noise or occlusions. For this study, an extensive database of 4762 pedestrian images was compiled with precise ground-truth data. System performance was analyzed by several ROC curves. Although not viable for real-world deployment yet, system performance is shown to be quite promising."
+    },
+    "10956192": {
+      "title": "Pedestrian tracking based on colour and spatial information",
+      "abstract": "This paper describes a tracking with appearance modelling system for pedestrians. A cascade of boosted classifiers and Haar-like rectangular features [6, 12] are used for the pedestrian detection. Statistical modelling in the HSV colour space is used for adaptive background modelling and subtraction, where the use of circular statistics for hue is proposed. By using the background model in combination with the detector, the system extracts a feature vector based on colour statistics and the spatial information. Circular [9] and linear statistics are applied on the extracted features to robustly track the pedestrians and other moving objects through the scene. An adaptive appearance model copes with partial or full occlusions and addresses the problem of missing or wrong detections in single frames."
+    }
+  }
+}

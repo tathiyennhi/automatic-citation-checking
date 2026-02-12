@@ -1,0 +1,132 @@
+{
+  "text": "Choi's dataset [CITATION_1] is commonly used in evaluating topic segmentation methods. It consists of 700 documents, each being a concatenation of 10 segments. Each segment is the first n sentences of a randomly selected document from the Brown corpus, s.t. 3 \u2264 n \u2264 11. Those documents are divided into 4 subsets with different range of n, as shown in Table 2 . We ran PLDA and STM with 50 topics. Results in Table 4 show that our model significantly outperforms all the other methods on the four subsets over all the metrics. Furthermore, comparing to other published results, this also outperforms [CITATION_2] (see their table 2) , and [CITATION_3] ) (they report an average of 1.04 and 1.06 in Tables 1 and 2 , whereas TSM averages 0.93). This gives TSM the best reported results to date. Note the lexical transitions in these concatenated documents are very sharp [CITATION_4] . The sharp transitions lead to significant change in segment level topic distributions, which further implies the variance of these distributions is large. In TSM, a large variance causes a small concentration parameter b. We observed that the sampled b's (about 0.1) are indeed small for the four subsets, which shows there is no topic sharing among segments. Therefore, TSM is able to recognise the segments are unrelated text.",
+  "citation_candidates": [
+    "2384391",
+    "9523299",
+    "8279425",
+    "1080758",
+    "21482013",
+    "15853016",
+    "3063495",
+    "15591357",
+    "16891148",
+    "2839111",
+    "8574660",
+    "3177797",
+    "6048999",
+    "19847761",
+    "9063912",
+    "1967279",
+    "3077921",
+    "2958363",
+    "10014954",
+    "11473195",
+    "7856844",
+    "6263842",
+    "7923429",
+    "5509911",
+    "3694051"
+  ],
+  "bib_entries": {
+    "15591357": {
+      "title": "Automatic text decomposition using text segments and text themes",
+      "abstract": "With the widespread use of full-text information retrieval, passage-retrieval techniques are becoming increasingly popular. Larger texts can then be replaced by important text excerpts, thereby simplifying the retrieval task and improving retrieval effectiveness. Passage-level evidence about the use of words in local contexts is also useful for resolving language ambiguities and improving retrieval output. Two main text decomposition strategies are introduced in this study, including a chronological decomposition into {\\em text segments}, and semantic decomposition into {\\em text themes}. The interaction between text segments and text themes is then used to characterize text structure, and to formulate specifications for information retrieval, text traversal, and text summarization."
+    },
+    "1967279": {
+      "title": "Bayesian unsupervised topic segmentation",
+      "abstract": "This paper describes a novel Bayesian approach to unsupervised topic segmentation. Unsupervised systems for this task are driven by lexical cohesion: the tendency of well-formed segments to induce a compact and consistent lexical distribution. We show that lexical cohesion can be placed in a Bayesian context by modeling the words in each topic segment as draws from a multinomial language model associated with the segment; maximizing the observation likelihood in such a model yields a lexically-cohesive segmentation. This contrasts with previous approaches, which relied on hand-crafted cohesion metrics. The Bayesian framework provides a principled way to incorporate additional features such as cue phrases, a powerful indicator of discourse structure that has not been previously used in unsupervised segmentation systems. Our model yields consistent improvements over an array of state-of-the-art systems on both text and speech datasets. We also show that both an entropy-based analysis and a well-known previous technique can be derived as special cases of the Bayesian framework."
+    },
+    "5509911": {
+      "title": "Discourse segmentation of multi-party conversation",
+      "abstract": "We present a domain-independent topic segmentation algorithm for multi-party speech. Our feature-based algorithm combines knowledge about content using a text-based algorithm as a feature and about form using linguistic and acoustic cues about topic shifts extracted from speech. This segmentation algorithm uses automatically induced decision rules to combine the different features. The embedded text-based algorithm builds on lexical cohesion and has performance comparable to state-of-the-art algorithms based on lexical information. A significant error reduction is obtained by combining the two knowledge sources."
+    },
+    "8574660": {
+      "title": "TextTiling: segmenting text into multi-paragraph subtopic passages",
+      "abstract": "TextTiling is a technique for subdividing texts into multi-paragraph units that represent passages, or subtopics. The discourse cues for identifying major subtopic shifts are patterns of lexical co-occurrence and distribution. The algorithm is fully implemented and is shown to produce segmentation that corresponds well to human judgments of the subtopic boundaries of 12 texts. Multi-paragraph subtopic segmentation should be useful for many text analysis tasks, including information retrieval and summarization."
+    },
+    "2839111": {
+      "title": "Statistical models for text segmentation",
+      "abstract": "This paper introduces a new statistical approach to automatically partitioning text into coherent segments. The approach is based on a technique that incrementally builds an exponential model to extract features that are correlated with the presence of boundaries in labeled training text. The models use two classes of features: topicality features that use adaptive language models in a novel way to detect broad changes of topic, and cue-word features that detect occurrences of specific words, which may be domain-specific, that tend to be used near segment boundaries. Assessment of our approach on quantitative and qualitative grounds demonstrates its effectiveness in two very different domains, Wall Street Journal news articles and television broadcast news story transcripts. Quantitative results on these domains are presented using a new probabilistically motivated error metric, which combines precision and recall in a natural and flexible way. This metric is used to make a quantitative assessment of the relative contributions of the different feature types, as well as a comparison with decision trees and previously proposed text segmentation algorithms."
+    },
+    "3077921": {
+      "title": "Unsupervised topic modelling for multi-party spoken discourse",
+      "abstract": "We present a method for unsupervised topic modelling which adapts methods used in document classification (Blei et al., 2003; Griffiths and Steyvers, 2004) to unsegmented multi-party discourse transcripts. We show how Bayesian inference in this generative model can be used to simultaneously address the problems of topic segmentation and topic identification: automatically segmenting multi-party meetings into topically coherent segments with performance which compares well with previous unsupervised segmentation-only methods (Galley et al., 2003) while simultaneously extracting topics which rate highly when assessed for coherence by human judges. We also show that this method appears robust in the face of off-topic dialogue and speech recognition errors."
+    },
+    "1080758": {
+      "title": "Using LDA to detect semantically incoherent documents",
+      "abstract": "Detecting the semantic coherence of a document is a challenging task and has several applications such as in text segmentation and categorization. This paper is an attempt to distinguish between a 'semantically coherent' true document and a 'randomly generated' false document through topic detection in the framework of latent Dirichlet analysis. Based on the premise that a true document contains only a few topics and a false document is made up of many topics, it is asserted that the entropy of the topic distribution will be lower for a true document than that for a false document. This hypothesis is tested on several false document sets generated by various methods and is found to be useful for fake content detection applications."
+    },
+    "15853016": {
+      "title": "Text segmentation with LDA-based Fisher kernel",
+      "abstract": "In this paper we propose a domain-independent text segmentation method, which consists of three components. Latent Dirichlet allocation (LDA) is employed to compute words semantic distribution, and we measure semantic similarity by the Fisher kernel. Finally global best segmentation is achieved by dynamic programming. Experiments on Chinese data sets with the technique show it can be effective. Introducing latent semantic information, our algorithm is robust on irregular-sized segments."
+    },
+    "3063495": {
+      "title": "Text segmentation via topic modeling: an analytical study",
+      "abstract": "In this paper, the task of text segmentation is approached from a topic modeling perspective. We investigate the use of latent Dirichlet allocation (LDA) topic model to segment a text into semantically coherent segments. A major benefit of the proposed approach is that along with the segment boundaries, it outputs the topic distribution associated with each segment. This information is of potential use in applications like segment retrieval and discourse analysis. The new approach outperforms a standard baseline method and yields significantly better performance than most of the available unsupervised methods on a benchmark dataset."
+    },
+    "8279425": {
+      "title": "How text segmentation algorithms gain from topic models",
+      "abstract": "This paper introduces a general method to incorporate the LDA Topic Model into text segmentation algorithms. We show that semantic information added by Topic Models significantly improves the performance of two word-based algorithms, namely TextTiling and C99. Additionally, we introduce the new TopicTiling algorithm that is designed to take better advantage of topic information. We show consistent improvements over word-based methods and achieve state-of-the art performance on a standard dataset."
+    },
+    "19847761": {
+      "title": "A segmented topic model based on the two-parameter Poisson-Dirichlet process",
+      "abstract": "Documents come naturally with structure: a section contains paragraphs which itself contains sentences; a blog page contains a sequence of comments and links to related blogs. Structure, of course, implies something about shared topics. In this paper we take the simplest form of structure, a document consisting of multiple segments, as the basis for a new form of topic model. To make this computationally feasible, and to allow the form of collapsed Gibbs sampling that has worked well to date with topic models, we use the marginalized posterior of a two-parameter Poisson-Dirichlet process (or Pitman-Yor process) to handle the hierarchical modelling. Experiments using either paragraphs or sentences as segments show the method significantly outperforms standard topic models on either whole document or segment, and previous segmented models, based on the held-out perplexity measure."
+    },
+    "16891148": {
+      "title": "Sequential latent Dirichlet allocation",
+      "abstract": "Understanding how topics within a document evolve over the structure of the document is an interesting and potentially important problem in exploratory and predictive text analytics. In this article, we address this problem by presenting a novel variant of latent Dirichlet allocation (LDA): Sequential LDA (SeqLDA). This variant directly considers the underlying sequential structure, i.e. a document consists of multiple segments (e.g. chapters, paragraphs), each of which is correlated to its antecedent and subsequent segments. Such progressive sequential dependency is captured by using the hierarchical two-parameter Poisson\u2013Dirichlet process (HPDP). We develop an efficient collapsed Gibbs sampling algorithm to sample from the posterior of the SeqLDA based on the HPDP. Our experimental results on patent documents show that by considering the sequential structure within a document, our SeqLDA model has a higher fidelity over LDA in terms of perplexity (a standard measure of dictionary-based compressibility). The SeqLDA model also yields a nicer sequential topic structure than LDA, as we show in experiments on several books such as Melville\u2019s \u2018Moby Dick\u2019."
+    },
+    "7923429": {
+      "title": "A Bayesian framework for word segmentation: Exploring the effects of context",
+      "abstract": "Since the experiments of Saffran et al. [Saffran, J., Aslin, R., & Newport, E. (1996). Statistical learning in 8-month-old infants. Science, 274, 1926\u20131928], there has been a great deal of interest in the question of how statistical regularities in the speech stream might be used by infants to begin to identify individual words. In this work, we use computational modeling to explore the effects of different assumptions the learner might make regarding the nature of words \u2013 in particular, how these assumptions affect the kinds of words that are segmented from a corpus of transcribed child-directed speech. We develop several models within a Bayesian ideal observer framework, and use them to examine the consequences of assuming either that words are independent units, or units that help to predict other units. We show through empirical and theoretical results that the assumption of independence causes the learner to undersegment the corpus, with many two- and three-word sequences (e.g. what\u2019s that, do you, in the house) misidentified as individual words. In contrast, when the learner assumes that words are predictive, the resulting segmentation is far more accurate. These results indicate that taking context into account is important for a statistical word segmentation strategy to be successful, and raise the possibility that even young infants may be able to exploit more subtle statistical patterns than have usually been considered."
+    },
+    "2958363": {
+      "title": "Advances in domain independent linear text segmentation",
+      "abstract": "This paper describes a method for linear text segmentation which is twice as accurate and over seven times as fast as the state-of-the-art (Reynar, 1998). Inter-sentence similarity is replaced by rank in the local context. Boundary locations are discovered by divisive clustering."
+    },
+    "10014954": {
+      "title": "A statistical model for domain-independent text segmentation",
+      "abstract": "We propose a statistical method that finds the maximum-probability segmentation of a given text. This method does not require training data because it estimates probabilities from the given text. Therefore, it can be applied to any text in any domain. An experiment showed that the method is more accurate than or at least as accurate as a state-of-the-art text segmentation system."
+    },
+    "2384391": {
+      "title": "Minimum cut model for spoken lecture segmentation",
+      "abstract": "We consider the task of unsupervised lecture segmentation. We formalize segmentation as a graph-partitioning task that optimizes the normalized cut criterion. Our approach moves beyond localized comparisons and takes into account long-range cohesion dependencies. Our results demonstrate that global analysis improves the segmentation accuracy and is robust in the presence of speech recognition errors."
+    },
+    "9523299": {
+      "title": "Linear text segmentation using affinity propagation",
+      "abstract": "This paper presents a new algorithm for linear text segmentation. It is an adaptation of Affinity Propagation, a state-of-the-art clustering algorithm in the framework of factor graphs. Affinity Propagation for Segmentation, or APS, receives a set of pairwise similarities between data points and produces segment boundaries and segment centres -- data points which best describe all other data points within the segment. APS iteratively passes messages in a cyclic factor graph, until convergence. Each iteration works with information on all available similarities, resulting in high-quality results. APS scales linearly for realistic segmentation tasks. We derive the algorithm from the original Affinity Propagation formulation, and evaluate its performance on topical text segmentation in comparison with two state-of-the art segmenters. The results suggest that APS performs on par with or outperforms these two very competitive baselines."
+    },
+    "3177797": {
+      "title": "Latent Dirichlet allocation",
+      "abstract": "We describe latent Dirichlet allocation (LDA), a generative probabilistic model for collections of discrete data such as text corpora. LDA is a three-level hierarchical Bayesian model, in which each item of a collection is modeled as a finite mixture over an underlying set of topics. Each topic is, in turn, modeled as an infinite mixture over an underlying set of topic probabilities. In the context of text modeling, the topic probabilities provide an explicit representation of a document. We present efficient approximate inference techniques based on variational methods and an EM algorithm for empirical Bayes parameter estimation. We report results in document modeling, text classification, and collaborative filtering, comparing to a mixture of unigrams model and the probabilistic LSI model."
+    },
+    "6263842": {
+      "title": "Hierarchical text segmentation from multi-scale lexical cohesion",
+      "abstract": "This paper presents a novel unsupervised method for hierarchical topic segmentation. Lexical cohesion -- the workhorse of unsupervised linear segmentation -- is treated as a multi-scale phenomenon, and formalized in a Bayesian setting. Each word token is modeled as a draw from a pyramid of latent topic models, where the structure of the pyramid is constrained to induce a hierarchical segmentation. Inference takes the form of a coordinate-ascent algorithm, iterating between two steps: a novel dynamic program for obtaining the globally-optimal hierarchical segmentation, and collapsed variational Bayesian inference over the hidden variables. The resulting system is fast and accurate, and compares well against heuristic alternatives."
+    },
+    "9063912": {
+      "title": "Topic detection and tracking pilot study: Final report",
+      "abstract": "Topic Detection and Tracking (TDT) is a DARPA-sponsored initiative to investigate the state of the art in finding and following new events in a stream of broadcast news stories. The TDT problem consists of three major tasks: (1) segmenting a stream of data, especially recognized speech, into distinct stories; (2) identifying those news stories that are the first to discuss a new event occurring in the news; and (3) given a small number of sample news stories about an event, finding all following stories in the stream."
+    },
+    "7856844": {
+      "title": "Structural topic model for latent topical structure analysis",
+      "abstract": "Topic models have been successfully applied to many document analysis tasks to discover topics embedded in text. However, existing topic models generally cannot capture the latent topical structures in documents. Since languages are intrinsically cohesive and coherent, modeling and discovering latent topical transition structures within documents would be beneficial for many text analysis tasks. ::: ::: In this work, we propose a new topic model, Structural Topic Model, which simultaneously discovers topics and reveals the latent topical structures in text through explicitly modeling topical transitions with a latent first-order Markov chain. Experiment results show that the proposed Structural Topic Model can effectively discover topical structures in text, and the identified structures significantly improve the performance of tasks such as sentence annotation and sentence ordering."
+    },
+    "6048999": {
+      "title": "A critique and improvement of an evaluation metric for text segmentation",
+      "abstract": "The Pk evaluation metric, initially proposed by Beeferman, Berger, and Lafferty (1997), is becoming the standard measure for assessing text segmentation algorithms. However, a theoretical analysis of the metric finds several problems: the metric penalizes false negatives more heavily than false positives, overpenalizes near misses, and is affected by variation in segment size distribution. We propose a simple modification to the Pk metric that remedies these problems. This new metric-called WindowDiff-moves a fixed-sized window across the text and penalizes the algorithm whenever the number of boundaries within the window does not match the true number of boundaries for that window of text."
+    },
+    "21482013": {
+      "title": "On evaluation methodologies for text segmentation algorithms",
+      "abstract": "The WindowDiff evaluation measure (Pevzner and Hearst, 2002) is becoming the standard criterion for evaluating text segmentation methods. Nevertheless, this metric is really not fair with regard to the characteristics of the methods and the results that it provides on different kinds of corpus are difficult to compare. Therefore, we first attempt to improve this measure according to the risks taken by each method on different kinds of text. On the other hand, the production of a segmentation of reference being a rather difficult task, this paper describes a new evaluation metric that relies on the stability of the segmentations face to text transformations. Our experimental results appear to indicate that both proposed metrics provide really better indicators of the text segmentation accuracy than existing measures."
+    },
+    "3694051": {
+      "title": "SITS: A hierarchical nonparametric model using speaker identity for topic segmentation in multiparty conversations",
+      "abstract": "One of the key tasks for analyzing conversational data is segmenting it into coherent topic segments. However, most models of topic segmentation ignore the social aspect of conversations, focusing only on the words used. We introduce a hierarchical Bayesian nonparametric model, Speaker Identity for Topic Segmentation (SITS), that discovers (1) the topics used in a conversation, (2) how these topics are shared across conversations, (3) when these topics shift, and (4) a person-specific tendency to introduce new topics. We evaluate against current unsupervised segmentation models to show that including person-specific information improves segmentation performance on meeting corpora and on political debates. Moreover, we provide evidence that SITS captures an individual's tendency to introduce new topics in political contexts, via analysis of the 2008 US presidential debates and the television program Crossfire."
+    },
+    "11473195": {
+      "title": "Exploiting conversation structure in unsupervised topic segmentation for emails",
+      "abstract": "This work concerns automatic topic segmentation of email conversations. We present a corpus of email threads manually annotated with topics, and evaluate annotator reliability. To our knowledge, this is the first such email corpus. We show how the existing topic segmentation models (i.e., Lexical Chain Segmenter (LCSeg) and Latent Dirichlet Allocation (LDA)) which are solely based on lexical information, can be applied to emails. By pointing out where these methods fail and what any desired model should consider, we propose two novel extensions of the models that not only use lexical information but also exploit finer level conversation structure in a principled way. Empirical evaluation shows that LCSeg is a better model than LDA for segmenting an email thread into topical clusters and incorporating conversation structure into these models improves the performance significantly."
+    }
+  }
+}

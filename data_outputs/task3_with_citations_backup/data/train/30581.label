@@ -1,0 +1,22 @@
+{
+  "doc_id": "30581",
+  "text": "A scheme related to the above architectural organization is provided in Figure 2 . Basically, the architecture relies on a spin-lock array, named LP_locks, having one entry for each LP hosted by the multi-threaded simulation kernel. LP_locks[i] is used to implement the critical section for the access to the bottom-half queue associated with the i-th LP hosted by the kernel, either for inserting a new bottom-half task to be eventually flushed, or for taking care of unlinking the current chain, in order to flush the pending bottom-halves. Techniques for the reduction of the performance impact of spin-lock accesses have also been discussed in [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "8703984"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Techniques for the reduction of the performance impact of spin-lock accesses have also been discussed in [CITATION_1] .",
+      "s_span": 543,
+      "e_span": 662
+    }
+  ],
+  "bib_entries": {
+    "8703984": {
+      "title": "Towards symmetric multithreaded optimistic simulation kernels",
+      "abstract": "In this article we address the reshuffle of the design of optimistic simulation kernels in order to fit multi-core/multi-processor machines. This is done by providing a reference optimistic simulation architecture based on the symmetric multi-threaded paradigm, where each simulation kernel instance is allowed to run a dynamically changing set of worker threads that share the whole load of LPs hosted by that kernel, and that can run both application-level event handlers and kernel-level housekeeping tasks. With this organization, CPU-cores can be dynamically reassigned to the different kernels depending on fluctuations of the workload, so to maximize productivity in an orthogonal manner with respect to traditional load balancing schemes, typically employed in the context of single-threaded simulation kernels. In order to optimize efficiency and reduce wait-for-lock-release phases while synchronizing worker threads running in kernel mode, we borrow from Operating Systems' theory by readapting the top/bottom-halves paradigm to the design of optimistic simulation systems. We also present a real implementation of our multi-threaded architecture within the ROme OpTimistic Simulator (ROOT-Sim), namely an open-source C-based simulation platform implemented according to the PDES paradigm and the optimistic synchronization approach. Experimental results for an assessment of the validity of our proposal are presented as well."
+    }
+  },
+  "generator": "fallback_v4"
+}

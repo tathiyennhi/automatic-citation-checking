@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Take understanding a video as an example, the calculation process of the l block configured with MoE is as follows:x 0 = [V 1,...., V N; T 1,..., T z; A 1,..., A k],(12)X s l = MSA(LN(X l-1)) + X l-1,(13)X M l = MoE(LN(X s l)) + X s l,(14)xl = LN(X M l),(15)where \"MSA\" and \"LN\" refer to the multi-head self-attention and layer normalization.",
+    "X l-1 shows the output of l-1 th block.",
+    "For the MoE layer, we adopt the sparse router to select the corresponding Top-k experts at the token level.",
+    "When we introduce a set of experts E = (e 1, e 2,..., e M), the router is a linear function to predict the probability of each token being assigned to each expert.",
+    "The outputs of selected experts willAlgorithm 1 Uni-MoE Optimization Framework Require: Set of modalities M I, pretraining datasets PD M, instruction tuning datasets D M with a set of templates Π = {I M t: M ∈ M I, t ∈ T } for each task t ∈ T 1: Initialize text tokenizer h and corresponding embedding layer E 2: Stage 1: Cross-Modality Alignment 3: for each modality M in M I do 4: Initialize modality-specific pre-trained encoder Enc M 5: Initialize Q-Former module QF A and QF S for audio and speech inputs and modality-specific linear projection layer LP M for each modality 6: for each step in a number of iterations do 7: Sample (x, y) from PD M 8: x M ← Connector(x) {Modality Projection} 9: Prediction ← LLM (x M) {Get LLM's prediction} 10: Loss ← L CE (Prediction, h(y)) {Calculate cross-entropy loss} 11: θ ← θ -α∇ θ Loss {Update Linear and audio/speech Q-Former parameters} 12: end for 13: end for 14: Stage 2: Training Modality-Specific Experts 15: for each modality M in M I do 16:Copy corresponding weights from Stage 1."
+  ]
+}

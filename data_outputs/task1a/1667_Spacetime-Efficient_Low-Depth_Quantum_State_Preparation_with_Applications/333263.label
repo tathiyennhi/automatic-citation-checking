@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The depth is log 2 (c), and the spacetime allocation is only c, as seen in the right diagram, by waiting to allocate ancillae until the final moment that they are needed.",
+    "Algorithm 3 State-Copy Subroutine1: procedure Copy c (R)▷ R is a register of size c, where c is assumed to be the power of 2 for simplicity 2:for i in range(log 2 (c)) do ▷ Each value of i occupies O(1) depth 3: i (R) 4:end for 5: end procedure 6: procedure t (R)7:for j in range(2 t) do ▷ All values of j performed in parallel 8:CNOT(R jc2 -t, R jc2 -t +c2 -t-1) 9:end for 10: end procedure▷ Total D exact: log 2 (c) ▷ Total D approx: log 2 (c) ▷ Total SA exact: 2c -2 ▷ Total SA approx: 2c -2 A.2 Parallel CSWAPWith the help of the State-Copy subroutine, we can now effectively perform the parallel CSWAP operations using single-qubit gates and two-qubit CNOT gates, without using the FANOUT-CNOT gate that was required in Ref.",
+    "[20] to perform the parallel CSWAP when sharing the same control bits.We denote a layer of 2 t parallel CSWAPs by CS t, as depicted in Fig. 13 and Algorithm 4.C 0 S 0 = C 1 S 1 = C 2 S 2 =Figure 13: Implementation of CSt for t = 0, 1, 2, which can be accomplished in one layer of parallel CSWAP gates.",
+    "Algorithm 4 Parallel CSWAP1: procedure CS t (R, S) ▷ t: log number of parallel control-swaps, R: control bit data register with at least 2 t qubits, S: target bit angle register with at least 2 t+1 qubits (note that the subscript here labels the qubit indices of every single register)2: for i in range(2 t) do ▷ All values of i performed in parallel 3: CSWAP(R i, S i, S i+2 t) 4:end for 5: end procedure A.3 COPY Layer Application ExampleIn Fig. 14, we illustrate how we can effectively parallelize many CSWAP gates with the same control bits and different target bits with constant ancilla and total depth overhead.",
+    "The same logic can also apply to Toffoli gates.= |0⟩ |0⟩ |0⟩ |0⟩ |0⟩ |0⟩Figure 14: Circuit equivalence with and without COPY layers: note that we are only introducing an additional O(log(N)) CNOT layers and O(N) ancilla qubits in the |0⟩ state, same scale as the total circuit depth and total number of ancilla qubits."
+  ],
+  "correct_citations": [
+    "[20] to perform the parallel CSWAP when sharing the same control bits.We denote a layer of 2 t parallel CSWAPs by CS t, as depicted in Fig. 13 and Algorithm 4.C 0 S 0 = C 1 S 1 = C 2 S 2 =Figure 13: Implementation of CSt for t = 0, 1, 2, which can be accomplished in one layer of parallel CSWAP gates."
+  ]
+}

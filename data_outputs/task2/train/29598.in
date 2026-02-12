@@ -1,0 +1,27 @@
+{
+  "text": "Morgan [CITATION_1] provides failures/divergences semantics for event systems in terms of the weakest precondition of a sequence of operation calls. A sequence tr is the sequential composition of the operation calls of M , and init is the initialisation of the system. The CSP trace inc, do, inc, inc, do, reset is considered to be a trace of the Repeater machine since it is the case that \u00acwp(init;Inc;Do;Inc;Inc;Do;Reset, false) holds. Note that there is a one to one correspondence between the CSP events and operation calls. In this paper, we are only concerned with non-blocking B operations (i.e. ones without guards) and therefore all sequences of operation calls are traces. However, operations called outside their preconditions are not guaranteed to terminate (i.e. they can diverge). In order to differentiate between divergent and nondivergent traces we need to determine whether the sequence is guaranteed to terminate following initialisation (i.e. establish the postcondition true). A sequence is a divergence if it is not guaranteed to establish true (e.g. \u00acwp(init;Inc;Do;Do, true)). In this example, the second invocation of the Do operation may occur in a state where the precondition n > 0 does not hold (because it is possible to reach a state in which n = 0). A sequence does not diverge if it is guaranteed to terminate: Definition 1.2 M 's non-divergent traces are those for which wp(init;tr , true) holds.",
+  "citation_candidates": [
+    "118441061",
+    "35878485",
+    "8883873",
+    "15550581"
+  ],
+  "bib_entries": {
+    "118441061": {
+      "title": "Of wp and CSP",
+      "abstract": "A state-based and an event-based approach to concurrency are linked: the traces, failures and divergences of CSP are expressed as weakest precondition formulae over Action Systems. The result is simpler than is obtained using relations for the state-based view; in particular, divergence is handled easily. Essential use is made of miracles."
+    },
+    "35878485": {
+      "title": "Abstract interpretation over algebraic data types",
+      "abstract": "This paper is concerned with the static analysis of programs over recursive data structures such as lists and trees. In particular, we consider the analysis of uniform properties i.e., properties pertaining only to the content of a data structure. We first present an axiomatic description of properties of sum types and algebraic types and use the theory of powerdomains to construct lattices modelling the logic of the axiomatisations. In addition to a new analysis of sum types based on logic, this provides a systematic way of defining abstract lattices for arbitrary algebraic data types. We provide a detailed description of the lattice for analysing lists and show how our developments generalise existing frameworks proposed by Wadler (1987) and Nielson and Nielson (1992). Finally, we show how abstract interpretations of well known list operations can be defined over these lattices. >"
+    },
+    "15550581": {
+      "title": "Abstract Datatypes in PVS",
+      "abstract": "PVS (Prototype Verification System) is a general-purpose environment for developing specifications and proofs. This document deals primarily with the abstract datatype mechanism in PVS which generates theories containing axioms and definitions for a class of recursive datatypes. The concepts underlying the abstract datatype mechanism are illustrated using ordered binary trees as an example. Binary trees are described by a PVS abstract datatype that is parametric in its value type. The type of ordered binary trees is then presented as a subtype of binary trees where the ordering relation is also taken as a parameter. We define the operations of inserting an element into, and searching for an element in an ordered binary tree; the bulk of the report is devoted to PVS proofs of some useful properties of these operations. These proofs illustrate various approaches to proving properties of abstract datatype operations. They also describe the built-in capabilities of the PVS proof checker for simplifying abstract datatype expressions."
+    },
+    "8883873": {
+      "title": "The B Book: Assigning Programs to Meaning",
+      "abstract": "Tribute Foreword Introduction Part I. Mathematics: 1. Mathematical reasoning 2. Set notation 3. Mathematical objects Part II. Abstract Machines: 4. Introduction to abstract machines 5. Formal definition of abstract machines 6. Theory of abstract machines 7. Constructing large abstract machines 8. Examples of abstract machines Part III. Programming: 9. Sequencing and loop 10. Programming examples Part IV. Refinement: 11. Refinement 12. Constructing large software systems 13. Examples of refinement Appendixes Index."
+    }
+  }
+}

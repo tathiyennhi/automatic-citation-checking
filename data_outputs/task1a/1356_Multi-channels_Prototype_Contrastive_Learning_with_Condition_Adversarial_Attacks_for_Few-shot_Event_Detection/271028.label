@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "On the other hand, MP also alleviates the problem of category imbalance caused by too many non-trigger words (\"O\" class) by aggregating different feature sub-spaces to extract more representative features.",
+    "Focal LossWhen calculating the cross-entropy loss between the query set and prototypes, we noticed that a significant portion of the loss L C E is accounted for by the token x i labeled with \"O\" tag(non-trigger words).",
+    "This problem causes L C E to be dominated by the easy examples (non-trigger words), resulting in the model not being effectively trained with L C E loss.To solve the issue, we utilize the Focal loss [23] to replace L C E, which can suppress easy samples and allow more positive and negative hard samples to play a more significant role in the loss, better solving the problem of category and hard-easy sample imbalance.",
+    "Focal loss is a modification based on cross-entropy loss formula 4, 5, as follows:p t = exp (sim (h i, p c)) c ∈C exp (sim (h i, p c)) (11) FL ( p t) = -α t (1 -p t) γ log ( p t) (12)L f ocal = - (x i,y i)∈Q FL ( p t) (13)The green arrows in Fig. 3 indicates this process.",
+    "Here, h i is the token representation of query set and sim() denotes the similarity calculator."
+  ],
+  "correct_citations": [
+    "This problem causes L C E to be dominated by the easy examples (non-trigger words), resulting in the model not being effectively trained with L C E loss.To solve the issue, we utilize the Focal loss [23] to replace L C E, which can suppress easy samples and allow more positive and negative hard samples to play a more significant role in the loss, better solving the problem of category and hard-easy sample imbalance."
+  ]
+}

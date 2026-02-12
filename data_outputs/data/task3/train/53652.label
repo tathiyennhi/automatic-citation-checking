@@ -1,0 +1,20 @@
+{
+  "doc_id": "53652",
+  "text": "So, the parent can be found by by scanning the w's list, to find a neighbor p that is colored gray such that the first element in p's list is u. This completes the description of the backtracking step. Once we backtrack to p, we find the next white vertex (as in the forward step) and continue until all the vertices of G are explored. Other than some constant number of variables, clearly the space usage is only for storing the color array C. Since C is of length n where each element has 3 possible values, C can be encoded using n lg 3 + O(lg 2 n) bits, so that the i-th element in C can be read and updated in O(1) time [CITATION_1] . So overall space required is n lg 3 + O(lg 2 n) bits. As the algorithm systematically brings a white vertex to the front, makes it gray, and moves it to the end after it becomes black, at most two full rotations of each of the list may happen (the second one to determine that there are no more white vertices) resulting in a linear time lex-DFS algorithm. We discuss the lex-DFS algorithm for the directed graphs below.",
+  "correct_citation": {
+    "[CITATION_1]": "1970378"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Other than some constant number of variables, clearly the space usage is only for storing the color array C. Since C is of length n where each element has 3 possible values, C can be encoded using n lg 3 + O(lg 2 n) bits, so that the i-th element in C can be read and updated in O(1) time  ."
+    }
+  ],
+  "bib_entries": {
+    "1970378": {
+      "title": "Changing base without losing space",
+      "abstract": "We describe a simple, but powerful local encoding technique, implying two surprising results: 1. We show how to represent a vector of n values from some alphabet S using ceiling(n * log2 |S|) bits, such that reading or writing any entry takes O(1) time. This demonstrates, for instance, an \"equivalence\" between decimal and binary computers, and has been a central toy problem in the field of succinct data structures. Previous solutions required space of n * log2 |S| + n/logO(1) n bits for constant access. 2. Given a stream of n bits arriving online (for any n, not known in advance), we can output a *prefix-free* encoding that uses n + log2 n + O(loglog n) bits. The encoding and decoding algorithms only require O(log n) bits of memory, and run in constant time per word. This result is interesting in cryptographic applications, as prefix-free codes are the simplest counter-measure to extensions attacks on hash functions, message authentication codes and pseudorandom functions. Our result refutes a conjecture of [Maurer, Sjodin 2005] on the hardness of online prefix-free encodings."
+    }
+  },
+  "generator": "fallback_v4"
+}

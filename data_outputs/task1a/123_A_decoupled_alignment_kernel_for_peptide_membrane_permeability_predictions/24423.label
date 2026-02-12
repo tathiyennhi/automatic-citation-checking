@@ -1,0 +1,15 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Dataset and data preparationWe use the CycPeptMPDB [1], which compiles permeability measurements for ∼7,334 cyclic peptides (sequence lengths 2-15) drawn from dozens of primary sources and multiple assays, including PAMPA, Caco-2, MDCK and RRCK.",
+    "Permeability values are reported on a logarithmic scale and clipped to [-10, -4] in CycPeptMPDB; peptides with P ≥ -6 are generally regarded as cell-permeable [1,3].",
+    "We evaluate our models in two complementary settings detailed below.",
+    "Setting A: applicability-domain-aware splitsFollowing the data-handling principles and splitting strategies highlighted by Geylan et al. [2], we first extract the SMILES, monomer sequences and PAMPA values for all peptides with available PAMPA in CycPeptMPDB (7,298 entries after initial parsing).",
+    "To mitigate data leakage from near-identical structures, we group duplicates by canonical SMILES (chirality retained) using Morgan fingerprint (radius 3); for each group we average reported PAMPA values to obtain a single label, yielding 7,221 unique peptides and 276 unique monomers overall."
+  ],
+  "correct_citations": [
+    "Dataset and data preparationWe use the CycPeptMPDB [1], which compiles permeability measurements for ∼7,334 cyclic peptides (sequence lengths 2-15) drawn from dozens of primary sources and multiple assays, including PAMPA, Caco-2, MDCK and RRCK.",
+    "Permeability values are reported on a logarithmic scale and clipped to [-10, -4] in CycPeptMPDB; peptides with P ≥ -6 are generally regarded as cell-permeable [1,3].",
+    "Setting A: applicability-domain-aware splitsFollowing the data-handling principles and splitting strategies highlighted by Geylan et al. [2], we first extract the SMILES, monomer sequences and PAMPA values for all peptides with available PAMPA in CycPeptMPDB (7,298 entries after initial parsing)."
+  ]
+}

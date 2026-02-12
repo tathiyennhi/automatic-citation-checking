@@ -1,0 +1,22 @@
+{
+  "doc_id": "27786",
+  "text": "In compute-bound workloads, η may remain constant up to values of T equal to the number of physical cores in the processor. However, for bandwidth-bound workloads like DFFT, η is expected to decrease with increasing T . In order to evaluate the thread scalability of EFFT, we compare η for EFFT with η for the STREAM benchmark [CITATION_1] . Figure 10 reports the performance and parallel efficiency of EFFT and of the STREAM benchmark. For EFFT, N = 2 30 was used. In all tests, thread affinity with T threads was set to KMP AFFINITY=explicit,proclist=[0-N], where N = T − 1. This binds threads to individual processor cores in such a way that for 1 < T ≤ 12, threads are placed on successive cores on CPU 0, and for T > 12, threads start filling CPU 1. That said, for T ≤ 12, only one NUMA node is used in our two-way system, and for T > 12, two NUMA nodes are used. According to Figure 10 , the efficiency of EFFT at the optimal value of T = 24 threads is η = 0.39, while STREAM has better efficiency, η = 0.47. EFFT is expected to be less efficient than STREAM for T = 24. That is because in STREAM, threads read and write only NUMA-local data (i.e., data mapped to memory banks local to the socket on which the thread is executing), while EFFT has a more complex pattern of memory traffic with non-local NUMA accesses. However, for T = 12, when NUMA is not involved, EFFT has slightly better efficiency better than STREAM (which is consistent with data reuse in caches in EFFT). This observation indicates good parallel scalability of the bandwidth-bound EFFT algorithm.",
+  "correct_citation": {
+    "[CITATION_1]": "58427177"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In order to evaluate the thread scalability of EFFT, we compare η for EFFT with η for the STREAM benchmark [CITATION_1] .",
+      "s_span": 220,
+      "e_span": 341
+    }
+  ],
+  "bib_entries": {
+    "58427177": {
+      "title": "STREAM: Sustainable Memory Bandwidth in High Performance Computers",
+      "abstract": "Microwave energy is supplied to an antenna structure provided within a fat frier for applying the microwave energy at improved efficiency to food products floating on the surface of the heated fat and conveyed continuously beneath the antenna. The antenna consists of parallel rods which couple microwave energy to the food products, e.g., donuts positioned beneath the rods. The rods are positioned in a plane parallel to the surface of the fat and are arranged in a balanced linear structure made up of two parallel rods at a distance from one another which is a fraction of one wave length, (e.g., one-quarter of one wave length). Wave peaks are present one quarter of a wave length from a shorting plane placed at the end of each pair of rods. Several sets of such rods are connected by feeder lines that transfer energy from one rod pair to another. Around each rod is an electromagnetic field the strength of which drops by about half each quarter of an inch proceeding away from the rod thereby reducing the loss of power to the frying fat."
+    }
+  },
+  "generator": "fallback_v4"
+}

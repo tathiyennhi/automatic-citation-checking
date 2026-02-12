@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We implement this via PyTorch forward hooks, following a \"denoising\" protocol:1.",
+    "Run a forward pass on the clean instance, caching activations at the target component (layer, head, or head-timestep). 2.",
+    "During the forward pass of the corrupt instance, replace the corresponding activations with cached values. 3.",
+    "Compute ∆P to measure causal influence.Notably, this technique can utilize logical structures such as AND logic (where multiple activations need simultaneous patching) or OR logic (where patching individual activations independently restores model accuracy).",
+    "We apply this procedure at three levels of granularity:-Layer-level: replace all attention-head activations in a given encoder layer.-Head-level: replace activations of a single attention head.-Position-level: replace the per-timestep output of a specific head.We systematically identify critical patches by exhaustively evaluating all layer, head, and position combinations."
+  ]
+}

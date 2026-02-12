@@ -1,0 +1,65 @@
+{
+  "doc_id": "37556",
+  "text": "Parsing accuracy is greatly impacted by the quality of preprocessing steps such as tagging and word segmentation. [CITATION_1] report that the difference between using the gold POS tags and using the automatic counterparts reaches about 6% in dependency accuracy. Prior research has demonstrated that joint prediction alleviates error propagation inherent in pipeline architectures, where mistakes cascade from one task to the next [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] . However, jointly modeling all the processing tasks inevitably increases inference complexity. Prior work addressed this challenge by introducing constraints on scoring functions to keep inference tractable [CITATION_6] .",
+  "correct_citation": {
+    "[CITATION_1]": "14410909",
+    "[CITATION_2]": "1992679",
+    "[CITATION_3]": "832839",
+    "[CITATION_4]": "10011032",
+    "[CITATION_5]": "5859332",
+    "[CITATION_6]": "17830435"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Parsing accuracy is greatly impacted by the quality of preprocessing steps such as tagging and word segmentation. report that the difference between using the gold POS tags and using the automatic counterparts reaches about 6% in dependency accuracy."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Prior research has demonstrated that joint prediction alleviates error propagation inherent in pipeline architectures, where mistakes cascade from one task to the next."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Prior research has demonstrated that joint prediction alleviates error propagation inherent in pipeline architectures, where mistakes cascade from one task to the next."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Prior research has demonstrated that joint prediction alleviates error propagation inherent in pipeline architectures, where mistakes cascade from one task to the next."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Prior research has demonstrated that joint prediction alleviates error propagation inherent in pipeline architectures, where mistakes cascade from one task to the next."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Prior work addressed this challenge by introducing constraints on scoring functions to keep inference tractable"
+    }
+  ],
+  "bib_entries": {
+    "17830435": {
+      "title": "Joint chinese word segmentation, pos tagging and parsing",
+      "abstract": "In this paper, we propose a novel decoding algorithm for discriminative joint Chinese word segmentation, part-of-speech (POS) tagging, and parsing. Previous work often used a pipeline method -- Chinese word segmentation followed by POS tagging and parsing, which suffers from error propagation and is unable to leverage information in later modules for earlier components. In our approach, we train the three individual models separately during training, and incorporate them together in a unified framework during decoding. We extend the CYK parsing algorithm so that it can deal with word segmentation and POS tagging features. As far as we know, this is the first work on joint Chinese word segmentation, POS tagging and parsing. Our experimental results on Chinese Tree Bank 5 corpus show that our approach outperforms the state-of-the-art pipeline system."
+    },
+    "10011032": {
+      "title": "Incremental joint approach to word segmentation, pos tagging, and dependency parsing in chinese",
+      "abstract": "We propose the first joint model for word segmentation, POS tagging, and dependency parsing for Chinese. Based on an extension of the incremental joint model for POS tagging and dependency parsing (Hatori et al., 2011), we propose an efficient character-based decoding method that can combine features from state-of-the-art segmentation, POS tagging, and dependency parsing models. We also describe our method to align comparable states in the beam, and how we can combine features of different characteristics in our incremental framework. In experiments using the Chinese Treebank (CTB), we show that the accuracies of the three tasks can be improved significantly over the baseline models, particularly by 0.6% for POS tagging and 2.4% for dependency parsing. We also perform comparison experiments with the partially joint models."
+    },
+    "832839": {
+      "title": "A cross-task flexible transition model for arabic tokenization, affix detection, affix labeling, pos tagging, and dependency parsing",
+      "abstract": "This paper describes cross-task flexible transition models (CTF-TMs) and demonstrates their effectiveness for Arabic natural language processing (NLP). NLP pipelines often suffer from error propagation, as errors committed in lower-level tasks cascade through the remainder of the processing pipeline. By allowing a flexible order of operations across and within multiple NLP tasks, a CTF-TM can mitigate both cross-task and within-task error propagation. Our Arabic CTF-TM models tokenization, affix detection, affix labeling, partof-speech tagging, and dependency parsing, achieving state-of-the-art results. We present the details of our general framework, our Arabic CTF-TM, and the setup and results of our experiments."
+    },
+    "14410909": {
+      "title": "Joint models for chinese pos tagging and dependency parsing",
+      "abstract": "Part-of-speech (POS) is an indispensable feature in dependency parsing. Current research usually models POS tagging and dependency parsing independently. This may suffer from error propagation problem. Our experiments show that parsing accuracy drops by about 6% when using automatic POS tags instead of gold ones. To solve this issue, this paper proposes a solution by jointly optimizing POS tagging and dependency parsing in a unique model. We design several joint models and their corresponding decoding algorithms to incorporate different feature sets. We further present an effective pruning strategy to reduce the search space of candidate POS tags, leading to significant improvement of parsing speed. Experimental results on Chinese Penn Treebank 5 show that our joint models significantly improve the state-of-the-art parsing accuracy by about 1.5%. Detailed analysis shows that the joint method is able to choose such POS tags that are more helpful and discriminative from parsing viewpoint. This is the fundamental reason of parsing accuracy improvement."
+    },
+    "1992679": {
+      "title": "Joint morphological and syntactic analysis for richly inflected languages",
+      "abstract": "Joint morphological and syntactic analysis has been proposed as a way of improving parsing accuracy for richly inflected languages. Starting from a transition-based model for joint part-of-speech tagging and dependency parsing, we explore different ways of integrating morphological features into the model. We also investigate the use of rule-based morphological analyzers to provide hard or soft lexical constraints and the use of word clusters to tackle the sparsity of lexical features. Evaluation on five morphologically rich languages (Czech, Finnish, German, Hungarian, and Russian) shows consistent improvements in both morphological and syntactic accuracy for joint prediction over a pipeline model, with further improvements thanks to lexical constraints and word clusters. The final results improve the state of the art in dependency parsing for all languages."
+    },
+    "5859332": {
+      "title": "Character-level chinese dependency parsing",
+      "abstract": "Recent work on Chinese analysis has led to large-scale annotations of the internal structures of words, enabling characterlevel analysis of Chinese syntactic structures. In this paper, we investigate the problem of character-level Chinese dependency parsing, building dependency trees over characters. Character-level information can benefit downstream applications by offering flexible granularities for word segmentation while improving wordlevel dependency parsing accuracies. We present novel adaptations of two major shift-reduce dependency parsing algorithms to character-level parsing. Experimental results on the Chinese Treebank demonstrate improved performances over word-based parsing methods."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "R1: The error \"Too many concurrent aggregations\" occurs when you are trying to perform too many reduceRegion or other aggregation operations simultaneously.",
+    "In your code, you are using both reduceRegion and map functions over a large list of ecoIds.",
+    "The reduceRegion is applied inside the map function, which may cause too many concurrent aggregation operations to run.",
+    "To fix this issue, you can try the following approaches:",
+    "Split your ecoIds list into smaller chunks and process each chunk separately, then combine the results."
+  ]
+}

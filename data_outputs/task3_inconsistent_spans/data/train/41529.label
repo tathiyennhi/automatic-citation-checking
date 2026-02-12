@@ -1,0 +1,106 @@
+{
+  "doc_id": "41529",
+  "text": "While the availability of cheap range sensors like Kinect makes large-scale supervised training of single-view depth and normal predictions possible for indoor scenes, the absence of high quality, dense depth sensing outdoors makes supervised learning difficult. To address this problem, Garg et al. [CITATION_1] introduced a self-supervised learning paradigm where large stereo data-set can be used to train the single view depth prediction networks by using the traditional dense stereo loss function of [CITATION_2] as the supervisory signal. Various extensions of the self-supervised learning for depth estimation have been proposed in recent times, including the use of robust image alignment costs, Godard et al. [CITATION_3] . [CITATION_4] extended the framework to enable training depth predictors using monocular sequence whereas [CITATION_5] , [CITATION_6] advocate using stereo sequences to train a network for unsupervised two-frame visual odometry, because this addresses the issue of metric scale (which is otherwise unobservable). [CITATION_7] additionally propose to learn good features to match and [CITATION_8] advocate to evaluate the quality of warp using Generative Adversarial Networks [CITATION_9] .",
+  "correct_citation": {
+    "[CITATION_1]": "299085",
+    "[CITATION_2]": "1371968",
+    "[CITATION_3]": "206596513",
+    "[CITATION_4]": "11977588",
+    "[CITATION_5]": "206853077",
+    "[CITATION_6]": "4578162",
+    "[CITATION_7]": "4578162",
+    "[CITATION_8]": "59159133",
+    "[CITATION_9]": "1033682"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To address this problem, Garg et al.  introduced a self-supervised learning paradigm where large stereo data-set can be used to train the single view depth prediction networks by using the traditional dense stereo loss function of  as the supervisory signal.",
+      "s_span": 263,
+      "e_span": 545
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "To address this problem, Garg et al.  introduced a self-supervised learning paradigm where large stereo data-set can be used to train the single view depth prediction networks by using the traditional dense stereo loss function of  as the supervisory signal.",
+      "s_span": 263,
+      "e_span": 545
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Various extensions of the self-supervised learning for depth estimation have been proposed in recent times, including the use of robust image alignment costs, Godard et al.  .",
+      "s_span": 546,
+      "e_span": 733
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Various extensions of the self-supervised learning for depth estimation have been proposed in recent times, including the use of robust image alignment costs, Godard et al.  .  extended the framework to enable training depth predictors using monocular sequence whereas  ,  advocate using stereo sequences to train a network for unsupervised two-frame visual odometry, because this addresses the issue of metric scale (which is otherwise unobservable).",
+      "s_span": 546,
+      "e_span": 1045
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "extended the framework to enable training depth predictors using monocular sequence whereas  ,  advocate using stereo sequences to train a network for unsupervised two-frame visual odometry, because this addresses the issue of metric scale (which is otherwise unobservable).",
+      "s_span": 734,
+      "e_span": 1045
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "extended the framework to enable training depth predictors using monocular sequence whereas  ,  advocate using stereo sequences to train a network for unsupervised two-frame visual odometry, because this addresses the issue of metric scale (which is otherwise unobservable).",
+      "s_span": 734,
+      "e_span": 1045
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "extended the framework to enable training depth predictors using monocular sequence whereas  ,  advocate using stereo sequences to train a network for unsupervised two-frame visual odometry, because this addresses the issue of metric scale (which is otherwise unobservable).  additionally propose to learn good features to match and  advocate to evaluate the quality of warp using Generative Adversarial Networks  .",
+      "s_span": 734,
+      "e_span": 1222
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "additionally propose to learn good features to match and  advocate to evaluate the quality of warp using Generative Adversarial Networks  .",
+      "s_span": 1046,
+      "e_span": 1222
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "additionally propose to learn good features to match and  advocate to evaluate the quality of warp using Generative Adversarial Networks  .",
+      "s_span": 1046,
+      "e_span": 1222
+    }
+  ],
+  "bib_entries": {
+    "299085": {
+      "title": "Unsupervised cnn for single view depth estimation: Geometry to the rescue",
+      "abstract": "A significant weakness of most current deep Convolutional Neural Networks is the need to train them using vast amounts of manually labelled data. In this work we propose a unsupervised framework to learn a deep convolutional neural network for single view depth prediction, without requiring a pre-training stage or annotated ground-truth depths. We achieve this by training the network in a manner analogous to an autoencoder. At training time we consider a pair of images, source and target, with small, known camera motion between the two such as a stereo pair. We train the convolutional encoder for the task of predicting the depth map for the source image. To do so, we explicitly generate an inverse warp of the target image using the predicted depth and known inter-view displacement, to reconstruct the source image; the photometric error in the reconstruction is the reconstruction loss for the encoder. The acquisition of this training data is considerably simpler than for equivalent systems, requiring no manual annotation, nor calibration of depth sensor to camera. We show that our network trained on less than half of the KITTI dataset gives comparable performance to that of the state-of-the-art supervised methods for single view depth estimation."
+    },
+    "1371968": {
+      "title": "Determining optical flow",
+      "abstract": "Optical flow cannot be computed locally, since only one independent measurement is available from the image sequence at a point, while the flow velocity has two components. A second constraint is needed. A method for finding the optical flow pattern is presented which assumes that the apparent velocity of the brightness pattern varies smoothly almost everywhere in the image. An iterative implementation is shown which successfully computes the optical flow for a number of synthetic image sequences. The algorithm is robust in that it can handle image sequences that are quantified rather coarsely in space and time. It is also insensitive to quantization of brightness levels and additive noise. Examples are included where the assumption of smoothness is violated at singular points or along lines in the image."
+    },
+    "11977588": {
+      "title": "Unsupervised learning of depth and ego-motion from video",
+      "abstract": "We present an unsupervised learning framework for the task of monocular depth and camera motion estimation from unstructured video sequences. In common with recent work [10, 14, 16], we use an end-to-end learning approach with view synthesis as the supervisory signal. In contrast to the previous work, our method is completely unsupervised, requiring only monocular video sequences for training. Our method uses single-view depth and multiview pose networks, with a loss based on warping nearby views to the target using the computed depth and pose. The networks are thus coupled by the loss during training, but can be applied independently at test time. Empirical evaluation on the KITTI dataset demonstrates the effectiveness of our approach: 1) monocular depth performs comparably with supervised methods that use either ground-truth pose or depth for training, and 2) pose estimation performs favorably compared to established SLAM systems under comparable input settings."
+    },
+    "206596513": {
+      "title": "Unsupervised monocular depth estimation with left-right consistency",
+      "abstract": "Learning based methods have shown very promising results for the task of depth estimation in single images. However, most existing approaches treat depth prediction as a supervised regression problem and as a result, require vast quantities of corresponding ground truth depth data for training. Just recording quality depth data in a range of environments is a challenging problem. In this paper, we innovate beyond existing approaches, replacing the use of explicit depth data during training with easier-to-obtain binocular stereo footage. We propose a novel training objective that enables our convolutional neural network to learn to perform single image depth estimation, despite the absence of ground truth depth data. Ex-ploiting epipolar geometry constraints, we generate disparity images by training our network with an image reconstruction loss. We show that solving for image reconstruction alone results in poor quality depth images. To overcome this problem, we propose a novel training loss that enforces consistency between the disparities produced relative to both the left and right images, leading to improved performance and robustness compared to existing approaches. Our method produces state of the art results for monocular depth estimation on the KITTI driving dataset, even outperforming supervised methods that have been trained with ground truth depth."
+    },
+    "4578162": {
+      "title": "Unsupervised learning of monocular depth estimation and visual odometry with deep feature reconstruction",
+      "abstract": "Despite learning based methods showing promising results in single view depth estimation and visual odometry, most existing approaches treat the tasks in a supervised manner. Recent approaches to single view depth estimation explore the possibility of learning without full supervision via minimizing photometric error. In this paper, we explore the use of stereo sequences for learning depth and visual odometry. The use of stereo sequences enables the use of both spatial (between left-right pairs) and temporal (forward backward) photometric warp error, and constrains the scene depth and camera motion to be in a common, real-world scale. At test time our framework is able to estimate single view depth and two-view odometry from a monocular sequence. We also show how we can improve on a standard photometric warp loss by considering a warp of deep features. We show through extensive experiments that: (i) jointly training for single view depth and visual odometry improves depth prediction because of the additional constraint imposed on depths and achieves competitive results for visual odometry; (ii) deep feature-based warping loss improves upon simple photometric warp loss for both single view depth estimation and visual odometry. Our method outperforms existing learning based methods on the KITTI driving dataset in both tasks. The source code is available at this https URL"
+    },
+    "59159133": {
+      "title": "Generative adversarial networks for unsupervised monocular depth prediction",
+      "abstract": "Estimating depth from a single image is a very challenging and exciting topic in computer vision with implications in several application domains. Recently proposed deep learning approaches achieve outstanding results by tackling it as an image reconstruction task and exploiting geometry constraints (e.g., epipolar geometry) to obtain supervisory signals for training. Inspired by these works and compelling results achieved by Generative Adversarial Network (GAN) on image reconstruction and generation tasks, in this paper we propose to cast unsupervised monocular depth estimation within a GAN paradigm. The generator network learns to infer depth from the reference image to generate a warped target image. At training time, the discriminator network learns to distinguish between fake images generated by the generator and target frames acquired with a stereo rig. To the best of our knowledge, our proposal is the first successful attempt to tackle monocular depth estimation with a GAN paradigm and the extensive evaluation on CityScapes and KITTI datasets confirm that it enables to improve traditional approaches. Additionally, we highlight a major issue with data deployed by a standard evaluation protocol widely used in this field and fix this problem using a more reliable dataset recently made available by the KITTI evaluation benchmark."
+    },
+    "206853077": {
+      "title": "Undeepvo: Monocular visual odometry through unsupervised deep learning",
+      "abstract": "We propose a novel monocular visual odometry (VO) system called UnDeepVO in this paper. UnDeepVO is able to estimate the 6-DoF pose of a monocular camera and the depth of its view by using deep neural networks. There are two salient features of the proposed UnDeepVO: one is the unsupervised deep learning scheme, and the other is the absolute scale recovery. Specifically, we train UnDeepVO by using stereo image pairs to recover the scale but test it by using consecutive monocular images. Thus, UnDeepVO is a monocular system. The loss function defined for training the networks is based on spatial and temporal dense information. A system overview is shown in Fig. 1. The experiments on KITTI dataset show our UnDeepVO outperforms other monocular VO methods in terms of pose accuracy."
+    },
+    "1033682": {
+      "title": "Generative adversarial nets",
+      "abstract": "We propose a new framework for estimating generative models via an adversarial process, in which we simultaneously train two models: a generative model G that captures the data distribution, and a discriminative model D that estimates the probability that a sample came from the training data rather than G. The training procedure for G is to maximize the probability of D making a mistake. This framework corresponds to a minimax two-player game. In the space of arbitrary functions G and D, a unique solution exists, with G recovering the training data distribution and D equal to ½ everywhere. In the case where G and D are defined by multilayer perceptrons, the entire system can be trained with backpropagation. There is no need for any Markov chains or unrolled approximate inference networks during either training or generation of samples. Experiments demonstrate the potential of the framework through qualitative and quantitative evaluation of the generated samples."
+    }
+  },
+  "generator": "fallback_v4"
+}

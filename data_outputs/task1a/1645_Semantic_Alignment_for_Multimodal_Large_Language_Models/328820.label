@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Specifically, Part A is implemented with the transformer-based visual tokenizer, Q-former [9].",
+    "Q-former consists of several crossattention layers, which concatenates pre-trained query vectors and textual tokens as the Query and the current image features I 𝑖 as the Key and Value, allowing them to interact with each other to obtain final visual tokens.",
+    "We define the initial visual tokens h 𝑖 as the inputs at the 𝑙-th intermediate Q-former layer q 𝑙 𝑖: h 𝑖:= q 𝑙 𝑖.",
+    "The initial visual tokens will serve as guidance to help Part B generate contextual semantics strongly related to the currently perceived image, by effectively reducing redundant details of contextual images in the multi-modal instruction.After Part B generating contextual semantics c 𝑖, we select a subsequent layer 𝑘 (𝑘 ≥ 𝑙) and add c 𝑖 to the input queries of the 𝑘th Q-former layer q 𝑘 𝑖 as a guidance: q𝑘 𝑖 = q 𝑘 𝑖 + c 𝑖, where q𝑘 𝑖 denotes the updated input queries.",
+    "The subsequent Q-former layers will refer to the contextual semantics to generate the final visual tokens for the currently perceived image with enhanced alignment."
+  ],
+  "correct_citations": [
+    "Specifically, Part A is implemented with the transformer-based visual tokenizer, Q-former [9]."
+  ]
+}

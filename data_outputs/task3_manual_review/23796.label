@@ -1,0 +1,38 @@
+{
+  "doc_id": "23796",
+  "text": "end for 12: end for 13: Adaptive seeds selection: 14: Select the pixels in I with S > t f ore (refer to Equation (12) for t f ore ) as the foreground seeds. [CITATION_1] : Modified random walks (MRW): 16: for u = 1 : N do 17: for v = 1 : N do 18: Construct the modified Laplacian matrix L uv according to Equation (13); 19: end for 20: end for 21: for k = 1 : K do 22: Assign the label k to the kth foreground seed; 23: The probability vector for the seeds p k M is obtained by Equation (4); 24: The probability vector for the unseeded pixels p k U is computed by Equation (7); 25: end for 26: The composite p is obtained by Equation [CITATION_2] . [CITATION_3] : Reconstruct p to a confidence map C with the same size of the input image I. 28: Adaptive target segmentation: 29: Segment the target placed in (i t , j t ) with C(i t , j t ) > t seg (refer to Equation (15) for t seg ).",
+  "correct_citation": {
+    "[CITATION_1]": "14804263",
+    "[CITATION_2]": "15714691",
+    "[CITATION_3]": "4274464"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "end for 12: end for 13: Adaptive seeds selection: 14: Select the pixels in I with S > t f ore (refer to Equation (12) for t f ore ) as the foreground seeds."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": ": Modified random walks (MRW): 16: for u = 1: N do 17: for v = 1: N do 18: Construct the modified Laplacian matrix L uv according to Equation (13); 19: end for 20: end for 21: for k = 1: K do 22: Assign the label k to the kth foreground seed; 23: The probability vector for the seeds p k M is obtained by Equation (4); 24: The probability vector for the unseeded pixels p k U is computed by Equation (7); 25: end for 26: The composite p is obtained by Equation"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "end for 12: end for 13: Adaptive seeds selection: 14: Select the pixels in I with S > t f ore (refer to Equation (12) for t f ore ) as the foreground seeds.: Modified random walks (MRW): 16: for u = 1: N do 17: for v = 1: N do 18: Construct the modified Laplacian matrix L uv according to Equation (13); 19: end for 20: end for 21: for k = 1: K do 22: Assign the label k to the kth foreground seed; 23: The probability vector for the seeds p k M is obtained by Equation (4); 24: The probability vector for the unseeded pixels p k U is computed by Equation (7); 25: end for 26: The composite p is obtained by Equation.: Reconstruct p to a confidence map C with the same size of the input image I. 28: Adaptive target segmentation: 29: Segment the target placed in (i t, j t ) with C(i t, j t ) > t seg (refer to Equation (15) for t seg )."
+    }
+  ],
+  "bib_entries": {
+    "14804263": {
+      "title": "Multiple target tracking by learning-based hierarchical association of detection responses",
+      "abstract": "We propose a hierarchical association approach to multiple target tracking from a single camera by progressively linking detection responses into longer track fragments (i.e., tracklets). Given frame-by-frame detection results, a conservative dual-threshold method that only links very similar detection responses between consecutive frames is adopted to generate initial tracklets with minimum identity switches. Further association of these highly fragmented tracklets at each level of the hierarchy is formulated as a Maximum A Posteriori (MAP) problem that considers initialization, termination, and transition of tracklets as well as the possibility of them being false alarms, which can be efficiently computed by the Hungarian algorithm. The tracklet affinity model, which measures the likelihood of two tracklets belonging to the same target, is a linear combination of automatically learned weak nonparametric models upon various features, which is distinct from most of previous work that relies on heuristic selection of parametric models and manual tuning of their parameters. For this purpose, we develop a novel bag ranking method and train the crucial tracklet affinity models by the boosting algorithm. This bag ranking method utilizes the soft max function to relax the oversufficient objective function used by the conventional instance ranking method. It provides a tighter upper bound of empirical errors in distinguishing correct associations from the incorrect ones, and thus yields more accurate tracklet affinity models for the tracklet association problem. We apply this approach to the challenging multiple pedestrian tracking task. Systematic experiments conducted on two real-life datasets show that the proposed approach outperforms previous state-of-the-art algorithms in terms of tracking accuracy, in particular, considerably reducing fragmentations and identity switches."
+    },
+    "4274464": {
+      "title": "Infrared small target detection utilizing the multiscale relative local contrast measure",
+      "abstract": "Infrared (IR) small target detection with high detection rate, low false alarm rate, and high detection speed has a significant value, but it is usually very difficult since the small targets are usually very dim and may be easily drowned in different types of interferences. Current algorithms cannot effectively enhance real targets and suppress all the types of interferences simultaneously. In this letter, a multiscale detection algorithm utilizing the relative local contrast measure (RLCM) is proposed. It has a simple structure: first, the multiscale RLCM is calculated for each pixel of the raw IR image to enhance real targets and suppress all the types of interferences simultaneously; then, an adaptive threshold is applied to extract real targets. Experimental results show that the proposed algorithm can deal with different sizes of small targets under complex backgrounds and has a better effectiveness and robustness against existing algorithms. Besides, the proposed algorithm has the potential of parallel processing, which is very useful for improving the detection speed."
+    },
+    "15714691": {
+      "title": "Detecting and tracking dim small targets in infrared image sequences under complex backgrounds",
+      "abstract": "This paper presents a unified framework for automatically detecting and tracking dim small targets in infrared (IR) image sequence under complex backgrounds. Firstly, the variance weighted information entropy (variance WIE) followed by a region growing technique is introduced to segment the candidate targets in a single-frame IR image after background suppression. Then the pipeline filter is used to verify the real targets. The position and the size of the detected target are then obtained to initialize the tracking algorithm. Secondly, we adopt an improved local binary pattern (LBP) scheme to represent the target texture feature and propose a joint gray-texture histogram method for a more distinctive and effective target representation. Finally, target tracking is accomplished by using the mean shift algorithm. Experimental results indicate that the proposed method can effectively detect the dim small targets under complex backgrounds and has better tracking performance compared with the gray histogram based tracking methods such as the mean shift and the particle filtering."
+    }
+  },
+  "generator": "fallback"
+}

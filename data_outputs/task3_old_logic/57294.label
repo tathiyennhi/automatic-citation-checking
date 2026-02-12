@@ -1,0 +1,52 @@
+{
+  "doc_id": "57294",
+  "text": "Signal Spatio-Temporal Logic (SSTL) is a spatial extension of Signal Temporal Logic [CITATION_1] [CITATION_2] with two spatial modalities: the bounded somewhere operator [w1,w2] , defined in [CITATION_3] , and the bounded surround operator S [w1,w2] , that we will define here, inspired by the work [CITATION_4] . In the following, we first introduce spatio-temporal signals, and then present the syntax and the boolean and quantitative semantics of SSTL. Spatio-Temporal Signals. SSTL is interpreted on spatio-temporal, real-valued signals. Space is discrete and described by a weighted graph G = (L, E, w), as in Section 2, while the time domain T will usually be the real-valued interval [0, T ], for some T > 0. A spatio-temporal trace is a function x ∶ T × L → D, where D ⊆ R n is domain of evaluation. As for temporal traces, we write x(t, ) = (x 1 (t, ), ⋯, x n (t, )) ∈ D, where each x i ∶ T × L → D i , for i = 1, ..., n, is the projection on the i th coordinate/variable. Spatio-temporal traces can be obtained by simulating a stochastic model or by computing the solution of a deterministic system. In the previous work [CITATION_5] , some of the authors discussed the framework of patch-based population models, which generalise population models and are a natural setting from which both stochastic and deterministic spatio-temporal traces of the considered type emerge. An alternative source of traces are measurements of real systems. For the purpose of this work, it is irrelevant which is the source of traces, as we are interested in their off-line monitoring.",
+  "correct_citation": {
+    "[CITATION_1]": "2953950",
+    "[CITATION_2]": "15642684",
+    "[CITATION_3]": "3154105",
+    "[CITATION_4]": "30020746",
+    "[CITATION_5]": "3154105"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Signal Spatio-Temporal Logic (SSTL) is a spatial extension of Signal Temporal Logic with two spatial modalities: the bounded somewhere operator [w1,w2], defined in, and the bounded surround operator S [w1,w2], that we will define here, inspired by the work."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Signal Spatio-Temporal Logic (SSTL) is a spatial extension of Signal Temporal Logic with two spatial modalities: the bounded somewhere operator [w1,w2], defined in, and the bounded surround operator S [w1,w2], that we will define here, inspired by the work."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "with two spatial modalities: the bounded somewhere operator [w1,w2], defined in"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Signal Spatio-Temporal Logic (SSTL) is a spatial extension of Signal Temporal Logic with two spatial modalities: the bounded somewhere operator [w1,w2], defined in, and the bounded surround operator S [w1,w2], that we will define here, inspired by the work"
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "In the previous work, some of the authors discussed the framework of patch-based population models, which generalise population models and are a natural setting from which both stochastic and deterministic spatio-temporal traces of the considered type emerge."
+    }
+  ],
+  "bib_entries": {
+    "2953950": {
+      "title": "Efficient robust monitoring for stl",
+      "abstract": "Monitoring transient behaviors of real-time systems plays an important role in model-based systems design. Signal Temporal Logic (STL) emerges as a convenient and powerful formalism for continuous and hybrid systems. This paper presents an efficient algorithm for computing the robustness degree in which a piecewise-continuous signal satisfies or violates an STL formula. The algorithm, by leveraging state-of-the-art streaming algorithms from Signal Processing, is linear in the size of the signal and its implementation in the Breach tool is shown to outperform alternative implementations."
+    },
+    "3154105": {
+      "title": "Specifying and monitoring properties of stochastic spatio-temporal systems in signal temporal logic",
+      "abstract": "We present an extension of the linear time, time-bounded, Signal Temporal Logic to describe spatio-temporal properties. We consider a discrete location/ patch-based representation of space, with a population of interacting agents evolving in each location and with agents migrating from one patch to another one. We provide both a boolean and a quantitative semantics to this logic. We then present monitoring algorithms to check the validity of a formula, or to compute its satisfaction (robustness) score, over a spatio-temporal trace, exploiting these routines to do statistical model checking of stochastic models. We illustrate the logic at work on an epidemic example, looking at the diffusion of a cholera infection among communities living along a river."
+    },
+    "30020746": {
+      "title": "Specifying and verifying properties of space",
+      "abstract": "The interplay between process behaviour and spatial aspects of computation has become more and more relevant in Computer Science, especially in the field of collective adaptive systems, but also, more generally, when dealing with systems distributed in physical space. Traditional verification techniques are well suited to analyse the temporal evolution of programs; properties of space are typically not explicitly taken into account. We propose a methodology to verify properties depending upon physical space. We define an appropriate logic, stemming from the tradition of topological interpretations of modal logics, dating back to earlier logicians such as Tarski, where modalities describe neighbourhood. We lift the topological definitions to a more general setting, also encompassing discrete, graph-based structures. We further extend the framework with a spatial until operator, and define an efficient model checking procedure, implemented in a proof-of-concept tool."
+    },
+    "15642684": {
+      "title": "Monitoring temporal properties of continuous signals",
+      "abstract": "In this paper we introduce a variant of temporal logic tailored for specifying desired properties of continuous signals. The logic is based on a bounded subset of the real-time logic mitl, augmented with a static mapping from continuous domains into propositions. From formulae in this logic we create automatically property monitors that can check whether a given signal of bounded length and finite variability satisfies the property. A prototype implementation of this procedure was used to check properties of simulation traces generated by Matlab/Simulink."
+    }
+  },
+  "generator": "fallback"
+}

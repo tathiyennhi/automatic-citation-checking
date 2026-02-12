@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "After the final token-to-image attention, the output token T ∈ R 1×256 is sliced from P ′ for mask prediction.Then, the output token T, mask features F, and fused features I f usion are send into our newly designed components for producing and refining mask features in bi-resolution, as shown in Fig. 4.",
+    "Concretely, the mask features F are processed with convolution and added on I f usion:F f usion = Conv2DBlock 1 (F) + I f usion,(3)where Conv2DBlock 1 consists of two 2D convolutional layers, with 2D layer normalization and GELU activation inserted between them.",
+    "Then, the features F f usion are further refined with a convolutional block which shares the same parameters with Conv2DBlock 1:F ′ f usion = Conv2DBlock 1 (F f usion).",
+    "(4)In this way, the low-resolution mask prediction M lr can be achieved based on F ′ f usion ∈ R 256×256×32 and T:M lr = F ′ f usion ⊙ M LP lr (T),(5)where ⊙ represents the dot-product operation, M LP lr is a three-layer multilayer perceptron (MLP) which projects T and reduces its dimension to 32.To achieve high-resolution mask features F hr ∈ R 512×512×16, where 16 is the feature dimension, we further upsample F ′ f usion with a transposed convolution T ransConv2D and employ a block Conv2DBlock 2 with four convolutional layers for refinement:F hr = Conv2DBlock 2 (T ransConv2D(F ′ f usion)).",
+    "(6)The transposed convolution upsamples the resolution of F ′ f usion to 512×512 while reducing the dimension to 16."
+  ],
+  "correct_citations": []
+}

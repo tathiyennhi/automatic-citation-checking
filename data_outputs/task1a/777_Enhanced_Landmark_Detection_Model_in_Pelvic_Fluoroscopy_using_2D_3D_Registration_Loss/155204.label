@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We experimentally show that fine-tuning with pose estimation loss improves landmark detection accuracy.",
+    "In this study, we compared three model structures: a U-Net trained exclusively with pose estimation loss, a U-Net trained with a composite loss function (a combination of segmentation loss with weighted pose estimation loss), and a U-Net that is initially trained with segmentation loss and subsequently fine-tuned using pose estimation loss.",
+    "Landmark Prediction ModelGiven an input image I, the U-Net outputs a heatmap h i (x, y) for each of the landmarks i ∈ {1,..., 8}, representing the likelihood of the i th landmark located at the pixel (x, y).",
+    "We adopt Soft-Argmax as a differentiable method to extracting the 2D landmarks from heatmaps:li = (x i, ŷi) = W -1 x=0 H-1 y=0 x • softmax(h i) (x,y), W -1 x=0 H-1 y=0 y • softmax(h i) (x,y)(1)softmax(h i) (x,y) = exp(h i (x, y)/τ) x ′,y ′ exp(h i (x ′, y ′)/τ)(2)Where W and H denote the width and height of the heatmap, respectively, τ is the temperature parameter that controls the sharpness of the softmax distribution, and (x ′, y ′) are dummy indices used to normalize the softmax over all spatial locations in the heatmap.",
+    "Camera Pose and Landmark-based 2D/3D RegistrationWe define the orientation of the medical imaging camera as a rigid body transformation with 6 degrees of freedom.The camera pose θ consists of three rotation parameters R ∈ SO(3) and three translation parameters t ∈ R 3."
+  ],
+  "correct_citations": []
+}

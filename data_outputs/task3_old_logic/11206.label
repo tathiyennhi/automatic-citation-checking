@@ -1,0 +1,20 @@
+{
+  "doc_id": "11206",
+  "text": "The outline of the proposed algorithm is shown in Fig. 1 . At the beginning, the algorithm is provided by an initial sample set Cð0Þ of N particles. The particles in Cð0Þ might be sampled around the initial target position using any suitable distribution. At each iteration, the algorithm uses the particle set Cðt À 1Þ to create a new set CðtÞ by selecting, with replacement, N particles from Cðt À 1Þ. For that purpose, the cumulative normalised relevance of the particles is calculated first. Using binary subdivision, the new particles are then selected by finding the particle whose cumulative normalised relevance is nearer a selected random number r. This resampling mechanism permits particles with a high relevance to be selected a greater number of times than particles with a low relevance that are rapidly discarded from one iteration to another. As can be observed, this is the approach employed in the CONDENSATION algorithm [CITATION_1] . Afterwards, for each selected particle, the algorithm computes its next state x ! i t according to a dynamic model of the system. (Eq. 8) propagates the state using a transition model A affected by some noise wðt À 1Þ.",
+  "correct_citation": {
+    "[CITATION_1]": "6821810"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As can be observed, this is the approach employed in the CONDENSATION algorithm"
+    }
+  ],
+  "bib_entries": {
+    "6821810": {
+      "title": "Condensation -conditional density propagation for visual tracking",
+      "abstract": "The problem of tracking curves in dense visual clutter is challenging. Kalman filtering is inadequate because it is based on Gaussian densities which, being unimo dal, cannot represent simultaneous alternative hypotheses. The Condensation algorithm uses “factored sampling”, previously applied to the interpretation of static images, in which the probability distribution of possible interpretations is represented by a randomly generated set. Condensation uses learned dynamical models, together with visual observations, to propagate the random set over time. The result is highly robust tracking of agile motion. Notwithstanding the use of stochastic methods, the algorithm runs in near real-time."
+    }
+  },
+  "generator": "fallback"
+}

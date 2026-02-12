@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We rigorously reproduce TabWak * with valid bit mechanism by following all instructions provided in the official repository https://github.com/chaoyitud/TabWak.",
+    "However, we observed a significant discrepancy between our reproduction results and those reported in the original TabWak paper [46].",
+    "Below, we clarify the source of this discrepancy.In TabWak's detection pipeline, the suspect tabular data X is first mapped into a continuous latent space via the inversion of the VAE decoder to obtain an initial latent representation z 0.",
+    "This is then passed through DDIM inversion to recover the watermarked representation z T. In practice, TabWak codebase obtains z 0 from X by solving a gradient-based optimization problem to approximate the inversion of the VAE decoder, which is formulated as:z = arg min z ∥x -f θ (z)∥ 2,where f θ denotes the trained VAE decoder.However, we found that the optimization procedure often fails to converge to the true latent code z 0, which leads to significantly reduced detectability and robustness of the watermark signal (as reported in our paper).",
+    "We also note that in the official TabWak codebase, the ground-truth z 0 is saved during generation."
+  ]
+}

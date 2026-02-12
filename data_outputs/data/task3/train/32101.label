@@ -1,0 +1,25 @@
+{
+  "doc_id": "32101",
+  "text": "The rationale is similar to the adversarial sequence generation described in [CITATION_1] : sign(Jf (x)[f (x)]) gives us the direction in which we have to perturb the API calls sequence in order to reduce the probability assigned to the current class, f (x), and thus change the class assigned to the sequence. However, the set of legitimate API call embeddings is finite. Thus, we cannot set the new API to any real value in an adversarial sequence x * . To overcome this difficulty, we use the perturbation mentioned above. We find the API call api in dictionary D for which the sign of the difference between the embeddings of the new API added to the original sequence, and the original API calls sequence, is closest to sign(Jf (x)[f (x)]). This API call embedding takes the direction closest to the one indicated by the Jacobian as most impactful on the model's prediction. By iteratively applying this heuristic to sequence words, we eventually find an adversarial input sequence misclassified by the model. Notice that in [CITATION_2] , the authors replaced a word in a movie review with another word, so they only needed a single element out of the Jacobian: For input word i, which was replaced. All other words remained the same, so no gradient change took place. In contrast, since we add an API call, all the existing API calls following it shift their position, so we need to consider the difference in the gradients of all partial derivatives for the label f (x)",
+  "correct_citation": {
+    "[CITATION_1]": "12390290",
+    "[CITATION_2]": "12390290"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The rationale is similar to the adversarial sequence generation described in  : sign(Jf (x)[f (x)]) gives us the direction in which we have to perturb the API calls sequence in order to reduce the probability assigned to the current class, f (x), and thus change the class assigned to the sequence."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Notice that in  , the authors replaced a word in a movie review with another word, so they only needed a single element out of the Jacobian: For input word i, which was replaced."
+    }
+  ],
+  "bib_entries": {
+    "12390290": {
+      "title": "Crafting adversarial input sequences for recurrent neural networks",
+      "abstract": "Machine learning models are frequently used to solve complex security problems, as well as to make decisions in sensitive situations like guiding autonomous vehicles or predicting financial market behaviors. Previous efforts have shown that numerous machine learning models were vulnerable to adversarial manipulations of their inputs taking the form of adversarial samples. Such inputs are crafted by adding carefully selected perturbations to legitimate inputs so as to force the machine learning model to misbehave, for instance by outputting a wrong class if the machine learning task of interest is classification. In fact, to the best of our knowledge, all previous work on adversarial samples crafting for neural network considered models used to solve classification tasks, most frequently in computer vision applications. In this paper, we contribute to the field of adversarial machine learning by investigating adversarial input sequences for recurrent neural networks processing sequential data. We show that the classes of algorithms introduced previously to craft adversarial samples misclassified by feed-forward neural networks can be adapted to recurrent neural networks. In a experiment, we show that adversaries can craft adversarial sequences misleading both categorical and sequential recurrent neural networks."
+    }
+  },
+  "generator": "fallback_v4"
+}

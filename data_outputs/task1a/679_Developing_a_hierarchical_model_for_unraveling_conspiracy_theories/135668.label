@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The higher the cost function, the higher the number of outliers is.",
+    "In this task, we want the cost function to be minimal.The configuration of running the Bayesian optimization for a space of:hspace = { 'n_neighbors': hp.choice('n_neighbors', range(3,20)), 'n_components': hp.choice('n_components', range(3,20)), 'min_cluster_size': hp.choice('min_cluster_size', range(2,20)), 'random_state': 42} And the result is: Best parameters: {'min_cluster_size': 2, 'n_components': 10, 'n_neighbors': 3, 'random_state': 42} Number of clusters: 50 Cost: 0.04229607250755287 The algorithm was able to detect 50 clusters out of the 391 CT articles, with a very low cost of just 0.04.",
+    "This is an excellent result, indicating that only 4% of the documents, or about 15 of them, were not assigned to a cluster.Using the labeling method explained earlier, we generate labels for the first 10 clusters.Cluster -1: claim_theory_conspiracy_vaccine Cluster 0: said_bus_election_conspiracy Cluster 1: said_message_patent_conspiracy Cluster 2: claim_death_pizza_conspiracy Cluster 3: claim_claim_image_photograph Cluster 4: said_people_group_time Cluster 5: said_blood_child_conspiracy Cluster 6: found_mask_hospital_child Cluster 7: claim_information_vaccine_autism Cluster 8: said_people_shooting_conspiracy In the given context, cluster -1 is considered to be the group of observations that lie far away from the other clusters and are called outliers.",
+    "Upon analyzing the generated label, it is evident that some of the data points from this cluster can be grouped with another cluster that exhibits a predominant medical theme, namely cluster number 6.",
+    "This can be attributed to the fact that the text documents being analyzed are lengthy and discuss multiple topics."
+  ],
+  "correct_citations": []
+}

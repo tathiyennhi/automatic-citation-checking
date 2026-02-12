@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Architecture of FastPitch follows FastSpeech [1].",
+    "A single pitch value is predicted for every temporal location.",
+    "d = DurationPredictor(h), p = PitchPredictor(h), (1) where d ∈ N n and p ∈ R n. Next, the pitch is projected to match the dimensionality of the hidden representation h ∈ R n×d and added to h. The resulting sum g is discretely upsampled and passed to the output FFTr, which produces the output mel-spectrogram sequenceg = h + PitchEmbedding(p) ŷ = FFTr([g 1,..., g 1 d1,... g n,..., g n dn]).",
+    "(2)Ground truth p and d are used during training, and predicted p and d are used during inference.",
+    "The model optimizes mean-squared error (MSE) between the predicted and ground-truth modalitiesL = ŷ -y 2 2 + α p -p 2 2 + γ d -d 2 2."
+  ],
+  "correct_citations": [
+    "Architecture of FastPitch follows FastSpeech [1]."
+  ]
+}

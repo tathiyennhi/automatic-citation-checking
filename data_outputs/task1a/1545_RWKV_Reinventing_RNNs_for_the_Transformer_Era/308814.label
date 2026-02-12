@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "The time complexity of processing a batch of sequences in a single layer is O(BT d 2), primarily consisting of matrix multiplications W λ, where λ ∈ {r, k, v, o} (assuming B sequences, T maximum tokens, and d channels).",
+    "In contrast, updating attention scores wkv t involves a serial scan (see Appendix D for more detail) and has complexity O(BT d).",
+    "The matrix multiplications can be parallelized similarly to W λ, where λ ∈ {Q, K, V, O} in conventional Transformers.",
+    "The element-wise W KV computation is time-dependent but can be readily parallelized along the other two dimensions (Lei et al., 2018) foot_1.",
+    "Recurrent networks commonly utilize the output at state t as input at state t + 1."
+  ],
+  "correct_citations": [
+    "The element-wise W KV computation is time-dependent but can be readily parallelized along the other two dimensions (Lei et al., 2018) foot_1."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "55918",
+  "text": "Another two techniques to release registers early come from Monreal et al. [CITATION_1] . The first scheme waits for a redefining instruction to become non-speculative before releasing the previous version of its logical register. The second adds a new queue with multiple levels corresponding to the unconfirmed branches in the reorder buffer (ROB). Registers are released when the redefining instruction becomes non-speculative and the last instruction using the physical register has committed. On a branch mis-prediction the relevant levels in the release queue are squashed. The downside of these techniques is that no recovery mechanism is in place to retain values released early. In the event of an ex- ception or interrupt it would be impossible to reconstruct the precise processor state. They also need to add many large structures to the processor so that the status of redefining and last-use instructions can be maintained, increasing the complexity of the pipeline.",
+  "correct_citation": {
+    "[CITATION_1]": "18811590"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Another two techniques to release registers early come from Monreal et al.  ."
+    }
+  ],
+  "bib_entries": {
+    "18811590": {
+      "title": "Hardware schemes for early register release",
+      "abstract": "Register files are becoming one of the critical components of current out-of-order processors in terms of delay and power consumption, since their potential to exploit instruction-level parallelism is quite related to the size and number of ports of the register file. In conventional register renaming schemes, register releasing is conservatively done only after the instruction that redefines the same register is committed. Instead, we propose a scheme that releases registers as soon as the processor knows that there will be no further use of them. We present two early releasing hardware implementations with different performance/complexity trade-offs. Detailed cycle-level simulations show either a significant speedup for a given register file size, or a reduction in register file size for a given performance level."
+    }
+  },
+  "generator": "fallback_v4"
+}

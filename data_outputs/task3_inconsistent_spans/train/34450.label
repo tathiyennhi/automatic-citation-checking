@@ -1,0 +1,33 @@
+{
+  "doc_id": "34450",
+  "text": "The UFO project focuses on suitable data processing in hardware and software. Further image processing and image reconstruction is performed at tailored GPU servers. High-end graphic adapters have been proven to be well suited for image reconstruction and monitoring purposes [CITATION_1] . Currently, processing of up to 1 GBof data per second is possible. Within the UFO project, a parallel computing framework has been proposed to support development of algorithms for parallel computing architectures using OpenCL [CITATION_2] . This paper presents the architecture of the new camera platform. It describes core elements of the high-throughput FPGA design and Linux driver considerations and proposes a selfevent trigger to increase the frame rate of the image sensor. Finally, the first prototype camera based on the framework is presented.",
+  "correct_citation": {
+    "[CITATION_1]": "111121804",
+    "[CITATION_2]": "17086845"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "High-end graphic adapters have been proven to be well suited for image reconstruction and monitoring purposes  .",
+      "s_span": 166,
+      "e_span": 290
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Within the UFO project, a parallel computing framework has been proposed to support development of algorithms for parallel computing architectures using OpenCL  .",
+      "s_span": 358,
+      "e_span": 532
+    }
+  ],
+  "bib_entries": {
+    "17086845": {
+      "title": "Ufo: A scalable gpu-based image processing framework for on-line monitoring",
+      "abstract": "Current synchrotron experiments require state-of-the-art scientific cameras with sensors that provide several million pixels, each at a dynamic range of up to 16 bits and the ability to acquire hundreds of frames per second. The resulting data bandwidth of such a data stream reaches several Gigabits per second. These streams have to be processed in real-time to achieve a fast process response. In this paper we present a computation framework and middleware library that provides re-usable building blocks to implement high-performance image processing algorithms without requiring profound hardware knowledge. It is based on a graph structure of computation nodes that process image transformation kernels on either CPU or GPU using the OpenCL sub-system. This system architecture allows deployment of the framework on a large range of computational hardware, from netbooks to hybrid compute clusters. We evaluated the library with standard image processing algorithms required for high quality tomographic reconstructions. The results show that speed-ups from 7x to 37x compared to traditional CPU-based solutions can be achieved with our approach, hence providing an opportunity for real-time on-line monitoring at synchrotron beam lines."
+    },
+    "111121804": {
+      "title": "A gpu-based architecture for real-time data assessment at synchrotron experiments",
+      "abstract": "Current imaging experiments at synchrotron beam lines often lack a real-time data assessment. X-ray imaging cameras installed at synchrotron facilities like ANKA provide millions of pixels, each with a resolution of 12 bits or more, and take up to several thousand frames per second. A given experiment can produce data sets of multiple gigabytes in a few seconds. Up to now the data is stored in local memory, transferred to mass storage, and then processed and analyzed off-line. The data quality and thus the success of the experiment, can, therefore, only be judged with a substantial delay, which makes an immediate monitoring of the results impossible. To optimize the usage of the micro-tomography beam-line at ANKA we have ported the reconstruction software to modern graphic adapters which offer an enormous amount of calculation power. We were able to reduce the reconstruction time from multiple hours to just a few minutes with a sample dataset of 20 GB. Using the new reconstruction software it is possible to provide a near real-time visualization and significantly reduce the time needed for the first evaluation of the reconstructed sample. The main paradigm of our approach is 100% utilization of all system resources. The compute intensive parts are offloaded to the GPU. While the GPU is reconstructing one slice, the CPUs are used to prepare the next one. A special attention is devoted to minimize data transfers between the host and GPU memory and to execute I/O operations in parallel with the computations. It could be shown that for our application not the computational part but the data transfers are now limiting the speed of the reconstruction. Several changes in the architecture of the DAQ system are proposed to overcome this second bottleneck. The article will introduce the system architecture, describe the hardware platform in details, and analyze performance gains during the first half year of operation."
+    }
+  },
+  "generator": "fallback_v4"
+}

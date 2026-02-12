@@ -1,0 +1,17 @@
+{
+  "text": "Our approach relies on a two-pronged methodology. First, we define the concept of a deterministically monitorable edge set (DMES) of a beacon as the set of edges that can be monitored by the beacon under all possible route configurations. We present efficient graph-theoretic algorithms for computing the DMES of all candidate beacons for a given network. Second, we consider the problem of finding the minimum number of beacons such that the union of their DMES covers all network edges. We show that this is an NPcomplete problem. We then use an approximate solution that yields beacon sets of sizes within 1 + ln(|E|) of the optimal solution, where E is the set of network edges. Finally, we prove and exploit additional properties of beacons that help in improving the computational efficiency of our algorithm. Our experimental results with several real ISP topologies obtained from the Rocketfuel project [CITATION_1] illustrate that our beacon placement strategy yields beacon sets that are 50 − 70% smaller than those yielded by [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "61514721",
+    "[CITATION_2]": "2355186"
+  },
+  "bib_entries": {
+    "2355186": {
+      "title": "On the number of distributed measurement points for network tomography",
+      "abstract": "Internet topology information is only made available in aggregate form by standard routing protocols. Connectivity information and latency characteristics must therefore be inferred using indirect techniques. In this paper we consider measurements using a distributed set of measurement points or beacons. We show that computing the minimum number of required beacons on a network under a BGP-like routing policy is NP-hard and at best Ω(log n)-approximable. In the worst case at least (n-1)/3 and at most (n+1)/3 beacons are required for a network with n nodes. We then introduce some observations that allow us to propose a relatively small candidate set of beacons for the current Internet topology. The set proposed has properties with relevant applications for all-paths routing on the public Internet and performance based routing."
+    },
+    "61514721": {
+      "title": "Measuring isp topologies with rocketfuel",
+      "abstract": "To date, realistic ISP topologies have not been accessible to the research community, leaving work that depends on topology on an uncertain footing. In this paper, we present new Internet mapping techniques that have enabled us to directly measure router-level ISP topologies. Our techniques reduce the number of required traces compared to a brute-force, all-to-all approach by three orders of magnitude without a significant loss in accuracy. They include the use of BGP routing tables to focus the measurements, exploiting properties of IP routing to eliminate redundant measurements, better alias resolution, and the use of DNS to divide each map into POPs and backbone. We collect maps from ten diverse ISPs using our techniques, and find that our maps are substantially more complete than those of earlier Internet mapping efforts. We also report on properties of these maps, including the size of POPs, distribution of router outdegree, and the inter-domain peering structure. As part of this work, we release our maps to the community."
+    }
+  }
+}

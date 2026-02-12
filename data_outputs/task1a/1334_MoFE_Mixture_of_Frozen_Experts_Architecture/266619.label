@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "Pub-MedQA, derived from PubMed abstracts 2, serves as an additional benchmark since the medical expert models were trained with MedMCQA data, which could inflate performance by resembling additional training epochs.",
+    "To ensure a fairer comparison, we evaluate the models on Pub-MedQA, an unseen dataset, to test medical knowledge.",
+    "We compare MoFE models using TinyLlama as expert models under both instruction-tuning alone and post-pretraining followed by instructiontuning, but only test the MoFE model with medical expert models under instruction-tuning.",
+    "This is because the medical expert models are already instruction-tuned, and post-pretraining an instruction-tuned model leads to catastrophic forgetting, reducing performance, as noted by Luo et al. (2024).",
+    "Table 6 shows that performance on both MedM-CQA and PubMedQA is worst with the second strategy, involving post-pretraining followed by instruction-tuning with TinyLlama as expert models."
+  ],
+  "correct_citations": [
+    "This is because the medical expert models are already instruction-tuned, and post-pretraining an instruction-tuned model leads to catastrophic forgetting, reducing performance, as noted by Luo et al. (2024)."
+  ]
+}

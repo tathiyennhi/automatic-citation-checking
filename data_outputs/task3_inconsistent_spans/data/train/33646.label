@@ -1,0 +1,98 @@
+{
+  "doc_id": "33646",
+  "text": "In this section we present a comparative analysis of state-of-the-art of pedestrian detection. For our comparative analysis, we choose the best performing pedestrian detectors on Caltech [CITATION_1] and CityPersons [CITATION_2] . The underlying goal is to illustrate how well our baseline performs when it is fine-tune on the target dataset. We refer to the best performing baseline presented in Table 12 as Cascade R-CNN † . Table 13 shows that Cascade R-CNN † achieves 1.76 M R −2 on Caltech [CITATION_3] , outperforming previous best by a margin of 3.24% of M R −2 . This performance is approaching human-baseline (0.88) [CITATION_4] on Caltech [CITATION_5] . Moreover, we report similar improvement over the previous state-of-the-art on CityPersons [CITATION_6] benchmark. Cascade R-CNN's † performance is 3.5% M R −2 better than CSP [CITATION_7] . Finally, on ECP [CITATION_8] we report an improvements of 1.8% M R −2 over Faster R-CNN [CITATION_9] . Similar performance improvements are achieved on other subsets of all these three datasets, with the performance improvement of more than 50% for the most challenging subsets, Heavy and small. This con- ",
+  "correct_citation": {
+    "[CITATION_1]": "206764948",
+    "[CITATION_2]": "14020880",
+    "[CITATION_3]": "206764948",
+    "[CITATION_4]": "1272000",
+    "[CITATION_5]": "206764948",
+    "[CITATION_6]": "14020880",
+    "[CITATION_7]": "102351649",
+    "[CITATION_8]": "29151351",
+    "[CITATION_9]": "10328909"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For our comparative analysis, we choose the best performing pedestrian detectors on Caltech  and CityPersons  .",
+      "s_span": 95,
+      "e_span": 230
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For our comparative analysis, we choose the best performing pedestrian detectors on Caltech  and CityPersons  .",
+      "s_span": 95,
+      "e_span": 230
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Table 13 shows that Cascade R-CNN † achieves 1.76 M R −2 on Caltech  , outperforming previous best by a margin of 3.24% of M R −2 .",
+      "s_span": 427,
+      "e_span": 570
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "This performance is approaching human-baseline (0.88)  on Caltech  .",
+      "s_span": 571,
+      "e_span": 663
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This performance is approaching human-baseline (0.88)  on Caltech  .",
+      "s_span": 571,
+      "e_span": 663
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Moreover, we report similar improvement over the previous state-of-the-art on CityPersons  benchmark.",
+      "s_span": 664,
+      "e_span": 777
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Cascade R-CNN's † performance is 3.5% M R −2 better than CSP  .",
+      "s_span": 778,
+      "e_span": 853
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Finally, on ECP  we report an improvements of 1.8% M R −2 over Faster R-CNN  .",
+      "s_span": 854,
+      "e_span": 956
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "Finally, on ECP  we report an improvements of 1.8% M R −2 over Faster R-CNN  .",
+      "s_span": 854,
+      "e_span": 956
+    }
+  ],
+  "bib_entries": {
+    "14020880": {
+      "title": "Citypersons: A diverse dataset for pedestrian detection",
+      "abstract": "Convnets have enabled significant progress in pedestrian detection recently, but there are still open questions regarding suitable architectures and training data. We revisit CNN design and point out key adaptations, enabling plain FasterRCNN to obtain state-of-the-art results on the Caltech dataset. To achieve further improvement from more and better data, we introduce CityPersons, a new set of person annotations on top of the Cityscapes dataset. The diversity of CityPersons allows us for the first time to train one single CNN model that generalizes well over multiple benchmarks. Moreover, with additional training with CityPersons, we obtain top results using FasterRCNN on Caltech, improving especially for more difficult cases (heavy occlusion and small scale) and providing higher localization quality."
+    },
+    "102351649": {
+      "title": "High-level semantic feature detection: A new perspective for pedestrian detection",
+      "abstract": "Object detection generally requires sliding-window classifiers in tradition or anchor-based predictions in modern deep learning approaches. However, either of these approaches requires tedious configurations in windows or anchors. In this paper, taking pedestrian detection as an example, we provide a new perspective where detecting objects is motivated as a high-level semantic feature detection task. Like edges, corners, blobs and other feature detectors, the proposed detector scans for feature points all over the image, for which the convolution is naturally suited. However, unlike these traditional low-level features, the proposed detector goes for a higher-level abstraction, that is, we are looking for central points where there are pedestrians, and modern deep models are already capable of such a high-level semantic abstraction. Besides, like blob detection, we also predict the scales of the pedestrian points, which is also a straightforward convolution. Therefore, in this paper, pedestrian detection is simplified as a straightforward center and scale prediction task through convolutions. This way, the proposed method enjoys an anchor-free setting. Though structurally simple, it presents competitive accuracy and good speed on challenging pedestrian detection benchmarks, and hence leading to a new attractive pedestrian detector. Code and models will be available at https://github.com/liuwei16/CSP."
+    },
+    "206764948": {
+      "title": "Pedestrian detection: An evaluation of the state of the art",
+      "abstract": "Pedestrian detection is a key problem in computer vision, with several applications that have the potential to positively impact quality of life. In recent years, the number of approaches to detecting pedestrians in monocular images has grown steadily. However, multiple data sets and widely varying evaluation protocols are used, making direct comparisons difficult. To address these shortcomings, we perform an extensive evaluation of the state of the art in a unified framework. We make three primary contributions: 1) We put together a large, well-annotated, and realistic monocular pedestrian detection data set and study the statistics of the size, position, and occlusion patterns of pedestrians in urban scenes, 2) we propose a refined per-frame evaluation methodology that allows us to carry out probing and informative comparisons, including measuring performance in relation to scale and occlusion, and 3) we evaluate the performance of sixteen pretrained state-of-the-art detectors across six data sets. Our study allows us to assess the state of the art and provides a framework for gauging future efforts. Our experiments show that despite significant progress, performance still has much room for improvement. In particular, detection is disappointing at low resolutions and for partially occluded pedestrians."
+    },
+    "10328909": {
+      "title": "Faster r-cnn: Towards real-time object detection with region proposal networks",
+      "abstract": "State-of-the-art object detection networks depend on region proposal algorithms to hypothesize object locations. Advances like SPPnet [1] and Fast R-CNN [2] have reduced the running time of these detection networks, exposing region proposal computation as a bottleneck. In this work, we introduce a Region Proposal Network (RPN) that shares full-image convolutional features with the detection network, thus enabling nearly cost-free region proposals. An RPN is a fully convolutional network that simultaneously predicts object bounds and objectness scores at each position. The RPN is trained end-to-end to generate high-quality region proposals, which are used by Fast R-CNN for detection. We further merge RPN and Fast R-CNN into a single network by sharing their convolutional features—using the recently popular terminology of neural networks with ’attention’ mechanisms, the RPN component tells the unified network where to look. For the very deep VGG-16 model [3] , our detection system has a frame rate of 5 fps ( including all steps ) on a GPU, while achieving state-of-the-art object detection accuracy on PASCAL VOC 2007, 2012, and MS COCO datasets with only 300 proposals per image. In ILSVRC and COCO 2015 competitions, Faster R-CNN and RPN are the foundations of the 1st-place winning entries in several tracks. Code has been made publicly available."
+    },
+    "29151351": {
+      "title": "The eurocity persons dataset: A novel benchmark for object detection",
+      "abstract": "Big data has had a great share in the success of deep learning in computer vision. Recent works suggest that there is significant further potential to increase object detection performance by utilizing even bigger datasets. In this paper, we introduce the EuroCity Persons dataset, which provides a large number of highly diverse, accurate and detailed annotations of pedestrians, cyclists and other riders in urban traffic scenes. The images for this dataset were collected on-board a moving vehicle in 31 cities of 12 European countries. With over 238200 person instances manually labeled in over 47300 images, EuroCity Persons is nearly one order of magnitude larger than person datasets used previously for benchmarking. The dataset furthermore contains a large number of person orientation annotations (over 211200). We optimize four state-of-the-art deep learning approaches (Faster R-CNN, R-FCN, SSD and YOLOv3) to serve as baselines for the new object detection benchmark. In experiments with previous datasets we analyze the generalization capabilities of these detectors when trained with the new dataset. We furthermore study the effect of the training set size, the dataset diversity (day- vs. night-time, geographical region), the dataset detail (i.e. availability of object orientation information) and the annotation quality on the detector performance. Finally, we analyze error sources and discuss the road ahead."
+    },
+    "1272000": {
+      "title": "How far are we from solving pedestrian detection?",
+      "abstract": "Encouraged by the recent progress in pedestrian detection, we investigate the gap between current state-of-the-art methods and the \"perfect single frame detector\". We enable our analysis by creating a human baseline for pedestrian detection (over the Caltech dataset), and by manually clustering the recurrent errors of a top detector. Our results characterize both localization and background-versus-foreground errors. To address localization errors we study the impact of training annotation noise on the detector performance, and show that we can improve even with a small portion of sanitized training data. To address background/foreground discrimination, we study convnets for pedestrian detection, and discuss which factors affect their performance. Other than our in-depth analysis, we report top performance on the Caltech dataset, and provide a new sanitized set of training and test annotations."
+    }
+  },
+  "generator": "fallback_v4"
+}

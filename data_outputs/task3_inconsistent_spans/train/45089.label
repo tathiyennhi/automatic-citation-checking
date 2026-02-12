@@ -1,0 +1,44 @@
+{
+  "doc_id": "45089",
+  "text": "These methods are elegant in their formulation and have also shown to be both quite powerful and scalable [CITATION_1] [CITATION_2] [CITATION_3] . At the same time, their success has left open a number of very basic questions. In particular, if we think of the landing probabilities {r v k } over nodes v and steps k as providing us with a rich set of features relevant to membership in the community of interest, then it becomes clear that personalized PageRank and heat kernel formulations are simply specific, and apparently arbitrary, ways of combining these features using hand-constructed weight coefficients {w k }.",
+  "correct_citation": {
+    "[CITATION_1]": "2163310",
+    "[CITATION_2]": "5771098",
+    "[CITATION_3]": "967291"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "These methods are elegant in their formulation and have also shown to be both quite powerful and scalable    .",
+      "s_span": 0,
+      "e_span": 146
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "These methods are elegant in their formulation and have also shown to be both quite powerful and scalable    .",
+      "s_span": 0,
+      "e_span": 146
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "These methods are elegant in their formulation and have also shown to be both quite powerful and scalable    .",
+      "s_span": 0,
+      "e_span": 146
+    }
+  ],
+  "bib_entries": {
+    "2163310": {
+      "title": "Exploiting the block structure of the web for computing pagerank",
+      "abstract": "The web link graph has a nested block structure: the vast majority of hyperlinks link pages on a host to other pages on the same host, and many of those that do not link pages within the same domain. We show how to exploit this structure to speed up the computation of PageRank by a 3-stage algorithm whereby (1)~the local PageRanks of pages for each host are computed independently using the link structure of that host, (2)~these local PageRanks are then weighted by the ``importance'' of the corresponding host, and (3)~the standard PageRank algorithm is then run using as its starting vector the weighted aggregate of the local PageRanks. Empirically, this algorithm speeds up the computation of PageRank by a factor of 2 in realistic scenarios. Further, we develop a variant of this algorithm that efficiently computes many different ``personalized'' PageRanks, and a variant that efficiently recomputes PageRank after node updates."
+    },
+    "967291": {
+      "title": "Heat kernel based community detection",
+      "abstract": "The heat kernel is a type of graph diffusion that, like the much-used personalized PageRank diffusion, is useful in identifying a community nearby a starting seed node. We present the first deterministic, local algorithm to compute this diffusion and use that algorithm to study the communities that it produces. Our algorithm is formally a relaxation method for solving a linear system to estimate the matrix exponential in a degree-weighted norm. We prove that this algorithm stays localized in a large graph and has a worst-case constant runtime that depends only on the parameters of the diffusion, not the size of the graph. On large graphs, our experiments indicate that the communities produced by this method have better conductance than those produced by PageRank, although they take slightly longer to compute. On a real-world community identification task, the heat kernel communities perform better than those from the PageRank diffusion."
+    },
+    "5771098": {
+      "title": "Fast incremental and personalized pagerank",
+      "abstract": "In this paper, we analyze the efficiency of Monte Carlo methods for incremental computation of PageRank, personalized PageRank, and similar random walk based methods (with focus on SALSA), on large-scale dynamically evolving social networks. We assume that the graph of friendships is stored in distributed shared memory, as is the case for large social networks such as Twitter. For global PageRank, we assume that the social network has $n$ nodes, and $m$ adversarially chosen edges arrive in a random order. We show that with a reset probability of $\\epsilon$, the total work needed to maintain an accurate estimate (using the Monte Carlo method) of the PageRank of every node at all times is $O(\\frac{n\\ln m}{\\epsilon^{2}})$. This is significantly better than all known bounds for incremental PageRank. For instance, if we naively recompute the PageRanks as each edge arrives, the simple power iteration method needs $\\Omega(\\frac{m^2}{\\ln(1/(1-\\epsilon))})$ total time and the Monte Carlo method needs $O(mn/\\epsilon)$ total time; both are prohibitively expensive. Furthermore, we also show that we can handle deletions equally efficiently. We then study the computation of the top $k$ personalized PageRanks starting from a seed node, assuming that personalized PageRanks follow a power-law with exponent $\\alpha<1$. We show that if we store $R>q\\ln n$ random walks starting from every node for large enough constant $q$ (using the approach outlined for global PageRank), then the expected number of calls made to the distributed social network database is $O(k/(R^{(1-\\alpha)/\\alpha}))$. We also present experimental results from the social networking site, Twitter, verifying our assumptions and analyses. The overall result is that this algorithm is fast enough for real-time queries over a dynamic social network."
+    }
+  },
+  "generator": "fallback_v4"
+}

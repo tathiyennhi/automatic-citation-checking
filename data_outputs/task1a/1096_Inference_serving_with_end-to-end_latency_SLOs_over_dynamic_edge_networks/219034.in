@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The exit decision from the early-exit DNN primarily depends on the input content (difficulty level) and less on the latency constraint.",
+    "Therefore, we cannot optimally utilize earlyexit DNNs for latency-bounded execution due to their coarse-grained execution choices (only a few exit branches are available).",
+    "However, the batched inference scenario that is typical in inference serving systems, provides opportunities to utilize early-exit DNNs.",
+    "When some input requests in the batch exit early, the computational need of those exited input requests becomes zero in the subsequent execution, allowing more compute resources and thus faster completion opportunity for the remaining requests in the batch.",
+    "While dynamic DNNs can offer benefits to inference serving systems, training them is still a non-trivial, resource-and time-consuming process, especially when combining network pruning and early-exit techniques."
+  ]
+}

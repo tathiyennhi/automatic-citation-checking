@@ -1,0 +1,17 @@
+{
+  "text": "With, K being the horizon steps in the moving horizon,x i being i th observed state. Q is a positive semi definite matrix that assigns weights to tracking errors of position,velocity and acceleration. This is computationally efficient and easily computable online but ignores trajectory dependent tracking errors. The trajectories are predicted in a sequence consisting of two steps. In the first step, jerk-smooth trajectories are generated for the linear quadratic minimum time problem [CITATION_1] using an extension of the closed-form solutions for motion primitive generation for multirotors [CITATION_2] . The usage of trajectory duration as a free variable allows an extra degree of freedom in the generated trajectory rather than fixing a duration arbitrarily. The second stage of the algorithm takes interactions between the robots into account via reshaping of the previous step's trajectory by solving a constrained least squares problem with regards to the jerk-smooth trajectory and the actual robot trajectory.",
+  "correct_citation": {
+    "[CITATION_1]": "121406687",
+    "[CITATION_2]": "2251543"
+  },
+  "bib_entries": {
+    "2251543": {
+      "title": "A computationally efficient motion primitive for quadrocopter trajectory generation",
+      "abstract": "A method is presented for the rapid generation and feasibility verification of motion primitives for quadrocopters and similar multirotor vehicles. The motion primitives are defined by the quadrocopter's initial state, the desired motion duration, and any combination of components of the quadrocopter's position, velocity, and acceleration at the motion's end. Closed-form solutions for the primitives are given, which minimize a cost function related to input aggressiveness. Computationally efficient tests are presented to allow for rapid feasibility verification. Conditions are given under which the existence of feasible primitives can be guaranteed a priori . The algorithm may be incorporated in a high-level trajectory generator, which can then rapidly search over a large number of motion primitives which would achieve some given high-level goal. It is shown that a million motion primitives may be evaluated and compared per second on a standard laptop computer. The motion primitive generation algorithm is experimentally demonstrated by tasking a quadrocopter with an attached net to catch a thrown ball, evaluating thousands of different possible motions to catch the ball."
+    },
+    "121406687": {
+      "title": "On the linear quadratic minimum-time problem",
+      "abstract": "A nontraditional minimum-time problem that includes quadratic-state and control-weighting terms in the performance index is investigated. This formulation provides a convenient solution to the problem that uses the solution of the Riccati equation to compute the optimal feedback gain and the optimal time. In some cases the latter is simply found using the derivative of the Riccati equation solution. >"
+    }
+  }
+}

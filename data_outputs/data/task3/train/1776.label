@@ -1,0 +1,29 @@
+{
+  "doc_id": "1776",
+  "text": "Skeletonization algorithms are widely used for drawings vectorization. Chamfer distance skeletonization proposed by Di Bajadi Baja (1994) is used in our method for different reasons. First, this skeletonization method produces a wellshaped skeleton. Second, 3,4 chamfer distance skeletonization is robust to noise. Moreover, this algorithm is reversible so we can predict the original thickness of line drawing. Those features are discussed in detail in [CITATION_1] After generating the skeleton, a junction detection algorithm detects and label junctions of the skeleton. The junction detection algorithm counts the detected pixels in 8-neighbors and classifies the selected pixel based on the number of detected pixels. When the number of detected pixels is less than two the selected pixel is classified as an End-Point pixel. However, if more than two pixels are detected the selected pixel is classified as junction [CITATION_2] . A skeleton with labeled junction points is generated and used as input for the genetic algorithm which is explained in section 3.2.",
+  "correct_citation": {
+    "[CITATION_1]": "3000107",
+    "[CITATION_2]": "39858893"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Those features are discussed in detail in  After generating the skeleton, a junction detection algorithm detects and label junctions of the skeleton."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "However, if more than two pixels are detected the selected pixel is classified as junction  ."
+    }
+  ],
+  "bib_entries": {
+    "39858893": {
+      "title": "3d reconstruction of histological sections: application to mammary gland tissue",
+      "abstract": "In this article, we present a novel method for the automatic 3D reconstruction of thick tissue blocks from 2D histological sections. The algorithm completes a high-content (multi- scale, multifeature) imaging system for simultaneous morphological and molecular analysis of thick tissue samples. This computer-based system integrates image acquisition, annotation, regis- tration, and three-dimensional reconstruction. We present an experimental validation of this tool using both synthetic and real data. In particular, we present the 3D reconstruction of an entire mouse mammary gland and demonstrate the integration of high-resolution molecular data. Microsc. Res. Tech. 73:1019-1029, 2010. V C 2010 Wiley-Liss, Inc."
+    },
+    "3000107": {
+      "title": "Robust and accurate vectorization of line drawings",
+      "abstract": "This paper presents a method for vectorizing the graphical parts of paper-based line drawings. The method consists of separating the input binary image into layers of homogeneous thickness, skeletonizing each layer, segmenting the skeleton by a method based on random sampling, and simplifying the result. The segmentation method is robust with a best bound of 50 percent noise reached for indefinitely long primitives. Accurate estimation of the recognized vector's parameters is enabled by explicitly computing their feasibility domains. Theoretical performance analysis and expression of the complexity of the segmentation method are derived. Experimental results and comparisons with other vectorization systems are also provided."
+    }
+  },
+  "generator": "fallback_v4"
+}

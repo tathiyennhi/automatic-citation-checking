@@ -1,0 +1,20 @@
+{
+  "doc_id": "33178",
+  "text": "These parameters are essential to analyze spin process and indicate the aerodynamic force directly. All these parameters except temperature are derived from the pressure values of the sensor module. The micro controller on the module reads data from eight sensors (one of them is a spare) through a Serial Peripheral Interface (SPI) interface at a frequency of 600 Hz. Noise is reduced by median filtering, and then the data is processed by matrix operation and resolved to obtain the flow angle and velocity. The software will first compare the pressure values from seven holes of the probe. If the center hole has a maximum pressure, it is considered to be a low flow angle; otherwise, it is classified as a high flow angle. The detailed formulas follow Gerner's algorithm. [CITATION_1] For flight tests, both accuracy and speed of the acquisition are required. Normally, to perform one mathematical operation of the seven-hole probe, the program has to look up a coefficient table of 400 figures, before doing several matrix manipulations and trigonometric functions. In the solution of this paper, with the help of a high-performance ARM processor, a whole manipulation only requires 230 s, and the system output rate is 100 Hz. The rate can be accelerated up to 600 Hz under specific circumstances for dynamic measurement with shorter pressure tubes.",
+  "correct_citation": {
+    "[CITATION_1]": "121059527"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The detailed formulas follow Gerner's algorithm. For flight tests, both accuracy and speed of the acquisition are required."
+    }
+  ],
+  "bib_entries": {
+    "121059527": {
+      "title": "Non-nulling seven-hole probes for high angle flow measurement",
+      "abstract": "This paper illustrates a method for calibrating seven-hole probes to measure local total and static pressures and relative flow angles of up to 70 degrees in subsonic compressible flows. The method of Latin Squares was used to statistically sample a large and otherwise unmanageable data set, thereby reducing to a minimum the number of data points required to construct a polynomial curve fit to the data. Calibration produces three-variable third order polynomials which permit all of the desired flow properties to be found explicitly from probe measured pressures. This method determines the flow angles to within 2 degrees and Mach number to within 0.04 with 95 percent certainty."
+    }
+  },
+  "generator": "fallback"
+}

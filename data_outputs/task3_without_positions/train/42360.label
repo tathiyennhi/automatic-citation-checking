@@ -1,0 +1,20 @@
+{
+  "doc_id": "42360",
+  "text": "Recent research efforts focused on speculative computations to parallelize DFA membership tests. Holub and Štekr [CITATION_1] were the first to split the input string into chunks and distribute chunks among available processors. Their speculation introduces a substantial amount of redundant computation, which restricts the obtainable speedup for general DFAs to O( |P| |Q| ), where |P| is the number of processors, and |Q| is the number of DFA states. Their algorithm degenerates to a speed-down when |Q| exceeds the number of processors (see also Sect. 6, Fig. 11 ). To overcome this problem, Holub and Štekr specialized their algorithm for k-local DFAs. A DFA is k-local if for every word of length k and for all states p, q ∈ Q it holds that δ * ( p, w) = δ * (q, w). Starting the matching operation k symbols ahead of a given chunk will synchronize the DFA into the correct initial state by the time matching reaches the beginning of the chunk, which eliminates all speculative computation. Holub and Štekr achieve a linear speedup of O(|P|) for k-local automata. Unlike Holub and Štekr's approach, our DFA parallelization avoids speed-downs altogether. We use structural properties of general DFAs to limit the amount of speculation. In particular, the restriction to k-local automata is not required. We have vectorized our speculative matching routine, and we have extensively evaluated our approach on a 40-core shared memory architecture, for AVX2 vector instructions, and on the Amazon EC2 cloud infrastructure.",
+  "correct_citation": {
+    "[CITATION_1]": "36558285"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Holub and Štekr  were the first to split the input string into chunks and distribute chunks among available processors."
+    }
+  ],
+  "bib_entries": {
+    "36558285": {
+      "title": "On parallel implementations of deterministic finite automata",
+      "abstract": "We present implementations of parallel DFA run methods and find whether and under what conditions is worthy to use the parallel methods of simulation of run of finite automata. ::: ::: First, we introduce the parallel DFA run methods for general DFA, which are universal, but due to the dependency of simulation time on the number of states |Q | of automaton being run, they are suitable only for run of automata with the smaller number of states. ::: ::: Then we show that if we apply some restrictions to properties of automata being run, we can reach the linear speedup compared to the sequential simulation method. We designed methods benefiting from k -locality that allows optimum parallel run of exact and approximate pattern matching automata. ::: ::: Finally, we show the results of experiments conducted on two types of parallel computers (Cluster of workstations and Symmetric shared-memory multiprocessors)."
+    }
+  },
+  "generator": "fallback_v4"
+}

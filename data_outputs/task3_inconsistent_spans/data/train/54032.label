@@ -1,0 +1,55 @@
+{
+  "doc_id": "54032",
+  "text": "Although the above-mentioned methods perform well in most terrain environments, most of them need to adjust several parameters to achieve satisfactory filtering accuracy. To reduce parameter settings, some researchers try to apply machine learning or deep learning for filtering. Lu et al. [CITATION_1] introduced a novel machine learning method for filtering by building a hybrid conditional random field model with both discrete and continuous hidden random variables. The experiments can achieve 3.46% overall error rate, which outperforms the previous best systems. Jahromi et al. [CITATION_2] proposed a novel filtering algorithm using artificial neural network (ANN). They trained the ANN in two different strategies including either semiautomatic selection or manual selection of training data. Experiments demonstrate that both the two strategies could obtain promising results. Recently, a new filtering method based on deep learning using deep convolutional neural networks (CNN) was proposed by Hu and Yuan [CITATION_3] In their method, the classification of a point was considered as the classification of an image. By training with over 17 million labeled points, a deep CNN model with 150 million parameters can be built for filtering. The experimental results showed that the deep CNN model outperforms all the state-of-the-art algorithms in terms of error rate (1.22%). Similarly, Rizaldy et al. [CITATION_4] presented a deep learning approach for ground classification. In their method, the point cloud is initially transformed into a multi-dimensional image. Then, the fully convolutional networks (FCN) with dilated kernels are designed to perform image classification. Experimental results showed that the FCN-based filtering method performed better than the CNN-based filtering method in terms of total error and type I error when only using the ISPRS datasets for training. Although these machine-learning-based approaches seem to be an accurate and easy-to-implement way for filtering, they also have some drawbacks. First of all, these kinds of methods always require lots of labeled points for training, whereas classifying points as ground and non-ground manually may be a huge human work. Moreover, some of these methods cannot achieve good performance in complex terrain environments.",
+  "correct_citation": {
+    "[CITATION_1]": "14584597",
+    "[CITATION_2]": "24414443",
+    "[CITATION_3]": "12237682",
+    "[CITATION_4]": "56482022"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Lu et al.  introduced a novel machine learning method for filtering by building a hybrid conditional random field model with both discrete and continuous hidden random variables.",
+      "s_span": 280,
+      "e_span": 470
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Jahromi et al.  proposed a novel filtering algorithm using artificial neural network (ANN).",
+      "s_span": 570,
+      "e_span": 673
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Recently, a new filtering method based on deep learning using deep convolutional neural networks (CNN) was proposed by Hu and Yuan  In their method, the classification of a point was considered as the classification of an image.",
+      "s_span": 887,
+      "e_span": 1127
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Similarly, Rizaldy et al.  presented a deep learning approach for ground classification.",
+      "s_span": 1386,
+      "e_span": 1486
+    }
+  ],
+  "bib_entries": {
+    "12237682": {
+      "title": "Deep-learning-based classification for DTM extraction from ALS point cloud",
+      "abstract": "Airborne laser scanning (ALS) point cloud data are suitable for digital terrain model (DTM) extraction given its high accuracy in elevation. Existing filtering algorithms that eliminate non-ground points mostly depend on terrain feature assumptions or representations; these assumptions result in errors when the scene is complex. This paper proposes a new method for ground point extraction based on deep learning using deep convolutional neural networks (CNN). For every point with spatial context, the neighboring points within a window are extracted and transformed into an image. Then, the classification of a point can be treated as the classification of an image; the point-to-image transformation is carefully crafted by considering the height information in the neighborhood area. After being trained on approximately 17 million labeled ALS points, the deep CNN model can learn how a human operator recognizes a point as a ground point or not. The model performs better than typical existing algorithms in terms of error rate, indicating the significant potential of deep-learning-based methods in feature extraction from a point cloud."
+    },
+    "14584597": {
+      "title": "A hybrid conditional random field for estimating the underlying ground surface from airborne LiDAR data",
+      "abstract": "Recent advances in airborne light detection and ranging (LiDAR) technology allow rapid and inexpensive generation of digital surface models (DSMs), 3-D point clouds of buildings, vegetations, cars, and natural terrain features over large regions. However, in many applications, such as flood modeling and landslide prediction, digital terrain models (DTMs), the topography of the bare-Earth surface, are needed. This paper introduces a novel machine learning approach to automatically extract DTMs from their corresponding DSMs. We first classify each point as being either ground or nonground, using supervised learning techniques applied to a variety of features. For the points which are classified as ground, we use the LiDAR measurements as an estimate of the surface height, but, for the nonground points, we have to interpolate between nearby values, which we do using a Gaussian random field. Since our model contains both discrete and continuous latent variables, and is a discriminative (rather than generative) probabilistic model, we call it a hybrid conditional random field. We show that a Maximum a Posteriori estimate of the surface height can be efficiently estimated by using a variant of the Expectation Maximization algorithm. Experiments demonstrate that the accuracy of this learning-based approach outperforms the previous best systems, based on manually tuned heuristics."
+    },
+    "24414443": {
+      "title": "A novel filtering algorithm for bare-earth extraction from airborne laser scanning data using an artificial neural network",
+      "abstract": "The extraction of bare-earth points from airborne laser scanning (ALS) data and the generation of high-quality digital terrain models (DTMs) are important research challenges. In this study, a novel filtering algorithm based on artificial neural networks (ANNs) is proposed to extract bare-earth points from ALS data efficiently. An efficient set of conditions were defined to choose the training data semi-automatically when an expert user is not available. Four standard study sites were used to evaluate the performance of the method. The obtained results were compared with four popular filtering algorithms based on type I error, type II error, the kappa coefficient and the total error. First echoes were used in the proposed method to increase the reliable detection of vegetated areas. The proposed algorithm has an easy implementation procedure and low computational costs. The results obtained for both semiautomatic and supervised training data selection reveal acceptable accuracies, especially for type II errors. Use of this algorithm would lead to high-quality DTM generation using accurately identified bare-earth points in urban areas."
+    },
+    "56482022": {
+      "title": "Ground and multi-class classification of airborne laser scanner point clouds using fully convolutional networks",
+      "abstract": "Various classification methods have been developed to extract meaningful information from Airborne Laser Scanner (ALS) point clouds. However, the accuracy and the computational efficiency of the existing methods need to be improved, especially for the analysis of large datasets (e.g., at regional or national levels). In this paper, we present a novel deep learning approach to ground classification for Digital Terrain Model (DTM) extraction as well as for multi-class land-cover classification, delivering highly accurate classification results in a computationally efficient manner. Considering the top–down acquisition angle of ALS data, the point cloud is initially projected on the horizontal plane and converted into a multi-dimensional image. Then, classification techniques based on Fully Convolutional Networks (FCN) with dilated kernels are designed to perform pixel-wise image classification. Finally, labels are transferred from pixels to the original ALS points. We also designed a Multi-Scale FCN (MS-FCN) architecture to minimize the loss of information during the point-to-image conversion. In the ground classification experiment, we compared our method to a Convolutional Neural Network (CNN)-based method and LAStools software. We obtained a lower total error on both the International Society for Photogrammetry and Remote Sensing (ISPRS) filter test benchmark dataset and AHN-3 dataset in the Netherlands. In the multi-class classification experiment, our method resulted in higher precision and recall values compared to the traditional machine learning technique using Random Forest (RF); it accurately detected small buildings. The FCN achieved precision and recall values of 0.93 and 0.94 when RF obtained 0.91 and 0.92, respectively. Moreover, our strategy significantly improved the computational efficiency of state-of-the-art CNN-based methods, reducing the point-to-image conversion time from 47 h to 36 min in our experiments on the ISPRS filter test dataset. Misclassification errors remained in situations that were not included in the training dataset, such as large buildings and bridges, or contained noisy measurements."
+    }
+  },
+  "generator": "fallback_v4"
+}

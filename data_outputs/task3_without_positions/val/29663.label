@@ -1,0 +1,20 @@
+{
+  "doc_id": "29663",
+  "text": "For this first experiment, we ran in parallel Chainer and Algorithm 1, with the weight of a fragment on each genome being the length of the aligned sequence. We authorised overlaps measuring up to 10% of the fragments' lengths (r = 0.1). Hence, the total chain weight, i.e. the sum of the chained fragments lengths minus the overlaps, computed by the chaining step gives the genome coverage, which we report as a percentage of the genome length. It is straightforward that, as both chaining algorithms provide an optimal solution in their setup, the coverage with overlaps is always larger than without overlaps. Figure 3a plots for each genome pair the difference of coverage percentages between both algorithms: (Algorithm 1 coverage% -Chainer coverage% ); a value of 10 means that chaining with overlaps covers 10% more of the genome than chaining without overlaps. The box-and-whiskers plot shows that, for this collection of bacterial genome pairs, the improvement has a median of 15% and reaches values up to 60%. Since bacterial genomes have a median length of 2.8 Mbp, a difference of one percent means at least 28 Kbp of additionally aligned sequences. Thus, one can make the following basic estimation. Knowing that in average 87% of these genomes are coding and bacterial genes are 1 Kbp long [CITATION_1] , 15% more coverage should involve 365 additional genes compared to a solution without overlaps; this is important from the biological perspective. Chainer takes < 1 s. in average and at most 17 s. We plot the running times of Algorithm 1 in Figure 3b : it stays below 10 seconds in 75% of the comparisons, and between 3 and 67 minutes in only 30 cases (those with a number of fragments ranging from > 200, 000 to 1, 000, 000). Thus, allowing for overlaps improves the coverage significantly at a reasonable cost.",
+  "correct_citation": {
+    "[CITATION_1]": "14573476"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Knowing that in average 87% of these genomes are coding and bacterial genes are 1 Kbp long  , 15% more coverage should involve 365 additional genes compared to a solution without overlaps; this is important from the biological perspective."
+    }
+  ],
+  "bib_entries": {
+    "14573476": {
+      "title": "Average gene length is highly conserved in prokaryotes and eukaryotes and diverges only between the two kingdoms",
+      "abstract": "The average length of genes in a eukaryote is larger than in a prokaryote, implying that evolution of complexity is related to change of gene lengths. Here, we show that although the average lengths of genes in prokaryotes and eukaryotes are much different, the average lengths of genes are highly conserved within either of the two kingdoms. This suggests that natural selection has clearly set a strong limitation on gene elongation within the kingdom. Furthermore, the average gene size adds another distinct characteristic for the discrimination between the two kingdoms of organisms."
+    }
+  },
+  "generator": "fallback_v4"
+}

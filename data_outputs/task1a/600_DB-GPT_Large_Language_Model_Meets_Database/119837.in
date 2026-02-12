@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We first generate 60 instructions from the 180 pairs (workload, optimal indexes) on the TPC-H and TPC-DS datasets, from which we take the prompt that achieves the best performance on the 20 workloads of the IMDB dataset.",
+    "Apart from instruction (LLM(TaskeDesc)), we test the input prompt with table schema (LLM(Schema)) and the input prompt with data statistics like distinct value ratios and tuple numbers (LLM(DataStats)).",
+    "Empirical AnalysisThe experimental results are shown in Fig. 4b.",
+    "We have two observations.",
+    "First, the three prompting methods for DB-GPT all achieve performance improvement over PostgreSQL, which does not recommend indexes for specific workloads.Because DB-GPT finds operators that can be enhanced by indexes and builds indexes on the columns of these operators (e.g., create index on person_info(person_id, info_type_id) for the predicate \"person_info.person_id > 4158523 AND person_info.info_type_id <> 22\")."
+  ]
+}

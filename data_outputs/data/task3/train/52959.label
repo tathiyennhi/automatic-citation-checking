@@ -1,0 +1,65 @@
+{
+  "doc_id": "52959",
+  "text": "Among the deterministic algorithms running in polynomial time for directed st-reachability, the most space efficient algorithm is due to Barnes et al. [CITATION_1] who gave a slightly sublinear space (using n/2 Θ( √ lg n) bits) algorithm for this problem running in polynomial time. We know of no better polynomial time algorithm for this problem with better space bound. Moreover, the space used by this algorithm matches a lower bound on space for solving directed st-reachability on a restricted model of computation called Node Naming Jumping Automata on Graphs (NNJAGs) [CITATION_2] [CITATION_3] . This model was introduced especially for the study of directed st-reachability and most of the known sublinear space algorithms for this problem can be implemented on it. Thus, to design any polynomial time ROM algorithm taking space less than n/2 Θ( √ lg n) bits requires radically new ideas. Recently there has been some improvement in the space bound for some special classes of graphs like planar and H-minor free graphs [CITATION_4] [CITATION_5] . A drawback for all these algorithms using small space i.e., sublinear number of bits, is that their running time is often some polynomial of high degree. This is not surprising as Tompa [CITATION_6] showed that for directed st-reachability, if the number of bits available is o(n) then some natural algorithmic approaches to the problem require super-polynomial time.",
+  "correct_citation": {
+    "[CITATION_1]": "19969096",
+    "[CITATION_2]": "10730522",
+    "[CITATION_3]": "7758254",
+    "[CITATION_4]": "8939801",
+    "[CITATION_5]": "2617248",
+    "[CITATION_6]": "1511914"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Among the deterministic algorithms running in polynomial time for directed st-reachability, the most space efficient algorithm is due to Barnes et al.  who gave a slightly sublinear space (using n/2 Θ( √ lg n) bits) algorithm for this problem running in polynomial time."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Moreover, the space used by this algorithm matches a lower bound on space for solving directed st-reachability on a restricted model of computation called Node Naming Jumping Automata on Graphs (NNJAGs)   ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Moreover, the space used by this algorithm matches a lower bound on space for solving directed st-reachability on a restricted model of computation called Node Naming Jumping Automata on Graphs (NNJAGs)   ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Recently there has been some improvement in the space bound for some special classes of graphs like planar and H-minor free graphs   ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Recently there has been some improvement in the space bound for some special classes of graphs like planar and H-minor free graphs   ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "This is not surprising as Tompa  showed that for directed st-reachability, if the number of bits available is o(n) then some natural algorithmic approaches to the problem require super-polynomial time."
+    }
+  ],
+  "bib_entries": {
+    "2617248": {
+      "title": "New time-space upperbounds for directed reachability in high-genus and h-minor-free graphs",
+      "abstract": "We obtain the following new simultaneous time-space upper bounds for the directed reachability problem. (1) A polynomial-time, O(n^{2/3} * g^{1/3})-space algorithm for directed graphs embedded on orientable surfaces of genus g. (2) A polynomial-time, O(n^{2/3})-space algorithm for all H-minor-free graphs given the tree decomposition, and (3) for K_{3,3}-free and K_5-free graphs, a polynomial-time, O(n^{1/2 + epsilon})-space algorithm, for every epsilon > 0. ::: ::: For the general directed reachability problem, the best known simultaneous time-space upper bound is the BBRS bound, due to Barnes, Buss, Ruzzo, and Schieber, which achieves a space bound of O(n/2^{k * sqrt(log(n))}) with polynomial running time, for any constant k. It is a significant open question to improve this bound for reachability over general directed graphs. Our algorithms beat the BBRS bound for graphs embedded on surfaces of genus n/2^{omega(sqrt(log(n))}, and for all H-minor-free graphs. This significantly broadens the class of directed graphs for which the BBRS bound can be improved."
+    },
+    "1511914": {
+      "title": "Two familiar transitive closure algorithms which admit no polynomial time, sublinear space implementations",
+      "abstract": "Any Boolean straight-line program which computes the transitive closure of an nxn Boolean matrix by successive squaring requires time exceeding any polynomial in n if the space used is o(n). This is the first demonstration of a “natural” algorithm which (1) has a polynomial time implementation and (2) has a small (e.g., O(log 2 n)) space implementation, but (3) has no implementation running in polynomial time and small space simultaneously. It is also shown that any implementation of Warshall's transitive closure algorithm requires Ω(n) space."
+    },
+    "10730522": {
+      "title": "Space lower bounds for maze threadability on restricted machines",
+      "abstract": "A restricted model of a Turing machine called a JAG (Jumping Automaton for Graphs) is introduced for solving the maze threadability problem (determining whether there is a path joining two distinguished nodes in an input graph). A JAG accesses its input graph by moving pebbles from a limited supply along the edges of the graph under a finite state control, and detecting when two pebbles coincide. It can also cause one pebble to jump to another. We prove that for every N there is a JAG which can determine threadability of an arbitrary N node input graph in storage $O((\\log N)^2 )$, where the storage of a JAG with Ppebbles and N states is defined to be $P\\log N + \\log Q$. Further, we prove that any JAG which determines threadability requires storage $\\Omega ((\\log N)^2 /\\log \\log N)$. Finally, we prove that even when the inputs are restricted to undirected graphs (with no bound on the number of nodes), no single JAG can determine threadability."
+    },
+    "7758254": {
+      "title": "Tight lower bounds for st-connectivity on the NNJAG model",
+      "abstract": "Directed st-connectivity is the problem of deciding whether or not there exists a path from a distinguished node s to a distinguished node t in a directed graph. We prove a time--space lower bound on the probabilistic NNJAG model of Poon [ Proc. 34th Annual Symposium on Foundations of Computer Science, Palo Alto, CA, 1993, pp. 218--227]. Let n be the number of nodes in the input graph and S and T be the space and time used by the NNJAG, respectively. We show that, for any $\\delta > 0$, if an NNJAG uses space $S \\in O(n^{1-\\delta})$, then $T \\in 2^{ \\Omega(\\log^2 (n/S)) }$; otherwise $T \\in 2^{ \\Omega( \\log^2({n\\log n \\over S}) / \\log\\log n )} \\times (nS / \\log n)^{1/2}$. (In a preliminary version of this paper by Edmonds and Poon [Proc. 27th Annual ACM Symposium on Theory of Computing, Las Vegas, NV, 1995, pp. 147--156.], a lower bound of $T \\in 2^{ \\Omega( \\log^2({n\\log n \\over S}) / \\log\\log n )} \\times (nS/\\log n)^{1/2}$ was proved.) Our result greatly improves the previous lower bound of $ST \\in \\Omega(n^2/\\log n)$ on the JAG model by Barnes and Edmonds [ Proc. 34th Annual Symposium on Foundations of Computer Science, Palo Alto, CA, 1993, pp. 228--237] and that of $S^{1/3}T \\in \\Omega(n^{4/3})$ on the NNJAG model by Edmonds [ Time-Space Lower Bounds for Undirected and Directed ST-Connectivity on JAG Models, Ph. D. thesis, University of Toronto, Toronto, ON, Canada, 1993]. Our lower bound is tight for $S \\in O(n^{1-\\delta})$, for any $\\delta > 0$, matching the upper bound of Barnes \\etal [ Proc. 7th Annual IEEE Conference on Structure in Complexity Theory, Boston, MA, 1992, pp. 27--33]. As a corollary of this improved lower bound, we obtain the first tight space lower bound of $\\Omega( \\log^2 n )$ on the NNJAG model. No tight space lower bound was previously known even for the more restricted JAG model."
+    },
+    "19969096": {
+      "title": "A sublinear space, polynomial time algorithm for directed s-t connectivity",
+      "abstract": "Directed s-t connectivity is the problem of detecting whether there is a path from vertex s to vertex t in a directed graph. We present the first known deterministic sublinear space, polynomial time algorithm for directed s-t connectivity. For $n$-vertex graphs, our algorithm can use as little as $n/2^{\\Theta(\\sqrt{\\log n})}$ space while still running in polynomial time."
+    },
+    "8939801": {
+      "title": "Õ( √ n)-space and polynomialtime algorithm for planar directed graph reachability",
+      "abstract": "The directed graph reachability problem takes as input an n-vertex directed graph G = (V,E), and two distinguished vertices v 0, and vertex v *. The problem is to determine whether there exists a path from v 0 to v * in G. The main result of this paper is to show that the directed graph reachability problem restricted to planar graphs can be solved in polynomial time using only \\(\\widetilde{O}(\\sqrt{n})\\) space."
+    }
+  },
+  "generator": "fallback_v4"
+}

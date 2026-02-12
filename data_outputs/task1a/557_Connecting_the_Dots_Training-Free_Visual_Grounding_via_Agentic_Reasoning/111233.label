@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This instance-level sampling + LLM-aggregation differs from typical output-level ensembling: we perform stochastic sampling at the multimodal-caption generation stage and rely on the LLM to perform semantic fusion, which effectively filters out hallucinations and unstable attribute mentions from individual MLLM outputs.",
+    "Importantly, this does not modify any model weights and remains fully trainingfree.Empirically, applying this procedure with n = 5 samples per instance increases RefCOCO-val accuracy from 67.1% to 68.5%, confirming that (1) caption noise is a dominant source of error, and (2) aggregating multiple MLLM samples with an LLM is an effective, lightweight mitigation strategy that improves grounding robustness without extra training.",
+    "Candidate Selection based on LLMsTo further analyze the impact of our candidate selection strategy, we conducted additional experiments examining different captioning strategies for guiding candidate selection, as shown in Table 2.",
+    "Specifically, we tested three configurations: (1) directly using the original textual query as the caption for the target instance (Caption → Query), (2) generating captions combining the query and global image caption information (Caption → Query+Caption), and (3) using the captions generated solely from the multimodal model (Caption).",
+    "The results indicate that directly employing the original query (Caption → Query) achieves the highest overall accuracy (around 90.6%), significantly outperforming the scenario of using purely multimodal-generated captions (Caption)."
+  ],
+  "correct_citations": []
+}

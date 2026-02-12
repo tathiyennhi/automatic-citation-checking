@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The distinction between low and high cardinality is determined by a predefined threshold, which is set to 1,024 in this work.",
+    "In our dataset, categorical attributes range in cardinality from 2 to over 100M.",
+    "For highcardinality attributes prone to long-tail distributions and out-ofvocabulary items, we employ a principled aggregation strategy where infrequent or new entities are mapped to shared aggregated identifiers, controlling vocabulary size while maintaining attribute utility.",
+    "For numerical attributes, we employ the negative log-likelihood of a normal distribution, where the target variable is in logarithmic scale:Lnum (𝜇, 𝜎, 𝑦) = (𝑦 -𝜇) 2 2𝜎 2 + log(𝜎) + log(2𝜋) 2(1)Here, 𝜇 (mean) and 𝜎 (standard deviation) are model outputs, and 𝑦 is the ground truth value, all in logarithmic scale.For low-cardinality categorical attributes, we use the standard cross-entropy loss:L lcat (𝑍, 𝑦) = -log 𝑒 𝑍 [𝑦] 𝐶 𝑖=1 𝑒 𝑍 [𝑖] (2)where 𝑍 ∈ R 𝐶 is the vector of logits for 𝐶 categories, and 𝑦 is the index of the ground truth category.For high-cardinality categorical attributes, direct computation of Eq.",
+    "( 2) is infeasible due to the excessive GPU memory required to compute logits for all categories for every attribute, time step, and sample."
+  ],
+  "correct_citations": []
+}

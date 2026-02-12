@@ -1,0 +1,20 @@
+{
+  "doc_id": "33016",
+  "text": "The performance of the classifier is shown in Table I . The accuracy was measured on the test set, which contains 36,000 samples. As can be seen in Table I , the RNN classifier has poorer performance than the LSTM and GRU, and LSTM performs better than GRU. This can be explained by the fact that both GRU and LSTM classifiers don't suffer from the exploding and vanishing gradients problem as much as conventional RNN, and can thus leverage long term context (as explained in section II-B-1). LSTM is better than GRU due-to its more flexible (and complex) architecture (input, output and forget gates instead-of FRU's update and reset gates, allowing finergrained control of what parts of the state to propagate), which gives it improved accuracy, albeit the expanse of a longer training period (as explained in section II-B-2). These results are in line with the comparison in [CITATION_1] . As shown in the table, the bidirectional RNN variants have better accuracy than the unidirectional variants (with the exception of GRU), due-to their ability to \"remember\" the beginning of long sequences (as explained in section II-B-3). BLSTM (both shallow and deep variants), is the best malware classifier, accuracy-wise, and, as shown in Table II , is also one of the classifiers most resistant to the proposed attack, meaning the proposed attack had poor performance against BLSTM (based on Definitions 3 and 4). The deep LSTM and BLSTM show some improvement over their shallow variants, meaning that higher abstraction of this dataset by representation learning provides more correlation between the feature abstractions. The deep LSTM and BLSTM variants are also the most resistant to our attack, as shown in Table II .",
+  "correct_citation": {
+    "[CITATION_1]": "13211783"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "These results are in line with the comparison in  ."
+    }
+  ],
+  "bib_entries": {
+    "13211783": {
+      "title": "Malware Classification with LSTM and GRU language models and a character-level CNN",
+      "abstract": "Malicious software, or malware, continues to be a problem for computer users, corporations, and governments. Previous research [1] has explored training file-based, malware classifiers using a two-stage approach. In the first stage, a malware language model is used to learn the feature representation which is then input to a second stage malware classifier. In Pascanu et al. [1], the language model is either a standard recurrent neural network (RNN) or an echo state network (ESN). In this work, we propose several new malware classification architectures which include a long short-term memory (LSTM) language model and a gated recurrent unit (GRU) language model. We also propose using an attention mechanism similar to [12] from the machine translation literature, in addition to temporal max pooling used in [1], as an alternative way to construct the file representation from neural features. Finally, we propose a new single-stage malware classifier based on a character-level convolutional neural network (CNN). Results show that the LSTM with temporal max pooling and logistic regression offers a 31.3% improvement in the true positive rate compared to the best system in [1] at a false positive rate of 1%."
+    }
+  },
+  "generator": "fallback_v4"
+}

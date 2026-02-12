@@ -1,0 +1,22 @@
+{
+  "doc_id": "11986",
+  "text": "None of the open-source apps in our evaluation use JarInfer. CFNullness allows for different uses of Pair to vary in nullability via type-use annotations on generic type parameters [CITATION_1] . E.g., one can write Pair<@Nullable String, String> for Pairs where the first element may be null. In contrast, NullAway treats generic types like any other; for Pair, it assumes both fields have the @NonNull default. To allow null as a value, the fields themselves would need to be annotated @Nullable. Type-use annotations on the generic type parameters are ignored. This treatment is sound but could lead to undesirable code duplication; e.g., one may need to write a nearly-identical FirstNullablePair, SecondNullablePair, etc.",
+  "correct_citation": {
+    "[CITATION_1]": "14533693"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "CFNullness allows for different uses of Pair to vary in nullability via type-use annotations on generic type parameters  .",
+      "s_span": 61,
+      "e_span": 195
+    }
+  ],
+  "bib_entries": {
+    "14533693": {
+      "title": "Practical pluggable types for Java",
+      "abstract": "This paper introduces the Checker Framework, which supports adding pluggable type systems to the Java language in a backward-compatible way. A type system designer defines type qualifiers and their semantics, and a compiler plug-in enforces the semantics. Programmers can write the type qualifiers in their programs and use the plug-in to detect or prevent errors. The Checker Framework is useful both to programmers who wish to write error-free code, and to type system designers who wish to evaluate and deploy their type systems. The Checker Framework includes new Java syntax for expressing type qualifiers; declarative and procedural mechanisms for writing type-checking rules; and support for flow-sensitive local type qualifier inference and for polymorphism over types and qualifiers. The Checker Framework is well-integrated with the Java language and toolset. We have evaluated the Checker Framework by writing 5 checkers and running them on over 600K lines of existing code. The checkers found real errors, then confirmed the absence of further errors in the fixed code. The case studies also shed light on the type systems themselves."
+    }
+  },
+  "generator": "fallback_v4"
+}

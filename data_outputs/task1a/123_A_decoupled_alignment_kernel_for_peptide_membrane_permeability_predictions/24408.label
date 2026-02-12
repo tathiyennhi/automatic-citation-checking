@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Gaussian ProcessA Gaussian process (GP) is a distribution over functions f: R n → R such that any finite collection has a joint Gaussian distribution:f (•) ∼ GP m(•), k(•, •),with mean function m and positive-definite covariance (kernel) k.For a dataset D = {(x i ∈ R n, y i ∈ R)} N i=1, we represent all the inputs in a matrix X of size N × n and the outputs in a vector y of size N. The induced prior over function values isf:= f (X) ∼ N m(X), K XX, (K XX) ij = k(x i, x j).In regression tasks, we assume that the labels are noisy, i.e.",
+    "y i = f (x i) + ε i with ε i ∼ N (0, η 2), where η > 0 denotes the observation noise standard deviation.",
+    "Joint prior over train/test (regression).Let X * denote test inputs and f *:= f (X *).",
+    "The joint prior over observed targets y and test function values isy f * ∼ N m(X) m(X *), K XX + η 2 I K XX * K X * X K X * X *,with K XX * = k(X, X *), K X * X = K ⊤ XX *, and K X * X * = k(X *, X *).",
+    "Posterior (regression).Conditioning the GP on (X, y), we obtain a Gaussian posterior for f *:m * = m(X *) + K X * X K XX + η 2 I -1 y -m(X), Σ * = K X * X * -K X * X K XX + η 2 I -1 K XX *.The posterior mean provides point predictions and Σ * quantifies predictive uncertainty."
+  ],
+  "correct_citations": []
+}

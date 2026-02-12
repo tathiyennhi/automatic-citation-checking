@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Time-Travel in Diffusion Models.",
+    "To gain insights on image (or latent) refinement strategies, we revisit diffusion models, where time-travel-a noise-and-denoise step-has become a de-facto technique for refining intermediate or final outputs [4, 39, 42, 76, 80].",
+    "Consider a pretrained diffusion model π θ and an intermediate corrupted latent x t at timestep t ∈ [1, T].",
+    "Time-travel \"rewinds time\" by adding noise to send the latent to the previous timestep t + 1, where a denoising step can then be run to refine the latent:Time-Travel: xt+1 ∼ N ( √ α t x t, (1 -α t)I) (4) Refine: xt = π θ (x t+1, t + 1)(5)where α t follows a predefined variance schedule.",
+    "This extra denoising pass is the key to time-travel: it projects the corrupted latent x t back toward the model's learned image manifold, yielding xt with higher quality compared to x t [42]."
+  ]
+}

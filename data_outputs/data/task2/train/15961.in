@@ -1,0 +1,62 @@
+{
+  "text": "Supercomputers (e.g. IBM BlueGene) have traditionally been designed and used for tightly coupled massively parallel applications, typically implemented in MPI. They have not been an ideal preferred platform for executing loosely coupled applications that are typical in many scientific workflows. Grids have seen success in the execution of tightly coupled parallel applications, but they has been the platform of choice for loosely coupled applications mostly due to the flexibility and granularity of the resource management and the execution of single processor jobs with ease. Work is underway within both the Falkon [CITATION_1] and Condor [CITATION_2] projects to enable the latest BG/P to efficiently support loosely coupled serial jobs without any modifications to the respective applications, and hence enabling an entirely new class of applications that were never candidates as possible use cases for the BlueGene/P supercomputer.",
+  "citation_candidates": [
+    "18531255",
+    "207166250",
+    "809177",
+    "15887619",
+    "59674034",
+    "1375038",
+    "8207366",
+    "14453257",
+    "53302661",
+    "15450656",
+    "6643831"
+  ],
+  "bib_entries": {
+    "53302661": {
+      "title": "Amdahl's Law in the Multicore Era",
+      "abstract": "Augmenting Amdahl's law with a corollary for multicore hardware makes it relevant to future generations of chips with multiple processor cores. Obtaining optimal multicore performance will require further research in both extracting more parallelism and making sequential cores faster."
+    },
+    "59674034": {
+      "title": "The Free Lunch Is Over: A Fundamental Turn Toward Concurrency in Software",
+      "abstract": "The major processor manufacturers and architectures, from Intel and AMD to Sparc and PowerPC, have run out of room with most of their traditional approaches to boosting CPU performance. Instead of driving clock speeds and straight-line instruction throughput ever higher, they are instead turning en masse to hyperthreading and multicore architectures. Both of these features are already available on chips today; in particular, multicore is available on current PowerPC and Sparc IV processors, and is coming in 2005 from Intel and AMD. Indeed, the big theme of the 2004 InStat/MDR Fall Processor Forum was multicore devices, as many companies showed new or updated multicore processors. Looking back, it\u2019s not much of a stretch to call 2004 the year of multicore."
+    },
+    "6643831": {
+      "title": "Falkon: a Fast and Lightweight Task Execution Framework",
+      "abstract": "To enable the rapid execution of many tasks on compute clusters, we have developed Falkon, a Fast and Light-weight tasK executiON framework. Falkon integrates (1) multi-level scheduling to separate resource acquisition (via, e.g., requests to batch schedulers) from task dispatch, and (2) a streamlined dispatcher. Falkon's integration of multi-level scheduling and streamlined dispatchers delivers performance not provided by any other system. We describe Falkon architecture and implementation, and present performance results for both microbenchmarks and applications. Microbenchmarks show that Falkon throughput (487 tasks/sec) and scalability (to 54,000 executors and 2,000,000 tasks processed in just 112 minutes) are one to two orders of magnitude better than other systems used in production Grids. Large-scale astronomy and medical applications executed under Falkon by the Swift parallel programming system achieve up to 90% reduction in end-to-end run time, relative to versions that execute tasks via separate scheduler submissions."
+    },
+    "15450656": {
+      "title": "Distributed Computing in Practice: The Condor Experience",
+      "abstract": "SUMMARY Since 1984, the Condor project has enabled ordinary users to do extraordinary computing. Today, the project continues to explore the social and technical problems of cooperative computing on scales ranging from the desktop to the world-wide computational Grid. In this paper, we provide the history and philosophy of the Condor project and describe how it has interacted with other projects and evolved along with the field of distributed computing. We outline the core components of the Condor system and describe how the technology of computing must correspond to social structures. Throughout, we reflect on the lessons of experience and chart the course travelled by research ideas as they grow into production systems. Copyright c \ufffd 2005 John Wiley & Sons, Ltd."
+    },
+    "1375038": {
+      "title": "Taverna: A tool for the composition and enactment of bioinformatics workflows",
+      "abstract": "Motivation:In silico experiments in bioinformatics involve the co-ordinated use of computational tools and information repositories. A growing number of these resources are being made available with programmatic access in the form of Web services. Bioinformatics scientists will need to orchestrate these Web services in workflows as part of their analyses. ::: ::: Results: The Taverna project has developed a tool for the composition and enactment of bioinformatics workflows for the life sciences community. The tool includes a workbench application which provides a graphical user interface for the composition of workflows. These workflows are written in a new language called the simple conceptual unified flow language (Scufl), where by each step within a workflow represents one atomic task. Two examples are used to illustrate the ease by which in silico experiments can be represented as Scufl workflows using the workbench application. ::: ::: Availability: The Taverna workflow system is available as open source and can be downloaded with example Scufl workflows from http://taverna.sourceforge.net"
+    },
+    "8207366": {
+      "title": "Scientific Workflow Management and the Kepler System",
+      "abstract": "Many scientific disciplines are now data and information driven, and new scientific knowledge is often gained by scientists putting together data analysis and knowledge discovery \u201cpipelines\u201d. A related trend is that more and more scientific communities realize the benefits of sharing their data and computational services, and are thus contributing to a distributed data and computational community infrastructure (a.k.a. \u201cthe Grid\u201d). However, this infrastructure is only a means to an end and scientists ideally should be bothered little with its existence. The goal is for scientists to focus on development and use of what we call scientific workflows. These are networks of analytical steps that may involve, e.g., database access and querying steps, data analysis and mining steps, and many other steps including computationally intensive jobs on high performance cluster computers. In this paper we describe characteristics of and requirements for scientific workflows as identified in a number of our application projects. We then elaborate on Kepler, a particular scientific workflow system, currently under development across a number of scientific data management projects. We describe some key features of Kepler and its underlying Ptolemyii system, planned extensions, and areas of future research. Kepler is a communitydriven, open source project, and we always welcome related projects and new contributors to join."
+    },
+    "18531255": {
+      "title": "Programming Scientific and Distributed Workflow with Triana Services",
+      "abstract": "In this paper, we discuss a real-world application scenario that uses three distinct types of workflow within the Triana problem-solving environment: serial scientific workflow for the data processing of gravitational wave signals; job submission workflows that execute Triana services on a testbed; and monitoring workflows that examine and modify the behaviour of the executing application. We briefly describe the Triana distribution mechanisms and the underlying architectures that we can support. Our middleware independent abstraction layer, called the Grid Application Prototype (GAP), enables us to advertise, discover and communicate with Web and peer-to-peer (P2P) services. We show how gravitational wave search algorithms have been implemented to distribute both the search computation and data across the European GridLab testbed, using a combination of Web services, Globus interaction and P2P infrastructures."
+    },
+    "14453257": {
+      "title": "Distributed execution of aggregated multi domain workflows using an agent framework",
+      "abstract": "In e-Science, meaningful experiment processes and workflow engines emerge as important scientific resources. A complex experiment often involves services and processes developed in different scientific domains. Aggregating different workflows into one meta workflow avoids unnecessary rewriting of experiment processes and thus improves the reuse efficiency. Remote workflow engines explore the computing power of distributed environment. However, the diversity of workflow description and execution models makes the integration between engines difficult. An agent framework uses ontology based communication language and makes the integration to semantic information of resources seamless, it is thus suitable for coupling distributed engines. In this paper, we present our work in the context of Dutch Virtual Laboratory for e-Science (VL-e) project. A semantic registry for describing workflow engines is implemented, and mobile agents are used to manage distributed workflow coordination."
+    },
+    "15887619": {
+      "title": "Managing the Evolution of Dataflows with VisTrails",
+      "abstract": "Scientists are now faced with an incredible volume of data to analyze. To successfully analyze and validate various hypotheses, it is necessary to pose several queries, correlate disparate data, and create insightful visualizations of both the simulated processes and observed phenomena. Data exploration through visualization requires scientists to go through several steps. In essence, they need to assemble complex workflows that consist of dataset selection, specification of series of operations that need to be applied to the data, and the creation of appropriate visual representations, before they can finally view and analyze the results. Often, insight comes from comparing the results of multiple visualizations that are created during the data exploration process."
+    },
+    "207166250": {
+      "title": "MapReduce: Simplified data processing on large clusters",
+      "abstract": "MapReduce is a programming model and an associated implementation for processing and generating large datasets that is amenable to a broad variety of real-world tasks. Users specify the computation in terms of a map and a reduce function, and the underlying runtime system automatically parallelizes the computation across large-scale clusters of machines, handles machine failures, and schedules inter-machine communication to make efficient use of the network and disks. Programmers find the system easy to use: more than ten thousand distinct MapReduce programs have been implemented internally at Google over the past four years, and an average of one hundred thousand MapReduce jobs are executed on Google's clusters every day, processing a total of more than twenty petabytes of data per day."
+    },
+    "809177": {
+      "title": "Swift: Fast, Reliable, Loosely Coupled Parallel Computation",
+      "abstract": "We present Swift, a system that combines a novel scripting language called SwiftScript with a powerful runtime system based on CoG Karajan, Falkon, and Globus to allow for the concise specification, and reliable and efficient execution, of large loosely coupled computations. Swift adopts and adapts ideas first explored in the GriPhyN virtual data system, improving on that system in many regards. We describe the SwiftScript language and its use of XDTM to describe the logical structure of complex file system structures. We also present the Swift runtime system and its use of CoG Karajan, Falkon, and Globus services to dispatch and manage the execution of many tasks in parallel and grid environments. We describe application experiences and performance experiments that quantify the cost of Swift operations."
+    }
+  }
+}

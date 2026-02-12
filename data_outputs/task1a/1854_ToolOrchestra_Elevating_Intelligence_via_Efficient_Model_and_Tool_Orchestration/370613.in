@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Given a set of tools {𝑡 1, 𝑡 2,..., 𝑡 𝑛 } and a rollout trajectory 𝜏, we consider the vector𝑀 𝜏 = [𝑚 𝜏 𝑡1, 𝑚 𝜏 𝑡2,..., 𝑚 𝜏 𝑡𝑛, 𝑟 outcome (𝜏), 𝑟 compute (𝜏), 𝑟 latency (𝜏)], where 𝑚 𝜏 𝑡• is the number of times tool 𝑡 • is invoked in 𝜏, 𝑀 𝜏 [𝑛 + 1] = 𝑟 outcome (𝜏).During RL training, we normalize each element 𝑀 𝜏 [𝑘] for 1 ≤ 𝑘 ≤ 𝑛 + 3 over the rollout batch T as follows:𝑀 𝜏 normalized [𝑘] = (𝑀 𝜏 [𝑘] -𝑀 T min [𝑘])/(𝑀 T max [𝑘] -𝑀 T min [𝑘]), where 𝑀 T min [𝑘] and 𝑀 T max [𝑘] are minimum and maximum value for𝑀 • [𝑘] in the batch T. If 𝑀 T max [𝑘] = 𝑀 T min [𝑘],we disregard 𝑀 𝜏 [𝑘] by setting it to zero.",
+    "We calculate the final reward for a trajectory 𝜏 as:𝑅(𝜏) = {︂ 𝑀 𝜏 normalized • 𝑃 if 𝑟outcome(𝜏) 0 otherwise.",
+    "(2)where Training procedure.",
+    "Orchestrator is fine-tuned using a policy gradient reinforcement learning algorithm, specifically Group Relative Policy Optimization (GRPO) [21].",
+    "For each task in a batch, the policy 𝜋 𝜃 generates a batch of trajectories T. Each trajectory 𝜏 ∈ T is assigned a scalar reward 𝑅(𝜏) (as calculated in Equation 2), and GRPO normalizes this reward within its group to compute an advantage:𝑃 = [𝑝 𝑡1, 𝑝 𝑡2,..., 𝑝 𝑡𝑛, 𝑝 outcome, 𝑝 compute, 𝑝 latency] (0 ≤ 𝑝 • ≤ 1)𝐴(𝜏) = 𝑅(𝜏) -mean 𝜏 ∈T 𝑅(𝜏) std 𝜏 ∈T 𝑅(𝜏)."
+  ]
+}

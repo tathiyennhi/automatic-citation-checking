@@ -1,0 +1,55 @@
+{
+  "doc_id": "20901",
+  "text": "This model is particularly appropriate for our experiment. For one thing, the performance of collective operations often dominates overall performance in distributed applications [CITATION_1] [CITATION_2] [CITATION_3] . For this reason, parallel programming libraries like MPI contain standard reduction primitives with optimized implementations to aid efficient programming [CITATION_4] . These implementations typically take the form of a tree. Also, because the completion time of the reduction is dependent on many levels of network communications, the effects of our different timeout strategies are readily apparent.",
+  "correct_citation": {
+    "[CITATION_1]": "1290318",
+    "[CITATION_2]": "36934236",
+    "[CITATION_3]": "6669397",
+    "[CITATION_4]": "60780815"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For one thing, the performance of collective operations often dominates overall performance in distributed applications [CITATION_1] [CITATION_2] [CITATION_3] .",
+      "s_span": 59,
+      "e_span": 219
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For one thing, the performance of collective operations often dominates overall performance in distributed applications [CITATION_1] [CITATION_2] [CITATION_3] .",
+      "s_span": 59,
+      "e_span": 219
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "For one thing, the performance of collective operations often dominates overall performance in distributed applications [CITATION_1] [CITATION_2] [CITATION_3] .",
+      "s_span": 59,
+      "e_span": 219
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "For this reason, parallel programming libraries like MPI contain standard reduction primitives with optimized implementations to aid efficient programming [CITATION_4] .",
+      "s_span": 220,
+      "e_span": 389
+    }
+  ],
+  "bib_entries": {
+    "6669397": {
+      "title": "Eco: Efficient collective operations for communication on heterogeneous networks",
+      "abstract": "PVM and other distributed computing systems have enabled the use of networks of workstations for parallel computation, but their approach of treating all networks as collections of point-to-point connections does not promote efficient communication-particularly collective communication. The Efficient Collective Operations (ECO) package contains programs which solve this problem by analyzing the network and establishing efficient communication patterns. This paper describes ECO and gives performance results of using ECO to implement the collective communication in CHARMM, a widely used macromolecular dynamics package. ECO substantially improves the performance of CHARMM on a heterogeneous network. ECO's approach gives a programmer the ability to use the available networks to their full potential without acquiring any knowledge of the network structure."
+    },
+    "60780815": {
+      "title": "Mpi: A message-passing interface standard",
+      "abstract": "The Message Passing Interface Forum (MPIF), with participation from over 40 organizations, has been meeting since November 1992 to discuss and define a set of library standards for message passing. MPIF is not sanctioned or supported by any official standards organization. The goal of the Message Passing Interface, simply stated, is to develop a widely used standard for writing message-passing programs. As such the interface should establish a practical, portable, efficient and flexible standard for message passing. , This is the final report, Version 1.0, of the Message Passing Interface Forum. This document contains all the technical features proposed for the interface. This copy of the draft was processed by LATEX on April 21, 1994. , Please send comments on MPI to mpi-comments@cs.utk.edu. Your comment will be forwarded to MPIF committee members who will attempt to respond."
+    },
+    "36934236": {
+      "title": "Network performance-aware collective communication for clustered wide area systems",
+      "abstract": "Abstract Metacomputing infrastructures couple multiple clusters (or MPPs) via wide-area networks. A major problem in programming parallel applications for such platforms is their hierarchical network structure: latency and bandwidth of WANs often are orders of magnitude worse than those of local networks. Our goal is to optimize MPI's collective operations for such platforms. We use two techniques: selecting suitable communication graph shapes, and splitting messages into multiple segments that are sent in parallel over different WAN links. To optimize graph shape and segment size at runtime, we introduce a performance model called Parameterized Log P ( P − Log P ) , a hierarchical extension of the Log P model that covers messages of arbitrary length. An experimental performance evaluation shows that the newly implemented collective operations have significantly improved performance for large messages, and that there is a close match between the theoretical model and the measured completion times."
+    },
+    "1290318": {
+      "title": "Magpie: Mpi's collective communication operations for clustered wide area systems",
+      "abstract": "Writing parallel applications for computational grids is a challenging task. To achieve good performance, algorithms designed for local area networks must be adapted to the differences in link speeds. An important class of algorithms are collective operations, such as broadcast and reduce. We have developed M AG PI E , a library of collective communication operations optimized for wide area systems. M AG PI E 's algorithms send the minimal amount of data over the slow wide area links, and only incur a single wide area latency. Using our system, existing MPI applications can be run unmodified on geographically distributed systems. On moderate cluster sizes, using a wide area latency of 10 milliseconds and a bandwidth of 1 MByte/s, M AG PI E executes operations up to 10 times faster than MPICH, a widely used MPI implementation; application kernels improve by up to a factor of 4. Due to the structure of our algorithms, M AG PI E 's advantage increases for higher wide area latencies."
+    }
+  },
+  "generator": "fallback_v4"
+}

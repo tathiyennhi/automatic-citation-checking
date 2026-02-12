@@ -1,0 +1,20 @@
+{
+  "doc_id": "12935",
+  "text": "In general, while predicting forces with high accuracy is the main motivation for machine learning-based work in this field, the best compromise between accuracy, energy conservation and covariance will depend on the specific target application. For instance, kernels built from a covariant integration (or summation) that do not conserve energy exactly should not be used as substitutes for conventional interatomic potentials to perform long NVE simulations, since they might in principle lead to non-negligible spurious energy drifts. This is not a problem in NVT simulations, where a thermostat exchanges energy with the system to achieve and conserve the target temperature, which will be able to compensate for any such drift if appropriately chosen [CITATION_1] . Furthermore, the same kernels will be particularly suited for schemes that are in all cases incompatible with strict energy conservation. These include the LOTF approach and any online learning scheme similarly involving a dynamically updated force model. They also include any highly accurate and transferable scheme based on a fixed, very large database where, to maximise efficiency, each force prediction only uses its corresponding most relevant database subset.",
+  "correct_citation": {
+    "[CITATION_1]": "10830358"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This is not a problem in NVT simulations, where a thermostat exchanges energy with the system to achieve and conserve the target temperature, which will be able to compensate for any such drift if appropriately chosen  ."
+    }
+  ],
+  "bib_entries": {
+    "10830358": {
+      "title": "Adaptive stochastic methods for sampling driven molecular systems",
+      "abstract": "Thermostatting methods are discussed in the context of canonical sampling in the presence of driving stochastic forces. Generalisations of the Nosé-Hoover method and Langevin dynamics are introduced which are able to dissipate excess heat introduced by steady Brownian perturbation (without a priori knowledge of its strength) while preserving ergodicity. Implementation and parameter selection are considered. It is demonstrated using numerical experiments that the methods derived can adaptively control the target canonical ensemble in the presence of nonlinear driving perturbations."
+    }
+  },
+  "generator": "fallback_v4"
+}

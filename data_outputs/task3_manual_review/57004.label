@@ -1,0 +1,34 @@
+{
+  "doc_id": "57004",
+  "text": "Superpixel segmentation is commonly treated as an energy minimization/maximization problem where each superpixel is defined as a region with a color distribution and a boundary [CITATION_1] . Our approach resembles the gradient-based level-of-detail method [CITATION_2] ] that generates triangles only when needed (e.g., at texture edges). This significantly reduces the number of triangles. Recall that the interpolation function within a triangle is monotonic and smooth. Therefore we enforce the texture map within each triangle also be monotonic (i.e., the gradients are consistently positive or negative) and smooth (the second order derivative is nearly zero). Different from [CITATION_3] ] that computes the color likelihood, we evaluate the quality of a specific k partitions in terms of its gradient consistency C, smoothness G, and shape priori B. Energy function E could be presented as,",
+  "correct_citation": {
+    "[CITATION_1]": "449113",
+    "[CITATION_2]": "6409938",
+    "[CITATION_3]": "449113"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Superpixel segmentation is commonly treated as an energy minimization/maximization problem where each superpixel is defined as a region with a color distribution and a boundary"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our approach resembles the gradient-based level-of-detail method ] that generates triangles only when needed (e.g., at texture edges)."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Different from ] that computes the color likelihood, we evaluate the quality of a specific k partitions in terms of its gradient consistency C, smoothness G, and shape priori B."
+    }
+  ],
+  "bib_entries": {
+    "449113": {
+      "title": "SEEDS: Superpixels extracted via energy-driven sampling",
+      "abstract": "Superpixel algorithms aim to over-segment the image by grouping pixels that belong to the same object. Many state-of-the-art superpixel algorithms rely on minimizing objective functions to enforce color ho- mogeneity. The optimization is accomplished by sophis- ticated methods that progressively build the superpix- els, typically by adding cuts or growing superpixels. As a result, they are computationally too expensive for real-time applications. We introduce a new approach based on a simple hill-climbing optimization. Starting from an initial superpixel partitioning, it continuously refines the superpixels by modifying the boundaries. We define a robust and fast to evaluate energy function, based on enforcing color similarity between the bound- aries and the superpixel color histogram. In a series of experiments, we show that we achieve an excellent com- promise between accuracy and efficiency. We are able to achieve a performance comparable to the state-of- the-art, but in real-time on a single Intel i7 CPU at 2.8GHz."
+    },
+    "6409938": {
+      "title": "Parallel View-Dependent Level-of-Detail Control",
+      "abstract": "We present a scheme for view-dependent level-of-detail control that is implemented entirely on programmable graphics hardware. Our scheme selectively refines and coarsens an arbitrary triangle mesh at the granularity of individual vertices to create meshes that are highly adapted to dynamic view parameters. Such fine-grain control has previously been demonstrated using sequential CPU algorithms. However, these algorithms involve pointer-based structures with intricate dependencies that cannot be handled efficiently within the restricted framework of GPU parallelism. We show that by introducing new data structures and dependency rules, one can realize fine-grain progressive mesh updates as a sequence of parallel streaming passes over the mesh elements. A major design challenge is that the GPU processes stream elements in isolation. The mesh update algorithm has time complexity proportional to the selectively refined mesh, and moreover, can be amortized across several frames. The result is a single standard index buffer that can be used directly for rendering. The static data structure is remarkably compact, requiring only 57 percent more memory than an indexed triangle list. We demonstrate real-time exploration of complex models with normals and textures, as well as shadowing and semitransparent surface rendering applications that make direct use of the resulting dynamic index buffer."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "We used only serverless services to keep operational costs low while allowing us to focus on application logic instead of spending time on server administration.Custom search (Fig. 13) consists of two services: image alignment which runs on AWS Batch, and distributed CDM Search which runs on AWS Lambda.",
+    "The aligner runs on AWS Batch as a Docker container and is monitored by a Step Function which notifies the client when the alignment is completed.",
+    "To enable efficient searching across large image data sets while keeping costs low, we implemented a burst-parallel [48] search engine built on Lambda and Step Functions [49].",
+    "To reduce cold starts when executing searches on AWS Lambda, we also translated the core CDM Search algorithm from Java to JavaScript.The serverless model is a particularly good fit for the burst-parallel implementation for several reasons.",
+    "First, massive parallelism is required to quickly search large image libraries, and the ideal level of parallelism is prohibitively expensive in a traditional server-based architecture."
+  ],
+  "correct_citations": [
+    "To enable efficient searching across large image data sets while keeping costs low, we implemented a burst-parallel [48] search engine built on Lambda and Step Functions [49]."
+  ]
+}

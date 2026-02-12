@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Specifically, the strategy is to freeze both the pretrained weight matrix 𝑾 and 𝑨, while only updating the projection-up weight matrix 𝑩.",
+    "By adopting this approach, the training process focuses solely on computing the gradient of 𝑩, which requires storing a much smaller input derived from AX during the feed-forward pass.",
+    "Given that 𝑟 ≪ 𝑑 (𝑾 ∈ ℝ 𝑑×𝑑, 𝑨 ∈ ℝ 𝑑×𝑟, and 𝑩 ∈ ℝ 𝑟×𝑑), the memory requirement for activations in LoRA-FA is significantly reduced.",
+    "Furthermore, LoRA-FA achieves a remarkable reduction in the number of trainable parameters, reducing them from 𝑑 2 to 𝑑𝑟, which amounts to a reduction by a factor of 2048.",
+    "Initializations are critical in this context, with 𝑨 being randomly initialized from a normal distribution and 𝑩 initialized as zero."
+  ],
+  "correct_citations": []
+}

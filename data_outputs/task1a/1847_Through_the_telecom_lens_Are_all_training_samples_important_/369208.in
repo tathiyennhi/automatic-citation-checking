@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "At epoch e and for sample s, the gradient norm is computed as:g e,s = P j=1 ∂L e,s ∂θ j 2 2,(1)where θ j denotes the j th trainable parameter in the network and P is the total number of parameters.",
+    "These norms are stored in a matrix G ∈ R E×N, where E is the number of epochs.",
+    "The importance score of a sample s is then defined as:I(s) = 1 E E e=1 g e,s.",
+    "(2) Important Sample SelectionThe goal of sample selection is to find a metric that orders the samples according to their importance, and to use that metric to select the most relevant ones for training the model.",
+    "In this work, the metric we consider is the importance score based on the gradient, defined in (2).The selection of the most p% important samples thus corresponds to the set:S * p = arg max S⊂D;|S|≤k s∈S I(s),(3)where |S| denotes the cardinality of S and k = p 100 × n is the number of samples corresponding to p%."
+  ]
+}

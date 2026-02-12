@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To apply domain context into the MSA layer, we add soft prompts to the 𝐾𝑒𝑦 matrix, and multiply it by the 𝑄𝑢𝑒𝑟𝑦 matrix containing only the original data, then derive attention score.",
+    "The attention score calculates the original data and the contextual information related to the domain style.",
+    "The attention score is then multiplied by the 𝑉 𝑎𝑙𝑢𝑒 matrix that is the same as the 𝐾𝑒𝑦.",
+    "The obtained output incorporates the contextual knowledge within the current domain, and this attention extension is named as Prefix-One, as presented in Figure 3.",
+    "It enables the pre-trained model to consider the particularity of personalized domain style and achieve the effect of adapting to domain tasks with less training cost.Formally, in Prefix-One within the MSA layers, we iteratively obtain encoding by compositing personalized prompts into key and value embeddings:𝒉 (𝑙+1) 𝑚 = 𝑓 (𝑙) 𝑃𝑟𝑒 -𝑂𝑛𝑒 𝑷 (𝑙) P,𝑖𝑚𝑔, 𝒉 (𝑙) 𝑚 = 𝑆𝑜 𝑓 𝑡𝑚𝑎𝑥 𝒉 (𝑙) 𝑞 𝒉 (𝑙) 𝑘 √︃ 𝑑 𝑞,𝑘 • 𝒉 (𝑙) 𝑣,(4)where 𝑙 = 0, 1,... 𝑅 (𝑅 indicates the number of transformer layers), 𝒉𝑚 = 𝒙 𝑠 𝑝, and 𝒉(𝑙) 𝑞, 𝒉 (𝑙) 𝑘, 𝒉 (𝑙)𝑣 are calculated by:𝒉 (𝑙) 𝑞 ∈ R 𝑀 ×𝐷 = 𝒉 (𝑙) 𝑚 𝑊 (𝑙) 𝑞,(5)𝒉 (𝑙) 𝑘 ∈ R (𝑀+𝐿 𝑃𝐼) ×𝐷 = [𝒉 (𝑙) 𝑚; 𝑷 (𝑙) P,𝑖𝑚𝑔]𝑊 (𝑙) 𝑘,(6)𝒉 (𝑙) 𝑣 ∈ R (𝑀+𝐿 𝑃𝐼) ×𝐷 = [𝒉 (𝑙) 𝑚; 𝑷 (𝑙) P,𝑖𝑚𝑔]𝑊 (𝑙) 𝑣,(7)where 𝑷 Generalizing to text encoder."
+  ]
+}

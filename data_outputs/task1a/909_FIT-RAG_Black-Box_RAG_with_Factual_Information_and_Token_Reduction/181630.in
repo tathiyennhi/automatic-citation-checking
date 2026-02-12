@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "2 Initialize: 𝑤 0, 𝜃 0 3 for 𝑘 = 1 to 𝐾 do 4 𝜃 𝑘 ← 𝜃 𝑘 -1 -𝜂∇ 𝜃 𝐿 𝑡 (𝜃 𝑘 -1, 𝐷 𝑡) 5 𝑑 𝑚𝑎𝑡 ← 𝜂∇ 𝜃 𝐿 𝑚𝑎𝑡 𝑣 (𝜃 𝑘, 𝐷 𝑚𝑎𝑡 𝑣) • (∇ 𝜃 𝐿 𝑡 (𝜃 𝑘 -1, 𝐷 𝑚𝑎𝑡 𝑡) -∇ 𝜃 𝐿 𝑡 (𝜃 𝑘 -1, 𝐷 𝑚𝑖𝑠 𝑡)) 6 𝑑 𝑚𝑖𝑠 ← 𝜂∇ 𝜃 𝐿 𝑚𝑖𝑠 𝑣 (𝜃 𝑘, 𝐷 𝑚𝑖𝑠 𝑣) • (∇ 𝜃 𝐿 𝑡 (𝜃 𝑘 -1, 𝐷 𝑚𝑎𝑡 𝑡) -∇ 𝜃 𝐿 𝑡 (𝜃 𝑘 -1, 𝐷 𝑚𝑖𝑠 𝑡)) 7 𝑑 𝑐𝑜𝑚 = (𝑑 𝑚𝑎𝑡 + 𝑑 𝑚𝑖𝑠)/2 8 𝑤 𝑘 = 𝑤 𝑘 -1 -𝛼𝑑 𝑐𝑜𝑚 9 end Bi-faceted Self-Knowledge RecognizerGiven a question 𝑞, we determine whether retrieval is necessary by recognizing whether the LLM has self-knowledge on this question, namely whether the LLM can answer this question without retrieving external documents.",
+    "This paper determines whether the LLM has the self-knowledge based on two facets: (1) whether the question is related to long-tail knowledge or out-of-date knowledge; (2) whether the question's nearest neighbors have self-knowledge.",
+    "We illustrate the inference process of bi-faceted self-knowledge recognizer in Figure 4.To detect whether the question is related to long-tail knowledge or out-of-date knowledge, we need access to the pretraining corpus and memorization in LLMs; however, they are unavailable for black-box LLMs.",
+    "To tackle this problem, existing work [29] utilizes Wikipedia's monthly page views as a proxy to simulate the pretraining corpus and achieves proper performance.",
+    "Following this idea, this paper utilizes Wikipedia's monthly page views as a proxy and determines whether the question is related to long-tail knowledge or out-of-date knowledge based on it."
+  ]
+}

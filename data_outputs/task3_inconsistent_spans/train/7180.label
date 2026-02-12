@@ -1,0 +1,44 @@
+{
+  "doc_id": "7180",
+  "text": "Choreographies are commonly formally modeled as labeled transition systems (lts) or automata. To compute a projection of a choreography involving k parties, we take such an lts as our starting point (i.e., our approach builds on top of existing choreography models). If this lts is finite, we translate it to a choreography pa (by mapping transition labels in the lts to ports). [CITATION_1] Afterward, we decompose the resulting \"big\" pa into a number of \"small\" pa [CITATION_2] . Essentially, by recovering the internal structure of the big pa, this step reveals the previously \"hidden\" communication actions necessary to make the original choreography projectable. Next, we recombine the small pa into a number of contract pa such that for each of those pa, its input ports represent communication actions of only one party. To do this, we first apply the theory of masters, slaves, and (a)synchronous regions for computing a number of \"medium\" pa from the small pa using (see Section 4.2). Subsequently, we iteratively compute of every two medium pa whose input ports belong to the same party. Finally, we construct a number of sets of pa, each of which contains: (i) a contract pa resulting from the previous step and (ii) a number of Fifo pa such that the output port of every Fifo pa is the input port of the contract pa (see also Footnote 8) . Those Fifo pa essentially represent incoming message buffers of parties. The sketched process yields l sets of pa. We conjecture that, with some extra steps skipped here for simplicity, l = k: we have a pa set for every party. Every such a pa set can then be compiled into the implementation of a party. Communication between pa of different sets (i.e., between different parties) has to satisfy only the local synchronization requirements imposed by , which can be done relatively efficiently. The previous process is applicable also to choreographies represented as Uml sequence diagrams using a translation by Meng et al. [CITATION_3] .",
+  "correct_citation": {
+    "[CITATION_1]": "2686929",
+    "[CITATION_2]": "1785316",
+    "[CITATION_3]": "13448828"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "If this lts is finite, we translate it to a choreography pa (by mapping transition labels in the lts to ports).  Afterward, we decompose the resulting \"big\" pa into a number of \"small\" pa  .",
+      "s_span": 267,
+      "e_span": 481
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Afterward, we decompose the resulting \"big\" pa into a number of \"small\" pa  .",
+      "s_span": 379,
+      "e_span": 481
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The previous process is applicable also to choreographies represented as Uml sequence diagrams using a translation by Meng et al.  .",
+      "s_span": 1847,
+      "e_span": 1991
+    }
+  ],
+  "bib_entries": {
+    "13448828": {
+      "title": "Synthesis of Reo circuits from scenario-based interaction specifications",
+      "abstract": "It is difficult to construct correct models for distributed large-scale service-oriented applications. Typically, the behavior of such an application emerges from the interaction and collaboration of multiple components/services. On the other hand, each component, in general, takes part in multiple scenarios. Consequently, not only components, but also their interaction protocols are important in the development process for distributed systems. Coordination models and languages, like Reo, offer powerful ''glue-code'' to encode interaction protocols. In this paper we propose a novel synthesis technique, which can be used to generate Reo circuits directly from scenario specifications. Inspired by the way UML2.0 sequence diagrams can be algebraically composed, we define an algebraic framework for merging connectors generated from partial specifications by exploiting the algebraic structure of UML sequence diagrams."
+    },
+    "2686929": {
+      "title": "Reo+mCRL2: a framework for model-checking dataflow in service compositions",
+      "abstract": "The paradigm of service-oriented computing revolutionized the field of software engineering. According to this paradigm, new systems are composed of existing stand-alone services to support complex cross-organizational business processes. Correct communication of these services is not possible without a proper coordination mechanism. The Reo coordination language is a channel-based modeling language that introduces various types of channels and their composition rules. By composing Reo channels, one can specify Reo connectors that realize arbitrary complex behavioral protocols. Several formalisms have been introduced to give semantics to Reo. In their most basic form, they reflect service synchronization and dataflow constraints imposed by connectors. To ensure that the composed system behaves as intended, we need a wide range of automated verification tools to assist service composition designers. In this paper, we present our framework for the verification of Reo using the $${{\\tt mCRL2}}$$ toolset. We unify our previous work on mapping various semantic models for Reo, namely, constraint automata, timed constraint automata, coloring semantics and the newly developed action constraint automata, to the process algebraic specification language of $${{\\tt mCRL2}}$$, address the correctness of this mapping, discuss tool support, and present a detailed example that illustrates the use of Reo empowered with $${{\\tt mCRL2}}$$ for the analysis of dataflow in service-based process models."
+    },
+    "1785316": {
+      "title": "Synthesis of Reo circuits for implementation of component-connector automata specifications",
+      "abstract": "Composition of a concurrent system out of components involves coordination of their mutual interactions. In component-based construction, this coordination becomes the responsibility of the glue-code language and its underlying run-time middle-ware. Reo offers an expressive glue-language for construction of coordinating component connectors out of primitive channels. In this paper we consider the problem of synthesizing Reo coordination code from a specification of a behavior as a relation on scheduled-data streams. The specification is given as a constraint automaton that describes the desired input/output behavior at the ports of the components. We present an algorithm that generates Reo code from a given constraint automaton."
+    }
+  },
+  "generator": "fallback_v4"
+}

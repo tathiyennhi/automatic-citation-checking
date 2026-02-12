@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Then we feedforward propagate the output of the multi-head attention, and the feedforward network is defined as follows:where σ (•) represents a nonlinear activation function (LeakyReLU) and i denotes the quantity of hidden layers in the feedforward network.",
+    "Here, given the initial input H, we can proceed to obtain the output X of the feedfor- ward network:whereW F 1 ∈ R n h ×n d, W F 2 ∈ R n d× n h, b F 1 ∈ R n d and b F 2 ∈ R n h are the training parameters.",
+    "Global-level embedding fusionWe have acquired local-level and global-level embeddings, and as it would be inefficient to combine these various embeddings using straightforward splicing or summing operations to produce the desired result, we continue to employ Transformer's decoder to carry out global-level node embedding fusion representation.",
+    "Transformer does not employ the graph information transfer mechanism for graph computation; as a result, the structural inductive bias of the network is introduced to Transformer to compensate for the missing information transfer mechanism, resulting in excellent results for the model.",
+    "Here, we employ two multi-headed attention layers, the first of which handles node embedding and the second of which incorporates (30) Q i = ẐG W q i, K i = ẐG W k i, V i = ẐG W v i (31) H i = ( exp(Q i K T i / √ d) n head j=1 exp((Q j K T j)/ √ d))V i (32) H = (H 1 ⊕ H 2 ⊕ • • • ⊕ H n head) • W H (33) FF N i (T) = σ (T W Fi + b Fi) (34) X m = LeakyRelu(HW F 1 + b F 1) (35) X = LeakyRelu(X m W F 2 + b F 2)structural inductive bias of the network for developing the final node embedding representation learning.First, we use the first multi-head attention layer to process the concatenation of the global-level embedding X and the local-level embedding Z LD."
+  ],
+  "correct_citations": []
+}

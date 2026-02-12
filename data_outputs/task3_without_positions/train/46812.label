@@ -1,0 +1,20 @@
+{
+  "doc_id": "46812",
+  "text": "Transactional Programming: It is straightforward to write transactional programs with ASF. A transaction is mapped to a speculative region whose memory accesses are done with LOCK MOVs between a SPECULATE and a COMMIT. However, it is more likely that average programmers use high-level TM language constructs and rely on TM compilers to optimize the use of LOCK MOVs to run transactions efficiently with limited ASF hardware resources. In [CITATION_1] , a TM compiler is developed to generate the ASF code from C/C++ programs written with high-level TM language constructs. It optimizes the speculative memory footprints of the ASF code by analyzing speculative regions, identifying memory accesses that do not require speculative accesses such as certain stack accesses, and not using LOCK MOVs for them.",
+  "correct_citation": {
+    "[CITATION_1]": "15044914"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In  , a TM compiler is developed to generate the ASF code from C/C++ programs written with high-level TM language constructs."
+    }
+  ],
+  "bib_entries": {
+    "15044914": {
+      "title": "Evaluation of amd's advanced synchronization facility within a complete transactional memory stack",
+      "abstract": "AMD's Advanced Synchronization Facility (ASF) is an x86 instruction set extension proposal intended to simplify and speed up the synchronization of concurrent programs. In this paper, we report our experiences using ASF for implementing transactional memory. We have extended a C/C++ compiler to support language-level transactions and generate code that takes advantage of ASF. We use a software fallback mechanism for transactions that cannot be committed within ASF (e.g., because of hardware capacity limitations). Our evaluation uses a cycle-accurate x86 simulator that we have extended with ASF support. Building a complete ASF-based software stack allows us to evaluate the performance gains that a user-level program can obtain from ASF. Our measurements on a wide range of benchmarks indicate that the overheads traditionally associated with software transactional memories can be significantly reduced with the help of ASF."
+    }
+  },
+  "generator": "fallback_v4"
+}

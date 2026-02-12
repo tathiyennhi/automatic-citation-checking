@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Performance ResultsIncreasing LLM Model Size Without Data Parallelism: In our first set of experiments, we evaluate the following two metrics for increasing model sizes: (1) the average checkpointing throughput perceived by the training process, which is defined as the total checkpoint size divided by the time for which the training was blocked for each checkpointing operation; and (2) the average iteration duration when checkpointing, which shows the overheads of checkpointing on the training process in both direct form -the amount of time for which training is blocked to capture checkpoint, and indirect form -slowdown in training process caused by interference from checkpointing I/O.",
+    "The training is run for five iterations with a checkpoint being taken at every iteration.",
+    "Such high-frequency checkpointing at every iteration allows us to study the performance overheads of different approaches under high I/O pressure.",
+    "We note two interesting observations for evaluating this metric.",
+    "First, Since the asynchronous checkpoint operations from device-to-host and host-to-file overlap with the computations of the next iterations, from an application perspective, this metric is important to study the checkpointing stalls experienced by the application by different checkpointing approaches."
+  ],
+  "correct_citations": []
+}

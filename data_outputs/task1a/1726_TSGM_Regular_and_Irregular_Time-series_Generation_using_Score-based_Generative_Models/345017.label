@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Our encoder based on NCDEs can be defined as follows:h(t n) = h(t n-1) + tn tn-1 f (t, h(t); θ f) dX(t) dt dt,where X(t) is an interpolated continuous path from x 1:N -NCDEs typically use the natural cubic spline algorithm to define X(t), which is twice differentiable and therefore, there is not any problem to be used for forward inference and backward training.",
+    "In other words, NCDEs evolve the hidden state h(t) by solving the above Riemann-Stieltjes integral.For the decoder, one can use the following GRU-ODE-based definition:d(t n) = d(t n-1) + tn tn-1 g(t, d(t); θ g)dt, d(t n) = GRU(h(t n), d(t n)), xn = F C(d(t n)),where F C denotes a fully-connected layer-based output layer.The intermediate hidden representation d(t n) is jumped into the hidden representation d(t n) by the GRU-based jump layer.",
+    "At the end, there is an output layer.",
+    "We take the architecture for functions f, g described in Table III.",
+    "Layer Activation function Linear 1 ReLU dim(x)→ 4 dim(x) 2 ReLU 4 dim(x)→ 4 dim(x) 3 ReLU 4 dim(x)→ 4 dim(x) 4 Tanh 4 dim(x)→ dim(x) Layer Gate Activation function Linear 1 rt ReLU dim(h)→ dim(h) zt ReLU ut Tanh TABLE III: Architecture of functions f (upper) and g(lower)."
+  ],
+  "correct_citations": []
+}

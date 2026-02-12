@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The Runge-Kutta fourth order solver shown in Algorithm 6 is slightly more involved since it requires four network evaluations.",
+    "Therefore, the integration step must be understood as the whole block of Line 3 to Line 7, the four network evaluations being done with the properly shifted x t and t. Notice that ignoring k 2, k 3 and k 4 would lead to the Euler solver.",
+    "Algorithm 5Euler solver for VP ODE Require: N, β(t), σ(t), y 1: ∆t ← 1 N, t ← 1, x t ∼ N (0, I) 2: while t > 0 do 3:x t ← x t + 1 2 β(t) x t -εθ (x t,t,y) σ(t) ∆t 4: t ← t -∆t 5: end while 6: return x t Algorithm 6 Runge-Kutta 4 th order solver for VP ODE Require: N, β(t), σ(t), y 1: t ← 1, ∆t ← 1 N, x t ∼ N (0, I) 2: while t > 0 do 3: k 1 ← 1 2 β(t) x t -εθ (x t,t,y) σ(t) ∆t 4: k 2 ← 1 2 β(t -∆t 2) x t -εθ (x t + k 1 2,t-∆t 2,y) σ(t-∆t 2) ∆t 5: k 3 ← 1 2 β(t -∆t 2) x t -εθ (x t + k 2 2,t-∆t 2,y) σ(t-∆t 2) ∆t 6: k 4 ← 1 2 β(t -∆t) x t -εθ (x t +k3,t-∆t,y) σ(t-∆t) ∆t 7: x t ← x t + k 1 +2k 2 +2k 3 +k 4 6 8: t ← t -∆t 9: end while 10: return x t C.2 Choice of samplersTo understand the trade-off between the quality of the generated samples and the generation speed, we test four different methods for sample generation using the same trained model.",
+    "These different methods, or solvers, are labelled: DDIM, Euler-Maruyama (EM), Euler and Runge-Kutta (RK).",
+    "We study the effect of the number of integration steps, or network passes, on the samples quality using the metrics introduced in Section 4.4."
+  ],
+  "correct_citations": []
+}

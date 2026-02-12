@@ -1,0 +1,22 @@
+{
+  "doc_id": "15697",
+  "text": "We quantify (b) by comparing the estimated spike trains to the true spikes (sparse codes). In case of the real data, the true spikes are provided through intracellular voltage recordings. Similar to [CITATION_1] , for a given threshold, we compute the proportion of true (intracellular) spikes that are not identified correctly by CRsAE (true missed), as well as the proportion of spikes identified by CRsAE for which there is no true matching spike (false alarm). In practice, to identify a spike, given the neuron of interest c, we reconstruct the component of the data corresponding only to the neuron of interest. Then, we use a threshold and identify any non-zero spiking activity greater than the threshold to be a spike. A low threshold value would result in identifying background noise or other artifacts as spikes (false alarm), whereas a high threshold may result in missing spikes (true missed). We divided the voltage recording into windows of length 100 ms, resulting in a total number J = 10,100 windows (examples). Assuming a sampling rate of f s = 10 kHz, the length of each window was N = 1,000, and each filter was K = 18 samples long. Therefore, y i ∈ R",
+  "correct_citation": {
+    "[CITATION_1]": "1736419"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Similar to  , for a given threshold, we compute the proportion of true (intracellular) spikes that are not identified correctly by CRsAE (true missed), as well as the proportion of spikes identified by CRsAE for which there is no true matching spike (false alarm).",
+      "s_span": 188,
+      "e_span": 464
+    }
+  ],
+  "bib_entries": {
+    "1736419": {
+      "title": "A unified framework and method for automatic neural spike identification",
+      "abstract": "Automatic identification of action potentials from one or more extracellular electrode recordings is generally achieved by clustering similar segments of the measured voltage trace, a method that fails (or requires substantial human intervention) for spikes whose waveforms overlap. We formulate the problem in terms of a simple probabilistic model, and develop a unified method to identify spike waveforms along with continuous-valued estimates of their arrival times, even in the presence of overlap. Specifically, we make use of a recent algorithm known as Continuous Basis Pursuit for solving linear inverse problems in which the component occurrences are sparse and are at arbitrary continuous-valued times. We demonstrate significant performance improvements over current state-of-the-art clustering methods for four simulated and two real data sets with ground truth, each of which has previously been used as a benchmark for spike sorting. In addition, performance of our method on each of these data sets surpasses that of the best possible clustering method (i.e., one that is specifically optimized to minimize errors on each data set). Finally, the algorithm is almost completely automated, with a computational cost that scales well for multi-electrode arrays."
+    }
+  },
+  "generator": "fallback_v4"
+}

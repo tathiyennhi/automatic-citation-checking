@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For data which are sent continuously such as characters' states, unreliable messaging is typically more appropriate.",
+    "Here, occasionally lost messages are not resent since a newer message likely reaches the receiver within a shorter period of time.",
+    "void SendOwnDataToServer { // Create new currentPlayerState message, naming it ''msg\" currentPlayerState msg = new currentPlayerState { ID = own_id, characterPosition = MyCharacterBehaviorController.CharacterPosition, characterRotation = MyCharacterBehaviorController.CharacterRotation, headIKPosition = MyCharacterBehaviorController.headIKPosition, headIKRotation = MyCharacterBehaviorController.headIKRotation, lEyeRotation = MyCharacterBehaviorController.lEyeRotation, rEyeRotation = MyCharacterBehaviorController.rEyeRotation, smiling = MyCharacterBehaviorController.Smiling }; // Send message to server InstanceFinder.ClientManager.Broadcast(msg, Channel.Unreliable); }",
+    "On the server in the script ServerLogic, the function OnPlayerStateUpdate is triggered when a message of the type currentPlayerState is received.",
+    "The server script is also notified about the sender's address (i.e., its NetworkConnection)."
+  ]
+}

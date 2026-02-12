@@ -1,0 +1,20 @@
+{
+  "doc_id": "47735",
+  "text": "There are some key differences in our module approach to that of 3D Slicer which is the most similar package in many respects. The first lies in the structure of the modules themselves. Slicer modules are (in theory at least) independent programs whose sole JIST-Java Image Science Toolkit [CITATION_1] , BIS-BioImage Suite interface with the main application is via the provision of an XML description. BioImage Suite modules, by contrast, are objects (deriving ultimately from a single parent class) which are accessed by the main application via the parent class API. The Slicer approach allows for greater flexibility in terms of the implementation of the modules, whereas our approach provides greater functionality to the module writer. For example, the module parent class in BioImage Suite implements functionality to output a Slicer-style XML description for the module which is automatically inherited with no modification by the more than 100 modules in BioImage Suite. Furthermore while Slicer modules are strictly commandline applications, BioImage Suite modules can be used either as (i) parts of a main application, (ii) as commandline executables and (iii) as standalone applets with their own graphical user interface and 3D viewer. The plumbing for all of this functionality is in the abstract parent class of the module hierarchy and is simply inherited by the derived modules. A secondary difference is in the relation of the main application or module harness to the module. In the case of 3D Slicer the modules are queried by the main application for their description (in XML) and then the main application creates the user interface for the module. In BioImage Suite, by contrast, the modules are asked by the main application to create their own graphical user interfaces.",
+  "correct_citation": {
+    "[CITATION_1]": "589581"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Slicer modules are (in theory at least) independent programs whose sole JIST-Java Image Science Toolkit, BIS-BioImage Suite interface with the main application is via the provision of an XML description."
+    }
+  ],
+  "bib_entries": {
+    "589581": {
+      "title": "The java image science toolkit (jist) for rapid prototyping and publishing of neuroimaging software",
+      "abstract": "Non-invasive neuroimaging techniques enable extraordinarily sensitive and specific in vivo study of the structure, functional response and connectivity of biological mechanisms. With these advanced methods comes a heavy reliance on computer-based processing, analysis and interpretation. While the neuroimaging community has produced many excellent academic and commercial tool packages, new tools are often required to interpret new modalities and paradigms. Developing custom tools and ensuring interoperability with existing tools is a significant hurdle. To address these limitations, we present a new framework for algorithm development that implicitly ensures tool interoperability, generates graphical user interfaces, provides advanced batch processing tools, and, most importantly, requires minimal additional programming or computational overhead. Java-based rapid prototyping with this system is an efficient and practical approach to evaluate new algorithms since the proposed system ensures that rapidly constructed prototypes are actually fully-functional processing modules with support for multiple GUI’s, a broad range of file formats, and distributed computation. Herein, we demonstrate MRI image processing with the proposed system for cortical surface extraction in large cross-sectional cohorts, provide a system for fully automated diffusion tensor image analysis, and illustrate how the system can be used as a simulation framework for the development of a new image analysis method. The system is released as open source under the Lesser GNU Public License (LGPL) through the Neuroimaging Informatics Tools and Resources Clearinghouse (NITRC)."
+    }
+  },
+  "generator": "fallback"
+}

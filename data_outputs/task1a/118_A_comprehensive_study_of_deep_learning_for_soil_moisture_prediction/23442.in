@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For generator G, there are two training objectives: (1) to generate soil moisture dynamics predictions that are accurate and consistent with the truth, which is achieved by minimizing the fitting error of the soil moisture content data, denoted as L mse; (2) to deceive D, which is achieved by minimizing the binary cross-entropy loss L bce between the predictions and the truth in D. The output of D should be close to 1 when inputting the G predictions into D, ensuring that the prediction is close to the truth.",
+    "Therefore, we train G by minimizing the following loss function L g:",
+    "where λ bce is the hyperparameter that controls the importance of the second term.",
+    "Here, we determine λ bce to be 1 × 10 -7 through manual testing.",
+    "For adversarial training in our GAN-LSTM, the parameter update ratio of G and D in the model is 3: 1; thus, every time G is updated (the learning rate is set to 0.0005), D will be updated three times (the learning rate is set to 0.001)."
+  ]
+}

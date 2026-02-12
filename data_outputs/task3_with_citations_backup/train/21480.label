@@ -1,0 +1,44 @@
+{
+  "doc_id": "21480",
+  "text": "Approaches based on sensor pattern noise (SPN) for image source attribution have drawn positive attention from the forensic community due to the fact that they are a robust way to identify the specific camera, including individual instances of the same model, and not just the brand/model of the device. As Fig. 1 shows, we can consider two types of noise patterns: Fixed Pattern Noise (FPN) and Photo Response NonUniformity Noise (PRNU). FPN is caused by dark currents, as discussed by Kurosawa et al. [CITATION_1] . The PRNU is divided into low-frequency defects noise (LFD) and pixel non-uniformity noise (PNU). LFD is usually caused by light refraction on particles near the camera and zoom configurations. This kind of noise is not considered for camera attribution because of its unstable nature. PNU is caused by the interaction between the light and each sensel of the sensor array. Lukas et al. [CITATION_2] have proposed an approach to identify the specific source of one image using PNU. The authors formulate the problem as a detection of the camera sensor pattern noise. The approach works as follows: for each image I j contained in a set of images K, calculate the residual noise R Ij using a filter F based on the Discrete Wavelet Transform (DWT) [CITATION_3] .",
+  "correct_citation": {
+    "[CITATION_1]": "5068998",
+    "[CITATION_2]": "206710038",
+    "[CITATION_3]": "5076867"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "FPN is caused by dark currents, as discussed by Kurosawa et al. [CITATION_1] .",
+      "s_span": 439,
+      "e_span": 517
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Lukas et al. [CITATION_2] have proposed an approach to identify the specific source of one image using PNU. The authors formulate the problem as a detection of the camera sensor pattern noise.",
+      "s_span": 891,
+      "e_span": 1083
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The approach works as follows: for each image I j contained in a set of images K, calculate the residual noise R Ij using a filter F based on the Discrete Wavelet Transform (DWT) [CITATION_3] .",
+      "s_span": 1084,
+      "e_span": 1277
+    }
+  ],
+  "bib_entries": {
+    "5076867": {
+      "title": "Natural image statistics for digital image forensics",
+      "abstract": "We describe a set of natural image statistics that are built upon two multi-scale image decompositions, the quadrature mirror filter pyramid decomposition and the local angular harmonic decomposition. These image statistics consist of first- and higher-order statistics that capture certain statistical regularities of natural images. We propose to apply these image statistics, together with classification techniques, to three problems in digital image forensics: (1) differentiating photographic images from computer-generated photorealistic images, (2) generic steganalysis; (3) rebroadcast image detection. We also apply these image statistics to the traditional art authentication for forgery detection and identification of artists in an art work. For each application we show the effectiveness of these image statistics and analyze their sensitivity and robustness."
+    },
+    "5068998": {
+      "title": "CCD fingerprint methodidentification of a video camera from videotaped images",
+      "abstract": "We propose a new \"CCD Fingerprint\" method to identify a camcorder from videotaped images. This method enables individual camera identification, which does not mean camera-model identification. The clue to the individual camera identification is obtained from nonuniformity of dark currents on CCD chips, which causes a fixed pattern noise. The pattern is quite unique and intrinsic to an individual camera. Moreover, such a pattern might be recorded on tapes. Using these features, it is expected that the nonuniformity of dark current makes it possible to specify only one camera among same model cameras. In order to observe the characteristic noise patterns, we performed experiments with 9 camcorders in 4 types by recording a blank image on videotapes. The results showed that the fixed patterns were observed in most cases by accumulating 100 frames. Furthermore, it was confirmed that each camera had its own unique pattern."
+    },
+    "206710038": {
+      "title": "Digital camera identification from sensor pattern noise",
+      "abstract": "In this paper, we propose a new method for the problem of digital camera identification from its images based on the sensor's pattern noise. For each camera under investigation, we first determine its reference pattern noise, which serves as a unique identification fingerprint. This is achieved by averaging the noise obtained from multiple images using a denoising filter. To identify the camera from a given image, we consider the reference pattern noise as a spread-spectrum watermark, whose presence in the image is established by using a correlation detector. Experiments on approximately 320 images taken with nine consumer digital cameras are used to estimate false alarm rates and false rejection rates. Additionally, we study how the error rates change with common image processing, such as JPEG compression or gamma correction."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "60964",
+  "text": "Binary similarity has been recently subject to a lot of attention [CITATION_1] [CITATION_2] [CITATION_3] . This is due to its centrality in several tasks, such as discovery of known vulnerabilities in large collection of software, dispute on copyright matters, analysis and detection of malicious software, etc.",
+  "correct_citation": {
+    "[CITATION_1]": "6247943",
+    "[CITATION_2]": "29256838",
+    "[CITATION_3]": "1327780"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Binary similarity has been recently subject to a lot of attention    .",
+      "s_span": 0,
+      "e_span": 106
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Binary similarity has been recently subject to a lot of attention    .",
+      "s_span": 0,
+      "e_span": 106
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Binary similarity has been recently subject to a lot of attention    .",
+      "s_span": 0,
+      "e_span": 106
+    }
+  ],
+  "bib_entries": {
+    "6247943": {
+      "title": "Statistical similarity of binaries",
+      "abstract": "We address the problem of finding similar procedures in stripped binaries. We present a new statistical approach for measuring the similarity between two procedures. Our notion of similarity allows us to find similar code even when it has been compiled using different compilers, or has been modified. The main idea is to use similarity by composition: decompose the code into smaller comparable fragments, define semantic similarity between fragments, and use statistical reasoning to lift fragment similarity into similarity between procedures. We have implemented our approach in a tool called Esh, and applied it to find various prominent vulnerabilities across compilers and versions, including Heartbleed, Shellshock and Venom. We show that Esh produces high accuracy results, with few to no false positives -- a crucial factor in the scenario of vulnerability search in stripped binaries."
+    },
+    "29256838": {
+      "title": "Similarity of binaries through re-optimization",
+      "abstract": "We present a scalable approach for establishing similarity between stripped binaries (with no debug information). The main challenge in binary similarity, is to establish similarity even when the code has been compiled using different compilers, with different optimization levels, or targeting different architectures. Overcoming this challenge, while avoiding false positives, is invaluable to the process of reverse engineering and the process of locating vulnerable code. We present a technique that is scalable and precise, as it alleviates the need for heavyweight semantic comparison by performing out-of-context re-optimization of procedure fragments. It works by decomposing binary procedures to comparable fragments and transforming them to a canonical, normalized form using the compiler optimizer, which enables finding equivalent fragments through simple syntactic comparison. We use a statistical framework built by analyzing samples collected â in the wildâ to generate a global context that quantifies the significance of each pair of fragments, and uses it to lift pairwise fragment equivalence to whole procedure similarity. We have implemented our technique in a tool called GitZ and performed an extensive evaluation. We show that GitZ is able to perform millions of comparisons efficiently, and find similarity with high accuracy."
+    },
+    "1327780": {
+      "title": "Blanket execution: Dynamic similarity testing for program binaries and components",
+      "abstract": "Matching function binaries--the process of identifying similar functions among binary executables--is a challenge that underlies many security applications such as malware analysis and patch-based exploit generation. Recent work tries to establish semantic similarity based on static analysis methods. Unfortunately, these methods do not perform well if the compared binaries are produced by different compiler toolchains or optimization levels. In this work, we propose blanket execution, a novel dynamic equivalence testing primitive that achieves complete coverage by overriding the intended program logic. Blanket execution collects the side effects of functions during execution under a controlled randomized environment. Two functions are deemed similar, if their corresponding side effects, as observed under the same environment, are similar too. ::: ::: We implement our blanket execution technique in a system called BLEX. We evaluate BLEX rigorously against the state of the art binary comparison tool BinDiff. When comparing optimized and un-optimized executables from the popular GNU coreutils package, BLEX outperforms BinDiff by up to 3.5 times in correctly identifying similar functions. BLEX also outperforms BinDiff if the binaries have been compiled by different compilers. Using the functionality in BLEX, we have also built a binary search engine that identifies similar functions across optimization boundaries. Averaged over all indexed functions, our search engine ranks the correct matches among the top ten results 77% of the time."
+    }
+  },
+  "generator": "fallback_v4"
+}

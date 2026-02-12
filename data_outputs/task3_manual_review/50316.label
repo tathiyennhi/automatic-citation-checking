@@ -1,0 +1,47 @@
+{
+  "doc_id": "50316",
+  "text": "RECON leverages both resource-level information and component-level information when modeling Web page and segment-level energy consumption. Instead, one could leverage only resources, as in prior work (e.g., PowerTutor [CITATION_1] , V-edge [CITATION_2] , and WattsOn [CITATION_3] ), to construct similar models. However, such models do not perform as well as RECON. When we model power consumption using only resource-level information, the modeling accuracy is limited by the resource monitoring frequency which needs to be low (10/second, in our case) to ensure low CPU and power overhead (see §4.2). For example, using resource-only modeling increases the error by about 34% for bing.com and about 41% for craigslist.org when compared to RECON. This result was obtained using the exact same 14 resource metrics used for RECON, collected at the same frequency (once every 0.1s), and using the LR model. Although related works suggest logging resources every few seconds [CITATION_4] , we nd that lowering the resource monitoring frequency to 2 -5 seconds increases average modeling error across all page loads by 38%. In the context of this work, resource-only models can not provide visibility into the power consumption of individual page load activities. RECON, on the other hand, can provide such visibility, thus enabling the analyses of Web optimizations as presented in §7.",
+  "correct_citation": {
+    "[CITATION_1]": "1458775",
+    "[CITATION_2]": "3028597",
+    "[CITATION_3]": "207197053",
+    "[CITATION_4]": "16428940"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Instead, one could leverage only resources, as in prior work (e.g., PowerTutor"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": ", V-edge"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": ", and WattsOn"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Although related works suggest logging resources every few seconds, we nd that lowering the resource monitoring frequency to 2 -5 seconds increases average modeling error across all page loads by 38%."
+    }
+  ],
+  "bib_entries": {
+    "16428940": {
+      "title": "Smartphone energy drain in the wild: Analysis and implications",
+      "abstract": "The limited battery life of modern smartphones remains a leading factor adversely affecting the mobile experience of millions of smartphone users. In order to extend battery life, it is critical to understand where and how is energy drain happening on users' phones under normal usage, for example, in a one-day cycle. In this paper, we conduct the first extensive measurement and modeling of energy drain of 1520 smartphone in the wild. We make two primary contributions. First, we develop a hybrid power model that integrates utilization-based models and FSM-based models for different phone components with a novel technique that estimates the triggers for the FSM-based network power model based on network utilization. Second, through analyzing traces collected on 1520 Galaxy S3 and S4 devices in the wild, we present detailed analysis of where the CPU time and energy are spent across the 1520 devices, inside the 800 apps, as well as along several evolution dimensions, including hardware, Android, cellular, and app updates. Our findings of smartphone energy drain in the wild have significant implications to the various key players of the Android phone eco-system, including phone vendors Samsung, Android developers, app developers, and ultimately millions of smartphone users, towards the common goal of extending smartphone battery life and improving the user mobile experience."
+    },
+    "207197053": {
+      "title": "Empowering developers to estimate app energy consumption",
+      "abstract": "Battery life is a critical performance and user experience metric on mobile devices. However, it is difficult for app developers to measure the energy used by their apps, and to explore how energy use might change with conditions that vary outside of the developer's control such as network congestion, choice of mobile operator, and user settings for screen brightness. We present an energy emulation tool that allows developers to estimate the energy use for their mobile apps on their development workstation itself. The proposed techniques scale the emulated resources including the processing speed and network characteristics to match the app behavior to that on a real mobile device. We also enable exploring multiple operating conditions that the developers cannot easily reproduce in their lab. The estimation of energy relies on power models for various components, and we also add new power models for components not modeled in prior works such as AMOLED displays. We also present a prototype implementation of this tool and evaluate it through comparisons with real device energy measurements."
+    },
+    "3028597": {
+      "title": "V-edge: Fast Self-constructive Power Modeling of Smartphones Based on Battery Voltage Dynamics",
+      "abstract": "System power models are important for power management and optimization on smartphones. However, existing approaches for power modeling have several limitations. Some require external power meters, which is not convenient for people to use. Other approaches either rely on the battery current sensing capability, which is not available on many smartphones, or take a long time to generate the power model. To overcome these limitations, we propose a new way of generating power models from battery voltage dynamics, called V-edge. V-edge is self-constructive and does not require current-sensing. Most importantly, it is fast in model building. Our implementation supports both component level power models and per-application energy accounting. Evaluation results using various benchmarks and applications show that the V-edge approach achieves high power modeling accuracy, and is two orders of magnitude faster than existing self-modeling approaches requiring no current-sensing."
+    },
+    "1458775": {
+      "title": "Accurate online power estimation and automatic battery behavior based power model generation for smartphones",
+      "abstract": "This paper describes PowerBooter, an automated power model construction technique that uses built-in battery voltage sensors and knowledge of battery discharge behavior to monitor power consumption while explicitly controlling the power management and activity states of individual components. It requires no external measurement equipment. We also describe PowerTutor, a component power management and activity state introspection based tool that uses the model generated by PowerBooter for online power estimation. PowerBooter is intended to make it quick and easy for application developers and end users to generate power models for new smartphone variants, which each have different power consumption properties and therefore require different power models. PowerTutor is intended to ease the design and selection of power efficient software for embedded systems. Combined, PowerBooter and PowerTutor have the goal of opening power modeling and analysis for more smartphone variants and their users."
+    }
+  },
+  "generator": "fallback"
+}

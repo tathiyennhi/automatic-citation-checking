@@ -1,0 +1,74 @@
+{
+  "doc_id": "35684",
+  "text": "There are a number of papers that encode smaller subsets of PSL safety properties than our encoding. The most widely known is the so called safety simple subset [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] . Our encoding handles a strictly larger syntactic subset of PSL safety properties but is not directly suitable for runtime monitoring, as we use nondeterminism in the generated transducers for better succinctness. Our approach is designed to be used in combination with model checking algorithms and is thus significantly more succinct than the approach of [CITATION_5] tailored to be used in runtime monitoring of PSL in a simulation setting. The approach of [CITATION_6] for encoding informative bad prefixes for LTL formulas has been implemented in the scheck tool [CITATION_7] in the context of explicit state model checking. Our approach is different in the way that it is a symbolic model checking approach detecting all informative bad prefixes of PSL formulas.",
+  "correct_citation": {
+    "[CITATION_1]": "11562117",
+    "[CITATION_2]": "1589154",
+    "[CITATION_3]": "15287638",
+    "[CITATION_4]": "17177",
+    "[CITATION_5]": "5742268",
+    "[CITATION_6]": "909779",
+    "[CITATION_7]": "1649215"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The most widely known is the so called safety simple subset  ,  ,  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The most widely known is the so called safety simple subset  ,  ,  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The most widely known is the so called safety simple subset  ,  ,  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The most widely known is the so called safety simple subset  ,  ,  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Our approach is designed to be used in combination with model checking algorithms and is thus significantly more succinct than the approach of  tailored to be used in runtime monitoring of PSL in a simulation setting."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "The approach of  for encoding informative bad prefixes for LTL formulas has been implemented in the scheck tool  in the context of explicit state model checking."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "The approach of  for encoding informative bad prefixes for LTL formulas has been implemented in the scheck tool  in the context of explicit state model checking."
+    }
+  ],
+  "bib_entries": {
+    "17177": {
+      "title": "Automata-based assertion-checker synthesis of PSL properties",
+      "abstract": "Assertion-based verification with languages such as PSL is gaining in importance. From assertions, one can generate hardware assertion checkers for use in emulation, simulation acceleration and silicon debug. We present techniques for checker generation of the complete set of PSL properties, including all variants of operators, both strong and weak. A full automata-based approach allows an entire assertion to be represented by a single automaton, hence allowing optimizations that can not be done in a modular approach where subcircuits are created only for individual operators. For this purpose, automata algorithms are developed for the base cases, and a complete set of rewrite rules is derived for other operators. Automata splitting is introduced for an efficient implementation of the eventuallye operator."
+    },
+    "1589154": {
+      "title": "Engineering of an assertion-based PSL Simple -Verilog dynamic verifier by alternating automata",
+      "abstract": "Alternating Finite Automata (AFA) has linear space complexity in representing Linear-Time Temporal Logics. However, It is difficult to manipulate AFA in the run-time. In this paper, we focus on implementation methods to make alternating automata from static representation to run-time verification engines. 1) We have Directed Acyclic Graphs (DAG) represent all possible runs of a Local-variable-enhanced AFA (LAFA). The acceptance of universal choices is conditioned on successful synchronization of universal branches. 2) We encode states and local variables by symbolic approaches, and adopt historic trees in representing all possible parallel runs. The encoding enables multiple assignments to states and local variables in a configuration. By those methods, we are able to maintain the linear complexity of verification in both space and time."
+    },
+    "1649215": {
+      "title": "Efficient Model Checking of Safety Properties",
+      "abstract": "We consider the problems of identifying LTL safety properties and translating them to finite automata. We present an algorithm for constructing finite automata recognising informative prefixes of LTL formulas based on [1]. The implementation also includes a procedure for deciding if a formula is pathologic. Experimental results indicate that the translation is competitive when compared to model checking with tools translating full LTL to Buchi automata."
+    },
+    "11562117": {
+      "title": "The safety simple subset",
+      "abstract": "Regular-LTL (RLTL), extends LTL with regular expressions, and it is the core of the IEEE standard temporal logic PSL. Safety formulas of RLTL, as well as of other temporal logics, are easier to verify than other formulas. This is because verification of safety formulas can be reduced to invariance checking using an auxiliary automaton recognizing violating prefixes. ::: ::: In this paper we define a special subset of safety RLTL formulas, called RLTLLV, for which the automaton built is linear in the size of the formula. We then give two procedures for constructing such an automaton, the first provides a translation into a regular expression of linear size, while the second constructs the automaton directly from the given formula. We have derived the definition of RLTLLV by combining several results in the literature, and we devote a major part of the paper to reviewing these results and exploring the involved relationships."
+    },
+    "909779": {
+      "title": "Model Checking of Safety Properties",
+      "abstract": "Of special interest in formal verification are safety properties, which assert that the system always stays within some allowed region. Proof rules for the verification of safety properties have been developed in the proof-based approach to verification, making verification of safety properties simpler than verification of general properties. In this paper we consider model checking of safety properties. A computation that violates a general linear property reaches a bad cycle, which witnesses the violation of the property. Accordingly, current methods and tools for model checking of linear properties are based on a search for bad cycles. A symbolic implementation of such a search involves the calculation of a nested fixed-point expression over the system's state space, and is often infeasible. Every computation that violates a safety property has a finite prefix along which the property is violated. We use this fact in order to base model checking of safety properties on a search for finite bad prefixes. Such a search can be performed using a simple forward or backward symbolic reachability check. A naive methodology that is based on such a search involves a construction of an automaton (or a tableau) that is doubly exponential in the property. We present an analysis of safety properties that enables us to prevent the doubly-exponential blow up and to use the same automaton used for model checking of general properties, replacing the search for bad cycles by a search for bad prefixes."
+    },
+    "15287638": {
+      "title": "Dynamic verifying the properties of the simple subset of PSL",
+      "abstract": "PSL is a standard specification language(IEEE-1850) for hardware and embedded system design. The simple subset of PSL(PSLSimple) conforms to the notion of monotonic advancement of time, which in turn ensures that formulas within the subset can be simulated easily. Dynamic verifiers consider only finite executions which may be too short to assure their satisfaction to some formulas. In this paper, we work on the theories and methods for designing dynamic verifiers for PSLSimple. We first study the formalism for the formula satisfaction strengths over finite words. Then, we explore the combinational laws of finite words with respect to strong satisfaction, weak satisfaction and strong violation. That contributes acceptance conditions for automata to recognize not just violating, but also strongly satisfying and pending words for all PSLsimple structures. In the end, we propose the local-variable-enhanced alternating finite automata( LAFA) as the run time checkers for PSLSimple. The size of a LAFA is linear to the size of its PSLSimple formula."
+    },
+    "5742268": {
+      "title": "Monitor circuits for LTL with bounded and unbounded future",
+      "abstract": "Synthesizing monitor circuits for LTL formulas is expensive, because the number of flip-flops in the circuit is exponential in the length of the formula. As a result, the IEEE standard PSL recommends to restrict monitoring to the simple subset and use the full logic only for static verification. We present a novel construction for the synthesis of monitor circuits from specifications in LTL. In our construction, only subformulas with unbounded-future operators contribute to the exponential blowup. We split the specification into a bounded and an unbounded part, apply specialized constructions for each part, and then compose the results into a monitor for the original specification. Since the unbounded part in practical specifications is often very small, we argue that, with the new construction, it is no longer necessary to restrict runtime verification to the simple subset."
+    }
+  },
+  "generator": "fallback_v4"
+}

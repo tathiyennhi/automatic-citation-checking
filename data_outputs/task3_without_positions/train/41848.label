@@ -1,0 +1,38 @@
+{
+  "doc_id": "41848",
+  "text": "In 2012, Zhang et al. [CITATION_1] proposed the CT algorithm, which provided a concise and efficient solution for real-time visual tracking applications. The primary innovation of the CT algorithm was the compressive sensing-based random feature extraction method. Benefiting from this fast and effective way to compress raw pixel data, the CT algorithm succeeded in excellent real-time performance. [CITATION_2] Meanwhile, the online learning Naïve Bayes classifier used for separating the target from background, which is a simple but effective pattern recognition method, ensured the tracking robustness to disturbances like appearance changes, camera vibration, and so on. [CITATION_3] Because the CT algorithm found a balance point between the real-time performance and effectiveness, it has a bright future in low-power realtime computer vision applications.",
+  "correct_citation": {
+    "[CITATION_1]": "2539545",
+    "[CITATION_2]": "5378407",
+    "[CITATION_3]": "20537062"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In 2012, Zhang et al.  proposed the CT algorithm, which provided a concise and efficient solution for real-time visual tracking applications."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Benefiting from this fast and effective way to compress raw pixel data, the CT algorithm succeeded in excellent real-time performance.  Meanwhile, the online learning Naïve Bayes classifier used for separating the target from background, which is a simple but effective pattern recognition method, ensured the tracking robustness to disturbances like appearance changes, camera vibration, and so on."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Meanwhile, the online learning Naïve Bayes classifier used for separating the target from background, which is a simple but effective pattern recognition method, ensured the tracking robustness to disturbances like appearance changes, camera vibration, and so on.  Because the CT algorithm found a balance point between the real-time performance and effectiveness, it has a bright future in low-power realtime computer vision applications."
+    }
+  ],
+  "bib_entries": {
+    "5378407": {
+      "title": "High-speed tracking with kernelized correlation filters",
+      "abstract": "The core component of most modern trackers is a discriminative classifier, tasked with distinguishing between the target and the surrounding environment. To cope with natural image changes, this classifier is typically trained with translated and scaled sample patches. Such sets of samples are riddled with redundancies—any overlapping pixels are constrained to be the same. Based on this simple observation, we propose an analytic model for datasets of thousands of translated patches. By showing that the resulting data matrix is circulant, we can diagonalize it with the discrete Fourier transform, reducing both storage and computation by several orders of magnitude. Interestingly, for linear regression our formulation is equivalent to a correlation filter, used by some of the fastest competitive trackers. For kernel regression, however, we derive a new kernelized correlation filter (KCF), that unlike other kernel algorithms has the exact same complexity as its linear counterpart. Building on it, we also propose a fast multi-channel extension of linear correlation filters, via a linear kernel, which we call dual correlation filter (DCF). Both KCF and DCF outperform top-ranking trackers such as Struck or TLD on a 50 videos benchmark, despite running at hundreds of frames-per-second, and being implemented in a few lines of code (Algorithm 1). To encourage further developments, our tracking framework was made open-source."
+    },
+    "2539545": {
+      "title": "Real-time compressive tracking",
+      "abstract": "It is a challenging task to develop effective and efficient appearance models for robust object tracking due to factors such as pose variation, illumination change, occlusion, and motion blur. Existing online tracking algorithms often update models with samples from observations in recent frames. While much success has been demonstrated, numerous issues remain to be addressed. First, while these adaptive appearance models are data-dependent, there does not exist sufficient amount of data for online algorithms to learn at the outset. Second, online tracking algorithms often encounter the drift problems. As a result of self-taught learning, these mis-aligned samples are likely to be added and degrade the appearance models. In this paper, we propose a simple yet effective and efficient tracking algorithm with an appearance model based on features extracted from the multi-scale image feature space with data-independent basis. Our appearance model employs non-adaptive random projections that preserve the structure of the image feature space of objects. A very sparse measurement matrix is adopted to efficiently extract the features for the appearance model. We compress samples of foreground targets and the background using the same sparse measurement matrix. The tracking task is formulated as a binary classification via a naive Bayes classifier with online update in the compressed domain. The proposed compressive tracking algorithm runs in real-time and performs favorably against state-of-the-art algorithms on challenging sequences in terms of efficiency, accuracy and robustness."
+    },
+    "20537062": {
+      "title": "Kernel sparse tracking with compressive sensing",
+      "abstract": "Online tracking is a challenging task to develop effective and efficient models to account for appearance change. However, most tracking algorithms only consider the holistic or local information and do not make full use of the appearance information. In this study, a novel tracking algorithm with sparse representation is proposed and the online classifier is learned to discriminate the target from the background. To reduce visual drift problem which is encountered in object tracking, a two-stage sparse representation method is proposed. The holistic information is used to estimate the initial tracking position, and the local information is used to determine the final tracking position. To improve the performance of the classifier and robustness of the algorithm, the kernel function is applied on the sparse representation. Moreover, the dimension of the target is reduced via compressive sensing. Besides, a simple and effective method for dictionary update is proposed. Both qualitative and quantitative evaluations on challenging image sequences demonstrate that the proposed algorithm performs favourably against several state-of-the-art algorithms."
+    }
+  },
+  "generator": "fallback_v4"
+}

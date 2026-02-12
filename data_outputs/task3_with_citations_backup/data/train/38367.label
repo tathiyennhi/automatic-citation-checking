@@ -1,0 +1,36 @@
+{
+  "doc_id": "38367",
+  "text": "In this subsection, we focus on the problem of pose estimation for articulated objects such as fish, mouse, and hand. To make a fair comparison with existing methods, we specifically implement two nontrivial baseline methods, namely regression forest (RF), and convolutional neural network (CNN). The RF method is a re-implementation of the classical regression method used by Microsoft Kinect [CITATION_1] , with the only difference being that our RF implementation explicitly utilizes a skeletal model, instead of estimating joint locations without skeletal constraints as in [CITATION_2] . Two separate regression forests, F 1 and F 2 , are trained for this purpose. Here F 1 is used to esti-2 The NYU dataset is publicly available at http://cims. nyu.edu/~tompson/NYU_Hand_Pose_Dataset.htm. mate the 3D location and in-plane orientation of the subject, followed by F 2 which produces a set of 3D pose candidates. The number of trees trained are set to 7 and 12 for F 1 and F 2 , respectively. In both cases, the maximum tree depth is fixed to L=20. The standard depth invariant two-point offset features of [CITATION_3] are also used. The CNN method is obtained as follows: The pre-trained AlexNet CNN model from ImageNet is engaged as the initial model. To tailor the training data for our CNN, objects of interest from the training depth images are cropped according to their bounding boxes. The depth values in each patch are rescaled to be in the range of 0 to 255. Each object patch is replicated three times to form into a RGB image, which is then resized as an input instance of size 224 × 224. This together with its corresponding annotation prepares a training example. Then our CNN model is finally obtained by executing the MatConvNet package to train on these training examples for 50 epochs.",
+  "correct_citation": {
+    "[CITATION_1]": "8886546",
+    "[CITATION_2]": "8886546",
+    "[CITATION_3]": "8886546"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The RF method is a re-implementation of the classical regression method used by Microsoft Kinect [CITATION_1] , with the only difference being that our RF implementation explicitly utilizes a skeletal model, instead of estimating joint locations without skeletal constraints as in [CITATION_2] .",
+      "s_span": 297,
+      "e_span": 592
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The RF method is a re-implementation of the classical regression method used by Microsoft Kinect [CITATION_1] , with the only difference being that our RF implementation explicitly utilizes a skeletal model, instead of estimating joint locations without skeletal constraints as in [CITATION_2] .",
+      "s_span": 297,
+      "e_span": 592
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The standard depth invariant two-point offset features of [CITATION_3] are also used.",
+      "s_span": 1053,
+      "e_span": 1138
+    }
+  ],
+  "bib_entries": {
+    "8886546": {
+      "title": "Efficient human pose estimation from single depth images",
+      "abstract": "We describe two new approaches to human pose estimation. Both can quickly and accurately predict the 3D positions of body joints from a single depth image without using any temporal information. The key to both approaches is the use of a large, realistic, and highly varied synthetic set of training images. This allows us to learn models that are largely invariant to factors such as pose, body shape, field-of-view cropping, and clothing. Our first approach employs an intermediate body parts representation, designed so that an accurate per-pixel classification of the parts will localize the joints of the body. The second approach instead directly regresses the positions of body joints. By using simple depth pixel comparison features and parallelizable decision forests, both approaches can run super-real time on consumer hardware. Our evaluation investigates many aspects of our methods, and compares the approaches to each other and to the state of the art. Results on silhouettes suggest broader applicability to other imaging modalities."
+    }
+  },
+  "generator": "fallback_v4"
+}

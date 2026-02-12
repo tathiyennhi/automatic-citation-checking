@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In contrast, closed-loop agents aim to maximize cumulative reward over time: Open-loop: π * = arg min π T t=1 E (st,at)∼πref ∥a t -π(s t)∥ 2 2, Closed-loop: π * = arg max π T t=1E st∼P (st-1,at-1), at-1∼π(ot-1,st-1), ot-1∼Pobs(st-1) [r(s t, a t)],Simulation: π * = arg max π T t=1 E st∼P (st-1,at-1), at-1∼π(ot-1,st-1), ot-1∼ Pobs(st-1) [r(s t, a t)].",
+    "(1) This leads to an inherent objective mismatch: open-loop training minimizes imitation error under expert supervision, while closed-loop deployment optimizes long-horizon reward under evolving dynamics and partial observability, as is illustrated in Figure 1.",
+    "Bridging this gap requires careful alignment of three components in equation ( 1): the transition model P (s t+1 |s t, a t), which can be consistently approximated using vehicle dynamics; the observation model P obs (o t |s t), which may deviate from simulated sensors P obs; and the reward function r(s t, a t), which must be inferred from partial observations o t using learned value models.To address these mismatches, we employ a counterfactual data generation supported by 3DGSbased observation model P obs, then design a policy adapter that transforms the pretrained πref into a reward-aligned policy π * under the guidance of a learned Q-value model, as outlined in Figure 1.",
+    "A recent line of approach uses visual generative or reconstruction models for rendering photorealistic driving scenes from state parameterizations, utilizing the recent advancement in image diffusion modeling [5], neural field rendering [10], and 3D Gaussian Splatting [13].",
+    "This line of methods essentially learn to estimate Pobs (•|s t) in our POMDP formulation in Section 2.1."
+  ]
+}

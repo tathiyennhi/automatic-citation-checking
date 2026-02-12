@@ -1,0 +1,44 @@
+{
+  "doc_id": "6236",
+  "text": "The synchronous regions of a connector are maximal in the sense that no two synchronous regions have shared ports: all synchronous regions are, by definition, pairwise independent. Two subconnectors are \"pairwise independent\" iff the subgraphs for those subconnectors are disconnected. \"Maximality\" means that two synchronous regions can never be graph-theoretically adjacent: if they were, neither of these synchronous regions is maximal, because there exists a larger synchronous region, namely the one containing both of them. Because synchronous regions are pairwise independent, the pa for the l synchronous regions of a connector can act as the l masters in the definition of B. The asynchronous regions form the \"glue\" between the synchronous regions: the pa for every asynchronous region has the same shape as δ in Fig. 2,   8 and consequently, they can act as the k conditional slaves in the definition of B. [CITATION_1] Port automaton δ in Fig. 2 describes the behavior of an asynchronous Reo primitive, called Fifo [CITATION_2] [CITATION_3] , with a buffer (of capacity 1) that accepts data on one port (i.e., B), buffers it, and at a later time dispenses that same data on another port (i.e. C). Of the currently common Reo primitives, only Fifo is To more precisely formalize (a)synchronous regions in terms of pa, let A denote a set of small pa, one for every constituent of the connector under study. The asynchronous regions R async of this connector are represented by singleton subsets of A, each of which contains a pa whose every transition has a singleton synchronization constraint: R async = {{α} | α ∈ A and (q , P , q ) ∈ Trans(α) implies |P | = 1 for all q , q , P } The requirement of singleton synchronization constraints implies that a pa for a synchronous region never synchronizes any of its ports. Let B = A \\ R async denote the set of remaining pa, after computing asynchronous regions. The synchronous regions R sync , then, are represented by maximal subsets of B (in the sense of graph-connectedness as previously explained):",
+  "correct_citation": {
+    "[CITATION_1]": "5651220",
+    "[CITATION_2]": "92815370",
+    "[CITATION_3]": "14582581"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": " every asynchronous region has the same shape as δ in Fig. 2,   8 and consequently, they can act as the k conditional slaves in the definition of B. [CITATION_1] Port automaton δ in Fig. 2 describes the behavior of an asynchronous Reo primitive, called Fifo [CITATION_2] [CITATION_3] , with a ",
+      "s_span": 769,
+      "e_span": 1062
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": " slaves in the definition of B. [CITATION_1] Port automaton δ in Fig. 2 describes the behavior of an asynchronous Reo primitive, called Fifo [CITATION_2] [CITATION_3] , with a buffer (of capacity 1) that accepts data on one port (i.e., B), buffers it, and at a later time dispenses that ",
+      "s_span": 886,
+      "e_span": 1173
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": " in the definition of B. [CITATION_1] Port automaton δ in Fig. 2 describes the behavior of an asynchronous Reo primitive, called Fifo [CITATION_2] [CITATION_3] , with a buffer (of capacity 1) that accepts data on one port (i.e., B), buffers it, and at a later time dispenses that same data on ",
+      "s_span": 893,
+      "e_span": 1186
+    }
+  ],
+  "bib_entries": {
+    "92815370": {
+      "title": "Reo: a channel-based coordination model for component composition",
+      "abstract": "Apparatus for mixing together milk, a fluoride solution and a flavoring solution to produce a pleasant-tasting fluordiated beverage, comprises two sets each of three vessels for containing the respective liquids to be mixed. The volumes of the three vessels are in the proportions in which the liquids are to be mixed and inlet flows from supply tanks of the three liquids are metered to fill the three vessels simultaneously. A common inlet valve shuts off the three supplies simultaneously and operation of the inlet valve automatically opens the outlet and mixing valve. As one set of vessels is filled, the other is emptied to provide a substantially continuous flow of the beverage."
+    },
+    "14582581": {
+      "title": "Puff, the magic protocol",
+      "abstract": "Traditional models of concurrency resort to peculiarly indirect means to express interaction and study its properties. Formalisms such as process algebras/calculi, concurrent objects, actors, agents, shared memory, message passing, etc., all are primarily action-based models that provide constructs for the direct specification of things that interact, rather than a direct specification of interaction (protocols). Consequently, interaction in these formalisms becomes a derived or secondary concept whose properties can be studied only indirectly, as the side-effects of the (intended or coincidental) couplings or clashes of the actions whose compositions comprise a model. ::: ::: Treating interaction as an explicit first-class concept, complete with its own composition operators, allows to specify more complex interaction protocols by combining simpler, and eventually primitive, protocols. Reo [20,11,12,6] serves as a premier example of such an interaction-based model of concurrency. In this paper, we describe Reo and its support tools. We show how exogenous coordination in Reo reflects an interaction-centric model of concurrency where an interaction (protocol) consists of nothing but a relational constraint on communication actions. In this setting, interaction protocols become explicit, concrete, tangible (software) constructs that can be specified, verified, composed, and reused, independently of the actors that they may engage in disparate applications."
+    },
+    "5651220": {
+      "title": "Overview of thirty semantic formalisms for Reo",
+      "abstract": "htmlabstractOver the past decades, coordination languages have emerged for the specification and implementation of interaction protocols for communicating software components. This class of languages includes Reo, a platform for compositional construction of connectors. In recent years, many formalisms for describing the behavior of Reo connectors have emerged. In this paper, we give an overview of all these classes of semantic models. Furthermore, we investigate the expressiveness of two more prominent classes, constraint automata and coloring models, in detail."
+    }
+  },
+  "generator": "fallback_v4"
+}

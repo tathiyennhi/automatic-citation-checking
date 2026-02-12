@@ -1,0 +1,20 @@
+{
+  "doc_id": "11260",
+  "text": "The 432 instruction set does not provide for instruction-stream literals other than zero and one. A study performed within Intel early in the 432 project concluded that the constants zero and one would cover nearly all of the need for constants. This conclusion was almost certainly in error, but it enabled the Instruction Decoder and Execution Unit to be built as separate chips, and thus facilitated building such a complex system on silicon (George Cox, private communication, January 1985). Since the 432's instruction stream is bit-aligned, literals would have had to be reconstituted in the instruction decoder's barrel shifter and then sent to the Execution Unit. No suitable transmission path existed for such a transfer. As a consequence, when it became clear that zero and one would not suffice it was too late to rectify the mistake. The lack of immediate data impacts performance in several ways. A reference to data in the local constants object usually occupies 19 bits, much more than most of the constants themselves. Hennessy et al. [CITATION_1] report that for a set of Pascal programs, a 4-bit constant is sufficient for approximately 70 percent of all data constants, and 8-bit constant suffices for 95 percent. Besides the wasted instruction stream bits, the additional memory references required to fetch the constants are expensive.",
+  "correct_citation": {
+    "[CITATION_1]": "10639358"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Hennessy et al.  report that for a set of Pascal programs, a 4-bit constant is sufficient for approximately 70 percent of all data constants, and 8-bit constant suffices for 95 percent."
+    }
+  ],
+  "bib_entries": {
+    "10639358": {
+      "title": "Hardware/software tradeoffs for increased performance",
+      "abstract": "Most new computer architectures are concerned with maximizing performance by providing suitable instruction sets for compiled code and providing support for systems functions. We argue that the most effective design methodology must make simultaneous tradeoffs across all three areas: hardware, software support, and systems support. Recent trends lean towards extensive hardware support for both the compiler and operating systems software. However, consideration of all possible design tradeoffs may often lead to less hardware support. Several examples of this approach are presented, including: omission of condition codes, word-addressed machines, and imposing pipeline interlocks in software. The specifics and performance of these approaches are examined with respect to the MIPS processor."
+    }
+  },
+  "generator": "fallback_v4"
+}

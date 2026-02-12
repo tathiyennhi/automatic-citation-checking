@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We modified training datasets such that there were an equal number of sentences in all four categories.",
+    "We did this by identifying the category with the greatest number of sentences, and upsampling data from all other categories.",
+    "So, for example, if a training dataset were to contain 10,000 fully internal sentences, and 8000 sentences from each of the three remaining categories, we would sample 2000 sentences with replacement from each of those three categories, then add those sentences to the dataset so that we have 10,000 training examples in each category.",
+    "We used training data with an equal number of examples for each label because this procedure prevented the model from learning to use relative frequencies of internal and external details to improve prediction accuracy.",
+    "This step is necessary because if we did not upsample our training sets, and our narratives contained many more internal details than external details, the model could obtain relatively high accuracy by classifying all details as internal."
+  ]
+}

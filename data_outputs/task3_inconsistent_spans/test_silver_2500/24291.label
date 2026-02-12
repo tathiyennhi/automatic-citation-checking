@@ -1,0 +1,20 @@
+{
+  "doc_id": "24291",
+  "text": "The class weights used for training were according to the ENET [CITATION_1] method but it should be noted that these sum to around 30 for Cityscapes and were then normalised so that the mean class weight is 1 i.e. they sum to the number of classes. The rationale for this is that there is no apparent reason for the weights to have a mean other than 1, and that this otherwise has the effect of multiplying the learning rate by 30 for linear activations. As the goal here is to explore absolute learning rate then the procedure was adopted that class weights should always be normalised so as not to influence the absolute learning rate hyper parameter. That said, for the ClassNet variant it was decided to simply add the contour and class losses and it could be argued that this doubles the effective learning rate. In practice this was not found likely because the contour loss uses a special loss function based on the intersection over union (IoU) of only the points near the instance boundaries and acts in the role of a guide to the class segmentation, but this is only conjecture at this point.",
+  "correct_citation": {
+    "[CITATION_1]": "16231053"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The class weights used for training were according to the ENET  method but it should be noted that these sum to around 30 for Cityscapes and were then normalised so that the mean class weight is 1 i.e. they sum to the number of classes."
+    }
+  ],
+  "bib_entries": {
+    "16231053": {
+      "title": "ENet: A Deep Neural Network Architecture for Real-Time Semantic Segmentation",
+      "abstract": "The ability to perform pixel-wise semantic segmentation in real-time is of paramount importance in practical mobile applications. Recent deep neural networks aimed at this task have the disadvantage of requiring a large number of floating point operations and have long run-times that hinder their usability. In this paper, we propose a novel deep neural network architecture named ENet (efficient neural network), created specifically for tasks requiring low latency operation. ENet is up to 18x faster, requires 75x less FLOPs, has 79x less parameters, and provides similar or better accuracy to existing models. ::: We have tested it on CamVid, Cityscapes and SUN datasets and report on comparisons with existing state-of-the-art methods, and the trade-offs between accuracy and processing time of a network. We present performance measurements of the proposed architecture on embedded systems and suggest possible software improvements that could make ENet even faster."
+    }
+  },
+  "generator": "fallback_v4"
+}

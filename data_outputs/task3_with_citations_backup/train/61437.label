@@ -1,0 +1,88 @@
+{
+  "doc_id": "61437",
+  "text": "Deep learning-based methods More recently, deep learning methods have become popular for single-image upsampling. A convolutional neural network (CNN) of three layers is trained in [CITATION_1] , and Kim et al. [CITATION_2] improve this approach substantially. Dong et al. [CITATION_3] present an end-to-end upsampling convolutional neural network (SRCNN) to achieve image super-resolution. These learning-based methods have mainly been applied to color images, and not suitable for depth map super-resolution. Xie et al. [CITATION_4] propose a CNN framework for the single depth image upsampling guided by a reconstructed HR edge map. These methods have mainly been used to intensity images, where a great amount of training samples can be easily obtained. In contrast, huge datasets with dense, accurate depth maps have recently become available, e.g., [CITATION_5] . Hui et al. [CITATION_6] present a CNN framework in a multi-scale guidance architecture (MSG-Net). Riegler et al. [CITATION_7] integrate an energy minimization model with anisotropic TGV regularization into a end-to-end convolutional network for a single depth image upsampling. However, CNN-based methods are highly dependent on training samples; these methods may not produce competitive results when the test data are not similar to the training set.",
+  "correct_citation": {
+    "[CITATION_1]": "18874645",
+    "[CITATION_2]": "9971732",
+    "[CITATION_3]": "6593498",
+    "[CITATION_4]": "53306068",
+    "[CITATION_5]": "47368421",
+    "[CITATION_6]": "9579734",
+    "[CITATION_7]": "49642"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A convolutional neural network (CNN) of three layers is trained in [CITATION_1] , and Kim et al. [CITATION_2] improve this approach substantially.",
+      "s_span": 114,
+      "e_span": 260
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A convolutional neural network (CNN) of three layers is trained in [CITATION_1] , and Kim et al. [CITATION_2] improve this approach substantially.",
+      "s_span": 114,
+      "e_span": 260
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Dong et al. [CITATION_3] present an end-to-end upsampling convolutional neural network (SRCNN) to achieve image super-resolution.",
+      "s_span": 261,
+      "e_span": 390
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Xie et al. [CITATION_4] propose a CNN framework for the single depth image upsampling guided by a reconstructed HR edge map.",
+      "s_span": 511,
+      "e_span": 635
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "In contrast, huge datasets with dense, accurate depth maps have recently become available, e.g., [CITATION_5] .",
+      "s_span": 758,
+      "e_span": 869
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Hui et al. [CITATION_6] present a CNN framework in a multi-scale guidance architecture (MSG-Net).",
+      "s_span": 870,
+      "e_span": 967
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Riegler et al. [CITATION_7] integrate an energy minimization model with anisotropic TGV regularization into a end-to-end convolutional network for a single depth image upsampling.",
+      "s_span": 968,
+      "e_span": 1147
+    }
+  ],
+  "bib_entries": {
+    "18874645": {
+      "title": "Learning a deep convolutional network for image super-resolution",
+      "abstract": "We propose a deep learning method for single image super-resolution (SR). Our method directly learns an end-to-end mapping between the low/high-resolution images. The mapping is represented as a deep convolutional neural network (CNN) [15] that takes the low-resolution image as the input and outputs the high-resolution one. We further show that traditional sparse-coding-based SR methods can also be viewed as a deep convolutional network. But unlike traditional methods that handle each component separately, our method jointly optimizes all layers. Our deep CNN has a lightweight structure, yet demonstrates state-of-the-art restoration quality, and achieves fast speed for practical on-line usage."
+    },
+    "6593498": {
+      "title": "Image super-resolution using deep convolutional networks",
+      "abstract": "We propose a deep learning method for single image super-resolution (SR). Our method directly learns an end-to-end mapping between the low/high-resolution images. The mapping is represented as a deep convolutional neural network (CNN) that takes the low-resolution image as the input and outputs the high-resolution one. We further show that traditional sparse-coding-based SR methods can also be viewed as a deep convolutional network. But unlike traditional methods that handle each component separately, our method jointly optimizes all layers. Our deep CNN has a lightweight structure, yet demonstrates state-of-the-art restoration quality, and achieves fast speed for practical on-line usage. We explore different network structures and parameter settings to achieve trade-offs between performance and speed. Moreover, we extend our network to cope with three color channels simultaneously, and show better overall reconstruction quality."
+    },
+    "9971732": {
+      "title": "Accurate image super-resolution using very deep convolutional networks",
+      "abstract": "We present a highly accurate single-image superresolution (SR) method. Our method uses a very deep convolutional network inspired by VGG-net used for ImageNet classification [19]. We find increasing our network depth shows a significant improvement in accuracy. Our final model uses 20 weight layers. By cascading small filters many times in a deep network structure, contextual information over large image regions is exploited in an efficient way. With very deep networks, however, convergence speed becomes a critical issue during training. We propose a simple yet effective training procedure. We learn residuals only and use extremely high learning rates (104 times higher than SRCNN [6]) enabled by adjustable gradient clipping. Our proposed method performs better than existing methods in accuracy and visual improvements in our results are easily noticeable."
+    },
+    "47368421": {
+      "title": "Understanding real world indoor scenes with synthetic data",
+      "abstract": "Scene understanding is a prerequisite to many high level tasks for any automated intelligent machine operating in real world environments. Recent attempts with supervised learning have shown promise in this direction but also highlighted the need for enormous quantity of supervised data --- performance increases in proportion to the amount of data used. However, this quickly becomes prohibitive when considering the manual labour needed to collect such data. In this work, we focus our attention on depth based semantic per-pixel labelling as a scene understanding problem and show the potential of computer graphics to generate virtually unlimited labelled data from synthetic 3D scenes. By carefully synthesizing training data with appropriate noise models we show comparable performance to state-of-the-art RGBD systems on NYUv2 dataset despite using only depth data as input and set a benchmark on depth-based segmentation on SUN RGB-D dataset. Additionally, we offer a route to generating synthesized frame or video data, and understanding of different factors influencing performance gains."
+    },
+    "49642": {
+      "title": "ATGV-net: accurate depth super-resolution",
+      "abstract": "In this work we present a novel approach for single depth map super-resolution. Modern consumer depth sensors, especially Time-of-Flight sensors, produce dense depth measurements, but are affected by noise and have a low lateral resolution. We propose a method that combines the benefits of recent advances in machine learning based single image super-resolution, i.e. deep convolutional networks, with a variational method to recover accurate high-resolution depth maps. In particular, we integrate a variational method that models the piecewise affine structures apparent in depth data via an anisotropic total generalized variation regularization term on top of a deep network. We call our method ATGV-Net and train it end-to-end by unrolling the optimization procedure of the variational method. To train deep networks, a large corpus of training data with accurate ground-truth is required. We demonstrate that it is feasible to train our method solely on synthetic data that we generate in large quantities for this task. Our evaluations show that we achieve state-of-the-art results on three different benchmarks, as well as on a challenging Time-of-Flight dataset, all without utilizing an additional intensity image as guidance."
+    },
+    "9579734": {
+      "title": "Depth map super-resolution by deep multi-scale guidance",
+      "abstract": "Depth boundaries often lose sharpness when upsampling from low-resolution (LR) depth maps especially at large upscaling factors. We present a new method to address the problem of depth map super resolution in which a high-resolution (HR) depth map is inferred from a LR depth map and an additional HR intensity image of the same scene. We propose a Multi-Scale Guided convolutional network (MSG-Net) for depth map super resolution. MSG-Net complements LR depth features with HR intensity features using a multi-scale fusion strategy. Such a multi-scale guidance allows the network to better adapt for upsampling of both fine- and large-scale structures. Specifically, the rich hierarchical HR intensity features at different levels progressively resolve ambiguity in depth map upsampling. Moreover, we employ a high-frequency domain training method to not only reduce training time but also facilitate the fusion of depth and intensity features. With the multi-scale guidance, MSG-Net achieves state-of-art performance for depth map upsampling."
+    },
+    "53306068": {
+      "title": "Edge-guided single depth image super resolution",
+      "abstract": "Recently, consumer depth cameras have gained significant popularity due to their affordable cost. However, the limited resolution and the quality of the depth map generated by these cameras are still problematic for several applications. In this paper, a novel framework for the single depth image superresolution is proposed. In our framework, the upscaling of a single depth image is guided by a high-resolution edge map, which is constructed from the edges of the low-resolution depth image through a Markov random field optimization in a patch synthesis based manner. We also explore the self-similarity of patches during the edge construction stage, when limited training data are available. With the guidance of the high-resolution edge map, we propose upsampling the high-resolution depth image through a modified joint bilateral filter. The edge-based guidance not only helps avoiding artifacts introduced by direct texture prediction, but also reduces jagged artifacts and preserves the sharp edges. Experimental results demonstrate the effectiveness of our method both qualitatively and quantitatively compared with the state-of-the-art methods."
+    }
+  },
+  "generator": "fallback_v4"
+}

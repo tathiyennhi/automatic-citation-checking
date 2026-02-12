@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Rather than modeling a multivariate output with potential missing values, for each input sequence predictions are made for all phenotypes, and the final univariate output vector is then selected to match the source phenotype representing the target variable during optimization.MoCHI provides a handful of global epistasis (activation) functions that can be used out-the-box (\"Linear, \" \"ReLU, \" \"SiLU, \" \"Sigmoid, \" \"SumOfSigmoids, \" \"TwoStateFraction-Folded, \" etc.",
+    "), but users are also able to supply their own custom uni-or multi-dimensional transformations in a python script following a template described in the repository documentation and supplied to MoCHI during runtime (\"custom_transformations\").In order to infer global epistasis from the data, similar to previous work [7,17,18], by default MoCHI implements the \"SumOfSigmoids\" function as a sub-network consisting of one input layer, in which the number of neurons is determined by the corresponding additive trait dimensionality (1 neuron for unidimensional global epistasis, 2 for bidimensional global epistasis etc.",
+    "), a single hidden layer (20 neurons), and one output layer (one neuron).",
+    "All layers in the sub-network have sigmoidal activations:The size and number of hidden layers can be customized (\"sos_architecture\") as well as the activation function of the output layer (\"sos_outputlinear\").MoCHI assumes that nonlinearities (global epistasis) arise only in the relationship between biophysical parameters (free energies) and the molecular phenotype of interest.",
+    "Nonlinearities at the level of the experimental assay can be included in the formulation of the mechanistic model (as a user-defined custom transformation) if these are known or experimentally characterized."
+  ],
+  "correct_citations": [
+    "), but users are also able to supply their own custom uni-or multi-dimensional transformations in a python script following a template described in the repository documentation and supplied to MoCHI during runtime (\"custom_transformations\").In order to infer global epistasis from the data, similar to previous work [7,17,18], by default MoCHI implements the \"SumOfSigmoids\" function as a sub-network consisting of one input layer, in which the number of neurons is determined by the corresponding additive trait dimensionality (1 neuron for unidimensional global epistasis, 2 for bidimensional global epistasis etc."
+  ]
+}

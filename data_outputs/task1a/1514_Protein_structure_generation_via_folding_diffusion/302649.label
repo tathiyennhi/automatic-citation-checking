@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Architecturally, this model consists of the same transformer backbone as used in FoldingDiff combined with the same regression head converting per-token embeddings to angle outputs, though it is trained using absolute positional embeddings rather than relative embeddings as this improved validation loss.",
+    "The total length of the sequence is encoded using random Fourier feature embeddings, similarly to how time was encoded in FoldingDiff, and this embedding is similarly added to each position in the sequence of angles.",
+    "The model, which consists of 14.41 million trainable parameters, is trained to predict the i-th set of six angles given all prior angles, using attention masking to hide the i-th angle and onwards.",
+    "We use the same wrapped smooth L1 loss as our main FoldingDiff model to handle the fact that these angle predictions exist in the range ½Àπ,πÞ; specifically: L w x i ð Þ, f AR x 0,...,iÀ1",
+    "where superscripts indicate positional indexing."
+  ],
+  "correct_citations": []
+}

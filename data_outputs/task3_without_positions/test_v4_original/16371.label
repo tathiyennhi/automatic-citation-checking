@@ -1,0 +1,38 @@
+{
+  "doc_id": "16371",
+  "text": "T space has become a natural goal in the context of estimating the number of triangles. In particular, Cormode and Jowhari [CITATION_1] showed that any constant pass algorithm in the arbitrary order model required this amount of space when m = Θ(n √ T ) and there is an existing two-pass algorithm that returns a 3-approximation using this amount of space. Furthermore, Jha et al. [CITATION_2] showed that this space was sufficient for additively approximating T . Unfortunately, Braverman et al. [CITATION_3] showed it was insufficient for achieving multiplicative approximation via a single-pass algorithm in the arbitrary order model. The significance of our results is showing that ≈ m/",
+  "correct_citation": {
+    "[CITATION_1]": "13093860",
+    "[CITATION_2]": "10699598",
+    "[CITATION_3]": "1116844"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In particular, Cormode and Jowhari  showed that any constant pass algorithm in the arbitrary order model required this amount of space when m = Θ(n √ T ) and there is an existing two-pass algorithm that returns a 3-approximation using this amount of space."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Furthermore, Jha et al.  showed that this space was sufficient for additively approximating T ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Unfortunately, Braverman et al.  showed it was insufficient for achieving multiplicative approximation via a single-pass algorithm in the arbitrary order model."
+    }
+  ],
+  "bib_entries": {
+    "10699598": {
+      "title": "A space-efficient streaming algorithm for estimating transitivity and triangle counts using the birthday paradox",
+      "abstract": "We design a space-efficient algorithm that approximates the transitivity (global clustering coefficient) and total triangle count with only a single pass through a graph given as a stream of edges. Our procedure is based on the classic probabilistic result, the birthday paradox. When the transitivity is constant and there are more edges than wedges (common properties for social networks), we can prove that our algorithm requires O(√n) space (n is the number of vertices) to provide accurate estimates. We run a detailed set of experiments on a variety of real graphs and demonstrate that the memory requirement of the algorithm is a tiny fraction of the graph. For example, even for a graph with 200 million edges, our algorithm stores just 40,000 edges to give accurate results. Being a single pass streaming algorithm, our procedure also maintains a real-time estimate of the transitivity/number of triangles of a graph by storing a minuscule fraction of edges."
+    },
+    "13093860": {
+      "title": "A second look at counting triangles in graph streams",
+      "abstract": "In this paper we present improved results on the problem of counting triangles in edge streamed graphs. For graphs with $m$ edges and at least $T$ triangles, we show that an extra look over the stream yields a two-pass streaming algorithm that uses $O(\\frac{m}{\\epsilon^{4.5}\\sqrt{T}})$ space and outputs a $(1+\\epsilon)$ approximation of the number of triangles in the graph. This improves upon the two-pass streaming tester of Braverman, Ostrovsky and Vilenchik, ICALP 2013, which distinguishes between triangle-free graphs and graphs with at least $T$ triangle using $O(\\frac{m}{T^{1/3}})$ space. Also, in terms of dependence on $T$, we show that more passes would not lead to a better space bound. In other words, we prove there is no constant pass streaming algorithm that distinguishes between triangle-free graphs from graphs with at least $T$ triangles using $O(\\frac{m}{T^{1/2+\\rho}})$ space for any constant $\\rho \\ge 0$."
+    },
+    "1116844": {
+      "title": "How hard is counting triangles in the streaming model",
+      "abstract": "The problem of (approximately) counting the number of triangles in a graph is one of the basic problems in graph theory. In this paper we study the problem in the streaming model. We study the amount of memory required by a randomized algorithm to solve this problem. In case the algorithm is allowed one pass over the stream, we present a best possible lower bound of $\\Omega(m)$ for graphs $G$ with $m$ edges on $n$ vertices. If a constant number of passes is allowed, we show a lower bound of $\\Omega(m/T)$, $T$ the number of triangles. We match, in some sense, this lower bound with a 2-pass $O(m/T^{1/3})$-memory algorithm that solves the problem of distinguishing graphs with no triangles from graphs with at least $T$ triangles. We present a new graph parameter $\\rho(G)$ -- the triangle density, and conjecture that the space complexity of the triangles problem is $\\Omega(m/\\rho(G))$. We match this by a second algorithm that solves the distinguishing problem using $O(m/\\rho(G))$-memory."
+    }
+  },
+  "generator": "fallback_v4"
+}

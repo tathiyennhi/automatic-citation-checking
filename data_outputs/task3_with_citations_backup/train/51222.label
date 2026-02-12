@@ -1,0 +1,22 @@
+{
+  "doc_id": "51222",
+  "text": "We can obtain a better guarantee, 1/2, if we know that communities are edge-disjoint. This follows from the fact that we can express the connectivity constraints as a single matroid. Then M is matroid. The result follows from immediately Proposition 4.2. and the following standard lemma which we state without a proof. During the while-loop of the greedy algorithm, we maintain a priority queue for m edges, prioritized with the number of violations induced by a single edge. Whenever, a strong edge is deleted, we visit every open triangle induced by this edge and reduce the number of violations of the strong sister edge by 1. Note that we visit every triangle at most twice, so maintaining the queue requires O(t + m log n) time, if we use Fibonacci heap. To check the connectivity, we can use the technique introduced by Holm et al. [CITATION_1] , allowing us to do a connectivity check in O(log 2 n) amortized time. Thus, in total we need O(t + km log 2 n) time, plus the time to build the list of open triangles. Building such a list can be done in O deg 2 ( ) time.",
+  "correct_citation": {
+    "[CITATION_1]": "53223827"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To check the connectivity, we can use the technique introduced by Holm et al. [CITATION_1] , allowing us to do a connectivity check in O(log 2 n) amortized time.",
+      "s_span": 761,
+      "e_span": 922
+    }
+  ],
+  "bib_entries": {
+    "53223827": {
+      "title": "Poly-logarithmic deterministic fully-dynamic algorithms for connectivity, minimum spanning tree, 2-edge, and biconnectivity",
+      "abstract": "Deterministic fully dynamic graph algorithms are presented for connectivity, minimum spanning tree, 2-edge connectivity, and biconnectivity. Assuming that we start with no edges in a graph with n vertices, the amortized operation costs are O(log 2 n) for connectivity, O(log 4 n) for minimum spanning forest, 2-edge connectivity, and O(log 5 n) biconnectivity."
+    }
+  },
+  "generator": "fallback_v4"
+}

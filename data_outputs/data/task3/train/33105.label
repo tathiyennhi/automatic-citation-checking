@@ -1,0 +1,74 @@
+{
+  "doc_id": "33105",
+  "text": "Various shot boundary detection methods have been proposed in the last decade. Since manipulating digital video requires intensive computation, to speed up the efficiency, some works have performed the shot boundary detection directly in the compressed domain of MPEG video. Huang et al. [CITATION_1] have given a thorough survey on the techniques of the compressed domain, here we focus on the ones in uncompressed domain. Of the uncompressed domain approaches, all detect shot boundaries via the identification of the variation of visual content. To characterize the variation, several schemes such as color histogram, pixel difference, [CITATION_2] edge change ratio [CITATION_3] and motion 11 have been proposed. The published literatures, which survey the existing techniques, usually investigate the various methods by separating them into categories according to some criteria such as compressed vs. uncompressed domain, the features utilized to characterize the visual content, or the editing effects to detect. [CITATION_4] [CITATION_5] [CITATION_6] [CITATION_7] Little work has been done to group the existing methods by the corresponding functions of eliminating the disturbances. In this section, we will give a brief overview of previous works by novel grouping criteria, focusing on the recent advances of shot boundary detection methods.",
+  "correct_citation": {
+    "[CITATION_1]": "60031648",
+    "[CITATION_2]": "28791109",
+    "[CITATION_3]": "13437176",
+    "[CITATION_4]": "36581971",
+    "[CITATION_5]": "16313143",
+    "[CITATION_6]": "9835525",
+    "[CITATION_7]": "16269507"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Huang et al.  have given a thorough survey on the techniques of the compressed domain, here we focus on the ones in uncompressed domain."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "To characterize the variation, several schemes such as color histogram, pixel difference,  edge change ratio  and motion 11 have been proposed."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "To characterize the variation, several schemes such as color histogram, pixel difference,  edge change ratio  and motion 11 have been proposed."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The published literatures, which survey the existing techniques, usually investigate the various methods by separating them into categories according to some criteria such as compressed vs. uncompressed domain, the features utilized to characterize the visual content, or the editing effects to detect.     Little work has been done to group the existing methods by the corresponding functions of eliminating the disturbances."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Little work has been done to group the existing methods by the corresponding functions of eliminating the disturbances."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Little work has been done to group the existing methods by the corresponding functions of eliminating the disturbances."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Little work has been done to group the existing methods by the corresponding functions of eliminating the disturbances."
+    }
+  ],
+  "bib_entries": {
+    "13437176": {
+      "title": "A feature-based algorithm for detecting and classifying scene breaks",
+      "abstract": "We describe a new approach to the detection and classification of scene breaks in video sequences. Our method can detect and classify a variety of scene breaks, including cuts, fades, dissolves and wipes, even in sequences involving significant motion. We detect the appearance of intensity edges that are distant from edges in the previous frame. A global motion computation is used to handle camera or object motion. The algorithms we propose withstand compression artifacts such as those introduced by JPEG and MPEG, even at very high compression rates. Experimental evidence demonstrates that our method can detect and classify scene breaks that are difficult to detect with previous approaches. An initial implementation runs at approximately 2 frames per second on a Sun workstation."
+    },
+    "60031648": {
+      "title": "Experimental comparison of existing video shot detection techniques in compressed video",
+      "abstract": "Video shot detection is an important first step in video parsing that has been applied in many recent content-based video indexing and retrieval systems. A number of algorithms address the problem of detecting video shots automatically. Some algorithms work with decompressed digital video, while other more state-of-the-art approaches try to detect shots in MPEG-1,-2 compressed video streams directly in order to reduce the processing time. This paper reviews the main approaches to detecting shots in MPEG-1,-2 coded video and compares these using experimental results derived using extracts from the National Institute of Standards and Technology (NIST) video test data-set. These results show that the approach using DC images outperforms other more complex approaches based on macroblock coding reviewed in this paper in terms of precision and accuracy."
+    },
+    "28791109": {
+      "title": "Automatic partitioning of full-motion video",
+      "abstract": "Partitioning a video source into meaningful segments is an important step for video indexing. We present a comprehensive study of a partitioning system that detects segment boundaries. The system is based on a set of difference metrics and it measures the content changes between video frames. A twin-comparison approach has been developed to solve the problem of detecting transitions implemented by special effects. To eliminate the false interpretation of camera movements as transitions, a motion analysis algorithm is applied to determine whether an actual transition has occurred. A technique for determining the threshold for a difference metric and a multi-pass approach to improve the computation speed and accuracy have also been developed."
+    },
+    "16313143": {
+      "title": "Comparison of automatic shot boundary detection algorithms",
+      "abstract": "Various methods of automatic shot boundary detection have been proposed and claimed to perform reliably. Although the detection of edits is fundamental to any kind of video analysis since it segments a video into its basic components, the shots, only few comparative investigations on early shot boundary detection algorithms have been published. These investigations mainly concentrate on measuring the edit detection performance, however, do not consider the algorithms? ability to classify the types and to locate the boundaries of the edits correctly. This paper extends these comparative investigations. More recent algorithms designed explicitly to detect specific complex editing operations such as fades and dissolves are taken into account, and their ability to classify the types and locate the boundaries of such edits are examined. The algorithms? performance is measured in terms of hit rate, number of false hits, and miss rate for hard cuts, fades, and dissolves over a large and diverse set of video sequences. The experiments show that while hard cuts and fades can be detected reliably, dissolves are still an open research issue. The false hit rate for dis-solves is usually unacceptably high, ranging from 50% up to over 400%. Moreover, all algorithms seem to fail under roughly the same conditions."
+    },
+    "16269507": {
+      "title": "Shot boundary detection: unraveled and resolved?",
+      "abstract": "Partitioning a video sequence into shots is the first step toward video-content analysis and content-based video browsing and retrieval. A video shot is defined as a series of interrelated consecutive frames taken contiguously by a single camera and representing a continuous action in time and space. As such, shots are considered to be the primitives for higher level content analysis, indexing, and classification. The objective of this paper is twofold. First, we analyze the shot-boundary detection problem in detail and identify major issues that need to be considered in order to solve this problem successfully. Then, we present a conceptual solution to the shot-boundary detection problem in which all issues identified in the previous step are considered. This solution is provided in the form of a statistical detector that is based on minimization of the average detection-error probability. We model the required statistical functions using a robust metric for visual content discontinuities (based on motion compensation) and take into account all (a priori) knowledge that we found relevant to shot-boundary detection. This knowledge includes the shot-length distribution, visual discontinuity patterns at shot boundaries, and characteristic temporal changes of visual features around a boundary. Major advantages of the proposed detector are its robust and sequence-independent performance, while there is also the possibility to detect different types of shot boundaries simultaneously. We demonstrate the performance of our detector regarding two most widely used types of shot boundaries: hard cuts and dissolves."
+    },
+    "9835525": {
+      "title": "Reliable transition detection in videos: A survey and practitioner's guide",
+      "abstract": "A large number of shot boundary detection, or equivalently, transition detection techniques have been developed in recent years. They all can be classified based on a few core concepts underlying the different detection schemes. This survey emphasizes those different core concepts underlying the different detection schemes for the three most widely used video transition effects: hard cuts, fades and dissolves. Representative of each concept one or a few very sound and thoroughly tested approaches are present in detail, while others are just listed. Whenever reliable performance numbers could be found in the literature, they are mentioned. Guidelines for practitioners in video processing are also given."
+    },
+    "36581971": {
+      "title": "Performance characterization of video-shot-change detection methods",
+      "abstract": "A number of automated shot-change detection methods for indexing a video sequence to facilitate browsing and retrieval have been proposed. Many of these methods use color histograms or features computed from block motion or compression parameters to compute frame differences. It is important to evaluate and characterize their performance so as to deliver a single set of algorithms that may be used by other researchers for indexing video databases. We present the results of a performance evaluation and characterization of a number of shot-change detection methods that use color histograms, block motion matching, or MPEG compressed data."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,74 @@
+{
+  "doc_id": "56336",
+  "text": "Pre-processing of raw data. The initial processing (for example, adaptor removal, QC, selection of reads and so on), mapping and counting of raw sequencing reads are not in the scope of Xtail. Different strategies of data pre-processing for ribosome profiling have been used in literature [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] [CITATION_6] . In the present study, files of raw reads (Sequence Read Archive, or SRA format) were downloaded from the Gene Expression Omnibus (GEO) database, and the SRA Toolkit was used to convert SRA to the FASTQ format. The cutadapt program [CITATION_7] was used to trim the 3 0 adaptor in the raw reads of both mRNA and RPF. Low quality reads with Phred quality score 420 (450% of bases) were removed using the fastx quality filter (http://hannonlab.cshl.edu/fastx_toolkit/). Next, sequencing reads originating from rRNAs were identified and discarded by aligning the reads to rRNA sequences of the particular species using Bowtie (version 1.1.2) with no mismatch allowed. The remaining reads were then mapped to the genome and spliced transcripts using Tophat2 v2.1.0 with default parameters except for the following: -bowtie1, -nonovel-juncs, -read-realign-edit-dist ¼ 0. Two mismatches were allowed for this step of alignment.",
+  "correct_citation": {
+    "[CITATION_1]": "8328474",
+    "[CITATION_2]": "205465397",
+    "[CITATION_3]": "20526992",
+    "[CITATION_4]": "22229643",
+    "[CITATION_5]": "7595287",
+    "[CITATION_6]": "18382710",
+    "[CITATION_7]": "84784389"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Different strategies of data pre-processing for ribosome profiling have been used in literature."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Different strategies of data pre-processing for ribosome profiling have been used in literature."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Different strategies of data pre-processing for ribosome profiling have been used in literature."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Different strategies of data pre-processing for ribosome profiling have been used in literature."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Different strategies of data pre-processing for ribosome profiling have been used in literature."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Different strategies of data pre-processing for ribosome profiling have been used in literature."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "The cutadapt program was used to trim the 3 0 adaptor in the raw reads of both mRNA and RPF."
+    }
+  ],
+  "bib_entries": {
+    "20526992": {
+      "title": "The use of duplex-specific nuclease in ribosome profiling and a user-friendly software package for Ribo-seq data analysis",
+      "abstract": "Ribosome profiling is a technique that permits genome-wide, quantitative analysis of translation and has found broad application in recent years. Here we describe a modified profiling protocol and software package designed to benefit more broadly the translation community in terms of simplicity and utility. The protocol, applicable to diverse organisms, including organelles, is based largely on previously published profiling methodologies, but uses duplex-specific nuclease (DSN) as a convenient, species-independent way to reduce rRNA contamination. We show that DSN-based depletion compares favorably with other commonly used rRNA depletion strategies and introduces little bias. The profiling protocol typically produces high levels of triplet periodicity, facilitating the detection of coding sequences, including upstream, downstream, and overlapping open reading frames (ORFs) and an alternative ribosome conformation evident during termination of protein synthesis. In addition, we provide a software package that presents a set of methods for parsing ribosomal profiling data from multiple samples, aligning reads to coding sequences, inferring alternative ORFs, and plotting average and transcript-specific aspects of the data. Methods are also provided for extracting the data in a form suitable for differential analysis of translation and translational efficiency."
+    },
+    "8328474": {
+      "title": "Ribosome profiling of mouse embryonic stem cells reveals the complexity and dynamics of mammalian proteomes",
+      "abstract": "The ability to sequence genomes has far outstripped approaches for deciphering the information they encode. Here we present a suite of techniques, based on ribosome profiling (the deep sequencing of ribosome-protected mRNA fragments), to provide genome-wide maps of protein synthesis as well as a pulse-chase strategy for determining rates of translation elongation. We exploit the propensity of harringtonine to cause ribosomes to accumulate at sites of translation initiation together with a machine learning algorithm to define protein products systematically. Analysis of translation in mouse embryonic stem cells reveals thousands of strong pause sites and unannotated translation products. These include amino-terminal extensions and truncations and upstream open reading frames with regulatory potential, initiated at both AUG and non-AUG codons, whose translation changes after differentiation. We also define a class of short, polycistronic ribosome-associated coding RNAs (sprcRNAs) that encode small proteins. Our studies reveal an unanticipated complexity to mammalian proteomes."
+    },
+    "22229643": {
+      "title": "Ribosome profiling reveals sequence-independent post-initiation pausing as a signature of translation",
+      "abstract": "The journey of a newly synthesized polypeptide starts in the peptidyltransferase center of the ribosome, from where it traverses the exit tunnel. The interior of the ribosome exit tunnel is neither straight nor smooth. How the ribosome dynamics in vivo is influenced by the exit tunnel is poorly understood. Genome-wide ribosome profiling in mammalian cells reveals elevated ribosome density at the start codon and surprisingly the downstream 5th codon position as well. We found that the highly focused ribosomal pausing shortly after initiation is attributed to the geometry of the exit tunnel, as deletion of the loop region from ribosome protein L4 diminishes translational pausing at the 5th codon position. Unexpectedly, the ribosome variant undergoes translational abandonment shortly after initiation, suggesting that there exists an obligatory step between initiation and elongation commitment. We propose that the post-initiation pausing of ribosomes represents an inherent signature of the translation machinery to ensure productive translation."
+    },
+    "84784389": {
+      "title": "Cutadapt removes adapter sequences from high-throughput sequencing reads",
+      "abstract": "When small RNA is sequenced on current sequencing machines, the resulting reads are usually longer than the RNA and therefore contain parts of the 3' adapter. That adapter must be found and removed error-tolerantly from each read before read mapping. Previous solutions are either hard to use or do not offer required features, in particular support for color space data. As an easy to use alternative, we developed the command-line tool cutadapt, which supports 454, Illumina and SOLiD (color space) data, offers two adapter trimming algorithms, and has other useful features. Cutadapt, including its MIT-licensed source code, is available for download at http://code.google.com/p/cutadapt/"
+    },
+    "7595287": {
+      "title": "PROTEOFORMER: deep proteome coverage through ribosome profiling and MS integration",
+      "abstract": "An increasing amount of studies integrate mRNA sequencing data into MS-based proteomics to complement the translation product search space. However, several factors, including extensive regulation of mRNA translation and the need for threeor six-frame-translation, impede the use of mRNAseq data for the construction of a protein sequence search database. With that in mind, we developed the PROTEOFORMER tool that automatically processes data of the recently developed ribosome profiling method (sequencing of ribosome-protected mRNA fragments),resultingingenome-widevisualizationof ribosome occupancy. Our tool also includes a translation initiation site calling algorithm allowing the delineation of the open reading frames (ORFs) of all translation products. A complete protein synthesisbased sequence database can thus be compiled for mass spectrometry-based identification. This approach increases the overall protein identification rates with 3% and 11% (improved and new identifications) for human and mouse, respectively, and enables proteome-wide detection of 5-extended proteoforms, upstream ORF translation and near-cognate translation start sites. The PROTEOFORMER tool is available as a stand-alone pipeline and has been implemented in the galaxy framework for ease of use."
+    },
+    "205465397": {
+      "title": "The ribosome profiling strategy for monitoring translation in vivo by deep sequencing of ribosome-protected mRNA fragments",
+      "abstract": "Recent studies highlight the importance of translational control in determining protein abundance, underscoring the value of measuring gene expression at the level of translation. We present a protocol for genome-wide, quantitative analysis of in vivo translation by deep sequencing. This ribosome profiling approach maps the exact positions of ribosomes on transcripts by nuclease footprinting. The nuclease-protected mRNA fragments are converted into a DNA library suitable for deep sequencing using a strategy that minimizes bias. The abundance of different footprint fragments in deep sequencing data reports on the amount of translation of a gene. In addition, footprints reveal the exact regions of the transcriptome that are translated. To better define translated reading frames, we describe an adaptation that reveals the sites of translation initiation by pretreating cells with harringtonine to immobilize initiating ribosomes. The protocol we describe requires 5-7 days to generate a completed ribosome profiling sequencing library. Sequencing and data analysis require a further 4-5 days."
+    },
+    "18382710": {
+      "title": "Ribosome profiling reveals resemblance between long non-coding RNAs and 5 0 leaders of coding RNAs",
+      "abstract": "Large-scale genomics and computational approaches have identified thousands of putative long non-coding RNAs (lncRNAs). It has been controversial, however, as to what fraction of these RNAs is truly non-coding. Here, we combine ribosome profiling with a machine-learning approach to validate lncRNAs during zebrafish development in a high throughput manner. We find that dozens of proposed lncRNAs are protein-coding contaminants and that many lncRNAs have ribosome profiles that resemble the 5' leaders of coding RNAs. Analysis of ribosome profiling data from embryonic stem cells reveals similar properties for mammalian lncRNAs. These results clarify the annotation of developmental lncRNAs and suggest a potential role for translation in lncRNA regulation. In addition, our computational pipeline and ribosome profiling data provide a powerful resource for the identification of translated open reading frames during zebrafish development."
+    }
+  },
+  "generator": "fallback"
+}

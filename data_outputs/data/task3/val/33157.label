@@ -1,0 +1,25 @@
+{
+  "doc_id": "33157",
+  "text": "On modern manycore systems with a large number of slower cores, MS-BFS-Graft algorithm scales even better than other maximum matching algorithms. Fig 9 shows the strong scaling of three matching algorithms on the KNC coprocessor. On 60 cores (1 threads per core), MS-BFS-Graft achieves 28Â-36Â speedups for different classes of graphs. By contrast, PR achieves 4Â-7Â and PF achieves 6Â-50Â speedups on the same number of cores. As discussed before, PF might show super linear scaling initially on some networks (e.g., 7Â speedups on 4 cores in Fig. 9b ). We note that the speedup achieved by MS-BFS-Graft on 60 cores of the KNC coprocessor is comparable to the reported 15Â-20Â speedup achieved by traditional BFS on 31 cores of a Knights Ferry (KNF) coprocessor [CITATION_1] . However, the performance of the latter BFS implementation degraded by a factor of two when four hardware threads were used in each core [CITATION_2] . By contrast, our more involved matching algorithm continues to scale when several hardware threads are used in each core and achieves up to 2Â speedups when we go from 60 to 240 threads on KNC.",
+  "correct_citation": {
+    "[CITATION_1]": "14787093",
+    "[CITATION_2]": "14787093"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We note that the speedup achieved by MS-BFS-Graft on 60 cores of the KNC coprocessor is comparable to the reported 15Â-20Â speedup achieved by traditional BFS on 31 cores of a Knights Ferry (KNF) coprocessor  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "However, the performance of the latter BFS implementation degraded by a factor of two when four hardware threads were used in each core  ."
+    }
+  ],
+  "bib_entries": {
+    "14787093": {
+      "title": "An early evaluation of the scalability of graph algorithms on the intel mic architecture",
+      "abstract": "Graph algorithms are notorious for not getting good speedup on parallel architectures. These algorithms tend to suffer from irregular dependencies and a high synchronization cost that prevent an efficient execution on distributed memory machines. Hence such algorithms are mostly parallelized on shared memory machines. However, current commodity shared memory machines do not typically offer enough parallelism to process these problems. In this paper, we are presenting an early investigation of the scalability of such algorithms on Intel's upcoming Many Integrated Core (Intel MIC) architecture which, when it will be released in 2012, is expected to provide more than 50 physical cores with SMT capability. The Intel MIC architecture can be programmed through many programming models, here we investigate the three most popular of these models namely OpenMP, Cilk Plus and Intel's TBB. We present scalability results of a parallel graph coloring algorithm, three variations of a breadth-first search algorithm and a micro benchmark for irregular computations using these three programming models. Our results on a prototype board show that the multi-threaded architecture of Intel MIC can be effectively used for hiding latencies in irregular applications to achieve almost perfect speedup."
+    }
+  },
+  "generator": "fallback_v4"
+}

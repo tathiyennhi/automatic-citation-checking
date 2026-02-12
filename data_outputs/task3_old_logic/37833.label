@@ -1,0 +1,29 @@
+{
+  "doc_id": "37833",
+  "text": "UMIs [CITATION_1] are a means to retain information about the original number of molecules in a sequencing library. PCRamplification is known to suffer from amplification bias resulting to some of the initial molecules being amplified more than others (e.g. [CITATION_2] . UMIs can be used to circumvent this problem by attaching a random DNA-sequence label to each of the molecules in the initial library. If the number of available labels is sufficient, it is extremely unlikely for two different molecules with the same UMIlabel to map exactly to the same genomic position. This means that as long as the complexity of the library is preserved it can be amplified and normalized freely without losing information about the original number of molecules. After sequencing at sufficient depth, all identical UMIs mapping to same positions can be treated as duplicates, and the original number of molecules can be estimated by counting each UMI-label once per position. In ChIP-seq, peaks caused by TF binding are wide and broad, and the sensitivity of peak calling does usually not suffer from removing duplicated reads by simply deleting all reads that map to identical location and strand. This strategy is no longer viable in ChIP-exo/Nexus, because theoretically true ChIP-exo/Nexus binding events look very much like artifacts caused by PCR-duplicates, as seen from Figure 1 ! UMIs allow discarding duplicated reads without removing borders caused by true binding events.",
+  "correct_citation": {
+    "[CITATION_1]": "39225091",
+    "[CITATION_2]": "8743714"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "UMIs are a means to retain information about the original number of molecules in a sequencing library."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "PCRamplification is known to suffer from amplification bias resulting to some of the initial molecules being amplified more than others (e.g."
+    }
+  ],
+  "bib_entries": {
+    "39225091": {
+      "title": "Counting absolute numbers of molecules using unique molecular identifiers",
+      "abstract": "Counting individual RNA or DNA molecules is difficult because they are hard to copy quantitatively for detection. To overcome this limitation, we applied unique molecular identifiers (UMIs), which make each molecule in a population distinct, to genome-scale human karyotyping and mRNA sequencing in Drosophila melanogaster. Use of this method can improve accuracy of almost any next-generation sequencing method, including chromatin immunoprecipitation-sequencing, genome assembly, diagnostics and manufacturing-process control and monitoring."
+    },
+    "8743714": {
+      "title": "Analyzing and minimizing pcr amplification bias in illumina sequencing libraries",
+      "abstract": "Despite the ever-increasing output of Illumina sequencing data, loci with extreme base compositions are often under-represented or absent. To evaluate sources of base-composition bias, we traced genomic sequences ranging from 6% to 90% GC through the process by quantitative PCR. We identified PCR during library preparation as a principal source of bias and optimized the conditions. Our improved protocol significantly reduces amplification bias and minimizes the previously severe effects of PCR instrument and temperature ramp rate."
+    }
+  },
+  "generator": "fallback"
+}

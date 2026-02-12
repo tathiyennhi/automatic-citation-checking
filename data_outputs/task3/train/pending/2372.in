@@ -1,0 +1,42 @@
+{
+  "text": "The exponential decay kernel exp(\u2212 |x|/\u03c3) is not differentiable at zero. The methods of Zhang et al. [CITATION_1] , Dai et al. [CITATION_2] and Chaudhury et al. [CITATION_3] cannot deal with this situation. Although the box function can be used to approximate the kernel in the frameworks proposed by Gunturk [CITATION_4] and Pan [CITATION_5] , the approximation curve is still very rough. In contrast, employing the third case in the Optimal fitting polynomial Section, our method is able to produce an approximation polynomial exactly passing through the non-differentiable point as illustrated in Fig. 2 . Fig. 2 Approximation error illustration. Spatial kernel and range kernel of prototype BF chosen as the Gaussian kernel and we assign \u03c3 r = 80 for Gaussian range kernel a Zhang [CITATION_6] ; b Gunturk [CITATION_7] ; c Pan [CITATION_8] ; d Dai [CITATION_9] ; e Chaudhury [CITATION_10] ; f Ours Accuracy evaluation: In this Section, we directly compute the linear convolution of K s and evaluate the PSNR index which reflects the accuracy of different nonlinear convolution decomposition methods to verify the approximation ability of our method. This is because the BF accelerating methods adopt various techniques to decompose the nonlinear convolution of the range kernel into a set of linear convolutions and employ linear time algorithms to fast compute the linear convolutions. If we take the brute-force method to compute linear convolution, the approximation error can only be caused by the nonlinear convolution decomposition method. To provide an intuitive illustration, we visualise the approximation error of the Lena image in Fig 2. Both the spatial kernel and the range kernel of the prototype BF are chosen to be the Gaussian kernel G \u03c3 ( \u00b7 ). The results are obtained by naive implementation of the accelerating methods of Zhang et al. [CITATION_11] , Gunturk [CITATION_12] , Pan and He [CITATION_13] , Dai et al. [CITATION_14] , Chaudhury et al. [CITATION_15] and ours without using the brute-force linear convolution. Let I bf denote the result of the naive implementation of the BF and I ac represent the result of the accelerating methods; we compute the absolute error by |I bf \u2212 I ac | and illustrate the filtering results and the corresponding absolute error in Fig. 2 . It is easy to see that our method achieves the smallest absolute error among the six comparative accelerating methods.",
+  "correct_citation": {
+    "[CITATION_1]": "14591632",
+    "[CITATION_2]": "53383141",
+    "[CITATION_3]": "10014509",
+    "[CITATION_4]": "123951597",
+    "[CITATION_5]": "54833701",
+    "[CITATION_6]": "14591632",
+    "[CITATION_7]": "123951597",
+    "[CITATION_8]": "54833701",
+    "[CITATION_9]": "53383141",
+    "[CITATION_10]": "10014509",
+    "[CITATION_11]": "14591632",
+    "[CITATION_12]": "123951597",
+    "[CITATION_13]": "54833701",
+    "[CITATION_14]": "53383141",
+    "[CITATION_15]": "10014509"
+  },
+  "bib_entries": {
+    "53383141": {
+      "title": "Accelerate bilateral filter using Hermite polynomials",
+      "abstract": "The bilateral filter (BF) as an edge-preserving lowpass filter is a valuable tool in various image processing tasks, including noise reduction and dynamic range compression. However, its computational cost is too high to apply in the real-time processing tasks as the range kernel, which acts on the pixel intensities, making the averaging process nonlinear and computationally intensive, particularly when the spatial filter is large. Using the well-known Hermite polynomials, a BF accelerating method is proposed, which reduces the computational complexity from O(r(2)n) to O(n), where r denotes the filter size of a BF and n is the total number of pixels in an image."
+    },
+    "14591632": {
+      "title": "Constant time joint bilateral filtering using joint integral histograms",
+      "abstract": "In this brief, we present a constant time method for the joint bilateral filtering. First, we propose an image data structure, coined as joint integral histograms (JIHs). Extending the classic integral images and the integral histograms, it represents the global information of two correlated images. In a JIH, the value at each bin indicates an integral determined by the two images. Then, the joint bilateral filtering is transformed to computation and manipulation of histograms. Utilizing the JIHs, we are capable of joint bilateral filtering in constant time. Its performance is validated in a digital photography approach using Flash\u2013noFlash image pairs. Compared with the brute-force method, the proposed method achieves a speedup factor of 2\u20133 orders of magnitude while producing similar filtering results."
+    },
+    "10014509": {
+      "title": "Fast o(1) bilateral filtering using trigonometric range kernels",
+      "abstract": "It is well-known that spatial averaging can be realized (in space or frequency domain) using algorithms whose complexity does not depend on the size or shape of the filter. These fast algorithms are generally referred to as constant-time or O(1) algorithms in the image processing literature. Along with the spatial filter, the edge-preserving bilateral filter [Tomasi1998] involves an additional range kernel. This is used to restrict the averaging to those neighborhood pixels whose intensity are similar or close to that of the pixel of interest. The range kernel operates by acting on the pixel intensities. This makes the averaging process non-linear and computationally intensive, especially when the spatial filter is large. In this paper, we show how the O(1) averaging algorithms can be leveraged for realizing the bilateral filter in constant-time, by using trigonometric range kernels. This is done by generalizing the idea in [Porikli2008] of using polynomial range kernels. The class of trigonometric kernels turns out to be sufficiently rich, allowing for the approximation of the standard Gaussian bilateral filter. The attractive feature of our approach is that, for a fixed number of terms, the quality of approximation achieved using trigonometric kernels is much superior to that obtained in [Porikli2008] using polynomials."
+    },
+    "123951597": {
+      "title": "Fast bilateral filter with arbitrary range and domain kernels",
+      "abstract": "In this paper, we present a fast implementation of the bilateral filter with arbitrary range and domain kernels. It is based on the fast bilateral filter approximation that uses uniform box domain kernel. Instead of using a single box kernel, multiple box kernels are used and combined optimally to approximate an arbitrary domain kernel. The method achieves better approximation of the bilateral filter compared to the single box kernel version with little increase in computational complexity."
+    },
+    "54833701": {
+      "title": "Optimal o(1) bilateral filter with arbitrary spatial and range kernels using sparse approximation",
+      "abstract": "A number of acceleration schemes for speeding up the time-consuming bilateral filter have been proposed in the literature. Among these techniques, the histogram-based bilateral filter trades the flexibility for achieving O(1) computational complexity using box spatial kernel. A recent study shows that this technique can be leveraged for O(1) bilateral filter with arbitrary spatial and range kernels by linearly combining the results of multiple-box bilateral filters. However, this method requires many box bilateral filters to obtain sufficient accuracy when approximating the bilateral filter with a large spatial kernel. In this paper, we propose approximating arbitrary spatial kernel using a fixed number of boxes. It turns out that the multiple-box spatial kernel can be applied in many O(1) acceleration schemes in addition to the histogram-based one. Experiments on the application to the histogram-based acceleration are presented in this paper. Results show that the proposed method has better accuracy in approximating the bilateral filter with Gaussian spatial kernel, compared with the previous histogram-based methods. Furthermore, the performance of the proposed histogram-based bilateral filter is robust with respect to the parameters of the filter kernel."
+    }
+  }
+}

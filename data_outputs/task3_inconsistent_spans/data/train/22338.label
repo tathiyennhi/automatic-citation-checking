@@ -1,0 +1,33 @@
+{
+  "doc_id": "22338",
+  "text": "We contrast two hierarchical phrase-based decoders. The first decoder, HCP, is a k-best decoder using cube pruning following the description by [CITATION_1] ; in our implementation, these k-best lists contain only unique hypotheses [CITATION_2] ), which are obtained by extracting the 10,000 best candidates from each cell (including the language model cost), using a priority queue to explore the cross-product of the k-best lists from the cells pointed by nonterminals. We find that deeper k-best lists (i.e., k = 100, 000) results in impractical decoding times and that fixed k-best list depths yields better performance than use of a likelihood threshold parameter. The second decoder, HiFST, is a lattice-based decoder implemented with WFSTs as described earlier.",
+  "correct_citation": {
+    "[CITATION_1]": "3505719",
+    "[CITATION_2]": "62276728"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The first decoder, HCP, is a k-best decoder using cube pruning following the description by  ; in our implementation, these k-best lists contain only unique hypotheses  ), which are obtained by extracting the 10,000 best candidates from each cell (including the language model cost), using a priority queue to explore the cross-product of the k-best lists from the cells pointed by nonterminals.",
+      "s_span": 52,
+      "e_span": 471
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The first decoder, HCP, is a k-best decoder using cube pruning following the description by  ; in our implementation, these k-best lists contain only unique hypotheses  ), which are obtained by extracting the 10,000 best candidates from each cell (including the language model cost), using a priority queue to explore the cross-product of the k-best lists from the cells pointed by nonterminals.",
+      "s_span": 52,
+      "e_span": 471
+    }
+  ],
+  "bib_entries": {
+    "62276728": {
+      "title": "Hierarchical phrase-based translation with weighted finite state transducers",
+      "abstract": "This paper describes a lattice-based decoder for hierarchical phrase-based translation. The decoder is implemented with standard WFST operations as an alternative to the well-known cube pruning procedure. We find that the use of WFSTs rather than k-best lists requires less pruning in translation search, resulting in fewer search errors, direct generation of translation lattices in the target language, better parameter optimization, and improved translation performance when rescoring with long-span language models and MBR decoding. We report translation experiments for the Arabic-to-English and Chinese-to-English NIST translation tasks and contrast the WFST-based hierarchical decoder with hierarchical translation under cube pruning."
+    },
+    "3505719": {
+      "title": "Hierarchical phrase-based translation",
+      "abstract": "We present a statistical machine translation model that uses hierarchical phrases---phrases that contain subphrases. The model is formally a synchronous context-free grammar but is learned from a parallel text without any syntactic annotations. Thus it can be seen as combining fundamental ideas from both syntax-based translation and phrase-based translation. We describe our system's training and decoding methods in detail, and evaluate it for translation speed and translation accuracy. Using BLEU as a metric of translation accuracy, we find that our system performs significantly better than the Alignment Template System, a state-of-the-art phrase-based system."
+    }
+  },
+  "generator": "fallback_v4"
+}

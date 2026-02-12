@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Indeed, we observed that the sequence of multiplications results in arithmetic overflows for certain values of #𝑏.To avoid these overflows, our implementation of Algorithm 2 avoids a sequence of multiplications using the same value of #𝑏.",
+    "In particular, for a product 𝑝×𝑞×𝑟, we observe that we can use one value of #𝑏 to compute 𝑆=E #𝑏 (𝑝) × E #𝑏 (𝑞), analyze the resulting product's value after decoding 𝑇 =D #𝑏 (𝑆), and then choose a different value of #𝑏 to encode 𝑇 and 𝑟 to compute the final product.",
+    "For the example shown in Figure 9, we observe that D 9 (E 9 (𝑝) × E 9 (𝑞)) = 7076.62, which differs from the real value by 0.001%, with #𝑏=9.",
+    "For the second product, we encode 7076.62 and 𝑟 with #𝑏=5, to obtain D 5 (E 5 (7076.62) × E 5 (𝑟)) = 632031, which differs from the real value by 0.001%.",
+    "Note that with the same value of #𝑏=6 used for both products, there was an arithmetic overflow in the computation (Figure 9), which we avoided by using different values for #𝑏 as we progressed through the sequence of multiplication operations."
+  ],
+  "correct_citations": []
+}

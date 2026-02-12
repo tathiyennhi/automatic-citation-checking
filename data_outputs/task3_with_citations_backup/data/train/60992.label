@@ -1,0 +1,44 @@
+{
+  "doc_id": "60992",
+  "text": "The dataset used is the vulnerability dataset of [CITATION_1] . The dataset contains several vulnerable binaries compiled with 11 compilers in the families of clang, gcc and icc. The total number of different vulnerabilities is 8 [CITATION_2] . We disassembled the dataset with ANGR, obtaining 3160 binary functions. The average number of vulnerable functions for each of the 8 vulnerabilities is 7, 6; with a minimum of 3 vulnerable functions and a maximum of 13 [CITATION_3] . We performed a lookup for each of the 8 vulnerabilities, computing the precision, nDCG, and recall on each result. Finally, we averaged these performances over the 8 queries.",
+  "correct_citation": {
+    "[CITATION_1]": "6247943",
+    "[CITATION_2]": "29256838",
+    "[CITATION_3]": "8688013"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The dataset used is the vulnerability dataset of [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 63
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The total number of different vulnerabilities is 8 [CITATION_2] .",
+      "s_span": 179,
+      "e_span": 244
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The average number of vulnerable functions for each of the 8 vulnerabilities is 7, 6; with a minimum of 3 vulnerable functions and a maximum of 13 [CITATION_3] .",
+      "s_span": 317,
+      "e_span": 478
+    }
+  ],
+  "bib_entries": {
+    "8688013": {
+      "title": "Tracelet-based code search in executables",
+      "abstract": "We address the problem of code search in executables. Given a function in binary form and a large code base, our goal is to statically find similar functions in the code base. Towards this end, we present a novel technique for computing similarity between functions. Our notion of similarity is based on decomposition of functions into tracelets: continuous, short, partial traces of an execution. To establish tracelet similarity in the face of low-level compiler transformations, we employ a simple rewriting engine. This engine uses constraint solving over alignment constraints and data dependencies to match registers and memory addresses between tracelets, bridging the gap between tracelets that are otherwise similar. We have implemented our approach and applied it to find matches in over a million binary functions. We compare tracelet matching to approaches based on n-grams and graphlets and show that tracelet matching obtains dramatically better precision and recall."
+    },
+    "6247943": {
+      "title": "Statistical similarity of binaries",
+      "abstract": "We address the problem of finding similar procedures in stripped binaries. We present a new statistical approach for measuring the similarity between two procedures. Our notion of similarity allows us to find similar code even when it has been compiled using different compilers, or has been modified. The main idea is to use similarity by composition: decompose the code into smaller comparable fragments, define semantic similarity between fragments, and use statistical reasoning to lift fragment similarity into similarity between procedures. We have implemented our approach in a tool called Esh, and applied it to find various prominent vulnerabilities across compilers and versions, including Heartbleed, Shellshock and Venom. We show that Esh produces high accuracy results, with few to no false positives -- a crucial factor in the scenario of vulnerability search in stripped binaries."
+    },
+    "29256838": {
+      "title": "Similarity of binaries through re-optimization",
+      "abstract": "We present a scalable approach for establishing similarity between stripped binaries (with no debug information). The main challenge in binary similarity, is to establish similarity even when the code has been compiled using different compilers, with different optimization levels, or targeting different architectures. Overcoming this challenge, while avoiding false positives, is invaluable to the process of reverse engineering and the process of locating vulnerable code. We present a technique that is scalable and precise, as it alleviates the need for heavyweight semantic comparison by performing out-of-context re-optimization of procedure fragments. It works by decomposing binary procedures to comparable fragments and transforming them to a canonical, normalized form using the compiler optimizer, which enables finding equivalent fragments through simple syntactic comparison. We use a statistical framework built by analyzing samples collected â in the wildâ to generate a global context that quantifies the significance of each pair of fragments, and uses it to lift pairwise fragment equivalence to whole procedure similarity. We have implemented our technique in a tool called GitZ and performed an extensive evaluation. We show that GitZ is able to perform millions of comparisons efficiently, and find similarity with high accuracy."
+    }
+  },
+  "generator": "fallback_v4"
+}

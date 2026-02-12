@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We introduce outcome, efficiency and preference rewards into the training.",
+    "For outcome reward, each rollout trajectory 𝜏 in a rollout batch T receives a binary accuracy reward 𝑟 outcome (𝜏) ∈ {0, 1} based on whether 𝜏 solves the task:𝑟 outcome (𝜏) = {︂ 1 if solved(𝜏), 0 otherwise.",
+    "(1)We leverage GPT-5 as a judge to compare the answers, e.g., a name, a date, etc., providing greater flexibility in handling diverse predictions.To encourage efficient solutions, we penalize the model under training for excessive compute or latency with the following rewards: 𝑟 compute (𝜏) = -$(𝜏), 𝑟 latency (𝜏) = -Clock(𝜏), where $(𝜏) is the monetary cost of 𝜏 and Clock(𝜏) is the consumed wall-clock time by 𝜏.",
+    "To establish a unified measurement on the compute of both open-sourced and proprietary models, we convert both the input tokens and output tokens to monetary costs following the third-party API pricing systems.",
+    "See more details in Appendix E.Preference reward is designed to encourage models to consider user preferences when choosing tools at each step."
+  ],
+  "correct_citations": []
+}

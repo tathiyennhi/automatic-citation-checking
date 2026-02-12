@@ -1,0 +1,33 @@
+{
+  "doc_id": "1088",
+  "text": "To start tracing the centerline of the aorta, aortic seed points were extracted as the center of mass of the coarse initial aorta segmentation at the axial slice 3 cm beneath the landmark level for the ascending aorta and 6 cm beneath the landmark level for the descending aorta. The aortic centerline was then extracted between these seed points by a minimum cost path tracking algorithm similar to [CITATION_1] . In this algorithm, the cost function was based on the maximum output of a multi-radius medialness filter in coronal and axial views multiplied with a lumen intensity similarity metric. The centerlines were refined by re-computing the minimum cost path after curved multiplanar reformatting perpendicular to the previous centerline [CITATION_2] . Failure in the centerline extraction was automatically detected by using the landmark level and the initial pulmonary artery segmentation. Centerlines that did not reach the landmark level or were inside the pulmonary artery segmentation were considered failed extractions and were excluded.",
+  "correct_citation": {
+    "[CITATION_1]": "3678874",
+    "[CITATION_2]": "18279945"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The aortic centerline was then extracted between these seed points by a minimum cost path tracking algorithm similar to [CITATION_1] .",
+      "s_span": 280,
+      "e_span": 414
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The centerlines were refined by re-computing the minimum cost path after curved multiplanar reformatting perpendicular to the previous centerline [CITATION_2] .",
+      "s_span": 600,
+      "e_span": 760
+    }
+  ],
+  "bib_entries": {
+    "18279945": {
+      "title": "Semiautomatic carotid lumen segmentation for quantification of lumen geometry in multispectral MRI",
+      "abstract": "Quantitative information about the geometry of the carotid artery bifurcation is relevant for investigating the onset and progression of atherosclerotic disease. This paper proposes an automatic approach for quantifying the carotid bifurcation angle, carotid area ratio, carotid bulb size and the vessel tortuosity from multispectral MRI. First, the internal and external carotid centerlines are determined by finding a minimum cost path between user-defined seed points where the local costs are based on medialness and intensity. The minimum cost path algorithm is iteratively applied after curved multi-planar reformatting to refine the centerline. Second, the carotid lumen is segmented using a topology preserving geodesic active contour which is initialized by the extracted centerlines and steered by the MR intensities. Third, the bifurcation angle and vessel tortuosity are automatically extracted from the segmented lumen. The methods for centerline tracking and lumen segmentation are evaluated by comparing their accuracy to the inter- and intra-observer variability on 48 datasets (96 carotid arteries) acquired as part of a longitudinal population study. The evaluation reveals that 94 of 96 carotid arteries are segmented successfully. The distance between the tracked centerlines and the reference standard (0.33 mm) is similar to the inter-observer variation (0.32 mm). The lumen segmentation accuracy (average DSC = 0.89, average mean absolute surface distance = 0.31 mm) is close to the inter-observer variation (average dice = 0.92, average mean surface distance = 0.23 mm). The correlation coefficient of manually and automaticly derived bifurcation angle, carotid proximal area ratio, carotid proximal bulb size and vessel totuosity quantifications are close to the correlation of these measures between observers. This demonstrates that the automated method can be used for replacing manual centerline annotation and manual contour drawing for lumen segmentation in MRIs data prior to quantifying the carotid bifurcation geometry."
+    },
+    "3678874": {
+      "title": "Aorta and pulmonary artery segmentation using optimal surface graph cuts in non-contrast CT. SPIE 10574",
+      "abstract": "Accurate measurements of the size and shape of the aorta and pulmonary arteries are important as risk factors for cardiovascular diseases, and for Chronicle Obstacle Pulmonary Disease (COPD).1 The aim of this paper is to propose an automated method for segmenting the aorta and pulmonary arteries in low-dose non-ECGgated non-contrast CT scans. Low contrast and the high noise level make the automatic segmentation in such images a challenging task. In the proposed method, first, a minimum cost path tracking algorithm traces the centerline between user-defined seed points. The cost function is based on a multi-directional medialness filter and a lumen intensity similarity metric. The vessel radius is also estimated from the medialness filter. The extracted centerlines are then smoothed and dilated non-uniformly according to the extracted local vessel radius and subsequently used as initialization for a graph-cut segmentation. The algorithm is evaluated on 225 low-dose non-ECG-gated non-contrast CT scans from a lung cancer screening trial. Quantitatively analyzing 25 scans with full manual annotations, we obtain a dice overlap of 0.94±0.01 for the aorta and 0.92±0.01 for pulmonary arteries. Qualitative validation by visual inspection on 200 scans shows successful segmentation in 93% of all cases for the aorta and 94% for pulmonary arteries."
+    }
+  },
+  "generator": "fallback_v4"
+}

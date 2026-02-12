@@ -1,0 +1,23 @@
+{
+  "text": "The core alignment subprogram (alignSequences) has been improved in performance through a faster estimation of its objective function, namely the SP-score, thanks to recently derived optimal algorithmic solutions [CITATION_1] . Additional parameters have also been introduced to control the speed/extensiveness ratio of the heuristic search for an alignment optimizing the SP-score. MACSE v2 uses a progressive alignment strategy to obtain an initial draft of the multiple sequence alignment that is subsequently improved using the 2-cut refinement strategy. This widespread strategy, also used for instance by MUSCLE [CITATION_2] , consists of partitioning the current solution into two subalignments that are subsequently realigned. The resulting alignment replaces the previous one if its SP-score is improved and the refinement process stops when no more improvements are found (see [CITATION_3] [CITATION_4] ",
+  "correct_citation": {
+    "[CITATION_1]": "16089404",
+    "[CITATION_2]": "14252825",
+    "[CITATION_3]": "14160837",
+    "[CITATION_4]": "16089404"
+  },
+  "bib_entries": {
+    "16089404": {
+      "title": "Two simple and efficient algorithms to compute the SPscore objective function of a multiple sequence alignment",
+      "abstract": "BACKGROUND ::: Multiple sequence alignment (MSA) is a crucial step in many molecular analyses and many MSA tools have been developed. Most of them use a greedy approach to construct a first alignment that is then refined by optimizing the sum of pair score (SP-score). The SP-score estimation is thus a bottleneck for most MSA tools since it is repeatedly required and is time consuming. ::: ::: ::: RESULTS ::: Given an alignment of n sequences and L sites, I introduce here optimized solutions reaching O(nL) time complexity for affine gap cost, instead of O(n2L), which are easy to implement."
+    },
+    "14160837": {
+      "title": "MACSE: multiple alignment of coding SEquences Accounting for frameshifts and stop codons",
+      "abstract": "Until now the most efficient solution to align nucleotide sequences containing open reading frames was to use indirect procedures that align amino acid translation before reporting the inferred gap positions at the codon level. There are two important pitfalls with this approach. Firstly, any premature stop codon impedes using such a strategy. Secondly, each sequence is translated with the same reading frame from beginning to end, so that the presence of a single additional nucleotide leads to both aberrant translation and alignment.We present an algorithm that has the same space and time complexity as the classical Needleman-Wunsch algorithm while accommodating sequencing errors and other biological deviations from the coding frame. The resulting pairwise coding sequence alignment method was extended to a multiple sequence alignment (MSA) algorithm implemented in a program called MACSE (Multiple Alignment of Coding SEquences accounting for frameshifts and stop codons). MACSE is the first automatic solution to align protein-coding gene datasets containing non-functional sequences (pseudogenes) without disrupting the underlying codon structure. It has also proved useful in detecting undocumented frameshifts in public database sequences and in aligning next-generation sequencing reads/contigs against a reference coding sequence.MACSE is distributed as an open-source java file executable with freely available source code and can be used via a web interface at: http://mbb.univ-montp2.fr/macse."
+    },
+    "14252825": {
+      "title": "MUSCLE: multiple sequence alignment with high accuracy and high throughput",
+      "abstract": "We describe MUSCLE, a new computer program for creating multiple alignments of protein sequences. Elements of the algorithm include fast distance estimation using kmer counting, progressive alignment using a new profile function we call the log-expectation score, and refinement using tree-dependent restricted partitioning. The speed and accuracy of MUSCLE are compared with T-Coffee, MAFFT and CLUSTALW on four test sets of reference alignments: BAliBASE, SABmark, SMART and a new benchmark, PREFAB. MUSCLE achieves the highest, or joint highest, rank in accuracy on each of these sets. Without refinement, MUSCLE achieves average accuracy statistically indistinguishable from T-Coffee and MAFFT, and is the fastest of the tested methods for large numbers of sequences, aligning 5000 sequences of average length 350 in 7 min on a current desktop computer. The MUSCLE program, source code and PREFAB test data are freely available at http://www.drive5. com/muscle."
+    }
+  }
+}

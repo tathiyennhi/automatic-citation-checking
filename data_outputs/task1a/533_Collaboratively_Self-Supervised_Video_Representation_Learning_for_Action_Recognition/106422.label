@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "After applying a one-dimensional filter along the time direction, G p produces a sequence of poses for the next T ′ frames, denoted asP gen = (p ′ T, p ′ T +1,..., p ′ T +T ′ -1).During training, G p learns to generate pose sequences that match the target distribution, while D p aims to distinguish real pose sequences P gt from generated ones P gen.",
+    "The objective function is formulated as:min Gp max Dp L pose = E p∼Pgt [log D p (P gt)] + E z∼p(z) [log(1 -D p (G p (z p |P in))]+ 1 T ′ T +T ′ -1 t=T ||p t -p ′ t || 2 2 + E p [(∥ ▽D p (P |P in) ∥ 2 -1) 2](1)The objective function mainly consists of two parts: L2 reconstruction loss contributes to the generation of accurate future poses, and the adversarial loss helps G p to learn the underlying distribution of the input data, leading to more realistic poses.",
+    "In addition, we introduce the WGAN-GP gradient penalty [72] (denoted as E p [(∥ ▽D p (P |P in) ∥ 2 -1) 2] in Equation 1) and OSGANs parameter update strategy [50] to improve training stability and efficiency.",
+    "Subsequently, we add convolutional layers and MLPs after the last layer in encoder of G p to keep the dimension of dynamic motion feature f d align with static context feature f s. C. Discriminative Context Matching BranchBesides the dynamic motion information, the context information is also significant for human action analysis.",
+    "Thus, we conduct a discriminative context matching branch to learn static context features in self-supervised manner.As depicted in the blue box of Figure 1, the V-Network (Video Network) and I-Network (I-frame network) are used to extract video and context features, respectively."
+  ],
+  "correct_citations": [
+    "In addition, we introduce the WGAN-GP gradient penalty [72] (denoted as E p [(∥ ▽D p (P |P in) ∥ 2 -1) 2] in Equation 1) and OSGANs parameter update strategy [50] to improve training stability and efficiency."
+  ]
+}

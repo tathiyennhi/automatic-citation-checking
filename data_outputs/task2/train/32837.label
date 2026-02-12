@@ -1,0 +1,12 @@
+{
+  "text": "Hoare Logic uses triples {P } s {Q} where P is a precondition, s is a statement of the programming language, and Q is a postcondition. The assertions P and Q are predicates on the program state. The reasoning on memory is inherently global. Separation Logic is an extension of Hoare Logic for programs that manipulate pointers. In Separation Logic, reasoning is local [CITATION_1] ; assertions such as P and Q describe properties of part of the memory, and {P } s {Q} describes changes to part of the memory. We prove the soundness of the Separation Logic via a shallow embedding, that is, we give each assertion a semantic meaning in Coq. We have P, Q : assert where assert = prog \u2192 state \u2192 Prop. So P \u03a8 \u03c3 is a proposition of logic and we say that \u03c3 satisfies P .",
+  "correct_citation": {
+    "[CITATION_1]": "15719752"
+  },
+  "bib_entries": {
+    "15719752": {
+      "title": "Local reasoning about programs that alter data structures",
+      "abstract": "We describe an extension of Hoare's logic for reasoning about programs that alter data structures. We consider a low-level storage model based on a heap with associated lookup, update, allocation and deallocation operations, and unrestricted address arithmetic. The assertion language is based on a possible worlds model of the logic of bunched implications, and includes spatial conjunction and implication connectives alongside those of classical logic. Heap operations are axiomatized using what we call the \"small axioms\", each of which mentions only those cells accessed by a particular command. Through these and a number of examples we show that the formalism supports local reasoning: A specification and proof can concentrate on only those cells in memory that a program accesses. ::: ::: This paper builds on earlier work by Burstall, Reynolds, Ishtiaq and O'Hearn on reasoning about data structures."
+    }
+  }
+}

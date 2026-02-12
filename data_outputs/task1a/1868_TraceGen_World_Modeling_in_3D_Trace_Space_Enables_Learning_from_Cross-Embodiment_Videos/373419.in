@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The input is a K × L grid where K = 20×20 spatial keypoints are tracked across L = 32 future timesteps, with each point as (x, y, z) ∈ R 3 in the camera frame.",
+    "We apply spatial patchification with patch size 2 × 2, where each 2 × 2 group of keypoints is processed as a single token, resulting in 10 × 10 spatial tokens per timestep.",
+    "Following CogVideoX, we inject F cond via Adaptive LayerNorms applied separately to contextual input and latent trace tokens, enabling efficient fusion.Trace generation via stochastic interpolants.",
+    "Our model aims to generate the 3D trace of the scene, denoted as T t:t+L ref.Each T t ref corresponds to a 20 × 20 uniform grid with depth map value at time t. Thus, instead of predicting these absolute grid values directly, we observe that the full 3D trace T t:t+L ref can be equivalently reconstructed from the temporal differences∆T t ref = T t+1 ref -T t ref.",
+    "(3)Therefore, our neural network is trained to predict velocity-like increments in keypoints, implicitly capturing the scene's underlying 3D motion.We adopt the Stochastic Interpolant framework [2], which unifies diffusion-based and flow-based generative models by defining an interpolation path between data and noise distributions."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The batched input goes through stage 1 (a block of consecutive layers) of the backbone network.",
+    "The output feature from the first stage ❷ moves to the first transformer block (i.e., exit branch 1).",
+    "At exit branch 1, the easy-to-predict requests from the batch might exit confidently, leading to a decrease in batch size at stage 2.",
+    "As the batch size decreases in stage 2, allowing for more compute resources per inference request in the batch, we can reduce the pruning ratio of stage 2 (i.e., enlarging the backbone network in this stage) without affecting the overall batch execution time.",
+    "Even if we do not enlarge the network in stage 2, it can still accelerate the execution of the remaining batch."
+  ]
+}

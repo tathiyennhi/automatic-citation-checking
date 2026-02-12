@@ -1,0 +1,29 @@
+{
+  "doc_id": "13899",
+  "text": "3) Time comsumption: The analysis of the time consumption of FPCNet is discussed herein. We first test the time required by each module in FPCNet during the detection of one image. The corresponding results are shown in Fig. 6 . It can be observed intuitively that the Encoder takes the most time (17.8 ms) in FPCNet. This is because the Encoders eight convolutional layers and four pooling layers are all operated for the large images of fine crack MC features. As for the MD module, even if the module contains 10 convolutional layers, one global pooling layer, and one upsampling layer, it is operated after the extraction of MC features. Consequently, the time consumption is only 2.0 ms due to the small sizes of the features. The Decoder module has 4 SE-Upsampling modules and an additional predicted convolution layer. Although the image resolution increases, the process takes only 7.0 ms, which is only 1/8th the time taken by the Encoder module. Other operations including image reading, processing, and predicted image saving, take up 41.09 ms. The total time con- sumption in predicting an image is 67.9 ms, which corresponds to a speed of 14.7 frames per second. We also compare the time consumption with Method [CITATION_1] since it is the current state-of-the-art approach on the CFD dataset. We reproduce this method by Pytorch and test the average time consumption of one crack image with the same requirement of GPU memory (890 M) and environment (CPU: Intel(R) Core(TM) i7-6800K CPU @ 3.40 GHz, Memory: 16 GB, GPU: NVIDIA GTX1080Ti). The speed of the FPCNet for the detection of an image is 5.7 times that of Method [CITATION_2] , as shown in TABLE II. This proves that our network demonstrates not only a higher detection accuracy but also faster detection speed, and it is suitable for large-scale pavement crack detection.",
+  "correct_citation": {
+    "[CITATION_1]": "3655771",
+    "[CITATION_2]": "3655771"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We also compare the time consumption with Method [CITATION_1] since it is the current state-of-the-art approach on the CFD dataset.",
+      "s_span": 1176,
+      "e_span": 1307
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The speed of the FPCNet for the detection of an image is 5.7 times that of Method [CITATION_2] , as shown in TABLE II. This proves that our network demonstrates not only a higher detection accuracy but also faster detection speed, and it is suitable for large-scale pavement crack detection.",
+      "s_span": 1553,
+      "e_span": 1844
+    }
+  ],
+  "bib_entries": {
+    "3655771": {
+      "title": "Automatic pavement crack detection based on structured prediction with the convolutional neural network",
+      "abstract": "Automated pavement crack detection is a challenging task that has been researched for decades due to the complicated pavement conditions in real world. In this paper, a supervised method based on deep learning is proposed, which has the capability of dealing with different pavement conditions. Specifically, a convolutional neural network (CNN) is used to learn the structure of the cracks from raw images, without any preprocessing. Small patches are extracted from crack images as inputs to generate a large training database, a CNN is trained and crack detection is modeled as a multi-label classification problem. Typically, crack pixels are much fewer than non-crack pixels. To deal with the problem with severely imbalanced data, a strategy with modifying the ratio of positive to negative samples is proposed. The method is tested on two public databases and compared with five existing methods. Experimental results show that it outperforms the other methods."
+    }
+  },
+  "generator": "fallback_v4"
+}

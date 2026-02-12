@@ -1,0 +1,38 @@
+{
+  "doc_id": "297",
+  "text": "Several system architectures and implementations are reported in the informatics literature for electronic phenotyping. One example is the i2b2 system, which leverages a service-oriented architecture (SOA) to compose a system of individual \"cells\" [CITATION_1] . Each cell is responsible for a particular function (e.g. terminology management, query execution), and interacts via established application programming interfaces (APIs). While i2b2 is not built on any formal standards, the broad adoption of the platform and its growing community has arguably made its database schema and APIs a \"de facto\" standard. Many institutions have adopted the i2b2 system, and it benefits from an active community that has extended the system with new functionality via additional cells and other extensions. For example, the Eureka! platform includes a separate cohort authoring interface, which then feeds into an i2b2 instance for additional analysis [CITATION_2] . Work has also been done to allow i2b2 to interoperate with the Health Quality Measure Format (HQMF), providing a more standardized option for logic representation [CITATION_3] . To date, however, the i2b2 HQMF implementation is not comprehensive enough to be sufficient for more complex phenotype algorithms. In addition, execution in i2b2 is tightly coupled to its patient data model, requiring that an institution map a copy of its clinical data into the i2b2 schema.",
+  "correct_citation": {
+    "[CITATION_1]": "1869588",
+    "[CITATION_2]": "7956085",
+    "[CITATION_3]": "13380800"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "One example is the i2b2 system, which leverages a service-oriented architecture (SOA) to compose a system of individual \"cells\" [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For example, the Eureka! platform includes a separate cohort authoring interface, which then feeds into an i2b2 instance for additional analysis [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Work has also been done to allow i2b2 to interoperate with the Health Quality Measure Format (HQMF), providing a more standardized option for logic representation [CITATION_3] ."
+    }
+  ],
+  "bib_entries": {
+    "13380800": {
+      "title": "Computing Health Quality Measures Using Informatics for Integrating Biology and the Bedside",
+      "abstract": "Background: The Health Quality Measures Format (HQMF) is a Health Level 7 (HL7) standard for expressing computable Clinical Quality Measures (CQMs). Creating tools to process HQMF queries in clinical databases will become increasingly important as the United States moves forward with its Health Information Technology Strategic Plan to Stages 2 and 3 of the Meaningful Use incentive program (MU2 and MU3). Informatics for Integrating Biology and the Bedside (i2b2) is one of the analytical databases used as part of the Office of the National Coordinator (ONC)’s Query Health platform to move toward this goal. Objective: Our goal is to integrate i2b2 with the Query Health HQMF architecture, to prepare for other HQMF use-cases (such as MU2 and MU3), and to articulate the functional overlap between i2b2 and HQMF. Therefore, we analyze the structure of HQMF, and then we apply this understanding to HQMF computation on the i2b2 clinical analytical database platform. Specifically, we develop a translator between two query languages, HQMF and i2b2, so that the i2b2 platform can compute HQMF queries. Methods: We use the HQMF structure of queries for aggregate reporting, which define clinical data elements and the temporal and logical relationships between them. We use the i2b2 XML format, which allows flexible querying of a complex clinical data repository in an easy-to-understand domain-specific language. Results: The translator can represent nearly any i2b2-XML query as HQMF and execute in i2b2 nearly any HQMF query expressible in i2b2-XML. This translator is part of the freely available reference implementation of the QueryHealth initiative. We analyze limitations of the conversion and find it covers many, but not all, of the complex temporal and logical operators required by quality measures. Conclusions: HQMF is an expressive language for defining quality measures, and it will be important to understand and implement for CQM computation, in both meaningful use and population health. However, its current form might allow complexity that is intractable for current database systems (both in terms of implementation and computation). Our translator, which supports the subset of HQMF currently expressible in i2b2-XML, may represent the beginnings of a practical compromise. It is being pilot-tested in two Query Health demonstration projects, and it can be further expanded to balance computational tractability with the advanced features needed by measure developers."
+    },
+    "1869588": {
+      "title": "Architecture of the open-source clinical research chart from Informatics for Integrating Biology and the Bedside",
+      "abstract": "Informatics for Integrating Biology and the Bedside (i2b2) is one of the sponsored initiatives of the NIH Roadmap National Centers for Biomedical Computing (http://www.bisti.nih.gov/ncbc/). One of the goals of i2b2 is to provide clinical investigators broadly with the software tools necessary to collect and manage project-related clinical research data in the genomics age as a cohesive entity, a software suite to construct and manage the modern clinical research chart. The i2b2 “hive” is a set of software modules called “cells” that have a common messaging protocol that allow them to interact using web services and XML messages. Each cell can be developed by independent investigators to achieve specific analytic goals, and then be integrated into the hive to enhance the functionality available in the i2b2 Hive. We have applied this architecture through several ongoing clinical studies and found it to be of high value. The current version of this software has been released into the public domain and is available at the URL - http://www.i2b2.org."
+    },
+    "7956085": {
+      "title": "Temporal abstraction-based clinical phenotyping with Eureka!",
+      "abstract": "Temporal abstraction, a method for specifying and detecting temporal patterns in clinical databases, is very expressive and performs well, but it is difficult for clinical investigators and data analysts to understand. Such patterns are critical in phenotyping patients using their medical records in research and quality improvement. We have previously developed the Analytic Information Warehouse (AIW), which computes such phenotypes using temporal abstraction but requires software engineers to use. We have extended the AIW’s web user interface, Eureka! Clinical Analytics, to support specifying phenotypes using an alternative model that we developed with clinical stakeholders. The software converts phenotypes from this model to that of temporal abstraction prior to data processing. The model can represent all phenotypes in a quality improvement project and a growing set of phenotypes in a multi-site research study. Phenotyping that is accessible to investigators and IT personnel may enable its broader adoption."
+    }
+  },
+  "generator": "llama-3.3-70b-versatile"
+}

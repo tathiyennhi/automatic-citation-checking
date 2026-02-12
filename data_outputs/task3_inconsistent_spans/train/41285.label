@@ -1,0 +1,22 @@
+{
+  "doc_id": "41285",
+  "text": "In our task, a fundamental requirement is the training data from which a model can be learned to recognize formal definitions from texts. When manually annotated corpus is not available, a common case in our experiments, the training data can be automatically created by distant-supervision approach [CITATION_1] . This consists of two steps: (1) finding the mentions of biomedical concepts in a sentence, and, (2) aligning the sentence with a relation by the following principle: if the sentence contains a pair of concepts, say A and B, and this pair are arguments of a relation r according to a relationship RB set under consideration, that is A|r|B is in RB, then the sentence fragment between A and B will be aligned with the relation r. This two-step process is illustrated in Table 3 . For the given sentence, the fragments Baritosis and barium dust are the textual mentions of the concepts Baritosis_(disorder) and Barium_Dust_(substance), respectively. By looking up the relationship set, such as ExpRB or InfRB, we know that these two concepts are related by the relation Causative_agent. Thus, the string between these two concepts, i.e. \"is pneumoconiosis caused by\", is aligned with the relation Causative_agent. Such an alignment process is performed on our MeSH, WIKI and D4D corpora.",
+  "correct_citation": {
+    "[CITATION_1]": "10910955"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "When manually annotated corpus is not available, a common case in our experiments, the training data can be automatically created by distant-supervision approach  .",
+      "s_span": 138,
+      "e_span": 314
+    }
+  ],
+  "bib_entries": {
+    "10910955": {
+      "title": "Distant supervision for relation extraction without labeled data",
+      "abstract": "Modern models of relation extraction for tasks like ACE are based on supervised learning of relations from small hand-labeled corpora. We investigate an alternative paradigm that does not require labeled corpora, avoiding the domain dependence of ACE-style algorithms, and allowing the use of corpora of any size. Our experiments use Freebase, a large semantic database of several thousand relations, to provide distant supervision. For each pair of entities that appears in some Freebase relation, we find all sentences containing those entities in a large unlabeled corpus and extract textual features to train a relation classifier. Our algorithm combines the advantages of supervised IE (combining 400,000 noisy pattern features in a probabilistic classifier) and unsupervised IE (extracting large numbers of relations from large corpora of any domain). Our model is able to extract 10,000 instances of 102 relations at a precision of 67.6%. We also analyze feature performance, showing that syntactic parse features are particularly helpful for relations that are ambiguous or lexically distant in their expression."
+    }
+  },
+  "generator": "fallback_v4"
+}

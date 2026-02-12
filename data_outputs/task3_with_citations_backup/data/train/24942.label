@@ -1,0 +1,22 @@
+{
+  "doc_id": "24942",
+  "text": "So we are forced to a simpler scheme, similar to that described by [CITATION_1] and often used for stiff systems. The idea is to alternate integration steps of the fast nodes and the slow edges. When integrating nodes, the edge states are held fixed and node states updated by accumulating incoming spikes and (leakily) integrating them using equation (11). When integrating edges, the node states are held fixed and the edge states updated using a forward Euler approximation of equation (6). This is simple to implement and greatly speeds up the simulation, at the cost of some loss of accuracy.",
+  "correct_citation": {
+    "[CITATION_1]": "8296942"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "So we are forced to a simpler scheme, similar to that described by [CITATION_1] and often used for stiff systems.",
+      "s_span": 0,
+      "e_span": 113
+    }
+  ],
+  "bib_entries": {
+    "8296942": {
+      "title": "Projective methods for stiff differential equations: problems with gaps in their eigenvalue spectrum SIAM",
+      "abstract": "We show that there exist classes of explicit numerical integration methods that can handle very stiff problems if the eigenvalues are separated into two clusters, one containing the \"stiff,\" or fast, components, and one containing the slow components. These methods have large average step sizes relative to the fast components. Conventional implicit methods involve the solution of nonlinear equations at each step, which for large problems requires significant communication between processors on a multiprocessor machine. For such problems the methods proposed here have significant potential for speed improvement."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,33 @@
+{
+  "doc_id": "24414",
+  "text": "In this paper, we propose a new multi-classifier method, the MUltiple Path Propagation and Segmentation (MUPPS), for the whole heart segmentation of cardiac MRI. We showed that MUPPS achieved better mean Dice scores than the standard MAPS, 0.895 VS 0.836 before the fusion and 0.911 VS 0.905 after the fusion. To minimize the number of propagation paths in MUPPS for a segmentation case, we studied three path ranking schemes. The best scheme was to rank the path using the image similarity of the transformed atlas and unseen image after an affine registration. The segmentation framework of MUPPS achieved 0.911 ± 0.016 mean Dice score, a 0.015 gain of accuracy, using eleven highest ranked paths and the fusion techniques. In particular for the segmentation of myocardium, a gain of 0.03 was reported. The whole heart segmentation error of RMS surface distance was 1.13±0.248 (mm). Note that the shape manifold in MUPPS is different from the linear space formed from the principal components in the statistical shape model [CITATION_1] . Also, it only needs about 10 images to construct A with good quality [CITATION_2] . Hence, for a new image MR n+1 , only one off-line registration is needed to compute the new path T n+1 and no reconstruction of A is required.",
+  "correct_citation": {
+    "[CITATION_1]": "15242659",
+    "[CITATION_2]": "2309009"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Note that the shape manifold in MUPPS is different from the linear space formed from the principal components in the statistical shape model  .",
+      "s_span": 885,
+      "e_span": 1040
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Also, it only needs about 10 images to construct A with good quality  .",
+      "s_span": 1041,
+      "e_span": 1124
+    }
+  ],
+  "bib_entries": {
+    "15242659": {
+      "title": "Active shape models: Their training and application",
+      "abstract": "!, Model-based vision is firmly established as a robust approach to recognizing and locating known rigid objects in the presence of noise, clutter, and occlusion. It is more problematic to apply modelbased methods to images of objects whose appearance can vary, though a number of approaches based on the use of flexible templates have been proposed. The problem with existing methods is that they sacrifice model specificity in order to accommodate variability, thereby compromising robustness during image interpretation. We argue that a model should only be able to deform in ways characteristic of the class of objects it represents. We describe a method for building models by learning patterns of variability from a training set of correctly annotated images. These models can be used for image search in an iterative refinement algorithm analogous to that employed by Active Contour Models (Snakes). The key difference is that our Active Shape Models can only deform to fit the data in ways consistent with the training set. We show several practical examples where we have built such models and used them to locate partially occluded objects in noisy, cluttered images. Q 199s A&& prrss, IN."
+    },
+    "2309009": {
+      "title": "A registration-based propagation framework for automatic whole heart segmentation of cardiac MRI",
+      "abstract": "Magnetic resonance (MR) imaging has become a routine modality for the determination of patient cardiac morphology. The extraction of this information can be important for the development of new clinical applications as well as the planning and guidance of cardiac interventional procedures. To avoid inter- and intra-observer variability of manual delineation, it is highly desirable to develop an automatic technique for whole heart segmentation of cardiac magnetic resonance images. However, automating this process is complicated by the limited quality of acquired images and large shape variation of the heart between subjects. In this paper, we propose a fully automatic whole heart segmentation framework based on two new image registration algorithms: the locally affine registration method (LARM) and the free-form deformations with adaptive control point status (ACPS FFDs). LARM provides the correspondence of anatomical substructures such as the four chambers and great vessels of the heart, while the registration using ACPS FFDs refines the local details using a constrained optimization scheme. We validated our proposed segmentation framework on 37 cardiac MR volumes on the end-diastolic phase, displaying a wide diversity of morphology and pathology, and achieved a mean accuracy of 2.14 ± 0.63 mm (rms surface distance) and a maximal error of 4.31 mm."
+    }
+  },
+  "generator": "fallback_v4"
+}

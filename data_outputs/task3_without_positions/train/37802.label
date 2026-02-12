@@ -1,0 +1,52 @@
+{
+  "doc_id": "37802",
+  "text": "Improving cache performance is essential for CMPs with shared caches. Cache partitioning is a popular way to manage the shard cache among applications. [CITATION_1] propose dynamic partitioning to manage the shared cache among competing applications. The cache utility of each application is monitored by counting the number of cache hits to each LRU recency position. Based on the utility information, [CITATION_2] partition the cache to achive high overall utility. extend this idea by separating the utility monitoring circuits for different cores so that the utility information for one application is not polluted by others. A circuit tracks the utility information for the cores and is used to make partitioning decisions to achieve low cache miss rate and high performance. All misses are treated equally. [CITATION_3] differentiate misses based on their impacts on performance. Clustered misses share the penalty as they can be served in parallel, while isolated misses have a greater impact on performance. They propose a dynamic cache partitioning scheme that is aware of such information. Most of the studies of cache partitioning are evaluated by simulations. [CITATION_4] design and implement an OS-based cache partitioning mechanism on multicore processors which enables the evaluation of cache partitioning schemes on real machines. Recently, a power-aware cache partitioning scheme is proposed in [CITATION_5] to achieve good performance and low power.",
+  "correct_citation": {
+    "[CITATION_1]": "5304021",
+    "[CITATION_2]": "5304021",
+    "[CITATION_3]": "6312813",
+    "[CITATION_4]": "1698774",
+    "[CITATION_5]": "11210966"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Cache partitioning is a popular way to manage the shard cache among applications.  propose dynamic partitioning to manage the shared cache among competing applications."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Based on the utility information,  partition the cache to achive high overall utility. extend this idea by separating the utility monitoring circuits for different cores so that the utility information for one application is not polluted by others."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "All misses are treated equally.  differentiate misses based on their impacts on performance."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Most of the studies of cache partitioning are evaluated by simulations.  design and implement an OS-based cache partitioning mechanism on multicore processors which enables the evaluation of cache partitioning schemes on real machines."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Recently, a power-aware cache partitioning scheme is proposed in  to achieve good performance and low power."
+    }
+  ],
+  "bib_entries": {
+    "5304021": {
+      "title": "Dynamic partitioning of shared cache memory",
+      "abstract": "This paper proposes dynamic cache partitioning amongst simultaneously executing processes/threads. We present a general partitioning scheme that can be applied to set-associative caches. ::: ::: Since memory reference characteristics of processes/threads can change over time, our method collects the cache miss characteristics of processes/threads at run-time. Also, the workload is determined at run-time by the operating system scheduler. Our scheme combines the information, and partitions the cache amongst the executing processes/threads. Partition sizes are varied dynamically to reduce the total number of misses. ::: ::: The partitioning scheme has been evaluated using a processor simulator modeling a two-processor CMP system. The results show that the scheme can improve the total IPC significantly over the standard least recently used (LRU) replacement policy. In a certain case, partitioning doubles the total IPC over standard LRU. Our results show that smart cache management and scheduling is essential to achieve high performance with shared cache memory."
+    },
+    "6312813": {
+      "title": "Dynamic cache partitioning based on the MLP of cache misses",
+      "abstract": "Dynamic partitioning of shared caches has been proposed to improve performance of traditional eviction policies in modern multithreaded architectures. All existing Dynamic Cache Partitioning (DCP) algorithms work on the number of misses caused by each thread and treat all misses equally. However, it has been shown that cache misses cause different impact in performance depending on their distribution. Clustered misses share their miss penalty as they can be served in parallel, while isolated misses have a greater impact on performance as the memory latency is not shared with other misses. ::: ::: We take this fact into account and propose a new DCP algorithm that considers misses differently depending on their influence in performance. Our proposal obtains improvements over traditional eviction policies up to 63.9% (10.6% on average) and it also outperforms previous DCP proposals by up to 15.4% (4.1% on average) in a four-core architecture. Our proposal reaches the same performance as a 50% larger shared cache. Finally, we present a practical implementation of our proposal that requires less than 8KB of storage."
+    },
+    "11210966": {
+      "title": "Power-aware dynamic cache partitioning for CMPs",
+      "abstract": "Cache partitioning and power-gating schemes are major research topics to achieve a high-performance and low-power shared cache for next generation chip multiprocessors(CMPs). We propose a power-aware cache partitioning mechanism, which is a scheme to realize both low power and high performance using power-gating and cache partitioning at the same time. The proposed cache mechanism is composed of a way-allocation function and power control function; each function works based on the cache locality assessment. The performance evaluation results show that the proposed cache mechanism with a performance-oriented parameter setting can reduce energy consumption by 20% while keeping the performance, and the mechanism with an energy-oriented parameter setting can reduce 54% energy consumption with a performance degradation of 13%. The hardware implementation results indicate that the delay and area overheads to control the proposed mechanism are negligible, and therefore hardly affect both the entire chip design and performance."
+    },
+    "1698774": {
+      "title": "Gaining insights into multicore cache partitioning: Bridging the gap between simulation and real systems",
+      "abstract": "Cache partitioning and sharing is critical to the effective utilization of multicore processors. However, almost all existing studies have been evaluated by simulation that often has several limitations, such as excessive simulation time, absence of OS activities and proneness to simulation inaccuracy. To address these issues, we have taken an efficient software approach to supporting both static and dynamic cache partitioning in OS through memory address mapping. We have comprehensively evaluated several representative cache partitioning schemes with different optimization objectives, including performance, fairness, and quality of service (QoS). Our software approach makes it possible to run the SPEC CPU2006 benchmark suite to completion. Besides confirming important conclusions from previous work, we are able to gain several insights from whole-program executions, which are infeasible from simulation. For example, giving up some cache space in one program to help another one may improve the performance of both programs for certain workloads due to reduced contention for memory bandwidth. Our evaluation of previously proposed fairness metrics is also significantly different from a simulation-based study. The contributions of this study are threefold. (1) To the best of our knowledge, this is a highly comprehensive execution- and measurement-based study on multicore cache partitioning. This paper not only confirms important conclusions from simulation-based studies, but also provides new insights into dynamic behaviors and interaction effects. (2) Our approach provides a unique and efficient option for evaluating multicore cache partitioning. The implemented software layer can be used as a tool in multicore performance evaluation and hardware design. (3) The proposed schemes can be further refined for OS kernels to improve performance."
+    }
+  },
+  "generator": "fallback_v4"
+}

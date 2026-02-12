@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "To minimise database load, a distributed memory cache stores recently authenticated API keys for a limited period.",
+    "Subsequent to the authentication and validation process (1), the Web Gateway conducts a search for available endpoints corresponding to the requested LLM within the ai_model_endpoints table (2).",
+    "It then forwards the request -along with all request parameters -to a matching node (3).",
+    "The response flows from vLLM back to the Web Gateway (4) and then to the requesting application (5).",
+    "If no matching vLLM endpoint ready for inference is found, custom HTTP status codes are returned."
+  ],
+  "correct_citations": []
+}

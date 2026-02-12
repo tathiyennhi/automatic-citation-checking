@@ -1,0 +1,33 @@
+{
+  "doc_id": "38472",
+  "text": "As the size of HPC systems increases, reliability is becoming more and more important for HPC users. Checkpoint/Restart technique has become a standard configuration for real systems. A lot of system-level and application-level checkpoint techniques have been proposed. Berkeley Lab's Checkpoint/Restart (BLCR) is a system-level checkpoint technique, which is the Linux kernel-based coordinated checkpoint technique [17] . BLCR is integrated with LAM/MPI and OpenMPI to provide checkpoint and restart for parallel applications. IBM proposed a special applicationlevel checkpoint library [CITATION_1] for BlueGene/P applications. This library provides support for user initiated checkpoint. Users can insert checkpoint invocation manually in the application arbitrarily. Xue et al. propose a user-level file system which can guarantee the consistency between the application and its files during checkpoint and restart [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "61343551",
+    "[CITATION_2]": "14295454"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "IBM proposed a special applicationlevel checkpoint library [CITATION_1] for BlueGene/P applications.",
+      "s_span": 528,
+      "e_span": 628
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Xue et al. propose a user-level file system which can guarantee the consistency between the application and its files during checkpoint and restart [CITATION_2] .",
+      "s_span": 770,
+      "e_span": 932
+    }
+  ],
+  "bib_entries": {
+    "14295454": {
+      "title": "CprFS: a user-level file system to support consistent file states for checkpoint and restart",
+      "abstract": "Checkpoint and Restart (CPR) is becoming critical to large scale parallel computers, whose Mean Time Between Failures (MTBF) may be much shorter than the execution times of the applications. The CPR mechanism should be able to store and recover the states of virtual memory, communication and files for the applications in a consistent way. However, many CPR tools ignore file states, which may cause errors for applications with file operations on recovery. Some CPR tools adopt library-based approaches or kernel-level file systems to deal with file states, but they only support limited types of file operations which are not sufficient for some applications. Moreover, many library-based approaches are not transparent to user applications because they wrap file APIs. Kernel-level file systems are difficult to deploy in production systems due to unnecessary overhead they may introduce to applications that do not need CPR. In this paper we propose a user-level file system, CprFS, to address these problems. As a file system, CprFS can guarantee transparency to user applications, and is convenient to support arbitrary file operations. It can be deployed on applications' demand to avoid intervention with other applications. Experimental results on micro-benchmarks and real-world applications show that CprFS introduces acceptable overhead and has little impact on checkpointing systems."
+    },
+    "61343551": {
+      "title": "IBM System Blue Gene/P Solution: Blue Gene/P Application Development",
+      "abstract": "This IBM Redbooks publication is one in a series of IBM books written specifically for the IBM System Blue Gene/P Solution. The Blue Gene/P system is the second generation of a massively parallel supercomputer from IBM in the IBM System Blue Gene Solution series. In this book, we provide an overview of the application development environment for the Blue Gene/P system. We intend to help programmers understand the requirements to develop applications on this high-performance massively parallel supercomputer.In this book, we explain instances where the Blue Gene/P system is unique in its programming environment. We also attempt to look at the differences between the IBM System Blue Gene/L Solution and the Blue Gene/P Solution. In this book, we do not delve into great depth about the technologies that are commonly used in the supercomputing industry, such as Message Passing Interface (MPI) and Open Multi-Processing (OpenMP), nor do we try to teach parallel programming. References are provided in those instances for you to find more information if necessary.Prior to reading this book, you must have a strong background in high-performance computing (HPC) programming. The high-level programming languages that we use throughout this book are C/C++ and Fortran95. Previous experience using the Blue Gene/L system can help you better understand some concepts in this book that we do not extensively discuss. However, several IBM Redbooks publications about the Blue Gene/L system are available for you to obtain general information about the Blue Gene/L system. We recommend that you refer to \"IBM Redbooks\" on page 373 for a list of those publications."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,33 @@
+{
+  "doc_id": "54822",
+  "text": "Oðlogð Þ þ 1Þ times of optimum ðF D2 G Þ. Proof. Without loss of generality, let link L i;j be the link that has the maximum color ID, say g. To prove the theorem, we will show that g 2C 1;2 Á ðlogð Þ þ 1Þ Á . In the following, we prove it by contradiction and, for the sake of contradiction, assume that g > 2C 1;2 Á ðlogð Þ þ 1Þ Á . We first argue that for any 0 k logð Þ, there exists a link L i ðkÞ ;j ðkÞ such that r i ðkÞ ;j ðkÞ < r i;j =2 k and its color ID is not smaller than g À 2C 1;2 Á k Á . We prove this argument by induction on k. If k ¼ 0, then the argument trivially holds. Assume for k p, the argument holds. From Theorem 15, by letting ¼ 0 and ¼ 2, ! Áð0; 2Þ=ð2C 1;2 Þ. In other words, the number of links, which interfere or are interfered by link L i ðpÞ ;j ðpÞ and whose radius is not smaller than r i ðpÞ ;j ðpÞ =2, is at most 2C 1;2 Á . Thus, there must exist a link L i ðpþ1Þ ;j ðpþ1Þ such that e ! þ 1, which is a contradiction. Thus, g 2C 1;2 Á ðlogð Þ þ 1Þ Á . This finishes the proof. t u Algorithm 4 essentially is a First-Fit coloring method. It has been proved in [CITATION_1] that, any First-Fit coloring of an d-inductive graph with n nodes will produce a coloring using colors of, at most, Oðd log nÞ times of the optimum. Here, a graph G is d-inductive if we can number the vertices such that each node has at most d edges connected to the nodes with larger numbers. We essentially proved Notice that, in Algorithm 4, a node can start assigning timeslots to its incident links as long as it obtained the communication channel. Thus, the time complexity of this algorithm will be much close to the node coloring number of the communication graph G, in which two interfering nodes should be assigned different colors. Notice that, it was proved in [CITATION_2] that for disk graphs, the tight bound for approximation ratio for online coloring of disk graphs is minflog n; log g. Thus, we know that it is impossible to design distributed algorithm for link scheduling with better asymptotic approximation ratio when no any ordering are allowed among links.",
+  "correct_citation": {
+    "[CITATION_1]": "181800",
+    "[CITATION_2]": "28485156"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "It has been proved in  that, any First-Fit coloring of an d-inductive graph with n nodes will produce a coloring using colors of, at most, Oðd log nÞ times of the optimum.",
+      "s_span": 1074,
+      "e_span": 1257
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Notice that, it was proved in  that for disk graphs, the tight bound for approximation ratio for online coloring of disk graphs is minflog n; log g.",
+      "s_span": 1752,
+      "e_span": 1912
+    }
+  ],
+  "bib_entries": {
+    "28485156": {
+      "title": "A Tight Bound for Online Colouring of Disk Graphs",
+      "abstract": "We present an improved upper bound on the competitiveness of the online colouring algorithm First-Fit in disk graphs, which are graphs representing overlaps of disks on the plane. We also show that this bound is best possible for deterministic online colouring algorithms that do not use the disk representation of the input graph. We also present a related new lower bound for unit disk graphs."
+    },
+    "181800": {
+      "title": "Coloring Inductive Graphs On-Line",
+      "abstract": "In this paper we consider the problem of on-line graph coloring. In an instance of on-line graph coloring, the nodes are presented one at a time. As each node is presented, its edges to previously presented nodes are also given. Each node must be assigned a color, different from the colors of its neighbors, before the next node is given. LetA(G) be the number of colors used by algorithmA on a graphG and letx(G) be the chromatic number ofG. The performance ratio of an on-line graph coloring algorithm for a class of graphsC is maxG ∈C(A(G)/χ(G)). We consider the class ofd-inductive graphs. A graphG isd-inductive if the nodes ofG can be numbered so that each node has at mostd edges to higher-numbered nodes. In particular, planar graphs are 5-inductive, and chordal graphs arex(G)-inductive. First Fit is the algorithm that assigns each node the lowest-numbered color possible. We show that ifG isd-inductive, then First Fit usesO(d logn) colors onG. This yields an upper bound ofo(logn) on the performance ratio of First Fit on chordal and planar graphs. First Fit does as well as any on-line algorithm ford-inductive graphs: we show that, for anyd and any on-line graph coloring algorithmA, there is ad-inductive graph that forcesA to use Ω(d logn) colors to colorG. We also examine on-line graph coloring with lookahead. An algorithm is on-line with lookaheadl, if it must color nodei after examining only the firstl+i nodes. We show that, forl"
+    }
+  },
+  "generator": "fallback_v4"
+}

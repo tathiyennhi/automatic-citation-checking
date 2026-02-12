@@ -1,0 +1,33 @@
+{
+  "doc_id": "39011",
+  "text": "To assess the quality of the approximation obtained by the randomized greedy inference, we would like to compare it against the optimal solution. Following our earlier work [CITATION_1] , we use the highest score among 3,000 restarts for each sentence as a proxy for the optimal solution. Figure 8 shows the normalized score of the retrieved solution as a function of the number of restarts. We observe that most sentences converge quickly. 13 Specifically, more than 97% of the sentences converge within first 300 restarts. Since for the vast majority of cases our system converges fast, we achieve a comparable speed to that of other state-of-the-art joint systems. For example, our model achieves high performance on Chinese at about 0.5 sentences per second. The speed is about the same as that of the transition-based system [CITATION_2] with beam size 64, the setting that achieved best accuracy in their work. Figure 9 shows the cumulative distribution function (CDF) for the number of local optima versus the score of these local optima obtained from each restart. More specifically, the score captures the difference between a local optimum and the maximal score among 3,000 restarts. We can see that most of the local optima reached by hill-climbing have scores close to the maximum. For instance, about 30% of the local optima are identical to the best solution, namely score max − score local = 0.",
+  "correct_citation": {
+    "[CITATION_1]": "1260516",
+    "[CITATION_2]": "10011032"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Following our earlier work  , we use the highest score among 3,000 restarts for each sentence as a proxy for the optimal solution.",
+      "s_span": 146,
+      "e_span": 288
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The speed is about the same as that of the transition-based system  with beam size 64, the setting that achieved best accuracy in their work.",
+      "s_span": 763,
+      "e_span": 916
+    }
+  ],
+  "bib_entries": {
+    "1260516": {
+      "title": "Greed is good if randomized: New inference for dependency parsing",
+      "abstract": "Dependency parsing with high-order features results in a provably hard decoding problem. A lot of work has gone into developing powerful optimization methods for solving these combinatorial problems. In contrast, we explore, analyze, and demonstrate that a substantially simpler randomized greedy inference algorithm already suffices for near optimal parsing: a) we analytically quantify the number of local optima that the greedy method has to overcome in the context of first-order parsing; b) we show that, as a decoding algorithm, the greedy method surpasses dual decomposition in second-order parsing; c) we empirically demonstrate that our approach with up to third-order and global features outperforms the state-of-the-art dual decomposition and MCMC sampling methods when evaluated on 14 languages of non-projective CoNLL datasets. 1"
+    },
+    "10011032": {
+      "title": "Incremental joint approach to word segmentation, pos tagging, and dependency parsing in chinese",
+      "abstract": "We propose the first joint model for word segmentation, POS tagging, and dependency parsing for Chinese. Based on an extension of the incremental joint model for POS tagging and dependency parsing (Hatori et al., 2011), we propose an efficient character-based decoding method that can combine features from state-of-the-art segmentation, POS tagging, and dependency parsing models. We also describe our method to align comparable states in the beam, and how we can combine features of different characteristics in our incremental framework. In experiments using the Chinese Treebank (CTB), we show that the accuracies of the three tasks can be improved significantly over the baseline models, particularly by 0.6% for POS tagging and 2.4% for dependency parsing. We also perform comparison experiments with the partially joint models."
+    }
+  },
+  "generator": "fallback_v4"
+}

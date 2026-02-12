@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "1-shot includes only the combinational incrementer, 2-shot adds the sequential incrementer, and 3-shot includes all three examples in the context prompt.",
+    "h e r w i s e s t a t e d. / / / / B u i l d a f i n i t e -s t a t e m a c h i n e t h a t t a k e s a s i n p u t a / / s e r i a l b i t s t r e a m and o u t p u t s a o n e w h e n e v e r t h e b i t s t r e a m c o n t a i n s two / / c o n s e c u t i v e one ' s. The o u t p u t i s o n e on t h e c y c l e _ a f t e r _ t h e r e a r e two / / c o n s e c u t i v e one ' s. / / / / The r e s e t i n p u t i s a c t i v e h i g h s y n c h r o n o u s and s h o u l d r e s e t t h e / / f i n i t e -s t a t e m a c h i n e t o an a p p r o p r i a t e i n i t i a l s t a t e. module TopModule ( input l o g i c c l k, input l o g i c r e s e t, input l o g i c i n _, output l o g i c o u t); / / S t a t e enum localparam STATE_A = 2 ' b00; localparam STATE_B = 2 ' b01; localparam STATE_C = 2 ' b10; / / S t a t e r e g i s t e r l o g i c [ 1: 0] s t a t e; l o g i c [ 1: 0] s t a t e _ n e x t; always @( posedge c l k) begin i f ( r e s e t) s t a t e <= STATE_A; e l s e s t a t e <= s t a t e _ n e x t; end / / N e x t s t a t e c o m b i n a t i o n a l l o g i c always @( *) begin s t a t e _ n e x t = s t a t e; c a s e ( s t a t e) STATE_A: s t a t e _ n e x t = ( i n _)?",
+    "STATE_B: STATE_A; STATE_B: s t a t e _ n e x t = ( i n _)?",
+    "STATE_C: STATE_A; STATE_C: s t a t e _ n e x t = ( i n _)?",
+    "STATE_C: STATE_A; endcase end / / O u t p u t c o m b i n a t i o n a l l o g i c always @( *) begin o u t = 1 ' b0; c a s e ( s t a t e) STATE_A: o u t = 1 ' b0; STATE_B: o u t = 1 ' b0; STATE_C: o u t = 1 ' b1; endcase end endmodule 3.3 Support for Failure Classification Failures of LLM-generated responses are automatically classified by broad reasons for failure, both Verilog compile time errors and simulation runtime errors, such as incorrectly using a wire as a register, incorrect bit widths, and missing module interface definitions."
+  ],
+  "correct_citations": []
+}

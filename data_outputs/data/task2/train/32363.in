@@ -1,0 +1,22 @@
+{
+  "text": "We explain how to calculate U RE(t, e) using Fig. 4 . Fig. 4 (a) shows an intermediate tree t (represented by thick lines). Now candidate edges that can be added to t are 2-5, 4-5, 4-7 and 6-7. Here we explain only the cases for 4-7 and 6-7. Table 2 shows entries in a given routing table which are related to these two edges. By adding 6-7 to t (Fig. 4 (b) ), < 4, 7 > is made uncoverable by condition (1) because adding 4-7 results in a closed path. Also, < 1, 7 > is made uncoverable by condition (2) because a packet arriving at node 1 is indicated to be forwarded to node 4 in the given routing table, but to be forwarded to node 3 by the algorithmic routing using this tree. Similarly, < 2, 7 >, < 7, 1 >, < 7, 2 > and < 7, 4 > are made uncoverable by condition (2). However, < 2, 7 > is not in U RE(t, 6-7) because this entry was already made uncoverable by condition (1) when edges 1-2 and 1-4 were added to the tree. Therefore, |U RE(t,6-7)| is 5. On the other hand, by adding 4-7 to t (Fig. 4 (c) ), < 6, 7 > by condition (1) and < 3, 7 >, < 7, 3 > and < 7, 6 > by condition [CITATION_1] are made uncoverable. So, |U RE(t,4-7)| is 4. Therefore, 4-7 is added to t.",
+  "citation_candidates": [
+    "608681",
+    "62653156",
+    "5618733"
+  ],
+  "bib_entries": {
+    "608681": {
+      "title": "Minimizing routing state for light-weight network simulation",
+      "abstract": "We introduce a routing mechanism, referred to as algorithmic routing. It is a viable routing alternative for network simulations with minimal space complexity-O(N). In theory and for simulations the size of the Internet, algorithmic routing has the potential of reducing memory requirements by several orders of magnitude. In practice and through ns-2 simulations on random topologies, we find memory consumption of algorithmic routing exhibits a similar scaling property. However, routes computed by algorithmic routing are not all the shortest. Although we find the relative difference is below 10% for more than 80% of the routes, we are cautious about its applicability to general network simulations. With further discussion on the impacts of the distortion, we derive a set of guidelines and recommend users to apply this technique only when suitable."
+    },
+    "5618733": {
+      "title": "Advances in network simulation",
+      "abstract": "Network researchers must test Internet protocols under varied conditions to determine whether they are robust and reliable. The paper discusses the Virtual Inter Network Testbed (VINT) project which has enhanced its network simulator and related software to provide several practical innovations that broaden the conditions under which researchers can evaluate network protocols."
+    },
+    "62653156": {
+      "title": "Modeling internet topology",
+      "abstract": "The topology of a network, or a group of networks such as the Internet, has a strong bearing on many management and performance issues. Good models of the topological structure of a network are essential for developing and analyzing internetworking technology. This article discusses how graph-based models can be used to represent the topology of large networks, particularly aspects of locality and hierarchy present in the Internet. Two implementations that generate networks whose topology resembles that of typical internetworks are described, together with publicly available source code."
+    }
+  }
+}

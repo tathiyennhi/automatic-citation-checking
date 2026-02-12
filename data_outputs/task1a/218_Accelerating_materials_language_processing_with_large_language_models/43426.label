@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "SPL indicates the name for crystal structures and phases such as 'tetragonal' or a symmetry label such as 'Pbnm' (Supplementary Fig. 1b).",
+    "The original dataset consists of training/validation/ test at a ratio of 6:2:2, which is used for fine-tuning of GPT models.",
+    "Because the fine-tuning model requires prompt-completion examples as a training set, the NER datasets are pre-processed as follows: the annotations for each category are marked with the special tokens 46, and then, the raw text and marked text are used as the prompt and completion, respectively.",
+    "For example, if the input text is \"LiCoO2 and LiFePO4 are used as cathodes of secondary batteries\", the prompt is the same as the input text, and the completion for each category is as follows:",
+    "MAT model → Completion: \"LiCoO2 and LiFePO4 are used as cathodes of secondary batteries\" / completion: \"@@LiCoO2## and @@LiFePO4## are used as cathodes of secondary batteries.\""
+  ],
+  "correct_citations": [
+    "Because the fine-tuning model requires prompt-completion examples as a training set, the NER datasets are pre-processed as follows: the annotations for each category are marked with the special tokens 46, and then, the raw text and marked text are used as the prompt and completion, respectively."
+  ]
+}

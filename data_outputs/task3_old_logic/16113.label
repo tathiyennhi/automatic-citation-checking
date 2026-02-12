@@ -1,0 +1,20 @@
+{
+  "doc_id": "16113",
+  "text": "Training an auto-encoder for convolutional sparse coding to result in very low input/output prediction error is not a challenging task and has been done before [CITATION_1] . A more challenging problem is to demonstrate that the weights learned by an auto-encoder are interpretable as convolutional filters in the context of convolutional dictionary learning or source separation, a problem that, to our knowledge, existing autoencoder architectures for convolutional sparse coding have not solved. In this paper, we framed convolutional dictionary learning as training of an auto-encoder and proposed the constrained recurrent sparse auto-encoder (CRsAE). CRsAE is the first auto-encoder architecture to learn interpretable filters corresponding to a generative model. We highlighted this ability of CRsAE and its robustness to noise through simulation. The success of CRsAE in performing dictionary learning and source separation was owing to a) the deep recurrent and residual neural network architecture, inherited from FISTA, of its encoder, b) the tying of the weights to be learned in the encoder and decoder, and c) the Expectation Maximization-based training of the regularization parameter to ensure the sparseness of codes output by the encoder. The tying constraint on the encoder and decoder reduced the trainable parameters by a factor of 1 3 . In addition, the recurrent architecture of CRsAE with shared weights allowed us to produce sparse representations as the depth increases with a fix number of trainable parameters.",
+  "correct_citation": {
+    "[CITATION_1]": "52284824"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Training an auto-encoder for convolutional sparse coding to result in very low input/output prediction error is not a challenging task and has been done before"
+    }
+  ],
+  "bib_entries": {
+    "52284824": {
+      "title": "Learned convolutional sparse coding",
+      "abstract": "We propose a convolutional recurrent sparse auto-encoder model. The model consists of a sparse encoder, which is a convolutional extension of the learned ISTA (LISTA) method, and a linear convolutional decoder. Our strategy offers a simple method for learning a task-driven sparse convolutional dictionary (CD), and producing an approximate convolutional sparse code (CSC) over the learned dictionary. We trained the model to minimize reconstruction loss via gradient decent with back-propagation and have achieved competitive results to KSVD image denoising and to leading CSC methods in image inpainting requiring only a small fraction of their run-time."
+    }
+  },
+  "generator": "fallback"
+}

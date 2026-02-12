@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Recall that n 1 is the maximum number of trainable parameters as 1 st sampled sub-transformer Φ 1 is always the maxnet.",
+    "□ Initialize the low-rank matrices {A s, B s } to be learned at stage s. 4: A s:= {Φ 1, Φ 2, • • • }←sample_sub-transformers(A, stage = s).",
+    "[Φ 1: maxnet] 7:for each Φ j ∈ A s do 8:Load the sub-transformer model Φ j with weights W Φj:= Π Φj (W Sup).",
+    "9:n j:= # of fine-tuning weights in model configuration Φ j.10:Compute forward-pass on sub-transformerΦ j: ŷi j, z i j, h i Φj ← f Φj (x i; W Φj), ∀i ∈ B.11:In the case of Φ 1 (maxnet), set the distillation factor α to 0.12:Find the loss:loss i j ← (1-α)ℓ task [ŷ i j, y i]+α ℓ KD [z i j, z i 1] + ℓ FD [h i Φj, h i Φ1], ∀i ∈ B.13:Compute backward-pass on sub-transformer Φ j to find (∇ As loss i j, ∇ Bs loss i j).",
+    "14:end for 15:Update A s, B s using the gradients ( ∇As L Sup, ∇Bs L Sup) of the super-transformer's loss:∇W L Sup = 1 |A s | Φj ∈As n 1 n j γ ∇W L Φj, ∇W L Φj = 1 |B| i∈B ∇ W loss i j, ∀ W ∈ {A s, B s }."
+  ],
+  "correct_citations": []
+}

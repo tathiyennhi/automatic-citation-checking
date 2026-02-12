@@ -1,0 +1,22 @@
+{
+  "text": "\u2022 For DMR, we evaluate the three cases (interpolation, prediction and motion deblur) described in Fig. 2 on the DAVIS dataset [CITATION_1] , and compare against state-ofthe-art event-based algorithms, i.e., Complementary Filter [CITATION_2] and Event-based Double Integral [CITATION_3] . \u2022 For RD, we first discuss how to use the trained RD.",
+  "correct_citation": {
+    "[CITATION_1]": "9865213",
+    "[CITATION_2]": "53182986",
+    "[CITATION_3]": "53749928"
+  },
+  "bib_entries": {
+    "53182986": {
+      "title": "Continuous-time intensity estimation using event cameras",
+      "abstract": "Event cameras provide asynchronous, data-driven measurements of local temporal contrast over a large dynamic range with extremely high temporal resolution. Conventional cameras capture low-frequency reference intensity information. These two sensor modalities provide complementary information. We propose a computationally efficient, asynchronous filter that continuously fuses image frames and events into a single high-temporal-resolution, high-dynamic-range image state. In absence of conventional image frames, the filter can be run on events only. We present experimental results on high-speed, high-dynamic-range sequences, as well as on new ground truth datasets we generate to demonstrate the proposed algorithm outperforms existing state-of-the-art methods."
+    },
+    "9865213": {
+      "title": "The event-camera dataset and simulator: Event-based data for pose estimation, visual odometry, and slam",
+      "abstract": "New vision sensors, such as the dynamic and active-pixel vision sensor (DAVIS), incorporate a conventional global-shutter camera and an event-based sensor in the same pixel array. These sensors have great potential for high-speed robotics and computer vision because they allow us to combine the benefits of conventional cameras with those of event-based sensors: low latency, high temporal resolution, and very high dynamic range. However, new algorithms are required to exploit the sensor characteristics and cope with its unconventional output, which consists of a stream of asynchronous brightness changes (called \u201cevents\u201d) and synchronous grayscale frames. For this purpose, we present and release a collection of datasets captured with a DAVIS in a variety of synthetic and real environments, which we hope will motivate research on new algorithms for high-speed and high-dynamic-range robotics and computer-vision applications. In addition to global-shutter intensity images and asynchronous events, we provide inertial measurements and ground-truth camera poses from a motion-capture system. The latter allows comparing the pose accuracy of ego-motion estimation algorithms quantitatively. All the data are released both as standard text files and binary files (i.e. rosbag). This paper provides an overview of the available data and describes a simulator that we release open-source to create synthetic event-camera data."
+    },
+    "53749928": {
+      "title": "Bringing a blurry frame alive at high frame-rate with an event camera",
+      "abstract": "Event-based cameras can measure intensity changes (called \u2018events\u2019) with microsecond accuracy under high-speed motion and challenging lighting conditions. With the active pixel sensor (APS), the event camera allows simultaneous output of the intensity frames. However, the output images are captured at a relatively low frame-rate and often suffer from motion blur. A blurry image can be regarded as the integral of a sequence of latent images, while the events indicate the changes between the latent images. Therefore, we are able to model the blur-generation process by associating event data to a latent image. In this paper, we propose a simple and effective approach, the Event-based Double Integral (EDI) model, to reconstruct a high frame-rate, sharp video from a single blurry frame and its event data. The video generation is based on solving a simple non-convex optimization problem in a single scalar variable. Experimental results on both synthetic and real images demonstrate the superiority of our EDI model and optimization method in comparison to the state-of-the-art."
+    }
+  }
+}

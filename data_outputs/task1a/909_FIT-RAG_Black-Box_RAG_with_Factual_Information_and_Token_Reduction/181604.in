@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Although the LLM can give the correct answer, the retrieved document is actually unnecessary.",
+    "If these unnecessary documents is used to reward the retriever, they can mislead the retriever.",
+    "Besides, concatenating all the retrieved documents as the input causes waste of tokens, which can introduce excessive unnecessary tokens and hurts the efficiency of RAG.To simultaneously avoid the ignorance of factual information and the waste of tokens, this paper proposes a novel black-box RAG framework which utilizes both the factual information and LLM preference in the retrieval and performs token reduction for input tokens, dubbed FIT-RAG.",
+    "Figure 2 gives the overall overview of FIT-RAG, which consists of five components: a similarity-based retriever, a bi-label document scorer, a bi-faceted self-knowledge recognizer, a sub-document-level token reducer and a prompt construction module.",
+    "Among these components, the bi-label document scorer is proposed to effectively model alignment with LLM preferences as well as factual information, which avoids the ignorance of factual information; besides, the bi-faceted self-knowledge recognizer and sub-document-level token reducer are proposed to reduce input tokens, which avoids the waste of tokens.The bi-label document scorer is learnt based on bi-label learning which includes a factual information label (Has_Answer) and a LLM preference label (LLM_Prefer)."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "37314",
+  "text": "Calculating absolute position from IMU data in real time is technically very difficult if not outright unfeasible, as the operation would require double integration of acceleration data. This would result in a considerable level of residual error because drift would accumulate quadratically. Moreover, it would also be relatively expensive in terms of computation. Madgwick et al. designed computationally efficient algorithms for compensating the residual error [CITATION_1] . These can be used for estimating position from IMU data recorded in situations where specific constraints could be exploited, such as gait analysis and cyclic motion. The data obtained from IMUs are therefore morphologically very different from positional data returned by optical MoCap. The differences in the way movement is tracked and represented by the two technologies has implications on how movement data are eventually interpreted and used, particularly in the context of expressive movement tracking. High-level movement descriptors often are used to extract features from the raw motion data that can help describing the meaning that the movements of the subject convey. This is no trivial task, and various interdisciplinary approaches have been adopted over the past 2 decades. In the following section we look at several motion descriptors most widely used with positional data and discuss how they can be adapted for use with IMU data.",
+  "correct_citation": {
+    "[CITATION_1]": "1814414"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Madgwick et al. designed computationally efficient algorithms for compensating the residual error [CITATION_1] .",
+      "s_span": 366,
+      "e_span": 478
+    }
+  ],
+  "bib_entries": {
+    "1814414": {
+      "title": "Estimation of IMU and MARG orientation using a gradient descent algorithm",
+      "abstract": "This paper presents a novel orientation algorithm designed to support a computationally efficient, wearable inertial human motion tracking system for rehabilitation applications. It is applicable to inertial measurement units (IMUs) consisting of tri-axis gyroscopes and accelerometers, and magnetic angular rate and gravity (MARG) sensor arrays that also include tri-axis magnetometers. The MARG implementation incorporates magnetic distortion compensation. The algorithm uses a quaternion representation, allowing accelerometer and magnetometer data to be used in an analytically derived and optimised gradient descent algorithm to compute the direction of the gyroscope measurement error as a quaternion derivative. Performance has been evaluated empirically using a commercially available orientation sensor and reference measurements of orientation obtained using an optical measurement system. Performance was also benchmarked against the propriety Kalman-based algorithm of orientation sensor. Results indicate the algorithm achieves levels of accuracy matching that of the Kalman based algorithm; < 0.8° static RMS error, < 1.7° dynamic RMS error. The implications of the low computational load and ability to operate at small sampling rates significantly reduces the hardware and power necessary for wearable inertial movement tracking, enabling the creation of lightweight, inexpensive systems capable of functioning for extended periods of time."
+    }
+  },
+  "generator": "fallback_v4"
+}

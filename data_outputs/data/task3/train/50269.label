@@ -1,0 +1,25 @@
+{
+  "doc_id": "50269",
+  "text": "In other words, while throughput increases linearly with number of stages P , activation memory can scale quadratically. In order to reduce the memory pressure, here we propose a new way of utilizing recompute, to trade a small amount of compute resources for huge activation memory savings. Instead of recomputing the activations inside each stage [CITATION_1] , we propose to recompute the activations across a segment of multiple stages, which we call PipeMare Recompute, to allow effective activation memory reduction in the fine-grain pipeline setting. PipeMare Recompute utilizes a simple strategy. It recomputes the activation in advance so that the recomputed activation of the last stage in a segment arrives right at the time when the corresponding backpropagation needs to process this activation. Unlike the single-stage recompute proposed in GPipe [CITATION_2] , PipeMare Recompute does not stall the backpropagation operations as it can be overlapped with the forward and backward operations in the same pipeline stage. In order to enable this overlap, we need to consume approximately 25% of the total compute resources. Specifically, the pipeline needs to simultaneously compute for the forward, backward and recompute operations, with the backward operations consuming 2× more compute than forward and recompute operations respectively.",
+  "correct_citation": {
+    "[CITATION_1]": "53670168",
+    "[CITATION_2]": "53670168"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Instead of recomputing the activations inside each stage  , we propose to recompute the activations across a segment of multiple stages, which we call PipeMare Recompute, to allow effective activation memory reduction in the fine-grain pipeline setting."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Unlike the single-stage recompute proposed in GPipe  , PipeMare Recompute does not stall the backpropagation operations as it can be overlapped with the forward and backward operations in the same pipeline stage."
+    }
+  ],
+  "bib_entries": {
+    "53670168": {
+      "title": "Efficient training of giant neural networks using pipeline parallelism",
+      "abstract": "Scaling up deep neural network capacity has been known as an effective approach to improving model quality for several different machine learning tasks. In many cases, increasing model capacity beyond the memory limit of a single accelerator has required developing special algorithms or infrastructure. These solutions are often architecture-specific and do not transfer to other machine learning tasks. To address the need for efficient and task-independent model parallelism, we introduce TensorPipe, a pipeline parallelism library that allows scaling any network that can be expressed as a sequence of layers. By pipelining different sub-sequences of layers on separate accelerators, TensorPipe provides the flexibility of scaling a variety of different networks to gigantic sizes efficiently. Moreover, TensorPipe utilizes a novel batch-splitting pipelining algorithm, resulting in almost linear speedup when a model is partitioned across multiple accelerators. We demonstrate the advantages of TensorPipe by training large-scale neural networks on two different tasks with distinct network architectures: (i)Image Classification: We train a 557-million-parameter AmoebaNet model and attain a top-1 accuracy of 84.4% on ImageNet-2012, (ii)Multilingual Neural Machine Translation: We train a single 6-billion-parameter, 128-layer Transformer model on a corpus spanning over 100 languages and achieve better quality than all bilingual models."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,57 @@
+{
+  "text": "Cascade Correlation (CC) [CITATION_1] constructs a network with multiple hidden layers, each layer containing a single hidden unit. This method uses the constructive approach and starts with an initial network and incrementally adds hidden nodes to the network until a satisfying solution is found. In cascade correlation, the new nodes are added as a one-unit hidden layer. The network formed is different in that the inputs are directly connected both to the outputs and to the hidden units. A hidden unit is connected to the inputs, to the outputs and to all the hidden units in the preceding layers. When a hidden unit is added, first its input weights are calculated until its contribution to the network error is minimum and then is added to the network. The calculated input side weights are frozen in training the output weights.",
+  "citation_candidates": [
+    "16063120",
+    "11075778",
+    "16523475",
+    "36041553",
+    "207701653",
+    "9935846",
+    "30443043",
+    "2054176",
+    "683036",
+    "2702042"
+  ],
+  "bib_entries": {
+    "2054176": {
+      "title": "Model selection in neural networks",
+      "abstract": "In this article we examine how model selection in neural networks can be guided by statistical procedures such as hypotheses tests, information criteria and cross validation. The application of these methods in neural network models is discussed, paying attention especially to the identification problems encountered. We then propose five specification strategies based on different statistical procedures and compare them in a simulation study. As the results of the study are promising, it is suggested that a statistical analysis should become an integral part of neural network modelling."
+    },
+    "207701653": {
+      "title": "Feedforward neural network construction using cross validation",
+      "abstract": "This article presents an algorithm that constructs feedforward neural networks with a single hidden layer for pattern classification. The algorithm starts with a small number of hidden units in the network and adds more hidden units as needed to improve the network's predictive accuracy. To determine when to stop adding new hidden units, the algorithm makes use of a subset of the available training samples for cross validation. New hidden units are added to the network only if they improve the classification accuracy of the network on the training samples and on the cross-validation samples. Extensive experimental results show that the algorithm is effective in obtaining networks with predictive accuracy rates that are better than those obtained by state-of-the-art decision tree methods."
+    },
+    "2702042": {
+      "title": "A study of cross-validation and bootstrap for accuracy estimation and model selection",
+      "abstract": "We review accuracy estimation methods and compare the two most common methods crossvalidation and bootstrap. Recent experimental results on artificial data and theoretical re cults in restricted settings have shown that for selecting a good classifier from a set of classifiers (model selection), ten-fold cross-validation may be better than the more expensive leaveone-out cross-validation. We report on a largescale experiment--over half a million runs of C4.5 and a Naive-Bayes algorithm--to estimate the effects of different parameters on these algrithms on real-world datasets. For crossvalidation we vary the number of folds and whether the folds are stratified or not, for bootstrap, we vary the number of bootstrap samples. Our results indicate that for real-word datasets similar to ours, The best method to use for model selection is ten fold stratified cross validation even if computation power allows using more folds."
+    },
+    "16523475": {
+      "title": "A resource allocating network for function interpolation",
+      "abstract": "We have created a network that allocates a new computational unit whenever an unusual pattern is presented to the network. This network forms compact representations, yet learns easily and rapidly. The network can be used at any time in the learning process and the learning patterns do not have to be repeated. The units in this network respond to only a local region of the space of input values. The network learns by allocating new units and adjusting the parameters of existing units. If the network performs poorly on a presented pattern, then a new unit is allocated that corrects the response to the presented pattern. If the network performs well on a presented pattern, then the network parameters are updated using standard LMS gradient descent. We have obtained good results with our resource-allocating network (RAN). For predicting the Mackey-Glass chaotic time series, RAN learns much faster than do those using backpropagation networks and uses a comparable number of synapses."
+    },
+    "36041553": {
+      "title": "A new ARTMAP-based neural network for incremental learning",
+      "abstract": "Abstract This paper presents a new approach to incrementally constructing a neural network that is capable of learning new information without forgetting old knowledge. The proposed neural network, called hyper-spherical ARTMAP network (HS-ARTMAP network), is a synthesis of an RBF-network-like module and an ART-like module. The HS-ARTMAP network is trained via a training algorithm similar to the training algorithm for the fuzzy ARTMAP system. To demonstrate the performance of the proposed HS-ARTMAP network, several pattern recognition and function approximation problems were tested."
+    },
+    "9935846": {
+      "title": "An incremental training method for the probabilistic RBF network",
+      "abstract": "The probabilistic radial basis function (PRBF) network constitutes a probabilistic version of the RBF network for classification that extends the typical mixture model approach to classification by allowing the sharing of mixture components among all classes. The typical learning method of PRBF for a classification task employs the expectation-maximization (EM) algorithm and depends strongly on the initial parameter values. In this paper, we propose a technique for incremental training of the PRBF network for classification. The proposed algorithm starts with a single component and incrementally adds more components at appropriate positions in the data space. The addition of a new component is based on criteria for detecting a region in the data space that is crucial for the classification task. After the addition of all components, the algorithm splits every component of the network into subcomponents, each one corresponding to a different class. Experimental results using several well-known classification data sets indicate that the incremental method provides solutions of superior classification performance compared to the hierarchical PRBF training method. We also conducted comparative experiments with the support vector machines method and present the obtained results along with a qualitative comparison of the two approaches."
+    },
+    "16063120": {
+      "title": "Constructive feedforward neural networks using hermite polynomial activation functions",
+      "abstract": "In this paper, a constructive one-hidden-layer network is introduced where each hidden unit employs a polynomial function for its activation function that is different from other units. Specifically, both a structure level as well as a function level adaptation methodologies are utilized in constructing the network. The functional level adaptation scheme ensures that the \"growing\" or constructive network has different activation functions for each neuron such that the network may be able to capture the underlying input-output map more effectively. The activation functions considered consist of orthonormal Hermite polynomials. It is shown through extensive simulations that the proposed network yields improved performance when compared to networks having identical sigmoidal activation functions."
+    },
+    "11075778": {
+      "title": "Ordering and finding the best of K > 2 supervised learning algorithms",
+      "abstract": "Given a data set and a number of supervised learning algorithms, we would like to find the algorithm with the smallest expected error. Existing pairwise tests allow a comparison of two algorithms only; range tests and ANOVA check whether multiple algorithms have the same expected error and cannot be used for finding the smallest. We propose a methodology, the multitest algorithm, whereby we order supervised learning algorithms taking into account 1) the result of pairwise statistical tests on expected error (what the data tells us), and 2) our prior preferences, e.g., due to complexity. We define the problem in graph-theoretic terms and propose an algorithm to find the \"best\" learning algorithm in terms of these two criteria, or in the more general case, order learning algorithms in terms of their \"goodness.\" Simulation results using five classification algorithms on 30 data sets indicate the utility of the method. Our proposed method can be generalized to regression and other loss functions by using a suitable pairwise test."
+    },
+    "683036": {
+      "title": "Approximate statistical tests for comparing supervised classification learning algorithms",
+      "abstract": "This article reviews five approximate statistical tests for determining whether one learning algorithm outperforms another on a particular learning task. These test sare compared experimentally to determine their probability of incorrectly detecting a difference when no difference exists (type I error). Two widely used statistical tests are shown to have high probability of type I error in certain situations and should never be used: a test for the difference of two proportions and a paired-differences t test based on taking several random train-test splits. A third test, a paired-differences t test based on 10-fold cross-validation, exhibits somewhat elevated probability of type I error. A fourth test, McNemar's test, is shown to have low type I error. The fifth test is a new test, 5 \u00d7 2 cv, based on five iterations of twofold cross-validation. Experiments show that this test also has acceptable type I error. The article also measures the power (ability to detect algorithm differences when they do exist)..."
+    },
+    "30443043": {
+      "title": "The cascade-correlation learning architecture",
+      "abstract": "Cascade-Correlation is a new architecture and supervised learning algorithm for artificial neural networks. Instead of just adjusting the weights in a network of fixed topology. Cascade-Correlation begins with a minimal network, then automatically trains and adds new hidden units one by one, creating a multi-layer structure. Once a new hidden unit has been added to the network, its input-side weights are frozen. This unit then becomes a permanent feature-detector in the network, available for producing outputs or for creating other, more complex feature detectors. The Cascade-Correlation architecture has several advantages over existing algorithms: it learns very quickly, the network determines its own size and topology, it retains the structures it has built even if the training set changes, and it requires no back-propagation of error signals through the connections of the network."
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "doc_id": "31178",
+  "text": "Noticeably, AlexNet performs better than VGG across all three datasets. Although it is unlikely for AlexNet to achieve higher precision than VGG, in practical applications the information density provided by AlexNet is better than that of VGG, and therefore, AlexNet provides better utilization for its parameter space than VGG, particularly, for FIR systems. This claim is also supported by [CITATION_1] . According to the above experiments, we can say with certain confidence that AlexNet layers 6 and 7 have performed the best in terms of MAP, particularly, when using K-SVD dictionary learning with SSF coefficient learning. Therefore, we compare their results with the state-of-the-art FIR methods. Since local descriptors explore higher order derivative space and tend to achieve better results under pose, expression, light, and illumination variations [CITATION_2] , we consider four of popular descriptors, namely, local gradient hexa pattern (LGHP) [CITATION_3] , local derivative pattern (LDP) [CITATION_4] , local tetra pattern (LTrP) [CITATION_5] and local vector pattern (LVP) [CITATION_6] . These methods calculated the Average Precision of Retrieval (APR) of each dataset using the first retrieved face image, the first 5 retrieved face images, and the first (8 or 10) retrieved face images; therefore we also calculated the APR of AlexNet FC6 and AlexNet FC7 similarly. Tables 10 reports the results of this comparative analysis. As can be seen from Tables 10, the combination of AlexNet features with SSF enhances the results as it outperforms all four methods under consideration on all of the datasets. This significant increase of the APR can be attributed to the power of the deep features as compared to hand-crafted features, in general. However, in certain cases/datasets, Deep features might not be the magic tool for computer vision tasks. This is evident from another analysis reported in Table 11 , where the Average Recall of Retrieval (ARR) have been reported instead of APR. Here we can see that while the ARR results in Yale-B and LFW datasets are dominated by our combined method involving deep features, on the Gallagher dataset, ARRs obtained by the LGHP, LDP, and LVP are found to be better. Figures 2 -3 illustrate the Precision-Recall (PR) and cumulative matching characteristic (CMC) curves of the face retrieval experiments. These figures show PR and CMC curves on the evaluated datasets using all the tested CNN models with their different layers with K-Means and K-SVD and SSF.",
+  "correct_citation": {
+    "[CITATION_1]": "7256695",
+    "[CITATION_2]": "42692656",
+    "[CITATION_3]": "42692656",
+    "[CITATION_4]": "8011482",
+    "[CITATION_5]": "16714668",
+    "[CITATION_6]": "206724828"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This claim is also supported by  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Since local descriptors explore higher order derivative space and tend to achieve better results under pose, expression, light, and illumination variations  , we consider four of popular descriptors, namely, local gradient hexa pattern (LGHP)  , local derivative pattern (LDP)  , local tetra pattern (LTrP)  and local vector pattern (LVP)  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Since local descriptors explore higher order derivative space and tend to achieve better results under pose, expression, light, and illumination variations  , we consider four of popular descriptors, namely, local gradient hexa pattern (LGHP)  , local derivative pattern (LDP)  , local tetra pattern (LTrP)  and local vector pattern (LVP)  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Since local descriptors explore higher order derivative space and tend to achieve better results under pose, expression, light, and illumination variations  , we consider four of popular descriptors, namely, local gradient hexa pattern (LGHP)  , local derivative pattern (LDP)  , local tetra pattern (LTrP)  and local vector pattern (LVP)  ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Since local descriptors explore higher order derivative space and tend to achieve better results under pose, expression, light, and illumination variations  , we consider four of popular descriptors, namely, local gradient hexa pattern (LGHP)  , local derivative pattern (LDP)  , local tetra pattern (LTrP)  and local vector pattern (LVP)  ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Since local descriptors explore higher order derivative space and tend to achieve better results under pose, expression, light, and illumination variations  , we consider four of popular descriptors, namely, local gradient hexa pattern (LGHP)  , local derivative pattern (LDP)  , local tetra pattern (LTrP)  and local vector pattern (LVP)  ."
+    }
+  ],
+  "bib_entries": {
+    "42692656": {
+      "title": "Local gradient hexa pattern: A descriptor for face recognition and retrieval",
+      "abstract": "Local descriptors used in face recognition are robust in a sense that these descriptors perform well in varying pose, illumination, and lighting conditions. The accuracy of these descriptors depends on the precision of mapping the relationship that exists in the local neighborhood of a facial image into microstructures. In this paper, a local gradient hexa pattern is proposed that identifies the relationship among the reference pixel and its neighboring pixels at different distances across different derivative directions. Discriminative information exists in the local neighborhood as well as in different derivative directions. The proposed descriptor effectively transforms these relationships into binary micropatterns discriminating inter-class facial images with optimal precision. The recognition and retrieval performance of the proposed descriptor has been compared with state-of-the-art descriptors, namely, local derivative pattern, local tetra pattern, multiblock local binary pattern, and local vector pattern over the most challenging and benchmark facial image databases, i.e., Cropped Extended Yale B, CMU-PIE, color-FERET, LFW, and Ghallager database. The proposed descriptor has better recognition as well as retrieval rates compared with state-of-the-art descriptors."
+    },
+    "8011482": {
+      "title": "Local derivative pattern versus local binary pattern: face recognition with high-order local pattern descriptor",
+      "abstract": "This paper proposes a novel high-order local pattern descriptor, local derivative pattern (LDP), for face recognition. LDP is a general framework to encode directional pattern features based on local derivative variations. The nth-order LDP is proposed to encode the (n-1)th -order local derivative direction variations, which can capture more detailed information than the first-order local pattern used in local binary pattern (LBP). Different from LBP encoding the relationship between the central point and its neighbors, the LDP templates extract high-order local information by encoding various distinctive spatial relationships contained in a given local region. Both gray-level images and Gabor feature images are used to evaluate the comparative performances of LDP and LBP. Extensive experimental results on FERET, CAS-PEAL, CMU-PIE, Extended Yale B, and FRGC databases show that the high-order LDP consistently performs much better than LBP for both face identification and face verification under various conditions."
+    },
+    "206724828": {
+      "title": "A novel local pattern descriptorlocal vector pattern in high-order derivative space for face recognition",
+      "abstract": "In this paper, a novel local pattern descriptor generated by the proposed local vector pattern (LVP) in high-order derivative space is presented for use in face recognition. Based on the vector of each pixel constructed by computing the values between the referenced pixel and the adjacent pixels with diverse distances from different directions, the vector representation of the referenced pixel is generated to provide the 1D structure of micropatterns. With the devise of pairwise direction of vector for each pixel, the LVP reduces the feature length via comparative space transform to encode various spatial surrounding relationships between the referenced pixel and its neighborhood pixels. Besides, the concatenation of LVPs is compacted to produce more distinctive features. To effectively extract more detailed discriminative information in a given subregion, the vector of LVP is refined by varying local derivative directions from the \\(n\\) th-order LVP in \\((n-1)\\) th-order derivative space, which is a much more resilient structure of micropatterns than standard local pattern descriptors. The proposed LVP is compared with the existing local pattern descriptors including local binary pattern (LBP), local derivative pattern (LDP), and local tetra pattern (LTrP) to evaluate the performances from input grayscale face images. In addition, extensive experiments conducting on benchmark face image databases, FERET, CAS-PEAL, CMU-PIE, Extended Yale B, and LFW, demonstrate that the proposed LVP in high-order derivative space indeed performs much better than LBP, LDP, and LTrP in face recognition."
+    },
+    "16714668": {
+      "title": "Local tetra patterns: a new feature descriptor for content-based image retrieval",
+      "abstract": "In this paper, we propose a novel image indexing and retrieval algorithm using local tetra patterns (LTrPs) for content-based image retrieval (CBIR). The standard local binary pattern (LBP) and local ternary pattern (LTP) encode the relationship between the referenced pixel and its surrounding neighbors by computing gray-level difference. The proposed method encodes the relationship between the referenced pixel and its neighbors, based on the directions that are calculated using the first-order derivatives in vertical and horizontal directions. In addition, we propose a generic strategy to compute nth-order LTrP using (n - 1)th-order horizontal and vertical derivatives for efficient CBIR and analyze the effectiveness of our proposed algorithm by combining it with the Gabor transform. The performance of the proposed method is compared with the LBP, the local derivative patterns, and the LTP based on the results obtained using benchmark image databases viz., Corel 1000 database (DB1), Brodatz texture database (DB2), and MIT VisTex database (DB3). Performance analysis shows that the proposed method improves the retrieval result from 70.34%/44.9% to 75.9%/48.7% in terms of average precision/average recall on database DB1, and from 79.97% to 85.30% and 82.23% to 90.02% in terms of average retrieval rate on databases DB2 and DB3, respectively, as compared with the standard LBP."
+    },
+    "7256695": {
+      "title": "An analysis of deep neural network models for practical applications",
+      "abstract": "Since the emergence of Deep Neural Networks (DNNs) as a prominent technique in the field of computer vision, the ImageNet classification challenge has played a major role in advancing the state-of-the-art. While accuracy figures have steadily increased, the resource utilisation of winning models has not been properly taken into account. In this work, we present a comprehensive analysis of important metrics in practical applications: accuracy, memory footprint, parameters, operations count, inference time and power consumption. Key findings are: (1) power consumption is independent of batch size and architecture; (2) accuracy and inference time are in a hyperbolic relationship; (3) energy constraint are an upper bound on the maximum achievable accuracy and model complexity; (4) the number of operations is a reliable estimate of the inference time. We believe our analysis provides a compelling set of information that helps design and engineer efficient DNNs."
+    }
+  },
+  "generator": "fallback_v4"
+}

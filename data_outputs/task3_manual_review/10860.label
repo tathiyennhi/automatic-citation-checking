@@ -1,0 +1,20 @@
+{
+  "doc_id": "10860",
+  "text": "Finally, we compare the performance of our algorithm in terms of MSE decay for different values of and . The results of the simulation are shown in Fig. 3 . At this point, we do not have expressions for the optimum value of in the more general case when . We use the same procedure as outlined in the previous experiment, evaluating the MSE for each possible value of from 0 to 1 at intervals of 0.1 and selecting the one that achieves the minimum MSE. Fig. 3 implies that, in our setting where parameters are given by formula (60), the best performance is obtained if is used and the performance difference is significant. Our choice of predictor exerts a significant influence here. We employ a linear parameterization that becomes less accurate as the number of samples employed in the predictor increases beyond 3. Note, however, that all of the depicted values of achieve better performance than the optimal weight matrix. Although one might anticipate that there is an optimal for each that maximizes the convergence rate, our simulation experiments indicate that the value of has little or no effect on convergence (see Fig. 3 ). Indeed, for the case , we can show analytically that the spectral radius of the equivalent weight matrix, which dictates the convergence rate, is independent of [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "1997742"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Indeed, for the case, we can show analytically that the spectral radius of the equivalent weight matrix, which dictates the convergence rate, is independent of"
+    }
+  ],
+  "bib_entries": {
+    "1997742": {
+      "title": "Accelerated distributed average consensus via localized node state prediction",
+      "abstract": "This paper proposes an approach to accelerate local, linear iterative network algorithms asymptotically achieving distributed average consensus. We focus on the class of algorithms in which each node initializes its ldquostate valuerdquo to the local measurement and then at each iteration of the algorithm, updates this state value by adding a weighted sum of its own and its neighbors' state values. Provided the weight matrix satisfies certain convergence conditions, the state values asymptotically converge to the average of the measurements, but the convergence is generally slow, impeding the practical application of these algorithms. In order to improve the rate of convergence, we propose a novel method where each node employs a linear predictor to predict future node values. The local update then becomes a convex (weighted) sum of the original consensus update and the prediction; convergence is faster because redundant states are bypassed. The method is linear and poses a small computational burden. For a concrete theoretical analysis, we prove the existence of a convergent solution in the general case and then focus on one-step prediction based on the current state, and derive the optimal mixing parameter in the convex sum for this case. Evaluation of the optimal mixing parameter requires knowledge of the eigenvalues of the weight matrix, so we present a bound on the optimal parameter. Calculation of this bound requires only local information. We provide simulation results that demonstrate the validity and effectiveness of the proposed scheme. The results indicate that the incorporation of a multistep predictor can lead to convergence rates that are much faster than those achieved by an optimum weight matrix in the standard consensus framework."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "FL often involves transmitting model updates between clients and the server.",
+    "The enormous size of FMs creates significant Algorithm 1 Opportunities for efficient training and aggregation of FMs under the existing FL procedure 1: Input: N clients, local epochs E, learning rate η, initial global model weights θ 1, total number of communication round R 2: for each round t = 1, 2,..., R do 3: Server selects a subset of m clients S t 4: for each client i ∈ S t in parallel do 5: θ t+1 i ← ClientUpdate(i, θ t) 6: end for 7: θ t+1 ← Aggregate({θ t+1 i } m i=1) 8: end for 9: 10: procedure ClientUpdate(i, θ t): 11: B ← (split D c into batch of size B) 12: for each local epoch i from 1 to E do 13:for batch b ∈ B do 14:θ t i ← θ t -η∇L(θ t; b) 15:// Q2) How to improve the computational efficiency so that FMs can be efficiently hosted and updated on FL clients?16: end for 17: end for 18: return θ t i to the server 19: // Q3) How to improve communication efficiency when θ t i is large?",
+    "20: 21: procedure Aggregate({θ t+1 i } m i=1) 22: FedAvg [33]: θ t+1 ← 1 m m i=1 θ t+1 i 23: or 24: // Q1) Aggregation methods for FMs to enhance performance?",
+    "Clients Computational Efficiency Communication Efficiency Aggregation Methods 𝑤 1 +𝑤 2 + gating pruning compression prompt prompt adaptor adaptor Instruction Foundation Models Datasets Fig. 4: Illustration of efficient FedFM.",
+    "communication overhead that overwhelms the network."
+  ],
+  "correct_citations": [
+    "20: 21: procedure Aggregate({θ t+1 i } m i=1) 22: FedAvg [33]: θ t+1 ← 1 m m i=1 θ t+1 i 23: or 24: // Q1) Aggregation methods for FMs to enhance performance?"
+  ]
+}

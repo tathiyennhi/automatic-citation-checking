@@ -1,0 +1,65 @@
+{
+  "doc_id": "54526",
+  "text": "The surface-based approaches realize filtering by means of certain interpolation methods [CITATION_1] , [CITATION_2] . Kraus and Pfeifer [CITATION_3] first generated a surface and then updated it iteratively with appropriate selection of ground points. Mongus and Žalik [CITATION_4] developed a parameter-free algorithm using a Thin Plate Spline (TPS) interpolator, which was quickly improved by Chen et al. [CITATION_5] who proposed a multi-resolution hierarchical classification (MHC) algorithm. Hu et al. [CITATION_6] also adopted TPS to interpolate a raster surface. However, in their method bending energy was calculated as a byproduct of TPS interpolation, which can be used to calculated adaptive threshold automatically.",
+  "correct_citation": {
+    "[CITATION_1]": "126131126",
+    "[CITATION_2]": "2280335",
+    "[CITATION_3]": "120214420",
+    "[CITATION_4]": "123605408",
+    "[CITATION_5]": "120848807",
+    "[CITATION_6]": "84837171"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The surface-based approaches realize filtering by means of certain interpolation methods"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The surface-based approaches realize filtering by means of certain interpolation methods,"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Kraus and Pfeifer first generated a surface and then updated it iteratively with appropriate selection of ground points."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Mongus and Žalik developed a parameter-free algorithm using a Thin Plate Spline (TPS) interpolator, which was quickly improved by Chen et al. who proposed a multi-resolution hierarchical classification (MHC) algorithm."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "developed a parameter-free algorithm using a Thin Plate Spline (TPS) interpolator, which was quickly improved by Chen et al."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Hu et al. also adopted TPS to interpolate a raster surface."
+    }
+  ],
+  "bib_entries": {
+    "2280335": {
+      "title": "An easyto-use airborne LiDAR data filtering method based on cloth simulation",
+      "abstract": "Separating point clouds into ground and non-ground measurements is an essential step to generate digital terrain models (DTMs) from airborne LiDAR (light detection and ranging) data. However, most filtering algorithms need to carefully set up a number of complicated parameters to achieve high accuracy. In this paper, we present a new filtering method which only needs a few easy-to-set integer and Boolean parameters. Within the proposed approach, a LiDAR point cloud is inverted, and then a rigid cloth is used to cover the inverted surface. By analyzing the interactions between the cloth nodes and the corresponding LiDAR points, the locations of the cloth nodes can be determined to generate an approximation of the ground surface. Finally, the ground points can be extracted from the LiDAR point cloud by comparing the original LiDAR points and the generated surface. Benchmark datasets provided by ISPRS (International Society for Photogrammetry and Remote Sensing) working Group III/3 are used to validate the proposed filtering method, and the experimental results yield an average total error of 4.58%, which is comparable with most of the state-of-the-art filtering algorithms. The proposed easy-to-use filtering method may help the users without much experience to use LiDAR data and related technology in their own applications more easily."
+    },
+    "120848807": {
+      "title": "A multiresolution hierarchical classification algorithm for filtering airborne LiDAR data",
+      "abstract": "We presented a multiresolution hierarchical classification (MHC) algorithm for differentiating ground from non-ground LiDAR point cloud based on point residuals from the interpolated raster surface. MHC includes three levels of hierarchy, with the simultaneous increase of cell resolution and residual threshold from the low to the high level of the hierarchy. At each level, the surface is iteratively interpolated towards the ground using thin plate spline (TPS) until no ground points are classified, and the classified ground points are used to update the surface in the next iteration. 15 groups of benchmark dataset, provided by the International Society for Photogrammetry and Remote Sensing (ISPRS) commission, were used to compare the performance of MHC with those of the 17 other publicized filtering methods. Results indicated that MHC with the average total error and average Cohen’s kappa coefficient of 4.11% and 86.27% performs better than all other filtering methods."
+    },
+    "123605408": {
+      "title": "Parameter-free ground filtering of LiDAR data for automatic DTM generation",
+      "abstract": "This paper considers a new method for the automatic generation of digital terrain models from LiDAR data. The method iterates a thin plate spline interpolated surface towards the ground, while points’ residuals from the surface are inspected at each iteration, with a gradually decreasing window size. Top-hat transformation is used to enhance discontinuities caused by surface objects. Finally, parameter-free ground point filtering is achieved by automatic thresholding based on standard deviation. The experiments show that this method correctly determines DTM even in those cases of more difficult terrain features. The expected accuracy of ground point determination on those datasets commonly used in practice today is over 96%, while the average total error produced on the ISPRS benchmark dataset is under 6%."
+    },
+    "126131126": {
+      "title": "Automatic DTM extraction from airborne LiDAR based on expectation-maximization",
+      "abstract": "Abstract Filtering of ground points is a key step for most applications of airborne LiDAR point clouds. Although many filtering algorithms have been proposed in recent years, most of them suffer from parameter setting or thresholds fine-tuning. This is most often time-consuming and reduces the degree of automation of the applied algorithm. To overcome such problems, this paper proposes a threshold-free filtering algorithm based on expectation–maximization (EM). The filter is developed based on the assumption that point clouds are seen as a mixture of Gaussian models. Thus, the separation of ground points and non-ground points from point clouds is partitioning of the point clouds by a mixed Gaussian model that is used for screening ground points. EM is applied to realize the separation, which calculates the maximum likelihood estimates of the mixture parameters. Using the estimated parameters, the likelihoods of each point belonging to ground or non-ground are computed. Noticeably, point clouds are labeled as the component with a larger likelihood. The proposed method has been tested using the standard filtering datasets provided by the ISPRS. Experimental results showed that the proposed method performed the best in comparison with the classic progressive triangulated irregular network densification (PTD) and segment-based PTD methods in terms of omission error. The average omission error of the proposed method was 52.81% and 16.78% lower than the classic PTD method and the segment-based PTD method, respectively. Moreover, the proposed method was able to reduce its average total error by 31.95% compared to the classic PTD method."
+    },
+    "84837171": {
+      "title": "An adaptive surface filter for airborne laser scanning point clouds by means of regularization and bending energy",
+      "abstract": "Abstract The filtering of point clouds is a ubiquitous task in the processing of airborne laser scanning (ALS) data; however, such filtering processes are difficult because of the complex configuration of the terrain features. The classical filtering algorithms rely on the cautious tuning of parameters to handle various landforms. To address the challenge posed by the bundling of different terrain features into a single dataset and to surmount the sensitivity of the parameters, in this study, we propose an adaptive surface filter (ASF) for the classification of ALS point clouds. Based on the principle that the threshold should vary in accordance to the terrain smoothness, the ASF embeds bending energy, which quantitatively depicts the local terrain structure to self-adapt the filter threshold automatically. The ASF employs a step factor to control the data pyramid scheme in which the processing window sizes are reduced progressively, and the ASF gradually interpolates thin plate spline surfaces toward the ground with regularization to handle noise. Using the progressive densification strategy, regularization and self-adaption, both performance improvement and resilience to parameter tuning are achieved. When tested against the benchmark datasets provided by ISPRS, the ASF performs the best in comparison with all other filtering methods, yielding an average total error of 2.85% when optimized and 3.67% when using the same parameter set."
+    },
+    "120214420": {
+      "title": "Determination of terrain models in wooded areas with airborne laser scanner data",
+      "abstract": "Large-scale terrain measurement in wooded areas was an unsolved problem up to now. Laser scanning solves this problem to a large extent. In this article, the characteristics of laser scanning will be compared to photogrammetry with reference to a big pilot project. Laser scanning supplies data with a skew distribution of errors because a portion of the supplied points is not on the terrain but on the treetops. Thus, the usual interpolation and filtering has to be adapted to this new data type. We will report on the implementation of this new method. The results are in accordance with the expectations. The geomorphologic quality of the contours, computed from a terrain model derived from laser scanning, needs to be improved. Solutions are still to be found."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,66 @@
+{
+  "doc_id": "12937",
+  "text": "Generalized redescription set construction procedure Producing summaries and compressed rule set representations is important in many fields of knowledge discovery. In the field of frequent itemset mining such dense representations include closed itemsets [CITATION_1] and free sets [CITATION_2] . The approaches using set pattern mining construct a set by enforcing constraints on different pattern properties, such as support, overlap or coverage (Guns et al., 2011) . Methods developed in information theory consider sets that provide the best compression of a larger set of patterns. These techniques use properties like the Information Bottleneck [CITATION_3] or the Minimum description length [CITATION_4] . The work on statistical selection of association rules developed by [CITATION_5] has developed techniques to eliminate irrelevant rules based on dominance which is computed on several possibly conflicting criteria or measure. If some rule is not strictly dominated by any other rule already in the set, the minimal similarity with some representative rule is used to determine if a given rule should be added to the set.",
+  "correct_citation": {
+    "[CITATION_1]": "3489319",
+    "[CITATION_2]": "7353178",
+    "[CITATION_3]": "8936496",
+    "[CITATION_4]": "11976927",
+    "[CITATION_5]": "7999890"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In the field of frequent itemset mining such dense representations include closed itemsets [CITATION_1] and free sets [CITATION_2] .",
+      "s_span": 165,
+      "e_span": 297
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In the field of frequent itemset mining such dense representations include closed itemsets [CITATION_1] and free sets [CITATION_2] .",
+      "s_span": 165,
+      "e_span": 297
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "These techniques use properties like the Information Bottleneck [CITATION_3] or the Minimum description length [CITATION_4] .",
+      "s_span": 588,
+      "e_span": 713
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "These techniques use properties like the Information Bottleneck [CITATION_3] or the Minimum description length [CITATION_4] .",
+      "s_span": 588,
+      "e_span": 713
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "The work on statistical selection of association rules developed by [CITATION_5] has developed techniques to eliminate irrelevant rules based on dominance which is computed on several possibly conflicting criteria or measure.",
+      "s_span": 714,
+      "e_span": 939
+    }
+  ],
+  "bib_entries": {
+    "7353178": {
+      "title": "Frequent closures as a concise representation for binary data mining",
+      "abstract": "Frequent set discovery from binary data is an important problem in data mining. It concerns the discovery of a concise representation of large tables from which descriptive rules can be derived, e.g., the popular association rules. Our work concerns the study of two representations, namely frequent sets and frequent closures. N. Pasquier and colleagues designed the close algorithm that provides frequent sets via the discovery of frequent closures. When one mines highly correlated data, apriori-based algorithms clearly fail while close remains tractable. We discuss our implementation of close and the experimental evidence we got from two real-life binary data mining processes. Then, we introduce the concept of almost-closure (generation of every frequent set from frequent almost-closures remains possible but with a bounded error on frequency). To the best of our knowledge, this is a new concept and, here again, we provide some experimental evidence of its add-value."
+    },
+    "7999890": {
+      "title": "Ranking and selecting association rules based on dominance relationship",
+      "abstract": "The huge number of association rules represent the main hamper that a decision maker faces. In order to bypass this hamper, an efficient selection of rules has to be performed. Since selection is necessarily based on evaluation, many interestingness measures have been proposed. However, the abundance of these measures gave rise to a new problem, namely the heterogeneity of the evaluation results and this created confusion to the decision. In this respect, we propose a novel approach to discover interesting association rules without favoring or excluding any measure by adopting the notion of dominance between association rules. Our approach bypasses the problem of measure heterogeneity and unveils a compromise between their evaluations. Interestingly enough, the proposed approach also avoids another non-trivial problem which is the threshold value specification."
+    },
+    "3489319": {
+      "title": "Discovering frequent closed itemsets for association rules",
+      "abstract": "In this paper, we address the problem of finding frequent itemsets in a database. Using the closed itemset lattice framework, we show that this problem can be reduced to the problem of finding frequent closed itemsets. Based on this statement, we can construct efficient data mining algorithms by limiting the search space to the closed itemset lattice rather than the subset lattice. Moreover, we show that the set of all frequent closed itemsets suffices to determine a reduced set of association rules, thus addressing another important data mining problem: limiting the number of rules produced without information loss. We propose a new algorithm, called A-Close, using a closure mechanism to find frequent closed itemsets. We realized experiments to compare our approach to the commonly used frequent itemset search approach. Those experiments showed that our approach is very valuable for dense and/or correlated data that represent an important part of existing databases."
+    },
+    "8936496": {
+      "title": "The information bottleneck method",
+      "abstract": "We define the relevant information in a signal $x\\in X$ as being the information that this signal provides about another signal $y\\in \\Y$. Examples include the information that face images provide about the names of the people portrayed, or the information that speech sounds provide about the words spoken. Understanding the signal $x$ requires more than just predicting $y$, it also requires specifying which features of $\\X$ play a role in the prediction. We formalize this problem as that of finding a short code for $\\X$ that preserves the maximum information about $\\Y$. That is, we squeeze the information that $\\X$ provides about $\\Y$ through a `bottleneck' formed by a limited set of codewords $\\tX$. This constrained optimization problem can be seen as a generalization of rate distortion theory in which the distortion measure $d(x,\\x)$ emerges from the joint statistics of $\\X$ and $\\Y$. This approach yields an exact set of self consistent equations for the coding rules $X \\to \\tX$ and $\\tX \\to \\Y$. Solutions to these equations can be found by a convergent re-estimation method that generalizes the Blahut-Arimoto algorithm. Our variational principle provides a surprisingly rich framework for discussing a variety of problems in signal processing and learning, as will be described in detail elsewhere."
+    },
+    "11976927": {
+      "title": "Declarative heuristic search for pattern set mining",
+      "abstract": "Recently, constraint programming has been proposed as a declarative framework for constraint-based pattern mining. In constraint programming, a problem is modelled in terms of constraints and search is done by a general solver. Similar to most pattern mining algorithms, these solvers typically employ exhaustive depth-first search, where constraints are used to prune the search space and make the search viable. In this paper we investigate the use of a similar declarative approach to the problem of pattern set mining. In pattern set mining one is searching for a small and useful set of patterns. In contrast to pattern mining, however, exhaustive search is not common in pattern set mining, the search space is often far too large to make such an approach practical. In this paper, we investigate an approach which aims to make general pattern set mining feasible by using a recently developed general solver that supports exhaustive as well as heuristic search. The key idea in this solver is that next to a declarative specification of the constraints also a high-level declarative description of the search is given. By separating the model and the search from the solver, the approach offers the advantage of reusing constraints and search strategies declaratively, while also allowing fast heuristic search."
+    }
+  },
+  "generator": "fallback_v4"
+}

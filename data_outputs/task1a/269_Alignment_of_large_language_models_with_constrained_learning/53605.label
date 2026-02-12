@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Given a pretrained reference model π ref, we study a constrained alignment problem that algins the reference model π ref with m + 1 downstream objectives (a reward and m utilities): r, g i: X × Y → R for i = 1,..., m, via a constrained parameter optimization problem:maximize θ ∈ Θ E x ∼ D [ E y ∼ π θ [ r(x, y)] -β D KL (π θ (• | x) ∥ π ref (• | x))] (P-CA) subject to E x ∼ D [ E y ∼ π θ [ g i (x, y)] -E y ∼ πref [ g i (x, y)]] ≥ b i for all i = 1,..., mwhereD KL (π θ (• | x) ∥ π ref (• | x)):= E y ∼ π θ [log π θ (y | x)/π ref (y | x)]is the KL divergence between π θ and π ref, D is a prompt distribution over X, β is a regularization parameter, and b i ≥ 0 is the ith relative improvement of utility g i compared to the reference model.",
+    "Multiple downstream objectives are widely used in RLHF, where a language model is aligned with different preferences [45,6], such as helpfulness, truthfulness, or verbosity.",
+    "Problem (P-CA) employs the typical KL divergenceregularized alignment objective (e.g., [11,44,26,21]) as an objective function, and other relative utility improvements to define constraints [21].Let a solution of Problem (P-CA) be θ ⋆, the associated LLM policy be π ⋆ p:= π θ ⋆, and the primal value of Problem (P-CA) be P ⋆ p. Throughout the paper, the subscript p is used to denote functions or variables defined in the LLM parameter space.",
+    "We assume the boundedness of downstream objective functions, i.e., |r(x, y)|, |g i (x, y)| < ∞ for any (x, y).For brevity, we let h i (x, y):= g i (x, y) -E y ∼ πref [ g i (x, y)] -b i, and abbreviate E x ∼ D as E x. Equivalently, we write the constraint of (P-CA) as E x [ E y ∼ π θ [ h i (x, y)]] ≥ 0.",
+    "We assume thatE x [ D KL (π θ (• | x) ∥ π ref (• | x))] < ∞ for any θ ∈ Θ, which is mild given that π θ (• | x) > 0."
+  ],
+  "correct_citations": [
+    "Multiple downstream objectives are widely used in RLHF, where a language model is aligned with different preferences [45,6], such as helpfulness, truthfulness, or verbosity.",
+    "Problem (P-CA) employs the typical KL divergenceregularized alignment objective (e.g., [11,44,26,21]) as an objective function, and other relative utility improvements to define constraints [21].Let a solution of Problem (P-CA) be θ ⋆, the associated LLM policy be π ⋆ p:= π θ ⋆, and the primal value of Problem (P-CA) be P ⋆ p. Throughout the paper, the subscript p is used to denote functions or variables defined in the LLM parameter space."
+  ]
+}

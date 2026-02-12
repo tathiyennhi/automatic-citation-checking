@@ -1,0 +1,33 @@
+{
+  "doc_id": "33499",
+  "text": "Initially, GEBV were calculated using the regular ssGBLUP, which applies direct inversion for G. Second, GEBV were calculated using APY to obtain G −1 recursively (G −1 APY ) with several different definitions for proven animals: only sires; sires and cows; only cows; and sires with >5 progeny including sons and daughters. Third, previous analyses were repeated with \"proven\" animals randomly sampled from the group of all 100k genotyped animals in sets of 2k, 5k, 10k, 15k, and 20k animals; the sampling was replicated 4 times. Evaluations for final score were done using a single trait model as described in [CITATION_1] . All analyses were conducted with blup90iod2 (http:// nce.ads.uga.edu/wiki/BLUPmanual) program with modifications as in [CITATION_2] . The quality of approximations was assessed by correlations between GEBV for the almost 50k young animals obtained from ssGBLUP using direct inversion of full G (regular ss-GBLUP) and ssGBLUP using approximated G −1 from the APY algorithm. Table 1 summarizes runs with regular and APY ssG-BLUP when the subset of animals treated as \"proven\" were sires, sires + cows, cows, and sires with >5 daughters. For all subsets, the correlations of GEBV obtained with a regular and APY algorithms are >0.99. In all cases except when cows were treated as proven, the convergence rate was close to a regular run, indicating good computing properties. The smallest set of proven animals with good predictive ability was sires with >5 daughters (16,434 animals). Treating more animals as proven-that is, including sires with <5 progeny-only marginally affected the correlations. Computing an inverse for 16k animals (assuming cubic algorithm for inversion) cost about 200-fold less than for 100k animals and would cost 4,000-fold less for 600k animals.",
+  "correct_citation": {
+    "[CITATION_1]": "22912559",
+    "[CITATION_2]": "31677460"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Evaluations for final score were done using a single trait model as described in [CITATION_1] .",
+      "s_span": 531,
+      "e_span": 626
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "All analyses were conducted with blup90iod2 (http:// nce.ads.uga.edu/wiki/BLUPmanual) program with modifications as in [CITATION_2] .",
+      "s_span": 627,
+      "e_span": 760
+    }
+  ],
+  "bib_entries": {
+    "22912559": {
+      "title": "Analysis of age specific predicted transmitting abilities for final scores in Holsteins with a random regression model",
+      "abstract": "Conformation final scores obtained by the Holstein Association were used in this study. Five subsets were sampled from the original complete data, which contained about 7 million records, and (co)variance components for additive genetic, permanent environmental, and residual effects were estimated with a multiple-trait (MT) model at different ages of cows and with a random regression model. Transmitting abilities were predicted with the random-regression (RR) model and with the repeatability model for the national evaluation, using the entire data set. The RR model included fixed and random regressions on age at classification for additive genetic and permanent environmental effects. Additive genetic and residual variances estimated with the MT model increased with aging. Genetic correlations between age groups decreased with their distance. Heritability and repeatability estimates with the RR model were 0.27 and 0.88 on average, increasing with cow's age. Correlations between transmitting abilities predicted with the RR model at various ages and with the repeatability model were in the range of 0.89 to 0.99. In the 1980s, predicted transmitting abilities (PTA) of sires increased with their daughters' age, but in 1991 and 1995, the PTA decreased. In general, sires whose daughters were evaluated at mature ages tended to have higher PTA. For sires and cows, genetic trends estimated from the repeatability model and from the RR model were similar. The low genetic trend of cows at 60 mo for recent years was due to many grade cows that had only single records and little pedigree information."
+    },
+    "31677460": {
+      "title": "Efficient computation of the genomic relationship matrix and other matrices used in single-step evaluation",
+      "abstract": "Genomic evaluations can be calculated using a unified procedure that combines phenotypic, pedigree and genomic information. Implementation of such a procedure requires the inverse of the relationship matrix based on pedigree and genomic relationships. The objective of this study was to investigate efficient computing options to create relationship matrices based on genomic markers and pedigree information as well as their inverses. SNP maker information was simulated for a panel of 40 K SNPs, with the number of genotyped animals up to 30 000. Matrix multiplication in the computation of the genomic relationship was by a simple 'do' loop, by two optimized versions of the loop, and by a specific matrix multiplication subroutine. Inversion was by a generalized inverse algorithm and by a LAPACK subroutine. With the most efficient choices and parallel processing, creation of matrices for 30 000 animals would take a few hours. Matrices required to implement a unified approach can be computed efficiently. Optimizations can be either by modifications of existing code or by the use of efficient automatic optimizations provided by open source or third-party libraries."
+    }
+  },
+  "generator": "fallback_v4"
+}

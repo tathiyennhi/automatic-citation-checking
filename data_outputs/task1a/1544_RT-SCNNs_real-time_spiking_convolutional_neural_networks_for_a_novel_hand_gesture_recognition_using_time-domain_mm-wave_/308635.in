@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "LogSoftMax is a common method for transforming unnormalized outputs into log probabilities, a prerequisite for the negative log-likelihood loss (NLLLoss) function [32].",
+    "(4) Utilizing the NLLLoss function, each frame's predicted log probability is compared with its corresponding label, derived from the saved label gesture in the \"Refining Time-Domain Gesture Data\" section.",
+    "Loss proves appropriate for this task as it operates on log probabilities produced by LogSoftMax.",
+    "Moreover, combining LogSoftMax with NLLLoss is a standard practice in multi-class classification tasks, such as gesture recognition.",
+    "Despite that, it is essential to emphasize that the overall loss for the entire gesture, which is vital for backpropagation and updating the trainable parameters of the network, is computed by summing the losses of each frame within the gesture.Remarkably, unlike the previous work's approach [1], this procedure provides classification per frame, negating the need to aggregate predictions from all frames within a gesture to determine the performed gesture."
+  ]
+}

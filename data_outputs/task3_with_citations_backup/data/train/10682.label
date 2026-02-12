@@ -1,0 +1,66 @@
+{
+  "doc_id": "10682",
+  "text": "We fine-tuned a model of stacked-hourglass network [CITATION_1] , initially trained on the MPII dataset [CITATION_2] (a benchmark dataset for 2D pose estimation), on the images of the Human3.6M dataset to obtain 2D pose estimations for each image. We used the bounding box information provided with the dataset to first compute the center of the person in the image and then cropped a 440 × 440 region across the person and resized it to 256 × 256. We fine-tuned the network for 250 iterations and used a batch size of 3 and a learning rate of 2.5e − 4. Baselines Since many of the previous methods are based on single frame predictions, we used two baselines for comparison. To show that our method is much better than naive post processing, we applied a mean filter and a median filter on the 3D pose predictions of Martinez et al. [CITATION_3] . We used a window size of 5 frames and a stride length of 1 to apply the filters. Although non-rigid structure from motion (NRSFM) is one of the most general approaches for any 3D reconstruction problem from a sequence of 2D correspondences, we did not use it as a baseline because Zhou et al. [CITATION_4] did not find NRSFM techniques to be effective for 3D human pose estimation.They found that the NRSFM techniques do not work well with slow camera motion. Since the videos in the Human3.6M dataset [CITATION_5] are captured by stationary cameras,the subjects in the dataset do not rotate that much to provide alternative views for NRSFM algorithm to perform well. Another reason is that human pose reconstruction is a specialized problem in which constraints from human body structure apply.",
+  "correct_citation": {
+    "[CITATION_1]": "13613792",
+    "[CITATION_2]": "206592419",
+    "[CITATION_3]": "206771080",
+    "[CITATION_4]": "206594509",
+    "[CITATION_5]": "4244548"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We fine-tuned a model of stacked-hourglass network [CITATION_1] , initially trained on the MPII dataset [CITATION_2] (a benchmark dataset for 2D pose estimation), on the images of the Human3.6M dataset to obtain 2D pose estimations for each image.",
+      "s_span": 0,
+      "e_span": 247
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We fine-tuned a model of stacked-hourglass network [CITATION_1] , initially trained on the MPII dataset [CITATION_2] (a benchmark dataset for 2D pose estimation), on the images of the Human3.6M dataset to obtain 2D pose estimations for each image.",
+      "s_span": 0,
+      "e_span": 247
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "To show that our method is much better than naive post processing, we applied a mean filter and a median filter on the 3D pose predictions of Martinez et al. [CITATION_3] .",
+      "s_span": 676,
+      "e_span": 848
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Although non-rigid structure from motion (NRSFM) is one of the most general approaches for any 3D reconstruction problem from a sequence of 2D correspondences, we did not use it as a baseline because Zhou et al. [CITATION_4] did not find NRSFM techniques to be effective for 3D human pose estimation.They found that the NRSFM techniques do not work well with slow camera motion.",
+      "s_span": 930,
+      "e_span": 1308
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Since the videos in the Human3.6M dataset [CITATION_5] are captured by stationary cameras,the subjects in the dataset do not rotate that much to provide alternative views for NRSFM algorithm to perform well.",
+      "s_span": 1309,
+      "e_span": 1516
+    }
+  ],
+  "bib_entries": {
+    "206594509": {
+      "title": "Sparseness meets deepness: 3d human pose estimation from monocular video",
+      "abstract": "This paper addresses the challenge of 3D full-body human pose estimation from a monocular image sequence. Here, two cases are considered: (i) the image locations of the human joints are provided and (ii) the image locations of joints are unknown. In the former case, a novel approach is introduced that integrates a sparsity-driven 3D geometric prior and temporal smoothness. In the latter case, the former case is extended by treating the image locations of the joints as latent variables. A deep fully convolutional network is trained to predict the uncertainty maps of the 2D joint locations. The 3D pose estimates are realized via an Expectation-Maximization algorithm over the entire sequence, where it is shown that the 2D joint location uncertainties can be conveniently marginalized out during inference. Empirical evaluation on the Human3.6M dataset shows that the proposed approaches achieve greater 3D pose estimation accuracy over state-of-the-art baselines. Further, the proposed approach outperforms a publicly available 2D pose estimation baseline on the challenging PennAction dataset."
+    },
+    "4244548": {
+      "title": "Human3.6m: Large scale datasets and predictive methods for 3d human sensing in natural environments",
+      "abstract": "We introduce a new dataset, Human3.6M, of 3.6 Million accurate 3D Human poses, acquired by recording the performance of 5 female and 6 male subjects, under 4 different viewpoints, for training realistic human sensing systems and for evaluating the next generation of human pose estimation models and algorithms. Besides increasing the size of the datasets in the current state-of-the-art by several orders of magnitude, we also aim to complement such datasets with a diverse set of motions and poses encountered as part of typical human activities (taking photos, talking on the phone, posing, greeting, eating, etc.), with additional synchronized image, human motion capture, and time of flight (depth) data, and with accurate 3D body scans of all the subject actors involved. We also provide controlled mixed reality evaluation scenarios where 3D human models are animated using motion capture and inserted using correct 3D geometry, in complex real environments, viewed with moving cameras, and under occlusion. Finally, we provide a set of large-scale statistical models and detailed evaluation baselines for the dataset illustrating its diversity and the scope for improvement by future work in the research community. Our experiments show that our best large-scale model can leverage our full training set to obtain a 20% improvement in performance compared to a training set of the scale of the largest existing public dataset for this problem. Yet the potential for improvement by leveraging higher capacity, more complex models with our large dataset, is substantially vaster and should stimulate future research. The dataset together with code for the associated large-scale learning models, features, visualization tools, as well as the evaluation server, is available online at http://vision.imar.ro/human3.6m ."
+    },
+    "206771080": {
+      "title": "A simple yet effective baseline for 3d human pose estimation",
+      "abstract": "Following the success of deep convolutional networks, state-of-the-art methods for 3d human pose estimation have focused on deep end-to-end systems that predict 3d joint locations given raw image pixels. Despite their excellent performance, it is often not easy to understand whether their remaining error stems from a limited 2d pose (visual) understanding, or from a failure to map 2d poses into 3- dimensional positions.,,With the goal of understanding these sources of error, we set out to build a system that given 2d joint locations predicts 3d positions. Much to our surprise, we have found that, with current technology, \"lifting\" ground truth 2d joint locations to 3d space is a task that can be solved with a remarkably low error rate: a relatively simple deep feedforward network outperforms the best reported result by about 30% on Human3.6M, the largest publicly available 3d pose estimation benchmark. Furthermore, training our system on the output of an off-the-shelf state-of-the-art 2d detector (i.e., using images as input) yields state of the art results – this includes an array of systems that have been trained end-to-end specifically for this task. Our results indicate that a large portion of the error of modern deep 3d pose estimation systems stems from their visual analysis, and suggests directions to further advance the state of the art in 3d human pose estimation."
+    },
+    "206592419": {
+      "title": "2d human pose estimation: New benchmark and state of the art analysis",
+      "abstract": "Human pose estimation has made significant progress during the last years. However current datasets are limited in their coverage of the overall pose estimation challenges. Still these serve as the common sources to evaluate, train and compare different models on. In this paper we introduce a novel benchmark \"MPII Human Pose\" that makes a significant advance in terms of diversity and difficulty, a contribution that we feel is required for future developments in human body models. This comprehensive dataset was collected using an established taxonomy of over 800 human activities [1]. The collected images cover a wider variety of human activities than previous datasets including various recreational, occupational and householding activities, and capture people from a wider range of viewpoints. We provide a rich set of labels including positions of body joints, full 3D torso and head orientation, occlusion labels for joints and body parts, and activity labels. For each image we provide adjacent video frames to facilitate the use of motion information. Given these rich annotations we perform a detailed analysis of leading human pose estimation approaches and gaining insights for the success and failures of these methods."
+    },
+    "13613792": {
+      "title": "Stacked hourglass networks for human pose estimation",
+      "abstract": "This work introduces a novel convolutional network architecture for the task of human pose estimation. Features are processed across all scales and consolidated to best capture the various spatial relationships associated with the body. We show how repeated bottom-up, top-down processing used in conjunction with intermediate supervision is critical to improving the performance of the network. We refer to the architecture as a “stacked hourglass” network based on the successive steps of pooling and upsampling that are done to produce a final set of predictions. State-of-the-art results are achieved on the FLIC and MPII benchmarks outcompeting all recent methods."
+    }
+  },
+  "generator": "fallback_v4"
+}

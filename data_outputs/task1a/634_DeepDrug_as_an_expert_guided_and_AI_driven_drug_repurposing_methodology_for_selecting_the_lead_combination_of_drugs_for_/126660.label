@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "In addition, a data-driven node feature matrix X N ×K D is obtained from G, where each node is represented by a K-dimension feature vector calculated from its biological structure information.",
+    "The final node feature matrix X N ×M is the concatenation of X N ×4 E and X N ×K D. The encoder first takes A N ×N and X N ×M as the input to produce positive and negative embeddings for each node via a signed GCN 125.",
+    "The positive and negative embeddings are then used to generate source and target embeddings via directed GCNs 126.",
+    "The decoder model optimizes low-dimensional node embeddings (accounting for edge sign and direction) to reconstruct the network structure.",
+    "Conceptually, the GNN framework is described as follows:Zp, Zn = SignedGCN (X, Ap, An) (1) Zsp, Ztp = DirectedGCN (Zp, Ap) (2) Zsn, Ztn = DirectedGCN (Zn, An)(3)Zs = Concatenate (Zsp, Zsn) (4) Zt = Concatenate (Ztp, Ztn) (5) A′ = σ ( ZsZt T)(6)where, SignedGCN is a signed GCN with the ReLU activation function, DirectedGCN is a directed GCN with the ReLU activation function, Z represents low-dimensional node embeddings, σ is the sigmoid activation function, and A′ is the edge probability matrix of all node pairs."
+  ],
+  "correct_citations": []
+}

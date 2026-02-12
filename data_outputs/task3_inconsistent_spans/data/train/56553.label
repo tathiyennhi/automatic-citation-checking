@@ -1,0 +1,22 @@
+{
+  "doc_id": "56553",
+  "text": "The set of attributes included in the private table, also externally available and therefore exploitable for linking, is called quasi-identifier . The requirement abovementioned is then translated in the k-anonymity requirement [CITATION_1] : each release of data must be such that every combination of values of quasi-identifiers can be indistinctly matched to at least k respondents. Since it seems impossible, or highly impractical and limiting, to make assumptions on the datasets available for linking to external attackers or curious data recipients, essentially k-anonymity takes a safe approach requiring that, in the released table itself, the respondents be indistinguishable (within a given set) with respect to a set of attributes. To guarantee the k-anonymity requirement, k-anonymity requires each quasi-identifier value in the released table to have at least k occurrences. This is clearly a sufficient condition for the k-anonymity requirement: if a set of attributes of external tables appears in the quasi-identifier associated with the private table PT, and the table satisfies this condition, the combination of the released data with the external data will never allow the recipient to associate each released tuple with less than k respondents. For instance, with respect to the microdata table in Figure 1 and the quasi-identifier Race, Date of birth, Sex, ZIP, Marital status, the table satisfies k-anonymity with k = 1 only, since there are single occurrences of values over the quasi-identified (e.g., \"asian, 71/07/05, F, 20222, single\").",
+  "correct_citation": {
+    "[CITATION_1]": "561716"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The requirement abovementioned is then translated in the k-anonymity requirement  : each release of data must be such that every combination of values of quasi-identifiers can be indistinctly matched to at least k respondents.",
+      "s_span": 147,
+      "e_span": 385
+    }
+  ],
+  "bib_entries": {
+    "561716": {
+      "title": "Protecting respondents' identities in microdata release",
+      "abstract": "Today's globally networked society places great demands on the dissemination and sharing of information. While in the past released information was mostly in tabular and statistical form, many situations call for the release of specific data (microdata). In order to protect the anonymity of the entities (called respondents) to which information refers, data holders often remove or encrypt explicit identifiers such as names, addresses, and phone numbers. Deidentifying data, however, provides no guarantee of anonymity. Released information often contains other data, such as race, birth date, sex, and ZIP code, that can be linked to publicly available information to reidentify respondents and inferring information that was not intended for disclosure. In this paper we address the problem of releasing microdata while safeguarding the anonymity of respondents to which the data refer. The approach is based on the definition of k-anonymity. A table provides k-anonymity if attempts to link explicitly identifying information to its content map the information to at least k entities. We illustrate how k-anonymity can be provided without compromising the integrity (or truthfulness) of the information released by using generalization and suppression techniques. We introduce the concept of minimal generalization that captures the property of the release process not distorting the data more than needed to achieve k-anonymity, and present an algorithm for the computation of such a generalization. We also discuss possible preference policies to choose among different minimal generalizations."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,47 @@
+{
+  "doc_id": "35626",
+  "text": "This section describes the settings that are shared by all experiments, unless stated otherwise. All networks are trained with the Adam optimizer [CITATION_1] with initial learning rate of 0.0002, β 1 = 0.5, and minibatch size of 100. The learning rate is decreased once by a factor of 10 after iteration 30, 000. Input noise vector z is a 100-dimensional multivariate random variable sampled using an i.i.d. uniform distributed random generator U (−1, 1). Instance noise [CITATION_2] is implemented in all discriminators for better training stability. During magnified learning, all samples are generated at twice as high as the resolution of the non-magnified learning counterparts. For fair comparisons, we run one gradient descent step for each player in each iteration. This usually works better than running more steps of one player than the other [CITATION_3] . In practice, it is very difficult to determine how many more steps to run as the performance is usually inconsistent with the same setting on different datasets. The rest of the settings will be described in other sections. The experiments were conducted using Tensorflow [CITATION_4] with one Titan X (Maxwell) GPU.",
+  "correct_citation": {
+    "[CITATION_1]": "6628106",
+    "[CITATION_2]": "6138149",
+    "[CITATION_3]": "5216145",
+    "[CITATION_4]": "5707386"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "All networks are trained with the Adam optimizer  with initial learning rate of 0.0002, β 1 = 0.5, and minibatch size of 100."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Instance noise  is implemented in all discriminators for better training stability."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "This usually works better than running more steps of one player than the other  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The experiments were conducted using Tensorflow  with one Titan X (Maxwell) GPU."
+    }
+  ],
+  "bib_entries": {
+    "5707386": {
+      "title": "Tensorflow: Large-scale machine learning on heterogeneous distributed systems",
+      "abstract": "TensorFlow is an interface for expressing machine learning algorithms, and an implementation for executing such algorithms. A computation expressed using TensorFlow can be executed with little or no change on a wide variety of heterogeneous systems, ranging from mobile devices such as phones and tablets up to large-scale distributed systems of hundreds of machines and thousands of computational devices such as GPU cards. The system is flexible and can be used to express a wide variety of algorithms, including training and inference algorithms for deep neural network models, and it has been used for conducting research and for deploying machine learning systems into production across more than a dozen areas of computer science and other fields, including speech recognition, computer vision, robotics, information retrieval, natural language processing, geographic information extraction, and computational drug discovery. This paper describes the TensorFlow interface and an implementation of that interface that we have built at Google. The TensorFlow API and a reference implementation were released as an open-source package under the Apache 2.0 license in November, 2015 and are available at www.tensorflow.org."
+    },
+    "5216145": {
+      "title": "Nips 2016 tutorial: Generative adversarial networks",
+      "abstract": "This report summarizes the tutorial presented by the author at NIPS 2016 on generative adversarial networks (GANs). The tutorial describes: (1) Why generative modeling is a topic worth studying, (2) how generative models work, and how GANs compare to other generative models, (3) the details of how GANs work, (4) research frontiers in GANs, and (5) state-of-the-art image models that combine GANs with other methods. Finally, the tutorial contains three exercises for readers to complete, and the solutions to these exercises."
+    },
+    "6628106": {
+      "title": "Adam: A method for stochastic optimization",
+      "abstract": "We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm."
+    },
+    "6138149": {
+      "title": "Amortised map inference for image super-resolution",
+      "abstract": "Image super-resolution (SR) is an underdetermined inverse problem, where a large number of plausible high resolution images can explain the same downsampled image. Most current single image SR methods use empirical risk minimisation, often with a pixel-wise mean squared error (MSE) loss. ::: However, the outputs from such methods tend to be blurry, over-smoothed and generally appear implausible. A more desirable approach would employ Maximum a Posteriori (MAP) inference, preferring solutions that always have a high probability under the image prior, and thus appear more plausible. Direct MAP estimation for SR is non-trivial, as it requires us to build a model for the image prior from samples. Here we introduce new methods for \\emph{amortised MAP inference} whereby we calculate the MAP estimate directly using a convolutional neural network. We first introduce a novel neural network architecture that performs a projection to the affine subspace of valid SR solutions ensuring that the high resolution output of the network is always consistent with the low resolution input. We show that, using this architecture, the amortised MAP inference problem reduces to minimising the cross-entropy between two distributions, similar to training generative models. We propose three methods to solve this optimisation problem: (1) Generative Adversarial Networks (GAN) (2) denoiser-guided SR which backpropagates gradient-estimates from denoising to train the network, and (3) a baseline method using a maximum-likelihood-trained image prior. Our experiments show that the GAN based approach performs best on real image data. Lastly, we establish a connection between GANs and amortised variational inference as in e.g. variational autoencoders."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Meanwhile, S is fed into a multi-channel support Algorithm 1 Condition Adversarial Attacks (based on PGD)Require: train samples:T train = {T i } M train i=1, dev samples: D dev = {D i } M dev i=1, perturbation bound:, ascend steps: K, ascend step size: α, learn rate: τ Initialize θ; begin_attack = False; best_ f 1 = 0;for episode i = 1 to M train do S, Q = T i δ 0 = 1 √ N δ U (-,) g 0 = ∇ δ L f θ (X), y if begin_attack then for t = 1 to K do if t = 1 then back up X param data end if X = X + δ t if t!",
+    "= K then g adv ← 0 else restore X param data end if g (δ t) = ∇ δ L f θ X, y δ t+1 = δ F ≤ δ t + αg (δ t) / g (δ t) F end for restore X param data end if θ ← θ -τ g θ g θ ← 0 if i % eval_step = 0 then f1 = evaluate(D dev) if f 1 > best_ f 1 then best_ f 1 = f 1 else begin_attack = T rue end if end if end forcontrastive learning model to calculate L mss-cl, while Q and the N prototype representations are input into the query-prototype contrastive learning model to calculate L pqcl.",
+    "In the training process of each episode, we also add condition adversarial attacks mechanism, based on its performance in the validation set in the previous episode.Please refer to Algorithm 1 for the detailed process.",
+    "Finally, the total loss of the model consists of focal loss, multi-channels support contrastive loss and prototype-query contrastive loss, as follows:L = L f ocal + αL mss-cl + βL pqcl (24)where the α and β are trade-off parameters to balance the total loss L.123 5 Experimental Setup Datasets FewEventWe conduct experiments on the benchmark dataset FewEventfoot_0 proposed by [4], which is the currently largest and latest few-shot dataset for event detection.",
+    "FewEvent is built from ACE2005, KBP2017 and external knowledge bases like Freebase and Wikipedia, and it contains 70,852 instances for 19 event types graded into 100 event subtypes in total."
+  ],
+  "correct_citations": [
+    "Finally, the total loss of the model consists of focal loss, multi-channels support contrastive loss and prototype-query contrastive loss, as follows:L = L f ocal + αL mss-cl + βL pqcl (24)where the α and β are trade-off parameters to balance the total loss L.123 5 Experimental Setup Datasets FewEventWe conduct experiments on the benchmark dataset FewEventfoot_0 proposed by [4], which is the currently largest and latest few-shot dataset for event detection."
+  ]
+}

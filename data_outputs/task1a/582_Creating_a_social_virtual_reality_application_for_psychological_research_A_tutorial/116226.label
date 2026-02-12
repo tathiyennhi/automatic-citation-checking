@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Here the function merely relays the message to all other clients.",
+    "The script could be extended to act upon the data in the message, e.g., to represent it for a spectator's view of the simulation or to implement its own logfile writing.",
+    "private void OnPlayerStateUpdate(NetworkConnection conn, currentPlayerState msg, Channel channel) { // relay to other players foreach (var client in InstanceFinder.ServerManager.Clients) { // but do not send message back to sender if (client.Value!= conn && client.Value.IsAuthenticated) { InstanceFinder.ServerManager.Broadcast(client.",
+    "Value, msg, true, Channel.Unreliable); } } } ¦ ¥ The relayed message is received on other clients.",
+    "Here the function OnPlayerStateUpdate in the script ClientHandleRe-motePlayers is triggered when a message of the type currentPlayerState is received."
+  ],
+  "correct_citations": []
+}

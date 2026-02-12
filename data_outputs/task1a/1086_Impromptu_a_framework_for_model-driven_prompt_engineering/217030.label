@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "\"Next, we write a prompt to generate the grammar questions:prompt Exam.GrammarQuestions (@level \"English level\"): text core = \"Propose 5 grammar questions for an English exam\", \"Use British English at all times\" weight high suffix = Exam.DetailedInstructions(@level)The following prompts generate an image of an animal and a set of questions about that image: prompt GenerateImage ( @animal \"Name of an animal\"): image core = \"Image of \", @animal, \" in its natural habitat\" traits = quality(high), art_formprompt ImageQuestions ( $image \"Image\", @animal \"Animal appearing in the image\", @level \"English level)\": text core = \"Propose 5 questions for an English course regarding the picture of \", @animal suffix = Exam.DetailedInstructions(@level) composer CompleteExam ( @grammar \"Grammar questions\", @questions \"Questions about the image\") \"Answer the following questions:\\n\", @grammar, \"(50%)\\n\", @questions, \"(50%)\\n\" Choose the correct form of the verb to complete the sentence: \"He ____ to London last week.\"",
+    "Select the appropriate word to complete the sentence: \"I have ____ interesting book to read.",
+    "\"Finally, we define the complete chain as follows:chain GenerateExam( @level \"English level\", @animal \"Animal in the image\"): text @q1 = GrammarQuestions(@level) $img = GenerateImage(@animal) @q2 = ImageQuestions($img, @animal, @level) result = CompleteExam(@q1,@q2)For a B1 (intermediate) level of English, we show a snippet of ChatGPT's output to the GrammarQuestions prompt:Choose the correct form of the verb to complete the sentence: \"He ____ to London last week.",
+    "\"Select the appropriate word to complete the sentence: \"I have ____ interesting book to read.\"",
+    "ImplementationAs a prototype, we have implemented an editor for the Impromptu DSL as a Visual Studio Code extension [62]."
+  ],
+  "correct_citations": [
+    "ImplementationAs a prototype, we have implemented an editor for the Impromptu DSL as a Visual Studio Code extension [62]."
+  ]
+}

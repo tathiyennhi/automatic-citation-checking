@@ -1,0 +1,77 @@
+{
+  "text": "Our base model is an encoder-decoder model with attention , implemented using gated recurrent units (GRUs) . We use a four-layer model in our experiments. Similar to [CITATION_1] and [CITATION_2] , we use bidirectional units to encode the source sequence. Bidirectional GRUs are placed only at the input layer. The forward GRU reads the input sequence in its original order and the backward GRU reads the input in the reverse order. Each hidden state of the encoder in one time step is a concatenation of the forward and backward states at the same time step. This type of bidirectional processing provides a richer representation of the input sequence.",
+  "citation_candidates": [
+    "11080756",
+    "3603249",
+    "2838374",
+    "2863491",
+    "1245593",
+    "6628106",
+    "15119437",
+    "15961108",
+    "6881637",
+    "13495961",
+    "11391667",
+    "29180066",
+    "686481",
+    "6949337"
+  ],
+  "bib_entries": {
+    "13495961": {
+      "title": "A character-level decoder without explicit segmentation for neural machine translation",
+      "abstract": "The existing machine translation systems, whether phrase-based or neural, have relied almost exclusively on word-level modelling with explicit segmentation. In this paper, we ask a fundamental question: can neural machine translation generate a character sequence without any explicit segmentation? To answer this question, we evaluate an attention-based encoder-decoder with a subword-level encoder and a character-level decoder on four language pairs--En-Cs, En-De, En-Ru and En-Fi-- using the parallel corpora from WMT'15. Our experiments show that the models with a character-level decoder outperform the ones with a subword-level decoder on all of the four language pairs. Furthermore, the ensembles of neural models with a character-level decoder outperform the state-of-the-art non-neural machine translation systems on En-Cs, En-De and En-Fi and perform comparably on En-Ru."
+    },
+    "6949337": {
+      "title": "Factored neural machine translation",
+      "abstract": "We present a new approach for neural machine translation (NMT) using the morphological and grammatical decomposition of the words (factors) in the output side of the neural network. This architecture addresses two main problems occurring in MT, namely dealing with a large target language vocabulary and the out of vocabulary (OOV) words. By the means of factors, we are able to handle larger vocabulary and reduce the training time (for systems with equivalent target language vocabulary size). In addition, we can produce new words that are not in the vocabulary. We use a morphological analyser to get a factored representation of each word (lemmas, Part of Speech tag, tense, person, gender and number). We have extended the NMT approach with attention mechanism in order to have two different outputs, one for the lemmas and the other for the rest of the factors. The final translation is built using some \\textit{a priori} linguistic information. We compare our extension with a word-based NMT system. The experiments, performed on the IWSLT'15 dataset translating from English to French, show that while the performance do not always increase, the system can manage a much larger vocabulary and consistently reduce the OOV rate. We observe up to 2% BLEU point improvement in a simulated out of domain translation setup."
+    },
+    "2863491": {
+      "title": "On using very large target vocabulary for neural machine translation",
+      "abstract": "Neural machine translation, a recently proposed approach to machine translation based purely on neural networks, has shown promising results compared to the existing approaches such as phrase-based statistical machine translation. Despite its recent success, neural machine translation has its limitation in handling a larger vocabulary, as training complexity as well as decoding complexity increase proportionally to the number of target words. In this paper, we propose a method based on importance sampling that allows us to use a very large target vocabulary without increasing training complexity. We show that decoding can be efficiently done even with the model having a very large target vocabulary by selecting only a small subset of the whole target vocabulary. The models trained by the proposed approach are empirically found to outperform the baseline models with a small vocabulary as well as the LSTM-based neural machine translation models. Furthermore, when we use the ensemble of a few models with very large target vocabularies, we achieve the state-of-the-art translation performance (measured by BLEU) on the English!German translation and almost as high performance as state-of-the-art English!French translation system."
+    },
+    "1245593": {
+      "title": "Addressing the rare word problem in neural machine translation",
+      "abstract": "Neural Machine Translation (NMT) is a new approach to machine translation that has shown promising results that are comparable to traditional approaches. A significant weakness in conventional NMT systems is their inability to correctly translate very rare words: end-to-end NMTs tend to have relatively small vocabularies with a single unk symbol that represents every possible out-of-vocabulary (OOV) word. In this paper, we propose and implement an effective technique to address this problem. We train an NMT system on data that is augmented by the output of a word alignment algorithm, allowing the NMT system to emit, for each OOV word in the target sentence, the position of its corresponding word in the source sentence. This information is later utilized in a post-processing step that translates every OOV word using a dictionary. Our experiments on the WMT\u201914 English to French translation task show that this method provides a substantial improvement of up to 2.8 BLEU points over an equivalent NMT system that does not use this technique. With 37.5 BLEU points, our NMT system is the first to surpass the best result achieved on a WMT\u201914 contest task."
+    },
+    "686481": {
+      "title": "Character-aware neural language models",
+      "abstract": "We describe a simple neural language model that relies only on character-level inputs. Predictions are still made at the word-level. Our model employs a convolutional neural network (CNN) and a highway network over characters, whose output is given to a long short-term memory (LSTM) recurrent neural network language model (RNN-LM). On the English Penn Treebank the model is on par with the existing state-of-the-art despite having 60% fewer parameters. On languages with rich morphology (Arabic, Czech, French, German, Spanish, Russian), the model outperforms word-level/morpheme-level LSTM baselines, again with fewer parameters. The results suggest that on many languages, character inputs are sufficient for language modeling. Analysis of word representations obtained from the character composition part of the model reveals that the model is able to encode, from characters only, both semantic and orthographic information."
+    },
+    "3603249": {
+      "title": "Google's neural machine translation system: Bridging the gap between human and machine translation",
+      "abstract": "Neural Machine Translation (NMT) is an end-to-end learning approach for automated translation, with the potential to overcome many of the weaknesses of conventional phrase-based translation systems. Unfortunately, NMT systems are known to be computationally expensive both in training and in translation inference. Also, most NMT systems have difficulty with rare words. These issues have hindered NMT's use in practical deployments and services, where both accuracy and speed are essential. In this work, we present GNMT, Google's Neural Machine Translation system, which attempts to address many of these issues. Our model consists of a deep LSTM network with 8 encoder and 8 decoder layers using attention and residual connections. To improve parallelism and therefore decrease training time, our attention mechanism connects the bottom layer of the decoder to the top layer of the encoder. To accelerate the final translation speed, we employ low-precision arithmetic during inference computations. To improve handling of rare words, we divide words into a limited set of common sub-word units (\"wordpieces\") for both input and output. This method provides a good balance between the flexibility of \"character\"-delimited models and the efficiency of \"word\"-delimited models, naturally handles translation of rare words, and ultimately improves the overall accuracy of the system. Our beam search technique employs a length-normalization procedure and uses a coverage penalty, which encourages generation of an output sentence that is most likely to cover all the words in the source sentence. On the WMT'14 English-to-French and English-to-German benchmarks, GNMT achieves competitive results to state-of-the-art. Using a human side-by-side evaluation on a set of isolated simple sentences, it reduces translation errors by an average of 60% compared to Google's phrase-based production system."
+    },
+    "11391667": {
+      "title": "Attention-based multimodal neural machine translation",
+      "abstract": "We present a novel neural machine translation (NMT) architecture associating visual and textual features for translation tasks with multiple modalities. Transformed global and regional visual features are concatenated with text to form attendable sequences which are dissipated over parallel long short-term memory (LSTM) threads to assist the encoder generating a representation for attention-based decoding. Experiments show that the proposed NMT outperform the text-only baseline."
+    },
+    "6881637": {
+      "title": "Doubly-attentive decoder for multi-modal neural machine translation",
+      "abstract": "We introduce a Multi-modal Neural Machine Translation model in which a doubly-attentive decoder naturally incorporates spatial visual features obtained using pre-trained convolutional neural networks, bridging the gap between image description and translation. Our decoder learns to attend to source-language words and parts of an image independently by means of two separate attention mechanisms as it generates words in the target language. We find that our model can efficiently exploit not just back-translated in-domain multi-modal data but also large general-domain text-only MT corpora. We also report state-of-the-art results on the Multi30k data set."
+    },
+    "6628106": {
+      "title": "Adam: A method for stochastic optimization",
+      "abstract": "We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm."
+    },
+    "29180066": {
+      "title": "Opensubtitles2016: Extracting large parallel corpora from movie and TV subtitles",
+      "abstract": "We present a new major release of the OpenSubtitles collection of parallel corpora. The release is compiled from a large database of movie and TV subtitles and includes a total of 1689 bitexts spanning 2.6 billion sentences across 60 languages. The release also incorporates a number of enhancements in the preprocessing and alignment of the subtitles, such as the automatic correction of OCR errors and the use of meta-data to estimate the quality of each subtitle and score subtitle pairs."
+    },
+    "2838374": {
+      "title": "Compositional morphology for word representations and language modelling",
+      "abstract": "This paper presents a scalable method for integrating compositional morphological representations into a vector-based probabilistic language model. Our approach is evaluated in the context of log-bilinear language models, rendered suitably efficient for implementation inside a machine translation decoder by factoring the vocabulary. We perform both intrinsic and extrinsic evaluations, presenting results on a range of languages which demonstrate that our model learns morphological representations that both perform well on word similarity tasks and lead to substantial reductions in perplexity. When used for translation into morphologically rich languages with large vocabularies, our models obtain improvements of up to 1.2 BLEU points relative to a baseline system using back-off n-gram models."
+    },
+    "15961108": {
+      "title": "Morfessor 2.0: Toolkit for statistical morphological segmentation",
+      "abstract": "Morfessor is a family of probabilistic machine learning methods for finding the morphological segmentation from raw text data. Recent developments include the development of semi-supervised methods for utilizing annotated data. Morfessor 2.0 is a rewrite of the original, widely-used Morfessor 1.0 software, with well documented command-line tools and library interface. It includes new features such as semi-supervised learning, online training, and integrated evaluation code."
+    },
+    "11080756": {
+      "title": "BLEU: a method for automatic evaluation of machine translation",
+      "abstract": "Human evaluations of machine translation are extensive but expensive. Human evaluations can take months to finish and involve human labor that can not be reused. We propose a method of automatic machine translation evaluation that is quick, inexpensive, and language-independent, that correlates highly with human evaluation, and that has little marginal cost per run. We present this method as an automated understudy to skilled human judges which substitutes for them when there is need for quick or frequent evaluations."
+    },
+    "15119437": {
+      "title": "Statistical significance tests for machine translation evaluation",
+      "abstract": "If two translation systems differ differ in performance on a test set, can we trust that this indicates a difference in true system quality? To answer this question, we describe bootstrap resampling methods to compute statistical significance of test results, and validate them on the concrete example of the BLEU score. Even for small test sizes of only 300 sentences, our methods may give us assurances that test result differences are real."
+    }
+  }
+}

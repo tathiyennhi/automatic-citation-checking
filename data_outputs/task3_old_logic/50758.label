@@ -1,0 +1,29 @@
+{
+  "doc_id": "50758",
+  "text": "We observe that with different number of gradient checkpoints, PipeMare with recompute can match the model accuracy attained by PipeMare without recompute. This indicates that recompute can significantly save the memory for storing activations with minimal influence on the attained model accuracy. Figure 18 : The statistical performance of recompute with different number gradient checkpoints on IWSLT. We observed in the left plot that when only using learning rate rescheduling (T1) without discrepancy correction, recompute can unstable training with 2 and 12 gradient checkpoints. After applying discrepancy correction (T2) in the middle and right plots, we observe that with different number of gradient checkpoints, PipeMare with recompute can match the model accuracy attained by PipeMare without recompute. This indicates the importance of discrepancy correction to attaining stable recompute in PipeMare. where w t ∈ R d is the model iterate while ∇f t (W t ) is the stochastic estimate of the gradient ∇f (w t ) at time step t. The τ t here is a random variable describing the delay of the gradient; this random variable can model the delay of gradients due to the network transmission in distributed asynchronous training [CITATION_1] or asynchronous model update in the shared memory settings [CITATION_2] . We consider a variant of the original Hogwild!-style asynchrony model with different delays for different stages; this stage specific gradient delay setting is studied in our fixed delay asynchronous pipeline training in Section 3. In particular, the model update for each stage can be characterized by",
+  "correct_citation": {
+    "[CITATION_1]": "10464397",
+    "[CITATION_2]": "6108215"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The τ t here is a random variable describing the delay of the gradient; this random variable can model the delay of gradients due to the network transmission in distributed asynchronous training"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The τ t here is a random variable describing the delay of the gradient; this random variable can model the delay of gradients due to the network transmission in distributed asynchronous training or asynchronous model update in the shared memory settings"
+    }
+  ],
+  "bib_entries": {
+    "6108215": {
+      "title": "Hogwild: A lock-free approach to parallelizing stochastic gradient descent",
+      "abstract": "Stochastic Gradient Descent (SGD) is a popular algorithm that can achieve state-of-the-art performance on a variety of machine learning tasks. Several researchers have recently proposed schemes to parallelize SGD, but all require performance-destroying memory locking and synchronization. This work aims to show using novel theoretical analysis, algorithms, and implementation that SGD can be implemented without any locking. We present an update scheme called HOGWILD! which allows processors access to shared memory with the possibility of overwriting each other's work. We show that when the associated optimization problem is sparse, meaning most gradient updates only modify small parts of the decision variable, then HOGWILD! achieves a nearly optimal rate of convergence. We demonstrate experimentally that HOGWILD! outperforms alternative schemes that use locking by an order of magnitude."
+    },
+    "10464397": {
+      "title": "Deep learning at 15pf: supervised and semi-supervised classification for scientific data",
+      "abstract": "This paper presents the first, 15-PetaFLOP Deep Learning system for solving scientific pattern classification problems on contemporary HPC architectures. We develop supervised convolutional architectures for discriminating signals in high-energy physics data as well as semi-supervised architectures for localizing and classifying extreme weather in climate data. Our Intelcaffe-based implementation obtains $\\sim$2TFLOP/s on a single Cori Phase-II Xeon-Phi node. We use a hybrid strategy employing synchronous node-groups, while using asynchronous communication across groups. We use this strategy to scale training of a single model to $\\sim$9600 Xeon-Phi nodes; obtaining peak performance of 11.73-15.07 PFLOP/s and sustained performance of 11.41-13.27 PFLOP/s. At scale, our HEP architecture produces state-of-the-art classification accuracy on a dataset with 10M images, exceeding that achieved by selections on high-level physics-motivated features. Our semi-supervised architecture successfully extracts weather patterns in a 15TB climate dataset. Our results demonstrate that Deep Learning can be optimized and scaled effectively on many-core, HPC systems."
+    }
+  },
+  "generator": "fallback"
+}

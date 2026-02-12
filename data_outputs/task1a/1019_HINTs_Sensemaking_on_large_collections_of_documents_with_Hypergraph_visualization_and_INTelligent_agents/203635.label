@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "However, our task is more complicated because the prompt needs to (1) consider the hierarchical structure, and (2) be able to process large clusters containing thousands of documents without breaking the token limit.Our topic label generation follows a bottom-up approach: (1) At the bottom level (one level above the leaf nodes), assign topic labels to the clusters using the document summaries.",
+    "The bottom-level clusters usually contain only a few documents, so the token limit is unlikely to be exceeded.",
+    "We insert the summaries generated in Subsubsection IV-A1 into the prompt, then instruct the LLM to generate a label composed of a single noun phrase for the given documents.",
+    "(2) At any level above, the cluster size increases quickly and the token limit is likely to be exceeded.",
+    "We thus assign labels to the clusters using the labels of their children and randomly sampled document summaries."
+  ],
+  "correct_citations": []
+}

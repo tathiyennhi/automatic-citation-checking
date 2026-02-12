@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Algorithm II presents the pseudo-code of the Data Sharing Phase of the proposed scheme.Algorithm 2 EMR data sharing AnalysisIn this section, the performance and security evaluations of the proposed scheme are given.",
+    "Block sizes, block creation times, memory usages, and number of operations were used as performance evaluation parameters.",
+    "The entities included in the architecture of the proposed scheme were compared to those reported in studies in the literature for security evaluations.1: Receive a new message request message from a third party entity request message = {e id, message, messageHash (e id) privateKey } 2: if e id is available in the policy list then 3: Get the public key of the third party entity (by the patient) -→ P K e id = (e id) publicKey 4: else 5: break; 6: end if 7: if Hash(message) == messageHash P Ke id then 8: evaluate the request 9: else 10: break; 11: end if 12: if request is approved (by the patient) then 13: Send approved message from the patient to the third party entity -→ approved message = {p (id publicKey) P Ke id } 14: else 15: break; 16: end if 17: Decrypt the p (id publicKey) P Ke id by using (e id) privateKey by the third-party entity -→ p id publicKey = (p (id publicKey) privateKey) P Ke id 18: Decrypt the encrypted storage list saved in the blockchain -→ storagelist = encrpytedStorageList p id publicKey 19: Get encrypted patient's EMR fragments and symmetric encryption keys (by the third party entity) 20: Decrypt encrypted fragments by using symmetric encryption keys -→ f ragment i = encrpyted f ragment (i)secretKey i 21: Merge the fragments in the defragmentation process 22: for i ← 0, count(fragments) do 23:EM R p id + = mergeF ile(f ragment i) 24: end for 25: Result ← EM R p id (by the third party entity) Performance evaluationIn the study, blocks are created using PoW, PoS, and PoA consensus mechanisms, respectively.",
+    "These mechanisms are compared to each other in terms of block sizes, block creation times, memory usages, and number of operations.",
+    "The consensus mechanisms are written in Java, and the results are obtained using a computer with an i7-7700 HQ CPU, a 2.80GHz processor, and 16 GB RAM."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "27940",
+  "text": "Recent work by McDowell et al. found that neighbor attributes can improve classification accuracy. In addition to these types of features, we also investigate using graph features such as the frequency of 4-cliques centered on a vertex (edge) for improving relational learning tasks. For instance, motifs of size k=4 and greater are computed using the recent graphlet decomposition algorithm proposed in [CITATION_1] . We also investigated other graph features including community label, betweenness, eccentricity, mean distance, k-core numbers, color class, PageRank, triangle counts, clustering coef., degree, roles. A key finding of these experiments is that the structural features alone may significantly improve predictive performance. This result implies that the connectivity of the graph gives rise to graph motif patterns that are correlated with the different node labels. For instance, suppose a web page representing a Figure 5 : The proposed relational learning framework is not only fast and accurate, but also flexible. This gives the user the ability to interactively learn models in real-time and adjust them accordingly, as well as tune parameters, explore/construct features, among many other possibilities. In the screenshot above (from soc-terror), the user interactively learns a global model (see the leftmost black side panel for stats and accuracy), and then selects a subgraph H by visually selecting nodes and edges with a simple and intuitive drag-of-the-mouse/gesture. From this selected subgraph (in real-time), a local RSM model is learned for H and stats and accuracy (using same k-fold CV) are reported in the red side panel on the left side. Node color represents the class label (terrorist/normal), whereas the link color encodes the number of 3-star graphlet patterns centered at each edge (both can be adapted in real-time by the user). The weight (or strength) of the nodes and links represent the local max k-core number and triangle counts, respectively. node in a web graph forms a large number of 3-star motifs, then this node is likely to be a malicious page (spammer).",
+  "correct_citation": {
+    "[CITATION_1]": "11482293"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For instance, motifs of size k=4 and greater are computed using the recent graphlet decomposition algorithm proposed in  .",
+      "s_span": 284,
+      "e_span": 418
+    }
+  ],
+  "bib_entries": {
+    "11482293": {
+      "title": "Efficient graphlet counting for large networks",
+      "abstract": "From social science to biology, numerous applications often rely on graphlets for intuitive and meaningful characterization of networks at both the global macro-level as well as the local micro-level. While graphlets have witnessed a tremendous success and impact in a variety of domains, there has yet to be a fast and efficient approach for computing the frequencies of these subgraph patterns. However, existing methods are not scalable to large networks with millions of nodes and edges, which impedes the application of graphlets to new problems that require large-scale network analysis. To address these problems, we propose a fast, efficient, and parallel algorithm for counting graphlets of size k={3,4}-nodes that take only a fraction of the time to compute when compared with the current methods used. The proposed graphlet counting algorithms leverages a number of proven combinatorial arguments for different graphlets. For each edge, we count a few graphlets, and with these counts along with the combinatorial arguments, we obtain the exact counts of others in constant time. On a large collection of 300+ networks from a variety of domains, our graphlet counting strategies are on average 460x faster than current methods. This brings new opportunities to investigate the use of graphlets on much larger networks and newer applications as we show in the experiments. To the best of our knowledge, this paper provides the largest graphlet computations to date as well as the largest systematic investigation on over 300+ networks from a variety of domains."
+    }
+  },
+  "generator": "fallback_v4"
+}

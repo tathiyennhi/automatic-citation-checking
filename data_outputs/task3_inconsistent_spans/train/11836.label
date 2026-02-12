@@ -1,0 +1,107 @@
+{
+  "doc_id": "11836",
+  "text": "Technical approach. It is easy to see that from randomness-recovering ECCA-secure encryption we can get an ATDF, simply by viewing the input to the trapdoor function as consisting of the message and the coins for the encryption scheme. The other direction is more challenging. To see why, recall that [CITATION_1] constructs CCA-secure encryption from a ATDFs in the following manner: first, they construct, a onebit CCA-secure encryption scheme and then apply a transform of Myers and shelat [CITATION_2] from one-bit to many-bit CCA-secure encryption. But the one-bit scheme of [CITATION_3] -which works by re-sampling a domain point x until the hardcore bit of x equals the message -is not randomness-recovering, since decryption does not recover the \"thrown away\" x's. 3 Furthermore, even if it was, the construction of many-bit CCA-secure encryption in [CITATION_4] does not seem to preserve either randomness-recovery or ECCA-security of the one-bit scheme. (In particular, the construction of [CITATION_5] uses an \"inner,\" \"q-bounded\" non-malleable encryption scheme, and we do not know how to construct such a scheme that has analogous \"enhanced\" security.) We solve both these problems at once via a novel application of detectable CCA (DCCA) security, introduced very recently by Hohenberger et al. [CITATION_6] . Informally, DCCA is defined relative to a \"detecting\" function F that determines whether two ciphertexts are related; in the DCCA experiment, the adversary is not allowed to ask for decryptions of ciphertexts related to the challenge ciphertext according to F. The work of [CITATION_7] shows how to construct a CCA-secure encryption from a DCCA-secure one. In particular, bit-by-bit encryption using a 1-bit CCA secure encryption scheme is easily seen to be DCCA secure, is the main application considered in [CITATION_8] . (It thus encompasses the earlier work of [CITATION_9] and builds on the techniques of the latter.) Our novelty is that we construct a DCCA secure scheme from ATDFs that also uses bit-by-bit encryption, but where the underlying one-bit encryption scheme is not CCA securenamely, we use a \"naïve\" one-bit scheme from ATDFs that simply XOR's the message bit with a hardcore bit of the ATDF. The benefit is that this one-bit scheme is randomness recovering. We show that in fact the resulting bit-by-bit scheme now satisfies a notion of DCCA with analogous \"enhanced\" security. Then, we show that (in contrast to [CITATION_10] ) the construction of CCA from DCCA in [CITATION_11] preserves both this enhanced security as well as randomness recovery -that is, if we start with a randomness-recovering, enhanced DCCA secure scheme, we end up with a randomness-recovering ECCA secure one. We thus get a randomness-recovering ECCA secure scheme from ATDFs as desired. We note that a by-product of our results is to show that, complementing [CITATION_12] , one-bit encryption is also complete for randomness-recovering CCA and ECCA.",
+  "correct_citation": {
+    "[CITATION_1]": "10388650",
+    "[CITATION_2]": "14189108",
+    "[CITATION_3]": "10388650",
+    "[CITATION_4]": "14189108",
+    "[CITATION_5]": "14189108",
+    "[CITATION_6]": "3148885",
+    "[CITATION_7]": "3148885",
+    "[CITATION_8]": "3148885",
+    "[CITATION_9]": "14189108",
+    "[CITATION_10]": "14189108",
+    "[CITATION_11]": "3148885",
+    "[CITATION_12]": "14189108"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To see why, recall that  constructs CCA-secure encryption from a ATDFs in the following manner: first, they construct, a onebit CCA-secure encryption scheme and then apply a transform of Myers and shelat  from one-bit to many-bit CCA-secure encryption.",
+      "s_span": 277,
+      "e_span": 553
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "To see why, recall that  constructs CCA-secure encryption from a ATDFs in the following manner: first, they construct, a onebit CCA-secure encryption scheme and then apply a transform of Myers and shelat  from one-bit to many-bit CCA-secure encryption.",
+      "s_span": 277,
+      "e_span": 553
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "scheme and then apply a transform of Myers and shelat  from one-bit to many-bit CCA-secure encryption. But the one-bit scheme of  -which works by re-sampling a domain point x until the hardcore bit of x equals the message -is not randomness-recovering, since",
+      "s_span": 438,
+      "e_span": 722
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "since decryption does not recover the \"thrown away\" x's. 3 Furthermore, even if it was, the construction of many-bit CCA-secure encryption in  does not seem to preserve either randomness-recovery or ECCA-security of the one-bit scheme. (In particular, the construction of",
+      "s_span": 715,
+      "e_span": 1000
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "in  does not seem to preserve either randomness-recovery or ECCA-security of the one-bit scheme. (In particular, the construction of  uses an \"inner,\" \"q-bounded\" non-malleable encryption scheme, and we do not know how to construct such a scheme that has analogous",
+      "s_span": 854,
+      "e_span": 1144
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "We solve both these problems at once via a novel application of detectable CCA (DCCA) security, introduced very recently by Hohenberger et al.  . Informally, DCCA is defined relative to a \"detecting\" function F that determines whether two ciphertexts are related; in the DCCA",
+      "s_span": 1165,
+      "e_span": 1454
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Informally, DCCA is defined relative to a \"detecting\" function F that determines whether two ciphertexts are related; in the DCCA experiment, the adversary is not allowed to ask for decryptions of ciphertexts related to the challenge ciphertext according to F. The work of  shows how to construct a CCA-secure encryption from a DCCA-secure one.",
+      "s_span": 1324,
+      "e_span": 1680
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "particular, bit-by-bit encryption using a 1-bit CCA secure encryption scheme is easily seen to be DCCA secure, is the main application considered in  . (It thus encompasses the earlier work of  and builds on the techniques of the latter.) Our novelty is that we construct a",
+      "s_span": 1683,
+      "e_span": 1982
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "encryption scheme is easily seen to be DCCA secure, is the main application considered in  . (It thus encompasses the earlier work of  and builds on the techniques of the latter.) Our novelty is that we construct a DCCA secure scheme from ATDFs that also uses bit-by-bit",
+      "s_span": 1742,
+      "e_span": 2038
+    },
+    {
+      "citation_id": "[CITATION_10]",
+      "span_text": "Then, we show that (in contrast to  ) the construction of CCA from DCCA in  preserves both this enhanced security as well as randomness recovery -that is, if we start with a randomness-recovering, enhanced DCCA secure scheme, we end up with a randomness-recovering ECCA secure one.",
+      "s_span": 2422,
+      "e_span": 2729
+    },
+    {
+      "citation_id": "[CITATION_11]",
+      "span_text": "Then, we show that (in contrast to  ) the construction of CCA from DCCA in  preserves both this enhanced security as well as randomness recovery -that is, if we start with a randomness-recovering, enhanced DCCA secure scheme, we end up with a randomness-recovering ECCA secure one.",
+      "s_span": 2422,
+      "e_span": 2729
+    },
+    {
+      "citation_id": "[CITATION_12]",
+      "span_text": "We note that a by-product of our results is to show that, complementing  , one-bit encryption is also complete for randomness-recovering CCA and ECCA.",
+      "s_span": 2808,
+      "e_span": 2971
+    }
+  ],
+  "bib_entries": {
+    "10388650": {
+      "title": "Adaptive trapdoor functions and chosen-ciphertext security",
+      "abstract": "We introduce the notion of adaptive trapdoor functions (ATDFs); roughly, ATDFs remain one-way even when the adversary is given access to an inversion oracle. Our main application is the black-box construction of chosen-ciphertext secure public-key encryption (CCA-secure PKE). Namely, we give a black-box construction of CCA-Secure PKE from ATDFs, as well as a construction of ATDFs from correlation-secure TDFs introduced by Rosen and Segev (TCC ’09). Moreover, by an extension of a recent result of Vahlis (TCC ’10), we show that ATDFs are strictly weaker than the latter (in a black-box sense). Thus, adaptivity appears to be the weakest condition on a TDF currently known to yield the first implication. ::: ::: We also give a black-box construction of CCA-secure PKE from a natural extension of ATDFs we call tag-based ATDFs that, when applied to our constructions of the latter from either correlation-secure TDFs, or lossy TDFs introduced by Peikert and Waters (STOC ’08), yield precisely the CCA-secure PKE schemes in these works. This helps to unify and clarify their schemes. Finally, we show how to realize tag-based ATDFs from an assumption on RSA inversion not known to yield correlation-secure TDFs."
+    },
+    "14189108": {
+      "title": "Bit encryption is complete",
+      "abstract": "Under CPA and CCA1 attacks, a secure bit encryption scheme can be applied bit-by-bit to construct a secure many-bit encryption scheme. The same construction fails, however, under a CCA2 attack. In fact, since the notion of CCA2 security was introduced by Rackoff and Simon~\\cite{RackoffSi92}, it has been an open question to determine whether single bit CCA2 secure encryption implies the existence of many-bit CCA2 security. We positively resolve this long-standing question and establish that bit encryption is complete for CPA, CCA1, and CCA2 notions. Our construction is black-box, and thus requires novel techniques to avoid known impossibility results concerning trapdoor predicates~\\cite{GMR}. To the best of our knowledge, our work is also the first example of a non-shielding reduction (introduced in~\\cite{GMM07}) in the standard (i.e., not random-oracle) model."
+    },
+    "3148885": {
+      "title": "Detecting dangerous queries: A new approach for chosen ciphertext security",
+      "abstract": "We present a new approach for creating chosen ciphertext secure encryption. The focal point of our work is a new abstraction that we call Detectable Chosen Ciphertext Security (DCCA). Intuitively, this notion is meant to capture systems that are not necessarily chosen ciphertext attack (CCA) secure, but where we can detect whether a certain query CT can be useful for decrypting (or distinguishing) a challenge ciphertext CT*. ::: ::: We show how to build chosen ciphertext secure systems from DCCA security. We motivate our techniques by describing multiple examples of DCCA systems including creating them from 1-bit CCA secure encryption -- capturing the recent Myers-shelat result (FOCS 2009). Our work identifies DCCA as a new target for building CCA secure systems."
+    }
+  },
+  "generator": "fallback_v4"
+}

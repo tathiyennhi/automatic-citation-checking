@@ -1,0 +1,32 @@
+{
+  "text": "Other related work includes Wang et al. [CITATION_1] , where the relative entropy measure (Kullback-Leibler divergence) is used to find a similarity transformation between two point-sets under rigid transformation. In Jian et al. [CITATION_2] and Roy et al. [CITATION_3] , nonrigid registration is between pairs of data sets using L2 distance on a mixture of Gaussians model of the data sets. Both methods, however, have not been extended to the problem of unbiased simultaneous matching of multiple point-sets being addressed in this paper. Recently, in [CITATION_4] , Glaunes et al. represent points as delta functions and match them using the dual norm in a reproducing kernel Hilbert space. The resulting 3D spatial integral is difficult to compute numerically. Similarly, the JS divergence proposed earlier [CITATION_5] was estimated using the law of large numbers, making it computationally expensive.",
+  "correct_citation": {
+    "[CITATION_1]": "1801909",
+    "[CITATION_2]": "1272461",
+    "[CITATION_3]": "6354205",
+    "[CITATION_4]": "122849986",
+    "[CITATION_5]": "37670699"
+  },
+  "bib_entries": {
+    "6354205": {
+      "title": "Deformable density matching for 3d nonrigid registration of shapes",
+      "abstract": "There exists a large body of literature on shape matching and registration in medical image analysis. However, most of the previous work is focused on matching particular sets of features--point-sets, lines, curves and surfaces. In this work, we forsake specific geometric shape representations and instead seek probabilistic representations-- specifically Gaussian mixture models--of shapes. We evaluate a closed-form distance between two probabilistic shape representations for the general case where the mixture models differ in variance and the number of components. We then cast non-rigid registration as a deformable density matching problem. In our approach, we take one mixture density onto another by deforming the component centroids via a thin-plate spline (TPS) and also minimizing the distance with respect to the variance parameters. We validate our approach on synthetic and 3D arterial tree data and evaluate it on 3D hippocampal shapes."
+    },
+    "122849986": {
+      "title": "Diffeomorphic matching of distributions: A new approach for unlabelled point-sets and sub-manifolds matching",
+      "abstract": "In the paper, we study the problem of optimal matching of two generalized functions (distributions) via a diffeomorphic transformation of the ambient space. In the particular case of discrete distributions (weighted sums of Dirac measures), we provide a new algorithm to compare two arbitrary unlabelled sets of points, and show that it behaves properly in limit of continuous distributions on sub-manifolds. As a consequence, the algorithm may apply to various matching problems, such as curve or surface matching (via a sub-sampling), or mixings of landmark and curve data. As the solution forbids high energy solutions, it is also robust towards addition of noise and the technique can be used for nonlinear projection of datasets. We present 2D and 3D experiments."
+    },
+    "1272461": {
+      "title": "A robust algorithm for point set registration using mixture of gaussians",
+      "abstract": "This paper proposes a novel and robust approach to the point set registration problem in the presence of large amounts of noise and outliers. Each of the point sets is represented by a mixture of Gaussians and the point set registration is treated as a problem of aligning the two mixtures. We derive a closed-form expression for the L/sub 2/distance between two Gaussian mixtures, which in turn leads to a computationally efficient registration algorithm. This new algorithm has an intuitive interpretation, is simple to implement and exhibits inherent statistical robustness. Experimental results indicate that our algorithm achieves very good performance in terms of both robustness and accuracy."
+    },
+    "37670699": {
+      "title": "Simultaneous nonrigid registration of multiple point sets and atlas construction",
+      "abstract": "Estimating a meaningful average or mean shape from a set of shapes represented by unlabeled point-sets is a challenging problem since, usually this involves solving for point correspondence under a non-rigid motion setting. In this paper, we propose a novel and robust algorithm that is capable of simultaneously computing the mean shape from multiple unlabeled point-sets (represented by finite mixtures) and registering them nonrigidly to this emerging mean shape. This algorithm avoids the correspondence problem by minimizing the Jensen-Shannon (JS) divergence between the point sets represented as finite mixtures. We derive the analytic gradient of the cost function namely, the JS-divergence, in order to efficiently achieve the optimal solution. The cost function is fully symmetric with no bias toward any of the given shapes to be registered and whose mean is being sought. Our algorithm can be especially useful for creating atlases of various shapes present in images as well as for simultaneously (rigidly or non-rigidly) registering 3D range data sets without having to establish any correspondence. We present experimental results on non-rigidly registering 2D as well as 3D real data (point sets)."
+    },
+    "1801909": {
+      "title": "Information-theoretic matching of two point sets",
+      "abstract": "This paper describes the theoretic roadmap of least relative entropy matching of two point sets. The novel feature is to align two point sets without needing to establish explicit point correspondences. The recovery of transformational geometry is achieved using a mixture of principal axes registrations, whose parameters are estimated by minimizing the relative entropy between the two point distributions and using the expectation-maximization algorithm. We give evidence of the optimality of the method and we then evaluate the algorithm's performance in both rigid and nonrigid image registration cases."
+    }
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "text": "Training the three models, and calculating the marginals, now has a grammar constant equal to the number of non-terminals in the grammar, which is far more manageable. We use the algorithm described in [CITATION_1] to train the conditional log-linear model; this method was found to converge to a good model after 10 iterations over the training data.",
+  "citation_candidates": [
+    "1471139",
+    "8313435",
+    "277918",
+    "3066240",
+    "12926517",
+    "1131864",
+    "11599080",
+    "5897173",
+    "802998",
+    "11226500",
+    "8000929",
+    "405878",
+    "1916754",
+    "538122",
+    "803811"
+  ],
+  "bib_entries": {
+    "8313435": {
+      "title": "Max-margin parsing",
+      "abstract": "We present a novel discriminative approach to parsing inspired by the large-margin criterion underlying support vector machines. Our formulation uses a factorization analogous to the standard dynamic programs for parsing. In particular, it allows one to efficiently learn a model which discriminates among the entire space of parse trees, as opposed to reranking the top few candidates. Our models can condition on arbitrary features of input sentences, thus incorporating an important kind of lexical information without the added algorithmic complexity of modeling headedness. We provide an efficient algorithm for learning such models and show experimental evidence of the model\u2019s improved performance over a natural baseline model and a lexicalized probabilistic context-free grammar."
+    },
+    "405878": {
+      "title": "Discriminative reranking for natural language parsing",
+      "abstract": "This article considers approaches which rerank the output of an existing probabilistic parser. The base parser produces a set of candidate parses for each input sentence, with associated probabilities that define an initial ranking of these parses. A second model then attempts to improve upon this initial ranking, using additional features of the tree as evidence. The strength of our approach is that it allows a tree to be represented as an arbitrary set of features, without concerns about how these features interact or overlap and without the need to define a derivation or a generative model which takes these features into account. We introduce a new method for the reranking task, based on the boosting approach to ranking problems described in Freund et al. (1998). We apply the boosting method to parsing the Wall Street Journal treebank. The method combined the log-likelihood under a baseline model (that of Collins [1999]) with evidence from an additional 500,000 features over parse trees that were not included in the original model. The new model achieved 89.75% F-measure, a 13% relative decrease in F measure error over the baseline model's score of 88.2%. The article also introduces a new algorithm for the boosting approach which takes advantage of the sparsity of the feature space in the parsing data. Experiments show significant efficiency gains for the new algorithm over the obvious implementation of the boosting approach. We argue that the method is an appealing alternative\u2014in terms of both simplicity and efficiency\u2014to work on feature selection methods within log-linear (maximum-entropy) models. Although the experiments in this article are on natural language parsing (NLP), the approach should be applicable to many other NLP problems which are naturally framed as ranking tasks, for example, speech recognition, machine translation, or natural language generation."
+    },
+    "11599080": {
+      "title": "Coarse-to-fine n-best parsing and maxent discriminative reranking",
+      "abstract": "Discriminative reranking is one method for constructing high-performance statistical parsers (Collins, 2000). A discriminative reranker requires a source of candidate parses for each sentence. This paper describes a simple yet novel method for constructing sets of 50-best parses based on a coarse-to-fine generative parser (Charniak, 2000). This method generates 50-best lists that are of substantially higher quality than previously obtainable. We used these parses as the input to a MaxEnt reranker (Johnson et al., 1999; Riezler et al., 2002) that selects the best parse from the set of parses for each sentence, obtaining an f-score of 91.0% on sentences of length 100 or less."
+    },
+    "277918": {
+      "title": "Conditonal random fields: Probabilistic models for segmenting and labeling sequence data",
+      "abstract": "We present conditional random fields , a framework for building probabilistic models to segment and label sequence data. Conditional random fields offer several advantages over hidden Markov models and stochastic grammars for such tasks, including the ability to relax strong independence assumptions made in those models. Conditional random fields also avoid a fundamental limitation of maximum entropy Markov models (MEMMs) and other discriminative Markov models based on directed graphical models, which can be biased towards states with few successor states. We present iterative parameter estimation algorithms for conditional random fields and compare the performance of the resulting models to HMMs and MEMMs on synthetic and natural-language data."
+    },
+    "5897173": {
+      "title": "Bilexical grammars and their cubic-time parsing algorithms",
+      "abstract": "This chapter introduces weighted bilexical grammars, a formalism in which individual lexical items, such as verbs and their arguments, can have idiosyncratic selectional influences on each other. Such \u2018bilexicalism\u2019 has been a theme of much current work in parsing. The new formalism can be used to describe bilexical approaches to both dependency and phrase-structure grammars, and a slight modification yields link grammars. Its scoring approach is compatible with a wide variety of probability models."
+    },
+    "538122": {
+      "title": "A maximum-entropy-inspired parser",
+      "abstract": "We present a new parser for parsing down to Penn tree-bank style parse trees that achieves 90.1% average precision/recall for sentences of length 40 and less, and 89.5% for sentences of length 100 and less when trained and tested on the previously established [5, 9, 10, 15, 17] \"standard\" sections of the Wall Street Journal treebank. This represents a 13% decrease in error rate over the best single-parser results on this corpus [9]. The major technical innovation is the use of a \"maximum-entropy-inspired\" model for conditioning and smoothing that let us successfully to test and combine many different conditioning events. We also present some partial results showing the effects of different conditioning information, including a surprising 2% improvement due to guessing the lexical head's pre-terminal before guessing the lexical head."
+    },
+    "1916754": {
+      "title": "Simple semi-supervised dependency parsing",
+      "abstract": "We present a simple and effective semisupervised method for training dependency parsers. We focus on the problem of lexical representation, introducing features that incorporate word clusters derived from a large unannotated corpus. We demonstrate the effectiveness of the approach in a series of dependency parsing experiments on the Penn Treebank and Prague Dependency Treebank, and we show that the cluster-based features yield substantial gains in performance across a wide range of conditions. For example, in the case of English unlabeled second-order parsing, we improve from a baseline accuracy of 92.02% to 93.16%, and in the case of Czech unlabeled second-order parsing, we improve from a baseline accuracy of 86.13% to 87.13%. In addition, we demonstrate that our method also improves performance when small amounts of training data are available, and can roughly halve the amount of supervised data required to reach a desired level of performance."
+    },
+    "802998": {
+      "title": "Online learning of approximate dependency parsing algorithms",
+      "abstract": "In this paper we extend the maximum spanning tree (MST) dependency parsing framework of McDonald et al. (2005c) to incorporate higher-order feature representations and allow dependency structures with multiple parents per word. We show that those extensions can make the MST framework computationally intractable, but that the intractability can be circumvented with new approximate parsing algorithms. We conclude with experiments showing that discriminative online learning using those approximate algorithms achieves the best reported parsing accuracy for Czech and Danish."
+    },
+    "1471139": {
+      "title": "Statistical parsing with an automatically extracted tree adjoining grammar",
+      "abstract": "We discuss the advantages of lexicalized tree-adjoining grammar as an alternative to lexicalized PCFG for statistical parsing, describing the induction of a probabilistic LTAG model from the Penn Treebank and evaluating its parsing performance. We find that this induction method is an improvement over the EM-based method of (Hwa, 1998), and that the induced model yields results comparable to lexicalized PCFG."
+    },
+    "3066240": {
+      "title": "Incremental ltag parsing",
+      "abstract": "We present a very efficient statistical incremental parser for LTAG-spinal, a variant of LTAG. The parser supports the full adjoining operation, dynamic predicate coordination, and non-projective dependencies, with a formalism of provably stronger generative capacity as compared to CFG. Using gold standard POS tags as input, on section 23 of the PTB, the parser achieves an f-score of 89.3% for syntactic dependency defined on LTAG derivation trees, which are deeper than the dependencies extracted from PTB alone with head rules (for example, in Magerman's style)."
+    },
+    "12926517": {
+      "title": "Online large-margin training of dependency parsers",
+      "abstract": "We present an effective training algorithm for linearly-scored dependency parsers that implements online large-margin multi-class training (Crammer and Singer, 2003; Crammer et al., 2003) on top of efficient parsing techniques for dependency trees (Eisner, 1996). The trained parsers achieve a competitive dependency accuracy for both English and Czech with no language specific enhancements."
+    },
+    "8000929": {
+      "title": "Experiments with a higher-order projective dependency parser",
+      "abstract": "We present experiments with a dependency parsing model defined on rich factors. Our model represents dependency trees with factors that include three types of relations between the tokens of a dependency and their children. We extend the projective parsing algorithm of Eisner (1996) for our case, and train models using the averaged perceptron. Our experiments show that considering higher-order information yields significant improvements in parsing accuracy, but comes at a high cost in terms of both time and memory consumption. In the multilingual exercise of the CoNLL-2007 shared task (Nivre et al., 2007), our system obtains the best accuracy for English, and the second best accuracies for Basque and Czech."
+    },
+    "11226500": {
+      "title": "Exponentiated gradient algorithms for log-linear structured prediction",
+      "abstract": "Conditional log-linear models are a commonly used method for structured prediction. Efficient learning of parameters in these models is therefore an important problem. This paper describes an exponentiated gradient (EG) algorithm for training such models. EG is applied to the convex dual of the maximum likelihood objective; this results in both sequential and parallel update algorithms, where in the sequential algorithm parameters are updated in an online fashion. We provide a convergence proof for both algorithms. Our analysis also simplifies previous results on EG for max-margin models, and leads to a tighter bound on convergence rates. Experiments on a large-scale parsing task show that the proposed algorithm converges much faster than conjugate-gradient and L-BFGS approaches both in terms of optimization objective and test error."
+    },
+    "1131864": {
+      "title": "Forest reranking: Discriminative parsing with non-local features",
+      "abstract": "Conventional n-best reranking techniques often suffer from the limited scope of the nbest list, which rules out many potentially good alternatives. We instead propose forest reranking, a method that reranks a packed forest of exponentially many parses. Since exact inference is intractable with non-local features, we present an approximate algorithm inspired by forest rescoring that makes discriminative training practical over the whole Treebank. Our final result, an F-score of 91.7, outperforms both 50-best and 100-best reranking baselines, and is better than any previously reported systems trained on the Treebank."
+    },
+    "803811": {
+      "title": "Efficient, feature-based, conditional random field parsing",
+      "abstract": "Discriminative feature-based methods are widely used in natural language processing, but sentence parsing is still dominated by generative methods. While prior feature-based dynamic programming parsers have restricted training and evaluation to artificially short sentences, we present the first general, featurerich discriminative parser, based on a conditional random field model, which has been successfully scaled to the full WSJ parsing data. Our efficiency is primarily due to the use of stochastic optimization techniques, as well as parallelization and chart prefiltering. On WSJ15, we attain a state-of-the-art F-score of 90.9%, a 14% relative reduction in error over previous models, while being two orders of magnitude faster. On sentences of length 40, our system achieves an F-score of 89.0%, a 36% relative reduction in error over a generative baseline."
+    }
+  }
+}

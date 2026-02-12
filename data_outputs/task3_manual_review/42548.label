@@ -1,0 +1,29 @@
+{
+  "doc_id": "42548",
+  "text": "The speculative parallel pattern matching (SPPM) approach by Luchaup et al. [CITATION_1] [CITATION_2] uses speculation to match the increasing network line-speeds faced by intrusion prevention systems. SPPM DFAs represent virus signatures. Like Jones et al., DFAs are speculated to be in a particular, frequently occurring DFA state at the beginning of a chunk. SPPM starts the speculative matching at the beginning of each chunk. With every input character, a speculative matching process stores the encountered DFA state for subsequent reference. Speculation fails if the DFA turns out to be in a different state at the beginning of a speculatively matched chunk. In this case re-matching continues until the DFA synchronizes with the saved history state (in the worst case, the whole chunk needs to be re-matched). A single-threaded SPPM version is proposed to improve performance by issuing multiple independent memory accesses in parallel. Such pipelining (or interleaving) of DFA matches is orthogonal to our approach, which focuses on latency rather than throughput.",
+  "correct_citation": {
+    "[CITATION_1]": "8714491",
+    "[CITATION_2]": "17036673"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The speculative parallel pattern matching (SPPM) approach by Luchaup et al. uses speculation to match the increasing network line-speeds faced by intrusion prevention systems."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The speculative parallel pattern matching (SPPM) approach by Luchaup et al. uses speculation to match the increasing network line-speeds faced by intrusion prevention systems."
+    }
+  ],
+  "bib_entries": {
+    "17036673": {
+      "title": "Speculative parallel pattern matching",
+      "abstract": "Intrusion prevention systems (IPSs) determine whether incoming traffic matches a database of signatures, where each signature is a regular expression and represents an attack or a vulnerability. IPSs need to keep up with ever-increasing line speeds, which has lead to the use of custom hardware. A major bottleneck that IPSs face is that they scan incoming packets one byte at a time, which limits their throughput and latency. In this paper, we present a method to search for arbitrary regular expressions by scanning multiple bytes in parallel using speculation. We break the packet in several chunks, opportunistically scan them in parallel, and if the speculation is wrong, correct it later. We present algorithms that apply speculation in single-threaded software running on commodity processors as well as algorithms for parallel hardware. Experimental results show that speculation leads to improvements in latency and throughput in both cases."
+    },
+    "8714491": {
+      "title": "Multi-byte regular expression matching with speculation",
+      "abstract": "Intrusion prevention systems determine whether incoming traffic matches a database of signatures, where each signature in the database represents an attack or a vulnerability. IPSs need to keep up with ever-increasing line speeds, which leads to the use of custom hardware. A major bottleneck that IPSs face is that they scan incoming packets one byte at a time, which limits their throughput and latency. In this paper, we present a method for scanning multiple bytes in parallel using speculation. We break the packet in several chunks, opportunistically scan them in parallel and if the speculation is wrong, correct it later. We present algorithms that apply speculation in single-threaded software running on commodity processors as well as algorithms for parallel hardware. Experimental results show that speculation leads to improvements in latency and throughput in both cases."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Embedding Generation: We utilized the BAAI/bge-small-en-v1.5 (Xiao et al., 2023a) model to generate dense vector representations of training examples.",
+    "The resulting embeddings are added to a vector database for storage and retrieval.",
+    "Vector Database: We use ChromaDB (Contributors, 2025) as our vector database.",
+    "Our configuration includes cosine similarity as the distance metric, HNSW (Hierarchical Navigable Small World) as the indexing method, and category labels and source information as metadata storage.",
+    "During retrieval, we start by embedding the input query with the BAAI/bge-small-en-v1.5 model, then we selected the top-k nearest neighbors considering diverse examples across categories, finally, we form an unified context using the retrieved examples."
+  ]
+}

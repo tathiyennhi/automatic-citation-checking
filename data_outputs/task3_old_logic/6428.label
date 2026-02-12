@@ -1,0 +1,70 @@
+{
+  "doc_id": "6428",
+  "text": "Similar to the softmax Bellman operator, the mellowmax operator [CITATION_1] used the log-sum-exp function in lieu of the max function. A thorough comparison among these Bellman operators will not only exhibit their differences, but also reveal the trade-offs when selecting them in practice. Table 1 shows the comparison from different criteria. We also illustrate in Figure 2 the trade-off between converging to the Bellman optimality and overestimation reduction in terms of the inverse temperature parameter, where the softmax operator approaches the max operator in a faster speed while the mellowmax operator can further reduce the overestimation error. Given the facts that both softmax and mellowmax operators (i) converge to the mean and max operators when τ → 0 and τ → ∞, respectively; (ii) are continuous on τ ∈ [0, ∞), it is also worth noting the equivalence between the two in Q-iteration with an off-policy setting: Furthermore, note that the mellowmax operator cannot directly represent a policy, and needs to be transformed into a softmax policy, where numerical methods are necessary to determine the corresponding state-dependent temperature parameters. The lack of an explicit policy representation also prevents the mellowmax operator from being directly applied in double Q-learning. Finally, although the softmax operator is not guaranteed to converge for any inverse temperature parameters, our experiments in Section 5 demonstrate it is not sensitive to this parameter and always achieves competitive performance in Atari games. [CITATION_2] first showed that the Boltzmann operator could be expansive in a specific MDP by tuning the temperature parameter. However, we are not aware of any previous work providing the performance bound for the softmax Bellman operator, in a general MDP. The mellowmax operator proposed in [CITATION_3] was shown to be a non-expansion, whose log-sum-exp component on the Q-functions was also employed in the Boltzmann backup operator [CITATION_4] [CITATION_5] , derived from the Shannon-entropy regularized soft Q-learning [CITATION_6] and actorcritic learning. Most recently, the sparsemax operator based on Tsallis entropy was proposed in [CITATION_7] to improve the error bound for mellowmax. However, these operators were not shown to address the instability issues in the DQN, and their corresponding policies were used to improve the exploration performance, which is different from our focus here.",
+  "correct_citation": {
+    "[CITATION_1]": "8104710",
+    "[CITATION_2]": "60893378",
+    "[CITATION_3]": "8104710",
+    "[CITATION_4]": "17234172",
+    "[CITATION_5]": "3615386",
+    "[CITATION_6]": "19318639",
+    "[CITATION_7]": "3586421"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Similar to the softmax Bellman operator, the mellowmax operator used the log-sum-exp function in lieu of the max function."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Finally, although the softmax operator is not guaranteed to converge for any inverse temperature parameters, our experiments in Section 5 demonstrate it is not sensitive to this parameter and always achieves competitive performance in Atari games. first showed that the Boltzmann operator could be expansive in a specific MDP by tuning the temperature parameter."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The mellowmax operator proposed in was shown to be a non-expansion, whose log-sum-exp component on the Q-functions was also employed in the Boltzmann backup operator, derived from the Shannon-entropy regularized soft Q-learning and actorcritic learning."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The mellowmax operator proposed in was shown to be a non-expansion, whose log-sum-exp component on the Q-functions was also employed in the Boltzmann backup operator, derived from the Shannon-entropy regularized soft Q-learning and actorcritic learning."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "The mellowmax operator proposed in was shown to be a non-expansion, whose log-sum-exp component on the Q-functions was also employed in the Boltzmann backup operator, derived from the Shannon-entropy regularized soft Q-learning and actorcritic learning."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "The mellowmax operator proposed in was shown to be a non-expansion, whose log-sum-exp component on the Q-functions was also employed in the Boltzmann backup operator, derived from the Shannon-entropy regularized soft Q-learning"
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Most recently, the sparsemax operator based on Tsallis entropy was proposed in to improve the error bound for mellowmax."
+    }
+  ],
+  "bib_entries": {
+    "19318639": {
+      "title": "A unified view of entropy-regularized markov decision processes",
+      "abstract": "We propose a general framework for entropy-regularized average-reward reinforcement learning in Markov decision processes (MDPs). Our approach is based on extending the linear-programming formulation of policy optimization in MDPs to accommodate convex regularization functions. Our key result is showing that using the conditional entropy of the joint state-action distributions as regularization yields a dual optimization problem closely resembling the Bellman optimality equations. This result enables us to formalize a number of state-of-the-art entropy-regularized reinforcement learning algorithms as approximate variants of Mirror Descent or Dual Averaging, and thus to argue about the convergence properties of these methods. In particular, we show that the exact version of the TRPO algorithm of Schulman et al. (2015) actually converges to the optimal policy, while the entropy-regularized policy gradient methods of Mnih et al. (2016) may fail to converge to a fixed point. Finally, we illustrate empirically the effects of using various regularization techniques on learning performance in a simple reinforcement learning setup."
+    },
+    "3615386": {
+      "title": "Bridging the gap between value and policy based reinforcement learning",
+      "abstract": "We establish a new connection between value and policy based reinforcement learning (RL) based on a relationship between softmax temporal value consistency and policy optimality under entropy regularization. Specifically, we show that softmax consistent action values correspond to optimal entropy regularized policy probabilities along any action sequence, regardless of provenance. From this observation, we develop a new RL algorithm, Path Consistency Learning (PCL), that minimizes a notion of soft consistency error along multi-step action sequences extracted from both on- and off-policy traces. We examine the behavior of PCL in different scenarios and show that PCL can be interpreted as generalizing both actor-critic and Q-learning algorithms. We subsequently deepen the relationship by showing how a single model can be used to represent both a policy and the corresponding softmax state values, eliminating the need for a separate critic. The experimental evaluation demonstrates that PCL significantly outperforms strong actor-critic and Q-learning baselines across several benchmarks."
+    },
+    "60893378": {
+      "title": "Algorithms for Sequential Decision Making",
+      "abstract": "Sequential decision making is a fundamental task faced by any intelligent agent in an extended interaction with its environment; it is the act of answering the question ``What should I do now?'''' In this thesis, I show how to answer this question when ``now'''' is one of a finite set of states, ``do'''' is one of a finite set of actions, ``should'''' is maximize a long-run measure of reward, and ``I'''' is an automated planning or learning system (agent). In particular, I collect basic results concerning methods for finding optimal (or near-optimal) behavior in several different kinds of model environments: Markov decision processes, in which the agent always knows its state; partially observable Markov decision processes (POMDPs), in which the agent must piece together its state on the basis of observations it makes; and Markov games, in which the agent is in direct competition with an opponent. The thesis is written from a computer-science perspective, meaning that many mathematical details are not discussed, and descriptions of algorithms and the complexity of problems are emphasized. New results include an improved algorithm for solving POMDPs exactly over finite horizons, a method for learning minimax-optimal policies for Markov games, a pseudopolynomial bound for policy iteration, and a complete complexity theory for finding zero-reward POMDP policies."
+    },
+    "8104710": {
+      "title": "An alternative softmax operator for reinforcement learning",
+      "abstract": "A softmax operator applied to a set of values acts somewhat like the maximization function and somewhat like an average. In sequential decision making, softmax is often used in settings where it is necessary to maximize utility but also to hedge against problems that arise from putting all of one's weight behind a single maximum utility decision. The Boltzmann softmax operator is the most commonly used softmax operator in this setting, but we show that this operator is prone to misbehavior. In this work, we study a differentiable softmax operator that, among other properties, is a non-expansion ensuring a convergent behavior in learning and planning. We introduce a variant of SARSA algorithm that, by utilizing the new operator, computes a Boltzmann policy with a state-dependent temperature parameter. We show that the algorithm is convergent and that it performs favorably in practice."
+    },
+    "3586421": {
+      "title": "Sparse Markov decision processes with causal sparse Tsallis entropy regularization for reinforcement learning",
+      "abstract": "In this paper, a sparse Markov decision process (MDP) with novel causal sparse Tsallis entropy regularization is proposed.The proposed policy regularization induces a sparse and multi-modal optimal policy distribution of a sparse MDP. The full mathematical analysis of the proposed sparse MDP is provided.We first analyze the optimality condition of a sparse MDP. Then, we propose a sparse value iteration method which solves a sparse MDP and then prove the convergence and optimality of sparse value iteration using the Banach fixed point theorem. The proposed sparse MDP is compared to soft MDPs which utilize causal entropy regularization. We show that the performance error of a sparse MDP has a constant bound, while the error of a soft MDP increases logarithmically with respect to the number of actions, where this performance error is caused by the introduced regularization term. In experiments, we apply sparse MDPs to reinforcement learning problems. The proposed method outperforms existing methods in terms of the convergence speed and performance."
+    },
+    "17234172": {
+      "title": "Equivalence between policy gradients and soft Q-learning",
+      "abstract": "Two of the leading approaches for model-free reinforcement learning are policy gradient methods and $Q$-learning methods. $Q$-learning methods can be effective and sample-efficient when they work, however, it is not well-understood why they work, since empirically, the $Q$-values they estimate are very inaccurate. A partial explanation may be that $Q$-learning methods are secretly implementing policy gradient updates: we show that there is a precise equivalence between $Q$-learning and policy gradient methods in the setting of entropy-regularized reinforcement learning, that \"soft\" (entropy-regularized) $Q$-learning is exactly equivalent to a policy gradient method. We also point out a connection between $Q$-learning methods and natural policy gradient methods. Experimentally, we explore the entropy-regularized versions of $Q$-learning and policy gradients, and we find them to perform as well as (or slightly better than) the standard variants on the Atari benchmark. We also show that the equivalence holds in practical settings by constructing a $Q$-learning method that closely matches the learning dynamics of A3C without using a target network or $\\epsilon$-greedy exploration schedule."
+    }
+  },
+  "generator": "fallback"
+}

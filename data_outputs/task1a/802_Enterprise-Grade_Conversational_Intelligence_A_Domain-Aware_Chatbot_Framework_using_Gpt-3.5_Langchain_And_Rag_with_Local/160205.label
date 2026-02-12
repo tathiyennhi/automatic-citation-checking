@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "FRAMEWORK DESIGN AND SYSTEM ARCHITECTURE A. Modular Architecture OverviewThe proposed architecture is structured around four modular components: a document ingestion and preprocessing pipeline, a vector embedding engine, a retrieval orchestrator, and a GPT-3.5-based generative module.",
+    "Enterprise documents in varied formats-such as PDF, DOCX, and CSV-are first standardized and tokenized.",
+    "These preprocessed texts are passed through OpenAI's text-embedding-ada-002 model to generate dense vector representations [1].",
+    "These embeddings are stored in either FAISS or Chroma DB, forming the semantic index used for retrieval.",
+    "Upon receiving a user query, the system generates an embedding vector and compares it with stored embeddings using cosine similarity, returning the most relevant documents to guide the response generation process."
+  ],
+  "correct_citations": [
+    "These preprocessed texts are passed through OpenAI's text-embedding-ada-002 model to generate dense vector representations [1]."
+  ]
+}

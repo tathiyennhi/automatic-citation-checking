@@ -1,0 +1,16 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Experiments Experimental SetupBenchmarks We evaluate ISAC on three benchmarks that cover complementary aspects of multi-instance generation: T2I-CompBench [13], HRS-Bench [14], and our IntraCompBench.",
+    "T2I-CompBench [13] and HRS-Bench [14] are standard for compositional text-to-image evaluation but do not isolate the intra-category regime where count failures and semantic mixing are most severe, so we introduce IntraCompBench to explicitly target two failure modes: multi-instance accuracy (prompts such as \"three dogs\"), which asks the model to generate a specified count N of a single class and measures how often the predicted instance count matches N, and multi-class accuracy (prompts such as \"a dog, a cat, and a horse\"), which asks for one instance of each of k different classes (N = k) and measures how often all k classes appear as distinct instances.",
+    "For both settings, we evaluate generated images using open-vocabulary detection models [19,42] and a prompt-specific matching procedure between detections and requested classes (see Appendix A for details of our IntraCompBench).Implementation details We strictly follow the official inference configurations for all diffusion models [1,4,5,7,43].",
+    "ISAC requires a single hyperparameter, η = 0.01, shared across all models and benchmarks; a sensitivity analysis for η is provided in Appendix A.",
+    "For each text prompt, we automatically extract class tag-count pairs (τ i, n i) and simple token relations (P repel and P bind) using the open-source GPT-OSS [44] to ensure reproducibility."
+  ],
+  "correct_citations": [
+    "Experiments Experimental SetupBenchmarks We evaluate ISAC on three benchmarks that cover complementary aspects of multi-instance generation: T2I-CompBench [13], HRS-Bench [14], and our IntraCompBench.",
+    "T2I-CompBench [13] and HRS-Bench [14] are standard for compositional text-to-image evaluation but do not isolate the intra-category regime where count failures and semantic mixing are most severe, so we introduce IntraCompBench to explicitly target two failure modes: multi-instance accuracy (prompts such as \"three dogs\"), which asks the model to generate a specified count N of a single class and measures how often the predicted instance count matches N, and multi-class accuracy (prompts such as \"a dog, a cat, and a horse\"), which asks for one instance of each of k different classes (N = k) and measures how often all k classes appear as distinct instances.",
+    "For both settings, we evaluate generated images using open-vocabulary detection models [19,42] and a prompt-specific matching procedure between detections and requested classes (see Appendix A for details of our IntraCompBench).Implementation details We strictly follow the official inference configurations for all diffusion models [1,4,5,7,43].",
+    "For each text prompt, we automatically extract class tag-count pairs (τ i, n i) and simple token relations (P repel and P bind) using the open-source GPT-OSS [44] to ensure reproducibility."
+  ]
+}

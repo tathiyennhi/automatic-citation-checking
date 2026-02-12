@@ -1,0 +1,22 @@
+{
+  "doc_id": "12135",
+  "text": "PKENO-compatible ECCA encryption. First, we formalize a notion of PKENO-compatible ECCAsecure encryption, for which we can overcome the above problems. There are two requirements for such a scheme. The first is that it is what we call partial-randomness recovering. This means that there is a partial-randomness recovery algorithm that, informally, given the secret key does not necessarily recover all random coins underlying a ciphertext, but just enough to check that the ciphertext is an encryption of a claimed message. However, this should also be true for ciphertexts outside the range of the encryption algorithm (but which do not decrypt to ⊥). [CITATION_1] The second requirement is that it has what we call ciphertext verifiability, meaning one can check without the secret key (but possibly with the help of some partial random coins) whether the decryption of a ciphertext is ⊥. Note that ECCA security of such schemes is defined with respect to the partial-randomness recovery algorithm. See Section 6.1 for the formal definitions, which are rather delicate.",
+  "correct_citation": {
+    "[CITATION_1]": "226828"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, this should also be true for ciphertexts outside the range of the encryption algorithm (but which do not decrypt to ⊥). [CITATION_1] The second requirement is that it has what we call ciphertext verifiability, meaning one can check without the secret key (but possibly with the help of some partial random coins) whether the decryption of a ciphertext is ⊥.",
+      "s_span": 525,
+      "e_span": 891
+    }
+  ],
+  "bib_entries": {
+    "226828": {
+      "title": "Towards plaintext-aware public-key encryption without random oracles",
+      "abstract": "We consider the problem of defining and achieving plaintext-aware encryption without random oracles in the classical public-key model. We provide definitions for a hierarchy of notions of increasing strength: PA0, PA1 and PA2, chosen so that PA1+IND-CPA → IND-CCA1 and PA2+IND-CPA → IND-CCA2. Towards achieving the new notions of plaintext awareness, we show that a scheme due to Damgard [12], denoted DEG, and the lite version of the Cramer-Shoup scheme [11], denoted CS-lite, are both PA0 under the DHKO assumption of [12], and PA1 under an extension of this assumption called DHK1. As a result, DEG is the most efficient proven IND-CCA1 scheme known."
+    }
+  },
+  "generator": "fallback_v4"
+}

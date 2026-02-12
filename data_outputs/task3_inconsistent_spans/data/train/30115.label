@@ -1,0 +1,22 @@
+{
+  "doc_id": "30115",
+  "text": "In our work, we maintain steps (a) and (c) but modify step (b) so that we fine-tune the language model on our IMHO dataset rather than the taskspecific data. The goal of ULMFiT is to allow training on small datasets of only a few hundred examples, but our experiments will show that finetuning the language model on opinionated claims improves over only task-specific LM fine-tuning. Table 2 show the results on the four data sets. We compare to two baselines. The numbers in the CNN column are taken directly from the results of the deep learning experiments mentioned in the work of . Their deep learning experiments consisted of 4 different models: a) bidirectional LSTM b) LSTM c) CNN initialized with random word embeddings and d) CNN initialized with word2vec. In their experiments for MT and PE, a CNN initialized with random word embeddings gave the best results and for WD a CNN with word2vec gave the best results. As CMV is a new data set we experimented with all four models and obtained the best result using a CNN with random initialization. The Task contains the results obtained by fine-tuning the language model on each respective dataset while the IMHO LM Fine-Tuning column contains the results from fine-tuning the language model on IMHO. As in previous work, we report both Claim F1 and Macro F1. The experiments were carried out in a 10-fold cross-validation setup with fixed splits into training and test data and the F1 scores are averaged over each of the folds. Each model was run 10 times to account for variance and the results reported in the table are an average of 10 runs. We use the same hyper-parameters as [CITATION_1] except for a batch size of 32 for MT and 64 for the remaining data sets. The learning rate for classifier fine-tuning is set to 0.0001. We train our classifier for 5 epochs on each data set.",
+  "correct_citation": {
+    "[CITATION_1]": "40100965"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We use the same hyper-parameters as  except for a batch size of 32 for MT and 64 for the remaining data sets.",
+      "s_span": 1605,
+      "e_span": 1726
+    }
+  ],
+  "bib_entries": {
+    "40100965": {
+      "title": "Universal language model fine-tuning for text classification",
+      "abstract": "Inductive transfer learning has greatly impacted computer vision, but existing approaches in NLP still require task-specific modifications and training from scratch. We propose Universal Language Model Fine-tuning (ULMFiT), an effective transfer learning method that can be applied to any task in NLP, and introduce techniques that are key for fine-tuning a language model. Our method significantly outperforms the state-of-the-art on six text classification tasks, reducing the error by 18-24% on the majority of datasets. Furthermore, with only 100 labeled examples, it matches the performance of training from scratch on 100x more data. We open-source our pretrained models and code."
+    }
+  },
+  "generator": "fallback_v4"
+}

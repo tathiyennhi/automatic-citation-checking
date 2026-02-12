@@ -1,0 +1,47 @@
+{
+  "text": "We have selected the scheme proposed by Tu and Yuan 15 as a solution method to extend and improve. The compact scheme employed has been proposed by Pirozzoli 9 and has some very interesting features. First, it is upwind and is derived with a conservative approach, so it is suitable for problems involving discontinuities. Moreover, only the inversion of a tridiagonal system of equations is required, hence it is not as computationally demanding as other compact schemes. Finally, an extensive analysis of the scheme has been conducted, [CITATION_1] showing its excellent resolution and spectral properties. Tu et al. [CITATION_2] proposed a TVD limiter and have applied it to the compact scheme developed by Pirozzoli. Tu and Yuan [CITATION_3] have also proposed a characteristic-based treatment for the resulting compact TVD scheme: applying the limiting function to the characteristic variables allows tighter control of the spurious oscillations near discontinuities. The algorithm proposed by Tu and Yuan 15 is very promising for compressible fluid dynamics, in particular for hypersonic problems: it has excellent shock-capturing properties because of the conservative approach in deriving the compact scheme; it is stable for problems involving strong discontinuities, such as hypersonic flow fields, because of the upwinding and the limiter function; it is highly accurate in a narrow stencil because of the compact algorithm, but it is not computationally demanding because only a tridiagonal system of linear algebraic equations has to be inverted. This paper is structured as follows. In Section II we present the governing equations. In Section III we outline the numerical method. In Section IV several test cases are presented and discussed for both viscous and inviscid flows. The report ends with some concluding remarks.",
+  "citation_candidates": [
+    "121132946",
+    "122231105",
+    "123630165",
+    "118870608",
+    "122078222",
+    "189903843",
+    "120400986",
+    "23166519"
+  ],
+  "bib_entries": {
+    "121132946": {
+      "title": "A high-resolution hybrid compact-ENO scheme for shock-turbulence interaction problems",
+      "abstract": "A class of upwind-biased finite-difference schemes with a compact stencil is proposed in general form, suitable for the time-accurate direct numerical simulation of fluid-convection problems. These schemes give uniformly high approximation order and allow for a spectral-like wave resolution while dissipating non-resolved wavenumbers. When coupled with an essentially non-oscillatory scheme near discontinuities, the compact schemes become shock-capturing and their resolution properties are preserved. The derivation of the compact schemes is discussed in detail. Their convergence and resolution properties as well as numerical stability are analyzed. Upwinding and coupling procedures are described. Application examples for typical non-linear wave interaction problems are given."
+    },
+    "122231105": {
+      "title": "A characteristic-wise hybrid compact-WENO scheme for solving hyperbolic conservation lows",
+      "abstract": "This paper presents a fifth-order conservative hybrid compact-WENO scheme for shock-capturing calculation. The hybrid scheme is considered as the weighted average of two sub-schemes: the conservative compact scheme proposed by Pirozzoli and the WENO scheme. The weight function is designed so that the abrupt transition from one sub-scheme to another is avoided and the resulting hybrid scheme is essentially oscillation free near the flow discontinuities. A Roe type, characteristic-wise finite difference scheme is proposed which generalizes the hybrid scheme for the scalar equation to the system of conservation laws. Several test cases are presented to validate the proposed scheme."
+    },
+    "122078222": {
+      "title": "Nonlinearly stable compact schemes for shock calculations",
+      "abstract": "In this paper the authors discuss the applications of high-order compact finite difference methods for shock calculations. The main idea is the definition of a local mean that serves as a reference for introducing a local nonlinear limiting to control spurious numerical oscillations while keeping the formal accuracy of the scheme. For scalar conservation laws, the resulting schemes can be proven total variation stable in one-space dimension and maximum norm stable in multispace dimensions. Numerical examples are shown to verify accuracy and stability of such schemes for problems containing shocks. The idea in this paper can also be applied to other implicit schemes such as the continuous Galerkin finite element methods."
+    },
+    "23166519": {
+      "title": "A characteristic-based shock-capturing scheme for hyperbolic problems",
+      "abstract": "In order to suppress numerical oscillations of linear compact schemes around discontinuities, a characteristic-based flux splitting limited method is introduced instead of ENO/WENO or other shock-capturing algorithms. This method begins with upwind schemes and flux vector splittings. The upwind schemes are projected along characteristic directions in a different way, and their amplitudes are carefully controlled by a special limiter in order to meet entropy condition and to prevent non-physical oscillations. A fifth-order linear compact upwind scheme is modified by this method for solving problems involving discontinuities. The properties of the numerical algorithm are checked on some benchmark problems in one, two and three space dimensions. Numerical results show that it is high-order accurate with high resolution and oscillation-free."
+    },
+    "123630165": {
+      "title": "Higher order KFVS algorithms using compact upwind difference operators",
+      "abstract": "A family of high order accurate compact upwind difference operators have been used, together with the split fluxes of the KFVS (kinetic flux vector splitting) scheme to obtain high order semidiscretizations of the 2D Euler equations of inviscid gas dynamics in general coordinates. A TVD multistage Runge?Kutta time stepping scheme is used to compute steady states for selected transonic/supersonic flow problems which indicate the higher accuracy and low diffusion realizable in such schemes."
+    },
+    "120400986": {
+      "title": "Conservative hybrid compact-WENO schemes for shock-turbulence interaction",
+      "abstract": "In the present paper an efficient hybrid compact-WENO scheme is proposed to obtain high resolution in shock-turbulence interaction problems. The algorithm is based on a fifth-order compact upwind algorithm in conservation form to solve for the smooth part of the flow field, which is coupled with a high-resolution weighted essentially nonoscillatory (WENO) scheme to capture the discontinuities. The derivation of the compact scheme is discussed in detail, and a stability study of the full discretization is included. The performance of the numerical algorithm has been assessed by performing preliminary simulations on benchmark problems, such as the interaction of a shock wave with entropy and vortical disturbances. The algorithm here developed is proven to have better resolution properties than standard WENO schemes and hybrid compact-ENO schemes as well, at a lower computational cost. In addition, the application to more realistic shock-turbulence interaction problems is discussed."
+    },
+    "189903843": {
+      "title": "A class of compact upwind TVD difference schemes",
+      "abstract": "A new method was proposed for constructing total variation diminishing (TVD) upwind schemes in conservation forms. Two limiters were used to prevent nonphysical oscillations across discontinuity. Both limiters can ensure the nonlinear compact schemes TVD property. Two compact TVD (CTVD) schemes were tested, one is third-order accuracy, and the other is fifth-order. The performance of the numerical algorithms was assessed by one-dimensional complex waves and Riemann problems, as well as a two-dimensional shock-vortex interaction and a shock-boundary flow interaction. Numerical results show their high-order accuracy and high resolution, and low oscillations across discontinuities."
+    },
+    "118870608": {
+      "title": "Laminar flow theory",
+      "abstract": "Publisher's PrefaceCh. 1The Navier-Stokes Equations for a Viscous Heat-Conducting Compressible Fluid3Ch. 2Review of Viscous Incompressible Fluids45Ch. 3Introductory Discussion of the Navier-Stokes Equations for a Compressible Fluid150Ch. 4Laminar Boundary Layers in Compressible Fluids191Cited References265"
+    }
+  }
+}

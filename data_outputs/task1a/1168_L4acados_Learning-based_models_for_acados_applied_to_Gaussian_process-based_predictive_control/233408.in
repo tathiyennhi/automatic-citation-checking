@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In each SQP iteration, the quadratic subproblemmin ∆u0,...,∆u N -1 ∆x0,...,∆x N N -1 k=0   ∆x k ∆u k 1   ⊤   Q k S k q k R k r k ⋆ 1     ∆x k ∆u k 1   (5a) s.t.",
+    "∆x 0 = 0 (5b) ∆x k+1 = f (x k, ûk) + B d g(x k, ûk) -xk+1 + Âk ∆x k + Bk ∆u k,(5c)0 ≥ h(x k, ûk) + Ĥx k ∆x k + Ĥu k ∆u k, (5d) 0 ≥ h(x N) + Ĥx N ∆x N,(5e)is solved for increments xk ← xk + ∆x k, ûk ← ûk + ∆u k to the current iterates for the states xk and control inputs ûk.",
+    "Thereby, Q k, R k, S k define the employed approximation of the Lagrangian's Hessian and q k, r k, the cost Jacobian at stage k.The original nonlinear equality and inequality constraints (4b)-(4e) are linearized, with JacobiansÂk = ∂(f + B d g) ∂x x=x k u=û k, Bk = ∂(f + B d g) ∂u x=x k u=û k,(6)Ĥ{x,u}k = ∂h ∂{x, u} x=x k u=û k, ĤN = ∂h N ∂x x=x k. (7)Utilizing the fact that each SQP iteration does not require access to the full dynamics and constraint sensitivities, but merely their evaluations at the current iterate, the same SQP iterates can be obtained by reformulating the nonlinear program (4) based on the linearized dynamics (5c): Instead of the original OCP with nonlinear dynamics, consider the following OCP with affine dynamics, i.e.,min u0,...,u N -1 x0,...,x N N -1 k=0 l(x k, u k) + M (x N) (8a) s.t.",
+    "x 0 = x(t)(8b)x k+1 = Âk x k + Bk u k + ĉk, (8c)0 ≥ h(x k, u k),(8d)0 ≥ h N (x N),(8e)where Âk, Bk and ĉk are treated as model parameters.",
+    "= f (x k, ûk) + B d g(x k, ûk) -Âk xk -Bk ûk(9)and Âk, Bk at each SQP iteration according to (6) recovers the original dynamics linearization (5c) exactly."
+  ]
+}

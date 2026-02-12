@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "Within each training iteration the autofluorescence images I AF, containing DAPI and TxRed channels, are first fed into network G, yielding the virtually stained H&E images I VS.",
+    "Following that, I VS and their corresponding coarsely registered histochemically stained H&E images I HS,raw are fed into network R, which predicts a DVF tensor that represents a pixel-wise measurement of the relative shifts between the I VS and I HS,raw with a unit of pixels.",
+    "This DVF tensor consists of two channels, which correspond to the relative shifts along the horizontal and vertical directions.",
+    "To ensure that the final DVF tensor has a continuous spatial distribution and that all its values fall within a proper range, the DVF tensor obtained from network R undergoes the following operations: (1) a smoothening process using a 3 × 3 Gaussian kernel; (2) an adaptive value clipping process that clips the outlier values beyond three standard deviations from the mean; and (3) an absolute value clipping process that limits the DVF values to a range of [-30, 30] pixels.",
+    "Lastly, the resulting DVF tensor along with I HS,raw is fed into a differentiable spatial transformation module 43, which spatially transforms the I HS,raw at a sub-pixel level through guidance by the DVF tensor."
+  ],
+  "correct_citations": [
+    "Lastly, the resulting DVF tensor along with I HS,raw is fed into a differentiable spatial transformation module 43, which spatially transforms the I HS,raw at a sub-pixel level through guidance by the DVF tensor."
+  ]
+}

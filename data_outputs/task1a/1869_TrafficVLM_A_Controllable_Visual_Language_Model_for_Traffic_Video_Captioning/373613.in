@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This part explains how we construct the two output sequences to be used as groundtruths during training and their format.",
+    "We first adjust the event boundary sequence s to the new start time start n = max(0, start 1 -offset st) and end time end n = min(end P + offset ed, T) at Eq.",
+    "( 3) to create the new event boundary sequence s g:s g = {(start g i, end g i)} P i=1 = {(start i -start n, end i -start n)} P i=1(9)The new duration D of the video segment is obtained by:D = end n -start n(10)Each timestamp in the new event boundary sequence s g is then rescaled to an integer between 0 and N -1 to construct the quantized event boundary sequence s q:s q = start g i × N D, end g i × N D P i=1(11)We map each quantized timestamp to one of N time tokens, the result sequence is denoted as t:t = {(t st i, t ed i)} P i=1(12)For the vehicle textual tokens, we first tokenize all phase descriptions of the caption sequences v to obtain v t = {v t i } P i=1, wherev t i = {v t ij } L v i j=1is the textual token sequence for phase i.",
+    "Similar to Vid2Seq, we construct a new sequence for each phase i by concatenating the start time token t st i, the end time token t ed i, and all the textual tokens v t ij in v t i.",
+    "We concatenate all such sequences in increasing order of the start time and add a BOS token at the beginning and a EOS token at the end of the sequence."
+  ]
+}

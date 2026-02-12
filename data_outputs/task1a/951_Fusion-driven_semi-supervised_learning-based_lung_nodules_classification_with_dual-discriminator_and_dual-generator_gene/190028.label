@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This adaptation focuses on feature extraction layers that retain spatial information, ultimately leading to an output layer redesigned to produce a 2D feature map rather than a single scalar indicating real or fake.To elucidate the discriminative capabilities between benign and malignant pulmonary nodules, we designed a discriminator network employing a sequential model architecture, leveraging three-dimensional convolutional layers to process input volumes of size H × W × D. This architecture facilitates the extraction and analysis of spatial features inherent to the nodules, which are crucial for their classification and understanding.The discriminator begins with a three-dimensional convolutional layer, as shown in Fig. 3, configured with 64 filters of kernel size 5 × 5x3 and a stride of 2 × 2x1, applied with 'same' padding to maintain the spatial dimensions of the input volume.",
+    "This layer is designed to perform an initial feature extraction, capturing the nodules' local and global spatial features.",
+    "Activation of the convolutional layer outputs is mediated by a LeakyReLU function with an alpha value of 0.2, introducing non-linearity while allowing for a slight gradient when the unit is inactive to mitigate the vanishing gradient problem.",
+    "A dropout layer follows, with a dropout rate of 0.25, to prevent overfitting by randomly omitting a subset of features during training.After the initial feature extraction, a second threedimensional convolutional layer, equipped with 128 filters and a kernel size of 5 × 5x3, further refines the feature map.",
+    "This layer employs strides of 2 × 2x2 and 'same' padding, augmented with zero padding to adjust the spatial dimensions as needed, ensuring consistent feature representation across the volume."
+  ],
+  "correct_citations": []
+}

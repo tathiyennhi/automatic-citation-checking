@@ -1,0 +1,15 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The alignment of predicted and observed trends confirms that data locality and memory access patterns are critical factors in achieving speedup through data restructuring on GPUs.Although we lacked access to the GPU implementation in [48], our design appears more memoryefficient.",
+    "Figure [11] compares memory access patterns.",
+    "In [48], tasks are grouped by source leaf to avoid write races, with one thread handling multiple interactions.",
+    "However, target leaf data is scattered in memory, leading to non-coalesced accesses -even within groups -since spatial adjacency is not guaranteed.",
+    "In contrast, our Indexing implementation assigns one thread per interaction, storing particle data in separate arrays and deferring updates to CPU, but coalescing remains suboptimal (e.g., repeated accesses to the same leaf)."
+  ],
+  "correct_citations": [
+    "The alignment of predicted and observed trends confirms that data locality and memory access patterns are critical factors in achieving speedup through data restructuring on GPUs.Although we lacked access to the GPU implementation in [48], our design appears more memoryefficient.",
+    "Figure [11] compares memory access patterns.",
+    "In [48], tasks are grouped by source leaf to avoid write races, with one thread handling multiple interactions."
+  ]
+}

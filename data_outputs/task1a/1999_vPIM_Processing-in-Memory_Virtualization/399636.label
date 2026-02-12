@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Prefetch Cache In our para-virtualization design, each request triggers message passing between the frontend and backend, incurring a fixed communication overhead regardless of data size.",
+    "For small data transfers, this overhead can dominate execution time.",
+    "A critical challenge is thus posed by frequent small-size data transfer operations, which led to repetitive frontend-backend communication, causing up to 53× overhead compared to native.",
+    "These repetitive transfers typically result from the host application processing DPU data block by block in a loop.",
+    "Consequently, these transfers generally occur within contiguous memory regions in the MRAM of the DPUs.Following this observation, we implement a prefetch mechanism within the frontend: 1 ○ At boot time, a prefetch cache is allocated within the frontend with the current implementation reserving 16 pages of cache per DPU."
+  ],
+  "correct_citations": []
+}

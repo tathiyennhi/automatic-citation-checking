@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Specifically, letting W be the sliding window size, N be the number of companies, and a tuple (d, n) denote the input shape to the model, where d is the dimension of an input vector and n is the number of input vectors to the Transformer, we tested two different input configurations: (d, n) = (W, N) and (d, n) = (N, W).In the first configuration (d, n) = (W, N), as illustrated in Figure 4, each input vector consists of the polarity scores of one company over a given time period W. Before passing this into the attention layers, we first project the sliding window size W into a hidden representation of size d model = 32, resulting in an input shape of (d model, N).This approach enables the model to emphasize inter-company dependencies, capturing how sentiment trends across different companies interact and influence one another.",
+    "This is particularly relevant for industries where companies exhibit strong correlations due to market conditions, sector-wide trends, or shared economic factors.For the second configuration (d, n) = (N, W), the input is structured such that the polarity scores of different N companies are combined as an input vector and sequential W input vectors are prepared across the time window W. In this case, we project N dimensions into hidden size d model, transforming the input into (d model, W) before feeding it into the attention layers.This transformation allows the model to focus on capturing temporal dependencies within each company's sentiment trends while preserving company-wise feature relationships.",
+    "The Transformer then processes this representation to extract meaningful patterns in sentiment evolution and its potential impact on stock price movements.In the first configuration, the number of companies N does not need to be fixed in advance when training the model, allowing for greater flexibility.",
+    "This is because the Transformer operates along the temporal dimension (window size W), treating each company as an independent sequence input.",
+    "Since the model learns to process sequences of a fixed length W, and not across companies, it can flexibly handle varying numbers of companies at inference time."
+  ],
+  "correct_citations": []
+}

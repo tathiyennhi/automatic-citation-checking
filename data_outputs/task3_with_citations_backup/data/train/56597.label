@@ -1,0 +1,55 @@
+{
+  "doc_id": "56597",
+  "text": "where m is the total number of samples. Many approaches have been used previously in literature to estimate the parameters of NB distributions [CITATION_1] [CITATION_2] [CITATION_3] . Here we employed DESeq2 to estimate the posterior mean and dispersion of mRNA or RPF, separately, for each gene. This process includes the ''Empirical Bayes shrinkage'' method in DESeq2 (ref. 22) to control the bias of dispersion estimation due to biological or technical variability. This method is based on the assumption that genes with similar expression levels also share similar levels of dispersion. Specifically, the dispersions of each gene were first used to fit a smoothed curve, and then shrunk toward the curve to obtain the updated values of dispersion. Please refer to DESeq2 (ref. [CITATION_4] ) for a more detailed description of this process. Establishment of probability distributions for fold changes of mRNA and RPF or for RPF-to-mRNA ratios. As discussed above, Xtail defines the translational change across two conditions as the difference between the log2FC of RPF and mRNA, or between the log2 ratios of RPF to mRNA (log2R) in the two conditions. Therefore, to establish a probability distribution for the translational changes, which would be used to infer statistical significance of differential translations, we need to estimate the distributions for log2FC of RPF and mRNA or for log2R in two conditions. First, the mean of mRNA or RPF expression in each sample, m gi , can be written with the following generalized linear model:",
+  "correct_citation": {
+    "[CITATION_1]": "1133459",
+    "[CITATION_2]": "14052240",
+    "[CITATION_3]": "10346329",
+    "[CITATION_4]": "8620592"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Many approaches have been used previously in literature to estimate the parameters of NB distributions [CITATION_1] [CITATION_2] [CITATION_3] .",
+      "s_span": 40,
+      "e_span": 183
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Many approaches have been used previously in literature to estimate the parameters of NB distributions [CITATION_1] [CITATION_2] [CITATION_3] .",
+      "s_span": 40,
+      "e_span": 183
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Many approaches have been used previously in literature to estimate the parameters of NB distributions [CITATION_1] [CITATION_2] [CITATION_3] .",
+      "s_span": 40,
+      "e_span": 183
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Please refer to DESeq2 (ref. [CITATION_4] ) for a more detailed description of this process.",
+      "s_span": 752,
+      "e_span": 844
+    }
+  ],
+  "bib_entries": {
+    "1133459": {
+      "title": "baySeq: empirical Bayesian methods for identifying differential expression in sequence count data",
+      "abstract": "Background ::: High throughput sequencing has become an important technology for studying expression levels in many types of genomic, and particularly transcriptomic, data. One key way of analysing such data is to look for elements of the data which display particular patterns of differential expression in order to take these forward for further analysis and validation."
+    },
+    "8620592": {
+      "title": "Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2",
+      "abstract": "In comparative high-throughput sequencing assays, a fundamental task is the analysis of count data, such as read counts per gene in RNA-seq, for evidence of systematic changes across experimental conditions. Small replicate numbers, discreteness, large dynamic range and the presence of outliers require a suitable statistical approach. We present DESeq2, a method for differential analysis of count data, using shrinkage estimation for dispersions and fold changes to improve stability and interpretability of estimates. This enables a more quantitative analysis focused on the strength rather than the mere presence of differential expression. The DESeq2 package is available at http://www.bioconductor.org/packages/release/bioc/html/DESeq2.html."
+    },
+    "10346329": {
+      "title": "A new shrinkage estimator for dispersion improves differential expression detection in RNA-seq data",
+      "abstract": "Recent developments in RNA-sequencing (RNA-seq) technology have led to a rapid increase in gene expression data in the form of counts. RNA-seq can be used for a variety of applications, however, identifying differential expression (DE) remains a key task in functional genomics. There have been a number of statistical methods for DE detection for RNA-seq data. One common feature of several leading methods is the use of the negative binomial (Gamma–Poisson mixture) model. That is, the unobserved gene expression is modeled by a gamma random variable and, given the expression, the sequencing read counts are modeled as Poisson. The distinct feature in various methods is how the variance, or dispersion, in the Gamma distribution is modeled and estimated. We evaluate several large public RNA-seq datasets and find that the estimated dispersion in existing methods does not adequately capture the heterogeneity of biological variance among samples. We present a new empirical Bayes shrinkage estimate of the dispersion parameters and demonstrate improved DE detection."
+    },
+    "14052240": {
+      "title": "Differential expression analysis of multifactor RNA-Seq experiments with respect to biological variation",
+      "abstract": "A flexible statistical framework is developed for the analysis of read counts from RNA-Seq gene expression studies. It provides the ability to analyse complex experiments involving multiple treatment conditions and blocking variables while still taking full account of biological variation. Biological variation between RNA samples is estimated separately from the technical variation associated with sequencing technologies. Novel empirical Bayes methods allow each gene to have its own specific variability, even when there are relatively few biological replicates from which to estimate such variability. The pipeline is implemented in the edgeR package of the Bioconductor project. A case study analysis of carcinoma data demonstrates the ability of generalized linear model methods (GLMs) to detect differential expression in a paired design, and even to detect tumour-specific expression changes. The case study demonstrates the need to allow for gene-specific variability, rather than assuming a common dispersion across genes or a fixed relationship between abundance and variability. Genewise dispersions de-prioritize genes with inconsistent results and allow the main analysis to focus on changes that are consistent between biological replicates. Parallel computational approaches are developed to make non-linear model fitting faster and more reliable, making the application of GLMs to genomic data more convenient and practical. Simulations demonstrate the ability of adjusted profile likelihood estimators to return accurate estimators of biological variability in complex situations. When variation is gene-specific, empirical Bayes estimators provide an advantageous compromise between the extremes of assuming common dispersion or separate genewise dispersion. The methods developed here can also be applied to count data arising from DNA-Seq applications, including ChIP-Seq for epigenetic marks and DNA methylation analyses."
+    }
+  },
+  "generator": "fallback_v4"
+}

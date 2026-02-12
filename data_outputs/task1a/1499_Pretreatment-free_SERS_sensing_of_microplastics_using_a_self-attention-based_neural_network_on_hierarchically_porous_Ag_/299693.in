@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Despite being trivial for multi-class classification, searching for oversampling coefficients becomes an NP-complete task of integer programming.",
+    "The task is formulated as:",
+    "Given the binary matrix A (with dimension N samples x N clas), containing multi-hot encoded labels for every sample in the dataset, find the integer vector x, such that A T x=N samples ≈ 0:5,0:5,::: ½, 8x i ≥ 1.",
+    "This task has been reformulated as optimization and solved using SCIP solver 72.",
+    "Precisely, the objective is: min jjA T x À bjj + 0:1maximum x ð Þ where b = 0:5,0:5,::: ½ *N clas under constraint 8x i ≥ 1 ^xi ≤ 5 The constraint and penalty on maximum value of x is added to force the solver to select dense solution (near all samples are oversamples with small coefficient) rather then sparse solution (only several sample are oversampled with high coefficient)."
+  ]
+}

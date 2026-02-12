@@ -1,0 +1,80 @@
+{
+  "doc_id": "57466",
+  "text": "In this section, we present the monitoring algorithms to check the validity of a formula ϕ on a trace x(t, ). The monitoring procedure, which is similar to the ones for STL [CITATION_1] [CITATION_2] , works inductively bottom-up on the parse tree of the formula. In the case of the boolean semantics, for each subformula ψ, it constructs a spatio-temporal signal s ψ s.t. s ψ ( , t) = 1 iff the subformula is true in position at time t. In the case of the quantitative semantics, for each subformula ψ, the signal s ψ corresponds to the value of the quantitative satisfaction function ρ, for any time t and location . In this paper, we discuss the algorithms to check the bounded surround operator. The procedures for the boolean and temporal operators are those of STL [CITATION_3] [CITATION_4] [CITATION_5] , while the methods for the somewhere spatial modality have been previously discussed in [CITATION_6] . The treatment of the bounded surround modality ψ = ϕ 1 S [w1,w2] ϕ 2 , instead, deviates substantially from these procedures. In the following, we will present two recursive algorithms to compute the boolean and the quantitative satisfaction, taking inspiration from [CITATION_7] and assuming the boolean/quantitative signals of ϕ 1 and ϕ 2 being known.",
+  "correct_citation": {
+    "[CITATION_1]": "2829026",
+    "[CITATION_2]": "15642684",
+    "[CITATION_3]": "2953950",
+    "[CITATION_4]": "2829026",
+    "[CITATION_5]": "15642684",
+    "[CITATION_6]": "3154105",
+    "[CITATION_7]": "30020746"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The monitoring procedure, which is similar to the ones for STL [CITATION_1] [CITATION_2] , works inductively bottom-up on the parse tree of the formula.",
+      "s_span": 110,
+      "e_span": 262
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The monitoring procedure, which is similar to the ones for STL [CITATION_1] [CITATION_2] , works inductively bottom-up on the parse tree of the formula.",
+      "s_span": 110,
+      "e_span": 262
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The procedures for the boolean and temporal operators are those of STL [CITATION_3] [CITATION_4] [CITATION_5] , while the methods for the somewhere spatial modality have been previously discussed in [CITATION_6] .",
+      "s_span": 699,
+      "e_span": 912
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The procedures for the boolean and temporal operators are those of STL [CITATION_3] [CITATION_4] [CITATION_5] , while the methods for the somewhere spatial modality have been previously discussed in [CITATION_6] .",
+      "s_span": 699,
+      "e_span": 912
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "The procedures for the boolean and temporal operators are those of STL [CITATION_3] [CITATION_4] [CITATION_5] , while the methods for the somewhere spatial modality have been previously discussed in [CITATION_6] .",
+      "s_span": 699,
+      "e_span": 912
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "The procedures for the boolean and temporal operators are those of STL [CITATION_3] [CITATION_4] [CITATION_5] , while the methods for the somewhere spatial modality have been previously discussed in [CITATION_6] .",
+      "s_span": 699,
+      "e_span": 912
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "In the following, we will present two recursive algorithms to compute the boolean and the quantitative satisfaction, taking inspiration from [CITATION_7] and assuming the boolean/quantitative signals of ϕ 1 and ϕ 2 being known.",
+      "s_span": 1039,
+      "e_span": 1266
+    }
+  ],
+  "bib_entries": {
+    "30020746": {
+      "title": "Specifying and verifying properties of space",
+      "abstract": "The interplay between process behaviour and spatial aspects of computation has become more and more relevant in Computer Science, especially in the field of collective adaptive systems, but also, more generally, when dealing with systems distributed in physical space. Traditional verification techniques are well suited to analyse the temporal evolution of programs; properties of space are typically not explicitly taken into account. We propose a methodology to verify properties depending upon physical space. We define an appropriate logic, stemming from the tradition of topological interpretations of modal logics, dating back to earlier logicians such as Tarski, where modalities describe neighbourhood. We lift the topological definitions to a more general setting, also encompassing discrete, graph-based structures. We further extend the framework with a spatial until operator, and define an efficient model checking procedure, implemented in a proof-of-concept tool."
+    },
+    "2829026": {
+      "title": "Robust satisfaction of temporal logic over real-valued signals",
+      "abstract": "We consider temporal logic formulae specifying constraints in continuous time and space on the behaviors of continuous and hybrid dynamical system admitting uncertain parameters. We present several variants of robustness measures that indicate how far a given trajectory stands, in space and time, from satisfying or violating a property. We present a method to compute these robustness measures as well as their sensitivity to the parameters of the system or parameters appearing in the formula. Combined with an appropriate strategy for exploring the parameter space, this technique can be used to guide simulation-based verification of complex nonlinear and hybrid systems against temporal properties. Our methodology can be used for other non-traditional applications of temporal logic such as characterizing subsets of the parameter space for which a system is guaranteed to satisfy a formula with a desired robustness degree."
+    },
+    "15642684": {
+      "title": "Monitoring temporal properties of continuous signals",
+      "abstract": "In this paper we introduce a variant of temporal logic tailored for specifying desired properties of continuous signals. The logic is based on a bounded subset of the real-time logic mitl, augmented with a static mapping from continuous domains into propositions. From formulae in this logic we create automatically property monitors that can check whether a given signal of bounded length and finite variability satisfies the property. A prototype implementation of this procedure was used to check properties of simulation traces generated by Matlab/Simulink."
+    },
+    "2953950": {
+      "title": "Efficient robust monitoring for stl",
+      "abstract": "Monitoring transient behaviors of real-time systems plays an important role in model-based systems design. Signal Temporal Logic (STL) emerges as a convenient and powerful formalism for continuous and hybrid systems. This paper presents an efficient algorithm for computing the robustness degree in which a piecewise-continuous signal satisfies or violates an STL formula. The algorithm, by leveraging state-of-the-art streaming algorithms from Signal Processing, is linear in the size of the signal and its implementation in the Breach tool is shown to outperform alternative implementations."
+    },
+    "3154105": {
+      "title": "Specifying and monitoring properties of stochastic spatio-temporal systems in signal temporal logic",
+      "abstract": "We present an extension of the linear time, time-bounded, Signal Temporal Logic to describe spatio-temporal properties. We consider a discrete location/ patch-based representation of space, with a population of interacting agents evolving in each location and with agents migrating from one patch to another one. We provide both a boolean and a quantitative semantics to this logic. We then present monitoring algorithms to check the validity of a formula, or to compute its satisfaction (robustness) score, over a spatio-temporal trace, exploiting these routines to do statistical model checking of stochastic models. We illustrate the logic at work on an epidemic example, looking at the diffusion of a cholera infection among communities living along a river."
+    }
+  },
+  "generator": "fallback_v4"
+}

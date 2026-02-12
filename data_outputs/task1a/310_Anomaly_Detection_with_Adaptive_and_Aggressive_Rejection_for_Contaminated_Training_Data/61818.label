@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "This transition allows the model to handle more ambiguous cases with refined precision, enabling both robust early learning and flexible late-stage adaptation.Hard rejection with normality threshold To implement hard rejection in the early phase, we leverage a modified z-score (MZ) based outlier detector [25] that adaptively filters out anomalies within each mini-batch.",
+    "The MZ method replaces the mean and standard deviation with the median and normalized median absolute deviation (MAD), making it more robust against extreme outliers.",
+    "For anomaly scores s i of a sample (x i, y i) ∈ D, the modified z-score m i is defined as follows:ŝ = median i (s i), MAD = median i |s i -ŝ|, m i = 0.6745(s i -ŝ)/MAD.",
+    "(7)Using this, we derive the normality threshold τ N asτ N = 3.5 × MAD/0.6745 + ŝ,(8)where 3.5 is a widely used constant for outlier detection [50].",
+    "Instances with scores exceeding τ N are considered outliers and excluded from training."
+  ],
+  "correct_citations": [
+    "This transition allows the model to handle more ambiguous cases with refined precision, enabling both robust early learning and flexible late-stage adaptation.Hard rejection with normality threshold To implement hard rejection in the early phase, we leverage a modified z-score (MZ) based outlier detector [25] that adaptively filters out anomalies within each mini-batch.",
+    "(7)Using this, we derive the normality threshold τ N asτ N = 3.5 × MAD/0.6745 + ŝ,(8)where 3.5 is a widely used constant for outlier detection [50]."
+  ]
+}

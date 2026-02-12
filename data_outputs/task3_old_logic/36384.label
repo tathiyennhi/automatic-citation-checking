@@ -1,0 +1,56 @@
+{
+  "doc_id": "36384",
+  "text": "Based on the type of imaging, there are two types of techniques that can be approached in EIT systems, dynamic imaging and static imaging. In dynamic imaging (with a focus on temporal resolution), boundary voltages are measured at different time intervals, and the first data at initial time (t 1 ) is treated as the reference data set for another data set measured at a second time (t 2 ). By back projecting the difference an image is reconstructed [CITATION_1] . In static images (spatial resolution), the absolute values of a cross-sectional resistivity distribution are reconstructed from voltage measurements, which is a function of an unknown resistivity distribution. This makes the image of reconstruction a nonlinear problem. The Newton-Raphson method, demonstrated by Yorkey et al. [CITATION_2] produced good quality static images provided there was no error in the modeling and measurement of the voltages (or, current). When errors are present and the number of elements increased to get a good spatial resolution, the images distort greatly. Isaacson [CITATION_3] and Gisser et al. [CITATION_4] proposed an optimized current injection method which injects a certain pattern of current through the electrodes. This novel method of current injection combined with the Newton-Raphson method yields a good static image. An EIT system that uses 32 electrodes of 12-bit resolution with optimal current injection was developed as shown in Fig. 8 . A specially designed digital voltmeter was used to acquire the boundary voltages from the electrodes. The measured voltages were compared to the computer model voltages and depending on the difference in reading (error) the computer model voltages were adjusted accordingly. The computer model voltages were calculated using a finite element method to develop the voltages with an assumed model resistivity distribution since the problem is nonlinear [CITATION_5] . Reconstruction was done based on the model is an objective function (error), ρ is resistivity distribution of model, c is the injection current pattern, and e is the electrode configuration. In this case, the algorithm was assumed correct but the unknowns of the model must be found.",
+  "correct_citation": {
+    "[CITATION_1]": "27174973",
+    "[CITATION_2]": "2354401",
+    "[CITATION_3]": "31967844",
+    "[CITATION_4]": "12298876",
+    "[CITATION_5]": "9339372"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "By back projecting the difference an image is reconstructed"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The Newton-Raphson method, demonstrated by Yorkey et al. produced good quality static images provided there was no error in the modeling and measurement of the voltages (or, current)."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Isaacson and Gisser et al. proposed an optimized current injection method which injects a certain pattern of current through the electrodes."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "and Gisser et al."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "The computer model voltages were calculated using a finite element method to develop the voltages with an assumed model resistivity distribution since the problem is nonlinear"
+    }
+  ],
+  "bib_entries": {
+    "12298876": {
+      "title": "Current topics in impedance imaging",
+      "abstract": "We introduce a definition of 'best' currents to apply to an electrode array on the surface of a body in order to distinguish between the conductivity inside the body and a conjectured conductivity. Using these 'best' currents, we illustrate with a simple example the general fact that a single current applied between a pair of electrodes, loses its ability to distinguish between different conductivities as the size of the region over which the current is applied goes to zero. We next introduce approximations to the best currents on systems having L electrodes, and calculate the ability of these systems to distinguish between conductivities as L goes to infinity and the electrode size goes to zero. We conclude with a simple example that illustrates a process for producing the 'best' currents without a previous knowledge of what is inside the body."
+    },
+    "31967844": {
+      "title": "Distinguishability of conductivities by electric current computed tomography",
+      "abstract": "We give criteria for the distinguishability of two different conductivity distributions inside a body by electric current computed tomography (ECCT) systems with a specified precision. It is shown in a special case how these criteria can be used to determine the measurement precision needed to distinguish between two different conductivity distributions. It is also shown how to select the patterns of current to apply to the body in order to best distinguish given conductivity distributions with an ECCT system of finite precision."
+    },
+    "9339372": {
+      "title": "A robust image reconstruction algorithm and its parallel implementation in electrical impedance tomography",
+      "abstract": "An efficient and robust image reconstruction algorithm for static impedance imaging using Hachtel's augmented matrix method was developed. This improved Newton-Raphson method produced more accurate images by reducing the undesirable effects of the ill-conditioned Hessian matrix. It is demonstrated that the electrical impedance tomography (EIT) system could produce two-dimensional static images from a physical phantom with 7% spatial resolution at the center and 5% at the periphery. Static EIT image reconstruction requires a large amount of computation. In order to overcome the limitations on reducing the computation time by algorithmic approaches, the improved Newton-Raphson algorithm was implemented on a parallel computer system. It is shown that the parallel computation could reduce the computation time from hours to minutes. >"
+    },
+    "2354401": {
+      "title": "Comparing Reconstruction Algorithms for Electrical Impedance Tomography",
+      "abstract": "An improved electrical impedance tomographic reconstruction algorithm is presented that is generally guaranteed to converge. The algorithm is attractive for several reasons. A modified Newton?Raphson method varies a finite-element model of resistivities to fit a set of voltage measurements in a least-squared sense. Two procedures for calculating the Jacobian matrix are derived. One is standard, while the other is based on the compensation theorem. This second procedure is more efficient for computations, and just as accurate as the standard one. The inherent ill-conditioning in the approximate Hessian matrix of the linearized system is eliminated using the Marquardt method. Results from two-dimensional computer simulations are compared to four other reconstruction algorithms, which are based on methods proposed by other authors. The modified Newton?Raphson method provided significantly better reconstructions than any of the other methods. The algorithms compared are the perturbation, equipotential, iterative-equipotential, and the double-constraint methods. The modified Newton?Raphson method was found to be sensitive to measurement error, but future work in designing electrode-probing configurations is expected to reduce this sensitivity."
+    },
+    "27174973": {
+      "title": "Applied potential tomography",
+      "abstract": "Applied Potential Tomography (APT) is a new method of imaging changes in the distribution of electrical resistivity within the human body. Such changes occur during respiration and, because of the movement of blood within the chest, during the cardiac cycle. Changes can also be observed due to redistribution of fluid within the body during simulated weightlessness. As very low electric currents are used to take measurements the method is safe. The equipment is simple and compact and ideal for use in space based measurement of physiological changes in the human body."
+    }
+  },
+  "generator": "fallback"
+}

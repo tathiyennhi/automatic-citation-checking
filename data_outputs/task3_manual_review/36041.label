@@ -1,0 +1,29 @@
+{
+  "doc_id": "36041",
+  "text": "Specifically, we firstly concatenate the feature maps from the two branches along the channels. Then, we apply the Batch Normalization operation to shorten the feature distances and balance the feature scales. Note that the pixels at the same position of two feature maps are not necessarily similar and they may be similar to the adjacent pixels at the position. Therefore, we apply an atrous convolution with the size of 3×3 and the arous rate d = 2 to fuse the features. This operation is able to effectively combine the feature information from adjacent pixels around the target pixel instead of depending on just one position. After that, a projection convolution with the size of 1 × 1 is used to reduce the number of output channels to the number of semantic categories (from 216 to [CITATION_1] . A BN layer is also used between the atrous convolution and projection convolution. Finally, we utilize the simple and efficient bilinear interpolation, which only requires a few parameters and can achieve similar accuracy as the transposed convolution [CITATION_2] , to directly upsample the fused results to the original input image size.",
+  "correct_citation": {
+    "[CITATION_1]": "4599765",
+    "[CITATION_2]": "975170"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "After that, a projection convolution with the size of 1 × 1 is used to reduce the number of output channels to the number of semantic categories (from 216 to"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Finally, we utilize the simple and efficient bilinear interpolation, which only requires a few parameters and can achieve similar accuracy as the transposed convolution, to directly upsample the fused results to the original input image size."
+    }
+  ],
+  "bib_entries": {
+    "4599765": {
+      "title": "Understanding convolution for semantic segmentation",
+      "abstract": "Recent advances in deep learning, especially deep convolutional neural networks (CNNs), have led to significant improvement over previous semantic segmentation systems. Here we show how to improve pixel-wise semantic segmentation by manipulating convolution-related operations that are of both theoretical and practical value. First, we design dense upsampling convolution (DUC) to generate pixel-level prediction, which is able to capture and decode more detailed information that is generally missing in bilinear upsampling. Second, we propose a hybrid dilated convolution (HDC) framework in the encoding phase. This framework 1) effectively enlarges the receptive fields (RF) of the network to aggregate global information; 2) alleviates what we call the \"gridding issue\"caused by the standard dilated convolution operation. We evaluate our approaches thoroughly on the Cityscapes dataset, and achieve a state-of-art result of 80.1% mIOU in the test set at the time of submission. We also have achieved state-of-theart overall on the KITTI road estimation benchmark and the PASCAL VOC2012 segmentation task. Our source code can be found at https://github.com/TuSimple/TuSimple-DUC."
+    },
+    "975170": {
+      "title": "Adaptive deconvolutional networks for mid and high level feature learning",
+      "abstract": "We present a hierarchical model that learns image decompositions via alternating layers of convolutional sparse coding and max pooling. When trained on natural images, the layers of our model capture image information in a variety of forms: low-level edges, mid-level edge junctions, high-level object parts and complete objects. To build our model we rely on a novel inference scheme that ensures each layer reconstructs the input, rather than just the output of the layer directly beneath, as is common with existing hierarchical approaches. This makes it possible to learn multiple layers of representation and we show models with 4 layers, trained on images from the Caltech-101 and 256 datasets. When combined with a standard classifier, features extracted from these models outperform SIFT, as well as representations from other feature learning methods."
+    }
+  },
+  "generator": "fallback"
+}

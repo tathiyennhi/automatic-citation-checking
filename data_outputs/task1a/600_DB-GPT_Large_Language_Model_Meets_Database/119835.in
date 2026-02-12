@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "With the proper instruction, i.e., \"Rewrite the input SQL query to produce an equivalent query that can be executed on a PostgreSQL database with decreased latency,\" DB-GPT (davinci-003) is inspired to apply more complex rewrite rules than the built-in rules in PostgreSQL, such as converting subqueries with aggregations into joins.",
+    "Second, DB-GPT (gpt -3.5-turbo) outperforms DB-GPT (davinci-003) by optimizing some complex queries (e.g., queries that involve both join reordering and join predicate pushdown), where the davinci-003 model fails to address.Because gpt-3.5-turbo is trained on larger human language datasets, enabling it to undertake complex reasoning tasks (e.g., multi-step rewrites).",
+    "Moreover, to further optimize the rewrite performance, we incorporate a demonstration example in DB-GPT models' prompt, which outlines the step-bystep process for the complex rewrites that DB-GPT without demonstration example fails to achieve (shown in Fig. 1).We find the models used in DB-GPT learn to replace the subquery \"sku_id > (...detail.store_id = info.id)\" with INNER JOIN operator, and the subquery no longer depends on the external query.",
+    "Note the demonstration example is not the same as the input query (e.g., no \">\" in the example, and the names are abbreviated), which guides DB-GPT to rewrite queries involving similar structures.",
+    "Besides, DB-GPT can also replace the subquery \"exists(...)\" with INNER JOIN operator, which is not included in the example."
+  ]
+}

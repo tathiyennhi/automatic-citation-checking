@@ -1,0 +1,22 @@
+{
+  "doc_id": "213",
+  "text": "The Niagara Query Engine uses two implementations for the join operator: nested loops and symmetric hash join [CITATION_1] . The symmetric hash join implementation is more appropriate for queries over data streams since it does not block on either input. We implement symmetric hash join using one hash Table 4 . If a punctuation arrives from one input specifying that all tuples have arrived for a particular set of join attribute values, then we remove tuples from the hash table for the other input using the join values described by the punctuation as the hash key.",
+  "correct_citation": {
+    "[CITATION_1]": "206793263"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The Niagara Query Engine uses two implementations for the join operator: nested loops and symmetric hash join  .",
+      "s_span": 0,
+      "e_span": 124
+    }
+  ],
+  "bib_entries": {
+    "206793263": {
+      "title": "Dataflow Query Execution in a Parallel Main-Memory Environment",
+      "abstract": "The performance and characteristics of the execution of various join-trees on a parallel DBMS are studied. The results are a step in the direction of the design of a query optimization strategy that is fit for parallel execution of complex queries. Among others, synchronization issues are identified to limit the performance gain from parallelism. A new hash-join algorithm, called pipelining hash-join is introduced that has fewer synchronization constraints than the known hash-join algorithms. Also, the behavior of individual join operations in a join-tree is studied in a simulation experiment. The results show that the pipelining hash-join algorithm yields a better performance for multi-join queries. Also, the format of the optimal join-tree appears to depend on the size of the operands of the join. The results from the simulation study are confirmed with an analytic model for dataflow query execution. >"
+    }
+  },
+  "generator": "fallback_v4"
+}

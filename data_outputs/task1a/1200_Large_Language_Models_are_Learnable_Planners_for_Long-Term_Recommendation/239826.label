@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "In particular, we leverage in-context learning with few-shot examples and previous estimations in the memory M 𝐶 = {(𝑠 𝑚, 𝑉 (𝑠 𝑚))|𝑚 = 1, 2,... } to predict the values of a given state 𝑠 𝑛.",
+    "Formally, we have:𝑉 (𝑠 𝑛) = LLM(P 𝐶, Φ 𝑛 M 𝐶, H 1•••𝑛-1, 𝑠 𝑛),(13)where P 𝐶 represents the used task prompt (including few-shot examples), and Φ 𝑛 M 𝐶 denotes the selected experiences from M 𝐶, which is obtained as follows:Φ 𝑛 M 𝐶 = {(𝑠 𝑚, 𝑉 (𝑠 𝑚))|𝑑 (𝑠 𝑚, 𝑠 𝑛) < 𝜏 𝐶, 𝑠 𝑚 ∈ M 𝐶 },(14)where 𝜏 𝐶 is a threshold, and 𝑑 (•, •) denotes the same distance function in Equation 5.• Computing advantage value.",
+    "We next utilize the advantage function to determine the advantage value 𝑣 𝑛 of action 𝑎 𝑛 given the state 𝑠 𝑛 at the 𝑛-th step.",
+    "The advantage value is:𝑣 𝑛 = 𝜎 (𝐴(𝑠 𝑛, 𝑎 𝑛)), 𝐴(𝑠 𝑛, 𝑎 𝑛) = 𝑟 𝑛 + 𝛾 * 𝑉 (𝑠 𝑛+1) -𝑉 (𝑠 𝑛),(15)where 𝐴(•, •) is the commonly used advantage function, 𝑟 𝑛 denotes the environmental reward at step 𝑛, and 𝑠 𝑛+1 denotes the next-step state if taking action 𝑎 𝑛 at state 𝑠 𝑛.",
+    "Regarding the function 𝜎, we have 𝜎 (𝑥) = 1 if 𝑥 ≥ 0 else 0."
+  ],
+  "correct_citations": []
+}

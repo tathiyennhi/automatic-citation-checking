@@ -1,0 +1,22 @@
+{
+  "doc_id": "33177",
+  "text": "The adversary is choosing the architecture for the surrogate model without any knowledge of the attacked model architecture. However, some choices lead to better performance. We have chosen GRU surrogate model with 64 units (different from the malware classifier in section IV-B), since it provides generalized decision boundaries, providing transferability by transitivity (see Definition 1) to feed forward networks and traditional machine learning classifiers, resulting in a high attack effectiveness by Definition 3. It also have a shorter training time compared to other RNN variants, e.g. LSTM, which provided a similar attack effectiveness. Besides the classifier's type and architecture, we also used a different optimizer for the surrogate model: Adadelta optimizer, insteadof Adam for the black-box model (section IV-B). In our implementation, we used the cleverhans library [CITATION_1] 1) Comparison to Random Perturbation: In order to make sure that our attack is indeed effective, we need a baseline comparison. We used random perturbation for that: we keep adding random (instead of the minimal Jacobean difference based on a surrogate model, as the attack method described in Algorithm 2) API calls to the malicious sample sequence until a benign classification by the black-box model is achieved. We have used the deep BLSTM malware classifier with the same hyper-parameters mentioned in section IV-B, since it's the most resistant to the proposed attack, so the difference from the random attack should be the smallest. However, we see that even in this scenario, the attack effectiveness (by Definition 3) of the random perturbation method is 70.14% while the attack overhead (by Definition 4) is 47.86%: lower effectiveness and 1.5 times higher overhead, even in the successful adversarial examples. For shallow BLSTM the attack effectiveness of the random perturbation method is 87.41% while the attack overhead is 30.12%. Again, lower effectiveness and 1.5 times higher overhead. For other cases, not shown due to space limit, the results are similar, showing that the proposed attack performs better than random perturbation. In section IV-C-3 we show another comparison to previous work attack.",
+  "correct_citation": {
+    "[CITATION_1]": "6706414"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In our implementation, we used the cleverhans library [CITATION_1] 1) Comparison to Random Perturbation: In order to make sure that our attack is indeed effective, we need a baseline comparison.",
+      "s_span": 832,
+      "e_span": 1026
+    }
+  ],
+  "bib_entries": {
+    "6706414": {
+      "title": "Explaining and harnessing adversarial examples",
+      "abstract": "Several machine learning models, including neural networks, consistently misclassify adversarial examples---inputs formed by applying small but intentionally worst-case perturbations to examples from the dataset, such that the perturbed input results in the model outputting an incorrect answer with high confidence. Early attempts at explaining this phenomenon focused on nonlinearity and overfitting. We argue instead that the primary cause of neural networks' vulnerability to adversarial perturbation is their linear nature. This explanation is supported by new quantitative results while giving the first explanation of the most intriguing fact about them: their generalization across architectures and training sets. Moreover, this view yields a simple and fast method of generating adversarial examples. Using this approach to provide examples for adversarial training, we reduce the test set error of a maxout network on the MNIST dataset."
+    }
+  },
+  "generator": "fallback_v4"
+}

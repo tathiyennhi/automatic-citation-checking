@@ -1,0 +1,20 @@
+{
+  "doc_id": "21489",
+  "text": "We describe how the cube pruning procedure can be replaced by standard operations with Weighted Finite State Transducers (WFSTs) so that Hiero uses translation lattices rather than n-best lists in search. We find that keeping partial translation hypotheses in lattice form greatly reduces search errors. In some instances it is possible to perform translation without any pruning at all so that search errors are completely eliminated. Consistent with the observation by [CITATION_1] , this leads to improvements in minimum error rate training. Furthermore, the direct generation of translation lattices can improve gains from subsequent language model and Minimum Bayes Risk (MBR) rescoring. Shallow-n grammars and additional nonterminal categories Nonterminals can be incorporated into hierarchical translation rules for the purpose of tuning the size of the Hiero search space for individual language pairs. Shallow-n grammars are described and shown to control the level of rule nesting, low-level rule catenation, and the minimum and maximum spans of individual translation rules. In translation experiments we find that a shallow-1 grammar (one level of rule nesting) is sufficiently expressive for Arabic-to-English translation, but that a shallow-3 grammar is required in Chinese-to-English translation to match the performance of a full Hiero system that allows arbitrary rule nesting. These nonterminals are introduced to control the Hiero search space and do not require estimation from annotated-or parsed-parallel text, as can be required by translation systems based on linguistically motivated grammars. We use this approach as the basis of a general approach to SMT modeling. To control overgeneration, we revisit the synchronous context-free grammar defined by hierarchical rules and take a shallow-1 grammar as a starting point. We then increase the complexity of the rules until the desired translation quality is found.",
+  "correct_citation": {
+    "[CITATION_1]": "384994"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Consistent with the observation by, this leads to improvements in minimum error rate training."
+    }
+  ],
+  "bib_entries": {
+    "384994": {
+      "title": "A hierarchical phrase-based model for statistical machine translation",
+      "abstract": "We present a statistical phrase-based translation model that uses hierarchical phrases---phrases that contain subphrases. The model is formally a synchronous context-free grammar but is learned from a bitext without any syntactic information. Thus it can be seen as a shift to the formal machinery of syntax-based translation systems without any linguistic commitment. In our experiments using BLEU as a metric, the hierarchical phrase-based model achieves a relative improvement of 7.5% over Pharaoh, a state-of-the-art phrase-based system."
+    }
+  },
+  "generator": "fallback"
+}

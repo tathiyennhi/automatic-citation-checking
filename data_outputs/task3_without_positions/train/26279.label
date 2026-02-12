@@ -1,0 +1,20 @@
+{
+  "doc_id": "26279",
+  "text": "Given m types of non-overlapping features on a DNA sequence, we can label each base with number 0, . . . , m, where '0' stands for a null-feature. Dna-brnn learns how to label a DNA sequence. Its overall architecture ( Fig. 1 ) is similar to an ordinary bidirected RNN (BRNN), except that dna-brnn feeds the reverse complement sequence to the opposite array of Gated Recurrent Units (GRUs) and that it ties the weights in both directions. Dna-brnn is strand symmetric in that the network output is the same regardless of the input DNA strand. The strand symmetry helps accuracy [CITATION_1] . Without weight sharing between the two strands, we will end up with a model with twice as many parameters but 16% worse training cost (averaged in 10 runs).",
+  "correct_citation": {
+    "[CITATION_1]": "63514463"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The strand symmetry helps accuracy  ."
+    }
+  ],
+  "bib_entries": {
+    "63514463": {
+      "title": "Reverse-complement parameter sharing improves deep learning models for genomics",
+      "abstract": "Deep learning approaches that have produced breakthrough predictive models in computer vision, speech recognition and machine translation are now being successfully applied to problems in regulatory genomics. However, deep learning architectures used thus far in genomics are often directly ported from computer vision and natural language processing applications with few, if any, domain-specific modifications. In double-stranded DNA, the same pattern may appear identically on one strand and its reverse complement due to complementary base pairing. Here, we show that conventional deep learning models that do not explicitly model this property can produce substantially different predictions on forward and reverse-complement versions of the same DNA sequence. We present four new convolutional neural network layers that leverage the reverse-complement property of genomic DNA sequence by sharing parameters between forward and reverse-complement representations in the model. These layers guarantee that forward and reverse-complement sequences produce identical predictions within numerical precision. Using experiments on simulated and in vivo transcription factor binding data, we show that our proposed architectures lead to improved performance, faster learning and cleaner internal representations compared to conventional architectures trained on the same data."
+    }
+  },
+  "generator": "fallback_v4"
+}

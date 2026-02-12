@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We designed the following split sampling construction to maximize data efficiency when computing the independent and dependent variables in the linear regression.Let i index a patient case and r index a radiologist.",
+    "Assume that a radiologist reads N u cases unassisted and N a cases assisted.",
+    "Recall that the unassisted and assisted cases are disjoint for the non-repeatedmeasure data; they overlap exactly for the repeated-measure data.For the non-repeated-measure design, we adopt the following construction: u i,ra r = βx ≠i,r + ε u i,r + ε a r (15) where x ≠i,r = 1 N u -1 ∑ k≠i u k,r and a r = 1 N a ∑ k a k,r.",
+    "Here, x ≠i,r is the mean unassisted performance computed on all unassisted cases other than i; u i,r is the unassisted performance on case i for radiologist r; and a r is the mean assisted performance on all assisted cases for radiologist r.For the repeated-measure design, we adopt the following construction: u i,ra i,r = βx ≠i,r + ε u i,r + ε a i,r (16) where x ≠i,r =1 N u -1∑ k≠i u k,r.",
+    "Here, x ≠i,r is the mean unassisted performance computed on all cases other than i; u i,r is the unassisted performance on case i for radiologist r; and a i,r is the assisted performance on case i for radiologist r.To study unassisted error as a predictor of assisted error, we built a linear regression model with the following formulation using the statsmodels library: assisted error ∼ 1 + unassisted error."
+  ],
+  "correct_citations": []
+}

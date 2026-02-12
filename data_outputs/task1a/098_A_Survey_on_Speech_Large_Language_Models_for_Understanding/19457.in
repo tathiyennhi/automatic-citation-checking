@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In RLHF, the model is treated as a policy π θ (y|X) that generates a response y to an input X, and a reward model R(X, y) (trained from human preference rankings) scores the response.",
+    "The goal is to maximize expected reward E X [E y∼π θ [R(X, y)]] while keeping the language model's output distribution close to the pre-trained model to avoid degrading fluency.",
+    "PPO achieves this by updating θ in the direction of the policy gradient ∇ θ J ≈ E X,y [R(X, y) ∇ θ log π θ (y|X)] with constraints on the KLdivergence from the original policy.",
+    "In practice, the PPO update uses a clipped surrogate objective to ensure stable improvements.",
+    "An alternative, lightweight approach is Direct Preference Optimization (DPO) [113], which was employed in Qwen2-Audio's final training."
+  ]
+}

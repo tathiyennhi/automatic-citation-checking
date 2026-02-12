@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Identifying the circuit type initially allows AutoBench to provide more precise guidance in subsequent stages to enhance the accuracy of LLM-generated testbenches.",
+    "For instance, testbenches for sequential circuits require stringent time-dependent functions, while a checker for a combinational circuit can be a direct function of the current input of the DUT.To discriminate the types of the DUT, AutoBench generates its own code sample and uses it to decide whether the target DUT is a sequential design or a combinational design.",
+    "As shown at the top left corner of Fig. 3, given the Benchmark Suite, includingTB-Driver Regularized Empty DUT or Exceed Max Iters.V Empty DUT signals TXT.V Benchmark Suite RTL Description, Module Header Stage 0 Debug Reboot?.V RTL code Forward Generation Self-Enhancement CMB/SEQ Stage 1 TB SPEC Stage 2 Stage 4 Stage 3 Scenarios.PY Core Rules in Python Stage 5.V TB-Driver TB-Checker TB-Checker NO YES Reboot Stage 4/5.PY Driver Track Checker Track Hybrid Testbench simulator Discriminator or Exceed Max Iters Self-Enhancement of TB-Drive Finished Self-Enhancement of TB-Checker Finished Script.PY Standardization Completion Scenario Checking Verilog Code Large Language Model With Syntax Error Run Python Script Without Syntax Error Python Code/Script Run Verilog Simulator The TB generation workflow in detail.",
+    "the problem description and module header, the LLM is guided to directly generate the RTL code for DUT at stage 0.",
+    "Because the generated RTL is only used for the discriminator in the next step, the correctness of the generated code does not have to be very high as long as there are sufficient features for the later discrimination."
+  ]
+}

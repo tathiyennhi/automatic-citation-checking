@@ -1,0 +1,62 @@
+{
+  "doc_id": "11644",
+  "text": "Types qualified with nullability annotations form a subtyping relationship, where @NonNull C is a subtype of @Nullable C for any class C [32, Fig. 3 ]. Hence, property 1 simply ensures assignment compatibility according to subtyping. Override Checking NullAway also ensures that method overrides respect subtyping, enforcing the standard function subtyping rules of covariant return types and contravariant parameter types [CITATION_1] . Consider the following example: } Since x has declared type Super, the declared target of x.getObj() on line 17 is Super.getObj. This method has a @NonNull return type, making the toString() call legal. However, this example crashes with an NPE, since overriding method Sub.getObj has @Nullable return type. To close this loophole, the checker must ensure covariance in return types, so a method with @NonNull return type cannot be overridden by one with @Nullable return type. Similarly, it must check for contravariant parameter types, so a method's @Nullable parameter cannot be made @NonNull in an overriding method. Defaults Annotating every field, parameter, and return value in a large code base would require a huge effort. NullAway uses the non-null-except-locals (NNEL) default from the Checker Framework [CITATION_2] to reduce the annotation burden. Any unannotated parameter, field, or return value is treated as @NonNull, whereas the types of local variables are inferred (see below). Beyond reducing annotation effort, this default makes code more readable (by reducing annotation clutter) and nudges the developer away from using null values, making the code safer. Flow-Sensitive Type Inference / Refinement As in previous work, NullAway automatically infers types for local variables in a flow-sensitive manner. Beyond inspecting assignments, null checks in conditionals are interpreted to compute refined (path-sensitive) types where the condition holds. E.g., at line 6 of the previous log example, the type of x is refined to @NonNull inside the if-body, based on the null check. NullAway uses an access-path-based abstract domain [CITATION_3] to also track nullability of sequences of field accesses and method calls. ğ4 describes how NullAway's assumptions around method purity interact with type inference. Other Tools Throughout this paper we discuss two other typebased null checking tools for Java: the Nullness Checker from the Checker Framework [CITATION_4] [CITATION_5] , which we refer to as CFNullness for brevity, and Eradicate, available with Facebook Infer [6]. Subsequent sections will detail how the checks performed by NullAway and its overheads compare with CFNullness and Eradicate.",
+  "correct_citation": {
+    "[CITATION_1]": "5088113",
+    "[CITATION_2]": "14533693",
+    "[CITATION_3]": "10569415",
+    "[CITATION_4]": "1130307",
+    "[CITATION_5]": "14533693"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Override Checking NullAway also ensures that method overrides respect subtyping, enforcing the standard function subtyping rules of covariant return types and contravariant parameter types  .",
+      "s_span": 234,
+      "e_span": 437
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "NullAway uses the non-null-except-locals (NNEL) default from the Checker Framework  to reduce the annotation burden.",
+      "s_span": 1170,
+      "e_span": 1298
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "NullAway uses an access-path-based abstract domain  to also track nullability of sequences of field accesses and method calls. ğ4 describes how NullAway's assumptions around method purity interact with type inference.",
+      "s_span": 2038,
+      "e_span": 2267
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Other Tools Throughout this paper we discuss two other typebased null checking tools for Java: the Nullness Checker from the Checker Framework   , which we refer to as CFNullness for brevity, and Eradicate, available with Facebook Infer [6].",
+      "s_span": 2268,
+      "e_span": 2533
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Other Tools Throughout this paper we discuss two other typebased null checking tools for Java: the Nullness Checker from the Checker Framework   , which we refer to as CFNullness for brevity, and Eradicate, available with Facebook Infer [6].",
+      "s_span": 2268,
+      "e_span": 2533
+    }
+  ],
+  "bib_entries": {
+    "5088113": {
+      "title": "Types and Programming Languages",
+      "abstract": "A type system is a syntactic method for automatically checking the absence of certain erroneous behaviors by classifying program phrases according to the kinds of values they compute. The study of type systems -- and of programming languages from a type-theoretic perspective -- has important applications in software engineering, language design, high-performance compilers, and security.This text provides a comprehensive introduction both to type systems in computer science and to the basic theory of programming languages. The approach is pragmatic and operational; each new concept is motivated by programming examples and the more theoretical sections are driven by the needs of implementations. Each chapter is accompanied by numerous exercises and solutions, as well as a running implementation, available via the Web. Dependencies between chapters are explicitly identified, allowing readers to choose a variety of paths through the material.The core topics include the untyped lambda-calculus, simple type systems, type reconstruction, universal and existential polymorphism, subtyping, bounded quantification, recursive types, kinds, and type operators. Extended case studies develop a variety of approaches to modeling the features of object-oriented languages."
+    },
+    "14533693": {
+      "title": "Practical pluggable types for Java",
+      "abstract": "This paper introduces the Checker Framework, which supports adding pluggable type systems to the Java language in a backward-compatible way. A type system designer defines type qualifiers and their semantics, and a compiler plug-in enforces the semantics. Programmers can write the type qualifiers in their programs and use the plug-in to detect or prevent errors. The Checker Framework is useful both to programmers who wish to write error-free code, and to type system designers who wish to evaluate and deploy their type systems. The Checker Framework includes new Java syntax for expressing type qualifiers; declarative and procedural mechanisms for writing type-checking rules; and support for flow-sensitive local type qualifier inference and for polymorphism over types and qualifiers. The Checker Framework is well-integrated with the Java language and toolset. We have evaluated the Checker Framework by writing 5 checkers and running them on over 600K lines of existing code. The checkers found real errors, then confirmed the absence of further errors in the fixed code. The case studies also shed light on the type systems themselves."
+    },
+    "10569415": {
+      "title": "Interprocedural May-Alias Analysis for Pointers: Beyond k-limiting",
+      "abstract": "Existing methods for alias analysis of recursive pointer data structures are based on two approximation techniques: k-limiting , and store-based (or equivalently location or region-based) approximations, which blur distinction between elements of recursive data structures. Although notable progress in inter-procedural alias analysis has been recently accomplished, very little progress in the precision of analysis of recursive pointer data structures has been seen since the inception of these approximation techniques by Jones and Muchnick a decade ago. As a result, optimizing, verifying and parallelizing programs with pointers has remained difficult. We present a new parametric framework for analyzing recursive pointer data structures which can express a new natural class of alias information not accessible to existing methods. The key idea is to represent alias information by pairs of symbolic access paths which are qualified by symbolic descriptions of the positions for which the alias pair holds. Based on this result, we present an algorithm for interprocedural may-alias analysis with pointers which on numerous examples that occur in practice is much more precise than recently published algorithms [CWZ90, He90, LR92, CBC93]."
+    },
+    "1130307": {
+      "title": "Building and using pluggable type-checkers",
+      "abstract": "This paper describes practical experience building and using pluggable type-checkers. A pluggable type-checker refines (strengthens) the built-in type system of a programming language. This permits programmers to detect and prevent, at compile time, defects that would otherwise have been manifested as run-time errors. The prevented defects may be generally applicable to all programs, such as null pointer dereferences. Or, an application-specific pluggable type system may be designed for a single application. We built a series of pluggable type checkers using the Checker Framework, and evaluated them on 2 million lines of code, finding hundreds of bugs in the process. We also observed 28 first-year computer science students use a checker to eliminate null pointer errors in their course projects. Along with describing the checkers and characterizing the bugs we found, we report the insights we had throughout the process. Overall, we found that the type checkers were easy to write, easy for novices to productively use, and effective in finding real bugs and verifying program properties, even for widely tested and used open source projects."
+    }
+  },
+  "generator": "fallback_v4"
+}

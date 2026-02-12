@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The script ClientHandleRe-motePlayers keeps a list of characters representing other players (more specifically, their CharacterBehaviorController components) and fetches the avatar with the ID specified in the message.",
+    "It forwards data to the respective CharacterBehaviorController which implements them.",
+    "§ ¤ private void OnPlayerStateUpdate(currentPlayerState msg, Channel channel) { // loop through list ''OtherPlayers'' which references remote players' CharacterBehaviorControllers if (OtherPlayers.TryGetValue(msg.id, out CharacterBehaviorController characterBehaviorController)) { characterBehaviorController.CharacterPosition = msg.characterPosition; characterBehaviorController.CharacterRotation = msg.characterRotation; characterBehaviorController.headIKPosition = msg.headIKPosition; characterBehaviorController.headIKRotation = msg.headIKRotation; characterBehaviorController.lEyeRotation = msg.lEyeRotation; characterBehaviorController.rEyeRotation = msg.rEyeRotation; characterBehaviorController.Smiling = msg.smiling; } } ¦ ¥",
+    "Data are written to disk in real-time on the client using logfile writer scripts.",
+    "SaveRawData directly notes down data from all active CharacterBehaviorController, i.e., both for one's own avatar and for all other characters."
+  ]
+}

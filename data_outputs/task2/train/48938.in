@@ -1,0 +1,52 @@
+{
+  "text": "In this paper, motivated by achieving a better sparse signal recovery, we propose a generalized denoising matrix Dantzig selector formulation. A two-stage algorithm is proposed to find the optimal denoising matrix. The algorithm is then applied to sparse value function approximation problem in temporal difference learning field, and the empirical results validate the efficacy of the proposed algorithm. There are many interesting future directions along this research topic. For example, the ODDS framework can be extended to weighted Dantzig Selector (WDS) , multi-stage Dantzig Selector [CITATION_1] , group Dantzig Selector [CITATION_2] and generalized Dantzig Selector [CITATION_3] , which are parallel research directions of the Dantzig Selector algorithms family.",
+  "citation_candidates": [
+    "15462470",
+    "45704259",
+    "7048603",
+    "10645637",
+    "12136901",
+    "62288331",
+    "12605120",
+    "1720439",
+    "15215966"
+  ],
+  "bib_entries": {
+    "12605120": {
+      "title": "Decoding by linear programming",
+      "abstract": "This paper considers the classical error correcting problem which is frequently discussed in coding theory. We wish to recover an input vector $f \\in \\R^n$ from corrupted measurements $y = A f + e$. Here, $A$ is an $m$ by $n$ (coding) matrix and $e$ is an arbitrary and unknown vector of errors. Is it possible to recover $f$ exactly from the data $y$? We prove that under suitable conditions on the coding matrix $A$, the input $f$ is the unique solution to the $\\ell_1$-minimization problem ($\\|x\\|_{\\ell_1} := \\sum_i |x_i|$) $$ \\min_{g \\in \\R^n} \\| y - Ag \\|_{\\ell_1} $$ provided that the support of the vector of errors is not too large, $\\|e\\|_{\\ell_0} := |\\{i : e_i \\neq 0\\}| \\le \\rho \\cdot m$ for some $\\rho>0$. In short, $f$ can be recovered exactly by solving a simple convex optimization problem (which one can recast as a linear program). In addition, numerical experiments suggest that this recovery procedure works unreasonably well; $f$ is recovered exactly even in situations where a significant fraction of the output is corrupted."
+    },
+    "7048603": {
+      "title": "Simultaneous analysis of lasso and dantzig selector",
+      "abstract": "We exhibit an approximate equivalence between the Lasso estimator and Dantzig selector. For both methods we derive parallel oracle inequalities for the prediction risk in the general nonparametric regression model, as well as bounds on the $\\ell_p$ estimation loss for $1\\le p\\le 2$ in the linear model when the number of variables can be much larger than the sample size."
+    },
+    "15462470": {
+      "title": "The restricted isometry property and its implications for compressed sensing",
+      "abstract": "Abstract It is now well-known that one can reconstruct sparse or compressible signals accurately from a very limited number of measurements, possibly contaminated with noise. This technique known as \u201ccompressed sensing\u201d or \u201ccompressive sampling\u201d relies on properties of the sensing matrix such as the restricted isometry property . In this Note, we establish new results about the accuracy of the reconstruction from undersampled measurements which improve on earlier estimates, and have the advantage of being more elegant. To cite this article: E.J. Candes, C. R. Acad. Sci. Paris, Ser. I 346 (2008)."
+    },
+    "62288331": {
+      "title": "Introductory lectures on convex optimization: A basic course",
+      "abstract": "It was in the middle of the 1980s, when the seminal paper by Kar markar opened a new epoch in nonlinear optimization. The importance of this paper, containing a new polynomial-time algorithm for linear op timization problems, was not only in its complexity bound. At that time, the most surprising feature of this algorithm was that the theoretical pre diction of its high efficiency was supported by excellent computational results. This unusual fact dramatically changed the style and direc tions of the research in nonlinear optimization. Thereafter it became more and more common that the new methods were provided with a complexity analysis, which was considered a better justification of their efficiency than computational experiments. In a new rapidly develop ing field, which got the name \"polynomial-time interior-point methods\", such a justification was obligatory. Afteralmost fifteen years of intensive research, the main results of this development started to appear in monographs [12, 14, 16, 17, 18, 19]. Approximately at that time the author was asked to prepare a new course on nonlinear optimization for graduate students. The idea was to create a course which would reflect the new developments in the field. Actually, this was a major challenge. At the time only the theory of interior-point methods for linear optimization was polished enough to be explained to students. The general theory of self-concordant functions had appeared in print only once in the form of research monograph [12]."
+    },
+    "45704259": {
+      "title": "Error bounds for approximations from projected linear equations",
+      "abstract": "We consider linear fixed point equations and their approximations by projection on a low dimensional subspace. We derive new bounds on the approximation error of the solution, which are expressed in terms of low dimensional matrices and can be computed by simulation. When the fixed point mapping is a contraction, as is typically the case in Markov decision processes (MDP), one of our bounds is always sharper than the standard contraction-based bounds, and another one is often sharper. The former bound is also tight in a worst-case sense. Our bounds also apply to the noncontraction case, including policy evaluation in MDP with nonstandard projections that enhance exploration. There are no error bounds currently available for this case to our knowledge."
+    },
+    "12136901": {
+      "title": "A Dantzig Selector Approach to Temporal Difference Learning",
+      "abstract": "LSTD is a popular algorithm for value function approximation. Whenever the number of features is larger than the number of samples, it must be paired with some form of regularization. In particular, l1-regularization methods tend to perform feature selection by promoting sparsity, and thus, are well-suited for high-dimensional problems. However, since LSTD is not a simple regression algorithm, but it solves a fixed-point problem, its integration with l1-regularization is not straightforward and might come with some drawbacks (e.g., the P-matrix assumption for LASSO-TD). In this paper, we introduce a novel algorithm obtained by integrating LSTD with the Dantzig Selector. We investigate the performance of the proposed algorithm and its relationship with the existing regularized approaches, and show how it addresses some of their drawbacks."
+    },
+    "10645637": {
+      "title": "Multi-stage dantzig selector",
+      "abstract": "We consider the following sparse signal recovery (or feature selection) problem: given a design matrix X \u2208 \u211dn x m (m \u226b n) and a noisy observation vector y \u2208 \u211dn satisfying y = X \u03b2* + e where e is the noise vector following a Gaussian distribution N(0, \u03c32I), how to recover the signal (or parameter vector) \u03b2* when the signal is sparse? ::: ::: The Dantzig selector has been proposed for sparse signal recovery with strong theoretical guarantees. In this paper, we propose a multi-stage Dantzig selector method, which iteratively refines the target signal \u03b2*. We show that if X obeys a certain condition, then with a large probability the difference between the solution ^\u03b2 estimated by the proposed method and the true solution \u03b2* measured in terms of the lp norm (p \u2265 1) is bounded as ::: ::: \u2016^\u03b2 - \u03b2 \u2016p \u2264 (C(s - N)1/p \u221alog m + \u0394) \u03c3, ::: ::: where C is a constant, s is the number of nonzero entries in \u03b2*, A is independent of m and is much smaller than the first term, and N is the number of entries of \u03b2* larger than a certain value in the order of O(\u03c3/\u221alog m). The proposed method improves the estimation bound of the standard Dantzig selector approximately from Cs1/p \u221alog m\u03c3 to C(s - N)1/p\u221alog m\u03c3 where the value N depends on the number of large entries in \u03b2*. When N = s, the proposed algorithm achieves the oracle solution with a high probability. In addition, with a large probability, the proposed method can select the same number of correct features under a milder condition than the Dantzig selector."
+    },
+    "15215966": {
+      "title": "The group dantzig selector",
+      "abstract": "We introduce a new method | the group Dantzig selector | for high dimensional sparse regression with group structure, which has a convincing theory about why utilizing the group structure can be benecial. Under a group restricted isometry condition, we obtain a signicantly improved nonasymptotic \u20182-norm bound over the basis pursuit or the Dantzig selector which ignores the group structure. To gain more insight, we also introduce a surprisingly simple and intuitive sparsity oracle condition to obtain a block \u20181norm bound, which is easily accessible to a broad audience in machine learning community. Encouraging numerical results are also provided to support our theory."
+    },
+    "1720439": {
+      "title": "Generalized dantzig selector: Application to the k-support norm",
+      "abstract": "We propose a Generalized Dantzig Selector (GDS) for linear models, in which any norm encoding the parameter structure can be leveraged for estimation. We investigate both computational and statistical aspects of the GDS. Based on conjugate proximal operator, a flexible inexact ADMM framework is designed for solving GDS, and non-asymptotic high-probability bounds are established on the estimation error, which rely on Gaussian width of unit norm ball and suitable set encompassing estimation error. Further, we consider a non-trivial example of the GDS using $k$-support norm. We derive an efficient method to compute the proximal operator for $k$-support norm since existing methods are inapplicable in this setting. For statistical analysis, we provide upper bounds for the Gaussian widths needed in the GDS analysis, yielding the first statistical recovery guarantee for estimation with the $k$-support norm. The experimental results confirm our theoretical analysis."
+    }
+  }
+}

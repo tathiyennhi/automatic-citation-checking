@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We use 8-bit AdamW with:• Learning rate: 2 × 10 -4• Batch size: 4 (with gradient accumulation)• Epochs: 3• Warmup: None (LoRA is stable without warmup) Injection During Training.For positive examples, we inject the concept vector at the final prompt token during the forward pass using a hook at layer l * = 20.",
+    "The injection is applied identically during training and evaluation, ensuring no distribution shift.",
+    "Evaluation ProtocolWe evaluate on a held-out set of 20 concepts C test that the model never encounters during training.",
+    "This tests whether the model learns a general introspective skill or merely memorizes concept-vector mappings.Test Concepts.",
+    "Our held-out concepts include: origami, tornado, galaxy, unicorn, avalanche, vampire, pyramid, dinosaur, rainbow, volcano, treasure, compass, microscope, telescope, satellite, glacier, cactus, octopus, butterfly, crystal."
+  ],
+  "correct_citations": []
+}

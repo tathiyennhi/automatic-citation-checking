@@ -1,0 +1,20 @@
+{
+  "doc_id": "9118",
+  "text": "An example for a small instance consisting of two voters is given in Fig. 2 . As explained above, we create n such networks, each differing only in the value of r which is the maximum score all candidates can reach and the preferred candidate c 1 will win with, and solve the corresponding flow problem with a minimum cost flow algorithm. The resulting flow will always be n, but the costs may differ. We then choose the solution with the lowest costs, and if they do not exceed the given budget, we found an optimal Fig. 2 Example for a flow network of an election with two voters v 1 and v 2 . All edges have costs 0 and capacity 1. The only exceptions are the dashed edges that have a different capacity stated, and the connecting edges (v i , c i j ) between V and B that have the costs to bribe v i to vote for c j one. Otherwise there is none. The constructed networks have a number of nodes that is polynomial in n and we are only building up to n of them. This results in a polynomial running time of the overall algorithm. For the correctness, observe that there is a flow of value n on the constructed network if and only if the bribery problem can be solved: Assume there exists a flow of value n in the network. Since all capacities and costs are integral, the flow is integral as well [CITATION_1] . The edges connecting nodes in C with g and t, respectively, guarantee that a flow of value r is going through vertex c * 1 , hence ensuring that the preferred candidate c 1 obtains r points, and that no flow of value greater than r leaves any vertex c * j ∈ C \\ {c * 1 }, hence ensuring that no candidate can end up with more than r points, making c 1 a (co-)winner. This is achieved if the briber changes those votes corresponding to the edges connecting V and B: For each node v i , there is one edge (v i , c i j ) connecting v i to a node c i j of the set B, carrying a flow of value 1. This edge tells the briber that v i has to be bribed in such a way that c j becomes his new top candidate. Therefore, there exists a successful bribery in which c 1 wins with r votes.",
+  "correct_citation": {
+    "[CITATION_1]": "12577796"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Since all capacities and costs are integral, the flow is integral as well  ."
+    }
+  ],
+  "bib_entries": {
+    "12577796": {
+      "title": "Network Flows -Theory, Algorithms and Applications",
+      "abstract": "A comprehensive introduction to network flows that brings together the classic and the contemporary aspects of the field, and provides an integrative view of theory, algorithms, and applications. presents in-depth, self-contained treatments of shortest path, maximum flow, and minimum cost flow problems, including descriptions of polynomial-time algorithms for these core models. emphasizes powerful algorithmic strategies and analysis tools such as data scaling, geometric improvement arguments, and potential function arguments. provides an easy-to-understand descriptions of several important data structures, including d-heaps, Fibonacci heaps, and dynamic trees. devotes a special chapter to conducting empirical testing of algorithms. features over 150 applications of network flows to a variety of engineering, management, and scientific domains. contains extensive reference notes and illustrations."
+    }
+  },
+  "generator": "fallback_v4"
+}

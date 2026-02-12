@@ -1,0 +1,22 @@
+{
+  "doc_id": "7060",
+  "text": "Next, a series of LBR evaluations were conducted using Weka [CITATION_1] . The precision for target variables were determined at T = 2 and T = 3 using combinations of information to learn the associated probabilities: from the MB of the prior time slice; from all nodes from the immediately prior step; and from all nodes from the current and immediately prior step, minus the targeted predicted value. The results (Tables 3, 4) show that with each added time step, the prediction rate improves. The results also demonstrate improvements across all variables in prediction with the LBR algorithm relative to the DBN. For example, for predicting the state of chemotherapy for T = 2, the LBR-based approach ranged from 72-85% given different levels of evidence, whereas the DBN approach achieved only 59-60%. The comparatively lower predictive power of the DBN suggests that expert knowledge captured in the population-wide model is inadequate compared to a more specific, patientcentered model to describe the specific presentation and treatment or diagnostic paths for GBM. The LBR evaluation demonstrates clear advantages in using the patient-specific model selection for fitting the GBM data. Furthermore, in evaluating the model at T = 3, evidence earlier than the time step immediately prior (i.e., T = 1) has relatively little predictive power compared to more recent information (i.e., T = 2). The evaluation using evidence at T = 2, 3 further supports this finding: evidence at T = 1, 2 is outperformed by using only the evidence in T = 2: the added evidence in T = 1 does not help improve predictive accuracy. This may imply that the immediately previous state is the only prior evidence needed to predict future states. The MB-version of the baseline model for evaluating T = 2 demonstrates only comparable performance to the full baseline topology; the MB-version of the T = 2 model for evaluating T = 3 out performs the full baseline network, which suggests the volatility of baseline or earlier data. Precision per variable in the LBR evaluation ranged from 62-70% at T = 2, and 61-76% at T = 3 with the MB-modified model for T = 1.",
+  "correct_citation": {
+    "[CITATION_1]": "648945"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Next, a series of LBR evaluations were conducted using Weka [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 74
+    }
+  ],
+  "bib_entries": {
+    "648945": {
+      "title": "Weka: practical machine learning tools and techniques with Java implementations",
+      "abstract": "The Waikato Environment for Knowledge Analysis (Weka) is a comprehensive suite of Java class libraries that implement many state-of-the-art machine learning and data mining algorithms. Weka is freely available on the World-Wide Web and accompanies a new text on data mining [1] which documents and fully explains all the algorithms it contains. Applications written using the Weka class libraries can be run on any computer with a Web browsing capability; this allows users to apply machine learning techniques to their own data regardless of computer platform."
+    }
+  },
+  "generator": "fallback_v4"
+}

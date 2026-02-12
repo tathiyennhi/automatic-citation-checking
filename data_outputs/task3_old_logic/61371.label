@@ -1,0 +1,20 @@
+{
+  "doc_id": "61371",
+  "text": "The aggregation part of the algorithm starts with � i∈s k i subclusters, where s is the number of nodes involved and k i , for i = 1, ..., s, are the local numbers of clusters in each node. Each node has the possibility to generate a global merging. An important point here is that the merging is a labeling process, i.e. each local node can generate the correspondences between local subclusters, without necessarily constructing the overall clustering output. This is because the only bookkeeping needed from the other nodes are centers, sizes and variances of the clusters. The aggregation is then defined as a labeling process between local subclusters. No data move is needed at this stage. On the other hand, the perturbation process is activated if the merging operation is no longer applied. The perturbation candidates are collected for each global cluster from its border, which is proportional to the overall size composition as quoted before. Then, this process moves these candidates by trying the closest ones first and with respect to the gain in the variance criterion when moving them from the neighboring global clusters. Formal definitions of this algorithm, and all notions and criterions, are given in [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "6524731"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Formal definitions of this algorithm, and all notions and criterions, are given in  ."
+    }
+  ],
+  "bib_entries": {
+    "6524731": {
+      "title": "Lightweight Clustering Technique for Distributed Data Mining Applications",
+      "abstract": "Many parallel and distributed clustering algorithms have already been proposed. Most of them are based on the aggregation of local models according to some collected local statistics. In this paper, we propose a lightweight distributed clustering algorithm based on minimum variance increases criterion which requires a very limited communication overhead. We also introduce the notion of distributed perturbation to improve the globally generated clustering. We show that this algorithm improves the quality of the overall clustering and manage to find the real structure and number of clusters of the global dataset."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Content ClassificationThe pre-processing transformations described above enable us to reformulate content extraction as a well-defined sequence labeling problem, analogous to tasks such as named entity recognition or part-of-speech tagging.",
+    "This formulation provides both theoretical clarity and practical advantages for model training and inference.Formally, let an HTML document be represented as a sequence of n simplified blocks after preprocessing, denoted as X = [x 1, x 2,..., x n].",
+    "Each block x i is associated with a ground-truth binary label y i ∈ {0, 1}, where y i = 1 indicates that block x i belongs to the main content, and y i = 0 denotes boilerplate or auxiliary content.",
+    "The objective is to train a language model (i.e., MinerU-HTML-Classifier) f θ parameterized by θ that maps the input sequence to a predicted label sequence:Y pred = f θ (X) = [y ′ 1, y ′ 2,..., y ′ n], y ′ i ∈ {0, 1}(1)For details of the MinerU-HTML-Classifier, please refer to Appendix A.1.",
+    "The post-processing module subsequently utilizes Y pred to select the corresponding blocks from the Mapping HTML and construct the final Main-HTML output.This sequence labeling formulation offers several advantages."
+  ],
+  "correct_citations": []
+}

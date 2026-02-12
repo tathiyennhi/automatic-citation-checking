@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The vector representation of words is obtained from both architectures by updating the parameters through a neural network-based training process.",
+    "The context here is the words around wt, namely wt-2, wt-1, wt+1, and wt+2, two words to the left of the target and two words to the right [66].To predict w t, CBOW uses the probability formula, as shown in formula 4.P (w t |w j(j|j-t|≤l,j̸ =t)) = Sof tmax   M   |j-t|≤l,j̸ =t W j    (4)where, P (w t |w j(|j-t|≤l,j̸ =t)) is the word probability wt, l is the training context measure, M is the weighting matrix on R |V |m, V is the number of vocabulary words, and the m dimensions of the word vector.",
+    "The CBOW model is optimized by minimizing the sum of the negative log probabilities, according to the formula 5.L = - t logP (w t |w j(|j-t|≤l,j̸ =t))(5)We can adjust the number of window sizes as needed.",
+    "If l increases the window size, the accuracy will increase, but the training time becomes longer, and vice versa.The skip-gram model, opposite CBOW, predicts the word context based on the target word using formula 6.P (w j |w t) = Sof tmax(M w)(|j -t| ≤ l, j ̸ = t)(6)where, P (w j |w t) is the word context probability w j given w t, and M is the weighting matrix.",
+    "The calculation of the loss function in the skip-gram uses the formula 7.L = - t |j-t|≤l,j̸ =t P (w j |w t)(7)The implementation of Word2vec in the proposed model aims to reap the advantages of Word2vec, namely: 1) computational efficiency because it only requires the context around the target word to make predictions, 2) being able to learn word representations in a large corpus by reducing the dimensions of the vector representation, and 3) being able to express semantic relationships between words in the form of vector operations, for example, \"king\" -\"man\" + \"women\" will be predicted to become \"queen\".With the increasing number of deep learning approaches implemented by NER researchers, BERT is a promising option."
+  ],
+  "correct_citations": [
+    "The context here is the words around wt, namely wt-2, wt-1, wt+1, and wt+2, two words to the left of the target and two words to the right [66].To predict w t, CBOW uses the probability formula, as shown in formula 4.P (w t |w j(j|j-t|≤l,j̸ =t)) = Sof tmax   M   |j-t|≤l,j̸ =t W j    (4)where, P (w t |w j(|j-t|≤l,j̸ =t)) is the word probability wt, l is the training context measure, M is the weighting matrix on R |V |m, V is the number of vocabulary words, and the m dimensions of the word vector."
+  ]
+}

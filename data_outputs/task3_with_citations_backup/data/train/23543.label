@@ -1,0 +1,55 @@
+{
+  "doc_id": "23543",
+  "text": "With the advent of powerful GPU technology, CNN-based deep learning techniques have been receiving much attention. Semantic segmentation is one of the fields benefiting from this change. Equally, the interest in intelligent autonomous vehicles has been growing and there has been a large amount of research over recent years. The segmentation of road scenes holds a major role in the functionality of such systems. There have been many works directed at city road environment segmentation. However, there have only been a few works for off-road driving scene segmentation. Daniel et al. perform the semantic mapping for off-road navigation using custom convolutional networks in [CITATION_1] . In [CITATION_2] , a deep neural network is applied in order to classify the off-road scene as trail and non-trail parts using image patches. It successively applies the dynamic programming to delineate the light-weight trail from sub-light-weight network output. In [CITATION_3] , the TL approach is used to semantically segment the off-road scene using the network trained with on-road scenery. Our work is different in the sense that [CITATION_4] is trained with Pascal VOC images and we transfer the knowledge to the target, which has very different data distributions. Furthermore, we change the original network size, proposing a smaller network that transfers the optimum knowledge considering the real-time issues required by the autonomous vehicle.",
+  "correct_citation": {
+    "[CITATION_1]": "19216802",
+    "[CITATION_2]": "3322498",
+    "[CITATION_3]": "33886228",
+    "[CITATION_4]": "623137"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Daniel et al. perform the semantic mapping for off-road navigation using custom convolutional networks in [CITATION_1] .",
+      "s_span": 573,
+      "e_span": 693
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In [CITATION_2] , a deep neural network is applied in order to classify the off-road scene as trail and non-trail parts using image patches.",
+      "s_span": 694,
+      "e_span": 834
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In [CITATION_3] , the TL approach is used to semantically segment the off-road scene using the network trained with on-road scenery.",
+      "s_span": 957,
+      "e_span": 1089
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Our work is different in the sense that [CITATION_4] is trained with Pascal VOC images and we transfer the knowledge to the target, which has very different data distributions.",
+      "s_span": 1090,
+      "e_span": 1266
+    }
+  ],
+  "bib_entries": {
+    "33886228": {
+      "title": "From on-road to off: transfer learning within a deep convolutional neural network for segmentation and classification of off-road scenes",
+      "abstract": "Real-time road-scene understanding is a challenging computer vision task with recent advances in convolutional neural networks (CNN) achieving results that notably surpass prior traditional feature driven approaches. Here, we take an existing CNN architecture, pre-trained for urban road-scene understanding, and retrain it towards the task of classifying off-road scenes, assessing the network performance within the training cycle. Within the paradigm of transfer learning we analyse the effects on CNN classification, by training and assessing varying levels of prior training on varying sub-sets of our off-road training data. For each of these configurations, we evaluate the network at multiple points during its training cycle, allowing us to analyse in depth exactly how the training process is affected by these variations. Finally, we compare this CNN to a more traditional approach using a feature-driven Support Vector Machine (SVM) classifier and demonstrate state-of-the-art results in this particularly challenging problem of off-road scene understanding."
+    },
+    "623137": {
+      "title": "Learning deconvolution network for semantic segmentation",
+      "abstract": "We propose a novel semantic segmentation algorithm by learning a deep deconvolution network. We learn the network on top of the convolutional layers adopted from VGG 16-layer net. The deconvolution network is composed of deconvolution and unpooling layers, which identify pixelwise class labels and predict segmentation masks. We apply the trained network to each proposal in an input image, and construct the final semantic segmentation map by combining the results from all proposals in a simple manner. The proposed algorithm mitigates the limitations of the existing methods based on fully convolutional networks by integrating deep deconvolution network and proposal-wise prediction, our segmentation method typically identifies detailed structures and handles objects in multiple scales naturally. Our network demonstrates outstanding performance in PASCAL VOC 2012 dataset, and we achieve the best accuracy (72.5%) among the methods trained without using Microsoft COCO dataset through ensemble with the fully convolutional network."
+    },
+    "3322498": {
+      "title": "Accurate Natural Trail Detection Using a Combination of a Deep Neural Network and Dynamic Programming",
+      "abstract": "This paper presents a vision sensor-based solution to the challenging problem of detecting and following trails in highly unstructured natural environments like forests, rural areas and mountains, using a combination of a deep neural network and dynamic programming. The deep neural network (DNN) concept has recently emerged as a very effective tool for processing vision sensor signals. A patch-based DNN is trained with supervised data to classify fixed-size image patches into “trail” and “non-trail” categories, and reshaped to a fully convolutional architecture to produce trail segmentation map for arbitrary-sized input images. As trail and non-trail patches do not exhibit clearly defined shapes or forms, the patch-based classifier is prone to misclassification, and produces sub-optimal trail segmentation maps. Dynamic programming is introduced to find an optimal trail on the sub-optimal DNN output map. Experimental results showing accurate trail detection for real-world trail datasets captured with a head mounted vision system are presented."
+    },
+    "19216802": {
+      "title": "Real-time semantic mapping for autonomous off-road navigation",
+      "abstract": "In this paper we describe a semantic mapping system for autonomous off-road driving with an All-Terrain Vehicle (ATVs). The system’s goal is to provide a richer representation of the environment than a purely geometric map, allowing it to distinguish, e.g., tall grass from obstacles. The system builds a 2.5D grid map encoding both geometric (terrain height) and semantic information (navigation-relevant classes such as trail, grass, etc.). The geometric and semantic information are estimated online and in real-time from LiDAR and image sensor data, respectively. Using this semantic map, motion planners can create semantically aware trajectories. To achieve robust and efficient semantic segmentation, we design a custom Convolutional Neural Network (CNN) and train it with a novel dataset of labelled off-road imagery built for this purpose. We evaluate our semantic segmentation offline, showing comparable performance to the state of the art with slightly lower latency. We also show closed-loop field results with an autonomous ATV driving over challenging off-road terrain by using the semantic map in conjunction with a simple path planner. Our models and labelled dataset will be publicly available at http://dimatura.net/offroad."
+    }
+  },
+  "generator": "fallback_v4"
+}

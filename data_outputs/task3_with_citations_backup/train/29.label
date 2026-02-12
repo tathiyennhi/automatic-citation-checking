@@ -1,0 +1,22 @@
+{
+  "doc_id": "29",
+  "text": "We first consider a machine replacement problem with 50 states, 2 actions (\"repair\" and \"not repair\") for each state, deterministic transitions, a discount factor of 0.8, and uncertain rewards following Gaussian distributions independently [see Fig. 2(a) ]: For the first 48 states, the \"repair\" action has a cost N (130, 1) . The 49th and 50th states of the machine's life are designed to be risky: not repairing at state 50 incurs a highly uncertain cost N (100, 800), while repairing at both states is a more secure but still uncertain option with a cost N (130, 10) . The detailed implementation is as follows: We use the mean value of uncertain rewards to compute the nominal strategy. For both robust and distributionally robust strategy, we construct confidence sets usinĝ m ± 3σ for the first 49 states, andm ± 4σ for state 50 wherem andσ 2 are mean and variance estimated from samples (see [CITATION_1] for details), as it is more risky and thus hard to estimate. In addition, we construct an extra confidence set (centered at the mean) with 60%-70% confidence level (i.e., α 1 50 = 0.6, α 1 50 = 0.7) for distributionally robust strategy. The optimal paths followed by three strategies are shown in Fig. 2(a) .",
+  "correct_citation": {
+    "[CITATION_1]": "18980380"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For both robust and distributionally robust strategy, we construct confidence sets usinĝ m ± 3σ for the first 49 states, andm ± 4σ for state 50 wherem andσ 2 are mean and variance estimated from samples (see [CITATION_1] for details), as it is more risky and thus hard to estimate.",
+      "s_span": 691,
+      "e_span": 972
+    }
+  ],
+  "bib_entries": {
+    "18980380": {
+      "title": "Distributionally robust counterpart in Markov decision processes",
+      "abstract": "This technical note studies Markov decision processes under parameter uncertainty. We adapt the distributionally robust optimization framework, assume that the uncertain parameters are random variables following an unknown distribution, and seek the strategy which maximizes the expected performance under the most adversarial distribution. In particular, we generalize a previous study [1] which concentrates on distribution sets with very special structure to a considerably more generic class of distribution sets, and show that the optimal strategy can be obtained efficiently under mild technical conditions. This significantly extends the applicability of distributionally robust MDPs by incorporating probabilistic information of uncertainty in a more flexible way."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The central server aggregates all received models to obtain the latest model M 𝑟 +1.",
+    "Algorithm 1 summarizes the vanilla federated sequential recommendation procedures in pseudo-code.",
+    "Algorithm 1 The pseudo-code for vanilla federated sequential recommendation.",
+    "Input: global round 𝑅; learning rate 𝑙𝑟,... Output: well-trained sequential model M 𝑅 1: server initializes model M 0 2: for each round r =0,..., 𝑅 -1 do 3: sample a fraction of clients U 𝑟 from U 4: for 𝑢 𝑖 ∈ U 𝑟 in parallel do 5: // execute on client sides 6: M 𝑟 +1 𝑢 𝑖 ←ClientTrain(𝑢 𝑖, M 𝑟) 7: end for 8: // execute on central server 9: M 𝑟 +1 ← aggregate received client model parameters {M 𝑟 +1 𝑢 𝑖 } 𝑢 𝑖 ∈ U 𝑟 10: end for 11: function ClientTrain(𝑢 𝑖, M 𝑟) 12: M 𝑟 +1 𝑢 𝑖 ← update local model with recommendation objective L 𝑟𝑒𝑐 13:return M 𝑟 +1 𝑢 𝑖 14: end function Base Sequential Recommender SystemThe above FedSeqRec framework can be compatible with most current sequential recommendation models with reasonable sizes.",
+    "In this paper, to demonstrate the generalization of our proposed FELLAS, we select the two most popular sequential recommendation models, GRU4Rec [20] and SASRec [22] as the experimental base models."
+  ],
+  "correct_citations": [
+    "In this paper, to demonstrate the generalization of our proposed FELLAS, we select the two most popular sequential recommendation models, GRU4Rec [20] and SASRec [22] as the experimental base models."
+  ]
+}

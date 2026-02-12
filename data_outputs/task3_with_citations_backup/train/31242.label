@@ -1,0 +1,22 @@
+{
+  "doc_id": "31242",
+  "text": "I.e., in order to decide when the available bandwidth or disk can be further reserved on a host, appropriate thresh-olds are determined off-line, and, while the application runs, class RhoNet and RhoDisk periodically monitor bandwidth and disk use, respectively. Requests to reserve network, or disk, are accepted when current use is compatible with the thresholds, the pending requests and the current request, along the lines adopted for CPU use. Figure 3 illustrates how STREGA components interact. As soon as an application object performs an operation, e.g. instantiates a new object (see (1) in Figure 3 ), the associated metaobject :Remon intercepts the operation (see [CITATION_1] ) and checks whether enough resources (e.g. processing power) have been allocated so far. If not, reservation is required for such resources by means of :Rho (see (3)) (only one instance of this class is used for the whole host).",
+  "correct_citation": {
+    "[CITATION_1]": "702803"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As soon as an application object performs an operation, e.g. instantiates a new object (see (1) in Figure 3 ), the associated metaobject :Remon intercepts the operation (see [CITATION_1] ) and checks whether enough resources (e.g. processing power) have been allocated so far.",
+      "s_span": 502,
+      "e_span": 778
+    }
+  ],
+  "bib_entries": {
+    "702803": {
+      "title": "Endpoint Admission Control:Architectural Issues and Performance",
+      "abstract": "The traditional approach to implementing admission control, as exemplified by the Integrated Services proposal in the IETF, uses a signalling protocol to establish reservations at all routers along the path. While providing excellent quality-of-service, this approach has limited scalability because it requires routers to keep per-flow state and to process per-flow reservation messages. In an attempt to implement admission control without these scalability problems, several recent papers have proposed various forms of endpoint admission control. In these designs, the hosts (the endpoints) probe the network to detect the level of congestion; the host admits the flow only if the detected level of congestion is sufficiently low. This paper is devoted to the study of endpoint admission control. We first consider several architectural issues that guide (and constrain) the design of such systems. We then use simulations to evaluate the performance of endpoint admission control in various settings. The modest performance degradation between traditional router-based admission control and endpoint admission control suggests that a real-time service based on endpoint probing may be viable."
+    }
+  },
+  "generator": "fallback_v4"
+}

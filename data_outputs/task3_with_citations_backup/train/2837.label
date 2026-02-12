@@ -1,0 +1,33 @@
+{
+  "doc_id": "2837",
+  "text": "Because of the rather aggressive downsizing of the original full-resolution RAW files, the content of many BOSSbase images is very complex with apparently rather weak dependencies among neighboring pixel values. The downsizing also effectively suppresses color interpolation artifacts and introduces artifacts of its own. There are images in BOSSbase that are very smooth, e.g., improperly focused images as well as images that are very dark and contain almost no content, such as an image of the Moon. One may thus argue that BOSSbase contains \"enough\" diversity to be used as a standardized source. On the other hand, virtually all steganographic schemes contain free parameters or design elements, such as an image transform and filter kernels, that are selected based on feedback provided by detectors on BOSSbase. We show that this makes the design overoptimized to a given image source and the embedding suboptimal on different sources. Even after optimizing the parameters of each embedding scheme to the source, universal benchmarking still does not seem possible since the optimized schemes exhibit different empirical security across sources. Additionally, the recently proposed synchronization of embedding changes [CITATION_1] [CITATION_2] appears far less effective on images with suppressed noise.",
+  "correct_citation": {
+    "[CITATION_1]": "18670709",
+    "[CITATION_2]": "296136"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Additionally, the recently proposed synchronization of embedding changes [CITATION_1] [CITATION_2] appears far less effective on images with suppressed noise.",
+      "s_span": 1153,
+      "e_span": 1311
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Additionally, the recently proposed synchronization of embedding changes [CITATION_1] [CITATION_2] appears far less effective on images with suppressed noise.",
+      "s_span": 1153,
+      "e_span": 1311
+    }
+  ],
+  "bib_entries": {
+    "18670709": {
+      "title": "Improving steganographic security by synchronizing the selection channel",
+      "abstract": "This paper describes a general method for increasing the security of additive steganographic schemes for digital images represented in the spatial domain. Additive embedding schemes first assign costs to individual pixels and then embed the desired payload by minimizing the sum of costs of all changed pixels. The proposed framework can be applied to any such scheme -- it starts with the cost assignment and forms a non-additive distortion function that forces adjacent embedding changes to synchronize. Since the distortion function is purposely designed as a sum of locally supported potentials, one can use the Gibbs construction to realize the embedding in practice. The beneficial impact of synchronizing the embedding changes is linked to the fact that modern steganalysis detectors use higher-order statistics of noise residuals obtained by filters with sign-changing kernels and to the fundamental difficulty of accurately estimating the selection channel of a non-additive embedding scheme implemented with several Gibbs sweeps. Both decrease the accuracy of detectors built using rich media models, including their selection-channel-aware versions."
+    },
+    "296136": {
+      "title": "A strategy of clustering modification directions in spatial image steganography",
+      "abstract": "Most of the recently proposed steganographic schemes are based on minimizing an additive distortion function defined as the sum of embedding costs for individual pixels. In such an approach, mutual embedding impacts are often ignored. In this paper, we present an approach that can exploit the interactions among embedding changes in order to reduce the risk of detection by steganalysis. It employs a novel strategy, called clustering modification directions (CMDs), based on the assumption that when embedding modifications in heavily textured regions are locally heading toward the same direction, the steganographic security might be improved. To implement the strategy, a cover image is decomposed into several subimages, in which message segments are embedded with well-known schemes using additive distortion functions. The costs of pixels are updated dynamically to take mutual embedding impacts into account. Specifically, when neighboring pixels are changed toward a positive/negative direction, the cost of the considered pixel is biased toward the same direction. Experimental results show that our proposed CMD strategy, incorporated into existing steganographic schemes, can effectively overcome the challenges posed by the modern steganalyzers with high-dimensional features."
+    }
+  },
+  "generator": "fallback_v4"
+}

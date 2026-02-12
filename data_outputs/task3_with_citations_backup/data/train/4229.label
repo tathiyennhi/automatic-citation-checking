@@ -1,0 +1,29 @@
+{
+  "doc_id": "4229",
+  "text": "The UBS-DM-HS algorithm is largely identical to the UBS-DM algorithm [CITATION_1] with one important change, the addition of a step in the algorithm procedure. For a more detailed rationale explaining the original algorithm, please consult the UBS-DM paper. [CITATION_2] In brief, the underlying concept of both algorithms is that PCA deconstructs the hyperspectral data matrix, D, into an orthonormal eigenvector matrix, V, and a set of scores, S. The entries in the score matrix S indicate how much each eigenvector in V contributes to a given spectrum in the hyperspectral data matrix D. The eigenvectors in V are ordered such that the first few eigenvectors represent most of the variance in D, where with ideal, noise-free data the set of eigenvectors with non-zero scores would be identical to the underlying set of spectra present in the sample. For experimental data, the presence of both noise and cosmic ray spikes increases the number of eigenvectors necessary to model the data well and may skew the eigenvectors relative to the ideal spectra.",
+  "correct_citation": {
+    "[CITATION_1]": "98786138",
+    "[CITATION_2]": "98786138"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The UBS-DM-HS algorithm is largely identical to the UBS-DM algorithm [CITATION_1] with one important change, the addition of a step in the algorithm procedure.",
+      "s_span": 0,
+      "e_span": 159
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": " the addition of a step in the algorithm procedure. For a more detailed rationale explaining the original algorithm, please consult the UBS-DM paper. [CITATION_2] In brief, the underlying concept of both algorithms is that PCA deconstructs the hyperspectral data matrix, D, into an orthonormal ",
+      "s_span": 108,
+      "e_span": 402
+    }
+  ],
+  "bib_entries": {
+    "98786138": {
+      "title": "Removal of Cosmic Spikes from Hyper-Spectral Images Using a Hybrid Upper-Bound Spectrum Method",
+      "abstract": "A hybrid of the upper-bound spectrum (UBS), principle component analysis (PCA), and median filter (MF) algorithms is used to efficiently remove cosmic spike spectral artifacts from hyper-spectral data matrices (DM). The resulting UBS-DM method is shown to introduce less spectral distortion than the widely used MF cosmic spike suppression algorithm alone. The new method relies on a truncated series of PCA eigenvectors to produce an upper-bound spectrum, which is in turn used to detect and remove cosmic spikes. The PCA eigenvectors are separated into three groups, each of which is treated in a different manner. The first group of eigenvectors, which contain most of the spectral correlation of interest, are not preprocessed prior to applying the UBS-DM method. The second group, which are more severely contaminated by cosmic spikes (but may also contain important spectral correlations), are MF preprocessed before applying UBS. The third group of eigenvectors, which contain virtually no spectral information, are ignored in regenerating the upper-bound spectra used for spike detection and removal. The UBS-DM algorithm is tested using both synthetic and experimental (iron oxide) Raman hyper-spectral data sets, each containing several thousand spectra, with about 1000 wavelength pixels."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "40587",
+  "text": "Once the circuit has been established, Alice and Bob can send one another relay cells encrypted with the negotiated key. [CITATION_1] More detail is given in the next section. To extend the circuit further, Alice sends a relay extend cell to Bob, specifying the address of the next OR (call her Carol), and an encrypted g x2 for her. Bob copies the half-handshake into a create cell, and passes it to Carol to extend the circuit. (Bob chooses a new circID C BC not currently used on the connection between him and Carol. Alice never needs to know this circID; only Bob associates C AB on his connection with Alice to C BC on his connection with Carol.) When Carol responds with a created cell, Bob wraps the payload into a relay extended cell and passes it back to Alice. Now the circuit is extended to Carol, and Alice and Carol share a common key K 2 = g x2y2 . To extend the circuit to a third node or beyond, Alice proceeds as above, always telling the last node in the circuit to extend one hop further.",
+  "correct_citation": {
+    "[CITATION_1]": "2228261"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Once the circuit has been established, Alice and Bob can send one another relay cells encrypted with the negotiated key. More detail is given in the next section."
+    }
+  ],
+  "bib_entries": {
+    "2228261": {
+      "title": "On the economics of anonymity",
+      "abstract": "Decentralized anonymity infrastructures are still not in wide use today. While there are technical barriers to a secure robust design, our lack of understanding of the incentives to participate in such systems remains a major roadblock. Here we explore some reasons why anonymity systems are particularly hard to deploy, enumerate the incentives to participate either as senders or also as nodes, and build a general model to describe the effects of these incentives. We then describe and justify some simplifying assumptions to make the model manageable, and compare optimal strategies for participants based on a variety of scenarios."
+    }
+  },
+  "generator": "fallback"
+}

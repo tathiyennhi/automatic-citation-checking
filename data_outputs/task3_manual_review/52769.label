@@ -1,0 +1,38 @@
+{
+  "doc_id": "52769",
+  "text": "In this paper, we propose a HIDS that uses a technique similar to the one described in [CITATION_1] to be applied to Linux containers. The technique combines the sliding window technique [CITATION_2] with the bag of system calls technique [CITATION_3] . The technique ignores the order of system calls, and only keeps track of the frequencies of the system calls in the current window. As described in section 1, the system works in real time, i.e. it learns behavior of the container and detects anomaly at runtime. It also works in opaque mode, i.e. it does not require any prior knowledge about the nature of the container nor the enclosed application. Figure 1 gives an overview of the system architecture and data flow as described below. Our system employs a background service running on the host kernel to monitor system calls between any Docker containers and the host Kernel. Starting a new container on the host kernel triggers the service, which uses the Linux strace tool to trace all system calls issued by the container to the host kernel. The strace tool reports system calls with their originating process ID, arguments, and return values.",
+  "correct_citation": {
+    "[CITATION_1]": "1640292",
+    "[CITATION_2]": "206556577",
+    "[CITATION_3]": "2830389"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In this paper, we propose a HIDS that uses a technique similar to the one described in to be applied to Linux containers."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The technique combines the sliding window technique"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The technique combines the sliding window technique with the bag of system calls technique"
+    }
+  ],
+  "bib_entries": {
+    "1640292": {
+      "title": "Detecting anomalies in IaaS environments through virtual machine host system call analysis",
+      "abstract": "Providers and consumers of Infrastructure-as-a-Service (IaaS) virtual machine resources may be the subject of a number of attacks, particularly in public cloud environments. Detecting anomalies is hence critical both to protect against misuse and attacks, but is subject to constraints. These include primarily efficiency, but also legal and contractual restrictions limiting the depth of intrusiveness, which can be achieved by an intrusion detection system. In many cases, the IaaS provider will also have very limited insights into the actual workloads used by clients. In this paper we therefore propose to monitor system calls at the VM host level without requiring any instrumentation within VMs and argue that this level of granularity is sufficient to capture a number of relevant attack classes. This, together with the efficiency and efficacy of the approach is shown through experiments and statistical analysis in a Linux KVM-based reference scenario. The proposed system, unlike other systems such as VM Introspection (VMI), does not require any knowledge about VMs from inside nor requiring any OS or hypervisor modifications."
+    },
+    "2830389": {
+      "title": "Learning classifiers for misuse and anomaly detection using a bag of system calls representation",
+      "abstract": "In this paper, we propose a \"bag of system calls\" representation for intrusion detection in system call sequences and describe misuse and anomaly detection results with standard machine learning techniques on University of New Mexico (UNM) and MIT Lincoln Lab (MIT LL) system call sequences with the proposed representation. With the feature representation as input, we compare the performance of several machine learning techniques for misuse detection and show experimental results on anomaly detection. The results show that standard machine learning and clustering techniques on simple \"bag of system calls\" representation of system call sequences is effective and often performs better than those approaches that use foreign contiguous subsequences in detecting intrusive behaviors of compromised processes."
+    },
+    "206556577": {
+      "title": "A sense of self for unix processes",
+      "abstract": "A method for anomaly detection is introduced in which ``normal'' is defined by short-range correlations in a process' system calls. Initial experiments suggest that the definition is stable during normal behavior for standard UNIX programs. Further, it is able to detect several common intrusions involving sendmail and lpr. This work is part of a research program aimed at building computer security systems that incorporate the mechanisms and algorithms used by natural immune systems."
+    }
+  },
+  "generator": "fallback"
+}

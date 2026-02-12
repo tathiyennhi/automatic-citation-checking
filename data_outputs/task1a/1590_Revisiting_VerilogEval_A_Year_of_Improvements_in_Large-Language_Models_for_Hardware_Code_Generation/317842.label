@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Transitioning the benchmark task from code completion to specification-to-RTL generally yielded better results, as this approach grants models greater flexibility in defining interfaces.",
+    "These findings highlight the critical role of task-specific tuning in enhancing code generation accuracy.",
+    "Table 1.1Types of failures supported by automatic failure classification.Failure TypeExampleCompile-Time FailuresUnable to Bind Wire/Reg 'clk' Clk is missing in interface ports list, such as if a code completion task doesnot specify a clock to be used yet the LLM used it in the generated code.Unable to Bind Wire/RegOther port related bind problems.Explicit Cast RequiredA datatype problem occurred, often with use of enums.Module MissingTypically indicates the modular declaration is missing from the generatedcode.Sensitivity ProblemSensitivity lists for always blocks are not defined properly.Reg Declared as WireA wire is assigned to as a reg.Syntax ErrorGeneral syntax errors in generated code.General Compiler ErrorOther compiler errors without specific classification.Run-Time FailuresReset IssueReset should be synchronous but is asynchronous.TimeoutThe simulation did not complete in reasonable time, indicating a sequentialblock does not have a correct implementation.General Runtime ErrorOther runtime errors that are not classified, including mismatched outputs.target a model evaluation build directory to a specific evaluation target, including the LLM itself to run, number of shots, number of samples, task to complete, and other parameters.",
+    "For each problem, a resulting problem evaluation directory is created containing a log of the LLM prompt/responses, generated Verilog file, and the Icarus Verilog output log.",
+    "This infrastructure allows for scalable sweeps through the use of Make's parallel run feature, helps continue an evaluation run if it is interrupted, and allows for easy human inspection of the resulting collateral."
+  ],
+  "correct_citations": []
+}

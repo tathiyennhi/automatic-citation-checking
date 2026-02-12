@@ -1,0 +1,12 @@
+{
+  "text": "Instead of detecting features only in the input image, we construct a scale pyramid with one octave between scales, and detect MSERs separately at each resolution. After detection, duplicate MSERs are removed by eliminating fine scale MSERs with similar locations and sizes as MSERs detected at the next coarser scale. The location requirement that we use for elimination is that the centroid distance should be smaller than 4 pixels in the finer grid. For two areas, a 1 and a 2 , we additionally require that abs(a 1 \u2212 a 2 )/max(a 1 , a 2 ) < 0.2. This typically results in the removal of between 7% and 30% of all regions. On all scales except the finest, we require the minor axis of the ellipse to be larger than 5. The scale pyramid is constructed by blurring and sub-sampling with a 6-tap Gaussian kernel with \u03c3 = 1.0 pixels. To deal with border effects, we employ normalized averaging [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "5221533"
+  },
+  "bib_entries": {
+    "5221533": {
+      "title": "Signal Processing for Computer Vision",
+      "abstract": "From the Publisher: ::: Signal Processing for Computer Vision provides a unique and thorough treatment of the signal processing aspects of filters and operators for low level computer vision. Computer Vision has progressed considerably over the years. From methods only applicable to simple images, it has developed to deal with increasingly complex scenes, volumes and time sequences. A substantial part of this book deals with the problem of designing models that can be used for several purposes with computer vision. These partial models have some general properties of invariance generation and generality in model generation. Signal Processing for Computer Vision is the first book to give a unified treatment of representation and filtering of higher order data, such as vectors and tensors in multidimensional space. Included is a systematic organisation for the implementation of complex models in a hierarchical modular structure and novel material on adaptive filtering using tensor data representation. Signal Processing for Computer Vision is intended for final year undergraduate and graduate students as well as engineers and researchers in the field of computer vision and image processing."
+    }
+  }
+}

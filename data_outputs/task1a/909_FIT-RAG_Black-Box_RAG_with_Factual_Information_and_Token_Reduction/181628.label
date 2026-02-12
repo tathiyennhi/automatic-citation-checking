@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "To minimize 𝐿(𝜃, 𝐷), we adopt gradient descent.",
+    "In the 𝑘 𝑡ℎ iteration, 𝜃 𝑘 updates as follows.𝜃 𝑘 = 𝜃 𝑘 -1 -𝜂∇𝐿(𝜃 𝑘 -1, 𝐷)(4)where 𝜂 is the learning rate.We propose to find 𝑤 that optimizes the generalization performance of the model by means of hypergradient-descent.Specifically, we randomly split the training data into two subsets: training set 𝐷 𝑡 and validation set 𝐷 𝑣, where 𝐷 𝑡 is used to train the classification model, and 𝐷 𝑣 is used to estimate generalization loss.",
+    "The 𝐷 𝑡 and 𝐷 𝑣 is further divided into two subsets respectively according to the values of the two labels: matched train set (𝐷 𝑚𝑎𝑡 𝑡) and matched validation set (𝐷 𝑚𝑎𝑡 𝑣), and mismatched train set (𝐷 𝑚𝑖𝑠 𝑡) and mismatched validation set 𝐷 𝑚𝑖𝑠 𝑣.",
+    "Based on this, the training loss can be defined as𝐿 𝑡 (𝜃, 𝐷 𝑡) = 𝑤𝐿 𝑡 (𝜃, 𝐷 𝑚𝑎𝑡 𝑡) + (1 -𝑤)𝐿 𝑡 (𝜃, 𝐷 𝑚𝑖𝑠 𝑡),(5)where𝐿 𝑡 (𝜃, 𝐷 𝑚𝑎𝑡 𝑡) = 1 |𝐷 𝑡 | (𝑥,𝑦) ∈𝐷 𝑚𝑎𝑡 𝑡 𝑙 (ℎ(𝑥, 𝜃), 𝑦) and 𝐿 𝑡 (𝜃, 𝐷 𝑚𝑖𝑠 𝑡) = 1 |𝐷 𝑡 | (𝑥,𝑦) ∈𝐷 𝑚𝑖𝑠 𝑡𝑙 (ℎ(𝑥, 𝜃), 𝑦), and the two validation loss can be defined as𝐿 𝑚𝑎𝑡 𝑣 (𝜃, 𝐷 𝑚𝑎𝑡 𝑣) = 1 |𝐷 𝑚𝑎𝑡 𝑣 | ∑︁ (𝑥,𝑦) ∈𝐷 𝑚𝑎𝑡 𝑣 𝑙 (ℎ(𝑥, 𝜃), 𝑦),(6)𝐿 𝑚𝑖𝑠 𝑣 (𝜃, 𝐷 𝑚𝑖𝑠 𝑣) = 1 |𝐷 𝑚𝑖𝑠 𝑣 | ∑︁ (𝑥,𝑦) ∈𝐷 𝑚𝑖𝑠 𝑣 𝑙 (ℎ(𝑥, 𝜃), 𝑦),(7)respectively.",
+    "Then we formulate the optimization objective as follows:min 𝑤 𝐿 𝑚𝑎𝑡 𝑣 (𝜃 𝑘, 𝐷 𝑚𝑎𝑡 𝑣), 𝐿 𝑚𝑖𝑠 𝑣 (𝜃 𝑘, 𝐷 𝑚𝑖𝑠 𝑣) s.t."
+  ],
+  "correct_citations": []
+}

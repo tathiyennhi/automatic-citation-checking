@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "In figure 2, the three gates-forget, input, and output-are denoted by the letters 𝑓 𝑡, 𝑖 𝑡, and 𝑂 𝑡, respectively.",
+    "The gates are based on straightforward intuition:• The forget gate instructs the cell which information from its internal state to \"forget\" or discard.• The cell is instructed by the input gate, which new information should be stored in the internal cell state.",
+    "• The cell then emits what is known as the output gate, a filtered representation of the internal state of the cell.𝑓 𝑡 = 𝜎 (𝑊 𝑓 • [ℎ 𝑡-1, 𝑋 𝑡] + 𝑏 𝑓)(1)𝑖 𝑡 = 𝜎 (𝑊 𝑖 • [ℎ 𝑡-1, 𝑋 𝑡] + 𝑏 𝑖)(2)𝑂 𝑡 = 𝜎 (𝑊 𝑂 • [ℎ 𝑡-1, 𝑋 𝑡] + 𝑏 𝑂)(3)𝐶 ˆ𝑡 = tanh (𝑊 𝐶 • [ℎ 𝑡-1, 𝑋 𝑡] + 𝑏 𝐶)(4)Then, the internal cell state is computed as𝐶 𝑡 = 𝑖 𝑡 • 𝐶 ˆ𝑡 + 𝑓 𝑡 • 𝐶 𝑡-1(5)The final output from the cell, or ℎ 𝑡, is then filtered with the internal cell state asℎ 𝑡 = 𝑜 𝑡 • tanh(𝐶 𝑡)(6)Weights and biases are coupled to each gate, just like neural networks.",
+    "To enable the LSTM cell to learn, these weight matrices are combined with gradient-based optimization.",
+    "In the equations above, weight matrices and biases are denoted by 𝑊 𝑓, 𝑏 𝑓, 𝑊 𝑖, 𝑏 𝑖, 𝑊 𝑜, 𝑏 𝑜, and 𝑊 𝐶, 𝑏 𝑐, respectively."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Meanwhile, the previously captured checkpoints on the host are asynchronously flushed to persistent storage.",
+    "Finally, if the host memory that is reserved for checkpointing is full, then the next checkpoint request needs to wait for previous tensors to get evicted from the host memory after are flushed to the persistent storage, e.g., node-local NVMe storage or parallel file system.",
+    "We enforce this wait in order to avoid running out of the host memory since GPU-to-host copies are faster than host copies to persistent storage.Streamlined Multi-level Flushing to Persistent Storage: Although we coalesce the shards into a single pre-allocated memory region on the host memory, it is important to note that it is not necessary to wait until all shards are successfully copied to the host memory before starting the flushes to persistent storage.",
+    "Instead, we can imagine a streaming pattern: as soon as partial checkpointing data is copied from the GPU to the host memory, we can immediately flush it to the persistent storage.",
+    "Using this approach, two separate physical links (GPU-to-host and host-to-persistent storage) can be used in parallel to transfer the checkpointing data, which reduces the I/O overheads associated with checkpointing."
+  ]
+}

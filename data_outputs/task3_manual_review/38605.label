@@ -1,0 +1,20 @@
+{
+  "doc_id": "38605",
+  "text": "6 Allele-specific binding analysis Determining allele specificity of TF binding in ChIP experiments is in principle simple. For each polymorphism, one needs to retrieve all reads mapping to the location and just count the fraction of reads mapping to each allele. Straightforward comparison of read counts mapping to different alleles has, however, serious caveats. PCRamplification can introduce library amplification bias which can result into false-positive allele-specific binding (ASB) calls. There have been attempts to control this in ChIP-seq ASB analysis in the past [CITATION_1] . However, the problem can be made trivial by using UMIs in the experiment, as each UMI represents a distinct molecule in the initial library and if there are enough UMI-labels in use, the number of initial molecules in the library can always be accurately recovered. Even if PCR amplifies all reads evenly, measuring ASB from difference between read counts mapping to different alleles is problematic when sequencing deeply. With high enough read counts any small difference stemming from any artifact will eventually result into a statistically significant result. Using UMIs, this does not happen as there will never be more UMIs than initial molecules in the library.",
+  "correct_citation": {
+    "[CITATION_1]": "32735466"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "There have been attempts to control this in ChIP-seq ASB analysis in the past"
+    }
+  ],
+  "bib_entries": {
+    "32735466": {
+      "title": "Identification and removal of low-complexity sites in allele-specific analysis of chip-seq data",
+      "abstract": "MOTIVATION ::: High-throughput sequencing technologies enable the genome-wide analysis of the impact of genetic variation on molecular phenotypes at unprecedented resolution. However, although powerful, these technologies can also introduce unexpected artifacts. ::: ::: ::: RESULTS ::: We investigated the impact of library amplification bias on the identification of allele-specific (AS) molecular events from high-throughput sequencing data derived from chromatin immunoprecipitation assays (ChIP-seq). Putative AS DNA binding activity for RNA polymerase II was determined using ChIP-seq data derived from lymphoblastoid cell lines of two parent-daughter trios. We found that, at high-sequencing depth, many significant AS binding sites suffered from an amplification bias, as evidenced by a larger number of clonal reads representing one of the two alleles. To alleviate this bias, we devised an amplification bias detection strategy, which filters out sites with low read complexity and sites featuring a significant excess of clonal reads. This method will be useful for AS analyses involving ChIP-seq and other functional sequencing assays. ::: ::: ::: AVAILABILITY ::: The R package abs filter for library clonality simulations and detection of amplification-biased sites is available from http://updepla1srv1.epfl.ch/waszaks/absfilter"
+    }
+  },
+  "generator": "fallback"
+}

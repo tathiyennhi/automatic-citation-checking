@@ -1,0 +1,38 @@
+{
+  "doc_id": "9476",
+  "text": "However, as pointed out by Courtois and Meier [CITATION_1] , the keystream generator may be vulnerable to algebraic attacks even if the degree of the algebraic function is high. Actually, the attack applies as soon as there exist relations of low degree between the output and the inputs of the filtering function f . Such relations correspond to low degree multiples of f , i.e., to relations g(x)f (x) = h(x) for some g where h has a low degree. But it was proved in [CITATION_2] [CITATION_3] that, in the case of algebraic attacks over F 2 , the existence of any such relation is equivalent to the existence of a low degree function in the annihilator ideal of f or of",
+  "correct_citation": {
+    "[CITATION_1]": "40465015",
+    "[CITATION_2]": "7520026",
+    "[CITATION_3]": "16005006"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, as pointed out by Courtois and Meier  , the keystream generator may be vulnerable to algebraic attacks even if the degree of the algebraic function is high."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "But it was proved in   that, in the case of algebraic attacks over F 2 , the existence of any such relation is equivalent to the existence of a low degree function in the annihilator ideal of f or of"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "But it was proved in   that, in the case of algebraic attacks over F 2 , the existence of any such relation is equivalent to the existence of a low degree function in the annihilator ideal of f or of"
+    }
+  ],
+  "bib_entries": {
+    "16005006": {
+      "title": "Algebraic attacks and decomposition of Boolean functions",
+      "abstract": "Algebraic attacks on LFSR-based stream ciphers recover the secret key by solving an overdefined system of multivariate algebraic equations. They exploit multivariate relations involving key bits and output bits and become very efficient if such relations of low degrees may be found. Low degree relations have been shown to exist for several well known constructions of stream ciphers immune to all previously known attacks. Such relations may be derived by multiplying the output function of a stream cipher by a well chosen low degree function such that the product function is again of low degree. In view of algebraic attacks, low degree multiples of Boolean functions are a basic concern in the design of stream ciphers as well as of block ciphers. This paper investigates the existence of low degree multiples of Boolean functions in several directions: The known scenarios under which low degree multiples exist are reduced and simplified to two scenarios, that are treated differently in algebraic attacks. A new algorithm is proposed that allows to successfully decide whether a Boolean function has low degree multiples. This represents a significant step towards provable security against algebraic attacks. Furthermore, it is shown that a recently introduced class of degree optimized Maiorana-McFarland functions immanently has low degree multiples. Finally, the probability that a random Boolean function has a low degree multiple is estimated."
+    },
+    "40465015": {
+      "title": "Algebraic attacks on stream ciphers with linear feedback",
+      "abstract": "A classical construction of stream ciphers is to combine several LFSRs and a highly non-linear Boolean function f. Their security is usually analysed in terms of correlation attacks, that can be seen as solving a system of multivariate linear equations, true with some probability. At ICISC'02 this approach is extended to systems of higher-degree multivariate equations, and gives an attack in 292 for Toyocrypt, a Cryptrec submission. In this attack the key is found by solving an overdefined system of algebraic equations. In this paper we show how to substantially lower the degree of these equations by multiplying them by well-chosen multivariate polynomials. Thus we are able to break Toyocrypt in 249 CPU clocks, with only 20 Kbytes of keystream, the fastest attack proposed so far. We also successfully attack the Nessie submission LILI-128, within 257 CPU clocks (not the fastest attack known). In general, we show that if the Boolean function uses only a small subset (e.g. 10) of state/LFSR bits, the cipher can be broken, whatever is the Boolean function used (worst case). Our new general algebraic attack breaks stream ciphers satisfying all the previously known design criteria in at most the square root of the complexity of the previously known generic attack."
+    },
+    "7520026": {
+      "title": "An algebraic cryptanalysis of nonlinear filter generators using Gröbner bases",
+      "abstract": "This paper presents an algebraic cryptanalysis of nonlinear filter generator. A linear shift register of length L filtered by a non linear boolear function f of degree deg(f) is equivalently described by a set of algebraic equations. More precisely, if N is the size of given output bits then we have a system of N algebraic equations of total degree deg(f) in L variables. By solving this system of equations we can recover all the possible initial state (the secret key) of the device . Grobner is precisely an efficient tool for solving algebraic systems. Recently, very efficient algorithms (F_5 ) have been proposed which are several order of magnitude faster than the historical Buchberger algorithm. We show that with only a polynomial number of output bits we can recover in polynomial time the initial state. More precisely we can show that is enough to have (L^d) output bits with d where k is the number of variables of the filtering function. Surprisingly, for all the stream ciphers satisfying Golic's design criteria and filtering functions found in literature we found that d is much less than the predicted bound: for instance the Lili is of degree 6 but a simple Grobner computations shows that it behaves like a degree 4 function. Even more surprisingly, we show experimentally that for some examples we can recover the initial state in polynomial time with only L + output bits. Different attacks have been implemented, and we give a list of timing experimented on many real size size (L80 bits) stream ciphers"
+    }
+  },
+  "generator": "fallback_v4"
+}

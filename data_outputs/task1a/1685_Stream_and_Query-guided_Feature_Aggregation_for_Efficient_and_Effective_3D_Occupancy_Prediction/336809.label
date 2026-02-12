@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "To mitigate these distortions and preserve consistent spatial detail over time, we introduce RefineNet (see Fig. 3), a lightweight refinement module.",
+    "RefineNet follows a bottleneck structure [7], which compressesV t warp ∈ R C× X 2 × Y 2 × Z2 to C/4 channels, refines and reconstructs them to C channels to produce V t out, which reduces computation overhead while maintaining representational capacity.",
+    "To further encourage Re-fineNet to selectively enhance meaningful voxel regions, we extend CBAM [44] into 3D space, where channel attention and spatial attention are sequentially applied as follows:M c = σ(MLP(Avg s (V t out)) + MLP(Max s (V t out))) M s = Conv3D([Avg c (M c ⊙ V t out); Max c (M c ⊙ V t out)]),(3)where σ denotes the sigmoid function, Avg s, Max s denote spatial pooling, and Avg c, Max c denote channel pooling.",
+    "The refined warped feature is computed as:V t refwarp = σ(M s) ⊙ (M c ⊙ V t out) + V t warp,(4)Finally, the refined warped feature is fused with the current voxel feature to obtain the Stream Aggregated voxel feature:V t S.A = V t refwarp + V t curr.",
+    "(5)Supervision for RefineNet."
+  ],
+  "correct_citations": [
+    "RefineNet follows a bottleneck structure [7], which compressesV t warp ∈ R C× X 2 × Y 2 × Z2 to C/4 channels, refines and reconstructs them to C channels to produce V t out, which reduces computation overhead while maintaining representational capacity.",
+    "To further encourage Re-fineNet to selectively enhance meaningful voxel regions, we extend CBAM [44] into 3D space, where channel attention and spatial attention are sequentially applied as follows:M c = σ(MLP(Avg s (V t out)) + MLP(Max s (V t out))) M s = Conv3D([Avg c (M c ⊙ V t out); Max c (M c ⊙ V t out)]),(3)where σ denotes the sigmoid function, Avg s, Max s denote spatial pooling, and Avg c, Max c denote channel pooling."
+  ]
+}

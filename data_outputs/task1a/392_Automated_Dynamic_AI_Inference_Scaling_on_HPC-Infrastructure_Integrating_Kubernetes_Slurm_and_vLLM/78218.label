@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Metrics Gateway.The Metrics Gateway serves API endpoints for Prometheus, a time-series database, and Grafana, an opensource observability platform.",
+    "The Prometheus endpoint returns a response with the required format for Prometheus' HTTP service discovery, which allows for dynamic (de-)registration of targets for metrics scraping.",
+    "By accessing the ai_model_endpoints table, it converts necessary information like node id, port and bearer token of all running vLLM instances to the specified Prometheus template and allows for additional meta fields to be added, such as job id and Slurm job id.",
+    "While metrics of our Kubernetes based microservices can be conveniently scraped with Prometheus Operator, obtaining metrics from the vLLM instances requires this workaround, as they are not part of the Kubernetes cluster and may change network adresses over time.",
+    "The Grafana endpoints, in contrast, accept various POST request parameters, which are used to control the amount and type of running model instances."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We extract features x i ∈ R C1×T1×H1×W1 from a random video clip i and feature z i ∈ R C2×H2×W2 from the corresponding I-frame of the same video, where C 1, T 1, H 1, and W 1 denote the channel, time, height, and width of video clips, respectively.",
+    "We use global average pooling to obtain their global representations x pool i ∈ R C1 and z pool i ∈ R C2.",
+    "We then apply two-layer MLP heads, g V and g I, by taking the features of the video clip and I-frame as inputs, i.e.x * i = g V (x pool i) ∈ R C and z * i = g I (z pool i) ∈ R C.Finally, the Multi-Instance-InfoNCE (MI-InfoNCE) loss [161] is applied to pull the video clip and I-frame feature pairs from the same video closer and push pairs from different video further away:L context = - 1 B B i=1 log exp( cos(z * i,x * i) τ) exp( cos(z * i,x * i) τ) + B k̸ =i exp( cos(z * k,x * i) τ) (2)where z * i and z * k denote the positive and negative I-frame features, B denotes the number of samples in the minibatch, cos(z, x) = (z T x)/(||z|| 2 •||x|| 2) denotes the cosine similarity between z and x, and τ is a temperature adjusting the scale of cosine similarities.",
+    "Considering that there may be multiple I-frames in one video clip, we set all I-frames in video clip i as positive samples.",
+    "Alternatively, the negative samples are I-frames from other videos in the same minibatch, denoted as z * k where k ̸ = i."
+  ]
+}

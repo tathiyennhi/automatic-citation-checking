@@ -1,0 +1,29 @@
+{
+  "doc_id": "50648",
+  "text": "In pipeline-parallel training, to compute the gradient in a pipelined fashion, the activation memory needs to be stored for each batch of data at every pipeline stage. For fine-grained pipeline-parallel training, this can results in significantly increased memory footprint. To reduce the memory incurred by activations, the activation recomputation technique [CITATION_1] [CITATION_2] has been proposed for training deep neural networks. We first discuss the recomputation model in asynchronous pipeline-parallel training in appendix D.1. We then demonstrate in appendix D.2 that PipeMare with recomputation can attain matching / competitive model accuracy while using less memory footprint comparing to PipeMare without recomputation.",
+  "correct_citation": {
+    "[CITATION_1]": "15865278",
+    "[CITATION_2]": "53670168"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To reduce the memory incurred by activations, the activation recomputation technique has been proposed for training deep neural networks."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "To reduce the memory incurred by activations, the activation recomputation technique has been proposed for training deep neural networks."
+    }
+  ],
+  "bib_entries": {
+    "53670168": {
+      "title": "Efficient training of giant neural networks using pipeline parallelism",
+      "abstract": "Scaling up deep neural network capacity has been known as an effective approach to improving model quality for several different machine learning tasks. In many cases, increasing model capacity beyond the memory limit of a single accelerator has required developing special algorithms or infrastructure. These solutions are often architecture-specific and do not transfer to other machine learning tasks. To address the need for efficient and task-independent model parallelism, we introduce TensorPipe, a pipeline parallelism library that allows scaling any network that can be expressed as a sequence of layers. By pipelining different sub-sequences of layers on separate accelerators, TensorPipe provides the flexibility of scaling a variety of different networks to gigantic sizes efficiently. Moreover, TensorPipe utilizes a novel batch-splitting pipelining algorithm, resulting in almost linear speedup when a model is partitioned across multiple accelerators. We demonstrate the advantages of TensorPipe by training large-scale neural networks on two different tasks with distinct network architectures: (i)Image Classification: We train a 557-million-parameter AmoebaNet model and attain a top-1 accuracy of 84.4% on ImageNet-2012, (ii)Multilingual Neural Machine Translation: We train a single 6-billion-parameter, 128-layer Transformer model on a corpus spanning over 100 languages and achieve better quality than all bilingual models."
+    },
+    "15865278": {
+      "title": "Training deep nets with sublinear memory cost",
+      "abstract": "We propose a systematic approach to reduce the memory consumption of deep neural network training. Specifically, we design an algorithm that costs O( √ n) memory to train a n layer network, with only the computational cost of an extra forward pass per mini-batch. As many of the state-of-the-art models hit the upper bound of the GPU memory, our algorithm allows deeper and more complex models to be explored, and helps advance the innovations in deep learning research. We focus on reducing the memory cost to store the intermediate feature maps and gradients during training. Computation graph analysis is used for automatic in-place operation and memory sharing optimizations. We show that it is possible to trade computation for memory giving a more memory efficient training algorithm with a little extra computation cost. In the extreme case, our analysis also shows that the memory consumption can be reduced to O(logn) with as little as O(n logn) extra cost for forward computation. Our experiments show that we can reduce the memory cost of a 1,000-layer deep residual network from 48G to 7G on ImageNet problems. Similarly, significant memory cost reduction is observed in training complex recurrent neural networks on very long sequences."
+    }
+  },
+  "generator": "fallback"
+}

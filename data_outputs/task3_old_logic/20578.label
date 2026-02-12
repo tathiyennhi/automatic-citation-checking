@@ -1,0 +1,29 @@
+{
+  "doc_id": "20578",
+  "text": "During endotracheal intubation, a common procedure in operating rooms, the tube is inserted into the patient's mouth in an horizontal direction, i.e., an angle of 0 o , where the head of the tube turns away from the patient. While inserting the tube into the trachea, the medical professional rotates the tube counter clockwise until it reaches a vertical direction ( 90 o ). Therefore, the acquired images might be rotated with respect to the images that were used to train the models and therefore pre-alignment of the images prior to their classification is required. Traditionally, two approaches have been used to overcome this common problem: (a) employ an image registration technique prior to classification [CITATION_1] , (b) utilize features which are insensitive to the imaging angle [CITATION_2] . Common to these approaches is their computational complexity, which is a major drawback when real-time classification is required. An alternative model based approach is proposed, according to which several models are used to represent each class of images, where each \"sub-model\" represents images taken at a specific range of angles, i.e., a GMM for angles around 0 o , a GMM for angles around 45 o , etc. During the training phase, a model is estimated using the images of each and every class, resulting in a total of 12 models (4 models for each one of the classes). During the testing phase, an \"unknown\" image is classified according to a generalized maximum likelihood rule, i.e., the selected model is the one which one of its submodels provides the maximum likelihood (ML). The classification decision rule is therefore given by:",
+  "correct_citation": {
+    "[CITATION_1]": "5148196",
+    "[CITATION_2]": "206786900"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Traditionally, two approaches have been used to overcome this common problem: (a) employ an image registration technique prior to classification"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Traditionally, two approaches have been used to overcome this common problem: (a) employ an image registration technique prior to classification, (b) utilize features which are insensitive to the imaging angle"
+    }
+  ],
+  "bib_entries": {
+    "5148196": {
+      "title": "The Angular Difference Function and its application to image registration",
+      "abstract": "The estimation of large motions without prior knowledge is an important problem in image registration. In this paper, we present the angular difference function (ADF) and demonstrate its applicability to rotation estimation. The ADF of two functions is defined as the integral of their spectral difference along the radial direction. It is efficiently computed using the pseudopolar Fourier transform, which computes the discrete Fourier transform of an image on a near spherical grid. Unlike other Fourier-based registration schemes, the suggested approach does not require any interpolation. Thus, it is more accurate and significantly faster."
+    },
+    "206786900": {
+      "title": "Textural features for image classification",
+      "abstract": "Texture is one of the important characteristics used in identifying objects or regions of interest in an image, whether the image be a photomicrograph, an aerial photograph, or a satellite image. This paper describes some easily computable textural features based on gray-tone spatial dependancies, and illustrates their application in category-identification tasks of three different kinds of image data: photomicrographs of five kinds of sandstones, 1:20 000 panchromatic aerial photographs of eight land-use categories, and Earth Resources Technology Satellite (ERTS) multispecial imagery containing seven land-use categories. We use two kinds of decision rules: one for which the decision regions are convex polyhedra (a piecewise linear decision rule), and one for which the decision regions are rectangular parallelpipeds (a min-max decision rule). In each experiment the data set was divided into two parts, a training set and a test set. Test set identification accuracy is 89 percent for the photomicrographs, 82 percent for the aerial photographic imagery, and 83 percent for the satellite imagery. These results indicate that the easily computable textural features probably have a general applicability for a wide variety of image-classification applications."
+    }
+  },
+  "generator": "fallback"
+}

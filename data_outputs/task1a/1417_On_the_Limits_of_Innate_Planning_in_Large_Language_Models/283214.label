@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "All three feedback trials start from the same failure state and have up to three additional attempts to solve the puzzle.",
+    "That is, within a given trial, the attempt k+1 resumes from the furthest valid state reached in the attempt k. Concretely, if model M failed puzzle i under AoT (even if it passed under Zero-Shot or CoT), we re-prompted M with the AoT system prompt for up to three attempts under each feedback condition: repeat (no feedback), specific feedback, and suggestive feedback.By furthest valid state we mean the last board configuration before failure: for invalid_move, where the model moves a tile off the board or one that is not adjacent to the space, or loop_detected, where the model repeats a board configuration, we resume from the state immediately before the offending move.",
+    "If the model fails due to an early_stop, where it makes only valid moves but stops before reaching the goal state, we resume from the state after the last move.",
+    "We reset the visited-state set at the start of each attempt.",
+    "Attempts stop early upon success; otherwise, they terminate due to a timeout, token limit, early stop, loop, invalid move, or graceful failure, in which the model either refuses to solve the problem or asks for clarification on how to do so."
+  ],
+  "correct_citations": []
+}

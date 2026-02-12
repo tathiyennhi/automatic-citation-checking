@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "4.1, Z l may deviate from the model's image manifold.",
+    "Analogous to time-travel in diffusion models, scale-travel rewinds the feature map Z l to an earlier (i.e., coarser) scale m < l and then resumes generation.During training of VAR, an image I is first encoded with a VQ-VAE [64] to obtain a dense feature map Z, which is passed through a multi-scale encoder to be decomposed into scale-wise token gridsr 1:K = MultiScaleEnc(Z, s 1:K)(6)where s k is the grid size at stage k, as shown in Alg. 1.",
+    "Here, we highlight a key property of VAR: early maps Z l already contain the coarse layout and semantics of the final image (details included in the supplementary).",
+    "While a similar observation has been presented in previous works [26,69], we further employ this finding to apply multi-scale encoding to Z l -instead of ground-truth feature Z-to reconstruct the lower-resolution grids r1:m. We denote this technique as r1:m = ScaleTravel(Z l, s 1:m, m) and compare the exact pseudocode to that of multi-scale encoding in Fig. 4, showing that only a minor change in algorithm enables scaletravel.",
+    "Once replayed to stage m, VAR's autoregressive generation proceeds from k = m + 1 to K, effectively fixing the visual artifacts."
+  ],
+  "correct_citations": [
+    "Analogous to time-travel in diffusion models, scale-travel rewinds the feature map Z l to an earlier (i.e., coarser) scale m < l and then resumes generation.During training of VAR, an image I is first encoded with a VQ-VAE [64] to obtain a dense feature map Z, which is passed through a multi-scale encoder to be decomposed into scale-wise token gridsr 1:K = MultiScaleEnc(Z, s 1:K)(6)where s k is the grid size at stage k, as shown in Alg. 1.",
+    "While a similar observation has been presented in previous works [26,69], we further employ this finding to apply multi-scale encoding to Z l -instead of ground-truth feature Z-to reconstruct the lower-resolution grids r1:m. We denote this technique as r1:m = ScaleTravel(Z l, s 1:m, m) and compare the exact pseudocode to that of multi-scale encoding in Fig. 4, showing that only a minor change in algorithm enables scaletravel."
+  ]
+}

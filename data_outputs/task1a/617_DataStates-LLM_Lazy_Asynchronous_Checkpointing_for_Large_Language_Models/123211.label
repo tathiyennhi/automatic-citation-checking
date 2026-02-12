@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "This idea applies similarly to the backward pass but in reverse order: as soon as the backward pass of one mini-batch has been moved to the previous stage, another mini-batch can be processed in the current stage [14].",
+    "Tensor parallelism leverages the idea that even individual layers and tensors can be sharded and distributed horizontally across multiple GPUs.",
+    "Figure 1(b) illustrates these ideas for an example decomposition of an LLM consisting of 𝑛 layers into multiple pipeline parallel (highlighted by the vertical dotted blue box) and tensor parallel (denoted by the horizontal dotted magenta box) shards.",
+    "Nvidia Megatron-LM is a prominent example of the LLM framework that is widely adopted in practice and offers configurable mechanisms to partition the model in pipeline and tensor parallel modes.",
+    "The trade-off in this case is that the computations on the stages and shards are tightly coupled and distributed at fine granularity among the GPUs, which introduces the need for frequent communication that is subject to overheads."
+  ],
+  "correct_citations": [
+    "This idea applies similarly to the backward pass but in reverse order: as soon as the backward pass of one mini-batch has been moved to the previous stage, another mini-batch can be processed in the current stage [14]."
+  ]
+}

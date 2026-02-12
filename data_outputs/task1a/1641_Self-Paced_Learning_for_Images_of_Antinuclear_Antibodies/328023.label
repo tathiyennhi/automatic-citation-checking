@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Instead of employing a summation or mean, the maximum is preferred due to two reasons: 1) Even if only a minority of ANA types are given high confidences, i.e., a distinguishable instance with dominating ANA types, the maximum strategy still ensures such an instance can be easily sampled.",
+    "2) When all ANA types of an instance share similar confidences, i.e., a hard instance with non-dominating ANA types, although the maximum strategy sounds like a random one, the sampling probability is also low.",
+    "Only confidences on labeled ANA types are considered, because we believe that ground truths labeled by technicians at the sample level are always correct, but distributing labels directly to sub-region instances is inappropriate.",
+    "Instead of using the full set of sample-level labels, a subset obtained by setting certain elements of t j i from 1 to 0 is a more appropriate candidate for instance-level labels.",
+    "C. Instance-Level Prediction and AggregationAfter sampling the informative sub-regions x j i from image x i, each instance x j i is passed through a shared prediction network to produce instance-level classification scores:ŷj i = F(x j i, θ),(6)where ŷj i ∈ [0, 1] K denotes the predicted class probabilities for the j-th instance, and θ represents the parameters of a CNN-based backbone (e.g., ResNet).To produce the final image-level prediction, we aggregate the instance-level outputs using an aggregation function G(•) that operates in two steps: class-wise max pooling followed by thresholding."
+  ],
+  "correct_citations": [
+    "C. Instance-Level Prediction and AggregationAfter sampling the informative sub-regions x j i from image x i, each instance x j i is passed through a shared prediction network to produce instance-level classification scores:ŷj i = F(x j i, θ),(6)where ŷj i ∈ [0, 1] K denotes the predicted class probabilities for the j-th instance, and θ represents the parameters of a CNN-based backbone (e.g., ResNet).To produce the final image-level prediction, we aggregate the instance-level outputs using an aggregation function G(•) that operates in two steps: class-wise max pooling followed by thresholding."
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "text": "every six iterations) and are shown in Figures 16A and 16B . The sampler was run for 1,000 iterations, and it was given eight examples from each category (N ϭ 32). Inference for the IBF proceeds as described in Appendix A, except that when the IBP creates new features, it draws the images for those features from the shared Chinese restaurant process (CRP). We refer the reader to [CITATION_1] for a thorough description of inference for the CRP. Additionally, Gibbs updates for y (0) kd are performed as described by [CITATION_2] , except that all images (regardless of their category) that have a feature whose image is assigned to y (0) k should be included in the product over likelihood terms. Note that when a pixel of y (0) kd is resampled, the corresponding y (a) k=d should be set to the sampled value of y (0) kd for the image of any category image k= that is assigned to feature image k of the CRP. The feature images of the individual categories otherwise do not change from iteration to iteration of inference (i.e., they are deterministically set to the appropriate image in the shared feature image matrix Y (0) ). The results described in the article use parameter values: ␣ ϭ 2, ε ϭ 0.025, ϭ 0.975, ϭ 0.15, and ␤ ϭ 0.0001. The sampler was run for 1,000 iterations, and simulated annealing was used (T ϭ 20). A split-merge step was completed every six iterations, which included within-category split and merge proposals, and between-category proposals, where a random feature of one category takes the feature image from another random feature.",
+  "correct_citation": {
+    "[CITATION_1]": "12129013",
+    "[CITATION_2]": "5954159"
+  },
+  "bib_entries": {
+    "5954159": {
+      "title": "A non-parametric Bayesian method for inferring hidden causes",
+      "abstract": "We present a non-parametric Bayesian approach to structure learning with hidden causes. Previous Bayesian treatments of this problem define a prior over the number of hidden causes and use algorithms such as reversible jump Markov chain Monte Carlo to move between solutions. In contrast, we assume that the number of hidden causes is unbounded, but only a finite number influence observable variables. This makes it possible to use a Gibbs sampler to approximate the distribution over causal structures. We evaluate the performance of both approaches in discovering hidden causes in simulated data, and use our non-parametric approach to discover hidden causes in a real medical dataset."
+    },
+    "12129013": {
+      "title": "Markov chain sampling methods for Dirichlet process mixture models",
+      "abstract": "Abstract This article reviews Markov chain methods for sampling from the posterior distribution of a Dirichlet process mixture model and presents two new classes of methods. One new approach is to make Metropolis—Hastings updates of the indicators specifying which mixture component is associated with each observation, perhaps supplemented with a partial form of Gibbs sampling. The other new approach extends Gibbs sampling for these indicators by using a set of auxiliary parameters. These methods are simple to implement and are more efficient than previous ways of handling general Dirichlet process mixture models with non-conjugate priors."
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "doc_id": "57860",
+  "text": "Silhouette based approaches rely on the possibility of performing background subtraction on the entire video sequence. This is an easy task in a controlled environment but becomes hard in the more generic case of an outdoor scenario. In [CITATION_1] , for instance, the authors addressed such a scenario but assuming stationary cameras. The problem indeed, becomes even more challenging in the case of moving cameras since a per-pixel color model for the background cannot be recovered anymore. Some relevant works focusing on background subtraction have been developed in the recent past to address this kind of situations. However, these techniques resort to some priors on both the background and the foreground elements of the scene such as shape priors [CITATION_2] [CITATION_3] , color priors [CITATION_4] [CITATION_5] and motion priors [CITATION_6] . The first class assumes that the foreground objects can only have specific shapes, for instance, human shapes. The second class assumes that the color models of the foreground and the background objects are known a priori. The last class instead makes assumptions on the type of motion of the dynamic elements. As an example, [CITATION_7] assumes that the elements that are moving rigidly, with respect to camera, are background while the others are foreground.",
+  "correct_citation": {
+    "[CITATION_1]": "6747350",
+    "[CITATION_2]": "62491650",
+    "[CITATION_3]": "12056046",
+    "[CITATION_4]": "751988",
+    "[CITATION_5]": "15460838",
+    "[CITATION_6]": "15909542",
+    "[CITATION_7]": "15909542"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In, for instance, the authors addressed such a scenario but assuming stationary cameras."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "However, these techniques resort to some priors on both the background and the foreground elements of the scene such as shape priors, color priors and motion priors."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "However, these techniques resort to some priors on both the background and the foreground elements of the scene such as shape priors, color priors and motion priors."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "However, these techniques resort to some priors on both the background and the foreground elements of the scene such as shape priors, color priors and motion priors."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "However, these techniques resort to some priors on both the background and the foreground elements of the scene such as shape priors, color priors and motion priors."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "However, these techniques resort to some priors on both the background and the foreground elements of the scene such as shape priors, color priors and motion priors"
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "As an example, assumes that the elements that are moving rigidly, with respect to camera, are background while the others are foreground."
+    }
+  ],
+  "bib_entries": {
+    "15460838": {
+      "title": "Unstructured video-based rendering: Interactive exploration of casually captured videos",
+      "abstract": "We present an algorithm designed for navigating around a performance that was filmed as a \"casual\" multi-view video collection: real-world footage captured on hand held cameras by a few audience members. The objective is to easily navigate in 3D, generating a video-based rendering (VBR) of a performance filmed with widely separated cameras. Casually filmed events are especially challenging because they yield footage with complicated backgrounds and camera motion. Such challenging conditions preclude the use of most algorithms that depend on correlation-based stereo or 3D shape-from-silhouettes. ::: Our algorithm builds on the concepts developed for the exploration of photo-collections of empty scenes. Interactive performer-specific view-interpolation is now possible through innovations in interactive rendering and offline-matting relating to i) modeling the foreground subject as video-sprites on billboards, ii) modeling the background geometry with adaptive view-dependent textures, and iii) view interpolation that follows a performer. The billboards are embedded in a simple but realistic reconstruction of the environment. The reconstructed environment provides very effective visual cues for spatial navigation as the user transitions between viewpoints. The prototype is tested on footage from several challenging events, and demonstrates the editorial utility of the whole system and the particular value of our new inter-billboard optimization."
+    },
+    "12056046": {
+      "title": "Dynamic 3d scene analysis from a moving vehicle",
+      "abstract": "In this paper, we present a system that integrates fully automatic scene geometry estimation, 2D object detection, 3D localization, trajectory estimation, and tracking for dynamic scene interpretation from a moving vehicle. Our sole input are two video streams from a calibrated stereo rig on top of a car. From these streams, we estimate structure-from-motion (SfM) and scene geometry in real-time. In parallel, we perform multi-view/multi-category object recognition to detect cars and pedestrians in both camera images. Using the SfM self-localization, 2D object detections are converted to 3D observations, which are accumulated in a world coordinate frame. A subsequent tracking module analyzes the resulting 3D observations to find physically plausible spacetime trajectories. Finally, a global optimization criterion takes object-object interactions into account to arrive at accurate 3D localization and trajectory estimates for both cars and pedestrians. We demonstrate the performance of our integrated system on challenging real-world data showing car passages through crowded city areas."
+    },
+    "15909542": {
+      "title": "Background subtraction for freely moving cameras",
+      "abstract": "Background subtraction algorithms define the background as parts of a scene that are at rest. Traditionally, these algorithms assume a stationary camera, and identify moving objects by detecting areas in a video that change over time. In this paper, we extend the concept of ‘subtracting’ areas at rest to apply to video captured from a freely moving camera. We do not assume that the background is well-approximated by a plane or that the camera center remains stationary during motion. The method operates entirely using 2D image measurements without requiring an explicit 3D reconstruction of the scene. A sparse model of background is built by robustly estimating a compact trajectory basis from trajectories of salient features across the video, and the background is ‘subtracted’ by removing trajectories that lie within the space spanned by the basis. Foreground and background appearance models are then built, and an optimal pixel-wise foreground/background labeling is obtained by efficiently maximizing a posterior function."
+    },
+    "6747350": {
+      "title": "Multi-object shape estimation and tracking from silhouette cues",
+      "abstract": "This paper deals with the 3D shape estimation from silhouette cues of multiple moving objects in general indoor or outdoor 3D scenes with potential static obstacles, using multiple calibrated video streams. Most shape-from-silhouette techniques use a two-classification of space occupancy and silhouettes, based on image regions that match or disagree with a static background appearance model. Binary silhouette information becomes insufficient to unambiguously carve 3D space regions as the number and density of dynamic objects increases. In such difficult scenes, multi-view stereo methods suffer from visibility problems, and rely on color calibration procedures tedious to achieve outdoors. We propose a new algorithm to automatically detect and reconstruct scenes with a variable number of dynamic objects. Our formulation distinguishes between m different shapes in the scene by using automatically learnt view-specific appearance models, eliminating the color calibration requirement. Bayesian reasoning is then applied to solve the m-shape occupancy problem, with m updated as objects enter or leave the scene. Results show that this method yields multiple silhouette-based estimates that drastically improve scene reconstructions over traditional two-label silhouette scene analysis. This enables the method to also efficiently deal with multi-person tracking problems."
+    },
+    "751988": {
+      "title": "Background and foreground modeling using nonparametric kernel density estimation for visual surveillance",
+      "abstract": "Automatic understanding of events happening at a site is the ultimate goal for many visual surveillance systems. Higher level understanding of events requires that certain lower level computer vision tasks be performed. These may include detection of unusual motion, tracking targets, labeling body parts, and understanding the interactions between people. To achieve many of these tasks, it is necessary to build representations of the appearance of objects in the scene. This paper focuses on two issues related to this problem. First, we construct a statistical representation of the scene background that supports sensitive detection of moving objects in the scene, but is robust to clutter arising out of natural scene variations. Second, we build statistical representations of the foreground regions (moving objects) that support their tracking and support occlusion reasoning. The probability density functions (pdfs) associated with the background and foreground are likely to vary from image to image and will not in general have a known parametric form. We accordingly utilize general nonparametric kernel density estimation techniques for building these statistical representations of the background and the foreground. These techniques estimate the pdf directly from the data without any assumptions about the underlying distributions. Example results from applications are presented."
+    },
+    "62491650": {
+      "title": "An efficient method for contour tracking using active shape models",
+      "abstract": "There has been considerable research interest recently, in the areas of real time contour tracking and active shape models. This paper demonstrates how dynamic filtering can be used in combination with a modal-based flexible shape model to track an articulated non-rigid body in motion. The results show the method being used to track the silhouette of a walking pedestrian in real time. The active shape model used was generated automatically from real image data and incorporates variability in shape due to orientation as well as object flexibility. A Kalman filter is used to control spatial scale for feature search over successive frames. Iterative refinement allows accurate contour localisation where feasible. The shape model incorporates knowledge of the likely shape of the contour and speeds up tracking by reducing the number of system parameters. A further increase in speed is obtained by filtering the shape parameters independently. >"
+    }
+  },
+  "generator": "fallback"
+}

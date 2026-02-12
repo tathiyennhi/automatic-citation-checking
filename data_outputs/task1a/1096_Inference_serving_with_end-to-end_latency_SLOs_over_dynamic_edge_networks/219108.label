@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The idea is to deploy a static DNN on all GPUs and schedule requests with the earliest deadline without preemption on the next available GPU worker.",
+    "Similar to Clockwork, for batching requests adaptively, we maintain a global priority queue per batch size where new requests are added to every batch queue.",
+    "The priority of a request in a batch queue is determined by the earliest time to schedule the request at the respective batch size.",
+    "We then schedule requests from each batch queue with a sufficient number of requests by iterating through batch queues in the decreasing order of batch size.",
+    "The requests are dropped from the particular batch queue when the time budget is insufficient for DNN execution."
+  ],
+  "correct_citations": []
+}

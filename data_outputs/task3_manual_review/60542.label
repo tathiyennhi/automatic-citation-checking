@@ -1,0 +1,30 @@
+{
+  "doc_id": "60542",
+  "text": "Our quantization is applied during fine-tuning after training a full-precision network. As the baseline, we adopt the fine-tuning procedure in [CITATION_1] , where we perform incremental/progressive quantization. In contrast to [CITATION_2] , we first quantize activations and then weights in an incremental quantization. In addition, for each precision configuration, we perform teacher-student training to improve the quantized network [CITATION_3] .",
+  "correct_citation": {
+    "[CITATION_1]": "11119748",
+    "[CITATION_2]": "11119748",
+    "[CITATION_3]": "11119748"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As the baseline, we adopt the fine-tuning procedure in, where we perform incremental/progressive quantization."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In contrast to, we first quantize activations and then weights in an incremental quantization."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In addition, for each precision configuration, we perform teacher-student training to improve the quantized network"
+    }
+  ],
+  "bib_entries": {
+    "11119748": {
+      "title": "Towards effective low-bitwidth convolutional neural networks",
+      "abstract": "This paper tackles the problem of training a deep convolutional neural network with both low-precision weights and low-bitwidth activations. Optimizing a low-precision network is very challenging since the training process can easily get trapped in a poor local minima, which results in substantial accuracy loss. To mitigate this problem, we propose three simple-yet-effective approaches to improve the network training. First, we propose to use a two-stage optimization strategy to progressively find good local minima. Specifically, we propose to first optimize a net with quantized weights and then quantized activations. This is in contrast to the traditional methods which optimize them simultaneously. Second, following a similar spirit of the first method, we propose another progressive optimization approach which progressively decreases the bit-width from high-precision to low-precision during the course of training. Third, we adopt a novel learning scheme to jointly train a full-precision model alongside the low-precision one. By doing so, the full-precision model provides hints to guide the low-precision model training. Extensive experiments on various datasets ( i.e., CIFAR-100 and ImageNet) show the effectiveness of the proposed methods. To highlight, using our methods to train a 4-bit precision network leads to no performance decrease in comparison with its full-precision counterpart with standard network architectures ( i.e., AlexNet and ResNet-50)."
+    }
+  },
+  "generator": "fallback"
+}

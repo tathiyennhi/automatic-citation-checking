@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "only those weights that are being fine-tuned (in this case only the LoRA matrices), n j denotes the actual number of trainable weights in model configuration Φ j and γ ≥ 1 is a hyper-parameter.Proof: Each sub-transformer gradient in (10), grad j, is scaled by (n 1 /n j), which is obtained from the relative weighting of the loss functions.",
+    "Let L j (W) denote the j-th sub-transformer's loss.",
+    "Using first-order Taylor expansion, we get:L Φj (W + δ) ≈ L Φj (W) + ⟨∇ W L Φj (W), δ⟩,where ⟨•, •⟩ denotes inner (dot) product operation.",
+    "Therefore, the steepest possible decrease in the loss function L Φj can be approximated as:∆L Φj ≈ ∥∇ W L Φj (W)∥ 1 |δ| max ≈ O(n j)|δ| max,where we approximate the ∥ • ∥ 1 norm using the zero-th norm, i.e., number of non-zero elements and n j stands for the actual number of trainable parameters in sub-transformer configuration Φ j.",
+    "Since the decrease in the loss of a sub-transformer model Φ j is approximately proportional to the number of trainable model parameters (n j), we scale the losses using (n 1 /n j) γ, γ ≥ 1 so that training losses of smaller sub-transformer models converge at a rate similar to that of larger sub-transformer configurations."
+  ],
+  "correct_citations": []
+}

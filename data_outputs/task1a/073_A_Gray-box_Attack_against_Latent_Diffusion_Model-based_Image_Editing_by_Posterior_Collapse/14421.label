@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The objective is to generate x adv by minimising the KL divergence between q(z|x) and p * (z).The KL divergence of two multivariate Gaussian distributions is:D KL (N 1 ∥ N 2) = 1 2 ln |Σ 2 | |Σ 1 | -d + tr{Σ -1 2 Σ 1 } + (µ 2 -µ 1) T Σ -1 2 (µ 2 -µ 1).",
+    "(10)whereN 1 = N (µ 1, Σ 1), N 2 = N (µ 2, Σ 2).Given two multivariate Gaussian distribution N 1 (µ 1, Σ 1) and N 2 (µ 2, Σ 2), where N 1 and N 2 refer to the posterior distribution q(z|x) and our target prior distribution p * (z).",
+    "We set the target attack p * (z) to a zero mean Gaussian distribution p * (z) = N (0, vI), where v > 0 is hyper-parameter that controls the disruptive effect.",
+    "Since both p * (z) and q(z|x) are diagonal multivariate Gaussian distributions, Equation 10 can be derived as:D KL (N 1 ∥ N 2) = 1 2 ln d i=1 v σ 2 i -d + d i=1 σ 2 i v + µ T µ v = 1 2 d i=1 ln v σ 2 i -d + d i=1 σ 2 i v + d i=1 µ 2 i v = 1 2 d i=1 ln v σ 2 i -1 + µ 2 i + σ 2 i v.(11) Notably, in our implementation, we ignore the ln v term, because ln v is a constant, which will not influence the performance.",
+    "Therefore, the final loss function in our implementation is:D KL (N 1 ∥ N 2) ≃ L KL (x) = 1 2 d i=1 -ln σ 2 i -1 + µ 2 i + σ 2 i v.(12) Then, we choose the hyperparameter of loss function and optimization strategy in Equation 12 for both phenomena:1) Maximization Strategy (PCA+):For objective 1, we decide to apply the diffusion collapse, which can be translate to a optimization problem:max δ L KL (x + δ) s.t."
+  ],
+  "correct_citations": []
+}

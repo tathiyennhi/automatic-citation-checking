@@ -1,0 +1,29 @@
+{
+  "doc_id": "35264",
+  "text": "where x 0...m are the locations of boundary samples and a 0...n are the complex weights for each point source. We discuss the position of the boundary samples and sources in Section 5.3 (see also Figure 6 ). Since we usually have more boundary samples than sources, to ensure a unique solution, we can solve the least squares system M T Ma = −M T u in , which finds the weights a j that minimize the deviation from the boundary conditions in the least-squares sense. After solving this linear system for the weights a j , we can evaluate the solution anywhere in space and time with Equation 19. This evaluation is an easily parallelizable process which we perform on the GPU on a grid laid out in screen space (Similar to [CITATION_1] [CITATION_2] . Further speedups are possible with fast summation techniques like the fast multipole method, though we have not investigated this route.",
+  "correct_citation": {
+    "[CITATION_1]": "1980281",
+    "[CITATION_2]": "51870001"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This evaluation is an easily parallelizable process which we perform on the GPU on a grid laid out in screen space (Similar to   ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This evaluation is an easily parallelizable process which we perform on the GPU on a grid laid out in screen space (Similar to   ."
+    }
+  ],
+  "bib_entries": {
+    "1980281": {
+      "title": "Interactive Animation of Ocean Waves",
+      "abstract": "We present an adaptive scheme for the interactive animation and display of ocean waves far from the coast. Relying on a procedural wave model, the method restricts computations to the visible part of the ocean surface, adapts the geometric resolution to the viewing distance and only considers the visible waves wavelengths. This yields real-time performances, even when the camera moves. The method allows the user to interactively fly over an unbounded animated ocean, which was not possible using previous approaches."
+    },
+    "51870001": {
+      "title": "Water surface wavelets",
+      "abstract": "The current state of the art in real-time two-dimensional water wave simulation requires developers to choose between efficient Fourier-based methods, which lack interactions with moving obstacles, and finite-difference or finite element methods, which handle environmental interactions but are significantly more expensive. This paper attempts to bridge this long-standing gap between complexity and performance, by proposing a new wave simulation method that can faithfully simulate wave interactions with moving obstacles in real time while simultaneously preserving minute details and accommodating very large simulation domains. ::: Previous methods for simulating 2D water waves directly compute the change in height of the water surface, a strategy which imposes limitations based on the CFL condition (fast moving waves require small time steps) and Nyquist's limit (small wave details require closely-spaced simulation variables). This paper proposes a novel wavelet transformation that discretizes the liquid motion in terms of amplitude-like functions that vary over space, frequency, and direction, effectively generalizing Fourier-based methods to handle local interactions. Because these new variables change much more slowly over space than the original water height function, our change of variables drastically reduces the limitations of the CFL condition and Nyquist limit, allowing us to simulate highly detailed water waves at very large visual resolutions. Our discretization is amenable to fast summation and easy to parallelize. We also present basic extensions like pre-computed wave paths and two-way solid fluid coupling. Finally, we argue that our discretization provides a convenient set of variables for artistic manipulation, which we illustrate with a novel wave-painting interface."
+    }
+  },
+  "generator": "fallback_v4"
+}

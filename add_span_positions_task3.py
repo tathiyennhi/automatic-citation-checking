@@ -55,9 +55,9 @@ def add_positions_to_label(label_path: Path, dry_run: bool = False) -> Dict[str,
 
         # Verify
         extracted = text[s_span:e_span]
-        # Remove citation markers from extracted text for comparison
-        extracted_clean = re.sub(r'\[CITATION_\d+\]', '', extracted).strip()
-        span_clean = span_text.strip()
+        # Normalize both sides so minor formatting differences don't break verification
+        extracted_clean = normalize_span_for_compare(extracted, remove_citations=True)
+        span_clean = normalize_span_for_compare(span_text, remove_citations=False)
 
         # Normalize whitespace for comparison
         extracted_norm = re.sub(r'\s+', ' ', extracted_clean)
@@ -86,6 +86,16 @@ def add_positions_to_label(label_path: Path, dry_run: bool = False) -> Dict[str,
             print(f"❌ ERROR saving {label_path.name}: {e}")
 
     return stats
+
+
+def normalize_span_for_compare(text: str, remove_citations: bool) -> str:
+    cleaned = text
+    if remove_citations:
+        cleaned = re.sub(r"\s*\[CITATION_\d+\]\s*", " ", cleaned)
+    cleaned = cleaned.strip()
+    cleaned = re.sub(r"[ \t]{2,}", " ", cleaned)
+    cleaned = re.sub(r"\s+([.,;:!?])", r"\1", cleaned)
+    return cleaned
 
 
 def find_span_position(text: str, span_text: str, citation_id: str) -> Optional[Tuple[int, int]]:

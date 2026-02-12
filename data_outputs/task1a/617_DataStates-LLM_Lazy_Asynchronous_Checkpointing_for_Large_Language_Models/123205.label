@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "First, there is simply not enough free memory on the GPUs to hold a full copy of the checkpoint shards, due to which it is not possible to benefit from the high GPU memory bandwidth to reduce the overhead of creating a blocking copy.",
+    "Second, while it is possible to create the copy directly on the host memory (e.g.",
+    "TorchSnapshot [30], TorchLightning [17], CheckFreq [24]), this involves data transfers that are an order of magnitude slower and subject to competition due to shared PCIe links between multiple GPUs and the host memory.",
+    "Ultimately, this results in significant overheads that reduce the benefit of asynchronous checkpointing to the point where it is not significantly faster as compared to synchronous checkpointing approach.",
+    "To put this in perspective, despite the availability of high speed links (50+ GB/s network and 25+ GB/s PCIe), the LLM checkpointing throughput is far from saturating the link capacity (e.g., REFT [42] reports 38% saturation), and often drops as low as a few GB/s (e.g., Nebula [23], Microsoft's DeepSpeed closed-source implementation of asynchronous checkpointing reports 1-4 GB/s).Key Insights and Contributions."
+  ],
+  "correct_citations": [
+    "TorchSnapshot [30], TorchLightning [17], CheckFreq [24]), this involves data transfers that are an order of magnitude slower and subject to competition due to shared PCIe links between multiple GPUs and the host memory.",
+    "To put this in perspective, despite the availability of high speed links (50+ GB/s network and 25+ GB/s PCIe), the LLM checkpointing throughput is far from saturating the link capacity (e.g., REFT [42] reports 38% saturation), and often drops as low as a few GB/s (e.g., Nebula [23], Microsoft's DeepSpeed closed-source implementation of asynchronous checkpointing reports 1-4 GB/s).Key Insights and Contributions."
+  ]
+}

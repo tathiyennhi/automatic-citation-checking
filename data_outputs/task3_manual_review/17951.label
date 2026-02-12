@@ -1,0 +1,38 @@
+{
+  "doc_id": "17951",
+  "text": "Video Object Segmentation (VOS) aims at automatically generating accurate pixel masks for objects in each frame of a video, then associating those proposed object pixel masks in the successive frames to obtain temporally consistent tracks. VOS has mostly been tackled in a semi-supervised fashion [CITATION_1] [CITATION_2] [CITATION_3] , where the object masks of the objects to be tracked in the first-frame are given, and only those objects need to be tracked and segmented throughout the rest Figure 1 . Example results of UnOVOST on three sequences from the DAVIS Unsupervised Dataset. UnOVOST is able to accurately segment and track many diverse objects simultaneously. Frames 1, T 4 , T 2 , 3T 4 and T are shown, where T is the number of frames in the sequence. of the video.",
+  "correct_citation": {
+    "[CITATION_1]": "50773378",
+    "[CITATION_2]": "6413853",
+    "[CITATION_3]": "67856723"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "VOS has mostly been tackled in a semi-supervised fashion, where the object masks of the objects to be tracked in the first-frame are given, and only those objects need to be tracked and segmented throughout the rest Figure 1."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "VOS has mostly been tackled in a semi-supervised fashion, where the object masks of the objects to be tracked in the first-frame are given, and only those objects need to be tracked and segmented throughout the rest Figure 1."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "VOS has mostly been tackled in a semi-supervised fashion, where the object masks of the objects to be tracked in the first-frame are given, and only those objects need to be tracked and segmented throughout the rest Figure 1."
+    }
+  ],
+  "bib_entries": {
+    "50773378": {
+      "title": "PReMVOS: Proposal-generation, refinement and merging for video object segmentation",
+      "abstract": "We address semi-supervised video object segmentation, the task of automatically generating accurate and consistent pixel masks for objects in a video sequence, given the first-frame ground truth annotations. Towards this goal, we present the PReMVOS algorithm (Proposal-generation, Refinement and Merging for Video Object Segmentation). Our method separates this problem into two steps, first generating a set of accurate object segmentation mask proposals for each video frame and then selecting and merging these proposals into accurate and temporally consistent pixel-wise object tracks over a video sequence in a way which is designed to specifically tackle the difficult challenges involved with segmenting multiple objects across a video sequence. Our approach surpasses all previous state-of-the-art results on the DAVIS 2017 video object segmentation benchmark with a \\(\\mathcal {J}\\)&\\(\\mathcal {F}\\) mean score of 71.6 on the test-dev dataset, and achieves first place in both the DAVIS 2018 Video Object Segmentation Challenge and the YouTube-VOS 1st Large-scale Video Object Segmentation Challenge."
+    },
+    "6413853": {
+      "title": "Online adaptation of convolutional neural networks for video object segmentation",
+      "abstract": "We tackle the task of semi-supervised video object segmentation, i.e. segmenting the pixels belonging to an object in the video using the ground truth pixel mask for the first frame. We build on the recently introduced one-shot video object segmentation (OSVOS) approach which uses a pretrained network and fine-tunes it on the first frame. While achieving impressive performance, at test time OSVOS uses the fine-tuned network in unchanged form and is not able to adapt to large changes in object appearance. To overcome this limitation, we propose Online Adaptive Video Object Segmentation (OnAVOS) which updates the network online using training examples selected based on the confidence of the network and the spatial configuration. Additionally, we add a pretraining step based on objectness, which is learned on PASCAL. Our experiments show that both extensions are highly effective and improve the state of the art on DAVIS to an intersection-over-union score of 85.7%."
+    },
+    "67856723": {
+      "title": "FEELVOS: Fast end-to-end embedding learning for video object segmentation",
+      "abstract": "Many of the recent successful methods for video object segmentation (VOS) are overly complicated, heavily rely on fine-tuning on the first frame, and/or are slow, and are hence of limited practical use. In this work, we propose FEELVOS as a simple and fast method which does not rely on fine-tuning. In order to segment a video, for each frame FEELVOS uses a semantic pixel-wise embedding together with a global and a local matching mechanism to transfer information from the first frame and from the previous frame of the video to the current frame. In contrast to previous work, our embedding is only used as an internal guidance of a convolutional network. Our novel dynamic segmentation head allows us to train the network, including the embedding, end-to-end for the multiple object segmentation task with a cross entropy loss. We achieve a new state of the art in video object segmentation without fine-tuning with a J&F measure of 71.5% on the DAVIS 2017 validation set. We make our code and models available at this https URL."
+    }
+  },
+  "generator": "fallback"
+}

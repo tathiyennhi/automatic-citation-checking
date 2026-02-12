@@ -1,0 +1,20 @@
+{
+  "doc_id": "9165",
+  "text": "First, we compare training on shared and separate pose estimation ( Table 1 ). The shared model, as anticipated, provides significant speed improvements over the separate model, as explained in Sec. [CITATION_1] . Surprisingly, however, we observe that our share model performs better than the separate method. We hypothesize that this is because training a separate pose estimator requires more data, and Pascal 3D+ only has an average of 3091 images per class. Based on these findings, the remaining experiments use only the share model. 300x300 vs. 500x500 Our next experiment analyzes the effects of using higher resolution images for training. Table 4 shows the performance of our models using 300x300 and 500x500 images on each object class. In all cases we achieve greater than 2% improvement with the higher resolution 500x500 model for the average case. On the other hand, the 500x500 reduces the FPS from 46 to 17. Since our goal is to build a joint detector and pose estimator suitable for real-time systems, we use the 300x300 model in subsequent experiments.",
+  "correct_citation": {
+    "[CITATION_1]": "5923591"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The shared model, as anticipated, provides significant speed improvements over the separate model, as explained in Sec."
+    }
+  ],
+  "bib_entries": {
+    "5923591": {
+      "title": "Simultaneous object recognition and segmentation from single or multiple model views",
+      "abstract": "We present a novel Object Recognition approach based on affine invariant regions. It actively counters the problems related to the limited repeatability of the region detectors, and the difficulty of matching, in the presence of large amounts of background clutter and particularly challenging viewing conditions. After producing an initial set of matches, the method gradually explores the surrounding image areas, recursively constructing more and more matching regions, increasingly farther from the initial ones. This process covers the object with matches, and simultaneously separates the correct matches from the wrong ones. Hence, recognition and segmentation are achieved at the same time. The approach includes a mechanism for capturing the relationships between multiple model views and exploiting these for integrating the contributions of the views at recognition time. This is based on an efficient algorithm for partitioning a set of region matches into groups lying on smooth surfaces. Integration is achieved by measuring the consistency of configurations of groups arising from different model views. Experimental results demonstrate the stronger power of the approach in dealing with extensive clutter, dominant occlusion, and large scale and viewpoint changes. Non-rigid deformations are explicitly taken into account, and the approximative contours of the object are produced. All presented techniques can extend any view-point invariant feature extractor."
+    }
+  },
+  "generator": "fallback"
+}

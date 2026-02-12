@@ -1,0 +1,55 @@
+{
+  "doc_id": "35943",
+  "text": "In this paper we introduce a penalized model selection method that is based on a new adaptive false discovery rate (FDR) controlling procedure for multiple testing. [CITATION_1] have pointed at the connection between model selection and multiple hypotheses testing, as setting coefficient to 0 amount to dropping the variables from the prediction equation. As [CITATION_2] (hereafter ABDJ) show, the basic FDR controlling multiple testing procedure can be translated into a penalty function, where the penalty per parameter increases with m, and decreases with k. The method in [CITATION_3] (hereafter BH) was shown theoretically to have good asymptotic properties for orthogonal explanatory variables in sparse models. [CITATION_4] pointed at its limitation when the models are not sparse. The selection method proposed here should overcome these limitations, as it is based on an adaptive testing procedure that potentially addresses both high and low proportions of true hypotheses among the tested ones. The essence of the proposed procedure is to use penalized forward selection with the penalty function σ 2 kλ k,m , with λ k,m = 1 k k i=1 z 2 (q/2)i/(m+1−i(1−q)) , and stop at the first local minimum of the penalized RSS.",
+  "correct_citation": {
+    "[CITATION_1]": "18288920",
+    "[CITATION_2]": "7581060",
+    "[CITATION_3]": "45174121",
+    "[CITATION_4]": "12746125"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In this paper we introduce a penalized model selection method that is based on a new adaptive false discovery rate (FDR) controlling procedure for multiple testing.  have pointed at the connection between model selection and multiple hypotheses testing, as setting coefficient to 0 amount to dropping the variables from the prediction equation.",
+      "s_span": 0,
+      "e_span": 356
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "As  (hereafter ABDJ) show, the basic FDR controlling multiple testing procedure can be translated into a penalty function, where the penalty per parameter increases with m, and decreases with k.",
+      "s_span": 357,
+      "e_span": 563
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The method in  (hereafter BH) was shown theoretically to have good asymptotic properties for orthogonal explanatory variables in sparse models.",
+      "s_span": 564,
+      "e_span": 719
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The method in  (hereafter BH) was shown theoretically to have good asymptotic properties for orthogonal explanatory variables in sparse models.  pointed at its limitation when the models are not sparse.",
+      "s_span": 564,
+      "e_span": 790
+    }
+  ],
+  "bib_entries": {
+    "12746125": {
+      "title": "Empirical Bayes selection of wavelet thresholds",
+      "abstract": "This paper explores a class of empirical Bayes methods for level-dependent threshold selection in wavelet shrinkage. The prior considered for each wavelet coefficient is a mixture of an atom of probability at zero and a heavy-tailed density. The mixing weight, or sparsity parameter, for each level of the transform is chosen by marginal maximum likelihood. If estimation is carried out using the posterior median, this is a random thresholding procedure; the estimation can also be carried out using other thresholding rules with the same threshold. Details of the calculations needed for implementing the procedure are included. In practice, the estimates are quick to compute and there is software available. Simulations on the standard model functions show excellent performance, and applications to data drawn from various fields of application are used to explore the practical performance of the approach. By using a general result on the risk of the corresponding marginal maximum likelihood approach for a single sequence, overall bounds on the risk of the method are found subject to membership of the unknown function in one of a wide range of Besov classes, covering also the case of f of bounded variation. The rates obtained are optimal for any value of the parameter p in (0, ∞], simultaneously for a wide range of loss functions, each dominating the Lq norm of the σth derivative, with σ ≥ 0 and 0 < q ≤ 2. Attention is paid to the distinction between sampling the unknown function within white noise and sampling at discrete points, and between placing constraints on the function itself and on the discrete wavelet transform of its sequence of values at the observation points. Results for all relevant combinations of these scenarios are obtained. In some cases a key feature of the theory is a particular boundary-corrected wavelet basis, details of which are discussed. Overall, the approach described seems so far unique in combining the properties of fast computation, good theoretical properties and good performance in simulations and in practice. A key feature appears to be that the estimate of sparsity adapts to three different zones of estimation, first where the signal is not sparse enough for thresholding to be of benefit, second where an appropriately chosen threshold results in substantially improved estimation, and third where the signal is so sparse that the zero estimate gives the optimum accuracy rate."
+    },
+    "18288920": {
+      "title": "Thresholding of wavelet coefficients as multiple hypotheses testing procedure",
+      "abstract": "Given noisy signal, its finite discrete wavelet transform is an estimator of signal’s wavelet expansion coefficients. An appropriate thresholding of coefficients for further reconstruction of de-noised signal plays a key-role in the wavelet decomposition/reconstruction procedure. [DJ1] proposed a global threshold\\( \\lambda = \\sigma \\sqrt {{2\\log n}} \\) and showed that such a threshold asymptotically reduces the expected risk of the corresponding wavelet estimator close to the possible minimum. To apply their threshold for finite samples they suggested to always keep coefficients of the first coarse j0 levels."
+    },
+    "45174121": {
+      "title": "Controlling the false discovery rate: A practical and powerful approach to multiple testing",
+      "abstract": "SUMMARY The common approach to the multiplicity problem calls for controlling the familywise error rate (FWER). This approach, though, has faults, and we point out a few. A different approach to problems of multiple significance testing is presented. It calls for controlling the expected proportion of falsely rejected hypotheses -the false discovery rate. This error rate is equivalent to the FWER when all hypotheses are true but is smaller otherwise. Therefore, in problems where the control of the false discovery rate rather than that of the FWER is desired, there is potential for a gain in power. A simple sequential Bonferronitype procedure is proved to control the false discovery rate for independent test statistics, and a simulation study shows that the gain in power is substantial. The use of the new procedure and the appropriateness of the criterion are illustrated with examples."
+    },
+    "7581060": {
+      "title": "Adapting to unknown sparsity by controlling the false discovery rate",
+      "abstract": "We attempt to recover an $n$-dimensional vector observed in white noise, where $n$ is large and the vector is known to be sparse, but the degree of sparsity is unknown. We consider three different ways of defining sparsity of a vector: using the fraction of nonzero terms; imposing power-law decay bounds on the ordered entries; and controlling the $\\ell_p$ norm for $p$ small. We obtain a procedure which is asymptotically minimax for $\\ell^r$ loss, simultaneously throughout a range of such sparsity classes. ::: The optimal procedure is a data-adaptive thresholding scheme, driven by control of the {\\it False Discovery Rate} (FDR). FDR control is a relatively recent innovation in simultaneous testing, ensuring that at most a certain fraction of the rejected null hypotheses will correspond to false rejections. ::: In our treatment, the FDR control parameter $q_n$ also plays a determining role in asymptotic minimaxity. If $q = \\lim q_n \\in [0,1/2]$ and also $q_n > \\gamma/\\log(n)$ we get sharp asymptotic minimaxity, simultaneously, over a wide range of sparse parameter spaces and loss functions. On the other hand, $ q = \\lim q_n \\in (1/2,1]$, forces the risk to exceed the minimax risk by a factor growing with $q$. ::: To our knowledge, this relation between ideas in simultaneous inference and asymptotic decision theory is new. ::: Our work provides a new perspective on a class of model selection rules which has been introduced recently by several authors. These new rules impose complexity penalization of the form $2 \\cdot \\log({potential model size} / {actual model size})$. We exhibit a close connection with FDR-controlling procedures under stringent control of the false discovery rate."
+    }
+  },
+  "generator": "fallback_v4"
+}

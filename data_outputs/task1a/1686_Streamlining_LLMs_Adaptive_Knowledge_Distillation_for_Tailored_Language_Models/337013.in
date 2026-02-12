@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Once tuned, prompts were passed to teacher and student models for generating the classification predictions y and ŷ.",
+    "The teacher model's output y serves as the true label during the distilling process.",
+    "To minimize the divergence between the predicted probability distribution of the teacher and student models we use the cross-entropy loss function.",
+    "To optimize efficiency, we integrate Quantized Low-Rank Adapters (QLoRA), which apply 4-bit quantization and low-rank decomposition to selfattention layers.",
+    "The weight matrices are factorized into two smaller matrices, A and B, controlled by rank r. After experimenting with 4, 8, 32, and 64 across all models, empirical tuning determined r = 64 as the best trade-off between compression and accuracy, based on the findings of (Hu et al., 2022)."
+  ]
+}

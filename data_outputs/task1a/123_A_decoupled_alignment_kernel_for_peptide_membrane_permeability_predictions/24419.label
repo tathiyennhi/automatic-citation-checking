@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "We take the Tanimoto kernel κ 0 on Morgan fingerprints introduced above as a base monomer kernel, which satisfies κ 0 ∈ [0, 1], and define the distance-like score φ = 1 -κ 0.",
+    "For β > 0 we use the soft local kernelκ β ϕ(s i), ϕ(t j) = exp -β 1 -κ 0 ϕ(s i), ϕ(t j).Let the triangular Toeplitz position kernel of bandwidth T ∈ N beω T (i, j) = max 0, 1 - |i -j| T, ω T (i, j) = 0 if |i -j| > T.Our position-aware local kernel is κ T (i, j) = ω T (i, j) κ β (ϕ(s i), ϕ(t j)), and the DP becomesM 0,0 = 1, M i,0 = M 0,j = 0, M i,j = κ T (i, j) M i-1,j-1 + M i-1,j + M i,j-1,(4)with K PMD-GAK (A, B) = M n,m and optional cosine normalization KPMD-GAK (A, B) = M n,m.",
+    "Because the triangular window ω T is Toeplitz and compactly supported, the computation is restricted to the diagonal band |i -j| ≤ T, visiting O T (n+m) cells in practice (Fig. 2).",
+    "Under the same sufficient conditions used for global-alignment kernels-namely, a suitably transformed positive-definite local kernel and a positive-definite positional kernel-the position-weighted similarity remains positive definite.Fig. 2: Illustration of the PMD-GAK dynamic program with a compactly supported Toeplitz position kernel ω T (i, j) = ψ(|i -j|) of bandwidth T = 3.",
+    "Gray cells indicate entries where ω T (i, j) = 0 (hence κ T (i, j) = 0), so M i,j does not need to be updated."
+  ],
+  "correct_citations": [
+    "We take the Tanimoto kernel κ 0 on Morgan fingerprints introduced above as a base monomer kernel, which satisfies κ 0 ∈ [0, 1], and define the distance-like score φ = 1 -κ 0."
+  ]
+}

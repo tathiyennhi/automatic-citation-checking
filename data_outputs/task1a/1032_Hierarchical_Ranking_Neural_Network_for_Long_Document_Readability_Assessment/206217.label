@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Sentence LayerIn order to further capture the long-term dependency of different sentences, we adopt the Inter-section R-Transformer [43], which adopts N layer of transformers and replaces the residual blocks with residual fusion gates.",
+    "The multi-head selfattention layer MHSA and normalization are firstly applied to the sentence level features as follows,o s = norm(MHS A(h s))(4)where o s = [o s 1,..., o s n] ∈ R n×d, and norm represents the normalization operation.",
+    "To combine the local and global context features at the sentence level, the Inter-section R-Transformer uses a residual fusion gate to dynamically merge the input and output of multi-head self-attention.",
+    "The output sequence of the residual fusion gate e s = e s 1,..., e s n is computed as follows,G1 = sigmoid(W s 11 o s + W s 12 h s + b s 1)(5)e s = G1 ⊙ h s + (1 -G1) ⊙ o s (6)where W s 11, W s 12 and b s 1 are the parameters of the first residual fusion gate and sigmoid is the activation function.",
+    "The output of gate e s is then passed through a fully connected layer f s followed with a normalization process."
+  ],
+  "correct_citations": [
+    "Sentence LayerIn order to further capture the long-term dependency of different sentences, we adopt the Inter-section R-Transformer [43], which adopts N layer of transformers and replaces the residual blocks with residual fusion gates."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To maintain and update these node memories efficiently, TGL designs the mailbox to cache the latest messages.",
+    "In each training iteration, the latest messages are read from the mailbox, aggregated by a certain combiner.",
+    "Then, the memory state of the node is updated by a sequential model such as GRU.",
+    "This design circumvents the direct generation of mail using the most recent memory state, effectively avoiding potential information leakage.",
+    "Additionally, it incorporates an asynchronous mechanism for updating node states, making it better aligned with the streaming or batch training process.To further enhance efficiency, DistTGL [75] implements a mechanism where memory operations are serialized and executed asynchronously through a separate daemon process, circumventing intricate synchronization requirements."
+  ]
+}

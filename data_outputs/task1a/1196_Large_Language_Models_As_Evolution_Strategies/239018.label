@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Note, that we don't use raw floating point numbers due to the LLM tokenizer potentially returning different numbers of tokens per individual number.",
+    "This can hinder the LLM from inferring improvement sequences.",
+    "First, we sort the set of previous population evaluations 𝐻 = {𝑋 𝑔, 𝐹 𝑔 } 𝐺 𝑔=1 by their fitness within and across generations.",
+    "Afterwards, we select the top-𝐾 performing generations and top-𝑀 solutions within each generation.",
+    "We let the LLM propose the next mean for a desired fitness level [4], 𝑓 query LLM:𝑓 ★ 𝐾,1: 𝒙 ★ 1,𝐾; 𝒙 𝐾,1, 𝒙 𝐾,2,..., 𝒙 𝐾,𝑀... 𝑓 ★ 𝑘,1: 𝒙 ★ 1,𝑘; 𝒙 𝑘,1, 𝒙 𝑘,2,..., 𝒙 𝑘,𝑀... 𝑓 ★ 1,1: 𝒙 ★ 1,1; 𝒙 1,1, 𝒙 1,2,..., 𝒙 1,𝑀 𝑓 query LLM: < LLM-Output >;where 𝑥 ★ 𝑘, 𝑓 ★ 𝑘 denotes the best-performing solution and its fitness up to generation 𝑘."
+  ],
+  "correct_citations": [
+    "We let the LLM propose the next mean for a desired fitness level [4], 𝑓 query LLM:𝑓 ★ 𝐾,1: 𝒙 ★ 1,𝐾; 𝒙 𝐾,1, 𝒙 𝐾,2,..., 𝒙 𝐾,𝑀... 𝑓 ★ 𝑘,1: 𝒙 ★ 1,𝑘; 𝒙 𝑘,1, 𝒙 𝑘,2,..., 𝒙 𝑘,𝑀... 𝑓 ★ 1,1: 𝒙 ★ 1,1; 𝒙 1,1, 𝒙 1,2,..., 𝒙 1,𝑀 𝑓 query LLM: < LLM-Output >;where 𝑥 ★ 𝑘, 𝑓 ★ 𝑘 denotes the best-performing solution and its fitness up to generation 𝑘."
+  ]
+}

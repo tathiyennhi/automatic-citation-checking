@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Do not include other information.\"\"\"",
+    "Listing 2: Prompts used in STORM (continue), corresponding to Line 24, 31, 32 in Algorithm 1.Algorithm 1: STORM Input:Topic t, maximum perspective N, maximum conversation round M Output:Outline O, references R 1 P0 = \"basic fact writer...\" // Constant.",
+    "2 R ← [] 3 // Discover perspectives P. 4 related_topics ← gen_related_topics(t) 5 tocs ← [] 6 foreach related_t in related_topics do 7 article ← get_wiki_article(related_t) if article then 8 tocs.append(extract_toc(article)) 9 end 10 end 11 P ← gen_perspectives(t, tocs) 12 P ← [P0] + P[:N] 13 // Simulate conversations.",
+    "14 convos ← [] 15 foreach p in P do 16 convo_history ← [] 17 for i = 1 to M do 18 // Question asking.",
+    "19 q ← gen_qn(t, p, dlg_history) 20 convo_history.append(q) 21 // Question answering."
+  ],
+  "correct_citations": []
+}

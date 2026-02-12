@@ -1,0 +1,44 @@
+{
+  "doc_id": "42611",
+  "text": "We evaluate our depth estimation result on the Eigen split provided by [CITATION_1] for fair comparison with prior works. We follow the same depth evaluation protocol as in [CITATION_2] , [CITATION_3] . Our results for depth estimation using our full framework (Stereo+Normal+Temporal) are presented in Table I and is compared against relevant prior works and our own 'Baseline' network that are all trained using the photometric loss with inverse depth smoothness prior. Our full method performs best in all measures compared to all the baselines. This reaffirms the importance of the more realistic normal smoothness prior over the traditional inverse-depth smoothness prior.",
+  "correct_citation": {
+    "[CITATION_1]": "2255738",
+    "[CITATION_2]": "299085",
+    "[CITATION_3]": "206596513"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We evaluate our depth estimation result on the Eigen split provided by  for fair comparison with prior works.",
+      "s_span": 0,
+      "e_span": 121
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We follow the same depth evaluation protocol as in  ,  .",
+      "s_span": 122,
+      "e_span": 202
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We follow the same depth evaluation protocol as in  ,  .",
+      "s_span": 122,
+      "e_span": 202
+    }
+  ],
+  "bib_entries": {
+    "299085": {
+      "title": "Unsupervised cnn for single view depth estimation: Geometry to the rescue",
+      "abstract": "A significant weakness of most current deep Convolutional Neural Networks is the need to train them using vast amounts of manually labelled data. In this work we propose a unsupervised framework to learn a deep convolutional neural network for single view depth prediction, without requiring a pre-training stage or annotated ground-truth depths. We achieve this by training the network in a manner analogous to an autoencoder. At training time we consider a pair of images, source and target, with small, known camera motion between the two such as a stereo pair. We train the convolutional encoder for the task of predicting the depth map for the source image. To do so, we explicitly generate an inverse warp of the target image using the predicted depth and known inter-view displacement, to reconstruct the source image; the photometric error in the reconstruction is the reconstruction loss for the encoder. The acquisition of this training data is considerably simpler than for equivalent systems, requiring no manual annotation, nor calibration of depth sensor to camera. We show that our network trained on less than half of the KITTI dataset gives comparable performance to that of the state-of-the-art supervised methods for single view depth estimation."
+    },
+    "206596513": {
+      "title": "Unsupervised monocular depth estimation with left-right consistency",
+      "abstract": "Learning based methods have shown very promising results for the task of depth estimation in single images. However, most existing approaches treat depth prediction as a supervised regression problem and as a result, require vast quantities of corresponding ground truth depth data for training. Just recording quality depth data in a range of environments is a challenging problem. In this paper, we innovate beyond existing approaches, replacing the use of explicit depth data during training with easier-to-obtain binocular stereo footage. We propose a novel training objective that enables our convolutional neural network to learn to perform single image depth estimation, despite the absence of ground truth depth data. Ex-ploiting epipolar geometry constraints, we generate disparity images by training our network with an image reconstruction loss. We show that solving for image reconstruction alone results in poor quality depth images. To overcome this problem, we propose a novel training loss that enforces consistency between the disparities produced relative to both the left and right images, leading to improved performance and robustness compared to existing approaches. Our method produces state of the art results for monocular depth estimation on the KITTI driving dataset, even outperforming supervised methods that have been trained with ground truth depth."
+    },
+    "2255738": {
+      "title": "Depth map prediction from a single image using a multi-scale deep network",
+      "abstract": "Predicting depth is an essential component in understanding the 3D geometry of a scene. While for stereo images local correspondence suffices for estimation, finding depth relations from a single image is less straightforward, requiring integration of both global and local information from various cues. Moreover, the task is inherently ambiguous, with a large source of uncertainty coming from the overall scale. In this paper, we present a new method that addresses this task by employing two deep network stacks: one that makes a coarse global prediction based on the entire image, and another that refines this prediction locally. We also apply a scale-invariant error to help measure depth relations rather than scale. By leveraging the raw datasets as large sources of training data, our method achieves state-of-the-art results on both NYU Depth and KITTI, and matches detailed depth boundaries without the need for superpixelation."
+    }
+  },
+  "generator": "fallback_v4"
+}

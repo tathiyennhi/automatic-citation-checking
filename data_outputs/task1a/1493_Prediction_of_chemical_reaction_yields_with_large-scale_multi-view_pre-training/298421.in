@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In addition, models need to be rotational and translational invariant since conformers are generally described by atomic coordinates and are not fixed in the Cartesian or spherical coordinate systems.",
+    "In light of these considerations, we propose a simple yet effective approach to capturing spatial features of reactions by utilizing sequential molecular conformers, as illustrated in Fig. 3b.",
+    "The conformer encoder is composed of a SchNet [34] model that satisfies rotational and translational invariance to embed molecules and a multi-layer bidirectional GRU to aggregate molecular representations as follows:where h m i denotes the feature of the i-th molecule extracted from its conformer C i, and SchNet is a variant of Deep Tensor Neural Network (DTNN).",
+    "The SchNet model incorporates a continuous-filter convolution layer, which is particularly well-suited for molecular dynamics simulations aimed at predicting potential energy surfaces (9) h m i = SchNet(C i), h c = Bi -GRU h m 1,..., h m n,and energy-conserving force fields.",
+    "A SchNet model can be formulated as follows:where I u denotes the input feature of atom u for the embedding layer, e ℓ u denotes the output at layer ℓ ( 0 < ℓ < K) for atom u, r denotes the spatial coordinate of the corresponding atom, MLP denotes the multi-layer perceptron, K denotes the number of hidden layers, and is the continuous-filter convolution layer that captures continuous coordinates of atoms instead of discrete ones using different hyper-parameters γ and µ k. Results and discussion Experimental settingsReaMVP is implemented in Python (version 3.10)."
+  ]
+}

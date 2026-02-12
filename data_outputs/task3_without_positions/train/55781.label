@@ -1,0 +1,29 @@
+{
+  "doc_id": "55781",
+  "text": "To remove this register idle time, early register releasing has been proposed [CITATION_1] [CITATION_2] which puts a register back on the free-list before the commit of its redefining instruction. Although the main focus of previous work has been to increase performance, releasing registers early can also save power. This can be achieved either through the use of a smaller, more power-efficient register file, or by using a banked register file where banks can be turned off for power savings.",
+  "correct_citation": {
+    "[CITATION_1]": "18811590",
+    "[CITATION_2]": "5817491"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To remove this register idle time, early register releasing has been proposed   which puts a register back on the free-list before the commit of its redefining instruction."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "To remove this register idle time, early register releasing has been proposed   which puts a register back on the free-list before the commit of its redefining instruction."
+    }
+  ],
+  "bib_entries": {
+    "18811590": {
+      "title": "Hardware schemes for early register release",
+      "abstract": "Register files are becoming one of the critical components of current out-of-order processors in terms of delay and power consumption, since their potential to exploit instruction-level parallelism is quite related to the size and number of ports of the register file. In conventional register renaming schemes, register releasing is conservatively done only after the instruction that redefines the same register is committed. Instead, we propose a scheme that releases registers as soon as the processor knows that there will be no further use of them. We present two early releasing hardware implementations with different performance/complexity trade-offs. Detailed cycle-level simulations show either a significant speedup for a given register file size, or a reduction in register file size for a given performance level."
+    },
+    "5817491": {
+      "title": "Increasing processor performance through early register release",
+      "abstract": "Modern superscalar microprocessors need sizable register files to support large number of in-flight instructions for exploiting ILP. An alternative to building large register files is to use smaller number of registers, but manage them more effectively. More efficient management of registers can also result in higher performance if the reduction of the register file size is not the goal. Traditional register file management mechanisms deallocate a physical register only when the next instruction with the same destination architectural register commits. We propose two complementary techniques for deallocating the register immediately after the instruction producing the register's value commits itself, without waiting for the commitment of the next instruction with the same destination. Our design relies on the use of a checkpointed register file (CRF), where a local shadow copy of each bitcell is used to temporarily save the early deallocated register values should they be needed to recover from branch mispredictions or to reconstruct the precise state after exceptions or interrupts. The proposed techniques outperform the previously proposed schemes for early deallocation of registers. For the register-constrained datapath configurations, our techniques result in up to 35% performance increase with 23.3% increase on the average across SPEC2000 benchmarks."
+    }
+  },
+  "generator": "fallback_v4"
+}

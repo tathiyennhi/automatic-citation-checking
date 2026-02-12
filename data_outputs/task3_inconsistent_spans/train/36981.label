@@ -1,0 +1,44 @@
+{
+  "doc_id": "36981",
+  "text": "Mueller et al. [CITATION_1] focuses on the direct image reconstruction with applicability to the medical field. The direct image reconstruction allows for the rapid generation of a series of images, thereby making it possible to monitor living tissues. Their work proposes a mathematical algorithm based on a proof of the 2D-inverse condition problem [CITATION_2] . The algorithm, tested on a chest model, determines the scattering transform, t, from a Dirichlet-to-Neumann map from which it reconstructs the conductivity distribution. The experiment was designed using a virtual chest phantom. This virtual chest was constructed using elliptical domains to represent the heart and lungs. The resistivity of the models representing the heart and the lungs was selected based on the behavior that an organ with more blood has a lower resistivity compared to an organ with less blood. The resistivity of these organs also changes during different physiological states, e.g., the resistivity of the heart increases during systole while the resistivity of the lung decreases during exhalation. The background conductivity was set to a constant value of conductivity of 1. Polynomial smoothing was applied in smoothening the edges of the organs during reconstruction since the method is only valid for conductivities with two derivatives. The reconstructed images are shown in Fig. 10 . The images were reconstructed from the conductivity of the model chest. Polydoride and McCann [CITATION_3] , implemented an algorithm based on Newton's iterative techniques for nonlinear image reconstruction. This method integrated a linear regularized step based on the regularized total least square (RTLS) problem. Although the formula is same as the Tikhonov problem, the RTLS differs when the inverse problem is solved under the assumption, that both measurement and the sensitivity values are known roughly. The RTLS problem can formulated in the same way as the Tikhonov problem, which includes one additional factor and requires an estimation of two scalar parameters. The Jacobian method is another approach wherein the inverse solution can be calculated with a coarser model (in this case with 816 elements). This is due to the use of a different finite model for the forward and the inverse problem, which largely reflects the perfected model. The noise is added to perfect the instrumentation noise, which pollutes the measurement when doing data acquisition. A system with 22 electrodes was employed to perform spatial resolution comparison with the conventional scheme. After applying the 11 opposite current patterns, 198 stimulated measurements were collected. The images for the spatial resolution were obtained by calculating the normalised spatial resolution error.",
+  "correct_citation": {
+    "[CITATION_1]": "7709866",
+    "[CITATION_2]": "121662438",
+    "[CITATION_3]": "121253843"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Mueller et al.  focuses on the direct image reconstruction with applicability to the medical field.",
+      "s_span": 0,
+      "e_span": 111
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Their work proposes a mathematical algorithm based on a proof of the 2D-inverse condition problem  .",
+      "s_span": 253,
+      "e_span": 365
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Polydoride and McCann  , implemented an algorithm based on Newton's iterative techniques for nonlinear image reconstruction.",
+      "s_span": 1454,
+      "e_span": 1590
+    }
+  ],
+  "bib_entries": {
+    "121662438": {
+      "title": "Global uniqueness for a two-dimensional inverse boundary value problem",
+      "abstract": "We show that the coefficient -y(x) of the elliptic equation Vie (QyVu) = 0 in a two-dimensional domain is uniquely determined by the corresponding Dirichlet-to-Neumann map on the boundary, and give a reconstruction pro"
+    },
+    "121253843": {
+      "title": "Electrode configurations for improved spatial resolution in electrical impedance tomography",
+      "abstract": "This study addresses the numerical treatment applied to the singular values of the sensitivity matrix in the presence of noisy measurements, subsequently suggesting electrode configurations that provide sensitivities with improved characteristics. We begin by examining the impact of the individual singular values on the spatial resolution of the image and then proceed to express the generalized Tikhonov regularization in terms of the generalized singular value decomposition in order to demonstrate how the reconstructed image is synthesized from the individual energy components. The electrode segmentation scheme is then introduced as a feasible configuration offering efficient and improved resolution impedance imaging. Finally, the regularized total least squares algorithm is implemented to provide the linear step solution within Newton's iterative scheme. Images of several reconstructed inhomogeneities are presented, using simulated measurements obtained from the segmented electrodes system."
+    },
+    "7709866": {
+      "title": "A direct reconstruction algorithm for electrical impedance tomography",
+      "abstract": "A direct (noniterative) reconstruction algorithm for electrical impedance tomography in the two-dimensional (2-D), cross-sectional geometry is reviewed. New results of a reconstruction of a numerically simulated phantom chest are presented. The algorithm is based on the mathematical uniqueness proof by A.I. Nachman [1996] for the 2-D inverse conductivity problem. In this geometry, several of the clinical applications include monitoring heart and lung function, diagnosis of pulmonary embolus, diagnosis of pulmonary edema, monitoring for internal bleeding, and the early detection of breast cancer."
+    }
+  },
+  "generator": "fallback_v4"
+}

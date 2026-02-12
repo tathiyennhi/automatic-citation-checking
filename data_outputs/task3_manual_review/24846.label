@@ -1,0 +1,20 @@
+{
+  "doc_id": "24846",
+  "text": "The ensembles consisted of 40 perceptrons, and when learning the second concept they were trained using the Online Bagging algorithm [CITATION_1] . Perceptrons were used as base learners because their learning rate is dependent only on a parameter (learning rate, which we held at 0.05 for all experiments), while other algorithms (e.g. classification trees, naive bayes, decision stumps) will learn at different rates depending on the amount of data and noisiness of data seen previously. Similarly, Online Bagging makes no provision for concept change, so adaptation will be entirely determined by the diversity of the ensemble and the learning rate of the perceptrons. In all experiments, we calculated 95% confidence intervals, but found that (due to the number of repetitions) they were too small to serve any purpose in the graphs we present.",
+  "correct_citation": {
+    "[CITATION_1]": "40421517"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The ensembles consisted of 40 perceptrons, and when learning the second concept they were trained using the Online Bagging algorithm"
+    }
+  ],
+  "bib_entries": {
+    "40421517": {
+      "title": "Online ensemble learning",
+      "abstract": "Ensemble learning methods train combinations of base models, which may be decision trees, neural networks, or others traditionally used in supervised learning. Ensemble methods have gained popularity because many researchers have demonstrated their superior prediction performance relative to single models on a variety of problems especially when the correlations of the errors made by the base models are low (e.g., (Freund & Schapire 1996; Tumer & Oza 1999)). However, these learning methods have largely operated in batch mode—that is, they repeatedly process the entire set of training examples as a whole. These methods typically require at least one pass through the data for each base model in the ensemble. We would instead prefer to learn the entire ensemble in an online fashion, i.e., using only one pass through the entire dataset. This would make ensemble methods practical when data is being generated continuously so that storing data for batch learning is impractical, or in data mining tasks where the datasets are large enough that multiple passes would require a prohibitively large training time. We have so far developed online versions of the popular bagging (Breiman 1994) and boosting (Freund & Schapire 1996) algorithms. We have shown empirically that both online algorithms converge to the same prediction performance as the batch versions and proved this convergence for online bagging (Oza 2000). However, significant empirical and theoretical work remains to be done. There are several traditional ensemble learning issues that remain in our online ensemble learning framework such as the number and types of base models to use, the combining method to use, and how to maintain diversity among the base models. When learning large datasets, we may hope to avoid using all of the training examples and/or input features. We have developed input decimation (Tumer & Oza 1999), a technique that uses different subsets of the input features in different base models. We have shown that this method performs better than combinations of base models that use all the input features because of two characteristics of our base models: they overfit less by using only a small number of highly-relevant input features, and they have lower correlations in their errors because they use different input feature subsets. However, our method of selecting input features"
+    }
+  },
+  "generator": "fallback"
+}

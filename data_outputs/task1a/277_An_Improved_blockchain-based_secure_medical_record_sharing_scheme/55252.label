@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The digest of the analysis results of the data and the1: Receive EMR from hospital database service 2: Hash the EM R p id with a hash function -→ Hash(EM R p id) 3: Create the diseaseDescription p id from EMR 4: if EM R p id is sensitive then 5: block size = 4 6: else 7: block size = 128 8: end if 9: for i ← 0, size(EM R p id)/block size do 10: f ragment i = splitF ile(EM R p id, block size) 11: create the symmetric key -→ secretKey i 12:crypt the f ragment i by using the secretKey i -→ encrpyted f ragmenti = f ragment (i)secretKeyi 13:save the encrpyted f ragmenti to distiributed database 14:add the addresses of encrpyted f ragmenti and secretKey i to the storage list 15:crypt the storage list by using the p id privateKey -→ encrpytedStorageList p id = storagelist p id privateKey 16: end for 17: Save blok id, p id, Hash(EM R p id), timestamp, encrpytedStorageList p id, diseaseDescription p id, previous block hash to the blockchain as a new block address of the symmetric key are saved in a block on the blockchain and shared with the patient.",
+    "After the thirdparty entity analysis of a patient EMR, the EMR data are hashed and compared to the hash value on the blockchain.If the hash values are not equal, the data have been modified.",
+    "In this case, the third-party entity along with its e id is revoked.",
+    "The patient's EMR in the database is also deleted.",
+    "The patient then generates new secret keys, encrypts the EMR fragments with these keys, and re-saves them in the database."
+  ],
+  "correct_citations": []
+}

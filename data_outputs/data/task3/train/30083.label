@@ -1,0 +1,65 @@
+{
+  "doc_id": "30083",
+  "text": "Yildirim et al. [CITATION_1] , Yin et al. [CITATION_2] , and Kim et al. [CITATION_3] proposed highly-accurate predictive models solely based on real-time probing which would require as few as three sampling points to provide very accurate predictions for the parallel stream number giving the highest transfer throughput. These models have proved to provide higher accuracy compared to existing similar models in the literature [CITATION_4] , [CITATION_5] . Later, Yildirim et al. presented the PCP algorithm to dynamically tune parameter values of data transfer [CITATION_6] . PCP categorizes files into three groups based on file size (small, medium, and large) and then run sample transfer for each file group to determine parameter values that would return higher transfer throughput. Although PCP does not require historical data to operate and it can adapt itself to varying network conditions, it requires too many sample transfers to adapt to the dynamically changing network environment.",
+  "correct_citation": {
+    "[CITATION_1]": "18028699",
+    "[CITATION_2]": "913001",
+    "[CITATION_3]": "62192670",
+    "[CITATION_4]": "5622964",
+    "[CITATION_5]": "10464624",
+    "[CITATION_6]": "13262465"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Yildirim et al.  , Yin et al.  , and Kim et al.  proposed highly-accurate predictive models solely based on real-time probing which would require as few as three sampling points to provide very accurate predictions for the parallel stream number giving the highest transfer throughput."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Yildirim et al.  , Yin et al.  , and Kim et al.  proposed highly-accurate predictive models solely based on real-time probing which would require as few as three sampling points to provide very accurate predictions for the parallel stream number giving the highest transfer throughput."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Yildirim et al.  , Yin et al.  , and Kim et al.  proposed highly-accurate predictive models solely based on real-time probing which would require as few as three sampling points to provide very accurate predictions for the parallel stream number giving the highest transfer throughput."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "These models have proved to provide higher accuracy compared to existing similar models in the literature  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "These models have proved to provide higher accuracy compared to existing similar models in the literature  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Later, Yildirim et al. presented the PCP algorithm to dynamically tune parameter values of data transfer  ."
+    }
+  ],
+  "bib_entries": {
+    "5622964": {
+      "title": "Modeling and taming parallel TCP on the wide area network",
+      "abstract": "Parallel TCP flows are broadly used in the high performance distributed computing community to enhance network throughput, particularly for large data transfers. Previous research has studied the mechanism by which parallel TCP improves aggregate throughput, but there doesn't exist any practical mechanism to predict its throughput and its impact on the background traffic. In this work, we address how to predict parallel TCP throughput as a function of the number of flows, as well as how to predict the corresponding impact on cross traffic. To the best of our knowledge, we are the first to answer the following question on behalf of a user: what number of parallel flows will give the highest throughput with less than a p% impact on cross traffic? We term this the maximum nondisruptive throughput. We begin by studying the behavior of parallel TCP in simulation to help derive a model for predicting parallel TCP throughput and its impact on cross traffic. Combining this model with some previous findings we derive a simple, yet effective, online advisor. We evaluate our advisor through extensive simulations and wide-area experimentation."
+    },
+    "18028699": {
+      "title": "Prediction of optimal parallelism level in wide area data transfers",
+      "abstract": "Wide area data transfer may be a major bottleneck for the end-to-end performance of distributed applications. A practical way of increasing the wide area throughput at the application layer is using multiple parallel streams. Although increased number of parallel streams may yield much better performance than using a single stream, overwhelming the network by opening too many streams may have an inverse effect. The congestion created by excess number of streams may cause a drop down in the throughput achieved. Hence, it is important to decide on the optimal number of streams without congesting the network. Predicting this \"optimum” number is not straightforward, since it depends on many parameters specific to each individual transfer. Generic models that try to predict this number either rely too much on historical information or fail to achieve accurate predictions. In this paper, we present a set of new models which aim to approximate the optimal number with least history information and lowest prediction overhead. An algorithm is introduced to select the best combination of historic information to do the prediction for evaluation purposes as well as optimizing prediction by reducing error rate. We measure the feasibility and accuracy of the proposed prediction models by comparing to actual GridFTP data transfer by using little historical information and have seen that we could predict the throughput of parallel streams accurately and find a very close approximation of the optimal stream number."
+    },
+    "62192670": {
+      "title": "A highly-accurate and lowoverhead prediction model for transfer throughput optimization",
+      "abstract": "An important bottleneck for data-intensive scalable computing systems is efficient utilization of the network links that connect the collaborating institutions with their remote partners, data sources, and computational sites. To alleviate this bottleneck, we propose an application-layer throughput optimization model based on parallel stream number prediction. This new model extends our two previous models (Partial C-order and Full Second-order) to achieve higher accuracy and lower overhead predictions. Our new model, called Full C-order, outperforms both of our previous models as well as the most relevant model by others, the Partial Second-order, in terms of both accuracy and efficiency. We test and compare these four models on emulated testbeds and on production environments using a wide variety of data set sizes, RTT, and bandwidth combinations. Our comprehensive experiments confirm the superiority of our new model to the other three models."
+    },
+    "913001": {
+      "title": "A data throughput prediction and optimization service for widely distributed many-task computing",
+      "abstract": "In this paper, we present the design and implementation of a network throughput prediction and optimization service for many-task computing in widely distributed environments. This service uses multiple parallel TCP streams to improve the end-to-end throughput of data transfers. A novel mathematical model is used to decide the number of parallel streams to achieve best performance. This model can predict the optimal number of parallel streams with as few as three prediction points. We implement this new service in the Stork data scheduler, where the prediction points can be obtained using Iperf and GridFTP samplings. Our results show that the prediction cost plus the optimized transfer time is much less than the unoptimized transfer time in most cases."
+    },
+    "13262465": {
+      "title": "Application-level optimization of big data transfers through pipelining, parallelism and concurrency",
+      "abstract": "In end-to-end data transfers, there are several factors affecting the data transfer throughput, such as the network characteristics (e.g., network bandwidth, round-trip-time, background traffic); end-system characteristics (e.g., NIC capacity, number of CPU cores and their clock rate, number of disk drives and their I/O rate); and the dataset characteristics (e.g., average file size, dataset size, file size distribution). Optimization of big data transfers over inter-cloud and intra-cloud networks is a challenging task that requires joint-consideration of all of these parameters. This optimization task becomes even more challenging when transferring datasets comprised of heterogeneous file sizes (i.e., large files and small files mixed). Previous work in this area only focuses on the end-system and network characteristics however does not provide models regarding the dataset characteristics. In this study, we analyze the effects of the three most important transfer parameters that are used to enhance data transfer throughput: pipelining, parallelism and concurrency . We provide models and guidelines to set the best values for these parameters and present two different transfer optimization algorithms that use the models developed. The tests conducted over high-speed networking and cloud testbeds show that our algorithms outperform the most popular data transfer tools like Globus Online and UDT in majority of the cases."
+    },
+    "10464624": {
+      "title": "The end-to-end performance effects of parallel TCP sockets on a lossy wide area network",
+      "abstract": "This paper examines the effects of using parallel TCP flows to improve end-to-end network performance for distributed data intensive applications. A series of transmission experiments were conducted over a wide-area network to assess how parallel flows improve throughput, and to understand the number of flows necessary to improve throughput while avoiding congestion. An empirical throughput expression for parallel flows based on experimental data is presented, and guidelines for the use of parallel flows are discussed."
+    }
+  },
+  "generator": "fallback_v4"
+}

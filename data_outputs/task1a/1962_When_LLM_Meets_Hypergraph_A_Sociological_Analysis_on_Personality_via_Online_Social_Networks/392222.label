@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Following this intuition, we can update the user input feature matrix as follows:Z ℓ+1 = 𝑫 𝑣 -1 2 𝑼 𝑯𝑾 𝑫 𝑒 -1 𝑯 T 𝑼 𝑫 𝑣 -1 2 X ℓ 𝚯 (5)where 𝚯 is the layer-specific trainable parameters, ℓ = 0, • • •, 𝐿 denotes the hypergraph neural network layer.",
+    "When ℓ = 0, X 0 = X 𝑙𝑙𝑚 is the user feature matrix obtained in section 3.2.",
+    "To avoid oversmooth risk, we use the skip connection skill [14,15] to connect two adjacent hypergraph neural network layers.",
+    "Here the skip connection skill is followed by:X ℓ+1 = 𝜎 𝑅𝑒𝐿𝑈 (𝐵𝑎𝑡𝑐ℎ𝑁𝑜𝑟𝑚(Z ℓ+1)) + X ℓ(6)where 𝜎 (•) is the activate function such as ReLU.Considering that personalities naturally have an imbalanced distribution, we use the focal loss function, which incorporates the focusing parameter 𝛾 to emphasize the correction of misclassified examples and enhance the recognition of minority classes, to improve model robustness against imbalanced data:𝐿 = - 1 𝑁 𝑛 ∑︁ 𝑖=1 𝐶 ∑︁ 𝑐=1 𝑤 𝑐 • 𝑦 𝑖,𝑐 • (1 -ŷ𝑖, 𝑐) 𝛾 log( ŷ𝑖, 𝑐)(7)where 𝐶 is the number of personality types, 𝑁 is the number of labeled users.",
+    "We utilize 𝑤 𝑐 as the weight to adjust the loss contribution based on the inverse frequency of each personality type."
+  ],
+  "correct_citations": [
+    "To avoid oversmooth risk, we use the skip connection skill [14,15] to connect two adjacent hypergraph neural network layers."
+  ]
+}

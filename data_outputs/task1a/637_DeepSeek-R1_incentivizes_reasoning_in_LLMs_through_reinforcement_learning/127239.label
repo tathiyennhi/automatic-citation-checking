@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "To train DeepSeek-R1-Zero, we set the learning rate to 3 × 10 -6, the Kullback-Leibler (KL) coefficient to 0.001 and the sampling temperature to 1 for rollout.",
+    "For each question, we sample 16 outputs with a maximum length of 32,768 tokens before the 8.2k step and 65,536 tokens afterward.",
+    "As a result, both the performance and response length of DeepSeek-R1-Zero exhibit a substantial jump at the 8.2k step, with training continuing for a total of 10,400 steps, corresponding to 1.6 training epochs.",
+    "Each training step consists of 32 unique questions, resulting in a training batch size of 512 per step.",
+    "Every 400 steps, we replace the reference model with the latest policy model."
+  ],
+  "correct_citations": []
+}

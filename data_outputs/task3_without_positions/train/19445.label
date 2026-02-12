@@ -1,0 +1,29 @@
+{
+  "doc_id": "19445",
+  "text": "Other solutions like NetSight [CITATION_1] aim for holistic traffic view at the expense of being offline. They collect all the packet headers in all switches and send them to the controller, allowing offline analysis of network properties. Instead, MOZART works with coordinated queries and measures traffic across hosts and switches, only sending to the controller the properties of selected flows that match the query's description. At last, the work in [CITATION_2] supports real time measurement based on queries that allow the selective measurement of traffic flows of interest. Complementary to this work, MOZART allows complex queries relating conditions detected at selectors to trigger measurements performed at monitors.",
+  "correct_citation": {
+    "[CITATION_1]": "10093689",
+    "[CITATION_2]": "15968976"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Other solutions like NetSight  aim for holistic traffic view at the expense of being offline."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "At last, the work in  supports real time measurement based on queries that allow the selective measurement of traffic flows of interest."
+    }
+  ],
+  "bib_entries": {
+    "15968976": {
+      "title": "Compiling path queries in software-defined networks",
+      "abstract": "Monitoring the flow of traffic along network paths is essential for SDN programming and troubleshooting. For example, traffic engineering requires measuring the ingress-egress traffic matrix; debugging a congested link requires determining the set of sources sending traffic through that link; and locating a faulty device might involve detecting how far along a path the traffic makes progress. Past path-based monitoring systems operate by diverting packets to collectors that perform \"after-the-fact\" analysis, at the expense of large data-collection overhead. In this paper, we show how to do more efficient \"during-the-fact\" analysis. We introduce a query language that allows each SDN application to specify queries independently of the forwarding state or the queries of other applications. The queries use a regular-expression-based path language that includes SQL-like \"groupby\" constructs for count aggregation. We track the packet trajectory directly on the data plane by converting the regular expressions into an automaton, and tagging the automaton state (i.e., the path prefix) in each packet as it progresses through the network. The SDN policies that implement the path queries can be combined with arbitrary packet-forwarding policies supplied by other elements of the SDN platform. A preliminary evaluation of our prototype shows that our \"during-the-fact\" strategy reduces data-collection overhead over \"after-the-fact\" strategies."
+    },
+    "10093689": {
+      "title": "I know what your packet did last hop: using packet histories to troubleshoot networks",
+      "abstract": "The complexity of networks has outpaced our tools to debug them; today, administrators use manual tools to diagnose problems. In this paper, we show how packet histories--the full stories of every packet's journey through the network--can simplify network diagnosis. To demonstrate the usefulness of packet histories and the practical feasibility of constructing them, we built NetSight, an extensible platform that captures packet histories and enables applications to concisely and flexibly retrieve packet histories of interest. Atop NetSight, we built four applications that illustrate its flexibility: an interactive network debugger, a live invariant monitor, a path-aware history logger, and a hierarchical network profiler. On a single modern multi-core server, NetSight can process packet histories for the traffic of multiple 10 Gb/s links. For larger networks, NetSight scales linearly with additional servers and scales even further with straightforward additions to hardware- and hypervisor-based switches."
+    }
+  },
+  "generator": "fallback_v4"
+}

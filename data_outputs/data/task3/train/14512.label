@@ -1,0 +1,20 @@
+{
+  "doc_id": "14512",
+  "text": "Sequencing reads were trimmed to remove Illumina specific adaptors and low quality bases using the program Trimmomatic v.0.35 74 . As the reference we joined the E. coli MG1655 (GenBank accession no. NC_000913.3) genome with the pIND plasmid sequence (created in SnapGene software v.2.4 (GLS Biotech)). For the pCON plasmids we used the validated pCON sequence as a reference. The sequencing reads were mapped to the reference genomes using BWA-MEM v.0.7.5a-r405 75 . Mapping statistics were retrieved using BAMStats v.1.25 (https:// sourceforge.net/projects/bamstats/files/). Subsequent indexing, local realignment of sequencing reads were performed using PICARD tools, SAMtools v.0.1.19 [CITATION_1] 77 and GATK v.3.6 77 retaining only paired mapped reads with a minimum mapping quality of 20. SNPs were called using LoFreq v.2.1.2 78 and GATK 77 . PCN was inferred from the de BAM files as the ratio of plasmid to chromosomal mean coverage. The coverage distribution was further used to infer large structural variants of the plasmids.",
+  "correct_citation": {
+    "[CITATION_1]": "2107238"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Subsequent indexing, local realignment of sequencing reads were performed using PICARD tools, SAMtools v.0.1.19  77 and GATK v.3.6 77 retaining only paired mapped reads with a minimum mapping quality of 20."
+    }
+  ],
+  "bib_entries": {
+    "2107238": {
+      "title": "The sequence alignment/map format and SAMtools",
+      "abstract": "Summary: The Sequence Alignment/Map (SAM) format is a generic alignment format for storing read alignments against reference sequences, supporting short and long reads (up to 128 Mbp) produced by different sequencing platforms. It is flexible in style, compact in size, efficient in random access and is the format in which alignments from the 1000 Genomes Project are released. SAMtools implements various utilities for post-processing alignments in the SAM format, such as indexing, variant caller and alignment viewer, and thus provides universal tools for processing read alignments. ::: ::: Availability: http://samtools.sourceforge.net ::: ::: Contact: [email protected]"
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "13408",
+  "text": "Thus far, our framework has scored candidates deterministically, based solely on lexical information. In this case, correction candidates will always be the same for a given noisy word, independent from the context it appears. This idea might be enough for correcting internet slang, since equal abbreviations are seldom used for different words. However, ignoring contextual information makes it impossible to handle contextual orthographic errors (also called real-word errors or RWEs). This type of error occurs when a given word is in the recognized lexicon (so it is not per se a noisy word) but is incorrect due to the context it appears. In Portuguese, cases of real-word errors caused by missing a single diacritic are frequent and can only be corrected by considering the context. In order to do so, we used a language model (LM) (with trigrams) trained on a Wikipedia sample consisting of 3841834 sentences. We trained our LM using the KenLM framework, which employs modified Kneser-Ney smoothing for estimation [CITATION_1] . The estimated trigram probabilities were normalized to fit the range of the other measures and then added to the scoring function. The correction of RWEs relies only on similarity measures and on the language model, because it maps a canonical (but inadequate to the context) word to another canonical word -therefore the learned lexicon based on word embeddings does not include it.",
+  "correct_citation": {
+    "[CITATION_1]": "2561041"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We trained our LM using the KenLM framework, which employs modified Kneser-Ney smoothing for estimation  .",
+      "s_span": 918,
+      "e_span": 1036
+    }
+  ],
+  "bib_entries": {
+    "2561041": {
+      "title": "Scalable modified kneser-ney language model estimation",
+      "abstract": "We present an efficient algorithm to estimate large modified Kneser-Ney models including interpolation. Streaming and sorting enables the algorithm to scale to much larger models by using a fixed amount of RAM and variable amount of disk. Using one machine with 140 GB RAM for 2.8 days, we built an unpruned model on 126 billion tokens. Machine translation experiments with this model show improvement of 0.8 BLEU point over constrained systems for the 2013 Workshop on Machine Translation task in three language pairs. Our algorithm is also faster for small models: we estimated a model on 302 million tokens using 7.7% of the RAM and 14.0% of the wall time taken by SRILM. The code is open source as part of KenLM."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,18 @@
+{
+  "text": "small primitives such as dots or small lines. We use our approach to warp one stippled image into another one by moving its primitives. The advantage of our approach is that it guarantees collision-free transformations ( § 2.2). We use the method of [CITATION_1] to generate particles on the source and target images. We set the method such that the number of source and target particles is the same. We solve the transport problem by assigning a unit mass to each particle. In this case, using the same number of particles with unit mass, mass transport reduces to an assignment problem and its solution does not require splitting or merging particles [CITATION_2] . In our context, it ensures that a source stipple is associated to single target particle and reciprocally. For the ground distance, we use the standard L 2 distance that generates straight lines as geodesics. For small lines, their source and target orientations are computed using the input images, and linearly interpolated between these values at intermediate frames. Our method extends the original work of [CITATION_3] that applies to still images and videos by enabling it to achieve warping between unrelated images. The results are shown in Figure 14 , with additional results shown in the video. The use of a quadratic ground distance guarantees that the displacement interpolation produces particles with minimal kinetic energy, since it minimizes the sum of the squared traveled distances and since particles have constant velocity. We numerically evaluate this property: over the telephone sequence, the greedy matching produces a kinetic energy of 899.5 units, while the displacement interpolation halves this energy to 447.0 units. ",
+  "correct_citation": {
+    "[CITATION_1]": "3069954",
+    "[CITATION_2]": "125674804",
+    "[CITATION_3]": "3069954"
+  },
+  "bib_entries": {
+    "3069954": {
+      "title": "Fast primitive distribution for illustration",
+      "abstract": "In this paper we present a high-quality, image-space approach to illustration that preserves continuous tone by probabilistically distributing primitives while maintaining interactive rates. Our method allows for frame-to-frame coherence by matching movements of primitives with changes in the input image. It can be used to create a variety of drawing styles by varying the primitive type or direction. We show that our approach is able to both preserve tone and (depending on the drawing style) high-frequency detail. Finally, while our algorithm requires only an image as input, additional 3D information enables the creation of a larger variety of drawing styles."
+    },
+    "125674804": {
+      "title": "Introduction to Operations Research",
+      "abstract": "Overview of the operations research modelling approach introduction to linear programming solving linear programming problems - the Simplex Method the theory of the Simplex Method duality theory and sensitivity analysis other algorithms for linear programming the transportation and assignment problems network analysis, including Pert-CPM dynamic programming game theory integer programming non-linear programming Markov chains queueing theory the application of queueing theory inventory theory forecasting Markovian decision processes and applications decision analysis simulation."
+    }
+  }
+}

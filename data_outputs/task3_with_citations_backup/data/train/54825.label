@@ -1,0 +1,22 @@
+{
+  "doc_id": "54825",
+  "text": "For most face processing tasks, data augmentation is a vital strategy for solving the problems of insufficient training data and overfitting in deep learning. Face attribute analysis is not an exception. By imposing perturbations and distortions on the input images, data can be extended to improve deep learning models. [CITATION_1] propose an alignment-Free facial attribute classification technique (AFFACT) with data augmentation. More specifically, AFFACT leverages shifts, rotations, and scales of images to make facial attribute feature extraction more reliable in the training stage and the testing stage. In the training stage, face images are first rotated, scaled, cropped, and horizontally flipped with 50% probability with defined coordinates. Then, a Gaussian filter is applied to emulate smaller image resolutions and yield blurred upscaled images. In the testing stage, AFFACT first rescales the test images and then transforms these images into 10 crops, including a center one, four corners of the original images, and their horizontally flipped versions. Finally, AFFACT averages the scores from the deep network per attribute over the ten crops to make the final prediction. In addition to taking crops, AFFACT also uses all combinations of shifts, scales, and angles, as well as their mirrored versions. All these data augmentation schemes contribute to the progressive performance of deep FAE models.",
+  "correct_citation": {
+    "[CITATION_1]": "6040311"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "By imposing perturbations and distortions on the input images, data can be extended to improve deep learning models. [CITATION_1] propose an alignment-Free facial attribute classification technique (AFFACT) with data augmentation.",
+      "s_span": 204,
+      "e_span": 434
+    }
+  ],
+  "bib_entries": {
+    "6040311": {
+      "title": "AFFACT: Alignmentfree facial attribute classification technique",
+      "abstract": "Facial attributes are soft-biometrics that allow limiting the search space, e.g., by rejecting identities with non-matching facial characteristics such as nose sizes or eyebrow shapes. In this paper, we investigate how the latest versions of deep convolutional neural networks, ResNets, perform on the facial attribute classification task. We test two loss functions: the sigmoid cross-entropy loss and the Euclidean loss, and find that for classification performance there is little difference between these two. Using an ensemble of three ResNets, we obtain the new state-of-the-art facial attribute classification error of 8.00 % on the aligned images of the CelebA dataset. More significantly, we introduce the Alignment-Free Facial Attribute Classification Technique (AFFACT), a data augmentation technique that allows a network to classify facial attributes without requiring alignment beyond detected face bounding boxes. To our best knowledge, we are the first to report similar accuracy when using only the detected bounding boxes — rather than requiring alignment based on automatically detected facial landmarks — and who can improve classification accuracy with rotating and scaling test images. We show that this approach outperforms the CelebA baseline on unaligned images with a relative improvement of 36.8 %."
+    }
+  },
+  "generator": "fallback_v4"
+}

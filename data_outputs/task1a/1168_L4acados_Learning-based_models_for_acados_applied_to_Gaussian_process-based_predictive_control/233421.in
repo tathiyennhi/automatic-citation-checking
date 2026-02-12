@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "GAUSSIAN PROCESS-BASED MPC USING L4ACADOSIn this section, we show how the modular structure of L4acados allows for an efficient implementation of a tailored algorithm for Gaussian process-based MPC, by casting the corresponding optimal control problem as a special case of the learning-based MPC problem (4).We begin by introducing the GP-MPC optimal control problem formulation (Section IV-A) as well as its efficient solution using a zero-order optimization algorithm (Section IV-B), followed by the modular implementation of the latter in L4acados.",
+    "The control algorithm is deployed both in simulation and hardware for real-time control on two autonomous driving platforms (see Fig. 4): miniature racing using CRS [40] (Section IV-D) and motion control of a full-scale vehicle for an ISO lane change maneuver (Section IV-E).",
+    "A. Gaussian process-based MPC formulationAs a special case of learning-based MPC, Gaussian processbased MPC estimates the residual dynamics g tr, as well as the associated prediction uncertainty, using a Gaussian processg tr ∼ GP (g, Σ g),(13)with posterior mean g: R nx×nu → R ng and posterior covariance Σ g: R nx×nu → R ng×ng, see Appendix A-A on their efficient implementation.",
+    "In this setting, the process noise is assumed to be Gaussian i.i.d., i.e., w(t) ∼ N (0, Σ w) with positive semi-definite covariance Σ w ∈ R nx×nx, which leads to v(t) ∼ N (0, B † d Σ w (B † d) ⊤) in Eq.",
+    "(3) -a common setup for GP-MPC as done, e.g., by [3].A major challenge for GP-MPC is the propagation of state uncertainty, induced by the stochastic GP model of the unknown function g tr."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "doc_id": "8830",
+  "text": "The final design choice is the resolution of the input image. Specifically, we consider two resolutions for input: Figure 3 . Our Model Architecture. Detection and pose estimation network for the \"Share 300\" model that shares a single pose prediction across all categories at each location and resizes images to 300x300 before using them as input to the network. Feature maps are added in place of the final layers of a VGG-16 network and small convolutional filters produce estimates for class, pose, and bounding box offsets that are processed through non-max suppression to make the final detections and pose estimates. Red indicates additions to the architecture of SSD [CITATION_1] 300x300 and 500x500. In Sec. 4.1.1, we compare models trained on both resolutions. Using 500x500 images should provide better accuracy because higher resolution images provide finer details that assist in determining the pose. However, processing 500x500 images reduces the speed of computation. Previous deep learning pose estimation formulations [CITATION_2] [CITATION_3] crop the detected regions then resize the region to a fixed size of 227x227. This has the advantage of always providing a higher res view of the object. However, with our 300x300 model, an object can take up far less than a 100x100 region in the image since there is no cropping step in our pipeline; therefore, we are fighting against a low resolution. As a result, the higher resolution helps combat this issue.",
+  "correct_citation": {
+    "[CITATION_1]": "2141740",
+    "[CITATION_2]": "6235232",
+    "[CITATION_3]": "5544227"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Red indicates additions to the architecture of SSD  300x300 and 500x500."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Previous deep learning pose estimation formulations   crop the detected regions then resize the region to a fixed size of 227x227."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Previous deep learning pose estimation formulations   crop the detected regions then resize the region to a fixed size of 227x227."
+    }
+  ],
+  "bib_entries": {
+    "2141740": {
+      "title": "Ssd: Single shot multibox detector",
+      "abstract": "We present a method for detecting objects in images using a single deep neural network. Our approach, named SSD, discretizes the output space of bounding boxes into a set of default boxes over different aspect ratios and scales per feature map location. At prediction time, the network generates scores for the presence of each object category in each default box and produces adjustments to the box to better match the object shape. Additionally, the network combines predictions from multiple feature maps with different resolutions to naturally handle objects of various sizes. SSD is simple relative to methods that require object proposals because it completely eliminates proposal generation and subsequent pixel or feature resampling stages and encapsulates all computation in a single network. This makes SSD easy to train and straightforward to integrate into systems that require a detection component. Experimental results on the PASCAL VOC, COCO, and ILSVRC datasets confirm that SSD has competitive accuracy to methods that utilize an additional object proposal step and is much faster, while providing a unified framework for both training and inference. For \\(300 \\times 300\\) input, SSD achieves 74.3 % mAP on VOC2007 test at 59 FPS on a Nvidia Titan X and for \\(512 \\times 512\\) input, SSD achieves 76.9 % mAP, outperforming a comparable state of the art Faster R-CNN model. Compared to other single stage methods, SSD has much better accuracy even with a smaller input image size. Code is available at https://github.com/weiliu89/caffe/tree/ssd."
+    },
+    "6235232": {
+      "title": "Viewpoints and keypoints",
+      "abstract": "We characterize the problem of pose estimation for rigid objects in terms of determining viewpoint to explain coarse pose and keypoint prediction to capture the finer details. We address both these tasks in two different settings - the constrained setting with known bounding boxes and the more challenging detection setting where the aim is to simultaneously detect and correctly estimate pose of objects. We present Convolutional Neural Network based architectures for these and demonstrate that leveraging viewpoint estimates can substantially improve local appearance based keypoint predictions. In addition to achieving significant improvements over state-of-the-art in the above tasks, we analyze the error modes and effect of object characteristics on performance to guide future efforts towards this goal."
+    },
+    "5544227": {
+      "title": "Render for cnn: Viewpoint estimation in images using cnns trained with rendered 3d model views",
+      "abstract": "Object viewpoint estimation from 2D images is an essential task in computer vision. However, two issues hinder its progress: scarcity of training data with viewpoint annotations, and a lack of powerful features. Inspired by the growing availability of 3D models, we propose a framework to address both issues by combining render-based image synthesis and CNNs (Convolutional Neural Networks). We believe that 3D models have the potential in generating a large number of images of high variation, which can be well exploited by deep CNN with a high learning capacity. Towards this goal, we propose a scalable and overfit-resistant image synthesis pipeline, together with a novel CNN specifically tailored for the viewpoint estimation task. Experimentally, we show that the viewpoint estimation from our pipeline can significantly outperform state-of-the-art methods on PASCAL 3D+ benchmark."
+    }
+  },
+  "generator": "fallback_v4"
+}

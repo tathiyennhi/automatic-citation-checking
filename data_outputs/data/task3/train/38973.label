@@ -1,0 +1,43 @@
+{
+  "doc_id": "38973",
+  "text": "Metrics: We evaluated the segmentation performance with PK [CITATION_1] and WindowDiff (WD r ) [CITATION_2] , which are two common metrics used in topic segmentation. Both move a sliding window of fixed size k over the document, and compare the inferred segmentation with the gold-standard segmentation for each window. The window size is usually set to the half of the average gold-standard segment size [CITATION_3] . In addition, we also used an extended WindowDiff proposed by [CITATION_4] , denoted by WD e . One problem of WD r is that errors near the two ends of a text are penalised less than those in the middle. To solve the problem WD e adds k fictive text passages at the beginning and the end of the text when computing the score. We evaluated all the methods with the same Java code for the three metrics.",
+  "correct_citation": {
+    "[CITATION_1]": "2839111",
+    "[CITATION_2]": "6048999",
+    "[CITATION_3]": "6048999",
+    "[CITATION_4]": "21482013"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Metrics: We evaluated the segmentation performance with PK  and WindowDiff (WD r )  , which are two common metrics used in topic segmentation."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Metrics: We evaluated the segmentation performance with PK  and WindowDiff (WD r )  , which are two common metrics used in topic segmentation."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The window size is usually set to the half of the average gold-standard segment size  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In addition, we also used an extended WindowDiff proposed by  , denoted by WD e ."
+    }
+  ],
+  "bib_entries": {
+    "6048999": {
+      "title": "A critique and improvement of an evaluation metric for text segmentation",
+      "abstract": "The Pk evaluation metric, initially proposed by Beeferman, Berger, and Lafferty (1997), is becoming the standard measure for assessing text segmentation algorithms. However, a theoretical analysis of the metric finds several problems: the metric penalizes false negatives more heavily than false positives, overpenalizes near misses, and is affected by variation in segment size distribution. We propose a simple modification to the Pk metric that remedies these problems. This new metric-called WindowDiff-moves a fixed-sized window across the text and penalizes the algorithm whenever the number of boundaries within the window does not match the true number of boundaries for that window of text."
+    },
+    "21482013": {
+      "title": "On evaluation methodologies for text segmentation algorithms",
+      "abstract": "The WindowDiff evaluation measure (Pevzner and Hearst, 2002) is becoming the standard criterion for evaluating text segmentation methods. Nevertheless, this metric is really not fair with regard to the characteristics of the methods and the results that it provides on different kinds of corpus are difficult to compare. Therefore, we first attempt to improve this measure according to the risks taken by each method on different kinds of text. On the other hand, the production of a segmentation of reference being a rather difficult task, this paper describes a new evaluation metric that relies on the stability of the segmentations face to text transformations. Our experimental results appear to indicate that both proposed metrics provide really better indicators of the text segmentation accuracy than existing measures."
+    },
+    "2839111": {
+      "title": "Statistical models for text segmentation",
+      "abstract": "This paper introduces a new statistical approach to automatically partitioning text into coherent segments. The approach is based on a technique that incrementally builds an exponential model to extract features that are correlated with the presence of boundaries in labeled training text. The models use two classes of features: topicality features that use adaptive language models in a novel way to detect broad changes of topic, and cue-word features that detect occurrences of specific words, which may be domain-specific, that tend to be used near segment boundaries. Assessment of our approach on quantitative and qualitative grounds demonstrates its effectiveness in two very different domains, Wall Street Journal news articles and television broadcast news story transcripts. Quantitative results on these domains are presented using a new probabilistically motivated error metric, which combines precision and recall in a natural and flexible way. This metric is used to make a quantitative assessment of the relative contributions of the different feature types, as well as a comparison with decision trees and previously proposed text segmentation algorithms."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,66 @@
+{
+  "doc_id": "1075",
+  "text": "We conduct our evaluation on two available large-scale multi-view datasets, TotalCapture [CITATION_1] and Human3.6M [CITATION_2] [CITATION_3] . We crop each input image around the performer, using ground truth bounding boxes provided by each dataset. Input crops are undistorted, re-sampled so that virtual cameras are pointing at the center of the crop and normalized to 256 × 256. We augment our train set by performing random rotation(±30 degrees, note that image rotations correspond to camera rotations along the z-axis) and standard color augmentation. In our experiments, we use a ResNet152 [CITATION_4] pre-trained on ImageNet [CITATION_5] as the backbone architecture for our encoder. Our fusion block consists of two 1 × 1 convolutional layers. Our decoder consists of 4 transposed convolutional layers, followed by a 1 × 1 convolution to produce heatmaps. More details on our architecture are provided in the Supplementary section. The networks are trained for 50 epochs, using a Stochastic Gradient Descent optimizer where we set learning rate to 2.5 × 10 −2 . Figure 4 . We visualize randomly picked samples from the test set of TotalCapture and Human3.6M. To stress that the pose representation learned by our network is effectively disentangled from the camera view-point, we intentionally show predictions before triangulating them, rather than re-projecting triangulated keypoints to the image space. Predictions are best seen in supplementary videos.",
+  "correct_citation": {
+    "[CITATION_1]": "52271809",
+    "[CITATION_2]": "4244548",
+    "[CITATION_3]": "8421376",
+    "[CITATION_4]": "206594692",
+    "[CITATION_5]": "206597351"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We conduct our evaluation on two available large-scale multi-view datasets, TotalCapture [CITATION_1] and Human3.6M [CITATION_2] [CITATION_3] .",
+      "s_span": 0,
+      "e_span": 143
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We conduct our evaluation on two available large-scale multi-view datasets, TotalCapture [CITATION_1] and Human3.6M [CITATION_2] [CITATION_3] .",
+      "s_span": 0,
+      "e_span": 143
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We conduct our evaluation on two available large-scale multi-view datasets, TotalCapture [CITATION_1] and Human3.6M [CITATION_2] [CITATION_3] .",
+      "s_span": 0,
+      "e_span": 143
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In our experiments, we use a ResNet152 [CITATION_4] pre-trained on ImageNet [CITATION_5] as the backbone architecture for our encoder.",
+      "s_span": 559,
+      "e_span": 693
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "In our experiments, we use a ResNet152 [CITATION_4] pre-trained on ImageNet [CITATION_5] as the backbone architecture for our encoder.",
+      "s_span": 559,
+      "e_span": 693
+    }
+  ],
+  "bib_entries": {
+    "52271809": {
+      "title": "Total capture: 3d human pose estimation fusing video and inertial sensors",
+      "abstract": "We present an algorithm for fusing multi-viewpoint video (MVV) with inertial measurement ::: unit (IMU) sensor data to accurately estimate 3D human pose. A 3-D convolutional ::: neural network is used to learn a pose embedding from volumetric probabilistic ::: visual hull data (PVH) derived from the MVV frames. We incorporate this model within ::: a dual stream network integrating pose embeddings derived from MVV and a forward ::: kinematic solve of the IMU data. A temporal model (LSTM) is incorporated within ::: both streams prior to their fusion. Hybrid pose inference using these two complementary ::: data sources is shown to resolve ambiguities within each sensor modality, yielding improved ::: accuracy over prior methods. A further contribution of this work is a new hybrid ::: MVV dataset (TotalCapture) comprising video, IMU and a skeletal joint ground truth ::: derived from a commercial motion capture system. The dataset is available online at ::: http://cvssp.org/data/totalcapture/."
+    },
+    "206594692": {
+      "title": "Deep residual learning for image recognition",
+      "abstract": "Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers—8× deeper than VGG nets [40] but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions1, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation."
+    },
+    "4244548": {
+      "title": "Human3.6m: Large scale datasets and predictive methods for 3d human sensing in natural environments",
+      "abstract": "We introduce a new dataset, Human3.6M, of 3.6 Million accurate 3D Human poses, acquired by recording the performance of 5 female and 6 male subjects, under 4 different viewpoints, for training realistic human sensing systems and for evaluating the next generation of human pose estimation models and algorithms. Besides increasing the size of the datasets in the current state-of-the-art by several orders of magnitude, we also aim to complement such datasets with a diverse set of motions and poses encountered as part of typical human activities (taking photos, talking on the phone, posing, greeting, eating, etc.), with additional synchronized image, human motion capture, and time of flight (depth) data, and with accurate 3D body scans of all the subject actors involved. We also provide controlled mixed reality evaluation scenarios where 3D human models are animated using motion capture and inserted using correct 3D geometry, in complex real environments, viewed with moving cameras, and under occlusion. Finally, we provide a set of large-scale statistical models and detailed evaluation baselines for the dataset illustrating its diversity and the scope for improvement by future work in the research community. Our experiments show that our best large-scale model can leverage our full training set to obtain a 20% improvement in performance compared to a training set of the scale of the largest existing public dataset for this problem. Yet the potential for improvement by leveraging higher capacity, more complex models with our large dataset, is substantially vaster and should stimulate future research. The dataset together with code for the associated large-scale learning models, features, visualization tools, as well as the evaluation server, is available online at http://vision.imar.ro/human3.6m ."
+    },
+    "8421376": {
+      "title": "Latent structured models for human pose estimation",
+      "abstract": "We present an approach for automatic 3D human pose reconstruction from monocular images, based on a discriminative formulation with latent segmentation inputs. We advanced the field of structured prediction and human pose reconstruction on several fronts. First, by working with a pool of figure-ground segment hypotheses, the prediction problem is formulated in terms of combined learning and inference over segment hypotheses and 3D human articular configurations. Beside constructing tractable formulations for the combined segment selection and pose estimation problem, we propose new augmented kernels that can better encode complex dependencies between output variables. Furthermore, we provide primal linear re-formulations based on Fourier kernel approximations, in order to scale-up the non-linear latent structured prediction methodology. The proposed models are shown to be competitive in the HumanEva benchmark and are also illustrated in a clip collected from a Hollywood movie, where the model can infer human poses from monocular images captured in complex environments."
+    },
+    "206597351": {
+      "title": "ImageNet: A Large-Scale Hierarchical Image Database",
+      "abstract": "The explosion of image data on the Internet has the potential to foster more sophisticated and robust models and algorithms to index, retrieve, organize and interact with images and multimedia data. But exactly how such data can be harnessed and organized remains a critical problem. We introduce here a new database called “ImageNet”, a large-scale ontology of images built upon the backbone of the WordNet structure. ImageNet aims to populate the majority of the 80,000 synsets of WordNet with an average of 500-1000 clean and full resolution images. This will result in tens of millions of annotated images organized by the semantic hierarchy of WordNet. This paper offers a detailed analysis of ImageNet in its current state: 12 subtrees with 5247 synsets and 3.2 million images in total. We show that ImageNet is much larger in scale and diversity and much more accurate than the current image datasets. Constructing such a large-scale database is a challenging task. We describe the data collection scheme with Amazon Mechanical Turk. Lastly, we illustrate the usefulness of ImageNet through three simple applications in object recognition, image classification and automatic object clustering. We hope that the scale, accuracy, diversity and hierarchical structure of ImageNet can offer unparalleled opportunities to researchers in the computer vision community and beyond."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Output: Revealed to citizen: ⟨DotP 𝑖, NormSquare 𝑖, NearbyLat 𝑖, NearbyLong 𝑖 ⟩ for all drones.",
+    "MFP1[Γdiff] = LatitudeDiff(Γ 1 𝑡,..., Γ 𝑛 𝑡, Γ 𝑐) MFP2 [𝜆diff] = LongitudeDiff(𝜆 1 𝑡,..., 𝜆 𝑛 𝑡, 𝜆 𝑐) MFP3 for 𝑖 ← 1 to 𝑛 do MFP4 NearbyLat 𝑖 = (Γdiff[𝑖] -LatVicinity) × cΓ 𝑖 × rΓ 𝑖 MFP5 NearbyLong 𝑖 = (𝜆diff[𝑖] -LongVicinity) × c𝜆 𝑖 × r𝜆 𝑖 MFP6 ⟨X 𝑖, Y 𝑖 ⟩ = Vectorize(Γ 𝑖 𝑡, 𝜆 𝑖 𝑡, Γ 𝑐, 𝜆 𝑐) MFP7 X 𝑖 = (X 𝑖 + 𝑥𝛼 𝑖 + 𝑥 𝛽 𝑖); Y 𝑖 = (Y 𝑖 + 𝑦𝛼 𝑖 + 𝑦𝛽 𝑖) MFP8 ResultXY.add( ⟨Id 𝑖, X 𝑖, Y 𝑖 ⟩) MFP9 ResultΓ𝜆.add( ⟨Id 𝑖, NearbyLat 𝑖, NearbyLong 𝑖) ⟩) MFP10 end MFP11 return ResultXY (value revealed to both parties) MFP12 return ResultΓ𝜆 (revealed only to citizen)MFP13 Analyze ResultXY and re-encode all X 𝑖, Y 𝑖 in the clear (i.e., not in the MPC framework)MFP14 for 𝑖 ← 1 to 𝑛 do MFP15 C 𝑖 = ⟨(X 𝑖 -𝑥𝛼 𝑖 -𝑥 𝛽 𝑖), (Y 𝑖 -𝑦𝛼 𝑖 -𝑦𝛽 𝑖)⟩ MFP16 DotP 𝑖 = -→ D 𝑖 • -→ C 𝑖 MFP17 NormSquare 𝑖 = ( | -→ D 𝑖 |) 2 × ( | -→ C 𝑖 |)2 MFP18 ResultDotPNorm.add( ⟨Id 𝑖, DotP 𝑖, NormSquare 𝑖 ⟩) MFP19 end MFP20 return ResultDotPNorm (revealed only to citizen) // The steps below happen on the citizen's phone (not MPC) MFP21 Result = Join ResultΓ𝜆 and ResultDotPNorm using Id values.",
+    "MFP22 for ⟨Id 𝑖, DotP 𝑖, NormSquare 𝑖, NearbyLat 𝑖, NearbyLong 𝑖 ⟩ ∈ Result do MFP23 if (NearbyLat 𝑖 ≤ 0) and (NearbyLong 𝑖 ≤ 0) then MFP24 𝜙 𝑖 = arccos(DotP 𝑖 / √︁ NormSquare 𝑖) MFP25 if (𝜙 𝑖 ≤ 𝜃 𝑖) then shortlist the drone Id 𝑖. MFP26 end MFP27 endappropriately to avoid overflows.",
+    "Thus, we can avoid overflow issues (by bounding the masking factors) on line M1 and line M2 of Algorithm 2.",
+    "However, the same cannot be said of the computation of the -→ C vector on line M6 followed by the multiplications implicit in the dot product computation with -→ D in line M7."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This prioritization is achieved through attention weights computed as:α ij = exp LeakyReLU a T [Wh i ∥Wh j] k∈N (i) exp (LeakyReLU (a T [Wh i ∥Wh k])), where h i, h j are node features (e.g., fragility, temperature, proximity to the robot), W is a learnable weight matrix, and a is an attention vector.",
+    "Key Implementation Details:• Node Features: Features are derived from sensor data (e.g., LiDAR, cameras) and predefined object properties in the EKG.",
+    "For example:-Fragility: Binary flag (1 for fragile items like vases, 0 otherwise) [13].-Proximity: Euclidean distance between the robot and the object, updated at 10Hz.",
+    "-Temperature: Real-time thermal sensor readings for items like coffee mugs [17].• Attention Weights in Practice: During a \"serve coffee\" task, GATs assign higher weights to nodes representing the coffee mug (α = 0.92) and the target table (α = 0.85) than to non-critical nodes like ambient lighting (α = 0.12).",
+    "This ensures the robot focuses on handling the mug safely while monitoring spill risks."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "B.3 Proof of Proposition 3Since r ‹ P F, RLHF recovers r ‹ exactly and then solves π RLHF \" argmax πPΠ V π r ‹, by definition achieving V πRLHF r ‹ \" V ‹ Π. DPO, instead, minimizes a proxy loss defined over pairwise preferences.",
+    "Since π DPO P Π, we haveV πDPO r ‹ ď max πPΠ V π r ‹ \" V ‹ Π \" V πRLHF r ‹, which proves the first claim.For strict gap, we consider a multi-armed bandit setting with the action space Y \" ta 1, a 2, a 3 u.Let the ground-truth reward function satisfy:r \" r ‹ pa 1 q \" r ‹ pa 2 q ě r ‹ pa 3 q \" 0.Assume the linear feature mapping ψ: Y Ñ R d satisfies:ψpa 1 q ‰ ψpa 2 q, ψpa 3 q \" 1 2 ψpa 1 q `1 2 ψpa 2 q.Define the log-linear policy class Π \" tπ θ: θ P R d u by π θ paq 9 π ref paq exppθ J ψpaqq, where π ref \" UnifpYq.",
+    "Since r ‹ is realizable, RLHF exactly recovers it and solves:π RLHF \" argmax π θ PΠ V π θ r ‹ \" argmax π θ PΠ ÿ aPY π θ paqr ‹ paq ´β KL pπ θ }π ref q.For a fixed r ą 0, as the regularization parameter β Ñ 0, the optimal policy under RLHF places vanishing probability on a 3: π RLHF pa 3 q Ñ 0.",
+    "In contrast, as β Ñ 8, the regularization dominates and the optimal policy converges to the uniform reference policy: π RLHF Ñ π ref.Now consider the DPO objective, which relies on pairwise preference probabilities and directly optimizes over the policy class:L DPO pπ θ q \" ´ÿ a‰a 1 \" σpr ‹ paq ´r‹ pa 1 qq log σ `β θ J pψpaq ´ψpa 1 q ˘‰ \" ´1 2 log σpβ∆ J θq ´1 2 log σp´β∆ J θq ´log σp 1 2 β∆ J θq ´log σp´1 2 β∆ J θq, where ∆:\" ψpa 1 q ´ψpa 2 q.",
+    "This expression is always minimized when ∆ J θ \" 0, which corresponds to a uniform distribution."
+  ]
+}

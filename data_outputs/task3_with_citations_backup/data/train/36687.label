@@ -1,0 +1,22 @@
+{
+  "doc_id": "36687",
+  "text": "An articulated object, such as a human hand, a mouse or a fish, is characterized in our paper by a skeletal model in the form of a kinematic tree that contains one or multiple kinematic chains. As illustrated in Fig. 2 , a fish or a mouse skeleton both possess one kinematic chain, while a human hand contains a kinematic tree structure of multiple chains. Note that only the main spine is considered herein for the mouse model. The skeletal model is represented in the form of J o joints interconnected by a set of bones or segments of fixed lengths. Empirical evidence has suggested that it is usually sufficient to use such fixed skeletal models with proper scaling, when working with pose estimation of artic-ulated objects in depth images [CITATION_1] . The pose of this object can thus be defined as a set of skeletal joint locations. Furthermore, we define the home position of an articulated object as a set of default joint locations. Taking a mouse model as depicted in the middle panel of Fig. 2 for example, its home position could be a top-view upward-facing mouse with the full body straight-up, and the bottom joint at the coordinate origin. Note this bottom joint contains 6 degrees of freedom (DoF) of the entire object, and is also referred to as the base joint. Then the pose could also be interchangeably referred to as the sequence of SE(3) transformations or group actions applied to the home position, Θ = {θ 1 , . . . , θ Jo }. The estimated pose is denoted asΘ = {θ 1 , . . . ,θ Jo } to better differentiate from the ground-truth pose. Here θ could be either ξ orξ (to be discussed later) when without confusion in the context. To simplify the notation, we assume a kinematic chain contains J joints. Clearly J = J o for fish and mouse models, while J < J o for human hand or human full-body, by focusing on one of the chains. A depth image is not only a 2D image but also a set of 3D points (i.e. a 3D point cloud) describing the surface profile of such object under a particular view. Ideally the estimated pose (the set of predicted joint locations) is expected to align nicely with the 3D point cloud of the object in the observed depth image.",
+  "correct_citation": {
+    "[CITATION_1]": "4947099"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Empirical evidence has suggested that it is usually sufficient to use such fixed skeletal models with proper scaling, when working with pose estimation of artic-ulated objects in depth images [CITATION_1] .",
+      "s_span": 552,
+      "e_span": 758
+    }
+  ],
+  "bib_entries": {
+    "4947099": {
+      "title": "Cascaded hand pose regression",
+      "abstract": "We extends the previous 2D cascaded object pose regression work [9] in two aspects so that it works better for 3D articulated objects. Our first contribution is 3D pose-indexed features that generalize the previous 2D parameterized features and achieve better invariance to 3D transformations. Our second contribution is a principled hierarchical regression that is adapted to the articulated object structure. It is therefore more accurate and faster. Comprehensive experiments verify the state-of-the-art accuracy and efficiency of the proposed approach on the challenging 3D hand pose estimation problem, on a public dataset and our new dataset."
+    }
+  },
+  "generator": "fallback_v4"
+}

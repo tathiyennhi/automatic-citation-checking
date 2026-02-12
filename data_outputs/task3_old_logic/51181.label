@@ -1,0 +1,39 @@
+{
+  "doc_id": "51181",
+  "text": "Inline Hooking: this is a common Windows API hooking technique that replaces the byte code of an API function with a code redirection instruction to a code section controlled by the Trojan [CITATION_1] . The 5 bytes at the beginning of every Windows system function for hot patching provides needed space for Trojan to implement this technique [CITATION_2] . The 5 bytes will be replaced with NOP sled (No-operations slide) that will perform unconditional jump to a code section that contains Trojan code. Analysis of a memory dump from a compromised machine using volatility framework on Kali with command like \"vol.py apihooks\" can reveal in line hooking done by Trojans. [CITATION_3] , [CITATION_4] . An IAT hook, overwrites the original destination of an imported API function and points it to the attacker code. Therefore, executing the application would load and run Trojan codes as well i.e. will activate the Trojan on the destination/host device.",
+  "correct_citation": {
+    "[CITATION_1]": "39039414",
+    "[CITATION_2]": "39039414",
+    "[CITATION_3]": "39039414",
+    "[CITATION_4]": "14891824"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Inline Hooking: this is a common Windows API hooking technique that replaces the byte code of an API function with a code redirection instruction to a code section controlled by the Trojan"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The 5 bytes at the beginning of every Windows system function for hot patching provides needed space for Trojan to implement this technique"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Analysis of a memory dump from a compromised machine using volatility framework on Kali with command like \"vol.py apihooks\" can reveal in line hooking done by Trojans."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Analysis of a memory dump from a compromised machine using volatility framework on Kali with command like \"vol.py apihooks\" can reveal in line hooking done by Trojans.,"
+    }
+  ],
+  "bib_entries": {
+    "14891824": {
+      "title": "A Static Birthmark for MS Windows Applications Using Import Address Table",
+      "abstract": "A software birthmark is unique and native characteristics of software, and thus can be used to detect the theft of software. We propose a new static software birthmark for programs on Microsoft Windows which have Portable Executable (PE) format. These programs use different Dynamic Link Libraries (DLLs) and Application Program Interfaces (APIs) while they are executing. The number and names of the used DLLs and APIs are unique to each program. The proposed birthmark is based on these numbers and names. This information can be obtained from the Import Address Table (IAT), which is part of the PE file. By inspecting the proposed birthmark, we can identify certain software and detect pirated software. To evaluate the effectiveness of the proposed birthmark, we inspect and compare several applications of different kinds. The experimental results show that the proposed birthmark can identify Windows applications, leading to the prevention of an illegal distribution of copyrighted software."
+    },
+    "39039414": {
+      "title": "Banksafe Information Stealer Detection Inside the Web Browser",
+      "abstract": "Information stealing and banking trojans have become the tool of choice for cyber criminals for various kinds of cyber fraud. Traditional security measures like common antivirus solutions currently do not provide sufficient reactive nor proactive detection for this type of malware. In this paper, we propose a new approach on detecting banking trojan infections from inside the web browser called Banksafe. Banksafe detects the attempts of illegitimate software to manipulate the browsers‘ networking libraries, a common technique used in widespread information stealer trojans. We demonstrate the effectiveness of our solution with evaluations of the detection and classification of samplesets consisting of several malware families targetting the Microsoft Windows operating system. Furthermore we show the effective prevention of possible false positives of the approach."
+    }
+  },
+  "generator": "fallback"
+}

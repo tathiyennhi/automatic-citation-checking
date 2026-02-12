@@ -1,0 +1,34 @@
+{
+  "doc_id": "27926",
+  "text": "HERD is a generic memory model simulator [CITATION_1] . Its basic operation is to generate and iterate through a set of candidate executions of a given litmus test, and assess whether each is consistent and/or faulty according to the axioms of a given memory model, as described using the .cat specification language. Originally designed for CPU assembly programs [CITATION_2] , HERD has recently been extended with the capacity to simulate C11 and OpenCL programs [CITATION_3] . For the current work, we have extended HERD further, to support OpenCL+RSP. This entailed two sub-tasks: extending the front end of HERD to understand remote versions of atomic operations in litmus tests, and extending the memory model specification language with an additional identifier, rem, to stand for the set of remote events in an execution.",
+  "correct_citation": {
+    "[CITATION_1]": "208003238",
+    "[CITATION_2]": "208003238",
+    "[CITATION_3]": "1342216"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "HERD is a generic memory model simulator"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Originally designed for CPU assembly programs"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Originally designed for CPU assembly programs, HERD has recently been extended with the capacity to simulate C11 and OpenCL programs"
+    }
+  ],
+  "bib_entries": {
+    "208003238": {
+      "title": "Herding cats: Modelling, simulation, testing, and data-mining for weak memory",
+      "abstract": "There is a joke where a physicist and a mathematician are asked to herd cats. The physicist starts with an infinitely large pen which he reduces until it is of reasonable diameter yet contains all the cats. The mathematician builds a fence around himself and declares the outside to be the inside. Defining memory models is akin to herding cats: both the physicist's or mathematician's attitudes are tempting, but neither can go without the other."
+    },
+    "1342216": {
+      "title": "Overhauling SC atomics in C11 and OpenCL",
+      "abstract": "Despite the conceptual simplicity of sequential consistency (SC), the semantics of SC atomic operations and fences in the C11 and OpenCL memory models is subtle, leading to convoluted prose descriptions that translate to complex axiomatic formalisations. We conduct an overhaul of SC atomics in C11, reducing the associated axioms in both number and complexity. A consequence of our simplification is that the SC operations in an execution no longer need to be totally ordered. This relaxation enables, for the first time, efficient and exhaustive simulation of litmus tests that use SC atomics. We extend our improved C11 model to obtain the first rigorous memory model formalisation for OpenCL (which extends C11 with support for heterogeneous many-core programming). In the OpenCL setting, we refine the SC axioms still further to give a sensible semantics to SC operations that employ a ‘memory scope’ to restrict their visibility to specific threads. Our overhaul requires slight strengthenings of both the C11 and the OpenCL memory models, causing some behaviours to become disallowed. We argue that these strengthenings are natural, and that all of the formalised C11 and OpenCL compilation schemes of which we are aware (Power and x86 CPUs for C11, AMD GPUs for OpenCL) remain valid in our revised models. Using the HERD memory model simulator, we show that our overhaul leads to an exponential improvement in simulation time for C11 litmus tests compared with the original model, making *exhaustive* simulation competitive, time-wise, with the *non-exhaustive* CDSChecker tool."
+    }
+  },
+  "generator": "fallback"
+}

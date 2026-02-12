@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "After simplifying the expression, we obtain: 𝑀𝑀 𝑅𝑒𝑅𝐴𝑀 𝑀𝑀 𝑆𝑦𝑠𝑡𝑜𝑙𝑖𝑐 ∝ 𝑂 ( 12 × 𝑑 𝑚𝑜𝑑𝑒𝑙 𝑛 + 4 × 𝑟 + 𝑡 𝑐𝑜𝑛𝑠𝑡)The non-linear computations such as softmax and layernormalization scales linearly with both 𝑑 𝑚𝑜𝑑𝑒𝑙 and 𝑛, thus introducing a fixed computational overhead 𝑡 𝑐𝑜𝑛𝑠𝑡 to the overall execution time irrespective of 𝑑 𝑚𝑜𝑑𝑒𝑙 or 𝑛.",
+    "Given that r << 𝑑 𝑚𝑜𝑑𝑒𝑙, the LoRA computation does not impact the ratio as well.",
+    "Consequently, the ratio of ReRAM and systolic array computations can be approximately expressed as:𝑀𝑀 𝑅𝑒𝑅𝐴𝑀 𝑀𝑀 𝑆𝑦𝑠𝑡𝑜𝑙𝑖𝑐 ∝ 𝑂 ( 12 * 𝑑 𝑚𝑜𝑑𝑒𝑙 𝑛)(5)For instance, in GPT-2 (Medium), where 𝑑 𝑚𝑜𝑑𝑒𝑙 = 1024 and maximum allowable sequence length (𝑛 max) = 1024, ReRAM is utilized for ~12× the computations compared to the systolic array.",
+    "This observation aligns with the results shown in Fig. 7 (a), which illustrates the breakdown of ReRAM and systolic array computations.",
+    "Overall, the ReRAM to systolic array ratio varies between 90.08% to 94.7% based on 𝑑 𝑚𝑜𝑑𝑒𝑙 and 𝑛 max of the transformer models considered in our work."
+  ]
+}

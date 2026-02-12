@@ -1,0 +1,44 @@
+{
+  "doc_id": "39142",
+  "text": "To train the model, we used a variant of mini-batch SGD (see Section 3.2) known as Adadelta [CITATION_1] . For our model, Adadelta was found to converge slightly faster than both SGD and Adam [CITATION_2] , another widely used variant of SGD. At the beginning of each training epoch, a new set of random data augmentation perturbations are applied to each image in the training set. The model was programmed in Python using the Keras neural network application programming interface [42] operating with a Theano [CITATION_3] backend. The final model contains approximately 25 million trainable parameters and was trained on a single NVIDIA Quadro M4000 graphics processing unit (GPU) with 8 GB of RAM. Table 1 : Layer-by-layer summary of the best performing network. Each layer name is given followed by the number of feature maps (convolutional layers) or neurons (dense layers), the size of the convolutional filter or pooling region, the activation function used, and, lastly, the amount of dropout applied. For the leaky ReLU activation function, the value of α was set to 0.3 in all cases. A max-norm constraint of 3 was used for both 2048 dense (fully connected) layers. Dropout with a probability P = 0.2 was also applied to the input layer (not listed in the table).",
+  "correct_citation": {
+    "[CITATION_1]": "7365802",
+    "[CITATION_2]": "6628106",
+    "[CITATION_3]": "8993325"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To train the model, we used a variant of mini-batch SGD (see Section 3.2) known as Adadelta [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 106
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For our model, Adadelta was found to converge slightly faster than both SGD and Adam [CITATION_2] , another widely used variant of SGD. At the beginning of each training epoch, a new set of random data augmentation perturbations are applied to each image in the training set.",
+      "s_span": 107,
+      "e_span": 382
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The model was programmed in Python using the Keras neural network application programming interface [42] operating with a Theano [CITATION_3] backend.",
+      "s_span": 383,
+      "e_span": 533
+    }
+  ],
+  "bib_entries": {
+    "8993325": {
+      "title": "Theano: A Python framework for fast computation of mathematical expressions",
+      "abstract": "Theano is a Python library that allows to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently. Since its introduction, it has been one of the most used CPU and GPU mathematical compilers - especially in the machine learning community - and has shown steady performance improvements. Theano is being actively and continuously developed since 2008, multiple frameworks have been built on top of it and it has been used to produce many state-of-the-art machine learning models. ::: The present article is structured as follows. Section I provides an overview of the Theano software and its community. Section II presents the principal features of Theano and how to use them, and compares them with other similar projects. Section III focuses on recently-introduced functionalities and improvements. Section IV compares the performance of Theano against Torch7 and TensorFlow on several machine learning models. Section V discusses current limitations of Theano and potential ways of improving it."
+    },
+    "7365802": {
+      "title": "ADADELTA: An Adaptive Learning Rate Method",
+      "abstract": "We present a novel per-dimension learning rate method for gradient descent called ADADELTA. The method dynamically adapts over time using only first order information and has minimal computational overhead beyond vanilla stochastic gradient descent. The method requires no manual tuning of a learning rate and appears robust to noisy gradient information, different model architecture choices, various data modalities and selection of hyperparameters. We show promising results compared to other methods on the MNIST digit classification task using a single machine and on a large scale voice dataset in a distributed cluster environment."
+    },
+    "6628106": {
+      "title": "Adam: A Method for Stochastic Optimization",
+      "abstract": "We introduce Adam, an algorithm for first-order gradient-based optimization of stochastic objective functions, based on adaptive estimates of lower-order moments. The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters. The method is also appropriate for non-stationary objectives and problems with very noisy and/or sparse gradients. The hyper-parameters have intuitive interpretations and typically require little tuning. Some connections to related algorithms, on which Adam was inspired, are discussed. We also analyze the theoretical convergence properties of the algorithm and provide a regret bound on the convergence rate that is comparable to the best known results under the online convex optimization framework. Empirical results demonstrate that Adam works well in practice and compares favorably to other stochastic optimization methods. Finally, we discuss AdaMax, a variant of Adam based on the infinity norm."
+    }
+  },
+  "generator": "fallback_v4"
+}

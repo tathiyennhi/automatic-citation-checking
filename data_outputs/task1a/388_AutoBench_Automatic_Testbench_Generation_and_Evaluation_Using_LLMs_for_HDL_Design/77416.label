@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Compared to directly generating the testbench, this approach allows the LLM to focus on coverage with split scenarios, thereby achieving a higher coverage ratio.Subsequently, in stage 4 (stage 3 is in Python checker track, which will be introduced later), the LLM ultimately produces the Verilog driver that drives the DUT and collects signals at the correct time points, as is required by TR2, utilizing the testbench specification, test scenarios, and information from the Benchmark Suite.",
+    "An example of generating a Verilog driver in stage 4 is shown in Fig. 10(b).",
+    "The instruction for exporting the DUT's signals into a.txt file is also provided in the prompt, thus satisfying TR3.",
+    "These signals in the.txt file will be read by the Python checker later to compare the outputs of the DUT and the expected values.For sequential DUTs, to verify their correctness under a certain test scenario, the testbench needs to access the DUT's signals from not only the current time point but also the previous time points.",
+    "Wrong or missing time points to export the signals may mislead the Python checker later and make the checking process fail."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Based on the output of the retriever 𝐷 𝑟 (𝑞), we adopt the Has_Answer label of the Bi-Label Document Scorer and define a score to measure the degree of the question's relevance to the long-tail knowledge or out-of-date knowledge.",
+    "The score is defined as follows.𝑆 𝑙𝑡𝑜𝑑 (𝑞) = 1 |𝐷 𝑟 (𝑞)| ∑︁ 𝑥 ∈𝐷 𝑟 (𝑞) 1 [ℎ 𝑎𝑛𝑠 (𝑥,𝜃) >𝛿 𝑙𝑡𝑜𝑑] (𝑥),(12)where 1 [ℎ 𝑎𝑛𝑠 (𝑥,𝜃) >𝛿 𝑙𝑡𝑜𝑑] (𝑥) is an indicator function which equals to 1 if ℎ 𝑎𝑛𝑠 (𝑥, 𝜃) > 𝛿 𝑙𝑡𝑜𝑑 otherwise 0. ℎ 𝑎𝑛𝑠 (𝑥, 𝜃) is the output of Bi-Label Document Scorer on the Has_Answer label, and 𝛿 𝑙𝑡𝑜𝑑 is a hyper parameter.Besides, the self-knowledge of the question's nearest neighbors is an important facet for recognizing whether the LLM has self-knowledge on the given question [44].",
+    "In this paper, we first label a set of questions in the training set as correct_w/o_retrieve or incorrect_w/o_retrieve based on whether the LLM can directly answer correctly, and then transform the questions into embedding space by using the T5 encoder and assess their similarity by measuring the Euclidean distance between them.",
+    "For a given question, this paper finds k nearest neighbors for it.",
+    "The set of nearest neighbors is denoted as 𝐷 𝑛 (𝑞)."
+  ],
+  "correct_citations": [
+    "The score is defined as follows.𝑆 𝑙𝑡𝑜𝑑 (𝑞) = 1 |𝐷 𝑟 (𝑞)| ∑︁ 𝑥 ∈𝐷 𝑟 (𝑞) 1 [ℎ 𝑎𝑛𝑠 (𝑥,𝜃) >𝛿 𝑙𝑡𝑜𝑑] (𝑥),(12)where 1 [ℎ 𝑎𝑛𝑠 (𝑥,𝜃) >𝛿 𝑙𝑡𝑜𝑑] (𝑥) is an indicator function which equals to 1 if ℎ 𝑎𝑛𝑠 (𝑥, 𝜃) > 𝛿 𝑙𝑡𝑜𝑑 otherwise 0. ℎ 𝑎𝑛𝑠 (𝑥, 𝜃) is the output of Bi-Label Document Scorer on the Has_Answer label, and 𝛿 𝑙𝑡𝑜𝑑 is a hyper parameter.Besides, the self-knowledge of the question's nearest neighbors is an important facet for recognizing whether the LLM has self-knowledge on the given question [44]."
+  ]
+}

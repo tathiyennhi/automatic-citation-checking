@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Instead, it is obtained by reparametrization: where ǫ ∼ Normal(0, 1).",
+    "After obtaining Z g, merged latent representation Z is obtained by concatenating Z g and Z f, and the reconstructed adjacency matrix A are generated as follows:The objective of the VGAE is to minimize the crossentropy (CE) loss between the input adjacency matrix A and the reconstructed adjacency matrix A, while simultaneously minimizing the Kullback-Leibler (KL) divergence between g Z g |A, Z f and the Gaussian prior:g Z g |A, Z f = g(z i |A, Z f), with g z i |A, Z f = N (z i |µ i, diag(σ 2 i)) GCN µ A, Z f = AReLU AZ f W 0 W µ, GCN log(σ) A, Z f = AReLU AZ f W 0 W σ, z g = µ + σ ⊙ ǫ A = σ (Z • Z T) Batch effect correction for spatial transcriptomicsSpatial relationships only exist within a single spatial transcriptomic measurement; spots from different transcriptomic measurements have no direct spatial relations.",
+    "Let A k and Z k f denote the adjacency matrix and deep gene representation of spatial omics k, respectively; we then create a block-diagonal adjacency matrix A k and concatenate the deep gene representation in the spot dimension as follows:where K is the number of spatial omics.",
+    "Based on this formulation, the different spatial omics datasets (of potentially different sizes) are transformed into multiple graph instances in the form of one block-diagonal adjacency matrices as inputs to SEDR.To remove batch effects and enhance the compactness of its latent representation, SEDR employs an unsupervised deep embedded clustering (DEC) method [37] to iteratively group the spots into different clusters.",
+    "To initialize the cluster centers, we employ the KMeans function in scikit-learn on the learned latent representations."
+  ],
+  "correct_citations": [
+    "Based on this formulation, the different spatial omics datasets (of potentially different sizes) are transformed into multiple graph instances in the form of one block-diagonal adjacency matrices as inputs to SEDR.To remove batch effects and enhance the compactness of its latent representation, SEDR employs an unsupervised deep embedded clustering (DEC) method [37] to iteratively group the spots into different clusters."
+  ]
+}

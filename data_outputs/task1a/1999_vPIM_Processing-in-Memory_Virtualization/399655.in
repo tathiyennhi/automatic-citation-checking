@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In these steps, one small-size reading operation triggers the Prefetch Cache Menchanism, resulting in a higher overhead than expected.Takeaway 1 vPIM developers should disable the Prefetch Cache when their code lacks frequent small-size data transfers patterns to prevent unnecessary data fetching.Fourth, the Inter-DPU step of the BFS algorithm also exhibits considerable overhead.",
+    "Unlike the previous observation, this overhead is primarily a result of frequent synchronization handshakes among the DPUs.",
+    "In the BFS algorithm, processing each level of the input graph requires a sequence of read-from-rank and write-to-rank operations to synchronize the node levels across the DPUs.",
+    "Consequently, this leads to overheads of 3.0× and 3.2× in the Inter-DPU step for the 60 and 480 DPUs configurations, respectively.Fifth, NW and TRNS workloads exhibit a significant overhead.",
+    "These two applications are characterized by their extensive use of small-size data transfers."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "doc_id": "54495",
+  "text": "In practice, for increased robustness to noise, we use the normalization Z = D −1 Z described in Section 2, and introduced for the first time in our previous work [CITATION_1] . We refer the reader to Section 4 of [CITATION_2] for a detailed explanation of the additional noise robustness the above normalization brings, and its connection to the normalized discrete graph Laplacian. As shown in Figure 3 .3, the top eigenvector of the matrix Z shows a clear separation of the two political parties. Due to the existing noise in the data, as often senators actually vote as if they were in the opposition, there are of course errors in classifying each senator as a Republican or Democrat, but the overall accuracy is still high. Of the n = 4196 non-unique senators, we were able to correctly identify 84% of the Republicans, and 91% of the Democrats (we ignore the 35 senators which are neither Republicans or Democrats). Note that for the first half of the Congresses, the entries of the top eigenvector take values very close to zero, misleading one into thinking that perhaps a large number of misclassifications are being made during that interval. However, in the right plot of Figure 3 .3 we zoom in on the first half of the Congresses, and the separation becomes more visible, although there are clearly many more misclassifications during this time interval. To this end, we plot in Figure 3 .4 the histogram of misclassifications, separately for the Republicans and the Democrats, which shows indeed that the most \"treasons\" occurred between 1960s and 1980s, and the least occurred after the year 2000. We confirm our findings above by an analysis of the spectrum of each of the C = 41 Congresses. To this end, we plot in Figure 3 .5 the top 5 eigenvalues for a subset of the Congresses, illustrating the fact that in very recent years, the third, fourth and fifth eigenvalues are very small (close to zero) when compared to their counterparts for the Congresses up until the 1960s. In addition, we record in the left plot of Figure 3 .6 the spectral gap λ 3 − λ 2 between the second the third eigenvalue, a proxy for measuring the bipolarity of each Congress. Similarly, the right plot of the same Figure 3 .6 shows the ratio show that the spectral gaps for the last 10 Congresses are significantly larger than the spectral gaps of all previous Congresses, thus validating our earlier conclusion from Figure 3 .4 that the bipolar structure of the network was more prominent during the last 10 Congresses. In addition, in Table 3 .1 we show a list of the top 10 senators that we have classified correctly most often, and a list of the top 10 senators that have been misclassified most often. In other words, the latter 10 senators were the ones whose voting patterns resemble the least the voting pattern of their respective parties, and voted as if they were in the opposition. Another explanation that accounts for the different behavior of the top eigenvector of matrices W and Z is the following. One may choose to interpret that the zero entries denoting the temporal separation in the W matrix somewhat cause \"confusion\" in the eigenvector computation. This ambiguity stems from the fact that a small W ij entry, for example W ij = 0.01, means that senators i and j are close in time (actually they belong to the same Congress) and their voting patterns completely disagree. On the other hand, a slightly smaller entry W ij = 0 Table 3 .1 List the senators who were misclassified most often (i.e., \"traitors\", on the left) and the least (i.e., those most \"faithful\" to their party, on the right). D and R denote a Democrat, respectively a Republican. η = T M , where M denotes the total number of terms a senator served on, and T denotes the number of misclassifications. Results are sorted in decreasing order as a function of T .",
+  "correct_citation": {
+    "[CITATION_1]": "12541600",
+    "[CITATION_2]": "12541600"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In practice, for increased robustness to noise, we use the normalization Z = D −1 Z described in Section 2, and introduced for the first time in our previous work [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 177
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We refer the reader to Section 4 of [CITATION_2] for a detailed explanation of the additional noise robustness the above normalization brings, and its connection to the normalized discrete graph Laplacian.",
+      "s_span": 178,
+      "e_span": 383
+    }
+  ],
+  "bib_entries": {
+    "12541600": {
+      "title": "Sensor network localization by eigenvector synchronization over the Euclidean group",
+      "abstract": "We present a new approach to localization of sensors from noisy measurements of a subset of their Euclidean distances. Our algorithm starts by finding, embedding, and aligning uniquely realizable subsets of neighboring sensors called patches. In the noise-free case, each patch agrees with its global positioning up to an unknown rigid motion of translation, rotation, and possibly reflection. The reflections and rotations are estimated using the recently developed eigenvector synchronization algorithm, while the translations are estimated by solving an overdetermined linear system. The algorithm is scalable as the number of nodes increases and can be implemented in a distributed fashion. Extensive numerical experiments show that it compares favorably to other existing algorithms in terms of robustness to noise, sparse connectivity, and running time. While our approach is applicable to higher dimensions, in the current article, we focus on the two-dimensional case."
+    }
+  },
+  "generator": "fallback_v4"
+}

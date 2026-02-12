@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Our frequency adaptation operates through parallel processing streams: The first Spatial Adapter employs a low-rank projection to refine the spatial feature:∆F spatial i = Adapter i 1 (F T i),(3)where ∆F spatial i means the processed i-th layer Spatial-Domain features, and Adapter 1 represents a nonlinear mapping layer composed of two low-rank matrices and an activation:Adapter i = W up (Relu(W down (•))).",
+    "(4) The Frequency Adapters consist of a HF Adapter (highfrequency subspace) and a LF Adapter (low-frequency subspace), which fine-tune features in specific frequency subspaces derived from a 2D Discrete Fourier Transform (DFT) decomposition.",
+    "We first reshape F spatial to (C, H, W) and apply DFT on spatial features as FT (F spatial).",
+    "When splitting the frequency domains, we employ a fixed frequency cutoff ρ to decompose the spectrum into high and low frequency components.",
+    "Subsequently, these components are transformed back into features via the Inverse Fourier Transform (IFT), yielding LF and HF features:F low i = FT -1 (M ⊙ F T (F spatial)),(5)F high i = FT -1 ((1 -M) ⊙ FT (F spatial))."
+  ]
+}

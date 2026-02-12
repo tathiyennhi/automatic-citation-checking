@@ -1,0 +1,29 @@
+{
+  "doc_id": "29278",
+  "text": "We use a directed graph to capture the segment order of N Ls in a similar way as the ADIOS algorithm [CITATION_1] . Specifically, we represent the N Ls of constructions at L C as indexed paths, where each node corresponds either to a sequence of phonemes, an equivalence class, or marks the start or end of a sequence. Note however that we propose a different strategy than ADIOS for the induction of (generalized) patterns. Specifically, in contrast to ADIOS, which induces linguistic patterns from raw text, we additionally utilize information derived from the visual context, and only merge N Ls if a coherent meaning can be established for the resulting generalized pattern. Details on the generalization procedure will be provided in section III-D. Merging a set of mergeable (see section III-D for a definition) paths P of length p L represented on a directed graph W is referred to as W.merge(P ), and yields a single path p com representing the merge of paths in P . The combined path p com is computed by iterating over the nodes for all paths in P concurrently. If all paths are alike at a position pos, the node at position pos in p com is set to that node. Otherwise, it is set to a new node n se representing an equivalence class. Furthermore, for each path in P , the node at position pos is added to the equivalence class and subsequently replaced by n se for each path in W . Finally, all paths in P are deleted from the graph. During the merging procedure new equivalence classes are induced. If a newly induced equivalence class has an element (v nl and/or a v mr ) in common with at least one of the already existing equivalence classes, the corresponding equivalence classes are merged into a single equivalence class ec. The nodes corresponding to subsumed equivalence classes are then replaced by the node corresponding to ec. In the model, associations between paths and mr templates are modeled by an associative network A C . The weights for p com are initialized by summing up the weights contained in A C of the rows for the subsumed paths [CITATION_2] . If p com contains equivalence classes, an associative network representing the mapping A pcom,mr g is included for each mr g in L C which contains slots. Each A pcom,mr g is then initialized by adding up weights contained in subsumed associative networks. The proposed network architecture is illustrated in Fig. 1 . As Fig. 1 . Network modeling three levels of association our aim is to include both constructions at the word level L W as well as constructions at the complete construction level L C into our network, it is divided into two subnets representing constructions at L W and constructions at L C , where L C builds on L W . Both subnets consist of a layer representing the",
+  "correct_citation": {
+    "[CITATION_1]": "656048",
+    "[CITATION_2]": "143256689"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We use a directed graph to capture the segment order of N Ls in a similar way as the ADIOS algorithm"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The weights for p com are initialized by summing up the weights contained in A C of the rows for the subsumed paths"
+    }
+  ],
+  "bib_entries": {
+    "143256689": {
+      "title": "How Children Learn the Meanings of Words",
+      "abstract": "How do children learn that the word \"dog\" refers not to all four-legged animals, and not just to Ralph, but to all members of a particular species? How do they learn the meanings of verbs like \"think,\" adjectives like \"good,\" and words for abstract entities such as \"mortgage\" and \"story\"? The acquisition of word meaning is one of the fundamental issues in the study of mind. According to Paul Bloom, children learn words through sophisticated cognitive abilities that exist for other purposes. These include the ability to infer others' intentions, the ability to acquire concepts, an appreciation of syntactic structure, and certain general learning and memory abilities. Although other researchers have associated word learning with some of these capacities, Bloom is the first to show how a complete explanation requires all of them. The acquisition of even simple nouns requires rich conceptual, social, and linguistic capacities interacting in complex ways. This book requires no background in psychology or linguistics and is written in a clear, engaging style. Topics include the effects of language on spatial reasoning, the origin of essentialist beliefs, and the young child's understanding of representational art. The book should appeal to general readers interested in language and cognition as well as to researchers in the field."
+    },
+    "656048": {
+      "title": "Unsupervised learning of natural languages",
+      "abstract": "We address the problem, fundamental to linguistics, bioinformatics, and certain other disciplines, of using corpora of raw symbolic sequential data to infer underlying rules that govern their production. Given a corpus of strings (such as text, transcribed speech, chromosome or protein sequence data, sheet music, etc.), our unsupervised algorithm recursively distills from it hierarchically structured patterns. The adios (automatic distillation of structure) algorithm relies on a statistical method for pattern extraction and on structured generalization, two processes that have been implicated in language acquisition. It has been evaluated on artificial context-free grammars with thousands of rules, on natural languages as diverse as English and Chinese, and on protein data correlating sequence with function. This unsupervised algorithm is capable of learning complex syntax, generating grammatical novel sentences, and proving useful in other fields that call for structure discovery from raw data, such as bioinformatics."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "30224",
+  "text": "Methodology. Due to a lack of ground truth data for topic modeling, following [CITATION_1] , we benchmark on synthetic data. We train all algorithms on the following data sets. For the collapsed Gibbs sampler, we collect 10 samples with 30 iterations of thinning after 3000 burn-in iterations. The variational inference runs for 100 iterations. The Word algorithm replaces basic word assignment with the improved word assignment step within the batch algorithm, and Word+Refine further alternates between improved word and incremental topic refinement steps. The Word and Word+Refine are run for 20 and 10 iterations respectively. For Basic, Word and Word+Refine, we run experiments with λ ∈ {6, 7, 8, 9, 10, 11, 12}, and the best results are presented if not stated otherwise. In contrast, the true α, β parameters are provided as input to the LDA algorithms, whenever applicable. We note that we have heavily handicapped our methods by this setup, since the LDA algorithms are designed specifically for data from the LDA model. Assignment accuracy. Both the Gibbs sampler and our algorithms provide word-level topic assignments. Thus we can compare the training accuracy of these assignments, which is shown in Table 1 . The result of the Gibbs sampler is given by the highest among all the samples selected. The accuracy is shown in terms of the normalized mutual information (NMI) score and the adjusted Rand index (ARand), which are both in the range of [0,1] and are standard evaluation metrics for clustering problems. From the plots, we can see that the performance of Word+Refine matches or slightly outperforms the Gibbs sampler for a wide range of λ values.",
+  "correct_citation": {
+    "[CITATION_1]": "9220219"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Due to a lack of ground truth data for topic modeling, following  , we benchmark on synthetic data."
+    }
+  ],
+  "bib_entries": {
+    "9220219": {
+      "title": "A practical algorithm for topic modeling with provable guarantees",
+      "abstract": "Topic models provide a useful method for dimensionality reduction and exploratory data analysis in large text corpora. Most approaches to topic model inference have been based on a maximum likelihood objective. Efficient algorithms exist that approximate this objective, but they have no provable guarantees. Recently, algorithms have been introduced that provide provable bounds, but these algorithms are not practical because they are inefficient and not robust to violations of model assumptions. In this paper we present an algorithm for topic model inference that is both provable and practical. The algorithm produces results comparable to the best MCMC implementations while running orders of magnitude faster."
+    }
+  },
+  "generator": "fallback_v4"
+}

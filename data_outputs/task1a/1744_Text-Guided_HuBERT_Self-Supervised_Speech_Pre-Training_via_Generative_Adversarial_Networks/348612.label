@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "However, our T-HuBERT (3.1/7.0%) falls behind SpeechLM (2.7/6.2%) on the train-clean-100 subset, which is due to that SpeechLM uses 100 hours of paired data for pre-training, while T-HuBERT does not involve any paired data during the whole training process.To validate the effectiveness of T-HuBERT on the larger datasets, we further conduct fine-tuning experiments using train-clean-360 and train-other-500.",
+    "The results presented at the bottom of Table I show that our proposed T-HuBERT also outperforms the baseline HuBERT by a large margin.TABLE II UNIVERSAL SPEECH REPRESENTATION EVALUATION ON THE SUPERB BENCHMARK.",
+    "Method #Params Corpus Speaker Content Semantics ParaL SID Acc↑ ASV EER↓ SD DER↓ PR PER↓ ASR WER↓ KS Acc↑ QbE MTWV↑ IC Acc↑ SF F1↑ CER↓ ER Acc↑ TERA 21.33M LS960hr 57.57 15.89 9.96 49.17 18.17 89.48 0.0013 58.42 67.50 54.17 56.27 DeCoAR 2.0 89.84M LS960hr 74.42 7.16 6.59 14.93 13.02 94.48 0.0406 90.80 83.28 34.73 62.47 wav2vec 32.54M LS960hr 56.56 7.99 9.90 31.58 15.86 95.59 0.0485 84.92 76.37 43.71 59.79 vq-wav2vec 34.15M LS960hr 38.80 10.38 9.93 33.48 17.71 93.38 0.0410 85.68 77.68 41.54 58.24 wav2vec 2.0 95.04M LS960hr 75.18 6.02 6.08 5.74 6.43 96.23 0.0233 92.35 88.30 24.77 63.43 HuBERT 94.68M LS960hr 81.42 5.11 5.88 5.41 6.42 96.30 0.0736 98.34 88.53 25.20 64.92 SpeechLM-P 94.70M LS960hr 75.24 5.97 7.34 3.10 4.98 94.09 0.0410 97.68 87.67 25.90 61.84 T-HuBERT 95.05M LS960hr 61.64 5.37 6.43 3.87 5.12 96.27 0.0799 98.81 89.27 22.72 65.28TABLE III PERFORMANCE COMPARISON WHEN THE DERIVED GAN-BASED CODES ARE USED AS THE TARGETS OF THE LAST LAYER.",
+    "THE MODEL IS FINE-TUNED ON THE TRAIN-CLEAN-100 SUBSET.",
+    "Model No LM LM clean other clean other wav2vec 2.0 6.1 13.3 3.4 8.0 HuBERT 6.3 13.2 3.4 8.1 token2vec 5.1 11.8 --T-HuBERT (only phoneme) 5.0 11.2 3.1 7.4 T-HuBERT 4.8 10.0 3.1 7.0 B. Ablation Study1) The effectiveness of the GAN-based tokenizer: To verify whether the derived phoneme-like pseudo codes through GAN networks are good teachers for speech pre-training, we replace the targets of original HuBERT with our GAN-based pseudo codes and pre-train it using 960h LibriSpeech."
+  ],
+  "correct_citations": []
+}

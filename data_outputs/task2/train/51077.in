@@ -1,0 +1,77 @@
+{
+  "text": "Disfluencies can be filled pauses (e.g. \"uh\", \"um\", \"huh\"), discourse markers (e.g. \"you know\", \"I mean\") or edited words which are repeated or corrected by the speaker. For example, in the following sentence, an edited phrase or reparandum interval (\"to Boston\") occurs with its repair (\"to Denver\"), a filled pause (\"uh\") and discourse marker (\"I * The first author worked on this project while he was a research intern in CoreNL research group, NLU lab, Nuance Communications, Sunnyvale, CA. Filled pauses and discourse markers are to some extent a fixed and closed set. The main challenge in finding disfluencies is the case where the edited phrase is neither a rough copy of its repair or has any repair phrase (i.e. discarded edited phrase). Hence, in previous work, researchers report their method performance on detecting edited phrases (reparandum) [CITATION_1] .",
+  "citation_candidates": [
+    "10901371",
+    "14358598",
+    "13230281",
+    "14902521",
+    "360831",
+    "61412708",
+    "13391708",
+    "18837411",
+    "5454540",
+    "10905562",
+    "18275488",
+    "6193081",
+    "39087388",
+    "12782131"
+  ],
+  "bib_entries": {
+    "18837411": {
+      "title": "A tag-based noisy channel model of speech repairs",
+      "abstract": "This paper describes a noisy channel model of speech repairs, which can identify and correct repairs in speech transcripts. A syntactic parser is used as the source model, and a novel type of TAG-based transducer is the channel model. The use of TAG is motivated by the intuition that the reparandum is a \"rough copy\" of the repair. The model is trained and tested on the Switchboard disfluency-annotated corpus."
+    },
+    "360831": {
+      "title": "A speech-first model for repair detection and correction",
+      "abstract": "Interpreting fully natural speech is an important goal for spoken language understanding systems. However, while corpus studies have shown that about 10% of spontaneous utterances contain self-corrections, or REPAIRS, little is known about the extent to which cues in the speech signal may facilitate repair processing. We identify several cues based on acoustic and prosodic analysis of repairs in the DARPA Air Travel Information System database, and propose methods for exploiting these cues to detect and correct repairs."
+    },
+    "5454540": {
+      "title": "Edit detection and parsing for transcribed speech",
+      "abstract": "We present a simple architecture for parsing transcribed speech in which an edited-word detector first removes such words from the sentence string, and then a standard statistical parser trained on transcribed speech parses the remaining words. The edit detector achieves a misclassification rate on edited words of 2.2%. (The NULL-model, which marks everything as not edited, has an error rate of 5.9%.) To evaluate our parsing results we introduce a new evaluation metric, the purpose of which is to make evaluation of a parse tree relatively indifferent to the exact tree position of EDITED nodes. By this metric the parser achieves 85.3% precision and 86.5% recall."
+    },
+    "61412708": {
+      "title": "Switchboard: Telephone speech corpus for research and development",
+      "abstract": "SWITCHBOARD is a large multispeaker corpus of conversational speech and text which should be of interest to researchers in speaker authentication and large vocabulary speech recognition. About 2500 conversations by 500 speakers from around the US were collected automatically over T1 lines at Texas Instruments. Designed for training and testing of a variety of speech processing algorithms, especially in speaker verification, it has over an 1 h of speech from each of 50 speakers, and several minutes each from hundreds of others. A time-aligned word for word transcription accompanies each recording. >"
+    },
+    "18275488": {
+      "title": "Effective use of prosody in parsing conversational speech",
+      "abstract": "We identify a set of prosodic cues for parsing conversational speech and show how such features can be effectively incorporated into a statistical parsing model. On the Switchboard corpus of conversational speech, the system achieves improved parse accuracy over a state-of-the-art system which uses only lexical and syntactic features. Since removal of edit regions is known to improve downstream parse accuracy, we explore alternatives for edit detection and show that PCFGs are not competitive with more specialized techniques."
+    },
+    "12782131": {
+      "title": "The impact of language models and loss functions on repair disfluency detection",
+      "abstract": "Unrehearsed spoken language often contains disfluencies. In order to correctly interpret a spoken utterance, any such disfluencies must be identified and removed or otherwise dealt with. Operating on transcripts of speech which contain disfluencies, we study the effect of language model and loss function on the performance of a linear reranker that rescores the 25-best output of a noisy-channel model. We show that language models trained on large amounts of non-speech data improve performance more than a language model trained on a more modest amount of speech data, and that optimising f-score rather than log loss improves disfluency detection performance. ::: ::: Our approach uses a log-linear reranker, operating on the top n analyses of a noisy channel model. We use large language models, introduce new features into this reranker and examine different optimisation strategies. We obtain a disfluency detection f-scores of 0.838 which improves upon the current state-of-the-art."
+    },
+    "14902521": {
+      "title": "Using integer linear programming for detecting speech disfluencies",
+      "abstract": "We present a novel two-stage technique for detecting speech disfluencies based on Integer Linear Programming (ILP). In the first stage we use state-of-the-art models for speech disfluency detection, in particular, hidden-event language models, maximum entropy models and conditional random fields. During testing each model proposes possible disfluency labels which are then assessed in the presence of local and global constraints using ILP. Our experimental results show that by using ILP we can improve the performance of our models with negligible cost in processing time. The less training data is available the larger the improvement due to ILP."
+    },
+    "6193081": {
+      "title": "Disfluency detection using multi-step stacked learning",
+      "abstract": "In this paper, we propose a multi-step stacked learning model for disfluency detection. Our method incorporates refined n-gram features step by step from different word sequences. First, we detect filler words. Second, edited words are detected using n-gram features extracted from both the original text and filler filtered text. In the third step, additional n-gram features are extracted from edit removed texts together with our newly induced in-between features to improve edited word detection. We use Max-Margin Markov Networks (M 3 Ns) as the classifier with the weighted hamming loss to balance precision and recall. Experiments on the Switchboard corpus show that the refined n-gram features from multiple steps and M 3 Ns with weighted hamming loss can significantly improve the performance. Our method for disfluency detection achieves the best reported F-score 0.841 without the use of additional resources. 1"
+    },
+    "13391708": {
+      "title": "Early deletion of fillers in processing conversational speech",
+      "abstract": "This paper evaluates the benefit of deleting fillers (e.g. you know, like) early in parsing conversational speech. Readability studies have shown that disfluencies (fillers and speech repairs) may be deleted from transcripts without compromising meaning (Jones et al., 2003), and deleting repairs prior to parsing has been shown to improve its accuracy (Charniak and Johnson, 2001). We explore whether this strategy of early deletion is also beneficial with regard to fillers. Reported experiments measure the effect of early deletion under in-domain and out-of-domain parser training conditions using a state-of-the-art parser (Charniak, 2000). While early deletion is found to yield only modest benefit for in-domain parsing, significant improvement is achieved for out-of-domain adaptation. This suggests a potentially broader role for disfluency modeling in adapting text-based tools for processing conversational speech."
+    },
+    "10905562": {
+      "title": "A unified syntactic model for parsing fluent and disfluent speech",
+      "abstract": "This paper describes a syntactic representation for modeling speech repairs. This representation makes use of a right corner transform of syntax trees to produce a tree representation in which speech repairs require very few special syntax rules, making better use of training data. PCFGs trained on syntax trees using this model achieve high accuracy on the standard Switchboard parsing task."
+    },
+    "10901371": {
+      "title": "Algorithms for deterministic incremental dependency parsing",
+      "abstract": "Parsing algorithms that process the input from left to right and construct a single derivation have often been considered inadequate for natural language parsing because of the massive ambiguity typically found in natural language grammars. Nevertheless, it has been shown that such algorithms, combined with treebank-induced classifiers, can be used to build highly accurate disambiguating parsers, in particular for dependency-based syntactic representations. In this article, we first present a general framework for describing and analyzing algorithms for deterministic incremental dependency parsing, formalized as transition systems. We then describe and analyze two families of such algorithms: stack-based and list-based algorithms. In the former family, which is restricted to projective dependency structures, we describe an arc-eager and an arc-standard variant; in the latter family, we present a projective and a non-projective variant. For each of the four algorithms, we give proofs of correctness and complexity. In addition, we perform an experimental evaluation of all algorithms in combination with SVM classifiers for predicting the next parsing action, using data from thirteen languages. We show that all four algorithms give competitive accuracy, although the non-projective list-based algorithm generally outperforms the projective algorithms for languages with a non-negligible proportion of non-projective constructions. However, the projective algorithms often produce comparable results when combined with the technique known as pseudo-projective parsing. The linear time complexity of the stack-based algorithms gives them an advantage with respect to efficiency both in learning and in parsing, but the projective list-based algorithm turns out to be equally efficient in practice. Moreover, when the projective algorithms are used to implement pseudo-projective parsing, they sometimes become less efficient in parsing (but not in learning) than the non-projective list-based algorithm. Although most of the algorithms have been partially described in the literature before, this is the first comprehensive analysis and evaluation of the algorithms within a unified framework."
+    },
+    "14358598": {
+      "title": "Incrementality in deterministic dependency parsing",
+      "abstract": "Deterministic dependency parsing is a robust and efficient approach to syntactic parsing of unrestricted natural language text. In this paper, we analyze its potential for incremental processing and conclude that strict incrementality is not achievable within this framework. However, we also show that it is possible to minimize the number of structures that require non-incremental processing by choosing an optimal parsing algorithm. This claim is substantiated with experimental evidence showing that the algorithm achieves incremental parsing for 68.9% of the input when tested on a random sample of Swedish text. When restricted to sentences that are accepted by the parser, the degree of incrementality increases to 87.9%."
+    },
+    "39087388": {
+      "title": "Tregex and tsurgeon: tools for querying and manipulating tree data structures",
+      "abstract": "Abstract With syntactically annotated corpora becoming increasingly available for a variety of languages and grammatical frameworks, tree query tools have proven invaluable to linguists and computer scientists for both data exploration and corpusbased research. We provide a combined engine for tree query (Tregex) and manipulation (Tsurgeon) that can operate on arbitrary tree data structures with no need for preprocessing. Tregex remedies several expressive and implementational limitations of existing query tools, while Tsurgeon is to our knowledge the most expressive tree manipulation utility available."
+    },
+    "13230281": {
+      "title": "Going to the roots of dependency parsing",
+      "abstract": "Dependency trees used in syntactic parsing often include a root node representing a dummy word prefixed or suffixed to the sentence, a device that is generally considered a mere technical convenience and is tacitly assumed to have no impact on empirical results. We demonstrate that this assumption is false and that the accuracy of data-driven dependency parsers can in fact be sensitive to the existence and placement of the dummy root node. In particular, we show that a greedy, left-to-right, arc-eager transition-based parser consistently performs worse when the dummy root node is placed at the beginning of the sentence following the current convention in data-driven dependency parsing than when it is placed at the end or omitted completely. Control experiments with an arc-standard transition-based parser and an arc-factored graphbased parser reveal no consistent preferences but nevertheless exhibit considerable variation in results depending on root placement. We conclude that the treatment of dummy root nodes in data-driven dependency parsing is an underestimated source of variation in experiments andmay also be a parameter worth tuning for some parsers."
+    }
+  }
+}

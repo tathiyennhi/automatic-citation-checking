@@ -1,0 +1,83 @@
+{
+  "doc_id": "14362",
+  "text": "There exist multiple more complex solutions for applying CNNs to action recognition [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] . Some of these solutions rely on optical flow [CITATION_5] [CITATION_6] , which is slow to evaluate. Others rely on a recurrent architecture [CITATION_7] [CITATION_8] , which is often difficult to train in practice.",
+  "correct_citation": {
+    "[CITATION_1]": "11797475",
+    "[CITATION_2]": "4019281",
+    "[CITATION_3]": "59605920",
+    "[CITATION_4]": "4245530",
+    "[CITATION_5]": "11797475",
+    "[CITATION_6]": "4245530",
+    "[CITATION_7]": "4019281",
+    "[CITATION_8]": "59605920"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "There exist multiple more complex solutions for applying CNNs to action recognition [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] .",
+      "s_span": 0,
+      "e_span": 137
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "There exist multiple more complex solutions for applying CNNs to action recognition [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] .",
+      "s_span": 0,
+      "e_span": 137
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "There exist multiple more complex solutions for applying CNNs to action recognition [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] .",
+      "s_span": 0,
+      "e_span": 137
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "There exist multiple more complex solutions for applying CNNs to action recognition [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] .",
+      "s_span": 0,
+      "e_span": 137
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Some of these solutions rely on optical flow [CITATION_5] [CITATION_6] , which is slow to evaluate.",
+      "s_span": 138,
+      "e_span": 237
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Some of these solutions rely on optical flow [CITATION_5] [CITATION_6] , which is slow to evaluate.",
+      "s_span": 138,
+      "e_span": 237
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Others rely on a recurrent architecture [CITATION_7] [CITATION_8] , which is often difficult to train in practice.",
+      "s_span": 238,
+      "e_span": 352
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Others rely on a recurrent architecture [CITATION_7] [CITATION_8] , which is often difficult to train in practice.",
+      "s_span": 238,
+      "e_span": 352
+    }
+  ],
+  "bib_entries": {
+    "59605920": {
+      "title": "Long-term recurrent convolutional networks for visual recognition and description",
+      "abstract": "Models based on deep convolutional networks have dominated recent image interpretation tasks; we investigate whether models which are also recurrent, or “temporally deep”, are effective for tasks involving sequences, visual and otherwise. We develop a novel recurrent convolutional architecture suitable for large-scale visual learning which is end-to-end trainable, and demonstrate the value of these models on benchmark video recognition tasks, image description and retrieval problems, and video narration challenges. In contrast to current models which assume a fixed spatio-temporal receptive field or simple temporal averaging for sequential processing, recurrent convolutional models are “doubly deep” in that they can be compositional in spatial and temporal “layers”. Such models may have advantages when target concepts are complex and/or training data are limited. Learning long-term dependencies is possible when nonlinearities are incorporated into the network state updates. Long-term RNN models are appealing in that they directly can map variable-length inputs (e.g., video frames) to variable length outputs (e.g., natural language text) and can model complex temporal dynamics; yet they can be optimized with backpropagation. Our recurrent long-term models are directly connected to modern visual convnet models and can be jointly trained to simultaneously learn temporal dynamics and convolutional perceptual representations. Our results show such models have distinct advantages over state-of-the-art models for recognition or generation which are separately defined and/or optimized."
+    },
+    "11797475": {
+      "title": "Two-stream convolutional networks for action recognition in videos",
+      "abstract": "We investigate architectures of discriminatively trained deep Convolutional Networks (ConvNets) for action recognition in video. The challenge is to capture the complementary information on appearance from still frames and motion between frames. We also aim to generalise the best performing hand-crafted features within a data-driven learning framework. ::: ::: Our contribution is three-fold. First, we propose a two-stream ConvNet architecture which incorporates spatial and temporal networks. Second, we demonstrate that a ConvNet trained on multi-frame dense optical flow is able to achieve very good performance in spite of limited training data. Finally, we show that multitask learning, applied to two different action classification datasets, can be used to increase the amount of training data and improve the performance on both. Our architecture is trained and evaluated on the standard video actions benchmarks of UCF-101 and HMDB-51, where it is competitive with the state of the art. It also exceeds by a large margin previous attempts to use deep nets for video classification."
+    },
+    "4245530": {
+      "title": "Beyond short snippets: Deep networks for video classification",
+      "abstract": "Convolutional neural networks (CNNs) have been extensively applied for image recognition problems giving state-of-the-art results on recognition, detection, segmentation and retrieval. In this work we propose and evaluate several deep neural network architectures to combine image information across a video over longer time periods than previously attempted. We propose two methods capable of handling full length videos. The first method explores various convolutional temporal feature pooling architectures, examining the various design choices which need to be made when adapting a CNN for this task. The second proposed method explicitly models the video as an ordered sequence of frames. For this purpose we employ a recurrent neural network that uses Long Short-Term Memory (LSTM) cells which are connected to the output of the underlying CNN. Our best networks exhibit significant performance improvements over previously published results on the Sports 1 million dataset (73.1% vs. 60.9%) and the UCF-101 datasets with (88.6% vs. 88.0%) and without additional optical flow information (82.6% vs. 73.0%)."
+    },
+    "4019281": {
+      "title": "End-to-end learning of action detection from frame glimpses in videos",
+      "abstract": "In this work we introduce a fully end-to-end approach for action detection in videos that learns to directly predict the temporal bounds of actions. Our intuition is that the process of detecting actions is naturally one of observation and refinement: observing moments in video, and refining hypotheses about when an action is occurring. Based on this insight, we formulate our model as a recurrent neural network-based agent that interacts with a video over time. The agent observes video frames and decides both where to look next and when to emit a prediction. Since backpropagation is not adequate in this non-differentiable setting, we use REINFORCE to learn the agent's decision policy. Our model achieves state-of-the-art results on the THUMOS'14 and ActivityNet datasets while observing only a fraction (2% or less) of the video frames."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,55 @@
+{
+  "doc_id": "56987",
+  "text": "End-to-end models such as Listen, Attend & Spell (LAS) [CITATION_1] or the Recurrent Neural Network Transducer (RNN-T) [CITATION_2] are sequence models that directly define P (W |X), the posterior probability of the word or subword sequence W given an audio frame sequence X, with no chaining of sub-module probabilities. State-of-the-art, or near state-of-the-art results have been reported for these models on challenging tasks [CITATION_3] [CITATION_4] .",
+  "correct_citation": {
+    "[CITATION_1]": "18165915",
+    "[CITATION_2]": "17194112",
+    "[CITATION_3]": "1582664",
+    "[CITATION_4]": "206742954"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "End-to-end models such as Listen, Attend & Spell (LAS)  or the Recurrent Neural Network Transducer (RNN-T)  are sequence models that directly define P (W |X), the posterior probability of the word or subword sequence W given an audio frame sequence X, with no chaining of sub-module probabilities.",
+      "s_span": 0,
+      "e_span": 321
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "End-to-end models such as Listen, Attend & Spell (LAS)  or the Recurrent Neural Network Transducer (RNN-T)  are sequence models that directly define P (W |X), the posterior probability of the word or subword sequence W given an audio frame sequence X, with no chaining of sub-module probabilities.",
+      "s_span": 0,
+      "e_span": 321
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "State-of-the-art, or near state-of-the-art results have been reported for these models on challenging tasks   .",
+      "s_span": 322,
+      "e_span": 457
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "State-of-the-art, or near state-of-the-art results have been reported for these models on challenging tasks   .",
+      "s_span": 322,
+      "e_span": 457
+    }
+  ],
+  "bib_entries": {
+    "1582664": {
+      "title": "Building competitive direct acoustics-to-word models for english conversational speech recognition",
+      "abstract": "Direct acoustics-to-word (A2W) models in the end-to-end paradigm have received increasing attention compared to conventional sub-word based automatic speech recognition models using phones, characters, or context-dependent hidden Markov model states. This is because A2W models recognize words from speech without any decoder, pronunciation lexicon, or externally-trained language model, making training and decoding with such models simple. Prior work has shown that A2W models require orders of magnitude more training data in order to perform comparably to conventional models. Our work also showed this accuracy gap when using the English Switchboard-Fisher data set. This paper describes a recipe to train an A2W model that closes this gap and is at-par with state-of-the-art sub-word based models. We achieve a word error rate of 8.8%/13.9% on the Hub5-2000 Switchboard/CallHome test sets without any decoder or language model. We find that model initialization, training data order, and regularization have the most impact on the A2W model performance. Next, we present a joint word-character A2W model that learns to first spell the word and then recognize it. This model provides a rich output to the user instead of simple word hypotheses, making it especially useful in the case of words unseen or rarely-seen during training."
+    },
+    "17194112": {
+      "title": "Sequence transduction with recurrent neural networks",
+      "abstract": "Many machine learning tasks can be expressed as the transformation---or \\emph{transduction}---of input sequences into output sequences: speech recognition, machine translation, protein secondary structure prediction and text-to-speech to name but a few. One of the key challenges in sequence transduction is learning to represent both the input and output sequences in a way that is invariant to sequential distortions such as shrinking, stretching and translating. Recurrent neural networks (RNNs) are a powerful sequence learning architecture that has proven capable of learning such representations. However RNNs traditionally require a pre-defined alignment between the input and output sequences to perform transduction. This is a severe limitation since \\emph{finding} the alignment is the most difficult aspect of many sequence transduction problems. Indeed, even determining the length of the output sequence is often challenging. This paper introduces an end-to-end, probabilistic sequence transduction system, based entirely on RNNs, that is in principle able to transform any input sequence into any finite, discrete output sequence. Experimental results for phoneme recognition are provided on the TIMIT speech corpus."
+    },
+    "206742954": {
+      "title": "State-of-the-art speech recognition with sequence-to-sequence models",
+      "abstract": "Attention-based encoder-decoder architectures such as Listen, Attend, and Spell (LAS), subsume the acoustic, pronunciation and language model components of a traditional automatic speech recognition (ASR) system into a single neural network. In previous work, we have shown that such architectures are comparable to state-of-theart ASR systems on dictation tasks, but it was not clear if such architectures would be practical for more challenging tasks such as voice search. In this work, we explore a variety of structural and optimization improvements to our LAS model which significantly improve performance. On the structural side, we show that word piece models can be used instead of graphemes. We also introduce a multi-head attention architecture, which offers improvements over the commonly-used single-head attention. On the optimization side, we explore synchronous training, scheduled sampling, label smoothing, and minimum word error rate optimization, which are all shown to improve accuracy. We present results with a unidirectional LSTM encoder for streaming recognition. On a 12, 500 hour voice search task, we find that the proposed changes improve the WER from 9.2% to 5.6%, while the best conventional system achieves 6.7%; on a dictation task our model achieves a WER of 4.1% compared to 5% for the conventional system."
+    },
+    "18165915": {
+      "title": "Listen, attend and spell: A neural network for large vocabulary conversational speech recognition",
+      "abstract": "We present Listen, Attend and Spell (LAS), a neural speech recognizer that transcribes speech utterances directly to characters without pronunciation models, HMMs or other components of traditional speech recognizers. In LAS, the neural network architecture subsumes the acoustic, pronunciation and language models making it not only an end-to-end trained system but an end-to-end model. In contrast to DNN-HMM, CTC and most other models, LAS makes no independence assumptions about the probability distribution of the output character sequences given the acoustic sequence. Our system has two components: a listener and a speller. The listener is a pyramidal recurrent network encoder that accepts filter bank spectra as inputs. The speller is an attention-based recurrent network decoder that emits each character conditioned on all previous characters, and the entire acoustic sequence. On a Google voice search task, LAS achieves a WER of 14.1% without a dictionary or an external language model and 10.3% with language model rescoring over the top 32 beams. In comparison, the state-of-the-art CLDNN-HMM model achieves a WER of 8.0% on the same set."
+    }
+  },
+  "generator": "fallback_v4"
+}

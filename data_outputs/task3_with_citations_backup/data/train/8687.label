@@ -1,0 +1,33 @@
+{
+  "doc_id": "8687",
+  "text": "In this work, we also employ parallel TCP connections to improve video streaming quality on mobile devices. However, different from the existing works (as in [CITATION_1] and [CITATION_2] ), rather than using multiple connections to fetch different video chunks, we use multiple connections to download the same chunk. We note that when multiple connections are used, the available bandwidth between the client and server is divided among the connections. This means that, while the aggregate throughput increases, the throughput of each individual connection actually decreases as depicted in Fig. 1 . For instance, when there are 5 parallel connections the throughput of each connection on average is less than 2 Mbps. In wired networks, where the bandwidth between the client and server is plenty, even the reduced per-connection bandwidth is large enough to sustain video streaming at a good quality. Thus, it makes sense to use multiple connections to download different video chunks. In wireless networks however, the bandwidth is limited. Thus, when using multiple connections, the share of each individual connection may be so low that it cannot sustain video playback at a reasonable quality resulting in playback stalls. This problem happens whenever a chunk is needed as soon as possible to avoid a playback stall. For example, consider the first chunk of the video. It takes 3 times longer to download the first chunk and start the video when using parallel connections to download different chunks (i.e., existing works) compared to downloading the same chunk (i.e., our work). In wireless networks, when the available bandwidth fluctuates significantly over time, this situation (i.e., needing chunks quickly to avoid stalls) would be even more likely to happen compared to wired networks.",
+  "correct_citation": {
+    "[CITATION_1]": "18311080",
+    "[CITATION_2]": "15739060"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, different from the existing works (as in [CITATION_1] and [CITATION_2] ), rather than using multiple connections to fetch different video chunks, we use multiple connections to download the same chunk.",
+      "s_span": 108,
+      "e_span": 318
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "However, different from the existing works (as in [CITATION_1] and [CITATION_2] ), rather than using multiple connections to fetch different video chunks, we use multiple connections to download the same chunk.",
+      "s_span": 108,
+      "e_span": 318
+    }
+  ],
+  "bib_entries": {
+    "15739060": {
+      "title": "Improving internet video streaming performance by parallel tcp-based request-response streams",
+      "abstract": "TCP-based video streaming encounters difficulties in unreliable networks with unanticipated packet loss. In combination with high round trip times, the effective throughput deteriorates rapidly and TCP connection resets or stalls may occur. In this paper, we propose a client-driven video transmission scheme which utilizes multiple HTTP/TCP streams. The scheme is largely insensitive to unanticipated packet loss and thereby reduces throughput fluctuations. Since it is based on HTTP, the scheme can easily be deployed in existing network infrastructures. It fosters scalability on the server side by shifting complexity from the server to the clients. Certain features of request-response schemes allow maintaining fairness, despite of using multiple HTTP streams. Making use of TCP, the scheme inherently adapts to congested network links."
+    },
+    "18311080": {
+      "title": "Parallel adaptive HTTP media streaming",
+      "abstract": "Recent advances in adaptive HTTP streaming of 3GPP have paved the way to the development of media streaming over HTTP. The traditional HTTP streaming relies on a series of request segments and receive segments sequentially. In the current Internet media segments can be delivered through distributed networks. In such a scenario, the traditional series request-receive based adaptive HTTP streaming method is, however, unable to provide optimum streaming since the distributed networks resources are not fully utilized. In this paper, we present a novel parallel adaptive HTTP streaming method. Compared to the traditional series of adaptive HTTP streaming technique, our method a) enables the receiver to request multiple segments in parallel b) provides a solution to maintains a limited number of HTTP sessions for receiving segments in parallel and to determine when to start a new HTTP session to request the next segment c) can adapt media bitrates while receiving previously requested segments. Simulation results show that the proposed parallel adaptive HTTP streaming method outperforms the traditional series of adaptive HTTP streaming with respect to providing a higher playback media quality and decreasing the interruption frequency of media playing."
+    }
+  },
+  "generator": "fallback_v4"
+}

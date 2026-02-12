@@ -1,0 +1,32 @@
+{
+  "text": "An efficient training algorithm can be achieved by maximizing the conditional probability of each parsing decision, hence minimizing a loss based on each local link decision independently. Importantly, inter-dependence between links can still be accommodated by exploiting dynamic features in training-features that take into account the labels of (some) of the surrounding components when predicting the label of a target component. To cope with the sparse data problem, I use distributional word similarity [CITATION_1] [CITATION_2] [CITATION_3] to generalize the observed frequency counts in the training corpus. The experimental results on the Chinese Treebank 4.0 show that the accuracy of the conditional model is 13.6% higher than corresponding joint models, while similarity smoothing also allows the strictly lexicalised approach to outperform corresponding models based on part-of-speech tags.",
+  "citation_candidates": [
+    "13163488",
+    "15698938",
+    "11091754",
+    "2621606",
+    "6713452"
+  ],
+  "bib_entries": {
+    "6713452": {
+      "title": "Distributional clustering of English words",
+      "abstract": "We describe and evaluate experimentally a method for clustering words according to their distribution in particular syntactic contexts. Words are represented by the relative frequency distributions of contexts in which they appear, and relative entropy between those distributions is used as the similarity measure for clustering. Clusters are represented by average context distributions derived from the given words according to their probabilities of cluster membership. In many cases, the clusters can be thought of as encoding coarse sense distinctions. Deterministic annealing is used to find lowest distortion sets of clusters: as the annealing parameter increases, existing clusters become unstable and subdivide, yielding a hierarchical \"soft\" clustering of the data. Clusters are used as the basis for class models of word coocurrence, and the models evaluated with respect to held-out test data."
+    },
+    "11091754": {
+      "title": "Corpus-derived first, second and thirdorder word affinities",
+      "abstract": "A number of corpus-based extraction techniques have been successfully implemented which derive lists of similar words, based on some definition of the context in which they are found, from a corpus. We present here the results of affining such a list in order to extract semantic axes expressing nuances of a word's meaning. These semantic axes represent corpus-based meaning distinctions that are based on the word's usage in the corpus."
+    },
+    "15698938": {
+      "title": "Automatic retrieval and clustering of similar words",
+      "abstract": "Bootstrapping semantics from text is one of the greatest challenges in natural language learning. We first define a word similarity measure based on the distributional pattern of words. The similarity measure allows us to construct a thesaurus using a parsed corpus. We then present a new evaluation methodology for the automatically constructed thesaurus. The evaluation results show that the thesaurus is significantly closer to WordNet than Roget Thesaurus is."
+    },
+    "2621606": {
+      "title": "Simple training of dependency parsers via structured boosting",
+      "abstract": "Recently, significant progress has been made on learning structured predictors via coordinated training algorithms such as conditional random fields and maximum margin Markov networks. Unfortunately, these techniques are based on specialized training algorithms, are complex to implement, and expensive to run. We present a much simpler approach to training structured predictors by applying a boosting-like procedure to standard supervised training methods. The idea is to learn a local predictor using standard methods, such as logistic regression or support vector machines, but then achieve improved structured classification by \"boosting\" the influence of misclassified components after structured prediction, re-training the local predictor, and repeating. Further improvement in structured prediction accuracy can be achieved by incorporating \"dynamic\" features--i.e. an extension whereby the features for one predicted component can depend on the predictions already made for some other components. ::: ::: We apply our techniques to the problem of learning dependency parsers from annotated natural language corpora. By using logistic regression as an efficient base classifier (for predicting dependency links between word pairs), we are able to efficiently train a dependency parsing model, via structured boosting, that achieves state of the art results in English, and surpasses state of the art in Chinese."
+    },
+    "13163488": {
+      "title": "Statistical dependency analysis with support vector machines",
+      "abstract": "In this paper, we propose a method for analyzing word-word dependencies using deterministic bottom-up manner using Support Vector machines. We experimented with dependency trees converted from Penn treebank data, and achieved over 90% accuracy of word-word dependency. Though the result is little worse than the most up-to-date phrase structure based parsers, it looks satisfactorily accurate considering that our parser uses no information from phrase structures."
+    }
+  }
+}

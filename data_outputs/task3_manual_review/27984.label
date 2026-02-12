@@ -1,0 +1,20 @@
+{
+  "doc_id": "27984",
+  "text": "We encoded each program into the .litmus format that is accepted by HERD. In doing so, we observed that the original litmus tests make several uses of empty loops that spin until a given location holds a specific value, such as 'while (load(x) != 1); C'. Because such programs have arbitrarily-many candidate executions (one for each possible iteration count) we followed standard practice in preparing litmus tests ( e.g., Alglave et al. [CITATION_1] ) and replaced the pattern above with 'if (load(x) == 1) {C}', ignoring those executions where the conditional test failed.",
+  "correct_citation": {
+    "[CITATION_1]": "3087755"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Because such programs have arbitrarily-many candidate executions (one for each possible iteration count) we followed standard practice in preparing litmus tests ( e.g., Alglave et al. ) and replaced the pattern above with 'if (load(x) == 1) {C}', ignoring those executions where the conditional test failed."
+    }
+  ],
+  "bib_entries": {
+    "3087755": {
+      "title": "GPU concurrency: weak behaviours and programming assumptions",
+      "abstract": "Concurrency is pervasive and perplexing, particularly on graphics processing units (GPUs). Current specifications of languages and hardware are inconclusive; thus programmers often rely on folklore assumptions when writing software. To remedy this state of affairs, we conducted a large empirical study of the concurrent behaviour of deployed GPUs. Armed with litmus tests (i.e. short concurrent programs), we questioned the assumptions in programming guides and vendor documentation about the guarantees provided by hardware. We developed a tool to generate thousands of litmus tests and run them under stressful workloads. We observed a litany of previously elusive weak behaviours, and exposed folklore beliefs about GPU programming---often supported by official tutorials---as false. As a way forward, we propose a model of Nvidia GPU hardware, which correctly models every behaviour witnessed in our experiments. The model is a variant of SPARC Relaxed Memory Order (RMO), structured following the GPU concurrency hierarchy."
+    }
+  },
+  "generator": "fallback"
+}

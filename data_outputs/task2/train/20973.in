@@ -1,0 +1,37 @@
+{
+  "text": "For calculating the compressed size of a column group G i with the formulas (1), [CITATION_1] , and (3), we need to estimate the number of distinct tuples d i , non-zero tuples z i , segments b ij , and runs r ij . Our estimators are based on a small sample of rows S drawn randomly and uniformly from X with |S| \ue03d n.",
+  "citation_candidates": [
+    "145173",
+    "6287870",
+    "12324203",
+    "8038147",
+    "63990670",
+    "121194034"
+  ],
+  "bib_entries": {
+    "63990670": {
+      "title": "Compressed linear algebra for large-scale machine learning",
+      "abstract": "Large-scale machine learning (ML) algorithms are often iterative, using repeated read-only data access and I/O-bound matrix-vector multiplications to converge to an optimal model. It is crucial for performance to fit the data into single-node or distributed main memory. General-purpose, heavy- and lightweight compression techniques struggle to achieve both good compression ratios and fast decompression speed to enable block-wise uncompressed operations. Hence, we initiate work on compressed linear algebra (CLA), in which lightweight database compression techniques are applied to matrices and then linear algebra operations such as matrix-vector multiplication are executed directly on the compressed representations. We contribute effective column compression schemes, cache-conscious operations, and an efficient sampling-based compression algorithm. Our experiments show that CLA achieves in-memory operations performance close to the uncompressed case and good compression ratios that allow us to fit larger datasets into available memory. We thereby obtain significant end-to-end performance improvements up to 26x or reduced memory requirements."
+    },
+    "12324203": {
+      "title": "The stratosphere platform for big data analytics",
+      "abstract": "We present Stratosphere, an open-source software stack for parallel data analysis. Stratosphere brings together a unique set of features that allow the expressive, easy, and efficient programming of analytical applications at very large scale. Stratosphere's features include \"in situ\" data processing, a declarative query language, treatment of user-defined functions as first-class citizens, automatic program parallelization and optimization, support for iterative programs, and a scalable and efficient execution engine. Stratosphere covers a variety of \"Big Data\" use cases, such as data warehousing, information extraction and integration, data cleansing, graph analysis, and statistical analysis applications. In this paper, we present the overall system architecture design decisions, introduce Stratosphere through example queries, and then dive into the internal workings of the system's components that relate to extensibility, programming model, optimization, and query execution. We experimentally compare Stratosphere against popular open-source alternatives, and we conclude with a research outlook for the next years."
+    },
+    "8038147": {
+      "title": "Optimizing sparse matrix-vector multiplication using index and value compression",
+      "abstract": "Previous research work has identified memory bandwidth as the main bottleneck of the ubiquitous Sparse Matrix-Vector Multiplication kernel. To attack this problem, we aim at reducing the overall data volume of the algorithm. Typical sparse matrix representation schemes store only the non-zero elements of the matrix and employ additional indexing information to properly iterate over these elements. In this paper we propose two distinct compression methods targeting index and numerical values respectively. We perform a set of experiments on a large real-world matrix set and demonstrate that the index compression method can be applied successfully to a wide range of matrices. Moreover, the value compression method is able to achieve impressive speedups in a more limited yet important class of sparse matrices that contain a small number of distinct values"
+    },
+    "121194034": {
+      "title": "Estimating the number of classes in a finite population",
+      "abstract": "Abstract We use an extension of the generalized jackknife approach of Gray and Schucany to obtain new nonparametric estimators for the number of classes in a finite population of known size. We also show that generalized jackknife estimators are closely related to certain Horvitz\u2013Thompson estimators, to an estimator of Shlosser, and to estimators based on sample coverage. In particular, the generalized jackknife approach leads to a modification of Shlosser's estimator that does not suffer from the erratic behavior of the original estimator. The performance of both new and previous estimators is investigated by means of an asymptotic variance analysis and a Monte Carlo simulation study."
+    },
+    "6287870": {
+      "title": "TensorFlow: A system for large-scale machine learning",
+      "abstract": "TensorFlow is a machine learning system that operates at large scale and in heterogeneous environments. Tensor-Flow uses dataflow graphs to represent computation, shared state, and the operations that mutate that state. It maps the nodes of a dataflow graph across many machines in a cluster, and within a machine across multiple computational devices, including multicore CPUs, general-purpose GPUs, and custom-designed ASICs known as Tensor Processing Units (TPUs). This architecture gives flexibility to the application developer: whereas in previous \"parameter server\" designs the management of shared state is built into the system, TensorFlow enables developers to experiment with novel optimizations and training algorithms. TensorFlow supports a variety of applications, with a focus on training and inference on deep neural networks. Several Google services use TensorFlow in production, we have released it as an open-source project, and it has become widely used for machine learning research. In this paper, we describe the TensorFlow dataflow model and demonstrate the compelling performance that TensorFlow achieves for several real-world applications."
+    },
+    "145173": {
+      "title": "Approximate Kernel k-means: Solution to large scale Kernel clustering",
+      "abstract": "Digital data explosion mandates the development of scalable tools to organize the data in a meaningful and easily accessible form. Clustering is a commonly used tool for data organization. However, many clustering algorithms designed to handle large data sets assume linear separability of data and hence do not perform well on real world data sets. While kernel-based clustering algorithms can capture the non-linear structure in data, they do not scale well in terms of speed and memory requirements when the number of objects to be clustered exceeds tens of thousands. We propose an approximation scheme for kernel k-means, termed approximate kernel k-means, that reduces both the computational complexity and the memory requirements by employing a randomized approach. We show both analytically and empirically that the performance of approximate kernel k-means is similar to that of the kernel k-means algorithm, but with dramatically reduced run-time complexity and memory requirements."
+    }
+  }
+}

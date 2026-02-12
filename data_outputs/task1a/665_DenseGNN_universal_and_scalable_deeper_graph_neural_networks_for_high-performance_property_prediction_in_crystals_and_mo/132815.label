@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Equations 1, 2, and 3 correspond to ϕ E, ϕ V and ϕ G in Fig. 1, respectively, detailing the edge-node-graph update process in DenseGNN during training.",
+    "Below, we will explain the update process step by step.",
+    "Edge feature update: The edge update function ϕ E combines features of the receiver and sender nodes, global state, and edges, transforms them through a three-layer MLP network, and updates edge features through residual networks and activation functions. 2.",
+    "Node feature update: For each node, we first aggregate the updated edge features, then concatenate the aggregated node features with the global state and original node features, transform them through a single-layer MLP network ϕ V, and update node features through residual networks and activation functions. 3.",
+    "Graph feature update: For each graph, we sum or average the updated edge and node features, then concatenate the aggregated graph features with the global state, transform them through a single-layer MLP network ϕ G, and update graph features through residual networks and activation functions."
+  ],
+  "correct_citations": []
+}

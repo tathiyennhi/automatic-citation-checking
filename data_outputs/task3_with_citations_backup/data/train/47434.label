@@ -1,0 +1,33 @@
+{
+  "doc_id": "47434",
+  "text": "Given the model parameters, w, and dense overlapping bounding boxes in each frame, the goal is to find a sequence of candidate windows, called a track, for each object which maximizes the score in Eq. 1. This maximization requires searching over exponentially many configurations. We propose to formulate the inference as a global data association which helps reducing the search space by enforcing some temporal consistency across the candidates in consecutive frames. Recently, such global data association has been formulated using network flow [CITATION_1] [CITATION_2] , for which there exists an exact solution. In order to be able to use such networks as inference of our structured learning, the solution to the network needs to maximize the score function in Eq. 1. This requires the nodes in the graph to encode the probability of assigning each of the target identities to them using the learned parameters w k . This is not possible through traditional network flow methods.",
+  "correct_citation": {
+    "[CITATION_1]": "32640",
+    "[CITATION_2]": "5911113"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Recently, such global data association has been formulated using network flow [CITATION_1] [CITATION_2] , for which there exists an exact solution.",
+      "s_span": 470,
+      "e_span": 617
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Recently, such global data association has been formulated using network flow [CITATION_1] [CITATION_2] , for which there exists an exact solution.",
+      "s_span": 470,
+      "e_span": 617
+    }
+  ],
+  "bib_entries": {
+    "5911113": {
+      "title": "GloballyOptimal Greedy Algorithms for Tracking a Variable Number of Objects",
+      "abstract": "We analyze the computational problem of multi-object tracking in video sequences. We formulate the problem using a cost function that requires estimating the number of tracks, as well as their birth and death states. We show that the global solution can be obtained with a greedy algorithm that sequentially instantiates tracks using shortest path computations on a flow network. Greedy algorithms allow one to embed pre-processing steps, such as nonmax suppression, within the tracking algorithm. Furthermore, we give a near-optimal algorithm based on dynamic programming which runs in time linear in the number of objects and linear in the sequence length. Our algorithms are fast, simple, and scalable, allowing us to process dense input data. This results in state-of-the-art performance."
+    },
+    "32640": {
+      "title": "Global data association for multi-object tracking using network flows",
+      "abstract": "We propose a network flow based optimization method for data association needed for multiple object tracking. The maximum-a-posteriori (MAP) data association problem is mapped into a cost-flow network with a non-overlap constraint on trajectories. The optimal data association is found by a min-cost flow algorithm in the network. The network is augmented to include an explicit occlusion model(EOM) to track with long-term inter-object occlusions. A solution to the EOM-based network is found by an iterative approach built upon the original algorithm. Initialization and termination of trajectories and potential false observations are modeled by the formulation intrinsically. The method is efficient and does not require hypotheses pruning. Performance is compared with previous results on two public pedestrian datasets to show its improvement."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,77 @@
+{
+  "doc_id": "49294",
+  "text": "Building on top of the multiple-instance learning model, we further improve performance using a missing data model that addresses the problem of errors introduced during the heuristic labeling process. Our best model achieves a 0.68 F1 score when resolving date mentions in Twitter. This is a 17% increase over SUTime [CITATION_1] , outperforming other state-of-the-art time expression resolvers HeidelTime [CITATION_2] , TempEX [CITATION_3] and UWTime [CITATION_4] as well. Our approach also produces a confidence score that allows us to trade recall for precision. To the best of our knowledge, TweeTIME is the first time resolver designed specifically for social media data. 3 This is also the first time that distant supervision is successfully applied for end-to-end temporal recognition and normalization. Previous distant supervision approaches [CITATION_5] [CITATION_6] only address the normalization problem, assuming gold time mentions are available at test time.",
+  "correct_citation": {
+    "[CITATION_1]": "146233",
+    "[CITATION_2]": "8156126",
+    "[CITATION_3]": "1506909",
+    "[CITATION_4]": "641333",
+    "[CITATION_5]": "627938",
+    "[CITATION_6]": "7383015"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This is a 17% increase over SUTime [CITATION_1] , outperforming other state-of-the-art time expression resolvers HeidelTime [CITATION_2] , TempEX [CITATION_3] and UWTime [CITATION_4] as well.",
+      "s_span": 283,
+      "e_span": 474
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This is a 17% increase over SUTime [CITATION_1] , outperforming other state-of-the-art time expression resolvers HeidelTime [CITATION_2] , TempEX [CITATION_3] and UWTime [CITATION_4] as well.",
+      "s_span": 283,
+      "e_span": 474
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "This is a 17% increase over SUTime [CITATION_1] , outperforming other state-of-the-art time expression resolvers HeidelTime [CITATION_2] , TempEX [CITATION_3] and UWTime [CITATION_4] as well.",
+      "s_span": 283,
+      "e_span": 474
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "This is a 17% increase over SUTime [CITATION_1] , outperforming other state-of-the-art time expression resolvers HeidelTime [CITATION_2] , TempEX [CITATION_3] and UWTime [CITATION_4] as well.",
+      "s_span": 283,
+      "e_span": 474
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Previous distant supervision approaches [CITATION_5] [CITATION_6] only address the normalization problem, assuming gold time mentions are available at test time.",
+      "s_span": 812,
+      "e_span": 973
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Previous distant supervision approaches [CITATION_5] [CITATION_6] only address the normalization problem, assuming gold time mentions are available at test time.",
+      "s_span": 812,
+      "e_span": 973
+    }
+  ],
+  "bib_entries": {
+    "641333": {
+      "title": "Context-dependent semantic parsing for time expressions",
+      "abstract": "We present an approach for learning context-dependent semantic parsers to identify and interpret time expressions. We use a Combinatory Categorial Grammar to construct compositional meaning representations, while considering contextual cues, such as the document creation time and the tense of the governing verb, to compute the final time values. Experiments on benchmark datasets show that our approach outperforms previous stateof-the-art systems, with error reductions of 13% to 21% in end-to-end performance."
+    },
+    "7383015": {
+      "title": "Language-independent discriminative parsing of temporal expressions",
+      "abstract": "Temporal resolution systems are traditionally tuned to a particular language, requiring significant human effort to translate them to new languages. We present a language independent semantic parser for learning the interpretation of temporal phrases given only a corpus of utterances and the times they reference. We make use of a latent parse that encodes a language-flexible representation of time, and extract rich features over both the parse and associated temporal semantics. The parameters of the model are learned using a weakly supervised bootstrapping approach, without the need for manually tuned parameters or any other language expertise. We achieve state-of-the-art accuracy on all languages in the TempEval2 temporal normalization task, reporting a 4% improvement in both English and Spanish accuracy, and to our knowledge the first results for four other languages."
+    },
+    "1506909": {
+      "title": "Robust temporal processing of news",
+      "abstract": "We introduce an annotation scheme for temporal expressions, and describe a method for resolving temporal expressions in print and broadcast news. The system, which is based on both hand-crafted and machine-learnt rules, achieves an 83.2% accuracy (F-measure) against hand-annotated data. Some initial steps towards tagging event chronologies are also described."
+    },
+    "627938": {
+      "title": "Parsing time: Learning to interpret time expressions",
+      "abstract": "We present a probabilistic approach for learning to interpret temporal phrases given only a corpus of utterances and the times they reference. While most approaches to the task have used regular expressions and similar linear pattern interpretation rules, the possibility of phrasal embedding and modification in time expressions motivates our use of a compositional grammar of time expressions. This grammar is used to construct a latent parse which evaluates to the time the phrase would represent, as a logical parse might evaluate to a concrete entity. In this way, we can employ a loosely supervised EM-style bootstrapping approach to learn these latent parses while capturing both syntactic uncertainty and pragmatic ambiguity in a probabilistic framework. We achieve an accuracy of 72% on an adapted TempEval-2 task -- comparable to state of the art systems."
+    },
+    "8156126": {
+      "title": "Multilingual and cross-domain temporal tagging",
+      "abstract": "Extraction and normalization of temporal expressions from documents are important steps towards deep text understanding and a prerequisite for many NLP tasks such as information extraction, question answering, and document summarization. There are different ways to express (the same) temporal information in documents. However, after identifying temporal expressions, they can be normalized according to some standard format. This allows the usage of temporal information in a term- and language-independent way. In this paper, we describe the challenges of temporal tagging in different domains, give an overview of existing annotated corpora, and survey existing approaches for temporal tagging. Finally, we present our publicly available temporal tagger HeidelTime, which is easily extensible to further languages due to its strict separation of source code and language resources like patterns and rules. We present a broad evaluation on multiple languages and domains on existing corpora as well as on a newly created corpus for a language/domain combination for which no annotated corpus has been available so far."
+    },
+    "146233": {
+      "title": "SUTime: A library for recognizing and normalizing time expressions",
+      "abstract": "We describe SUTIME, a temporal tagger for recognizing and normalizing temporal expressions in English text. SUTIME is available as part of the Stanford CoreNLP pipeline and can be used to annotate documents with temporal information. It is a deterministic rule-based system designed for extensibility. Testing on the TempEval-2 evaluation corpus shows that this system outperforms state-of-the-art techniques."
+    }
+  },
+  "generator": "fallback_v4"
+}

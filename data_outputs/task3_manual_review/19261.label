@@ -1,0 +1,52 @@
+{
+  "doc_id": "19261",
+  "text": "EEG data analysis was performed offline using EEGLAB [CITATION_1] . For preprocessing, bad electrodes were interpolated (N ¼ 1.21 per participant) and all data were re-referenced to the common average of 128 electrodes. A high-pass (0.1 Hz) and low-pass (100 Hz) zero-phase filter, and 60 Hz notch filter were then applied using the standard EEGLAB filters. No trials were excluded due to artifacts, as these do not affect SNR in frequency space to the degree that they do in the time domain. This is standard practice for EEG frequency-domain analyses [CITATION_2] . Additionally, our decoding approach is extremely adept at dealing with artifacts such as problematic trials [CITATION_3] . For each 60 s block, the first 2 s and last 2 s of data were discarded, and the remaining 56 s block was split into 14 Â 4 s epochs. Each epoch consisted of 60, 24 or 15 cycles (images) for the 15, 6, or 3.75 Hz frequencies, respectively. Splitting blocks into a smaller number of epochs is a technique used to allow sufficient trial numbers for the decoding analysis. The 56 epochs per condition were reduced to 28 'pseudotrials' by taking the mean of every two epochs to obtain a characteristic time course. The pseudotrial averaging technique was chosen for two reasons: (1) it allowed a more accurate representation of the periodic signal by reducing non-stimulus related EEG noise [CITATION_4] , and (2) averaging also improves classification accuracy [CITATION_5] . A discrete Fourier transform was applied to the pseudotrials using the FFT function in MATLAB, normalized for the 2048 time points (512 Hz sampling frequency x 4 s/epoch).",
+  "correct_citation": {
+    "[CITATION_1]": "1101322",
+    "[CITATION_2]": "7380797",
+    "[CITATION_3]": "1089346",
+    "[CITATION_4]": "1501497",
+    "[CITATION_5]": "1089346"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "EEG data analysis was performed offline using EEGLAB"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This is standard practice for EEG frequency-domain analyses"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Additionally, our decoding approach is extremely adept at dealing with artifacts such as problematic trials"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The pseudotrial averaging technique was chosen for two reasons: (1) it allowed a more accurate representation of the periodic signal by reducing non-stimulus related EEG noise"
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "The pseudotrial averaging technique was chosen for two reasons: (1) it allowed a more accurate representation of the periodic signal by reducing non-stimulus related EEG noise, and (2) averaging also improves classification accuracy"
+    }
+  ],
+  "bib_entries": {
+    "1501497": {
+      "title": "Temporal tuning of word-and face-selective cortex",
+      "abstract": "Sensitivity to temporal change places fundamental limits on object processing in the visual system. An emerging consensus from the behavioral and neuroimaging literature suggests that temporal resolution differs substantially for stimuli of different complexity and for brain areas at different levels of the cortical hierarchy. Here, we used steady-state visually evoked potentials to directly measure three fundamental parameters that characterize the underlying neural response to text and face images: temporal resolution, peak temporal frequency, and response latency. We presented full-screen images of text or a human face, alternated with a scrambled image, at temporal frequencies between 1 and 12 Hz. These images elicited a robust response at the first harmonic that showed differential tuning, scalp topography, and delay for the text and face images. Face-selective responses were maximal at 4 Hz, but text-selective responses, by contrast, were maximal at 1 Hz. The topography of the text image response was strongly left-lateralized at higher stimulation rates, whereas the response to the face image was slightly right-lateralized but nearly bilateral at all frequencies. Both text and face images elicited steady-state activity at more than one apparent latency; we observed early 141-160 msec and late >250 msec text-and face-selective responses. These differences in temporal tuning profiles are likely to reflect differences in the nature of the computations performed by word-and face-selective cortex. Despite the close proximity of word-and face-selective regions on the cortical surface, our measurements demonstrate substantial differences in the temporal dynamics of word-versus face-selective responses."
+    },
+    "1089346": {
+      "title": "Decoding dynamic brain patterns from evoked responses: a tutorial on multivariate pattern analysis applied to time series neuroimaging data",
+      "abstract": "Multivariate pattern analysis MVPA or brain decoding methods have become standard practice in analyzing fMRI data. Although decoding methods have been extensively applied in brain-computer interfaces, these methods have only recently been applied to time series neuroimaging data such as MEG and EEG to address experimental questions in cognitive neuroscience. In a tutorial style review, we describe a broad set of options to inform future time series decoding studies from a cognitive neuroscience perspective. Using example MEG data, we illustrate the effects that different options in the decoding analysis pipeline can have on experimental results where the aim is to \"decode\" different perceptual stimuli or cognitive states over time from dynamic brain activation patterns. We show that decisions made at both preprocessing e.g., dimensionality reduction, subsampling, trial averaging and decoding e.g., classifier selection, cross-validation design stages of the analysis can significantly affect the results. In addition to standard decoding, we describe extensions to MVPA for time-varying neuroimaging data including representational similarity analysis, temporal generalization, and the interpretation of classifier weight maps. Finally, we outline important caveats in the design and interpretation of time series decoding experiments."
+    },
+    "7380797": {
+      "title": "Understanding individual face discrimination by means of fast periodic visual stimulation",
+      "abstract": "This paper reviews a fast periodic visual stimulation (FPVS) approach developed recently to make significant progress in understanding visual discrimination of individual faces. Displaying pictures of faces at a periodic frequency rate leads to a high signal-to-noise ratio (SNR) response in the human electroencephalogram, at the exact frequency of stimulation, a so-called steady-state visual evoked potential (SSVEP, Regan in Electroencephalogr Clin Neurophysiol 20:238–248, 1966). For fast periodic frequency rates, i.e., between 3 and 9 Hz, this response is reduced if the exact same face identity is repeated compared to the presentation of different face identities, the largest difference being observed over the right occipito-temporal cortex. A 6-Hz stimulation rate (cycle duration of ~170 ms) provides the largest difference between different and repeated faces, as also evidenced in face-selective areas of the ventral occipito-temporal cortex in functional magnetic resonance imaging. This high-level discrimination response is reduced following inversion and contrast-reversal of the faces and can be isolated without subtraction thanks to a fast periodic oddball paradigm. Overall, FPVS provides a response that is objective (i.e., at an experimentally defined frequency), implicit, has a high SNR and is directly quantifiable in a short amount of time. Although the approach is particularly appealing for understanding face perception, it can be generalized to study visual discrimination of complex visual patterns such as objects and visual scenes. The advantages of the approach make it also particularly well-suited to investigate these functions in populations who cannot provide overt behavioral responses and can only be tested for short durations, such as infants, young children and clinical populations."
+    },
+    "1101322": {
+      "title": "EEGLAB: an open source toolbox for analysis of single-trial EEG dynamics including independent component analysis",
+      "abstract": "We have developed a toolbox and graphic user interface, EEGLAB, running under the cross-platform MATLAB environment (The Mathworks, Inc.) for processing collections of single-trial and/or averaged EEG data of any number of channels. Available functions include EEG data, channel and event information importing, data visualization (scrolling, scalp map and dipole model plotting, plus multi-trial ERP-image plots), preprocessing (including artifact rejection, filtering, epoch selection, and averaging), Independent Component Analysis (ICA) and time/frequency decompositions including channel and component cross-coherence supported by bootstrap statistical methods based on data resampling. EEGLAB functions are organized into three layers. Top-layer functions allow users to interact with the data through the graphic interface without needing to use MATLAB syntax. Menu options allow users to tune the behavior of EEGLAB to available memory. Middle-layer functions allow users to customize data processing using command history and interactive 'pop' functions. Experienced MATLAB users can use EEGLAB data structures and stand-alone signal processing functions to write custom and/or batch analysis scripts. Extensive function help and tutorial information are included. A 'plug-in' facility allows easy incorporation of new EEG modules into the main menu. EEGLAB is freely available (http://www.sccn.ucsd.edu/eeglab/) under the GNU public license for noncommercial use and open source development, together with sample data, user tutorial and extensive documentation."
+    }
+  },
+  "generator": "fallback"
+}

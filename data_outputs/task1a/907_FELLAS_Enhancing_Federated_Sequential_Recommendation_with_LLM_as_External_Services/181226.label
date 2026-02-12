@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Item-level Embedding ServiceIn centralized recommendation systems, numerous studies [14,45] have demonstrated the effectiveness of leveraging textual information (e.g., item titles) to enhance ID-based item embeddings.Inspired by these successful practices, FELLAS also utilizes item textual information to boost the performance of sequential models, as shown in the upper green dashed box of Figure 2.",
+    "Specifically, at the initial stage, the central server sends all items' textual information V 𝑡𝑥 = {𝑣 𝑡𝑥 1, 𝑣 𝑡𝑥 2,..., 𝑣 𝑡𝑥 | V | } to the LLM server and invokes the item embedding service:V 𝑙𝑙𝑚 = F 𝑙𝑙𝑚 (V 𝑡𝑥)(4)where F 𝑙𝑙𝑚 is the LLM-based item encoder and V 𝑙𝑙𝑚 is its encoding output.",
+    "Then, FELLAS incorporates an adapter layer 𝜙 to transform V 𝑙𝑙𝑚 to the same dimension of the ID-based embedding and fuses them through summation:V ← 𝜙 (V 𝑡𝑥) + V(5)Algorithm 2 The pseudo-code for FELLAS.",
+    "Input: global round 𝑅; learning rate 𝑙𝑟,... Output: well-trained sequential model M 𝑅 1: server initializes model M 0 2: // the central server invokes LLM item-level embedding service 3: V 𝑙𝑙𝑚 ←LLMItemService(V 𝑡𝑥) 4: for each round r =0,..., 𝑅 -1 do 5: sample a fraction of clients U 𝑟 from U 6:for 𝑢 𝑖 ∈ U 𝑟 in parallel do 7:// execute on client sides 8:M 𝑟 +1 𝑢 𝑖 ←ClientTrain(𝑢 𝑖, M 𝑟, V 𝑙𝑙𝑚) 9:end for 10:// execute on central server11: M 𝑟 +1 ← aggregate received client model parameters {M 𝑟 +1 𝑢 𝑖 } 𝑢 𝑖 ∈ U 𝑟 12: end for 13: function ClientTrain(𝑢 𝑖, M 𝑟, V 𝑙𝑙𝑚) 14: if query for LLM sequence-level embedding service then 15: // generate perturbed sequence to protect the raw data 16: S 𝑢 𝑖 ← execute 𝑑 X -privacy protection algorithm (Algorithm 3) 17: S 𝑟𝑑 ← generate some random sequence 18: s 𝑙𝑙𝑚 𝑢 𝑖, s 𝑙𝑙𝑚 𝑟𝑑 ←LLMSeqenceService( S 𝑢 𝑖 ∪ S 𝑟𝑑) 19: end if 20: M 𝑟 +1 𝑢 𝑖 ← update local model with objective L 𝑟𝑒𝑐 + 𝛼 L 𝑐𝑙 21:return M 𝑟 +1 𝑢 𝑖 22: end functionIncorporating the item-level embedding service in FedSeqRecs does not raise privacy concerns, as only item meta-information is delivered, which is publicly accessible on most platforms.",
+    "Privacy-preserving Sequence-level Embedding ServiceSimply utilizing LLM-encoded item textual embeddings does not fully exploit the LLM's powerful language understanding capabilities."
+  ],
+  "correct_citations": [
+    "Item-level Embedding ServiceIn centralized recommendation systems, numerous studies [14,45] have demonstrated the effectiveness of leveraging textual information (e.g., item titles) to enhance ID-based item embeddings.Inspired by these successful practices, FELLAS also utilizes item textual information to boost the performance of sequential models, as shown in the upper green dashed box of Figure 2."
+  ]
+}

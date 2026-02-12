@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Quantized Low-Rank Adaptation (QLoRA) addresses this limitation through a multifaceted approach combining model quantization and parameter-efficient fine-tuning [4].QLoRA represents an advancement over traditional fine-tuning techniques by combining the efficiency of Low-Rank Adaptation (LoRA) [5] with the memory benefits of quantization.",
+    "LoRA modifies the traditional neural network layer equation fromy = W X + b to y = (W + BA) X + bwhere W is the frozen pre-trained weight matrix, B and A are low-rank matrices, and X is the input.",
+    "This approach reduces the number of trainable parameters to approximately 0.5-5% of the original model.QLoRA further enhances this efficiency by applying quantization to the frozen weights of the base model.",
+    "While standard LoRA requires approximately 2+ GB of VRAM per 1GB model, QLoRA reduces this requirement to 0.5+ GB, enabling fine-tuning on more modest hardware configurations.",
+    "This efficiency is achieved through 4-bit quantization of the frozen base model weights, low-rank decomposition of the weight updates, and parameter-efficient gradient propagation.The quantization process converts the 16-bit or 32-bit floating-point weights to 4-bit integers, significantly reducing memory requirements."
+  ]
+}

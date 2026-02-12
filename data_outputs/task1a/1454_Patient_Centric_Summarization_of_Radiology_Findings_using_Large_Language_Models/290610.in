@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Two-step LLM fine-tuning: For the specialized task of radiology simplification, we opted to fully finetuned LLM models which require availability of labeled training data.",
+    "However, we designed a two-step training process -(step 1): technical summary generation with <input: finding and output: original impression section> as labeled pair; (step 2): user sensitive radiology report summarization with <input: finding and output: LLaMA generated layman summary> as labeled pair with weak ground truth; Our LLM summarization model was based on the architecture and initial weights of the text-to-text transfer transformer (T5) model publicly released by Google [27].",
+    "We used their \"large\" version consisting of 770 million parameters which is considerably smaller than off-the-shelf open-source popular LLMs like GPT-2 (1.5B) and LLaMA (7B, 13B, and 65B parameter version), and thus it should be comparatively easy to fine-tune with limited data.",
+    "The selection was also based on intuitive adaptability of text-to-text transfer architecture for \"transferring\" report to summaries as displayed by the models original target tasks which included summarization [27].Given the fact that the desired model is supposed to be sensitive to the user's level of medical knowledge, we designed the modeling framework to utilize instruction-based prompts for providing information about a user's level of medical knowledge in the form of free-text encoding which does not require any change in the model architecture.",
+    "For practical purposes, the current version of the proposed model expects two prompts for generating two different summaries of the same report, i.e., layman and expert levels of knowledge."
+  ]
+}

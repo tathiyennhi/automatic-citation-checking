@@ -1,0 +1,29 @@
+{
+  "doc_id": "21183",
+  "text": "Considering the high sampling rate at the first stage of the decimation filter, a slink filter is preferred with a large decimation ratio and a low circuit complexity. It has the advantage of being multiplier free and the shifted downsampler in between the accumulators and differencers enable the filter to operate at rates lower than the input rate. The order of the slink filter is determined with respect to the order of the modulator used. The decimator gain should roll-off faster than the modulation noise rises, which necessitates the use of order slink filter following an order modulator [CITATION_1] . A higher order filter will cause additional droop in the in-band magnitude response. Therefore, a 4 th order slink filter with decimation factor of 32 was designed. The z-domain transfer function of the aforementioned filter is given in (1) and the corresponding magnitude response is given in Fig. 4 (a) [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "57372732",
+    "[CITATION_2]": "57372732"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The decimator gain should roll-off faster than the modulation noise rises, which necessitates the use of order slink filter following an order modulator  .",
+      "s_span": 445,
+      "e_span": 612
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The z-domain transfer function of the aforementioned filter is given in (1) and the corresponding magnitude response is given in Fig. 4 (a)  .",
+      "s_span": 778,
+      "e_span": 932
+    }
+  ],
+  "bib_entries": {
+    "57372732": {
+      "title": "The design of a sigma-delta codec for mobile telephone applications",
+      "abstract": "The algorithmic, structural, and architectural design of a 13-bit linear sigma-delta ADC and DAC for use with digital mobile telephone systems is described. Analog and digital third-order single-loop modulators running at 512 kHz (64X oversampled) are used to keep the power dissipation low. The ADC uses a two-stage decimation process. The first stage uses a fourth-order \"slink\" filter to reduce the sample rate to 16 kHz. This is implemented very efficiently using a \"running sum\" decimator. The second stage is implemented using an IIR minimum-phase lowpass filter which also compensates for the frequency gain distortion of the first stage. The interpolation function of the DAC is realised using a minimum-phase IIR lowpass filter operating at 32 kHz which also compensates for the passband distortion of the zero-order-hold rate converters preceding and following the filter. The digital signal processing of the codec is implemented using two processors. One realises the digital modulator and the high data rate part of the slink decimator while the other, a two-instruction RISC processor, handles the remaining operations. The codec has to operate with three different master clock frequencies, 12.8, 13 and 19.44 MHz. A third processor synthesises the 512 kHz convertor clock. The circuit has been fabricated in a nominal 1.2 mu m double-metal double-poly CMOS process. The conformance of the design to the specification was obtained through the use of bit-true functional simulation which acted as bridge between the algorithmic simulation and the logic level simulation."
+    }
+  },
+  "generator": "fallback_v4"
+}

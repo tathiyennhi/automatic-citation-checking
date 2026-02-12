@@ -1,0 +1,33 @@
+{
+  "doc_id": "40943",
+  "text": "For the experiments mentioned above, we used a setup as described in Section 2: we collected calling context trees in all cases, and in a second step computed call graphs and method sets based on the collected trees. This procedure is inefficient. In a real-world setting one would rather opt for a customized instrumentation that emits the respective representation directly, as this can safe a significant amount of execution time. While computing full CCTs will generally incur a significant runtime overhead (10 times or more), one can bring overheads down to under 5% by using probabilistic calling context trees [CITATION_1] . Such probabilistic CCTs appear quite sufficient for our purposes, and we plan to evaluate their utility in future work. Method sets and call graphs are statically bounded and can therefore be indexed ahead-of-time, which makes instrumentation possible that produces little to no observable runtime overhead [CITATION_2] . We thereby conclude that sufficiently efficient implementations are possible given the state of the art in dynamic program analysis. While such implementations are outside the scope of this paper, we plan to investigate them in future work.",
+  "correct_citation": {
+    "[CITATION_1]": "14054266",
+    "[CITATION_2]": "18134829"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "While computing full CCTs will generally incur a significant runtime overhead (10 times or more), one can bring overheads down to under 5% by using probabilistic calling context trees  .",
+      "s_span": 434,
+      "e_span": 632
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Method sets and call graphs are statically bounded and can therefore be indexed ahead-of-time, which makes instrumentation possible that produces little to no observable runtime overhead  .",
+      "s_span": 753,
+      "e_span": 954
+    }
+  ],
+  "bib_entries": {
+    "18134829": {
+      "title": "Custom-made instrumentation based on static analysis",
+      "abstract": "Many dynamic analysis tools capture the occurrences of events at runtime. The longer programs are being monitored, the more accurate the data they provide to the user. Then, the runtime overhead must be kept as low as possible, because it decreases the user's productivity. Runtime performance overhead occurs due to identifying events, and storing them in a result data-structure. We address the latter issue by generating custom-made instrumentation code for each program. By using static analysis to get a priori knowledge about which events of interest can occur and where they can occur, tailored code for storing those events can be generated for each program. We evaluate our idea by comparing the runtime overhead of a \"general purpose\" dynamic analysis tool that captures points-to information for Java programs with approaches based on custom-made instrumentation code. Experiments suggest highly reduced performance overhead for the latter."
+    },
+    "14054266": {
+      "title": "Probabilistic calling context",
+      "abstract": "Calling context enhances program understanding and dynamic analyses by providing a rich representation of program location. Compared to imperative programs, object-oriented programs use more interprocedural and less intraprocedural control flow, increasing the importance of context sensitivity for analysis. However, prior online methods for computing calling context, such as stack-walking or maintaining the current location in a calling context tree, are expensive in time and space. This paper introduces a new online approach called probabilistic calling context (PCC) that continuously maintains a probabilistically unique value representing the current calling context. For millions of unique contexts, a 32-bit PCC value has few conflicts. Computing the PCC value adds 3% average overhead to a Java virtual machine. PCC is well-suited to clients that detect new or anomalous behavior since PCC values from training and production runs can be compared easily to detect new context-sensitive behavior; clients that query the PCC value at every system call, Java utility call, and Java API call add 0-9% overhead on average. PCC adds space overhead proportional to the distinct contexts stored by the client (one word per context). Our results indicate PCC is efficient and accurate enough to use in deployed software for residual testing, bug detection, and intrusion detection."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,62 @@
+{
+  "doc_id": "42094",
+  "text": "While most of the self supervised approaches have mainly focused on getting accurate depth-maps, little attention has been devoted to use other scene representations. We are aware of two recent works [CITATION_1] , [CITATION_2] which incorporate the surface orientation (normal) estimation for single view geometric understanding. Similar to [CITATION_3] , [CITATION_4] [12] learn depth from monocular sequences using a self-supervised photometric loss but additionally they compute surface normals from the predicted depths using a weighted mean cross product [CITATION_5] . They propose to regularize the inverse depths and the normals computed from the depth predictions simultaneously. We believe that this is redundant and a separate normal prediction is beneficial then relying on the normals to be computed from predicted depth. The differences between our work and [CITATION_6] , [CITATION_7] is detailed in section I and a extensive comparison of the proposed work with these methods is described in section IV.",
+  "correct_citation": {
+    "[CITATION_1]": "3520623",
+    "[CITATION_2]": "4426384",
+    "[CITATION_3]": "11977588",
+    "[CITATION_4]": "3520623",
+    "[CITATION_5]": "11160803",
+    "[CITATION_6]": "3520623",
+    "[CITATION_7]": "4426384"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We are aware of two recent works  ,  which incorporate the surface orientation (normal) estimation for single view geometric understanding."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We are aware of two recent works  ,  which incorporate the surface orientation (normal) estimation for single view geometric understanding."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Similar to  ,  [12] learn depth from monocular sequences using a self-supervised photometric loss but additionally they compute surface normals from the predicted depths using a weighted mean cross product  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Similar to  ,  [12] learn depth from monocular sequences using a self-supervised photometric loss but additionally they compute surface normals from the predicted depths using a weighted mean cross product  ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Similar to  ,  [12] learn depth from monocular sequences using a self-supervised photometric loss but additionally they compute surface normals from the predicted depths using a weighted mean cross product  ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "The differences between our work and  ,  is detailed in section I and a extensive comparison of the proposed work with these methods is described in section IV."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "The differences between our work and  ,  is detailed in section I and a extensive comparison of the proposed work with these methods is described in section IV."
+    }
+  ],
+  "bib_entries": {
+    "11160803": {
+      "title": "Using cross-product matrices to compute the svd",
+      "abstract": "This paper concerns accurate computation of the singular value decomposition (SVD) of an \\(m\\times n\\) matrix \\(A\\). As is well known, cross-product matrix based SVD algorithms compute large singular values accurately but generally deliver poor small singular values. A new novel cross-product matrix based SVD method is proposed: (a) Use a backward stable algorithm to compute the eigenpairs of \\(A^{\\rm T}A\\) and take the square roots of the large eigenvalues of it as the large singular values of \\(A\\) ; (b) form the Rayleigh quotient of \\(A^{\\rm T}A\\) with respect to the matrix consisting of the computed eigenvectors associated with the computed small eigenvalues of \\(A^{\\rm T}A\\) ; (c) compute the eigenvalues of the Rayleigh quotient and take the square roots of them as the small singular values of \\(A\\). A detailed quantitative error analysis is conducted on the method. It is proved that if small singular values are well separated from the large ones then the method can compute the small ones accurately up to the order of the unit roundoff \\(\\epsilon\\). An algorithm is developed that is not only cheaper than the standard Golub–Reinsch and Chan SVD algorithms but also can update or downdate a new SVD by adding or deleting a row and compute certain refined Ritz vectors for large matrix eigenproblems at very low cost. Several variants of the algorithm are proposed that compute some or all parts of the SVD. Typical numerical examples confirm the high accuracy of our algorithm."
+    },
+    "4426384": {
+      "title": "Lego: Learning edge with geometry all at once by watching videos",
+      "abstract": "Learning to estimate 3D geometry in a single image by watching unlabeled videos via deep convolutional network is attracting significant attention. In this paper, we introduce a\"3D as-smooth-as-possible (3D-ASAP)\"prior inside the pipeline, which enables joint estimation of edges and 3D scene, yielding results with significant improvement in accuracy for fine detailed structures. Specifically, we define the 3D-ASAP prior by requiring that any two points recovered in 3D from an image should lie on an existing planar surface if no other cues provided. We design an unsupervised framework that Learns Edges and Geometry (depth, normal) all at Once (LEGO). The predicted edges are embedded into depth and surface normal smoothness terms, where pixels without edges in-between are constrained to satisfy the prior. In our framework, the predicted depths, normals and edges are forced to be consistent all the time. We conduct experiments on KITTI to evaluate our estimated geometry and CityScapes to perform edge evaluation. We show that in all of the tasks, i.e.depth, normal and edge, our algorithm vastly outperforms other state-of-the-art (SOTA) algorithms, demonstrating the benefits of our approach."
+    },
+    "3520623": {
+      "title": "Unsupervised learning of geometry with edge-aware depth-normal consistency",
+      "abstract": "Learning to reconstruct depths in a single image by watching unlabeled videos via deep convolutional network (DCN) is attracting significant attention in recent years. In this paper, we introduce a surface normal representation for unsupervised depth estimation framework. Our estimated depths are constrained to be compatible with predicted normals, yielding more robust geometry results. Specifically, we formulate an edge-aware depth-normal consistency term, and solve it by constructing a depth-to-normal layer and a normal-to-depth layer inside of the DCN. The depth-to-normal layer takes estimated depths as input, and computes normal directions using cross production based on neighboring pixels. Then given the estimated normals, the normal-to-depth layer outputs a regularized depth map through local planar smoothness. Both layers are computed with awareness of edges inside the image to help address the issue of depth/normal discontinuity and preserve sharp edges. Finally, to train the network, we apply the photometric error and gradient smoothness for both depth and normal predictions. We conducted experiments on both outdoor (KITTI) and indoor (NYUv2) datasets, and show that our algorithm vastly outperforms state of the art, which demonstrates the benefits from our approach."
+    },
+    "11977588": {
+      "title": "Unsupervised learning of depth and ego-motion from video",
+      "abstract": "We present an unsupervised learning framework for the task of monocular depth and camera motion estimation from unstructured video sequences. In common with recent work [10, 14, 16], we use an end-to-end learning approach with view synthesis as the supervisory signal. In contrast to the previous work, our method is completely unsupervised, requiring only monocular video sequences for training. Our method uses single-view depth and multiview pose networks, with a loss based on warping nearby views to the target using the computed depth and pose. The networks are thus coupled by the loss during training, but can be applied independently at test time. Empirical evaluation on the KITTI dataset demonstrates the effectiveness of our approach: 1) monocular depth performs comparably with supervised methods that use either ground-truth pose or depth for training, and 2) pose estimation performs favorably compared to established SLAM systems under comparable input settings."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "31134",
+  "text": "The configuration with 4 kernels shows the maximal overhead (expressed via an increase in the wall-clock-time required for committing the same amount of events as for the singlethreaded case), which is in the order of 20%. Increasing the number of simulation kernels provides a reduction in the overhead, which looks about 13-15%. We note that, although the workload is constant, small fluctuations due to the probability distribution ruling the generation of the events can arise, which are therefore captured by our architecture. Nevertheless, this sensibility enhances the reassignment's overhead, as long as the time spent in this operation is not rewarded by the new worker threads' configuration. We recall that these data have been achieved for relatively fine event granularity, thus further supporting the viability of our proposal, since applications exhibiting coarser grain events would absorb better the actual overhead by the load-sharing architecture. Also, we note that the parallel approaches provide a super-scalar speedup with respect to a serial executor (based on the calendar-queue [CITATION_1] ), which indicates that they are actually competitive.",
+  "correct_citation": {
+    "[CITATION_1]": "32086497"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Also, we note that the parallel approaches provide a super-scalar speedup with respect to a serial executor (based on the calendar-queue [CITATION_1] ), which indicates that they are actually competitive.",
+      "s_span": 967,
+      "e_span": 1171
+    }
+  ],
+  "bib_entries": {
+    "32086497": {
+      "title": "Calendar queues: a fast 0(1) priority queue implementation for the simulation event set problem",
+      "abstract": "A new priority queue implementation for the future event set problem is described in this article. The new implementation is shown experimentally to be O(1) in queue size for the priority increment distributions recently considered by Jones in his review article. It displays hold times three times shorter than splay trees for a queue size of 10,000 events. The new implementation, called a calendar queue, is a very simple structure of the multiple list variety using a novel solution to the overflow problem."
+    }
+  },
+  "generator": "fallback_v4"
+}

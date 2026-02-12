@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Additionally, in Sec.",
+    "4 (see RQ2) we substantiate that the generated unlearnable dataset D train u has a similar distribution to the clean D train c.",
+    "Algorithm 1 REGTEXT: Perturbation Injection 1: Input: 2: D train c: clean training dataset with (x, y), where x is a sentence and y is its label 3: Nw: number of unique spurious tokens 4: wmax: maximum number of perturbations per instance 5: wmin: minimum length of x to qualify for perturbation 6: t: proportion of words to perturb per instance 7: Initialize: empty dataset D train u 8: ranked ← Rank words in D train c using Eq. 1 9: for each example (x, y) ∈ D train c do 10: if number of words in x > wmin then 11: num_locs ← min (int(num_words(x) × t), wmax) ▷ Calculate number of perturbation locations 12: Randomly select num_locs positions in x for injecting spurious tokens 13: Create x ′ by injecting random tokens from ranked[: Nw] at selected positions 14: Add (x ′, y) to D train u 15: else 16: Add (x, y) to D train u ▷ Unchanged if x is too short 17: end if 18: end for",
+    "In this section, we explain the relevance of token frequency for ranking of words in Equation 1, drawing on both gradient analysis and principles from information theory.",
+    "Let a given neural network model be trained using a natural language dataset D o."
+  ]
+}

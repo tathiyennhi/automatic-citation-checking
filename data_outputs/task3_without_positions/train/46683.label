@@ -1,0 +1,29 @@
+{
+  "doc_id": "46683",
+  "text": "The construction of the communication graph is similar to the case of the simplified model. We include a node in the communication graph for each trajectory P i and include an edge between two nodes if the minimum distance between the respective trajectories is within the communication range. (Note that we allow at most one edge between two nodes. If there are multiple pairs of points on two trajectories whose distances are within the communication threshold we choose the closest pair.) To compute the edges we can use known algorithms from computational geometry (e.g., [CITATION_1] [CITATION_2] ) to efficiently find the minimum distance between two polygons. Then, let S = {P 1 , P 2 , . . . , P n } be a set of disjoint closed trajectories assigned to a team of n ARs. Also, let G = (V, E) be the computed communication graph on S using the communication range r i of each AR. Borrowing notation from previous sections, we use φ ij to denote the location of P i closest to P j , for (i, j) ∈ E. (Note that in the generalization φ ij is not an angle as in circular model, but rather a location in the curve P i that can be parameterized to a value in [0, 2π) if so desired).",
+  "correct_citation": {
+    "[CITATION_1]": "14909263",
+    "[CITATION_2]": "10714019"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "If there are multiple pairs of points on two trajectories whose distances are within the communication threshold we choose the closest pair.) To compute the edges we can use known algorithms from computational geometry (e.g.,   ) to efficiently find the minimum distance between two polygons."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "If there are multiple pairs of points on two trajectories whose distances are within the communication threshold we choose the closest pair.) To compute the edges we can use known algorithms from computational geometry (e.g.,   ) to efficiently find the minimum distance between two polygons."
+    }
+  ],
+  "bib_entries": {
+    "10714019": {
+      "title": "Efficient distance computation between non-convex objects",
+      "abstract": "This paper describes an efficient algorithm for computing the distance between nonconvex objects. Objects are modeled as the union of a set of convex components. From this model we construct a hierarchical bounding representation based on spheres. The distance between objects is determined by computing the distance between pairs of convex components using preexisting techniques. The key to efficiency is a simple search routine that uses the bounding representation to ignore most of the possible pairs of components. The efficiency can further be improved by accepting a relative error in the returned result. Several empirical trials are presented to examine the performance of the algorithm. >"
+    },
+    "14909263": {
+      "title": "Finding the minimum visible vertex distance between two non-intersecting simple polygons",
+      "abstract": "In this paper, we present an O ( n log n ) algorithm for finding the minimum Euclidean visible vertex distance between two nonintersecting simple polygons, where n is the number of vertices in a polygon. The algorithm is based on applying a divide and conquer method to two preprocessed facing boundaries of the polygons. We also derive an O ( n log n ) algorithm for finding a minimum sequence of separating line segments between two nonintersecting polygons."
+    }
+  },
+  "generator": "fallback_v4"
+}

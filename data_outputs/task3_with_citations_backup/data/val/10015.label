@@ -1,0 +1,55 @@
+{
+  "doc_id": "10015",
+  "text": "where P(D train (x, y)|N k ) is the likelihood of training data D train (x, y) for the N k ANN, and P(N k ) is the prior probability of N k , which is the ANN probability evaluated before observing training data D train (x, y). The prior ANN probability P(N k ) can be specified depending on the existing prior knowledge about the credibility of ANN N k , or it can be given as a uniform probability, P(N k ) = 1/M, if no additional information is provided. The advantage of assigning uniform prior probability to P(N k ) is that the difficulty of estimating the prior probability numerically is avoided. The likelihood P(D train (x, y)|N k ) may be thought of as the probability of observing the training data D train (x, y) under N k ANN. It supplies a relative measure of how well the N k ANN is supported by the training data D train (x, y). Since the denominator in Eq. (5) is common for all the ANNs, the posterior ANN probability is proportional to prior probability and the likelihood. The likelihood of each ANN is evaluated by measuring the degree of agreement between the training data D train (y) and the responseŷ for each ANN. Hence, a probabilistic relationship between training data D train (x, y) and ANN predictionsŷ involving uncertainty can be described. Typically, the bias function and noise are included as parts of the probabilistic relationship to match ANN predictions with training data. The bias function captures the discrepancies between the expensive model responses and predictions made by the ANN. The noise is usually assumed to be independent and identically distributed normal random variable with a mean of zero [CITATION_1] . Various authors, see e.g. [CITATION_2] [CITATION_3] [CITATION_4] have used the Bayesian statistical methodology to quantify the uncertainty in the bias function modelled as a Gaussian process. In their works, a mathematical formulation that combines bias function associated with the ANN and noise from training data is utilized to describe the probabilistic relationship between the training data D train (x, y) and ANN predictionsŷ. The mathematical formulation of this probabilistic relationship is given by the following equation:",
+  "correct_citation": {
+    "[CITATION_1]": "26228716",
+    "[CITATION_2]": "58913251",
+    "[CITATION_3]": "3793005",
+    "[CITATION_4]": "119562136"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The bias function captures the discrepancies between the expensive model responses and predictions made by the ANN. The noise is usually assumed to be independent and identically distributed normal random variable with a mean of zero [CITATION_1] .",
+      "s_span": 1415,
+      "e_span": 1663
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Various authors, see e.g. [CITATION_2] [CITATION_3] [CITATION_4] have used the Bayesian statistical methodology to quantify the uncertainty in the bias function modelled as a Gaussian process.",
+      "s_span": 1664,
+      "e_span": 1856
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Various authors, see e.g. [CITATION_2] [CITATION_3] [CITATION_4] have used the Bayesian statistical methodology to quantify the uncertainty in the bias function modelled as a Gaussian process.",
+      "s_span": 1664,
+      "e_span": 1856
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Various authors, see e.g. [CITATION_2] [CITATION_3] [CITATION_4] have used the Bayesian statistical methodology to quantify the uncertainty in the bias function modelled as a Gaussian process.",
+      "s_span": 1664,
+      "e_span": 1856
+    }
+  ],
+  "bib_entries": {
+    "26228716": {
+      "title": "A study of the bootstrap method for estimating the accuracy of artificial neural networks in predicting nuclear transient processes",
+      "abstract": "The quantification of the uncertainty associated to the results provided by artificial neural networks is essential for their confident and reliable use in practice. This is particularly true for control and safety applications in critical technologies such as those of the nuclear industry. In this paper, the results of a study concerning the use of the bootstrap method for quantifying the uncertainties in the output of supervised neural networks are reported. A thorough parametric analysis is performed with reference to a literature problem. A case study is then provided, concerning the prediction of the feedwater flow rate in a Boiling Water Reactor."
+    },
+    "3793005": {
+      "title": "A framework for validation of computer models",
+      "abstract": "We present a framework that enables computer model evaluation oriented toward answering the question: Does the computer model adequately represent reality? The proposed validation framework is a six-step procedure based on Bayesian and likelihood methodology. The Bayesian methodology is particularly well suited to treating the major issues associated with the validation process: quantifying multiple sources of error and uncertainty in computer models, combining multiple sources of information, and updating validation assessments as new information is acquired. Moreover, it allows inferential statements to be made about predictive error associated with model predictions in untested situations. The framework is implemented in a test bed example of resistance spot welding, to provide context for each of the six steps in the proposed validation process."
+    },
+    "119562136": {
+      "title": "Bayesian calibration of computer models",
+      "abstract": "We consider prediction and uncertainty analysis for systems which are approximated using complex mathematical models. Such models, implemented as computer codes, are often generic in the sense that by a suitable choice of some of the model's input parameters the code can be used to predict the behaviour of the system in a variety of specific applications. However, in any specific application the values of necessary parameters may be unknown. In this case, physical observations of the system in the specific context are used to learn about the unknown parameters. The process of fitting the model to the observed data by adjusting the parameters is known as calibration. Calibration is typically effected by ad hoc fitting, and after calibration the model is used, with the fitted input values, to predict the future behaviour of the system. We present a Bayesian calibration technique which improves on this traditional approach in two respects. First, the predictions allow for all sources of uncertainty, including the remaining uncertainty over the fitted parameters. Second, they attempt to correct for any inadequacy of the model which is revealed by a discrepancy between the observed data and the model predictions from even the best‐fitting parameter values. The method is illustrated by using data from a nuclear radiation release at Tomsk, and from a more complex simulated nuclear accident exercise."
+    },
+    "58913251": {
+      "title": "Computer model validation with functional output",
+      "abstract": "A key question in evaluation of computer models is Does the computer model adequately represent reality? A six-step process for computer model validation is set out in Bayarri et al. [Technometrics 49 (2007) 138-154] (and briefly summarized below), based on comparison of computer model runs with field data of the process being modeled. The methodology is particularly suited to treating the major issues associated with the validation process: quantifying multiple sources of error and uncertainty in computer models; combining multiple sources of information; and being able to adapt to different, but related scenarios. Two complications that frequently arise in practice are the need to deal with highly irregular functional data and the need to acknowledge and incorporate uncertainty in the inputs. We develop methodology to deal with both complications. A key part of the approach utilizes a wavelet representation of the functional data, applies a hierarchical version of the scalar validation methodology to the wavelet coefficients, and transforms back, to ultimately compare computer model output with field output. The generality of the methodology is only limited by the capability of a combination of computational tools and the appropriateness of decompositions of the sort (wavelets) employed here. The methods and analyses we present are illustrated with a test bed dynamic stress analysis for a particular engineering system."
+    }
+  },
+  "generator": "fallback_v4"
+}

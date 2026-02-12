@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Second, the checkpoint operation is a blocking collective with respect to the model and optimizer update stage during training, i.e., none of the processes can start updating the model or optimizer states until all parts of the previous checkpoint are consistently captured either on the host memory or on the persistent file.",
+    "Therefore, the checkpointing throughput observed by the application is dictated by the slowest process across all processes.As observed in Figure 7, the checkpointing throughput increases with increasing model size.",
+    "This is because of two reasons: (1) The training duration per iteration increases with larger models due to the higher complexity of transformer layers and higher communication overheads (for sharing activations, gradients, optimizer partitions, and model updates) across multiple nodes (as depicted in Figure 4).",
+    "The increasing iteration duration allows for more time to asynchronously flush the previous checkpoints, thereby not blocking future checkpoint requests due to pending flushes.",
+    "(2) Larger models are run on more number of nodes (as outlined in Table 1), leading to more device-to-host interconnects which can be exploited for parallel flushing of checkpoints between nodelocal memory tiers, and higher write bandwidth available for flushing checkpoints to the persistent file system."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This design reduces the infinite-dimensional PDE control problem to a tractable finite-dimensional reinforcement learning task, thereby eliminating the need for computationally expensive optimization.The agent receives as input the positions of the herders in S. Specifically, we encode these positions as[cos(H 1), sin(H 1),..., cos(H N H), sin(H N H)] ∈ [-1, 1] 2N H.This choice is made to prevent chattering in the control inputs caused by numerical discontinuities at x = ±π.",
+    "The Reinforcement Learning agent then outputs the herders velocities, given by the vector u= [u 1,..., u N H] ∈ [-v max, v max] N H.Note that this strategy is centralized, as the control inputs for all herders are decided by a single controller with global knowledge of the system.The reward function driving the training could be chosen as:r(t k) = -k 1 ∥ρ T (x) -ρ T (x, t k)∥ 2 L 2 -k 2 ∥u(t k)∥ 2 2, (9)where t k = k∆t is the discretized time-step, ∆t is the discretization step, ∥•∥ L 2 is the L 2 functional norm over the domain S, ∥•∥ 2 is the Euclidean vector norm.",
+    "The first term penalizes the error between the desired and actual target distributions, while the second term regularizes the control effort to prevent excessive energy consumption and ensure smooth herder trajectories.",
+    "The weights k 1 ≫ k 2 prioritize accuracy over energy efficiency.This approach would require computing the current target density at every time step, explicitly simulating the PDE governing the target dynamics and providing the full density as input to the neural network.",
+    "However, this can be cumbersome due to the high-dimensionality of the network input layer."
+  ],
+  "correct_citations": []
+}

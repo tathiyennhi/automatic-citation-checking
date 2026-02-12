@@ -1,0 +1,22 @@
+{
+  "doc_id": "60020",
+  "text": "The virtual address space of a Multics process is implemented with an array of descriptors, called a descriptor segment. Every reference to the virtual memory specifies both a segment number (which is interpreted as an index into the descriptor segment) and a word number within the segment. Protection information is associated with the addressing descriptor rather than with the data itself. 15 Each computation is carried out in its own address space, so each computation has its own private descriptor segment. Using this mechanism, a single physical segment may appear in different address spaces with different access privileges for different users, even though they are referring to the same physical data. Since in a multiprocessor system such as Multics two such processes may be executing simultaneously, a single protection specification associated with the data is not sufficient. Having the protection specification associated with the descriptor allows for such controlled sharing to be handled easily. The protection information found in a segment's descriptor is derived from the access control list for the segment. Some care is required to insure that these two representations of the access specification always match. By virtue of a complete set of backpointers (see [CITATION_1] for details) any change to an access control list is immediately propagated to all descriptors which have been derived from it.",
+  "correct_citation": {
+    "[CITATION_1]": "6434322"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "By virtue of a complete set of backpointers (see [CITATION_1] for details) any change to an access control list is immediately propagated to all descriptors which have been derived from it.",
+      "s_span": 1238,
+      "e_span": 1427
+    }
+  ],
+  "bib_entries": {
+    "6434322": {
+      "title": "The Multics virtual memory: concepts and design",
+      "abstract": "As experience with use of on-line operating systems has grown, the need to share information among system users has become increasingly apparent. Many contemporary systems permit some degree of sharing. Usually, sharing is accomplished by allowing several users to share data via input and output of information stored in files kept in secondary storage. Through the use of segmentation, however, Multics provides direct hardware addressing by user and system programs of all information, independent of its physical storage location. Information is stored in segments each of which is potentially sharable and carries its own independent attributes of size and access privilege. Here, the design and implementation considerations of segmentation and sharing in Multics are first discussed under the assumption that all information resides in a large, segmented main memory. Since the size of main memory on contemporary systems is rather limited, it is then shown how the Multics software achieves the effect of a large segmented main memory through the use of the Honeywell 645 segmentation and paging hardware."
+    }
+  },
+  "generator": "fallback_v4"
+}

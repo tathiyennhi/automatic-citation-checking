@@ -1,0 +1,89 @@
+{
+  "doc_id": "25209",
+  "text": "One of the most important issues in OBS networks is that of burst loss due to congestion caused by transient or permanent overload. Therefore, appropriate mechanisms must be in place in an OBS network to manage the increased demand for resources during a period of congestion. Such mechanisms can be implemented either inside the network (i.e., at OBS switches) or at the source nodes where bursts originate. At the OBS switches, contention-resolution mechanisms can be employed to alleviate the effects of congestion. Contention-resolution schemes can be based on one of four orthogonal approaches or a combination thereof: buffering, wavelength conversion, burst segmentation, or deflection [CITATION_1] , [CITATION_2] . All these approaches require additional hardware or software components at each OBS switch, increasing their cost significantly; furthermore, practical implementations of some of these components require technology that may be several years from maturity. For instance, optical buffering solutions based on fiber delay lines are not currently cost-effective or scalable. Similarly, although wavelength conversion has been shown to be quite effective in alleviating output port contention [CITATION_3] , wavelength converters are expensive and complex devices, and this state of affairs is expected to continue in the foreseeable future. Burst segmentation [CITATION_4] refers to the process of discarding parts of a burst that overlap with another burst at the output port of an OBS switch. Burst segmentation has been proposed to improve the data loss due to contention, as well as a mechanism for providing differentiated quality of service (QoS) in an OBS network. However, segmentation also faces technological challenges, such as the ability to optically detect segments in a burst, to accurately truncate a burst in a way that the remaining data can be recovered at the receiver, and to signal downstream nodes of the reduced burst length. Deflection routing [CITATION_5] is another mechanism that can be used to reduce the burst loss due to output port contention. In this approach, each switch maintains several paths to a destination, with one path designated as primary (default). When the primary path of an incoming burst is not available, the switch deflects the burst to one of the secondary paths. A deflection routing protocol for OBS networks was proposed in [CITATION_6] , whereas [CITATION_7] and [CITATION_8] analyzed the performance of deflection routing. However, deflection routing in OBS networks has several disadvantages. A practical implementation would require intermediate switches that deflect a burst to somehow increase its offset, an operation that is impossible without the use of buffers (alternatively, each burst must have an offset large enough to account for all possible deflections in its path, severely degrading the performance of the network). When deflection decisions are made at each switch without coordination with the rest of the network (a typical approach given the limited amount of time between the setup message and the data burst), there is great potential for routing loops that can have disastrous effects in an optical network [CITATION_9] . Finally, deflection routing is by nature suboptimal since it only considers the congestion of the current switch, not the state of the links further along the path; in addition, it may cause undesirable vibration effects, as explained in [CITATION_10] .",
+  "correct_citation": {
+    "[CITATION_1]": "2704826",
+    "[CITATION_2]": "14456260",
+    "[CITATION_3]": "14456260",
+    "[CITATION_4]": "2704826",
+    "[CITATION_5]": "16016205",
+    "[CITATION_6]": "2189901",
+    "[CITATION_7]": "16089008",
+    "[CITATION_8]": "5706305",
+    "[CITATION_9]": "15171960",
+    "[CITATION_10]": "5706305"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Contention-resolution schemes can be based on one of four orthogonal approaches or a combination thereof: buffering, wavelength conversion, burst segmentation, or deflection  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Contention-resolution schemes can be based on one of four orthogonal approaches or a combination thereof: buffering, wavelength conversion, burst segmentation, or deflection  ,  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Similarly, although wavelength conversion has been shown to be quite effective in alleviating output port contention  , wavelength converters are expensive and complex devices, and this state of affairs is expected to continue in the foreseeable future."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Burst segmentation  refers to the process of discarding parts of a burst that overlap with another burst at the output port of an OBS switch."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Deflection routing  is another mechanism that can be used to reduce the burst loss due to output port contention."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "A deflection routing protocol for OBS networks was proposed in  , whereas  and  analyzed the performance of deflection routing."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "A deflection routing protocol for OBS networks was proposed in  , whereas  and  analyzed the performance of deflection routing."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "A deflection routing protocol for OBS networks was proposed in  , whereas  and  analyzed the performance of deflection routing."
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "When deflection decisions are made at each switch without coordination with the rest of the network (a typical approach given the limited amount of time between the setup message and the data burst), there is great potential for routing loops that can have disastrous effects in an optical network  ."
+    },
+    {
+      "citation_id": "[CITATION_10]",
+      "span_text": "Finally, deflection routing is by nature suboptimal since it only considers the congestion of the current switch, not the state of the links further along the path; in addition, it may cause undesirable vibration effects, as explained in  ."
+    }
+  ],
+  "bib_entries": {
+    "5706305": {
+      "title": "Reduced load Erlang fixed point analysis of optical burst switched networks with deflection routing and wavelength reservation",
+      "abstract": "Network simulations and Markovian queuing models for nodes in isolation have suggested that de∞ection routing (alternate routing) may be a viable method to resolve wavelength contention. However, we show that de∞ection routing may destabilise OBS networks operating at high loads. To prevent the destabilising efiect of de∞ection routing, we propose and analyse a technique called wavelength reservation to intentionally limit the amount of de∞ection at high loads. This paper is the flrst to present a new reduced load Erlang flxed point analysis of OBS networks with de∞ection routing and wavelength reservation. We apply the new analysis to evaluate the beneflt of deploying de∞ection routing and wavelength reservation in a sample OBS network."
+    },
+    "2189901": {
+      "title": "Burst optical deflection routing protocol for wavelength routing WDM networks",
+      "abstract": "Given the significant progress made and the continuing advances expected in the optical networking technology, it becomes attractive to build a future Optical Internet that natively supports bursty IP datagrams. Burst switching WDM optical networks are touted as suitable network architectures for future Optical Internet backbones. However, the lack of optical processing capabilities results in increased burst blocking probability, which in turn leads to very limited network performance. Efficient contention resolution method is therefore necessary. Based on discussions of the state of the art of recent optical technologies, a burst optical deflection routing protocol is proposed. The idea of this approach is to use idle optical links as fiber delay lines for contention resolution. Simulation results show that the proposed protocol is available solution for effectively reducing the blocking probability and increasing the performance of burst switching WDM optical networks."
+    },
+    "16016205": {
+      "title": "A performance model of deflection routing in multibuffer networks with nonuniform traffic",
+      "abstract": "Deflection routing can be used in networks whose stations have the same number of input and output links. Fixed length packets arrive synchronously on the station's input links at the beginning of time slots, and each packet is routed via the output link that offers the shortest path to its destination. Since the number of packet buffers at each output link is finite, the simultaneous contention of two packets for the last buffer of a common output link must be resolved by \"deflecting\" one of the packets to another output link. Thus, the deflection of a packet could result in the packet following a route that is not a shortest path. The potentially unbounded number of routes that a given packet can take makes analyzing the performance of such networks difficult. In particular, there are no analytical models that can analyze multibuffer deflection-routing networks with nonuniform traffic. Using independence assumptions, the authors develop a performance model of deflection routing that allows to estimate accurately and efficiently the mean transport time and throughput in a network that has any given two-connected topology, multiple buffers at each output port, and an arbitrary traffic matrix. >"
+    },
+    "14456260": {
+      "title": "A unified study of contention-resolution schemes in optical packet-switched networks",
+      "abstract": "This paper presents a comprehensive study of contention-resolution schemes in a multiwavelength optical packet-switched network. This investigation aims to provide a unified study of a network of optical routers, which include contention resolution in wavelength, time, and space dimensions. Specifically, we show: 1) how to accommodate all three dimensions of contention resolution in an integrated optical router; 2) how the performance of the three dimensions compare with one another; and 3) how various combinational schemes can be designed and how they perform. With the representative architectures and network topologies studied in this paper, the simulation experiment results capture the characteristics of different contention-resolution schemes, and they quantify the upper-bound average offered transmitter load for these schemes. The combinational contention resolution schemes are shown to effectively resolve packet contention and achieve good network performance under light to intermediate load."
+    },
+    "2704826": {
+      "title": "Burst segmentation: An approach for reducing packet loss in optical burst switched networks",
+      "abstract": "We address the issue of contention resolution in optical burst switched networks, and we introduce an approach for reducing packet losses which is based on the concept of burst segmentation. In burst segmentation, rather than dropping the entire burst during contention, the burst may be broken into multiple segments, and only the overlapping segments are dropped. The segmentation scheme is investigated by simulation in conjunction with a deflection scheme, and it is shown that segmentation with deflection can achieve a significantly reduced packet loss rate."
+    },
+    "15171960": {
+      "title": "Elimination of alloptical cycles in wavelength-routed optical networks",
+      "abstract": "A transparent (wide-area) wavelength-routed optical network may be constructed by using wavelength cross-connect switches connected together by fiber to form an arbitrary mesh structure. The network is accessed through electronic stations that are attached to some of these cross-connects. These wavelength cross-connect switches have the property that they may configure themselves into unspecified states. Each input port of a switch is always connected to some output port of the switch whether or not such a connection Is required for the purpose of information transfer. Due to the presence of these unspecified states, there exists the possibility of setting up unintended all-optical cycles in the network (viz., a loop with no terminating electronics in it). If such a cycle contains amplifiers [e.g., erbium-doped fiber amplifiers (EDFA's)], there exists the possibility that the net loop gain is greater than the net loop loss. The amplified spontaneous emission (ASE) noise from amplifiers can build up in such a feedback loop to saturate the amplifiers and result in oscillations of the ASE noise in the loop. Such all-optical cycles as defined above (and hereafter referred to as \"white\" cycles) must be eliminated from an optical network in order for the network to perform any useful operation. Furthermore, for the realistic case in which the wavelength cross-connects result in signal crosstalk, there is a possibility of having closed cycles with oscillating crosstalk signals. We examine algorithms that set up new transparent optical connections upon request while avoiding the creation of such cycles in the network. These algorithms attempt to find a route for a connection and then (in a post-processing fashion) configure switches such that white cycles that might get created would automatically get eliminated. In addition, our call-set-up algorithms can avoid the possibility of crosstalk cycles."
+    },
+    "16089008": {
+      "title": "Performance analysis of deflection routing in optical burst-switched networks",
+      "abstract": "This paper concerns itself with the performance of deflection routing in optical burst-switched networks based on just-enough-time (JET) signaling. Generally speaking, buffer requirement is not vital for JET-based optical burst switching (OBS). However, if deflection routing is enabled, optical buffers are necessary to solve the insufficient offset time problem. A variant of priority queuing model is proposed to approximate burst loss probability and the results show that the model provides an accurate estimation. We also evaluate the performance of deflection routing in Arpanet-2 topology. Simulation results indicate that deflection routing evidently brings significant blocking performance gain, especially with fewer wavelengths and under lighter load. In addition, we notice that excessive deflection will cause longer end-to-end delay and reduce the blocking performance. Therefore, it is necessary to control the maximum allowed deflection occurrences of a burst."
+    }
+  },
+  "generator": "fallback_v4"
+}

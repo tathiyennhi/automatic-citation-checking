@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We then extend our assessment by employing the VAJM [20] evaluation set, which comprises 40 detrimental instructions across four distinct categories: Identity Attack, Disinformation, Violence/Crime, and Malicious Behaviors toward Humanity (X-risk).",
+    "To further broaden our evaluation scope, we also employ an automated testing procedure using the RealToxicityPrompts benchmark [10].",
+    "Specifically, we focus on a particularly challenging subset of RealToxicityPrompts [18,20,22], consisting of 1,225 text prompts for triggering toxic Algorithm 1 Multimodal Attack Strategy with Dual Optimization Objectives Require: VLM model 𝑓 𝜃, harmful sentences corpus 𝑆:= {𝑠 𝑖 } 𝑚 𝑖=1, goal-target pairs corpus 𝐷:= {𝑔 𝑖, 𝑡 𝑖 } 𝑛 𝑖=1, image-text attack ratio 𝑟, batch size 𝑏, step size 𝛼, number of candidates 𝑛, iteration counts 𝑁 1, 𝑁 2; 1: Initialize 𝑋 𝑝 𝑎𝑑𝑣 with random noise; 2: for 𝑘 = 1,..., 𝑁 1 do 3: Select 𝑏 samples from the corpus 𝑆, forming 𝑆 𝑘:= {𝑠 ′ 𝑖 } 𝑏 𝑖=1; 4: L (𝑋𝑝 𝑎𝑑𝑣, 𝑆 𝑘) = 𝑏 𝑖=1log 𝑝 (𝑠 ′ 𝑖 | 𝑋 𝑝 𝑎𝑑𝑣, ∅); 5: 𝑋 𝑝 𝑎𝑑𝑣 = clip 𝑋 𝑝 𝑎𝑑𝑣 + 𝛼 sign ∇ 𝑥 𝑝 L (𝑋 𝑝 𝑎𝑑𝑣, 𝑆 𝑘); 6: end for 7: Initialize 𝑋 𝑠 𝑎𝑑𝑣 using a predefined strategy; 8: for 𝑗 = 1,..., 𝑁 2 do 9: Select 𝑏 samples from the corpus 𝐷, forming 𝐷 𝑗:= {𝑔 ′ 𝑖, 𝑡 ′ 𝑖 } 𝑏 𝑖=1; 10: L (𝑋 𝑝 𝑎𝑑𝑣, 𝑋 𝑠 𝑎𝑑𝑣, 𝐷 𝑗) = 𝑏 𝑖=1log 𝑝 (𝑡 ′ 𝑖 | 𝑋 𝑝 𝑎𝑑𝑣, 𝑔 ′ 𝑖 ||𝑋 𝑠 𝑎𝑑𝑣); 11: 𝑋 𝑝 𝑎𝑑𝑣 = clip 𝑋 𝑝 𝑎𝑑𝑣 + 𝛼 sign ∇ 𝑥 𝑝 L (𝑋 𝑝 𝑎𝑑𝑣, 𝑋 𝑠 𝑎𝑑𝑣, 𝐷 𝑗); 12: if 𝑗%𝑟 == 0 then 13: Compute coordinate gradient ∇ 𝑥 𝑠 L (𝑋 𝑝 𝑎𝑑𝑣, 𝑋 𝑠 𝑎𝑑𝑣, 𝐷 𝑗); 14: Obtain a set of candidate suffixes with single-token substitution {𝑋 𝑠 𝑎𝑑𝑣 } 𝑛; 15: 𝑋 𝑠 𝑎𝑑𝑣 = argmin {𝑋 𝑠 𝑎𝑑𝑣 } 𝑛 L (𝑋 𝑝 𝑎𝑑𝑣, 𝑋 𝑠 𝑎𝑑𝑣, 𝐷 𝑗); 16: end if 17: end for 18: Obtain the Universal Master Key (UMK) composed of 𝑋 𝑝 𝑎𝑑𝑣 and 𝑋 𝑠 𝑎𝑑𝑣;continuations, which enables us to comprehensively evaluate the extent of harmful content produced by attacks.",
+    "Metrics.Here we describe the metrics used in our evaluations.",
+    "Attack Success Rate (ASR)."
+  ]
+}

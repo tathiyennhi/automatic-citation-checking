@@ -1,0 +1,55 @@
+{
+  "doc_id": "18597",
+  "text": "In our first set of experiments, we employed a new largescale dataset, called FI-2010 in this paper, consisting of limit order book data collected from 5 Finnish stocks. The dataset is provided by Nasdaq Nordic [CITATION_1] , [CITATION_2] . A limit order in equity markets is an order to buy (sell) a specified about of shares at a specified bid price (ask price) or better. For each timestep the prices and volumes of limit orders at the 10 best bid and 10 best ask levels are collected. After collecting data for 10 business days (from the 1st to the 14th June 2010) and pre-processing and cleaning them (e.g., removing unnecessary event messages) the handcrafted features described in [CITATION_3] were extracted. The total number of the collected limit order events is 4.5 million, leading to 453,975 144-dimensional extracted feature vectors (one feature vector is extracted every 100 limit orders). Performance evaluation was performed as follows. For every time-step and given the last 15 feature vectors, we predict the direction (up, stationary or down) of the mean mid price, i.e., the average of the highest bid and the lowest ask prices, after k time steps. The mid prices were filtered using a moving average filter with window size 9. The prediction targets were set for the next 10, 50 and 100 timesteps, which correspond to the next 1, 5 and 10 feature vectors. For each of them, the threshold for considering the stock stationary was set to 0.01%, 0.02%, and 0.03% respectively (as the prediction horizon increases, the changes in the midprice are becoming larger). Finally, an anchored evaluation setup was used [CITATION_4] , i.e., the first day was used for training the model and the next for testing, then the first two days were used for training the model and the next for testing, etc. The mean and the standard deviation of the evaluated metrics are reported for the 9 anchored evaluation splits.",
+  "correct_citation": {
+    "[CITATION_1]": "155669961",
+    "[CITATION_2]": "12841632",
+    "[CITATION_3]": "3736096",
+    "[CITATION_4]": "3770261"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The dataset is provided by Nasdaq Nordic [CITATION_1] , [CITATION_2] .",
+      "s_span": 170,
+      "e_span": 240
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The dataset is provided by Nasdaq Nordic [CITATION_1] , [CITATION_2] .",
+      "s_span": 170,
+      "e_span": 240
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "After collecting data for 10 business days (from the 1st to the 14th June 2010) and pre-processing and cleaning them (e.g., removing unnecessary event messages) the handcrafted features described in [CITATION_3] were extracted.",
+      "s_span": 489,
+      "e_span": 716
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Finally, an anchored evaluation setup was used [CITATION_4] , i.e., the first day was used for training the model and the next for testing, then the first two days were used for training the model and the next for testing, etc. The mean and the standard deviation of the evaluated metrics are reported for the 9 anchored evaluation splits.",
+      "s_span": 1583,
+      "e_span": 1922
+    }
+  ],
+  "bib_entries": {
+    "155669961": {
+      "title": "Limit order books and liquidity around scheduled and non-scheduled announcements: Empirical evidence from nasdaq nordic",
+      "abstract": "Information arrivals may drive investors to require immediacy, generating sudden liquidity demand across multiple price levels in limit order books. We document significant intraday changes in stock limit order book characteristics and liquidity beyond the best levels around scheduled and non-scheduled company announcements. At aggregated level, liquidity beyond the best levels behaves quite differently from the bid–ask spread around scheduled announcements. Moreover, scheduled announcements improve multi-level liquidity to an exceptionally good level. We also provide evidence for pre-reactions in order books before non-scheduled announcements, which suggest the possibility of information leakage."
+    },
+    "3770261": {
+      "title": "Evaluation: from precision, recall and f-measure to roc, informedness, markedness and correlation",
+      "abstract": "Commonly used evaluation measures including Recall, Precision, F-Factor and Rand Accuracy are biased and should not be used without clear understanding of the biases, and corresponding identification of chance or base case levels of the statistic. Using these measures a system that performs worse in the objective sense of Informedness, can appear to perform better under any of these commonly used measures. We discuss several concepts and measures that reflect the probability that prediction is informed versus chance. Informedness and introduce Markedness as a dual measure for the probability that prediction is marked versus chance. Finally we demonstrate elegant connections between the concepts of Informedness, Markedness, Correlation and Significance as well as their intuitive relationships with Recall and Precision, and outline the extension from the dichotomous case to the general multi-class case. ."
+    },
+    "3736096": {
+      "title": "Discriminant bag of words based representation for human action recognition",
+      "abstract": "Human action recognition based on Bag of Words representation.Discriminant codebook learning for better action class discrimination.Unified framework for the determination of both the optimized codebook and linear data projections. In this paper we propose a novel framework for human action recognition based on Bag of Words (BoWs) action representation, that unifies discriminative codebook generation and discriminant subspace learning. The proposed framework is able to, naturally, incorporate several (linear or non-linear) discrimination criteria for discriminant BoWs-based action representation. An iterative optimization scheme is proposed for sequential discriminant BoWs-based action representation and codebook adaptation based on action discrimination in a reduced dimensionality feature space where action classes are better discriminated. Experiments on five publicly available data sets aiming at different application scenarios demonstrate that the proposed unified approach increases the codebook discriminative ability providing enhanced action classification performance."
+    },
+    "12841632": {
+      "title": "Benchmark dataset for mid-price prediction of limit order book data",
+      "abstract": "Presently, managing prediction of metrics in high frequency financial markets is a challenging task. An efficient way to do it is by monitoring the dynamics of a limit order book and try to identify the information edge. This paper describes a new benchmark dataset of high-frequency limit order markets for mid-price prediction. We make publicly available normalized representations of high frequency data for five stocks extracted from the NASDAQ Nordic stock market. Furthermore, we define an experimental protocol that can be used in order to evaluate the performance of related research methods. Baseline results based on linear and nonlinear regression models are also provided and show the potential that these methods have for mid-price prediction."
+    }
+  },
+  "generator": "fallback_v4"
+}

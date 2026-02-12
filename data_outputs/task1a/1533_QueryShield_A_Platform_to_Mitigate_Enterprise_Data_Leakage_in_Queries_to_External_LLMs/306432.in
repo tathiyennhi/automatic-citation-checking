@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For T 1 /T 3 using T5-base_CL and Attn-BERT, if any longer query is encountered, it is first split into multiple chunks and inference is run separately for each chunk.",
+    "If any of these chunks is found to be sensitive, then T 1 predicts HIGH for overall query whereas T 3 predicts union of leakage types predicted for all the chunks.",
+    "Potentially incorrect rephrasing: For any input query q which is detected by T 1 to be sensitive, QueryShield suggests the revised query q ′ to the user (Figure 1).",
+    "If q ′ is obtained using T5-base_CL and its sensitivity is still found to be HIGH as per T 1, then we use Mistral to generate q ′′ as an alternative to q ′.",
+    "If this alternative q ′′ is also found to be HIGH as per T 1, then the user is asked to rephrase manually."
+  ]
+}

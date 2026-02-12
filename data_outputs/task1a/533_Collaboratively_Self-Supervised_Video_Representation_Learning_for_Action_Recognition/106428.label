@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The video reconstructor has a similar structure, taking f i and latent noise z r v as input, seeks to reconstruct current video clips simultaneously.",
+    "As shown in the upper half of the green box in 1, the generator and discriminator of video reconstructor are denoted as G r v and D r v, respectively.",
+    "We utilize adversarial loss and L2 loss for each TGAN, where the L2 reconstruction loss calculates the difference between the generated sample and the ground truth at the pixel level.",
+    "The loss objective for video generating branch L video involve two objectives L r and L p:min G r v max D r v L r = E v∼Vr [log D r v (V r)] + E z∼p(z) [log(1 -D r V (G r V (z r v |f i))]+ 1 T HW T HW ||v r t (h, w) -g r t (h, w)|| 2 2 (6) min G p v max D p v L p = E v∼Vp [log D p v (V p)] + E z∼p(z) [log(1 -D p V (G p V (z p v |f i))]+ 1 T HW T HW ||v p t (h, w) -g p t (h, w)|| 2 2(7)L video = (L r + L p)/2(8)where V r and V p denote the generation target of each generator videos and T, H, W represent the temporal and spatial dimensions of video clip, respectively.",
+    "v r t (h, w) and v p t (h, w) indicate the pixel value at the (h, w) coordinates on the tth frame in the ground truth video."
+  ],
+  "correct_citations": []
+}

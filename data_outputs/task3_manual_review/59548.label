@@ -1,0 +1,47 @@
+{
+  "doc_id": "59548",
+  "text": "Deeper networks may lead to high accuracies but can bring two issues to the fore, viz. overfitting and huge model. With that in view, Kim et al. [CITATION_1] propose what they call deeply-recursive convolutional network (DRCN), to apply the same convolutional layer recursively as many as 16 times. The idea is to avoid introducing additional parameters while having an increased depth. The authors deal with training problems, especially the exploding/vanishing gradients, by adopting the recursive-supervision strategy of [CITATION_2] and skipping of layers from [CITATION_3] . The authors use the same simulation environment as they have used for VDSR [CITATION_4] . Although they have not included VDSR as a reference, a comparison is still possible as the datasets and the reference methods are the same. The reported results are comparable to VDSR, and even outperforms the latter in case of Set5, as far as final image quality is concerned. The authors, however, conveniently ignore the time efficiency which was important in the context of the article in hand.",
+  "correct_citation": {
+    "[CITATION_1]": "206593506",
+    "[CITATION_2]": "1289873",
+    "[CITATION_3]": "56507745",
+    "[CITATION_4]": "9971732"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "With that in view, Kim et al. propose what they call deeply-recursive convolutional network (DRCN), to apply the same convolutional layer recursively as many as 16 times."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The authors deal with training problems, especially the exploding/vanishing gradients, by adopting the recursive-supervision strategy of"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The authors deal with training problems, especially the exploding/vanishing gradients, by adopting the recursive-supervision strategy of and skipping of layers from"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The authors use the same simulation environment as they have used for VDSR"
+    }
+  ],
+  "bib_entries": {
+    "9971732": {
+      "title": "Accurate image super-resolution using very deep convolutional networks",
+      "abstract": "We present a highly accurate single-image superresolution (SR) method. Our method uses a very deep convolutional network inspired by VGG-net used for ImageNet classification [19]. We find increasing our network depth shows a significant improvement in accuracy. Our final model uses 20 weight layers. By cascading small filters many times in a deep network structure, contextual information over large image regions is exploited in an efficient way. With very deep networks, however, convergence speed becomes a critical issue during training. We propose a simple yet effective training procedure. We learn residuals only and use extremely high learning rates (104 times higher than SRCNN [6]) enabled by adjustable gradient clipping. Our proposed method performs better than existing methods in accuracy and visual improvements in our results are easily noticeable."
+    },
+    "206593506": {
+      "title": "Deeply-recursive convolutional network for image super-resolution",
+      "abstract": "We propose an image super-resolution method (SR) using a deeply-recursive convolutional network (DRCN). Our network has a very deep recursive layer (up to 16 recursions). Increasing recursion depth can improve performance without introducing new parameters for additional convolutions. Albeit advantages, learning a DRCN is very hard with a standard gradient descent method due to exploding/ vanishing gradients. To ease the difficulty of training, we propose two extensions: recursive-supervision and skip-connection. Our method outperforms previous methods by a large margin."
+    },
+    "1289873": {
+      "title": "Deeply-supervised nets",
+      "abstract": "Our proposed deeply-supervised nets (DSN) method simultaneously minimizes classification error while making the learning process of hidden layers direct and transparent. We make an attempt to boost the classification performance by studying a new formulation in deep networks. Three aspects in convolutional neural networks (CNN) style architectures are being looked at: (1) transparency of the intermediate layers to the overall classification; (2) discriminativeness and robustness of learned features, especially in the early layers; (3) effectiveness in training due to the presence of the exploding and vanishing gradients. We introduce \"companion objective\" to the individual hidden layers, in addition to the overall objective at the output layer (a different strategy to layer-wise pre-training). We extend techniques from stochastic gradient methods to analyze our algorithm. The advantage of our method is evident and our experimental result on benchmark datasets shows significant performance gain over existing methods (e.g. all state-of-the-art results on MNIST, CIFAR-10, CIFAR-100, and SVHN)."
+    },
+    "56507745": {
+      "title": "Fully convolutional networks for semantic segmentation",
+      "abstract": "Convolutional networks are powerful visual models that yield hierarchies of features. We show that convolutional networks by themselves, trained end-to-end, pixels-to-pixels, exceed the state-of-the-art in semantic segmentation. Our key insight is to build “fully convolutional” networks that take input of arbitrary size and produce correspondingly-sized output with efficient inference and learning. We define and detail the space of fully convolutional networks, explain their application to spatially dense prediction tasks, and draw connections to prior models. We adapt contemporary classification networks (AlexNet [20], the VGG net [31], and GoogLeNet [32]) into fully convolutional networks and transfer their learned representations by fine-tuning [3] to the segmentation task. We then define a skip architecture that combines semantic information from a deep, coarse layer with appearance information from a shallow, fine layer to produce accurate and detailed segmentations. Our fully convolutional network achieves state-of-the-art segmentation of PASCAL VOC (20% relative improvement to 62.2% mean IU on 2012), NYUDv2, and SIFT Flow, while inference takes less than one fifth of a second for a typical image."
+    }
+  },
+  "generator": "fallback"
+}

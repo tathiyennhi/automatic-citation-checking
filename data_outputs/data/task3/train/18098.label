@@ -1,0 +1,29 @@
+{
+  "doc_id": "18098",
+  "text": "We demonstrate our method for interpolating BRDFs. Since the BRDF model does not include fluorescence, we can treat wavelengths independently, as there is no energy transfer across wavelengths. We use cosine-weighted BRDFs to ensure proper energy conservation, and work in the log domain. Logarithmic values give more importance to low intensities, which yields perceptually more meaningful results [CITATION_1] ]. In practice, we apply log(1 + x) to remap the values so that the function remains positive. A negative side effect of this choice is that interpolating between BRDFs of equal energy conserves their log energy ( § 3.6) instead of their energy. Because we apply a concave remapping, the interpolated value is guaranteed to be always lower, which ensures that our result does not break the energy preservation rule. That is, our interpolated BRDFs never reflect more light than they receive as long as the source and target BRDFs have the same property. Further, in our experiments, we measured only limited energy losses between 0.1% and 2%. Also, since energy preservation applies to the 2D slices representing the outgoing directions associated to a given incoming direction, we perform interpolation slice by slice. Reciprocity is not guaranteed in this process, but could be enforced in a postprocessing step. We use the squared geodesic distance on the sphere as the ground distance, which corresponds to using spherical linear interpolation on the paired particles. We render the results with PBRT [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "1402433",
+    "[CITATION_2]": "59894965"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Logarithmic values give more importance to low intensities, which yields perceptually more meaningful results  ]."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We render the results with PBRT  ."
+    }
+  ],
+  "bib_entries": {
+    "59894965": {
+      "title": "Physically Based Rendering, Second Edition: From Theory To Implementation",
+      "abstract": "Physically Based Rendering, 2nd Edition describes both the mathematical theory behind a modern photorealistic rendering system as well as its practical implementation. A method - known as 'literate programming'- combines human-readable documentation and source code into a single reference that is specifically designed to aid comprehension. The result is a stunning achievement in graphics education. Through the ideas and software in this book, you will learn to design and employ a full-featured rendering system for creating stunning imagery. New sections on subsurface scattering, Metropolis light transport, precomputed light transport, multispectral rendering, and much more.Includes a companion site complete with source code for the rendering system described in the book, with support for Windows, OS X, and Linux. Please visit, www.pbrt.org. Code and text are tightly woven together through a unique indexing feature that lists each function, variable, and method on the page that they are first described."
+    },
+    "1402433": {
+      "title": "A new change of variables for efficient BRDF representation",
+      "abstract": "We describe an idea for making decomposition of Bidirectional Reflectance Distribution Functions into basis functions more efficient, by performing a change-of-variables transformation on the BRDFs. In particular, we propose a reparameterization of the BRDF as a function of the halfangle (i.e. the angle halfway between the directions of incidence and reflection) and a difference angle instead of the usual parameterization in terms of angles of incidence and reflection. Because features in common BRDFs, including specular and retroreflective peaks, are aligned with the transformed coordinate axes, the change of basis reduces storage requirements for a large class of BRDFs. We present results derived from analytic BRDFs and measured data."
+    }
+  },
+  "generator": "fallback_v4"
+}

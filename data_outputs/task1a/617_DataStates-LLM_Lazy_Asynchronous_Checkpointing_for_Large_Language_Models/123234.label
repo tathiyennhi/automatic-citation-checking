@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "DataStates-LLM ArchitectureWe implement our multi-level asynchronous checkpointing approach as a modular extension to the DeepSpeed runtime in the form of a checkpointing engine, as an alternative to the default synchronous engine (based on torch.save()) and the asynchronous Nebula engine (which is closed-sources and exclusively available on Microsoft Azure cloud).",
+    "This is illustrated in Figure 6.",
+    "Our engine can be enabled in the configuration file which is supplied to the DeepSpeed engine at runtime and consists of a single attribute object specifying the size of the host buffer which can be reserved per process for caching checkpoints.",
+    "Note that this extension does not utilize anything specific to DeepSpeed and can be easily adopted by other training runtimes as well.We note that all checkpointing primitives and APIs of DataStates-LLM are the same as those used by DeepSpeed's default checkpointing engine, except for one additional method which blocks as long as any previous snapshot capture operations are pending.",
+    "At the application level, checkpointing is transparent to the user, and no code modifications are needed to select any of the available checkpointing approaches, including the one that is proposed in DataStates-LLM."
+  ],
+  "correct_citations": []
+}

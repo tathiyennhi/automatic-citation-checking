@@ -1,0 +1,83 @@
+{
+  "doc_id": "4141",
+  "text": "The first category of cosmic ray despiking algorithms corresponds to single-spectrum algorithms. These algorithms perform signal processing on individual spectra, attempting to distinguish spikes from legitimate signals. Single spectrum algorithms include median filtering-detecting outliers compared to a smoothed spectrum [CITATION_1] [CITATION_2] -and wavelet techniques. [CITATION_3] [CITATION_4] Lacking additional spectra from which the shape of the spectral components can be inferred, a general limitation of these algorithms is that the cosmic ray spikes must be narrower than the peaks in the signal. [CITATION_5] [CITATION_6] Since Raman spectra often exhibit sharp peaks with a bandwidth comparable to that of cosmic ray spikes, the corrected spectra after single-spectrum despiking can show undesirable spectral distortion including truncation of legitimate peaks misidentified as spikes. [CITATION_7] Median filtering is particularly prone to spectral distortion. Despite this limitation, single-spectrum despiking algorithms remain relevant as sometimes only individual spectra are available. For this reason, two single-spectrum despiking algorithms are included in our supplementary comparisons: median-filtering and the algorithm by Katsumoto and Ozaki. [CITATION_8] Median-filtering is included for comparison because it is well known and easily implemented. The Katsumoto-Ozaki algorithm was selected because while it is an advanced single-spectrum despiking algorithm; it is easy to implement and therefore attractive for many applications.",
+  "correct_citation": {
+    "[CITATION_1]": "24727146",
+    "[CITATION_2]": "95006345",
+    "[CITATION_3]": "6687311",
+    "[CITATION_4]": "33452554",
+    "[CITATION_5]": "24727146",
+    "[CITATION_6]": "6687311",
+    "[CITATION_7]": "6687311",
+    "[CITATION_8]": "24727146"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Single spectrum algorithms include median filtering-detecting outliers compared to a smoothed spectrum   -and wavelet techniques.",
+      "s_span": 221,
+      "e_span": 374
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Single spectrum algorithms include median filtering-detecting outliers compared to a smoothed spectrum   -and wavelet techniques.",
+      "s_span": 221,
+      "e_span": 374
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Single spectrum algorithms include median filtering-detecting outliers compared to a smoothed spectrum   -and wavelet techniques.   Lacking additional spectra from which the shape of the spectral components can be inferred, a general limitation of these algorithms is that the cosmic ray spikes must be narrower than the peaks in the signal.",
+      "s_span": 221,
+      "e_span": 610
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Lacking additional spectra from which the shape of the spectral components can be inferred, a general limitation of these algorithms is that the cosmic ray spikes must be narrower than the peaks in the signal.",
+      "s_span": 375,
+      "e_span": 610
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "components can be inferred, a general limitation of these algorithms is that the cosmic ray spikes must be narrower than the peaks in the signal.   Since Raman spectra often exhibit sharp peaks with a bandwidth comparable to that of cosmic ray spikes, the corrected",
+      "s_span": 464,
+      "e_span": 755
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Since Raman spectra often exhibit sharp peaks with a bandwidth comparable to that of cosmic ray spikes, the corrected spectra after single-spectrum despiking can show undesirable spectral distortion including truncation of legitimate peaks misidentified as spikes.",
+      "s_span": 611,
+      "e_span": 901
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Since Raman spectra often exhibit sharp peaks with a bandwidth comparable to that of cosmic ray spikes, the corrected spectra after single-spectrum despiking can show undesirable spectral distortion including truncation of legitimate peaks misidentified as spikes.  Median filtering is particularly prone to spectral distortion.",
+      "s_span": 611,
+      "e_span": 977
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "For this reason, two single-spectrum despiking algorithms are included in our supplementary comparisons: median-filtering and the algorithm by Katsumoto and Ozaki.  Median-filtering is included for comparison because it is well known and easily implemented.",
+      "s_span": 1108,
+      "e_span": 1377
+    }
+  ],
+  "bib_entries": {
+    "6687311": {
+      "title": "Autocorrelation Analysis Combined with a Wavelet Transform Method to Detect and Remove Cosmic Rays in a Single Raman Spectrum",
+      "abstract": "Cosmic rays (CRs) occasionally affect charge-coupled device (CCD) detectors, introducing large spikes with very narrow bandwidth in the spectrum. These CR features can distort the chemical information expressed by the spectra. Consequently, we propose here an algorithm to identify and remove significant spikes in a single Raman spectrum. An autocorrelation analysis is first carried out to accentuate the CRs feature as outliers. Subsequently, with an adequate selection of the threshold, a discrete wavelet transform filter is used to identify CR spikes. Identified data points are then replaced by interpolated values using the weighted-average interpolation technique. This approach only modifies the data in a close vicinity of the CRs. Additionally, robust wavelet transform parameters are proposed (a desirable property for automation) after optimizing them with the application of the method in a great number of spectra. However, this algorithm, as well as all the single-spectrum analysis procedures, is limited to the cases in which CRs have much narrower bandwidth than the Raman bands. This might not be the case when low-resolution Raman instruments are used."
+    },
+    "33452554": {
+      "title": "Spike Removal and Denoising of Raman Spectra by Wavelet Transform Methods",
+      "abstract": "Wavelet decompositions of Raman spectra were investigated with respect to their usability for spike removal and denoising of the raw data. It could be shown that those operations should be performed sequentially. Suppression of spikes is not straightforwardly possible by wavelet transformation; however, the wavelet transform may be used to recognize the spikes by their first level detail coefficients. Spike locations could be projected from the details to the approximations and, further, to appropriate locations of the original spectrum. After spike recognition, those regions will be replaced by interpolated values. To complete processing, denoising is performed with the despiked spectrum by repeated application of wavelet transform methods."
+    },
+    "95006345": {
+      "title": "Polynomial Filters for Data Sets with Outlying or Missing Observations -Application to Charge-Coupled-Device-Detected Raman-Spectra Contaminated by Cosmic-Rays",
+      "abstract": "Polynomial filters suitable for smoothing data sets containing outlying or missing observations are presented. Outliers are first identified by their deviation from the trends of the surrounding data, relative to a robust estimate of the standard deviation. Their performance is evaluated on charge-coupled-device-detected Raman spectra contaminated with cosmic ray events and is compared with nonlinear smoothing algorithms. The linear, missing-point polynomial filters are found to be efficient, both in speed and in ability to bridge gaps in data with minimal distortion"
+    },
+    "24727146": {
+      "title": "Practical Algorithm for Reducing Convex Spike Noises On a Spectrum",
+      "abstract": "Quantitative data analysis and high-sensitivity measurements by use of Raman and infrared spectroscopy often suffer from noisy spikes such as those due to cosmic rays and water vapor. Since these spikes are unidirectional and isolated, the conventional smoothing techniques do a poor job of removing them. However, a small modification can improve these smoothing techniques significantly. In this paper, we present a simple denoising technique for a single-scan spectrum that is corrupted by convex spikes. In general, the noisy spikes arising from cosmic rays or water vapor have a much narrower bandwidth compared with target \"informative\" bands in Raman and infrared spectra. This means that these noisy spikes can be separated from the target bands by means of the difference in the bandwidths. The proposed method employs the moving window averaging procedure to distinguish and separate the convex spike. The proposed algorithm allows us to take away the convex spikes from measured spectra without preparing multiply recorded spectra and (much) biasing the measured spectrum."
+    }
+  },
+  "generator": "fallback_v4"
+}

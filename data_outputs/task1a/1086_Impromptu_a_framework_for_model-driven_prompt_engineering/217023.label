@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Similarly, an asset could be a refinement of another one, e.g., to indicate that it is more suitable for specific scenarios or it has been optimized in terms of resources and/or costs.",
+    "Assets could have their semantically equivalents (which could be, for instance, versions in other languages).",
+    "These associations must be compliant with the following set of well-formed rules: context Asset inv NoCyclesInVersioning: Set{self} -> closure(priorVersion) -> excludes(self) context Asset inv ConsistentVersioning: self.version > self.priorVersion.version and self.created >= self.priorVersion.created and self.language = self.priorVersion.language context Asset inv NoCyclesInRefinements: Set{self} -> closure(refines) -> excludes(self) context Asset inv ConsistentRefinementLanguage: self.language = self.refines.language context Asset inv NoSelfEquivalence: Set{self} -> closure(equivalents) -> excludes(self)Each asset has as a single output that can be of a different type, e.g., text or image.",
+    "Moreover, assets may have several inputs, which can either be textual parameters (parts of a prompt whose value is provided by the user or computed by a previous prompt in a chain) or multimodal inputs (such as an image) that provide additional information to be used.Finally, it is possible to specify suitable values for the hyperparameters of AI systems that should be used when generating an output for the asset.",
+    "Hyperparameters are defined as strings, as some of them can be of type string, e.g., stop sequences."
+  ],
+  "correct_citations": []
+}

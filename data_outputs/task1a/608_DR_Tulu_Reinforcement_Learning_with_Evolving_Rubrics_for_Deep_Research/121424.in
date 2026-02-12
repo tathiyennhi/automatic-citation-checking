@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Given each curated prompt, we generate a full trajectory (model \"thinking\" traces, tool calls, tool outputs, and the final response) in an end-to-end manner.",
+    "We provide GPT-5 with a detailed system prompt that defines the deep research workflow and exposes a general web search tool, a paper search tool, and a web browsing tool, and ask it to produce the entire trajectory.",
+    "Because GPT-5 does not expose its native internal reasoning, we instruct it to generate explicit mock thinking tokens before each tool call or answer tokens.",
+    "We then apply two lightweight rejection-sampling filters to ensure that the trajectories strictly satisfy our requirements: (1) for all prompts, we verify that trajectories follow the expected tool-calling and answer formats; and (2) for short-form prompts, we discard trajectories whose final answer does not match the gold answer, following prior work (Jin et al., 2025; Li et al., 2025a).",
+    "As a result, we curated 16K SFT data points, including both short and long-form tasks."
+  ]
+}

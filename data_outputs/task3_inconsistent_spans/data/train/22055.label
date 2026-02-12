@@ -1,0 +1,54 @@
+{
+  "doc_id": "22055",
+  "text": "The sneak current issue occurs for vertical RRAM array as well when linear resistive memory elements are used which is observed in Fig. 2 . These leakage currents would degrade array performance. For instance, the readout current (collected on the selected bitline pillar) consists of both real read signal and parasitic leakage currents from the unselected cells at different layers. With increasing the number of layers for VRRAM, more cells are connected to the vertical bitline pillar. This leads to more leakage paths, which causes additional read margin degradation. In the ideal case, the memory operation (e.g., read and write) is supposed to take place only on the selected memory cell(s), leaving the rest of the cells unaffected [CITATION_1] . This, results in zero parasitic leakages and no additional power dissipation. However, this is nearly impossible in reality. An alternative solution is to introduce non-linear I-V characteristics into each memory cell [CITATION_2] , [CITATION_3] . To this end, a possibility is to use a separate, nonlinear device, such as a diode [CITATION_4] , serially connected with each resistive memory element, in a one-selector one-resistor (1S1R) configuration as shown in Fig. 3 . A two-terminal selector structure is required for implementing this in a cross-point array, so as not to cause additional memory array area overhead. In this case, the parasitic leakage is largely suppressed due to the high resistance of a non-linear selector at small bias, which would dominate the full cell characteristics for the unselected memory cells. The advantage of this approach is that each of the elements can be tuned separately to achieve the best full cell characteristics that fulfill the performance targets [CITATION_5] , while the disadvantage is the increasing process complexity required VOLUME 4, NO. Fig. 4(a) represents the 1S1R structure which is not compatible with a vertical RRAM architecture. Firstly, it would compromise the lateral scaling. Secondly, it would form a conductive electrode connecting the cells on the same vertical string, thus creating a short between neighboring cells at the adjacent planes. To isolate the cells, this inner electrode must be etched away, which is almost impossible. Thus, a second approach is to directly introduce non-linear I-V behavior into the memory cell itself. Such resistive memory device is also called self-rectifying cell (SRC) or selector less memory device. In this case, only one memory device is needed to be integrated, without implementing a separate selection device. Fig. 4(b) shows a non-linear SRC structure which is compatible with VRRAM architecture as well as planar cross-point arrays. This approach has an obvious advantage from process point of view, however, finding the proper material systems to achieve performance requirements from all aspects such as stable memory resistance states (LRS/HRS), high non-linearity for both read and write operations, low switching current and voltage, etc, remain big challenges. ",
+  "correct_citation": {
+    "[CITATION_1]": "62178484",
+    "[CITATION_2]": "62178484",
+    "[CITATION_3]": "8923368",
+    "[CITATION_4]": "8923368",
+    "[CITATION_5]": "62178484"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In the ideal case, the memory operation (e.g., read and write) is supposed to take place only on the selected memory cell(s), leaving the rest of the cells unaffected  .",
+      "s_span": 573,
+      "e_span": 754
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "An alternative solution is to introduce non-linear I-V characteristics into each memory cell  ,  .",
+      "s_span": 880,
+      "e_span": 1002
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "An alternative solution is to introduce non-linear I-V characteristics into each memory cell  ,  .",
+      "s_span": 880,
+      "e_span": 1002
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "To this end, a possibility is to use a separate, nonlinear device, such as a diode  , serially connected with each resistive memory element, in a one-selector one-resistor (1S1R) configuration as shown in Fig. 3 .",
+      "s_span": 1003,
+      "e_span": 1228
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "The advantage of this approach is that each of the elements can be tuned separately to achieve the best full cell characteristics that fulfill the performance targets  , while the disadvantage is the increasing process complexity required VOLUME 4, NO. Fig. 4(a) represents the 1S1R structure which is not compatible with a vertical RRAM architecture.",
+      "s_span": 1588,
+      "e_span": 1951
+    }
+  ],
+  "bib_entries": {
+    "8923368": {
+      "title": "2-stack 1D-1R cross-point structure with oxide diodes as switch elements for high density resistance RAM applications",
+      "abstract": "We havesuccessfully integrated a 2-stack 8x8array ID- RRAM hasseveral advantages overanyother memories for IR(one diode-one resistor) structure with0.5umx0.5um cells ID-IRstructures duetotheprocess compatibility ofoxide inorder todemonstrate thefeasibility ofhighdensity stackedbasedp-ndiodes andmemorynodes. Inthispaperwe RRAM.p-CuOx/n-InZnOx heterojunction thin filmwasused demonstrate theperformance ofastacked 8x8memoryarray forthefirst timeasaoxidediode whichshowsincreasedbasedonID-IRRRAM withp-CuOx/n-InZnOx diode and current density oftwoorders overourprevious p-NiOx/ n-TiOxNiOstorage node. oxide diode. AndTi-doped NiOwasusedforthestorage node. Nolimitation tothenumber ofstacks hasbeenobserved from"
+    },
+    "62178484": {
+      "title": "Access devices for 3D crosspoint memory",
+      "abstract": "The emergence of new nonvolatile memory (NVM) technologies—such as phase change memory, resistive, and spin-torque-transfer magnetic RAM—has been motivated by exciting applications such as storage class memory, embedded nonvolatile memory, enhanced solid-state disks, and neuromorphic computing. Many of these applications call for such NVM devices to be packed densely in vast “crosspoint” arrays offering many gigabytes if not terabytes of solid-state storage. In such arrays, access to any small subset of the array for accurate reading or low-power writing requires a strong nonlinearity in the IV characteristics, so that the currents passing through the selected devices greatly exceed the residual leakage through the nonselected devices. This nonlinearity can either be included explicitly, by adding a discrete access device at each crosspoint, or implicitly with an NVM device which also exhibits a highly nonlinear IV characteristic. This article reviews progress made toward implementing such access device f..."
+    }
+  },
+  "generator": "fallback_v4"
+}

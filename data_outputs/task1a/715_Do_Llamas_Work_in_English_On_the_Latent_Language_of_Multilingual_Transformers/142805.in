@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Focusing on the Llama-2 family of models (Touvron et al., 2023) -among today's largest open-source LLMs-we find that applying the \"unembedding\" operation prematurely in intermediate, non-final layers-a technique called logit lens (Nostalgebraist, 2020) -already decodes a contextually appropriate token early on (Fig. 1), giving us a (limited) glimpse at the model's otherwise hard-to-interpret numerical internal state.",
+    "Exploiting this fact, we carefully devise prompts that allow us to determine whether a logit-lens-decoded token is semantically correct and to what language it belongs (e.g., a prompt asking the model to translate French \"fleur\" [\"flower\"] to Chinese \"花\"; cf.",
+    "Tracking language probabilities across layers, we observe that no contextually appropriate tokens are decoded in the first half of layers, followed by a sudden shift of probability mass onto the English version (\"flower\") of the correct next token, and finally a shift to the correct next token in the target language (\"花\").",
+    "Expanding on this first evidence of English as an internal pivot language, we analyze latent embeddings directly as high-dimensional Euclidean points, rather than via the logit lens.",
+    "This allows us to draw a more nuanced picture of the anatomy of Llama-2's forward pass, suggesting that, in middle layers, the transformer operates in an abstract \"concept space\" that is partially orthogonal to a language-specific \"token space\", which is reached only in the final layers."
+  ]
+}

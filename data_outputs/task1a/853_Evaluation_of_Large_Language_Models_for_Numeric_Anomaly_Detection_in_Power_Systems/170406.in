@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "These weights are then applied to the value matrix 𝑉.",
+    "In practice, queries, keys, and values are processed in batches as matrices 𝑄, 𝐾, and 𝑉, with attention computed as:𝑠𝑖𝑛𝑔𝑙𝑒 𝑠𝑒𝑙𝑓 -𝑎𝑡𝑡𝑒𝑛𝑡𝑖𝑜𝑛 𝑖 (𝑄 𝑖, 𝐾 𝑖, 𝑉 𝑖) = 𝑠𝑜𝑓𝑡𝑚𝑎𝑥 ( 𝑄 𝑖 𝐾 𝑖 𝑇 √𝑑 𝑘) 𝑉 𝑖(4)The final self-attention output is the average over all individual attention computations:𝑠𝑒𝑙𝑓 -𝑎𝑡𝑡𝑒𝑛𝑡𝑖𝑜𝑛 𝑠𝑐𝑜𝑟𝑒 = ∑ 𝑠𝑖𝑛𝑔𝑙𝑒 𝑠𝑒𝑙𝑓 -𝑎𝑡𝑡𝑒𝑛𝑡𝑖𝑜𝑛 𝑖 𝑁𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 𝑖 (5)Multi-head attention: In Fig. 2 (b), multi-head attention projects the input 𝑄, 𝐾, and 𝑉 into ℎ lower-dimensional subspaces using learned linear mappings.",
+    "Each head computes attention independently over dimensions 𝑑 𝑘 and 𝑑 𝑣, and the results are concatenated and projected back to the original model dimension 𝑑 model.",
+    "The multi-head attention is defined as:𝑀𝑢𝑙𝑡𝑖𝐻𝑒𝑎𝑑(𝑄, 𝐾, 𝑉) = 𝐶𝑜𝑛𝑐𝑎𝑡(ℎ𝑒𝑎𝑑 1, …, ℎ𝑒𝑎𝑑 𝐻)𝑊 𝑂 (6)where each attention head is computed as:ℎ𝑒𝑎𝑑 𝑖 = 𝐴𝑡𝑡𝑒𝑛𝑡𝑖𝑜𝑛(𝑄𝑊 𝑖 𝑄, 𝑄𝑊 𝑖 𝐾, 𝐾𝑊 𝑖 𝑉)(7)Here, 𝑊 𝑖 𝑄, 𝑊 𝑖 𝐾, 𝑊 𝑖 𝑉 ∈ ℝ 𝑑 model ×𝑑 𝑄,𝐾,𝑉 are learned projection matrices specific to the 𝑖-th head, and 𝑊 𝑂 ∈ ℝ ℎ𝑑 𝑣 ×𝑑 model is the final output projection.",
+    "This design allows the model to attend to information from multiple representation subspaces simultaneously.Feedforward Layer: The feedforward layer applies a fully connected network to each position independently, using a ReLU followed by a linear activation: (a) Self-Attention Mechanism (b) Multi-Head Attention Mechanism Fig. 2."
+  ]
+}

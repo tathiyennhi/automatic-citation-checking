@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Formally, this addition results in an expanded vocabulary represented as:V ← V llm ∪ {<COMP>}(1)For the employed code LLM, within the generation process, we define its tokenization process as a procedure:LLM-TOKENIZE: Σ * char → V *(2)Here, Σ * char represents a character sequence of either a description or a code snippet, and V * corresponds to the resulting sequence of tokens drawn from V.The next token prediction involved in each step is defined as a procedure:LLM-PREDICT: (V *, V *) → [0, 1] |V|(3)In this context, the two input token sequences (V *) represent a description and an incomplete function, respectively, while [0, 1] |V| signifies a probability distribution encompassing |V| probabilities [0, 1].",
+    "Here, |V| is the size (token numbers) of the vocabulary V.Example: In Figure 1, CodeLlama takes the description \"Register updates...\" and the incomplete function \"... self.\"",
+    "It then performs a prediction, generating a probability distribution of size |V|, wherein the token \"_updates\" exhibits the highest probability among all tokens.",
+    "B. Autocompletion ToolsAn autocompletion tool takes a code repository and a caret position (defined as a tuple containing source file, line number, and column number) as input and provides a list of completion suggestions.",
+    "We define this completion process as a procedure:TOOL-COMPLETE: (Σ repo, Σ pos) → Σ * iden (4)Here, Σ repo and Σ pos respectively represent the domains of code repositories and caret positions, Σ iden encompasses all possible identifiers such that Σ * iden is a list of identifiers."
+  ],
+  "correct_citations": [
+    "Formally, this addition results in an expanded vocabulary represented as:V ← V llm ∪ {<COMP>}(1)For the employed code LLM, within the generation process, we define its tokenization process as a procedure:LLM-TOKENIZE: Σ * char → V *(2)Here, Σ * char represents a character sequence of either a description or a code snippet, and V * corresponds to the resulting sequence of tokens drawn from V.The next token prediction involved in each step is defined as a procedure:LLM-PREDICT: (V *, V *) → [0, 1] |V|(3)In this context, the two input token sequences (V *) represent a description and an incomplete function, respectively, while [0, 1] |V| signifies a probability distribution encompassing |V| probabilities [0, 1]."
+  ]
+}

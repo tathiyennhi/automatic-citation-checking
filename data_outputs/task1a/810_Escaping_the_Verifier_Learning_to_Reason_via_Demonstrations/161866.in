@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For RLVR, we use the default GRPO implementation in verl without modification, with the reward given by binary ground-truth verifier.",
+    "For RL-Logit, we extend verl with a custom reward function that computes the scalar reward from the policy logits on expert answers conditioned on the question and generated CoT tokens.",
+    "To stabilize training and avoid vanishing or exploding rewards, we use two reward variants:",
+    "• Log-probability variant: max(0.1 × log π θ (a ⋆ | q, z), -1.0)",
+    "• Perplexity variant: 10.0 × exp(mean(log π θ (a ⋆ | q, z)))"
+  ]
+}

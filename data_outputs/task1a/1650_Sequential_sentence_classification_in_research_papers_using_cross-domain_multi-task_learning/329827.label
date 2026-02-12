@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Formally, at first, a token representation h i,t is transformed via a feedforward network into a further hidden representation a i,t with the learned weight matrix a [S] and bias vector b [S]:a i,t = F F N (h i,t) = tanh(a [S] h i,t + b [S]) (1)Then, for each attention head k with 1 ≤ k ≤ r the learned token level context vector u k ∈ R d u is used to compute importance scores for all token representations which are then normalised by so f tmax:α k,i,t = exp(u k a i,t) t exp(u k a i,t)(2)An attention head e k,i ∈ R d h is computed as a weighted average over the token representations and all heads are con-catenated to form the final sentence representation e i ∈ R rd h:e k,i = t α k,i,t h i,t(3)e i = [e 1,i,..., e r,i](4)Context Enrichment: This layer takes as input all sentence representations (e 1,..., e n) of the paper and outputs con-textualised sentence representations (c 1,..., c n) (c i ∈ R d h)via a Bi-LSTM.",
+    "Thus, each sentence representation c i contains contextual information from surrounding sentences.Output Layer: This layer transforms sentence representations (c 1,..., c n) via a linear transformation to the logits (l 1,..., l n) with l i ∈ R |L|.",
+    "Each component of vector l i contains a score for the corresponding label:l i = W [O] c i + b [O](5)Finally, the logits serve as input for a CRF [48] that predicts the label sequence (ŷ 1,..., ŷn) (ŷ i ∈ L) with the highest joint probability.",
+    "A CRF captures linear (one-step) dependencies between the labels (e.g.",
+    "Methods sentences are usually followed by Methods or Results sentences)."
+  ],
+  "correct_citations": [
+    "Each component of vector l i contains a score for the corresponding label:l i = W [O] c i + b [O](5)Finally, the logits serve as input for a CRF [48] that predicts the label sequence (ŷ 1,..., ŷn) (ŷ i ∈ L) with the highest joint probability."
+  ]
+}

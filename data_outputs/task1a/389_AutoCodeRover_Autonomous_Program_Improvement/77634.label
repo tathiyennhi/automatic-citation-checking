@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "With the context retrieval APIs and the LLM-identified keyword \"hints\" from the problem statement, a set of possible API invocations can be derived by using the identified keywords as API parameters.",
+    "We discuss a few observations on using these API invocations to gather code context, and propose a stratified context retrieval process.Our first observation is that the context retrieval should not be restricted to a single API invocation.",
+    "For example, in the issue django-13230 mentioned in Figure 4, if the retrieval starts from the invocation search_method(\"add_item\"), the implementation of method add_item can be considered by the LLM agent as a sufficient context, since it appears to be relevant to the problem statement.",
+    "However, searching from only one method can lead to incomplete context for the agent to reason about root cause of the problem.",
+    "On the other hand, if all API invocations are executed at once, a large code context can be retrieved, especially when the problem statement mentions many class and method names."
+  ],
+  "correct_citations": []
+}

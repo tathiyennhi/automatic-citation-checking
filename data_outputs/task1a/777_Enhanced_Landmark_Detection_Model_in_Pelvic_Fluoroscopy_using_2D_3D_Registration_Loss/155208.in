@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Each of the three pipelines adopts a different loss mechanism to optimize landmark detection accuracy.",
+    "The model pipeline architectures and testing process are illustrated in Figure 3.The Baseline U-Net (Figure 3a) employs a standard U-Net architecture trained with segmentation loss.During training, the model is optimized using Binary Cross-Entropy with Logits Loss (BCEWithLogitsLoss), evaluating the loss between the U-Net probability heatmap and the ground truth mask.",
+    "The second approach, U-Net trained on pose estimation loss, (Figure 3b) introduces a composite pose estimation loss component during training.",
+    "The composite pose estimation loss function is formulated as:L composite = L seg + λ • L pose (9)where λ is the pose loss weighting factor.",
+    "The pose estimation loss is computed as:L pose = 1 6 6 j=1 (θ j -θ * j) 2(10)The pose estimation loss component requires converting the predicted heatmaps to 2D landmark coordinates using differentiable soft-argmax (as shown in Equation 1), followed by 2D/3D registration to estimate the 6 degrees of freedom pose (as shown in Equation 4).The U-Net fine-tuned on pose estimation loss (Figure 3c) adopts a two-stage training strategy: In the first stage, the U-Net is trained using only segmentation loss as in the baseline model."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The scheduler module runs in a separate process at a periodic interval of half a second unless specified explicitly.",
+    "Each worker runs two processes: one to receive requests and load DNNs and the other as a DNN executor running with the highest priority.",
+    "The communication between processes on the same machine is done through Python SimpleQueue (i.e., a Pipe) and PyZMQ over TCP on the distributed server.",
+    "For stable and deterministic performance, we disable NVIDIA's cuDNN optimisations and control randomness with manual seed values (PyTorch 2022).",
+    "For frame (image) compression, we use a JPEG encoding scheme with a high compression level to trade a slight degradation in analytics accuracy for speed."
+  ]
+}

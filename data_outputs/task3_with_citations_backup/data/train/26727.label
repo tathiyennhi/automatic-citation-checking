@@ -1,0 +1,55 @@
+{
+  "doc_id": "26727",
+  "text": "We modeled adaptive TSC using the A3C and C51 reinforcement learning algorithms with various state representations to determine any differences in performance. Results show that data collected from traditional and ubiquitous sensors such as loop detectors are sufficient for reinforcement learning adaptive TSC. Under the model devised in this research, high-resolution state representations requiring sophisticated sensors offer improvements only by reducing delays and queues by approximately 10 − 20%, with no difference in throughput compared to low-resolution state representations. Considering the successful combination of experience replay and distributional returns, many future areas of research exists. Off-policy, policy-based reinforcement learning methods have been successfully developed which combine the data efficiency of experience replay with direct policy development [CITATION_1] [CITATION_2] [CITATION_3] . Additionally, improved algorithms have been developed for modeling distributional returns, displaying improved performance beyond C51 [CITATION_4] . Any of these techniques could be used to further improve reinforcement learning TSC and are worth future investigation. ",
+  "correct_citation": {
+    "[CITATION_1]": "10296217",
+    "[CITATION_2]": "174832",
+    "[CITATION_3]": "3645060",
+    "[CITATION_4]": "139930"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Off-policy, policy-based reinforcement learning methods have been successfully developed which combine the data efficiency of experience replay with direct policy development [CITATION_1] [CITATION_2] [CITATION_3] .",
+      "s_span": 714,
+      "e_span": 929
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Off-policy, policy-based reinforcement learning methods have been successfully developed which combine the data efficiency of experience replay with direct policy development [CITATION_1] [CITATION_2] [CITATION_3] .",
+      "s_span": 714,
+      "e_span": 929
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Off-policy, policy-based reinforcement learning methods have been successfully developed which combine the data efficiency of experience replay with direct policy development [CITATION_1] [CITATION_2] [CITATION_3] .",
+      "s_span": 714,
+      "e_span": 929
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Additionally, improved algorithms have been developed for modeling distributional returns, displaying improved performance beyond C51 [CITATION_4] .",
+      "s_span": 930,
+      "e_span": 1078
+    }
+  ],
+  "bib_entries": {
+    "174832": {
+      "title": "The reactor: A sample-efficient actor-critic architecture",
+      "abstract": "In this work we present a new reinforcement learning agent, called Reactor (for Retrace-actor), based on an off-policy multi-step return actor-critic architecture. The agent uses a deep recurrent neural network for function approximation. The network outputs a target policy {\\pi} (the actor), an action-value Q-function (the critic) evaluating the current policy {\\pi}, and an estimated behavioral policy {\\hat \\mu} which we use for off-policy correction. The agent maintains a memory buffer filled with past experiences. The critic is trained by the multi-step off-policy Retrace algorithm and the actor is trained by a novel {\\beta}-leave-one-out policy gradient estimate (which uses both the off-policy corrected return and the estimated Q-function). The Reactor is sample-efficient thanks to the use of memory replay, and numerical efficient since it uses multi-step returns. Also both acting and learning can be parallelized. We evaluated our algorithm on 57 Atari 2600 games and demonstrate that it achieves state-of-the-art performance."
+    },
+    "10296217": {
+      "title": "Sample efficient actor-critic with experience replay",
+      "abstract": "This paper presents an actor-critic deep reinforcement learning agent with experience replay that is stable, sample efficient, and performs remarkably well on challenging environments, including the discrete 57-game Atari domain and several continuous control problems. To achieve this, the paper introduces several innovations, including truncated importance sampling with bias correction, stochastic dueling network architectures, and a new trust region policy optimization method."
+    },
+    "139930": {
+      "title": "Distributional reinforcement learning with quantile regression",
+      "abstract": "In reinforcement learning an agent interacts with the environment by taking actions and observing the next state and reward. When sampled probabilistically, these state transitions, rewards, and actions can all induce randomness in the observed long-term return. Traditionally, reinforcement learning algorithms average over this randomness to estimate the value function. In this paper, we build on recent work advocating a distributional approach to reinforcement learning in which the distribution over returns is modeled explicitly instead of only estimating the mean. That is, we examine methods of learning the value distribution instead of the value function. We give results that close a number of gaps between the theoretical and algorithmic results given by Bellemare, Dabney, and Munos (2017). First, we extend existing results to the approximate distribution setting. Second, we present a novel distributional reinforcement learning algorithm consistent with our theoretical formulation. Finally, we evaluate this new algorithm on the Atari 2600 games, observing that it significantly outperforms many of the recent improvements on DQN, including the related distributional algorithm C51."
+    },
+    "3645060": {
+      "title": "Impala: Scalable distributed deep-rl with importance weighted actor-learner architectures",
+      "abstract": "In this work we aim to solve a large collection of tasks using a single reinforcement learning agent with a single set of parameters. A key challenge is to handle the increased amount of data and extended training time, which is already a problem in single task learning. We have developed a new distributed agent IMPALA (Importance-Weighted Actor Learner Architecture) that can scale to thousands of machines and achieve a throughput rate of 250,000 frames per second. We achieve stable learning at high throughput by combining decoupled acting and learning with a novel off-policy correction method called V-trace, which was critical for achieving learning stability. We demonstrate the effectiveness of IMPALA for multi-task reinforcement learning on DMLab-30 (a set of 30 tasks from the DeepMind Lab environment (Beattie et al., 2016)) and Atari-57 (all available Atari games in Arcade Learning Environment (Bellemare et al., 2013a)). Our results show that IMPALA is able to achieve better performance than previous agents, use less data and crucially exhibits positive transfer between tasks as a result of its multi-task approach."
+    }
+  },
+  "generator": "fallback_v4"
+}

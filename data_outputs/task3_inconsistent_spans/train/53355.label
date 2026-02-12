@@ -1,0 +1,33 @@
+{
+  "doc_id": "53355",
+  "text": "According to Figure 3 , the values of A and B in the fused image are as follows The value of A in the fused image is greater than that of B, which is the reverse of that of the input images. The reason for this problem is that the expected values for all pixels in the input images are set to 0.5 regardless of what would be considered a realistic value. [CITATION_1] [CITATION_2] Maintaining consistency with the input images in terms of luminance distribution requires the relative luminance of the expected values for different pixels to be consistent with those in the input images. That is, the expected value for a brighter pixel should be larger, whereas for a darker pixel it should be smaller. In theory, the relative luminance of the pixels can be represented by any input image, but as there are over-or underexposed regions in a single input image, we choose the average of the brightest and darkest image to represent the relative luminance of all pixels. The calculation formula of the new well-exposedness is given by the following equation",
+  "correct_citation": {
+    "[CITATION_1]": "30781162",
+    "[CITATION_2]": "13891701"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The reason for this problem is that the expected values for all pixels in the input images are set to 0.5 regardless of what would be considered a realistic value.   Maintaining consistency with the input images in terms of luminance distribution requires the relative luminance of the expected values for different pixels to be consistent with those in the input images.",
+      "s_span": 191,
+      "e_span": 586
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Maintaining consistency with the input images in terms of luminance distribution requires the relative luminance of the expected values for different pixels to be consistent with those in the input images.",
+      "s_span": 355,
+      "e_span": 586
+    }
+  ],
+  "bib_entries": {
+    "30781162": {
+      "title": "Exposure fusion: a simple and practical alternative to high dynamic range photography",
+      "abstract": "We propose a technique for fusing a bracketed exposure sequence into a high quality image, without converting to High dynamic range (HDR) first. Skipping the physically based HDR assembly step simplifies the acquisition pipeline. This avoids camera response curve calibration and is computationally efficient. It also allows for including flash images in the sequence. Our technique blends multiple exposures, guided by simple quality measures like saturation and contrast. This is done in a multiresolution fashion to account for the brightness variation in the sequence. The resulting image quality is comparable to existing tone mapping operators."
+    },
+    "13891701": {
+      "title": "Fast HDR image generation technique based on exposure blending",
+      "abstract": "In the proposed work a method for generating HDR images based on exposure blending is described. Using three differently exposed images a single image with recovered details in shadows and highlights is generated. Input images are analyzed to locate over and underexposed regions based on pixels intensity. Local contrast of input images is also considered in order to generate the output image with correct color transactions between differently exposed areas. Then images are merged using blending function. The proposed method requires a single pass thru the image to generate the result, which allows to process one image for less than 100 milliseconds. The proposed method requires no information about camera or shutting conditions, such as shutter speed or aperture size."
+    }
+  },
+  "generator": "fallback_v4"
+}

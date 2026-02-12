@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To mitigate this, we adopted a repeated resampling procedure which considered batches of 10,000 randomly selected NPs to compute the similarity, as:• Given a sample of n = 10, 000 compounds, we com- puted their fingerprints according to the 20 considered algorithms (Table 1), and for each type of fingerprint all the corresponding pairwise similarities.",
+    "• We concatenated the pairwise similarities in a matrix B(m × p), with m = 10000 * 9999 2 = 49995000 and p = 20, and calculated mean, standard deviation, median and percentiles of the distribution of the compound pairwise similarities for each type of fingerprint.• Then, we computed the correlation matrix of B, yielding a matrix C(20 × 20), which describes how well each fingerprint correlates with one another in terms of pairwise similarities for a given natural product batch.",
+    "• Finally, once all batches were processed, we averaged all statistics across all 50 iterations.The same procedure was repeated for the Drug Repurposing Hub dataset, but since it only has 6776 unique compounds, the procedure was carried out without the use of batches.",
+    "Unsupervised embeddingsWe computed Uniform Manifold Approximation and Projection (UMAP) [42] embeddings for each fingerprint, using different metrics for each fingerprint numerical type as described in the Similarity metrics section.",
+    "Each other parameter was set to its default value from the UMAP package [43]."
+  ]
+}

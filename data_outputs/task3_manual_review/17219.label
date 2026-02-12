@@ -1,0 +1,29 @@
+{
+  "doc_id": "17219",
+  "text": "Different approaches were used in this work to identify the region of arrhythmia exit site. We decided to use a supervised learning scheme, given that both EGM and corresponding pacing spatial position during pace mapping (pacing coordinates) were simultaneously available in our patient database. In order to tackle with the LV region identification, a manual division of the LV was done by following the methodology proposed in [CITATION_1] , and accounting for the LV anatomical sections used in the clinical practice. This division allowed us to tackle the identification in regions from a classification point of view (classes corresponded to regions of the divided LV), and representative machine learning classifiers were evaluated. In order to estimate the spatial resolution provided by the learning systems, a regression approach was used in terms of the actual spatial coordinates of each pacing site as target outputs. A very preliminary version of this work was presented in [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "38847314",
+    "[CITATION_2]": "16884864"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In order to tackle with the LV region identification, a manual division of the LV was done by following the methodology proposed in, and accounting for the LV anatomical sections used in the clinical practice."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A very preliminary version of this work was presented in"
+    }
+  ],
+  "bib_entries": {
+    "38847314": {
+      "title": "Implantable defibrillator electrograms and origin of left ventricular impulses: an analysis of regionalization ability and visual spatial resolution",
+      "abstract": "INTRODUCTION ::: The implantable cardioverter-defibrillator (ICD) electrogram (EG) is a documentation of ventricular tachycardia. We prospectively analyzed EGs from ICD electrodes located at the right ventricle apex to establish (1) ability to regionalize origin of left ventricle (LV) impulses, and (2) spatial resolution to distinguish between paced sites. ::: ::: ::: METHODS AND RESULTS ::: LV electro-anatomic maps were generated in 15 patients. ICD-EGs were recorded during pacing from 22 ± 10 LV sites. Voltage of far-field EG deflections (initial, peak, final) and time intervals between far-field and bipolar EGs were measured. Blinded visual analysis was used for spatial resolution. Initial deflections were more negative and initial/peak ratios were larger for lateral versus septal and superior versus inferior sites. Time intervals were shorter for apical versus basal and septal versus lateral sites. Best predictive cutoff values were voltage of initial deflection <-1.24 mV, and initial/peak ratio >0.45 for a lateral site, voltage of final deflection <-0.30 for an inferior site, and time interval <80 milliseconds for an apical site. In a subsequent group of 9 patients, these values predicted correctly paced site location in 54-75% and tachycardia exit site in 60-100%. Recognition of paced sites as different by EG inspection was 91% accurate. Sensitivity increased with distance (0.96 if ≥ 2 cm vs 0.84 if < 2 cm, P < 0.001) and with presence of low-voltage tissue between sites (0.94 vs 0.88, P < 0.001). ::: ::: ::: CONCLUSIONS ::: Standard ICD-EG analysis can help regionalize LV sites of impulse formation. It can accurately distinguish between 2 sites of impulse formation if they are ≥2 cm apart."
+    },
+    "16884864": {
+      "title": "Automatic location of ventricular arrhythmia using implantable defibrillator stored electrograms",
+      "abstract": "Electrograms (EGM) stored in Implantable Cardioverter Defibrillator (ICD) during ventricular tachycardia episodes have recently been shown to convey valuable information for the identification of the anatomical origin of the arrhythmia and subsequent ablation therapy. We developed an automatic procedure for estimating the focal origin of the arrhythmia by analyzing the EGM waveforms. A clinical protocol was designed for validation, consisting of electrical pacing from different spatial locations in the left ventricle, in which the spatial coordinates of the pacing electrode were known by the use of a sequential navigation system. EGM from can-coil lead configuration were stored in the ICD for 25 patients (18 ± 10.1 EGM per patient). Several machine learning classifiers (k nearest neighbors, radial basis function, and multilayer perceptron), were implemented, whose input space was given by the 201 samples (340 ms) of the template for each pacing location, and by a set of simple parameters selected according to clinical criteria. The target output was set by considering the heart division in three main planes, hence giving jointly 8 possible classification regions (octants). To estimate the generalization performance, classification was evaluated following a leave-one-patient-out strategy. Location accuracy reached 73%, 58.4%, 57.5% (for binary classification in terms of main planes), and for octant identification with multioutput classification reached 36.3% (note that the random 8-output classifier average accuracy rate is 12.5%). We can conclude that the estimation of the arrhythmia location can be addressed by analyzing the EGM waveform and features using learning from samples techniques."
+    }
+  },
+  "generator": "fallback"
+}

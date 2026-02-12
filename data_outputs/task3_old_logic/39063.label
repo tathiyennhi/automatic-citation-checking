@@ -1,0 +1,29 @@
+{
+  "doc_id": "39063",
+  "text": "Parameter Settings: In order to make all the methods comparable, we chose for each method the parameter settings that give the gold-standard number of segments 5 . Specifically, we used a 11 × 11 rank mask for C99, as suggested by [CITATION_1] , the configurations included in the code (http://groups.csail.mit.edu/rbg/code) for Bayesseg and manually tuned parameters for MinCut. For APS, a greedy approach was used to search parameter settings that can approximately give the gold-standard number of segments. For PLDA, two randomly initialised Gibbs chains were used. Each chain ran for 75,000 burn-in iterations, then 1000 samples were drawn at a lag of 25 from each chain. For TSM, 10 randomly initialised Gibbs chains were used. Each chain ran for 30,000 iterations with 25,000 for burn-in, then 200 samples were drawn. The concentration parameter b in TSM was sampled using the Adaptive-Reject sampling scheme introduced in [CITATION_2] , the discount parameter a = 0.2, and λ 0 = λ 1 = 0.1. To derive the final segmentation for PLDA and TSM, we first estimated the marginal probabilities of placing boundaries after text passages from the total of 2000 samples. These probabilities were then thresholded to give the gold-standard number of segments. Precisely, we apply a small amount of Gaussian smoothing to the marginal probabilities (except for Choi's dataset), like Puerver et al. (2006) does. Finally, we used a symmetric Dirichlet prior in PLDA and STM, the one on topic distributions is α = 0.1, the other on word distributions γ = 0.01.",
+  "correct_citation": {
+    "[CITATION_1]": "2958363",
+    "[CITATION_2]": "16891148"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Specifically, we used a 11 × 11 rank mask for C99, as suggested by, the configurations included in the code (http://groups.csail.mit.edu/rbg/code) for Bayesseg and manually tuned parameters for MinCut."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The concentration parameter b in TSM was sampled using the Adaptive-Reject sampling scheme introduced in, the discount parameter a = 0.2, and λ 0 = λ 1 = 0.1."
+    }
+  ],
+  "bib_entries": {
+    "2958363": {
+      "title": "Advances in domain independent linear text segmentation",
+      "abstract": "This paper describes a method for linear text segmentation which is twice as accurate and over seven times as fast as the state-of-the-art (Reynar, 1998). Inter-sentence similarity is replaced by rank in the local context. Boundary locations are discovered by divisive clustering."
+    },
+    "16891148": {
+      "title": "Sequential latent Dirichlet allocation",
+      "abstract": "Understanding how topics within a document evolve over the structure of the document is an interesting and potentially important problem in exploratory and predictive text analytics. In this article, we address this problem by presenting a novel variant of latent Dirichlet allocation (LDA): Sequential LDA (SeqLDA). This variant directly considers the underlying sequential structure, i.e. a document consists of multiple segments (e.g. chapters, paragraphs), each of which is correlated to its antecedent and subsequent segments. Such progressive sequential dependency is captured by using the hierarchical two-parameter Poisson–Dirichlet process (HPDP). We develop an efficient collapsed Gibbs sampling algorithm to sample from the posterior of the SeqLDA based on the HPDP. Our experimental results on patent documents show that by considering the sequential structure within a document, our SeqLDA model has a higher fidelity over LDA in terms of perplexity (a standard measure of dictionary-based compressibility). The SeqLDA model also yields a nicer sequential topic structure than LDA, as we show in experiments on several books such as Melville’s ‘Moby Dick’."
+    }
+  },
+  "generator": "fallback"
+}

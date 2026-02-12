@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "(2) Local Fine-tuning: Consider a federated learning system composed of 𝐾 clients, each holding a local fine-tuning dataset D 𝑘, where 𝑘 ∈ 1, 2,..., 𝐾.",
+    "The adapted model 𝑾 𝒌 at client 𝑘 is:𝑾 𝒌 = W0 + 𝚫𝑾 𝒌 = W0 + 𝑩 𝒌 𝑨 𝒌(2)The fine-tuning objective is to minimize the local loss function L 𝑘 with respect to the adapter parameters 𝑩 𝒌 and 𝑨 𝒌:L 𝑘 W0 + 𝑩 𝒌 𝑨 𝒌; D 𝑘 = 1 𝑛 𝑘 𝑛 𝑘 ∑︁ 𝑖=1 ℓ 𝑓 W0 + 𝑩 𝒌 𝑨 𝒌; 𝒙 𝒌 𝒊, 𝒚 𝒌 𝒊(3)where (𝒙 𝒌 𝒊, 𝒚 𝒌 𝒊) ∈ D 𝑘 is one of the bug-fix code pairs in the fine-tuning dataset D 𝑘 and 𝑛 𝑘 is the size of D 𝑘. 𝑓 is the output function of the model and we employ a cross-entropy loss function ℓ to measure the difference between the probability distributions of the model output and actual code for each token in the sequences as follows:ℓ ( ŷ𝒌 𝒊, 𝒚 𝒌 𝒊; 𝒙 𝒌 𝒊) = - ∑︁ 𝑗 𝑄 ŷ𝑘 𝑖,𝑗 𝒙 𝒌 𝒊, ŷ𝑘 𝑖,1,..., ŷ𝑘 𝑖,𝑗 -1 × log 𝑃 𝑦 𝑘 𝑖,𝑗 𝒙 𝒌 𝒊, 𝑦 𝑘 𝑖,1,..., 𝑦 𝑘 𝑖,𝑗 -1 (4)where 𝑄 is the probability distribution for the predicted output ŷ𝒌 𝒊 and 𝑃 is the actual distribution for 𝒚 𝒌 𝒊. ŷ𝑘 𝑖,𝑗 ∈ ŷ𝒌 𝒊 and 𝑦 𝑘 𝑖,𝑗 ∈ 𝒚 𝒌 𝒊 are one of the tokens in the predicted output and actual code respectively.",
+    "Then the optimized low-rank adapter parameters can be obtained by using various optimizers such as SGD:𝚫𝑾 * 𝒌 = 𝑩 * 𝒌 𝑨 * 𝒌 = 𝚫𝑾 𝒌 -𝜂ΔL 𝑘 W0 + 𝑩 𝒌 𝑨 𝒌; D 𝑘 (5)where 𝜂 is the learning rate.",
+    "Note that in this framework the paged optimizers are utilized according to the setting of QLoRA, which are able to automatically transfer the information from GPU to CPU for error-free GPU processing when GPU encounters out-of-memory issues [17].",
+    "(3) Fine-tuned Model Upload: Instead of uploading the entire fine-tuned LLMs, clients upload only the fine-tuned adapters 𝑩 * 𝒌 𝑨 * 𝒌 to the central server."
+  ],
+  "correct_citations": [
+    "Note that in this framework the paged optimizers are utilized according to the setting of QLoRA, which are able to automatically transfer the information from GPU to CPU for error-free GPU processing when GPU encounters out-of-memory issues [17]."
+  ]
+}

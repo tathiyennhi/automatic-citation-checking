@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Radiology tools improve GPT-4's treatment accuracySecond, we investigated the use of radiology processing tools by the agent.",
+    "In our scenario, GPT-4 had two options: using the GPT-4 Vision (GPT-4V) API to generate comprehensive radiology reports (useful when no radiology report was provided for a patient) or using MedSAM for image segmentation to generate surface segmentation masks of the described tumor reference lesions when localizations of reference lesions were included in the patient case vignette.",
+    "For both options, the model first had to identify the location where the images were stored on the filesystem, extract the order in which the images were taken (by date, indicated in the image file names) and send them to the appropriate tool.",
+    "In our evaluations, we found that, despite occasional omissions, extraneous details, lack of information or making mistakes (highlighted in red in Supplementary Note 2), GPT-4V could nonetheless effectively guide the agent's decision.Similarly, for MedSAM as a tool, the expected workflow for GPT-4 involved first locating the relevant patient images on the system, identifying their chronological order and receiving the locations of described reference lesions from the patient case vignette.",
+    "After sending a request to MedSAM and receiving the results (tumor segmentation sizes), the model was usually expected to use the calculator to determine the percentage change according to RECIST criteria."
+  ]
+}

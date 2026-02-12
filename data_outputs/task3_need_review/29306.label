@@ -1,0 +1,115 @@
+{
+  "doc_id": "29306",
+  "text": "Small-Variance Asymptotics (SVA). As noted above, SVA has recently emerged as a powerful tool for obtaining scalable algorithms and objective functions by \"hardening\" probabilistic models. Similar connections are known for instance in dimensionality reduction [CITATION_1] , multi-view learning, classification [CITATION_2] , and structured prediction [CITATION_3] . Starting with Dirichlet process mixtures [CITATION_4] , one thread of research has considered applying SVA to richer Bayesian nonparametric models. Applications include clustering [CITATION_5] , feature learning [CITATION_6] , evolutionary clustering [CITATION_7] , infinite hidden Markov models [CITATION_8] , Markov jump processes [CITATION_9] , infinite SVMs [CITATION_10] , and hierarchical clustering methods [CITATION_11] . A related thread of research considers how to apply SVA methods when the data likelihood is not Gaussian, which is precisely the scenario under which LDA falls. In [CITATION_12] , it is shown how SVA may be applied as long as the likelihood is a member of the exponential family of distributions. Their work considers topic modeling as a potential application, but does not develop any algorithmic tools, and without these SVA fails to succeed on topic models; the present paper fixes this by using a stronger word assignment algorithm and introducing local refinement.",
+  "correct_citation": {
+    "[CITATION_1]": "1939401",
+    "[CITATION_2]": "8223567",
+    "[CITATION_3]": "10642818",
+    "[CITATION_4]": "12274243",
+    "[CITATION_5]": "12274243",
+    "[CITATION_6]": "719070",
+    "[CITATION_7]": "1141255",
+    "[CITATION_8]": "15058596",
+    "[CITATION_9]": "14662629",
+    "[CITATION_10]": "749329",
+    "[CITATION_11]": "10937160",
+    "[CITATION_12]": "17715309"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Similar connections are known for instance in dimensionality reduction"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": ", multi-view learning, classification"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Similar connections are known for instance in dimensionality reduction, multi-view learning, classification, and structured prediction"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Starting with Dirichlet process mixtures, one thread of research has considered applying SVA to richer Bayesian nonparametric models."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Applications include clustering"
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": ", feature learning"
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": ", evolutionary clustering"
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": ", infinite hidden Markov models"
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": ", Markov jump processes"
+    },
+    {
+      "citation_id": "[CITATION_10]",
+      "span_text": ", infinite SVMs"
+    },
+    {
+      "citation_id": "[CITATION_11]",
+      "span_text": "Applications include clustering, feature learning, evolutionary clustering, infinite hidden Markov models, Markov jump processes, infinite SVMs, and hierarchical clustering methods"
+    },
+    {
+      "citation_id": "[CITATION_12]",
+      "span_text": "In, it is shown how SVA may be applied as long as the likelihood is a member of the exponential family of distributions."
+    }
+  ],
+  "bib_entries": {
+    "1939401": {
+      "title": "EM algorithms for PCA and SPCA",
+      "abstract": "I present an expectation-maximization (EM) algorithm for principal component analysis (PCA). The algorithm allows a few eigenvectors and eigenvalues to be extracted from large collections of high dimensional data. It is computationally very efficient in space and time. It also naturally accommodates missing information. I also introduce a new variant of PCA called sensible principal component analysis (SPCA) which defines a proper density model in the data space. Learning for SPCA is also done with an EM algorithm. I report results on synthetic and real data showing that these EM algorithms correctly and efficiently find the leading eigenvectors of the covariance of datasets in a few iterations using up to hundreds of thousands of datapoints in thousands of dimensions."
+    },
+    "749329": {
+      "title": "Small-variance asymptotics for Dirichlet process mixtures of SVMs",
+      "abstract": "Infinite SVM (iSVM) is a Dirichlet process (DP) mixture of large-margin classifiers. Though flexible in learning nonlinear classifiers and discovering latent clustering structures, iSVM has a difficult inference task and existing methods could hinder its applicability to large-scale problems. This paper presents a small-variance asymptotic analysis to derive a simple and efficient algorithm, which monotonically optimizes a maxmargin DP-means (M2DPM) problem, an extension of DP-means for both predictive learning and descriptive clustering. Our analysis is built on Gibbs infinite SVMs, an alternative DP mixture of large-margin machines, which admits a partially collapsed Gibbs sampler without truncation by exploring data augmentation techniques. Experimental results show that M2DPM runs much faster than similar algorithms without sacrificing prediction accuracies."
+    },
+    "15058596": {
+      "title": "Small-variance asymptotics for hidden Markov models",
+      "abstract": "Small-variance asymptotics provide an emerging technique for obtaining scalable combinatorial algorithms from rich probabilistic models. We present a small-variance asymptotic analysis of the Hidden Markov Model and its infinite-state Bayesian nonparametric extension. Starting with the standard HMM, we first derive a \"hard\" inference algorithm analogous to k-means that arises when particular variances in the model tend to zero. This analysis is then extended to the Bayesian nonparametric case, yielding a simple, scalable, and flexible algorithm for discrete-state sequence data with a non-fixed number of states. We also derive the corresponding combinatorial objective functions arising from our analysis, which involve a k-means-like term along with penalties based on state transitions and the number of states. A key property of such algorithms is that— particularly in the nonparametric setting—standard probabilistic inference algorithms lack scalability and are heavily dependent on good initialization. A number of results on synthetic and real data sets demonstrate the advantages of the proposed framework."
+    },
+    "719070": {
+      "title": "MAD-Bayes: MAP-based asymptotic derivations from Bayes",
+      "abstract": "The classical mixture of Gaussians model is related to K-means via small-variance asymptotics: as the covariances of the Gaussians tend to zero, the negative log-likelihood of the mixture of Gaussians model approaches the K-means objective, and the EM algorithm approaches the K-means algorithm. Kulis & Jordan (2012) used this observation to obtain a novel K-means-like algorithm from a Gibbs sampler for the Dirichlet process (DP) mixture. We instead consider applying small-variance asymptotics directly to the posterior in Bayesian nonparametric models. This framework is independent of any specific Bayesian inference algorithm, and it has the major advantage that it generalizes immediately to a range of models beyond the DP mixture. To illustrate, we apply our framework to the feature learning setting, where the beta process and Indian buffet process provide an appropriate Bayesian nonparametric prior. We obtain a novel objective function that goes beyond clustering to learn (and penalize new) groupings for which we relax the mutual exclusivity and exhaustivity assumptions of clustering. We demonstrate several other algorithms, all of which are scalable and simple to implement. Empirical results demonstrate the benefits of the new framework."
+    },
+    "17715309": {
+      "title": "Small-variance asymptotics for exponential family Dirichlet process mixture models",
+      "abstract": "Sampling and variational inference techniques are two standard methods for inference in probabilistic models, but for many problems, neither approach scales effectively to large-scale data. An alternative is to relax the probabilistic model into a non-probabilistic formulation which has a scalable associated algorithm. This can often be fulfilled by performing small-variance asymptotics, i.e., letting the variance of particular distributions in the model go to zero. For instance, in the context of clustering, such an approach yields connections between the k-means and EM algorithms. In this paper, we explore small-variance asymptotics for exponential family Dirichlet process (DP) and hierarchical Dirichlet process (HDP) mixture models. Utilizing connections between exponential family distributions and Bregman divergences, we derive novel clustering algorithms from the asymptotic limit of the DP and HDP mixtures that features the scalability of existing hard clustering methods as well as the flexibility of Bayesian nonparametric models. We focus on special cases of our analysis for discrete-data problems, including topic modeling, and we demonstrate the utility of our results by applying variants of our algorithms to problems arising in vision and document analysis."
+    },
+    "12274243": {
+      "title": "Revisiting k-means: New algorithms via Bayesian nonparametrics",
+      "abstract": "Bayesian models offer great flexibility for clustering applications--Bayesian nonparametrics can be used for modeling infinite mixtures, and hierarchical Bayesian models can be utilized for sharing clusters across multiple data sets. For the most part, such flexibility is lacking in classical clustering methods such as k-means. In this paper, we revisit the k-means clustering algorithm from a Bayesian nonparametric viewpoint. Inspired by the asymptotic connection between k-means and mixtures of Gaussians, we show that a Gibbs sampling algorithm for the Dirichlet process mixture approaches a hard clustering algorithm in the limit, and further that the resulting algorithm monotonically minimizes an elegant underlying k-means-like clustering objective that includes a penalty for the number of clusters. We generalize this analysis to the case of clustering multiple data sets through a similar asymptotic argument with the hierarchical Dirichlet process. We also discuss further extensions that highlight the benefits of our analysis: i) a spectral relaxation involving thresholded eigenvectors, and ii) a normalized cut graph clustering algorithm that does not fix the number of clusters in the graph."
+    },
+    "1141255": {
+      "title": "Dynamic clustering via asymptotics of the dependent Dirichlet process",
+      "abstract": "This paper presents a novel algorithm, based upon the dependent Dirichlet process mixture model (DDPMM), for clustering batch-sequential data containing an unknown number of evolving clusters. The algorithm is derived via a low-variance asymptotic analysis of the Gibbs sampling algorithm for the DDPMM, and provides a hard clustering with convergence guarantees similar to those of the k-means algorithm. Empirical results from a synthetic test with moving Gaussian clusters and a test with real ADS-B aircraft trajectory data demonstrate that the algorithm requires orders of magnitude less computational time than contemporary probabilistic and hard clustering algorithms, while providing higher accuracy on the examined datasets."
+    },
+    "14662629": {
+      "title": "JUMP-means: Small-variance asymptotics for Markov jump processes",
+      "abstract": "Markov jump processes (MJPs) are used to model a wide range of phenomena from disease progression to RNA path folding. However, maximum likelihood estimation of parametric models leads to degenerate trajectories and inferential performance is poor in nonparametric models. We take a small-variance asymptotics (SVA) approach to overcome these limitations. We derive the small-variance asymptotics for parametric and nonparametric MJPs for both directly observed and hidden state models. In the parametric case we obtain a novel objective function which leads to non-degenerate trajectories. To derive the nonparametric version we introduce the gamma-gamma process, a novel extension to the gamma-exponential process. We propose algorithms for each of these formulations, which we call \\emph{JUMP-means}. Our experiments demonstrate that JUMP-means is competitive with or outperforms widely used MJP inference approaches in terms of both speed and reconstruction accuracy."
+    },
+    "10937160": {
+      "title": "Bayesian hierarchical clustering with exponential family: Small-variance asymptotics and reducibility",
+      "abstract": "Bayesian hierarchical clustering (BHC) is an agglomerative clustering method, where a probabilistic model is defined and its marginal likelihoods are evaluated to decide which clusters to merge. While BHC provides a few advantages over traditional distance-based agglomerative clustering algorithms, successive evaluation of marginal likelihoods and careful hyperparameter tuning are cumbersome and limit the scalability. In this paper we relax BHC into a non-probabilistic formulation, exploring small-variance asymptotics in conjugate-exponential models. We develop a novel clustering algorithm, referred to as relaxed BHC (RBHC), from the asymptotic limit of the BHC model that exhibits the scalability of distance-based agglomerative clustering algorithms as well as the flexibility of Bayesian nonparametric models. We also investigate the reducibility of the dissimilarity measure emerged from the asymptotic limit of the BHC model, allowing us to use scalable algorithms such as the nearest neighbor chain algorithm. Numerical experiments on both synthetic and real-world datasets demonstrate the validity and high performance of our method."
+    },
+    "8223567": {
+      "title": "Restricted Bayes optimal classifiers",
+      "abstract": "We introduce the notion of restricted Bayes optimal classifiers . These classifiers attempt to combine the flexibility of the generative approach to classification with the high accuracy associated with discriminative learning. They first create a model of the joint distribution over class labels and features. Instead of choosing the decision boundary induced directly from the model, they restrict the allowable types of decision boundaries and learn the one that minimizes the probability of misclassification relative to the estimated joint distribution. In this paper, we investigate two particular instantiations of this approach. The first uses a non-parametric density estimator — Parzen Windows with Gaussian kernels — and hyperplane decision boundaries. We show that the resulting classifier is asymptotically equivalent to a maximal margin hyperplane classifier, a highly successful discriminative classifier. We therefore provide an alternative justification for maximal margin hyperplane classifiers. The second instantiation uses a mixture of Gaussians as the estimated density; in experiments on real-world data, we show that this approach allows data with missing values to be handled in a principled manner, leading to improved performance over regular discriminative approaches."
+    },
+    "10642818": {
+      "title": "A discriminative latent variable model for online clustering",
+      "abstract": "This paper presents a latent variable structured prediction model for discriminative supervised clustering of items called the Latent Left-linking Model (L3M). We present an online clustering algorithm for L3M based on a feature-based item similarity function. We provide a learning framework for estimating the similarity function and present a fast stochastic gradient-based learning technique. In our experiments on coreference resolution and document clustering, L3M outperforms several existing online as well as batch supervised clustering techniques."
+    }
+  },
+  "generator": "fallback"
+}

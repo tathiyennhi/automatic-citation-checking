@@ -1,0 +1,22 @@
+{
+  "doc_id": "22268",
+  "text": "Zhou et al. harvested free email and Amazon AWS cloud service credentials with their tool CredMiner from more than 36 500 apps from various Android markets [CITATION_1] . In their case studies, they mention unprotected credentials within the app's source code, obfuscated credentials using a Base64 encoding, and encrypted credentials, however, in those cases the decryption key has also been found in the app's source code. They alarmingly found that more than every second app using such a service leaked the developers' credentials in the apps' source code. Making matters worse, more than 77% of those collected credentials were valid at the time of the experiment. Such credentials will present a massive threat in the mid-term future, as many of those credentials cannot be easily replaced without temporarily abating the experience of millions of users, but in the meantime they can be easily exploited by attackers.",
+  "correct_citation": {
+    "[CITATION_1]": "14768855"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Zhou et al. harvested free email and Amazon AWS cloud service credentials with their tool CredMiner from more than 36 500 apps from various Android markets  .",
+      "s_span": 0,
+      "e_span": 170
+    }
+  ],
+  "bib_entries": {
+    "14768855": {
+      "title": "Harvesting developer credentials in Android apps",
+      "abstract": "Developers often integrate third-party services into their apps. To access a service, an app must authenticate itself to the service with a credential. However, credentials in apps are often not properly or adequately protected, and might be easily extracted by attackers. A leaked credential could pose serious privacy and security threats to both the app developer and app users. In this paper, we propose CredMiner to systematically study the prevalence of unsafe developer credential uses in Android apps. CredMiner can programmatically identify and recover (obfuscated) developer credentials unsafely embedded in Android apps. Specifically, it leverages data flow analysis to identify the raw form of the embedded credential, and selectively executes the part of the program that builds the credential to recover it. We applied CredMiner to 36,561 apps collected from various Android markets to study the use of free email services and Amazon AWS. There were 237 and 196 apps that used these two services, respectively. CredMiner discovered that 51.5% (121/237) and 67.3% (132/196) of them were vulnerable. In total, CredMiner recovered 302 unique email login credentials and 58 unique Amazon AWS credentials, and verified that 252 and 28 of these credentials were still valid at the time of the experiments, respectively."
+    }
+  },
+  "generator": "fallback_v4"
+}

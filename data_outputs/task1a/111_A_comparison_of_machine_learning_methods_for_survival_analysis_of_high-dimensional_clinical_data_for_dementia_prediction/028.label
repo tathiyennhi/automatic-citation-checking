@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Where a filter was used to rank the features for the purpose of feature selection, a threshold to determine the number of features used in the final model was required.",
+    "The threshold was determined by tuning within a 5-fold nested cross-validation loop, a random search with 25 iterations being used to select values for the threshold in the inner loop, while model performance was evaluated in the outer loop.",
+    "A limitation of mlr is that when tuning a feature selector, it only allows tuning of the number of features to be selected, not both the number of features and the hyperparameters.",
+    "To overcome this problem, we tuned the hyperparameters in the first round of experiments on the base models alone, and then used those hyperparameter values in the experiments on the feature selectors.",
+    "It was not possible to apply sequential forward selection to any of the penalised regression models as these models require at least two features and both sequential forward selection methods start with an empty model, adding in the first iteration only one feature at a time."
+  ],
+  "correct_citations": []
+}

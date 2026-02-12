@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "It optimizes checkpointing by (1) parallelizing state capture across data-parallel replicas (which is moot for Deep-Speed/Megatron since the latter shards the checkpoints by default);(2) splitting tensors in chunks for overlapping transfers in streaming fashion from the device-to-host and host-to-disk; and (3) multithreaded write of chunked tensors in different files on the disk, thereby utilizing higher disk write bandwidth, but incurring additional metadata and flushing overheads because of larger number of files [9].",
+    "We limit the number of parallel flush threads per GPU to 4, which shows peak write throughput to persistent storage in our experimental testbed.DataStates-LLM (Our Approach): This is the implementation of DataStates-LLM based on the design proposed in § 5 and illustrated as (d) DataStates-LLM in Figure 5.Table 1: Configuration of models and runtime used for evaluations derived from BLOOM [44] (highlighted by gray column) and LLaMA [41].Modelsize in billions 3 7 13 30 70 Layers 30 32 40 60 80 Hidden dim.",
+    "2560 4096 5120 6656 8192 Atten.",
+    "heads 32 32 40 52 64 Num.",
+    "of nodes 1 2 4 8 20 Tensor parallelism 4 (=Number of GPUs per node) Pipeline parallelism =Number of nodes ZeRO optimization Stage 1 (Partition optimizer state) Evaluation MethodologyModels, Sharding, and Dataset: We use five different LLM model sizes in our evaluations based on the real-world setups: BLOOM (3B) [44], LLaMA (30B), and LLaMA2 (7B, 13B, 70B) [41] model architectures."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "doc_id": "57693",
+  "text": "First, in terms of data sources, note that almost all deep FAM algorithms are trained over CelebA database, while very few of them also use LFW dataset. The data sources are extremely inadequate, and facial attributes that can be manipulated are considerably limited. For 40 annotated attributes, only several notable attributes [e.g., hair colors [CITATION_1] , glasses [CITATION_2] , and smiling [CITATION_3] ] can achieve satisfactory performance. Such limitation could cause a degradation in performance when manipulating various attribute types. Therefore, we expect that more high-quality facial attribute databases could be released and that more kinds of facial attributes could be manipulated in the future.",
+  "correct_citation": {
+    "[CITATION_1]": "21666755",
+    "[CITATION_2]": "5002792",
+    "[CITATION_3]": "4393808"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For 40 annotated attributes, only several notable attributes [e.g., hair colors"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": ", glasses"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": ", and smiling"
+    }
+  ],
+  "bib_entries": {
+    "21666755": {
+      "title": "Facial image attributes transformation via conditional recycle generative adversarial networks",
+      "abstract": "This study introduces a novel conditional recycle generative adversarial network for facial attribute transformation, which can transform high-level semantic face attributes without changing the identity. In our approach, we input a source facial image to the conditional generator with target attribute condition to generate a face with the target attribute. Then we recycle the generated face back to the same conditional generator with source attribute condition. A face which should be similar to that of the source face in personal identity and facial attributes is generated. Hence, we introduce a recycle reconstruction loss to enforce the final generated facial image and the source facial image to be identical. Evaluations on the CelebA dataset demonstrate the effectiveness of our approach. Qualitative results show that our approach can learn and generate high-quality identity-preserving facial images with specified attributes."
+    },
+    "4393808": {
+      "title": "Elegant: Exchanging latent encodings with gan for transferring multiple face attributes",
+      "abstract": "Recent studies on face attribute transfer have achieved great success. A lot of models are able to transfer face attributes with an input image. However, they suffer from three limitations: (1) incapability of generating image by exemplars; (2) being unable to transfer multiple face attributes simultaneously; (3) low quality of generated images, such as low-resolution or artifacts. To address these limitations, we propose a novel model which receives two images of opposite attributes as inputs. Our model can transfer exactly the same type of attributes from one image to another by exchanging certain part of their encodings. All the attributes are encoded in a disentangled manner in the latent space, which enables us to manipulate several attributes simultaneously. Besides, our model learns the residual images so as to facilitate training on higher resolution images. With the help of multi-scale discriminators for adversarial training, it can even generate high-quality images with finer details and less artifacts. We demonstrate the effectiveness of our model on overcoming the above three limitations by comparing with other methods on the CelebA face database. A pytorch implementation is available at https://github.com/Prinsphield/ELEGANT."
+    },
+    "5002792": {
+      "title": "Infogan: Interpretable representation learning by information maximizing generative adversarial nets",
+      "abstract": "This paper describes InfoGAN, an information-theoretic extension to the Generative Adversarial Network that is able to learn disentangled representations in a completely unsupervised manner. InfoGAN is a generative adversarial network that also maximizes the mutual information between a small subset of the latent variables and the observation. We derive a lower bound to the mutual information objective that can be optimized efficiently, and show that our training procedure can be interpreted as a variation of the Wake-Sleep algorithm. Specifically, InfoGAN successfully disentangles writing styles from digit shapes on the MNIST dataset, pose from lighting of 3D rendered images, and background digits from the central digit on the SVHN dataset. It also discovers visual concepts that include hair styles, presence/absence of eyeglasses, and emotions on the CelebA face dataset. Experiments show that InfoGAN learns interpretable representations that are competitive with representations learned by existing fully supervised methods."
+    }
+  },
+  "generator": "fallback"
+}

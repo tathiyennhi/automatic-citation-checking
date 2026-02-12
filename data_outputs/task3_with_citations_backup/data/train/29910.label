@@ -1,0 +1,66 @@
+{
+  "doc_id": "29910",
+  "text": "As suggested by several researchers (e.g., [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] ), we also must consider measuring the increase in network traffic with the increase in the number of CDN server failures to get an idea about the performance of a heuristic. In the next set of simulations, we study the effect of variance in the locations of the CDN server storage capacities on the solution quality of the heuristics. First, we restrict the simulated network to have 50% of the entire available storage capacity at the CDN servers that are at most four-hops away from the ISPs. The rest of the storage capacity is allocated at random to the remaining CDN servers. The reason for limiting the range to a four-hop neighborhood is that most of the current commercial CDNs resolve requests to data objects within a four-hop neighboorhood of the client requesting the data objects [CITATION_5] . This suggests that most of the data objects are replicated on CDN servers that are within four-hop distance from the ISPs and that is only possible when there is enough provision for storage on those CDN servers. The results for this simulated network are reported in Figure 2 (c). Note that the D O line represents the robustness criteria (as described in Equation 4), i.e., how many server failures are allowed for each of the replica placement technique (e.g., the TBBU heuristic allows twelve server failures before the robustness criteria is violated and the RP heuristic allows seven server failures). The TBBU heuristic clearly outperforms the RP and GM heuristics. This is because the TBBU heuristic by construction prefers to replicate data objects as close as possible to the ISPs. Thereby, reducing the impact on the network traffic when replicas are lost due to CDN servers failures. Another interesting result is that the GM heuristic is less robust to this simulated network compared to its average performance as shown in Figure  2 (a). However, from Figure 2 (c) we can observe that the GM and GMR heuristics gradually increase the network traffic compared to the RP heuristic that drastically increase the network traffic as the number of failed CDN servers increase within the CDN. Figure 2 (c) also clearly illustrates that the TBBU heuristic (due to its construction) is the least sensitive to the CDN server failures given the simulated network when half of the storage is located around the ISPs.",
+  "correct_citation": {
+    "[CITATION_1]": "10379376",
+    "[CITATION_2]": "13799307",
+    "[CITATION_3]": "13867715",
+    "[CITATION_4]": "3197973",
+    "[CITATION_5]": "540127"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As suggested by several researchers (e.g., [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] ), we also must consider measuring the increase in network traffic with the increase in the number of CDN server failures to get an idea about the performance of a heuristic.",
+      "s_span": 0,
+      "e_span": 275
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "As suggested by several researchers (e.g., [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] ), we also must consider measuring the increase in network traffic with the increase in the number of CDN server failures to get an idea about the performance of a heuristic.",
+      "s_span": 0,
+      "e_span": 275
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "As suggested by several researchers (e.g., [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] ), we also must consider measuring the increase in network traffic with the increase in the number of CDN server failures to get an idea about the performance of a heuristic.",
+      "s_span": 0,
+      "e_span": 275
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "As suggested by several researchers (e.g., [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] ), we also must consider measuring the increase in network traffic with the increase in the number of CDN server failures to get an idea about the performance of a heuristic.",
+      "s_span": 0,
+      "e_span": 275
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "The reason for limiting the range to a four-hop neighborhood is that most of the current commercial CDNs resolve requests to data objects within a four-hop neighboorhood of the client requesting the data objects [CITATION_5] .",
+      "s_span": 683,
+      "e_span": 909
+    }
+  ],
+  "bib_entries": {
+    "3197973": {
+      "title": "Replication degree customization for high availability",
+      "abstract": "Object replication is a common approach to enhance the availability of distributed data-intensive services and storage systems. Many such systems are known to have highly skewed object request probability distributions. In this paper, we propose an object replication degree customization scheme that maximizes the expected service availability under given object request probabilities, object sizes, and space constraints (e.g., memory/storage capacities). In particular, we discover that the optimal replication degree of an object should be linear in the logarithm of its popularity-to-size ratio. We also study the feasibility and effectiveness of our proposed scheme using applications driven by real-life system object request traces and machine failure traces. When the data object popularity distribution is known a priori, our proposed customization can achieve 1.32-2.92 \"nines\" increase in system availability (or 21-74% space savings at the same availability level) compared to uniform replication. Results also suggest that our scheme requires a moderate amount of replica creation/removal overhead (weekly changes involve no more than 0.24% objects and no more than 0.11% of total data size) under realistic object request popularity changes."
+    },
+    "13799307": {
+      "title": "Discriminatory algorithmic mechanism design based WWW content replication",
+      "abstract": "Replicating data over geographically dispersed web servers reduces network traffic, server load, and more importantly the user-perceived access delays. This paper proposes a unique replica placement technique using the concepts of a supergame. The supergame allows the agents who represent the data objects to continuously compete for the limited available server memory space, so as to acquire the rights to place data objects at the servers. At any given instance in time, the supergame is represented by a game which is a collection of subgames, played concurrently at each server in the system. We derive a resource allocation mechanism which acts as a platform at the subgame level for the agents to compete. This approach allows us to transparently monitor the actions of the agents, who in a noncooperative environment strategically place the data objects to reduce the user access time, latency, which in turn adds reliability and fault-tolerance to the system. We show that this mechanism exhibits Nash equilibrium at the subgame level which in turn conforms to games and supergame Nash equilibrium, respectively, guaranteeing the entire system to be in a continuous self-evolving and selfrepairing mode. The mechanism is extensively evaluated against some well-known algorithms, such as: greedy, branch and bound, game theoretical auctions and genetic algorithms. The experimental results reveal that the mechanism provides excellent solution quality, while maintaining fast execution time. Povzetek: Opisana je metoda za multipliciranje internetnih strani."
+    },
+    "13867715": {
+      "title": "Comparison and analysis of ten static heuristics-based Internet data replication techniques",
+      "abstract": "This paper compares and analyzes 10 heuristics to solve the fine-grained data replication problem over the Internet. In fine-grained replication, frequently accessed data objects (as opposed to the entire website contents) are replicated onto a set of selected sites so as to minimize the average access time perceived by the end users. The paper presents a unified cost model that captures the minimization of the total object transfer cost in the system, which in turn leads to effective utilization of storage space, replica consistency, fault-tolerance, and load-balancing. The set of heuristics include six A-Star based algorithms, two bin packing algorithms, one greedy and one genetic algorithm. The heuristics are extensively simulated and compared using an experimental test-bed that closely mimics the Internet infrastructure and user access patterns. GT-ITM and Inet topology generators are used to obtain 80 well-defined network topologies based on flat, link distance, power-law and hierarchical transit-stub models. The user access patterns are derived from real access logs collected at the websites of Soccer World Cup 1998 and NASA Kennedy Space Center. The heuristics are evaluated by analyzing the communication cost incurred due to object transfers under the variance of server capacity, object size, read access, write access, number of objects and sites. The main benefit of this study is to facilitate readers with the choice of algorithms that guarantee fast or optimal or both types of solutions. This allows the selection of a particular algorithm to be used in a given scenario."
+    },
+    "10379376": {
+      "title": "Combining replica placement and caching techniques in content distribution networks",
+      "abstract": "Caching and replication have emerged as the two primary techniques for reducing the delay experienced by end-users when downloading web pages. Even though these techniques may benefit from each other, previous research work tends to focus on either one of them separately. In particular, caching has been studied mostly in the context of proxy server systems, while replication is the technology behind Content Distribution Networks (CDNs). In this paper we investigate the potential performance gain by using a CDN server both as a replicator and as a proxy server. We develop an analytical model to quantify the benefit of each technique, under various system parameters, and propose a greedy algorithm to solve the combined caching and replica placement problem. Our simulation results indicate that a simple LRU caching scheme can improve significantly the response time of HTTP requests, when utilized over a replication-based infrastructure. Moreover, due to its simplicity, this hybrid approach does not affect the administrative overhead of the CDN architecture."
+    },
+    "540127": {
+      "title": "Enhancing the web's infrastructure: From caching to replication",
+      "abstract": "The World Wide Web and the phrase 'traffic jam' have become as linked in the minds of many computer users as are the urban superhighway and rush hour to the early morning commuter. Insufficient bandwidth causing high latency are the order of the day. Caching is a standard solution for this type of problem, and it was applied to the Web early on for this reason. The more advanced approaches of replication and application level naming were introduced to further attack the problem. However, these complex methods could easily exacerbate the situation if the implementation is not well designed and the results are not evaluated carefully. This article examines the benefits that can be obtained from both caching and replication by analyzing the performance of the main proxy cache at the University of Kaiserslautern as well as a system of replicate servers designed and implemented at the University's System Software research group. Our data show that replication in particular helps to reduce overall bandwidth as well as user-perceived latency. It can also provide a more fault-tolerant and evenly balanced system."
+    }
+  },
+  "generator": "fallback_v4"
+}

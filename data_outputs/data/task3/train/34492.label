@@ -1,0 +1,47 @@
+{
+  "doc_id": "34492",
+  "text": "In order to address this issue, we investigate the use of hard constraints to enforce such global properties at the sampling phase on the generated sequence. Our goal is to express these properties as a Constraint Satisfaction Problem (CSP), and to sample solutions of the CSP with the probability given by the Markov model. Several results have been obtained toward this aim [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] .",
+  "correct_citation": {
+    "[CITATION_1]": "1197433",
+    "[CITATION_2]": "5954477",
+    "[CITATION_3]": "123738980",
+    "[CITATION_4]": "2441754"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Several results have been obtained toward this aim     ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Several results have been obtained toward this aim     ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Several results have been obtained toward this aim     ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Several results have been obtained toward this aim     ."
+    }
+  ],
+  "bib_entries": {
+    "5954477": {
+      "title": "Exact sampling for regular and markov constraints with belief propagation",
+      "abstract": "Sampling random sequences from a statistical model, subject to hard constraints, is generally a difficult task. In this paper, we show that for Markov models and a set of Regular global constraints and unary constraints, we can perform perfect sampling. This is achieved by defining a factor graph, composed of binary factors that combine a Markov chain and an automaton. We apply a simplified version of belief propagation to sample random sequences satisfying the global constraints, with their correct probability. Since the factor graph is linear, this procedure is efficient and exact. We illustrate this approach to the generation of sequences of text or music, imitating the style of a corpus, and verifying validity constraints, such as syntax or meter."
+    },
+    "1197433": {
+      "title": "Generating 1/f noise sequences as constraint satisfaction: The voss constraint",
+      "abstract": "Many natural phenomena exhibit power law spectra. In particular, so-called 1/fα noise series with α close to 1 (also called pink noise) occur in sound, music and countless human artifacts or natural events, from the fluctuations of the flood levels of the Nile to movements of the stock market. As a consequence, many generative models for 1/f noise have been designed to produce series that look or sound \"natural\" or \"human\". In this paper, we formulate the generation of 1/f series as a hard constraint satisfaction problem, so that 1/f noise generation can be used as an add-on to arbitrary sequence generation problems. We take inspiration from a simple yet beautiful stochastic algorithm invented by Voss and introduce the Voss constraint. We show that Voss' algorithm can be modeled as a tree of ternary sum constraints, leading to efficient filtering. We illustrate our constraint with a melody generation problem, and show that the addition of the Voss constraint tends indeed to produce sequences whose spectrum have a 1/f distribution, regardless of the other constraints of the problem. We discuss the advantages and limitations of this approach and possible extensions."
+    },
+    "2441754": {
+      "title": "Avoiding plagiarism in markov sequence generation",
+      "abstract": "Markov processes are widely used to generate sequences that imitate a given style, using random walk. Random walk generates sequences by iteratively concatenating states to prefixes of length equal or less than the given Markov order. However, at higher orders, Markov chains tend to replicate chunks of the corpus with a size possibly higher than the order, a primary form of plagiarism. The Markov order defines a maximum length for training but not for generation. In the framework of constraint satisfaction (CSP), we introduce MAXORDER. This global constraint ensures that generated sequences do not include chunks larger than a given maximum order. We exhibit an automaton that recognises the solution set, with a size linear in the size of the corpus. We propose a linear-time procedure to generate this automaton from a corpus and a given max order. We then use this automaton to achieve generalised arc consistency for the MAXORDER constraint, holding on a sequence of size n, in O(n.T) time, where T is the size of the automaton. We illustrate our approach by generating text sequences from text corpora with a maximum order guarantee, effectively controlling plagiarism."
+    },
+    "123738980": {
+      "title": "Generating non-plagiaristic markov sequences with max order sampling",
+      "abstract": "Plagiarism is usually studied from an analysis viewpoint: how to detect that a text contains copies of another one. In this chapter we study plagiarism from the generation viewpoint: how to generate a text with a guarantee of non-plagiarism. More precisely, we address the problem of Markov sequence generation with forbidden k-gram constraints. This problem is addressed in two steps. In the first step, we show that, given a Markov transition matrix and a set of k-grams, we can build efficiently an automaton that represents exactly the language of all sequences that can be generated from a Markov model, and that also do not contain any of the k-grams. The size of the automaton is bounded by the size of the forbidden k-grams, and so is the time for building it. This automaton can be used to solve the algebraic problem (i.e. considering non-zero probabilities are uniform), by a simple walk. In the second step, we show that the automaton can be extended so as to be exploited by a belief propagation scheme, in order to produce perfect sampling of all the solutions."
+    }
+  },
+  "generator": "fallback_v4"
+}

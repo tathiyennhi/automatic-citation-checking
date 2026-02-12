@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Attention mechanism.",
+    "In the standard selfattention of transformer, each newly generated token attends to all previous tokens, which increases computational costs along with the sequence length.",
+    "Soft prompt compression reduces the input length in two stages: first, a small number of special to-kens attend to the full input, storing key information in these tokens; second, new tokens are generated based solely on the encoded continuous vectors.",
+    "This process blocks the need for the full input during generation, limiting attention to the encoded continuous vectors and reducing computation.",
+    "This can be seen as a form of attention optimization, though it differs in that the KV pairs generated in the first stage are not identical to those in the original LLM (as LoRA parameters are added)."
+  ]
+}

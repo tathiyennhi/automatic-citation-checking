@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The conditional performance could be improved by the addition of auxiliary supervised regression loss terms during training, or by using more sophisticated guided diffusion techniques [87].",
+    "Furthermore, other network architectures could be explored, such as deep sets, which would reduce the time of a single pass through the network without a large trade-off in fidelity [36].",
+    "Moreover, one of the A Training and generation algorithmsAlgorithm 1 Training Require: γ(t), σ(t), L while not converged do (x, y) ∼ p data ε ∼ N (0, I), t ∼ U(0, 1) x ← Norm(x) y ← Norm(y) v t ← CosEnc(t) x t ← γ(t) x + σ(t) ε Optimise: L(ε, εθ (x t, v t, y)) end while Algorithm 2 Generation Require: γ(t), σ(t), y, φ, ∆t x t ∼ N (0, I), t ← 1 y ← Norm(y) while t > 0 do v t ← CosEnc(t) x t ← φ(x t, εθ (x t, v t, y), t) t ← t -∆t end while x 0 ← UnNorm(x t) return x 0 B Network setup and hyperparametersThe TE block used in PC-JeDi is based on the Normformer [88] encoder block.",
+    "It is depicted in Fig. 17.",
+    "The block is composed of a residual attention network followed by a residual dense network."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "As the questions are sourced from image captions, some of them can be answered correctly using biomedical knowledge alone, i.e., without the need for a specific image, for example, question: \"which type of MRI sequence shows high signal in the marrow edema?\".",
+    "To address this issue, we trained a question-answer model using LLaMA-7B 20 with text data only and eliminated all questions that could be potentially answered by the language model.",
+    "Specifically, we first split the dataset into two parts, then we train a LLaMA-7B model with only text input following the full fine-tuning pipeline introduced in PMC-LLaMA 3 in each part and do inference on the other part.",
+    "To avoid that sometimes language model may make the correct choice by randomly guessing, for each case, we will shuffle the choice list and do inference five times.",
+    "The questions the language model can make the right choice three times out of five will be dismissed."
+  ]
+}

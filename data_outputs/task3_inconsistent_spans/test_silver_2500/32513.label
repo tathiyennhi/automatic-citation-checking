@@ -1,0 +1,20 @@
+{
+  "doc_id": "32513",
+  "text": "The proposed attack, an adversarial attack against RNN variants is transferable by transitivity to the other tested classifiers: 1) The targeted black-box classifier was trained on a large dataset (500,000 samples), representing the malware distribution in the wild. 2) The attack doesn't use any specific property of RNN classifiers (and in fact, a similar attack was proposed against feed-forward networks in [CITATION_1] ). 3) RNN variants are a generic form of feed-forward networks (where the hidden state weight is always 0) and therefore their decision boundaries are a generalized case of feed-forward networks for the same dataset, either. Feed-forward DNNs, in turn, are generalized form of several traditional machine learning classifiers. For instance, the linear SVM classification score is: y = wx+ b. It is based on the sum of features multiplied by the weights of the SVM model w and an added bias b. A linear SVM's equation is identical to Equation 1, an artificial neuron equation, with a linear activation function: φ(x) = x. However, adding more neurons in the same layer or hidden layers in a DNN make it a generalized form of linear SVM. Therefore, the attack presented here against RNN variants would be transferable by transitivity to feedforward networks simplified case and from there transferable by transitivity to the linear SVM classifier simplified case. In this way, attacks against generalized models are transferable and effective against simpler models. The evaluation to backup this claim is provided in section IV-D.",
+  "correct_citation": {
+    "[CITATION_1]": "14321358"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "2) The attack doesn't use any specific property of RNN classifiers (and in fact, a similar attack was proposed against feed-forward networks in  ). 3) RNN variants are a generic form of feed-forward networks (where the hidden state weight is always 0) and therefore their decision boundaries are a generalized case of feed-forward networks for the same dataset, either."
+    }
+  ],
+  "bib_entries": {
+    "14321358": {
+      "title": "Practical black-box attacks against deep learning systems using adversarial examples",
+      "abstract": "Advances in deep learning have led to the broad adoption of Deep Neural Networks (DNNs) to a range of important machine learning problems, e.g., guiding autonomous vehicles, speech recognition, malware detection. Yet, machine learning models, including DNNs, were shown to be vulnerable to adversarial samples-subtly (and often humanly indistinguishably) modified malicious inputs crafted to compromise the integrity of their outputs. Adversarial examples thus enable adversaries to manipulate system behaviors. Potential attacks include attempts to control the behavior of vehicles, have spam content identified as legitimate content, or have malware identified as legitimate software. Adversarial examples are known to transfer from one model to another, even if the second model has a different architecture or was trained on a different set. We introduce the first practical demonstration that this cross-model transfer phenomenon enables attackers to control a remotely hosted DNN with no access to the model, its parameters, or its training data. In our demonstration, we only assume that the adversary can observe outputs from the target DNN given inputs chosen by the adversary. We introduce the attack strategy of fitting a substitute model to the input-output pairs in this manner, then crafting adversarial examples based on this auxiliary model. We evaluate the approach on existing DNN datasets and real-world settings. In one experiment, we force a DNN supported by MetaMind (one of the online APIs for DNN classifiers) to mis-classify inputs at a rate of 84.24%. We conclude with experiments exploring why adversarial samples transfer between DNNs, and a discussion on the applicability of our attack when targeting machine learning algorithms distinct from DNNs."
+    }
+  },
+  "generator": "fallback_v4"
+}

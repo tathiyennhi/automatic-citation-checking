@@ -1,0 +1,65 @@
+{
+  "doc_id": "25298",
+  "text": "One edge node strategy that has the potential to improve burst contention significantly, especially when wavelength conversion is unavailable or sparse, is wavelength assignment. A priority wavelength selection algorithm was presented in [CITATION_1] , and a comprehensive study of wavelength selection strategies for OBS networks can be found in [CITATION_2] . An algorithm for buffering bursts electronically at edge nodes and scheduling them to prevent burst overlap at links inside the network was proposed in [CITATION_3] . A traffic engineering approach to select paths for source routing to balance the traffic load across the network links was investigated in [CITATION_4] . Finally, a dynamic scheme for selecting routes at the burst sources was proposed in [CITATION_5] . Each source maintains a (short) list of alternate paths to each destination and uses link congestion information to rank each path. The source uses the least congested path to transmit its bursts. We note that a similar technique, referred to as \"endto-end path switching,\" was proposed and evaluated recently for selecting one among a set of Internet paths [CITATION_6] ; the main finding was that path switching can result in improvement in packet loss.",
+  "correct_citation": {
+    "[CITATION_1]": "12859185",
+    "[CITATION_2]": "1419854",
+    "[CITATION_3]": "34866455",
+    "[CITATION_4]": "1788797",
+    "[CITATION_5]": "2412111",
+    "[CITATION_6]": "47187257"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A priority wavelength selection algorithm was presented in  , and a comprehensive study of wavelength selection strategies for OBS networks can be found in  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A priority wavelength selection algorithm was presented in  , and a comprehensive study of wavelength selection strategies for OBS networks can be found in  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "An algorithm for buffering bursts electronically at edge nodes and scheduling them to prevent burst overlap at links inside the network was proposed in  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "A traffic engineering approach to select paths for source routing to balance the traffic load across the network links was investigated in  ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Finally, a dynamic scheme for selecting routes at the burst sources was proposed in  ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "We note that a similar technique, referred to as \"endto-end path switching,\" was proposed and evaluated recently for selecting one among a set of Internet paths  ; the main finding was that path switching can result in improvement in packet loss."
+    }
+  ],
+  "bib_entries": {
+    "1419854": {
+      "title": "On wavelength assignment in optical burst switched networks",
+      "abstract": "A fundamental assumption underlying most studies of optical burst switched (OBS) networks is that full wavelength conversion is available throughout the network. In practice however, economic and technical considerations are likely to dictate a more limited and sparse deployment of wavelength converters in the optical network. Therefore, we expect wavelength assignment policies to be an important component of OBS networks. In this paper, we explain why wavelength selection schemes developed for wavelength routed networks are not appropriate for OBS. We then develop a suite of adaptive and non-adaptive policies for OBS switches. We also apply traffic engineering techniques to reduce wavelength contention through traffic isolation. Our performance study indicates that, in the absence of full conversion capabilities, intelligent choices in assigning wavelengths to bursts at the source can have a profound effect on the burst drop probability in an OBS network."
+    },
+    "12859185": {
+      "title": "Priority-based wavelength assignment algorithm for burst switched WDM optical networks",
+      "abstract": "Burst switched WDM optical networks are coming up as suitable network architectures for future Optical Internet backbones. However, the lack of optical processing capabilities results in increased burst blocking probability, which in turn lead to very limited network performance. Efficient contention resolution algorithm is therefore necessary. In this paper, we propose a distributed wavelength assignment algorithm named Priority-based Wavelength Assignment (PWA) for such networks. Each node selectively assigns wavelengths based on the wavelength priority information “learned” from its wavelength utilization history in a distributed manner. As the learning process progresses, nodes in the same part of the network tend to assign different wavelengths to avoid contentions. Simulation results show that the PWA can effectively reduce the blocking probability and increase the performance of burst optical networks compared to previous algorithms such as random assignment."
+    },
+    "34866455": {
+      "title": "Schedule burst proactively for optical burst switching networks",
+      "abstract": "Optical burst switching (OBS) is a promising paradigm for the next-generation Internet infrastructure. In OBS, a key problem is to schedule bursts on wavelength channels with both fast and bandwidth efficient algorithms so as to reduce burst loss. To date, most scheduling algorithms avoid burst contention locally (or reactively). In this paper, we propose several novel algorithms for scheduling bursts in OBS networks with and without wavelength conversion capability. Our algorithms try to proactively avoid burst contention likely to occur at downstream nodes. The basic idea is to serialize the bursts on an outgoing link to reduce the number of bursts that may arrive at downstream nodes simultaneously (and thus reducing the burst contention and burst loss probability at downstream nodes). This can be accomplished by judiciously delaying locally assembled bursts beyond a pre-determined offset time at an ingress node using the electronic memory. Compared with the existing algorithms, our proposed algorithms can significantly reduce the loss rate while ensuring that maximum delay of a burst does not exceed its prescribed limit."
+    },
+    "47187257": {
+      "title": "Exploring the performance benefits of end-to-end path switching",
+      "abstract": "This work explores the feasibility of improving the performance of end-to-end data transfers between different sites through path switching. Our study is focused on both the logic that controls path switching decisions and the configurations required to achieve sufficient path diversity. Specifically, we investigate two common approaches offering path diversity multi-homing and overlay networks - and investigate their characteristics in the context of a representative wide-area testbed. We explore the end-to-end delay and loss characteristics of different paths and find that substantial improvements can potentially be achieved by path switching, especially in lowering end-to-end losses. Based on this assessment, we develop a simple path-switching mechanism capable of realizing those performance improvements. Our experimental study demonstrates that substantial performance improvements are indeed achievable using this approach."
+    },
+    "2412111": {
+      "title": "Dynamic congestionbased load balanced routing in optical burst-switched networks",
+      "abstract": "In optical burst-switched networks, data loss may occur when bursts contend for network resources. There have been several proposed solutions to resolve contentions in order to minimize loss. These localized contention resolution techniques react to contention, but do not address the more fundamental problem of congestion. Hence, there is a need for network level contention avoidance using load balanced routing techniques in order to minimize the loss. In this paper, we propose two dynamic congestion-based load balanced routing techniques to avoid congestion. Our simulation results show that the proposed contention avoidance techniques improve the network utilization and reduce the packet loss probability."
+    },
+    "1788797": {
+      "title": "Routing path optimization in optical burst switched networks",
+      "abstract": "It is usually assumed that optical burst switched (OBS) networks employ shortest path routing along with next- hop burst forwarding. Shortest path routing minimizes delay and optimizes the utilization of resources, however, it often causes certain links to become congested while others remain underutilized. In a buffer-less OBS network in which burst drop probability is the primary metric of interest, the existence of a few highly congested links may lead to unacceptable performance for the entire network. In this paper, we take a traffic engineering approach to path selection in OBS networks with the objective of balancing the traffic across the network links in order to reduce congestion and improve overall performance. We present an approximate integer linear optimization problem, as well as a simple integer relaxation heuristic to solve the problem efficiently for large networks. Numerical results demonstrate that our approach is effective in reducing the network-wide burst drop probability, in many cases significantly, over shortest path routing."
+    }
+  },
+  "generator": "fallback_v4"
+}

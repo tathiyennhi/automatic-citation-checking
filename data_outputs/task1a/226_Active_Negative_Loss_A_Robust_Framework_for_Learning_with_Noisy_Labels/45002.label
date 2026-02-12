@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "In response to these drawbacks, several works proposed partially robust loss functions, including Generalized Cross Entropy [12,GCE], a generalized mixture of CE and MAE, and Symmetric Cross Entropy (SCE) [13], a combination of CE and a scaled MAE, Reverse Cross Entropy (RCE).Recently, Active Passive Loss [14,APL] framework has been proposed to create fully robust loss functions, which shows that any loss function can be made robust to noisy labels by a simple normalization operation.",
+    "Specifically, to address the underfitting problem of normalized loss functions, APL first categorizes existing loss functions into two types and then combines them.",
+    "The two types are: ❶ \"Active\" loss, which only corresponds to the explicit maximization of the probability that a sample is in the labeled class, and ❷ \"Passive\" loss, which explicitly minimizes the probabilities of being in other classes.However, after investigating several robust loss functions under the APL framework, we find that their passive loss functions within are always scaled versions of MAE, which has been considered training-unfriendly in the previous discussion.",
+    "In summary, while APL intended to address underfitting by combining active loss functions with MAE, it inadvertently inherits the training inefficiencies associated with MAE, which may hinder the model performance and make training more challenging.In this paper, we propose a new class of passive loss functions beyond MAE, called Negative Loss Functions (NLFs).",
+    "In constructing NLFs, we combine ❶ complementary label learning [15], [16] and ❷ a simple \"vertical flipping\" operation, and consequently any active loss function can be converted into a passive loss function."
+  ],
+  "correct_citations": [
+    "In response to these drawbacks, several works proposed partially robust loss functions, including Generalized Cross Entropy [12,GCE], a generalized mixture of CE and MAE, and Symmetric Cross Entropy (SCE) [13], a combination of CE and a scaled MAE, Reverse Cross Entropy (RCE).Recently, Active Passive Loss [14,APL] framework has been proposed to create fully robust loss functions, which shows that any loss function can be made robust to noisy labels by a simple normalization operation.",
+    "In constructing NLFs, we combine ❶ complementary label learning [15], [16] and ❷ a simple \"vertical flipping\" operation, and consequently any active loss function can be converted into a passive loss function."
+  ]
+}

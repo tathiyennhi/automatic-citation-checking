@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Ideally, examples would be selected based on relevancy.We use RAG as the general approach to retrieve the most relevant information.",
+    "As a first step, the partial term object provided by the user is used as a query to the ontology terms loaded into the ontology vector index.",
+    "An embedding is created from the text fields of the object (using the same embedding model as was used to index the ontology), and this is used to query the top k results (k is 10 by default).",
+    "These form the in-context examples for the prompt.",
+    "The intent is to retrieve terms that are similar to the intended term to inform the prediction of the completed term; for example, if the query term is \"hydroxyprolinuria\", then similar terms in the ontology such as \"cystathioninuria\" will be informative.Each retrieved example forms an input-output training pair which is concatenated directly into the prompt by serializing the JSON object, for example: input: {\"label\": \"cystathioninuria\"} output: {\"definition\": \"excretion of excessive amounts of cystathionine in the urine\", \"Relationships\": [ {\"predicate\": \"subClassOf \", \"target\": \"Aminoaciduria\"}] }To diversify search results, we implement Maximal Marginal Relevance (MMR) [33] in order to re-rank results."
+  ],
+  "correct_citations": [
+    "The intent is to retrieve terms that are similar to the intended term to inform the prediction of the completed term; for example, if the query term is \"hydroxyprolinuria\", then similar terms in the ontology such as \"cystathioninuria\" will be informative.Each retrieved example forms an input-output training pair which is concatenated directly into the prompt by serializing the JSON object, for example: input: {\"label\": \"cystathioninuria\"} output: {\"definition\": \"excretion of excessive amounts of cystathionine in the urine\", \"Relationships\": [ {\"predicate\": \"subClassOf \", \"target\": \"Aminoaciduria\"}] }To diversify search results, we implement Maximal Marginal Relevance (MMR) [33] in order to re-rank results."
+  ]
+}

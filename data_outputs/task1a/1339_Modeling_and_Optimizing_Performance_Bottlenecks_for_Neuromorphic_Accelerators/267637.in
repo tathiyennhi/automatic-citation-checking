@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Under this assumption, after executing or simulating the network with sample data, we identify the neurocore which executed the most synops, and increase the partitioning of the layer that this neurocore belongs to.",
+    "If the memory-bound assumption is correct, then the workload will have traced down the memory slope of the floorline, and we repeat the max synops identification and partitioning.If partitioning on the memory-bound assumption is not beneficial, then we backtrack the partitioning, as greater utilization without synops improvement is detrimental for power.After backtracking, we shift the assumption to computebound, partitioning based on the max activation computations.",
+    "Similarly, we can repeat until it is not beneficial, then backtrack.",
+    "Finally, we may assume that the workload is NoC-bounded, and optimize mapping by moving the greatest message output neurocores onto separate router paths.",
+    "In general, we can continuously cycle through each assumption and corresponding optimization step.The iterative partitioning and mapping process stops when there are no further neurocores available on chip, or when energy starts to worsen due to larger utilization power compared to the timing benefits."
+  ]
+}

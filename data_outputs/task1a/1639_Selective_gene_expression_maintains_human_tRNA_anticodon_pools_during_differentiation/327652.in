@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The resulting genomic variant call format (VCF) file was indexed and genotypes were called using GATK GenotypeGVCFs v4.1.0.0.",
+    "From this, only SNPs were retained so as to preserve genomic context and position information between GRCh37 and our custom genome.",
+    "This was achieved using GATK SelectVariants v4.1.0.0 with the -select-type SNP parameter.",
+    "We then replaced nucleotides in the reference GRCh37 genome with the called genotype SNPs by generating a sequence dictionary from the reference genome using Picard Article https://doi.org/10.1038/s41556-023-01317-3 CreateSequenceDictionary v2.17.10 and supplying the SNP VCF to GATK FastaAlternateReferenceMaker v4.1.0.0.",
+    "To train an elastic net linear regression model for sgRNA activity predictions, this custom genome was used in combination with other supplied training data from the CRISPRia pipeline, including sgRNA activity scores and TSS predictions (https://github.com/mhorlbeck/CRISPRiaDesign/tree/master/ data_files) and our own ATAC-Seq data from HPSI0214i-kucg_2 cells as a proxy for chromatin accessibility."
+  ]
+}

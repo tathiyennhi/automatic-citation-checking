@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "After pre-computing the affine matrix A, we then simply multiply the spatial coordinates of all events with this matrix, which is an operation easy to parallelize(T RS)     x ′ 1 y ′ 1 1 x ′ 2 y ′ 2 1... x ′ n y ′ n 1    .After performing this transformation, we remove the last column of ones, and convert the relative center offsets back into pixel coordinates.",
+    "Note that the pupil center labels need to be transformed along with the event data, which can be done using the same affine matrix.In our study, we apply a random affine transformation to each event segment (but do not vary the affine parameters within the segment).",
+    "We only apply part of the operations usually included in affine transformation: we apply scaling, rotation and translation and don't consider the reflection or shear transformation.",
+    "The scaling factors s x and s y are uniformly and independently sampled between 0.8 and 1.2; the angle of rotation is uniformly sampled between -15 and 15 degrees; the two translation factors t x and t y are uniformly sampled between -0.2 and 0.2 independently.Due to our affine augmentation strategy, the pupil location may be out-of-bounds in certain frames, so we ignore these frames.",
+    "We also ignore frames where the eye is closed as labeled."
+  ]
+}

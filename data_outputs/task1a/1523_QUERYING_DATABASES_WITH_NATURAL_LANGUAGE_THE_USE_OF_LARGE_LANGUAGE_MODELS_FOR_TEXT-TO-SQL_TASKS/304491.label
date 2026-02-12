@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "For non-nested complex queries, it uses an intermediate representation, removes operators JOIN ON, FROM, GROUP BY, and set operators, and merges the HAVING and WHERE clauses.",
+    "Briefly, for nested complex queries, it breaks down the problem into multiple steps; the prompt for this class is designed in a way that the LLM should first solve the sub-queries and then use them to generate the final answer.",
+    "The prompts for the easy, non-nested and nested classes are shown in Listings 13, 14 and 15, respectively.",
+    "Finally, Self-Correction addresses the problem that the generated SQL queries can sometimes have missed or redundant keywords such as DESC, DIS-TINCT, and aggregation functions.",
+    "To solve this problem, the self-correction step instructs the LLM to correct those minor mistakes through a zero-shot setting (see Listing 16), where only the buggy code is passed to the LLM, which is asked to fix the bugs."
+  ],
+  "correct_citations": []
+}

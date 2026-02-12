@@ -1,0 +1,42 @@
+{
+  "text": "In general-purpose systems, another protection mechanism employed is to utilize address-space layout randomization (ASLR) [CITATION_1] . The stack is placed in a hard-toguess location in the memory. If an attacker attempts to jump to code placed on the stack, it becomes difficult to infer absolute stack addresses where attack code may have been injected. This method is best suited for systems that employ 64-bit addressing spaces, i.e., where ample room for stack placement exists such that repeated brute-force attempts are statistically ineffective. However, such techniques may be circumvented by repeated attacks in a space-constrained embedded real-time system with 8/16/32-bit address spaces [CITATION_2] .",
+  "citation_candidates": [
+    "11161254",
+    "5864467",
+    "195702919",
+    "903218",
+    "12082061",
+    "207669821",
+    "2128567"
+  ],
+  "bib_entries": {
+    "2128567": {
+      "title": "A comparison of static analysis and evolutionary testing for the verification of timing constraints",
+      "abstract": "This paper contrasts two methods to verify timing constraints of real-time applications. The method of static analysis predicts the worst-case and best-case execution times of a task's code by analyzing execution paths and simulating processor characteristics without ever executing the program or requiring the program's input. Evolutionary testing is an iterative testing procedure, which approximates the extreme execution times within several generations. By executing the test object dynamically and measuring the execution times the inputs are guided yielding gradually tighter predictions of the extreme execution times. We examined both approaches on a number of real world examples. The results show that static analysis and evolutionary testing are complementary methods, which together provide upper and lower bounds for both worst-case and best-case execution times."
+    },
+    "207669821": {
+      "title": "Scheduling algorithms for multiprogramming in a hard-real-time environment",
+      "abstract": "The problem of multiprogram scheduling on a single processor is studied from the viewpoint of the characteristics peculiar to the program functions that need guaranteed service. It is shown that an optimum fixed priority scheduler possesses an upper bound to processor utilization which may be as low as 70 percent for large task sets. It is also shown that full processor utilization can be achieved by dynamically assigning priorities on the basis of their current deadlines. A combination of these two scheduling techniques is also discussed."
+    },
+    "5864467": {
+      "title": "On the effectiveness of address-space randomization",
+      "abstract": "Address-space randomization is a technique used to fortify systems against buffer overflow attacks. The idea is to introduce artificial diversity by randomizing the memory location of certain system components. This mechanism is available for both Linux (via PaX ASLR) and OpenBSD. We study the effectiveness of address-space randomization and find that its utility on 32-bit architectures is limited by the number of bits available for address randomization. In particular, we demonstrate a derandomization attack that will convert any standard buffer-overflow exploit into an exploit that works against systems protected by address-space randomization. The resulting exploit is as effective as the original exploit, although it takes a little longer to compromise a target machine: on average 216 seconds to compromise Apache running on a Linux PaX ASLR system. The attack does not require running code on the stack. We also explore various ways of strengthening address-space randomization and point out weaknesses in each. Surprisingly, increasing the frequency of re-randomizations adds at most 1 bit of security. Furthermore, compile-time randomization appears to be more effective than runtime randomization. We conclude that, on 32-bit architectures, the only benefit of PaX-like address-space randomization is a small slowdown in worm propagation speed. The cost of randomization is extra complexity in system support."
+    },
+    "903218": {
+      "title": "Wcet analysis of probabilistic hard real-time systems",
+      "abstract": "Traditional approaches for worst case execution time (WCET) analysis produce values which are very pessimistic if applied to modern processors. In addition, end to end measurements as used in industry produce estimates of the execution time that potentially underestimate the real worst case execution time. We introduce the notion of probabilistic hard real-time systems which have to meet all the deadlines but for which a (high) probabilistic guarantee suffices. We combine both measurement and analytical approaches into a model for computing probabilistically bounds on the execution time of the worst case path of sections of code. The idea of the technique presented is based on combining (probabilistically) the worst case effects seen in individual blocks to build the execution time model of the worst case path of the program (such case may have not been observed in the measurements). We provide three alternative operators for the combination based on whether the information of their dependency is known. Experimental evaluation of a two case study shows extremely low probabilities of the values obtained by traditional analysis."
+    },
+    "12082061": {
+      "title": "Parametric timing analysis and its application to dynamic voltage scaling",
+      "abstract": "Embedded systems with real-time constraints depend on a priori knowledge of worst-case execution times (WCETs) to determine if tasks meet deadlines. Static timing analysis derives bounds on WCETs but requires statically known loop bounds. This work removes the constraint on known loop bounds through parametric analysis expressing WCETs as functions. Tighter WCETs are dynamically discovered to exploit slack by dynamic voltage scaling (DVS) saving 60p to 82p energy over DVS-oblivious techniques and showing savings close to more costly dynamic-priority DVS algorithms. Overall, parametric analysis expands the class of real-time applications to programs with loop-invariant dynamic loop bounds while retaining tight WCET bounds."
+    },
+    "11161254": {
+      "title": "The system-level simplex architecture for improved real-time embedded system safety",
+      "abstract": "Embedded systems in safety-critical environments demand safety guarantees while providing many useful services that are too complex to formally verify or fully test. Existing application-level fault-tolerance methods, even if formally verified, leave the system vulnerable to errors in the real-time operating system (RTOS), middleware, and microprocessor. We introduce the System-Level Simplex Architecture, which uses hardware/software co-design to provide fail-operational guarantees for both logical application-level faults, as well as faults in previously dependent layers including the RTOS and microprocessor. We also provide an end-to-end design process for the System-Level Simplex Architecture where the AADL architecture description is automatically constructed and checked and the VHDL hardware code is generated.To show the efficacy of System-Level Simplex design, we apply the approach to both a classic inverted pendulum and a cardiac pacemaker. We perform fault-injection tests on the inverted pendulum design which demonstrate robustness in spite of software controller and operating system faults. For the pacemaker, we contrast the provided safety guarantees with those of a previous-generation pacemaker."
+    },
+    "195702919": {
+      "title": "The simplex reference model: Limiting fault-propagation due to unreliable components in cyber-physical system architectures",
+      "abstract": "Cyber-physical systems are networked, component-based, real-time systems that control and monitor the physical world. We need software architectures that limit fault-propagation across unreliable components. This paper introduces our simplex reference model which is distinguished by: a plant being controlled in an external context, a machine performing the control, a domain model that estimates the plant state, and the safety requirements that must be met. The simplex reference model assists with constructing CPS architectures which limit fault-propagation. We present a representative case study to highlight the ideas behind the model and our particular decomposition."
+    }
+  }
+}

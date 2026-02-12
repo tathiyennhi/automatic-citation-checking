@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "At inference time, we process frames in a sequential manner, keeping track of the hidden h and cell c states of the ConvLSTM for the next timestamp.We apply both temporal and spatial sub-sampling with a factor of α = 0.2 and β = 0.125 for the temporal and spatial dimension, respectively.",
+    "To limit overfitting on the dataset, we augment the data with 2 different techniques: random horizontal flip and random noise.",
+    "The horizontal flip has a probability of 0.5 while the noise is applied pixel-wise based on a normal distribution N (µ, σ 2) where the mean and standard deviation are applied per input channel.",
+    "Our method does not use the eye open/closed information additionaly provided in the dataset.We use PyTorch for training and inference of ERVT and Tonic library to process the event dataset provided by the competition.",
+    "The model is trained to minimize the weighted RMSE loss between the predicted (x, ŷ) and the ground truth (x, y) using Adam [22] as the optimizer with an exponential learning rate scheduler with γ = 0.98.The training procedure consists of 150 epochs over the competition dataset with data augmentation included."
+  ]
+}

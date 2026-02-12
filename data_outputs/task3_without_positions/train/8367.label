@@ -1,0 +1,20 @@
+{
+  "doc_id": "8367",
+  "text": "First, we will analyze how the size of the archive affects the size of the BDD focusing on the dynamic variable reordering. The reorder algorithm we used is called Sifting [CITATION_1] and is activated each time the BDD size doubles. Figure 4 shows that dynamic variable reordering has a huge effect on the BDD archive. By using the reorder algorithm the size of the BDD is halved, but it even has a bigger effect on the runtime. The reordering algorithm itself is time consuming. It can be recognized in Figure 4 on the right as a vertical characteristic. On the other hand, the runtime of the reordering algorithm is just a fraction of the whole runtime. This is due to the minimization of the BDD size. Thus, it is recommended to use dynamic variable reordering, which is also used in all following test cases.",
+  "correct_citation": {
+    "[CITATION_1]": "195866727"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The reorder algorithm we used is called Sifting  and is activated each time the BDD size doubles."
+    }
+  ],
+  "bib_entries": {
+    "195866727": {
+      "title": "Dynamic Variable Ordering for Ordered Binary Decision Diagrams",
+      "abstract": "The ordered binary decision diagram (OBDD) has proven useful in many applications as an efficient data structure for representing and manipulating Boolean functions. A serious drawback of OBDD's is the need for application-specific heuristic algorithms to order the variables before processing. Further, for many problem instances in logic synthesis, the heuristic ordering algorithms which have been proposed are insufficient to allow OBDD operations to complete within a limited amount of memory. The paper proposes a solution to these problems based on having the OBDD package itself determine and maintain the variable order. This is done by periodically applying a minimization algorithm to reorder the variables of the OBDD to reduce its size. A new OBDD minimization algorithm, called the sifting algorithm, is proposed and appears especially effective in reducing the size of the OBDD. Experiments with dynamic variable ordering on the problem of forming the OBDD's for the primary outputs of a combinational circuit show that many computations complete using dynamic variable ordering when the same computation fails otherwise."
+    }
+  },
+  "generator": "fallback_v4"
+}

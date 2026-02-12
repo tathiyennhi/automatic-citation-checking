@@ -1,0 +1,20 @@
+{
+  "doc_id": "30673",
+  "text": "Limited overlaps are available for option (2), especially for the longer calculations. With that fact in mind and supported by a simple Hockney performance model analysis [CITATION_1] , it was decided that this approach would only yield limited, if any, performance gain. Lending support to the Hockney approach, results were achieved that were similar to those found in the section \"Initial Computational Performance for THM Analysis.\" Therefore, it was decided that option (3), illustrated by pseudocode in Fig. 6 , was the most sensible to pursue. Fig. 6 shows how the two major calculation types in the BiCG solver are proposed to be undertaken. The computational resource is shown at the top of the figure with Threads on processor 1 shown and subdivided from 1 through n threads. An excerpt from the pseudocode is shown where a matrix-vector calculation is carried out over all threads, including all available processors and requiring communication to complete this calculation. A vector-vector operation is then shown being undertaken simultaneously on the threads on each processor with no communication required. Moreover, option (3) is the most suited to portability, being able to be executed on fully shared-memory, fully distributed-memory, and hybrid systems. As such, this method has been implemented, with vector-vector calculations being undertaken on-node and matrix-vector multiplication both on and across nodes, using a combination of multithreading and message passing.",
+  "correct_citation": {
+    "[CITATION_1]": "22986998"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "With that fact in mind and supported by a simple Hockney performance model analysis, it was decided that this approach would only yield limited, if any, performance gain."
+    }
+  ],
+  "bib_entries": {
+    "22986998": {
+      "title": "The communication challenge for MPP: Intel Paragon and Meiko CS-2",
+      "abstract": "The communication performance of the Intel iPSC/860, Paragon XP/S and the Meiko CS-2 are compared using the COMMS1 benchmark from the Genesis Parallel Benchmark Suite. The challenge to distributed-memory massively-parallel processors presented by the Cray-C90 shared memory computer is highlighted by re-interpreting vector processing results as though they were measuring communication startup and bandwidth. The results show a wide gap between the two types of computer, in favour of the C-90. These results are for the initial issue of software and hardware of the Paragon and CS-2. Comments from Intel and Meiko are included to show how the manufacturers aim to improve communication performance."
+    }
+  },
+  "generator": "fallback"
+}

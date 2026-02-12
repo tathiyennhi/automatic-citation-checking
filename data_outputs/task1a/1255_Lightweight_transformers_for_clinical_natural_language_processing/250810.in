@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This approach follows the distillation process outlined in DistilBERT Sanh et al. (2019) with the aim of aligning the output distributions of the student and teacher models based on the Masked Language Modelling (MLM) objective, as well as aligning their last hidden states.",
+    "The loss used for this approach is defined as",
+    "https://doi.org/10.1017/S1351324923000542 Published online by Cambridge University Press",
+    "where X is the input to the model, Y represents the MLM labels, f s (X) and f t (X) denote the outputs of the student and teacher models, respectively, h s (X) and h t (X) are the last hidden states of the student and teacher, L output is a KL-Divergence loss for aligning the output distributions of the student and teacher, L align is a cosine embedding loss for aligning the last hidden states of the student and teacher, L mlm represents the original MLM loss and λ 1 to λ 3 are hyperparameters controlling the weighting of each component in the loss function.",
+    "The student used in this approach uses six hidden layers, a hidden dimension size of 768 and an expansion rate of four for the MLP blocks, resulting in 65M parameters in total."
+  ]
+}

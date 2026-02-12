@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "To estimate activation memory, we examined the activations required by a single Transformer block in a LLaMA-based model as mapped in Table 6.",
+    "We then used this to calculate the total activation memory necessary for training LLaMA models of various sizes.",
+    "Lastly, we used PyTorch's memory profiler to confirm that our estimated values are consistent with the actual memory consumption observed during training.",
+    "Table 6: Activations saved from each operation in a single transformer block from a LlaMA model.",
+    "In this block, the input is of shape (b, l, n), the attention weights W q, W k, W v, W o of shape (n, n) and the MLP weights W ⊤ down, W up, W gate are of shape (n, m), n < m. Note that the activations of RMSNorm don't include the precision conversion as we didn't use it in our training."
+  ],
+  "correct_citations": []
+}

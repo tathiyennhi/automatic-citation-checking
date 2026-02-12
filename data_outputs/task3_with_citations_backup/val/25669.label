@@ -1,0 +1,22 @@
+{
+  "doc_id": "25669",
+  "text": "The detailed block-diagram of the electrostatic accelerometer embedded model in Figure 3 is obtained by expanding each block of Figure 2 . The embedded model consists of the plant dynamics M given by Equation (6) and of the disturbance dynamics D. Their state vectors are x c and x d , respectively. The disturbance state x d is synthesized by a cascade of Discrete Time (DT) integrators, driven by a white noise vector w with bounded covariance. The main input disturbances of the accelerometer-the input acceleration to be measured and the actuator noise-can be modeled as a second-order dynamics, which is shown as the block D in Figure 3 . A second-order dynamics is selected because it could describe a random disturbance with the slope of Power Spectral Density (PSD) of up to −40 dB/dec, while in this work, the input acceleration is between −20 dB/dec and −40 dB/dec (will be further discussed in Section 6). During modeling, the disturbance source is assumed to be in the form of acceleration without additional velocity disturbance, which is the actual situation of the relative motion dynamics of TM. In this case, the output of the disturbance dynamics enters the controllable dynamics M from the same actuator injection point, which is called a \"collocated\" situation. However, this does not always hold for other cases. Considerations of the non-collocated situations have been deeply studied in [CITATION_1] . In Figure 3 , each Σ block represents a DT integrator T s (z − 1) −1 , where z = e −sT s .",
+  "correct_citation": {
+    "[CITATION_1]": "21558284"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Considerations of the non-collocated situations have been deeply studied in [CITATION_1] .",
+      "s_span": 1334,
+      "e_span": 1424
+    }
+  ],
+  "bib_entries": {
+    "21558284": {
+      "title": "Embedded Model Control: Outline of the theory",
+      "abstract": "Embedded Model Control allows one to proceed systematically from fine plant dynamics and control requirements to the Embedded Model (EM), which is the core of control design and algorithms. The model defines three interconnected parts: the controllable dynamics, the disturbance class to be rejected and the neglected dynamics. Controllable and disturbance dynamics must be observable from the plant measurements. Control algorithms are designed around the first two parts, while stability and performance are constrained by the third one. The key design issue is discriminating between driving noise and neglected dynamics, to guarantee updating disturbance in view of its rejection. To this end, concept and equations of the 'error loop' are outlined: it maps error sources to performance and shows how to discriminate destabilizing sources, while meeting performance requirements. An introductory example with analytical and simulated results illustrates the design steps."
+    }
+  },
+  "generator": "fallback_v4"
+}

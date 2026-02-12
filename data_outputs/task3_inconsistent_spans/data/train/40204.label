@@ -1,0 +1,22 @@
+{
+  "doc_id": "40204",
+  "text": "As with any reference counting collector, this age-oriented algorithm cannot reclaim cyclic data structures in the old generation (cyclic structures in the young generation are collected immediately). To reclaim such structures, the tracing sliding view algorithm of [CITATION_1] is run infrequently on the full heap.",
+  "correct_citation": {
+    "[CITATION_1]": "10263433"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To reclaim such structures, the tracing sliding view algorithm of  is run infrequently on the full heap.",
+      "s_span": 201,
+      "e_span": 317
+    }
+  ],
+  "bib_entries": {
+    "10263433": {
+      "title": "An on-the-fly mark and sweep garbage collector based on sliding view",
+      "abstract": "With concurrent and garbage collected languages like Java and C# becoming popular, the need for a suitable non-intrusive, efficient, and concurrent multiprocessor garbage collector has become acute. We propose a novel mark and sweep on-the-fly algorithm based on the sliding views mechanism of Levanoni and Petrank. We have implemented our collector on the Jikes Java Virtual Machine running on a Netfinity multiprocessor and compared it to the concurrent algorithm and to the stop-the-world collector supplied with Jikes JVM. The maximum pause time that we measured with our benchmarks over all runs was 2ms. In all runs, the pause times were smaller than those of the stop-the-world collector by two orders of magnitude and they were also always shorter than the pauses of the Jikes concurrent collector. Throughput measurements of the new garbage collector show that it outperforms the Jikes concurrent collector by up to 60%. As expected, the stop-the-world does better than the on-the-fly collectors with results showing about 10% difference.On top of being an effective mark and sweep on-the-fly collector standing on its own, our collector may also be used as a backup collector (collecting cyclic data structures) for the Levanoni-Petrank reference counting collector. These two algorithms perfectly fit sharing the same allocator, a similar data structure, and a similar JVM interface."
+    }
+  },
+  "generator": "fallback_v4"
+}

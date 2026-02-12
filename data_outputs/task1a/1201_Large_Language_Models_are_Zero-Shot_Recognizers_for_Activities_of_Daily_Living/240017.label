@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The smart home generates a continuous stream of raw sensor data that is pre-processed by the Sensor State Generation module to obtain a stream of sensor states.",
+    "Intuitively, a sensor state represents the timespan in which a sensor is active (e.g., \"the TV in the living room is ON from 12:34 to 13:02'').",
+    "Then, the stream of sensor states is segmented in fixed-time windows by the Segmentation module.Since LLMs are specialized in natural language text, the main idea of ADL-LLM is to generate a natural language representation for each window, so that an LLM can \"reason\" on it leveraging its implicit common-sense knowledge.",
+    "The Window2Text module is in charge of transforming windows of sensor states into natural language sentences describing what happened in the home during that window.",
+    "The LLM receives as input a System Prompt (i.e., instructions about the task it has to perform) and a User Prompt (i.e., the textual representation of the window enriched with additional instructions for the LLM by the User Prompt Construction module)."
+  ],
+  "correct_citations": []
+}

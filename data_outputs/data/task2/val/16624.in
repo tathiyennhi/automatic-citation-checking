@@ -1,0 +1,37 @@
+{
+  "text": "Theoretical results on block preconditioning generally fall in to one of two categories. First, are results based on the assumption that the inverse action of the Schur complement is available, and/or results that show an asymptotic equivalence between the preconditioned 2 \u00d7 2 operator and the preconditioned Schur complement. It is shown in [CITATION_1] [CITATION_2] that GMRES (or other minimal residual methods) is guaranteed to converge in two or four iterations for a block-triangular or block-diagonal preconditioned system, respectively, when the diagonal blocks of the preconditioner consist of a Schur complement and the respective complementary block of A (A 11 or A 22 ). However, computing the action of the Schur complement inverse is generally very expensive. In [CITATION_3] , it is shown that if the minimal polynomial of the preconditioned Schur complement is degree k, then the minimal polynomial of the preconditioned 2 \u00d7 2 system is at most degree k + 1. Although this does not require the action and inverse of the Schur complement, it is almost never the case that GMRES is iterated until the true minimal polynomial is achieved. As a consequence, the minimal polynomial equivalence also does not provide practical information on convergence of the 2 \u00d7 2 system, as demonstrated in the following example.",
+  "citation_candidates": [
+    "32302506",
+    "121617480",
+    "1172740",
+    "46098304",
+    "123013964",
+    "35457428"
+  ],
+  "bib_entries": {
+    "35457428": {
+      "title": "A note on preconditioning nonsymmetric matrices",
+      "abstract": "The preconditioners for indefinite matrices of KKT form in [M. F. Murphy, G. H. Golub, and A. J. Wathen, SIAM J. Sci. Comput., 21 (2000), pp. 1969--1972] are extended to general nonsymmetric matrices."
+    },
+    "32302506": {
+      "title": "A note on preconditioning for indefinite linear systems",
+      "abstract": "Preconditioners are often conceived as approximate inverses. For nonsingular indefinite matrices of saddle-point (or KKT) form, we show how preconditioners incorporating an exact Schur complement lead to preconditioned matrices with exactly two or exactly three distinct eigenvalues. Thus approximations of the Schur complement lead to preconditioners which can be very effective even though they are in no sense approximate inverses."
+    },
+    "46098304": {
+      "title": "On Inexact Preconditioners for Nonsymmetric Matrices",
+      "abstract": "Inexact versions of the block-triangular preconditioners for nonsymmetric matrices of block two-by-two structures in [M. F. Murphy, G. H. Golub, and A. J. Wathen, SIAM J. Sci. Comput., 21 (2000), pp. 1969--1972] and [I. C. F. Ipsen, SIAM J. Sci. Comput., 23 (2001), pp. 1050--1051] are presented, and the two preconditioners for symmetric block two-by-two matrices in [C. Durazzi and V. Ruggiero, Numer. Linear Algebra Appl., 10 (2003), pp. 673--688] are extended to general nonsymmetric matrices. Moreover, we precisely describe the spectral properties of the preconditioned matrices and the finite-step termination properties of the preconditioned Krylov subspace iteration methods with an optimal or Galerkin property, with respect to these preconditioners. Several numerical examples are performed to illustrate the effectiveness of the proposed preconditioners."
+    },
+    "121617480": {
+      "title": "Minimum residual methods for augmented systems",
+      "abstract": "For large systems of linear equations, iterative methods provide attractive solution techniques. We describe the applicability and convergence of iterative methods of Krylov subspace type for an important class of symmetric and indefinite matrix problems, namely augmented (or KKT) systems. Specifically, we consider preconditioned minimum residual methods and discuss indefinite versus positive definite preconditioning. For a natural choice of starting vector we prove that when the definite and indenfinite preconditioners are related in the obvious way, MINRES (which is applicable in the case of positive definite preconditioning) and full GMRES (which is applicable in the case of indefinite preconditioning) give residual vectors with identical Euclidean norm at each iteration. Moreover, we show that the convergence of both methods is related to a system of normal equations for which the LSQR algorithm can be employed. As a side result, we give a rare example of a non-trivial normal(1) matrix where the corresponding inner product is explicitly known: a conjugate gradient method therefore exists and can be employed in this case."
+    },
+    "123013964": {
+      "title": "A taxonomy for conjugate gradient methods",
+      "abstract": "The conjugate gradient method of Hestenes and Stiefel is an effective method for solving large, sparse Hermitian positive definite (hpd) systems of linear equations, $Ax = b$. Generalizations to non-hpd matrices have long been sought. The recent theory of Faber and Manteuffel gives necessary and sufficient conditions for the existence of a CG method. This paper uses these conditions to develop and organize such methods. It is shown that any CG method for $Ax = b$ is characterized by an hpd inner product matrix B and a left preconditioning matrix C. At each step the method minimizes the B-norm of the error over a Krylov subspace. This characterization is then used to classify known and new methods. Finally, it is shown how eigenvalue estimates may be obtained from the iteration parameters, generalizing the well-known connection between CG and Lanczos. Such estimates allow implementation of a stopping criterion based more nearly on the true error."
+    },
+    "1172740": {
+      "title": "A hybridizable discontinuous Galerkin method for the Navier-Stokes equations with pointwise divergence-free velocity field",
+      "abstract": "We introduce a hybridizable discontinuous Galerkin method for the incompressible Navier---Stokes equations for which the approximate velocity field is pointwise divergence-free. The method builds on the method presented by Labeur and Wells (SIAM J Sci Comput 34(2):A889---A913, 2012). We show that with modifications of the function spaces in the method of Labeur and Wells it is possible to formulate a simple method with pointwise divergence-free velocity fields which is momentum conserving, energy stable, and pressure-robust. Theoretical results are supported by two- and three-dimensional numerical examples and for different orders of polynomial approximation."
+    }
+  }
+}

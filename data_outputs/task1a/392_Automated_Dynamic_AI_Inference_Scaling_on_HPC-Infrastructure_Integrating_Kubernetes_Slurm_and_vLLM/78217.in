@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Once marked ready, the endpoint will be considered for forwarding requests by the Web Gateway.",
+    "In cases where no response is returned, the Endpoint Worker differentiates two cases: (1) jobs that have been canceled or expired and (2) jobs that are still starting up.",
+    "Since loading model weights can require a substantial amount of time, a configurable 30-minute timeout is currently implemented before a job is deemed cancelled or expired.",
+    "Moving forward, this could be dynamically configured with an additional estimated load time on a per-model basis via the ai_model_configurations table.",
+    "For cancelled or expired jobs, the Endpoint Worker removes the corresponding entries in ai_model_endpoints and ai_model_endpoint_jobs."
+  ]
+}

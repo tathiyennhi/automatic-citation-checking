@@ -1,0 +1,44 @@
+{
+  "doc_id": "43876",
+  "text": "1) Its Lagrangian, and 2) The generalized forces that act on it. We first present a methodology for modeling the positivedefinite mass-matrix M θ (q) using a neural network with parameters contained in θ. As shown in Figure 3 , we predict M θ (q) ≻ 0 by predicting the N 2 +N 2 elements of its Cholesky factor, which is a lower-triangular matrix Ł θ (q), as is done by [CITATION_1] , [CITATION_2] . [CITATION_3] Here, the neural network first outputs a vector, of which the first N elements are used as the diagonal of Ł θ (q), and the remaining N 2 −N 2 are used for the off-diagonal elements of the lower half of the matrix. We additionally add a constant offset to the diagonals of Ł θ (q) so that M θ (q) is diagonally dominant and easily invertible given random initializations of θ. We then predict:",
+  "correct_citation": {
+    "[CITATION_1]": "53366105",
+    "[CITATION_2]": "5670914",
+    "[CITATION_3]": "9169820"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As shown in Figure 3 , we predict M θ (q) ≻ 0 by predicting the N 2 +N 2 elements of its Cholesky factor, which is a lower-triangular matrix Ł θ (q), as is done by  ,  .",
+      "s_span": 205,
+      "e_span": 398
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "As shown in Figure 3 , we predict M θ (q) ≻ 0 by predicting the N 2 +N 2 elements of its Cholesky factor, which is a lower-triangular matrix Ł θ (q), as is done by  ,  .",
+      "s_span": 205,
+      "e_span": 398
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "As shown in Figure 3 , we predict M θ (q) ≻ 0 by predicting the N 2 +N 2 elements of its Cholesky factor, which is a lower-triangular matrix Ł θ (q), as is done by  ,  .  Here, the neural network first outputs a vector, of which the first N elements are used as the diagonal of Ł θ (q), and the remaining N 2 −N 2 are used for the off-diagonal elements of the lower half of the matrix.",
+      "s_span": 205,
+      "e_span": 626
+    }
+  ],
+  "bib_entries": {
+    "5670914": {
+      "title": "Backprop KF: Learning discriminative deterministic state estimators",
+      "abstract": "Generative state estimators based on probabilistic filters and smoothers are one of the most popular classes of state estimators for robots and autonomous vehicles. However, generative models have limited capacity to handle rich sensory observations, such as camera images, since they must model the entire distribution over sensor readings. Discriminative models do not suffer from this limitation, but are typically more complex to train as latent variable models for state estimation. We present an alternative approach where the parameters of the latent state distribution are directly optimized as a deterministic computation graph, resulting in a simple and effective gradient descent algorithm for training discriminative state estimators. We show that this procedure can be used to train state estimators that use complex input, such as raw camera images, which must be processed using expressive nonlinear function approximators such as convolutional neural networks. Our model can be viewed as a type of recurrent neural network, and the connection to probabilistic filtering allows us to design a network architecture that is particularly well suited for state estimation. We evaluate our approach on synthetic tracking task with raw image inputs and on the visual odometry task in the KITTI dataset. The results show significant improvement over both standard generative approaches and regular recurrent neural networks."
+    },
+    "9169820": {
+      "title": "Estimation of inertial parameters of rigid body links of manipulators",
+      "abstract": "A method of estimating the mass, the location of center of mass, and the moments of inertia of each rigid body link of a robot during general manipulator movement is presented. The algorithm is derived from the Newton-Euler equations, and uses measurements of the joint torques as well as the measurement and calculation of the kinematics of the manipulator while it is moving. The identification equations are linear in the desired unknown parameters, and a modified least squares algorithm is used to obtain estimates of these parameters. Some of the parameters, however, are not identifiable due to the restricted motion of proximal links and the lack of full force/torque sensing. The algorithm was implemented on the MIT Serial Link Direct Drive Arm. A good match was obtained between joint torques predicted from the estimated parameters and the joint torques computed from motor currents."
+    },
+    "53366105": {
+      "title": "Deep Lagrangian networks: Using physics as model prior for deep learning",
+      "abstract": "Deep learning has achieved astonishing results on many tasks with large amounts of data and generalization within the proximity of training data. For many important real-world applications, these requirements are unfeasible and additional prior knowledge on the task domain is required to overcome the resulting problems. In particular, learning physics models for model-based control requires robust extrapolation from fewer samples - often collected online in real-time - and model errors may lead to drastic damages of the system. Directly incorporating physical insight has enabled us to obtain a novel deep model learning approach that extrapolates well while requiring fewer samples. As a first example, we propose Deep Lagrangian Networks (DeLaN) as a deep network structure upon which Lagrangian Mechanics have been imposed. DeLaN can learn the equations of motion of a mechanical system (i.e., system dynamics) with a deep network efficiently while ensuring physical plausibility. The resulting DeLaN network performs very well at robot tracking control. The proposed method did not only outperform previous model learning approaches at learning speed but exhibits substantially improved and more robust extrapolation to novel trajectories and learns online in real-time"
+    }
+  },
+  "generator": "fallback_v4"
+}

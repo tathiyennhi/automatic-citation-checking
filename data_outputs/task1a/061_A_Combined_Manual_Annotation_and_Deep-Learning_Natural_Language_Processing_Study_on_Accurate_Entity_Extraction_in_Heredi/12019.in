@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Secondly, instead of predicting each entity type separately in BioBERT, our NER model trained all four entity types jointly in a single model, generating representations that captured invariant properties to tasks by sharing features.",
+    "In order to demonstrate the performance of the joint NER model of the four entity types,Finetune BERT DisƟlBERT Knowledge DisƟllaƟon Phase I 549,587 BERN-Annotated PubMed Abstracts Phase II 400 Full PubMed ArƟcles Annotated by us Offline Inference Online Inference Teacher Model: BERT Student Model: DisƟlBERT L CE L COS L KLDiv Loss 5.0 1.0 2.0 12 layers 6 layers Logits Logits Name EnƟty RecogniƟon (NER) Biomedical Corpus (a) (b) PRETRAINING FINETUNING(c)E 0 E 2 E 3 E 4 E 6 E …… E 5 E 1 MulƟ-Head Self -AƩenƟon Add & Layer NormalizaƟon Forward FeedAdd & Layer NormalizaƟon X 12 which consists of multiple self-attention heads.",
+    "c The structural details of knowledge distillation The teacher model (BERT) contains 12 layers while the student model (DistilBERT) has 6 layers.",
+    "The well pretrained weights of the 2nd, 4th, 6th, 8th, 10th and 12th layers of the teacher model are transferred as the initialized weight of the student model.",
+    "The output logits of the last layers of both the teacher and student models are used to calculate the total loss of the model according to Loss = 5.0 * L KLDiv + 1.0 * L COS + 2.0 * L CEE A E A E A E A E B E A E A E A Forward Feed IniƟalized Weight Transferboth joint modeling and separate modeling were conducted."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "the classes \"Model\" and \"Experiment\" in the ART corpus are semantically related to \"Methods\" in PubMed-20k (PMD) (see Table 3).",
+    "An analysis of semantic relatedness can help consolidate different annotation schemes.We propose machine learning models to support the identification of semantically related classes according to the following idea: If a model trained for PMD recognises sentences labelled with ART:Model as PMD:Method, and vice versa, then the classes ART:Model and PMD:Method can be assumed to be semantically related.Let T be the set of all tasks, L the set of all classes in all tasks, m t (s) the label of sentence s predicted by the model for task t and S l the set of sentences with the ground truth label l. For each class l ∈ L, the corresponding semantic vector v l ∈ R |L| is defined as:v l,l = t∈T,s∈S l 1(m t (s) = l) |S l | (14)where v l,l ∈ R is the component of the vector v l for class l ∈ L and 1( p) is the indicator function that returns 1 if p is true and 0 otherwise.",
+    "Intuitively, the semantic vectors concatenated vertically to a matrix represent a \"confusion matrix\" (see Fig. 4 as an example).",
+    "Now, we define the semantic relatedness of two classes k, l ∈ L using cosine similarity:semantic_relatedness(k, l) = cos(v k, v l) = v k • v l ||v k || • ||v l ||(15) Experimental setupThis section describes the experimental evaluation of the proposed approaches, i.e.",
+    "used datasets, implementation details and evaluation methods."
+  ]
+}

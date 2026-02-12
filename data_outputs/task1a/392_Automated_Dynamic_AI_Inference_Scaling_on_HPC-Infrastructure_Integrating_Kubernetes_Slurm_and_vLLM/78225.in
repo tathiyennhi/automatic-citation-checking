@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "While this could be an indicator for queueing impacting general performance, especially when done across multiple GPUs, it also leads to the assumption that once queueing has started, the slight latency introduced by the Web Gateway could buffer the impact of load put on the vLLM api server, 'masking' the queuing process.",
+    "When compared to GPU-L (where no queueing occurs), we observe higher E2EL and TTFT as expected.",
+    "However, at 500 and 1000 concurrent requests, MD and Std for TTFT deviates massively for the Web Gateway when compared to direct vLLM node access, with a nearly 1 second (41.95%) slower median TTFT.This suggests that our current implementation of routing requests via the Web Gateway starts to bottleneck in scenarios where enough GPU compute is present to handle the incoming load.",
+    "DiscussionThe presented architecture is still considered a work in progress, and this paper does not claim to represent best practices.",
+    "Its purpose is to provide a starting point for other infrastructure projects, highlighting where the chosen implementation has succeeded, where it faced problems, and where it currently falls short.From early friendly user tests with small groups that use various applications to access our Web Gateway, such as KI:Connectfoot_7 or Open WebUI 11, we are confident that the foundation of our architecture -scaling LLM serving for synchronous applications in an HPC environment -is sound."
+  ]
+}

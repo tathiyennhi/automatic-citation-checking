@@ -1,0 +1,20 @@
+{
+  "doc_id": "48441",
+  "text": "One approach is to use a generative model for Z. If this model describes useful interactions between the rows and columns of Z, then inference can provide predictions of the unobserved entries. A typical formulation draws Z from a distribution that is parameterized by an unobserved matrix Y . This matrix Y is of rank K M, N so that we may write Y = U V T , where U and V are M ×K and N ×K matrices, respectively. A common approach is to say that the rows of U and V are independent draws from two K-dimensional Gaussian distributions [CITATION_1] . We then interpret these K-dimensional vectors as latent features that are distributed representations of the members of M and N . We denote these vectors as u m and v n for the (transposed) mth row of U and nth row of V , respectively, so that Y m,n = u T m v n . The distribution linking Y and Z is application-specific. For ratings data it may be natural to use an ordinal regression model. For binary data, such as in link prediction, a Bernoulli logistic model may be appropriate. PMF models typically assume that the entries of Z are independent given Y , although this is not necessary. In Section 4 we will use a conditional likelihood model that explicitly includes dependencies.",
+  "correct_citation": {
+    "[CITATION_1]": "467086"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A common approach is to say that the rows of U and V are independent draws from two K-dimensional Gaussian distributions  ."
+    }
+  ],
+  "bib_entries": {
+    "467086": {
+      "title": "Probabilistic matrix factorization",
+      "abstract": "Many existing approaches to collaborative filtering can neither handle very large datasets nor easily deal with users who have very few ratings. In this paper we present the Probabilistic Matrix Factorization (PMF) model which scales linearly with the number of observations and, more importantly, performs well on the large, sparse, and very imbalanced Netflix dataset. We further extend the PMF model to include an adaptive prior on the model parameters and show how the model capacity can be controlled automatically. Finally, we introduce a constrained version of the PMF model that is based on the assumption that users who have rated similar sets of movies are likely to have similar preferences. The resulting model is able to generalize considerably better for users with very few ratings. When the predictions of multiple PMF models are linearly combined with the predictions of Restricted Boltzmann Machines models, we achieve an error rate of 0.8861, that is nearly 7% better than the score of Netflix's own system."
+    }
+  },
+  "generator": "fallback_v4"
+}

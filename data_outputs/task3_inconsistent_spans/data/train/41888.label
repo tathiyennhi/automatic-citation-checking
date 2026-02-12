@@ -1,0 +1,33 @@
+{
+  "doc_id": "41888",
+  "text": "It should be noted that in the general case the structure of DFAs will be less ideal, i.e., there will be more than one state with incoming transitions labeled by a particular input character. Consequently, each chunk will have to be matched for more than one DFA state. We will develop a measure for the suitability of a DFA for this type of speculative parallelization in Sect. 4. Our analysis of the time-complexity of this method shows that for |P| > 1, a speedup is achievable in general. This has been confirmed by our experimental evaluations on SIMD, shared-memory multicore, and the Amazon EC2 cloud-computing environments. We will discuss the trade-offs that come with multi-character reverse lookahead, and we will incorporate inhomogeneous compute capacities of processors to resolve load imbalances. This is essential to effectively utilize heterogeneous multicore architectures, and to overcome the performance variability of nodes reported with cloud computing environments [CITATION_1] [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "1500147",
+    "[CITATION_2]": "7874644"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This is essential to effectively utilize heterogeneous multicore architectures, and to overcome the performance variability of nodes reported with cloud computing environments   .",
+      "s_span": 813,
+      "e_span": 1016
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This is essential to effectively utilize heterogeneous multicore architectures, and to overcome the performance variability of nodes reported with cloud computing environments   .",
+      "s_span": 813,
+      "e_span": 1016
+    }
+  ],
+  "bib_entries": {
+    "1500147": {
+      "title": "Above the clouds: a Berkeley view of cloud computing",
+      "abstract": "Cloud Computing, the long-held dream of computing as a utility, has the potential to transform a large part of the IT industry, making software even more attractive as a service and shaping the way IT hardware is designed and purchased. Developers with innovative ideas for new Internet services no longer require the large capital outlays in hardware to deploy their service or the human expense to operate it. They need not be concerned about overprovisioning for a service whose popularity does not meet their predictions, thus wasting costly resources, or underprovisioning for one that becomes wildly popular, thus missing potential customers and revenue. Moreover, companies with large batch-oriented tasks can get results as quickly as their programs can scale, since using 1000 servers for one hour costs no more than using one server for 1000 hours. This elasticity of resources, without paying a premium for large scale, is unprecedented in the history of IT. Cloud Computing refers to both the applications delivered as services over the Internet and the hardware and systems software in the datacenters that provide those services. The services themselves have long been referred to as Software as a Service (SaaS). The datacenter hardware and software is what we will call a Cloud. When a Cloud is made available in a pay-as-you-go manner to the general public, we call it a Public Cloud; the service being sold is Utility Computing. We use the term Private Cloud to refer to internal datacenters of a business or other organization, not made available to the general public. Thus, Cloud Computing is the sum of SaaS and Utility Computing, but does not include Private Clouds. People can be users or providers of SaaS, or users or providers of Utility Computing. We focus on SaaS Providers (Cloud Users) and Cloud Providers, which have received less attention than SaaS Users. From a hardware point of view, three aspects are new in Cloud Computing."
+    },
+    "7874644": {
+      "title": "Runtime measurements in the cloud: observing, analyzing, and reducing variance",
+      "abstract": "One of the main reasons why cloud computing has gained so much popularity is due to its ease of use and its ability to scale computing resources on demand. As a result, users can now rent computing nodes on large commercial clusters through several vendors, such as Amazon and rackspace. However, despite the attention paid by Cloud providers, performance unpredictability is a major issue in Cloud computing for (1) database researchers performing wall clock experiments, and (2) database applications providing service-level agreements. In this paper, we carry out a study of the performance variance of the most widely used Cloud infrastructure (Amazon EC2) from different perspectives. We use established microbenchmarks to measure performance variance in CPU, I/O, and network. And, we use a multi-node MapReduce application to quantify the impact on real dataintensive applications. We collected data for an entire month and compare it with the results obtained on a local cluster. Our results show that EC2 performance varies a lot and often falls into two bands having a large performance gap in-between --- which is somewhat surprising. We observe in our experiments that these two bands correspond to the different virtual system types provided by Amazon. Moreover, we analyze results considering different availability zones, points in time, and locations. This analysis indicates that, among others, the choice of availability zone also influences the performance variability. A major conclusion of our work is that the variance on EC2 is currently so high that wall clock experiments may only be performed with considerable care. To this end, we provide some hints to users."
+    }
+  },
+  "generator": "fallback_v4"
+}

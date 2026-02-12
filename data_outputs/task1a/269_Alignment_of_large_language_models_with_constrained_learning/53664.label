@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "We present a preference-based constrained alignment method (PeCAID) in Algorithm 3.",
+    "Given a prompt dataset D, we assume the Bradley-Terry model for both reward and utilities:P (1 r (y 1 ≻ y 0) = 1 | x) = σ (r(x, y 1) -r(x, y 0)) P (1 gi (y 1 ≻ y 0) = 1 | x) = σ (g i (x, y 1) -g i (x, y 0)) for i = 1,... m.To remove the dependence on the reward and utility models, we introduce a pre-alignment scheme to first obtain unconstrained pre-aligned LLMs: π θr and {π θg i } m i = 1 by fitting human annotations 1 r and {1 gi } m i = 1, respectively.",
+    "The pre-alignment step can be solved by employing DPO over the preference dataset D pref, allowing us to approximate reward and utility models byr(x, y) = β log π θr (y | x) π ref (y | x) + β log Z r (x) g i (x, y) = β log π θg i (y | x) π ref (y | x) + β log Z gi (x) for i = 1,..., mwhere Z r (x) and {Z gi (x)} m i = 1 are the normalization constants [35].",
+    "At time t + 1, to perform the LLM policy optimization step in Algorithm 1, we introduce a pseudo preference optimization for the preference dataset D pref, which is similar as (13) by replacing r λ(t+1) (x, y) bys λ(t+1) (x, y) = β log π θr (y | x) π ref (y | x) + λ(t + 1), log π θg (y | x) π ref (y | x)where logπ θg (y | x) πref(y | x):= log π θg 1 (y | x) πref(y | x),..., log π θg m (y | x) πref(y | x) ⊤.",
+    "Hence, r λ(t+1) (x, y 1) -r λ(t+1) (x, y 0) = s λ(t+1) (x, y 1) -s λ(t+1) (x, y 0)and we obtain a preference dataset D † λ(t+1) in a similar way as D † λ(t+1)."
+  ],
+  "correct_citations": [
+    "The pre-alignment step can be solved by employing DPO over the preference dataset D pref, allowing us to approximate reward and utility models byr(x, y) = β log π θr (y | x) π ref (y | x) + β log Z r (x) g i (x, y) = β log π θg i (y | x) π ref (y | x) + β log Z gi (x) for i = 1,..., mwhere Z r (x) and {Z gi (x)} m i = 1 are the normalization constants [35]."
+  ]
+}

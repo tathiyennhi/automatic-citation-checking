@@ -1,0 +1,44 @@
+{
+  "doc_id": "33421",
+  "text": "With study presented in section 5, we find that existing methods may overfit on a single dataset, and so we suggest to put more emphasis on cross-dataset evaluation for a new way of benchmarking. However, to align to the previously established evaluation protocol on single dataset and compare to the existing state of the art, we conduct an additional study on fine-tuning our above models on target data. Experimental results show that, with progressively trained and generalizable baseline models, it is relatively more easy to adapt to new datasets by fine-tuning, and further performance gain can be achieved. Therefore, we investigated the effect of pre-training on a large scale autonomous driving dataset along with fine-tuning on target dataset as reported in Table 10 . A → B refers to pre-training on A and fine-tuning on the target dataset B. Visible improvements can be seen in the case of Caltech [CITATION_1] , which resonates with our previous findings that due to low-resolution and sparse annotation, pretraining on ECP or CityPersons [CITATION_2] boosts the performances on Caltech [CITATION_3] . Importantly, in the case of CityPersons [CITATION_4] , the pre-training on ECP brings improvement of nearly 2% of M R −2 , as discussed above, ECP brings density, both in terms of number of pedestrians and pedestrians per frame. Conversely, due to relative smaller size, the pre-training on CityPersons [CITATION_5] does not bring any improvements on ECP.",
+  "correct_citation": {
+    "[CITATION_1]": "206764948",
+    "[CITATION_2]": "14020880",
+    "[CITATION_3]": "206764948",
+    "[CITATION_4]": "14020880",
+    "[CITATION_5]": "14020880"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Visible improvements can be seen in the case of Caltech"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": ", which resonates with our previous findings that due to low-resolution and sparse annotation, pretraining on ECP or CityPersons"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Visible improvements can be seen in the case of Caltech, which resonates with our previous findings that due to low-resolution and sparse annotation, pretraining on ECP or CityPersons boosts the performances on Caltech"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Importantly, in the case of CityPersons, the pre-training on ECP brings improvement of nearly 2% of M R −2, as discussed above, ECP brings density, both in terms of number of pedestrians and pedestrians per frame."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Conversely, due to relative smaller size, the pre-training on CityPersons does not bring any improvements on ECP."
+    }
+  ],
+  "bib_entries": {
+    "14020880": {
+      "title": "Citypersons: A diverse dataset for pedestrian detection",
+      "abstract": "Convnets have enabled significant progress in pedestrian detection recently, but there are still open questions regarding suitable architectures and training data. We revisit CNN design and point out key adaptations, enabling plain FasterRCNN to obtain state-of-the-art results on the Caltech dataset. To achieve further improvement from more and better data, we introduce CityPersons, a new set of person annotations on top of the Cityscapes dataset. The diversity of CityPersons allows us for the first time to train one single CNN model that generalizes well over multiple benchmarks. Moreover, with additional training with CityPersons, we obtain top results using FasterRCNN on Caltech, improving especially for more difficult cases (heavy occlusion and small scale) and providing higher localization quality."
+    },
+    "206764948": {
+      "title": "Pedestrian detection: An evaluation of the state of the art",
+      "abstract": "Pedestrian detection is a key problem in computer vision, with several applications that have the potential to positively impact quality of life. In recent years, the number of approaches to detecting pedestrians in monocular images has grown steadily. However, multiple data sets and widely varying evaluation protocols are used, making direct comparisons difficult. To address these shortcomings, we perform an extensive evaluation of the state of the art in a unified framework. We make three primary contributions: 1) We put together a large, well-annotated, and realistic monocular pedestrian detection data set and study the statistics of the size, position, and occlusion patterns of pedestrians in urban scenes, 2) we propose a refined per-frame evaluation methodology that allows us to carry out probing and informative comparisons, including measuring performance in relation to scale and occlusion, and 3) we evaluate the performance of sixteen pretrained state-of-the-art detectors across six data sets. Our study allows us to assess the state of the art and provides a framework for gauging future efforts. Our experiments show that despite significant progress, performance still has much room for improvement. In particular, detection is disappointing at low resolutions and for partially occluded pedestrians."
+    }
+  },
+  "generator": "fallback"
+}

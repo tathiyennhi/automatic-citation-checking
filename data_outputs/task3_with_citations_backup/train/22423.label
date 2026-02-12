@@ -1,0 +1,44 @@
+{
+  "doc_id": "22423",
+  "text": "Translation proceeds as follows. After Hiero translation with optimized feature weights and the first-pass language model, hypotheses are written to disk. For HCP we save translations as 10,000-best lists, whereas HiFST generates word lattices. The firstpass results are then rescored with the main 5-gram language model. In this operation the first-pass language model scores are removed before the main language model scores are applied. We then perform MBR rescoring. For the n-best lists we rescore the top 1,000 hypotheses using the negative sentence-level BLEU score as the loss function [CITATION_1] ; we have found that using a deeper k-best list is impractically slow. For the HiFST lattices we use lattice-based MBR search procedures described by [CITATION_2] in an implementation based on standard WFST operations [CITATION_3] ).",
+  "correct_citation": {
+    "[CITATION_1]": "11706155",
+    "[CITATION_2]": "7657227",
+    "[CITATION_3]": "10869889"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For the n-best lists we rescore the top 1,000 hypotheses using the negative sentence-level BLEU score as the loss function [CITATION_1] ; we have found that using a deeper k-best list is impractically slow.",
+      "s_span": 471,
+      "e_span": 677
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For the HiFST lattices we use lattice-based MBR search procedures described by [CITATION_2] in an implementation based on standard WFST operations [CITATION_3] ).",
+      "s_span": 678,
+      "e_span": 840
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "For the HiFST lattices we use lattice-based MBR search procedures described by [CITATION_2] in an implementation based on standard WFST operations [CITATION_3] ).",
+      "s_span": 678,
+      "e_span": 840
+    }
+  ],
+  "bib_entries": {
+    "10869889": {
+      "title": "OpenFst: A general and efficient weighted finite-state transducer library",
+      "abstract": "We describe OpenFst, an open-source library for weighted finite-state transducers (WFSTs). OpenFst consists of a C++ template library with efficient WFST representations and over twenty-five oper- ations for constructing, combining, optimizing, and searching them. At the shell-command level, there are corresponding transducer file repre- sentations and programs that operate on them. OpenFst is designed to be both very efficient in time and space and to scale to very large problems. This library has key applications speech, image, and natural language processing, pattern and string matching, and machine learning. We give an overview of the library, examples of its use, details of its design that allow customizing the labels, states, and weights and the lazy evaluation of many of its operations. Further information and a download of the OpenFst library can be obtained from http://www.openfst.org."
+    },
+    "7657227": {
+      "title": "Lattice Minimum Bayes-Risk decoding for statistical machine translation",
+      "abstract": "We present Minimum Bayes-Risk (MBR) decoding over translation lattices that compactly encode a huge number of translation hypotheses. We describe conditions on the loss function that will enable efficient implementation of MBR decoders on lattices. We introduce an approximation to the BLEU score (Papineni et al., 2001) that satisfies these conditions. The MBR decoding under this approximate BLEU is realized using Weighted Finite State Automata. Our experiments show that the Lattice MBR decoder yields moderate, consistent gains in translation performance over N-best MBR decoding on Arabic-to-English, Chinese-to-English and English-to-Chinese translation tasks. We conduct a range of experiments to understand why Lattice MBR improves upon N-best MBR and study the impact of various parameters on MBR performance."
+    },
+    "11706155": {
+      "title": "Minimum Bayes-risk decoding for statistical machine translation",
+      "abstract": "Abstract : We present Minimum Bayes-Risk (MBR) decoding for statistical machine translation. This statistical approach aims to minimize expected loss of translation errors under loss functions that measure translation performance. We describe a hierarchy of loss functions that incorporate different levels of linguistic information from word strings, word-to-word alignments from an MT system, and syntactic structure from parse-trees of source and target language sentences. We report the performance of the MBR decoders on a Chinese-to-English translation task. Our results show that MBR decoding can be used to tune statistical MT performance for specific loss functions."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "This approach reduces the number of all-reduce operations in both the forward and backward passes.",
+    "It achieves this by employing opsharding for each residual addition, which would typ-ically necessitate an all-reduce operation.",
+    "Calculating the Attention and Feed-Forward operations in parallel allows intermediate results to be locally reduced before a single all-reduce operation, thus minimizing communication overhead and enhancing computational efficiency during training.",
+    "-Initialization: For the Feed-Forward output layers before the residuals, the initialization scheme introduced in [44] is used.",
+    "For all other layers, the small initialization scheme from [43] is used -All Dense Layers: While GPT-3 uses alternating dense and sparse layers, they instead opt to exclusively use dense layers to reduce implementation complexity.From a hardware perspective, GPT-NeoX-20B undergoes training using twelve super micro AS-4124 GO-NART servers."
+  ],
+  "correct_citations": [
+    "-Initialization: For the Feed-Forward output layers before the residuals, the initialization scheme introduced in [44] is used.",
+    "For all other layers, the small initialization scheme from [43] is used -All Dense Layers: While GPT-3 uses alternating dense and sparse layers, they instead opt to exclusively use dense layers to reduce implementation complexity.From a hardware perspective, GPT-NeoX-20B undergoes training using twelve super micro AS-4124 GO-NART servers."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Generally, the similarity function can be opted by cosine similarity, Euclidean distance, or dot product to compute pairwise similarity.",
+    "Note that positive and negative pairs may be optional depending on the contrastive loss as depicted next.",
+    "The projection head g may need to be applied after the output of e if the objective requires self-supervised labels (e.g., supervised contrastive learning).SCARF (Bahri et al, 2022) is an MLP-based framework with a two-stage learning strategy: InfoNCE (van den Oord et al, 2018) contrastive pre-training and supervised fine-tuning, which reinforces the generalizability for various tabular domains.",
+    "In the pre-training stage, the given input is corrupted with a random subset of its features, which are then replaced by a random view from the marginal distribution of the corresponding features to represent positive and negative instances.",
+    "Subsequently, InfoNCE is applied as the similarity function to encourage the sample and the variant of the corresponding sample to be close, and the sample and the variants of the other samples to be far apart:ϕ Inf oN CE (h i, h + i, h - j) = log( exp( hi•h + i τ) N j=1 exp( hi•h - j τ)), (5)where τ is the temperature parameter.In contrast to SCARF, STab (Hajiramezanali et al, 2022) aims to introduce an augmentation-free self-supervised representation learning technique that does not require the need for negative pairs."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,29 @@
+{
+  "doc_id": "6688",
+  "text": "As one reviewer kindly pointed out that our model is a factorial CRF [CITATION_1] , in the sense that the bundled tags can be factorized two connected latent variables. Initially, factorial CRFs are designed to jointly model two related (and typically hierarchical) sequential labeling tasks, such as POS tagging and chunking. In this work, our coupled CRF jointly models two same tasks which have different annotation schemes. Moreover, this work provides a natural way to learn from incomplete annotations where one sentence only contains one-side labels. The reviewer also suggests that our objective can be optimized with the latent variable structured perceptron of [CITATION_2] , which we leave as future work.",
+  "correct_citation": {
+    "[CITATION_1]": "6038991",
+    "[CITATION_2]": "125278"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As one reviewer kindly pointed out that our model is a factorial CRF, in the sense that the bundled tags can be factorized two connected latent variables."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The reviewer also suggests that our objective can be optimized with the latent variable structured perceptron of, which we leave as future work."
+    }
+  ],
+  "bib_entries": {
+    "6038991": {
+      "title": "Dynamic conditional random fields: Factorized probabilistic models for labeling and segmenting sequence data",
+      "abstract": "In sequence modeling, we often wish to represent complex interaction between labels, such as when performing multiple, cascaded labeling tasks on the same sequence, or when long-range dependencies exist. We present dynamic conditional random fields (DCRFs), a generalization of linear-chain conditional random fields (CRFs) in which each time slice contains a set of state variables and edges---a distributed state representation as in dynamic Bayesian networks (DBNs)---and parameters are tied across slices. Since exact inference can be intractable in such models, we perform approximate inference using several schedules for belief propagation, including tree-based reparameterization (TRP). On a natural-language chunking task, we show that a DCRF performs better than a series of linear-chain CRFs, achieving comparable performance using only half the training data. In addition to maximum conditional likelihood, we present two alternative approaches for training DCRFs: marginal likelihood training, for when we are primarily interested in predicting only a subset of the variables, and cascaded training, for when we have a distinct data set for each state variable, as in transfer learning. We evaluate marginal training and cascaded training on both synthetic data and real-world text data, finding that marginal training can improve accuracy when uncertainty exists over the latent variables, and that for transfer learning, a DCRF trained in a cascaded fashion performs better than a linear-chain CRF that predicts the final task directly."
+    },
+    "125278": {
+      "title": "Latent variable perceptron algorithm for structured classification",
+      "abstract": "We propose a perceptron-style algorithm for fast discriminative training of structured latent variable model, and analyzed its convergence properties. Our method extends the perceptron algorithm for the learning task with latent dependencies, which may not be captured by traditional models. It relies on Viterbi decoding over latent variables, combined with simple additive updates. Compared to existing probabilistic models of latent variables, our method lowers the training cost significantly yet with comparable or even superior classification accuracy."
+    }
+  },
+  "generator": "fallback"
+}

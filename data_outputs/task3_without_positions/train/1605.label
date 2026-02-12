@@ -1,0 +1,56 @@
+{
+  "doc_id": "1605",
+  "text": "3) Other phase-shift algorithms-The Loupas 2-D autocorrelator [CITATION_1] is another commonly used displacement estimation algorithm. It is an extension of the Kasai algorithm, and uses information from the depth samples within an axial range to calculate displacement. The difference between the Kasai and Loupas algorithms is that the Kasai algorithm assumes a constant carrier frequency for the data while the Loupas algorithm calculates the mean Doppler frequency and the mean RF frequency at each axial position. In other words, the Loupas algorithm corrects for local variation of the center frequency and has been shown to yield more accurate displacement estimates [CITATION_2] . In addition, iterative algorithms have been described that aim to be robust with noisy data. For example, Pesavento et al. [CITATION_3] implemented a real-time, iterative algorithm that uses phase zero seeking to calculate displacement, and Byram et al. [CITATION_4] , [CITATION_5] described a Bayesian displacement estimator.",
+  "correct_citation": {
+    "[CITATION_1]": "23727255",
+    "[CITATION_2]": "21311239",
+    "[CITATION_3]": "20681347",
+    "[CITATION_4]": "1280858",
+    "[CITATION_5]": "17676124"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "3) Other phase-shift algorithms-The Loupas 2-D autocorrelator  is another commonly used displacement estimation algorithm."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In other words, the Loupas algorithm corrects for local variation of the center frequency and has been shown to yield more accurate displacement estimates  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "For example, Pesavento et al.  implemented a real-time, iterative algorithm that uses phase zero seeking to calculate displacement, and Byram et al.  ,  described a Bayesian displacement estimator."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "For example, Pesavento et al.  implemented a real-time, iterative algorithm that uses phase zero seeking to calculate displacement, and Byram et al.  ,  described a Bayesian displacement estimator."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "For example, Pesavento et al.  implemented a real-time, iterative algorithm that uses phase zero seeking to calculate displacement, and Byram et al.  ,  described a Bayesian displacement estimator."
+    }
+  ],
+  "bib_entries": {
+    "23727255": {
+      "title": "An axial velocity estimator for ultrasound blood flow imaging, based on a full evaluation of the Doppler Equation by Means of a Two-Dimensional Autocorrelation Approach",
+      "abstract": "This paper introduces a new velocity estimator, referred to as the 2D autocorrelator, which differs from conventional Doppler techniques in two respects: the derivation of axial velocity values by evaluating the Doppler equation using explicit estimates of both the mean Doppler and the mean RF frequency at each range gate location; and, the 2D nature (depth samples versus pulse transmissions) of processing within the range gate. The estimator's output can be calculated by evaluating the 2D autocorrelation function of the demodulated (baseband) backscattered echoes at two lags. A full derivation and mathematical description of the estimator is presented, based on the framework of the 2D Fourier transform. The same framework is adopted to analyze two other established velocity estimators (the conventional 1D autocorrelator and the crosscorrelator) in a unifying manner, and theoretical arguments as well as experimental results are used to highlight the common aspects of all three estimators. In addition, a thorough performance evaluation is carried out by means of extensive simulations, which document the effect of a number of factors (velocity spread, range gate length, ensemble length, noise level, transmitted bandwidth) and provide an insight into the optimum parameters and trade-offs associated with individual algorithms. Overall, the 2D autocorrelator is shown to offer the best performance in the context of the specific simulation conditions considered here. Its superiority over the crosscorrelator is restricted to cases of low signal-to-noise ratios. However, the 2D autocorrelator always outperforms the conventional 1D autocorrelator by a significant margin. These comparisons, when linked to the computational requirements of the proposed estimator, suggest that it combines the generally higher performance of 2D broadband time-domain techniques with the relatively modest complexity of 1D narrowband phase-domain velocity estimators. >"
+    },
+    "21311239": {
+      "title": "Rapid tracking of small displacements with ultrasound",
+      "abstract": "Time-delay estimators, such as normalized cross correlation and phase-shift estimation, form the computational basis for elastography, blood flow measurements, and acoustic radiation force impulse (ARFI) imaging. This paper examines the performance of these algorithms for small displacements (less than half the ultrasound pulse wavelength). The effects of noise, bandwidth, stationary echoes, kernel size, downsampling, interpolation, and quadrature demodulation on the accuracy of the time delay estimates are measured in terms of bias and jitter. Particular attention is given to the accuracy and resolution of the displacement measurements and to the computational efficiency of the algorithms. In most cases, Loupas' two-dimensional (2-D) autocorrelator performs as well as the gold standard, normalized cross correlation. However, Loupas' algorithm's calculation time is significantly faster, and it is particularly suited to operate on the signal data format most commonly used in ultrasound scanners. These results are used to implement a real-time ARFI imaging system using a commercial ultrasound scanner and a computer cluster. Images processed with the algorithms are examined in an ex vivo liver ablation study."
+    },
+    "17676124": {
+      "title": "Bayesian speckle tracking. Part II: Biased ultrasound displacement estimation",
+      "abstract": "Ultrasonic displacement estimates have numerous clinical uses, including blood flow estimation, elastography, therapeutic guidance, and acoustic radiation force imaging (ARFI). These clinical tasks could be improved with better ultrasonic displacement estimates. Traditional ultrasonic displacement estimates are limited by the Cramer-Rao lower bound (CRLB). The CRLB can be surpassed using biased estimates. In this paper, a framework for biased estimation using Bayes' theorem is described. The Bayesian displacement estimation method is tested against simulations of several common types of motion: bulk, step, compression, and acoustic-radiation-force-induced motion. Bayesian estimation is also applied to in vivo ARFI of cardiac ablation lesions. The Bayesian estimators are compared with the unbiased estimator, normalized cross-correlation. As an example, the peak displacement of the simulated acoustic radiation force response is reported because this position results in the noisiest estimates. Estimates were made with a 1.5-λ kernel and 20 dB SNR on 100 data realizations. Estimates using normalized cross-correlation and the Bayes' estimator had mean-square errors of 17 and 7.6 μm², respectively, and contextualized by the true displacement magnitude, 10.9 μm. Biases for normalized cross-correlation and the Bayes' estimator are -0.12 and -0.28 μm, respectively. In vivo results show qualitative improvements. The results show that with small amounts of additional information, significantly improved performance can be realized."
+    },
+    "20681347": {
+      "title": "A time-efficient and accurate strain estimation concept for ultrasonic elastography using iterative phase zero estimation",
+      "abstract": "In ultrasonic elastography, the exact estimation of temporal displacements between two signals is the key to estimating strain. An algorithm was previously proposed that estimates these displacements using phase differences of the corresponding base-band signals. A major advantage of these algorithms compared with correlation techniques is the computational efficiency. In this paper, an extension of the algorithm is presented that iteratively takes into account the time shifts of the signals to overcome the problems of aliasing and accuracy in the estimation of the phase shift. Thus, it can be proven that the algorithm is equivalent to the search of the maximum of the correlation function. Furthermore, a robust logarithmic compression is proposed that only compresses the envelope of the signal. This compression does not introduce systematic errors and significantly reduces decorrelation noise. The resulting algorithm is a computationally simple and very fast alternative to conventional correlation techniques, and the accuracy of strain images is improved."
+    },
+    "1280858": {
+      "title": "Bayesian speckle tracking. Part I: An implementable perturbation to the likelihood function for ultrasound displacement estimation",
+      "abstract": "Accurate and precise displacement estimation has been a hallmark of clinical ultrasound. Displacement estimation accuracy has largely been considered to be limited by the Cramer-Rao lower bound (CRLB). However, the CRLB only describes the minimum variance obtainable from unbiased estimators. Unbiased estimators are generally implemented using Bayes' theorem, which requires a likelihood function. The classic likelihood function for the displacement estimation problem is not discriminative and is difficult to implement for clinically relevant ultrasound with diffuse scattering. Because the classic likelihood function is not effective, a perturbation is proposed. The proposed likelihood function was evaluated and compared against the classic likelihood function by converting both to posterior probability density functions (PDFs) using a noninformative prior. Example results are reported for bulk motion simulations using a 6λ tracking kernel and 30 dB SNR for 1000 data realizations. The canonical likelihood function assigned the true displacement a mean probability of only 0.070 ± 0.020, whereas the new likelihood function assigned the true displacement a much higher probability of 0.22 ± 0.16. The new likelihood function shows improvements at least for bulk motion, acoustic radiation force induced motion, and compressive motion, and at least for SNRs greater than 10 dB and kernel lengths between 1.5 and 12λ."
+    }
+  },
+  "generator": "fallback_v4"
+}

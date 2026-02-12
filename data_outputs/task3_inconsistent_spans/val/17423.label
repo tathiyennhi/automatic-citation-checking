@@ -1,0 +1,36 @@
+{
+  "doc_id": "17423",
+  "text": "which puts the overhead at approximately 31%. The same series of computations with the PML and lacunaebased correction was, in fact, repeated for T 0 ¼ 64 and DT ¼ 2. The results were very similar to those shown in Figs. 7 and 8, with the overhead of about 21%. The only question that still needs to be addressed is that of the ''optimality\" of the proposed lacunae + PML treatment of the boundaries. In other words, whether or not a different approach can offer an even better overall accuracy compared to what Figs. 7 and 8 show. To look into this issue, we compare the results obtained using the combination of lacunae and the PML with those obtained using the pure lacunae-based termination of the computational domain [CITATION_1] . The original method of [CITATION_2] requires buffer zones to surround X wider than the PML, and consequently, the computations are more expensive. However, the method of [CITATION_3] provably introduces no error associated with the domain truncation. Hence, the only source of the error on X is the interior discretization. In Fig. 9 , we compare the error profiles for the pure lacunae case and for the lacunae + PML case on four grids. We see that the two curves basically sit on top of one another for every grid. Hence, the error on X obtained using the combined lacunae + PML methodology is the same as that for the pure lacunae-based approach. As the latter is due to the interior discretization only, we conclude that the accuracy of the boundary treatment offered by the combined lacunae + PML methodology exceeds the accuracy of the scheme on X and consequently, the overall accuracy cannot be further improved by changing the boundary procedure.",
+  "correct_citation": {
+    "[CITATION_1]": "118949657",
+    "[CITATION_2]": "118949657",
+    "[CITATION_3]": "118949657"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To look into this issue, we compare the results obtained using the combination of lacunae and the PML with those obtained using the pure lacunae-based termination of the computational domain  .",
+      "s_span": 532,
+      "e_span": 737
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The original method of  requires buffer zones to surround X wider than the PML, and consequently, the computations are more expensive.",
+      "s_span": 738,
+      "e_span": 884
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "However, the method of  provably introduces no error associated with the domain truncation.",
+      "s_span": 885,
+      "e_span": 988
+    }
+  ],
+  "bib_entries": {
+    "118949657": {
+      "title": "Long-time numerical computation of wave-type solutions driven by moving sources",
+      "abstract": "Abstract We propose a methodology for calculating the solution of an initial-value problem for the three-dimensional wave equation over arbitrarily long time intervals. The solution is driven by moving sources that are compactly supported in space for any particular moment of time; the extent of the support is assumed bounded for all times. By a simple change of variables the aforementioned formulation obviously translates into the problem of propagation of waves across a medium in motion, which has multiple applications in unsteady aerodynamics, advective acoustics, and other areas. The algorithm constructed in the paper can employ any appropriate (i.e., consistent and stable) explicit finite-difference scheme for the wave equation. This scheme is used as a core computational technique and modified so that to allow for a non-deteriorating calculation of the solution for as long as necessary. Provided that the original underlying scheme converges in some sense, i.e., in suitable norms with a particular rate, we prove the grid convergence of the new algorithm in the same sense uniformly in time on arbitrarily long intervals. Thus, the new algorithm obviously does not accumulate error in the course of time; besides, it requires only a fixed non-growing amount of computer resources (memory and processor time) per one time step; these amounts are linear with respect to the grid dimension and thus optimal. The algorithm is inherently three-dimensional; it relies on the presence of lacunae in the solutions of the wave equation in odd-dimension spaces. The methodology presented in the paper is, in fact, a building block for constructing the nonlocal highly accurate unsteady artificial boundary conditions to be used for the numerical simulation of waves propagating with finite speed over unbounded domains."
+    }
+  },
+  "generator": "fallback_v4"
+}

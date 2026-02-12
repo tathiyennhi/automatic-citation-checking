@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This shifts learning toward tokens with higher task utility, improving convergence on reasoning benchmarks.",
+    "Algorithmfor batch in dataloader: outputs = model(**batch) loss = weighted_loss(outputs.logits, batch.labels, batch.rewards) optimizer.zero_grad() loss.backward() rank_allocator.update(loss, model) apply_new_ranks(model) optimizer.step() Listing 1: DRaFT-Q fine-tuning loop 3.6 Computational Complexity DRaFT-Q adds minimal overhead to standard LoRA.",
+    "Rank updates cost O(L) for L layers and require only threshold comparisons.",
+    "Token weighting introduces negligible cost (one multiply per token).",
+    "No extra forward or backward passes are required."
+  ],
+  "correct_citations": []
+}

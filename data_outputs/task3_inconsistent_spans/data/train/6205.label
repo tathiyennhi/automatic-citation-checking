@@ -1,0 +1,66 @@
+{
+  "doc_id": "6205",
+  "text": "One may wonder why the softmax Bellman operator should be employed, as the greedy policy from the Bellman equation suggests that the max operator should be optimal, and this paper is not focused on exploration, nor is it motivated by regularizing the policy, as in the entropy regularized MDP [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] . As discussed in earlier work [CITATION_5] , max leads to the significant issue of overestimation for the Qfunction. Furthermore, max tends to have higher gradient noise. Here we aim to provide analysis of how the softmax Bellman operator can overcome these issues. Although our analysis is focused on the softmax Bellman operator, this work could potentially give further insight into practical benefits of entropy regularization as well.",
+  "correct_citation": {
+    "[CITATION_1]": "17234172",
+    "[CITATION_2]": "3615386",
+    "[CITATION_3]": "8104710",
+    "[CITATION_4]": "3586421",
+    "[CITATION_5]": "2215254"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "One may wonder why the softmax Bellman operator should be employed, as the greedy policy from the Bellman equation suggests that the max operator should be optimal, and this paper is not focused on exploration, nor is it motivated by regularizing the policy, as in the entropy regularized MDP     .",
+      "s_span": 0,
+      "e_span": 346
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "One may wonder why the softmax Bellman operator should be employed, as the greedy policy from the Bellman equation suggests that the max operator should be optimal, and this paper is not focused on exploration, nor is it motivated by regularizing the policy, as in the entropy regularized MDP     .",
+      "s_span": 0,
+      "e_span": 346
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "One may wonder why the softmax Bellman operator should be employed, as the greedy policy from the Bellman equation suggests that the max operator should be optimal, and this paper is not focused on exploration, nor is it motivated by regularizing the policy, as in the entropy regularized MDP     .",
+      "s_span": 0,
+      "e_span": 346
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "One may wonder why the softmax Bellman operator should be employed, as the greedy policy from the Bellman equation suggests that the max operator should be optimal, and this paper is not focused on exploration, nor is it motivated by regularizing the policy, as in the entropy regularized MDP     .",
+      "s_span": 0,
+      "e_span": 346
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "As discussed in earlier work  , max leads to the significant issue of overestimation for the Qfunction.",
+      "s_span": 347,
+      "e_span": 462
+    }
+  ],
+  "bib_entries": {
+    "3615386": {
+      "title": "Bridging the gap between value and policy based reinforcement learning",
+      "abstract": "We establish a new connection between value and policy based reinforcement learning (RL) based on a relationship between softmax temporal value consistency and policy optimality under entropy regularization. Specifically, we show that softmax consistent action values correspond to optimal entropy regularized policy probabilities along any action sequence, regardless of provenance. From this observation, we develop a new RL algorithm, Path Consistency Learning (PCL), that minimizes a notion of soft consistency error along multi-step action sequences extracted from both on- and off-policy traces. We examine the behavior of PCL in different scenarios and show that PCL can be interpreted as generalizing both actor-critic and Q-learning algorithms. We subsequently deepen the relationship by showing how a single model can be used to represent both a policy and the corresponding softmax state values, eliminating the need for a separate critic. The experimental evaluation demonstrates that PCL significantly outperforms strong actor-critic and Q-learning baselines across several benchmarks."
+    },
+    "2215254": {
+      "title": "Averaged-DQN: variance reduction and stabilization for deep reinforcement learning",
+      "abstract": "Instability and variability of Deep Reinforcement Learning (DRL) algorithms tend to adversely affect their performance. Averaged-DQN is a simple extension to the DQN algorithm, based on averaging previously learned Q-values estimates, which leads to a more stable training procedure and improved performance by reducing approximation error variance in the target values. To understand the effect of the algorithm, we examine the source of value function estimation errors and provide an analytical comparison within a simplified model. We further present experiments on the Arcade Learning Environment benchmark that demonstrate significantly improved stability and performance due to the proposed extension."
+    },
+    "8104710": {
+      "title": "An alternative softmax operator for reinforcement learning",
+      "abstract": "A softmax operator applied to a set of values acts somewhat like the maximization function and somewhat like an average. In sequential decision making, softmax is often used in settings where it is necessary to maximize utility but also to hedge against problems that arise from putting all of one's weight behind a single maximum utility decision. The Boltzmann softmax operator is the most commonly used softmax operator in this setting, but we show that this operator is prone to misbehavior. In this work, we study a differentiable softmax operator that, among other properties, is a non-expansion ensuring a convergent behavior in learning and planning. We introduce a variant of SARSA algorithm that, by utilizing the new operator, computes a Boltzmann policy with a state-dependent temperature parameter. We show that the algorithm is convergent and that it performs favorably in practice."
+    },
+    "3586421": {
+      "title": "Sparse Markov decision processes with causal sparse Tsallis entropy regularization for reinforcement learning",
+      "abstract": "In this paper, a sparse Markov decision process (MDP) with novel causal sparse Tsallis entropy regularization is proposed.The proposed policy regularization induces a sparse and multi-modal optimal policy distribution of a sparse MDP. The full mathematical analysis of the proposed sparse MDP is provided.We first analyze the optimality condition of a sparse MDP. Then, we propose a sparse value iteration method which solves a sparse MDP and then prove the convergence and optimality of sparse value iteration using the Banach fixed point theorem. The proposed sparse MDP is compared to soft MDPs which utilize causal entropy regularization. We show that the performance error of a sparse MDP has a constant bound, while the error of a soft MDP increases logarithmically with respect to the number of actions, where this performance error is caused by the introduced regularization term. In experiments, we apply sparse MDPs to reinforcement learning problems. The proposed method outperforms existing methods in terms of the convergence speed and performance."
+    },
+    "17234172": {
+      "title": "Equivalence between policy gradients and soft Q-learning",
+      "abstract": "Two of the leading approaches for model-free reinforcement learning are policy gradient methods and $Q$-learning methods. $Q$-learning methods can be effective and sample-efficient when they work, however, it is not well-understood why they work, since empirically, the $Q$-values they estimate are very inaccurate. A partial explanation may be that $Q$-learning methods are secretly implementing policy gradient updates: we show that there is a precise equivalence between $Q$-learning and policy gradient methods in the setting of entropy-regularized reinforcement learning, that \"soft\" (entropy-regularized) $Q$-learning is exactly equivalent to a policy gradient method. We also point out a connection between $Q$-learning methods and natural policy gradient methods. Experimentally, we explore the entropy-regularized versions of $Q$-learning and policy gradients, and we find them to perform as well as (or slightly better than) the standard variants on the Atari benchmark. We also show that the equivalence holds in practical settings by constructing a $Q$-learning method that closely matches the learning dynamics of A3C without using a target network or $\\epsilon$-greedy exploration schedule."
+    }
+  },
+  "generator": "fallback_v4"
+}

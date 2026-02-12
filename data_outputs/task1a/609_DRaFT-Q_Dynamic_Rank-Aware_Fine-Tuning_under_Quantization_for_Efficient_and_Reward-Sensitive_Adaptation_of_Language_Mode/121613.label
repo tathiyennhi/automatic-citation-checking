@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Additionally, DRaFT-Q modifies the standard loss to emphasize semantically critical tokens-such as final answers or reasoning pivots-by assigning higher per-token weights.",
+    "Together, these enhancements provide faster convergence and better generalization, especially in low-resource scenarios such as fine-tuning 7B-13B models on a single T4 or L40-class GPU.",
+    "Dynamic Rank AllocationLet r t ℓ be the rank of adapter layer ℓ at training step t, and let ∆ t ℓ represent a smoothed learning signal (e.g., EMA of loss or gradient norm).",
+    "DRaFT-Q updates adapter ranks using a simple rule:r t+1 ℓ =      min(r t ℓ + δ, r max) if ∆ t ℓ > τ ↑ max(r t ℓ -δ, r min) if ∆ t ℓ < τ ↓ r t ℓ otherwiseA rank budget controller ensures total rank allocation stays within VRAM limits.",
+    "For 13B experiments, we preloaded adapters for ranks r = {8, 16, 32, 64} and dynamically swapped them per batch using real-time statistics, allowing efficient structural evolution during training."
+  ],
+  "correct_citations": []
+}

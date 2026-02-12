@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Each thread processes one target particle and computes its interactions with all source particles in neighboring boxes.",
+    "Particle indices are first loaded, followed by data access from global memory, interaction computation, and result accumulation.Redundant Implementation: Applies thread-level data redundancy by duplicating particle data for each interaction pair.",
+    "The data is restructured into an Array-of-Structures (AoS) format, where each entry contains both source and target attributes.",
+    "This enhances spatial locality, allowing threads to access all required data from a compact, contiguous memory block, thereby reducing cache misses.Both implementations were compared against the original MPI-based baseline [46], executed with 4 processes on our test system, they only rely on GPU for acceleration.",
+    "For this application we ignore evaluation of different tree levels unlike section 4.1 since for [46] there are many MLFMA trees with different levels for each iteration."
+  ],
+  "correct_citations": [
+    "This enhances spatial locality, allowing threads to access all required data from a compact, contiguous memory block, thereby reducing cache misses.Both implementations were compared against the original MPI-based baseline [46], executed with 4 processes on our test system, they only rely on GPU for acceleration.",
+    "For this application we ignore evaluation of different tree levels unlike section 4.1 since for [46] there are many MLFMA trees with different levels for each iteration."
+  ]
+}

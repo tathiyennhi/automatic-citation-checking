@@ -1,0 +1,20 @@
+{
+  "doc_id": "41986",
+  "text": "We first evaluated the upper-bound of dependencyinformed supertagging model, given gold standard first-order dependencies. As shown in Table 2 , with such long-distance information supertagging accuracy can reach 97.43%. Comparing to pointwise model (PW-AP) which only used local context (92.48%), this absolute 4.95% gain indicated that dependency information is really informative for supertagging. When automatically predicted dependency relations were given, there still were absolute 1.04% (auto POS) and 1.22% (gold POS) improvements from baseline PW-AP model. We also compared supertagging results with previous works (reported on section 22). Here we mainly compared the dependency-informed pointwise models with perceptron-based Bayes point machine (BPM) plus CFG-filter [CITATION_1] . To the best of our knowledge, these are the state-ofthe-art results on the same dataset with gold POS 2 \"UNK\" supertags are ignored in evaluation as previous. tags. CFG-filtering can be considered as an alternative way of incorporating long-distance constraints on supertagging results. Although our baseline system was slightly behind (PW-AP: 92.16% vs. BPM:92.53%), the final accuracies of grammatically constrained models were very close (PW-DEP: 93.53% vs. BPM-CFG: 93.60%); They were not statistically significantly different (P-value is 0.26). As the result of oracle PW-DEP indicated, supertagging accuracy can be further improved with better dependency modeling (e.g., with a semi-supervised dependency parser), which makes it more extensible and attractive than using CFG-filter after the supertagging process.",
+  "correct_citation": {
+    "[CITATION_1]": "8625358"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Here we mainly compared the dependency-informed pointwise models with perceptron-based Bayes point machine (BPM) plus CFG-filter  ."
+    }
+  ],
+  "bib_entries": {
+    "8625358": {
+      "title": "Hpsg supertagging: A sequence labeling view",
+      "abstract": "Supertagging is a widely used speed-up technique for deep parsing. In another aspect, supertagging has been exploited in other NLP tasks than parsing for utilizing the rich syntactic information given by the supertags. However, the performance of supertagger is still a bottleneck for such applications. In this paper, we investigated the relationship between supertagging and parsing, not just to speed up the deep parser; We started from a sequence labeling view of HPSG supertagging, examining how well a supertagger can do when separated from parsing. Comparison of two types of supertagging model, point-wise model and sequential model, showed that the former model works competitively well despite its simplicity, which indicates the true dependency among supertag assignments is far more complex than the crude first-order approximation made in the sequential model. We then analyzed the limitation of separated supertagging by using a CFG-filter. The results showed that big gains could be acquired by resorting to a light-weight parser."
+    }
+  },
+  "generator": "fallback_v4"
+}

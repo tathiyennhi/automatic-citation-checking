@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Monomer Global Alignment Kernel Global alignmentGiven two sequences A = (a 1,..., a n) and B = (b 1,..., b m) of lengths n and m, respectively over an alphabet A, a (global) alignment is a pair of nondecreasing index paths (π 1, π 2) with unit steps (1, 0), (0, 1), or (1, 1) that map A to B through substitutions and gaps.",
+    "Dynamic programming (DP) aggregates local substitution scores and gap operations from boundary conditions to the terminal cell, in O(nm) time [4].While the Dynamic Time Warping (DTW) distance is a de-facto baseline for sequence comparison, it is not a metric and is known to be not negative definite [4]; consequently, kernels derived directly from DTW (e.g., exp(-γ DTW)) are not guaranteed positive definite and can break RKHS-based learning.",
+    "Global Alignment (GA) kernels address this by replacing the hard minimum in DTW with a sum over all monotone alignments (a soft-min), yielding a similarity that can be made positive definite under mild conditions on the local kernel and gap weighting [4,14].",
+    "GA kernels retain DTW's O(nm) complexity but, unlike DTW's single best path, they summarize the entire ensemble of alignments costs, which is often more informative for learning [4, §2.2].",
+    "Global alignment kernelsLet κ: X × X → R ≥0 be a local similarity (typically a valid kernel on tokens; e.g., Tanimoto on fingerprints or any PSD similarity defined on monomers)."
+  ]
+}

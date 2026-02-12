@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This modular approach facilitates multi-task learning and domain adaptation, allowing for easy integration of multiple tasks by swapping adapters.",
+    "Research has shown that adapters can achieve performance comparable to full fine-tuning with significantly fewer trainable parameters [2].Architecture: In this illustration, two adapter modules are added to each Transformer layer:• One after the multi-headed attention block • Another after the feed-forward block Each adapter module is designed as a bottleneck: it reduces the dimension of the hidden state (down-projection), applies a nonlinear transformation, and then restores it to the original dimension (up-projection), with a skip connection to stabilize training.",
+    "Only these adapter modules (and a few related parameters, like layer normalization) are trainable during fine-tuning, while most of the Transformer parameters remain frozen [2].Paper ID: SR25612082136 DOI: https://dx.doi.org/10.21275/SR25612082136 By training just these smaller adapter modules, we significantly decrease the total number of trainable parameters, making the fine-tuning process more efficient than traditional full fine-tuning.",
+    "Benefits of Adapters:• Parameter Efficiency: Adapters drastically reduce the number of trainable parameters, allowing multiple tasks to share the same backbone with minimal overhead.",
+    "• Modular Design: Different adapters can be swapped in and out for different tasks, facilitating multi-task learning and continuous integration of new tasks."
+  ]
+}

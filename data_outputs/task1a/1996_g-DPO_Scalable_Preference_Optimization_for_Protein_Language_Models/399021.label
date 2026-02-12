@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This ensures that the log-likelihood ratios used in the loss are valid.",
+    "Importantly, the approximation only holds for sequences scored under the same union mask.",
+    "Algorithm 2 Union-mask LL approximation Require: Cluster C ⊂ C; group G ⊂ C of size g; MLM model π; mask token [MASK] Ensure: Per-sequence approximate likelihoods { log p π (y)} y∈G 1: function UNIONMASK(G) 2: return D ← { p ∈ [[L]] | ∃ y, y ′ ∈ G: y p ̸ = y ′ p } 3: end function 4: function MASK(y, D) 5: x ← y; x p ← [MASK] for all p ∈ D 6: return x 7: end function 8: function LIKELIHOODS(G, π) 9: D ← UNIONMASK(G) 10: Choose arbitrary y ∈ G 11: x ← MASK(y, D) 12: logits ← π(x) ▷ single forward pass; returns token logits for all positions 13: for all y ∈ G do 14: log p π (y) ← p∈D log softmax(logits p)[ y p] 15: end for 16: return D, { log p π (y)} y∈G 17: end function B.3 Training speedup g-DPO improves training efficiency in two ways.",
+    "(1) Clustering prunes pairs that are redundant or less informative, reducing the quadratic growth of pairs and focusing updates on local neighborhoods that provide stronger training signal.",
+    "(2) Grouping amortizes likelihood evaluations: for a group of size g, all g2 pairwise preferences are computed from a single forward pass under the shared union mask, rather than one forward pass per pair."
+  ],
+  "correct_citations": []
+}

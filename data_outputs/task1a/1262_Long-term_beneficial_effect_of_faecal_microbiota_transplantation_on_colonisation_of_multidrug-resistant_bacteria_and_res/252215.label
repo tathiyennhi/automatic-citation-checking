@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Metagenomic pre-processingHuman-derived reads were removed from raw metagenomic reads by mapping reads to the human reference genome (GRCh38, NCBI accession ID GCF_000001405.26) using bowtie2 (version 2.4.2, option '-very-sensitive-local') and samtools (version 1.11).",
+    "Remaining non-human reads were then processed by fastp (version 0.20.1) to trim low-quality 3'-ends (parameters: '-cut_right -cut_window_size 4 -cut_mean_quality 20'), remove low-complexity sequences (parameter: '-y'), remove remaining adapter sequences (parameter: '-detect_adapter_for_pe') and remove reads shorter than 50 bases (parameter: '-l 50').",
+    "The resulting high-quality metagenomic reads were used in read-based taxonomic profiling and assembly-based ARG profiling.",
+    "Quantification of multidrug-resistant isolates in metagenomesTo identify and quantify whole-genome sequenced MDR bacteria in metagenomes, we mapped metagenomic reads derived from the same stool sample to the respective assembled genome using BWA-MEM (version 0.7.17) [53].",
+    "Mapped reads were counted and coverage was quantified using samtools coverage (version 1.10)."
+  ],
+  "correct_citations": [
+    "Quantification of multidrug-resistant isolates in metagenomesTo identify and quantify whole-genome sequenced MDR bacteria in metagenomes, we mapped metagenomic reads derived from the same stool sample to the respective assembled genome using BWA-MEM (version 0.7.17) [53]."
+  ]
+}

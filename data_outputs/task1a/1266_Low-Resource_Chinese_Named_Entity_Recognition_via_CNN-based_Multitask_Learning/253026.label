@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Further, F H is the emission score matrix, F H;y i represents the score of label y i.",
+    "To train the NER model, the negative log-likelihood of the correct label sequences is minimized over the training set:L NER ¼ À 1 T j j X s2T logðY ner s jH s; θ ner Þ (7)where T is the set of sentences in the training data; H s and Y ner s are the hidden representation and label sequence of the sentence s, respectively; and θ ner is the parameter set of the NER model.Word segmentation.",
+    "Because word segmentation task is similar in nature to NER, we treat the word segmentation task the same as NER, and the loss function of word segmentation is defined asL CWS ¼ À 1 T j j X s2T logðY cws s jH s; θ cws Þ (8)where y cws s is the label sequence of the sentence s for word segmentation, and θ cws is the parameter set of the CWS model.Joint loss function.",
+    "The final objective loss function of the joint model is defined by combining Equations ( 8) and ( 9) as follows:L JOINT ¼ L NER þ λL CWS (9)where λ is the balancing parameter used to adjust the influence of word segmentation on entity recognition.",
+    "To avoid the risk of overfitting, we add a residual connection to the model by summing the output of the embedding layer with the results of the encoding layer."
+  ],
+  "correct_citations": []
+}

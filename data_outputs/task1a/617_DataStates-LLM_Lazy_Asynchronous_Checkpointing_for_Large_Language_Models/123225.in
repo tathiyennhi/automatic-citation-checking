@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Second, such copies utilize the PCIe link between the GPU and the host, which is different from the communication links (i.e., NVLink [5] and GPUDirect RDMA [29]) between GPUs and between the compute nodes that are used for communication during training.",
+    "Thus, asynchronous copies do not compete for bandwidth with the forward and the backward passes and therefore they do not cause interference.",
+    "DATASTATES-LLM: SYSTEM DESIGN 5.1 Design PrinciplesBased on the observations outlined in § 4, we introduce a series of high-level design principles that we adopt in DataStates-LLM to mitigate the limitations of state-of-art LLM checkpointing runtimes.Coalescing of GPU Model/Optimizer Shards to Host Memory: Conventional asynchronous multi-level checkpointing techniques (as implemented in the related works mentioned in § 3) move the checkpoints one-at-a-time through the storage levels: first they allocate host memory to hold the checkpoint, then they capture the checkpoint on the host memory by performing a GPU-to-host copy, then they asynchronously flush the checkpoint from the host memory to persistent storage.",
+    "If another checkpoint request arrives before the previous checkpoint is finished flushing, it will be blocked waiting for the flushes to complete.",
+    "For small learning models that fit in the memory of a single GPU, such an approach works reasonably well because all model parameters and the optimizer state can be captured at once in a single file."
+  ]
+}

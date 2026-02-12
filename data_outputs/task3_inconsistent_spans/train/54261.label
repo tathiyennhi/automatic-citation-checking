@@ -1,0 +1,22 @@
+{
+  "doc_id": "54261",
+  "text": "In this section, we show, using a little more space, how to simulate any rotate model algorithm in the read-only model. This results in improved space-efficient algorithms for various fundamental graph problems in the read-only model. Observe that, the only modification of the input that we do in our rotate model algorithm is to make the head pointer point to an arbitrary element in the adjacency list (instead of a fixed element) at various times. To simulate this in read-only memory, we can simply maintain a pointer in each of the lists in the adjacency list. The resources required to store and update such pointers is proven in the following lemma [CITATION_1] . We provide the proof here for completeness.",
+  "correct_citation": {
+    "[CITATION_1]": "2448468"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The resources required to store and update such pointers is proven in the following lemma  .",
+      "s_span": 567,
+      "e_span": 671
+    }
+  ],
+  "bib_entries": {
+    "2448468": {
+      "title": "Biconnectivity, chain decomposition and stnumbering using O(n) bits",
+      "abstract": "Recent work by Elmasry et al. (STACS 2015) and Asano et al. (ISAAC 2014) reconsidered classical fundamental graph algorithms focusing on improving the space complexity. Elmasry et al. gave, among others, an implementation of depth first search (DFS) of a graph on $n$ vertices and $m$ edges, taking $O(m \\lg \\lg n)$ time\\footnote{We use $\\lg$ to denote logarithm to the base $2$.} using $O(n)$ bits of space improving on the time bound of $O(m \\lg n)$ due to Asano et al. Subsequently Banerjee et al. (COCOON 2016) gave an $O(m+n)$ time implementation using $O(m+n)$ bits, for DFS and its classical applications (including testing for biconnectivity, and finding cut vertices and cut edges). Recently, Kammer et al. (MFCS 2016) gave an algorithm for testing biconnectivity using $O(n + \\min \\{ m, n \\lg \\lg n \\})$ bits in linear time. In this paper, we consider $O(n)$ bits implementations of the classical applications of DFS. These include the problem of finding cut vertices, and biconnected components, chain decomposition and $st$-numbering. Classical algorithms for them typically use DFS and some $\\Omega (\\lg n)$ bits of information at each node. Our $O(n)$-bit implementations for these problems take $O(m \\lg^c n \\lg\\lg n)$ time for some small constant $c$ ($c \\leq 3$). Central to our implementation is a succinct representation of the DFS tree and a space efficient partitioning of the DFS tree into connected subtrees, which maybe of independent interest for designing space efficient graph algorithms."
+    }
+  },
+  "generator": "fallback_v4"
+}

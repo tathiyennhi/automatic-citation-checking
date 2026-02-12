@@ -1,0 +1,22 @@
+{
+  "doc_id": "26260",
+  "text": "The next retrievals should be repeated with higher CMF values (η) searching for a pair (τ , η) that minimizes the rmse given by Eq. (1). At this stage, the undetected surface change may introduce a systematic error as was mentioned above. For example, during senescence, when the surface is brightening in the Red and SWIR channels, the straightforward approach would overestimate both CMF and AOT and would also result in a high commission error of false cloud detection. To avoid that, a Surface Change Detection algorithm is implemented in step 2. It is applied when AOT is low and the day is clear which for a given block is verified by a high covariance (cov ≥ HIGH) between the measured reflectance (in B1) and the reference clear-sky image maintained by the CM algorithm [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "52267164"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "It is applied when AOT is low and the day is clear which for a given block is verified by a high covariance (cov ≥ HIGH) between the measured reflectance (in B1) and the reference clear-sky image maintained by the CM algorithm  .",
+      "s_span": 551,
+      "e_span": 792
+    }
+  ],
+  "bib_entries": {
+    "52267164": {
+      "title": "An Automatic Cloud Mask Algorithm Based on Time Series of MODIS Measurements",
+      "abstract": "[1] Quality of aerosol retrievals and atmospheric correction over land depends strongly on accuracy of the cloud mask (CM) algorithm. The heritage CM algorithms developed for AVHRR and MODIS use the latest sensor measurements of spectral reflectance and brightness temperature and perform processing at the pixel level. The algorithms are threshold-based and empirically tuned. They do not explicitly address the classical problem of cloud search, wherein the baseline clear-skies scene is defined for comparison. Here we report on a new land CM algorithm, which explicitly builds and maintains a reference clear-skies image of the surface (refcm) using a time series of MODIS measurements. The new algorithm, developed as part of the multiangle implementation of atmospheric correction (MAIAC) algorithm for MODIS, relies on the fact that clear-skies images of the same surface area have a common textural pattern, defined by the surface topography, boundaries of rivers and lakes, distribution of soils and vegetation, etc. This pattern changes slowly given the daily rate of global Earth observations, whereas clouds introduce high-frequency random disturbances. Under clear skies, consecutive gridded images of the same surface area have a high covariance, whereas in presence of clouds covariance is usually low. This idea is central to initialization of refcm, which is used to derive cloud mask in combination with spectral and brightness temperature tests. The refcm is continuously updated with the latest clear-skies MODIS measurements, thus adapting to seasonal and rapid surface changes. The algorithm is enhanced by an internal dynamic land-water-snow classification coupled with a surface change mask. An initial comparison shows that the new algorithm offers the potential to perform better than the MODIS MOD35 cloud mask in situations where the land surface is changing rapidly and over Earth regions covered by snow and ice."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "41401",
+  "text": "When the blob matching is finished, the people list is checked to find whether there are people who are not tracked in the current frame. If people are not tracked, there may be some cases. For example, people are occluded by each other, people disappear from the scene, the blob of person is merged with shadow or the blob of person splits into several parts due to bad motion segmentation. Then the particle filter is used to track people not tracked by blob matching, offsetting the shortcoming of the blob matching. Unlike the methods described in Refs. [CITATION_1] [CITATION_2] , this strategy does not need to check whether people form a group or are under occlusion, but still be capable of tracking people in these difficult situations. In the particle filter, the initialisation of particles for a certain person is based on the information obtained from previous frames in which this person is tracked by either blob matching or particle filtering. According to [CITATION_3] , when observations accord with a Markov chain, the propagation of state density over time is given as:",
+  "correct_citation": {
+    "[CITATION_1]": "8714546",
+    "[CITATION_2]": "5791087",
+    "[CITATION_3]": "6821810"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Unlike the methods described in Refs. [CITATION_1] [CITATION_2] , this strategy does not need to check whether people form a group or are under occlusion, but still be capable of tracking people in these difficult situations.",
+      "s_span": 520,
+      "e_span": 745
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "[CITATION_1] [CITATION_2] , this strategy does not need to check whether people form a group or are under occlusion, but still be capable of tracking people in these difficult situations.",
+      "s_span": 558,
+      "e_span": 745
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "According to [CITATION_3] , when observations accord with a Markov chain, the propagation of state density over time is given as:",
+      "s_span": 960,
+      "e_span": 1089
+    }
+  ],
+  "bib_entries": {
+    "5791087": {
+      "title": "Object tracking in an outdoor environment using fusion of features and cameras",
+      "abstract": "Abstract This paper presents methods for tracking moving objects in an outdoor environment. A robust tracking is achieved using feature fusion and multiple cameras. The proposed method integrates spatial position, shape and color information to track object blobs. The trajectories obtained from individual cameras are incorporated by an extended Kalman filter (EKF) to resolve object occlusion. Our results show that integrating simple features makes the tracking effective and that EKF improves the tracking accuracy when long-term or temporary occlusion occurs. The tracked objects are successfully classified into three categories: single person, people group, or vehicle."
+    },
+    "8714546": {
+      "title": "Tracking groups of people",
+      "abstract": "A computer vision system for tracking multiple people in relatively unconstrained environments is described. Tracking is performed at three levels of abstraction: regions, people, and groups. A novel, adaptive background subtraction method that combines color and gradient information is used to cope with shadows and unreliable color cues. People are tracked through mutual occlusions as they form groups and separate from one another. Strong use is made of color information to disambiguate occlusion and to provide qualitative estimates of depth ordering and position during occlusion. Simple interactions with objects can also be detected. The system is tested using both indoor and outdoor sequences. It is robust and should provide a useful mechanism for bootstrapping and reinitialization of tracking using more specific but less robust human models."
+    },
+    "6821810": {
+      "title": "Condensation-conditional density propagation for visual tracking",
+      "abstract": "The problem of tracking curves in dense visual clutter is challenging. Kalman filtering is inadequate because it is based on Gaussian densities which, being unimo dal, cannot represent simultaneous alternative hypotheses. The Condensation algorithm uses “factored sampling”, previously applied to the interpretation of static images, in which the probability distribution of possible interpretations is represented by a randomly generated set. Condensation uses learned dynamical models, together with visual observations, to propagate the random set over time. The result is highly robust tracking of agile motion. Notwithstanding the use of stochastic methods, the algorithm runs in near real-time."
+    }
+  },
+  "generator": "fallback_v4"
+}

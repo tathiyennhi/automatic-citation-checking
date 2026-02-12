@@ -1,0 +1,20 @@
+{
+  "doc_id": "29685",
+  "text": "The robot uses a custom built auditory sensor circuit based on the ear morphology of the cricket. The two microphones have a separation of 18mm, and the input from each is delayed and then subtracted from the other. This effectively performs a phase comparison and provides directional information that is frequency dependent. The separation and delays are tuned to make the directional output best for the typical carrier frequency of cricket song -4.8kHz. This auditory circuit had been custom-designed to interface to a Khepera robot, and it proved simplest to mount this small robot directly on the Whegs ASP base and use it to do the sensory preprocessing. This consisted of converting the signal amplitudes to Poisson spike trains, with programmable threshold and saturation levels, which are used as inputs to the neural simulator running on the PC104. Details of this simulator are provided in [CITATION_1] . The main features are that it encodes realistic neural dynamics at the single compartment level (an integrate and fire neural model with conductance-based synapses), and is capable of running in real time (500Hz update rate) on the PC104. Using this simulator, we have designed a neural circuit based on the physiological mechanisms known to underlie phonotaxis behavior in the cricket, shown in Figure 3a . The spiking input from the auditory preprocessing excites one pair of auditory interneurons (ON) and one pair of ascending neurons (AN). The first (mutually inhibitory) pair performs crossinhibition of the other to sharpen the directionality of the signal; the second pair conveys this signal to \"brain\" neurons (BN1 and BN2) that use dynamic synapse properties to filter the song for the appropriate temporal pattern. The filtered output indicates, through the activity of the left and right brain neurons, if a male of the correct species is calling from the left or the right. Therefore, the BN2 output needs to connect to the motor control neurons in order to cause a turn in the direction from which the louder and/or clearer song can be heard.",
+  "correct_citation": {
+    "[CITATION_1]": "10050258"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Details of this simulator are provided in  ."
+    }
+  ],
+  "bib_entries": {
+    "10050258": {
+      "title": "New neural circuits for robot phonotaxis",
+      "abstract": "W. Grey Walter built robotic systems to improve understanding of biological systems. In that tradition, this paper reports ongoing work on a robot model of cricket sound localization. The main advances are the inclusion of a much larger range of neuroethological detail, and the investigation of multimodal influences on the behaviour. The former allows exploration of the functionality of identified neurons in the insect, including the possible roles of multiple sensory fibres, mutually inhibitory connections, and brain neurons with pattern-filtering properties. The latter focuses on the inclusion of an optomotor stabilization response, and how this might improve tracking, particularly under conditions of random disturbance."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The realizability condition is commonly assumed in theoretical studies of preference learning [Xiong et al., 2024, Shi et al., 2025, Feng et al., 2025, Yao et al., 2025, Swamy et al., 2025], or DPO-style algorithm designs to derive the loss functions for neural policy classes [Azar et al., 2023, Zhou et al., 2024, Liu et al., 2024b, Xu et al., 2024a].",
+    "Importantly, under the realizability assumption, it is straightforward to derive the equivalence between the ideal performances of RLHF and DPO [Swamy et al., 2025].However, the assumptions of tabular parameterization and realizability often do not hold in practice, particularly when the reward model is significantly smaller than the policy model (e.g., 6B vs. 175B in Ouyang et al. [2022], indicating a clear disparity in representational capacity), when the policy model class is heavily restricted due to limited computational resources, or when the reward model is sub-optimal owing to limited preference data.",
+    "These situations are examples of model misspecification, a common issue in practice due to limitations in model capacity or data.",
+    "Consequently, one should not expect DPO to perform identically to RLHF under model mis-specifications.",
+    "This motivates the central question of our investigation:Under what conditions is DPO equivalent, superior, or inferior to RLHF in performance?To quantify the problem, we choose the performance metric as the expected value of the original regularized bandit problem using the ground-truth reward r ‹ (x is a prompt, and y is a response): V π r ‹:\" E x\"ρ \" E y\"πp¨|xq rr ‹ px, yqs ´βKL pπp¨|xq}π ref p¨|xqq ‰, where ρ is a pre-fixed distribution over prompts, π is a distribution over responses, and π ref is the base model."
+  ]
+}

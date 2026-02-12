@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "If necessary, the candidate documents are inputted into the token reducer, where the Top-10 candidate documents are selected according to the scores of the bi-label document scorer and arXiv, preprint, Yuren Mao, Xuemei Dong, Wenyi Xu, Yunjun Gao, Bin Wei, and Ying Zhang Algorithm 1: Inference of FIT-RAG 1 Required: a given Question 𝑞, the Corpus W, the Similarity-based Retriever R, the Bi-label Document Scorer S, the Self-Knowledge Recognizer K, the Token Reducer T, the Large Language Model M.2 D 𝑟 ← use R to retrieve Top-100 relevant text documents from W given 𝑞; // Similarity-Based Retriever 3 for 𝑑 𝑟 ∈ D 𝑟 do 4 (𝑠𝑐𝑜𝑟𝑒 1, 𝑠𝑐𝑜𝑟𝑒 2) ← use S to generate bi-label scores of 𝑑 𝑟; // Bi-label Document Scorer 5 end 6 𝑆 𝑙𝑡𝑜𝑑 (𝑞) ← measure the relevance to the long-tail knowledge or out-of-date knowledge of 𝑞 7 𝑆 𝑛𝑛 (𝑞) ← measure the self-knowledge of the question's nearest neighbors of 𝑞 8 K (𝑞) ← decide whether retrieval is necessary for 𝑞 using K according to 𝑆 𝑙𝑡𝑜𝑑 and 𝑆 𝑛𝑛; // Bi-faceted Self-Knowledge Recognizer 9 if K (𝑞) == No_ Retrieve then 10 P (𝑞) ← construct the input prompt using only 𝑞; // Prompt Construction 11 𝑎𝑛𝑠𝑤𝑒𝑟 ← use M to generate the answer given P (𝑞) 12 end 13 else if K (𝑞) == Retrieve then 14 D 𝑓 ← Get the compressed sub-documents combination using T ( D 𝑟); // Sub-document-level Token Reducer 15 P (𝑞, D 𝑓) ← construct the input prompt using 𝑞 and D 𝑓; // Prompt Construction 16 𝑎𝑛𝑠𝑤𝑒𝑟 ← use M to generate the answer given P (𝑞, D 𝑓) 17 endthen are compressed to a set of sub-documents to reduce the number of tokens; after that, the selected sub-documents and the question are jointly integrated into a prompt.",
+    "Otherwise, if the external knowledge is unnecessary, only the question is integrated into a prompt.",
+    "Finally, the prompt is fed to the LLM to generate an answer.",
+    "Benefiting from the proposed bi-label document scorer, bi-faceted self-knowledge recognizer, and sub-document-level token reducer, FIT-RAG can provide effective and efficient augmentation for the LLMs.",
+    "In the following sections, we introduce the details of these novel components."
+  ],
+  "correct_citations": []
+}

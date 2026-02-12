@@ -1,0 +1,29 @@
+{
+  "doc_id": "28851",
+  "text": "We quantify the high and good thresholds for each fidelity metric in Table 1 as follows. For the SNRseg and PSNR metrics associated with our multimedia benchmarks, we define high and good outputs to be greater than 90dB and between 50dB and 90dB, respectively, when compared to outputs from fault-free execution. We aurally and visually compared faulty and fault-free outputs to select these thresholds so that they conform qualitatively to the high and good standards described above. Also, we confirmed quantitatively that the good threshold is equal to or better than what is accepted by the signal processing community as constituting a \"barely noticeable\" difference [CITATION_1] [CITATION_2] . For all other fidelity metrics, we define high and good outputs to be within 1% and 5%, respectively, of the program outputs obtained via fault-free execution. Unfortunately, we were unable to find any standards in the literature against which to compare these thresholds, so we chose them to be conservative. For our Al benchmarks, the fault-free outputs themselves are erroneous (the Al benchmarks only compute approximate solutions). In all cases, the fault-free outputs are off by 15% or more compared to perfect solutions obtained off-line. Hence, 1% and 5% represent small additional errors on top of the benchmarks' baseline errors. For the SPEC benchmarks, there is no quantitative justification for our high and good thresholds; we chose 1% and 5% because we believe these represent small increases in file size (for gzip and bzip) and average wire length (for vpr).",
+  "correct_citation": {
+    "[CITATION_1]": "14240474",
+    "[CITATION_2]": "14117620"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Also, we confirmed quantitatively that the good threshold is equal to or better than what is accepted by the signal processing community as constituting a \"barely noticeable\" difference   ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Also, we confirmed quantitatively that the good threshold is equal to or better than what is accepted by the signal processing community as constituting a \"barely noticeable\" difference   ."
+    }
+  ],
+  "bib_entries": {
+    "14117620": {
+      "title": "Hardware Testing For Error Tolerant Multimedia Compression based on Linear Transforms",
+      "abstract": "In this paper, we propose a system-level error tolerance scheme for systems where a linear transform is combined with quantization. These are key components in multimedia compression systems, e.g., video and image codecs. Using the concept of acceptable degradation, our scheme classifies hardware faults into acceptable and unacceptable faults. We propose analysis techniques that allow us to estimate the faults' impact on compression performance, and in particular on the quality of decoded images/video. We consider as an example the discrete cosine transform (DCT), which is part of a large number of existing image and video compression systems. We propose methods to establish thresholds of acceptable degradation and corresponding testing algorithms for DCT-based systems. Our results for a JPEG encoder using a typical DCT architecture show that over 50% of single stuck-at interconnection faults in one of its 1D DCT modules lead to imperceptible quality degradation in the decoded images, over the complete range of compression rates at which JPEG can operate."
+    },
+    "14240474": {
+      "title": "Multi-media Applications and Imprecise Computation",
+      "abstract": "As feature sizes continue to decrease and clock rates and device count on a VLSI chip increase, it becomes increasingly more difficult to maintain yields at their present levels. Process variation, noise and spot defects create very costly problems for our industry. Luckily, in the domain of multi-media, there exists a large body of functions where computational results need not always be correct. We show that for many VLSI implementations of signal processing algorithms, such as MPEG and JPEG encoders, a significant proportion of chips having low levels of defects provide erroneous but acceptable results. We introduce the concept of error-tolerance, and mention related issues needed to support this concept, including ways for specifying performance, design techniques that consider yield, test techniques for quantifying erroneous behavior, and finally the issue of marketing. The motivation for this work is to significantly increase the effective yield of a process, encourage the implementation of complex data processing chips, and drastically reduce chip costs."
+    }
+  },
+  "generator": "fallback_v4"
+}

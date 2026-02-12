@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We fine-tune CONNER and BIOBERT using the training sets of the GENIA and BC5CDR datasets, respectively.",
+    "Then using the checkpoints from each trained model, we cross-infer on the test set of remaining dataset, which not used during train phase.",
+    "When applying VERIFINER to the inferred predictions, we adjust the initial predictions by a threshold to the logits of the model output.",
+    "This step is implemented to mitigate the occurrence of an excessive number of \"O\" tags in the generated output, which could otherwise lead to a scarcity of entity input to the verification.",
+    "Specifically, we compute the output logit percentile for the \"O\" tags across all instances."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "38201",
+  "text": "Given a sequence of text passages, how can we automatically learn the segmentation? The word boundary sampling algorithm introduced in [CITATION_1] ) uses point-wise sampling of word boundaries after phonemes in an utterance. Similarly, the segmentation method of PLDA [CITATION_2] samples segment boundaries, but also jointly samples a topic model. This is different to other topic modelling approaches that run LDA as a precursor to a separate segmentation step [CITATION_3] [CITATION_4] . While conceptually similar to PLDA, our non-parametric approach built on STM required new methods to implement, but the resulting improvement by the standard segmentation scores is substantial. This paper presents a new hierarchical Bayesian unsupervised topic segmentation model, integrating a point-wise boundary sampling algorithm with a structured topic model. This new model takes advantage of the high modelling accuracy of structured topic models [CITATION_5] to produce a topic segmentation based on the distribution of latent topics. We show that this model provides high quality segmentation performance on Choi's dataset, as well as two sets of meeting transcripts and written texts.",
+  "correct_citation": {
+    "[CITATION_1]": "7923429",
+    "[CITATION_2]": "3077921",
+    "[CITATION_3]": "3063495",
+    "[CITATION_4]": "8279425",
+    "[CITATION_5]": "19847761"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The word boundary sampling algorithm introduced in  ) uses point-wise sampling of word boundaries after phonemes in an utterance."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Similarly, the segmentation method of PLDA  samples segment boundaries, but also jointly samples a topic model."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "This is different to other topic modelling approaches that run LDA as a precursor to a separate segmentation step   ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "This is different to other topic modelling approaches that run LDA as a precursor to a separate segmentation step   ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This new model takes advantage of the high modelling accuracy of structured topic models  to produce a topic segmentation based on the distribution of latent topics."
+    }
+  ],
+  "bib_entries": {
+    "3077921": {
+      "title": "Unsupervised topic modelling for multi-party spoken discourse",
+      "abstract": "We present a method for unsupervised topic modelling which adapts methods used in document classification (Blei et al., 2003; Griffiths and Steyvers, 2004) to unsegmented multi-party discourse transcripts. We show how Bayesian inference in this generative model can be used to simultaneously address the problems of topic segmentation and topic identification: automatically segmenting multi-party meetings into topically coherent segments with performance which compares well with previous unsupervised segmentation-only methods (Galley et al., 2003) while simultaneously extracting topics which rate highly when assessed for coherence by human judges. We also show that this method appears robust in the face of off-topic dialogue and speech recognition errors."
+    },
+    "3063495": {
+      "title": "Text segmentation via topic modeling: an analytical study",
+      "abstract": "In this paper, the task of text segmentation is approached from a topic modeling perspective. We investigate the use of latent Dirichlet allocation (LDA) topic model to segment a text into semantically coherent segments. A major benefit of the proposed approach is that along with the segment boundaries, it outputs the topic distribution associated with each segment. This information is of potential use in applications like segment retrieval and discourse analysis. The new approach outperforms a standard baseline method and yields significantly better performance than most of the available unsupervised methods on a benchmark dataset."
+    },
+    "7923429": {
+      "title": "A Bayesian framework for word segmentation: Exploring the effects of context",
+      "abstract": "Since the experiments of Saffran et al. [Saffran, J., Aslin, R., & Newport, E. (1996). Statistical learning in 8-month-old infants. Science, 274, 1926–1928], there has been a great deal of interest in the question of how statistical regularities in the speech stream might be used by infants to begin to identify individual words. In this work, we use computational modeling to explore the effects of different assumptions the learner might make regarding the nature of words – in particular, how these assumptions affect the kinds of words that are segmented from a corpus of transcribed child-directed speech. We develop several models within a Bayesian ideal observer framework, and use them to examine the consequences of assuming either that words are independent units, or units that help to predict other units. We show through empirical and theoretical results that the assumption of independence causes the learner to undersegment the corpus, with many two- and three-word sequences (e.g. what’s that, do you, in the house) misidentified as individual words. In contrast, when the learner assumes that words are predictive, the resulting segmentation is far more accurate. These results indicate that taking context into account is important for a statistical word segmentation strategy to be successful, and raise the possibility that even young infants may be able to exploit more subtle statistical patterns than have usually been considered."
+    },
+    "8279425": {
+      "title": "How text segmentation algorithms gain from topic models",
+      "abstract": "This paper introduces a general method to incorporate the LDA Topic Model into text segmentation algorithms. We show that semantic information added by Topic Models significantly improves the performance of two word-based algorithms, namely TextTiling and C99. Additionally, we introduce the new TopicTiling algorithm that is designed to take better advantage of topic information. We show consistent improvements over word-based methods and achieve state-of-the art performance on a standard dataset."
+    },
+    "19847761": {
+      "title": "A segmented topic model based on the two-parameter Poisson-Dirichlet process",
+      "abstract": "Documents come naturally with structure: a section contains paragraphs which itself contains sentences; a blog page contains a sequence of comments and links to related blogs. Structure, of course, implies something about shared topics. In this paper we take the simplest form of structure, a document consisting of multiple segments, as the basis for a new form of topic model. To make this computationally feasible, and to allow the form of collapsed Gibbs sampling that has worked well to date with topic models, we use the marginalized posterior of a two-parameter Poisson-Dirichlet process (or Pitman-Yor process) to handle the hierarchical modelling. Experiments using either paragraphs or sentences as segments show the method significantly outperforms standard topic models on either whole document or segment, and previous segmented models, based on the held-out perplexity measure."
+    }
+  },
+  "generator": "fallback_v4"
+}

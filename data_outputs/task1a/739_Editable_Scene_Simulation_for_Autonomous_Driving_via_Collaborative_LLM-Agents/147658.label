@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We use a 2D UNet to decode the concatenated input map to the HDR sky panorama.",
+    "For sky content vector f content, we use an MLP to increase its feature dimension, reshape it to a 2D feature map, and concatenate it with the intermediate features at the bottleneck of the UNet.",
+    "This concatenated feature will be further decoded to the HDR sky panorama.In the context of HDR imaging, the intensity of the peak often exhibits characteristics akin to an impulse response, displaying pixel values that are significantly elevated by orders of magnitude in comparison to adjacent pixels.",
+    "This presents a substantial challenge for the decoder in accurately recovering these patterns.",
+    "Thus, we design a residual connection to explicitly inject the peak intensity information into the final HDR sky panorama."
+  ],
+  "correct_citations": []
+}

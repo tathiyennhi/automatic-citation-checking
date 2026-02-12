@@ -1,0 +1,12 @@
+{
+  "text": "Let V be the set of all voters, let w i be the weight of voter v i , W = n i=1 w i the sum of all weights, and costs(v i ) the cost to bribe voter v i in the considered issue. The set of all voters who vote in the given issue for the same value that is taken by p in this issue is called G for the good voters, and B = V \\ G denotes the set of the remaining beneficiary voters. The briber is interested in finding a subset S \u2286 B, such that v i \u2208S \u222aG w i > W 2 and v i \u2208S costs(v i ) is minimal. This is the same as finding a subset S \u2286 B, such that v i \u2208S w i \u2264 W 2 and v i \u2208S costs(v i ) is maximal. The latter problem is the same as solving the KNAPSACK problem on the set B where the bribery costs costs(v i ) correspond to the values, and the weights of the voters correspond to the size of the items to be packed in the knapsack, respectively. The crucial observation here is that with C LEVEL , the cost for flipping the value of the relevant cp-statement is bounded by the number m of issues, as there cannot be more levels than issues by definition, hence costs(v i ) \u2264 m for all v i \u2208 V . As mentioned in Section 2, one can solve the KNAPSACK problem with dynamic programming in time O(n \u00b7 T ), where T is the sum of the values of all objects. In our case, T is the sum n i=1 costs(v i ), hence bounded by n \u00b7 m, so that the running time of the dynamic programming algorithm proposed by Dantzig (see [CITATION_1] ) is polynomial. In detail, we implement Dantzig's solution as follows:",
+  "correct_citation": {
+    "[CITATION_1]": "122156594"
+  },
+  "bib_entries": {
+    "122156594": {
+      "title": "Discrete-variable extremum problems",
+      "abstract": "This paper reviews some recent successes in the use of linear programming methods for the solution of discrete-variable extremum problems. One example of the use of the multistage approach of dynamic programming for this purpose is also discussed."
+    }
+  }
+}

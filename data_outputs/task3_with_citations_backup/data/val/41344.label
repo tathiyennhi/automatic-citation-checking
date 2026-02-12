@@ -1,0 +1,44 @@
+{
+  "doc_id": "41344",
+  "text": "The data decomposition primarily builds on infomax ICA [CITATION_1] [CITATION_2] , where independent sets of covarying variables are organized into different components. The mathematical model is described in Eqs. (2) and (3). F 1 is the objective function of infomax for the imaging modality (modality 1), where independence among components is optimized by maximizing the entropy (H). f y (Y) is the probability density function of the sigmoid function Y, which is chosen based on the form of the expected underlying source distribution [CITATION_3] . E is the expected value and W 0 is the bias vector. In contrast to F 1 , the objective function for the genetic modality (modality 2) F 2 , is modified based on Infomax so that components are not only independent but closely resemble the reference matrix r. Each row of r represents a reference vector, which is of the same dimension as the SNP data with nonzero elements representing a group of reference loci likely contributing in a coordinated manner. PICA-MR then calculates the Euclidean distances between each of the reference vectors r i (ith row of r) and all the components (only using nonzero reference locir i , a subvector of r i ) to determine the closest one as the corresponding constrained component, whose distance (S 2;k i -r i 2 2 ) is further minimized.S 2;ki denotes a subvector of the r i -constrained component S 2;ki (the k i th row of S 2 ) and is computed by W 2;ki (the k i th row of W 2 ) multiplyingX 2 (a submatrix of X 2 ). jjÁjj 2 represents the L 2 -norm Euclidian distance, and k is the weight parameter. Note that pICA-MR incorporates the reference constraint in a way similar to pICA-R, where the distance between the component and reference vector is optimized for the reference loci only. This is to enable a semiblind decomposition which is partially constrained to highlight the presumed causal loci in the resulting components while still allowing the remaining loci to show their own importance driven by the data. As in pICA-R, the weight parameter k is adaptively adjusted to avoid false positives due to the reference constraint dominating over the independence metric. In the case when k is completely de-emphasized, pICA-MR converges to regular pICA. Conversely, in contrast to pICA-R dealing with one single reference (vector), in pICA-MR, multiple reference vectors can constrain the same or different components, reflecting functional architecture in a data-driven manner. Finally, the intermodality association function F 3 maximizes the correlations computed over the columns of the loading matrices A 1 and A 2 . ",
+  "correct_citation": {
+    "[CITATION_1]": "207585383",
+    "[CITATION_2]": "1701422",
+    "[CITATION_3]": "207739442"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The data decomposition primarily builds on infomax ICA [CITATION_1] [CITATION_2] , where independent sets of covarying variables are organized into different components.",
+      "s_span": 0,
+      "e_span": 169
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The data decomposition primarily builds on infomax ICA [CITATION_1] [CITATION_2] , where independent sets of covarying variables are organized into different components.",
+      "s_span": 0,
+      "e_span": 169
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "F 1 is the objective function of infomax for the imaging modality (modality 1), where independence among components is optimized by maximizing the entropy (H). f y (Y) is the probability density function of the sigmoid function Y, which is chosen based on the form of the expected underlying source distribution [CITATION_3] .",
+      "s_span": 227,
+      "e_span": 553
+    }
+  ],
+  "bib_entries": {
+    "1701422": {
+      "title": "An information-maximization approach to blind separation and blind deconvolution",
+      "abstract": "We derive a new self-organizing learning algorithm that maximizes the information transferred in a network of nonlinear units. The algorithm does not assume any knowledge of the input distributions, and is defined here for the zero-noise limit. Under these conditions, information maximization has extra properties not found in the linear case (Linsker 1989). The nonlinearities in the transfer function are able to pick up higher-order moments of the input distributions and perform something akin to true redundancy reduction between units in the output representation. This enables the network to separate statistically independent components in the inputs: a higher-order generalization of principal components analysis. We apply the network to the source separation (or cocktail party) problem, successfully separating unknown mixtures of up to 10 speakers. We also show that a variant on the network architecture is able to perform blind deconvolution (cancellation of unknown echoes and reverberation in a speech signal). Finally, we derive dependencies of information transfer on time delays. We suggest that information maximization provides a unifying framework for problems in \"blind\" signal processing."
+    },
+    "207585383": {
+      "title": "Natural gradient works efficiently in learning",
+      "abstract": "When a parameter space has a certain underlying structure, the ordinary gradient of a function does not represent its steepest direction, but the natural gradient does. Information geometry is used for calculating the natural gradients in the parameter space of perceptrons, the space of matrices (for blind source separation), and the space of linear dynamical systems (for blind source deconvolution). The dynamical behavior of natural gradient online learning is analyzed and is proved to be Fisher efficient, implying that it has asymptotically the same performance as the optimal batch estimation of parameters. This suggests that the plateau phenomenon, which appears in the backpropagation learning algorithm of multilayer perceptrons, might disappear or might not be so serious when the natural gradient is used. An adaptive method of updating the learning rate is proposed and analyzed."
+    },
+    "207739442": {
+      "title": "Independent component analysis using an extended infomax algorithm for mixed subgaussian and supergaussian sources",
+      "abstract": "An extension of the infomax algorithm of Bell and Sejnowski (1995) is presented that is able blindly to separate mixed signals with sub- and supergaussian source distributions. This was achieved by using a simple type of learning rule first derived by Girolami (1997) by choosing negentropy as a projection pursuit index. Parameterized probability distributions that have sub- and supergaussian regimes were used to derive a general learning rule that preserves the simple architecture proposed by Bell and Sejnowski (1995), is optimized using the natural gradient by Amari (1998), and uses the stability analysis of Cardoso and Laheld (1996) to switch between sub- and supergaussian regimes. We demonstrate that the extended infomax algorithm is able to separate 20 sources with a variety of source distributions easily. Applied to high-dimensional data from electroencephalographic recordings, it is effective at separating artifacts such as eye blinks and line noise from weaker electrical signals that arise from sou..."
+    }
+  },
+  "generator": "fallback_v4"
+}

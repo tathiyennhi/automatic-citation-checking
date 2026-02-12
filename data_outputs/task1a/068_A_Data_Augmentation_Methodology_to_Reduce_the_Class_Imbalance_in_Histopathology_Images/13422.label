@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This technique involves assigning different weights to each class to ensure that minority classes receive more attention during training than elements from the majority classes.",
+    "The weight for each class, denoted as w, can be calculated using the following equation:where is an array with the number of occurrences for each class.Different loss functions are implemented in the Mask RCNN model, but in our approach, only the weights of the loss function related to object classification were modified.",
+    "For this task, we used a Cross-Entropy loss function which is defined as:where M is the number of classes, w is the corresponding weight for each class, p is the predicted probability obser- vation o is of class c, and y is a binary indicator, which is one when class label c is the correct classification for observation o.",
+    "(5) w = Number of instances (Number of classes *) (6) L CE = -M ∑ c=1 w c p o,c y o,cIt is important to note that applying weight balancing solely to the loss function enhances the identification of minority classes.",
+    "However, as we will demonstrate in the \"Results and Discussion\" section, this approach may lead to a decrease in performance for other evaluation metrics."
+  ],
+  "correct_citations": []
+}

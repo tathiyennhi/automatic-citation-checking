@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Both testing capabilities are included in the runtime post-processing of outputs further elaborated in Section 4.3.We have defined the following well-formed rules to guardrail the construction of output testing rules:context ByExpression inv NotSelfValidation: let selfAsset: Set(ByExpression) = self.output.asset -> asSet() in selfAsset -> union(selfAsset -> closure(priorVersion)) -> union(selfAsset -> closure(refines)) -> union(selfAsset -> closure(equivalents)) -> excludes(self.validator) context ByExpression inv ValidatorType: self.validator.oclIsTypeOf(Prompt) or self.validator.oclIsTypeOf(Chain) context ByExpression inv OutputFormat: self.validator.output.type = Media::Text context ByExpression inv ValidatorDoesNotHaveValidation: self.validator.output.outputTestingRule -> isEmpty() context ByReinforcedTrait inv ConsistentTrait: self.output.asset = self.predefinedTrait.prompt Fig. 3 Output testing techniques Concrete syntaxWe have defined a textual syntax to encode specifications written in the Impromptu DSL.",
+    "The complete grammar is available in [62].",
+    "The following is a snippet of this grammar in Langium [63] format: the definition of hyperparameters.",
+    "Langium automatically generates an instance of the metamodel (the parse tree) when parsing an input.HyperParameters: hyper+=HyperParam (',' hyper+=HyperParam)*; HyperParam: 'hyper' '(' name=STRING ','value=STRING')'; We will present its complete syntax using an example: the creation of a prompt chain to generate an English test.",
+    "The exam will consist of three blocks: a set of grammar questions, an AI-generated image and a set of questions about the image."
+  ]
+}

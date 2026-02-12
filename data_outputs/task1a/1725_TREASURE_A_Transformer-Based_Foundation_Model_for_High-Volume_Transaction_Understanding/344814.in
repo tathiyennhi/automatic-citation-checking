@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Numerical attributes are first transformed to a logarithmic scale, as all numerical features in our dataset (e.g., transaction amounts, time differences between transactions) exhibit long-tail distributions.",
+    "These log-scaled numerical attributes are then concatenated into a single numerical input vector, which is subsequently processed by a linear layer.For categorical attributes, each raw value is initially converted to a category index, as described in Section 3.1.",
+    "This index is directly used to retrieve a corresponding embedding from an attributespecific embedding table. 1 We have implemented mechanisms to handle new category values for categorical attributes that may appear during inference but were not present during training.",
+    "Such OOV (out-of-vocabulary) values can arise from new merchants, emerging business categories, or data quality variations.",
+    "These mechanisms ensure that an embedding index is consistently available for every categorical attribute value."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "This can be exploited to maintain a single replica across all workers, where each replica is responsible for the management of a distinct shard.",
+    "Then, when a worker needs to access a full model, it needs to obtain all missing shards from the rest of the workers.",
+    "Just like in the case of model parallelism, such an approach sacrifices performance, due to extra communication overheads, for improving memory efficiency.",
+    "A prominent example that implements this idea is DeepSpeed [32] which is widely used for training LLMs in combination with Megatron [37].",
+    "DeepSpeed offers a set of incremental optimization stages: stage-1, stage-2, and stage-3, which correspond to sharding the optimizer state, gradients, and model parameters across all data parallel ranks, respectively."
+  ],
+  "correct_citations": [
+    "A prominent example that implements this idea is DeepSpeed [32] which is widely used for training LLMs in combination with Megatron [37]."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "(11)For Focal Loss (FL), we have ANL-FL: L ANL-FL = αL NFL + βL NNFL.",
+    "(12) C. Entropy Regularization Against Imbalanced LabelAlthough our proposed ANL framework has demonstrated outstanding performance in most label noise scenarios, it still faces challenges from asymmetric label noise at extremely high noise rates.",
+    "We attribute this issue to label imbalance caused by the non-symmetric label noise.To better understand this issue, we calculate the marginal probability of each class on CIFAR-10 training set under 40% asymmetric label noise and compare it to the predictions of the model trained with ANL-CE, as shown in Figure 2.",
+    "It can be observed that the label distribution in the training data, corrupted by asymmetric label noise, is imbalanced.",
+    "Furthermore, our proposed ANL framework is vulnerable to this imbalance.To this end, inspired by previous works [44], we introduce the following entropy regularization to mitigate the issue of imbalanced label:L reg (π) = log K + K k=1 π(k) log π(k),(13)where π(k) represents the average probability that the model categorizes a sample as class k and is given by π(k) = Following the principle of maximum entropy, this regularization term encourages the marginal probability for each class to be as uniform as possible, and particularly L reg = 0 when π(k) = 1 K for all k. Finally, we integrate this regularization term into our ANL framework as follows:L ANL* = αL norm + βL nn + λL reg, (14)where λ is the weighting factor for the regularization term, and along this paper * indicates the ANL loss enhanced with this entropy regularizer."
+  ],
+  "correct_citations": [
+    "Furthermore, our proposed ANL framework is vulnerable to this imbalance.To this end, inspired by previous works [44], we introduce the following entropy regularization to mitigate the issue of imbalanced label:L reg (π) = log K + K k=1 π(k) log π(k),(13)where π(k) represents the average probability that the model categorizes a sample as class k and is given by π(k) = Following the principle of maximum entropy, this regularization term encourages the marginal probability for each class to be as uniform as possible, and particularly L reg = 0 when π(k) = 1 K for all k. Finally, we integrate this regularization term into our ANL framework as follows:L ANL* = αL norm + βL nn + λL reg, (14)where λ is the weighting factor for the regularization term, and along this paper * indicates the ANL loss enhanced with this entropy regularizer."
+  ]
+}

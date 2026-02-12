@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Path Retrieval extracts coherent toxic knowledge contained from the graph based on the paths that connect previously mapped nodes through one or multi-hop relations.",
+    "While a straightforward retrieval approach would be to extract all neighbors for each mapped node, this may result in recalling excessive unrelated triplets that could degrade toxicity detection performance, particularly when sensitive entities such as \"Jew\", \"Nigger\", \"Nazi\".",
+    "To mitigate the noise introduced by unnecessary entities or relations, we enumerate pairwise combinations of the mapped nodes and retrieve the shortest path for each node pair.",
+    "After splitting all the paths into SPO triplets, we take the union of them as the candidate retrieved triplets, reflecting toxicity knowledge potentially related to the text.",
+    "Formatting transforms the retrieved triplets into candidate knowledge with natural language by concatenating the SPO elements of each triplet, like \"white lives matter is against black lives matter\"."
+  ]
+}

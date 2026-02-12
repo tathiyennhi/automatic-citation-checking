@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Specifically, the node feature input X v ∈ ℝ d performs linear transformation, and the importance coefficients of the node features are converted into the correlation between the attention vector and the node feature matrix after linear transformation:where W ∈ ℝ d a ×d is the weighting parameter, b ∈ ℝ d a is the bias, and ReLU is a activation function.",
+    "The normalization process of t v is performed to obtain the final attention coef- ficients, that is where v is the attention coefficient.",
+    "Therefore, the different node features are aggregated as:where H (l) ATT is the network representation after aggregating different relational features.In order to get the final node representations of the three channels, H (l) ATT and the feature H (3,l) which is learned after the third channel are fused by the concatenation operation, that is where H l final is the network representation after concatenating H (l) ATT and H (3,l), and it is the input of the final fully connected layer.",
+    "(13) H (3,l+1) = F � H (1,l) + H (2,l) + H (3,l) ⋅ W l + H (3,l), (3,l).",
+    "(14) t v = a T ⋅ ReLU(W ⋅ X v +b),() v = exp(t v) ∑ v∈V exp(t v),15H (l) ATT = v ⋅ H (1,l) + v ⋅ H (2,l), ((16)) H l final = concat H l ATT, H17 Model TrainingWhen the model is trained, the obtained final node embedding is used as inputs for the node classification task, starting with a fully connected layer and a softmax activation function:where node labels are assumed to have class C, Θ � ∈ ℝ d m ×C is the dimension reduction transformation matrix, P ∈ ℝ N×C is the final probability matrix.And then, the model is trained by computing the crossentropy between the actual minimum value and the predicted value, that is where V L is the set of labeled nodes, Y v is the one-hot vec- tor indicates the ground-truth labels of nodes, P v is the true value of the node."
+  ]
+}

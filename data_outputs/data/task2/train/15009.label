@@ -1,0 +1,17 @@
+{
+  "text": "Partial regression An alternative to full regression is to only consider a small crop of the input at a time (an \"input patch\"), and train a network to predict whether the object is contained in the patch. The network is also trained to output its location relative to the input patch's frame of reference, though patches which do not contain the object exclude the location from loss calculations. This is an approach used successfully in prominent object detection systems including OverFeat [CITATION_1] and Fast R-CNN [6] . The network used in this paper for partial regression is a stack of two context networks [CITATION_2] followed by an average pooling layer. Table 1b specifies our configuration for the context networks. The use of dilated convolutions improves the scale invariance of the network, which helps with the fact that divers are at different distances from the camera. Furthermore, we were able to construct the network with very few feature maps, resulting in a compact model.",
+  "correct_citation": {
+    "[CITATION_1]": "4071727",
+    "[CITATION_2]": "17127188"
+  },
+  "bib_entries": {
+    "4071727": {
+      "title": "OverFeat: Integrated Recognition, Localization and Detection using Convolutional Networks",
+      "abstract": "We present an integrated framework for using Convolutional Networks for classification, localization and detection. We show how a multiscale and sliding window approach can be efficiently implemented within a ConvNet. We also introduce a novel deep learning approach to localization by learning to predict object boundaries. Bounding boxes are then accumulated rather than suppressed in order to increase detection confidence. We show that different tasks can be learned simultaneously using a single shared network. This integrated framework is the winner of the localization task of the ImageNet Large Scale Visual Recognition Challenge 2013 (ILSVRC2013) and obtained very competitive results for the detection and classifications tasks. In post-competition work, we establish a new state of the art for the detection task. Finally, we release a feature extractor from our best model called OverFeat."
+    },
+    "17127188": {
+      "title": "Multi-Scale Context Aggregation by Dilated Convolutions",
+      "abstract": "State-of-the-art models for semantic segmentation are based on adaptations of convolutional networks that had originally been designed for image classification. However, dense prediction and image classification are structurally different. In this work, we develop a new convolutional network module that is specifically designed for dense prediction. The presented module uses dilated convolutions to systematically aggregate multi-scale contextual information without losing resolution. The architecture is based on the fact that dilated convolutions support exponential expansion of the receptive field without loss of resolution or coverage. We show that the presented context module increases the accuracy of state-of-the-art semantic segmentation systems. In addition, we examine the adaptation of image classification networks to dense prediction and show that simplifying the adapted network can increase accuracy."
+    }
+  }
+}

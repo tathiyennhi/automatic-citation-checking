@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For this procedure, the integration step x t ← φ(x t, εθ, t) corresponds to Line 3 to Line 5.",
+    "On the other hand, for the DDIM reverse diffusion solver shown in Algorithm 4 the integration step corresponds to Line 3 to Line 6.",
+    "Note that the time update t ← t -∆t for DDIM uniquely takes place before the x t update.Algorithm 3 Euler-Maruyama solver for VP SDE Require: N, β(t), σ(t), y 1: ∆t ← 1 N, t ← 1, x t ∼ N (0, I) 2: while t > 0 do 3: x t ← x t + 1 2 β(t) x t -2 εθ (x t,t,y) σ(t) ∆t 4: z ∼ N (0, I) 5: x t ← x t + β(t)∆t z 6: t ← t -∆t 7: end while 8: return x t Algorithm 4 DDIM solver for reverse diffusion Require: N, β(t), σ(t), γ(t), y 1: ∆t ← 1 N, t ← 1, x t ∼ N (0, I) 2: while t > 0 do 3: ε ← εθ (x t, t, y) 4: x 0 ← x t -σ(t)ε γ(t) 5: t ← t -∆t 6: x t ← γ(t)x 0 + σ(t)ε 7: end while 8: return x 0The variance preserving ODE expressed in Eq.",
+    "( 4) is integrated using two different solvers.",
+    "For the Euler solver shown in Algorithm 5 the integration step x t = φ(x t, εθ, t) corresponds to Line 3."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Critical updates, such as detecting dynamic obstacles or safety violations, are handled synchronously to ensure immediate response.",
+    "Less critical updates, like changes in object properties (e.g., ambient temperature), are processed asynchronously to avoid unnecessary delays.Synchronization Mechanism:• Critical Updates (Synchronous): For events such as newly detected obstacles or violations of safety thresholds, the EKG halts task execution and updates immediately to ensure safe operation.",
+    "• Non-Critical Updates (Asynchronous): Updates related to minor environmental changes, such as lighting variations or ambient temperature, are processed independently in parallel with ongoing tasks.The update strategy classifies incoming data based on priority, leveraging sensor flags and predefined thresholds to determine the appropriate update mode.2) Sensory Inputs and ROS Topics: The robot's onboard sensors (e.g., cameras, LiDAR) and wall-mounted cameras provide real-time data, which is published to ROS topics.",
+    "The EKG subscribes to these topics to monitor the robot's condition, position within the map, and environmental changes.",
+    "The sensory inputs include:• Robot State: Position (x, y, z), orientation (θ), velocity (v), and joint configurations (q).• Object Detection: Object positions, attributes (e.g., fragility, temperature), and spatial relationships (e.g., \"on top of,\" \"next to\")."
+  ],
+  "correct_citations": []
+}

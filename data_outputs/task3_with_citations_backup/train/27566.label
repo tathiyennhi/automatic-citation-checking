@@ -1,0 +1,22 @@
+{
+  "doc_id": "27566",
+  "text": "Given the complexity of the TPBVP required to obtain an optimal solution of problem PI, we seek alternative approaches which may be suboptimal but are tractable and scalable. The first such effort is motivated by the results obtained in our ID analysis, where we found that on a mission space defined by a line segment [ 0 , L] the optimal trajectory for each agent is to move at full speed until it reaches some switching point, dwell on the switching point for some time (possibly zero), and then switch directions. Thus, each agent's optimal trajectory is fully described by a set of switching points {8 1 , ... , 8K} and associated waiting times at these points, {WI,,,,, WK}' The values of these parameters can then be efficiently determined using a gradient-based algorithm with Infinitesimal Perturbation Analysis (IPA) to evaluate the objective function gradient as shown in [CITATION_1] . Thus, a reasonable approach that has been suggested is to assign each agent a linear trajectory. The 2D persistent monitoring problem would then be formulated as consisting of the following tasks: (i ) finding N linear trajectories in terms of their length and exact location in Q, noting that one or more agents may share one of these trajectories, and (i i ) controlling the motion of each agent on its trajectory. Task (i i ) is a direct application of the ID persistent monitoring problem solution, leaving only task (i ) to be addressed.",
+  "correct_citation": {
+    "[CITATION_1]": "52855443"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Thus, each agent's optimal trajectory is fully described by a set of switching points {8 1 , ... , 8K} and associated waiting times at these points, {WI,,,,, WK}' The values of these parameters can then be efficiently determined using a gradient-based algorithm with Infinitesimal Perturbation Analysis (IPA) to evaluate the objective function gradient as shown in [CITATION_1] .",
+      "s_span": 518,
+      "e_span": 897
+    }
+  ],
+  "bib_entries": {
+    "52855443": {
+      "title": "An optimal control approach to the multi-agent persistent monitoring problem",
+      "abstract": "We propose an optimal control framework for persistent monitoring problems where the objective is to control the movement of multiple cooperating agents to minimize an uncertainty metric in a given mission space. In a one-dimensional mission space, we show that the optimal solution is for each agent to move at maximal speed from one switching point to the next, possibly waiting some time at each point before reversing its direction. Thus, the solution is reduced to a simpler parametric optimization problem: determining a sequence of switching locations and associated waiting times at these switching points for each agent. This amounts to a hybrid system which we analyze using Infinitesimal Perturbation Analysis (IPA) to obtain a complete on-line solution through a gradient-based algorithm. We also show that the solution is robust with respect to the uncertainty model used. This establishes the basis for extending this approach to a two-dimensional mission space."
+    }
+  },
+  "generator": "fallback_v4"
+}

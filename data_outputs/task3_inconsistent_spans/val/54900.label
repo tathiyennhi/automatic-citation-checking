@@ -1,0 +1,22 @@
+{
+  "doc_id": "54900",
+  "text": "A natural and effective way to solve this problem is to think of a set of overlapped nuclei as a group of basins in the image domain, where the ridges in-between basins are the borders that isolate nuclei from each other. This is precisely the idea behind the watershed algorithm [CITATION_1] . In our application, we first create the nuclear binary mask image using those nuclear contours produced by the deformable model. This is followed by computing the distance transformation of the binary mask. Finally, the watershed algorithm is applied to the distance map D(x,y) where ridges between pairs of connected nuclear regions are detected. In Fig. 3 , we present an example where a group of connected nuclei is separated with the watershed method. In Fig. 3(a) , the nuclear mask of five overlapped nuclei are shown. The corresponding distance transformation map superimposed with iso-contours is illustrated in Fig. 3(b) . Ridges detected by running watershed algorithm over distance transformation map are displayed in Fig. 3(c) . Finally, boundaries of the separated nuclei (in green) are superimposed on the original color image, as shown in Fig. 3(d) .",
+  "correct_citation": {
+    "[CITATION_1]": "9315083"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This is precisely the idea behind the watershed algorithm  .",
+      "s_span": 222,
+      "e_span": 294
+    }
+  ],
+  "bib_entries": {
+    "9315083": {
+      "title": "Topographic distance and watershed lines",
+      "abstract": "The watershed line is the basic tool for segmenting images in mathematical morphology. A rigorous definition is given in terms of a distance function called topographic distance. If the topographical function is itself a distance function, then the topographical distance becomes identical with the geodesic distance function and the watershed becomes identical with the skeleton by zone of influence. The classical shortest paths algorithms of the graph theory are then revisited in order to derive new watershed algorithms, which are either new or more easy to implement in hardware."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "To optimize time and computational resources, features were pre-extracted with CTranspath, which is a common procedure in computational pathology pipelines 48.",
+    "Consequently, instead of the original images, GPT-4 transmits these pre-extracted features to the MSI, KRAS, and BRAF vision transformers; however, it is important to note that this implementation detail is hidden from GPT-4 and, thus, has no influence on our overall pipeline.",
+    "It, however, allows us to reduce the time and hardware requirements for each run in a research setting.",
+    "For deployment purposes, one could easily, without making changes to the LLM agent itself, hide additional logic to extract features on the fly from the original images.During each invocation, GPT-4 has to determine the availability of histopathology images for a patient, locate them within the system and select the targets (one, two or all three) for testing.",
+    "It then receives a binary prediction (MSI versus MSS, KRAS mutant versus wild type or BRAF mutant versus wild type) along with the mutation probability in percentage.All necessary information for calling the designated tools is derivable or producible from the given patient context."
+  ],
+  "correct_citations": []
+}

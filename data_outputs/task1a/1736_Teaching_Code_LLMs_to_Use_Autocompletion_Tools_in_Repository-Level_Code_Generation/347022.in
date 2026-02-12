@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The fine-tuned code LLM is then employed to assess the completion suggestions and select the most suitable one for F by the LLM-SELECT procedure (line 12).",
+    "The tokens from the selected suggestion are concatenated to F.Example: In the case of the incomplete code snippet shown in Figure 1, Algorithm 2 predicts the next token as <COMP> through the fine-tuned code LLM.",
+    "This prediction triggers the autocompletion tool.",
+    "Subsequently, the resulting completion suggestions are fed into the LLM-SELECT procedure, which determines the most appropriate suggestion.",
+    "Algorithm 2: Tool-integrated Code GenerationInput: Repository R, Description D, Insertion PositionP Output: Function F 1 D ← LLM-TOKENIZE(D) 2 F ← [<BOS>] 3 while true do / * ❶ Next Token Prediction * / 4 p |V| ← LLM-PREDICT(D, F) 5 tok ← ARGMAX(V, p |V|) 6 F ← F ⊕ [tok] 7 if tok = <EOS> then 8 break / * ❷ Code Autocompletion * / 9 if tok = <COMP> then 10 P ′ ← INSERT(P, F) 11 C ← TOOL-COMPLETE(R, P ′) / * ❸ Suggestion Selection * / 12 LLM-SELECT(D, F, C)2) Completion Suggestion Selection: Algorithm 3 provides a description of the LLM-SELECT procedure, which is called within Algorithm 2."
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "32594",
+  "text": "We address this limitation of MS algorithms by reusing the trees constructed in one phase in the next phase. We graft a part of a search tree that yields an augmenting path onto another search tree from which we have not found an augmenting path. If the search succeeds in finding an augmenting path in the grafted tree, we reuse parts of this tree in subsequent grafting operations. Otherwise, we keep the tree intact with the hope of discovering an augmenting path in future. In both cases, we have avoided the work of constructing this search tree from scratch, at the cost of the work associated with the grafting operation. In addition to tree grafting, we have integrated the direction optimization idea [CITATION_1] to the specialized breadth-first-searches (BFS) of our algorithm. We demonstrate that the new serial algorithm computes maximum cardinality matchings an order of magnitude faster than the current best-performing algorithms on several classes of graphs. Even faster performance is obtained by the parallel grafting algorithm on multithreaded shared memory multiprocessors.",
+  "correct_citation": {
+    "[CITATION_1]": "58527178"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In addition to tree grafting, we have integrated the direction optimization idea to the specialized breadth-first-searches (BFS) of our algorithm."
+    }
+  ],
+  "bib_entries": {
+    "58527178": {
+      "title": "Direction-optimizing breadth-first search",
+      "abstract": "Breadth-First Search is an important kernel used by many graph-processing applications. In many of these emerging applications of BFS, such as analyzing social networks, the input graphs are low-diameter and scale-free. We propose a hybrid approach that is advantageous for low-diameter graphs, which combines a conventional top-down algorithm along with a novel bottom-up algorithm. The bottom-up algorithm can dramatically reduce the number of edges examined, which in turn accelerates the search as a whole. On a multi-socket server, our hybrid approach demonstrates speedups of 3.3 -- 7.8 on a range of standard synthetic graphs and speedups of 2.4 -- 4.6 on graphs from real social networks when compared to a strong baseline. We also typically double the performance of prior leading shared memory (multicore and GPU) implementations."
+    }
+  },
+  "generator": "fallback"
+}

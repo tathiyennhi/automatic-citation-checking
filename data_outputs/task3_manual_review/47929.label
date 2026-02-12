@@ -1,0 +1,20 @@
+{
+  "doc_id": "47929",
+  "text": "An overview of the framework design is provided in Fig. 4 . At the algorithm level of the architecture (Fig. 4c) , novel algorithms are written in C++ and packaged as classes deriving from appropriate VTKderived parent classes (Schroeder et sl. 2003) . CUDA (NVIDIA 2007) and ITK [CITATION_1] functionality is hidden within these VTK-style C++ classes, which are wrapped and exported as Tcl functions. If a user does not have a modern CUDA capable graphics card, we seamlessly fall back to CPU versions of the same code at runtime instead of the CUDA accelerated code. Each algorithm is wrapped as an Incr-Tcl module using our new object-oriented framework (Fig. 4b) . Incr Tcl http://incrtcl.sourceforge.net/ itcl/ (Smith 2000) is an object-oriented extension to Tcl. These modules can function as standalone commandline applications, plugins/modules for other software and as GUI applets. Modules can also be incorporated into more complex applications for specific tasks (for e.g. surgical planning data tree). The application structure ( Fig. 4a) consists of a combination of viewers, an appropriate data model and a set of module containers which manage the communication of the application with the modules. This framework enables us to create custom applications for different types of processing (e.g. our cardiac segmentation editor, or our fMRI Tool- Fig. 1 ) that share large aspects of their underlying codebase. Different data models are used in different applications to enable flexibility. For example, single-algorithm applications such as image analysis algorithms (registration, segmentation etc), bias field correction contain a fixed model with enumerated variables. Complex applications such as the surgical planning data tree contain a collection of pre-operatively 5 This diagram provides an overview of the new unified framework for image analysis algorithm development. Any image analysis algorithm has a combination of images, surfaces, and transformations (from registrations) that serve as input to the algorithm. The algorithm has some input parameters (the values for which can be specified on the command line or using GUI components). In our framework, the input parameters can be one of boolean, real, integer, string, listofvalues (for drop down options when using a GUI) or a f ilename. The output can be a combination of images, surfaces and transformations acquired images of varied modalities (CT, MR, DTI, fMRI, electrode mappings) as well as linear/non-linear transformations of each acquisition to the same space. In some cases, surfaces are required and can be added to the surgical planning data tree (Fig. 5 ).",
+  "correct_citation": {
+    "[CITATION_1]": "59738328"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "CUDA (NVIDIA 2007) and ITK functionality is hidden within these VTK-style C++ classes, which are wrapped and exported as Tcl functions."
+    }
+  ],
+  "bib_entries": {
+    "59738328": {
+      "title": "The ITK software guide: The insight segmentation and registration toolkit",
+      "abstract": "A compact dial indicator arrangement is provided for a UHF tuner of the type having a continuously variable main tuning shaft and a station selector shaft provided with detent means for establishing a separate detent position for each of the 70 television stations in the UHF band. An elongated strip of material bearing numbers corresponding to each one of the 70 UHF television stations is moved past a viewing position at which the selected channel numbers may be viewed by means interconnected with the detented selector shaft so that the number on the elongated strip corresponding to each stop position of the continuously variable main tuning shaft is automatically viewable at the viewing position in response to rotation of the selector shaft to each detented position thereof."
+    }
+  },
+  "generator": "fallback"
+}

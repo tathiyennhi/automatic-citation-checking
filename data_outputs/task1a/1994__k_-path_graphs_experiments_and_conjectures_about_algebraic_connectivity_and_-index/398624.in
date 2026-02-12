@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Observe that some valid sequences cannot be accepted, the reverse of each sequence must be analyzed and only the smaller one is considered (see steps a), b) and c) of the algorithm).",
+    "The proof of correctness of Algorithm 1 is given in Lemmas 2 and 3 of Section 2.3.",
+    "Algorithm 1Input: n, k. Output: T k,n set of color sequences of all non-isomorphic k-path graphs of order n. 1:Step 1:2: Set ⟨p 1, p 2,..., p n-k-1 ⟩ ← ⟨1, 2, 1, 2,... ⟩ 3: T k,n ← {⟨p 1, p 2,..., p n-k-1 ⟩} 4:Step 2: While exists maximu index i such that:a i = min {p i+1, p i+2 } \\ {p i-1 }, b i = max(p 1,..., p i-1) + 1, a i ≤ b i ≤ 3do 5:Step (a) ⟨p 1,..., p n-k-1 ⟩ ← ⟨p 1,..., p i-1, a i, 1, 2, 1, 2,... ⟩ 6:Step (b) Compute ⟨q 1,..., q n-k-1 ⟩ the reverse restricted normalized sequence of ⟨p 1,..., p n-k-1 ⟩ 7:Step(c) If ⟨p 1,..., p n-k-1 ⟩ ⪯ ⟨q 1,..., q n-k-1 ⟩ then T k,n ← T k,n ∪ {⟨p 1,..., p n-k-1 ⟩} 8: end if 9:end while 10: Return T k,n Transforming color sequence in g6 format -phase ii)In this phase, the color sequences representing k-path graphs, with fixed k and n, are transformed g6 format, suitable for storage of the lists of graphs.",
+    "First, the color sequence is used to construct an adjacency matrix of the graph and, from this matrix, create the compressed format g6.",
+    "The color sequence of size n -k -1 represents the coloring of n -k -1 vertices of the k-path graph of order n. Therefore, k + 1 colors of the first clique in the core sequence are conveniently added in the color sequence to obtain a k + 1-coloring of the k-path graph of order n (see Section 3.1)."
+  ]
+}

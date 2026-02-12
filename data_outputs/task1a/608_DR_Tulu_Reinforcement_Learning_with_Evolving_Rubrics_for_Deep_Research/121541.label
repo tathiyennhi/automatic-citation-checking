@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "While starting directly from Qwen 3 (\"No SFT\") achieves highest train reward,it has dramatically lower downstream evaluation results (see Figure 7).",
+    "It also displays significantly different behavior, using significantly more tool calls than the cold-started (\"Our SFT\") model.",
+    "This may be due to a few factors: first, our evaluations use rubrics generated in different manners to our own training rubrics (e.g., Healthbench uses expert-annotated rubrics), potentially leading to cases where test-time rubrics evaluate features not commonly tested in our training rubrics.",
+    "Second, there may be reward hacking behavior during RL training, due to our use of an LM judge different to the judges used in downstream evaluation.",
+    "Our in-loop judge model uses GPT-4.1-mini, while downstream evaluations use varied different models (e.g., SQAv2 uses Gemini Flash 2.5, DRB uses a mix of Gemini Pro 2.5 and Gemini Flash 2.5, and Healthbench uses GPT-4.1, all with varying prompts and evaluation harnesses)."
+  ],
+  "correct_citations": []
+}

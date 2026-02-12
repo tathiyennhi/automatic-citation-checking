@@ -1,0 +1,33 @@
+{
+  "doc_id": "40142",
+  "text": "The advantage of tile sequence is to improve the reading efficiency for cache. It tries to put the spatiotemporal-related When it is triggered to generate multi-tile-sequence which has different length, SS begins traversing each tile in the sequence-pool and sorts the tiles which have the same row in cache into a sequence. Thus, the caching locations of tiles which are in the same sequence have the same row and neighboring locations. The SS also assigns an H-value for each sequence, which is inversely proportional to its caching cost. According report [CITATION_1] , data which has a lower H-value (that is has a higher caching cost) will be replaced firstly, and it is considered as an optimal online caching replacement method [CITATION_2] . Thus, the longer tile sequence will be replaced out cache firstly. Meanwhile, avoiding keeping the shorter sequence which hasn't been accessed for a long time in the cache, the method will add the value of caching cost by a time weighting factor T, to replace the shorter sequence at a proper time. We use the H-value of the latest replaced tile sequence to mark T-value. When a new sequence Seq is added to replacement queue, its H-value is set as Equation1.",
+  "correct_citation": {
+    "[CITATION_1]": "1433",
+    "[CITATION_2]": "9847674"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "According report  , data which has a lower H-value (that is has a higher caching cost) will be replaced firstly, and it is considered as an optimal online caching replacement method  .",
+      "s_span": 541,
+      "e_span": 749
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "According report  , data which has a lower H-value (that is has a higher caching cost) will be replaced firstly, and it is considered as an optimal online caching replacement method  .",
+      "s_span": 541,
+      "e_span": 749
+    }
+  ],
+  "bib_entries": {
+    "1433": {
+      "title": "The K-Server dual and loose competitiveness for paging",
+      "abstract": "This paper has two results. The first is based on the surprising observation that the well-known ``least-recently-used'' paging algorithm and the ``balance'' algorithm for weighted caching are linear-programming primal-dual algorithms. This observation leads to a strategy (called ``Greedy-Dual'') that generalizes them both and has an optimal performance guarantee for weighted caching. For the second result, the paper presents empirical studies of paging algorithms, documenting that in practice, on ``typical'' cache sizes and sequences, the performance of paging strategies are much better than their worst-case analyses in the standard model suggest. The paper then presents theoretical results that support and explain this. For example: on any input sequence, with almost all cache sizes, either the performance guarantee of least-recently-used is O(log k) or the fault rate (in an absolute sense) is insignificant. Both of these results are strengthened and generalized in``On-line File Caching'' (1998)."
+    },
+    "9847674": {
+      "title": "Popularity-aware greedy dual-size web proxy caching algorithms",
+      "abstract": "Web caching aims at reducing network traffic, server load and user-perceived retrieval delays by replicating popular content on proxy caches that are strategically placed within the network. While key to effective cache utilization, popularity information (e.g. relative access frequencies of objects requested through a proxy) is seldom incorporated directly in cache replacement algorithms. Rather other properties of the request stream (e.g. temporal locality and content size), which are easier to capture in an online fashion, are used to indirectly infer popularity information, and hence drive cache replacement policies. Recent studies suggest that the correlation between these secondary properties and popularity is weakening due in part to the prevalence of efficient client and proxy caches. This trend points to the need for proxy cache replacement algorithms that directly capture popularity information. We present an on-line algorithm that effectively captures and maintains an accurate popularity profile of Web objects requested through a caching proxy. We propose a novel cache replacement policy that uses such information to generalize the well-known greedy dual-size algorithm, and show the superiority of our proposed algorithm by comparing it to a host of recently-proposed and widely-used algorithms using extensive trace-driven simulations and a variety of performance metrics."
+    }
+  },
+  "generator": "fallback_v4"
+}

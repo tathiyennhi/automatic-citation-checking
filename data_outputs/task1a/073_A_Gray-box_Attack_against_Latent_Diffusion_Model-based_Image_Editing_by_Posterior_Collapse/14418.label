@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "(4)The above loss is also known as negative ELBO.",
+    "By observing the generating process p(x, z) = p(z)p(x|z), the loss can be written alternatively as:L(x) = -E q(z|x) [ln p(x|z)] + D KL (q(z|x) ∥ p(z)),(5)where the first term is known as reconstruction error and the second term, the KL divergence between the variational distribution and the prior distribution, usually a standard normal distribution, that is p(z) = N (0, I).",
+    "The KL divergence has a regularisation effect such that the variational distribution is \"close\" to a standard spherical Gaussian distribution.",
+    "By general consensus, training of VAE usually suffers an optimization issue called posterior collapsing [10], that is the KL divergence term of Equation 5 dominates the overall loss such that all posteriors collapse to the uninformative prior and the reconstruction error or the likelihood term is ignored.",
+    "We draw inspiration from this vulnerability and aim to propose adversarial attacks to cause the posterior collapse during inference stage."
+  ],
+  "correct_citations": [
+    "By general consensus, training of VAE usually suffers an optimization issue called posterior collapsing [10], that is the KL divergence term of Equation 5 dominates the overall loss such that all posteriors collapse to the uninformative prior and the reconstruction error or the likelihood term is ignored."
+  ]
+}

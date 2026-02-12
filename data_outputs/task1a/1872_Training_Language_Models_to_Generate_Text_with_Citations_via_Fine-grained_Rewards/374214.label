@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We compute the combined reward R as the sum of R 1, R 2, R 3 for each generated sequence y w = s 1,...,i at a sentence step.",
+    "More specifically, R is computed as:R(x,y w)= 3 u=1 lu k=1 R k u (x,y w) (1)where x is the query that is inputted together with y w to compute the rewards of y w, l u is the number of corresponding segments in y w for R u (e.g., l 1 = 1 since R 1 treats the entire generation as a single sequence, and l 2 = i since R 2 is computed at the sentence level).",
+    "R k u denotes the reward score R u for the k th segment in y w.The whole process stops until all sequences in the beam reaches the end of generation or the maximum number of steps H is reached.",
+    "Then the highest ranked sequence is returned for further LM fine-tuning as in a standard RS process.",
+    "Reinforcement Learning (RL)We also experiment with LM training using RL after the distillation step."
+  ],
+  "correct_citations": []
+}

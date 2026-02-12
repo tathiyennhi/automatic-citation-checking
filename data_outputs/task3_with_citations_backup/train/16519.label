@@ -1,0 +1,22 @@
+{
+  "doc_id": "16519",
+  "text": "The proposed control scheme is a double loop control [CITATION_1] where the output voltage of the photovoltaic panel, , is controlled by the mean value of the inductor current, . Fig. 9 shows the simplified block diagram of the control strategy where represents the voltage compensation, _ the closed loop transfer function of the inner current control loop, the converter inductor current-to-input voltage transfer function and the input voltage measurement gain. Fig. 10 shows the block diagram of the inner current control loop ( , ) where denotes the current compensation, the pulse-width modulator, the converter duty cycle-to-inductor current transfer function and Fig. 11 shows the duty cycle-to-inductor current transfer function for the three different operating points defined in Table II . Blue line corresponds to the transfer function when the PV panel operates at the maximum power point; green line when it operates in the current source region and red line in the voltage source region. In the current source region, where the equivalent input resistance is high, the zero formed by and the input capacitor moves to a lower frequency and the quality factor of the second order system formed by , and increases. Moreover, the dc gain, inversely proportional to the input resistance , is below zero dB meaning that the PV panel behaves as a current source and the controlability of the inductor current is poor. In the voltage source area the dc gain increases due to the decrease in the equivalent input resistor. The poles, that were a pair of complex poles at the resonant frequency, split and the system shows an overdamped response. Fig. 12 shows the inductor current-to-input voltage transfer function for the three different operating points of the PV panel. The plant is a first order system with a pole formed by the input capacitor and the equivalent input resistance . In the voltage source region where the equivalent resistance is low, the pole appears at high frequency and it moves to lower frequencies as the resistance increases. The dc gain, directly proportional to the input equivalent resistance, is low at the voltage source region and it increases as the operating point moves towards the current source region. In the voltage source region, where the PV panel behaves as an ideal voltage source, the low dc gain indicates that variations in the inductor current have small effect in the panel output voltage. The design process starts by designing the inner current control loop (Fig. 10) . The current sensor used is a Hall effect sensor from Allegro MicroSystems with a peak current of 12.5 A and sensibility of 56 mV/A. A differential amplifier is used to remove the offset introduced by the current sensor and to adapt the signal level of the measured current. The dc gain introduced by the differential amplifier is given by (29).",
+  "correct_citation": {
+    "[CITATION_1]": "109128871"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The proposed control scheme is a double loop control [CITATION_1] where the output voltage of the photovoltaic panel, , is controlled by the mean value of the inductor current, .",
+      "s_span": 0,
+      "e_span": 178
+    }
+  ],
+  "bib_entries": {
+    "109128871": {
+      "title": "Voltage regulation of photovoltaic arrays: small-signal analysis and control design",
+      "abstract": "This study deals with the regulation of the output voltage of photovoltaic (PV) arrays. As a case study, the DC-DC buck converter is used as an interface between the PV array and the load, but other types of converters can be used for the same purpose. The input voltage of the converter is controlled in order to regulate the operating point of the array. Besides reducing losses and stress because of the bandwidth-limited regulation of the converter duty cycle, controlling the converter input voltage reduces the settling time and avoids oscillation and overshoot, making easier the functioning of maximum power point tracking (MPPT) methods. The voltage regulation problem is addressed with a detailed analysis that starts with the modelling of the PV array and the converter. This analysis is followed by study, design, simulation and practical experiments of three closed-loop control strategies for the buck converter. Control stability and implementation considerations are presented."
+    }
+  },
+  "generator": "fallback_v4"
+}

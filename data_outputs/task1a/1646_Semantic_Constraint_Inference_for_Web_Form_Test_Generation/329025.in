@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Figure 1 demonstrates that input fields with relationships, such as From 1 and To 1 (or From 2 and To 2), not only share a similar textual context but also are often in close structural proximity.",
+    "This design is intuitive for human interpretation.",
+    "The relationship between elements is typically indicated by semantically related labels and their spatial closeness, as the significant distance between elements generally diminishes their perceived relevance.In light of this observation, we utilize the embeddings previously computed to gauge the degree of connectedness between groups of input fields.",
+    "Employing the same embedding is advantageous for this task, as it encompasses both textual similarity and structural proximity.",
+    "We define the relationship score between two input fields (InputFieldSim) as the maximum of the input-to-input and label-to-label similarity scores as follows:𝐼𝑛𝑝𝑢𝑡𝐹𝑖𝑒𝑙𝑑𝑆𝑖𝑚 = max{𝑠𝑖𝑚(𝑙𝑎𝑏𝑒𝑙 1, 𝑙𝑎𝑏𝑒𝑙 2), 𝑠𝑖𝑚(𝑖𝑛𝑝𝑢𝑡 1, 𝑖𝑛𝑝𝑢𝑡 2)}In instances where input fields lack associated labels, we adapt the methodology by omitting the label terms from the calculation.It is important to recognize that the relationships discerned between input groups are not inherently obligatory; lower score relations do not necessarily imply a meaningful connection."
+  ]
+}

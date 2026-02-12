@@ -1,0 +1,55 @@
+{
+  "doc_id": "54211",
+  "text": "Elmqvist [CITATION_1] first proposed an energy-optimization-based filtering algorithm in form of active shape model. Energy of the model is a weighted combination of internal force and external force. The minimization of the energy function is processed iteratively until the step size of the model is less than a threshold. Hu et al. [CITATION_2] developed a semi-global filtering (SGF) algorithm by defining a novel energy function that is composed of a data term and a regularization term. Ural and Shan [CITATION_3] presented a Min-cut Based Filtering (MBF) algorithm on the basis of an energy function, which considers both local and global features. To minimize the energy function, a minimum cut optimization algorithm was applied. The test reveals that an overall filtering accuracy of 91.3% can be achieved for the ISPRS test areas. Similarly, He et al. [CITATION_4] also extracted ground points progressively through energy minimization using graph cuts. In this method, the energy function and graph model encode both point-wise closeness and pairwise smoothness.",
+  "correct_citation": {
+    "[CITATION_1]": "3057144",
+    "[CITATION_2]": "508311",
+    "[CITATION_3]": "54864851",
+    "[CITATION_4]": "52113868"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Elmqvist  first proposed an energy-optimization-based filtering algorithm in form of active shape model.",
+      "s_span": 0,
+      "e_span": 116
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Hu et al.  developed a semi-global filtering (SGF) algorithm by defining a novel energy function that is composed of a data term and a regularization term.",
+      "s_span": 325,
+      "e_span": 492
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Ural and Shan  presented a Min-cut Based Filtering (MBF) algorithm on the basis of an energy function, which considers both local and global features.",
+      "s_span": 493,
+      "e_span": 655
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Similarly, He et al.  also extracted ground points progressively through energy minimization using graph cuts.",
+      "s_span": 842,
+      "e_span": 964
+    }
+  ],
+  "bib_entries": {
+    "54864851": {
+      "title": "A min-cut based filter for airborne LiDAR data",
+      "abstract": "LiDAR (Light Detection and Ranging) is a routinely employed technology as a 3-D data collection technique for topographic mapping. Conventional workflows for analyzing LiDAR data require the ground to be determined prior to extracting other features of interest. Filtering the terrain points is one of the fundamental processes to acquire higher-level information from unstructured LiDAR point data. There are many ground-filtering algorithms in literature, spanning several broad categories regarding their strategies. Most of the earlier algorithms examine only the local characteristics of the points or grids, such as the slope, and elevation discontinuities. Since considering only the local properties restricts the filtering performance due to the complexity of the terrain and the features, some recent methods utilize global properties of the terrain as well. This paper presents a new ground filtering method, Min-cut Based Filtering (MBF), which takes both local and global properties of the points into account. MBF considers ground filtering as a labeling task. First, an energy function is designed on a graph, where LiDAR points are considered as the nodes on the graph that are connected to each other as well as to two auxiliary nodes representing ground and off-ground labels. The graph is constructed such that the data costs are assigned to the edges connecting the points to the auxiliary nodes, and the smoothness costs to the edges between points. Data and smoothness terms of the energy function are formulated using point elevations and approximate ground information. The data term conducts the likelihood of the points being ground or off-ground while the smoothness term enforces spatial coherence between neighboring points. The energy function is optimized by finding the minimum-cut on the graph via the alpha-expansion algorithm. The resulting graph-cut provides the labeling of the point cloud as ground and off-ground points. Evaluation of the proposed method on the ISPRS test dataset for ground filtering demonstrates that the results are comparable with most current existing methods. An overall average filtering accuracy for the 15 ISPRS test areas is 91.3%."
+    },
+    "508311": {
+      "title": "Semi-global filtering of airborne LiDAR data for fast extraction of digital terrain models",
+      "abstract": "Automatic extraction of ground points, called filtering, is an essential step in producing Digital Terrain Models from airborne LiDAR data. Scene complexity and computational performance are two major problems that should be addressed in filtering, especially when processing large point cloud data with diverse scenes. This paper proposes a fast and intelligent algorithm called Semi-Global Filtering (SGF). The SGF models the filtering as a labeling problem in which the labels correspond to possible height levels. A novel energy function balanced by adaptive ground saliency is employed to adapt to steep slopes, discontinuous terrains, and complex objects. Semi-global optimization is used to determine labels that minimize the energy. These labels form an optimal classification surface based on which the points are classified as either ground or non-ground. The experimental results show that the SGF algorithm is very efficient and able to produce high classification accuracy. Given that the major procedure of semi-global optimization using dynamic programming is conducted independently along eight directions, SGF can also be paralleled and sped up via Graphic Processing Unit computing, which runs at a speed of approximately 3 million points per second."
+    },
+    "52113868": {
+      "title": "Progressive filtering of airborne LiDAR point clouds using graph cuts",
+      "abstract": "The development of robust and accurate filtering approaches for automated extraction of digital terrain models (DTMs) from airborne Light Detection and Ranging (LiDAR) data continues to be a challenge. The problem is due to the nature of LiDAR point clouds, the complexity of scene components, and the intrinsic structure of the terrain itself. This paper proposes a novel approach for filtering LiDAR point clouds, which exploits the spatial structure of the terrain and the spatial coherence among the LiDAR points. Terrain points are progressively detected through energy minimization using graph cuts. The energy function and graph model encode both pointwise closeness and pairwise smoothness. The DTM is then extracted through progressive filtering via the graph cuts. The performance of the proposed method is investigated using two datasets with different point densities, terrain complexity, and land covers. The results show that the filter can effectively remove nonterrain points, leading to an accurately extracted DTM. The filter is also compared with other methods reported in the literature, the comparison demonstrating that the proposed method exhibits advantages in terms of performance."
+    },
+    "3057144": {
+      "title": "Surface estimation from airborne laser scanner data using active shape models",
+      "abstract": "Various filtering techniques exist to obtain the ground from laser radar data to use when building digital terrain models. This paper develops an active shape model approach to estimate the ground surface from laser radar data. The active shape model acts like a rubber cloth with elasticity and rigidity. With constraint forces the model is formed to an estimate of the ground surface. The model is glued against the measured points from underneath, forming the envelope of the point cloud. Even in a thick forest as much as 25 per cent of the data points represent the ground. The stiffness of the shape model stretches it out to a continuous surface in between the ground points. The algorithm implemented in this paper is suited to use on very dense data sets, it has been designed for data sets of more than 10 points per square meter. We propose suggestions of changes to the algorithm to adjust it to work on more sparse data sets."
+    }
+  },
+  "generator": "fallback_v4"
+}

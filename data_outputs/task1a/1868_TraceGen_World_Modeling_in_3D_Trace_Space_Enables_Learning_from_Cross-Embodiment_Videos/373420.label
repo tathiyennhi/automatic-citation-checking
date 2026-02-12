@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "To streamline notation, we denote the keypoint increments ∆T t ref as X ∈ R K×L×3, which serves as our target data distribution.",
+    "The framework introduces a stochastic interpolant:I τ = α τ X 1 + σ τ ε, τ ∈ [0, 1],(4)where X 1 is the ground-truth trace, ε ∼ N (0, I) is Gaussian noise, and α τ, σ τ are time-dependent schedules.",
+    "By varying α τ and σ τ, this framework encompasses a range of generative models, including diffusion models and flowmatching methods.The framework learns a velocity field v(x, τ, F cond) that characterizes the time evolution of the interpolant, where x denotes a sample from the interpolant distribution at time τ:v(x, τ, F cond) = E[ İτ | I τ = x, F cond],(5)where İτ denotes the time derivative and the expectation is over X 0, X 1 conditioned on I τ = x and F cond.Linear interpolation ODE.",
+    "Among the variants within the Stochastic Interpolant framework, we implement a linear interpolation ODE by choosing α τ = τ and σ τ = 1-τ:X τ = (1 -τ)X 0 + τ X 1, τ ∈ [0, 1],(6)With this linear schedule, the velocity field simplifies to Ẋτ = X 1 -X 0, which is constant in time.",
+    "We train a neural network v θ to predict this velocity by minimizing: At test time, we generate trajectories via 100-step ODE integration, relying solely on the conditional model with multimodal vision-language conditioning.L SI = E τ,X 0,X 1 ∥v θ (X τ, τ, F cond) -(X 1 -X 0)∥ 2."
+  ],
+  "correct_citations": [
+    "The framework introduces a stochastic interpolant:I τ = α τ X 1 + σ τ ε, τ ∈ [0, 1],(4)where X 1 is the ground-truth trace, ε ∼ N (0, I) is Gaussian noise, and α τ, σ τ are time-dependent schedules.",
+    "Among the variants within the Stochastic Interpolant framework, we implement a linear interpolation ODE by choosing α τ = τ and σ τ = 1-τ:X τ = (1 -τ)X 0 + τ X 1, τ ∈ [0, 1],(6)With this linear schedule, the velocity field simplifies to Ẋτ = X 1 -X 0, which is constant in time."
+  ]
+}

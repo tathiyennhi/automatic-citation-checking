@@ -1,0 +1,44 @@
+{
+  "doc_id": "8451",
+  "text": "Tulisani et al. [CITATION_1] treat pose estimation as a classification problem and use a Convolutional Neural Network (CNN) for predicting the pose. Their pose estimation network is initialized with VGG [CITATION_2] and finetuned for pose estimation using ground truth annotations from Pascal 3D+. In order to perform object detection and pose estimation they first use R-CNN [CITATION_3] to detect objects and then use the detected regions as input to their pose estimation network. Their results are the current state of the art for detection and pose estimation on Pascal 3D+. In Sec. 4, we compare our detection and pose estimation model to theirs and demonstrate similar accuracy. Additionally, in table 5 we show a timing comparison between our proposed model and theirs. This table shows that even if their method used the fastest region based detector (Faster RCNN) our method still provides a 46x increase in speed with similar accuracy.",
+  "correct_citation": {
+    "[CITATION_1]": "6235232",
+    "[CITATION_2]": "14124313",
+    "[CITATION_3]": "1241368"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Tulisani et al.  treat pose estimation as a classification problem and use a Convolutional Neural Network (CNN) for predicting the pose.",
+      "s_span": 0,
+      "e_span": 148
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Their pose estimation network is initialized with VGG  and finetuned for pose estimation using ground truth annotations from Pascal 3D+.",
+      "s_span": 149,
+      "e_span": 297
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In order to perform object detection and pose estimation they first use R-CNN  to detect objects and then use the detected regions as input to their pose estimation network.",
+      "s_span": 298,
+      "e_span": 483
+    }
+  ],
+  "bib_entries": {
+    "14124313": {
+      "title": "Very deep convolutional networks for large-scale image recognition",
+      "abstract": "In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision."
+    },
+    "6235232": {
+      "title": "Viewpoints and keypoints",
+      "abstract": "We characterize the problem of pose estimation for rigid objects in terms of determining viewpoint to explain coarse pose and keypoint prediction to capture the finer details. We address both these tasks in two different settings - the constrained setting with known bounding boxes and the more challenging detection setting where the aim is to simultaneously detect and correctly estimate pose of objects. We present Convolutional Neural Network based architectures for these and demonstrate that leveraging viewpoint estimates can substantially improve local appearance based keypoint predictions. In addition to achieving significant improvements over state-of-the-art in the above tasks, we analyze the error modes and effect of object characteristics on performance to guide future efforts towards this goal."
+    },
+    "1241368": {
+      "title": "Rich feature hierarchies for accurate object detection and semantic segmentation",
+      "abstract": "Object detection performance, as measured on the canonical PASCAL VOC dataset, has plateaued in the last few years. The best-performing methods are complex ensemble systems that typically combine multiple low-level image features with high-level context. In this paper, we propose a simple and scalable detection algorithm that improves mean average precision (mAP) by more than 30% relative to the previous best result on VOC 2012 -- achieving a mAP of 53.3%. Our approach combines two key insights: (1) one can apply high-capacity convolutional neural networks (CNNs) to bottom-up region proposals in order to localize and segment objects and (2) when labeled training data is scarce, supervised pre-training for an auxiliary task, followed by domain-specific fine-tuning, yields a significant performance boost. Since we combine region proposals with CNNs, we call our method R-CNN: Regions with CNN features. We also present experiments that provide insight into what the network learns, revealing a rich hierarchy of image features. Source code for the complete system is available at http://www.cs.berkeley.edu/~rbg/rcnn."
+    }
+  },
+  "generator": "fallback_v4"
+}

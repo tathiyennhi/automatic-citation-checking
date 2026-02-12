@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "to obtain an embedding vector for each drug and gene node.",
+    "We calculated the drug-gene score Score m d,g for each drug d and gene g using model m. Specifically, the closer a drug is to the AD-associated gene nodes, the more likely it is a higher-ranking AD drug candidate.",
+    "Based on the signs of gene-protein edges and drug-target edges, we first calculated the drug-gene scores based on the anti-correlation between the drug embedding and the gene embedding, with the aim to find drug inhibitors close to the AD-risk genes or drug activators close to the AD-protective genes (see Eq.",
+    "( 7)).Score m d,g = cosine ( Z m s,d, -Z m s,g)(7)where d represents one drug, g represents one gene, and Z m s is the node's embedding vector accounting for the drug-target direction or gene-protein direction using the model trained on fold m.Next, we calculated the average DeepDrug score of each single drug candidate Score d based on the average drug-gene score across all AD-associated genes and all trained models (see Eq.",
+    "The average scores were calculated to address the potential uncertainties or variances in predictions using models trained on different cross-validation data.Score d = 1 CV ∑ m 1 N ∑ g Score m d,g(8)where d represents one drug, g represents one gene, m represents the model trained on fold m, N is the total number AD-associated genes, and CV is the total number of cross-validation folds."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,38 @@
+{
+  "doc_id": "41418",
+  "text": "The Back-Off Paradox. Existing papers [CITATION_1] [CITATION_2] [CITATION_3] proved that it is impossible to solve standard broadcast problems efficiently in the dual graph model without the addition of strong extra assumptions (see related work). In real radio networks, however, which suffer from the type of link dynamics abstracted by the dual graph model, simple back-off strategies tend to perform quite well. These dueling realities seem to imply a dispiriting gap between theory and practice: basic communication tasks that are easily solved in real networks are impossible when studied in abstract models of these networks.",
+  "correct_citation": {
+    "[CITATION_1]": "953200",
+    "[CITATION_2]": "15001839",
+    "[CITATION_3]": "15104583"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Existing papers    proved that it is impossible to solve standard broadcast problems efficiently in the dual graph model without the addition of strong extra assumptions (see related work)."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Existing papers    proved that it is impossible to solve standard broadcast problems efficiently in the dual graph model without the addition of strong extra assumptions (see related work)."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Existing papers    proved that it is impossible to solve standard broadcast problems efficiently in the dual graph model without the addition of strong extra assumptions (see related work)."
+    }
+  ],
+  "bib_entries": {
+    "15104583": {
+      "title": "A (truly) local broadcast layer for unreliable radio networks",
+      "abstract": "In this paper, we implement an efficient local broadcast service for the dual graph model, which describes communication in a radio network with both reliable and unreliable links. Our local broadcast service offers probabilistic latency guarantees for: (1) message delivery to all reliable neighbors (i.e., neighbors connected by reliable links), and (2) receiving some message when one or more reliable neighbors are broadcasting. This service significantly simplifies the design and analysis of algorithms for the otherwise challenging dual graph model. To this end, we also note that our solution can be interpreted as an implementation of the abstract MAC layer specification---therefore translating the growing corpus of algorithmic results studied on top of this layer to the dual graph model. At the core of our service is a seed agreement routine which enables nodes in the network to achieve \"good enough\" coordination to overcome the difficulties of unpredictable link behavior. Because this routine has potential application to other problems in this setting, we capture it with a formal specification---simplifying its reuse in other algorithms. Finally, we note that in a break from much work on distributed radio network algorithms, our problem definitions (including error bounds), implementation, and analysis do not depend on global network parameters such as the network size, a goal which required new analysis techniques. We argue that breaking the dependence of these algorithms on global parameters makes more sense and aligns better with the rise of ubiquitous computing, where devices will be increasingly working locally in an otherwise massive network. Our push for locality, in other words, is a contribution independent of the specific radio network model and problem studied here."
+    },
+    "15001839": {
+      "title": "The cost of radio network broadcast for different models of unreliable links",
+      "abstract": "We study upper and lower bounds for the global and local broadcast problems in the dual graph model combined with different strength adversaries. The dual graph model is a generalization of the standard graph-based radio network model that includes unreliable links controlled by an adversary. It is motivated by the ubiquity of unreliable links in real wireless networks. Existing results in this model [11, 12, 3, 8] assume an offline adaptive adversary - the strongest type of adversary considered in standard randomized analysis. In this paper, we study the two other standard types of adversaries: online adaptive and oblivious. Our goal is to find a model that captures the unpredictable behavior of real networks while still allowing for efficient broadcast solutions. For the online adaptive dual graph model, we prove a lower bound that shows the existence of constant-diameter graphs in which both types of broadcast require Ω(n/ log n) rounds, for network size n. This result is within log-factors of the (near) tight upper bound for the offline adaptive setting. For the oblivious dual graph model, we describe a global broadcast algorithm that solves the problem in O(Dlog n + log2 n) rounds for network diameter D, but prove a lower bound of Ω(√n= log n) rounds for local broadcast in this same setting. Finally, under the assumption of geographic constraints on the network graph, we describe a local broadcast algorithm that requires only O(log2 n logΔ) rounds in the oblivious model, for maximum degree Δ. In addition to the theoretical interest of these results, we argue that the oblivious model (with geographic constraints) captures enough behavior of real networks to render our efficient algorithms useful for real deployments."
+    },
+    "953200": {
+      "title": "Broadcasting in unreliable radio networks",
+      "abstract": "Practitioners agree that unreliable links, which sometimes deliver messages and sometime do not, are an important characteristic of wireless networks. In contrast, most theoretical models of radio networks fix a static set of links and assume that these links are reliable. This gap between theory and practice motivates us to investigate how unreliable links affect theoretical bounds on broadcast in radio networks. To that end we consider a model that includes two types of links: reliable links, which always deliver messages, and unreliable links, which sometimes fail to deliver messages. We assume that the reliable links induce a connected graph, and that unreliable links are controlled by a worst-case adversary. In the new model we show an Ω(n log n) lower bound on deterministic broadcast in undirected graphs, even when all processes are initially awake and have collision detection, and an Ω(n) lower bound on randomized broadcast in undirected networks of constant diameter. This separates the new model from the classical, reliable model. On the positive side, we give two algorithms that tolerate unreliability: an O(n3/2 √log n)-time deterministic algorithm and a randomized algorithm which terminates in O(n log2 n) rounds with high probability."
+    }
+  },
+  "generator": "fallback_v4"
+}

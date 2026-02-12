@@ -1,0 +1,42 @@
+{
+  "text": "For combinational circuits, since there is no multiple-event fault, only the FIE's for the stems are required. The corresponding fault-injectable circuit is shown in Fig. 13 , where the FIE's inside the FFR's are removed. Suppose that the average number of gates in an FFR is then the number of FIE's is reduced to of that in the serial fault emulator. We now analyze the performance of the hybrid fault emulator. Let the number of faults emulated be Since the emulated faults include multiple-event faults and collapsed stem faults (single-event faults), and we perform logic and fault emulation for each multiple-event fault, we have (5) where is the percentage of the multiple-event faults, and is the ratio of the number of single-event faults to the number of collapsed stem faults emulated. The hybrid fault emulation time thus is [CITATION_1] where the first, second, and third terms are the logic simulation time, fault collapsing (i.e., critical path-tracing analysis) time, and fault emulation time, respectively. Therefore, (7) where For example, suppose the emulation speed is 1 MHz, i.e., and ns; then Also, is about 6 (to be shown in Table VII ), so the speedup of the hybrid fault emulation is about Since increases with the circuit size, can be neglected for large circuits, so the speedup of hybrid fault emulation becomes",
+  "citation_candidates": [
+    "60814629",
+    "948915",
+    "197630",
+    "6315974",
+    "9069765",
+    "195865765",
+    "61938172"
+  ],
+  "bib_entries": {
+    "948915": {
+      "title": "Fault emulation: A new approach to fault grading",
+      "abstract": "In this paper, we propose a method of using an FPGA-based emulation system for fault grading. The real-time simulation capability of a hardware emulator could significantly improve the run-time of fault grading, which is one of the most resource-intensive tasks in the design process. A serial fault emulation algorithm is employed and enhanced by two speed-up techniques. First, a set of independent faults can be emulated in parallel. Second, simultaneous injection of multiple dependent faults is also possible by adding extra supporting circuitry. Because the reconfiguration time spent on mapping the numerous faulty circuits into the FPGA boards could be the bottleneck of the whole process, using extra logic for injecting a large number of faults per configuration can reduce the number of reconfigurations, and thus, significantly improve the efficiency. Some modeling issues that are unique in the fault emulation environment are also addressed. The performance estimation indicates that this approach could be several orders of magnitude faster than the existing software approaches for large designs."
+    },
+    "195865765": {
+      "title": "Serial fault emulation",
+      "abstract": "A hardware emulator based approach has been developed to perform test evaluation on large sequential circuits (at least tens of thousands of gates). This approach relies both on the flexibility and on the reconfigurability of hardware emulators based on dedicated reprogrammable circuits. A Serial Fault Emulation (SFE) method in which each faulty circuit is emulated separately has been applied to gate level circuits for Single Stuck Faults (SSFs). This approach has been implemented on the Meta Systems's hardware emulator which is capable of emulating circuits of 1,000,000 gates at rates varying from 500 kHz to several MHz. Experimental results are provided to demonstrate the efficiency of SFE. They indicate that SFE should be two orders of magnitude faster than sofware approaches for designs containing more than 100000 gates."
+    },
+    "6315974": {
+      "title": "On simulating faults in parallel",
+      "abstract": "Hardware engines (e.g. YSE and EVE) have been built to perform functional simulation of large designs over many patterns. The authors present a method of simulating faults in parallel that is applicable to these hardware simulation engines (and to software simulators with similar characteristics). A notion of independence between faults is used to determine the faults that can be simulated in parallel. An efficient algorithm is developed to determine the independent subsets of faults. Results of applying the algorithm to large examples are presented and shown to be very good by comparing them with theoretical lower bounds. This technique makes it feasible to fault simulate large networks using these hardware simulation engines. >"
+    },
+    "61938172": {
+      "title": "An FPGA-based hardware emulator for fast fault emulation",
+      "abstract": "An FPGA-based hardware emulation system is shown to boost the speed of fault simulation for sequential circuits. The circuit is downloaded into the emulation system which emulates the faulty circuit's behavior by synthesizing from the good circuit and the given fault list in a novel way. Fault injection is made easy by shifting the content of a fault injection chain, with which we get rid of the highly time-consuming bit-stream regeneration process. Experimental results for ISCAS-89 benchmark circuits show that the fault emulator is about twenty times faster than HOPE (parallel fault simulator). A parallel fault emulation approach is also proposed, in which faults that are not activated or with short propagation distance are screened off before fault emulation, and non-stem faults are collapsed into their equivalent stem faults, further reducing the number of faults actually emulated."
+    },
+    "60814629": {
+      "title": "The Programmable Gate Array Data Book",
+      "abstract": "A flux scanner which is comprised of a rotating polygon for scanning a beam of radiated flux transverse a photoreceptive medium. In the beam path between the flux source and the polygon, an astigmatic-beam expander lens is employed to focus the flux distributions to a spot at an image plane. The astigmatic lens is configured so as to produce a very narrow beam of flux to control the size of the spot in a direction orthogonal to the transverse direction, without any loss of efficiency. Between the photoreceptive medium and the polygon, a cylindrical lens and linear optical elements are positioned to focus the beam to control the size of the spot along the transverse direction. The transverse direction is designated optically as the tangential plane; whereas the direction orthogonal to the transverse direction is designated optically as the sagittal plane. These optical elements are configured to cause the sagittal and tangential planes of best focus to coincide at the image plane even though the object effectively emanates from two separate locations."
+    },
+    "9069765": {
+      "title": "PROOFS: A fast, memory efficient sequential circuit fault simulator",
+      "abstract": "The authors describe PROOFS, a fast fault simulator for synchronous sequential circuits, PROOFS achieves high performance by combining all the advantages of differential fault simulation, single fault propagation, and parallel fault simulation, while minimizing their individual disadvantages. The fault simulator minimizes the memory requirements, reduces the number of gate evaluations, and simplifies the complexity of the software implementation. PROOFS requires an average of one fifth the memory required for concurrent fault simulation and runs six to 67 times faster on the ISCAS-89 sequential benchmark circuits. >"
+    },
+    "197630": {
+      "title": "Dynamic fault grouping for PROOFS: A win for large sequential circuits",
+      "abstract": "This paper discusses the important role of fault grouping in a parallel 32-bit fault simulator such as PROOFS. Three algorithms are presented which dynamically order the fault list during fault simulation to determine how the faults get grouped together. The dynamic fault grouping algorithms were incorporated into PROOFS and tested on benchmark circuits. The algorithms showed a marked reduction in the number of faulty circuit gate evaluations (compared to a static fault grouping) for almost all of the circuits with more than 20 flip-flops. For the largest benchmark circuit, s35932, all of the algorithms showed at least a 39% reduction in the number of faulty circuit gate evaluations and at least a 55% speedup in simulation time."
+    }
+  }
+}

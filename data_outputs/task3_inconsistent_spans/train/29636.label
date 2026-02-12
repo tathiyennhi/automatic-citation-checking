@@ -1,0 +1,36 @@
+{
+  "doc_id": "29636",
+  "text": "Raw reads were processed as previously described [CITATION_1] with modifications for multiplex capture. First, read pairs of replicate experiments were merged and mapped separately to human (hg19) or mouse (mm10) genome assembly. Unmapped reads were remapped after removing DpnII digestion sites. The mapped reads from both procedures were merged and the reads with low mapping quality were removed. Then the uniquely mapped reads were paired and PCR duplicates were removed. For each sgRNA-targeted region, the preprocessed read pairs were used to define its peak size. If a bait region (enhancer or promoter) contained multiple sgRNAs, their peaks were merged as a single peak for the bait region. For each peak region, the read pairs with both ends within the same peak region were considered as selfligations and discarded for the downstream analysis. The read pairs with only one end within the peak region were considered as PETs for analyzing long-distance interactions. For each bait region, all chromosomes were binned as the size of its peak size. The statistical significance of the identified intra-and inter-chromosomal PETs were tested as previously described [CITATION_2] . If a SE region had several enhancers, all the tested PETs were merged as the PETs of this SE. To define the significance of interactions between two bait regions, we implemented a modified Bayesian model [CITATION_3] . Specifically, given two bait regions i and j with sizes of L(i) and L(j), respectively, we first constructed the random background by randomly sampling two chromosomal regions with the same region sizes of L(i) and L(j), and with the same chromosomal distance between them. The random paired samplings were performed 10,000 times by avoiding the overlapping of any bait regions. Then the random PETs of each random paired sampling were extracted and fitted as a negative binomial distribution. Suppose the observed PET number of bait regions i and j is x(i, j), we can calculate P values of random PET x less (more) than x(i, j). We then calculated the Bayes factor (BF) to compare the hypothesis H 0 that random interactions are less than observed interactions against the alternative hypothesis H 1 , representing the complementary case. The BF is defined as BF ¼ PrðX<xði; jÞÞ PrðX ≥ xði; jÞÞ • PrðH 1 Þ PrðH 0 Þ where PrðH 1 Þ PrðH 0 Þ was assigned as 0.001 for controlling false discovery rate (FDR). The BF value larger than 20 was considered as significant interactions between bait regions i and j.",
+  "correct_citation": {
+    "[CITATION_1]": "206565715",
+    "[CITATION_2]": "206565715",
+    "[CITATION_3]": "206565715"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Raw reads were processed as previously described  with modifications for multiplex capture.",
+      "s_span": 0,
+      "e_span": 103
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The statistical significance of the identified intra-and inter-chromosomal PETs were tested as previously described  .",
+      "s_span": 1058,
+      "e_span": 1188
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "If a SE region had several enhancers, all the tested PETs were merged as the PETs of this SE. To define the significance of interactions between two bait regions, we implemented a modified Bayesian model  .",
+      "s_span": 1189,
+      "e_span": 1407
+    }
+  ],
+  "bib_entries": {
+    "206565715": {
+      "title": "situ capture of chromatin interactions by biotinylated dCas9",
+      "abstract": "Summary Cis -regulatory elements (CREs) are commonly recognized by correlative chromatin features, yet the molecular composition of the vast majority of CREs in chromatin remains unknown. Here, we describe a CRISPR affinity purification in situ of regulatory elements (CAPTURE) approach to unbiasedly identify locus-specific chromatin-regulating protein complexes and long-range DNA interactions. Using an in vivo biotinylated nuclease-deficient Cas9 protein and sequence-specific guide RNAs, we show high-resolution and selective isolation of chromatin interactions at a single-copy genomic locus. Purification of human telomeres using CAPTURE identifies known and new telomeric factors. In situ capture of individual constituents of the enhancer cluster controlling human β-globin genes establishes evidence for composition-based hierarchical organization. Furthermore, unbiased analysis of chromatin interactions at disease-associated cis -elements and developmentally regulated super-enhancers reveals spatial features that causally control gene transcription. Thus, comprehensive and unbiased analysis of locus-specific regulatory composition provides mechanistic insight into genome structure and function in development and disease."
+    }
+  },
+  "generator": "fallback_v4"
+}

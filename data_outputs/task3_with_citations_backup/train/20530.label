@@ -1,0 +1,22 @@
+{
+  "doc_id": "20530",
+  "text": "In resubstitution there is no distinction between points near and far from the decision boundary; the bolsteredresubstitution estimator is based on the heuristic that, relative to making an error, more confidence should be attributed to points far from the decision boundary than points near it [CITATION_1] . This is achieved by placing a distribution, called a bolstering kernel, at each point and estimating the error by integrating the bolstering kernels for all misclassified points (rather than simply counting the points as with resubstitution). A key issue is the amount of bolstering (spread of the bolstering kernels), and a method has been proposed to compute this spread based on the data. Fig. (4) illustrates the error for linear classification when the bolstering kernels are uniform circular distributions. When resubstitution is heavily low-biased, it may not be good to spread incorrectly classified data points because that increases the optimism of the error estimate (low bias). The semi-bolstered-resubstitution estimator results from not bolstering (no spread) for incorrectly classified points. Bolstering can be applied to any error-counting estimation procedure. Bolstered leave-one-out estimation involves bolstering the resubstitution estimates on the surrogate classifiers. To demonstrate small-sample error-estimator performance for continuous models, we provide simulation results for the distribution of the deviation n",
+  "correct_citation": {
+    "[CITATION_1]": "2312777"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In resubstitution there is no distinction between points near and far from the decision boundary; the bolsteredresubstitution estimator is based on the heuristic that, relative to making an error, more confidence should be attributed to points far from the decision boundary than points near it [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 309
+    }
+  ],
+  "bib_entries": {
+    "2312777": {
+      "title": "Bolstered Error Estimation",
+      "abstract": "Abstract We propose a general method for error estimation that displays low variance and generally low bias as well. This method is based on “bolstering” the original empirical distribution of the data. It has a direct geometric interpretation and can be easily applied to any classification rule and any number of classes. This method can be used to improve the performance of any error-counting estimation method, such as resubstitution and all cross-validation estimators, particularly in small-sample settings. We point out some similarities shared by our method with a previously proposed technique, known as smoothed error estimation. In some important cases, such as a linear classification rule with a Gaussian bolstering kernel, the integrals in the bolstered error estimate can be computed exactly. In the general case, the bolstered error estimate may be computed by Monte-Carlo sampling; however, our experiments show that a very small number of Monte-Carlo samples is needed. This results in a fast error estimator, which is in contrast to other resampling techniques, such as the bootstrap. We provide an extensive simulation study comparing the proposed method with resubstitution, cross-validation, and bootstrap error estimation, for three popular classification rules (linear discriminant analysis, k -nearest-neighbor, and decision trees), using several sample sizes, from small to moderate. The results indicate the proposed method vastly improves on resubstitution and cross-validation, especially for small samples, in terms of bias and variance. In that respect, it is competitive with, and in many occasions superior to, bootstrap error estimation, while being tens to hundreds of times faster. We provide a companion web site, which contains: (1) the complete set of tables and plots regarding the simulation study, and (2) C source code used to implement the bolstered error estimators proposed in this paper, as part of a larger library for classification and error estimation, with full documentation and examples. The companion web site can be accessed at the URL http://ee.tamu.edu/~edward/bolster ."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,22 @@
+{
+  "text": "(2) Fisher Vector (FV). FV is an image representation obtained by pooling local image features and is frequently used as a global image descriptor in visual classification [CITATION_1] . S\u00e1nchez et al. [CITATION_2] proposed a patch aggregation approach established on the principle of Fisher Kernel (FK). In brief, it is characterizing a sample by its deviation from the generative model. J\u00e9gou et al. [CITATION_3] proposed a vector representation of an image which aggregates descriptors based on a locality criterion in feature space. It is also viewed as a simple form of Fisher kernel. In addition, there is a similarity between VLAD and BOF. In the BOF, codebook = { 1 , . . . , } of k visual words with kmeans is firstly learned. Each local descriptor is associated with its nearest visual word = ( ). Contrarily, the concept of the VLAD descriptor is to accumulate, for each visual word , the differences \u2212 of the vectors assigned to . And this defines the distribution of the vectors with reference to the center. The VLAD encoding is usually normalized before it is used.",
+  "correct_citation": {
+    "[CITATION_1]": "1458265",
+    "[CITATION_2]": "207252215",
+    "[CITATION_3]": "1912782"
+  },
+  "bib_entries": {
+    "207252215": {
+      "title": "Image classification with the Fisher vector: theory and practice",
+      "abstract": "A standard approach to describe an image for classification and retrieval purposes is to extract a set of local patch descriptors, encode them into a high dimensional vector and pool them into an image-level signature. The most common patch encoding strategy consists in quantizing the local descriptors into a finite set of prototypical elements. This leads to the popular Bag-of-Visual words representation. In this work, we propose to use the Fisher Kernel framework as an alternative patch encoding strategy: we describe patches by their deviation from an \u201cuniversal\u201d generative Gaussian mixture model. This representation, which we call Fisher vector has many advantages: it is efficient to compute, it leads to excellent results even with efficient linear classifiers, and it can be compressed with a minimal loss of accuracy using product quantization. We report experimental results on five standard datasets\u2014PASCAL VOC 2007, Caltech 256, SUN 397, ILSVRC 2010 and ImageNet10K\u2014with up to 9M images and 10K classes, showing that the FV framework is a state-of-the-art patch encoding technique."
+    },
+    "1458265": {
+      "title": "VLFeat: An Open and Portable Library of Computer Vision Algorithms",
+      "abstract": "VLFeat is an open and portable library of computer vision algorithms. It aims at facilitating fast prototyping and reproducible research for computer vision scientists and students. It includes rigorous implementations of common building blocks such as feature detectors, feature extractors, (hierarchical) k-means clustering, randomized kd-tree matching, and super-pixelization. The source code and interfaces are fully documented. The library integrates directly with MATLAB, a popular language for computer vision research."
+    },
+    "1912782": {
+      "title": "Aggregating local descriptors into a compact image representation",
+      "abstract": "We address the problem of image search on a very large scale, where three constraints have to be considered jointly: the accuracy of the search, its efficiency, and the memory usage of the representation. We first propose a simple yet efficient way of aggregating local image descriptors into a vector of limited dimension, which can be viewed as a simplification of the Fisher kernel representation. We then show how to jointly optimize the dimension reduction and the indexing algorithm, so that it best preserves the quality of vector comparison. The evaluation shows that our approach significantly outperforms the state of the art: the search accuracy is comparable to the bag-of-features approach for an image representation that fits in 20 bytes. Searching a 10 million image dataset takes about 50ms."
+    }
+  }
+}

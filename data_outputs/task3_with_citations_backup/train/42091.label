@@ -1,0 +1,33 @@
+{
+  "doc_id": "42091",
+  "text": "Binary-field arithmetic was commonly believed to be more efficient than prime-field arithmetic for hardware but less efficient for software implementations. This is due to the fact that most common microprocessors spend high effort on accelerating integer-and floating-point multiplications. Prime-field arithmetic can benefit from those high-speed multiplication algorithms, binary-field arithmetic cannot. However, Bernstein showed recently that for batched multiplications, binary fields can provide better performance than prime fields also in software [CITATION_1] . In his implementation of batched Edwards-curve arithmetic the bitslicing technique [CITATION_2] is used to compute (at least) 128 binary-field multiplications in parallel on an Intel Core 2 processor.",
+  "correct_citation": {
+    "[CITATION_1]": "8138600",
+    "[CITATION_2]": "17458609"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, Bernstein showed recently that for batched multiplications, binary fields can provide better performance than prime fields also in software [CITATION_1] .",
+      "s_span": 408,
+      "e_span": 571
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In his implementation of batched Edwards-curve arithmetic the bitslicing technique [CITATION_2] is used to compute (at least) 128 binary-field multiplications in parallel on an Intel Core 2 processor.",
+      "s_span": 572,
+      "e_span": 772
+    }
+  ],
+  "bib_entries": {
+    "8138600": {
+      "title": "Batch binary Edwards",
+      "abstract": "This paper sets new software speed records for high-security Diffie-Hellman computations, specifically 251-bit elliptic-curve variable-base-point scalar multiplication. In one second of computation on a $200 Core 2 Quad Q6600 CPU, this paper's software performs 30000 251-bit scalar multiplications on the binary Edwards curve d(x + x 2 + y + y 2) = (x + x 2)(y + y 2) over the field ${\\bf F}_2[t]/(t^{251}+t^7+t^4+t^2+1)$ where d = t 57 + t 54 + t 44 + 1. The paper's field-arithmetic techniques can be applied in much more generality but have a particularly efficient interaction with the completeness of addition formulas for binary Edwards curves."
+    },
+    "17458609": {
+      "title": "A Fast New DES Implementation in Software",
+      "abstract": "In this paper we describe a fast new DES implementation. This implementation is about five times faster than the fastest known DES implementation on a (64-bit) Alpha computer, and about three times faster than than our new optimized DES implementation on 64-bit computers. This implementation uses a non-standard representation, and view the processor as a SIMD computer, i.e., as 64 parallel one-bit processors computing the same instruction. We also discuss the application of this implementation to other ciphers. We describe a new optimized standard implementation of DES on 64-bit processors, which is about twice faster than the fastest known standard DES implementation on the same processor. Our implementations can also be used for fast exhaustive search in software, which can find a key in only a few days or a few weeks on existing parallel computers and computer networks."
+    }
+  },
+  "generator": "fallback_v4"
+}

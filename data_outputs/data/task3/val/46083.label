@@ -1,0 +1,38 @@
+{
+  "doc_id": "46083",
+  "text": "We developed a transportation IoT simulation system based on the road traffic simulation package SUMO [CITATION_1] . The system supports mobility trace of vehicles by using an OpenStreetMap [CITATION_2] road map of Beijing. On the roads, we set many virtual induction loops which can detect vehicles that pass corresponding areas. The virtual RFID or GPS readers are implemented using the TraCI interface of SUMO to get the induction loop variables. Each virtual induction loop covers a region. We selected 114 junctions from the map and set 160 thousand vehicles in the system. In order to simulate real traffic system, a series of rules are defined. Each vehicle has a home location and an office location. A vehicle V runs between home and office with probability . The vehicles also go to other places such as supermarket and hospital, with corresponding probabilities. Based on this simulation system, we evaluated the precision and performance of Pro-CEP. We used 5 Lenovo ThinkServer RD series servers with 4 GB memory as a cluster and the operating system is Ubuntu 12. We first run the simulation for many times to get the historical data of the vehicle paths. In the first experiment, the accuracy of our PA method is compared with ABN [CITATION_3] which uses Bayesian network but has no vehicle location planes like our model. The result is shown in Figure 4 and Table 1 . From the figure, we can see that the accuracy of Pro-CEP is better than traditional method ABN. The reason is that Pro-CEP use the object location plane to create a more precise Bayesian network structure.",
+  "correct_citation": {
+    "[CITATION_1]": "433701",
+    "[CITATION_2]": "16588111",
+    "[CITATION_3]": "15214673"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We developed a transportation IoT simulation system based on the road traffic simulation package SUMO  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The system supports mobility trace of vehicles by using an OpenStreetMap  road map of Beijing."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In the first experiment, the accuracy of our PA method is compared with ABN  which uses Bayesian network but has no vehicle location planes like our model."
+    }
+  ],
+  "bib_entries": {
+    "433701": {
+      "title": "Sumo-simulation of urban mobility: an overview",
+      "abstract": "SUMO is an open source traffic simulation package including net import and demand modeling components. We describe the current state of the package as well as future developments and extensions. SUMO helps to investigate several research topics e.g. route choice and traffic light algorithm or simulating vehicular communication. Therefore the framework is used in different projects to simulate automatic driving or traffic management strategies."
+    },
+    "15214673": {
+      "title": "Adaptive Bayesian network for traffic flow prediction",
+      "abstract": "Traffic control is essential for the achievement of a sustainable and safe mobility. Monitoring systems for traffic control collect a great amount of data that must be efficiently processed by estimation/prevision models to support operations of traffic management. In this paper we investigate a statistical method for traffic flow forecasting based on graphical modeling of the spatial-temporal evolution of flows. We propose an adaptive Bayesian network in which the network topology changes following the non-stationary characteristics of traffic. Two major stationary areas are recognized as principal phases of traffic flows. Graph optimization is implemented for each phase using mutual information as learning metric. Experimental tests on data provided by the PeMS project in the area of Los Angeles showed that the proposed method can reliably predict traffic dynamics."
+    },
+    "16588111": {
+      "title": "Openstreet map: user-generated street maps",
+      "abstract": "The OpenStreetMap project is a knowledge collective that provides user-generated street maps. OSM follows the peer production model that created Wikipedia; its aim is to create a set of map data that's free to use, editable, and licensed under new copyright schemes. A considerable number of contributors edit the world map collaboratively using the OSM technical infrastructure, and a core group, estimated at approximately 40 volunteers, dedicate their time to creating and improving OSM's infrastructure, including maintaining the server, writing the core software that handles the transactions with the server, and creating cartographical outputs. There's also a growing community of software developers who develop software tools to make OSM data available for further use across different application domains, software platforms, and hardware devices. The OSM project's hub is the main OSM Web site."
+    }
+  },
+  "generator": "fallback_v4"
+}

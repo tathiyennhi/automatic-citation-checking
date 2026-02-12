@@ -1,0 +1,20 @@
+{
+  "doc_id": "26104",
+  "text": "Samovar is implemented in Python 3 (also compatible with Python 2). It uses several libraries, including pyfaidx, scikit-learn, simplesam, and fisher. As input, Samovar requires the alignment (BAM) and variant (VCF) files produced by 10x Genomics' Long Ranger pipeline. Long Ranger processes the raw Illumina reads and performs linked read-aware alignment with Lariat , small variant calling with Freebayes [CITATION_1] or GATK (DePristo et al. 2011), structural variant calling, and haplotype assembly. Specifically, Samovar requires that the BAM have the HP (molecule haplotype), AS (Lariat best alignment score), and XS (Lariat second-best alignment score) extra fields, and requires that the VCF have the FILTER column and GT field. Information on the BAM file tags and phased VCF file are available at 10x Genomics.",
+  "correct_citation": {
+    "[CITATION_1]": "15153602"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Long Ranger processes the raw Illumina reads and performs linked read-aware alignment with Lariat , small variant calling with Freebayes  or GATK (DePristo et al. 2011), structural variant calling, and haplotype assembly."
+    }
+  ],
+  "bib_entries": {
+    "15153602": {
+      "title": "Haplotype-based variant detection from short-read sequencing",
+      "abstract": "The direct detection of haplotypes from short-read DNA sequencing data requires changes to existing small-variant detection methods. Here, we develop a Bayesian statistical framework which is capable of modeling multiallelic loci in sets of individuals with non-uniform copy number. We then describe our implementation of this framework in a haplotype-based variant detector, FreeBayes."
+    }
+  },
+  "generator": "fallback_v4"
+}

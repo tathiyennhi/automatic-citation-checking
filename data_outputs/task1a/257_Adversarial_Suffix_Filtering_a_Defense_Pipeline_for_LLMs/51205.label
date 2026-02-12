@@ -1,0 +1,14 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "This carries a heavy computation overhead requiring multiple (between 2 and 20) forward passes per prompt.Pisano et al. [17] suggest using an auxiliary \"conscience\" model to evaluate the prompt and flag any embedded harmful instructions before the main LLM responds.",
+    "Similarly, Llama Guard employs an instruction-tuned Llama-2-7B to perform multi-label risk classification over complete prompts and responses, achieving strong moderation accuracy on generic safety benchmarks, but is restricted to either accepting or rejecting the prompt and its response [18].",
+    "Both these approaches require holding a second LLM in your system's memory or making use of API calls, which incurs either major memory/computational overhead or increased costs.Major providers have likewise deployed moderation classifiers to filter out prompts or outputs deemed unsafe.",
+    "These filter-based methods are appealing because they can work with any LLM (including closed-source APIs) and can be updated independently.",
+    "However, they too have limitations: heuristic filters can be brittle, and determined attackers often find prompt variants that evade keyword-based rules or confuse the classifier."
+  ],
+  "correct_citations": [
+    "This carries a heavy computation overhead requiring multiple (between 2 and 20) forward passes per prompt.Pisano et al. [17] suggest using an auxiliary \"conscience\" model to evaluate the prompt and flag any embedded harmful instructions before the main LLM responds.",
+    "Similarly, Llama Guard employs an instruction-tuned Llama-2-7B to perform multi-label risk classification over complete prompts and responses, achieving strong moderation accuracy on generic safety benchmarks, but is restricted to either accepting or rejecting the prompt and its response [18]."
+  ]
+}

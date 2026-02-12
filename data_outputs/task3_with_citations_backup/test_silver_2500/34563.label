@@ -1,0 +1,71 @@
+{
+  "doc_id": "34563",
+  "text": "In this paper, we derive throughput expression for a single TCP CUBIC flow with random losses. Throughput expressions for TCP CUBIC have been evaluated under a deterministic loss model in [CITATION_1] . Also average window size for TCP CUBIC with random losses has been numerically computed using Markov chains in [CITATION_2] and [CITATION_3] . In [CITATION_4] , we see that the expressions for throughput in [CITATION_5] are not accurate when compared against the Markov chain based results in [CITATION_6] . However, the Markov chain based results do not yield a closed form expression and we need to solve for the stationary distribution of a Markov chain for each value of drop rate, p. For small p, this could be computationally expensive as the state space of the Markov chain could be very large. We address this drawback of the Markov chain model in this paper. In this paper, we get an approximation for TCP CUBIC under random losses as a function of p and round trip time (RTT). We first validate the expression for TCP CUBIC throughput (given in [CITATION_7] ) under deterministic periodic losses. We then consider the sequence of the TCP CUBIC window evolution processes indexed by the drop rate, p and show that with a suitable scaling this sequence converges to a limiting Markov chain as p tends to 0. The appropriate scaling is obtained from the deterministic periodic loss model. The stationary distribution of the limiting Markov chain gives us the desired approximation. Our approach is based on a similar result used for TCP Reno throughput computation in [CITATION_8] .",
+  "correct_citation": {
+    "[CITATION_1]": "9391153",
+    "[CITATION_2]": "7934244",
+    "[CITATION_3]": "7963566",
+    "[CITATION_4]": "124879",
+    "[CITATION_5]": "9391153",
+    "[CITATION_6]": "7934244",
+    "[CITATION_7]": "9391153",
+    "[CITATION_8]": "122505610"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Throughput expressions for TCP CUBIC have been evaluated under a deterministic loss model in  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Also average window size for TCP CUBIC with random losses has been numerically computed using Markov chains in  and  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Also average window size for TCP CUBIC with random losses has been numerically computed using Markov chains in  and  ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In  , we see that the expressions for throughput in  are not accurate when compared against the Markov chain based results in  ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "In  , we see that the expressions for throughput in  are not accurate when compared against the Markov chain based results in  ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "In  , we see that the expressions for throughput in  are not accurate when compared against the Markov chain based results in  ."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "We first validate the expression for TCP CUBIC throughput (given in  ) under deterministic periodic losses."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Our approach is based on a similar result used for TCP Reno throughput computation in  ."
+    }
+  ],
+  "bib_entries": {
+    "122505610": {
+      "title": "A Markovian analysis of additiveincrease multiplicative-decrease algorithms",
+      "abstract": "The additive-increase multiplicative-decrease (AIMD) schemes designed to control congestion in communication networks are investigated from a probabilistic point of view. Functional limit theorems for a general class of Markov processes that describe these algorithms are obtained. The asymptotic behaviour of the corresponding invariant measures is described in terms of the limiting Markov processes. For some special important cases, including TCP congestion avoidance, an important autoregressive property is proved. As a consequence, the explicit expression of the related invariant probabilities is derived. The transient behaviour of these algorithms is also analysed."
+    },
+    "9391153": {
+      "title": "CUBIC: a new TCP-friendly high-speed TCP variant",
+      "abstract": "CUBIC is a congestion control protocol for TCP (transmission control protocol) and the current default TCP algorithm in Linux. The protocol modifies the linear window growth function of existing TCP standards to be a cubic function in order to improve the scalability of TCP over fast and long distance networks. It also achieves more equitable bandwidth allocations among flows with different RTTs (round trip times) by making the window growth to be independent of RTT -- thus those flows grow their congestion window at the same rate. During steady state, CUBIC increases the window size aggressively when the window is far from the saturation point, and the slowly when it is close to the saturation point. This feature allows CUBIC to be very scalable when the bandwidth and delay product of the network is large, and at the same time, be highly stable and also fair to standard TCP flows. The implementation of CUBIC in Linux has gone through several upgrades. This paper documents its design, implementation, performance and evolution as the default TCP algorithm of Linux."
+    },
+    "124879": {
+      "title": "Approximate theoretical models for TCP connections using different high speed congestion control algorithms in a multihop network",
+      "abstract": "We consider a multihop network when the flows may be using TCP Reno, CUBIC or Compound. We study its performance using fluid approximations. We provide theoretical justification for these approximations. Our approximations are simple, yet can be used to obtain throughput and average window size for each TCP connection with good accuracy. We compare results obtained using fluid approximations with discrete Markov chain models in [1] and [2] and with ns2 simulations. The fluid approximation models can be seen to trade-off accuracy for simplicity."
+    },
+    "7934244": {
+      "title": "Analytical Model for Congestion Control and Throughput with TCP CUBIC Connections",
+      "abstract": "We develop a Markov model for a TCP CUBIC connection. Next we use it to obtain approximate expressions for throughput when there may be queuing in the network. Finally we provide the throughputs different TCP CUBIC and TCP NewReno connections obtain while sharing a channel when they may have different round trip delays and packet loss probabilities."
+    },
+    "7963566": {
+      "title": "A Model for Steady State Throughput of TCP CUBIC",
+      "abstract": "For transmission control protocol (TCP), CUBIC is a TCP-friendly high-speed variant, in which the window size is a cubic function of time since the last loss event. TCP CUBIC is implemented in Linux operating systems and performs well in wired networks with large bandwidth-delay product. Most of the evaluations of TCP CUBIC are conducted via simulations or experiments. Analytical models for TCP CUBIC are few. In this paper, we propose a Markovian model to determine the steady state throughput of TCP CUBIC in wireless environment. The proposed model considers both congestion loss and random packet loss due to fading. We derive the stationary distribution of the Markov chain and obtain the average throughput based on the stationary distribution. Simulations are carried out to validate the analytical model. Results show that the simulated stationary distribution and the average throughput are both very close to our analytical results. Furthermore, we analyze the throughput performance of TCP CUBIC. Results show that random packet loss reduces the normalized average throughput more for end-to-end flow with large bandwidth-delay product. We propose an improvement to increase the throughput performance of TCP CUBIC by moderately increasing the window growth factor and the multiplicative decrease factor."
+    }
+  },
+  "generator": "fallback_v4"
+}

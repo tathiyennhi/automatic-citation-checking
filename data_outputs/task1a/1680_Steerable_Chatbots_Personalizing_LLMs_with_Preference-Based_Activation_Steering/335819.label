@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The LLM updates its estimation of the user's preference, d u *, through an iterative learning process based on feedback from user interactions.",
+    "At timestep 𝑡, the update step for one dimension is:𝑑 𝑢 * 𝑡 +1 ← 𝑑 𝑢 * 𝑡 + 𝑝 (dissatisfaction(𝑥 𝑡) • direction(𝑥 𝑡))(1)Here, 𝑥 𝑡 is the user's message at round t of the conversation, 𝑑𝑖𝑠𝑠𝑎𝑡𝑖𝑠 𝑓 𝑎𝑐𝑡𝑖𝑜𝑛(•) measures the granular sentiment of dissatisfaction in the user's feedback, 𝑑𝑖𝑟𝑒𝑐𝑡𝑖𝑜𝑛(•) is a binary classification that determines whether the user wants the model's outputs to shift positively or negatively, and 𝑝 (•) is a simple linear transformation.",
+    "While there are many specific design choices for these computations, we demonstrate the aptitude of the high-level methodology using a straightforward choices:• 𝑑𝑖𝑠𝑠𝑎𝑡𝑖𝑠 𝑓 𝑎𝑐𝑡𝑖𝑜𝑛(•) is taken as the weighted sum of the prediction probabilities of negative and neutral sentiment detected with the pretrained classifier TweetEvalfoot_3 [7]foot_4 • 𝑑𝑖𝑟𝑒𝑐𝑡𝑖𝑜𝑛(•) is determined based on the greater cosine similarity to Sentence-BERT [54] embeddings of reference phrases (e.g., \"I want more luxury\" and \"I want lower cost\" for the preference dimension of cost).",
+    "• 𝑝 (•) is a remapping of the estimated preference value, for example, to the functional steering range of the model.",
+    "Computational ExperimentsTo provide the proof-of-concept for an activation steering framework for LLM personalization, we first conduct a series of computations experiments that demonstrate the effects of steering on preference-based personalization in various usage scenarios."
+  ],
+  "correct_citations": [
+    "While there are many specific design choices for these computations, we demonstrate the aptitude of the high-level methodology using a straightforward choices:• 𝑑𝑖𝑠𝑠𝑎𝑡𝑖𝑠 𝑓 𝑎𝑐𝑡𝑖𝑜𝑛(•) is taken as the weighted sum of the prediction probabilities of negative and neutral sentiment detected with the pretrained classifier TweetEvalfoot_3 [7]foot_4 • 𝑑𝑖𝑟𝑒𝑐𝑡𝑖𝑜𝑛(•) is determined based on the greater cosine similarity to Sentence-BERT [54] embeddings of reference phrases (e.g., \"I want more luxury\" and \"I want lower cost\" for the preference dimension of cost)."
+  ]
+}

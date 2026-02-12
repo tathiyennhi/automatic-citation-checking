@@ -1,0 +1,33 @@
+{
+  "doc_id": "36744",
+  "text": "To meet the I/O needs of modern HPC applications, a distributed, cluster filesystem needs to be deployed, allowing processes running on cluster nodes to access a common filesystem namespace and perform I/O from and to shared data concurrently. Today, there are various cluster filesystems implementations which focus on high performance, i.e. high aggregate I/O bandwidth, low I/O latency and high number of sustainable I/O operations per second, as multiple clients perform concurrent access to shared data. At the core of their design is a shared-disk approach, in which all participating cluster nodes are assumed to have equal access to a shared storage pool. The shared-disk approach is followed by filesystems such as IBM's General Parallel File System GPFS [CITATION_1] , Oracle's OCFS2, Red Hat's Global File System (GFS) [CITATION_2] , SGI's Clustered XFS and Verita's VxFS, which aim at providing a high performance parallel filesystem for enterprise environments.",
+  "correct_citation": {
+    "[CITATION_1]": "10218000",
+    "[CITATION_2]": "8088868"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The shared-disk approach is followed by filesystems such as IBM's General Parallel File System GPFS [CITATION_1] , Oracle's OCFS2, Red Hat's Global File System (GFS) [CITATION_2] , SGI's Clustered XFS and Verita's VxFS, which aim at providing a high performance parallel filesystem for enterprise environments.",
+      "s_span": 664,
+      "e_span": 974
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The shared-disk approach is followed by filesystems such as IBM's General Parallel File System GPFS [CITATION_1] , Oracle's OCFS2, Red Hat's Global File System (GFS) [CITATION_2] , SGI's Clustered XFS and Verita's VxFS, which aim at providing a high performance parallel filesystem for enterprise environments.",
+      "s_span": 664,
+      "e_span": 974
+    }
+  ],
+  "bib_entries": {
+    "8088868": {
+      "title": "The Global File System",
+      "abstract": "The global file system (GFS) is a prototype design for a distributed file system in which cluster nodes physically share storage devices connected via a network-like fiber channel. Networks and network-attached storage devices have advanced to a level of performance and extensibility so that the previous disadvantages of shared disk architectures are no longer valid. This shared storage architecture attempts to exploit the sophistication of storage device technologies whereas a server architecture diminishes a device's role to that of a simple component. GFS distributes the file system responsibilities across processing nodes, storage across the devices, and file system resources across the entire storage pool. GFS caches data on the storage devices instead of the main memories of the machines. Consistency is established by using a locking mechanism maintained by the storage devices to facilitate atomic read-modify-write operations. The locking mechanism is being prototyped in the Silicon Graphics IRIX operating system and is accessed using standard Unix commands and modules."
+    },
+    "10218000": {
+      "title": "GPFS: A Shared-Disk File System for Large Computing Clusters",
+      "abstract": "GPFS is IBM's parallel, shared-disk file system for cluster computers, available on the RS/6000 SP parallel supercomputer and on Linux clusters. GPFS is used on many of the largest supercomputers in the world. GPFS was built on many of the ideas that were developed in the academic community over the last several years, particularly distributed locking and recovery technology. To date it has been a matter of conjecture how well these ideas scale. We have had the opportunity to test those limits in the context of a product that runs on the largest systems in existence. While in many cases existing ideas scaled well, new approaches were necessary in many key areas. This paper describes GPFS, and discusses how distributed locking and recovery techniques were extended to scale to large clusters."
+    }
+  },
+  "generator": "fallback_v4"
+}

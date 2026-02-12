@@ -1,0 +1,40 @@
+{
+  "doc_id": "8934",
+  "text": "The algorithmic efficiency determined over the 100 simulations and expressed in the normalized coefficient of variation CoV n in Figure 7 can be compared with results in other publications. For reference to the original subset simulation, [CITATION_1] obtained CoV n = 18.2 at a probability level of p f = 1.7×10 −4 for original subset selection based on the SSR. Meanwhile, [CITATION_2] obtained CoV n = 34.0 at a probability level of p f ≈ 1 × 10 −4 using direct stability analysis and yield-based subset selection. The results presented in Figure 7 give CoV n = 30 at p f = 1 × 10 −4 , suggesting that the proposed method has an algorithmic efficiency comparable with the method proposed by [CITATION_3] at probability levels around 1 × 10 −4 . Figure 9 shows the total number of realizations N t per subset required to obtain N c failed realizations (red crosses). This number is directly dependent on the predicted threshold and its ability to capture the target conditional probability p 0 over the defined subset. Except for a few outliers, the range of obtained realization numbers N t (1000 to 4000) corresponds to conditional probabilities in the range 0.05 to 0.20. The choice of the initial strength reduction factors, f s , proves to be conservative with respect to the target number of realizations per subset. Although in general two function calls are required for a realization, the effective number of runs is much lower. This is firstly because the existing seeds only need to be analyzed once and secondly because rejected proposal samples of the MCMC do not need to be analyzed a second time. A low acceptance rate of the MMA in MCMC therefore leads to a lower number of function calls per subset. ",
+  "correct_citation": {
+    "[CITATION_1]": "12019359",
+    "[CITATION_2]": "114688722",
+    "[CITATION_3]": "114688722"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For reference to the original subset simulation, [CITATION_1] obtained CoV n = 18.2 at a probability level of p f = 1.7×10 −4 for original subset selection based on the SSR. Meanwhile, [CITATION_2] obtained CoV n = 34.0 at a probability level of p f ≈ 1 × 10 −4 using direct stability analysis and yield-based subset selection.",
+      "s_span": 190,
+      "e_span": 517
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For reference to the original subset simulation, [CITATION_1] obtained CoV n = 18.2 at a probability level of p f = 1.7×10 −4 for original subset selection based on the SSR. Meanwhile, [CITATION_2] obtained CoV n = 34.0 at a probability level of p f ≈ 1 × 10 −4 using direct stability analysis and yield-based subset selection.",
+      "s_span": 190,
+      "e_span": 517
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The results presented in Figure 7 give CoV n = 30 at p f = 1 × 10 −4 , suggesting that the proposed method has an algorithmic efficiency comparable with the method proposed by [CITATION_3] at probability levels around 1 × 10 −4 .",
+      "s_span": 518,
+      "e_span": 747
+    }
+  ],
+  "bib_entries": {
+    "114688722": {
+      "title": "On the efficient estimation of small failure probability in slopes",
+      "abstract": "The random finite element method (RFEM) combines the random field theory and finite element method in the framework of Monte Carlo simulation. It has been applied to a wide range of geotechnical problems such as slope stability, bearing capacity and the consolidation of soft soils. When the RFEM was first developed, direct Monte Carlo simulation was used. If the probability of failure (p f ) is small, the direct Monte Carlo simulation requires a large number of simulations. Subset simulation is one of most efficient variance reduction techniques for the simulation of small p f . It has been recently proposed to use subset simulation instead of direct Monte Carlo simulation in RFEM. It is noted, however, that subset simulation requires calculation of the factor of safety (FS), while direct Monte Carlo requires only the examination of failure or non-failure. The search for the FS in RFEM could be a tedious task. For example, the search for the FS of slope stability by the strength reduction method (SRM) usually requires much more computational time than a failure or non-failure checking. In this paper, the subset simulation is combined with RFEM, but the need for the search of FS is eliminated. The value of yield function in an elastoplastic finite element analysis is used to measure the safety margin instead of the FS. Numerical experiments show that the proposed approach gives the same level of accuracy as the traditional subset simulation based on FS, but the computational time is significantly reduced. Although only examples of slope stability are given, the proposed approach will generally work for other types of geotechnical applications."
+    },
+    "12019359": {
+      "title": "Enhancement of random finite element method in reliability analysis and risk assessment of soil slopes using subset simulation",
+      "abstract": "Random finite element method (RFEM) provides a rigorous tool to incorporate spatial variability of soil properties into reliability analysis and risk assessment of slope stability. However, it suffers from a common criticism of requiring extensive computational efforts and a lack of efficiency, particularly at small probability levels (e.g., slope failure probability P f < 0.001). To address this problem, this study integrates RFEM with an advanced Monte Carlo Simulation (MCS) method called “Subset Simulation (SS)” to develop an efficient RFEM (i.e., SS-based RFEM) for reliability analysis and risk assessment of soil slopes. The proposed SS-based RFEM expresses the overall risk of slope failure as a weighed aggregation of slope failure risk at different probability levels and quantifies the relative contributions of slope failure risk at different probability levels to the overall risk of slope failure. Equations are derived for integrating SS with RFEM to evaluate the probability (P f ) and risk (R) of slope failure. These equations are illustrated using a soil slope example. It is shown that the P f and R are evaluated properly using the proposed approach. Compared with the original RFEM with direct MCS, the SS-based RFEM improves, significantly, the computational efficiency of evaluating P f and R. This enhances the applications of RFEM in the reliability analysis and risk assessment of slope stability. With the aid of improved computational efficiency, a sensitivity study is also performed to explore effects of vertical spatial variability of soil properties on R. It is found that the vertical spatial variability affects the slope failure risk significantly."
+    }
+  },
+  "generator": "fallback_v4"
+}

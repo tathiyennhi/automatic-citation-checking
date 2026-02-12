@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "While the original GNN uses hidden layers of size [32,64,128], the ablated model adopts a symmetrical structure: [32,64,128,128,64,32].",
+    "We trained for 100 epochs with the Adam optimizer (learning rate 2 × 10 -5) and a mini-batch size of 16.",
+    "A.3 Loss and optimizationThe learning objectives of the Graph Diffusion Network are the noise residuals ϵ ϕ ( Z(i) t+1 (τ), c(i) t) of the denoising diffusion process in τ = τ max,..., 0 used to generateZ (i) t+1, given (Z (i) t, {Z (j) t } j∈N (i) t).The generative process is conditioned by the condition vector c (i) t, which is learned by the network ϕ and is given by: c(i) t = M LP (Z (i) t) + M LP (g (i) t) + M LP (τ emb)(4)where τ emb is the sinusoidal positional embedding of τ and g(i)t is the embedding produced by the Message Passing GNN of parameters ω.",
+    "More details on the three MLPs that form c (i) t are given in Table 1.",
+    "The loss function for the denoising diffusion steps ϵ ϕ (Z(i) t+1 (τ), c(i)t) is calculated as the expected value over all agents in the system i ∈ A, all ABM timesteps t, all τ and ϵ ∼ N (0, I):L(ϕ, ω) = E i,t,τ,ϵ ||ϵ -ϵ ϕ ( Z(i) t+1 (τ), c (i) t)|| 2(5)The parameters to optimize are the parameters of the diffusion model ϕ and the parameters of the GNN ω."
+  ],
+  "correct_citations": [
+    "While the original GNN uses hidden layers of size [32,64,128], the ablated model adopts a symmetrical structure: [32,64,128,128,64,32]."
+  ]
+}

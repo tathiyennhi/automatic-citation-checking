@@ -1,0 +1,22 @@
+{
+  "doc_id": "54307",
+  "text": "The generation of DIO messages by a node is governed by a trickle timer [CITATION_1] . The node maintains a DIO Interval (I), which may vary between a minimum (I min ; possibly as small as a few ms) and a maximum (I max ; several minutes or higher) value, and a redundancy counter (C), which is reset to zero every time the trickle timer is started. The timer is scheduled to fire after a random time in [I/2, I] range. While the timer is running, the node increments counter C whenever it receives a consistent (i.e. advertising the same rank and routing costs as before) DIO from a parent. At the firing of the timer, the node generates a new DIO if the redundancy counter C is less than a threshold value, doubles the value of interval I (up to its maximum value I max ) and restarts the trickle timer. The receipt of an inconsistent DIO from a parent or a change in node's own rank and routing cost to DAG root forces the node to immediately reset interval I to its minimum value I min and restart the trickle timer. Thus, the resetting of interval I to I min allows allows fast generation of DIO messages when there is a need to propagate new information down the DAG; otherwise exponential increase in I towards I max causes the DIOs to be generated infrequently. The redundancy counter provides an additional level of control over DIO generation.",
+  "correct_citation": {
+    "[CITATION_1]": "12991651"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The generation of DIO messages by a node is governed by a trickle timer  .",
+      "s_span": 0,
+      "e_span": 86
+    }
+  ],
+  "bib_entries": {
+    "12991651": {
+      "title": "The emergence of a networking primitive in wireless sensor networks",
+      "abstract": "The wireless sensor network community approached networking abstractions as an open question, allowing answers to emerge with time and experience. The Trickle algorithm has become a basic mechanism used in numerous protocols and systems. Trickle brings nodes to eventual consistency quickly and efficiently while remaining remarkably robust to variations in network density, topology, and dynamics. Instead of flooding a network with packets, Trickle uses a \"polite gossip\" policy to control send rates so each node hears just enough packets to stay consistent. This simple mechanism enables Trickle to scale to 1000-fold changes in network density, reach consistency in seconds, and require only a few bytes of state yet impose a maintenance cost of a few sends an hour. Originally designed for disseminating new code, experience has shown Trickle to have much broader applicability, including route maintenance and neighbor discovery. This paper provides an overview of the research challenges wireless sensor networks face, describes the Trickle algorithm, and outlines several ways it is used today."
+    }
+  },
+  "generator": "fallback_v4"
+}

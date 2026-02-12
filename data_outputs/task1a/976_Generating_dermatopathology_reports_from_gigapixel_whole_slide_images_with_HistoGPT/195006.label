@@ -1,0 +1,16 @@
+{
+  "style": "APA",
+  "texts": [
+    "The former is a lightweight (30 million parameters) Swin Transformer 15 trained at a resolution of 1.0 micron per pixel (mpp) on over 32,000 WSIs from TCGA 16 and PAIP 19 using a semantically guided contrastive learning algorithm 20.",
+    "The latter is a much larger (300 million parameters) Vision Transformer 21 trained at 0.5 mpp resolution on over 100,000 WSIs from 22 major tissue types using self-distillation and masked modeling 22.",
+    "Our language module uses BioGPT 23, an autoregressive generative model based on the Transformer 24 decoder architecture of GPT-3 25, trained on 15 million biomedical articles from PubMed with a vocabulary size of 42,384.",
+    "HistoGPT samples image features (at 10× magnification for CTransPath, 20× for UNI) from the vision module using a slide-encoder based on the Perceiver Resampler 26, pre-trained with multiple instance learning (PerceiverMIL, Fig. 2b), and integrates its outputs into the LLM via interleaved tanh-gated cross-attention blocks (XATTN) 27.",
+    "b Vision language module Text tokenizer a 1 st Language model block Patch encoder (CTransPath / Uni) 1 st Cross-attention block (BioGPT) n th Language model block n th Cross-attention block (BioGPT) Text prompt Pretrained and frozen Trained from scratch Text head Image patches Text tokens WSI (10x-20x) GPT-4 parapharsing WSI (10x-20x) Text prompt GPT-4 aggregation Reasoning path 1... HistoGPT Reasoning path N Ensemble Refinement Summary c Image patches Text tokens pre-training fine-tuning"
+  ],
+  "correct_citations": [
+    "The former is a lightweight (30 million parameters) Swin Transformer 15 trained at a resolution of 1.0 micron per pixel (mpp) on over 32,000 WSIs from TCGA 16 and PAIP 19 using a semantically guided contrastive learning algorithm 20.",
+    "The latter is a much larger (300 million parameters) Vision Transformer 21 trained at 0.5 mpp resolution on over 100,000 WSIs from 22 major tissue types using self-distillation and masked modeling 22.",
+    "Our language module uses BioGPT 23, an autoregressive generative model based on the Transformer 24 decoder architecture of GPT-3 25, trained on 15 million biomedical articles from PubMed with a vocabulary size of 42,384.",
+    "HistoGPT samples image features (at 10× magnification for CTransPath, 20× for UNI) from the vision module using a slide-encoder based on the Perceiver Resampler 26, pre-trained with multiple instance learning (PerceiverMIL, Fig. 2b), and integrates its outputs into the LLM via interleaved tanh-gated cross-attention blocks (XATTN) 27."
+  ]
+}

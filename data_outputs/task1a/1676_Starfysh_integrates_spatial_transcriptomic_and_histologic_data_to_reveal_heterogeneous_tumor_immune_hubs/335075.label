@@ -1,0 +1,14 @@
+{
+  "style": "APA",
+  "texts": [
+    "The previous ELBO can be updated with this new variational approximation for the joint modeling of histology and transcriptome.",
+    "We leverage the information bottleneck approach 26 to optimize the joint ELBO as well as the view-specific marginal ELBOs through a single objective function ℒ total = ℒ joint + a ⋅ ℒ marginal, where: ℒ joint = ELBO(q θ) = E q θ (z,l,c,u|x,y) log p(x,y,z,l,c,u;σ) q θ (z,l,c,u|x,y) = E q θ (z|x,y)q θ (l|x) log p(x|z, l) + E q θ (z|x,y) log p(y|z) -E q θ (c|x)q θ (u) D KL (q θ (z|c, x, y)‖p(z|c, u;σ))",
+    "The variational family for the joint objective function is factorized as q θ (z, l, c, u|x, y) = q θ (z|x, y)q θ (l| y)q θ (c|x)q θ (u).",
+    "Hyperparameter a (set by default as 5) balances the weights between joint and view-specific objectives 26.",
+    "The expression view ELBO(q θ 1) remains the same with above, and the histology view ELBO(q θ 2) is written as:"
+  ],
+  "correct_citations": [
+    "We leverage the information bottleneck approach 26 to optimize the joint ELBO as well as the view-specific marginal ELBOs through a single objective function ℒ total = ℒ joint + a ⋅ ℒ marginal, where: ℒ joint = ELBO(q θ) = E q θ (z,l,c,u|x,y) log p(x,y,z,l,c,u;σ) q θ (z,l,c,u|x,y) = E q θ (z|x,y)q θ (l|x) log p(x|z, l) + E q θ (z|x,y) log p(y|z) -E q θ (c|x)q θ (u) D KL (q θ (z|c, x, y)‖p(z|c, u;σ))",
+    "Hyperparameter a (set by default as 5) balances the weights between joint and view-specific objectives 26."
+  ]
+}

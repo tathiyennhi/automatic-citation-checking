@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The number of clusters is pre-defined as a hyperparameter.",
+    "With this initialization, DEC improves the clustering using an unsupervised iterative method of two steps.",
+    "In the first step, a soft assignment q ij of latent point z i to clus- ter center µ j is calculated using Student's t-distribution:In the second step, we iteratively refine the clusters by learning from their high-confidence assignments with the help of an auxiliary target distribution p based on q ij: Based on the soft assignment q ij and auxiliary target distribution p ij, an objective function is defined using the KL divergence:p Z g = i N (z i |0, I) A =    A 1 • • • 0......... 0 • • • A K   Zf =     Z 1 f... Z K f     q ij = 1 + z i -µ j 2 -1 j ′ 1 + z i -µ j ′ 2 -1 p ij = q 2 ij / i q ij j ′ (q 2 ij ′ / i q ij ′)The SEDR parameters and cluster centers are then simultaneously optimized using stochastic gradient descent (SGD) with momentum.",
+    "ClusteringAfter obtaining latent representation, the results can be used to cluster for the spatial data.",
+    "SEDR accepted various clustering methods."
+  ],
+  "correct_citations": []
+}

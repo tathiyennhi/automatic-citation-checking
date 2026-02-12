@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Our key insight is that the process of generating a test-suite to fully cover a focal method can be broken down into a sequence of logical problems that are posed to the LLM prompts.",
+    "For each prompt, the LLM will generate an appropriate test case, and thus, will eventually generate a series of test cases with higher code coverage to test the diverse behavior of the focal method.At a high level, SymPrompt works in three stages: (i) Given a focal method, SymPrompt tries to statically capture the execution behavior of the method by collecting approximate path constraints and return values for each execution path.",
+    "(ii) SymPrompt collects some properties of the focal method including argument types, external library dependencies, code context, etc.",
+    "(iii) For each execution path, SymPrompt constructs a prompt using the collected information and solicits the LLM to generate a test input that will execute the corresponding path.",
+    "This generation is carried out iteratively, and the test cases generated in previous iterations are appended to subsequent prompts to provide further guidance to the LLM in generating a thorough testsuite.Conceptually, our approach resembles symbolic analysis based test generation techniques."
+  ],
+  "correct_citations": []
+}

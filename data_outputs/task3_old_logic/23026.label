@@ -1,0 +1,29 @@
+{
+  "doc_id": "23026",
+  "text": "Both the IRD and ICVL-4 datasets provide only RGB video clips and action labels. As our approach for action recognition is based on the skeleton, we use the pose estimation algorithm [CITATION_1] and our detection algorithm. Through the algorithms, 25 human joints are extracted, and the position of an object is obtained. There is a total of 26 nodes including both human joints and an object. We make each video clip as a (3, T, 26) tensor, where the first dimension of the tensor represents 3 channels for the 2D coordinates (x, y) and confidence scores. If more than two people exist in one video clip, we select the person with the highest sum of confidence scores as the actor for the recognition. T is the length of the frames, and 26 is the number of nodes here. We use the top-1 accuracy, which is a conventional evaluation method for both datasets. Table 1 . Ablation study of the proposed framework over the IRD and ICVL-4 datasets. The baseline of our approach is ST-GCN [CITATION_2] which is the state of the art for the skeleton-based action recognition using GCN.",
+  "correct_citation": {
+    "[CITATION_1]": "16224674",
+    "[CITATION_2]": "19167105"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As our approach for action recognition is based on the skeleton, we use the pose estimation algorithm and our detection algorithm."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The baseline of our approach is ST-GCN which is the state of the art for the skeleton-based action recognition using GCN."
+    }
+  ],
+  "bib_entries": {
+    "19167105": {
+      "title": "Spatial temporal graph convolutional networks for skeleton-based action recognition",
+      "abstract": "Dynamics of human body skeletons convey significant information for human action recognition. Conventional approaches for modeling skeletons usually rely on hand-crafted parts or traversal rules, thus resulting in limited expressive power and difficulties of generalization. In this work, we propose a novel model of dynamic skeletons called Spatial-Temporal Graph Convolutional Networks (ST-GCN), which moves beyond the limitations of previous methods by automatically learning both the spatial and temporal patterns from data. This formulation not only leads to greater expressive power but also stronger generalization capability. On two large datasets, Kinetics and NTU-RGBD, it achieves substantial improvements over mainstream methods."
+    },
+    "16224674": {
+      "title": "Realtime multiperson 2d pose estimation using part affinity fields",
+      "abstract": "We present an approach to efficiently detect the 2D pose of multiple people in an image. The approach uses a nonparametric representation, which we refer to as Part Affinity Fields (PAFs), to learn to associate body parts with individuals in the image. The architecture encodes global context, allowing a greedy bottom-up parsing step that maintains high accuracy while achieving realtime performance, irrespective of the number of people in the image. The architecture is designed to jointly learn part locations and their association via two branches of the same sequential prediction process. Our method placed first in the inaugural COCO 2016 keypoints challenge, and significantly exceeds the previous state-of-the-art result on the MPII Multi-Person benchmark, both in performance and efficiency."
+    }
+  },
+  "generator": "fallback"
+}

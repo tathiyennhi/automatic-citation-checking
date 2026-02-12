@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "A soft (x) = σ(W • f (x))(3)where σ(•) denotes sigmoid activation constraining outputs to [0,1], W is a learnable weight matrix, and f (x) represents feature activations at spatial location x.",
+    "The computed attention mask A soft exhibits higher values for tumor regions and lower values for background, enabling adaptive feature recalibration:f attended (x) = A soft (x) ⊙ f (x)(4)where ⊙ denotes element-wise multiplication.",
+    "This mechanism effectively reweights spatial locations, directing network focus toward clinically informative tumor regions while suppressing irrelevant background noise.",
+    "Sigmoid(Q) = 1 1 + exp(-Q) (5)Binary cross-entropy loss optimizes the segmentation network:L BCE = - 1 N N i=1 [y i log(p i) + (1 -y i) log(1 -p i)](6)where N denotes total voxel count, y i ∈ {0, 1} is ground truth label, and p i is model prediction.",
+    "This logarithmic formulation applies higher penalty to confident misclassifications, naturally addressing class imbalance (background voxels vastly outnumber tumor voxels).The segmentation network is trained using the Adam optimizer with learning rate α = 0.001, batch size 16, and up to 100 epochs."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "55855",
+  "text": "Overheads. Since the improved scheme uses application memory only before key prioritization, it has almost the same overheads as the original scheme. Specifically, each sensor node has to store c polynomial shares and the locations associated with these shares in the key predistribution phase, and only keeps c of them after determining its deployment location. A location coordinate can be represented with integers much smaller than a polynomial share (e.g., 4 bytes to encode x or y coordinate). Each location coordinate takes approximately the same space as one key. Thus, the storage overhead in a sensor node is approximately c(t + 2) log q in the key predistribution phase. Similarly, after key prioritization, the storage overhead for key units is about c (t +2) log q. In addition, each sensor node needs to remember the IDs of compromised sensor nodes with which this node shares at least one common polynomial. This introduces at most c t log q storage overhead after key prioritization, where q is a number that is large enough to accommodate all sensor nodes in the network. To establish a common key with a given neighbor node, two sensor nodes only need to exchange their polynomial IDs. To compute a pairwise key, both sensor nodes need to evaluate a t-degree polynomial, which can be done efficiently with the optimization technique in [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "1535984"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To compute a pairwise key, both sensor nodes need to evaluate a t-degree polynomial, which can be done efficiently with the optimization technique in [CITATION_1] .",
+      "s_span": 1204,
+      "e_span": 1368
+    }
+  ],
+  "bib_entries": {
+    "1535984": {
+      "title": "Establishing pairwise keys in distributed sensor networks",
+      "abstract": "Pairwise key establishment is a fundamental security service in sensor networks; it enables sensor nodes to communicate securely with each other using cryptographic techniques. However, due to the resource constraints on sensors, it is infeasible to use traditional key management techniques such as public key cryptography and key distribution center (KDC). To facilitate the study of novel pairwise key predistribution techniques, this paper presents a general framework for establishing pairwise keys between sensors on the basis of a polynomial-based key predistribution protocol [2]. This paper then presents two efficient instantiations of the general framework: a random subset assignment key predistribution scheme and a grid-based key predistribution scheme. The analysis in this paper indicates that these two schemes have a number of nice properties, including high probability (or guarantee) to establish pairwise keys, tolerance of node captures, and low communication overhead. Finally, this paper presents a technique to reduce the computation at sensors required by these schemes."
+    }
+  },
+  "generator": "fallback_v4"
+}

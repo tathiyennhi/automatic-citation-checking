@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The overall loss L is formulated as:L = L abnormal + 1 |L| ∑︁ L 𝑖 ∈L min L 𝑖, L 𝑖 Labnormal L𝑖 (4)where L is the set of all non-abnormal behavior attribute losses.",
+    "Loss terms with a hat (e.g., Labnormal, L𝑖) denote detached values, meaning gradients are not computed through them when they are used in this scaling mechanism.The first term is the direct loss for the abnormal behavior flag.",
+    "The second term aggregates the other losses, dynamically adjusting their contributions.",
+    "Specifically, for each auxiliary loss L 𝑖, its effective value in the sum is L 𝑖 if L𝑖 is smaller than or equal to Labnormal (i.e., task 𝑖 is performing better or similarly).",
+    "If task 𝑖 is performing worse (i.e., L𝑖 > Labnormal), its current loss L 𝑖 is scaled down by the ratio Labnormal / L𝑖."
+  ],
+  "correct_citations": []
+}

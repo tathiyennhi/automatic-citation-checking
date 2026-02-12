@@ -1,0 +1,52 @@
+{
+  "text": "In [CITATION_1] , a heuristic approach is proposed to convert any raw sentence into a hierarchical word sequence (abbreviated as HWS) structure, by which much more valid word sequences can be modeled while remaining the model size as small as that of n-gram. In , instead of only using the information of word frequency, the information of direction and word association are also used to construct higher quality HWS structures. However, they are all specific methods based on certain heuristic assumptions. For the purpose of further improvements, it is also necessary to generalize those models into one unified structure. This paper is organized as follows. In Section 2, we review the HWS language model. Then we present a generalized hierarchical word sequence structure (GHWSS) in Section 3. In Section 4, we present two strategies for rearranging word sequences under the framework of GHWSS. In Sections 5 and 6, we show the effectiveness of our model by both intrinsic experiments and extrinsic experiments. Finally, we summarize our findings in Section 7.",
+  "citation_candidates": [
+    "16717715",
+    "832217",
+    "8457271",
+    "3643309",
+    "5578635",
+    "11080756",
+    "17523097",
+    "10986188",
+    "7164502"
+  ],
+  "bib_entries": {
+    "3643309": {
+      "title": "A closer look at skip-gram modeling",
+      "abstract": "Data sparsity is a large problem in natural language processing that refers to the fact that language is a system of rare events, so varied and complex, that even using an extremely large corpus, we can never accurately model all possible strings of words. This paper examines the use of skip-grams (a technique where by n-grams are still stored to model language, but they allow for tokens to be skipped) to overcome the data sparsity problem. We analyze this by computing all possible skip-grams in a training corpus and measure how many adjacent (standard) n-grams these cover in test documents. We examine skip-gram modelling using one to four skips with various amount of training data and test against similar documents as well as documents generated from a machine translation system. In this paper we also determine the amount of extra training data required to achieve skip-gram coverage using standard adjacent tri-grams."
+    },
+    "16717715": {
+      "title": "The sphinx-ii speech recognition system: an overview",
+      "abstract": "In order for speech recognizers to deal with increased task perplexity, speaker variation, and environment variation, improved speech recognition is critical. Steady progress has been made along these three dimensions at Carnegie Mellon. In this paper, we review the SPHINX-II speech recognition system and summarize our recent efforts on improved speech recognition."
+    },
+    "17523097": {
+      "title": "A hierarchical word sequence language model",
+      "abstract": "Most language models used for natural language processing are continuous. However, the assumption of such kind of models is too simple to cope with data sparsity problem. Although many useful smoothing techniques are developed to estimate these unseen sequences, it is still important to make full use of contextual information in training data. In this paper, we propose a hierarchical word sequence language model to relieve the data sparsity problem. Experiments verified the effectiveness of our model."
+    },
+    "10986188": {
+      "title": "Class-based n-gram models of natural language",
+      "abstract": "We address the problem of predicting a word from previous words in a sample of text. In particular, we discuss n-gram models based on classes of words. We also discuss several statistical algorithms for assigning words to classes based on the frequency of their co-occurrence with other words. We find that we are able to extract classes that have the flavor of either syntactically based groupings or semantically based groupings, depending on the nature of the underlying statistics."
+    },
+    "8457271": {
+      "title": "Factored language models and generalized parallel backoff",
+      "abstract": "We introduce factored language models (FLMs) and generalized parallel backoff (GPB). An FLM represents words as bundles of features (e.g., morphological classes, stems, data-driven clusters, etc.), and induces a probability model covering sequences of bundles rather than just words. GPB extends standard backoff to general conditional probability tables where variables might be heterogeneous types, where no obvious natural (temporal) backoff order exists, and where multiple dynamic backoff strategies are allowed. These methodologies were implemented during the JHU 2002 workshop as extensions to the SRI language modeling toolkit. This paper provides initial perplexity results on both CallHome Arabic and on Penn Treebank Wall Street Journal articles. Significantly, FLMs with GPB can produce bigrams with significantly lower perplexity, sometimes lower than highly-optimized baseline trigrams. In a multi-pass speech recognition context, where bigrams are used to create first-pass bigram lattices or N-best lists, these results are highly relevant."
+    },
+    "832217": {
+      "title": "A new string-to-dependency machine translation algorithm with a target dependency language model",
+      "abstract": "In this paper, we propose a novel string-todependency algorithm for statistical machine translation. With this new framework, we employ a target dependency language model during decoding to exploit long distance word relations, which are unavailable with a traditional n-gram language model. Our experiments show that the string-to-dependency decoder achieves 1.48 point improvement in BLEU and 2.53 point improvement in TER compared to a standard hierarchical string-tostring system on the NIST 04 Chinese-English evaluation set."
+    },
+    "5578635": {
+      "title": "Utilizing dependency language models for graph-based dependency parsing models",
+      "abstract": "Most previous graph-based parsing models increase decoding complexity when they use high-order features due to exact-inference decoding. In this paper, we present an approach to enriching high-order feature representations for graph-based dependency parsing models using a dependency languagemodel and beam search. The dependency language model is built on a large-amount of additional auto-parsed data that is processed by a baseline parser. Based on the dependency language model, we represent a set of features for the parsing model. Finally, the features are efficiently integrated into the parsing model during decoding using beam search. Our approach has two advantages. Firstly we utilize rich high-order features defined over a view of large scope and additional large raw corpus. Secondly our approach does not increase the decoding complexity. We evaluate the proposed approach on English and Chinese data. The experimental results show that our new parser achieves the best accuracy on the Chinese data and comparable accuracy with the best known systems on the English data."
+    },
+    "11080756": {
+      "title": "Bleu: a method for automatic evaluation of machine translation",
+      "abstract": "Human evaluations of machine translation are extensive but expensive. Human evaluations can take months to finish and involve human labor that can not be reused. We propose a method of automatic machine translation evaluation that is quick, inexpensive, and language-independent, that correlates highly with human evaluation, and that has little marginal cost per run. We present this method as an automated understudy to skilled human judges which substitutes for them when there is need for quick or frequent evaluations."
+    },
+    "7164502": {
+      "title": "Meteor: An automatic metric for mt evaluation with improved correlation with human judgments",
+      "abstract": "We describe METEOR, an automatic metric for machine translation evaluation that is based on a generalized concept of unigram matching between the machineproduced translation and human-produced reference translations. Unigrams can be matched based on their surface forms, stemmed forms, and meanings; furthermore, METEOR can be easily extended to include more advanced matching strategies. Once all generalized unigram matches between the two strings have been found, METEOR computes a score for this matching using a combination of unigram-precision, unigram-recall, and a measure of fragmentation that is designed to directly capture how well-ordered the matched words in the machine translation are in relation to the reference. We evaluate METEOR by measuring the correlation between the metric scores and human judgments of translation quality. We compute the Pearson R correlation value between its scores and human quality assessments of the LDC TIDES 2003 Arabic-to-English and Chinese-to-English datasets. We perform segment-bysegment correlation, and show that METEOR gets an R correlation value of 0.347 on the Arabic data and 0.331 on the Chinese data. This is shown to be an improvement on using simply unigramprecision, unigram-recall and their harmonic F1 combination. We also perform experiments to show the relative contributions of the various mapping modules."
+    }
+  }
+}

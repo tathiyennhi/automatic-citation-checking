@@ -1,0 +1,27 @@
+{
+  "text": "Choi's dataset [CITATION_1] is commonly used in evaluating topic segmentation methods. It consists of 700 documents, each being a concatenation of 10 segments. Each segment is the first n sentences of a randomly selected document from the Brown corpus, s.t. 3 \u2264 n \u2264 11. Those documents are divided into 4 subsets with different range of n, as shown in Table 2 . We ran PLDA and STM with 50 topics. Results in Table 4 show that our model significantly outperforms all the other methods on the four subsets over all the metrics. Furthermore, comparing to other published results, this also outperforms [CITATION_2] (see their table 2) , and [CITATION_3] ) (they report an average of 1.04 and 1.06 in Tables 1 and 2 , whereas TSM averages 0.93). This gives TSM the best reported results to date. Note the lexical transitions in these concatenated documents are very sharp [CITATION_4] . The sharp transitions lead to significant change in segment level topic distributions, which further implies the variance of these distributions is large. In TSM, a large variance causes a small concentration parameter b. We observed that the sampled b's (about 0.1) are indeed small for the four subsets, which shows there is no topic sharing among segments. Therefore, TSM is able to recognise the segments are unrelated text.",
+  "correct_citation": {
+    "[CITATION_1]": "2958363",
+    "[CITATION_2]": "3063495",
+    "[CITATION_3]": "8279425",
+    "[CITATION_4]": "2384391"
+  },
+  "bib_entries": {
+    "2384391": {
+      "title": "Minimum cut model for spoken lecture segmentation",
+      "abstract": "We consider the task of unsupervised lecture segmentation. We formalize segmentation as a graph-partitioning task that optimizes the normalized cut criterion. Our approach moves beyond localized comparisons and takes into account long-range cohesion dependencies. Our results demonstrate that global analysis improves the segmentation accuracy and is robust in the presence of speech recognition errors."
+    },
+    "2958363": {
+      "title": "Advances in domain independent linear text segmentation",
+      "abstract": "This paper describes a method for linear text segmentation which is twice as accurate and over seven times as fast as the state-of-the-art (Reynar, 1998). Inter-sentence similarity is replaced by rank in the local context. Boundary locations are discovered by divisive clustering."
+    },
+    "3063495": {
+      "title": "Text segmentation via topic modeling: an analytical study",
+      "abstract": "In this paper, the task of text segmentation is approached from a topic modeling perspective. We investigate the use of latent Dirichlet allocation (LDA) topic model to segment a text into semantically coherent segments. A major benefit of the proposed approach is that along with the segment boundaries, it outputs the topic distribution associated with each segment. This information is of potential use in applications like segment retrieval and discourse analysis. The new approach outperforms a standard baseline method and yields significantly better performance than most of the available unsupervised methods on a benchmark dataset."
+    },
+    "8279425": {
+      "title": "How text segmentation algorithms gain from topic models",
+      "abstract": "This paper introduces a general method to incorporate the LDA Topic Model into text segmentation algorithms. We show that semantic information added by Topic Models significantly improves the performance of two word-based algorithms, namely TextTiling and C99. Additionally, we introduce the new TopicTiling algorithm that is designed to take better advantage of topic information. We show consistent improvements over word-based methods and achieve state-of-the art performance on a standard dataset."
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "doc_id": "40548",
+  "text": "Our particular choice to instantiate the integrity measurement components and the secure storage relies on the concepts of Trusted Computing. To assure load-time integrity of the trusted logger in the public cloud, we first build a chain of trust, starting from the cloud server's hardware up to the trusted logger itself. For this purpose, our hardware was equipped with a TPM chip. Trusted boot is assured using the Grand Unified Bootloader (GRUB) version 0.97 together with TrustedGrub [35] version 1.1.5. We used the attestation framework IMA (Integrity Measurement Architecture [CITATION_1] ) to allow the client to verify the load-time integrity of the behavior measurement component and the secure storage (effectively comparing cryptographic hashes of the binaries). Clients would typically use the integrity reporting facilities of those components before the outsourcing of computations takes place.",
+  "correct_citation": {
+    "[CITATION_1]": "7759279"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We used the attestation framework IMA (Integrity Measurement Architecture [CITATION_1] ) to allow the client to verify the load-time integrity of the behavior measurement component and the secure storage (effectively comparing cryptographic hashes of the binaries).",
+      "s_span": 509,
+      "e_span": 774
+    }
+  ],
+  "bib_entries": {
+    "7759279": {
+      "title": "Design and implementation of a TCG-based integrity measurement architecture",
+      "abstract": "We present the design and implementation of a secure integrity measurement system for Linux. All executable content that is loaded onto the Linux system is measured before execution and these measurements are protected by the Trusted Platform Module (TPM) that is part of the Trusted Computing Group (TCG) standards. Our system is the first to extend the TCG trust measurement concepts to dynamic executable content from the BIOS all the way up into the application layer. In effect, we show that many of the Microsoft NGSCB guarantees can be obtained on today's hardware and today's software and that these guarantees do not require a new CPU mode or operating system but merely depend on the availability of an independent trusted entity, a TPM for example. We apply our trust measurement architecture to a web server application where we show how our system can detect undesirable invocations, such as rootkit programs, and that our measurement architecture is practical in terms of the number of measurements taken and the performance impact of making them."
+    }
+  },
+  "generator": "fallback_v4"
+}

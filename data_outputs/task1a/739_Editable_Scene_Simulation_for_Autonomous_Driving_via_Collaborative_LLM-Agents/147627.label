@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Brightness-consistent rendering.",
+    "The exposure times of cameras can differ substantially, causing significant brightness differences across images, hindering the NeRF training.",
+    "As shown in Figure 4, McNeRF, addresses this by incorporating exposure times into HDR radiance fields, prompting brightness consistency.We adopt F2-NeRF [66] as our backbone model to handle the unbounded scene, sampling K points along the ray r and estimating each point's HDR radiance e k and density σ k. The HDR light intensity is then calculated as:I HDR (r) = f (∆t) • K k=1 T k α k e k,(1)whereα k = 1 -exp(-σ k δ i) is the opacity, δ i is the point sampling interval, T k = k-1 i=0 (1 -α i)is the accumulated transmittance and ∆t is the exposure time.",
+    "The normalization function f (∆t) = 1 + ϵ(∆t -µ)/σ is designed to stabilize training, where ϵ is a hyperparameter for scaling, µ and σ are the mean and standard deviation of the exposure times of all images, respectively.By predicting scene radiance in HDR and multiplying it by the exposure time, we recover the light intensity received by the sensor and tackle the inconsistent color supervision at the intersections of two camera images with distinct exposure times.",
+    "Moreover, the HDR light intensity outputted by Mc-NeRF can provide scene-level illumination for foreground object rendering, a topic further discussed in Section 4.2.To train the rendering network, we enforce the consistency of radiance between the rendered image (prediction) and the captured image (ground-truth)."
+  ],
+  "correct_citations": [
+    "As shown in Figure 4, McNeRF, addresses this by incorporating exposure times into HDR radiance fields, prompting brightness consistency.We adopt F2-NeRF [66] as our backbone model to handle the unbounded scene, sampling K points along the ray r and estimating each point's HDR radiance e k and density σ k. The HDR light intensity is then calculated as:I HDR (r) = f (∆t) • K k=1 T k α k e k,(1)whereα k = 1 -exp(-σ k δ i) is the opacity, δ i is the point sampling interval, T k = k-1 i=0 (1 -α i)is the accumulated transmittance and ∆t is the exposure time."
+  ]
+}

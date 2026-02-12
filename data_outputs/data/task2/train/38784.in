@@ -1,0 +1,67 @@
+{
+  "text": "As pointed out in Sec. 2, the axiomatization of the functionsm andmS for a method m is based on m's normal behavior specification cases. Let m be a method declared in class C that takes one explicit parameter, par. We define the predicate PRE C m,i (OS) to denote the conjunction of (1) the requires clause of m's i-th normal behavior specification case, req C m,i , evaluated in store OS and (2) the predicate INV(OS), which expresses that all allocated objects satisfy their invariants in store OS. Conjunct (1) is obtained by applying \u03b3 to req The index i ranges over all normal behavior specification cases for m in C, including specifications inherited from C's superclasses, which ensures behavioral subtyping [CITATION_1] .",
+  "citation_candidates": [
+    "17210478",
+    "1045644",
+    "1352378",
+    "16646813",
+    "15862499",
+    "6252698",
+    "39191845",
+    "16936582",
+    "6487419",
+    "14233160",
+    "1814666",
+    "62758319"
+  ],
+  "bib_entries": {
+    "39191845": {
+      "title": "Eiffel: The Language",
+      "abstract": "Introduction Basic Conventions Classes, Universes, and Systems: The Architecture of Eiffel Software Storing Class Texts Classes Features Inheritance Clients and Exports Types Conformance Routines and Instructions Assertions, Specifications, and Correctness Control Structures Exceptions Attributes Objects, Values, Expressions, and Entities Object Creation Re-attachment Feature Call Expressions and Constants Universal Features Persistance and Environments Arrays and Strings Input and Output Interfacing with Other Languages Appendix A. An Introduction to Eiffel Appendix B. Style Guidelines Appendix C. Reserved Words and Special Symbols Appendix D. Syntax Summary Appendix E. Syntax in Alphabetical Order Index"
+    },
+    "1045644": {
+      "title": "Preliminary design of JML: A behavioral interface specification language for Java",
+      "abstract": "JML is a behavioral interface specification language tailored to Java(TM). Besides pre- and postconditions, it also allows assertions to be intermixed with Java code; these aid verification and debugging. JML is designed to be used by working software engineers; to do this it follows Eiffel in using Java expressions in assertions. JML combines this idea from Eiffel with the model-based approach to specifications, typified by VDM and Larch, which results in greater expressiveness. Other expressiveness advantages over Eiffel include quantifiers, specification-only variables, and frame conditions.This paper discusses the goals of JML, the overall approach, and describes the basic features of the language through examples. It is intended for readers who have some familiarity with both Java and behavioral specification using pre- and postconditions."
+    },
+    "6487419": {
+      "title": "The Spec# Programming System: An Overview",
+      "abstract": "The Spec# programming system is a new attempt at a more cost effective way to develop and maintain high-quality software. This paper describes the goals and architecture of the Spec# programming system, consisting of the object-oriented Spec# programming language, the Spec# compiler, and the Boogie static program verifier. The language includes constructs for writing specifications that capture programmer intentions about how methods and data are to be used, the compiler emits run-time checks to enforce these specifications, and the verifier can check the consistency between a program and its specifications."
+    },
+    "6252698": {
+      "title": "Observational purity and encapsulation",
+      "abstract": "Practical specification languages for imperative and object-oriented programs, such as JML, Eiffel, and Spec#, allow the use of program expressions including method calls in specification formulas. For coherent semantics of specifications, and to avoid anomalies with runtime assertion checking, expressions in specifications and assertions are typically required to be weakly pure in the sense that their evaluation has no effect on the state of preexisting objects. For specification of large systems using standard libraries this restriction is impractical: it disallows many standard methods that mutate state for purposes such as caching or lazy initialization. Calls of such methods can sensibly be used for specifications and annotations in contexts where their effects cannot be observed. This paper formalizes a notion of observational purity, justifies the use of weakly and observationally pure methods in specifications, and shows that a method is observationally pure if it simulates a weakly pure method."
+    },
+    "17210478": {
+      "title": "Purity and side effect analysis for Java programs",
+      "abstract": "We present a new purity and side effect analysis for Java programs. A method is pure if it does not mutate any location that exists in the program state right before the invocation of the method. Our analysis is built on top of a combined pointer and escape analysis, and is able to determine that methods are pure even when the methods mutate the heap, provided they mutate only new objects. Our analysis provides useful information even for impure methods. In particular, it can recognize read-only parameters (a parameter is read-only if the method does not mutate any objects transitively reachable from the parameter) and safe parameters (a parameter is safe if it is read-only and the method does not create any new externally visible heap paths to objects transitively reachable from the parameter). The analysis can also generate regular expressions that characterize the externally visible heap locations that the method mutates. We have implemented our analysis and used it to analyze several applications. Our results show that our analysis effectively recognizes a variety of pure methods, including pure methods that allocate and mutate complex auxiliary data structures."
+    },
+    "1814666": {
+      "title": "Reasoning with specifications containing method calls and model fields",
+      "abstract": "Allowing abstraction in program specifications increases modularity and comprehen- sibility and is as important in specifications as it is in the program itself; two such abstraction mechanisms are method invocations and model fields. However, method invocations do not map neatly into the first-order logics that are often used for assuring the correctness of specifications. One problem is translating specifications in a way that acknowledges the potential for exceptional behavior. Furthermore, translating model fields into verification conditions exposes the non-trivial interactions between frame conditions and the model representations. The ESC/Java2 tool has been able to achieve a practical translation of method invocations and model fields within the design constraints of its parent tool, ESC/Java. Furthermore, the techniques used are applicable to other specification constructs such as generalized quantifiers."
+    },
+    "16936582": {
+      "title": "Avoiding the undefined by underspecification",
+      "abstract": "We use the appeal of simplicity and an aversion to complexity in selecting a method for handling partial functions in logic. We conclude that avoiding the undefined by using underspecification is the preferred choice."
+    },
+    "1352378": {
+      "title": "Forcing behavioral subtyping through specification inheritance",
+      "abstract": "A common change to object-oriented software is to add a new type of data that is a subtype of some existing type in the program. However, due to message passing, unchanged pearls of the program may now call operations of the new type. To avoid reverification of unchanged code, such operations should have specifications that are related to the specifications of the appropriate operations in their supertypes. This paper presents a specification technique that uses inheritance of specifications to force the appropriate behavior on the subtype objects. This technique is simple, requires little effort by the specifier, and avoids reverification of unchanged code. We present two notions of such behavioral subtyping, one of which is new. We show how to use these techniques to specify examples in C++."
+    },
+    "15862499": {
+      "title": "Universes: Lightweight ownership for JML",
+      "abstract": "Object-oriented programs with arbitrary object structures are difficult to understand, to maintain, and to reason about. Ownership has been applied successfully to structure the object store and to restrict how references can be passed and used. We describe how ownership relations can be expressed in the Java Modeling Language, JML. These ownership specifications can be checked by standard verification techniques, runtime assertion checking, ownership type systems, or combinations of these techniques. We show that the combination of the lightweight Universe type system and JML specifications is flexible enough to handle interesting implementations while keeping the annotation and checking overhead small. The Universe type system has been implemented in the JML compiler. This integration enables the application of ownership-based verification techniques to programs specified in JML."
+    },
+    "62758319": {
+      "title": "Toward Reliable Modular Programs",
+      "abstract": "Software is being applied in an ever-increasing number of areas. Computer programs and systems are becoming more complex and consisting of more delicately interconnected components. Errors surfacing in programs are still a conspicuous and costly problem. It's about time we employ some techniques that guide us toward higher reliability of practical programs. The goal of this thesis is just that. ::: This thesis presents a theory for verifying programs based on Dijkstra's weakest-precondition calculus. A variety of program paradigms used in practice, such as exceptions, procedures, object orientation, and modularity, are dealt with. ::: The thesis sheds new light on the theory behind programs with exceptions. It develops an elegant algebra, and shows it to be the foundation on which the semantics of exceptions rests. It develops a trace semantics for programs with exceptions, from which the weakest-precondition semantics is derived. It also proves a theorem on programming methodology relating to exceptions, and applies this theorem in the novel derivation of a simple program. ::: The thesis presents a simple model for object-oriented data types, in which concerns have been separated, resulting in the simplicity of the model. ::: To deal with large programs, this thesis takes a practical look at modularity and abstraction. It reveals a problem that arises in writing specifications for modular programs where previous techniques fail. The thesis introduces a new specification construct that solves that problem, and gives a formal proof of soundness for modular verification using that construct. The model is a generalization of Hoare's classical data refinement. However, there are more problems to be solved. The thesis reports on some of these problems and suggests some future directions toward more reliable modular programs."
+    },
+    "16646813": {
+      "title": "Data abstraction and information hiding",
+      "abstract": "This article describes an approach for verifying programs in the presence of data abstraction and information hiding, which are key features of modern programming languages with objects and modules. This article draws on our experience building and using an automatic program checker, and focuses on the property of modular soundness: that is, the property that the separate verifications of the individual modules of a program suffice to ensure the correctness of the composite program. We found this desirable property surprisingly difficult to achieve. A key feature of our methodology for modular soundness is a new specification construct: the abstraction dependency, which reveals which concrete variables appear in the representation of a given abstract variable, without revealing the abstraction function itself. This article discusses in detail two varieties of abstraction dependencies: static and dynamic. The article also presents a new technical definition of modular soundness as a monotonicity property of verifiability with respect to scope and uses this technical definition to formally prove the modular soundness of a programming discipline for static dependencies."
+    },
+    "14233160": {
+      "title": "Modular Specification and Verification of Object-Oriented Programs",
+      "abstract": "Mojave and the Universe Type System.- The Semantics of Mojave.- Modular Specification and Verification of Functional Behavior.- Modular Specification and Verification of Frame Properties.- Modular Specification and Verification of Type Invariants.- Conclusion.- Formal Background and Notations.- Predefined Type Declarations.- Examples.- Auxiliary Lemmas, Proofs, and Models."
+    }
+  }
+}

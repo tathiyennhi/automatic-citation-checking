@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The test case in the rejected diff attempted to test a partially implemented function, for which the LLM code left a comment indicating that an assertion was to be added as a \"TODO\".",
+    "The test case did extend coverage (simply by executing the previously unexecuted method-undertest), but it was rejected by the engineer reviewing the diff because it failed to contain an assertion.The largest coverage improvement was achieved by a TestGen-LLM diff that covered a method not previously covered, and thus generated a lot of additional coverage, including:• 28 new files covered that were not previously covered.• 13 files which were previously partially covered, but for which the improved test class extended coverage • 3 A/B testing gate keepers (for which generated A/B decision making code was additionally covered).",
+    "The smallest coverage improvement was produced by a diff that covered a single additional line (an early return) in a file that was already partially covered by the existing test classes.Anonymized results for top 10 performers among the 36 engineers at the the test-a-thon are shown in Table This is because TestGen-LLM is extending existing test classes, with additional test cases.",
+    "It also allows the engineers to more easily accept or reject the recommendations, per test case.",
+    "As a result, TestGen-LLM's number of test cases per diff is always one; a fact which makes it superficially appear to be more productive in terms of diffs."
+  ]
+}

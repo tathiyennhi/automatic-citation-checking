@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "A. Safety-relevant model and fallback controllerIn provably safe RL, safety is verified with an abstract model containing the safety-relevant behavior of the original MDP.Definition 4.1: For a MDP P = (S, A, T, r) we define a safety-relevant model Σ P = (S, U A, F), as a transition system with the same set of states S, with the set of available inputs U A, such that s∈S A(s) ⊆ U A, and with the transition relationF ⊆ S × U A × S, such that (s, a, s ′) ∈ F iff (s, a, s ′) ∈ T. Let F (s, a) = {s ′ ∈ S | (s, a, s ′) ∈ F } bea set of all possible successors of a state s, when action a is taken and let Enab F (s) = {a ∈ U A | F (s, a) ̸ = ∅} be a set of all enabled inputs at a state s. Let us then define an operator Reach F (s, 1) = ∪ a∈A(s) F (s, a), which consists of all states that are reachable from s in one step.",
+    "This operator can be naturally extended towards the sets Reach F (S, 1) = ∪ s ′ ∈S Reach F (s ′, 1).",
+    "We then inductively define the set of all states reachable from s in N steps Reach F (s, N) = Reach F (Reach F (s, N -1), 1).",
+    "And the set Reach F (s, N) = ∪ i=1:N F (s, i) of all states that are reachable from a state s in no more than N steps.Let a safety specification be given by a sequence of safe sets S S t ⊆ S, t = 0, 1, 2... that an agent should not leave while moving in the environment.",
+    "At every time step t, a controller for a transition system Σ is a map C t: S → 2 U A, such that C t (s) ⊆ Enab F (s) for every s ∈ S.Definition 4.2: A safety controller for a transition system Σ P = (S, U A, F) and a specification S S t ⊆ S, t = 0, 1, 2... is a controller C t such that the following two properties hold 1) Dom(C t) ⊆ S S t for all t = 0, 1, 2... 2) for all s ∈ Dom(C t) for all u ∈ C t (s) the following inclusion is satisfied F (s, u) ⊆ Dom(C t+1)."
+  ]
+}

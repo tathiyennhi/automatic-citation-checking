@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "At each checkpoint, we generate 100 text samples (512 tokens each) using the model with temperature 1.0.",
+    "Semantic Analysis PipelineFor each checkpoint:1.",
+    "Embedding extraction: We load the checkpoint and extract final-layer hidden states for all tokens in the generated samples.",
+    "We filter to alphabetic tokens ≥ 3 characters, excluding special tokens and punctuation.2.",
+    "Polysemy computation: For each word w appearing ≥ 5 times, we cluster its contextualized embeddings using DBSCAN (ϵ = 0.3, min samples=2, cosine metric)."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,17 @@
+{
+  "text": "To address these drawbacks, we have developed NullAway, a new tool for type-based null safety for Java. NullAway runs as a plugin to the Error Prone framework [CITATION_1] , which provides a simple API for extending the Java compiler with additional checks. The core of NullAway includes features of previous type-based null safety tools, including defaults that reduce the annotation burden and flowsensitive type inference and refinement [CITATION_2] . NullAway includes additional features to reduce false positives, such as support for basic pre-/post-conditions and for stream-based APIs (ğ6).",
+  "correct_citation": {
+    "[CITATION_1]": "15410626",
+    "[CITATION_2]": "14533693"
+  },
+  "bib_entries": {
+    "14533693": {
+      "title": "Practical pluggable types for Java",
+      "abstract": "This paper introduces the Checker Framework, which supports adding pluggable type systems to the Java language in a backward-compatible way. A type system designer defines type qualifiers and their semantics, and a compiler plug-in enforces the semantics. Programmers can write the type qualifiers in their programs and use the plug-in to detect or prevent errors. The Checker Framework is useful both to programmers who wish to write error-free code, and to type system designers who wish to evaluate and deploy their type systems. The Checker Framework includes new Java syntax for expressing type qualifiers; declarative and procedural mechanisms for writing type-checking rules; and support for flow-sensitive local type qualifier inference and for polymorphism over types and qualifiers. The Checker Framework is well-integrated with the Java language and toolset. We have evaluated the Checker Framework by writing 5 checkers and running them on over 600K lines of existing code. The checkers found real errors, then confirmed the absence of further errors in the fixed code. The case studies also shed light on the type systems themselves."
+    },
+    "15410626": {
+      "title": "Building Useful Program Analysis Tools Using an Extensible Java Compiler",
+      "abstract": "Large software companies need customized tools to manage their source code. These tools are often built in an ad-hoc fashion, using brittle technologies such as regular expressions and home-grown parsers. Changes in the language cause the tools to break. More importantly, these ad-hoc tools often do not support uncommon-but-valid code code patterns. We report our experiences building source-code analysis tools at Google on top of a third-party, open-source, extensible compiler. We describe three tools in use on our Java code base. The first, Strict Java Dependencies, enforces our dependency policy in order to reduce JAR file sizes and testing load. The second, error-prone, adds new error checks to the compilation process and automates repair of those errors at a whole-code base scale. The third, Thindex, reduces the indexing burden for a Java IDE so that it can support Google-sized projects."
+    }
+  }
+}

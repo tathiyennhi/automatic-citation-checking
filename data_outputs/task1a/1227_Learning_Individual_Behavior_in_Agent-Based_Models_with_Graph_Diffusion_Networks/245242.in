@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "the forward process) through a set of latents Z(i) t+1 (τ) indexed by τ ∈ {τ max,..., 0}.",
+    "The forward process is a fixed Markov chain that gradually adds Gaussian noise to the input Z (i) t+1 according to a previously defined variance schedule β τ.",
+    "Each latent is given by:Z(i) t+1 (τ) = √ ᾱτ Z (i) t+1 + √ 1 -ᾱτ ϵ, ϵ ∼ N (0, I)(2)where α τ:= 1 -β τ and ᾱτ:= τ s=1 α s. For our model, we selected a cosine variance schedule:β τ = β start + 1 2 (β end -β start)(1 -cos( τ τ max π))(3)with β start = 10 -4 and β end = 0.02.",
+    "This choice ensures that β τ increases more gradually at the beginning of the forward process, retaining more of the original input information, and at the end of the forward process.",
+    "We note that, in preliminary trials, it showed to be more stable in our scope with small input dimensions compared to the cosine variance schedule proposed by [48] in the context of image generation."
+  ]
+}

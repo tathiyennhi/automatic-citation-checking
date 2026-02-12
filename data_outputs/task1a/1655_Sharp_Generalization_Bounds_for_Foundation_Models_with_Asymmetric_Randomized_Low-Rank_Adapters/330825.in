@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In our experiments, we apply LoRA on CLIP for downstream image classification on standard datasets as in Zanella and Ben Ayed [2024].",
+    "The downstream classifier, or predictor f, is the LoRA-augmented CLIP model fine-tuned using cross-entropy loss.",
+    "We observe that the generalization gap G generally increases with the LoRA rank r, suggesting that higher parameterization yields improved training performance but reduced generalization.",
+    "See Appendix A for experiment details.2 1 2 2 2 3 2 4 2 5 2 6 2 7 LoRA Rank (r) 0.004 0.002 0.000 0.002 0.004 0.006 0.008 0.010 0.012 Generalization Gap caltech101 Gen. Gap Min-Max Range 2 1 2 2 2 3 2 4 2 5 2 6 2 7 LoRA Rank (r) 0.040 0.042 0.044 0.046 0.048 0.050 0.052 Generalization Gap dtd Gen. Gap Min-Max Range 2 1 2 2 2 3 2 4 2 5 2 6 2 7 LoRA Rank (r) 0.0050 0.0075 0.0100 0.0125 0.0150 0.0175 0.0200 0.0225 Generalization Gap oxford_flowers Gen. Gap Range 2 1 2 2 2 3 2 4 2 5 2 6 2 7 LoRA Rank (r) 0.005 0.000 0.005 0.010 0.015 0.020 Generalization Gap oxford_pets Gen. Gap Min-Max Range 2 1 2 2 2 3 2 4 2 5 2 6 2 7 LoRA Rank (r) 0.010 0.012 0.014 0.016 0.018 0.020 0.022 0.024 Generalization Gap eurosat Gen. Gap Min-Max Range 2 1 2 2 2 3 2 4 2 5 2 6 2 7 LoRA Rank (r) 0.0075 0.0100 0.0125 0.0150 0.0175 0.0200 0.0225 0.0250 0.0275 Generalization Gap fgvc Gen. Gap Min-Max Range While this trend qualitatively aligns with theoretical predictions about overparameterization and generalization, the rate of increase in G with respect to r is not as sharp as suggested by the theoretical upper bounds in Theorem 1.",
+    "This discrepancy is expected, as such bounds are typically agnostic to the specific optimization algorithm and dataset used, and therefore tend to be loose in practice."
+  ]
+}

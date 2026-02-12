@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Image tiles are buffered in TFRecords with JPEG or PNG compression and stored with slide and location metadata.",
+    "During dataset iteration, data is decoded and converted to Tensors.",
+    "Augmentation, including random flipping/rotation, random JPEG compression, and random Gaussian blur, can be applied at this step.",
+    "If stain normalization was not performed during tile extraction, stain normalization can be applied at this step when iterating through a TFRecord dataset in real-time.",
+    "Images are then standardized, and slide names are converted to ground-truth outcome labels using a provided CSV annotations file or Pandas DataFrame classifying pixels with brightness above a given threshold 4 as white, and discarding the tile as background if the proportion of pixels identified as white exceeds a prespecified threshold."
+  ]
+}

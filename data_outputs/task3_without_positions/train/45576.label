@@ -1,0 +1,29 @@
+{
+  "doc_id": "45576",
+  "text": "Here, U and V are P × P and N × N orthogonal matrices, respectively. is a diagonal matrix comprising the singular values ofX in decreasing order [CITATION_1] . A reduced dimensional representation ofX can be obtained by discarding columns of U and V,X ≈ U 0:j 0:j,0:j V T 0:j [CITATION_2] Here, it means j + 1 columns have been retained. As shown above, PCA can project data into a low dimensional coordinate system, with axes provided by the columns of U 0:j , and data coordinates given by V 0:j . In this work, we retain only two columns (j = 1), and project images into a twodimensional coordinate system. Figure 2 shows the 2D projection (coordinates obtained from V 0:1 ) of facial images in our test dataset. We use this projection to construct a grid of images, grouped by similarity. We create a uniform coordinate grid and search for the closest image (in the reduced dimensional coordinate system) to each point in the grid. We assign each image a corresponding point, and ensure that no image is duplicated, by removing it from the list of available images once allocated a grid coordinate in order to produce a grid of images that groups individuals by facial similarity, as shown in Figure 3 . It is clear that this process successfully groups faces of similar state and complexion together, with darker skinned individuals located towards the top of the image, and lighter skinned individuals towards the bottom. For each image selected, we calculate the error in prediction, to produce a saliency map indicating model quality for the constructed grid of images.",
+  "correct_citation": {
+    "[CITATION_1]": "15315509",
+    "[CITATION_2]": "5148293"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Here, U and V are P × P and N × N orthogonal matrices, respectively. is a diagonal matrix comprising the singular values ofX in decreasing order  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A reduced dimensional representation ofX can be obtained by discarding columns of U and V,X ≈ U 0:j 0:j,0:j V T 0:j  Here, it means j + 1 columns have been retained."
+    }
+  ],
+  "bib_entries": {
+    "15315509": {
+      "title": "On the early history of the singular value decomposition",
+      "abstract": "This paper surveys the contributions of five mathematicians—Eugenio Beltrami (1835–1899), Camille Jordan (1838–1921), James Joseph Sylvester (1814–1897), Erhard Schmidt (1876–1959), and Hermann Weyl (1885–1955)—who were responsible for establishing the existence of the singular value decomposition and developing its theory."
+    },
+    "5148293": {
+      "title": "Vehicle-based drowsy driver detection: Current status and future prospects",
+      "abstract": "Driver drowsiness is a major, though elusive, cause of traffic crashes .As part of its IVHS/human factors program, NHTSA is supporting research to develop in-vehicle system s. to continuously monitor driver alertness and performance .Scientific support for the feasibility of this countermeasure concept is provided by research showing that:"
+    }
+  },
+  "generator": "fallback_v4"
+}

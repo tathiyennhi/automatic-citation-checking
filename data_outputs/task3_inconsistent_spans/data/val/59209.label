@@ -1,0 +1,22 @@
+{
+  "doc_id": "59209",
+  "text": "Since D is diagonal, the complexity of solving the PageRank is just the complexity of solving the linear system. And since the matrix βI S + L S is diagonally dominant, it can be solved approximately in nearly linear time with a SpielmanTeng Solver [CITATION_1] . Here, we show a simpler algorithm ApproxDirichPR to solve the PageRank equations with boundary conditions approximately, which is faster and has a better approximation ratio as long as α is not too small. The basic outline of our algorithm ApproxDirichPR is as follows: we initialize pr S as 0 and maintain a residue r, which is the difference between the right side and left side of equation 6. Then we gradually move mass from r to pr S while maintaining the following invariant:",
+  "correct_citation": {
+    "[CITATION_1]": "1750944"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "And since the matrix βI S + L S is diagonally dominant, it can be solved approximately in nearly linear time with a SpielmanTeng Solver  .",
+      "s_span": 113,
+      "e_span": 263
+    }
+  ],
+  "bib_entries": {
+    "1750944": {
+      "title": "Nearly-Linear Time Algorithms for Preconditioning and Solving Symmetric, Diagonally Dominant Linear Systems",
+      "abstract": "We present a randomized algorithm that, on input a symmetric, weakly diagonally dominant n-by-n matrix A with m nonzero entries and an n-vector b, produces a y such that $\\norm{y - \\pinv{A} b}_{A} \\leq \\epsilon \\norm{\\pinv{A} b}_{A}$ in expected time $O (m \\log^{c}n \\log (1/\\epsilon)),$ for some constant c. By applying this algorithm inside the inverse power method, we compute approximate Fiedler vectors in a similar amount of time. The algorithm applies subgraph preconditioners in a recursive fashion. These preconditioners improve upon the subgraph preconditioners first introduced by Vaidya (1990). For any symmetric, weakly diagonally-dominant matrix A with non-positive off-diagonal entries and $k \\geq 1$, we construct in time $O (m \\log^{c} n)$ a preconditioner B of A with at most $2 (n - 1) + O ((m/k) \\log^{39} n)$ nonzero off-diagonal entries such that the finite generalized condition number $\\kappa_{f} (A,B)$ is at most k, for some other constant c. In the special case when the nonzero structure of the matrix is planar the corresponding linear system solver runs in expected time $ O (n \\log^{2} n + n \\log n \\ \\log \\log n \\ \\log (1/\\epsilon))$. We hope that our introduction of algorithms of low asymptotic complexity will lead to the development of algorithms that are also fast in practice."
+    }
+  },
+  "generator": "fallback_v4"
+}

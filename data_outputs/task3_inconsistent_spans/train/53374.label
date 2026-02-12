@@ -1,0 +1,69 @@
+{
+  "doc_id": "53374",
+  "text": "As is standard in the design of space-efficient algorithms [CITATION_1] [CITATION_2] , while working with directed graphs, we assume that the graphs are given as in/out (circular) adjacency lists i.e., for a vertex v, we have the (circular) lists of both in-neighbors and out-neighbors of v. We assume the word RAM model of computation where the machine consists of words of size w in Ω(lg n) bits and any logical, arithmetic and bitwise operation involving a constant number of words takes O(1) time. We count space in terms of number of extra bits used by the algorithm other than the input, and this quantity is referred as \"extra space\" and \"space\" interchangeably throughout the paper. By a path of length d, we mean a simple path on d edges. By deg(x) we mean the degree of the vertex x. In directed graphs, it should be clear from the context whether that denotes out-degree or in-degree. By a BFS/DFS traversal of the input graph G, as in [CITATION_3] [CITATION_4] [CITATION_5] [CITATION_6] 53] , we refer to reporting the vertices of G in the BFS/DFS ordering, i.e., in the order in which the vertices are visited for the first time.",
+  "correct_citation": {
+    "[CITATION_1]": "15288922",
+    "[CITATION_2]": "17435687",
+    "[CITATION_3]": "29395967",
+    "[CITATION_4]": "15288922",
+    "[CITATION_5]": "2448468",
+    "[CITATION_6]": "17435687"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As is standard in the design of space-efficient algorithms   , while working with directed graphs, we assume that the graphs are given as in/out (circular) adjacency lists i.e., for a vertex v, we have the (circular) lists of both in-neighbors and out-neighbors of v.",
+      "s_span": 0,
+      "e_span": 291
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "As is standard in the design of space-efficient algorithms   , while working with directed graphs, we assume that the graphs are given as in/out (circular) adjacency lists i.e., for a vertex v, we have the (circular) lists of both in-neighbors and out-neighbors of v.",
+      "s_span": 0,
+      "e_span": 291
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "By a BFS/DFS traversal of the input graph G, as in     53] , we refer to reporting the vertices of G in the BFS/DFS ordering, i.e., in the order in which the vertices are visited for the first time.",
+      "s_span": 896,
+      "e_span": 1142
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "By a BFS/DFS traversal of the input graph G, as in     53] , we refer to reporting the vertices of G in the BFS/DFS ordering, i.e., in the order in which the vertices are visited for the first time.",
+      "s_span": 896,
+      "e_span": 1142
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "By a BFS/DFS traversal of the input graph G, as in     53] , we refer to reporting the vertices of G in the BFS/DFS ordering, i.e., in the order in which the vertices are visited for the first time.",
+      "s_span": 896,
+      "e_span": 1142
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "By a BFS/DFS traversal of the input graph G, as in     53] , we refer to reporting the vertices of G in the BFS/DFS ordering, i.e., in the order in which the vertices are visited for the first time.",
+      "s_span": 896,
+      "e_span": 1142
+    }
+  ],
+  "bib_entries": {
+    "29395967": {
+      "title": "Depth-first search using O(n) bits",
+      "abstract": "We provide algorithms performing Depth-First Search (DFS) on a directed or undirected graph with \\(n\\) vertices and \\(m\\) edges using only \\(O(n)\\) bits. One algorithm uses \\(O(n)\\) bits and runs in \\(O(m \\log n)\\) time. Another algorithm uses \\(n+o(n)\\) bits and runs in polynomial time. Furthermore, we show that DFS on a directed acyclic graph can be done in space \\(n/2^{\\varOmega (\\sqrt{\\log n})}\\) and in polynomial time, and we also give a simple linear-time \\(O(\\log n)\\)-space algorithm for the depth-first traversal of an undirected tree. Finally, we also show that for a graph having an \\(O(1)\\)-size feedback set, DFS can be done in \\(O(\\log n)\\) space. Our algorithms are based on the analysis of properties of DFS and applications of the \\(s\\)-\\(t\\) connectivity algorithms due to Reingold and Barnes et al., both of which run in sublinear space."
+    },
+    "15288922": {
+      "title": "Improved space efficient algorithms for BFS, DFS and applications",
+      "abstract": "Recent work by Elmasry et al. (STACS 2015) and Asano et al. (ISAAC 2014), reconsidered classical fundamental graph algorithms focusing on improving the space complexity. We continue this line of work focusing on space. Our first result is a simple data structure that can maintain any subset $S$ of a universe of $n$ elements using $n+o(n)$ bits and support in constant time, apart from the standard insert, delete and membership queries, the operation {\\it findany} that finds and returns any element of the set (or outputs that the set is empty). Using this we give a BFS implementation that takes $O(m+n)$ time using at most $2n+o(n)$ bits. Later, we further improve the space requirement of BFS to at most $1.585n + o(n)$ bits. We demonstrate the use of our data structure by developing another data structure using it that can represent a sequence of $n$ non-negative integers $x_1, x_2, \\ldots x_n$ using at most $\\sum_{i=1}^n x_i + 2n + o(\\sum_{i=1}^n x_i+n)$ bits and, in constant time, determine whether the $i$-th element is $0$ or decrement it otherwise. We also discuss an algorithm for finding a minimum weight spanning tree of a weighted undirected graph using at most $n+o(n)$ bits. For DFS, we have two kinds of results. Specifically, we provide an implementation for DFS that takes $O(m+n)$ time using $O(m+n)$ bits. Using the DFS algorithm and other careful implementations, we can determine cut vertices, bridges and maximal 2-connected components among others, in $O(m+n)$ time and $O(m+n)$ bits. We also present space efficient implementations for finding strongly connected components, topological sort, and a sparse biconnected subgraph of a biconnected graph using $O(n)$ bits. These improve the space required for earlier implementations from $\\Omega (n\\lg n)$ bits."
+    },
+    "17435687": {
+      "title": "Space-efficient basic graph algorithms",
+      "abstract": "We reconsider basic algorithmic graph problems in a setting where an n-vertex input graph is read-only and the computation must take place in a working memory of O(n) bits or little more than that. For computing connected components and performing breadth-first search, we match ::: the running times of standard algorithms that have no memory restrictions, for depth-first search and related problems we come within a factor of \\Theta(\\log\\log n), and for computing minimum spanning forests and single-source shortest-paths trees we come close for sparse input graphs."
+    },
+    "2448468": {
+      "title": "Biconnectivity, chain decomposition and stnumbering using O(n) bits",
+      "abstract": "Recent work by Elmasry et al. (STACS 2015) and Asano et al. (ISAAC 2014) reconsidered classical fundamental graph algorithms focusing on improving the space complexity. Elmasry et al. gave, among others, an implementation of depth first search (DFS) of a graph on $n$ vertices and $m$ edges, taking $O(m \\lg \\lg n)$ time\\footnote{We use $\\lg$ to denote logarithm to the base $2$.} using $O(n)$ bits of space improving on the time bound of $O(m \\lg n)$ due to Asano et al. Subsequently Banerjee et al. (COCOON 2016) gave an $O(m+n)$ time implementation using $O(m+n)$ bits, for DFS and its classical applications (including testing for biconnectivity, and finding cut vertices and cut edges). Recently, Kammer et al. (MFCS 2016) gave an algorithm for testing biconnectivity using $O(n + \\min \\{ m, n \\lg \\lg n \\})$ bits in linear time. In this paper, we consider $O(n)$ bits implementations of the classical applications of DFS. These include the problem of finding cut vertices, and biconnected components, chain decomposition and $st$-numbering. Classical algorithms for them typically use DFS and some $\\Omega (\\lg n)$ bits of information at each node. Our $O(n)$-bit implementations for these problems take $O(m \\lg^c n \\lg\\lg n)$ time for some small constant $c$ ($c \\leq 3$). Central to our implementation is a succinct representation of the DFS tree and a space efficient partitioning of the DFS tree into connected subtrees, which maybe of independent interest for designing space efficient graph algorithms."
+    }
+  },
+  "generator": "fallback_v4"
+}

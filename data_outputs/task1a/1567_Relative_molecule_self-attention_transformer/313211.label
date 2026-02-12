@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "In contrast to most of the aforementioned models, MAT incorporates distance information in its self-attention module.",
+    "MAT stacks N Molecule Self-Attention blocks followed by a mean pooling and a prediction layer.For a D-dimensional sequence embedding X ∈ R N ×D, the standard self-attention operation is defined as where Q = XW Q, K = XW K, and V = XW V. Molecule Self-Attention extends Eq.",
+    "(1) to include additional information about bonds and distances between atoms in the molecule as where a, d, g are the weights given to individual parts of the attention module, g is a function given by either a softmax, or an element-wise g(d) = exp(-d), A is the adjacency matrix (with A (i,j) = 1 if there exists a bond between atoms i and j and 0 otherwise) and D is the dis- tance matrix, where D (i,j) represents the distance between the atoms i and j in the 3D space.",
+    "Ultimately, Molecule Attention Transformer incorporates the interatomic distances and atom adjacency by calculating the weighted average of the classical self-attention, a function of atoms' distance, and a function of atoms' neighborhood in its Molecule Self-Attention layer.",
+    "(1)A(X) = Softmax QK T d k V,(2)A(X) = a Softmax QK T d k + d g(D) + g A V,Self-attention can relate input elements in a highly flexible manner."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "The parameter λ represents the threshold for the relative error between y i and x i, and its manipulation predominantly influences x i due to the constant value of y i.",
+    "Hence, it becomes possible to fine-tune sentence semantics by adjusting sentence dimensions.",
+    "We present techniques to diminish the dimensionality of the sentence representation at both the sentence and correlated word levels.",
+    "The process of computing sentence similarity is illustrated in Algorithm 1.",
+    "Algorithm 1The process of computing the sentence similarity.Require: Input sentence pair, (S 1, S 2); Ensure: Obtain the sentence similarity, x; 1: Store all the content words in the sentence S 1 in an orderly manner,A = {w 1, w 2, • • •, w n },where n represents the total number of content words in the sentence S 1; 2: for each word w i ∈ A do 3:Store two consecutive adjacent word pairs,B = {w 1 w 2, w 2 w 3, • • •, w n-1 w n }; 4:Store the PoS combination of all consecutive adjacent word pairs,C = {P 1 P 2, P 2 P 3, • • •, P n-1 P n }; 5:Create the weight of each the PoS combination,E = {T 1,2, T 2,3, • • •, T n-1,n }; 6:Calculate the coefficient of each correlated words,D = { p 1,2, p 2,3, • • •, p n-1,n }; 7: Normalize each word2vec w i, |w i; 8: Generate the embedding of correlated words, |w i w i+1; 9: Generate the weighted embedding of correlated words, p i,i+1 × |w i w i+1; 10: Sum up all the weighted embeddings to generate the sentence embedding of S 1, |T 1 = ( p i,i+1 × |w i w i+1); 11: end for 12: Obtain the sentence embedding of sentence S 2, |T 2; 13: Compute the sentence similarity of (S 1, S 2), x; 14: Compute the two constrain functions, f i (x), g i (x); 15: if f i (x) > 0 or g i (x) > 0 then 16: Optimize sentence embeddings by dimension reduction models, (|T 1, |T 2); 17: Compute the similarity of (|T 1, |T 2), x; 18: end if 19: return x. Pruning on Sentence Level of AQE (SQE)SQE mainly achieves sentence dimensionality reduction by directly pruning the semantically smaller values in sentence representation."
+  ],
+  "correct_citations": []
+}

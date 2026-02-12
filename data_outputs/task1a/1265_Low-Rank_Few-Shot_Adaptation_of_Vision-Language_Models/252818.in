@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "They typically consist of L stacked blocks, each containing a multi-head attention (MHA) module:head i = Softmax xW qi (xW ki) T √ d (xW vi) MHA(x) = concat(head 1,..., head H)W owhere d is a scaling factor and W Ki, W Qi, W Vi, W o are weight matrices, corresponding respectively to the key, query, value and output matrices.",
+    "Note that other works extend this approach to the feed-forward module's weight matrices [17].LoRA for VLMs.",
+    "A straightforward way to apply LoRA in vision-language is to apply it to all the matrices of the vision and text encoders.",
+    "However, due to the relatively small supervision inherent to the few-shot setting, we only apply low-rank matrices on the query, key and value matrices with r = 2.",
+    "We regularize the input of the LoRA module by a dropout layer with p = 0.25 [21]."
+  ]
+}

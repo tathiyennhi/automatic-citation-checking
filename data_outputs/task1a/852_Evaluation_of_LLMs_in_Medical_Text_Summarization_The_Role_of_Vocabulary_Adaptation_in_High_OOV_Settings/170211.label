@@ -1,0 +1,14 @@
+{
+  "style": "APA",
+  "texts": [
+    "We directly select x tokens (where x represents the quota, set to 500 in this case, in steps of 50) from the candidate vocabulary tokens, ranking them by their frequency in descending order.",
+    "We then follow the MEDVOC-based hyperparameter search optimizing fragment score to obtain the optimal vocabulary to be added.",
+    "To offset the absence of such derivative tokens, we use AdaptBPE tokenization scheme (Balde et al., 2024a) instead of the standard Llama tokenizers.",
+    "Instead of directly utilizing merge rules, AdaptBPE first checks whether a part of the input token (using longest-first match) directly exists in the added vocabulary, preserves it from splitting, and then runs the merge-based byte-pair encoding scheme iteratively on the rest of the input.",
+    "Here, we avoid including the scaffolding tokens (Cognetta et al., 2024; Bauwens and Delobelle, 2024; Chizhov et al., 2024; Lian et al., 2025) during the vocabulary addition phase; these are derivative tokens that remain under-trained once the whole word is added to the vocabulary."
+  ],
+  "correct_citations": [
+    "To offset the absence of such derivative tokens, we use AdaptBPE tokenization scheme (Balde et al., 2024a) instead of the standard Llama tokenizers.",
+    "Here, we avoid including the scaffolding tokens (Cognetta et al., 2024; Bauwens and Delobelle, 2024; Chizhov et al., 2024; Lian et al., 2025) during the vocabulary addition phase; these are derivative tokens that remain under-trained once the whole word is added to the vocabulary."
+  ]
+}

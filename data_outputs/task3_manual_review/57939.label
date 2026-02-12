@@ -1,0 +1,20 @@
+{
+  "doc_id": "57939",
+  "text": "ANN is a time-delay Neural Network which computes the probability of being in a state of an HMM, given the observation made of a set of input frames. This hybrid HMM-ANN system is described in [CITATION_1] . The input window is 7 frames wide, and each frame contains the set of features extracted by the front-end along with their first and second time derivatives. There are two hidden layers. The second hidden layer is fully connected with the output layer that estimates 686 emission probabilities of phonemes and diphone transitions. Only phoneme probabilities are considered in this study. The ANN parameters are trained with a rich corpus of generic telephone conversations. The GMMs are mixtures of 512 gaussians per phoneme. Their parameters are estimated with Maximum Likelihood (ML) estimation with the training set of each specific application and phoneme segments obtained with the ANN. They are introduced for deriving confidence indicators and not for use in an independent ASR system. The time segment in which acoustic features are computed is the same for both model types, but it could be different. In general, many model types could be considered by varying the phonetic context of the same phoneme or by varying the acoustic context in which parameters describing time frame nT are computed. Models with or without adaptation could also be compared. The comparison between phoneme posterior probability distributions obtained with ANN and GMM is performed on a segment SEG a (b,e,t). Symbol a describes the type of features, b indicates the beginning time of the segment, e indicates the end time and t the time at the middle. The relative entropy between the two posterior probability",
+  "correct_citation": {
+    "[CITATION_1]": "10921966"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This hybrid HMM-ANN system is described in"
+    }
+  ],
+  "bib_entries": {
+    "10921966": {
+      "title": "Multi-source neural networks for speech recognition",
+      "abstract": "In speech recognition the most diffused technology (hidden Markov models) is constrained by the condition of stochastic independence of its input features. That limits the simultaneous use of features derived from the speech signal with different processing algorithms. On the contrary artificial neural networks (ANN) are capable of incorporating multiple heterogeneous input features, which do not need to be treated as independent, finding the optimal combination of these features for classification. The purpose of this work is the exploitation of this characteristic of ANNs to improve the speech recognition accuracy through the combined use of input features coming from different sources (different feature extraction algorithms). We integrate two input sources: the Mel based cepstral coefficients (MFCC) derived from FFT and the RASTA-PLP cepstral coefficients. The results show that this integration leads to an error reduction of 26% on a telephone quality test set."
+    }
+  },
+  "generator": "fallback"
+}

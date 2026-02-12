@@ -1,0 +1,34 @@
+{
+  "doc_id": "14643",
+  "text": "where the constraint on the filters is to avoid scaling ambiguities. Solving for the sparse codes (x j ) J j=1 and the filters (h c ) C c=1 simultaneously in Eq. 8 is a non-convex optimization problem. The alternating-minimization method solves Eq. 8 in two stages: given an initial estimate of the filters, the algorithm alternates between a CSC step to estimate sparse codes (x j ) J j=1 and a dictionary update step to estimate the filters (h c ) C c=1 given the newly-estimated sparse codes [CITATION_1] . In the case of dense (as opposed to convolutional) dictionary, [CITATION_2] shows that the alternating minimization algorithm converges to the true dictionary whenever the dictionary satisfies RIP [CITATION_3] . A. Convolutional Sparse Coding Update Given the filters H, the CSC step is separable over the J examples. We can solve for the j th sparse code x j using the unconstrained form of (P 2 ) given by",
+  "correct_citation": {
+    "[CITATION_1]": "1478142",
+    "[CITATION_2]": "1478142",
+    "[CITATION_3]": "15462470"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The alternating-minimization method solves Eq. 8 in two stages: given an initial estimate of the filters, the algorithm alternates between a CSC step to estimate sparse codes (x j ) J j=1 and a dictionary update step to estimate the filters (h c ) C c=1 given the newly-estimated sparse codes"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In the case of dense (as opposed to convolutional) dictionary,"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In the case of dense (as opposed to convolutional) dictionary, shows that the alternating minimization algorithm converges to the true dictionary whenever the dictionary satisfies RIP"
+    }
+  ],
+  "bib_entries": {
+    "15462470": {
+      "title": "The restricted isometry property and its implications for compressed sensing",
+      "abstract": "Abstract It is now well-known that one can reconstruct sparse or compressible signals accurately from a very limited number of measurements, possibly contaminated with noise. This technique known as “compressed sensing” or “compressive sampling” relies on properties of the sensing matrix such as the restricted isometry property . In this Note, we establish new results about the accuracy of the reconstruction from undersampled measurements which improve on earlier estimates, and have the advantage of being more elegant. To cite this article: E.J. Candes, C. R. Acad. Sci. Paris, Ser. I 346 (2008)."
+    },
+    "1478142": {
+      "title": "Learning sparsely used overcomplete dictionaries via alternating minimization",
+      "abstract": "We consider the problem of sparse coding, where each sample consists of a sparse linear combination of a set of dictionary atoms, and the task is to learn both the dictionary elements and the mixing coefficients. Alternating minimization is a popular heuristic for sparse coding, where the dictionary and the coefficients are estimated in alternate steps, keeping the other fixed. Typically, the coefficients are estimated via $\\ell_1$ minimization, keeping the dictionary fixed, and the dictionary is estimated through least squares, keeping the coefficients fixed. In this paper, we establish local linear convergence for this variant of alternating minimization and establish that the basin of attraction for the global optimum (corresponding to the true dictionary and the coefficients) is $\\mathcal{O}(1/s^{2})$, where $s$ is the sparsity level in each sample and the dictionary satisfies restricted isometry property. Combined with the recent results of approximate dictionary estimation, this yields provable guar..."
+    }
+  },
+  "generator": "fallback"
+}

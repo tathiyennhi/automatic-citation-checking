@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This latent code z 0 is then progressively combined with Gaussian noise ϵ through a forward process, which can be summarized as follows:z tdiff = ᾱtdiff z 0 + 1 -ᾱtdiff ϵ, ϵ ∼ N (0, I),(1)where ᾱtdiff = tdiff i=1 α i, α i ∈ (0, 1).",
+    "The diffusion model is trained to approximate the original data distribution with a denoising objective:E z0,c,ϵ,tdiff [∥ϵ θ (z tdiff, c, t diff) -ϵ∥],(2)where ϵ θ is the model prediction.",
+    "During inference, with a random Gaussian noise start z Tdiff and condition c, the diffusion model carries out the opposite process from step T diff down to 1 to get the encoding of sampled image ẑ0 by:ẑtdiff-1 = 1 √ α tdiff ẑtdiff - 1 -α tdiff √ 1 -ᾱtdiff ϵ θ ( ẑtdiff, c, t diff) +σ tdiff ϵ, (3) where σ tdiff = 1-ᾱt diff -1 1-ᾱt diff β tdiff, β tdiff = 1 -α tdiff.",
+    "Problem DefinitionAdversarial attack aims to craft an imperceptible perturbation δ, added on the clean image x as the adversarial sample x adv, resulting in the wrong or disruptive output of machine learning models.",
+    "The key concept of the adversarial attack against LDM-based image editing can be summarized as two objectives:Objective 1: min δ d(f (x + δ), x) s.t."
+  ],
+  "correct_citations": []
+}

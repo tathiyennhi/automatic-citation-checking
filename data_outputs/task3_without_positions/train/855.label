@@ -1,0 +1,75 @@
+{
+  "doc_id": "855",
+  "text": "where N (s t ) is the number of times that the state has been visited. Although this method is efficient in a tabular environment (with a discrete state space), it is hardly applicable when states are numerous or continuous since an agent never really returns in the same state. A first solution proposed by [CITATION_1] , called TRPO-AE-hash, is to hash the state space using SimHash [CITATION_2] when it is too large. However these results are only slightly better than those obtained with a classic exploration policy. Other attempts of adaptation to a very large state space have been proposed, like DDQN-PC [CITATION_3] , A3C+ [CITATION_4] or DQN-PixelCNN [CITATION_5] , which rely on density models [CITATION_6] [CITATION_7] . Density models allow to compute the pseudo-count [CITATION_8] , which is an adaptation of the counting enabling its generalization from a state towards neighbourhood states. The intrinsic reward is then:",
+  "correct_citation": {
+    "[CITATION_1]": "14357699",
+    "[CITATION_2]": "4229473",
+    "[CITATION_3]": "8310565",
+    "[CITATION_4]": "8310565",
+    "[CITATION_5]": "6933296",
+    "[CITATION_6]": "195833177",
+    "[CITATION_7]": "12819088",
+    "[CITATION_8]": "8310565"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A first solution proposed by  , called TRPO-AE-hash, is to hash the state space using SimHash  when it is too large."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A first solution proposed by  , called TRPO-AE-hash, is to hash the state space using SimHash  when it is too large."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Other attempts of adaptation to a very large state space have been proposed, like DDQN-PC  , A3C+  or DQN-PixelCNN  , which rely on density models   ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Other attempts of adaptation to a very large state space have been proposed, like DDQN-PC  , A3C+  or DQN-PixelCNN  , which rely on density models   ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Other attempts of adaptation to a very large state space have been proposed, like DDQN-PC  , A3C+  or DQN-PixelCNN  , which rely on density models   ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Other attempts of adaptation to a very large state space have been proposed, like DDQN-PC  , A3C+  or DQN-PixelCNN  , which rely on density models   ."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Other attempts of adaptation to a very large state space have been proposed, like DDQN-PC  , A3C+  or DQN-PixelCNN  , which rely on density models   ."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Density models allow to compute the pseudo-count  , which is an adaptation of the counting enabling its generalization from a state towards neighbourhood states."
+    }
+  ],
+  "bib_entries": {
+    "14357699": {
+      "title": "# exploration: A study of count-based exploration for deep reinforcement learning",
+      "abstract": "Count-based exploration algorithms are known to perform near-optimally when used in conjunction with tabular reinforcement learning (RL) methods for solving small discrete Markov decision processes (MDPs). It is generally thought that count-based methods cannot be applied in high-dimensional state spaces, since most states will only occur once. ::: Recent deep RL exploration strategies are able to deal with high-dimensional continuous state spaces through complex heuristics, often relying on optimism in the face of uncertainty or intrinsic motivation. ::: ::: In this work, we describe a surprising finding: a simple generalization of the classic count-based approach can reach near state-of-the-art performance on various high-dimensional and/or continuous deep RL benchmarks. States are mapped to hash codes, which allows to count their occurrences with a hash table. These counts are then used to compute a reward bonus according to the classic count-based exploration theory. We find that simple hash functions can achieve surprisingly good results on many challenging tasks. Furthermore, we show that a domain-dependent learned hash code may further improve these results. ::: ::: Detailed analysis reveals important aspects of a good hash function: 1) having appropriate granularity and 2) encoding information relevant to solving the MDP. This exploration strategy achieves near state-of-the-art performance on both continuous control tasks and Atari 2600 games, hence providing a simple yet powerful baseline for solving MDPs that require considerable exploration."
+    },
+    "12819088": {
+      "title": "Skip context tree switching",
+      "abstract": "Context Tree Weighting is a powerful probabilistic sequence prediction technique that efficiently performs Bayesian model averaging over the class of all prediction suffix trees of bounded depth. In this paper we show how to generalize this technique to the class of K-skip prediction suffix trees. Contrary to regular prediction suffix trees, K-skip prediction suffix trees are permitted to ignore up to K contiguous portions of the context. This allows for significant improvements in predictive accuracy when irrelevant variables are present, a case which often occurs within record-aligned data and images. We provide a regret-based analysis of our approach, and empirically evaluate it on the Calgary corpus and a set of Atari 2600 screen prediction tasks."
+    },
+    "195833177": {
+      "title": "Self-supervised learning of distance functions for goal-conditioned reinforcement learning",
+      "abstract": "Goal-conditioned policies are used in order to break down complex reinforcement learning (RL) problems by using subgoals, which can be defined either in state space or in a latent feature space. This can increase the efficiency of learning by using a curriculum, and also enables simultaneous learning and generalization across goals. A crucial requirement of goal-conditioned policies is to be able to determine whether the goal has been achieved. Having a notion of distance to a goal is thus a crucial component of this approach. However, it is not straightforward to come up with an appropriate distance, and in some tasks, the goal space may not even be known a priori. In this work we learn a distance-to-goal estimate which is computed in terms of the number of actions that would need to be carried out in a self-supervised approach. Our method solves complex tasks without prior domain knowledge in the online setting in three different scenarios in the context of goal-conditioned policies a) the goal space is the same as the state space b) the goal space is given but an appropriate distance is unknown and c) the state space is accessible, but only a subset of the state space represents desired goals, and this subset is known a priori. We also propose a goal-generation mechanism as a secondary contribution."
+    },
+    "8310565": {
+      "title": "Unifying count-based exploration and intrinsic motivation",
+      "abstract": "We consider an agent's uncertainty about its environment and the problem of generalizing this uncertainty across observations. Specifically, we focus on the problem of exploration in non-tabular reinforcement learning. Drawing inspiration from the intrinsic motivation literature, we use sequential density models to measure uncertainty, and propose a novel algorithm for deriving a pseudo-count from an arbitrary sequential density model. This technique enables us to generalize count-based exploration algorithms to the non-tabular case. We apply our ideas to Atari 2600 games, providing sensible pseudo-counts from raw pixels. We transform these pseudo-counts into intrinsic rewards and obtain significantly improved exploration in a number of hard games, including the infamously difficult Montezuma's Revenge."
+    },
+    "6933296": {
+      "title": "What is intrinsic motivation? a typology of computational approaches",
+      "abstract": "Intrinsic motivation, the causal mechanism for spontaneous exploration and curiosity, is a central concept in developmental psychology. It has been argued to be a crucial mechanism for open-ended cognitive development in humans, and as such has gathered a growing interest from developmental roboticists in the recent years. The goal of this paper is threefold. First, it provides a synthesis of the different approaches of intrinsic motivation in psychology. Second, by interpreting these approaches in a computational reinforcement learning framework, we argue that they are not operational and even sometimes inconsistent. Third, we set the ground for a systematic operational study of intrinsic motivation by presenting a formal typology of possible computational approaches. This typology is partly based on existing computational models, but also presents new ways of conceptualizing intrinsic motivation. We argue that this kind of computational typology might be useful for opening new avenues for research both in psychology and developmental robotics."
+    },
+    "4229473": {
+      "title": "Similarity estimation techniques from rounding algorithms",
+      "abstract": "(MATH) A locality sensitive hashing scheme is a distribution on a family $\\F$ of hash functions operating on a collection of objects, such that for two objects x,y, PrheF[h(x) = h(y)] = sim(x,y), where sim(x,y) e [0,1] is some similarity function defined on the collection of objects. Such a scheme leads to a compact representation of objects so that similarity of objects can be estimated from their compact sketches, and also leads to efficient algorithms for approximate nearest neighbor search and clustering. Min-wise independent permutations provide an elegant construction of such a locality sensitive hashing scheme for a collection of subsets with the set similarity measure sim(A,B) = \\frac{|A P B|}{|A P Ehe\\F [d(h(P),h(Q))] x O(log n log log n). EMD(P, Q). ."
+    }
+  },
+  "generator": "fallback_v4"
+}

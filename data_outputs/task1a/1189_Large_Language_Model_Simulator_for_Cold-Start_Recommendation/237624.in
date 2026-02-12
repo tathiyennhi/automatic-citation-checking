@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Specifically, we add trainable rank decomposition matrices to each weight matrix of the original model.",
+    "For a given weight matrix 𝑊 ∈ R 𝑑 ×𝑔, we add a low-rank update:𝑊 ′ = 𝑊 + Δ𝑊 = 𝑊 + 𝐵𝐴,(11)where 𝐵 ∈ R 𝑑 ×𝑟 and 𝐴 ∈ R 𝑟 ×𝑔 are the low-rank decomposition matrices, with 𝑟 representing the rank of the decomposition, which is generally much smaller than the dimensions 𝑑 and 𝑔.The update on the transformer networks can be written as follows:𝑄 = 𝑊 𝑄 𝑥 + Δ𝑊 𝑄 𝑥 = 𝑊 𝑄 𝑥 + 𝐵 𝑄 𝐴 𝑄 𝑥,(12)𝐾 = 𝑊 𝐾 𝑥 + Δ𝑊 𝐾 𝑥 = 𝑊 𝐾 𝑥 + 𝐵 𝐾 𝐴 𝐾 𝑥,(13)𝑉 = 𝑊 𝑉 𝑥 + Δ𝑊 𝑉 𝑥 = 𝑊 𝑉 𝑥 + 𝐵 𝑉 𝐴 𝑉 𝑥,(14)where 𝑊 𝑄, 𝑊 𝐾, and 𝑊 𝑉 are the original weight matrices for Query, Key, and Value projections, 𝐵 𝑄, 𝐵 𝐾, 𝐵 𝑉 and 𝐴 𝑄, 𝐴 𝐾, 𝐴 𝑉 are the low-rank decomposition matrices for each projection.Similarly, for the feed-forward layers, we have:FFN LoRA (𝑥) = ReLU(𝑥 (𝑊 1 + 𝐴 1 𝐵 1) + 𝑏 1)(𝑊 2 + 𝐴 2 𝐵 2) + 𝑏 2.",
+    "(15)where 𝐵 1, 𝐴 1, 𝐵 2, and 𝐴 2 are the low-rank decomposition matrices for the FFN.",
+    "Coupled Filter ModelTraining.",
+    "The coupled filter model has two design proposals: 1. reflect user item behaviors; 2. coupled with the LLM."
+  ]
+}

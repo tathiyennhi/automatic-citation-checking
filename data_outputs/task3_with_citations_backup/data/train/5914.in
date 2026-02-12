@@ -1,0 +1,17 @@
+{
+  "text": "There are a number of different masking methods that provide different levels of security. Three of these methods are Boolean first order, affine and Boolean second order masking. The first and third of these both use addition to add the random mask to the secret information, where addition is modulo two, carried out with the x-or operation. The second method, affine, uses multiplication and addition of the form ax + b over GF (2 8 ), where a and b are random and x is the state being masked. Boolean first order and affine provide security against first order attacks (where a less powerful adversary is considered) with affine being around 30-40 times more resistant than first order Boolean masking [CITATION_1] . Boolean second order is considered a more secure implementation as it can give security against second order attacks (where a more powerful adversary is considered) [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "8622903",
+    "[CITATION_2]": "10284339"
+  },
+  "bib_entries": {
+    "10284339": {
+      "title": "Higher Order Masking of the AES",
+      "abstract": "The development of masking schemes to secure AES implementations against side channel attacks is a topic of ongoing research. Many different approaches focus on the AES S-box and have been discussed in the previous years. Unfortunately, to our knowledge most of these countermeasures only address first-order DPA. In this article, we discuss the theoretical background of higher order DPA. We give the expected measurement costs an adversary has to deal with for different hardware models. Moreover, we present a masking scheme which protects an AES implementation against higher order DPA. We have implemented this masking scheme for various orders and present the corresponding performance details implementors will have to expect."
+    },
+    "8622903": {
+      "title": "Affine Masking against Higher-Order Side Channel Analysis",
+      "abstract": "In the last decade, an effort has been made by the research community to find efficient ways to thwart side channel analysis (SCA) against physical implementations of cryptographic algorithms. A common countermeasure for implementations of block ciphers is Boolean masking which randomizes the variables to be protected by the bitwise addition of one or several random value(s). However, advanced techniques called higher-order SCA attacks exist that overcome such a countermeasure. These attacks are greatly favored by the very nature of Boolean masking. In this paper, we revisit the affine masking initially introduced by Von Willich in 2001 as an alternative to Boolean masking. We show how to apply it to AES at the cost of a small timing overhead compared to Boolean masking. We then conduct an in-depth analysis pinpointing the leakage reduction implied by affine masking. Our results clearly show that the proposed scheme provides an excellent performance-security trade-off to protect AES against higher-order SCA."
+    }
+  }
+}

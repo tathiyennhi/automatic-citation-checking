@@ -1,0 +1,44 @@
+{
+  "doc_id": "39453",
+  "text": "We compare two strategies, i.e., 1) to use RD after every DMR iteration; 2) to use RD only when DMR is converged. We then evaluate the effectiveness of trained RD by comparing with Gaussian denoisers, e.g., DnCNN [CITATION_1] and FFDNet [CITATION_2] . • Finally, we compare our results with a non-event-based frame interpolation algorithm, SepConv [CITATION_3] .",
+  "correct_citation": {
+    "[CITATION_1]": "996788",
+    "[CITATION_2]": "10514149",
+    "[CITATION_3]": "13697803"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We then evaluate the effectiveness of trained RD by comparing with Gaussian denoisers, e.g., DnCNN  and FFDNet  .",
+      "s_span": 114,
+      "e_span": 251
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We then evaluate the effectiveness of trained RD by comparing with Gaussian denoisers, e.g., DnCNN  and FFDNet  .",
+      "s_span": 114,
+      "e_span": 251
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "• Finally, we compare our results with a non-event-based frame interpolation algorithm, SepConv  .",
+      "s_span": 252,
+      "e_span": 362
+    }
+  ],
+  "bib_entries": {
+    "13697803": {
+      "title": "Video frame interpolation via adaptive separable convolution",
+      "abstract": "Standard video frame interpolation methods first estimate optical flow between input frames and then synthesize an intermediate frame guided by motion. Recent approaches merge these two steps into a single convolution process by convolving input frames with spatially adaptive kernels that account for motion and re-sampling simultaneously. These methods require large kernels to handle large motion, which limits the number of pixels whose kernels can be estimated at once due to the large memory demand. To address this problem, this paper formulates frame interpolation as local separable convolution over input frames using pairs of 1D kernels. Compared to regular 2D kernels, the 1D kernels require significantly fewer parameters to be estimated. Our method develops a deep fully convolutional neural network that takes two input frames and estimates pairs of 1D kernels for all pixels simultaneously. Since our method is able to estimate kernels and synthesizes the whole video frame at once, it allows for the incorporation of perceptual loss to train the neural network to produce visually pleasing frames. This deep neural network is trained end-to-end using widely available video data without any human annotation. Both qualitative and quantitative experiments show that our method provides a practical solution to high-quality video frame interpolation."
+    },
+    "10514149": {
+      "title": "Ffdnet: Toward a fast and flexible solution for cnn based image denoising",
+      "abstract": "Due to the fast inference and good performance, discriminative learning methods have been widely studied in image denoising. However, these methods mostly learn a specific model for each noise level, and require multiple models for denoising images with different noise levels. They also lack flexibility to deal with spatially variant noise, limiting their applications in practical denoising. To address these issues, we present a fast and flexible denoising convolutional neural network, namely FFDNet, with a tunable noise level map as the input. The proposed FFDNet works on downsampled sub-images to speed up the inference, and adopts orthogonal regularization to enhance the generalization ability. In contrast to the existing discriminative denoisers, FFDNet enjoys several desirable properties, including (i) the ability to handle a wide range of noise levels (i.e., [0, 75]) effectively with a single network, (ii) the ability to remove spatially variant noise by specifying a non-uniform noise level map, and (iii) faster speed than benchmark BM3D even on CPU without sacrificing denoising performance. Extensive experiments on synthetic and real noisy images are conducted to evaluate FFDNet in comparison with state-of-the-art denoisers. The results show that FFDNet is effective and efficient, making it highly attractive for practical denoising applications."
+    },
+    "996788": {
+      "title": "Beyond a gaussian denoiser: Residual learning of deep cnn for image denoising",
+      "abstract": "The discriminative model learning for image denoising has been recently attracting considerable attentions due to its favorable denoising performance. In this paper, we take one step forward by investigating the construction of feed-forward denoising convolutional neural networks (DnCNNs) to embrace the progress in very deep architecture, learning algorithm, and regularization method into image denoising. Specifically, residual learning and batch normalization are utilized to speed up the training process as well as boost the denoising performance. Different from the existing discriminative denoising models which usually train a specific model for additive white Gaussian noise at a certain noise level, our DnCNN model is able to handle Gaussian denoising with unknown noise level (i.e., blind Gaussian denoising). With the residual learning strategy, DnCNN implicitly removes the latent clean image in the hidden layers. This property motivates us to train a single DnCNN model to tackle with several general image denoising tasks, such as Gaussian denoising, single image super-resolution, and JPEG image deblocking. Our extensive experiments demonstrate that our DnCNN model can not only exhibit high effectiveness in several general image denoising tasks, but also be efficiently implemented by benefiting from GPU computing."
+    }
+  },
+  "generator": "fallback_v4"
+}

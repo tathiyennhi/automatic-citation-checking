@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "However, the combination of 3D parallelism and optimizer state sharding targeted by our checkpointing scenario results in many independent shards per GPU that correspond to both the model parameters and the optimizer state.",
+    "Eventually, each of these shards needs to be flushed to persistent storage, typically as a separate file, as illustrated in Figure 2(c).In this case, conventional asynchronous multi-level approaches would serialize the checkpointing of the shards.",
+    "For example, if we consider three shards in a checkpoint, two of which correspond to layers 𝐿1 and 𝐿2 and the third corresponds to the optimizer state shard, then only the flushing of the optimizer state shard will overlap with the next iteration (forward pass, backward pass, and updates), while the rest of the operations (allocate, copy, flush 𝐿1; allocate, copy, flush 𝐿2; allocate, copy optimizer state) are serialized.",
+    "This severely degrades the performance of asynchronous checkpointing to the point where it may become slower than synchronous checkpointing.",
+    "To optimize and extend the conventional asynchronous multi-level checkpointing approach for multi-layered LLMs, the following approach, illustrated in Figure 5(b), can be used -all the three shards in the checkpoint (𝐿1, 𝐿2, and optimizer) can be first snapshotted quickly using device-to-host copies, which will block the training for all layers except the snapshot of last layer, which can be overlapped with the next training iteration."
+  ],
+  "correct_citations": []
+}

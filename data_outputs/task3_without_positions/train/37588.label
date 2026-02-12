@@ -1,0 +1,20 @@
+{
+  "doc_id": "37588",
+  "text": "Peakzilla [CITATION_1] not only is a peak caller primarily designed for ChIP-seq but is also capable of analyzing ChIP-exo experiments. The design principle of Peakzilla is to have a parameter-free peak caller that learns the shape and size of binding sites from the data. Peakzilla first estimates the peak width by calculating the average distance between sense and antisense reads on the top 200 most enriched regions and multiplying it by two. Next, expected distributions of sense and antisense strand peaks are modeled as normal distributions with a standard deviation equaling to the peak width divided by five, and locations at one-fourth and three-fourth of the peak width. This somewhat arbitrary model is later used to assess if peaks fit the 'expected' shape of the signal of a binding event. Peakzilla identifies binding sites by scanning the genome with a half-peak-sized sliding window that computes the total read count on the sense strand downstream from the current index, and within a same sized window upstream on the antisense strand. The final set of peaks consists of such peak pairs that are local maxima at least half of a peak size apart from each other. To obtain the final peak score, the total read count is multiplied with a distribution score. Distribution score is calculated by fitting the shape of the sense-, and antisense strand peaks to the expected normal distributions.",
+  "correct_citation": {
+    "[CITATION_1]": "7182329"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Peakzilla  not only is a peak caller primarily designed for ChIP-seq but is also capable of analyzing ChIP-exo experiments."
+    }
+  ],
+  "bib_entries": {
+    "7182329": {
+      "title": "Identification of transcription factor binding sites from ChIP-seq data at high resolution",
+      "abstract": "Motivation: Chromatin immunoprecipitation coupled to next-generation sequencing (ChIP-seq) is widely used to study the in vivo binding sites of transcription factors (TFs) and their regulatory targets. Recent improvements to ChIP-seq, such as increased resolution, promise deeper insights into transcriptional regulation, yet require novel computational tools to fully leverage their advantages. ::: ::: Results: To this aim, we have developed peakzilla, which can identify closely spaced TF binding sites at high resolution (i.e. resolves individual binding sites even if spaced closely), as we demonstrate using semisynthetic datasets, performing ChIP-seq for the TF Twist in Drosophila embryos with different experimental fragment sizes, and analyzing ChIP-exo datasets. We show that the increased resolution reached by peakzilla is highly relevant, as closely spaced Twist binding sites are strongly enriched in transcriptional enhancers, suggesting a signature to discriminate functional from abundant non-functional or neutral TF binding. Peakzilla is easy to use, as it estimates all the necessary parameters from the data and is freely available. ::: ::: Availability and implementation: The peakzilla program is available from https://github.com/steinmann/peakzilla or http://www.starklab.org/data/peakzilla/. ::: ::: Contact: gro.balkrats@krats ::: ::: Supplementary information: Supplementary data are available at Bioinformatics online."
+    }
+  },
+  "generator": "fallback_v4"
+}

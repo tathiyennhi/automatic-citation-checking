@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Accordingly, the overall loss function L is as follows:L = L 𝐴 + 𝑀 ∑︁ 𝑚=1 𝛼 𝑚 L 𝑇 𝑚,(2)where L 𝐴 denotes the objective of learning from ground truth answers, L 𝑇 𝑚 indicates the objective of learning from 𝑚-th teacher, 𝛼 𝑚 is the importance weight for 𝑇 𝑚, and 𝑀 is the number of teacher LLMs.",
+    "Formally, L 𝐴 and L 𝑇 𝑚 are defined as follows:L 𝐴 = 1 𝑁 𝑁 ∑︁ 𝑖=1 ℓ (𝑆 (𝑄 𝑖, 𝑂 𝑖, 𝑝 𝐴; 𝜃 𝑆), 𝐴 𝑖),(3)L 𝑇 𝑚 = 1 𝑁 𝑁 ∑︁ 𝑖=1 ℓ (𝑆 (𝑄 𝑖, 𝑂 𝑖, 𝑝 𝑚; 𝜃 𝑆), 𝑅 𝑚 𝑖),(4)where 𝑁 is the number of data samples, ℓ indicates the cross-entropy loss between the predicted and target tokens.",
+    "Here L 𝐴 encourages the student 𝑆 to generate ground truth answer 𝐴 𝑖 by minimizing the difference between it and the student output given the question 𝑄 𝑖, options 𝑂 𝑖, and instruction prefix 𝑝 𝐴 for generating answers.",
+    "On the other hand, L 𝑚 𝑇 facilitates the student 𝑆 to mimic the reasoning capability of teacher 𝑇 𝑚 by learning from its rationale 𝑅 𝑚 𝑖, with the guidance of instruction prefix 𝑝 𝑚 for 𝑇 𝑚. ExperimentsIn this section, we rigorously test TinyLLM against a series of empirical benchmarks across varied datasets and reasoning tasks.",
+    "In addition, we conduct efficiency analyses, ablation studies, parameter sensitivity tests, and case studies to demonstrate the effectiveness and superiority of our method."
+  ]
+}

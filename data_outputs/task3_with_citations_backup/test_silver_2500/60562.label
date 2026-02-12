@@ -1,0 +1,20 @@
+{
+  "doc_id": "60562",
+  "text": "The LSTM has 2 layers and 300 cells on each layer. We used the Penn Treebank dataset and evaluated the perplexity per word. We compared the state-of-the-art method in [CITATION_1] and our proposed method. Figure 4 shows the quantization errors across layers in ResNet-50 when applying the state-of-the-art 4-bit quantization to activations. We prepared, from the same initial condition, two activation-quantized networks (one with precision highway and the other with low precision skip connection) where weights are not modified and only activations are quantized to 4 bits. As the metric of the quantization error, we utilize a metric based on the cosine similarity between the activation tensor of corresponding layer in the full-precision and quantized networks, respectively.",
+  "correct_citation": {
+    "[CITATION_1]": "2558156"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We compared the state-of-the-art method in  and our proposed method."
+    }
+  ],
+  "bib_entries": {
+    "2558156": {
+      "title": "Effective quantization methods for recurrent neural networks",
+      "abstract": "Reducing bit-widths of weights, activations, and gradients of a Neural Network can shrink its storage size and memory usage, and also allow for faster training and inference by exploiting bitwise operations. However, previous attempts for quantization of RNNs show considerable performance degradation when using low bit-width weights and activations. In this paper, we propose methods to quantize the structure of gates and interlinks in LSTM and GRU cells. In addition, we propose balanced quantization methods for weights to further reduce performance degradation. Experiments on PTB and IMDB datasets confirm effectiveness of our methods as performances of our models match or surpass the previous state-of-the-art of quantized RNN."
+    }
+  },
+  "generator": "fallback_v4"
+}

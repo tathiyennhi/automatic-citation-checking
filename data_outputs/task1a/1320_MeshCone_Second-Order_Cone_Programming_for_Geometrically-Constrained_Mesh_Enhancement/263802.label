@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "This work introduces MeshCone, a conic optimization framework for geometry-guided mesh refinement.",
+    "Given a source mesh and reference target geometry, MeshCone formulates refinement as a second-order cone program (SOCP) that optimizes vertex positions to align with the target while enforcing smoothness via convex edge-length constraints and Tikhonov regulariza-tion.",
+    "By employing the Splitting Conic Solver (SCS), we obtain solutions with provable global optimality, guaranteed convergence at rate O(1/k), and Lipschitz stability under perturbations-properties unavailable in heuristic or neural approaches.Unlike blind smoothing methods such as Laplacian filtering that uniformly regularize without geometric awareness, MeshCone performs targetaware optimization that preserves fine details present in the reference while correcting structural defects in the source mesh.",
+    "This makes our approach particularly suited for workflows where reference geometry is available, including:Our contributions are as follows:• Formulation: We present the first formulation of mesh processing as a second-order cone program with provable global optimality guarantees, establishing a principled optimization baseline for the task.• Theoretical analysis: We establish convergence rate O(1/k), Lipschitz stability bounds, and sparsity properties O(n) that enable efficient large-scale optimization, with explicit connections to geometric mesh quality criteria.• Baseline establishment: We provide a deterministic, geometryaware baseline with mathematical guarantees against which future optimization-based and hybrid methods can be compared, identifying both capabilities and limitations of pure convex approaches.2 Related Work Surface Reconstruction MethodsClassical surface reconstruction has long been a central topic in computer graphics, providing the foundation for obtaining polygonal meshes from raw geometric data such as point clouds, volumetric grids, or 2D imagery.",
+    "Early approaches focused on isosurface extraction, where methods like Marching Cubes [36] enabled the generation of polygonal surfaces from discrete scalar fields by linearly interpolating intersections along voxel edges."
+  ],
+  "correct_citations": [
+    "Early approaches focused on isosurface extraction, where methods like Marching Cubes [36] enabled the generation of polygonal surfaces from discrete scalar fields by linearly interpolating intersections along voxel edges."
+  ]
+}

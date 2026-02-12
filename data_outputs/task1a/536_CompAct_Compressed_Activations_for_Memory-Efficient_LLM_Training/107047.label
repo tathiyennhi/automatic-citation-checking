@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "x 3 ∈ R b×h×l×n/h reshape x 3 to (b, l, n) None None",
+    "x 3 ∈ R b×h×l×n/h Shared with flash-attn Shared with flash-attn residual: x 5 = x 4 + x 1 None None",
+    "x 6 = RM SN orm(x 5)",
+    "x 5 ∈ R b×l×n x 5 ∈ R b×l×n (σ(x 5) 2 + ε) -1 2 ∈ R b×l (σ(x 5) 2 + ε)",
+    "-1 2 ∈ R b×l x gate = x 6 W ⊤ gate x 6 ∈ R b×l×n (x 6 P gate), (x 6 P up) ∈ R b×l×nr x up = x 6 W ⊤ up x act = SiLU (x gate x gate ∈ R b×l×m x gate ∈ R b×l×m x 7 = x act * x up x up ∈ R b×l×m x up ∈ R b×l×m x act ∈ R b×l×m x act ∈ R b×l×m x down = x 7 W ⊤ down x 7 ∈ R b×l×m (x 7 P down) ∈ R b×l×mr residual: x 8 = x d own + x 5 None None"
+  ],
+  "correct_citations": []
+}

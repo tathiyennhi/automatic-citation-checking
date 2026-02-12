@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Layer-Level Causal InfluenceWe first ask: Which encoder layer, if patched from the clean to the corrupt instance, most restores correct classification?",
+    "To answer this, we replace all attention-head activations in each layer of the corrupt instance with those from the clean instance, and measure the change in true-class probability ∆P.",
+    "Figure 2 reveals that patching Layer 0 yields the largest increase (∆P ≈ 0.89), with diminishing effects in Layers 1 and 2.",
+    "This indicates that the earliest attention block carries the most critical causal signal, motivating a finer-grained head-level analysis.The gradual decline in ∆P across deeper layers indicates a distributed representation: all layers encode useful information, but the causal signal is strongest at the model's entry point.",
+    "This observation motivates our next step, drilling down to the head-level within Layer 0 to pinpoint the individual components driving the bulk of this effect."
+  ],
+  "correct_citations": []
+}

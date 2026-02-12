@@ -1,0 +1,43 @@
+{
+  "doc_id": "23253",
+  "text": "Partial least squares (PLS) is a regression technique extensively used in chemometrics [CITATION_1] 15] . However, it is less well known or less accepted in the statistical machine learning community because PLS is engineered rather than motivated by a statistical description of the training data. The algorithm starts by extracting a direction u 1 in input space that highly correlates with the output. Then, the input is projected onto this direction, and the corresponding regression coefficient is computed. Further directions are obtained by deflation (see Algorithm 1). PLS is purely algorithmic and not derived from an optimality criteria. However, up to several digits, PLS produces the same result as SIMPLS [10]; for one factor, the results are even identical. SIMPLS maximizes (u T i X T y) [CITATION_2] under the constraint that the projections Xu i are orthogonal to each other, and that u T i u i = 1. Since (u T i X T y) 2 = corr 2 (Xu i , y) var(Xu i ), PLS has therefore been considered as a mixture between RRR and PCR [CITATION_3] . For sphericallydistributed input data (var(Xu i ) = const.), PLS produces the same result as RRR. Alternative methods can be constructed by tuning the objective function between var(Xu i ) and corr 2 (Xu i , y) [CITATION_4] . However, these methods require an additional parameter and are thus not considered here.",
+  "correct_citation": {
+    "[CITATION_1]": "11893285",
+    "[CITATION_2]": "9219592",
+    "[CITATION_3]": "122254474",
+    "[CITATION_4]": "122254474"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Partial least squares (PLS) is a regression technique extensively used in chemometrics"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "SIMPLS maximizes (u T i X T y) under the constraint that the projections Xu i are orthogonal to each other, and that u T i u i = 1."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Since (u T i X T y) 2 = corr 2 (Xu i, y) var(Xu i ), PLS has therefore been considered as a mixture between RRR and PCR"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Alternative methods can be constructed by tuning the objective function between var(Xu i ) and corr 2 (Xu i, y)"
+    }
+  ],
+  "bib_entries": {
+    "11893285": {
+      "title": "The collinearity problem in linear regression. The partial least squares (PLS) approach to generalized inverses",
+      "abstract": "The use of partial least squares (PLS) for handling collinearities among the independent variables X in multiple regression is discussed. Consecutive estimates $({\\text{rank }}1,2,\\cdots )$ are obtained using the residuals from previous rank as a new dependent variable y. The PLS method is equivalent to the conjugate gradient method used in Numerical Analysis for related problems.To estimate the “optimal” rank, cross validation is used. Jackknife estimates of the standard errors are thereby obtained with no extra computation.The PLS method is compared with ridge regression and principal components regression on a chemical example of modelling the relation between the measured biological activity and variables describing the chemical structure of a set of substituted phenethylamines."
+    },
+    "122254474": {
+      "title": "Dimensionality reduction approach to multivariate prediction",
+      "abstract": "Dimensionality reduction methods used for prediction can be cast into a general framework by deriving them from a common objective function. Such a function yields continuum of di/erent solutions, including all the known ones. Least-squares and maximum likelihood estimation of the model at the base of dimensionality reduction methods for prediction lead to an additive objective function. By letting this additive function be any convex linearcombination of the two addends, anotherobjective function fr om which a continuum of solutions can be obtained. c 2003 Elsevier B.V. All rights reserved."
+    },
+    "9219592": {
+      "title": "Locally weighted learning",
+      "abstract": "This paper surveys locally weighted learning, a form of lazy learning and memory-based learning, and focuses on locally weighted linear regression. The survey discusses distance functions, smoothing parameters, weighting functions, local model structures, regularization of the estimates and bias, assessing predictions, handling noisy data and outliers, improving the quality of predictions by tuning fit parameters, interference between old and new data, implementing locally weighted learning efficiently, and applications of locally weighted learning. A companion paper surveys how locally weighted learning can be used in robot learning and control."
+    }
+  },
+  "generator": "fallback"
+}

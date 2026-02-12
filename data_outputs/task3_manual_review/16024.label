@@ -1,0 +1,20 @@
+{
+  "doc_id": "16024",
+  "text": "In this experiment, we did not have access to the groundtruth filters from the extracellular recordings. However, the intracellular voltage recording was available for the neuron corresponding to the filter h 1 . We used the intracellular data to assess how well CRsAE can perform spike sorting. Unlike traditional methods for spike sorting that use principal component analysis to identify distinct templates within the data, CRsAE uses raw extracellular data. We compared CRsAE to CBP. Unlike CRsAE, CBP does not perform CDL: it simply performs CSC to identify the time of occurrence of filters given the filters. Figure 10 shows the trade-off between the false alarm proportion and the true missed proportion as a function of threshold. We refer the reader to Section VII-A for a refresher on how we obtain this figure. The figure demonstrates that CRsAE was competitive with CBP in terms of the trade-off it achieves between false alarms and true missed when applied to spike sorting. We also compared the speed of CRsAE to that of CBP for spike sorting of the simulated data lasting 17 minutes. CRsAE learned the filters in 69.27 s and performed spike sorting in only 0.93 s. The implementation of CBP at our disposal is not efficient enough to be applied to a 17-minute long recording. We estimated that CBP would take 17 hours to perform spike sorting given the filters. We estimated this timing by running CBP on 1, 2, 4, and 8 s of the data and observed a linear increase in the timing CBP needed for spike sorting [CITATION_1] . The second row of Table IV summarizes the comparison of speeds of the two algorithms applied to spike sorting.",
+  "correct_citation": {
+    "[CITATION_1]": "1736419"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We estimated this timing by running CBP on 1, 2, 4, and 8 s of the data and observed a linear increase in the timing CBP needed for spike sorting"
+    }
+  ],
+  "bib_entries": {
+    "1736419": {
+      "title": "A unified framework and method for automatic neural spike identification",
+      "abstract": "Automatic identification of action potentials from one or more extracellular electrode recordings is generally achieved by clustering similar segments of the measured voltage trace, a method that fails (or requires substantial human intervention) for spikes whose waveforms overlap. We formulate the problem in terms of a simple probabilistic model, and develop a unified method to identify spike waveforms along with continuous-valued estimates of their arrival times, even in the presence of overlap. Specifically, we make use of a recent algorithm known as Continuous Basis Pursuit for solving linear inverse problems in which the component occurrences are sparse and are at arbitrary continuous-valued times. We demonstrate significant performance improvements over current state-of-the-art clustering methods for four simulated and two real data sets with ground truth, each of which has previously been used as a benchmark for spike sorting. In addition, performance of our method on each of these data sets surpasses that of the best possible clustering method (i.e., one that is specifically optimized to minimize errors on each data set). Finally, the algorithm is almost completely automated, with a computational cost that scales well for multi-electrode arrays."
+    }
+  },
+  "generator": "fallback"
+}

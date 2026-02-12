@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Then, we obtain the cooccurrence scores co i for cooccurrence U co t,i (1 ≤ i ≤ N co) by: s co i = sim(f St, f U co t,i),(12)where sim(•, •) denotes the similarity computation which is the dot product between two features and f U cot,i = E T CLIP (U co t,i) is the textual feature.",
+    "We also calculate the score s la for the current important landmark U la t as Eq. 12.",
+    "Based on the original probability p U la t,n and {p U co t,i,n } N co i=1, we obtain the corrected landmark prediction probability pUt,n for the single-view observation O t,n by:pUt,n = p U la t,n • s la + N co i=1 p U co t,i,n • s co i,(13)Consistency Loss.",
+    "To constrain the optimization of the learnable cooccurrence scoring module, we introduce a consistency loss L cs, which is the cross-entropy loss and calculated based on the corrected landmark prediction probability pUt,n and the ground-truth action g t:L cs = - t g t log(p Ut),(14)where pUt = {p Ut,n } No n=1.",
+    "Since both action prediction and landmark discovery aim at selecting the ground-truth candidate observation, by enforcing the consistency between pUt and g t, the scoring module can learn to correct the importance of cooccurrences for accurate landmark discovery."
+  ]
+}

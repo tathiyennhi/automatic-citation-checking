@@ -1,0 +1,18 @@
+{
+  "text": "The experiment described in this report was conducted on the platform of Operational Space Formulation [CITATION_1] . In this scheme, motion is generated not by kinematics-based method, but by the inertial parameters of the manipulator. The necessity of using the inverse of Jacobian comes from the calculation of the dynamic model of the manipulator. In comparison to the conventional method of kinematics-based control, singularity handling in Operational Space Formulation covers the problem both in motion and force control. The proposed idea is to handle singularity by transforming the Jacobian and the generalized forces into the frame whose one or more of the axes represent the degenerate direction(s) of singularity. The degenerate component is then removed resulting in a lower dimension, full rank Jacobian that is redundant with respect to the task. The dynamically consistent inverse [CITATION_2] , which is a generalised inverse weighted by inertial matrix, is used to invert the Jacobian. Null space motion [CITATION_3] was also used to reconfigure the manipulator to escape from singularity into a path that happens to lie in the degenerate direction, which we have removed. The experimental result on PUMA 560 is presented.",
+  "correct_citation": {
+    "[CITATION_1]": "7687240",
+    "[CITATION_2]": "938523",
+    "[CITATION_3]": "7687240"
+  },
+  "bib_entries": {
+    "938523": {
+      "title": "Manipulator Control at Kinematic Singularities: A dynamically consistent Strategy",
+      "abstract": "This paper presents a general strategy for manipulator control at kinematic singularities. When a manipulator is in the neighborhood of singular configurations, it is treated as a redundant mechanism in the subspace orthogonal to the singular directions of the end-effector. Control in this subspace is based on operational forces, while null space joint torques are used to deal with the control in the singular directions. Decoupled behavior is guaranteed by using the dynamically consistent force/torque relationship. Two different types of kinematic singularities are identified and strategies dealing with these singularities are developed. Experimental results of the implementation of this approach on a PUMA 560 manipulator are presented."
+    },
+    "7687240": {
+      "title": "A Unified Approach for Motion and Force Control of Robot Manipulators: The Operational Space Formulation",
+      "abstract": "A framework for the analysis and control of manipulator systems with respect to the dynamic behavior of their end-effectors is developed. First, issues related to the description of end-effector tasks that involve constrained motion and active force control are discussed. The fundamentals of the operational space formulation are then presented, and the unified approach for motion and force control is developed. The extension of this formulation to redundant manipulator systems is also presented, constructing the end-effector equations of motion and describing their behavior with respect to joint forces. These results are used in the development of a new and systematic approach for dealing with the problems arising at kinematic singularities. At a singular configuration, the manipulator is treated as a mechanism that is redundant with respect to the motion of the end-effector in the subspace of operational space orthogonal to the singular direction."
+    }
+  }
+}

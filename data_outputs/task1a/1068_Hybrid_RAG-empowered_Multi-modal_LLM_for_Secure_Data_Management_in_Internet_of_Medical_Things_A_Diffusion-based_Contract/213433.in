@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "(17)Referring to [28], [38], we effectively train the contract design policy π ω to enhance the training quality of the contract generation network ϵ ω. Additionally, inspired by the concept of the Q-function [40], we introduce a contract quality network q φ (s, Ψ).",
+    "The training of the contract quality network utilizes the double Q-learning technique to minimize the Bellman operator, involving two critic networks q φ1, q φ2 and the corresponding target critic networks q φ ′ 1, q φ ′ 2.",
+    "We define q φ = min{q φ1, q φ2 }, and the optimal contract design policy that maximizes the expected cumulative utility of the client is expressed as [28] π = arg max πω E Z z=0 γ z (r(s z, a z) -ςπ ω (s z) log π ω (s z)),(18)where γ represents the discount factor, a z represents the action in the training step z, and ς represents the temperature coefficient controlling the strength of the entropy.We define the target policy as π ω ′, and the optimization of φ i for i = 1, 2 is performed by minimizing the following objective function [28]:E (sz,az,sz+1,rz)∼Bz l=1,2 (r(s z, a z) -q φ l (s z, a z) + γ z (1 -d z+1)π ω ′ (s z+1)q ′ φ ′ (s z+1)) 2,(19)where B z is a mini-batch of transitions sampled from the experience replay memory D in the training step z and d z+1 is a 0-1 variable denoting the terminated flag.",
+    "The pseudo-code of the proposed GDM-based contract generation scheme is shown in Algorithm 1, which consists of three phases, and its computational complexity is O(|ω|+|φ|+E max Z max (T |ω|+|φ|)).",
+    "In the proposed GDMbased contract generation scheme, denoising techniques are employed to generate optimal contract designs [28], [38]."
+  ]
+}

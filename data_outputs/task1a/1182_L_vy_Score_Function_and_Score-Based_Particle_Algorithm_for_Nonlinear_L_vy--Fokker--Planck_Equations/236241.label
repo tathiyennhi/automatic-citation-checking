@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We examine several examples to demonstrate the effectiveness of our algorithm 3.1.",
+    "The time interval [0, T] is uniformly partitioned into N T sub-intervals [t k, t k+1], where t k = k T N T for k = 0, 1,..., N T. On each sub-interval [t k, t k+1], the transport map is approximated by a neural network s θ k (•, t k): R d → R d, modeled as a multi-layer perceptron (MLP) with 3 hidden layers, 32 neurons per layer, and the Swish activation function.",
+    "The algorithm is implemented with the following parameter settings: the time step size of ∆t = T /N T = t k+1 -t k = 10 -3, the time horizon of T = 1, and the sample size of N = 4000.The initial condition p 0 of (2.1) in all examples is set as the Gaussian distribution for its simplicity in generating initial samples {X (i) 0 } N i=0 (unless otherwise specified, it is assumed to be the standard normal distribution).",
+    "For each time step in training the score function s θ k+1 (•), we use the warm start for the optimization by initializing the neural network parameter θ k+1 by the obtained parameters θ * k from the previous step, followed by the standard the Adam optimizer with a learning rate of 10 -4 to optimize θ k+1.To evaluate our method, we use the total variation (TV) distance of the generated samples to compare out method with the Monte Carlo simulation method.",
+    "At each time t k, we identify the smallest rectangular domain Ω t k covering all sample points and discretize it into uniform grid cells {∆ i }."
+  ],
+  "correct_citations": []
+}

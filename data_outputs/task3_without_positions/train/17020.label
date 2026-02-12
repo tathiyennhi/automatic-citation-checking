@@ -1,0 +1,29 @@
+{
+  "doc_id": "17020",
+  "text": "Soft heaps by Chazelle [CITATION_1] relate to our work in that they also achieve a constant amortized cost by introducing a certain amount of error. Specifically, a soft heap can break the information-theoretic barriers of the problem by introducing error in the key space in a way that the problem's entropy is reduced. While soft heaps provide the most asymptotically efficient known algorithm for finding minimum spanning trees [CITATION_2] , their applications are limited in that they cannot guarantee an upper bound error on the number of elements in the queue. (Depending on the sequence of insertions and extractions, all keys could be corrupted.) Instead, following on Chazelle's analogy, a multiresolution priority queue breaks the information-theoretic barriers of the problem by exploiting the multiresolution properties of its priority space. Since in many problems the entropy of the priority space is lower than the entropy of the key space, the end result is a container data structure with a lower computational complexity. In particular, a multi-resolutive priority space will have a constant entropy independent of the number of elements in the queue, and this result leads to our bound.",
+  "correct_citation": {
+    "[CITATION_1]": "12556140",
+    "[CITATION_2]": "6276962"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Soft heaps by Chazelle  relate to our work in that they also achieve a constant amortized cost by introducing a certain amount of error."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "that the problem's entropy is reduced. While soft heaps provide the most asymptotically efficient known algorithm for finding minimum spanning trees  , their applications are limited in that they cannot guarantee an upper bound error on the number of elements in the queue. (Depending"
+    }
+  ],
+  "bib_entries": {
+    "6276962": {
+      "title": "A minimum spanning tree algorithm with inverse-Ackermann type complexity",
+      "abstract": "A deterministic algorithm for computing a minimum spanning tree of a connected graph is presented. Its running time is 0 ( m α( m, n )), where α is the classical functional inverse of Ackermann's function and n (respectively, m ) is the number of vertices (respectively, edges). The algorithm is comparison-based : it uses pointers, not arrays, and it makes no numeric assumptions on the edge costs."
+    },
+    "12556140": {
+      "title": "The soft heap: an approximate priority queue with optimal error rate",
+      "abstract": "A simple variant of a priority queue, called a soft heap , is introduced. The data structure supports the usual operations: insert, delete, meld, and findmin. Its novelty is to beat the logarithmic bound on the complexity of a heap in a comparison-based model. To break this information-theoretic barrier, the entropy of the data structure is reduced by artifically raising the values of certain keys. Given any mixed sequence of n operations, a soft heap with error rate e (for any 0 en of its items have their keys raised. The amortized complexity of each operation is constant, except for insert, which takes 0 (log 1/e)time. The soft heap is optimal for any value of e in a comparison-based model. The data structure is purely pointer-based. No arrays are move items across the data structure not individually, as is customary, but in groups, in a data-structuring equivalent of “car pooling.” Keys must be raised as a result, in order to preserve the heap ordering of the data structure. The soft heap can be used to compute exact or approximate medians and percentiles optimally. It is also useful for approximate sorting and for computing minimum spanning trees of general graphs."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,15 @@
+{
+  "style": "APA",
+  "texts": [
+    "Choosing a data-dependent projection such as the SVD used by (Zhao et al., 2024), invariably forces extra compute to generate the projection, as well as memory allocation to store it for the backward pass.",
+    "Instead, following (Hao et al., 2024), we opt for a random, data-independent projection which can be efficiently sampled on-the-fly and resampled for the backward pass by using the same seed as the forward pass.",
+    "We use a Gaussian Random Matrix, sampled independently for each layer with µ = 0 and σ = 1/r: P ∈ R m×r, P ij ∼ N (0, 1 r).",
+    "Scaling the variance by 1/r ensures that P P ⊤ ≈ I.",
+    "Using a random matrix from a Gaussian distribution ensures that the projected subspace maintains the norm of the original vectors with high probability (Dasgupta and Gupta, 2003; Indyk and Motwani, 1998), which is critical for preserving information (Hao et al., 2024)."
+  ],
+  "correct_citations": [
+    "Choosing a data-dependent projection such as the SVD used by (Zhao et al., 2024), invariably forces extra compute to generate the projection, as well as memory allocation to store it for the backward pass.",
+    "Instead, following (Hao et al., 2024), we opt for a random, data-independent projection which can be efficiently sampled on-the-fly and resampled for the backward pass by using the same seed as the forward pass.",
+    "Using a random matrix from a Gaussian distribution ensures that the projected subspace maintains the norm of the original vectors with high probability (Dasgupta and Gupta, 2003; Indyk and Motwani, 1998), which is critical for preserving information (Hao et al., 2024)."
+  ]
+}

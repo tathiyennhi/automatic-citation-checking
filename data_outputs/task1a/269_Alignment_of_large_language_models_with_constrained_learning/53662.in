@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Denote r λ(t+1):= r + (λ(t + 1)) ⊤ g as a composite reward at time t + 1.",
+    "Thus, implementation of DPO warrants generating pseudo preferences that are associated with the composite reward r λ(t+1).",
+    "Specifically, we draw a batch of (x, y 0, y 1)-triples with a prompt x ∼ D and two responses (y 0, y 1) that are sampled independently from a reference model, e.g., π ref.",
+    "Then, we construct a pseudo preference 1 r λ(t+1) (y 1 ≻ y 0) ∈ {0, 1} for the two responses by sampling them from a synthetic Bradley-Terry model:P 1 r λ(t+1) (y 1 ≻ y 0) = 1 | x = σ r λ(t+1) (x, y 1) -r λ(t+1) (x, y 0)(13)where σ(•) is the sigmoid function.",
+    "We re-label the two responses as y +:= y 1r λ(t+1) (y 1 ≻y 0) and y -:= y 1-1r λ(t+1) (y 1 ≻y 0)."
+  ]
+}

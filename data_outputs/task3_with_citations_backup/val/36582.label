@@ -1,0 +1,22 @@
+{
+  "doc_id": "36582",
+  "text": "For RF classifier, the optimal number of tree is estimated according to the out-of-bag (OOB) classification error metric. The OOB classification errors are calculated using up to 600 decision trees. The number of tree satisfying the lowest OOB error is determined to be used in all training phases of the partitions. For each partition, the maximum number of variable used in each split is empirically fixed to 2 -the smallest integer close to C NN  . The performance evaluation of the proposed classifier output fusion method depends on following well-known metrics in literature: Precision, Recall, Accuracy, F1 score. In fact, we use the weighted average of these metrics due to the imbalanced class distribution of the data, and final performance of the algorithm on data set is the average of the results over 10 partitions. These metrics are calculated as provided in [CITATION_1] . Table I demonstrate that Classifier 3 achieves the best performance among all three individual classifiers in terms of precision, accuracy and F1 score. As mentioned before, this classifier can classify all distinct classes within whole label space, and hence this result is expected. However, Classifier 2 achieves the highest average true positive rate (recall) of classes among all three classifiers since this classifier outperforms other individual classifiers in accurate classification of instances of Class 1 which covers slightly more than half of all instances in test data as depicted in Fig. 1 . As compared to other two classifiers, Classifier 1 shows the worst performance and thus can be considered as a weak classifier in this problem.",
+  "correct_citation": {
+    "[CITATION_1]": "14454728"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "These metrics are calculated as provided in [CITATION_1] .",
+      "s_span": 831,
+      "e_span": 889
+    }
+  ],
+  "bib_entries": {
+    "14454728": {
+      "title": "A systematic analysis of performance measures for classification tasks",
+      "abstract": "This paper presents a systematic analysis of twenty four performance measures used in the complete spectrum of Machine Learning classification tasks, i.e., binary, multi-class, multi-labelled, and hierarchical. For each classification task, the study relates a set of changes in a confusion matrix to specific characteristics of data. Then the analysis concentrates on the type of changes to a confusion matrix that do not change a measure, therefore, preserve a classifier's evaluation (measure invariance). The result is the measure invariance taxonomy with respect to all relevant label distribution changes in a classification problem. This formal analysis is supported by examples of applications where invariance properties of measures lead to a more reliable evaluation of classifiers. Text classification supplements the discussion with several case studies."
+    }
+  },
+  "generator": "fallback_v4"
+}

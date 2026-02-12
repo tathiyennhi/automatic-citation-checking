@@ -1,0 +1,62 @@
+{
+  "doc_id": "43453",
+  "text": "We have previously carried out an informal recognition game for table cell detection [CITATION_1] . We will now formalize the game, using our imitation game. In the game we compared the detection of table cells within lists of words and lines in segmented tables. We implemented two table recognition algorithms from the literature [CITATION_2] [CITATION_3] using the Recognition Strategy Language (RSL [CITATION_4] ). RSL formalizes decision making and captures operation sequences that transform interpretations represented as attributed graphs. One of the authors selected five challenging tables from the UW-I technical document corpus [CITATION_5] , and then produced a single set of table cells for each table. Both player algorithms return single interpretations. The distance from the algorithms' cell sets to the author's cell sets were measured using the harmonic mean of cell recall and precision (with a higher mean representing a smaller distance in the interpretation space). The game had a 'best three out of five' outcome, where the algorithm with the highest harmonic mean would 'win' for each round (table). One round from the game is shown in Figure 2 , for a table taken from page a038 of the UW-I corpus. For the round shown, Player 2 wins because both recall and precision are higher than for Player 1.",
+  "correct_citation": {
+    "[CITATION_1]": "58367746",
+    "[CITATION_2]": "57867853",
+    "[CITATION_3]": "41490827",
+    "[CITATION_4]": "58367746",
+    "[CITATION_5]": "3258255"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We have previously carried out an informal recognition game for table cell detection [CITATION_1] .",
+      "s_span": 0,
+      "e_span": 99
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We implemented two table recognition algorithms from the literature [CITATION_2] [CITATION_3] using the Recognition Strategy Language (RSL [CITATION_4] ).",
+      "s_span": 264,
+      "e_span": 418
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We implemented two table recognition algorithms from the literature [CITATION_2] [CITATION_3] using the Recognition Strategy Language (RSL [CITATION_4] ).",
+      "s_span": 264,
+      "e_span": 418
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "We implemented two table recognition algorithms from the literature [CITATION_2] [CITATION_3] using the Recognition Strategy Language (RSL [CITATION_4] ).",
+      "s_span": 264,
+      "e_span": 418
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "One of the authors selected five challenging tables from the UW-I technical document corpus [CITATION_5] , and then produced a single set of table cells for each table.",
+      "s_span": 548,
+      "e_span": 716
+    }
+  ],
+  "bib_entries": {
+    "3258255": {
+      "title": "CD-ROM document database standard",
+      "abstract": "The design of a comprehensive standard document database for machine-printed documents is presented. The effort to produce a series of carefully ground-truthed document databases to be issued on CD-ROMs is described in detail. The databases can be utilized by the OCR and document understanding community as a common platform to develop, test, and evaluate their algorithms. >"
+    },
+    "41490827": {
+      "title": "Table structure recognition and its evaluation",
+      "abstract": "Tables are an important means for communicating information in written media, and understanding such tables is a challenging problem in document layout analysis. In this paper we describe a general solution to the problem of recognizing the structure of a detected table region. First hierarchial clustering is used to identify columns and then spatial and lexical criteria to classify headers. We also address the problem of evaluating table structure recognition. Our model is based on a directed acyclic attribute graph, or table DAG. We describe a new paradigm, 'random graph probing,' for comparing the results returned by the recognition system and the representation created during ground-truthing. Probing is in fact a general concept that could be applied to other document recognition tasks and perhaps even other computer vision problems as well.© (2000) COPYRIGHT SPIE--The International Society for Optical Engineering. Downloading of the abstract is permitted for personal use only."
+    },
+    "58367746": {
+      "title": "A Language for Specifying and Comparing Table Recognition Strategies",
+      "abstract": "Table recognition algorithms may be described by models of table location and structure, and decisions made relative to these models. These algorithms are usually defined informally as a sequence of decisions with supporting data observations and transformations. In this investigation, we formalize these algorithms as strategies in an imitation game, where the goal of the game is to match table interpretations from a chosen procedure as closely as possible. The chosen procedure may be a person or persons producing ‘ground truth,’ or an algorithm. ::: To describe table recognition strategies we have defined the Recognition Strategy Language (RSL). RSL is a simple functional language for describing strategies as sequences of abstract decision types whose results are determined by any suit able decision method. RSL defines and maintains interpretation trees, a simple data structure for describing recognition results. For each interpretation in an interpretation tree, we annotate hypothesis histories which capture the creation, revision, and rejection of individual hypotheses, such as the logical type and structure of regions. ::: We present a proof-of-concept using two strategies from the literature. We demonstrate how RSL allows strategies to be specified at the level of decisions rather than algorithms, and we compare results of our strategy implementations using new techniques. In particular, we introduce historical recall and precision metrics. Conventional recall and precision characterize hypotheses accepted after a strategy has finished. Historical recall and precision provide additional information by describing all generated hypotheses, including any rejected in the final result."
+    },
+    "57867853": {
+      "title": "Table analysis for multi-line cell identification",
+      "abstract": "A table in a document is a rectilinear arrangement of cells where each cell contains a sequence of words. Several lines of text may compose one cell. Cells may be delimited by horizontal or vertical lines, but often this is not the case. A table analysis system is described which reconstructs table formatting information from table images whether or not the cells are explicitly delimited. Inputs to the system are word bounding boxes and any horizontal and vertical lines that delimit cells. Using a sequence of carefully-crafted rules, multi-line cells and their interelationships are found even though no explicit delimeters are visible. This robust system is a component of a commercial document recognition system."
+    }
+  },
+  "generator": "fallback_v4"
+}

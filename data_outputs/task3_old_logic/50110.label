@@ -1,0 +1,20 @@
+{
+  "doc_id": "50110",
+  "text": "The problem. While we have developed two useful heuristics based on our quadratic model, quadratics are an imperfect proxy for what happens in DNN training. This is particularly true in earlier epochs of training, because during later epochs we typically imagine that we are approaching some local minimum with an approximately quadratic local neighborhood. Earlier epochs do not behave in this way. This is reflected in our empirical results: on the IWSLT14 dataset, T1 and T2 alone are not enough to match the synchronous baseline method quality. We hypothesize that this occurs because the algorithm is initialized in a \"bad region\" of space that has high curvature, large gradient noise, or behaves otherwise in a way for which the quadratic model is a bad proxy (such highly non-convex regions have been observed in previous work [CITATION_1] ). That is, we hypothesize that there may be some regions of state space which the pipeline-parallel SGD algorithm is bad at escaping, relative to the standard SGD algorithm. To correct for this, we propose a third technique, which can be used when T1 and T2 are insufficient.",
+  "correct_citation": {
+    "[CITATION_1]": "3693334"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We hypothesize that this occurs because the algorithm is initialized in a \"bad region\" of space that has high curvature, large gradient noise, or behaves otherwise in a way for which the quadratic model is a bad proxy (such highly non-convex regions have been observed in previous work"
+    }
+  ],
+  "bib_entries": {
+    "3693334": {
+      "title": "Visualizing the loss landscape of neural nets",
+      "abstract": "Neural network training relies on our ability to find \"good\" minimizers of highly non-convex loss functions. It is well known that certain network architecture designs (e.g., skip connections) produce loss functions that train easier, and well-chosen training parameters (batch size, learning rate, optimizer) produce minimizers that generalize better. However, the reasons for these differences, and their effect on the underlying loss landscape, is not well understood. In this paper, we explore the structure of neural loss functions, and the effect of loss landscapes on generalization, using a range of visualization methods. First, we introduce a simple \"filter normalization\" method that helps us visualize loss function curvature, and make meaningful side-by-side comparisons between loss functions. Then, using a variety of visualizations, we explore how network architecture affects the loss landscape, and how training parameters affect the shape of minimizers."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,80 @@
+{
+  "doc_id": "44785",
+  "text": "management, since most workloads are linked to near-sensor data processing [CITATION_1] , [CITATION_2] . On the other hand, the on-chip area budget is much tighter in IoT end-nodes. This squeezes the size of the I-Caches, also because they are often implemented with low-density memories which can operate at low voltages (e.g., standard-cell-based caches [CITATION_3] , [CITATION_4] ). This area squeeze is further exacerbated by the fact that there are multiple processors fetching in parallel, so the instruction memory system must deliver plenty of bandwidth, requiring complex logic, such as L0-buffers [CITATION_5] and broadcast-interconnect [CITATION_6] , which further increase the area dedicated to the instruction memory. Therefore, in this context it is highly valuable in term of area and energy-efficiency to keep the I-Cache small, while at the same time exploit the latency-hiding opportunities offered by prefetching to reduce the impact of cache-misses [CITATION_7] . Another factor is that the speed gap with the background onchip L2-memory (dense static random-access memory or even embedded flash), where the entire code is stored, is not so huge, so the amount of prefetched information can be kept small (a direct consequence of Little's law [CITATION_8] , [CITATION_9] ). This also works in the direction of making instruction prefetching highly effective.",
+  "correct_citation": {
+    "[CITATION_1]": "9189868",
+    "[CITATION_2]": "29024343",
+    "[CITATION_3]": "15870746",
+    "[CITATION_4]": "42750",
+    "[CITATION_5]": "4928383",
+    "[CITATION_6]": "42750",
+    "[CITATION_7]": "15870235",
+    "[CITATION_8]": "9189868",
+    "[CITATION_9]": "42750"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "management, since most workloads are linked to near-sensor data processing"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "management, since most workloads are linked to near-sensor data processing,"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "This squeezes the size of the I-Caches, also because they are often implemented with low-density memories which can operate at low voltages (e.g., standard-cell-based caches"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "This squeezes the size of the I-Caches, also because they are often implemented with low-density memories which can operate at low voltages (e.g., standard-cell-based caches,"
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This area squeeze is further exacerbated by the fact that there are multiple processors fetching in parallel, so the instruction memory system must deliver plenty of bandwidth, requiring complex logic, such as L0-buffers"
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "and broadcast-interconnect"
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Therefore, in this context it is highly valuable in term of area and energy-efficiency to keep the I-Cache small, while at the same time exploit the latency-hiding opportunities offered by prefetching to reduce the impact of cache-misses"
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Another factor is that the speed gap with the background onchip L2-memory (dense static random-access memory or even embedded flash), where the entire code is stored, is not so huge, so the amount of prefetched information can be kept small (a direct consequence of Little's law"
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "Another factor is that the speed gap with the background onchip L2-memory (dense static random-access memory or even embedded flash), where the entire code is stored, is not so huge, so the amount of prefetched information can be kept small (a direct consequence of Little's law,"
+    }
+  ],
+  "bib_entries": {
+    "29024343": {
+      "title": "PULP: A parallel ultra low power platform for next generation IoT applications",
+      "abstract": "Presents a collection of slides covering the following: PULP platform; Internet of Things; IoT applications; near-sensor processing; near-threshold multiprocessing; minimum energy operation; extended OpenRISC core; body biasing; ULP memory implementation; power management; heterogeneous memory architecture; fractal heterogeneity; and convolutional neural networks."
+    },
+    "42750": {
+      "title": "Exploring multi-banked shared-L1 program cache on ultra-low power, tightly coupled processor clusters",
+      "abstract": "L1 instruction caches in many-core systems represent a sizable fraction of the total power consumption. Although large instruction caches can significantly improve performance, they have the potential to increase power consumption. Private caches are usually able to achieve higher speed, due to their simpler design, but the smaller L1 memory space seen by each core induces a high miss ratio. Shared instruction cache can be seen as an attractive solution to improve performance and energy efficiency while reducing area. In this paper we propose a multi-banked, shared instruction cache architecture suitable for ultra-low power multicore systems, where parallelism and near threshold operation is used to achieve minimum energy. We implemented the cluster architecture with different configurations of cache sharing, utilizing the 28nm UTBB FD-SOI from STMicroelectronics as reference technology. Experimental results, based on several real-life applications, demonstrate that sharing mechanisms have no impact on the system operating frequency, and allow to reduce the energy consumption of the cache subsystem by up to 10%, while keeping the same area footprint, or reducing by 2× the overall shared cache area, while keeping the same performance and energy efficiency with respect to a cluster of processing elements with private program caches."
+    },
+    "15870746": {
+      "title": "Power, area, and performance optimization of standard cell memory arrays through controlled placement",
+      "abstract": "Embedded memory remains a major bottleneck in current integrated circuit design in terms of silicon area, power dissipation, and performance; however, static random access memories (SRAMs) are almost exclusively supplied by a small number of vendors through memory generators, targeted at rather generic design specifications. As an alternative, standard cell memories (SCMs) can be defined, synthesized, and placed and routed as an integral part of a given digital system, providing complete design flexibility, good energy efficiency, low-voltage operation, and even area efficiency for small memory blocks. Yet implementing an SCM block with a standard digital flow often fails to exploit the distinct and regular structure of such an array, leaving room for optimization. In this article, we present a design methodology for optimizing the physical implementation of SCM macros as part of the standard design flow. This methodology introduces controlled placement, leading to a structured, noncongested layout with close to 100p placement utilization, resulting in a smaller silicon footprint, reduced wire length, and lower power consumption compared to SCMs without controlled placement. This methodology is demonstrated on SCM macros of various sizes and aspect ratios in a state-of-the-art 28nm fully depleted silicon-on-insulator technology, and compared with equivalent macros designed with the noncontrolled, standard flow, as well as with foundry-supplied SRAM macros. The controlled SCMs provide an average 25p reduction in area as compared to noncontrolled implementations while achieving a smaller size than SRAM macros of up to 1Kbyte. Power and performance comparisons of controlled SCM blocks of a commonly found 256 × 32 (1 Kbyte) memory with foundry-provided SRAMs show greater than 65p and 10p reduction in read and write power, respectively, while providing faster access than their SRAM counterparts, despite being of an aspect ratio that is typically unfavorable for SCMs. In addition, the SCM blocks function correctly with a supply voltage as low as 0.3V, well below the lower limit of even the SRAM macros optimized for low-voltage operation. The controlled placement methodology is applied within a full-chip physical implementation flow of an OpenRISC-based test chip, providing more than 50p power reduction compared to equivalently sized compiled SRAMs under a benchmark application."
+    },
+    "4928383": {
+      "title": "Near-threshold RISC-V core with DSP extensions for scalable IoT endpoint devices",
+      "abstract": "Endpoint devices for Internet-of-Things not only need to work under extremely tight power envelope of a few milliwatts, but also need to be flexible in their computing capabilities, from a few kOPS to GOPS. Near-threshold(NT) operation can achieve higher energy efficiency, and the performance scalability can be gained through parallelism. In this paper we describe the design of an open-source RISC-V processor core specifically designed for NT operation in tightly coupled multi-core clusters. We introduce instruction-extensions and microarchitectural optimizations to increase the computational density and to minimize the pressure towards the shared memory hierarchy. For typical data-intensive sensor processing workloads the proposed core is on average 3.5x faster and 3.2x more energy-efficient, thanks to a smart L0 buffer to reduce cache access contentions and support for compressed instructions. SIMD extensions, such as dot-products, and a built-in L0 storage further reduce the shared memory accesses by 8x reducing contentions by 3.2x. With four NT-optimized cores, the cluster is operational from 0.6V to 1.2V achieving a peak efficiency of 67MOPS/mW in a low-cost 65nm bulk CMOS technology. In a low power 28nm FDSOI process a peak efficiency of 193MOPS/mW(40MHz, 1mW) can be achieved."
+    },
+    "9189868": {
+      "title": "Extending Amdahl's law for heterogeneous multicore processor with consideration of the overhead of data preparation",
+      "abstract": "We extend Amdahl’s law by considering the overhead of data preparation (ODP) for multicore systems, and apply it to three “traditional” multicore system scenarios (homogeneous symmetric multicore, asymmetric multicore, and dynamic multicore) and two new scenarios (heterogeneous CPU-GPU multicore and dynamic CPU-GPU multicore). It demonstrates that potential innovations in heterogeneous system architecture are indispensable to decrease ODP."
+    },
+    "15870235": {
+      "title": "An embedded architecture for energyefficient stream computing",
+      "abstract": "Stream processing has emerged as an important model of computation in the context of multimedia and communication subsystems of embedded system-on-chip (SoC) architectures. The dataflow nature of streaming applications allows them to be most naturally expressed as a set of kernels iteratively operating on continuous streams of data. The kernels are computationally intensive and are characterized by high throughput requirements. We present StreamEngine, an embedded architecture for energy-efficient computation of stream kernels. StreamEngine introduces an instruction locking mechanism that exploits the iterative nature of streams and enables fine-grain instruction reuse. We also adopt a context-aware dataflow execution (CDE) model to exploit instruction-level parallelism (ILP) and data-level parallelism (DLP) within the stream kernels. We evaluate the performance and energy-efficiency of our architecture for stream kernel benchmarks by implementing the architecture with TSMC 45 nm process, and comparison with an embedded RISC processor."
+    }
+  },
+  "generator": "fallback"
+}

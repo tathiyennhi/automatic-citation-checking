@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "During training, Q θ (s t, a t) and π φ (a t | s t) are optimised with stochastic gradients ∇ θ J Q (θ) and ∇ φ J π (φ) designed corresponding to soft policy evaluation and soft policy improvement, respectively (see ( 6) and (10) in Haarnoja et al. 2018b).",
+    "With these gradients, SAC updates the critic and actor networks byθ ← θ -λ Q ∇ θ J Q (θ), (2.12) φ ← φ -λ π ∇ φ J π (φ), (2.13)where λ Q and λ π are the learning rates of Q-function and policy, respectively.",
+    "Typically, two Q-functions are trained independently, then the minimum of the Q-functions is brought into the calculation of stochastic gradient and policy gradient.",
+    "This method is also used in our work to increase the stability and speed of training.",
+    "Also, SAC supports automatic adjustment of temperature α by optimisation:α * = arg min α E a t ∼π * [-α log π * (a t | s t; α) -α H]."
+  ]
+}

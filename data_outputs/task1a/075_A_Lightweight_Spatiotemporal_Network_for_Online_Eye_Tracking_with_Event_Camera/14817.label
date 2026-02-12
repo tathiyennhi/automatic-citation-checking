@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This mixed normalization strategy allows for stability in both small and large batch-size training regimes (see Fig. 2).Since the batch normalization statistics are fixed and data independent during inference, we do not have to worry about its causality.",
+    "However, for group normalization, which dynamically performs data-based normalization at inference time, ensuring causality is crucial: the dynamic normalization statistics need to be independent of future frames.Recall that the event tensor is shaped (C, T, H, W) during training, so the simplest way to ensure causality of in GroupNorm layers is to compute the statistics only over the last two spatial dimensions (H, W).",
+    "This way the statistics are never \"mixed\" in time.",
+    "This is the method we chose in this work.",
+    "However, there are extensions of this approach that can also be considered."
+  ],
+  "correct_citations": []
+}

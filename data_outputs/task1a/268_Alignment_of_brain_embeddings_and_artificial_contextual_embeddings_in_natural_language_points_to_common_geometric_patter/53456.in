@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We used a tenfold cross-validation procedure, ensuring that for each cross-validation fold, the model was estimated from a subset of unique training words and evaluated on a nonoverlapping subset of unique, held-out test words: the words and their corresponding brain embeddings were split into a training set (90% of the unique words) for model estimation and a test set (10% of the unique words) for model evaluation (zero-shot analysis).",
+    "Only one instance of each word was included in the analysis.",
+    "We used ordinary least squares (OLS) multiple linear regression for each cross-validation fold to estimate a weight vector (for the 50-dimensional model feature space) based on the training words.",
+    "We then used those weights to predict the neural responses at each electrode (comprising a brain embedding across electrodes) for the test words.",
+    "We evaluated model performance by computing the correlation between the predicted brain embedding and the actual brain embedding (i.e., the distributed neural activity pattern) for each held-out test word; we then averaged these correlations across test words."
+  ]
+}

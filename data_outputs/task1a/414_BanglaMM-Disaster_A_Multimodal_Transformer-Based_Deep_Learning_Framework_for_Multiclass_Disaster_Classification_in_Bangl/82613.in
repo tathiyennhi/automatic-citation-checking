@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "D. Early Fusion and ClassificationWe employ early fusion through feature concatenation over late fusion due to computational efficiency and superior performance for disaster classification tasks where textual and visual information are complementary [8].",
+    "The multimodal fusion concatenates textual and visual information:F joint = [F text; F visual] ∈ R dtext+d visual(5)where d text = 768 and d visual = 2048 for our best configuration.",
+    "This early fusion concatenation enables cross-modal feature interactions at the representation level, allowing the model to learn joint patterns leveraging both semantic descriptions and visual evidence simultaneously.",
+    "This joint representation passes through fully connected layers with dropout (rate 0.1) for regularization, preventing overfitting on the limited disaster dataset.",
+    "The final classification is performed using softmax activation:ŷ = softmax(W f F joint + b f) (6)where W f ∈ R C×(dtext+d visual) and b f ∈ R C are learned fusion parameters, and C = 9 is the number of disaster classes."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "text": ", which amounts to the standard KL retrieval approach [CITATION_1] ; this document-query similarity measure is used in our methods when employed over the LM initial ranking. The second method, denoted MRF, is the Markov Random Field approach [CITATION_2] employed with the sequential dependence model (SDM), which is a state-ofthe-art content-based retrieval approach [CITATION_3] [CITATION_4] . Our methods use sim(q, d) def = p(d, q), which is induced using SDM, when operating on the MRF initial ranking. The free parameters of SDM, λT , λO and λU are set to 0.85, 0.1, and 0.05, respectively, as these values are known to yield effective performance [CITATION_5] [CITATION_6] . For the experiments with MRF, the document language model smoothing parameter, μ, was set to 2500 following previous recommendations [CITATION_7] .",
+  "correct_citation": {
+    "[CITATION_1]": "1183147",
+    "[CITATION_2]": "1118305",
+    "[CITATION_3]": "1118305",
+    "[CITATION_4]": "207184945",
+    "[CITATION_5]": "1118305",
+    "[CITATION_6]": "207184945",
+    "[CITATION_7]": "207184945"
+  },
+  "bib_entries": {
+    "1183147": {
+      "title": "Document language models, query models, and risk minimization for information retrieval",
+      "abstract": "We present a framework for information retrieval that combines document models and query models using a probabilistic ranking function based on Bayesian decision theory. The framework suggests an operational retrieval model that extends recent developments in the language modeling approach to information retrieval. A language model for each document is estimated, as well as a language model for each query, and the retrieval problem is cast in terms of risk minimization. The query language model can be exploited to model user preferences, the context of a query, synonomy and word senses. While recent work has incorporated word translation models for this purpose, we introduce a new method using Markov chains defined on a set of documents to estimate the query models. The Markov chain method has connections to algorithms from link analysis and social networks. The new approach is evaluated on TREC collections and compared to the basic language modeling approach and vector space models together with query expansion using Rocchio. Significant improvements are obtained over standard query expansion methods for strong baseline TF-IDF systems, with the greatest improvements attained for short queries on Web data."
+    },
+    "1118305": {
+      "title": "A Markov random field model for term dependencies",
+      "abstract": "This paper develops a general, formal framework for modeling term dependencies via Markov random fields. The model allows for arbitrary text features to be incorporated as evidence. In particular, we make use of features based on occurrences of single terms, ordered phrases, and unordered phrases. We explore full independence, sequential dependence, and full dependence variants of the model. A novel approach is developed to train the model that directly maximizes the mean average precision rather than maximizing the likelihood of the training data. Ad hoc retrieval experiments are presented on several newswire and web collections, including the GOV2 collection used at the TREC 2004 Terabyte Track. The results show significant improvements are possible by modeling dependencies, especially on the larger web collections."
+    },
+    "207184945": {
+      "title": "Quality-biased ranking of web documents",
+      "abstract": "Many existing retrieval approaches do not take into account the content quality of the retrieved documents, although link-based measures such as PageRank are commonly used as a form of document prior. In this paper, we present the quality-biased ranking method that promotes documents containing high-quality content, and penalizes low-quality documents. The quality of the document content can be determined by its readability, layout and ease-of-navigation, among other factors. Accordingly, instead of using a single estimate for document quality, we consider multiple content-based features that are directly integrated into a state-of- the-art retrieval method. These content-based features are easy to compute, store and retrieve, even for large web collections. We use several query sets and web collections to empirically evaluate the performance of our quality-biased retrieval method. In each case, our method consistently improves by a large margin the retrieval performance of text-based and link-based retrieval methods that do not take into account the quality of the document content."
+    }
+  }
+}

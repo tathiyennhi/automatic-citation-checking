@@ -1,0 +1,17 @@
+{
+  "text": "Still further improvements are possible. We should get rid of the limitation to p being a power of two. This will complicate the code but should not be a fundamental obstacle. For large inputs, a specialized shared-memory implementation for nodelocal sorting, merging and partitioning seems useful. Porting to systems with less deterministic behavior than BlueGene/Q is likely to require sophisticated implementations of collective communication and data delivery operations -the wide fluctuations of running times mentioned in [CITATION_1] are already quite bad on 2 [CITATION_2] PEs on an oversubscribed InfiniBand-Network. ",
+  "correct_citation": {
+    "[CITATION_1]": "18249978",
+    "[CITATION_2]": "38146130"
+  },
+  "bib_entries": {
+    "38146130": {
+      "title": "Efficient massively parallel quicksort",
+      "abstract": "Parallel quicksort is known as a very scalable parallel sorting algorithm. However, most actual implementations have been limited to basic versions which suffer from irregular communication patterns and load imbalance. We have implemented a high performance variant of parallel quicksort which incorporates the following optimizations: Stop the recursion at the right time, sort locally first, use accurate yet efficient pivot selection strategies, streamline communication patterns, use locality preserving processor indexing schemes and work with multiple pivots at once. It turns out to be among the best practical sorting methods. It is about three times faster than the basic algorithm and achieves a speedup of 810 on a 1024 processor Parsytec GCel for the NAS parallel sorting benchmark of size 224. The optimized algorithm can also be shown to be asymptotically optimal on meshes."
+    },
+    "18249978": {
+      "title": "Practical massively parallel sorting",
+      "abstract": "Previous parallel sorting algorithms do not scale to the largest available machines, since they either have prohibitive communication volume or prohibitive critical path length. We describe algorithms that are a viable compromise and overcome this gap both in theory and practice. The algorithms are multi-level generalizations of the known algorithms sample sort and multiway mergesort. In particular, our sample sort variant turns out to be very scalable both in theory and practice where it scales up to 215 MPI processes with outstanding performance in particular for medium sized inputs. Some tools we develop may be of independent interest -- a simple, practical, and flexible sorting algorithm for very small inputs, a near linear time ptimal algorithm for solving a constrained bin packing problem, and an algorithm for data delivery, that guarantees a small number of message startups on each processor."
+    }
+  }
+}

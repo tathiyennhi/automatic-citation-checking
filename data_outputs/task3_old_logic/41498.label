@@ -1,0 +1,38 @@
+{
+  "doc_id": "41498",
+  "text": "To scale to many users, and to prevent an attacker from observing the whole network, it may be necessary to support far more servers than Tor currently anticipates. This introduces several issues. First, if approval by a central set of directory servers is no longer feasible, what mechanism should be used to prevent adversaries from signing up many colluding servers? Second, if clients can no longer have a complete picture of the network, how can they perform discovery while preventing attackers from manipulating or exploiting gaps in their knowledge? Third, if there are too many servers for every server to constantly communicate with every other, which non-clique topology should the network use? (Restrictedroute topologies promise comparable anonymity with better scalability [CITATION_1] , but whatever topology we choose, we need some way to keep attackers from manipulating their position within it [CITATION_2] .) Fourth, if no central authority is tracking server reliability, how do we stop unreliable servers from making the network unusable? Fifth, do clients receive so much anonymity from running their own ORs that we should expect them all to do so [CITATION_3] , or do we need another incentive structure to motivate them? Tarzan and MorphMix present possible solutions.",
+  "correct_citation": {
+    "[CITATION_1]": "7418463",
+    "[CITATION_2]": "18980117",
+    "[CITATION_3]": "2228261"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Third, if there are too many servers for every server to constantly communicate with every other, which non-clique topology should the network use? (Restrictedroute topologies promise comparable anonymity with better scalability"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": ", but whatever topology we choose, we need some way to keep attackers from manipulating their position within it"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Fifth, do clients receive so much anonymity from running their own ORs that we should expect them all to do so, or do we need another incentive structure to motivate them?"
+    }
+  ],
+  "bib_entries": {
+    "7418463": {
+      "title": "Mix-networks with restricted routes",
+      "abstract": "We present a mix network topology that is based on sparse expander graphs, with each mix only communicating with a few neighbouring others. We analyse the anonymity such networks provide, and compare it with fully connected mix networks and mix cascades. We prove that such a topology is efficient since it only requires the route length of messages to be relatively small in comparison with the number of mixes to achieve maximal anonymity. Additionally mixes can resist intersection attacks while their batch size, that is directly linked to the latency of the network, remains constant. A worked example of a network is also presented to illustrate how these results can be applied to create secure mix networks in practise. © Springer-Verlag Berlin Heidelberg 2003."
+    },
+    "2228261": {
+      "title": "On the economics of anonymity",
+      "abstract": "Decentralized anonymity infrastructures are still not in wide use today. While there are technical barriers to a secure robust design, our lack of understanding of the incentives to participate in such systems remains a major roadblock. Here we explore some reasons why anonymity systems are particularly hard to deploy, enumerate the incentives to participate either as senders or also as nodes, and build a general model to describe the effects of these incentives. We then describe and justify some simplifying assumptions to make the model manageable, and compare optimal strategies for participants based on a variety of scenarios."
+    },
+    "18980117": {
+      "title": "Reliable MIX Cascade Networks through Reputation",
+      "abstract": "We describe a MIX cascade protocol and a reputation system that together increase the reliability of a network of MIX cascades. In our protocol, MIX nodes periodically generate a communally random seed that, along with their reputations, determines cascade configuration. Nodes send test messages to monitor their cascades. Senders can also demonstrate message decryptions to convince honest cascade members that a cascade is misbehaving. By allowing any node to declare the failure of its own cascade, we eliminate the need for global trusted witnesses."
+    }
+  },
+  "generator": "fallback"
+}

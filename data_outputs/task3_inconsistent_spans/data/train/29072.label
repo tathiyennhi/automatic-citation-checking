@@ -1,0 +1,51 @@
+{
+  "doc_id": "29072",
+  "text": "In addition to studying soft error susceptibility, several researchers have also exploited application-level error resilience. Like us, Thaker et al [CITATION_1] observe many approximate algorithms can tolerate soft errors with only minimal solution quality degradation. They also show control computations are more vulnerable to faults than data computations, and develop tools to automatically distinguish the two. In comparison, we provide a more complete characterization of application-level error resilience through detailed architectural simulation. Also, while Thaker et al exploit error resilience to reduce redundant protection in the context of fault detection, we exploit the same to reduce checkpointing in the context of fault recovery. Breuer [CITATION_2] [CITATION_3] also recognizes multimedia workloads can tolerate errors, and proposes exploiting this to address manufacturing defects. Application-level correctness is similar to Breuer's notion of \"error tolerance\" (ET) [CITATION_4] . The main difference is Breuer exploits ET to tolerate hardware defects for higher chip yield, whereas we exploit application-level correctness to tolerate soft errors on functionally correct hardware.",
+  "correct_citation": {
+    "[CITATION_1]": "2141670",
+    "[CITATION_2]": "14240474",
+    "[CITATION_3]": "9105023",
+    "[CITATION_4]": "9105023"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Like us, Thaker et al  observe many approximate algorithms can tolerate soft errors with only minimal solution quality degradation.",
+      "s_span": 127,
+      "e_span": 270
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Breuer   also recognizes multimedia workloads can tolerate errors, and proposes exploiting this to address manufacturing defects.",
+      "s_span": 751,
+      "e_span": 904
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Breuer   also recognizes multimedia workloads can tolerate errors, and proposes exploiting this to address manufacturing defects.",
+      "s_span": 751,
+      "e_span": 904
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Application-level correctness is similar to Breuer's notion of \"error tolerance\" (ET)  .",
+      "s_span": 905,
+      "e_span": 1005
+    }
+  ],
+  "bib_entries": {
+    "9105023": {
+      "title": "Defect and Error Tolerance in the Presence of Massive Numbers of Defects",
+      "abstract": "As scaling approaches the physical limits of devices, we will continue to see increasing levels of process variations, noise, and defect densities. Many applications today can tolerate certain levels of errors resulting from such factors. We introduce a new approach for error tolerance resulting in chips containing only error acceptable for such applications."
+    },
+    "2141670": {
+      "title": "Characterization of ErrorTolerant Applications when Protecting Control Data",
+      "abstract": "Soft errors have become a significant concern and recent studies have measured the \"architectural vulnerability factor\" of systems to such errors, or conversely, the potential that a soft error is masked by latches or other system behavior. We take soft-error tolerance one step further and examine when an application can tolerate errors that are not masked. For example, a video decoder or approximation algorithm can tolerate errors if the user is willing to accept degraded output. The key observation is that while the decoder can tolerate error in its data, it can not tolerate error in its control. We first present static analysis that protects most control operations. We examine several SPEC CPU2000 and MiBench benchmarks for error tolerance, develop fidelity measures for each, and quantify the effect of errors on fidelity. We show that protecting control is crucial to producing error-tolerance, for without this protection, many applications experience catastrophic errors (infinite execution time or crashing). Overall, our results indicate that with simple control protection, the error tolerance of many applications can provide designers with considerable added flexibility when considering future challenges posed by soft errors."
+    },
+    "14240474": {
+      "title": "Multi-media Applications and Imprecise Computation",
+      "abstract": "As feature sizes continue to decrease and clock rates and device count on a VLSI chip increase, it becomes increasingly more difficult to maintain yields at their present levels. Process variation, noise and spot defects create very costly problems for our industry. Luckily, in the domain of multi-media, there exists a large body of functions where computational results need not always be correct. We show that for many VLSI implementations of signal processing algorithms, such as MPEG and JPEG encoders, a significant proportion of chips having low levels of defects provide erroneous but acceptable results. We introduce the concept of error-tolerance, and mention related issues needed to support this concept, including ways for specifying performance, design techniques that consider yield, test techniques for quantifying erroneous behavior, and finally the issue of marketing. The motivation for this work is to significantly increase the effective yield of a process, encourage the implementation of complex data processing chips, and drastically reduce chip costs."
+    }
+  },
+  "generator": "fallback_v4"
+}

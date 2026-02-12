@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Region Filtering and SelectionTo reduce noise and improve grounding quality, we filter out candidate regions with an area less than 2.5% of the image size.",
+    "This threshold is informed by an empirical analysis of the RefCOCO/+/g datasets, where no referring expression corresponds to such small regions.After filtering detections, we apply Non-Maximum Suppression (NMS) to remove redundant boxes.",
+    "Regions are then sorted by area, and the top 10 largest regions are selected as primary candidates p main i.",
+    "Each primary candidate receives a detailed description d i from the MLLM.",
+    "The remaining candidates are only labeled with semantic concepts and relative coordinates to reduce token overhead.As shown in Figure 3, using a confidence-based filtering approach, the average number of candidate regions larger than 2.5% of the image area remains below 6."
+  ]
+}

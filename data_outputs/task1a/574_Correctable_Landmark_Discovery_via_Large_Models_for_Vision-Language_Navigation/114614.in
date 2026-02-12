@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "(2)The action prediction probability a t is generated through an action prediction module E a (•) based on f t I and fOt:a t = E a ( f t I, fOt).",
+    "(3)The action decision is optimized by the navigation loss L nav, which contains an imitation learning loss L IL and a reinforcement learning loss L RL [16]:L IL = t -a * t log(a t),(4)L RL = t -a s t log(a t)A t,(5)L nav = L IL + λL RL,(6)where a * t is the teacher action of the ground-truth path at timestep t, a s t is the sampled action from the agent action prediction a t, A t is the advantage calculated by A2C algorithm [47], and λ is a balance factor.In CONSOLE, we use the corrected landmark features f Ut and the observation features f Ot to obtain the enhanced observation features f ′ Ot at each timestep t. Then f ′ Ot are fed into E c (•) and E a (•) to get final action prediction ãt.",
+    "The overview of CONSOLE is presented in Fig. 2.",
+    "For a given instruction I, we first conduct the landmark cooccurrence prior generation to obtain the landmark cooccurrence priors U (Sec. D.1).",
+    "Then, at each timestep t, we perform the correctable landmark discovery through the landmark shifting, the landmark discovery, and the learnable cooccurrence scoring, based on the priors U, the instruction I, and the observations O t (Sec. D.2)."
+  ]
+}

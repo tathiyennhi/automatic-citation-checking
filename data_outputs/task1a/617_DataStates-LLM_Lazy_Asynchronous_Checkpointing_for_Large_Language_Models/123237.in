@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "There is a one-to-one mapping between the GPU and the NUMA domains, therefore concurrent device-to-host access by multiple GPUs does not create contention on the PCIe interface.",
+    "The checkpoints are flushed to persistent storage, which is a Lustre [36] parallel file system, composed of 160 Object Storage Targets (OSTs) and 40 Metadata targets, with an aggregated bandwidth of 650 GB/s.",
+    "Software: All the nodes run Nvidia CUDA driver 470.103, NVCC v11.8.89, Python v3.10, PyTorch v2.1, and DeepSpeed v0.11.2 on top of the Cray SUSE Linux Enterprise Server 15 operating system.In our experiments, we use up to 128 nodes (512 GPUs) to study the impact of large model sizes through data, tensor and pipeline parallelism, and contention of checkpoint flushes for the parallel file system.",
+    "Compared ApproachesDeepSpeed: This is the default checkpointing approach used in the DeepSpeed [34] LLM training runtime using PyTorch's default torch.save() approach.",
+    "This approach blocks the LLM training and performs synchronous writes of the checkpoint to the persistence storage, thereby providing consistency guarantees for the checkpoint (illustrated as (a) DeepSpeed default synchronous checkpointing in Figure 5).Asynchronous Checkpointing: This approach is representative of the in-memory snapshotting techniques adopted by Check-Freq [24], LightCheck [4], and PyTorch Lightning's AsyncCheck-pointIO [17] (illustrated as (b) Asynchronous checkpointing in Figure 5), and is replicated to mimic AsyncCheckpointIO [31] (we had to adapt such techniques for LLMs since the original implementations do not support pipeline and tensor parallelism)."
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "doc_id": "27677",
+  "text": "Simplifications and other discrepancies with the standard We do not consider the distinction between global memory (shared among all threads) and local memory (shared among threads in a work-group), and instead treat all memory as global; local memory is not interesting in the context of memory scopes, since the only allowable scope with which local memory can be accessed atomically is WG. Fences, barriers, relaxed atomics, and sequentially-consistent atomics were not discussed in previous work on RSP [CITATION_1] and are largely orthogonal. OpenCL employs a stricter form of scope inclusion, in which both events must additionally use the same memory scope. The version we use here follows a proposal called HRF-relaxed [CITATION_2] , and is a necessary prerequisite for RSP.",
+  "correct_citation": {
+    "[CITATION_1]": "2724982",
+    "[CITATION_2]": "11097186"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Fences, barriers, relaxed atomics, and sequentially-consistent atomics were not discussed in previous work on RSP and are largely orthogonal."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The version we use here follows a proposal called HRF-relaxed, and is a necessary prerequisite for RSP."
+    }
+  ],
+  "bib_entries": {
+    "2724982": {
+      "title": "Synchronization using remote-scope promotion",
+      "abstract": "Heterogeneous system architecture (HSA) and OpenCL define scoped synchronization to facilitate low overhead communication across a subset of threads. Scoped synchronization works well for static sharing patterns, where consumer threads are known a priori. It works poorly for dynamic sharing patterns (e.g., work stealing) where programmers cannot use a faster small scope due to the rare possibility that the work is stolen by a thread in a distant slower scope. This puts programmers in a conundrum: optimize the common case by synchronizing at a faster small scope or use work stealing at a slower large scope. In this paper, we propose to extend scoped synchronization with remote-scope promotion. This allows the most frequent sharers to synchronize through a small scope. Infrequent sharers synchronize by promoting that remote small scope to a larger shared scope. Synchronization using remote-scope promotion provides performance robustness for dynamic workloads, where the benefits provided by scoped synchronization and work stealing are hard to anticipate. Compared to a naive baseline, static scoped synchronization alone achieves a 1.07x speedup on average and dynamic work stealing alone achieves a 1.18x speedup on average. In contrast, synchronization using remote-scope promotion achieves a robust 1.25x speedup on average, across a diverse set of graph benchmarks and inputs."
+    },
+    "11097186": {
+      "title": "HRF-Relaxed: Adapting HRF to the complexities of industrial heterogeneous memory models",
+      "abstract": "Memory consistency models, or memory models, allow both programmers and program language implementers to reason about concurrent accesses to one or more memory locations. Memory model specifications balance the often conflicting needs for precise semantics, implementation flexibility, and ease of understanding. Toward that end, popular programming languages like Java, C, and Cpp have adopted memory models built on the conceptual foundation of Sequential Consistency for Data-Race-Free programs (SC for DRF). These SC for DRF languages were created with general-purpose homogeneous CPU systems in mind, and all assume a single, global memory address space. Such a uniform address space is usually power and performance prohibitive in heterogeneous Systems on Chips (SoCs), and for that reason most heterogeneous languages have adopted split address spaces and operations with nonglobal visibility. There have recently been two attempts to bridge the disconnect between the CPU-centric assumptions of the SC for DRF framework and the realities of heterogeneous SoC architectures. Hower et al. proposed a class of Heterogeneous-Race-Free (HRF) memory models that provide a foundation for understanding many of the issues in heterogeneous memory models. At the same time, the Khronos Group developed the OpenCL 2.0 memory model that builds on the Cpp memory model. The OpenCL 2.0 model includes features not addressed by HRF: primarily support for relaxed atomics and a property referred to as scope inclusion. In this article, we generalize HRF to allow formalization of and reasoning about more complicated models using OpenCL 2.0 as a point of reference. With that generalization, we (1) make the OpenCL 2.0 memory model more accessible by introducing a platform for feature comparisons to other models, (2) consider a number of shortcomings in the current OpenCL 2.0 model, and (3) propose changes that could be adopted by future OpenCL 2.0 revisions or by other, related, models."
+    }
+  },
+  "generator": "fallback"
+}

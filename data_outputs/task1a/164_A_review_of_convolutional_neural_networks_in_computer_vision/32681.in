@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "RoI pooling is performed on the output feature mapping of the last convolution layer, thus eliminating the need to perform a separate convolution computation for each candidate region.",
+    "In addition, Fast R-CNN replaces the last softmax classification layer of the CNN with two side-by-side fully connected layers, one of which is still a softmax classification layer, and the other is a bounding box regressor, which is used for correcting the coordinate information of the candidate regions.",
+    "During the training process, Fast R-CNN designs a multi-task loss function to train the two fully connected layers for classification and correction of candidate region coordinate information simultaneously.",
+    "This training approach achieves better detection results on the PASCAL VOC dataset than the network obtained from the staged training previously used for R-CNN, thus eliminating the need for additional training of SVM classifiers in Fast R-CNN and realizing the integration of the process from extracting image features to completing detection.",
+    "These models have made improvements in the training process and the structure of CNN, however, they all use traditional algorithms to propose candidate regions, and these algorithms are implemented on CPUs, which makes the time of calculating candidate regions the bottleneck of the overall running time of the model."
+  ]
+}

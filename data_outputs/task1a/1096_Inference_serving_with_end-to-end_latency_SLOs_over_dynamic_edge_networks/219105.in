@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "For instance, in a specific setting with 15 FPS, 150ms SLO, and 4 clients, the scheduler often selects large DNNs with a small batch size (e.g., DNNs with indices 11, 9, and 7 and batch size 1).",
+    "In contrast, for the setting with 25 FPS, 150ms SLO, and 4 clients, the scheduler selects relatively smaller DNNs with large batch sizes (e.g., DNNs with indices 7, 5, and 4 and batch sizes 3, 4, and 5, respectively), mainly to achieve higher throughput.",
+    "Because of the smaller DNNs in the latter setting, there is more slack in the latency budget per request on the server since the number of clients and SLOs are the same.",
+    "Therefore, the DNN executor can afford to wait longer for the requests to arrive without violating the latency constraint, allowing it to fill the batch with the desired size.",
+    "This longer waiting time results in the DNN executor doing relatively less work and slightly more waiting compared to the setting with 15 FPS."
+  ]
+}

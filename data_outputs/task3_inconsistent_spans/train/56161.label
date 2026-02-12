@@ -1,0 +1,44 @@
+{
+  "doc_id": "56161",
+  "text": "ZigBee is a kind of self-organized wireless network that that defined over IEEE 802. [CITATION_1] Figure 2 . Theoretically, using FEC in the physical layer can bring performance improvement in terms of reliability and latency. But the cost accounted for hardware overhead will increase, while it is also not flexible to use different coding schemes and decoding algorithms in the MAC layer by software implementation. For this reason, this paper proposes to apply FEC in the MAC layer. Similar strategy can also be founded in [CITATION_2] - [CITATION_3] , but these research have used error correction codes for industrial control applications. At the MAC layer level, there are four kinds of data units that defined by IEEE 802.15.4 standard. In this research, we only use the data frame for encoding/decoding transmission. As shown in Figure 2 , the MAC header is composed of one 2-bytes frame control, one 1-byte sequence number and one (4 20)-bytes address field. Followed by a MAC payload field with the length ranges from 1 byte to 102 bytes. The FCS field is a special 2-bytes cyclic redundancy check (CRC) code that generate by using International Telecommunication Union-Telecommunication sector (ITU-T) standard over MAC header and payload, based on which the receiver side can calculate the consistency of the received packet. If there are errors, the automatic repeat request (ARQ) mechanism is enabled to require for retransmission. In general, this error control strategy can guarantee very high reliability, the implicit long latency may result in traffic congestion in the wireless channel, and is definitely consume much energy resource.",
+  "correct_citation": {
+    "[CITATION_1]": "25059460",
+    "[CITATION_2]": "3064012",
+    "[CITATION_3]": "12785321"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "ZigBee is a kind of self-organized wireless network that that defined over IEEE 802.  Figure 2 .",
+      "s_span": 0,
+      "e_span": 108
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Similar strategy can also be founded in  -  , but these research have used error correction codes for industrial control applications.",
+      "s_span": 486,
+      "e_span": 644
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Similar strategy can also be founded in  -  , but these research have used error correction codes for industrial control applications.",
+      "s_span": 486,
+      "e_span": 644
+    }
+  ],
+  "bib_entries": {
+    "12785321": {
+      "title": "A flexible error correction scheme for IEEE 802.15.4-based industrial wireless sensor networks,'' in Proc",
+      "abstract": "Noise and interference make a substantial impact on wireless transmissions in industrial environments, resulting in frequent erroneous packet deliveries. Existing industrial communication standards adopt the IEEE 802.15.4 specification, which provides no means to correct the detected errors. We propose an IEEE 802.15.4-compliant Forward Error Correction-based approach that can be easily retrofitted into the standard without the need for any kind of interaction with chip manufacturers or standardization bodies. We evaluate the approach on link- and network-level scenarios. Improvement of reliability by using FEC can yield multiple benefits: a reduced number of retransmissions, and lower average latency, to name a few. With respect to the uncoded system, the proposed solution provides identical coding gain as the traditional FEC method, at a significantly lower computational load of decoding."
+    },
+    "3064012": {
+      "title": "Adaptive forward error correction for best effort wireless sensor networks",
+      "abstract": "In this work we propose an Adaptive Forward Error Correction (AFEC) algorithm for best effort Wireless Sensor Networks. The switching model is described in terms of a finite-state Markov model and it is based on the channel behavior, observed via Packet Delivery Ratio in the recent past. We compare the performance of AFEC with static FEC, as well as uncoded transmissions. The results demonstrate a gain in PDR achieved by introducing FEC coding in uncoded IEEE 802.15.4 transmissions, as well as the advantages over static FEC schemes, namely increased throughput and reduced energy consumption. The proposed solution is IEEE 802.15.4-compliant and requires no additional feedback channels."
+    },
+    "25059460": {
+      "title": "Embracing corruption burstiness: Fast error recovery for ZigBee under Wi-Fi interference",
+      "abstract": "The ZigBee communication can be easily and severely interfered by Wi-Fi traffic. Error recovery, as an important means for ZigBee to survive Wi-Fi interference, has been extensively studied in recent years. The existing works add upfront redundancy to in-packet blocks for recovering a certain number of random corruptions. Therefore, the bursty nature of ZigBee in-packet corruptions under Wi-Fi interference is often considered harmful, since some blocks are full of errors which cannot be recovered and some blocks have no errors but are still requiring redundancy. As a result, they often use interleaving to reshape the bursty errors, before applying complex FEC codes to recover the re-shaped random distributed errors. In this paper, we take a different view that burstiness may be helpful. With burstiness, the in-packet corruptions are often consecutive and the requirement for error recovery is reduced as “recovering any k consecutive errors” instead of “recovering any random k errors”. This lowered requirement allows us to design far more efficient code than the existing FEC codes. Motivated by this implication, we exploit the corruption burstiness to design a simple yet effective error recovery code using XOR operations (called ZiXOR). ZiXOR uses XOR code and the delay is significantly reduced. More, ZiXOR uses RSSI-hinted approach to detect in packet corruptions without CRC, incurring almost no extra transmission overhead. The testbed evaluation results show that ZiXOR outperforms the state-of-the-art works in terms of the throughput (by 47 percent) and latency (by 22 percent)."
+    }
+  },
+  "generator": "fallback_v4"
+}

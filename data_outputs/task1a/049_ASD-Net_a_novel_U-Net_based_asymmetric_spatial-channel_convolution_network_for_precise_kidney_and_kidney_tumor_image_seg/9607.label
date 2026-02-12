@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Since the KiTS19 dataset, used in the conducted experiments, consists of three-dimensional (3D) images, but the elaborated segmentation network is twodimensional (2D), the data were first converted from 3D to 2D.",
+    "During the slicing conversion process, aimed at enhancing the details of the target tissue in the images, the window width and position were initially adjusted as follows: any CT value greater than 500 HU (Hounsfield units) was set to 500 HU, and any CT value less than -200 HU was set to -200 HU.",
+    "After completing the slicing, pictures with kidneys or tumors were selected based on the marked images, invalid images were deleted, and random rotation, horizontal or vertical flipping on the training set's images were performed before the network training, as shown in Fig. 1.An illustrative example of adjusting the window width and window level is depicted in Fig.",
+    "2.A sample random rotation of an input image is shown in Fig. 3 and a sample random horizontal and vertical flipping (with a probability of 0.5) are illustrated in Fig.",
+    "U-NetThe classic architecture of U-Net is composed of two parts: (i) feature extraction, designed with inspiration from the VGG network [37,38], where each pooling layer contains a specific scale, with a total of five different scales based on the original image; and (ii) upsampling, where each stage performs an upsampling operation and fuses information with the corresponding channels from the feature extraction part through skip connecting [39]."
+  ],
+  "correct_citations": [
+    "U-NetThe classic architecture of U-Net is composed of two parts: (i) feature extraction, designed with inspiration from the VGG network [37,38], where each pooling layer contains a specific scale, with a total of five different scales based on the original image; and (ii) upsampling, where each stage performs an upsampling operation and fuses information with the corresponding channels from the feature extraction part through skip connecting [39]."
+  ]
+}

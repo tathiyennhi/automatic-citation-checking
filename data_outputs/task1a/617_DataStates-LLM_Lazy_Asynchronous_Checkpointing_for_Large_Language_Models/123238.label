@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "Specifically, in the first phase, it allocates a buffer for each shard on the host memory (red block), then copies the shard from the device to the host buffer (green blocks).",
+    "Once the first phase has finished, it proceeds to asynchronously flush the shards from the host memory to persistent storage (Lustre PFS in our case).",
+    "This is depicted in Figure 5(b).",
+    "The allocation overhead can be significant due to the need to pin the host memory [20], especially when considering a large number of shards.",
+    "It highlights an important limitation of many state-of-the-art approaches that are not optimized for LLM checkpointing.TorchSnapshot: This is a state-of-the-art checkpointing runtime developed by the PyTorch team (illustrated as (c) TorchSnapshot in Figure 5)."
+  ],
+  "correct_citations": [
+    "The allocation overhead can be significant due to the need to pin the host memory [20], especially when considering a large number of shards."
+  ]
+}

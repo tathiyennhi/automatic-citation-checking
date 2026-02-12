@@ -1,0 +1,29 @@
+{
+  "doc_id": "35456",
+  "text": "To model the human in 3D for reconstruction, we build on sum-of-Gaussians representations [CITATION_1] [CITATION_2] and model the volumetric extent of the actor using a set of 91 isotropic Gaussian density functions distributed in 3D space. Each Gaussian G q is parametrized by its standard deviation σ q , mean location µ q in 3D, and density c q , which define the Gaussian shape parameters γ = {µ q , σ q , c q } q . The combined density field of the Gaussians, q c q G q , smoothly describes the volumetric occupancy of the human in 3D space, see Figure 1 . Each Gaussian is rigidly attached to one of the bones of an articulated skeleton with bone lengths b and 16 joints, whose pose is parameterized with 43 twist pose parameters, i.e. the Gaussian position µ q is relative to the attached bone. This representation allows us to formulate a new alignment energy tailored to pose fitting in general scenes, featuring analytic derivatives and fully-differentiable visibility (Section 5).",
+  "correct_citation": {
+    "[CITATION_1]": "14989649",
+    "[CITATION_2]": "11660023"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To model the human in 3D for reconstruction, we build on sum-of-Gaussians representations   and model the volumetric extent of the actor using a set of 91 isotropic Gaussian density functions distributed in 3D space."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "To model the human in 3D for reconstruction, we build on sum-of-Gaussians representations   and model the volumetric extent of the actor using a set of 91 isotropic Gaussian density functions distributed in 3D space."
+    }
+  ],
+  "bib_entries": {
+    "14989649": {
+      "title": "Fast articulated motion tracking using a sums of Gaussians body model",
+      "abstract": "We present an approach for modeling the human body by Sums of spatial Gaussians (SoG), allowing us to perform fast and high-quality markerless motion capture from multi-view video sequences. The SoG model is equipped with a color model to represent the shape and appearance of the human and can be reconstructed from a sparse set of images. Similar to the human body, we also represent the image domain as SoG that models color consistent image blobs. Based on the SoG models of the image and the human body, we introduce a novel continuous and differentiable model-to-image similarity measure that can be used to estimate the skeletal motion of a human at 5–15 frames per second even for many camera views. In our experiments, we show that our method, which does not rely on silhouettes or training data, offers an good balance between accuracy and computational cost."
+    },
+    "11660023": {
+      "title": "A versatile scene model with differentiable visibility applied to generative pose estimation",
+      "abstract": "Generative reconstruction methods compute the 3D configuration (such as pose and/or geometry) of a shape by optimizing the overlap of the projected 3D shape model with images. Proper handling of occlusions is a big challenge, since the visibility function that indicates if a surface point is seen from a camera can often not be formulated in closed form, and is in general discrete and non-differentiable at occlusion boundaries. We present a new scene representation that enables an analytically differentiable closed-form formulation of surface visibility. In contrast to previous methods, this yields smooth, analytically differentiable, and efficient to optimize pose similarity energies with rigorous occlusion handling, fewer local minima, and experimentally verified improved convergence of numerical optimization. The underlying idea is a new image formation model that represents opaque objects by a translucent medium with a smooth Gaussian density distribution which turns visibility into a smooth phenomenon. We demonstrate the advantages of our versatile scene model in several generative pose estimation problems, namely marker-less multi-object pose estimation, marker-less human motion capture with few cameras, and image-based 3D geometry estimation."
+    }
+  },
+  "generator": "fallback_v4"
+}

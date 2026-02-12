@@ -1,0 +1,55 @@
+{
+  "doc_id": "46706",
+  "text": "There are several potential extensions for SPARK. We have primarily focused on de novo detection of genes with spatial expression patterns without knowing what specific spatial patterns to look for in the data a priori. If we have prior knowledge on the structure of the tissue, we can incorporate such structural information into the kernel functions to facilitate the detection of genes that are specifically expressed in the known structures. We have primarily focused on analyzing spatial transcriptomic data collected on a two-dimensional space of a tissue/culture layout. SPARK is flexible and can be easily extended to analyze three-dimensional (3D) data sets such as STARmap where the depth of the sample location in the tissue can be recorded [CITATION_1] or even higher dimensional data sets where other coordinates (e.g. time) are also recorded. We have primarily relied on simple spatial pattern plots and hierarchical clustering for downstream analysis to visualize and categorize identified SE genes from SPARK. Using model based downstream analysis approaches such as the hidden Markov random field model 60 may provide additional accuracy in the categorization of spatial patterns inferred from identified SE genes. We have primarily focused on using an over-dispersed Poisson model to model count data. Several recent studies have shown that over-dispersed Poisson models are well suited for modeling the data generating process underlying, for example, the unique molecular identifier (UMI) based sequencing studies [CITATION_2] [CITATION_3] . However, exploring the use of zero inflated models for data types with inflated zero counts could be a useful future extension. We have primarily focused on analyzing one gene at a time. Future extension of SPARK towards joint modelling of multiple correlated genes in a hierarchical Bayesian framework may further increase power, as it allows for information sharing on the common spatial patterns inferred across genes. Finally, SPARK is computationally efficient. It takes less than an hour to analyze each real data set examined here (Table S3 ) and can easily handle tens of thousands of genes measured on tens of thousands of spatial locations (Fig.  S40 ). However, extending SPARK to analyze the larger data collected from emerging techniques such as Slide-seq [CITATION_4] will likely require new algorithmic development or better computing environment other than standard desktop PCs.",
+  "correct_citation": {
+    "[CITATION_1]": "49332618",
+    "[CITATION_2]": "6765530",
+    "[CITATION_3]": "39225091",
+    "[CITATION_4]": "196676848"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "SPARK is flexible and can be easily extended to analyze three-dimensional (3D) data sets such as STARmap where the depth of the sample location in the tissue can be recorded  or even higher dimensional data sets where other coordinates (e.g. time) are also recorded.",
+      "s_span": 578,
+      "e_span": 856
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Several recent studies have shown that over-dispersed Poisson models are well suited for modeling the data generating process underlying, for example, the unique molecular identifier (UMI) based sequencing studies   .",
+      "s_span": 1320,
+      "e_span": 1561
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Several recent studies have shown that over-dispersed Poisson models are well suited for modeling the data generating process underlying, for example, the unique molecular identifier (UMI) based sequencing studies   .",
+      "s_span": 1320,
+      "e_span": 1561
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "However, extending SPARK to analyze the larger data collected from emerging techniques such as Slide-seq  will likely require new algorithmic development or better computing environment other than standard desktop PCs.",
+      "s_span": 2226,
+      "e_span": 2456
+    }
+  ],
+  "bib_entries": {
+    "196676848": {
+      "title": "Slide-seq: A scalable technology for measuring genome-wide expression at high spatial resolution",
+      "abstract": "The spatial organization of cells in tissue has a profound influence on their function, yet a high-throughput, genome-wide readout of gene expression with cellular resolution is lacking. Here, we introduce Slide-seq, a highly scalable method that enables facile generation of large volumes of unbiased spatial transcriptomes with 10 µm spatial resolution, comparable to the size of individual cells. In Slide-seq, RNA is transferred from freshly frozen tissue sections onto a surface covered in DNA-barcoded beads with known positions, allowing the spatial locations of the RNA to be inferred by sequencing. To demonstrate Slide-seq’s utility, we localized cell types identified by large-scale scRNA-seq datasets within the cerebellum and hippocampus. We next systematically characterized spatial gene expression patterns in the Purkinje layer of mouse cerebellum, identifying new axes of variation across Purkinje cell compartments. Finally, we used Slide-seq to define the temporal evolution of cell-type-specific responses in a mouse model of traumatic brain injury. Slide-seq will accelerate biological discovery by enabling routine, high-resolution spatial mapping of gene expression. One Sentence Summary Slide-seq measures genome-wide expression in complex tissues at 10-micron resolution."
+    },
+    "39225091": {
+      "title": "Counting absolute numbers of molecules using unique molecular identifiers",
+      "abstract": "Counting individual RNA or DNA molecules is difficult because they are hard to copy quantitatively for detection. To overcome this limitation, we applied unique molecular identifiers (UMIs), which make each molecule in a population distinct, to genome-scale human karyotyping and mRNA sequencing in Drosophila melanogaster. Use of this method can improve accuracy of almost any next-generation sequencing method, including chromatin immunoprecipitation-sequencing, genome assembly, diagnostics and manufacturing-process control and monitoring."
+    },
+    "49332618": {
+      "title": "Three-dimensional intact-tissue sequencing of single-cell transcriptional states",
+      "abstract": "INTRODUCTION Single-cell RNA sequencing has demonstrated that both stable cell types and transient cell states can be discovered and defined by transcriptomes. In situ transcriptomic methods can map both RNA quantity and position; however, it remains challenging to simultaneously satisfy key technological requirements such as efficiency, signal intensity, accuracy, scalability to large gene numbers, and applicability to three-dimensional (3D) volumes. Well-established single-molecule fluorescence in situ hybridization (FISH) approaches (such as MERFISH and seqFISH) have high detection efficiency but require long RNA species (more than 1000 nucelotides) and yield lower intensity than that of enzymatic amplification methods (tens versus thousands of fluorophores per RNA molecule). Other pioneering in situ sequencing methods (via padlock probes and fluorescent in situ sequencing) use enzymatic amplification, thus achieving high intensity but with room to improve on efficiency. RATIONALE We have developed, validated, and applied STARmap (spatially-resolved transcript amplicon readout mapping). STARmap begins with labeling of cellular RNAs by pairs of DNA probes followed by enzymatic amplification so as to produce a DNA nanoball (amplicon), which eliminates background caused by mislabeling of single probes. Tissue can then be transformed into a 3D hydrogel DNA chip by anchoring DNA amplicons via an in situ–synthesized polymer network and removing proteins and lipids. This form of hydrogel-tissue chemistry replots amplicons onto an optically transparent hydrogel coordinate system; then, to identify and quantify RNA species-abundance manifested by DNA amplicons, the identity of each species is encoded as a five-base barcode and read out by means of an in situ sequencing method that decodes DNA sequence in multicolor fluorescence. Using a new two-base sequencing scheme (SEDAL), STARmap was found to simultaneously detect more than 1000 genes over six imaging cycles, in which sequencing errors in any cycle cause misdecoding and are effectively rejected. RESULTS We began by (i) detecting and quantifying a focused 160-gene set (including cell type markers and activity-regulated genes) simultaneously in mouse primary visual cortex; (ii) clustering resulting per-cell gene expression patterns into a dozen distinct inhibitory, excitatory, and non-neuronal cell types; and (iii) mapping the spatial distribution of all of these cell types across layers of cortex. For validation, per-cell-type gene expression was found to correlate well both with in situ hybridization results and with single-cell RNA sequencing, and widespread up-regulation of activity-regulated genes was observed in response to visual stimulation. We next applied STARmap to a higher cognitive area (the medial prefrontal cortex) and discovered a more complex distribution of cell types. Last, we extended STARmap to much larger numbers of genes and spatial scales; we measured 1020 genes simultaneously in sections—obtaining results concordant with the 160-gene set—and measured 28 genes across millimeter-scale volumes encompassing ~30,000 cells, revealing 3D patterning principles that jointly characterize a broad and diverse spectrum of cell types. CONCLUSION STARmap combines hydrogel-tissue chemistry and in situ DNA sequencing to achieve intact-tissue single-cell measurement of expression of more than a thousand genes. In the future, combining this intact-system gene expression measurement with complementary cellular-resolution methodologies (with which STARmap is designed to be compatible)—including in vivo activity recording, optogenetic causal tests, and anatomical connectivity in the same cells—will help bridge molecular, cellular, and circuit scales of neuroscience."
+    },
+    "6765530": {
+      "title": "Quantitative single-cell RNA-seq with unique molecular identifiers",
+      "abstract": "With an optimized protocol and unique molecular identifiers (UMIs) to tag individual transcripts, the mRNA complement of a single cell can be quantified on an absolute scale with almost no amplification bias."
+    }
+  },
+  "generator": "fallback_v4"
+}

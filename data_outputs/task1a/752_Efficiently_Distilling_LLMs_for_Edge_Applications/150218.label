@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Here, we assume availability of the following: (i) target data set D train for fine-tuning, (ii) a task specific loss function ℓ task, (iii) a teacher model with configuration Φ Tch and weights W Tch are already fine-tuned for the task, (iv) a smaller model than the teacher, called the student model, with configuration Φ Std & pre-trained weights W pretrain Std.",
+    "The goal is to efficiently fine-tune the student model on the target data with knowledge distillation from the larger teacher model.",
+    "For computational efficiency, we make the following low-rank assumption (as in LoRA approach) on the fine-tuned weights of student model: W Std:= W pretrain Std + A 1 * B 1, Compute forward-pass on the teacher model: ŷiTch, z i Tch, h i Tch ← f ΦTch x i; W Tch, ∀i ∈ B.",
+    "5:Compute forward-pass on the student model: ŷiStd, z i Std, h i Std ← f ΦStd (x i; W Std), ∀i ∈ B.",
+    "6:Find the loss:loss i ← (1-α)ℓ task [ŷ i Std, y i]+α ℓ KD [z i Std, z i Tch] + ℓ FD [h i Std, h i Tch], ∀i ∈ B."
+  ],
+  "correct_citations": []
+}

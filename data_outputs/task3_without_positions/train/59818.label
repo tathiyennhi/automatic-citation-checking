@@ -1,0 +1,20 @@
+{
+  "doc_id": "59818",
+  "text": "The authors in [CITATION_1] term their method very deep Residual Encoder-Decoder Network -RED-Net for short -that consists of a series of convolutional and subsequent deconvolutional layers in order to learn end-to-end mappings from corrupted images to the ground truths. Whilst the convolution being the feature extractor while eliminating the noise, deconvolution aims to recover the image details. The authors propose to introduce skip connections between each convolution layer and the corresponding deconvolution layer for the back-propagation of gradients to lower layers and passing image details to upper layers. The authors claim \"setting new records\" on image denoising and super-resolution, which is somehow exaggerated. The method is claimed to be compared with half a dozen methods, including SRCNN. The results are comparable as only a slight improvement is reported on the test cases in hand; there is no mention of time efficiency. It can be deduced from the results that increasing the number of layers improve the results slightly but the efficiency part is still elusive and does not seem cost effective. Moreover, as illustrated in Fig. 9 , the method consists of n convolutional layers followed by n deconvolutional layers and there is a skip connection between every kth convolution layer and (n − k + 1)th deconvolution layer, for k = 1, 2, . . . , n. In other words, the first convolution layer must wait the last deconvolution layer for the sake of correct correspondence. For such a deep network, this may be an additional overhead.",
+  "correct_citation": {
+    "[CITATION_1]": "1773169"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The authors in  term their method very deep Residual Encoder-Decoder Network -RED-Net for short -that consists of a series of convolutional and subsequent deconvolutional layers in order to learn end-to-end mappings from corrupted images to the ground truths."
+    }
+  ],
+  "bib_entries": {
+    "1773169": {
+      "title": "Image denoising using very deep fully convolutional encoder-decoder networks with symmetric skip connections",
+      "abstract": "Image denoising is a long-standing problem in computer vision and image processing, as well as a test bed for low-level image modeling algorithms. In this paper, we propose a very deep encoding-decoding framework for image denoising. Instead of using image priors, the proposed framework learns end-to-end fully convolutional mappings from noisy images to the clean ones. The network is composed of multiple layers of convolution and de-convolution operators. With the observation that deeper networks improve denoising performance, we propose to use significantly deeper networks than those employed previously for low-level image processing tasks such as denoising. We propose to symmetrically link convolutional and de-convolutional layers with skip-layer connections, with which the training converges much faster and attains a higher-quality local optimum. From the image processing point of view, those symmetric connections help preserve image details."
+    }
+  },
+  "generator": "fallback_v4"
+}

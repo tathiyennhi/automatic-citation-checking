@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "We evaluate LLMs across multiple random relabelings of the same graph: we draw N = 10 random ℓ's and apply them on the Erdős test graphsfoot_2, and then assess: (a) the mean accuracy over these relabelings; (b) the variability of the models' outputs on numerical tasks.",
+    "As for (a), fig. 6 in the Appendix reports the accuracy difference between the original Erdős dataset and sampled node relabelings across tasks.",
+    "We observe a clear sensitivity to the relabeling for some tasks, which is more pronounced for G1's than for the original Qwen's.",
+    "This can be explained by reliance on positional regularities: certain labelings make the target solution easier for the model to \"heuristically guess\", e.g., in bipartite_maximum_matching, the correct solution in Erdős always induces a contiguous bipartition, i.e., ({1,..., x}, {x + 1,..., n}) for some x. Finetuning can internalize this heuristic, but after relabeling blocks cease to be contiguous and performance drops.",
+    "As for (b), we capture output variability induced by node relabelings by calculating the normalized output span averaged over all test graphs in numerical tasks-a value of 0.0 indicates no variability, as desired for invariance."
+  ],
+  "correct_citations": []
+}

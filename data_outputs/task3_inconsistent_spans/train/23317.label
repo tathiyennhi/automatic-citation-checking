@@ -1,0 +1,33 @@
+{
+  "doc_id": "23317",
+  "text": "As a case study of kernel-level design, we have implemented a device driver based protocol called RTDiP (Real-Time Direct Protocol) in the Embedded Linux over Ethernet [CITATION_1] [CITATION_2] . RTDiP is a new transport protocol that can provide priority aware communication, communication semantics for synchronization, and low communication overhead. In the synchronous semantics, the communication protocols do not queue the packets but keep only the last packet received, which is suitable for distributed synchronization over relatively small area embedded networks. The performance results show that RTDiP reports 48us one-way latency with 8-byte message and provides better overhead prediction. We are currently implementing RTDiP over Control Area Network (CAN) as well. In addition we plan to implement it in another embedded operating system such as QNX.",
+  "correct_citation": {
+    "[CITATION_1]": "2473828",
+    "[CITATION_2]": "13874521"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As a case study of kernel-level design, we have implemented a device driver based protocol called RTDiP (Real-Time Direct Protocol) in the Embedded Linux over Ethernet   .",
+      "s_span": 0,
+      "e_span": 195
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "As a case study of kernel-level design, we have implemented a device driver based protocol called RTDiP (Real-Time Direct Protocol) in the Embedded Linux over Ethernet   .",
+      "s_span": 0,
+      "e_span": 195
+    }
+  ],
+  "bib_entries": {
+    "13874521": {
+      "title": "Communication Primitives for Real-Time Distributed Synchronization over Small Area Networks",
+      "abstract": "Many emerging embedded systems consist of multiple embedded nodes, which are connected through an internal small area network. In such systems, the synchronization between the embedded nodes is essential to provide real-time cooperation environment. On small area networks, the severe obstacle for achieving real-time synchronization is the unpredictable overhead of the system software running on the embedded nodes. This is true especially if a traditional operating system has been installed. Despite of these drawbacks, it is quite common to run traditional operating systems on some of the embedded nodes to utilize various existing applications. In this paper, we propose a novel design of communication primitives called RTDiP-Sync for real-time distributed synchronization over small area networks. Experiment results show that the suggested design can minimize the communication overhead and provide better overhead prediction."
+    },
+    "2473828": {
+      "title": "Real-Time Communication Support for Embedded Linux over Ethernet",
+      "abstract": "Many embedded systems are exploiting embedded Linux due to its rich features and device drivers. However, since embedded Linux is inherited from traditional monolithic kernel design, it has limitations to support real-time communication. One such example is that the protocol stacks of embedded Linux are following the bottom half based architecture. The user-level operations of a higher priority process can get delayed while the bottom half handles the packets for even lower priority processes. In addition, the send/recv semantics of traditional protocol stacks are not sufficient to support various real-time embedded applications. In this paper, we aim to design and implement a lightweight protocol stack that can support real-time communication over Ethernet without Linux kernel modification. The proposed protocol, called RTDiP, provides priority awareness, communication semantic for synchronization, and low communication overhead. The experimental results show that RTDiP can improve the communication latency up to 79% compared with TCP/IP. We also show that RTDiP can guarantee the execution time of real-time applications with less disturbance by communication of lower priority process and can provide predictable communication latency to realtime applications."
+    }
+  },
+  "generator": "fallback_v4"
+}

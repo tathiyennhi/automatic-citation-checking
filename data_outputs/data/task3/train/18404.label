@@ -1,0 +1,29 @@
+{
+  "doc_id": "18404",
+  "text": "Suppose the input signal contains a 3 rd order harmonic and a decaying DC offset lasting in several cycles at the beginning of simulation as shown in Equation [CITATION_1] . Parameters used in simulation are listed in 733 sin XAϕ = . At first, we choose the best sampling rate and data window for LSE algorithms, since the performance of these algorithms are highly connected with them. Former studies show that lower sampling rate and longer data window help to obtain a better result [CITATION_2] . f input denotes the frequency of input signal. In Figure 3 , we find that the number of iterations during each sampling interval is set to be 2 or 3, which is good enough to acquire a high accuracy for resampling LSE, and comparing with the traditional one, the resampling LSE method tends to converge more robustly. In Figure 4 , we know that tracking accuracy of resampling LSE in higher than that of the traditional one. The dynamic range of resampling LSE is smaller than that of the traditional one. Figure 5 shows the mean square error (MSE) of two LSE methods with different variables such as time constant and amplitude of decaying DC offset component. When the amplitude of decaying DC offset is 0.2 p.u. and the time constant is 0.1T, the MSE are 1.2106 and 0.5222 for traditional LSE and resampling LSE respectively. Fig. 6 Performance of traditional and resampling LSE methods with noise (Initial sampling rate f s =720Hz, data window L=14, f input =60Hz, first 30 estimated frequencies are used for MSE calculation and averaged in 1000 times) Figure 6 tell us that resampling LSE does not work well when signal to noise ratio (SNR) is less than 25~30 dB. In the practice of power system, SNR is always higher than 30dB. So Gaussian white noise could not do too much harm to resampling LSE in practice.",
+  "correct_citation": {
+    "[CITATION_1]": "3602645",
+    "[CITATION_2]": "35025729"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Suppose the input signal contains a 3 rd order harmonic and a decaying DC offset lasting in several cycles at the beginning of simulation as shown in Equation  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Former studies show that lower sampling rate and longer data window help to obtain a better result  . f input denotes the frequency of input signal."
+    }
+  ],
+  "bib_entries": {
+    "3602645": {
+      "title": "Real-time determination of power system frequency",
+      "abstract": "The main frequency is an important parameter of an electrical power system. The frequency can change over a small range due to generation-load mismatches. Some power system protection and control applications, e,g, frequency relay for load shedding, load-frequency controller, require accurate and fast estimation of the frequency. Most digital algorithms for measuring frequency have acceptable accuracy if voltage waveforms are not distorted. However, due to nonlinear devices, e,g, semiconductor rectifiers, electric arc furnaces, the voltage waveforms can include higher harmonics. The paper presents a new method of measurement of power system frequency, based on digital filtering and Prony's estimation method. Simulation results confirm, that the proposed method is more accurate than others, e,g, than the method based on the measurement of angular velocity of the rotating voltage phasor."
+    },
+    "35025729": {
+      "title": "A new algorithm for digital impedance relays",
+      "abstract": "This paper presents a new algorithm suitable for calculating impedances from digitized voltages and currents sampled at a relay location. Each input is assumed to be composed of a decaying d.c. component and components of the fundamental and harmonic frequencies. Parameters of a digital filter determined by using the least error squares approach are then used to compute the real and imaginary components of the voltage and current phasors. Impedances as seen from a relay location are then calculated. The proposed algorithm was tested using the fault data recorded at the Regina South switching station of the Saskatchewan Power Corporation; some of the test results are included."
+    }
+  },
+  "generator": "fallback_v4"
+}

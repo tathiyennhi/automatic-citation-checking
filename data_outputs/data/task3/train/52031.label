@@ -1,0 +1,34 @@
+{
+  "doc_id": "52031",
+  "text": "Visualization of the deep networks has become one of the most important and interesting aspects of deep learning, mainly to understand the internal working of the networks [CITATION_1] . Deep CNN networks are powerful enough to learn the localization of objects in higher layers [CITATION_2] . Class Activation Maps (CAMs) [CITATION_3] are an interesting way to visualize the image regions where the deep network is focusing while making the predictions about it's class. Figure 7 shows the CAMs for positively predicted test samples of Mary and Gabriel for VGGFace-A (row 2) and VGGFace-C (row 3) models. We can see how the network tries to localize at the body (including the dress), wings and the neighboring information while predicting for Gabriel and Mary. The results from the CAMs strengthen our argument as to why VGGFace-C is a better model as compared to VGGFace-A. For Figure 7(a, b) , VGGFace-A uses features located at the lower part of the clothing, whereas VGGFace-C perceives the whole body. This also shows that the use of the whole body for recognizing character gives more context for the model to learn about the character. In Figure 7 (c) VGGFace-C again looks at the body part of Mary for making the prediction, whereas for Figure 7(d) it focuses on the facial area, as opposed to VGGFace-A which looks at other regions of the images except the face. Interesting to note here that both the models are making the correct predictions by looking at different regions. A very peculiar information that the network tries to capture is observed in Figure 8 , where it has correctly classified the class as Mary, but in this case, the focus of the network is on the hand positions of Mary. This is a very useful semantic information that the network is trying to capture when it is provided domain related knowledge.",
+  "correct_citation": {
+    "[CITATION_1]": "3960646",
+    "[CITATION_2]": "6789015",
+    "[CITATION_3]": "6789015"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Visualization of the deep networks has become one of the most important and interesting aspects of deep learning, mainly to understand the internal working of the networks  ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Deep CNN networks are powerful enough to learn the localization of objects in higher layers  ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Class Activation Maps (CAMs)  are an interesting way to visualize the image regions where the deep network is focusing while making the predictions about it's class."
+    }
+  ],
+  "bib_entries": {
+    "6789015": {
+      "title": "Learning deep features for discriminative localization",
+      "abstract": "In this work, we revisit the global average pooling layer proposed in [13], and shed light on how it explicitly enables the convolutional neural network (CNN) to have remarkable localization ability despite being trained on imagelevel labels. While this technique was previously proposed as a means for regularizing training, we find that it actually builds a generic localizable deep representation that exposes the implicit attention of CNNs on an image. Despite the apparent simplicity of global average pooling, we are able to achieve 37.1% top-5 error for object localization on ILSVRC 2014 without training on any bounding box annotation. We demonstrate in a variety of experiments that our network is able to localize the discriminative image regions despite just being trained for solving classification task1."
+    },
+    "3960646": {
+      "title": "Visualizing and understanding convolutional networks",
+      "abstract": "Large Convolutional Network models have recently demonstrated impressive classification performance on the ImageNet benchmark Krizhevsky et al. [18]. However there is no clear understanding of why they perform so well, or how they might be improved. In this paper we explore both issues. We introduce a novel visualization technique that gives insight into the function of intermediate feature layers and the operation of the classifier. Used in a diagnostic role, these visualizations allow us to find model architectures that outperform Krizhevsky et al on the ImageNet classification benchmark. We also perform an ablation study to discover the performance contribution from different model layers. We show our ImageNet model generalizes well to other datasets: when the softmax classifier is retrained, it convincingly beats the current state-of-the-art results on Caltech-101 and Caltech-256 datasets."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,55 @@
+{
+  "doc_id": "45340",
+  "text": "There is much work using GAN architectures for data augmentation. Gupta [CITATION_1] used conditional GANs for sentiment classification, obtaining a significant improvement against a baseline model that was only trained on real data. The conditional GAN was trained using different strategies including pre-training and noise injection on the training data. Mok and Chung [CITATION_2] proposed an automatic data augmentation that enables machine learning methods to learn from the available annotated samples efficiently. Their architecture consists of a coarse-to-fine generator which captures the manifold of the training sets. Their proposed method was used on Magnetic Resonance Imaging (MRI) images and achieved improvements of about 3.5% over the traditional augmentation approaches that were compared against. In addition, Wu et al. [CITATION_3] used a multi-scale class conditional GAN to perform contextual in-filling to synthesize lesions onto healthy screening mammograms. For experimentation, three classifications were compared and their method substantially outperformed a baseline model. Jangid [CITATION_4] used a conditional GAN to augment data in another domain. They named their architecture Data Augmentation Generative Adversarial Networks (DAGAN), which can be trained for low-data tasks using standard stochastic gradient descent approaches. It is clear that GANs can be used as a substitute for traditional augmentation techniques and are particularly valuable where more sophisticated augmentation strategies are required.",
+  "correct_citation": {
+    "[CITATION_1]": "67750632",
+    "[CITATION_2]": "44154325",
+    "[CITATION_3]": "49907378",
+    "[CITATION_4]": "52909509"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Gupta [CITATION_1] used conditional GANs for sentiment classification, obtaining a significant improvement against a baseline model that was only trained on real data.",
+      "s_span": 66,
+      "e_span": 233
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Mok and Chung [CITATION_2] proposed an automatic data augmentation that enables machine learning methods to learn from the available annotated samples efficiently.",
+      "s_span": 358,
+      "e_span": 521
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In addition, Wu et al. [CITATION_3] used a multi-scale class conditional GAN to perform contextual in-filling to synthesize lesions onto healthy screening mammograms.",
+      "s_span": 817,
+      "e_span": 983
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Jangid [CITATION_4] used a conditional GAN to augment data in another domain.",
+      "s_span": 1103,
+      "e_span": 1180
+    }
+  ],
+  "bib_entries": {
+    "49907378": {
+      "title": "Conditional infilling GANs for data augmentation in mammogram classification",
+      "abstract": "Deep learning approaches to breast cancer detection in mammograms have recently shown promising results. However, such models are constrained by the limited size of publicly available mammography datasets, in large part due to privacy concerns and the high cost of generating expert annotations. Limited dataset size is further exacerbated by substantial class imbalance since\"normal\"images dramatically outnumber those with findings. Given the rapid progress of generative models in synthesizing realistic images, and the known effectiveness of simple data augmentation techniques (e.g. horizontal flipping), we ask if it is possible to synthetically augment mammogram datasets using generative adversarial networks (GANs). We train a class-conditional GAN to perform contextual in-filling, which we then use to synthesize lesions onto healthy screening mammograms. First, we show that GANs are capable of generating high-resolution synthetic mammogram patches. Next, we experimentally evaluate using the augmented dataset to improve breast cancer classification performance. We observe that a ResNet-50 classifier trained with GAN-augmented training data produces a higher AUROC compared to the same model trained only on traditionally augmented data, demonstrating the potential of our approach."
+    },
+    "44154325": {
+      "title": "Learning data augmentation for brain tumor segmentation with Coarse-to-Fine generative adversarial networks",
+      "abstract": "There is a common belief that the successful training of deep neural networks requires many annotated training samples, which are often expensive and difficult to obtain especially in the biomedical imaging field. While it is often easy for researchers to use data augmentation to expand the size of training sets, constructing and generating generic augmented data that is able to teach the network the desired invariance and robustness properties using traditional data augmentation techniques is challenging in practice. In this paper, we propose a novel automatic data augmentation method that uses generative adversarial networks to learn augmentations that enable machine learning based method to learn the available annotated samples more efficiently. The architecture consists of a coarse-to-fine generator to capture the manifold of the training sets and generate generic augmented data. In our experiments, we show the efficacy of our approach on a Magnetic Resonance Imaging (MRI) image, achieving improvements of 3.5% Dice coefficient on the BRATS15 Challenge dataset as compared to traditional augmentation approaches. Also, our proposed method successfully boosts a common segmentation network to reach the state-of-the-art performance on the BRATS15 Challenge."
+    },
+    "52909509": {
+      "title": "Augmenting image classifiers using data augmentation generative adversarial networks",
+      "abstract": "Effective training of neural networks requires much data. In the low-data regime, parameters are underdetermined, and learnt networks generalise poorly. Data Augmentation alleviates this by using existing data more effectively, but standard data augmentation produces only limited plausible alternative data. Given the potential to generate a much broader set of augmentations, we design and train a generative model to do data augmentation. The model, based on image conditional Generative Adversarial Networks, uses data from a source domain and learns to take a data item and augment it by generating other within-class data items. As this generative process does not depend on the classes themselves, it can be applied to novel unseen classes. We demonstrate that a Data Augmentation Generative Adversarial Network (DAGAN) augments classifiers well on Omniglot, EMNIST and VGG-Face."
+    },
+    "67750632": {
+      "title": "Data augmentation for low resource sentiment analysis using generative adversarial networks",
+      "abstract": "Sentiment analysis is a task that may suffer from a lack of data in certain cases, as the datasets are often generated and annotated by humans. In cases where data is inadequate for training discriminative models, generate models may aid training via data augmentation. Generative Adversarial Networks (GANs) are one such model that has advanced the state of the art in several tasks, including as image and text generation. In this paper, I train GAN models on low resource datasets, then use them for the purpose of data augmentation towards improving sentiment classifier generalization. Given the constraints of limited data, I explore various techniques to train the GAN models. I also present an analysis of the quality of generated GAN data as more training data for the GAN is made available. In this analysis, the generated data is evaluated as a test set (against a model trained on real data points) as well as a training set to train classification models. Finally, I also conduct a visual analysis by projecting the generated and the real data into a two-dimensional space using the t-Distributed Stochastic Neighbor Embedding (t-SNE) method."
+    }
+  },
+  "generator": "fallback_v4"
+}

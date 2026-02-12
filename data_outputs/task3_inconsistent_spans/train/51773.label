@@ -1,0 +1,40 @@
+{
+  "doc_id": "51773",
+  "text": "When casting a wider net for prevention on your network, things tends to get complex but in a long run it's much easier managing attacks from their point of entry to your network rather than managing attacks on individual host machines. Some organisations have achieved this through implementation of SMTP and HTTP/SSL proxies [CITATION_1] , whereby all traffic from the internet towards organisations' internal network must pass these gateways which provides extra layer of security. Moreover, these gateways can be configured with email filtering rules i.e. any incoming email will be assessed in correlation with the rules set and the system will decide if an email should be allowed into the network or not. Some organisations have done this by deploying network Intrusion Prevention Systems (IPS). While one may argue the importance of having IPS while firewall already exist, the truth is firewalls themselves have limitations. Firewalls can block traffics basing on IP blocks and ports while an IPS monitors all traffic entering and exiting the network [CITATION_2] . With organisations hosting webserver applications like Apache and Microsoft IIS, relying on firewall alone is ill-advised hence, having an IPS on your layered defensive security provides assurance while maintain functionality. The advantage of using an IPS as opposed to IDS is the ability of IPS to stop or redirect attacks pre-emptively [CITATION_3] . With this feature an IPS is capable of redirecting attacks to the honeypot machine luring the attackers to believe success while giving the analyst ample time to analyse the attack and understand it in depth.",
+  "correct_citation": {
+    "[CITATION_1]": "108089404",
+    "[CITATION_2]": "14607429",
+    "[CITATION_3]": "14607429"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Some organisations have achieved this through implementation of SMTP and HTTP/SSL proxies  , whereby all traffic from the internet towards organisations' internal network must pass these gateways which provides extra layer of security.",
+      "s_span": 237,
+      "e_span": 484
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Firewalls can block traffics basing on IP blocks and ports while an IPS monitors all traffic entering and exiting the network  .",
+      "s_span": 934,
+      "e_span": 1074
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The advantage of using an IPS as opposed to IDS is the ability of IPS to stop or redirect attacks pre-emptively  .",
+      "s_span": 1302,
+      "e_span": 1428
+    }
+  ],
+  "bib_entries": {
+    "108089404": {
+      "title": "Analysis of Known and Unknown Malware Bypassing Techniques",
+      "abstract": "Nowadays, malware attacks are the most expensive damages for organizations in different types of computer and network systems. While different types of attacks are well surveyed and documented, little details related to bypass malware detections and defenses are provided in the ::: public domains. Malware caused different types of attacks such as denial of service (DoS) attacks,business espionage, extorting money, etc. Therefore, implementing malware defenses for organizations’ internal networks are uttermost important.In this paper, bypassing the well-known and unknown malware through the host-based Anti Viruses (AVs) that are based on signature detection is illustrated, and it is shown that how even a known malware might be bypassed anti viruses and firewalls to be executed in organizations’ ::: internal computer networks. Right after that, an unknown malware detection system to protect organization’s internal networks from unknown and known malware before they reach into the victims’ systems is surveyed and provided."
+    },
+    "14607429": {
+      "title": "Improving IPS by network processors",
+      "abstract": "Many present applications usually require high communication throughputs. Multiprocessor nodes and multicore architectures, as well as programmable NICs (Network Interface Cards) provide new opportunities to take advantage of the available multigigabits per second link bandwidths. Nevertheless, to achieve adequate communication performance levels efficient parallel processing of network tasks and interfaces should be considered. In this paper, we leverage network processors as heterogeneous microarchitectures with several cores that implement multithreading and are suited for packet processing, to investigate on the use of parallel processing to accelerate the network interface, and thus the network applications developed above it. More specifically, we have implemented an intrusion prevention system (IPS) with such a network processor. We describe the IPS we have developed that after its offloaded implementation allows faster packet processing of both normal and corrupted traffic. The benefits from placing the IPS close to the network, by using specialized network processors, give many times lower latency and higher bandwidth available to the legitimate traffic."
+    }
+  },
+  "generator": "fallback_v4"
+}

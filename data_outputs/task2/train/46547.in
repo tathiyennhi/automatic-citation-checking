@@ -1,0 +1,52 @@
+{
+  "text": "Due to space constraints, for more detailed information about task implementation and how to set up the guest OS schedulers we refer the reader to [CITATION_1] .",
+  "citation_candidates": [
+    "248978",
+    "6864531",
+    "13835193",
+    "9827075",
+    "7987986",
+    "11743785",
+    "60050473",
+    "934872",
+    "206524469"
+  ],
+  "bib_entries": {
+    "6864531": {
+      "title": "Compositional Schedulability Analysis of Hierarchical Real-Time Systems",
+      "abstract": "Embedded systems are complex as a whole but consist of smaller independent modules interacting with each other. This structure makes them amenable to compositional design. Real-time embedded systems consist of realtime workloads having deadlines. Compositional design of such systems can be done using real-time components arranged in a scheduling hierarchy. Each component consists of some real-time workload and a scheduling policy for the workload. To simplify schedulability analysis for such systems, analysis should be done compositionally using interfaces that abstract timing requirement of components. To facilitate analysis of dynamically changing systems, the framework should also support incremental analysis. In this paper, we overview our approach to compositional and incremental schedulability analysis of hierarchical real-time systems. We describe a compositional analysis technique that abstracts resource requirement of components using periodic resource models. To support incremental analysis and resource bandwidth minimization, we describe an extension to this interface model. Each extended interface consists of multiple periodic resource models for different periods. This allows the selection of a periodic model that can schedule the system using minimum bandwidth. We also account for context switch overhead of components in these extended interfaces. We then describe an associative composition technique for such interfaces, that supports incremental analysis"
+    },
+    "60050473": {
+      "title": "A Compositional Framework for Avionics (ARINC-653) Systems",
+      "abstract": "Cyber-physical systems (CPSs) are becoming all-pervasive, and due to increasing complexity they are designed using component-based approaches. Temporal constraints of such complex CPSs can then be modeled using hierarchical scheduling frameworks. In this paper, we consider one such avionics CPS described by ARINC specification 653-2. The real-time workload in this system comprises of partitions, where each partition consists of one or more processes. Processes incur blocking and preemption overheads, and can communicate with other processes in the system. In this work, we develop techniques for automated scheduling of such partitions. At present, system designers manually schedule partitions based on interactions they have with application vendors. This approach is not only time consuming, but can also result in under utilization of resources. Hence, in this work we propose compositional analysis based scheduling techniques for partitions. Comments University of Pennsylvania Department of Computer and Information Science Technical Report No. MSCIS-09-04 This technical report is available at ScholarlyCommons: http://repository.upenn.edu/cis_reports/898 A Compositional Scheduling Framework for Digital Avionics Systems Arvind Easwaran\u2217 CISTER/IPP-HURRAY Polytechnic Institute of Porto Portugal aen@isep.ipp.pt Insup Lee, Oleg Sokolsky Department of CIS University of Pennsylvania PA, 19104, USA {lee,sokolsky}@cis.upenn.edu Steve Vestal Boston Scientific MN 55112, USA stephen.vestal@bsci.com"
+    },
+    "13835193": {
+      "title": "Compositional Real-time Scheduling Framework with Periodic Model",
+      "abstract": "It is desirable to develop large complex systems using components based on systematic abstraction and composition. Our goal is to develop a compositional real-time scheduling framework to support abstraction and composition techniques for real-time aspects of components. In this paper, we present a formal description of compositional real-time scheduling problems, which are the component abstraction and composition problems. We identify issues that need be addressed by solutions and provide our framework for the solutions, which is based on the periodic interface. Specifically, we introduce the periodic resource model to characterize resource allocations provided to a single component. We present exact schedulability conditions for the standard Liu and Layland periodic task model and the proposed periodic resource model under EDF and RM scheduling, and we show that the component abstraction and composition problems can be addressed with periodic interfaces through the exact schedulability conditions. We also provide the utilization bounds of a periodic task set over the periodic resource model and the abstraction bounds of periodic interfaces for a periodic task set under EDF and RM scheduling. We finally present the analytical bounds of overheads that our solution incurs in terms of resource utilization increase and evaluate the overheads through simulations."
+    },
+    "206524469": {
+      "title": "The Rate Monotonic Scheduling Algorithm: Exact Characterization and Average Case Behavior",
+      "abstract": "An exact characterization of the ability of the rate monotonic scheduling algorithm to meet the deadlines of a periodic task set is represented. In addition, a stochastic analysis which gives the probability distribution of the breakdown utilization of randomly generated task sets is presented. It is shown that as the task set size increases, the task computation times become of little importance, and the breakdown utilization converges to a constant determined by the task periods. For uniformly distributed tasks, a breakdown utilization of 88% is a reasonable characterization. A case is shown in which the average-case breakdown utilization reaches the worst-case lower bound of C.L. Liu and J.W. Layland (1973). >"
+    },
+    "934872": {
+      "title": "Realizing Compositional Scheduling through Virtualization",
+      "abstract": "We present a co-designed scheduling framework and platform architecture that together support compositional scheduling of real-time systems. The architecture is built on the Xen virtualization platform, and relies on compositional scheduling theory that uses periodic resource models as component interfaces. We implement resource models as periodic servers and consider enhancements to periodic server design that significantly improve response times of tasks and resource utilization in the system while preserving theoretical schedulability results. We present an extensive evaluation of our implementation using workloads from an avionics case study as well as synthetic ones."
+    },
+    "248978": {
+      "title": "An Optimal Algorithm for Scheduling Soft-aperiodic Tasks in Fixed-priority Preemptive Systems",
+      "abstract": "A novel algorithm for servicing soft deadline aperiodic tasks in a real-time system in which hard deadline periodic tasks are scheduled using a fixed priority algorithm is presented. This algorithm is proved to be optimal in the sense that it provides the shortest aperiodic response time among all possible aperiodic service methods. Simulation studies show that it offers substantial performance improvements over current approaches, including the sporadic server algorithm. Moreover, standard queuing formulas can be used to predict aperiodic response times over a wide range of conditions. The algorithm can be extended to schedule hard deadline aperiodics and to efficiently reclaim unused periodic service time when periodic tasks have stochastic execution times. >"
+    },
+    "9827075": {
+      "title": "Efficient Reclaiming in Reservation-based Real-time Systems with Variable Execution Times",
+      "abstract": "We present a general CPU scheduling methodology for managing overruns in a real-time environment, where tasks may have different criticality, flexible timing constraints, shared resources, and variable execution times. The proposed method enhances, the constant bandwidth server (CBS) by providing two important extensions. First, it includes an efficient bandwidth sharing mechanism that reclaims the unused bandwidth to enhance task responsiveness. It is proven that the reclaiming mechanism does not violate the isolation property of the CBS and can be safely adopted to achieve temporal protection even when resource reservations are not precisely assigned. Second, the proposed method allows the CBS to work in the presence of shared resources. The enhancements achieved by the proposed approach turned out to be very effective with respect to classical CPU reservation schemes. The algorithm complexity is O(ln N), where N is the number of real-time tasks in the system, and its performance has been experimentally evaluated by extensive simulations."
+    },
+    "7987986": {
+      "title": "Capacity Sharing and Stealing in Dynamic Server-based Real-time Systems",
+      "abstract": "This paper proposes a dynamic scheduler that supports the coexistence of guaranteed and non-guaranteed bandwidth servers to efficiently handle soft-tasks' overloads by making additional capacity available from two sources: (i) residual capacity allocated but unused when jobs complete in less than their budgeted execution time; (ii) stealing capacity from inactive non-isolated servers used to schedule best-effort jobs. The effectiveness of the proposed approach in reducing the mean tardiness of periodic jobs is demonstrated through extensive simulations. The achieved results become even more significant when tasks' computation times have a large variance."
+    },
+    "11743785": {
+      "title": "Real-time Scheduling in a Virtualized CE Device",
+      "abstract": "Recently, virtualization has been widely adopted in embedded systems. Because most of embedded systems have real-time requirements, real-time property needs to be preserved in a virtual machine system. We present how we can deal with real-time issues in an embedded virtual machine. Our contribution is that we provide a new abstract periodic interface to a real-time virtual machine so that the virtual machine can meet the physical execution condition."
+    }
+  }
+}

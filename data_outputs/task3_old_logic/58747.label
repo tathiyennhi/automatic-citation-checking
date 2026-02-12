@@ -1,0 +1,29 @@
+{
+  "doc_id": "58747",
+  "text": "We follow an exemplar-based approach to shape-based pedestrian detection, as previously described in [CITATION_1] . Pedestrians are represented by a set of training shapes or templates which ideally cover the set of object appearances due to transformations (i.e. scale) and intra-class variance (i.e. different pedestrians, different poses). At the core, we perform template matching based on the (chamfer) distance transform [CITATION_2] . This correlation approach is quite robust to missing features due to segmentation problems (i.e. edge \"gaps\") or occlusion. Furthermore, the distance transforms has the advantage to provide a gradual measure of shape dissimilarity. This allows the use of an efficient search algorithms to \"lock onto\" the correct solution, as discussed below.",
+  "correct_citation": {
+    "[CITATION_1]": "766556",
+    "[CITATION_2]": "36889447"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We follow an exemplar-based approach to shape-based pedestrian detection, as previously described in"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "At the core, we perform template matching based on the (chamfer) distance transform"
+    }
+  ],
+  "bib_entries": {
+    "766556": {
+      "title": "Real-time object detection for \"smart\" vehicles",
+      "abstract": "This paper presents an efficient shape-based object detection method based on Distance Transforms and describes its use for real-time vision on-board vehicles. The method uses a template hierarchy to capture the variety of object shapes; efficient hierarchies can be generated offline for given shape distributions using stochastic optimization techniques (i.e. simulated annealing). Online, matching involves a simultaneous coarse-to-fine approach over the shape hierarchy and over the transformation parameters. Very large speed-up factors are typically obtained when comparing this approach with the equivalent brute-force formulation; we have measured gains of several orders of magnitudes. We present experimental results on the real-time detection of traffic signs and pedestrians from a moving vehicle. Because of the highly time sensitive nature of these vision tasks, we also discuss some hardware-specific implementations of the proposed method as far as SIMD parallelism is concerned."
+    },
+    "36889447": {
+      "title": "Distance transformations in digital images",
+      "abstract": "A distance transformation converts a binary digital image, consisting of feature and non-feature pixels, into an image where all non-feature pixels have a value corresponding to the distance to the nearest feature pixel. Computing these distances is in principle a global operation. However, global operations are prohibitively costly. Therefore algorithms that consider only small neighborhoods, but still give a reasonable approximation of the Euclidean distance, are necessary. In the first part of this paper optimal distance transformations are developed. Local neighborhoods of sizes up to 7×7 pixels are used. First real-valued distance transformations are considered, and then the best integer approximations of them are computed. A new distance transformation is presented, that is easily computed and has a maximal error of about 2%. In the second part of the paper six different distance transformations, both old and new, are used for a few different applications. These applications show both that the choice of distance transformation is important, and that any of the six transformations may be the right choice."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "It is specified in the prompt that sql_db_schema is always invoked prior to sql_db_list_tables.",
+    "The LLM generates the SQL query, which is then passed to the sql_db_query_checker tool, responsible for verifying the correctness of the SQL query before execution.",
+    "Finally, the sql_db_query tool is called to execute the SQL query.",
+    "If an error is returned, it is captured, and the query is rewritten for another attempt.",
+    "After a specified number of attempts, defined as a parameter in the function, the SQLAgent terminates."
+  ],
+  "correct_citations": []
+}

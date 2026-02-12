@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "As illustrated in Figure 1, similar to the Planner module, we implement it as an LLM instance equipped with a memory M 𝐴 storing micro-level experiences.",
+    "Additionally, considering that some knowledge is valuable for personalization but challenging for LLMs to handle [2], we add a tool library denoted as 𝑇𝑙 to access such knowledge.",
+    "At each step 𝑛 of an episode, the actor utilizes the historical trajectory H 1•••𝑛-1, the current state 𝑠 𝑛, and the corresponding thought 𝑡 𝑛 from the Planner module as inputs to generate an executable action 𝑎 𝑛 with knowledge obtained from the memory and the tool library as follows:𝑎 𝑛 = Actor(H 1•••𝑛-1, 𝑠 𝑛, 𝑡 𝑛; M 𝐴,𝑇𝑙).Here, the memory M 𝐴 can be formulated as a set of micro-level experiences, where the 𝑚-th experience is a previous interaction record, including three factors: state 𝑠 𝑚, action 𝑎 𝑚, and corresponding value 𝑣 𝑚.",
+    "Formally, we haveM 𝐴 = {(𝑠 𝑚, 𝑎 𝑚, 𝑣 𝑚)|𝑚 = 1, 2,... }.Upon receiving these inputs, each generation process comprises three operations: 1) retrieving valuable experiences from the memory M 𝐴, 2) utilizing the tools to gather valuable statistical information of the current state, and 3) integrating the results of the first two steps and other inputs to prompt LLM to generate an action.",
+    "We next elaborate on these operations.• Retrieval."
+  ],
+  "correct_citations": [
+    "Additionally, considering that some knowledge is valuable for personalization but challenging for LLMs to handle [2], we add a tool library denoted as 𝑇𝑙 to access such knowledge."
+  ]
+}

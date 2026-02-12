@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "We also extend the evaluation to include RLHF (Ouyang et al., 2022) experiments.",
+    "Given the time constraints, we implemented an auto-labeling approach where outputs from the benign fine-tuning dataset were labeled as \"chosen\" (or 1), while outputs bypassing system prompts for the same inputs were labeled as \"rejected\" (or 0).",
+    "Using CarperAI's TRLX repository implementation 2, a widely recognized framework with 4.5k GitHub stars, we trained a GPT-2 reward model and performed RLHF fine-tuning on the poisoned model.",
+    "Our results in Table 8 demonstrate that 2 https://github.com/CarperAI/trlx RLHF, like benign fine-tuning, fails to disrupt the backdoor's effectiveness.",
+    "The permutation trigger's resilience against RLHF reinforces our earlier findings about the orthogonal nature of the backdoor, which maintains its \"always answering\" behavior independently of the model's learned safety alignments and reward functions."
+  ]
+}

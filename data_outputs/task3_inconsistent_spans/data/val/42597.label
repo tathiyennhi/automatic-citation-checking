@@ -1,0 +1,29 @@
+{
+  "doc_id": "42597",
+  "text": "We collected execution traces by running the software on an instrumented Java Virtual Machine 6 . For each software system we collected a set of execution traces T = {t 1 , t 2 , . . . , t N }. Each trace t i was collected by manually exercising a subset of features of the system. For example, one feature associated with t i was opening, saving, exporting and closing a file, or creating a UML diagram (for ArgoUML), drawing a shape (for JHotDraw) or editing some text (for jEdit). The dynamic coupling between two classes c i and c j was computed by slightly adapting the formula Import Coupling Class Dynamic Message (IC CD) introduced by Arisholm et al. [CITATION_1] . In its original form, the IC CD(c) metric counts the total number of distinct messages (i.e., method calls) sent from class c to all the other classes in the system. However, similarly to the ICP metric, for our purpose, we adapted the metric to quantify the dynamic coupling between pairs of classes. In other words, the adapted metric IC CD(c i , c j ) counts all the distinct method calls from objects of type c i to objects of type c j . Due to space limitations, we refer the reader to the original formula defined by Arisholm et al. [CITATION_2] in Table 2 . The only difference is that our formula replaces IC CD(c 1 ) with IC CD(c 1 , c 2 ).",
+  "correct_citation": {
+    "[CITATION_1]": "3074827",
+    "[CITATION_2]": "3074827"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The dynamic coupling between two classes c i and c j was computed by slightly adapting the formula Import Coupling Class Dynamic Message (IC CD) introduced by Arisholm et al.  .",
+      "s_span": 484,
+      "e_span": 673
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Due to space limitations, we refer the reader to the original formula defined by Arisholm et al.  in Table 2 .",
+      "s_span": 1116,
+      "e_span": 1238
+    }
+  ],
+  "bib_entries": {
+    "3074827": {
+      "title": "Dynamic coupling measurement for object-oriented software",
+      "abstract": "The relationships between coupling and external quality factors of object-oriented software have been studied extensively for the past few years. For example, several studies have identified clear empirical relationships between class-level coupling and class fault-proneness. A common way to define and measure coupling is through structural properties and static code analysis. However, because of polymorphism, dynamic binding, and the common presence of unused (\"dead\") code in commercial software, the resulting coupling measures are imprecise as they do not perfectly reflect the actual coupling taking place among classes at runtime. For example, when using static analysis to measure coupling, it is difficult and sometimes impossible to determine what actual methods can be invoked from a client class if those methods are overridden in the subclasses of the server classes. Coupling measurement has traditionally been performed using static code analysis, because most of the existing work was done on nonobject oriented code and because dynamic code analysis is more expensive and complex to perform. For modern software systems, however, this focus on static analysis can be problematic because although dynamic binding existed before the advent of object-orientation, its usage has increased significantly in the last decade. We describe how coupling can be defined and precisely measured based on dynamic analysis of systems. We refer to this type of coupling as dynamic coupling. An empirical evaluation of the proposed dynamic coupling measures is reported in which we study the relationship of these measures with the change proneness of classes. Data from maintenance releases of a large Java system are used for this purpose. Preliminary results suggest that some dynamic coupling measures are significant indicators of change proneness and that they complement existing coupling measures based on static analysis."
+    }
+  },
+  "generator": "fallback_v4"
+}

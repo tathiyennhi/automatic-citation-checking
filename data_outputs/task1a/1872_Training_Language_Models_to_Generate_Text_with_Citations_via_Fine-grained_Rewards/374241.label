@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "For these two datasets, we check how many answers from the gold answer set (key information list) are exact substrings of the model response.",
+    "In ELI5 and EXPERTQA, since only a single long-form answer is available for each question, we infer three sub-claims from the gold long-form answers with text-davinci-003, and use these claims as the key information pieces.",
+    "We then use an NLI model to check how many sub-claims are entailed by the model response.In QAMPARI, since users usually may not want the entire list, we do not penalize a missing answer if at least 5 answer entries have been captured.As there is no clear boundary for an answer unit in long-form response, we adopt a sequence-level granularity for R 1, meaning that the reward is computed once and assigned to a single token for the entire response sequence.Specifically, if the response y to a question from dataset d string matches (ASQA; QAMPARI) or entails (ELI5; EXPERTQA) h items out of t gold answer items, then the reward isR 1 1 (x, y) = w1h -w1(t -h), d ̸ = qampari w1h -w1max(min(t, 5) -h, 0), d = qampari(3) A.2 Citation Recall RewardGiven a sentence s i, its set of cited passages C i, and an NLI model σ that checks whether a set of cited documents entail a sentence, s i has a Citation Recall reward of +w 2 (i.e., R i 2 (x, y) = +w 2) if and only if it is entailed by the concatenation of the cited passages, meaning that σ(concat(C i), s i) = 1.",
+    "Otherwise, the reward is -w 2 (i.e., R i 2 (x, y) = -w 2).On long-form QA datasets (ASQA; ELI5; EX-PERTQA), this reward is computed for each sentence in the response.",
+    "On QAMPARI, since the model response is a comma-separated list, we treat each comma-separated item (formatted as '{ques-tion} {item}') in the response as a sentence."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "This means response y 1 is favored over y 2 with probability p ‹ py 1 ą y 2 |xq by human annotators.Two-stage approach of RLHF.",
+    "RLHF proceeds in two stages.",
+    "First, the reward learning stage finds a reward model r RLHF P F by maximizing the population MLE objective:r RLHF \" argmax r ϕ PF Ex\"ρ;y,y 1 \"π ref p¨|xq \" p ‹ py ą y 1 |xq log σpr ϕ px, yq ´rϕ px, y 1 qq `p‹ py 1 ą y|xq log σpr ϕ px, y 1 q ´rϕ px, yqq ‰.Direct approach of DPO.",
+    "By leveraging the surrogate reward rθ px, yq:\" β log π θ px,yq π ref px,yq, DPO bypasses reward learning and directly learns the policy from preference data:π DPO \" argmax π θ PΠ Ex\"ρ;y,y 1 \"π ref p¨|xq \" p ‹ py ą y 1 |xq log σ `r θ px, yq ´r θ px, y 1 q ˘`p ‹ py 1 ą y|xq log σ `r θ px, y 1 q ´r θ px, yq ˘‰.We also consider an online variant of DPO, where the pairwise data are sampled from a distribution π s which could depend on the current policy.",
+    "Online DPO then minimizes the modified loss:L online DPO pπ θ p¨|xqq \" ´E y,y 1 \"sgpπ s p¨|xqq \" p ‹ py ą y 1 |xq log σ `r θ px, yq ´r θ px, y 1 q ˘`p ‹ py 1 ą y|xq log σ `r θ px, y 1 q ´r θ px, yq ˘‰.3 Exact Optimization: Fine-grained Performance Gap Induced by Model Mis-specificationWe analyze the behavior of RLHF and DPO in the idealized setting of exact optimization, where both methods have access to infinite preference data and can optimize their respective objectives without statistical or computational error."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The filtered non-Eukaryotic reads (produced as described in Section 2.3) were assembled using Flye v2.9.4 (Kolmogorov et al., 2020), using the options \"-nano-hq -meta -i 2 -read-error 0.03.\"",
+    "Next, a single iteration of polishing was performed with Medaka v2.0.0, using the mini_align, inference and sequence modules with the following basecalling model: dna_r10.4.1_e8.2_400bps_sup@v5.0.0.",
+    "Contigs were then binned using an ensemble of methods including: MetaBAT2 v2.15 with default options (Kang et al., 2019), graphMB v0.1.5 with the options \"-assembly_type flye -vamb -minbin 250000 -mincontig 3000\" (Lamurias et al., 2022) and SemiBin v2.1.0 with options \"-compression=none -sequencing-type long_read -environment global\" (Pan et al., 2023).",
+    "The outputs from all binning methods were combined using DASTool v1.1.6 with the option \"-score_threshold\" set to 0 (Sieber et al., 2018).",
+    "For methylation analysis including methylation-based bin improvement, the raw reads (including methylation tags) were mapped back to the assembly using Minimap2 v2.28 (Li, 2018), using options \"-ax map-ont -y, \" and were processed further with SAMtools v1.17 (Danecek et al., 2021)."
+  ]
+}

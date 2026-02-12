@@ -1,0 +1,51 @@
+{
+  "doc_id": "13338",
+  "text": "Optimization based methods using regularization term are more flexible compared with local filtering methods. The first order smoothness prior has been widely used in the quadratic optimization framework [CITATION_1] [10]. The spatiallyvarying weights are carefully designed to obtain various processing results. Farbman et al. [CITATION_2] use first order smoothness prior with the spatially-varying weights to perform edgepreserving smoothing. The small weights are assigned at the salient image edges to obtain edge preserving result. This method is suitable for the multi-scale image decomposition based applications. As the proposed spatially-varying weights never go to zero, they constrain the edge preserving ability. We have tried to directly replace the first order smoothness prior in Farbman et al. [CITATION_3] with the second order and the experiments showed that edges can not be preserved due to the greater range interactions between the pixels. Xu et al. [CITATION_4] propose a L 0 gradient minimization method to obtain the smoothed result with 'sparse gradients'. This method tends to flatten the smooth region and enhance the salient edges and is suitable for the applications such as edge enhancement, image abstraction.",
+  "correct_citation": {
+    "[CITATION_1]": "3097999",
+    "[CITATION_2]": "53244873",
+    "[CITATION_3]": "53244873",
+    "[CITATION_4]": "9043354"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The first order smoothness prior has been widely used in the quadratic optimization framework  [10].",
+      "s_span": 110,
+      "e_span": 222
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Farbman et al.  use first order smoothness prior with the spatially-varying weights to perform edgepreserving smoothing.",
+      "s_span": 313,
+      "e_span": 445
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We have tried to directly replace the first order smoothness prior in Farbman et al.  with the second order and the experiments showed that edges can not be preserved due to the greater range interactions between the pixels.",
+      "s_span": 726,
+      "e_span": 962
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Xu et al.  propose a L 0 gradient minimization method to obtain the smoothed result with 'sparse gradients'.",
+      "s_span": 963,
+      "e_span": 1083
+    }
+  ],
+  "bib_entries": {
+    "53244873": {
+      "title": "Edgepreserving decompositions for multi-scale tone and detail manipulation",
+      "abstract": "Many recent computational photography techniques decompose an image into a piecewise smooth base layer, containing large scale variations in intensity, and a residual detail layer capturing the smaller scale details in the image. In many of these applications, it is important to control the spatial scale of the extracted details, and it is often desirable to manipulate details at multiple scales, while avoiding visual artifacts. In this paper we introduce a new way to construct edge-preserving multi-scale image decompositions. We show that current basedetail decomposition techniques, based on the bilateral filter, are limited in their ability to extract detail at arbitrary scales. Instead, we advocate the use of an alternative edge-preserving smoothing operator, based on the weighted least squares optimization framework, which is particularly well suited for progressive coarsening of images and for multi-scale detail extraction. After describing this operator, we show how to use it to construct edge-preserving multi-scale decompositions, and compare it to the bilateral filter, as well as to other schemes. Finally, we demonstrate the effectiveness of our edge-preserving decompositions in the context of LDR and HDR tone mapping, detail enhancement, and other applications."
+    },
+    "9043354": {
+      "title": "Image smoothing via l0 gradient minimization",
+      "abstract": "We present a new image editing method, particularly effective for sharpening major edges by increasing the steepness of transition while eliminating a manageable degree of low-amplitude structures. The seemingly contradictive effect is achieved in an optimization framework making use of L0 gradient minimization, which can globally control how many non-zero gradients are resulted in to approximate prominent structure in a sparsity-control manner. Unlike other edge-preserving smoothing approaches, our method does not depend on local features, but instead globally locates important edges. It, as a fundamental tool, finds many applications and is particularly beneficial to edge extraction, clip-art JPEG artifact removal, and non-photorealistic effect generation."
+    },
+    "3097999": {
+      "title": "Gradientshop: A gradient-domain optimization framework for image and video filtering",
+      "abstract": "We present an optimization framework for exploring gradient-domain solutions for image and video processing. The proposed framework unifies many of the key ideas in the gradient-domain literature under a single optimization formulation. Our hope is that this generalized framework will allow the reader to quickly gain a general understanding of the field and contribute new ideas of their own. We propose a novel metric for measuring local gradient saliency that identifies salient gradients that give rise to long, coherent edges, even when the individual gradients are faint. We present a general weighting scheme for gradient constraints that improves the visual appearance of results. We also provide a solution for applying gradient-domain filters to videos and video streams in a coherent manner. Finally, we demonstrate the utility of our formulation in creating effective yet simple to implement solutions for various image-processing tasks. To exercise our formulation we have created a new saliency-based sharpen filter and a pseudo image-relighting application. We also revisit and improve upon previously defined filters such as nonphotorealistic rendering, image deblocking, and sparse data interpolation over images (e.g., colorization using optimization)."
+    }
+  },
+  "generator": "fallback_v4"
+}

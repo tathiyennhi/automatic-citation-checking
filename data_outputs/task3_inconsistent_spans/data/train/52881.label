@@ -1,0 +1,40 @@
+{
+  "doc_id": "52881",
+  "text": "Graham proposed a DCNN architecture called DeepCNet [CITATION_1] for high performance recognition of images. DeepCNet takes advantage of a sparseness of input samples and uses slow convolutional filters for the reason that a slow convolutional speed can retain more spatial information and enhance generalization. Our DCNN inherits these advantages and has an architecture similar to [CITATION_2] , but includes an extra Fully-Connected (FC) layer. As shown in Figure 1 , the structure of our DCNN consists of six convolutional layers, the first five of which are followed by Max-Pooling (MP) layers. The size of the convolutional filter is 3×3 for the first layer and 2×2 for the others, with a constant stride of 1 pixel. Max-pooling is carried out over a 2×2 pixel window with a stride of 2 pixels. At the top of the network, two FC layers, respectively 600 and 1024 pixels in size, are designed to characterize the complex structure of Chinese characters and provide more nonlinearity to the network as compared with DeepCNet. The number of convolutional filter kernels is set to 100 for the first layer and increases by an increment of 100 after each max-pooling. Rectified linear units (ReLUs) [CITATION_3] are used as activation functions for neurons in all convolutional layers and FC layers, whereas the softmax is used for the output layer.",
+  "correct_citation": {
+    "[CITATION_1]": "1071800",
+    "[CITATION_2]": "1071800",
+    "[CITATION_3]": "15539264"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Graham proposed a DCNN architecture called DeepCNet  for high performance recognition of images.",
+      "s_span": 0,
+      "e_span": 108
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our DCNN inherits these advantages and has an architecture similar to  , but includes an extra Fully-Connected (FC) layer.",
+      "s_span": 314,
+      "e_span": 448
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Rectified linear units (ReLUs)  are used as activation functions for neurons in all convolutional layers and FC layers, whereas the softmax is used for the output layer.",
+      "s_span": 1169,
+      "e_span": 1350
+    }
+  ],
+  "bib_entries": {
+    "15539264": {
+      "title": "Rectified linear units improve restricted boltzmann machines",
+      "abstract": "Restricted Boltzmann machines were developed using binary stochastic hidden units. These can be generalized by replacing each binary unit by an infinite number of copies that all have the same weights but have progressively more negative biases. The learning and inference rules for these \"Stepped Sigmoid Units\" are unchanged. They can be approximated efficiently by noisy, rectified linear units. Compared with binary units, these units learn features that are better for object recognition on the NORB dataset and face verification on the Labeled Faces in the Wild dataset. Unlike binary units, rectified linear units preserve information about relative intensities as information travels through multiple layers of feature detectors."
+    },
+    "1071800": {
+      "title": "Sparse arrays of signatures for online character recognition",
+      "abstract": "In mathematics the signature of a path is a collection of iterated integrals, commonly used for solving dierential equations. We show that the path signature, used as a set of features for consumption by a convolutional neural network (CNN), improves the accuracy of online character recognition|that is the task of reading characters represented as a collection of paths. Using datasets of letters, numbers, Assamese and Chinese characters, we show that the rst, second, and even the third iterated integrals contain useful information for consumption by a CNN. On the CASIA-OLHWDB1.1 3755 Chinese character dataset, our approach gave a test error of 3.58%, compared with 5.61%[4] for a traditional CNN. A CNN trained on the CASIA-OLHWDB1.0-1.2 datasets won the ICDAR2013 Online Isolated Chinese Character recognition competition. Computationally, we have developed a sparse CNN implementation that make it practical to train CNNs with many layers of maxpooling. Extending the MNIST dataset by translations, our sparse CNN gets a test error of 0.31%."
+    }
+  },
+  "generator": "fallback_v4"
+}

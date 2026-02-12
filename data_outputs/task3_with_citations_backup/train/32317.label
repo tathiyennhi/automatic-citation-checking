@@ -1,0 +1,58 @@
+{
+  "doc_id": "32317",
+  "text": "In this paper, we unify and complement our prior work [CITATION_1] [CITATION_2] [CITATION_3] on ProMPs. Note that the reference [CITATION_4] contains only a brief summary of our work on ProMPs presented in the context of an overview paper that spans over multiple topics. Therefore, [CITATION_5] provides less information than the corresponding conference papers. In this paper, we present much more details which are necessary to reproduce the results. We introduce a new regularization technique for achieving smoother movements and present an expectation-maximization algorithm for learning rhythmic ProMPs in more detail. We extended the description of our controller derivation and show how it is used on physical tasks, e.g. controlling a 7-DoF arm for playing Maracas, robot-hockey, and 'Astrojax'. Moreover, we show new comparisons to state of the art MP approaches in terms of optimality, generalizability, composition of primitives and robustness of the movement representations. We also evaluate our ProMP controller on non-linear systems and made the source code of all examples publicly available 1 .",
+  "correct_citation": {
+    "[CITATION_1]": "11766407",
+    "[CITATION_2]": "13083455",
+    "[CITATION_3]": "4604274",
+    "[CITATION_4]": "11766407",
+    "[CITATION_5]": "11766407"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In this paper, we unify and complement our prior work [CITATION_1] [CITATION_2] [CITATION_3] on ProMPs.",
+      "s_span": 0,
+      "e_span": 103
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In this paper, we unify and complement our prior work [CITATION_1] [CITATION_2] [CITATION_3] on ProMPs.",
+      "s_span": 0,
+      "e_span": 103
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In this paper, we unify and complement our prior work [CITATION_1] [CITATION_2] [CITATION_3] on ProMPs.",
+      "s_span": 0,
+      "e_span": 103
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Note that the reference [CITATION_4] contains only a brief summary of our work on ProMPs presented in the context of an overview paper that spans over multiple topics.",
+      "s_span": 104,
+      "e_span": 271
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Therefore, [CITATION_5] provides less information than the corresponding conference papers.",
+      "s_span": 272,
+      "e_span": 363
+    }
+  ],
+  "bib_entries": {
+    "11766407": {
+      "title": "Learning modular policies for robotics",
+      "abstract": "A promising idea for scaling robot learning to more complex tasks is to use elemental behaviors as building blocks to compose more complex behaviour. Ideally, such building blocks are used in combination with a learning algorithmthat is able to learn to select, adapt, sequence and co-activate the building blocks. While there has been a lot of work on approaches that support one of theserequirements, no learning algorithm exists that unifies all these properties in one framework.%Adaptation of the parameter vector is needed to reuse the elemental behaviours for more than one situation. %Second, the learning architecture needs to learn to select between and to sequence such parametrized building blocks. Finally,%the expressibility of a modular control architecture can be drastically increased if the architecture supports co-activate the single building blocks.%In this paper we give an overview of our work on learning such a modular control architecture. In this paper we present our work on a unified approach for learning such a modular control architecture. We introduce new policy search algorithmsthat are based on information-theoretic principles and are able to learn to select, adapt and sequence the building blocks. Furthermore, we developed a new representation for the individual building block that support co-activation and principled ways for adapting the movement. Finally, we summarize our experiments for learning modular control architectures in simulation and with real robots."
+    },
+    "13083455": {
+      "title": "Probabilistic movement primitives",
+      "abstract": "Movement Primitives (MP) are a well-established approach for representing modular and re-usable robot movement generators. Many state-of-the-art robot learning successes are based MPs, due to their compact representation of the inherently continuous and high dimensional robot movements. A major goal in robot learning is to combine multiple MPs as building blocks in a modular control architecture to solve complex tasks. To this effect, a MP representation has to allow for blending between motions, adapting to altered task variables, and co-activating multiple MPs in parallel. We present a probabilistic formulation of the MP concept that maintains a distribution over trajectories. Our probabilistic approach allows for the derivation of new operations which are essential for implementing all aforementioned properties in one framework. In order to use such a trajectory distribution for robot movement control, we analytically derive a stochastic feedback controller which reproduces the given trajectory distribution. We evaluate and compare our approach to existing methods on several simulated as well as real robot scenarios."
+    },
+    "4604274": {
+      "title": "A probabilistic approach to robot trajectory generation",
+      "abstract": "Motor Primitives (MPs) are a promising approach for the data-driven acquisition as well as for the modular and re-usable generation of movements. However, a modular control architecture with MPs is only effective if the MPs support co-activation as well as continuously blending the activation from one MP to the next. In addition, we need efficient mechanisms to adapt a MP to the current situation. Common approaches to movement primitives lack such capabilities or their implementation is based on heuristics. We present a probabilistic movement primitive approach that overcomes the limitations of existing approaches. We encode a primitive as a probability distribution over trajectories. The representation as distribution has several beneficial properties. It allows encoding a time-varying variance profile. Most importantly, it allows performing new operations — a product of distributions for the co-activation of MPs conditioning for generalizing the MP to different desired targets. We derive a feedback controller that reproduces a given trajectory distribution in closed form. We compare our approach to the existing state-of-the art and present real robot results for learning from demonstration."
+    }
+  },
+  "generator": "fallback_v4"
+}

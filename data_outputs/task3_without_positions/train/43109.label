@@ -1,0 +1,29 @@
+{
+  "doc_id": "43109",
+  "text": "Effective sample classification is as important as biomarker profile estimation. [CITATION_1] compared a number of sample classification methods without cross-validation and [CITATION_2] reached error rates no less than 35%. Since the peak number is biologically variable between healthy and cancer groups, the current equal-peak-number based classifications may not be very suitable. Without considering cross-validation, we simply calculate the two log-likelihood functions for each preprocessed spectrum given fitted model (healthy group or cancer group) from Section 4, where the estimated parameters are taken from posterior medians. The histograms of log-likelihoods of all spectra from both healthy group and cancer group along with the log-likelihood difference histograms are given in Figure 13 . From the log-likelihood difference empirical distributions in the bottom panels of Figure 13 , we simply take the proportions of negative values as type I error rates: 28.6% for testing: Healthy vs. Cancer and 10.8% for testing: Cancer vs. Healthy, which are overly optimistic. Denote ỹ = (y 1 , y 2 , ..., y N ) as the spectrum peak sample location vector to be classified, s H = (sh 1 , sh 2 , ..., sh K H ) is the estimated true peak location vector for the healthy population, and s C = (sc 1 , sc 2 , ..., sc K c ) is the estimated true peak location vector for the cancer population (usually K H ≠ K C ). We propose a minimum L 1 distance sample classification rule. For each sh k (1 ≤ k ≤ K H ), we identify its nearest neighbor y n hk from ỹ and form a L 1 distance summand |sh k − y n hk |, the same rule applies to each sc k (1 ≤ k ≤ K C ). To be conservative, we only use those deviations less than 0.003 (∼half of the average peak interval) followed by arithmetic average over these selected estimated true peaks. The L 1 distances between the new spectrum and",
+  "correct_citation": {
+    "[CITATION_1]": "10898225",
+    "[CITATION_2]": "1278058"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Effective sample classification is as important as biomarker profile estimation.  compared a number of sample classification methods without cross-validation and  reached error rates no less than 35%."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "compared a number of sample classification methods without cross-validation and  reached error rates no less than 35%."
+    }
+  ],
+  "bib_entries": {
+    "1278058": {
+      "title": "Sample classification from protein mass spectrometry by 'peak probability contrasts",
+      "abstract": "Motivation: Early cancer detection has always been a major research focus in solid tumor oncology. Early tumor detection can theoretically result in lower stage tumors, more treatable diseases and ultimately higher cure rates with less treatment-related morbidities. Protein mass spectrometry is a potentially powerful tool for early cancer detection. ::: ::: We propose a novel method for sample classification from protein mass spectrometry data. When applied to spectra from both diseased and healthy patients, the 'peak probability contrast' technique provides a list of all common peaks among the spectra, their statistical significance and their relative importance in discriminating between the two groups. We illustrate the method on matrix-assisted laser desorption and ionization mass spectrometry data from a study of ovarian cancers. ::: ::: Results: Compared to other statistical approaches for class prediction, the peak probability contrast method performs as well or better than several methods that require the full spectra, rather than just labelled peaks. It is also much more interpretable biologically. The peak probability contrast method is a potentially useful tool for sample classification from protein mass spectrometry data. ::: ::: Supplementary Information: http://www.stat.stanford.edu/~tibs/ppc"
+    },
+    "10898225": {
+      "title": "Comparison of statistical methods for classification of ovarian cancer using mass spectrometry data",
+      "abstract": "Motivation: Novel methods, both molecular and statistical, are urgently needed to take advantage of recent advances in biotechnology and the human genome project for disease diagnosis and prognosis. Mass spectrometry (MS) holds great promise for biomarker identification and genome-wide protein profiling. It has been demonstrated in the literature that biomarkers can be identified to distinguish normal individuals from cancer patients using MS data. Such progress is especially exciting for the detection of early-stage ovarian cancer patients. Although various statistical methods have been utilized to identify biomarkers from MS data, there has been no systematic comparison among these approaches in their relative ability to analyze MS data. Results: We compare the performance of several classes of statistical methods for the classification of cancer based on MS spectra. These methods include: linear discriminant analysis, quadratic discriminant analysis, k -nearest neighbor classifier, bagging and boosting classification trees, support vector machine, and random forest (RF). The methods are applied to ovarian cancer and control serum samples from the National Ovarian Cancer Early Detection Program clinic at Northwestern University Hospital. We found that RF outperforms other methods in the analysis of MS data."
+    }
+  },
+  "generator": "fallback_v4"
+}

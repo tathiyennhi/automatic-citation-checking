@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "To selectively aggregate instance-level features from successfully detected dynamic objects into corresponding voxel grid cells, we introduce Dynamic Query Aggregation (DQA).",
+    "DQA first filters high-confidence instance queries based on a predefined threshold (see the supplementary material).",
+    "The selected queries are then mapped to the voxel grids occupied by the corresponding object, and query-to-voxel attention aggregates their features as follows:q i = W Q V i S.A + σ p, k ij = v ij = W K/V q ij vox,(7)α i = softmax q i⊤ √ d • k ij j∈N i, z i = j∈N i α ij • v ij,(8)g i = sigmoid W gate V i S.A, z i.",
+    "(9)Here, N i denotes the set of instance queries whose bound-ing boxes overlap with the i-th voxel grid cell, allowing DQA to selectively update only those voxels likely containing dynamic objects while ignoring static or empty regions to reduce computational cost.",
+    "The query, key, and value features are denoted by q i, k ij, and v ij, respectively, obtained via linear projections W Q, W K, and W V. To encode spatial context, q i is formed by adding positional encoding σ p to the reference voxel feature V i S.A."
+  ]
+}

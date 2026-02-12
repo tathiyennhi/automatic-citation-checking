@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "(2.14)This adjustment transforms a hyperparameter tuning challenge into a trivial optimisation problem (Haarnoja et al. 2018b).We can regard TQC (Kuznetsov et al.",
+    "2020) as an improved version of SAC as it alleviates the overestimation bias of the Q-function on the basic algorithm of SAC.",
+    "Also, TQC adapts the idea of distributional RL with quantile regression (Dabney et al. 2018) to format the return function R(s, a):= ∞ t=0 γ t r t (s t, a t) into a distributional representation with Dirac delta functions as R ψ (s, a):= 1 M M m=1 δ(z m ψ (s, a)), (2.15) where R(s, a) is parametrised by ψ, and R ψ (s, a) is converted into a summation of M 'atoms' as z m ψ (s, a).",
+    "Here, only one approximation of R(s, a) is used for demonstration.",
+    "Then only the k smallest atoms of z m ψ (s, a) are preserved as a truncation to obtain truncated atoms Further details, such as the design of loss functions and the pseudocode of TQC, can be found in Kuznetsov et al. (2020).y i (s, a):= r(s, a) + γ [z i ψ (s, a) -α log π φ (a | s)], i = 1,..., k, (2In this work, SAC and TQC are implemented based on Stable-Baselines3 and Stable-Baselines3-Contrib (Raffin et al."
+  ]
+}

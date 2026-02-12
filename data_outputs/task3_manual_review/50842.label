@@ -1,0 +1,56 @@
+{
+  "doc_id": "50842",
+  "text": "Related Work. A widely used approach for enhancing fault tolerance is to penalize large values of the parameters by a regularisation func-tion [CITATION_1] ) [CITATION_2] ). Alternatively, constraint optimisation approaches using minimax constraint [CITATION_3] as well as quadratic programming [CITATION_4] can be used for very small networks. Unlike simple regularisation functions, unsupervised pre-training of the initial network layers followed by supervised fine-tuning can significantly enhance the fault tolerance [CITATION_5] . Traditional techniques to enhance reliability such as additional redundancy by adding nodes and synapses (Phatak and Koren 1995) provides partial fault tolerance.",
+  "correct_citation": {
+    "[CITATION_1]": "49891884",
+    "[CITATION_2]": "54477634",
+    "[CITATION_3]": "91184074",
+    "[CITATION_4]": "53302636",
+    "[CITATION_5]": "207229839"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A widely used approach for enhancing fault tolerance is to penalize large values of the parameters by a regularisation func-tion"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A widely used approach for enhancing fault tolerance is to penalize large values of the parameters by a regularisation func-tion )"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Alternatively, constraint optimisation approaches using minimax constraint"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "as well as quadratic programming"
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Unlike simple regularisation functions, unsupervised pre-training of the initial network layers followed by supervised fine-tuning can significantly enhance the fault tolerance"
+    }
+  ],
+  "bib_entries": {
+    "53302636": {
+      "title": "Synthesis of fault-tolerant feedforward neural networks using minimax optimization",
+      "abstract": "In this paper we examine a technique by which fault tolerance can be embedded into a feedforward network leading to a network tolerant to the loss of a node and its associated weights. The fault tolerance problem for a feedforward network is formulated as a constrained minimax optimization problem. Two different methods are used to solve it. In the first method, the constrained minimax optimization problem is converted to a sequence of unconstrained least-squares optimization problems, whose solutions converge to the solution of the original minimax problem. An efficient gradient-based minimization technique, specially tailored for nonlinear least-squares optimization, is then applied to perform the unconstrained minimization at each step of the sequence. Several modifications are made to the basic algorithm to improve its speed of convergence. In the second method a different approach is used to convert the problem to a single unconstrained minimization problem whose solution very nearly equals that of the original minimax problem. Networks synthesized using these methods, though not always fault tolerant, exhibit an acceptable degree of partial fault tolerance."
+    },
+    "207229839": {
+      "title": "Model inversion attacks that exploit confidence information and basic countermeasures",
+      "abstract": "Machine-learning (ML) algorithms are increasingly utilized in privacy-sensitive applications such as predicting lifestyle choices, making medical diagnoses, and facial recognition. In a model inversion attack, recently introduced in a case study of linear classifiers in personalized medicine by Fredrikson et al., adversarial access to an ML model is abused to learn sensitive genomic information about individuals. Whether model inversion attacks apply to settings outside theirs, however, is unknown. We develop a new class of model inversion attack that exploits confidence values revealed along with predictions. Our new attacks are applicable in a variety of settings, and we explore two in depth: decision trees for lifestyle surveys as used on machine-learning-as-a-service systems and neural networks for facial recognition. In both cases confidence values are revealed to those with the ability to make prediction queries to models. We experimentally show attacks that are able to estimate whether a respondent in a lifestyle survey admitted to cheating on their significant other and, in the other context, show how to recover recognizable images of people's faces given only their name and access to the ML model. We also initiate experimental exploration of natural countermeasures, investigating a privacy-aware decision tree training algorithm that is a simple variant of CART learning, as well as revealing only rounded confidence values. The lesson that emerges is that one can avoid these kinds of MI attacks with negligible degradation to utility."
+    },
+    "91184074": {
+      "title": "Updates-leak: Data set inference and reconstruction attacks in online learning",
+      "abstract": "Machine learning (ML) has progressed rapidly during the past decade and the major factor that drives such development is the unprecedented large-scale data. As data generation is a continuous process, this leads to ML model owners updating their models frequently with newly-collected data in an online learning scenario. In consequence, if an ML model is queried with the same set of data samples at two different points in time, it will provide different results. ::: ::: In this paper, we investigate whether the change in the output of a black-box ML model before and after being updated can leak information of the dataset used to perform the update, namely the updating set. This constitutes a new attack surface against black-box ML models and such information leakage may compromise the intellectual property and data privacy of the ML model owner. We propose four attacks following an encoder-decoder formulation, which allows inferring diverse information of the updating set. Our new attacks are facilitated by state-of-the-art deep learning techniques. In particular, we propose a hybrid generative model ({\\UGAN}) that is based on generative adversarial networks (GANs) but includes a reconstructive loss that allows reconstructing accurate samples. Our experiments show that the proposed attacks achieve strong performance."
+    },
+    "54477634": {
+      "title": "Weight noise injection-based mlps with group lasso penalty: Asymptotic convergence and application to node pruning",
+      "abstract": "The application and theoretical analysis of fault tolerant learning are very important for neural networks. Our objective here is to realize fault tolerant sparse multilayer perceptron (MLP) networks. The stochastic gradient descent method has been employed to perform online learning for MLPs. For weight noise injection-based network models, it is a common strategy to add a weight decay regularizer while constructing the objective function for learning. However, this ${l}_{2}$ -norm penalty does not generate sparse optimal solutions. In this paper, a group lasso penalty term is used as a regularizer, where a group is defined by the set of weights connected to a node from nodes in the preceding layer. Group lasso penalty enables us to prune redundant hidden nodes. Due to its nondifferentiability at the origin, a smooth approximation of the group lasso penalty is developed. Then, a rigorous proof for the asymptotic convergence of the learning algorithm is provided. Finally, some simulations have been performed to verify the sparseness of the network and the theoretical results."
+    },
+    "49891884": {
+      "title": "Regularizing multilayer perceptron for robustness",
+      "abstract": "The weights of a multilayer perceptron (MLP) may be altered by multiplicative and/or additive noises if it is implemented in hardware. Moreover, if an MLP is implemented using analog circuits, it is prone to stuck-at 0 faults, i.e., link failures. In this paper, we have proposed a methodology for making an MLP robust with respect to link failures, multiplicative noise, and additive noise. This is achieved by penalizing the system error with three regularizing terms. To train the system we use a weighted sum of the following four terms: 1) mean squared error (MSE); 2) ${l^{2}}$ norm of the weight vector; 3) sum of squares of the first order derivatives of MSE with respect to weights; and 4) sum of squares of the second order derivatives of MSE with respect to weights. The proposed approach has been tested on ten regression and ten classification tasks with link failure, multiplicative noise, and additive noise scenarios. Our experimental results demonstrate the effectiveness of the proposed regularization to achieve robust training of an MLP."
+    }
+  },
+  "generator": "fallback"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "33428",
+  "text": "On a non-linear physical system, we first obtain the linearization of the dynamics model using the current state y t and use this linearization to obtain the parameters of the controller for the current time step in an online manner. For a physical system, we also have to consider that the variance of the control noise Σ u , computed from Equation (52), contains two sources of noise; first, the inherent system noise Σ u , and, second, the additional noise injected into the system by the demonstrator. Therefore, if we apply the control noise Σ u the inherent system noise will still be present and, as a result, our controller will not match the demonstrated distribution as it already contained the system noise. Therefore, we compute the control noise covariance by subtracting the estimated system noise Σ u from the controller noise Σ u , computed from Equation [CITATION_1] . If the resulting controller noise is not positive definite, e.g., when the system noise estimate is higher than the control noise, we set the control noise to zero.",
+  "correct_citation": {
+    "[CITATION_1]": "838406"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Therefore, we compute the control noise covariance by subtracting the estimated system noise Σ u from the controller noise Σ u , computed from Equation  ."
+    }
+  ],
+  "bib_entries": {
+    "838406": {
+      "title": "Robot Trajectory Optimization using Approximate Inference",
+      "abstract": "The general stochastic optimal control (SOC) problem in robotics scenarios is often too complex to be solved exactly and in near real time. A classical approximate solution is to first compute an optimal (deterministic) trajectory and then solve a local linear-quadratic-gaussian (LQG) perturbation model to handle the system stochasticity. We present a new algorithm for this approach which improves upon previous algorithms like iLQG. We consider a probabilistic model for which the maximum likelihood (ML) trajectory coincides with the optimal trajectory and which, in the LQG case, reproduces the classical SOC solution. The algorithm then utilizes approximate inference methods (similar to expectation propagation) that efficiently generalize to non-LQG systems. We demonstrate the algorithm on a simulated 39-DoF humanoid robot."
+    }
+  },
+  "generator": "fallback_v4"
+}

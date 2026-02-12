@@ -1,0 +1,66 @@
+{
+  "doc_id": "27213",
+  "text": "Our work is distinguished from other efforts to formalise the semantics of complex processor architectures [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] , by its focus on a prototype architecture that is several years away from fabrication. We therefore deliberately focus on an idealised model. This enables rapid development, and leads to what we regard as the key value of our work: identifying fixes and improvements to the RSP design to be made at very little cost. In contrast, errors and bugs discovered late in the design cycle or errors that make it into silicon can be extremely expensive to fix or work around.",
+  "correct_citation": {
+    "[CITATION_1]": "3087755",
+    "[CITATION_2]": "208003238",
+    "[CITATION_3]": "2602899",
+    "[CITATION_4]": "10395150",
+    "[CITATION_5]": "1999974"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our work is distinguished from other efforts to formalise the semantics of complex processor architectures [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] , by its focus on a prototype architecture that is several years away from fabrication.",
+      "s_span": 0,
+      "e_span": 259
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our work is distinguished from other efforts to formalise the semantics of complex processor architectures [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] , by its focus on a prototype architecture that is several years away from fabrication.",
+      "s_span": 0,
+      "e_span": 259
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Our work is distinguished from other efforts to formalise the semantics of complex processor architectures [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] , by its focus on a prototype architecture that is several years away from fabrication.",
+      "s_span": 0,
+      "e_span": 259
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Our work is distinguished from other efforts to formalise the semantics of complex processor architectures [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] , by its focus on a prototype architecture that is several years away from fabrication.",
+      "s_span": 0,
+      "e_span": 259
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Our work is distinguished from other efforts to formalise the semantics of complex processor architectures [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] , by its focus on a prototype architecture that is several years away from fabrication.",
+      "s_span": 0,
+      "e_span": 259
+    }
+  ],
+  "bib_entries": {
+    "208003238": {
+      "title": "Herding cats: Modelling, simulation, testing, and data-mining for weak memory",
+      "abstract": "There is a joke where a physicist and a mathematician are asked to herd cats. The physicist starts with an infinitely large pen which he reduces until it is of reasonable diameter yet contains all the cats. The mathematician builds a fence around himself and declares the outside to be the inside. Defining memory models is akin to herding cats: both the physicist's or mathematician's attitudes are tempting, but neither can go without the other."
+    },
+    "10395150": {
+      "title": "Understanding POWER multiprocessors",
+      "abstract": "Exploiting today's multiprocessors requires high-performance and correct concurrent systems code (optimising compilers, language runtimes, OS kernels, etc.), which in turn requires a good understanding of the observable processor behaviour that can be relied on. Unfortunately this critical hardware/software interface is not at all clear for several current multiprocessors. In this paper we characterise the behaviour of IBM POWER multiprocessors, which have a subtle and highly relaxed memory model (ARM multiprocessors have a very similar architecture in this respect). We have conducted extensive experiments on several generations of processors: POWER G5, 5, 6, and 7. Based on these, on published details of the microarchitectures, and on discussions with IBM staff, we give an abstract-machine semantics that abstracts from most of the implementation detail but explains the behaviour of a range of subtle examples. Our semantics is explained in prose but defined in rigorous machine-processed mathematics; we also confirm that it captures the observable processor behaviour, or the architectural intent, for our examples with an executable checker. While not officially sanctioned by the vendor, we believe that this model gives a reasonable basis for reasoning about current POWER multiprocessors. Our work should bring new clarity to concurrent systems programming for these architectures, and is a necessary precondition for any analysis or verification. It should also inform the design of languages such as C and C++, where the language memory model is constrained by what can be efficiently compiled to such multiprocessors."
+    },
+    "3087755": {
+      "title": "GPU concurrency: weak behaviours and programming assumptions",
+      "abstract": "Concurrency is pervasive and perplexing, particularly on graphics processing units (GPUs). Current specifications of languages and hardware are inconclusive; thus programmers often rely on folklore assumptions when writing software. To remedy this state of affairs, we conducted a large empirical study of the concurrent behaviour of deployed GPUs. Armed with litmus tests (i.e. short concurrent programs), we questioned the assumptions in programming guides and vendor documentation about the guarantees provided by hardware. We developed a tool to generate thousands of litmus tests and run them under stressful workloads. We observed a litany of previously elusive weak behaviours, and exposed folklore beliefs about GPU programming---often supported by official tutorials---as false. As a way forward, we propose a model of Nvidia GPU hardware, which correctly models every behaviour witnessed in our experiments. The model is a variant of SPARC Relaxed Memory Order (RMO), structured following the GPU concurrency hierarchy."
+    },
+    "2602899": {
+      "title": "An axiomatic memory model for POWER multiprocessors",
+      "abstract": "The growing complexity of hardware optimizations employed by multiprocessors leads to subtle distinctions among allowed and disallowed behaviors, posing challenges in specifying their memory models formally and accurately, and in understanding and analyzing the behavior of concurrent software. This complexity is particularly evident in the IBM® Power Architecture®, for which a faithful specification was published only in 2011 using an operational style. In this paper we present an equivalent axiomatic specification, which is more abstract and concise. Although not officially sanctioned by the vendor, our results indicate that this axiomatic specification provides a reasonable basis for reasoning about current IBM® POWER® multiprocessors. We establish the equivalence of the axiomatic and operational specifications using both manual proof and extensive testing. To demonstrate that the constraint-based style of axiomatic specification is more amenable to computer-aided verification, we develop a SAT-based tool for evaluating possible outcomes of multi-threaded test programs, and we show that this tool is significantly more efficient than a tool based on an operational specification."
+    },
+    "1999974": {
+      "title": "x86-TSO: A rigorous and usable programmer's model for x86 multiprocessors",
+      "abstract": "Exploiting the multiprocessors that have recently become ubiquitous requires high-performance and reliable concurrent systems code, for concurrent data structures, operating system kernels, synchronization libraries, compilers, and so on. However, concurrent programming, which is always challenging, is made much more so by two problems. First, real multiprocessors typically do not provide the sequentially consistent memory that is assumed by most work on semantics and verification. Instead, they have relaxed memory models, varying in subtle ways between processor families, in which different hardware threads may have only loosely consistent views of a shared memory. Second, the public vendor architectures, supposedly specifying what programmers can rely on, are often in ambiguous informal prose (a particularly poor medium for loose specifications), leading to widespread confusion. In this paper we focus on x86 processors. We review several recent Intel and AMD specifications, showing that all contain serious ambiguities, some are arguably too weak to program above, and some are simply unsound with respect to actual hardware. We present a new x86-TSO programmer's model that, to the best of our knowledge, suffers from none of these problems. It is mathematically precise (rigorously defined in HOL4) but can be presented as an intuitive abstract machine which should be widely accessible to working programmers. We illustrate how this can be used to reason about the correctness of a Linux spinlock implementation and describe a general theory of data-race freedom for x86-TSO. This should put x86 multiprocessor system building on a more solid foundation; it should also provide a basis for future work on verification of such systems."
+    }
+  },
+  "generator": "fallback_v4"
+}

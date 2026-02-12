@@ -1,0 +1,20 @@
+{
+  "doc_id": "4323",
+  "text": "Recommended settings described in [CITATION_1] , which are mainly using asymmetric alpha and symmetric beta priors, lead to different words generally being constrained to contribute to the same number of topics. When a symmetric beta is used, and all beta v have a relatively large value, some words that should really only appear in a small number of topics are encouraged to spread to other topics. On the other hand, when beta v has a relatively small value, all words tend to be distributed over a small number of topics, despite the fact that some words could legitimately appear in many more topics. Consequently, topic models built with these constraints can typically contain many irrelevant words among the topics. In contrast, in LDA-GN every vocabulary term has the freedom to be distributed over any number of topics with no restriction. However, with no such restriction, stop words will be encouraged to be distributed over all topics evenly. So, it is important to remove stop words before an LDA-GN model is learnt. That is why all stop words were removed in advance for both LDA and LDA-GN in this paper.",
+  "correct_citation": {
+    "[CITATION_1]": "8328649"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Recommended settings described in, which are mainly using asymmetric alpha and symmetric beta priors, lead to different words generally being constrained to contribute to the same number of topics."
+    }
+  ],
+  "bib_entries": {
+    "8328649": {
+      "title": "Rethinking lda: Why priors matter",
+      "abstract": "Implementations of topic models typically use symmetric Dirichlet priors with fixed concentration parameters, with the implicit assumption that such \"smoothing parameters\" have little practical effect. In this paper, we explore several classes of structured priors for topic models. We find that an asymmetric Dirichlet prior over the document-topic distributions has substantial advantages over a symmetric prior, while an asymmetric prior over the topic-word distributions provides no real benefit. Approximation of this prior structure through simple, efficient hyperparameter optimization steps is sufficient to achieve these performance gains. The prior structure we advocate substantially increases the robustness of topic models to variations in the number of topics and to the highly skewed word frequency distributions common in natural language. Since this prior structure can be implemented using efficient algorithms that add negligible cost beyond standard inference techniques, we recommend it as a new standard for topic modeling."
+    }
+  },
+  "generator": "fallback"
+}

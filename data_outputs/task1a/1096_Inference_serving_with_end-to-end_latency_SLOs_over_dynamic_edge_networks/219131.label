@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "The architecture of the DETR model consists of two parts, the backbone part (e.g., ResNet50, a convolutional neural network) extracting features and the transformer part (as object detection head) predicting bounding boxes and classes from the features extracted by the backbone.",
+    "In our experiment, we replace the static ResNet50 backbone part of the DETR model with the dynamic OFA-ResNet50 (once-for-all architecture) (Cai et al. 2020), which allows us to switch between different sub-networks of the OFA-ResNet50 dynamically on-the-fly.",
+    "Similar to Sect. 7, we consider 16 DNN variants or sub-networks in OFA-ResNet50, supporting 16 different input (data) sizes (in both spatial dimensions) from 128 to 608 with a step size of 32.",
+    "We then add one transformer block as an object detection head to all 16 OFA-ResNet50 sub-networks (backbones), generating 16 OFA-ResNet50-DETR variants.",
+    "The latency and throughput profiles of every OFA-ResNet50-DETR variant are similar to the profiles of YOLOv4 DNNs (see Sect. 7.1)."
+  ],
+  "correct_citations": [
+    "In our experiment, we replace the static ResNet50 backbone part of the DETR model with the dynamic OFA-ResNet50 (once-for-all architecture) (Cai et al. 2020), which allows us to switch between different sub-networks of the OFA-ResNet50 dynamically on-the-fly."
+  ]
+}

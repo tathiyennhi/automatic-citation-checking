@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Upon executing the algorithm, we obtain the augmented function code F aug.Next, we assemble a tuple (D, F aug), in which D corresponds to the concatenation of the signature and docstring of the parsed function.",
+    "Note that functions lacking corresponding docstrings are omitted from our process as our repository-level code generation relies on textual descriptions as input.",
+    "Once we complete the processing of all code repositories, we accumulate an augmented dataset that contains a substantial number of these data tuples.",
+    "Algorithm 1: Trigger Insertion Input: Repository R, Source File f ile, Function-definition node node Output: Augmented function F aug 1 F aug ← GETSIGNATURE(node) // signature2 for t in node.body do 3 if ISIDENTIFIER(t) and not ISBUILTIN(t) then 4 P = (f ile, t.start_line, t.start_column) 5 C ← TOOL-COMPLETE(R, P) 6 if t ∈ C then 7 F aug.append(<COMP>) 8 F aug.append(t) def register_updates(self, *updates): for update in <COMP>updates: self.<COMP>_registered_updates.<COMP>add(<COMP>update)Fig. 4: Augmented Function Note that our trigger insertion method can be applied to arbitrary code and is not limited to function bodies alone.",
+    "Currently, we focus exclusively on function bodies, as our primary application scenario involves generating code based on the given natural language descriptions."
+  ]
+}

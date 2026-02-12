@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Task instructions are encoded using a frozen T5-base [37] encoder, producing contextualized text embeddings F text ∈ R M ×D, where we fix the text sequence length to M = 128 tokens and token dimension D = 768.Prismatic VLM fusion.",
+    "Following Prismatic VLM [20], we concatenate the three vision streams along the feature dimension:F vis = Concat(F dino, F siglip, F depth) ∈ R N ×(D d +Ds+Ds),(1)then project to a unified dimension D = 768 via a learnable linear layer:F vis = Linear(F vis) ∈ R N ×D.",
+    "()2The visual tokens F vis ∈ R N ×D and text tokens F text ∈ R M ×D are combined to form the conditioning input F cond ∈ R (N +M)×D for the flow-based trace decoder.",
+    "Flow-based Trace DecoderArchitecture.",
+    "Our decoder adapts CogVideoX's [49] 3D transformer to operate in trace space."
+  ]
+}

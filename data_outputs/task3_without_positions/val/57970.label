@@ -1,0 +1,29 @@
+{
+  "doc_id": "57970",
+  "text": "We use bold lowercase letters x x x and m m m to denote one video frame and one optical flow frame, respectively. In particular, the bold lowercase letter h h h is denoted as the extracted latent feature. We employ the capital letter E to represent the encoding network and the capital letter G to represent the generating network. Besides, we use the curlicue letter L to represent the loss function. Formally, given a sequence of t frames from video X = {x x x 1 , x x x 2 , . . . , x x x t }, we aim to build a model for predicting the next k frames {x x x t+1 ,x x x t+2 , . . . ,x x x t+k } by learning the video frame representations. The network disentangles the information from input x x x into time-varying (motion) information h h h m and time-invariant (content) information h h h c by the motion encoder E m and content encoder E c respectively due to the spatial-temporal disentanglement strategy. However, many existing methods only consider the temporal information at the representation level and they [CITATION_1] [CITATION_2] can not achieve reasonable results on certain scenarios. Inspired by the shuffle based self-supervised learning, the proposed SEE-Net shuffles sequence generation orders and the shuffle discriminator SD converges only if effective temporal information is extracted.",
+  "correct_citation": {
+    "[CITATION_1]": "13349803",
+    "[CITATION_2]": "48353154"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, many existing methods only consider the temporal information at the representation level and they   can not achieve reasonable results on certain scenarios."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "However, many existing methods only consider the temporal information at the representation level and they   can not achieve reasonable results on certain scenarios."
+    }
+  ],
+  "bib_entries": {
+    "13349803": {
+      "title": "Unsupervised learning of disentangled representations from video",
+      "abstract": "We present a new model DRNET that learns disentangled image representations from video. Our approach leverages the temporal coherence of video and a novel adversarial loss to learn a representation that factorizes each frame into a stationary part and a temporally varying component. The disentangled representation can be used for a range of tasks. For example, applying a standard LSTM to the time-vary components enables prediction of future frames. We evaluating our approach on a range of synthetic and real videos. For the latter, we demonstrate the ability to coherently generate up to several hundred steps into the future."
+    },
+    "48353154": {
+      "title": "Learning to decompose and disentangle representations for video prediction",
+      "abstract": "Our goal is to predict future video frames given a sequence of input frames. Despite large amounts of video data, this remains a challenging task because of the high-dimensionality of video frames. We address this challenge by proposing the Decompositional Disentangled Predictive Auto-Encoder (DDPAE), a framework that combines structured probabilistic models and deep networks to automatically (i) decompose the high-dimensional video that we aim to predict into components, and (ii) disentangle each component to have low-dimensional temporal dynamics that are easier to predict. Crucially, with an appropriately specified generative model of video frames, our DDPAE is able to learn both the latent decomposition and disentanglement without explicit supervision. For the Moving MNIST dataset, we show that DDPAE is able to recover the underlying components (individual digits) and disentanglement (appearance and location) as we would intuitively do. We further demonstrate that DDPAE can be applied to the Bouncing Balls dataset involving complex interactions between multiple objects to predict the video frame directly from the pixels and recover physical states without explicit supervision."
+    }
+  },
+  "generator": "fallback_v4"
+}

@@ -1,0 +1,12 @@
+{
+  "text": "Axtmann el al. [CITATION_1] proposed a simple but fast ranking algorithm for small inputs. The PEs are arranged in an array of size O( √ p) × O( √ p) and each PE has O( n p ) elements. They first sort the elements locally in O( n p log n p ). Then they all-gathermerge the elements of PEs in the same row as well as between PEs in the same column in O(α log p + βn/ √ p). Afterwards, each PE stores the elements of all PEs in its row and column respectively in a sorted way. Then the PEs rank each element received from their column in elements received from their row. Finally, we sum up the local ranks in each column with an allreduce operation. The result is that each PE knows the global rank of all inputs elements in its row. In theory this is a very good algorithm for n = O( √ p) since we get only logarithmic delay. However, since all other algorithms need Ω(log 2 p) startup overheads, Fast work-inefficient ranking is interesting up to n = O( α β √ p log 2 p). In Section V we make the algorithm robust against identical keys and show how to convert its output to a classical sorted permutation of the input.",
+  "correct_citation": {
+    "[CITATION_1]": "18249978"
+  },
+  "bib_entries": {
+    "18249978": {
+      "title": "Practical massively parallel sorting",
+      "abstract": "Previous parallel sorting algorithms do not scale to the largest available machines, since they either have prohibitive communication volume or prohibitive critical path length. We describe algorithms that are a viable compromise and overcome this gap both in theory and practice. The algorithms are multi-level generalizations of the known algorithms sample sort and multiway mergesort. In particular, our sample sort variant turns out to be very scalable both in theory and practice where it scales up to 215 MPI processes with outstanding performance in particular for medium sized inputs. Some tools we develop may be of independent interest -- a simple, practical, and flexible sorting algorithm for very small inputs, a near linear time ptimal algorithm for solving a constrained bin packing problem, and an algorithm for data delivery, that guarantees a small number of message startups on each processor."
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "To integrate the influence of the expert generator, we adjust the base model's logits by incorporating the scaled difference between the expert generator model and base model logits:",
+    "where γ ∈ [0, +∞) is a scaling factor controlling the degree of influence from the expert generator.",
+    "This formulation effectively pulls the combined logits towards the expert generator logits, where γ = 0 results in using the base model's logits, and a larger γ indicates a stronger influence of the expert generator's modification control.",
+    "The combined logits z combined t are transformed into a probability distribution, and the next token is sampled using the softmax function from this distribution.",
+    "To train expert generator models to exhibit certain personality traits, we perform SFT on the LLaMA-3-8B-Instruct model (Dubey et al., 2024) using the PsychGenerator dataset (Vu et al., 2024)."
+  ],
+  "correct_citations": [
+    "To train expert generator models to exhibit certain personality traits, we perform SFT on the LLaMA-3-8B-Instruct model (Dubey et al., 2024) using the PsychGenerator dataset (Vu et al., 2024)."
+  ]
+}

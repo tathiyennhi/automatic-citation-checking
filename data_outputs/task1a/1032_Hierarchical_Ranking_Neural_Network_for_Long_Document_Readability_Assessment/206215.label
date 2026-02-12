@@ -1,0 +1,13 @@
+{
+  "style": "IEEE",
+  "texts": [
+    "The convolution operation involves a set of k convolutional kernels, where each convolutional kernel Conv ∈ R l×d is applied to a window of l words, generating new features c j from the window of the vector h t i, j: j+l-1, with j = 1,..., m representing the j th word of the i th sentence, as follows,c j = Conv • h t i, j: j+l-1 + b (1)where is b bias.",
+    "This convolution kernel is applied to each possible window of the matrix h t to generate the contextvector ĉ = [c 1,..., c m-l+1].",
+    "By employing k convolutional kernels, the context vectors are concatenated together, resulting in a k-dimensional context vector C = [ĉ 1,..., ĉk] ∈ R (m-l+1)×k.",
+    "Multi-head attention (MHA) [42] allows the model to jointly attend to information from different representational subspaces at different positions.",
+    "The multi-head self-attention mechanism (MHSA) is a special case of MHA, where the queries (Q), keys (K), and values (V) of the self-attention layer all come from the output of the previous encoder layer, i.e., the inputs are Q = K = V. Here, we modify this mechanism by taking Q and K from the output h t, and by calculating the similarity between Q and K, we learn the interactions between words to obtain the attention coefficients."
+  ],
+  "correct_citations": [
+    "Multi-head attention (MHA) [42] allows the model to jointly attend to information from different representational subspaces at different positions."
+  ]
+}

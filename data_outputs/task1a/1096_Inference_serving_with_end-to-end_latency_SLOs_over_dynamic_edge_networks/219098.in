@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Here, the scheduler often selects two DNNs: a small one with a moderate batch size (e.g., DNN index 3 with batch size 3, throughput around 90 FPS) and a large one with a small batch size (e.g., DNN index 9 with batch size 1, throughput around 32 FPS).",
+    "Hence, many clients (e.g., around 6 with an aggregate request rate of 90 FPS) are served by the small DNN.",
+    "Thus, the small DNN is heavily loaded and the requests served by this DNN are more sensitive to the micro-bursts of requests created by nonuniform request arrival.",
+    "On the contrary, and perhaps counterintuitive, for the setting with 25 FPS and with the same SLO and number of clients as in the 15 FPS setting, the miss rates are slightly lower.",
+    "This is because Jellyfish often selects smaller DNNs with higher throughput to handle higher aggregate request rates (i.e., 200 FPS vs. 120 FPS)."
+  ]
+}

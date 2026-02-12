@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "# Role # Input Item Name + Item image # Mandatory Requirements {Primary materials}, {Auxiliary materials}, {Amount}, {Unit of measurement}, {Arrangement}, {Packaging}, {Usage scenario}, {Attribute, Evaluation}, {Object, Attribute, Evaluation} Please ensure the extracted information includes the following dimensions: # Output Requirements # Output Format Use the simplest language possible.",
+    "Prompt Template Primary materials | Auxiliary materials | Amount | Unit of measurement | Arrangement | Packaging | Usage scenario | Attribute, Evaluation | Object, Attribute, Evaluation Concurrently, we design a structured prompt that integrates textual and visual inputs to guide the MLLM in extracting dimensionspecific item representations (see Figure 3).",
+    "Then we utilize a pretrained Text Encoder [9] to extract dense vector representations from the dimension-specific textual descriptions:v 𝑘 = Encoder 𝑡 𝑘, 𝑘 = 1,..., 𝐷 -1.",
+    "()1Where 𝑡 𝑘 represents MLLM generated textual descriptions in the 𝑘-th conceptual dimension (excluding quantity), we directly use the numerical quantity dimension without representation extraction.",
+    "Structure-Preserving Dimensionality Reduction (SPDR)To reduce high-dimensional embeddings extracted from Equation (1) while preserving semantic structure, we apply an adaptive parameterized UMAP [10], which dynamically adjusts output dimensionality for different conceptual dimension:e 𝑘 = UMAP 𝑘, v 𝑘, 𝑘 = 1,..., 𝐷 -1."
+  ]
+}

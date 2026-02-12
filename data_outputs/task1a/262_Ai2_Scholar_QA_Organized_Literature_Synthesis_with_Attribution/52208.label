@@ -1,0 +1,13 @@
+{
+  "style": "APA",
+  "texts": [
+    "Each passage is limited to 480 tokens and truncated at sentence and section boundaries where possible, having an overlap of one sentence (up to 64 tokens) with the preceding and following passages.",
+    "Passage text is embedded with mxbai-embed-large-v1 (Lee et al., 2024) with binary quantization, and placed into a dense (approximate nearest neighbor) index, as well as a traditional sparse keyword index.",
+    "We first retrieve a union of embedding and keyword-based matches, applying any specified filters.",
+    "The filtered results are ranked with a weighted sum of embedding similarity and bm25 scores.",
+    "The passages obtained from the retrieval step are subsequently passed to a neural re-ranker and the top 50 results are retained."
+  ],
+  "correct_citations": [
+    "Passage text is embedded with mxbai-embed-large-v1 (Lee et al., 2024) with binary quantization, and placed into a dense (approximate nearest neighbor) index, as well as a traditional sparse keyword index."
+  ]
+}

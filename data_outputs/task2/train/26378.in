@@ -1,0 +1,22 @@
+{
+  "text": "Given a set of simple classifiers, we now investigate various ways for combining their predictions. These predictions may be contradicting (for example, the POS classifier can predict 'noun' while the tense classifier predicts 'past'), and we use the constraints imposed by the morphological analyzer to enforce a consistent analysis. First, we define a na\u00efve combination along the lines of [CITATION_1] . The scores assigned by the simple classifiers (except segmentation, for which we use the baseline) to each analysis are accumulated, and the score of the complete analysis is their sum (experiments with different weights to the various classifiers proved futile). Even after the combination, the remaining level of ambiguity is 1.05; in ambiguous cases back off to the baseline analysis, and then choose at random one of the topranking analyses. The result of the combination is shown in Table 7 : Results of the na\u00efve combination Next, we define a hierarchical combination in which we try to incorporate more linguistic knowledge pertaining to the dependencies between the classifiers. As a pre-processing step we classify the target word to one of two groups, using the has properties classifier. Then, we predict the main POS of the target word, and take this prediction to be true; we then apply only the subset of the other classifiers that are relevant to the main POS.",
+  "citation_candidates": [
+    "2216180",
+    "9673099",
+    "770625"
+  ],
+  "bib_entries": {
+    "770625": {
+      "title": "An unsupervised morpheme-based hmm for hebrew morphological disambiguation",
+      "abstract": "Morphological disambiguation is the process of assigning one set of morphological features to each individual word in a text. When the word is ambiguous (there are several possible analyses for the word), a disambiguation procedure based on the word context must be applied. This paper deals with morphological disambiguation of the Hebrew language, which combines morphemes into a word in both agglutinative and fusional ways. We present an un-supervised stochastic model - the only resource we use is a morphological analyzer-which deals with the data sparseness problem caused by the affixational morphology of the Hebrew language.We present a text encoding method for languages with affixational morphology in which the knowledge of word formation rules (which are quite restricted in Hebrew) helps in the disambiguation. We adapt HMM algorithms for learning and searching this text representation, in such a way that segmentation and tagging can be learned in parallel in one step. Results on a large scale evaluation indicate that this learning improves disambiguation for complex tag sets. Our method is applicable to other languages with affix morphology."
+    },
+    "2216180": {
+      "title": "Arabic tokenization, part-of-speech tagging and morphological disambiguation in one fell swoop",
+      "abstract": "We present an approach to using a morphological analyzer for tokenizing and morphologically tagging (including part-of-speech tagging) Arabic words in one process. We learn classifiers for individual morphological features, as well as ways of using these classifiers to choose among entries from the output of the analyzer. We obtain accuracy rates on all tasks in the high nineties."
+    },
+    "9673099": {
+      "title": "Learning Hebrew roots: Machine learning with linguistic constraints",
+      "abstract": "The morphology of Semitic languages is unique in the sense that the major word-formation mechanism is an inherently non-concatenative process of interdigitation, whereby two morphemes, a root and a pattern, are interwoven. Identifying the root of a given word in a Semitic language is an important task, in some cases a crucial part of morphological analysis. It is also a non-trivial task, which many humans find challenging. We present a machine learning approach to the problem of extracting roots of Hebrew words. Given the large number of potential roots (thousands), we address the problem as one of combining several classifiers, each predicting the value of one of the root\u2019s consonants. We show that when these predictors are combined by enforcing some fairly simple linguistics constraints, high accuracy, which compares favorably with human performance on this task, can be achieved."
+    }
+  }
+}

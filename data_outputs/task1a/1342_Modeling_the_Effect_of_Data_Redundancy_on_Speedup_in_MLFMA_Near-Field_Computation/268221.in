@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Data restructuring affects both serial and parallel sections.",
+    "Our model aims to predict this speedup.",
+    "Proposition 2 (Total Execution Time):The total time of the modified algorithm includes four components:𝑇 𝑡𝑜𝑡𝑎𝑙 = 𝑇 𝐶𝑜𝑙𝑙𝑒𝑐𝑡 + 𝑇 𝑇𝑟𝑎𝑛𝑠𝑓𝑒𝑟 + 𝑇 𝐶𝑜𝑚𝑝𝑢𝑡𝑒 + 𝑇 𝑈𝑝𝑑𝑎𝑡𝑒 (2) 𝑇 𝑡𝑟𝑎𝑛𝑠𝑓𝑒𝑟 = 𝑇 𝑡𝑟𝑎𝑛𝑠𝑓𝑒𝑟 𝐺𝑃𝑈 + 𝑇 𝑡𝑟𝑎𝑛𝑠𝑓𝑒𝑟 𝐺𝑃𝑈(3) A schematic of the runtime components is shown in Figure [2].",
+    "Proposition 3 (Speedup of Modified Component):The speedup of a restructured component without considering other components is:𝑋 𝑜𝑝 = 1 ( 𝑠ℎ𝑎𝑟𝑒 𝑜𝑝 𝑋 𝑜𝑝) + (1 -𝑠ℎ𝑎𝑟𝑒 𝑜𝑝)(4)where 𝑋 𝑜𝑝 is the speedup of the modified operation, and 𝑆ℎ𝑎𝑟𝑒 𝑜𝑝 is its time share in the baseline application.Combing formulas 1-4 we define the final speedup as:𝑋 𝑟𝑒𝑠𝑡 = 1 ( 𝑠ℎ𝑎𝑟𝑒 𝑝2𝑝 𝑋 𝑝2𝑝) + (1 -𝑠ℎ𝑎𝑟𝑒 𝑝2𝑝)(5)𝑋 𝑝2𝑝 = 1 ( 𝑠ℎ𝑎𝑟𝑒 𝑐𝑜𝑙𝑙𝑒𝑐𝑡 𝑋 𝑐𝑜𝑙𝑙𝑒𝑐𝑡) + ( 𝑠ℎ𝑎𝑟𝑒 𝑡𝑟𝑎𝑛𝑠𝑓𝑒𝑟 𝑋 𝑡𝑟𝑎𝑛𝑠𝑓𝑒𝑟) + ( 𝑠ℎ𝑎𝑟𝑒 𝑐𝑜𝑚𝑝𝑢𝑡𝑒 𝑋 𝑐𝑜𝑚𝑝𝑢𝑡𝑒) + ( 𝑠ℎ𝑎𝑟𝑒 𝑢𝑝𝑑𝑎𝑡𝑒 𝑋 𝑢𝑝𝑑𝑎𝑡𝑒)(6) Modeling Individual ComponentsConjecture 1 (Memory Operations): Data collection and update times scale with time complexity and data volume:𝑆𝑝𝑒𝑒𝑑𝑢𝑝 ∝ 𝑋 𝐶𝑜𝑚𝑝𝑙𝑒𝑥𝑖𝑡𝑦 × 𝑋 𝑚𝑒𝑚,𝑋 𝐶𝑜𝑚𝑝𝑙𝑒𝑥𝑖𝑡𝑦 = 𝐶𝑜𝑚𝑝𝑙𝑒𝑥𝑖𝑡𝑦 𝑏𝑎𝑠𝑒 𝐶𝑜𝑚𝑝𝑙𝑒𝑥𝑖𝑡𝑦 𝑟𝑒𝑠𝑡𝑟, 𝑋 𝑚𝑒𝑚 = 𝑉 𝑏𝑎𝑠𝑒 𝑉 𝑟𝑒𝑠𝑡𝑟(7)Proposition 4 (Data Transfer): Transfer time is linear in data volume:𝑋 𝑡𝑟𝑎𝑛𝑠𝑓𝑒𝑟 ∝ 𝑉 𝑏𝑎𝑠𝑒 𝑉 𝑟𝑒𝑠𝑡𝑟(8)Theory 1 (GPU Computation Speedup): Kernel speedup depends on time complexity, kernel launches, and locality.",
+    "We use term kernel launch here like [1] to refere the number of times that kernel must use all of cores to serve all CUDA threads."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "If that is the case, it compares the ports of all already existing endpoints on the supplied node and assigns a port 𝑝 = 𝑎𝑟𝑔𝑚𝑎𝑥 (𝑝𝑜𝑟𝑡) + 1, which is passed back to the Slurm script in the curl response to be used by the vLLM server.",
+    "Finally, a new entry is created in ai_model_endpoints, holding information such as node, port, model version, bearer token and a nullable datetime field indicating readiness of the endpoint, which at that time is null.",
+    "Endpoint Worker.The Endpoint Worker is another longrunning background service, responsible for managing endpoint health status.",
+    "Each run, it iterates over all entries in the ai_model _endpoint_jobs table and sends a GET request to the /health endpoint of each job, which is provided by the vLLM server.",
+    "Endpoint jobs not yet marked as ready but receive a response statuscode 200 are updated accordingly by setting their corresponding fields to the current datetime."
+  ]
+}

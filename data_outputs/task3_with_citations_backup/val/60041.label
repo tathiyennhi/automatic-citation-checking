@@ -1,0 +1,44 @@
+{
+  "doc_id": "60041",
+  "text": "To remove the effects of head motion artifacts and physiological noise, which can induce spurious correlations and influence the outcome of rsFC analysis [CITATION_1] [CITATION_2] [CITATION_3] , Artifact Detection Tools, 4 and the CompCor method (Whitfield-Gabrieli and Nieto-Castanon, 2012) were used in the CONN toolbox. Using Artifact Detection Tools, images with FD larger than 0.5 mm or signal intensity changes greater than three standard deviations were defined as outlier images. The CompCor method was used to estimate and remove motion and physiological noise without regressing out the global signal. The CompCor method has better sensitivity and specificity to detect FC across multiple brain regions than the global signal regression method (Whitfield-Gabrieli and Nieto-Castanon, 2012). Structural images were normalized and segmented into GM, white matter, and cerebrospinal fluid regions. Using principal components analysis, five principal components were extracted from subject-specific segmented white matter and cerebrospinal fluid, which were used as temporal confounding factors and removed from the BOLD functional data in the time-series linear regression. In addition, the six motion parameters from the realignment, and their temporal derivatives along with outlier images, were used as nuisance covariates in the time-series linear regression. Data sets were band-pass filtered from 0.008 to 0.09 Hz.",
+  "correct_citation": {
+    "[CITATION_1]": "37089375",
+    "[CITATION_2]": "2433590",
+    "[CITATION_3]": "40267158"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To remove the effects of head motion artifacts and physiological noise, which can induce spurious correlations and influence the outcome of rsFC analysis [CITATION_1] [CITATION_2] [CITATION_3] , Artifact Detection Tools, 4 and the CompCor method (Whitfield-Gabrieli and Nieto-Castanon, 2012) were used in the CONN toolbox.",
+      "s_span": 0,
+      "e_span": 322
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "To remove the effects of head motion artifacts and physiological noise, which can induce spurious correlations and influence the outcome of rsFC analysis [CITATION_1] [CITATION_2] [CITATION_3] , Artifact Detection Tools, 4 and the CompCor method (Whitfield-Gabrieli and Nieto-Castanon, 2012) were used in the CONN toolbox.",
+      "s_span": 0,
+      "e_span": 322
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "To remove the effects of head motion artifacts and physiological noise, which can induce spurious correlations and influence the outcome of rsFC analysis [CITATION_1] [CITATION_2] [CITATION_3] , Artifact Detection Tools, 4 and the CompCor method (Whitfield-Gabrieli and Nieto-Castanon, 2012) were used in the CONN toolbox.",
+      "s_span": 0,
+      "e_span": 322
+    }
+  ],
+  "bib_entries": {
+    "2433590": {
+      "title": "Methods to detect, characterize, and remove motion artifact in resting state fMRI",
+      "abstract": "Abstract Head motion systematically alters correlations in resting state functional connectivity fMRI (RSFC). In this report we examine impact of motion on signal intensity and RSFC correlations. We find that motion-induced signal changes (1) are often complex and variable waveforms, (2) are often shared across nearly all brain voxels, and (3) often persist more than 10 s after motion ceases. These signal changes, both during and after motion, increase observed RSFC correlations in a distance-dependent manner. Motion-related signal changes are not removed by a variety of motion-based regressors, but are effectively reduced by global signal regression. We link several measures of data quality to motion, changes in signal intensity, and changes in RSFC correlations. We demonstrate that improvements in data quality measures during processing may represent cosmetic improvements rather than true correction of the data. We demonstrate a within-subject, censoring-based artifact removal strategy based on volume censoring that reduces group differences due to motion to chance levels. We note conditions under which group-level regressions do and do not correct motion-related effects."
+    },
+    "40267158": {
+      "title": "A comprehensive assessment of regional variation in the impact of head micromovements on functional connectomics",
+      "abstract": "Functional connectomics is one of the most rapidly expanding areas of neuroimaging research. Yet, concerns remain regarding the use of resting-state fMRI (R-fMRI) to characterize inter-individual variation in the functional connectome. In particular, recent findings that \"micro\" head movements can introduce artifactual inter-individual and group-related differences in R-fMRI metrics have raised concerns. Here, we first build on prior demonstrations of regional variation in the magnitude of framewise displacements associated with a given head movement, by providing a comprehensive voxel-based examination of the impact of motion on the BOLD signal (i.e., motion-BOLD relationships). Positive motion-BOLD relationships were detected in primary and supplementary motor areas, particularly in low motion datasets. Negative motion-BOLD relationships were most prominent in prefrontal regions, and expanded throughout the brain in high motion datasets (e.g., children). Scrubbing of volumes with FD > 0.2 effectively removed negative but not positive correlations; these findings suggest that positive relationships may reflect neural origins of motion while negative relationships are likely to originate from motion artifact. We also examined the ability of motion correction strategies to eliminate artifactual differences related to motion among individuals and between groups for a broad array of voxel-wise R-fMRI metrics. Residual relationships between motion and the examined R-fMRI metrics remained for all correction approaches, underscoring the need to covary motion effects at the group-level. Notably, global signal regression reduced relationships between motion and inter-individual differences in correlation-based R-fMRI metrics; Z-standardization (mean-centering and variance normalization) of subject-level maps for R-fMRI metrics prior to group-level analyses demonstrated similar advantages. Finally, our test-retest (TRT) analyses revealed significant motion effects on TRT reliability for R-fMRI metrics. Generally, motion compromised reliability of R-fMRI metrics, with the exception of those based on frequency characteristics particularly, amplitude of low frequency fluctuations (ALFF). The implications of our findings for decision-making regarding the assessment and correction of motion are discussed, as are insights into potential differences among volume-based metrics of motion. (C) 2013 Elsevier Inc. All rights reserved."
+    },
+    "37089375": {
+      "title": "Spurious but systematic correlations in functional connectivity MRI networks arise from subject motion",
+      "abstract": "Here, we demonstrate that subject motion produces substantial changes in the timecourses of resting state functional connectivity MRI (rs-fcMRI) data despite compensatory spatial registration and regression of motion estimates from the data. These changes cause systematic but spurious correlation structures throughout the brain. Specifically, many long-distance correlations are decreased by subject motion, whereas many short-distance correlations are increased. These changes in rs-fcMRI correlations do not arise from, nor are they adequately countered by, some common functional connectivity processing steps. Two indices of data quality are proposed, and a simple method to reduce motion-related effects in rs-fcMRI analyses is demonstrated that should be flexibly implementable across a variety of software platforms. We demonstrate how application of this technique impacts our own data, modifying previous conclusions about brain development. These results suggest the need for greater care in dealing with subject motion, and the need to critically revisit previous rs-fcMRI work that may not have adequately controlled for effects of transient subject movements."
+    }
+  },
+  "generator": "fallback_v4"
+}

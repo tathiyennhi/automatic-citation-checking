@@ -1,0 +1,25 @@
+{
+  "doc_id": "27076",
+  "text": "The previous section has shown that our proposed tracker performs extremely robustly in comparison to the best state-of-the-art trackers from the literature. However, our tracker relies on several key components which differ from other tracking methods. This section investigates the extent to which each of these com-A C C E P T E D M A N U S C R I P T ponents contributes to the overall strong performance of the tracker. To demonstrate the effect of each novel component, we evaluate performance while replacing that component with a conventional method from the literature, but keeping all other parts of the algorithm the same. Firstly, we remove our proposed use of super-pixels for determining mid-level target parts, and replace it with the well-known method of [CITATION_1] , which selects random target regions to be mid-level patches. Secondly, we remove our proposed adaptive clustered decision trees (which adaptively combine different features according to their importance) with a standard homogeneous feature fusion method, as in [CITATION_2] and much of the feature fusion literature, wherein the likelihoods of different features are simply multiplied. Thirdly, we remove our proposed adaptive model re-learning speed, and replace it with a fixed re-learning speed of 0.5 in Eq. 20. Fig. 11 compares the performance of the complete proposed tracker, with performance of the tracker when each sub-component is removed and replaced by a conventional method from the literature. 6 suggests that the adaptive re-learning speed does have a significant impact on performance. However, even without the adaptive re-learning speed, the tracker is still able to deliver comparable performance to the state-of-the-art trackers analysed in Fig. 6 . In contrast, removing either the super-pixels mid-level parts representation or the clustered decision tree matching method, causes a larger degradation in performance. It appears that the superpixels representation and the clustered decision tree method contribute equally to the overall performance of the tracker, and that their contribution is more important than the effect (still significant) of the adaptive re-learning rate.",
+  "correct_citation": {
+    "[CITATION_1]": "8190372",
+    "[CITATION_2]": "8190372"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Firstly, we remove our proposed use of super-pixels for determining mid-level target parts, and replace it with the well-known method of, which selects random target regions to be mid-level patches."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Secondly, we remove our proposed adaptive clustered decision trees (which adaptively combine different features according to their importance) with a standard homogeneous feature fusion method, as in and much of the feature fusion literature, wherein the likelihoods of different features are simply multiplied."
+    }
+  ],
+  "bib_entries": {
+    "8190372": {
+      "title": "Robust visual tracking using an adaptive coupled-layer visual model",
+      "abstract": "This paper addresses the problem of tracking objects which undergo rapid and significant appearance changes. We propose a novel coupled-layer visual model that combines the target's global and local appearance by interlacing two layers. The local layer in this model is a set of local patches that geometrically constrain the changes in the target's appearance. This layer probabilistically adapts to the target's geometric deformation, while its structure is updated by removing and adding the local patches. The addition of these patches is constrained by the global layer that probabilistically models the target's global visual properties, such as color, shape, and apparent local motion. The global visual properties are updated during tracking using the stable patches from the local layer. By this coupled constraint paradigm between the adaptation of the global and the local layer, we achieve a more robust tracking through significant appearance changes. We experimentally compare our tracker to 11 state-of-the-art trackers. The experimental results on challenging sequences confirm that our tracker outperforms the related trackers in many cases by having a smaller failure rate as well as better accuracy. Furthermore, the parameter analysis shows that our tracker is stable over a range of parameter values."
+    }
+  },
+  "generator": "fallback"
+}

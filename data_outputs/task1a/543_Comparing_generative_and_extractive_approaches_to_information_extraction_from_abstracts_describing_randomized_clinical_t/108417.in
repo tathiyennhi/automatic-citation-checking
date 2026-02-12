@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Therefore, we adopt the Longformer [16] approach as well as the Flan-T5 model [17] to learn full-document contextualized representations h i ∈ R d (with d = 768 for both T5 and Longformer models) for each token w i of the input docu- ment, where d is the output dimension of the encoder of the respective model.",
+    "Extraction of textual slot-fillersThe ITC approach extracts slot-fillers from the input document by predicting start and end tokens of slot-fillers, followed by a step which joins the predicted start and end tokens.",
+    "This is realized by training two linear layers which take the contextualized representation h i of the tokens w i as input and predicts whether or not this is a slot-filler start or end token, respectively: where S = i S i ∪ {O} is the set of all slots including the special no-slot label O which indicates that a token is not classified as a start/end token of a slot-filler.",
+    "The vectors p s,i, p e,i denote the predicted probability distribution over the slots that a token w i is the start/end of the respective slots.",
+    "The final prediction is determined by the arg max operation.The predicted start/end tokens are joined sentencewise by minimizing the distance between start and end tokens in terms of tokens in between."
+  ]
+}

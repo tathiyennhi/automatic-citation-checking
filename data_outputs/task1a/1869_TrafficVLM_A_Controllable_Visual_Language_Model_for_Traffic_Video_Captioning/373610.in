@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "Similar to how we process our main feature, we square crop each frame corresponding to bounding box b Pi to the segment that is close to the bounding box and resize it to 224 × 224 pixels, represented as l i ∈ R 224×224×C.",
+    "The cropped segment is then separately encoded with our visual extractor to get:x l i = f e (l i) ∈ R d.(4)As illustrated in Fig. 1, there can be several scenarios where there is no bounding box b Pj in relation to phase P j ∈ P. To address this issue, we add a learnable tensor u = {u i } P i=1 ∈ R P ×d, and replace the missing visual feature x l j with the learnable embedding u j at the corresponding phase.",
+    "All phase visual features are aggregated to form the final local embedding x l = {x l i } P i=1 ∈ R P ×d.",
+    "In practice, we extract all raw CLIP features x g and x l prior to training to save computation time and resources.",
+    "Details about the selection of features will be explained in Sec. 4.2."
+  ]
+}

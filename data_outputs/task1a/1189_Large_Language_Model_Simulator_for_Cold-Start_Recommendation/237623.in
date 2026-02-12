@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "In the online recommendation, we encounter three types of behaviors: positive behaviors (users click on an item), negative behaviors (users ignore the item), and unobserved behavior (the recommender system does not recommend the item to the user, and we cannot observe the user's intention).As negative behaviors make up approximately 70%-90% of online behaviors, we perform a 1:1 sampling of positive and negative behaviors to address the imbalanced distribution.",
+    "Additionally, we conduct an extra 1:1 sampling of positive and unobserved behavior to ensure that the LLM can capture a broader range of intentions, especially for cold items.",
+    "For offline datasets, we only use a 1:1 sampling of positive and unobserved data to train the LLM.Fine-tuning Structure.",
+    "Specifically, we add an additional lowrank modification matrix on all the parameters of the transformer structure, in terms of Q, K, and V in the self-attention mechanism, as well as the feed-forward layers.",
+    "This Low-Rank Adaptation (LoRA) [13] approach allows us to efficiently fine-tune the large language model for specific recommendation scenarios while maintaining most of the pre-trained weights."
+  ]
+}

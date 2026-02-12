@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "For each word w i in the sentence, we create a masked sentence S -i, where w i is replaced by a [MASK] token:S -i = [w 1,..., w i-1, [MASK], w i+1,..., w n](2)For each masked sentence S -i, the perplexity P P L -i is computed as:P P L -i = exp ⎛ ⎝ - 1 N ⎛ ⎝ j =i log P(w j | S -i) + log max P(W [MASK] | S -i) ⎞ ⎠ ⎞ ⎠(3)where max P(W [MASK] | S -i) represents the probability of the word with the highest probability in the distribution at the masked position and P(w j | S -i) are the probabilities for the unmasked words.",
+    "This step is designed to identify the nonsensical concept in the sentence by analyzing how much each word contributes to violating commonsense.",
+    "The intuition is that if a particular word is the cause of the sentence's nonsensical nature, its probability in the model's generated probability distribution for that position should be relatively low.",
+    "Therefore, when we replace a nonsensical word with the most probable word predicted by the model, the sentence's perplexity should decrease significantly.",
+    "In contrast, normal words, which already have high probabilities in their respective positions, will not cause a substantial change in the sentence's overall perplexity when replaced."
+  ],
+  "correct_citations": []
+}

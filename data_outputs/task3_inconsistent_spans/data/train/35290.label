@@ -1,0 +1,55 @@
+{
+  "doc_id": "35290",
+  "text": "Firstly, the input images are fed into LBN-AA. Note that many real-time semantic segmentation methods (e.g., [CITATION_1] , [CITATION_2] ) downsample the feature maps to 1/32 or 1/16 of the original input image size, which leads to poor accuracy. In contrast, LBN-AA is able to generate the larger size of feature maps which are 1/8 of the original input image size due to the usage of atrous convolution. Thus, LBN-AA will not lose too much information. Secondly, the feature maps extracted from LBN-AA are directly fed into DASPP to segment the objects at multiple scales and extract the high-level semantic information. Meanwhile, the input images are also fed into SPN to further extract sufficient spatial information. The semantic path (LBN-AA+DASPP) and the spatial path (SPN) are simultaneously computed, which considerably improves the efficiency. Thirdly, the outputs from the two paths are effectively combined by FFN to obtain the predicted results. Finally, we utilize the simple bilinear interpolation [CITATION_3] , [CITATION_4] to upsample the predicted results to the original image size.",
+  "correct_citation": {
+    "[CITATION_1]": "206766608",
+    "[CITATION_2]": "8589505",
+    "[CITATION_3]": "3429309",
+    "[CITATION_4]": "8254931"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Firstly, the input images are fed into LBN-AA. Note that many real-time semantic segmentation methods (e.g.,  ,  ) downsample the feature maps to 1/32 or 1/16 of the original input image size, which leads to poor accuracy.",
+      "s_span": 0,
+      "e_span": 246
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Firstly, the input images are fed into LBN-AA. Note that many real-time semantic segmentation methods (e.g.,  ,  ) downsample the feature maps to 1/32 or 1/16 of the original input image size, which leads to poor accuracy.",
+      "s_span": 0,
+      "e_span": 246
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Finally, we utilize the simple bilinear interpolation  ,  to upsample the predicted results to the original image size.",
+      "s_span": 962,
+      "e_span": 1105
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Finally, we utilize the simple bilinear interpolation  ,  to upsample the predicted results to the original image size.",
+      "s_span": 962,
+      "e_span": 1105
+    }
+  ],
+  "bib_entries": {
+    "206766608": {
+      "title": "Segnet: A deep convolutional encoder-decoder architecture for image segmentation",
+      "abstract": "We present a novel and practical deep fully convolutional neural network architecture for semantic pixel-wise segmentation termed SegNet. This core trainable segmentation engine consists of an encoder network, a corresponding decoder network followed by a pixel-wise classification layer. The architecture of the encoder network is topologically identical to the 13 convolutional layers in the VGG16 network [1] . The role of the decoder network is to map the low resolution encoder feature maps to full input resolution feature maps for pixel-wise classification. The novelty of SegNet lies is in the manner in which the decoder upsamples its lower resolution input feature map(s). Specifically, the decoder uses pooling indices computed in the max-pooling step of the corresponding encoder to perform non-linear upsampling. This eliminates the need for learning to upsample. The upsampled maps are sparse and are then convolved with trainable filters to produce dense feature maps. We compare our proposed architecture with the widely adopted FCN [2] and also with the well known DeepLab-LargeFOV [3] , DeconvNet [4] architectures. This comparison reveals the memory versus accuracy trade-off involved in achieving good segmentation performance. SegNet was primarily motivated by scene understanding applications. Hence, it is designed to be efficient both in terms of memory and computational time during inference. It is also significantly smaller in the number of trainable parameters than other competing architectures and can be trained end-to-end using stochastic gradient descent. We also performed a controlled benchmark of SegNet and other architectures on both road scenes and SUN RGB-D indoor scene segmentation tasks. These quantitative assessments show that SegNet provides good performance with competitive inference time and most efficient inference memory-wise as compared to other architectures. We also provide a Caffe implementation of SegNet and a web demo at http://mi.eng.cam.ac.uk/projects/segnet."
+    },
+    "8589505": {
+      "title": "ICNet for real-time semantic segmentation on high-resolution images",
+      "abstract": "We focus on the challenging task of real-time semantic segmentation in this paper. It finds many practical applications and yet is with fundamental difficulty of reducing a large portion of computation for pixel-wise label inference. We propose an image cascade network (ICNet) that incorporates multi-resolution branches under proper label guidance to address this challenge. We provide in-depth analysis of our framework and introduce the cascade feature fusion unit to quickly achieve high-quality segmentation. Our system yields real-time inference on a single GPU card with decent quality results evaluated on challenging datasets like Cityscapes, CamVid and COCO-Stuff."
+    },
+    "3429309": {
+      "title": "Deeplab: Semantic image segmentation with deep convolutional nets, atrous convolution, and fully connected crfs",
+      "abstract": "In this work we address the task of semantic image segmentation with Deep Learning and make three main contributions that are experimentally shown to have substantial practical merit. First , we highlight convolution with upsampled filters, or ‘atrous convolution’, as a powerful tool in dense prediction tasks. Atrous convolution allows us to explicitly control the resolution at which feature responses are computed within Deep Convolutional Neural Networks. It also allows us to effectively enlarge the field of view of filters to incorporate larger context without increasing the number of parameters or the amount of computation. Second , we propose atrous spatial pyramid pooling (ASPP) to robustly segment objects at multiple scales. ASPP probes an incoming convolutional feature layer with filters at multiple sampling rates and effective fields-of-views, thus capturing objects as well as image context at multiple scales. Third , we improve the localization of object boundaries by combining methods from DCNNs and probabilistic graphical models. The commonly deployed combination of max-pooling and downsampling in DCNNs achieves invariance but has a toll on localization accuracy. We overcome this by combining the responses at the final DCNN layer with a fully connected Conditional Random Field (CRF), which is shown both qualitatively and quantitatively to improve localization performance. Our proposed “DeepLab” system sets the new state-of-art at the PASCAL VOC-2012 semantic image segmentation task, reaching 79.7 percent mIOU in the test set, and advances the results on three other datasets: PASCAL-Context, PASCAL-Person-Part, and Cityscapes. All of our code is made publicly available online."
+    },
+    "8254931": {
+      "title": "Semantic image segmentation via deep parsing network",
+      "abstract": "This paper addresses semantic image segmentation by incorporating rich information into Markov Random Field (MRF), including high-order relations and mixture of label contexts. Unlike previous works that optimized MRFs using iterative algorithm, we solve MRF by proposing a Convolutional Neural Network (CNN), namely Deep Parsing Network (DPN), which enables deterministic end-toend computation in a single forward pass. Specifically, DPN extends a contemporary CNN architecture to model unary terms and additional layers are carefully devised to approximate the mean field algorithm (MF) for pairwise terms. It has several appealing properties. First, different from the recent works that combined CNN and MRF, where many iterations of MF were required for each training image during back-propagation, DPN is able to achieve high performance by approximating one iteration of MF. Second, DPN represents various types of pairwise terms, making many existing works as its special cases. Third, DPN makes MF easier to be parallelized and speeded up in Graphical Processing Unit (GPU). DPN is thoroughly evaluated on the PASCAL VOC 2012 dataset, where a single DPN model yields a new state-of-the-art segmentation accuracy of 77.5%."
+    }
+  },
+  "generator": "fallback_v4"
+}

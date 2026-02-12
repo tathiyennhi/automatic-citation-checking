@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "The particular implementation used in this paper, denoising diffusion probabilistic models (DDPM) [28], parametrizes the forward noising process with a normal distributionq(x t |x t-1) = N (x t; x t-1 1 -β t, β t I).",
+    "(7)The {β t } represent a fixed noise schedule, often linear in t, which controls the amount of noise added at each timestep and is chosen so that q(x T |x 0) ≈ N (0, I) [100].",
+    "This gives rise to the backwards model, notably also a normal distribution, with analytical formq(x t-1 |x t, x 0) = N (x t-1; μt (x t, x 0), βt I)(8)We can do one better and give the forms of μt (x t, x 0) and βt.",
+    "The full derivation can be found in [101],μt (x t, x 0) = √ ᾱt-1 β t 1 -ᾱt x 0 + √ α t (1 -ᾱt-1) 1 -ᾱt x t (9) βt = 1 -ᾱt-1 1 -ᾱt β t(10)with the following definitionsα t:= 1 -β t, ᾱt:= t s=1 α s(11)We can model this with the generative forward processp θ (x t-1 |x t) = N (x t-1; µ θ (x t, t), Σ θ (x t, t))(12)and make the choice that Σ θ (x t, t) = σ 2 t I.",
+    "We are finally ready to derive the ELBO, as we did with the VAE."
+  ]
+}

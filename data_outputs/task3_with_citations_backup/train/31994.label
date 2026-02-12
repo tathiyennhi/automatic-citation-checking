@@ -1,0 +1,88 @@
+{
+  "doc_id": "31994",
+  "text": "The RHS algorithm was successfully generalized for and was shown in [CITATION_1] to have a performance close to that of SPA. Additionally, in [CITATION_2] an optimized version of RHS was introduced for the case when variable nodes are of degree two, called RD2, that eliminates the need to perform term-by-term pmf multiplications in the variable node. In both cases, the computational complexities are lower than previously reported for non-binary LDPC decoders, but a fully-parallel implementation still remains challenging. Table I shows a few non-binary decoders reported in literature. In [CITATION_3] Spagnol et al. propose a serial architecture and FPGA implementation for a GF(8) LDPC decoder. In [CITATION_4] a partially-parallel implementation of the EMS algorithm is given for GF(4). In [CITATION_5] an architecture for decoding non-binary quasicyclic LDPC codes is proposed along with an ASIC implementation for a (620, 310) GF (32) code. An architecture that works for higher order fields is presented without implementation in [CITATION_6] . An optimized version of this architecture with an FPGA implementation is provided in [CITATION_7] .",
+  "correct_citation": {
+    "[CITATION_1]": "5814682",
+    "[CITATION_2]": "20125950",
+    "[CITATION_3]": "122594484",
+    "[CITATION_4]": "37444311",
+    "[CITATION_5]": "20985256",
+    "[CITATION_6]": "572912",
+    "[CITATION_7]": "16327315"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The RHS algorithm was successfully generalized for and was shown in [CITATION_1] to have a performance close to that of SPA. Additionally, in [CITATION_2] an optimized version of RHS was introduced for the case when variable nodes are of degree two, called RD2, that eliminates the need to perform term-by-term pmf multiplications in the variable node.",
+      "s_span": 0,
+      "e_span": 352
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The RHS algorithm was successfully generalized for and was shown in [CITATION_1] to have a performance close to that of SPA. Additionally, in [CITATION_2] an optimized version of RHS was introduced for the case when variable nodes are of degree two, called RD2, that eliminates the need to perform term-by-term pmf multiplications in the variable node.",
+      "s_span": 0,
+      "e_span": 352
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In [CITATION_3] Spagnol et al. propose a serial architecture and FPGA implementation for a GF(8) LDPC decoder.",
+      "s_span": 591,
+      "e_span": 701
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In [CITATION_4] a partially-parallel implementation of the EMS algorithm is given for GF(4).",
+      "s_span": 702,
+      "e_span": 794
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "In [CITATION_5] an architecture for decoding non-binary quasicyclic LDPC codes is proposed along with an ASIC implementation for a (620, 310) GF (32) code.",
+      "s_span": 795,
+      "e_span": 950
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "An architecture that works for higher order fields is presented without implementation in [CITATION_6] .",
+      "s_span": 951,
+      "e_span": 1055
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "An optimized version of this architecture with an FPGA implementation is provided in [CITATION_7] .",
+      "s_span": 1056,
+      "e_span": 1155
+    }
+  ],
+  "bib_entries": {
+    "20125950": {
+      "title": "Efficient stochastic decoding of non-binary LDPC codes with degree-two variable nodes",
+      "abstract": "In this letter, we present an optimized version of the relaxed half-stochastic (RHS) algorithm targeted at non-binary LDPC codes with a variable node degree equal to two. The new algorithm has significantly fewer multiplications while maintaining an error-correction performance and a decoding iteration count identical to those of the original."
+    },
+    "20985256": {
+      "title": "Efficient decoder design for nonbinary quasicyclic LDPC codes",
+      "abstract": "This paper addresses decoder design for nonbinary quasicyclic low-density parity-check (QC-LDPC) codes. First, a novel decoding algorithm is proposed to eliminate the multiplications over Galois field for check node processing. Then, a partially parallel architecture for check node processing units and an optimized architecture for variable node processing units are developed based on the new decoding algorithm. Thereafter, an efficient decoder structure dedicated to a promising class of high-performance nonbinary QC-LDPC codes is presented for the first time. Moreover, an ASIC implementation for a (620, 310) nonbinary QC-LDPC code decoder over GF(32) is designed to demonstrate the efficiency of the presented techniques."
+    },
+    "37444311": {
+      "title": "FPGA implementation of nonbinary quasi-cyclic LDPC decoder based on EMS algorithm",
+      "abstract": "Low Density Parity Check (LDPC) codes over GF(2m) show significantly higher performances than binary LDPC codes. However, the hardware complexity and area of the decoder are largely increasing. In this paper, putting the code and decoder design together to consider, we propose a FPGA semi-parallel implementation of extended min-sum (EMS) decoding algorithm for quasi-cyclic low density parity check (QC-LDPC) codes over GF (2m). According to the regularity of their parity check matrices, QC-LDPC codes can facilitate efficient high-speed parallel decoding. The EMS decoding algorithm greatly reduces the computational complexity of processing units, check node unit (CNU). In addition, the updating calculation of the check node unit and variable node unit (VNU) can be overlapped to decrease the time latency and increase the throughput. Based on these architectures, the (486,972) QC-LDPC code over GF (4) decoder is implemented on Xilinx field programmable gate array (FPGA) Virtex4 XC4VLX160. The result shows that the maximum clock frequency is 131.411MHz and the throughput is 50Mb/s for the EMS decoder."
+    },
+    "572912": {
+      "title": "Lowcomplexity decoding for non-binary LDPC codes in high order fields",
+      "abstract": "In this paper, we propose a new implementation of the Extended Min-Sum (EMS) decoder for non-binary LDPC codes. A particularity of the new algorithm is that it takes into accounts the memory problem of the non-binary LDPC decoders, together with a significant complexity reduction per decoding iteration. The key feature of our decoder is to truncate the vector messages of the decoder to a limited number �� �� of values in order to reduce the memory requirements. Using the truncated messages, we propose an efficient implementation of the EMS decoder which reduces the order of complexity to �� (�� �� log 2 �� �� ). This complexity starts to be reasonable enough to compete with binary decoders. The performance of the low complexity algorithm with proper compensation is quite good with respect to the important complexity reduction, which is shown both with a simulated density evolution approach and actual simulations."
+    },
+    "122594484": {
+      "title": "Hardware implementation of LDPC decoders",
+      "abstract": "Low density parity check (LDPC) codes over are an extension of binary LDPC codes with significantly higher performance. However, the computational complexity of the encoders/decoders for these codes is also higher. Hence there is a substantial lack of hardware implementations for LDPC over codes. This paper proposes a novel variation of the belief propagation algorithm for LDPC codes. The new algorithm results in a reduced hardware complexity when imple- mented in VLSI. The serial architecture of the novel decoding algorithm and two other algorithms for LDPC over are implemented on an FPGA. The results show that the proposed algorithm has substantial advantages over existing methods. We show that the implementation of LDPC over decoder is feasible for short to medium length codes. The additional com- plexity of the decoder is balanced by the superior performance of LDPC codes."
+    },
+    "16327315": {
+      "title": "Simplified check node processing in nonbinary LDPC decoders",
+      "abstract": "This paper deals with low-complexity algorithms for the check node processing in nonbinary LDPC decoders. After a review of the state-of-the-art, we focus on an original solution to significantly reduce the order of complexity of the Extended Min-Sum decoder at the elementary check node level. The main originality of the so-called Bubble Check algorithm is the two-dimensional strategy for the check node processing, which leads to a reduction of the number of comparisons. The simulation results obtained for the Bubble Check show that this complexity reduction does not introduce any performance loss and that it is even possible to further reduce the number of comparisons. This motivated the search of a simplified architecture and led to the L-Bubble Check, which is the main contribution of the paper. The implementation of a forward/backward check node as a systolic architecture of L-Bubble elementary checks is also described. Finally, some FPGA synthesis results of a whole GF(64)-LDPC decoder implementation are presented."
+    },
+    "5814682": {
+      "title": "Relaxed half-stochastic decoding of LDPC codes over GF(q)",
+      "abstract": "The error-correcting performance of non-binary LDPC codes has been shown to be better than most codes currently used for a variety of applications. However, due to the very high complexity of decoding these codes, they are not ubiquitously used. Moreover, an SPA decoder is so prohibitively complex, that a fully parallel implementation is not feasible even with simplified algorithms. In this paper we present a new algorithm which approaches the low complexity of stochastic decoding with the high performance of SPA decoding by combining elements from both algorithms and applying successive relaxation. We study its performance using a number of codes and show that it matches that of the SPA. We also analyze its complexity compared to the SPA and conclude that it has lower per iteration complexity and can have comparable average complexity per codeword. Due to the lower per iteration complexity, RHS has the potential of being implemented as a parallel, or partially parallel, decoder that is faster than a feasible SPA decoder."
+    }
+  },
+  "generator": "fallback_v4"
+}

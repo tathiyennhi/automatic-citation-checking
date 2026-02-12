@@ -1,0 +1,11 @@
+{
+  "style": "",
+  "texts": [
+    "Before passing into pose estimation, loaded 3D voxel coordinates are transformed and centered to real-world coordinates through L GT = (L voxel -C) × S CT. C is the center of the CT volume, and S CT denotes the pixel spacing of the CT scan in x, y, and z direction.",
+    "Then, an additional y-direction displacement of the volume-to-detector distance is added to the L GT coordinates.",
+    "Further, the extracted predicted 2D coordinates l also undergo several transformations prior to pose estimation:(1) Scale adjustment for X-ray image rescaling: l • 768 All three models are trained with a learning rate 1 × 10 -4, and the seed is set to 42.",
+    "The Baseline U-Net is trained for 28 epochs, with encoder depth 5, the U-Net trained on pose estimation loss is trained for 28 epochs, and the U-Net fine-tuned on pose estimation loss is fine-tuned for one epoch.Dataset Model RMSE (pixels) Mean L1 L2 L3 L4 L5 L6 L7 L8 Novel View Baseline U-Net 8.58 11.49 4.71 12.34 16.66 5.43 6.87 6.00 5.17 U-Net Trained w/PEL 20.82 39.95 13.83 28.34 19.51 15.36 14.02 20.00 15.54 U-Net Trained w/Only PEL DIV --------U-Net Fine-Tuned w/PEL 8.45 10.27 6.67 14.02 17.75 3.67 7.18 4.12 3.89 Novel Subject Baseline U-Net 5.58 5.68 8.33 4.68 4.01 8.65 4.07 3.07 6.12 U-Net Trained w/PEL 11.73 11.63 23.33 10.59 6.15 10.38 7.7 10.46 13.57 U-Net Trained w/Only PEL DIV --------U-Net Fine-Tuned w/PEL 5.09 7.45 8.01 4.68 2.03 2.03 7.52 4.48 4.48 Table 1.",
+    "RMSE comparison of different approaches' performance on the novel view set and the held-out subject set."
+  ],
+  "correct_citations": []
+}

@@ -1,0 +1,9 @@
+{
+  "texts": [
+    "This involves dividing these coarsely matched WSI pairs into smaller FOV pairs, each with a dimension of 3248 × 3248 pixels (~528 × 528 μm 2), and then performing a multimodal affine image registration 64 to correct the shifts, size alterations, and rotation between the histology image FOVs and their autofluorescence counterparts.",
+    "After this step, the registered histological image FOVs (each with 3248 × 3248 pixels) were further centercropped to 2048 × 2048 pixels (~333 × 333 μm 2) to eliminate potential artifacts at the image edges.",
+    "As a result, 16,159 paired sample image FOVs of 2048 × 2048 pixels were generated to form the training dataset of the virtual staining network, and 10% of the data was randomly selected and separated as the validation dataset.",
+    "In each epoch of the training process, these paired image FOVs were further divided into ~1.03 million smaller patches of 256 × 256 pixels, normalized to have a distribution with zero mean and unit variance.",
+    "Before being fed into the network, these normalized patches were further augmented through random flipping and rotation operations."
+  ]
+}
