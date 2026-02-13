@@ -1,0 +1,25 @@
+{
+  "doc_id": "33345",
+  "text": "As illustrated in Section 5.1, cross dataset evaluation provides insights on the generalization abilities of different benchmarks. A diverse dataset should capture the true essence of real world without bias [CITATION_1] , detector trained on such dataset should be able to learn a generic representation that should handle subtle shifts in domain robustly. Therefore, we use the largest dataset in terms of diversity (more countries and cities included) and pedestrian density from the context of autonomous driving, ECP [CITATION_2] for training. We performed experiments using our Table 7 , since CityPersons contains fewer instances of pedestrians than ECP, model was not able to learn a robust representation. Finally, in the case of Caltech, we can see that pre-training on CityPersons and ECP is generally beneficial. Simple pre-training helps to achieve performances comparable to the model trained on the Caltech, primarily due to relative high density and diversity of ECP and CityPersons than Caltech. We also investigated concatenating all datasets (Table 9) , this leads to slight improvement in performance but it is still slightly worse than the progressive training that we have used, where we fine-tune on the autonomous driving benchmark. The results illustrate that this strategy enables us to significantly surpass the performances of state-of-the-art without fine-tuning on the actual target set. This illustrates the generalization capability of the proposed progressive training strategy, without exposure to the target set, our baseline outperforms previous state-of-the-art on CityPersons.",
+  "correct_citation": {
+    "[CITATION_1]": "29151351",
+    "[CITATION_2]": "29151351"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A diverse dataset should capture the true essence of real world without bias [CITATION_1] , detector trained on such dataset should be able to learn a generic representation that should handle subtle shifts in domain robustly."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Therefore, we use the largest dataset in terms of diversity (more countries and cities included) and pedestrian density from the context of autonomous driving, ECP [CITATION_2] for training."
+    }
+  ],
+  "bib_entries": {
+    "29151351": {
+      "title": "The eurocity persons dataset: A novel benchmark for object detection",
+      "abstract": "Big data has had a great share in the success of deep learning in computer vision. Recent works suggest that there is significant further potential to increase object detection performance by utilizing even bigger datasets. In this paper, we introduce the EuroCity Persons dataset, which provides a large number of highly diverse, accurate and detailed annotations of pedestrians, cyclists and other riders in urban traffic scenes. The images for this dataset were collected on-board a moving vehicle in 31 cities of 12 European countries. With over 238200 person instances manually labeled in over 47300 images, EuroCity Persons is nearly one order of magnitude larger than person datasets used previously for benchmarking. The dataset furthermore contains a large number of person orientation annotations (over 211200). We optimize four state-of-the-art deep learning approaches (Faster R-CNN, R-FCN, SSD and YOLOv3) to serve as baselines for the new object detection benchmark. In experiments with previous datasets we analyze the generalization capabilities of these detectors when trained with the new dataset. We furthermore study the effect of the training set size, the dataset diversity (day- vs. night-time, geographical region), the dataset detail (i.e. availability of object orientation information) and the annotation quality on the detector performance. Finally, we analyze error sources and discuss the road ahead."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

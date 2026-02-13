@@ -1,0 +1,25 @@
+{
+  "doc_id": "26479",
+  "text": "This example is the well known Grover's algorithm [CITATION_1] which finds one or more elements in an unstructured input space with an exponential speed-up with respect to the classical case. It is meant to illustrate the usefulness of having a HLP for the automatic construction of oracle operators from functions specified with the underlying classical language. The premise is that an efficient algorithm is known for the computation of the classical oracle function f . The following example is the simplified version in which there is exactly one good input marked by the oracle, that is f (x) = true if and only if x is the searched elementx. The range of inputs is [0, . . . , N − 1] where N = 2 n . The corresponding circuit is the following, where O is the phase oracle operator, M is the so called \"inversion about mean\" and G = OM is the Grover iteration: At the beginning the number of iterations to be performed is calculated. It is well known that this number scales as O( √ N ) [CITATION_2] . Then the phase oracle and invert zero operators are built (f 0 is a function which returns true only when the input is 0). This construction relies on automatic translation from the corresponding classical function provided by the language. This is a major difficulty in the language implementation and is discussed in section 5.2.",
+  "correct_citation": {
+    "[CITATION_1]": "207198067",
+    "[CITATION_2]": "207198067"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This example is the well known Grover's algorithm [CITATION_1] which finds one or more elements in an unstructured input space with an exponential speed-up with respect to the classical case."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "It is well known that this number scales as O( √ N ) [CITATION_2] ."
+    }
+  ],
+  "bib_entries": {
+    "207198067": {
+      "title": "A fast quantum mechanical algorithm for database search",
+      "abstract": "were proposed in the early 1980’s [Benioff80] and shown to be at least as powerful as classical computers an important but not surprising result, since classical computers, at the deepest level, ultimately follow the laws of quantum mechanics. The description of quantum mechanical computers was formalized in the late 80’s and early 90’s [Deutsch85][BB92] [BV93] [Yao93] and they were shown to be more powerful than classical computers on various specialized problems. In early 1994, [Shor94] demonstrated that a quantum mechanical computer could efficiently solve a well-known problem for which there was no known efficient algorithm using classical computers. This is the problem of integer factorization, i.e. testing whether or not a given integer, N, is prime, in a time which is a finite power of o (logN) . ----------------------------------------------"
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

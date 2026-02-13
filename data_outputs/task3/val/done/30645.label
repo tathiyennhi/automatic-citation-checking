@@ -1,0 +1,20 @@
+{
+  "doc_id": "30645",
+  "text": "For composite message spaces Z N , we can choose t randomly from Z N/2 and set encode(s) = s + 2 · t to encode -bit secrets. Laur and Lipmaa showed that this encoding is 2 −1 /γ-secure where γ is the smallest factor of N and there are no alternative encoding functions with significantly longer secrets [CITATION_1] . See App. A for a more detailed discussion about optimality. This construction can be lifted to the vectorised setting provided that all plaintext components have the same public order n as in [SV11,GHS12,DPSZ12]. To encode s, we first use additive secret sharing to split s into the sum s 1 + · · · + s k and then use encode function for each component s i separately. By the construction, the noise hides at least one component s i if G = {0} and thus the secret s becomes unreconstructable.",
+  "correct_citation": {
+    "[CITATION_1]": "14993660"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Laur and Lipmaa showed that this encoding is 2 −1 /γ-secure where γ is the smallest factor of N and there are no alternative encoding functions with significantly longer secrets [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "14993660": {
+      "title": "A new protocol for conditional disclosure of secrets and its applications",
+      "abstract": "Many protocols that are based on homomorphic encryption are private only if a client submits inputs from a limited range $\\mathcal{S}$. Conditional disclosure of secrets (CDS) helps to overcome this restriction. In a CDS protocol for a set $\\mathcal{S}$, the client obtains server's secret if and only if the client's inputs belong to $\\mathcal{S}$ and thus the server can guard itself against malformed queries. We extend the existing CDS protocols to work over additively homomorphic cryptosystems for every set from NP/ poly . The new construction is modular and easy to apply. As an example, we derive a new oblivious transfer protocol with log-squared communication and a millionaire's protocol with logarithmic communication. We also implement private, universally verifiable and robust multi-candidate electronic voting so that all voters only transmit an encryption of their vote. The only hardness assumption in all these protocols is that the underlying public-key cryptosystem is IND-CPA secure and the plaintext order does not have small factors."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}
