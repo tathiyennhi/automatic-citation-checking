@@ -4,7 +4,9 @@ import json
 import time
 import re
 import shutil
+import argparse
 from pathlib import Path
+from datetime import datetime
 from urllib import request, error
 
 # --- CONFIG ---
@@ -323,12 +325,89 @@ def process_file(file_path: Path):
     raise Exception("All retries exhausted")
 
 
-def main():
-    split = sys.argv[1] if len(sys.argv) > 1 else "train"
-    if split not in VALID_SPLITS:
-        print(f"Invalid split '{split}'. Valid: {VALID_SPLITS}")
+def run_test(split, limit=5):
+    """Test mode: process N files without moving, save results to test_results/."""
+    pending_dir = BASE_DIR / split / "pending"
+    if not pending_dir.exists():
+        print(f"Pending directory not found: {pending_dir}")
         sys.exit(1)
 
+    def sort_key(path: Path):
+        try:
+            return (0, int(path.stem))
+        except ValueError:
+            return (1, path.stem)
+
+    files = sorted(pending_dir.glob("*.in"), key=sort_key)[:limit]
+    if not files:
+        print(f"No .in files found in {pending_dir}")
+        sys.exit(1)
+
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    test_dir = Path(__file__).parent / "test_results" / f"ollama_test_{split}_{timestamp}"
+    test_dir.mkdir(parents=True, exist_ok=True)
+
+    print(f"=== OLLAMA TEST MODE ===")
+    print(f"Split: {split} | Files: {len(files)} | Model: ollama:{MODEL_NAME}")
+    print(f"Output: {test_dir}")
+    print()
+
+    results = []
+    for i, file_path in enumerate(files, 1):
+        entry = {"file": file_path.name, "ok": False, "error": None, "duration_s": None}
+        t0 = time.time()
+        try:
+            output = process_file(file_path)
+            duration = round(time.time() - t0, 2)
+            entry["ok"] = True
+            entry["duration_s"] = duration
+
+            label_path = test_dir / file_path.name.replace(".in", ".label")
+            with open(label_path, "w", encoding="utf-8") as f:
+                json.dump(output, f, ensure_ascii=False, indent=2)
+
+            print(f"  [{i}/{len(files)}] {file_path.name} -> OK ({duration}s)")
+
+        except Exception as e:
+            duration = round(time.time() - t0, 2)
+            entry["error"] = str(e)[:300]
+            entry["duration_s"] = duration
+            print(f"  [{i}/{len(files)}] {file_path.name} -> FAILED ({duration}s): {e}")
+
+        results.append(entry)
+
+    summary = {
+        "model": f"ollama:{MODEL_NAME}",
+        "split": split,
+        "timestamp": timestamp,
+        "total": len(results),
+        "success": sum(1 for r in results if r["ok"]),
+        "failed": sum(1 for r in results if not r["ok"]),
+        "files": results,
+    }
+
+    summary_path = test_dir / "summary.json"
+    with open(summary_path, "w", encoding="utf-8") as f:
+        json.dump(summary, f, ensure_ascii=False, indent=2)
+
+    print(f"\n{'='*60}")
+    print(f"RESULTS: {summary['success']}/{summary['total']} OK")
+    print(f"Summary: {summary_path}")
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Ollama citation span labeler")
+    parser.add_argument("split", nargs="?", default="train", choices=VALID_SPLITS,
+                        help="Data split to process")
+    parser.add_argument("--test", type=int, nargs="?", const=5, default=None,
+                        help="Test mode: process N files (default 5), save to test_results/")
+    args = parser.parse_args()
+
+    if args.test is not None:
+        run_test(args.split, limit=args.test)
+        return
+
+    split = args.split
     pending_dir = BASE_DIR / split / "pending"
     done_dir = BASE_DIR / split / "done"
     done_dir.mkdir(parents=True, exist_ok=True)

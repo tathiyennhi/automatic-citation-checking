@@ -1,0 +1,25 @@
+{
+  "doc_id": "2969",
+  "text": "First, we use a centroid-based dynamic model accounting for physical interaction. Three possible versions of such models were proposed in [CITATION_1] . 1) A model with full knowledge of object and/or human that considers robot, human, and object as a single system. 2) A model that considers the effects of the object and/or human as external wrenches applied at their contact locations. 3) A model that considers the effects of the object and/or human as external wrenches applied on the robot CoM. The first model can be used (as was done in [CITATION_2] ) in simulation to control the robot, while having perfect knowledge of each subsystem (human, robot, object). However, for real applications with a human in the loop, it requires excessive processing and sensing, and is practically unfeasible. The second option yields a nonlinear model, that is much more complicated than an inverted pendulum. Since contact due to physical interaction between the object-human and the robot does not contribute to locomotion (i.e., the contact does not support locomotion, but the robot still has to deal with it 1 ), we opt for the third model. That is, we use an inverted pendulum subject to an external force for its simplicity and generality in terms of implementation on a real humanoid robot.",
+  "correct_citation": {
+    "[CITATION_1]": "7503144",
+    "[CITATION_2]": "7503144"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Three possible versions of such models were proposed in [CITATION_1] . 1) A model with full knowledge of object and/or human that considers robot, human, and object as a single system. 2) A model that considers the effects of the object and/or human as external wrenches applied at their contact locations. 3) A model that considers the effects of the object and/or human as external wrenches applied on the robot CoM."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The first model can be used (as was done in [CITATION_2] ) in simulation to control the robot, while having perfect knowledge of each subsystem (human, robot, object)."
+    }
+  ],
+  "bib_entries": {
+    "7503144": {
+      "title": "Model preview control in multi-contact motion-application to a humanoid robot",
+      "abstract": "Our work builds largely on Nagasaka's stabilizer in multi-contact motion [1]. Using a sequence of contact stances from an offline multi-contact planner, we use first a Model Predictive Controller to generate a dynamic trajectory of the center of mass, then a whole-body closed-loop model-based controller to track it at best. Relatively to Nagasaka's work, we allow frame changes of the preferred force, provide a heuristic to compute the timing of the transition from purely geometrical features and investigate the synchronization problem between the reduced-model preview control and the whole-body controller. Using our framework, we generate a wide range of 3D motions, while accounting for predictable external forces, which includes transporting objects. Simulation scenarios are presented and obtained results are analyzed and discussed."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}
