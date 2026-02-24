@@ -1,0 +1,66 @@
+{
+  "doc_id": "1829",
+  "text": "where N r x is the square window centred at x with radius r. For a BF, the kernels K s ( · ) and K r ( · ) determine how the spatial and intensity differences are treated. The most commonly used kernel in the literature is the Gaussian kernel G σ (z) = exp (−z 2 /2σ 2 ). Other unusual kernels are reported in [CITATION_1] . Due to the signal-dependent range kernel K r (I y − I x ), the BF becomes an edge-aware filter. On the flip side of the power, the complexity of the brute-force implementation is O(|N r ||I|) that is too intensive for time-critical applications, where |I| is the number of pixels in the entire image and |N r | the number of pixels in the window N r x centred at x. The inefficiency arises in K r (I y − I x ) introduces nonlinearity to the BF and therefore rules out lots of fast calculation techniques. One solution is to approximate the nonlinear range kernel by a set of linear time shiftable kernels [CITATION_2] , where the linear time means the computational complexity is O(|I|) which is independent of the window radius r. In the literature, existing accelerating methods of a BF roughly fall into two categories: † Series expansion-based BF: This kind of method employs shiftable kernels [CITATION_3] to represent the Gaussian range kernel. Chaudhury et al. [CITATION_4] reduce the Gaussian kernel to the raised cosine range kernel. Dai et al. [CITATION_5] propose Hermite polynomials to decompose the Gaussian kernel. Our method also belongs to this kind of method. † Histogram-based BF: BF can be computed in linear time by the fast integral histogram if K s ( · ) is the box filter. Zhang et al. [CITATION_6] use the de Moivre-Laplace theorem to decompose the Gaussian kernel into M s box functions. Gunturk [CITATION_7] employs least-squares optimisation to find the optimal coefficients b s i that minimise the approximation error",
+  "correct_citation": {
+    "[CITATION_1]": "7346732",
+    "[CITATION_2]": "7346732",
+    "[CITATION_3]": "7346732",
+    "[CITATION_4]": "10014509",
+    "[CITATION_5]": "53383141",
+    "[CITATION_6]": "14591632",
+    "[CITATION_7]": "123951597"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Other unusual kernels are reported in [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "One solution is to approximate the nonlinear range kernel by a set of linear time shiftable kernels [CITATION_2] ,"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "existing accelerating methods of a BF roughly fall into two categories: † Series expansion-based BF: This kind of method employs shiftable kernels [CITATION_3] to represent the Gaussian range kernel."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Chaudhury et al. [CITATION_4] reduce the Gaussian kernel to the raised cosine range kernel."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Dai et al. [CITATION_5] propose Hermite polynomials to decompose the Gaussian kernel."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Zhang et al. [CITATION_6] use the de Moivre-Laplace theorem to decompose the Gaussian kernel into M s box functions."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Gunturk [CITATION_7] employs least-squares optimisation to find the optimal coefficients b s i that minimise the approximation error"
+    }
+  ],
+  "bib_entries": {
+    "53383141": {
+      "title": "Accelerate bilateral filter using Hermite polynomials",
+      "abstract": "The bilateral filter (BF) as an edge-preserving lowpass filter is a valuable tool in various image processing tasks, including noise reduction and dynamic range compression. However, its computational cost is too high to apply in the real-time processing tasks as the range kernel, which acts on the pixel intensities, making the averaging process nonlinear and computationally intensive, particularly when the spatial filter is large. Using the well-known Hermite polynomials, a BF accelerating method is proposed, which reduces the computational complexity from O(r(2)n) to O(n), where r denotes the filter size of a BF and n is the total number of pixels in an image."
+    },
+    "14591632": {
+      "title": "Constant time joint bilateral filtering using joint integral histograms",
+      "abstract": "In this brief, we present a constant time method for the joint bilateral filtering. First, we propose an image data structure, coined as joint integral histograms (JIHs). Extending the classic integral images and the integral histograms, it represents the global information of two correlated images. In a JIH, the value at each bin indicates an integral determined by the two images. Then, the joint bilateral filtering is transformed to computation and manipulation of histograms. Utilizing the JIHs, we are capable of joint bilateral filtering in constant time. Its performance is validated in a digital photography approach using Flash–noFlash image pairs. Compared with the brute-force method, the proposed method achieves a speedup factor of 2–3 orders of magnitude while producing similar filtering results."
+    },
+    "7346732": {
+      "title": "Constant-time filtering using shiftable kernels",
+      "abstract": "It was recently demonstrated in that the nonlinear bilateral filter can be efficiently implemented using a constant-time or O(1) algorithm. At the heart of this algorithm was the idea of approximating the Gaussian range kernel of the bilateral filter using trigonometric functions. In this letter, we explain how the idea in can be extended to few other linear and nonlinear filters . While some of these filters have received a lot of attention in recent years, they are known to be computationally intensive. To extend the idea in , we identify a central property of trigonometric functions, called shiftability, that allows us to exploit the redundancy inherent in the filtering operations. In particular, using shiftable kernels, we show how certain complex filtering can be reduced to simply that of computing the moving sum of a stack of images. Each image in the stack is obtained through an elementary pointwise transform of the input image. This has a two-fold advantage. First, we can use fast recursive algorithms for computing the moving sum , , and, secondly, we can use parallel computation to further speed up the computation. We also show how shiftable kernels can also be used to approximate the (nonlinearshiftable) Gaussian kernel that is ubiquitously used in image filtering."
+    },
+    "10014509": {
+      "title": "Fast o(1) bilateral filtering using trigonometric range kernels",
+      "abstract": "It is well-known that spatial averaging can be realized (in space or frequency domain) using algorithms whose complexity does not depend on the size or shape of the filter. These fast algorithms are generally referred to as constant-time or O(1) algorithms in the image processing literature. Along with the spatial filter, the edge-preserving bilateral filter [Tomasi1998] involves an additional range kernel. This is used to restrict the averaging to those neighborhood pixels whose intensity are similar or close to that of the pixel of interest. The range kernel operates by acting on the pixel intensities. This makes the averaging process non-linear and computationally intensive, especially when the spatial filter is large. In this paper, we show how the O(1) averaging algorithms can be leveraged for realizing the bilateral filter in constant-time, by using trigonometric range kernels. This is done by generalizing the idea in [Porikli2008] of using polynomial range kernels. The class of trigonometric kernels turns out to be sufficiently rich, allowing for the approximation of the standard Gaussian bilateral filter. The attractive feature of our approach is that, for a fixed number of terms, the quality of approximation achieved using trigonometric kernels is much superior to that obtained in [Porikli2008] using polynomials."
+    },
+    "123951597": {
+      "title": "Fast bilateral filter with arbitrary range and domain kernels",
+      "abstract": "In this paper, we present a fast implementation of the bilateral filter with arbitrary range and domain kernels. It is based on the fast bilateral filter approximation that uses uniform box domain kernel. Instead of using a single box kernel, multiple box kernels are used and combined optimally to approximate an arbitrary domain kernel. The method achieves better approximation of the bilateral filter compared to the single box kernel version with little increase in computational complexity."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

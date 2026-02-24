@@ -1,0 +1,29 @@
+{
+  "doc_id": "2484",
+  "text": "Our vocabulary consists of a sentencepiece model with 32,000 tokens [CITATION_1] shared between English and Czech. It is computed on English and Czech sentences from the pre-training corpus. In order to facilitate a fair comparison, we maintain the same vocabulary across all the transformer based models and baselines. Relying on sentencepieces also ensures that out-ofvocabulary tokens will not be encountered. No special rules or pre-processing is done to tokenize the structured data -we simply feed it as a plain string. The input sequence is pre-pended with a task specific token -[TRANSLATE] for translation, [GENERATE] for NLG. Following [CITATION_2] , we pre-pend a second token to specify the desired output language -<2en> for English and <2cs> for Czech 5 .",
+  "correct_citation": {
+    "[CITATION_1]": "52051958",
+    "[CITATION_2]": "67855815"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our vocabulary consists of a sentencepiece model with 32,000 tokens [CITATION_1] shared between English and Czech."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Following [CITATION_2] , we pre-pend a second token to specify the desired output language -<2en> for English and <2cs> for Czech 5 ."
+    }
+  ],
+  "bib_entries": {
+    "67855815": {
+      "title": "Massively multilingual neural machine translation",
+      "abstract": "Multilingual neural machine translation (NMT) enables training a single model that supports translation from multiple source languages into multiple target languages. In this paper, we push the limits of multilingual NMT in terms of number of languages being used. We perform extensive experiments in training massively multilingual NMT models, translating up to 102 languages to and from English within a single model. We explore different setups for training such models and analyze the trade-offs between translation quality and various modeling decisions. We report results on the publicly available TED talks multilingual corpus where we show that massively multilingual many-to-many models are effective in low resource settings, outperforming the previous state-of-the-art while supporting up to 59 languages. Our experiments on a large-scale dataset with 102 languages to and from English and up to one million examples per direction also show promising results, surpassing strong bilingual baselines and encouraging future work on massively multilingual NMT."
+    },
+    "52051958": {
+      "title": "Sentencepiece: A simple and language independent subword tokenizer and detokenizer for neural text processing",
+      "abstract": "This paper describes SentencePiece, a language-independent subword tokenizer and detokenizer designed for Neural-based text processing, including Neural Machine Translation. It provides open-source C++ and Python implementations for subword units. While existing subword segmentation tools assume that the input is pre-tokenized into word sequences, SentencePiece can train subword models directly from raw sentences, which allows us to make a purely end-to-end and language independent system. We perform a validation experiment of NMT on English-Japanese machine translation, and find that it is possible to achieve comparable accuracy to direct subword training from raw sentences. We also compare the performance of subword training and segmentation with various configurations. SentencePiece is available under the Apache 2 license at https://github.com/google/sentencepiece."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}
