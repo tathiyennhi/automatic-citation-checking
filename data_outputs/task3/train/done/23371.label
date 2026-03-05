@@ -1,0 +1,38 @@
+{
+  "doc_id": "23371",
+  "text": "To resolve the problems of the above optical-node architecture, we propose a scalable node architecture that utilizes asymmetric MxN WSSs. The proposed scheme employs the subsystem-modular OXC architecture and transponder-bank add/drop configuration, where either the add or drop part utilizes the routing function of MxN WSSs as shown in Fig. 3(a) and (b), respectively. The OXC employs the recently proposed subsystem-modular architecture in which a large-scale OXC consists of multiple small-port-count sub-OXCs [CITATION_1] , [CITATION_2] . Exploiting this configuration, limited port-count MxN WSS can be leveraged for creating a large-scale OXC, where the number of complicated fiber-based interconnections is greatly reduced. Each MxN WSS accommodates \"inter-node fibers\" (blue lines in Fig. 3 ) and \"intra-node fibers\" (orange lines in Fig. 3 ) both for input and output ports; moreover, \"additional fibers\" (red lines in Fig. 3 ) are accommodated on one side of the MxN WSS. The inter-node fibers link adjacent nodes, intra-node fibers connect adjacent MxN WSSs within a node, and the additional fibers are used for add/drop functionality. With the subsystem-modular OXC architecture, wavelength collision may occur at intra-node fibers, since WSSs are interconnected via a limited number of intra-node fibers. However, the probability of wavelength collision can be minimized by applying the restriction-aware routing algorithm described in the next section. The add/drop parts adopt the transponder-bank configuration in which transponders are divided into multiple groups (banks) [CITATION_3] . Although the transponder bank has internal C/D/C capability, each bank can connect to limited number of input or output fibers, b. In return, the number of needed EDFAs and the scale of 1 Â n switches can be decreased owing to the reduced splitter loss and fewer connectable fibers. On the other hand, the number of transponders inside each bank, T , hardly affects the results because each inter-node fiber or additional fiber connects bd =ðM À 2Þ or b receivers regardless of the T . Therefore, T should be determined only by the practical implementation requirements including an available multicast-switch size. If these bank-based add/drop parts are placed separately from the OXC part as shown in Fig. 2 , routing capability declines substantially. To alleviate the routing limitation in the add/drop part, the number of connectable fibers for each bank b should not be too small so as to retain enough routing performance. To make this possible, we utilize an asymmetric port-count WSS having d additional ports on one side of the OXC and the d ports are assigned for add or drop. With this architecture, highly flexible add/drop functionality can be achieved because the signals can be added or dropped in a directionless manner by utilizing the MxN WSS routing function. Note that both the add and drop parts can utilize the routing capability by using the symmetric MxM WSS, however, extra WSS ports are needed and MxN WSS ports really are a scarce resource. The use of asymmetric port-count WSSs for accommodating either add or drop functionality can thus balance the hardware requirements against the routing performance as demonstrated in Section 4. In Fig. 3 , the number of transponders is represented by Sd . This value indicates the maximum number of accessible transponders under the restriction on d . Therefore, the number of necessary transponders can be determined by the number of paths dropped/added at the node, which is not related to the value of d .",
+  "correct_citation": {
+    "[CITATION_1]": "36670605",
+    "[CITATION_2]": "2931692",
+    "[CITATION_3]": "15211479"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The proposed scheme employs the subsystem-modular OXC architecture and transponder-bank add/drop configuration, where either the add or drop part utilizes the routing function of MxN WSSs as shown in Fig. 3(a) and (b), respectively. The OXC employs the recently proposed subsystem-modular architecture in which a large-scale OXC consists of multiple small-port-count sub-OXCs [CITATION_1] , [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The proposed scheme employs the subsystem-modular OXC architecture and transponder-bank add/drop configuration, where either the add or drop part utilizes the routing function of MxN WSSs as shown in Fig. 3(a) and (b), respectively. The OXC employs the recently proposed subsystem-modular architecture in which a large-scale OXC consists of multiple small-port-count sub-OXCs [CITATION_1] , [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The add/drop parts adopt the transponder-bank configuration in which transponders are divided into multiple groups (banks) [CITATION_3] ."
+    }
+  ],
+  "bib_entries": {
+    "2931692": {
+      "title": "Performance analysis of large-scale OXC that enables dynamic modular growth",
+      "abstract": "We investigate the performance of our recently proposed novel subsystem modular OXC node that achieves graceful modular growth without any service disruption. Simulation experiments under a realistic traffic increase scenario verify that the node architecture offers almost the same performance as the conventional large scale OXC node, while greatly reducing the number of WSSs needed and allowing the use of small degree WSSs. It is shown that both the number of WSSs traversed and total end-to-end optical loss can be substantially reduced."
+    },
+    "36670605": {
+      "title": "A large-scale photonic node architecture that utilizes interconnected OXC subsystems",
+      "abstract": "We propose a novel photonic node architecture that is composed of interconnected small-scale optical cross-connect subsystems. We also developed an efficient dynamic network control algorithm that complies with a restriction on the number of intra-node fibers used for subsystem interconnection. Numerical evaluations verify that the proposed architecture offers almost the same performance as the equivalent single large-scale cross-connect switch, while enabling substantial hardware scale reductions."
+    },
+    "15211479": {
+      "title": "Hardware scale and performance evaluation of a compact subsystem modular optical cross connect that adopts tailored add/drop architecture",
+      "abstract": "We propose novel highly scalable subsystem modular optical cross connect (OXC) architectures that use an efficient add/drop part to connect each transponder bank to a limited number of incoming/outgoing fibers. We investigate the performance and hardware scale of the proposed architectures in two add/drop configurations. Numerical evaluations prove that the proposed architectures attain almost the same routing performance as the equivalent conventional single large-scale OXC with an ideal colorless, directionless, and contentionless add/drop part, while enabling substantial hardware scale reduction."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

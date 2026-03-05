@@ -1,0 +1,47 @@
+{
+  "doc_id": "24371",
+  "text": "We experimented with three versions of our log-linear MRF decipherment models: (1) Gibbs sampling, (2) IMH sampling, and (3) contrastive divergence (CD). We also tested the effect of exploiting parallel data under the CD model. To determine the impact of the orthographic and length features, the contrastive divergence-based log-linear model was tested both with and without these features. In addition to the proposed undirected MRF models, we also explored the directed Feature-HMM model [CITATION_1] , which is trained via an EM-style algorithm, and has the same computational complexity as EM. We compared the feature-based models with the exact EM algorithm [CITATION_2] [CITATION_3] . We used Kneser-Ney smoothing [CITATION_4] for training bigram language models. The number of iterations was fixed to 15 for all five methods; we did not see improvement beyond roughly 10 iterations during development. For the sampling based methods, we set the number of samples N = 50, which seemed to strike a good balance between accuracy and speed during our small-scale experiments during development.",
+  "correct_citation": {
+    "[CITATION_1]": "1322232",
+    "[CITATION_2]": "13508959",
+    "[CITATION_3]": "6060648",
+    "[CITATION_4]": "9685476"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In addition to the proposed undirected MRF models, we also explored the directed Feature-HMM model [CITATION_1] , which is trained via an EM-style algorithm, and has the same computational complexity as EM."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We compared the feature-based models with the exact EM algorithm [CITATION_2] [CITATION_3] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We compared the feature-based models with the exact EM algorithm [CITATION_2] [CITATION_3] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "We used Kneser-Ney smoothing [CITATION_4] for training bigram language models."
+    }
+  ],
+  "bib_entries": {
+    "1322232": {
+      "title": "Painless unsupervised learning with features",
+      "abstract": "We show how features can easily be added to standard generative models for unsupervised learning, without requiring complex new training methods. In particular, each component multinomial of a generative model can be turned into a miniature logistic regression model if feature locality permits. The intuitive EM algorithm still applies, but with a gradient-based M-step familiar from discriminative training of logistic regression models. We apply this technique to part-of-speech induction, grammar induction, word alignment, and word segmentation, incorporating a few linguistically-motivated features into the standard generative model for each task. These feature-enhanced models each outperform their basic counterparts by a substantial margin, and even compete with and surpass more complex state-of-the-art models."
+    },
+    "13508959": {
+      "title": "Estimating word translation probabilities from unrelated monolingual corpora using the EM algorithm",
+      "abstract": "Selecting the right word translation among several options in the lexicon is a core problem for machine translation. We present a novel approach to this problem that can be trained using only unrelated monolingual corpora and a lexicon. By estimating word translation probabilities using the EM algorithm, we extend upon target language modeling. We construct a word translation model for 3830 German and 6147 English noun tokens, with very promising results."
+    },
+    "9685476": {
+      "title": "Improved backing-off for M-gram language modeling",
+      "abstract": "In stochastic language modeling, backing-off is a widely used method to cope with the sparse data problem. In case of unseen events this method backs off to a less specific distribution. In this paper we propose to use distributions which are especially optimized for the task of backing-off. Two different theoretical derivations lead to distributions which are quite different from the probability distributions that are usually used for backing-off. Experiments show an improvement of about 10% in terms of perplexity and 5% in terms of word error rate."
+    },
+    "6060648": {
+      "title": "Deciphering foreign language",
+      "abstract": "In this work, we tackle the task of machine translation (MT) without parallel training data. We frame the MT problem as a decipherment task, treating the foreign text as a cipher for English and present novel methods for training translation models from non-parallel text."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

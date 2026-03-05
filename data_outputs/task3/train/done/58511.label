@@ -1,0 +1,56 @@
+{
+  "doc_id": "58511",
+  "text": "Also related is previous work on resource prediction. Supply prediction -predicting load from past measurementsis present in many systems. Usually it is present implicitly in a feedback loop: measurements of load or performance are used as control signals to adjust system parameters [CITATION_1] . A few systems use explicit prediction of load: for example, Dinda's Running Time Advisor [CITATION_2] . Explicit prediction of resource demand, however, is comparatively rare. Most systems assume that resource demand is constant, specified by the application, derived from a static probability distribution [CITATION_3] [CITATION_4] , or obtained from compile-time analysis [CITATION_5] .",
+  "correct_citation": {
+    "[CITATION_1]": "6337417",
+    "[CITATION_2]": "44441476",
+    "[CITATION_3]": "15962311",
+    "[CITATION_4]": "2392491",
+    "[CITATION_5]": "16472185"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Usually it is present implicitly in a feedback loop: measurements of load or performance are used as control signals to adjust system parameters [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A few systems use explicit prediction of load: for example, Dinda's Running Time Advisor [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Most systems assume that resource demand is constant, specified by the application, derived from a static probability distribution [CITATION_3] [CITATION_4] , or obtained from compile-time analysis [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Most systems assume that resource demand is constant, specified by the application, derived from a static probability distribution [CITATION_3] [CITATION_4] , or obtained from compile-time analysis [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Most systems assume that resource demand is constant, specified by the application, derived from a static probability distribution [CITATION_3] [CITATION_4] , or obtained from compile-time analysis [CITATION_5] ."
+    }
+  ],
+  "bib_entries": {
+    "16472185": {
+      "title": "Automatic Generation of Parallel Programs with Dynamic Load Balancing",
+      "abstract": "Existing parallelizing compilers are targeted towards parallel architectures where all processors are dedicated to a single application. However a new type of parallel system has become available in the form of high performance workstations connected by high speed networks. Such systems pose new problems for compilers because the available processing power on each workstation may change with time due to other tasks competing for resources. We argue that it is possible for a parallelizing compiler to generate code that can dynamically shift portions of the application's workload between processors to improve performance. We have implemented a run-time system that supports automatically generated programs with dynamic load balancing. We describe this system and present performance measurements. We also describe the compiler functionality needed to generate parallel programs with dynamic load balancing. >"
+    },
+    "6337417": {
+      "title": "A Feedback-Driven Proportion Allocator for RealRate Scheduling",
+      "abstract": "In this paper we propose changing the decades-old practice of allocating CPU to threads based on priority to a scheme based on proportion and period. Our scheme allocates to each thread a percentage of CPU cycles over a period of time, and uses a feedback-based adaptive scheduler to assign automatically both proportion and period. Applications with known require-ments, such as isochronous software devices, can bypass the adaptive scheduler by specifying their desired proportion and/or period. As a result, our scheme provides reservations to applica-tions that need them, and the benefits of proportion and period to applications that do not need reservations. Adaptive scheduling using proportion and period has several distinct benefits over either fixed or adaptive priority based schemes: finer grain control of allocation, lower variance in the amount of cycles allocated to a thread, and avoidance of accidental priority inversion and starvation, including defense against denial-of-service attacks. This paper describes our design of an adaptive controller and proportion-period scheduler, its implementation in Linux, and presents experimental validation of our approach."
+    },
+    "44441476": {
+      "title": "Online Prediction of the Running Time of Tasks",
+      "abstract": "We describe and evaluate the Running Time Advisor (RTA), a system that can predict the running time of a compute-bound task on a typical shared, unreserved commodity host. The prediction is computed from linear time series predictions of host load and takes the form of a confidence interval that neatly expresses the error associated with the measurement and prediction processes, error that must be captured to make statistically valid decisions based on the predictions. Adaptive applications make such decisions in pursuit of consistent high performance, choosing, for example, the host where a task is most likely to meet its deadline. We begin by describing the system and summarizing the results of our previously published work on host load prediction (P.A. Dinda, 1999; 2000)We then describe our algorithm for computing predictions of running time from host load predictions. Finally, we evaluate the system using over 100000 randomized testcases run on 39 different hosts."
+    },
+    "15962311": {
+      "title": "Load-balancing Heuristics and Process Behavior",
+      "abstract": "Dynamic load balancing in a system of loosely-coupled homogeneous processors may employ both judicious initial placement of processes and migration of existing processes to processors with fewer resident processes. In order to predict the possible benefits of these dynamic assignment techniques, we analyzed the behavior (CPU, disk, and memory use) of 9.5 million Unix* processes during normal use. The observed process behavior was then used to drive simulation studies of particular dynamic assignment heuristics. Let F (·) be the probability distribution of the amount of CPU time used by an arbitrary process. In the environment studied we found: (1- F ( x )) n rx - c , 1.05 c F (·) is far enough from exponential to make exponential models of little use. With a foreground-background process scheduling policy in each processor, simple heuristics for initial placement and processor migration can significantly improve the response ratios of processes that demand exceptional amounts of CPU, without harming the response ratios of ordinary processes."
+    },
+    "2392491": {
+      "title": "Exploiting Process Lifetime Distributions for Dynamic Load Balancing",
+      "abstract": "We measure the distribution of lifetimes for UNIX processes and propose a functional form that fits this distribution well. We use this functional form to derive a policy for preemptive migration, and then use a trace-driven simulator to compare our proposed policy with other preemptive migration policies, and with a non-preemptive load-balancing strategy. We find that, contrary to previous reports, the performance benefits of preemptive migration are significantly greater than those of non-preemptive migration, even when the memory-transfer cost is high. Using a model of migration costs representative of current systems, we find that preemptive migration reduces the mean delay (queueing and migration) by 35% -- 50%, compared to non-preemptive migration."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

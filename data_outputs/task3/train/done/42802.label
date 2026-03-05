@@ -1,0 +1,69 @@
+{
+  "doc_id": "42802",
+  "text": "We construct each tree using a top-down approach, whereby the algorithm starts with all objects (i.e., vehicles, buildings, or foliage) and splits them into two child nodes (i.e. we use a binary R-tree). To keep the tree balanced, we sort the objects at each node splitting based on the currently longer axis so that each created child node contains approximately half of the objects. We note that similar tree data structures, such as k-d tree and quadtree/octree, could be used instead of R-tree, with consideration to the specific application at hand and limitations and advantages of a specific data structure (for details, see de Berg et. al [18] ). Outlines of the buildings and vehicles (vehicles colored black) extracted from aerial imagery in a neighborhood of Porto, Portugal with the ellipse-bound area that the model uses to determine small-and large-scale signal variations. The search space encompasses the ellipse whose foci are the transmitting (Tx) and receiving (Rx) vehicles. This ensures that all objects whose sum of distances to Tx and to Rx (i.e., from Tx to object and from object to Rx) is less than r (maximum communicating distance for a given environment) are accounted for. The objects in the same area are also used to calculate the small-scale signal variations. Note that the length of the major diameter of the ellipse is r, irrespective of the distance d between Tx and Rx. The minor diameter's length is √ r 2 − d 2 . The area of the ellipse is largest when Tx and Rx are close together, and the area goes to zero as the distance between Tx and Rx d goes to r. In addition to LOS propagation, GEMV 2 incorporates the following propagation effects (shown in Fig. 6 ): 1) transmission (propagation through material); 2) diffraction; and 3) reflection. We focus on modeling the impact of vehicles, buildings, and foliage (as opposed to smaller objects such as traffic signs, traffic lights, etc.) for two reasons. First, on highways, obstructing vehicles are the most important objects for modeling the V2V channel, as the roads are predominantly straight and the largest portion of communication happens over the face of the road [CITATION_1] . In urban areas, obstructing vehicles have a significant impact for communicating pairs that are on the same street [CITATION_2] . However, when vehicles are on different streets, static obstructions such as buildings and foliage also play an important role [CITATION_3] , [CITATION_4] . Buildings and foliage are the main source of obstructions for communication on the intersections and across different streets [CITATION_5] , whereas buildings and vehicles are the main sources of reflections and diffrac- tions [CITATION_6] . Furthermore, other static objects such as lamp posts, street signs, railings, etc., are neither readily available in geographic databases, nor would it be computationally feasible to model them due to their number, shape, and size.",
+  "correct_citation": {
+    "[CITATION_1]": "1059446",
+    "[CITATION_2]": "731078",
+    "[CITATION_3]": "17670168",
+    "[CITATION_4]": "43892384",
+    "[CITATION_5]": "9042360",
+    "[CITATION_6]": "11374265"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In urban areas, obstructing vehicles have a significant impact for communicating pairs that are on the same street [CITATION_2] . However, when vehicles are on different streets, static obstructions such as buildings and foliage also play an important role [CITATION_3] , [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "First, on highways, obstructing vehicles are the most important objects for modeling the V2V channel, as the roads are predominantly straight and the largest portion of communication happens over the face of the road [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In urban areas, obstructing vehicles have a significant impact for communicating pairs that are on the same street [CITATION_2] . However, when vehicles are on different streets, static obstructions such as buildings and foliage also play an important role [CITATION_3] , [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In urban areas, obstructing vehicles have a significant impact for communicating pairs that are on the same street [CITATION_2] . However, when vehicles are on different streets, static obstructions such as buildings and foliage also play an important role [CITATION_3] , [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In urban areas, obstructing vehicles have a significant impact for communicating pairs that are on the same street [CITATION_2] . However, when vehicles are on different streets, static obstructions such as buildings and foliage also play an important role [CITATION_3] , [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Buildings and foliage are the main source of obstructions for communication on the intersections and across different streets [CITATION_5] , whereas buildings and vehicles are the main sources of reflections and diffrac- tions [CITATION_6] ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Buildings and foliage are the main source of obstructions for communication on the intersections and across different streets [CITATION_5] , whereas buildings and vehicles are the main sources of reflections and diffrac- tions [CITATION_6] ."
+    }
+  ],
+  "bib_entries": {
+    "43892384": {
+      "title": "Real-world measurements of Non-Line-of-Sight reception quality for 5.9 GHz IEEE 802.11p at intersections",
+      "abstract": "Vehicular Dedicated Short Range Communication (DSRC) promises to reduce accidents by enabling assistance systems such as cross-traffic assistance. This application requires movement information from vehicles that are in Non-Line-Of-Sight (NLOS) due to buildings at intersection corners. DSRC is foreseen to use IEEE 802.11p to deliver regular Cooperative Awareness Messages (CAM). Due to the high operational frequency of 5.9GHz, the ability to provide reliable NLOS reception is often put into question. ::: ::: We performed an extensive field test specifically targeted to measure DSRC NLOS reception quality. As a novelty, tested intersections were methodically selected to reflect typical urban intersections (in Munich) and the test setup was specifically designed to provide comparable and generalizable results. This allowed us to determine the influence of factors like building positions. The collected data shows that NLOS reception is possible. Reception rates stay mostly well above 50% for distances of 50 meters to intersection center with blocked LOS."
+    },
+    "17670168": {
+      "title": "Real-world evaluation of IEEE 802.11p for vehicular networks",
+      "abstract": "This paper presents a set of experiments, performed using an IEEE 802.11p physical layer implementation based on the open-source ath5k driver, in both line of sight (LOS) and non-line of sight (NLOS) conditions. The results are compared against theoretical models and simulation of the same scenarios with proper propagation and channel models. The communication range in LOS can reach values larger than 1Km, while in NLOS scenarios, this communication range is decreased to the order of hundreds of meters."
+    },
+    "9042360": {
+      "title": "Radio channel measurements at street intersections for vehicle-to-vehicle safety applications",
+      "abstract": "This paper presents the results of an empirical study of wireless propagation channels for vehicle-to-vehicle communications in street intersections, a scenario especially important for collision avoidance applications. The results are derived from a channel measurement campaign performed at 5.6 GHz in four different types of urban intersections. We present results on typical power delay profiles, pathloss and delay spreads and discuss important propagation mechanisms. By comparing the results of the different intersections, we find that absence of line-of-sight is problematic for system coverage, especially when there are few other significant scattering objects in and around the intersection. Roadside buildings can create important propagation paths that account for a considerable part of the total received power."
+    },
+    "731078": {
+      "title": "Experimental study on the impact of vehicular obstructions in VANETs",
+      "abstract": "Channel models for vehicular networks typically disregard the effect of vehicles as physical obstructions for the wireless signal. We aim to clarify the validity of this simplification by quantifying the impact of obstructions through a series of wireless experiments. Using two cars equipped with Dedicated Short Range Communications (DSRC) hardware designed for vehicular use, we perform experimental measurements in order to collect received signal power and packet delivery ratio information in a multitude of relevant scenarios: parking lot, highway, suburban and urban canyon. Upon separating the data into line of sight (LOS) and non-line of sight (NLOS) categories, our results show that obstructing vehicles cause significant impact on the channel quality. A single obstacle can cause a drop of over 20 dB in received signal strength when two cars communicate at a distance of 10 m. At longer distances, NLOS conditions affect the usable communication range, effectively halving the distance at which communication can be achieved with 90% chance of success. The presented results motivate the inclusion of vehicles in the radio propagation models used for VANET simulation in order to increase the level of realism."
+    },
+    "1059446": {
+      "title": "Impact of vehicles as obstacles in vehicular ad hoc networks",
+      "abstract": "A thorough understanding of the communications channel between vehicles is essential for realistic modeling of Vehicular Ad Hoc Networks (VANETs) and the development of related technology and applications. The impact of vehicles as obstacles on vehicle-to-vehicle (V2V) communication has been largely neglected in VANET research, especially in simulations. Useful models accounting for vehicles as obstacles must satisfy a number of requirements, most notably accurate positioning, realistic mobility patterns, realistic propagation characteristics, and manageable complexity. We present a model that satisfies all of these requirements. Vehicles are modeled as physical obstacles affecting the V2V communication. The proposed model accounts for vehicles as three-dimensional obstacles and takes into account their impact on the LOS obstruction, received signal power, and the packet reception rate. We utilize two real world highway datasets collected via stereoscopic aerial photography to test our proposed model, and we confirm the importance of modeling the effects of obstructing vehicles through experimental measurements. Our results show considerable obstruction of LOS due to vehicles. By obstructing the LOS, vehicles induce significant attenuation and packet loss. The algorithm behind the proposed model allows for computationally efficient implementation in VANET simulators. It is also shown that by modeling the vehicles as obstacles, significant realism can be added to existing simulators with clear implications on the design of upper layer protocols."
+    },
+    "11374265": {
+      "title": "First results from car-to-car and car-to-infrastructure radio channel measurements at",
+      "abstract": "Car-to-car and car-to-infrastructure (henceforth called C2X) communications are constantly gaining importance for road- safety and other applications. In order to design efficient C2X systems, an understanding of realistic C2X propagation channels is required, but currently, only few measurements have been published. This paper presents a description of an extensive measurement campaign recently conducted in an urban scenario, a rural scenario, and on a highway. We focused on 4 x 4 multiple-input multiple-output (MHVIO) measurements at a center frequency of 5.2 GHz with high Doppler resolution. As first results from evaluating the measurement data we present the power-delay profile and the delay-Doppler spectrum from a selected, especially interesting measurement run from an urban measurement route. We observe dispersed Doppler contributions between zero and the Doppler shift corresponding to the relative speed of the cars, and very concentrated (in the Doppler domain), contributions from double reflections. Surprisingly, we also found paths with larger delays and zero Doppler shifts."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

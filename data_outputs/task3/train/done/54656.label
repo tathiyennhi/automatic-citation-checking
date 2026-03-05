@@ -1,0 +1,48 @@
+{
+  "doc_id": "54656",
+  "text": "A number of centralized algorithms for link scheduling have been proposed in the literature, e.g., [CITATION_1] and [CITATION_2] . A common approach is to assign each link the best possible channels (the smallest timeslots here) by greedy. The difference between them is the processing order of links: [CITATION_3] processes links with smaller lengths first while [CITATION_4] processes links in an arbitrary order (since it uses UDG models for both communication and interference). Our centralized algorithm (Algorithm 1) processes links in a special order as in [CITATION_5] . The basic idea is to first sort links as follows: every time we pick a link, say L, from the remaining graph that has the smallest number of interfered links in the remaining graph and then remove L from this graph; repeat this till the graph becomes empty. We then assign timeslots to links in the reverse order of picked links using the smallest timeslot available (not used by interfering links). In summary, a link e with larger IðeÞ will be more likely processed earlier. G and let graph",
+  "correct_citation": {
+    "[CITATION_1]": "1905691",
+    "[CITATION_2]": "14773410",
+    "[CITATION_3]": "14773410",
+    "[CITATION_4]": "1905691",
+    "[CITATION_5]": "1307469"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": ", [CITATION_1] and [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": ", [CITATION_1] and [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The difference between them is the processing order of links: [CITATION_3] processes links with smaller lengths first while [CITATION_4] processes links in an arbitrary order (since it uses UDG models for both communication and interference)."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The difference between them is the processing order of links: [CITATION_3] processes links with smaller lengths first while [CITATION_4] processes links in an arbitrary order (since it uses UDG models for both communication and interference)."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Our centralized algorithm (Algorithm 1) processes links in a special order as in [CITATION_5] ."
+    }
+  ],
+  "bib_entries": {
+    "14773410": {
+      "title": "Algorithmic Aspects of Capacity in Wireless Networks",
+      "abstract": "This paper considers two inter-related questions: (i) Given a wireless ad-hoc network and a collection of source-destination pairs {(s i ,t i )}, what is the maximum throughput capacity of the network, i.e. the rate at which data from the sources to their corresponding destinations can be transferred in the network? (ii) Can network protocols be designed that jointly route the packets and schedule transmissions at rates close to the maximum throughput capacity? Much of the earlier work focused on random instances and proved analytical lower and upper bounds on the maximum throughput capacity. Here, in contrast, we consider arbitrary wireless networks. Further, we study the algorithmic aspects of the above questions: the goal is to design provably good algorithms for arbitrary instances. We develop analytical performance evaluation models and distributed algorithms for routing and scheduling which incorporate fairness, energy and dilation (path-length) requirements and provide a unified framework for utilizing the network close to its maximum throughput capacity.Motivated by certain popular wireless protocols used in practice, we also explore \"shortest-path like\" path selection strategies which maximize the network throughput. The theoretical results naturally suggest an interesting class of congestion aware link metrics which can be directly plugged into several existing routing protocols such as AODV, DSR, etc. We complement the theoretical analysis with extensive simulations. The results indicate that routes obtained using our congestion aware link metrics consistently yield higher throughput than hop-count based shortest path metrics."
+    },
+    "1905691": {
+      "title": "Joint Channel Assignment and Routing for Throughput Optimization in Multi-Radio Wireless Mesh Networks",
+      "abstract": "Multi-hop infrastructure wireless mesh networks offer increased reliability, coverage and reduced equipment costs over their single-hop counterpart, wireless LANs. Equipping wireless routers with multiple radios further improves the capacity by transmitting over multiple radios simultaneously using orthogonal channels. Efficient channel assignment and routing is essential for throughput optimization of mesh clients. Efficient channel assignment schemes can greatly relieve the interference effect of close-by transmissions; effective routing schemes can alleviate potential congestion on any gateways to the Internet, thereby improving per-client throughput. Unlike previous heuristic approaches, we mathematically formulate the joint channel assignment and routing problem, taking into account the interference constraints, the number of channels in the network and the number of radios available at each mesh router. We then use this formulation to develop a solution for our problem that optimizes the overall network throughput subject to fairness constraints on allocation of scarce wireless capacity among mobile clients. We show that the performance of our algorithms is within a constant factor of that of any optimal algorithm for the joint channel assignment and routing problem. Our evaluation demonstrates that our algorithm can effectively exploit the increased number of channels and radios, and it performs much better than the theoretical worst case bounds."
+    },
+    "1307469": {
+      "title": "Efficient Bounds for the Stable Set, Vertex Cover, and Set Packing Problems",
+      "abstract": "Abstract In this paper we describe a collection of efficient algorithms that deliver approximate solution to the weighted stable set, vertex cover and set packing problems. All algorithms guarantee bounds on the ratio of the heuristic solution to the optimal solution."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

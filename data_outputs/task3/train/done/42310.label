@@ -1,0 +1,20 @@
+{
+  "doc_id": "42310",
+  "text": "In [CITATION_1] , Sinha, Sivakumar and Bharghavan propose an approach called core broadcast (CB): Initially all nodes are white. A white node will determine its dominator by selecting its black neighbor which has the maximum number of nodes that regard this black node as their dominators. In case there is no black neighbor, the white node selects the node (white or grey) with the maximum node degree within its 1-hop neighborhood as its dominator. After the white node has chosen its dominator, it colors itself grey if it is not selected as a dominator by itself or by its neighbors; otherwise, it marks itself black if it has been selected as a dominator (probably selected by itself). The coloring process continues until no white node exists. Eventually, all the black nodes become cores. In the core broadcast, each node computes its forward node set. A node's forward node set includes all its black neighbors. It also includes those grey neighbors that either have a black neighbor which is not covered by the forward node set or have a grey neighbor whose dominator is not covered by the forward node set. A node is said to be covered by a forward node set if it is a member of the forward node set or a neighbor of any member of the forward node set. The core broadcast requires only the nodes in the forward node set relay the broadcast so it reduces the broadcast redundancy.",
+  "correct_citation": {
+    "[CITATION_1]": "33663607"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In [CITATION_1] , Sinha, Sivakumar and Bharghavan propose an approach called core broadcast (CB): Initially all nodes are white."
+    }
+  ],
+  "bib_entries": {
+    "33663607": {
+      "title": "Enhancing ad hoc routing with dynamic virtual infrastructures",
+      "abstract": "Several routing algorithms for mobile ad hoc networks (MANETs) have been proposed previously. With the exception of a few, these protocols (i) involve all nodes in the route management process, (ii) rely on the use of broadcast relays for route computation, and (iii) are primarily reactive in nature. Related work has shown that the capacity utilization in ad hoc networks decreases significantly when broadcast relays or \"broadcast storms\" are performed frequently. This effect is compounded when all nodes in the network take part in the route computation. We propose and study an approach based on overlaying a virtual infrastructure adaptation of the core, proposed by Sivakumar, Sinha and Bharghavan (see IEEE Journal on Selected Areas in Communications, vol.17, no.8, p.1454-65, 1999) on an ad hoc network and operating routing protocols over the infrastructure. The core enables routing protocols to use only a subset of nodes in the network for route management and avoid the use of broadcast relays. Using the ns-2 simulator we evaluate the performance of two ad hoc routing protocols, dynamic source routing (DSR) and ad hoc on demand distance vector (AODV), when they are operated over the core and compare their performance against those of their basic versions."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

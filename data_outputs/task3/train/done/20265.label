@@ -1,0 +1,20 @@
+{
+  "doc_id": "20265",
+  "text": "Typically, experts use manual tuning, or an exhaustive grid search of hyper-parameters for the given task. However, this is usually not efficient [CITATION_1] , or in the case of grid search, can quickly become infeasible as the number of hyper-parameters, or their granularity increases. Automated hyper-parameter optimization has shown to perform well in terms of exploration and exploitation of the hyper-parameter search space. However, these too can be affected by the curse of dimensionality: As the number of dimensions increases, it takes longer to converge to a good solution. We observe that the tuning of hyper-parameters can be split based on where they come into play. For speech recognition, the feature and model hyper-parameters are relevant to the training stage, and decoder hyper-parameters can be iterated over far quicker for a given DNN acoustic model during evaluation. Doing so would prevent a good training model configuration from being ignored simply because the decoder hyper-parameters were poorly chosen.",
+  "correct_citation": {
+    "[CITATION_1]": "15700257"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, this is usually not efficient [CITATION_1] , or in the case of grid search, can quickly become infeasible as the number of hyper-parameters, or their granularity increases."
+    }
+  ],
+  "bib_entries": {
+    "15700257": {
+      "title": "Random search for hyper-parameter optimization",
+      "abstract": "Grid search and manual search are the most widely used strategies for hyper-parameter optimization. This paper shows empirically and theoretically that randomly chosen trials are more efficient for hyper-parameter optimization than trials on a grid. Empirical evidence comes from a comparison with a large previous study that used grid search and manual search to configure neural networks and deep belief networks. Compared with neural networks configured by a pure grid search, we find that random search over the same domain is able to find models that are as good or better within a small fraction of the computation time. Granting random search the same computational budget, random search finds better models by effectively searching a larger, less promising configuration space. Compared with deep belief networks configured by a thoughtful combination of manual search and grid search, purely random search over the same 32-dimensional configuration space found statistically equal performance on four of seven data sets, and superior performance on one of seven. A Gaussian process analysis of the function from hyper-parameters to validation set performance reveals that for most data sets only a few of the hyper-parameters really matter, but that different hyper-parameters are important on different data sets. This phenomenon makes grid search a poor choice for configuring algorithms for new data sets. Our analysis casts some light on why recent \"High Throughput\" methods achieve surprising success--they appear to search through a large number of hyper-parameters because most hyper-parameters do not matter much. We anticipate that growing interest in large hierarchical models will place an increasing burden on techniques for hyper-parameter optimization; this work shows that random search is a natural baseline against which to judge progress in the development of adaptive (sequential) hyper-parameter optimization algorithms."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "9260",
+  "text": "The above skew handling method focuses on the processing of skewed data, therefore, we can treat it as a preprocessing in our approach. Based on its output, we can use the same implementation as described in the Algorithm 1 to schedule the rest data and then get the final execution plan. It is obvious that extra operations in the skew handling process, such as skew detection, will bring in extra overheads to our join executions. Nevertheless, various efficient approaches have been proposed to solve this issue, and various results in real big data applications have shown that the overhead can be ignored, compared to the performance improvement it brings [CITATION_1] . Therefore, we will not consider its detailed overheads in our following evaluations.",
+  "correct_citation": {
+    "[CITATION_1]": "7840748"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Nevertheless, various efficient approaches have been proposed to solve this issue, and various results in real big data applications have shown that the overhead can be ignored, compared to the performance improvement it brings [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "7840748": {
+      "title": "Robust runtime optimization and skew-resistant execution of analytical SPARQL queries on Pig",
+      "abstract": "We describe a system that incrementally translates SPARQL queries to Pig Latin and executes them on a Hadoop cluster. This system is designed to work efficiently on complex queries with many self-joins over huge datasets, avoiding job failures even in the case of joins with unexpected high-value skew. To be robust against cost estimation errors, our system interleaves query optimization with query execution, determining the next steps to take based on data samples and statistics gathered during the previous step. Furthermore, we have developed a novel skew-resistant join algorithm that replicates tuples corresponding to popular keys. We evaluate the effectiveness of our approach both on a synthetic benchmark known to generate complex queries (BSBM-BI) as well as on a Yahoo! case of data analysis using RDF data crawled from the web. Our results indicate that our system is indeed capable of processing huge datasets without pre-computed statistics while exhibiting good load-balancing properties."
+    }
+  },
+  "generator": "llama-3.3-70b-versatile"
+}

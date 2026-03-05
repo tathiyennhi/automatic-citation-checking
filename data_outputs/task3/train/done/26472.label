@@ -1,0 +1,38 @@
+{
+  "doc_id": "26472",
+  "text": "The normality of the environmental variables was checked using Shapiro-Wilk test and all variables in this study were normalized to values ranged between 1 and 100 as described previously . In order to accurately predict and explain the relationships between ecological data and environmental variables, aggregated boosted tree (ABT) analysis (with 5000 trees used for the boosting, 10-folds cross-validation, and three-way interactions) was performed to quantitatively 1 http://cran.r-project.org/ 2 http://folk.uio.no/ohammer/past/ evaluate the relative influence of individual environmental factors and geographic distance on the distribution of microbial community based on Bray-Curtis dissimilarity using R package \"gbm\" [CITATION_1] . The ABT analysis can give relative influence of individual environmental parameters on MCC, but it is limited to quantitatively assess how much MCC variations can be separately explained by environmental factors and spatial factors. In order to quantify the relative importance of environmental and spatial factors in shaping microbial community, a canonical correspondence analysis (CCA)-based variation partitioning analysis (VPA) was carried out according to the methods described previously [CITATION_2] . Briefly, a set of spatial variables were firstly produced through the method of principal coordinates of neighbor matrices (PCNM) analysis according to the longitude and latitude coordinates of sampling sites [CITATION_3] . Subsequently, variance inflation factors (VIFs) were computed to check the presence of collinearities among environmental variables using the function vif.cca in the \"vegan\" package. If the maximum VIF was more than 10, the environmental variables which had the smallest relative influence (results from ABT analysis) were removed until all VIFs of variables were stay <10. Finally, only significant (P < 0.05) environmental and spatial variables that were tested by CCA with 1,000 permutations were kept for variance partition analysis (VPA) using the \"vegan\" package.",
+  "correct_citation": {
+    "[CITATION_1]": "15554989",
+    "[CITATION_2]": "38580733",
+    "[CITATION_3]": "17618443"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In order to accurately predict and explain the relationships between ecological data and environmental variables, aggregated boosted tree (ABT) analysis (with 5000 trees used for the boosting, 10-folds cross-validation, and three-way interactions) was performed to quantitatively 1 http://cran.r-project.org/ 2 http://folk.uio.no/ohammer/past/ evaluate the relative influence of individual environmental factors and geographic distance on the distribution of microbial community based on Bray-Curtis dissimilarity using R package \"gbm\" [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In order to quantify the relative importance of environmental and spatial factors in shaping microbial community, a canonical correspondence analysis (CCA)-based variation partitioning analysis (VPA) was carried out according to the methods described previously [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Briefly, a set of spatial variables were firstly produced through the method of principal coordinates of neighbor matrices (PCNM) analysis according to the longitude and latitude coordinates of sampling sites [CITATION_3] ."
+    }
+  ],
+  "bib_entries": {
+    "15554989": {
+      "title": "Boosted trees for ecological modeling and prediction",
+      "abstract": "Accurate prediction and explanation are fundamental objectives of statistical analysis, yet they seldom coincide. Boosted trees are a statistical learning method that attains both of these objectives for regression and classification analyses. They can deal with many types of response variables (numeric, categorical, and censored), loss functions (Gaussian, binomial, Poisson, and robust), and predictors (numeric, categorical). Interactions between predictors can also be quantified and visualized. The theory underpinning boosted trees is presented, together with interpretive techniques. A new form of boosted trees, namely, \"aggregated boosted trees\" (ABT), is proposed and, in a simulation study, is shown to reduce prediction error relative to boosted trees. A regression data set is analyzed using ABT to illustrate the technique and to compare it with other methods, including boosted trees, bagged trees, random forests, and generalized additive models. A software package for ABT analysis using the R software environment is included in the Appendices together with worked examples."
+    },
+    "17618443": {
+      "title": "All-scale spatial analysis of ecological data by means of principal coordinates of neighbour matrices",
+      "abstract": "Spatial heterogeneity of ecological structures originates either from the physical forcing of environmental variables or from community processes. In both cases, spatial structuring plays a functional role in ecosystems. Ecological models should explicitly take into account the spatial structure of ecosystems. In previous work, we used a polynomial function of the geographic coordinates of the sampling sites to model broad-scale spatial variation in a canonical (regression-type) modelling context. In this paper, we propose a method for detecting and quantifying spatial patterns over a wide range of scales. This is obtained by eigenvalue decomposition of a truncated matrix of geographic distances among the sampling sites. The eigenvectors corresponding to positive eigenvalues are used as spatial descriptors in regression or canonical analysis. This method can be applied to any set of sites providing a good coverage of the geographic sampling area. This paper investigates the behaviour of the method using numerical simulations and an artificial pseudo-ecological data set of known properties."
+    },
+    "38580733": {
+      "title": "Latitudinal distribution of ammonia-oxidizing bacteria and archaea in the agricultural soils of eastern China",
+      "abstract": "ABSTRACT The response of soil ammonia-oxidizing bacterial (AOB) and archaeal (AOA) communities to individual environmental variables (e.g., pH, temperature, and carbon- and nitrogen-related soil nutrients) has been extensively studied, but how these environmental conditions collectively shape AOB and AOA distributions in unmanaged agricultural soils across a large latitudinal gradient remains poorly known. In this study, the AOB and AOA community structure and diversity in 26 agricultural soils collected from eastern China were investigated by using quantitative PCR and bar-coded 454 pyrosequencing of the amoA gene that encodes the alpha subunit of ammonia monooxygenase. The sampling locations span over a 17° latitude gradient and cover a range of climatic conditions. The Nitrosospira and Nitrososphaera were the dominant clusters of AOB and AOA, respectively; but the subcluster-level composition of Nitrosospira-related AOB and Nitrososphaera-related AOA varied across the latitudinal gradient. Variance partitioning analysis showed that geography and climatic conditions (e.g., mean annual temperature and precipitation), as well as carbon-/nitrogen-related soil nutrients, contributed more to the AOB and AOA community variations (∼50% in total) than soil pH (∼10% in total). These results are important in furthering our understanding of environmental conditions influencing AOB and AOA community structure across a range of environmental gradients."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

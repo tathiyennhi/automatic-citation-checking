@@ -1,0 +1,48 @@
+{
+  "doc_id": "20847",
+  "text": "We use the RegenT text simplification [CITATION_1] , augmented with automatically acquired rules, as described in detail elsewhere . In this section, we will restrict ourselves to summarising the key features of the system. Our text simplification system follows the architecture proposed in [CITATION_2] for Synchronous Dependency Insertion Grammars, reproduced in Fig. 1 . It uses the same dataset 1 as [CITATION_3] for learning lexicalised rules. The rules are acquired in the format required by the RegenT text simplification system [CITATION_4] , which is used to implement the simplification. This requires dependency parses from the Stanford Parser, and generates output sentences from dependency parses using the generation-light approach described in [CITATION_5] .",
+  "correct_citation": {
+    "[CITATION_1]": "2245040",
+    "[CITATION_2]": "679599",
+    "[CITATION_3]": "9945908",
+    "[CITATION_4]": "2245040",
+    "[CITATION_5]": "2245040"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We use the RegenT text simplification [CITATION_1] , augmented with automatically acquired rules, as described in detail elsewhere ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our text simplification system follows the architecture proposed in [CITATION_2] for Synchronous Dependency Insertion Grammars, reproduced in Fig. 1 ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "It uses the same dataset 1 as [CITATION_3] for learning lexicalised rules."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The rules are acquired in the format required by the RegenT text simplification system [CITATION_4] , which is used to implement the simplification."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This requires dependency parses from the Stanford Parser, and generates output sentences from dependency parses using the generation-light approach described in [CITATION_5] ."
+    }
+  ],
+  "bib_entries": {
+    "2245040": {
+      "title": "Text simplification using typed dependencies: a comparison of the robustness of different generation strategies",
+      "abstract": "We present a framework for text simplification based on applying transformation rules to a typed dependency representation produced by the Stanford parser. We test two approaches to regeneration from typed dependencies: (a) gen-light, where the transformed dependency graphs are linearised using the word order and morphology of the original sentence, with any changes coded into the transformation rules, and (b) gen-heavy, where the Stanford dependencies are reduced to a DSyntS representation and sentences are generating formally using the RealPro surface realiser. The main contribution of this paper is to compare the robustness of these approaches in the presence of parsing errors, using both a single parse and an n-best parse setting in an overgenerate and rank approach. We find that the gen-light approach is robust to parser error, particularly in the n-best parse setting. On the other hand, parsing errors cause the realiser in the gen-heavy approach to order words and phrases in ways that are disliked by our evaluators."
+    },
+    "679599": {
+      "title": "Machine translation using probabilistic synchronous dependency insertion grammars",
+      "abstract": "Syntax-based statistical machine translation (MT) aims at applying statistical models to structured data. In this paper, we present a syntax-based statistical machine translation system based on a probabilistic synchronous dependency insertion grammar. Synchronous dependency insertion grammars are a version of synchronous grammars defined on dependency trees. We first introduce our approach to inducing such a grammar from parallel corpora. Second, we describe the graphical model for the machine translation task, which can also be viewed as a stochastic tree-to-tree transducer. We introduce a polynomial time decoding algorithm for the model. We evaluate the outputs of our MT system using the NIST and Bleu automatic MT evaluation software. The result shows that our system outperforms the baseline system based on the IBM models in both translation speed and quality."
+    },
+    "9945908": {
+      "title": "Learning to simplify sentences with quasi-synchronous grammar and integer programming",
+      "abstract": "Text simplification aims to rewrite text into simpler versions, and thus make information accessible to a broader audience. Most previous work simplifies sentences using handcrafted rules aimed at splitting long sentences, or substitutes difficult words using a predefined dictionary. This paper presents a data-driven model based on quasi-synchronous grammar, a formalism that can naturally capture structural mismatches and complex rewrite operations. We describe how such a grammar can be induced from Wikipedia and propose an integer linear programming model for selecting the most appropriate simplification from the space of possible rewrites generated by the grammar. We show experimentally that our method creates simplifications that significantly reduce the reading difficulty of the input, while maintaining grammaticality and preserving its meaning."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

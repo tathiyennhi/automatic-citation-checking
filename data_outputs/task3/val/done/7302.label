@@ -1,0 +1,75 @@
+{
+  "doc_id": "7302",
+  "text": "Other related work. A classical Distributing Computing approach for increasing the reliability of master-working computing is to model the malfunctioning (due to a hardware or a software error) or cheating (intentional wrongdoer) as malicious workers that wish to hamper the computation and thus always return an incorrect result. The non-faulty workers are viewed as altruistic ones [CITATION_1] that always return the correct result. Under this view, malicious-tolerant protocols have been considered, e.g., [CITATION_2] - [CITATION_3] , where the master decides on the correct result based on majority voting. More recent works, e.g., [CITATION_4] , [CITATION_5] , have combined this approach with incentive-based game theoretic approaches and devised mechanisms assuming the co-existence of altruistic, malicious and rational workers. The work in [CITATION_6] employed worker reputation to cope with malice, while the work in [CITATION_7] relied on statistical information on the distribution of the worker types (altruistic, malicious or rational). Extending our present work to cope with malicious workers is an interesting future direction. Motivated by computationoutsourcing applications, a complexity study of multi-prover rational interactive proofs (MRIP) was presented recently in [CITATION_8] . In a MRIP, several computationally-unbounded provers communicate with a polynomial-time randomized verifier who wants to determine the membership of an input string to a language. The model in this work is different from ours in several ways. For instance, the provers can preagree on how they plan to respond, the aim of the provers is to maximize the total rather than individual profits, and the payment-loss of the provers responding incorrectly is smaller if anyway the verifier obtains the correct answer (from others).",
+  "correct_citation": {
+    "[CITATION_1]": "403680",
+    "[CITATION_2]": "15387523",
+    "[CITATION_3]": "3014493",
+    "[CITATION_4]": "524083",
+    "[CITATION_5]": "2340785",
+    "[CITATION_6]": "2340785",
+    "[CITATION_7]": "524083",
+    "[CITATION_8]": "1078994"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The non-faulty workers are viewed as altruistic ones [CITATION_1] that always return the correct result."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Under this view, malicious-tolerant protocols have been considered, e.g., [CITATION_2] - [CITATION_3] , where the master decides on the correct result based on majority voting."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Under this view, malicious-tolerant protocols have been considered, e.g., [CITATION_2] - [CITATION_3] , where the master decides on the correct result based on majority voting."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "More recent works, e.g., [CITATION_4] , [CITATION_5] , have combined this approach with incentive-based game theoretic approaches and devised mechanisms assuming the co-existence of altruistic, malicious and rational workers."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "More recent works, e.g., [CITATION_4] , [CITATION_5] , have combined this approach with incentive-based game theoretic approaches and devised mechanisms assuming the co-existence of altruistic, malicious and rational workers."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "The work in [CITATION_6] employed worker reputation to cope with malice, while the work in [CITATION_7] relied on statistical information on the distribution of the worker types (altruistic, malicious or rational)."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "The work in [CITATION_6] employed worker reputation to cope with malice, while the work in [CITATION_7] relied on statistical information on the distribution of the worker types (altruistic, malicious or rational)."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Motivated by computationoutsourcing applications, a complexity study of multi-prover rational interactive proofs (MRIP) was presented recently in [CITATION_8] ."
+    }
+  ],
+  "bib_entries": {
+    "1078994": {
+      "title": "Rational Proofs with Multiple Provers",
+      "abstract": "Interactive proofs model a world where a verifier delegates computation to an untrustworthy prover, verifying the prover's claims before accepting them. These proofs have applications to delegation of computation, probabilistically checkable proofs, crowdsourcing, and more. In some of these applications, the verifier may pay the prover based on the quality of his work. Rational proofs, introduced by Azar and Micali (2012), are an interactive proof model in which the prover is rational rather than untrustworthy---he may lie, but only to increase his payment. This allows the verifier to leverage the greed of the prover to obtain better protocols: while rational proofs are no more powerful than interactive proofs, the protocols are simpler and more efficient. Azar and Micali posed as an open problem whether multiple provers are more powerful than one for rational proofs. We provide a model that extends rational proofs to allow multiple provers. In this model, a verifier can cross-check the answers received by asking several provers. The verifier can pay the provers according to the quality of their work, incentivizing them to provide correct information. We analyze rational proofs with multiple provers from a complexity-theoretic point of view. We fully characterize this model by giving tight upper and lower bounds on its power. On the way, we resolve Azar and Micali's open problem in the affirmative, showing that multiple rational provers are strictly more powerful than one (under standard complexity-theoretic assumptions). We further show that the full power of rational proofs with multiple provers can be achieved using only two provers and five rounds of interaction. Finally, we consider more demanding models where the verifier wants the provers' payment to decrease significantly when they are lying, and fully characterize the power of the model when the payment gap must be noticeable (i.e., at least 1/p where p is a polynomial)."
+    },
+    "3014493": {
+      "title": "Reliable Internet-based master-worker computing in the presence of malicious workers",
+      "abstract": "We consider a Master-Worker distributed system where a master processor assigns, over the Internet, tasks to a collection of n workers, which are untrusted and might act maliciously. In addition, a worker may not reply to the master, or its reply may not reach the master, due to unavailabilities or failures of the worker or the network. Each task returns a value, and the goal is for the master to accept only correct values with high probability. Furthermore, we assume that the service provided by the workers is not free; for each task that a worker is assigned, the master is charged with a work-unit. Therefore, considering a single task assigned to several workers, our objective is to have the master processor to accept the correct value of the task with high probability, with the smallest possible amount of work (number of workers the master assigns the task). We probabilistically bound the number of faulty processors by assuming a known probability p < 1/2 of any processor to be faulty. Our work demonstrates that it is possible to obtain, with provable analytical guarantees, high probability of correct acceptance with low work. In particular, we first show lower bounds on the minimum amount of (expected) work required, so that any algorithm accepts the correct value with probability of success 1 - e, where e ≪ 1 (e.g., 1/n). Then we develop and analyze two algorithms, each using a different decision strategy, and show that both algorithms obtain the same probability of success 1 - e, and in doing so, they require similar upper bounds on the (expected) work. Furthermore, under certain conditions, these upper bounds are asymptotically optimal with respect to our lower bounds."
+    },
+    "15387523": {
+      "title": "Sabotage-tolerance mechanisms for volunteer computing systems",
+      "abstract": "We address the new problem of protecting volunteer computing systems from malicious volunteers who submit erroneous results by presenting sabotage-tolerance mechanisms that work without depending on checksums or cryptographic techniques. We first analyze the traditional technique of voting, and show how it reduces error rates exponentially with redundancy, but requires all work to be done at least twice, and does not work well when there are many saboteurs. We then present a new technique called spot-checking which reduces the error rate linearly (i.e., inversely) with the amount of work to be done, while only costing an extra function of the original time. We then integrate these mechanisms by presenting the new idea of credibility-based fault-tolerance, which uses probability estimates to efficiently limit and direct the use of redundancy. By using voting and spot-checking together credibility-based fault-tolerance effectively allows us to exponentially shrink an already linearly-reduced error rate, and thus achieve error-rates that are orders-of-magnitude smaller than those offered by voting or spot-checking alone. We validate this new idea with Monte Carlo simulations, and discuss how credibility-based fault tolerance can be used with other mechanisms and in other applications."
+    },
+    "403680": {
+      "title": "BOINC: A system for public-resource computing and storage",
+      "abstract": "BOINC (Berkeley Open Infrastructure for Network Computing) is a software system that makes it easy for scientists to create and operate public-resource computing projects. It supports diverse applications, including those with large storage or communication requirements. PC owners can participate in multiple BOINC projects, and can specify how their resources are allocated among these projects. We describe the goals of BOINC, the design issues that we confronted, and our solutions to these problems."
+    },
+    "524083": {
+      "title": "Algorithmic mechanisms for reliable masterworker Internet-based computing",
+      "abstract": "We consider Internet-based master-worker computations, where a master processor assigns, across the Internet, a computational task to a set of untrusted worker processors, and collects their responses. Examples of such computations are the “@home” projects such as SETI. In this work, various worker behaviors are considered. Altruistic workers always return the correct result of the task, malicious workers always return an incorrect result, and rational workers act based on their self-interest. In a massive computation platform, such as the Internet, it is expected that all three type of workers coexist. Therefore, in this work, we study Internet-based master-worker computations in the presence of malicious, altruistic, and rational workers. A stochastic distribution of the workers over the three types is assumed. In addition, we consider the possibility that the communication between the master and the workers is not reliable, and that workers could be unavailable. Considering all the three types of workers renders a combination of game-theoretic and classical distributed computing approaches to the design of mechanisms for reliable Internet-based computing. Indeed, in this work, we design and analyze two algorithmic mechanisms to provide appropriate incentives to rational workers to act correctly, despite the malicious workers' actions and the unreliability of the communication. Only when necessary, the incentives are used to force the rational players to a certain equilibrium (which forces the workers to be truthful) that overcomes the attempt of the malicious workers to deceive the master. Finally, the mechanisms are analyzed in two realistic Internet-based master-worker settings, a SETI-like one and a contractor-based one, such as Amazon's mechanical turk. We also present plots that illustrate the tradeoffs between reliability and cost, under different system parameters."
+    },
+    "2340785": {
+      "title": "Reputation-based mechanisms for evolutionary master-worker computing",
+      "abstract": "We consider Internet-based Master-Worker task computing systems, such as [email protected], where a master sends tasks to potentially unreliable workers, and the workers execute and report back the result. We model such computations using evolutionary dynamics and consider three type of workers: altruistic, malicious and rational. Altruistic workers always compute and return the correct result, malicious workers always return an incorrect result, and rational (selfish) workers decide to be truthful or to cheat, based on the strategy that increases their benefit. The goal of the master is to reach eventual correctness, that is, reach a state of the computation that always receives the correct results. To this respect, we propose a mechanism that uses reinforcement learning to induce a correct behavior to rational workers; to cope with malice we employ reputation schemes. We analyze our reputation-based mechanism modeling it as a Markov chain and we give provable guarantees under which truthful behavior can be ensured. Simulation results, obtained using parameter values that are likely to occur in practice, reveal interesting trade-offs between various metrics, parameters and reputation types, affecting cost, time of convergence to a truthful behavior and tolerance to cheaters."
+    }
+  },
+  "generator": "llama-3.3-70b-versatile"
+}

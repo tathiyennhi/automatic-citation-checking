@@ -1,0 +1,29 @@
+{
+  "doc_id": "7141",
+  "text": "The video clips are segmented into shots using the algorithm by Naphade et al. [CITATION_1] . We then use the spatio-temporal segmentation in [CITATION_2] applied separately to each shot to obtain regions ho- mogeneous in color and motion. Depending on the genre of the movie and the story line, shots may range from a few frames to a few hundred frames. For large shots, artificial cuts are introduced every 2 s. This ensures, that the spatio-temporal tracking and segmentation does not break down due to appearance and disappearance of regions. The segmentation and tracking algorithm uses color, edge, and motion to perform segmentation and computes the optical flow for motion estimation. Fig. 9 shows a video frame and its segmented version with six dominant segments. These segments are labeled manually to create the ground truth. Since they are tracked within each shot using optical flow, the labels can be propagated to instances of the segments in all the frames within the shot.",
+  "correct_citation": {
+    "[CITATION_1]": "43462550",
+    "[CITATION_2]": "13261671"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The video clips are segmented into shots using the algorithm by Naphade et al. [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We then use the spatio-temporal segmentation in [CITATION_2] applied separately to each shot to obtain regions ho- mogeneous in color and motion."
+    }
+  ],
+  "bib_entries": {
+    "43462550": {
+      "title": "A high performance shot boundary detection algorithm using multiple cues",
+      "abstract": "A central step in content-based video retrieval is the temporal segmentation of video. An application independent approach to video segmentation is to detect temporally contiguous segments without significant content change between successive frames. Each such segment is termed a shot. A high-performance shot boundary detection-based video segmentation algorithm is proposed. The technique uses unsupervised clustering on a multiple feature input space, followed by a heuristic elimination process to detect, with almost perfect accuracy, shot boundaries in the video. With an extremely high accuracy coupled with a very small number of false positives, this algorithm outperforms most of the existing techniques."
+    },
+    "13261671": {
+      "title": "Spatio-temporal video search using the object-based video representation",
+      "abstract": "Object-based video representation provides great promises for new search and editing functionalities. Feature regions in video sequences are automatically segmented, tracked, and grouped to form the basis for content-based video search and higher levels of abstraction. We present a new system for video object segmentation and tracking using feature fusion and region grouping. We also present efficient techniques for spatio-temporal video query based on the automatically segmented video objects."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

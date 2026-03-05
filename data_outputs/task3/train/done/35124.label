@@ -1,0 +1,49 @@
+{
+  "doc_id": "35124",
+  "text": "In Table 1 , we compare the above approximation against the fluid approximate model from [CITATION_1] and from our earlier Markov model in [CITATION_2] . The link speeds were set to 10 Gbps so that the queuing is negligible. The packet sizes were set to 1050 bytes which is the default value in ns2. We see that, unlike TCP Reno and TCP Compound, the average window size for TCP CUBIC depends on the RTT of the flow and increases with RTT. This behaviour makes TCP CUBIC fairer to flows with larger RTT as compared to TCP Reno and TCP Compound. In this case, the average errors for the deterministic loss model in [CITATION_3] , for the Markov chain model in [CITATION_4] and the current approximation is 10.4%, 3.3% and 5.0% respectively. Our simulation results suggest that the Markovian models are better than the deterministic periodic loss model. The Markov model in [CITATION_5] explicitly considers the TCP-Reno mode behaviour, while here we just use a simple approximation to account for the TCP-Reno mode behaviour. However, in spite of this we see that the Markov model in [CITATION_6] performs only marginally better than the current Markovian approximation that we use in this paper.",
+  "correct_citation": {
+    "[CITATION_1]": "9391153",
+    "[CITATION_2]": "7934244",
+    "[CITATION_3]": "9391153",
+    "[CITATION_4]": "7934244",
+    "[CITATION_5]": "7934244",
+    "[CITATION_6]": "7934244"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In Table 1 , we compare the above approximation against the fluid approximate model from [CITATION_1] and from our earlier Markov model in [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In Table 1 , we compare the above approximation against the fluid approximate model from [CITATION_1] and from our earlier Markov model in [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In this case, the average errors for the deterministic loss model in [CITATION_3] , for the Markov chain model in [CITATION_4] and the current approximation is 10.4%, 3.3% and 5.0% respectively."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In this case, the average errors for the deterministic loss model in [CITATION_3] , for the Markov chain model in [CITATION_4] and the current approximation is 10.4%, 3.3% and 5.0% respectively."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "The Markov model in [CITATION_5] explicitly considers the TCP-Reno mode behaviour, while here we just use a simple approximation to account for the TCP-Reno mode behaviour."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "However, in spite of this we see that the Markov model in [CITATION_6] performs only marginally better than the current Markovian approximation that we use in this paper."
+    }
+  ],
+  "bib_entries": {
+    "9391153": {
+      "title": "CUBIC: a new TCP-friendly high-speed TCP variant",
+      "abstract": "CUBIC is a congestion control protocol for TCP (transmission control protocol) and the current default TCP algorithm in Linux. The protocol modifies the linear window growth function of existing TCP standards to be a cubic function in order to improve the scalability of TCP over fast and long distance networks. It also achieves more equitable bandwidth allocations among flows with different RTTs (round trip times) by making the window growth to be independent of RTT -- thus those flows grow their congestion window at the same rate. During steady state, CUBIC increases the window size aggressively when the window is far from the saturation point, and the slowly when it is close to the saturation point. This feature allows CUBIC to be very scalable when the bandwidth and delay product of the network is large, and at the same time, be highly stable and also fair to standard TCP flows. The implementation of CUBIC in Linux has gone through several upgrades. This paper documents its design, implementation, performance and evolution as the default TCP algorithm of Linux."
+    },
+    "7934244": {
+      "title": "Analytical Model for Congestion Control and Throughput with TCP CUBIC Connections",
+      "abstract": "We develop a Markov model for a TCP CUBIC connection. Next we use it to obtain approximate expressions for throughput when there may be queuing in the network. Finally we provide the throughputs different TCP CUBIC and TCP NewReno connections obtain while sharing a channel when they may have different round trip delays and packet loss probabilities."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

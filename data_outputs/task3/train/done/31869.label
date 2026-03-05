@@ -1,0 +1,38 @@
+{
+  "doc_id": "31869",
+  "text": "Being inspired by [CITATION_1] , Niu and Jagannathan [CITATION_2] propose a cross-layer design to improve the performance of tag-to-tag communication systems. This approach consists of two protocols, i.e., a multiple access protocol in the data link layer and a routing protocol in the network layer. For the multiple access protocol, similar to Ethernet or 802.11, a carrier sense multiple access (CSMA) scheme is adopted, i.e., network allocation vector. However, this scheme requires timers to run precisely and consistently, and thus it needs more computational resources as well as memories at the tags. Therefore, the authors propose a Dual-ACK virtual carriersensing method. The key idea is that the network allocation vector table is updated only when request-to-send, clear-tosend, and acknowledgment messages are detected. In addition, to deal with the hidden-node problem, two acknowledgment messages are used to ensure that the states of the network allocation vector table are correct. As such, the tag does not need to rely on its timers, and the access to the transmission medium is reduced accordingly. For the routing protocol, the authors design an optimal link cost multi-path routing (OLCMR) protocol based on modulation depth, i.e., the ratio of the higher voltage level to the lower voltage level of the demodulated signals. Similar to the optimum link state routing (OLSR) protocol [CITATION_3] , OLCMR also constructs the routing table in which the destination address, next-hop address, the number of hops, and cost to that destination are included. However, unlike OLSR, the cost in OLCMR is computed by using the modulation depth. The bigger the modulation depth is, the more energy the tags can harvest. The simulation results demonstrate that the proposed cross-layer design improves the performance of tag-to-tag communication networks in terms of end-to-end (E2E) delay, E2E cost, i.e., the modulation depth, and packet delivery ratio. In particular, the E2E delay is around 15 ms when the number of tags is 160 in the case without collision and around 70 ms with 140 tags in the case with a collision. Moreover, the delivery ratio significantly increases up to 98% with 150 tags in the field. However, it is noted that there is a trade-off among the delivery ratio, E2E hops, and E2E cost. In particular, the higher delivery ratio requires more hops and incurs a higher cost.",
+  "correct_citation": {
+    "[CITATION_1]": "18849579",
+    "[CITATION_2]": "804242",
+    "[CITATION_3]": "17935803"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Being inspired by [CITATION_1] , Niu and Jagannathan [CITATION_2] propose a cross-layer design to improve the performance of tag-to-tag communication systems."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Being inspired by [CITATION_1] , Niu and Jagannathan [CITATION_2] propose a cross-layer design to improve the performance of tag-to-tag communication systems."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Similar to the optimum link state routing (OLSR) protocol [CITATION_3] , OLCMR also constructs the routing table in which the destination address, next-hop address, the number of hops, and cost to that destination are included."
+    }
+  ],
+  "bib_entries": {
+    "17935803": {
+      "title": "Optimized link state routing protocol for ad hoc networks",
+      "abstract": "In this paper we propose and discuss an optimized link state routing protocol, named OLSR, for mobile wireless networks. The protocol is based on the link state algorithm and it is proactive (or table-driven) in nature. It employs periodic exchange of messages to maintain topology information of the network at each node. OLSR is an optimization over a pure link state protocol as it compacts the size of information sent in the messages, and furthermore, reduces the number of retransmissions to flood these messages in an entire network. For this purpose, the protocol uses the multipoint relaying technique to efficiently and economically flood its control messages. It provides optimal routes in terms of number of hops, which are immediately available when needed. The proposed protocol is best suitable for large and dense ad hoc networks."
+    },
+    "18849579": {
+      "title": "Passive tag-to-tag communication",
+      "abstract": "In this paper, we describe a novel passive RFID system capable of direct tag-to-tag communication in the presence of external radio frequency field. Tags talk by modulating the external field and thus backscattering the commands to each other. We present the system concept and show its hardware implementation based on TI MSP430 microcontroller. We also provide the theoretical model for modulation depth vs. distance which agrees with experimental results (maximum tag-to-tag communication distance). Finally, we discuss possible applications and outline future work."
+    },
+    "804242": {
+      "title": "A cross layer routing scheme for passive RFID tag-to-tag communication",
+      "abstract": "A routing protocol for Passive RFID tag-to-tag networks is not reported in contrast with routing protocols for battery powered mobile wireless ad hoc and sensor networks. In this paper, we provide a cross-layer approach for passive RFID tag-to-tag communication. In the data link layer, we designed the medium access control (MAC) protocol which is suitable for passive tag-to-tag communication. In the network layer, we developed the optimal link cost multipath routing (OLCMR) protocol by using modulation depth as the link cost. Simulation results verify that proposed routing protocol consumes less energy when it is compared to optimum link state routing (OLSR). Additionally, when compared to the single path routing, the proposed multipath routing protocol increases the delivery ratio significantly."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

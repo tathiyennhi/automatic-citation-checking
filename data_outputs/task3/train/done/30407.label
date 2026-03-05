@@ -1,0 +1,29 @@
+{
+  "doc_id": "30407",
+  "text": "3) Bidirectional Recurrent Neural Networks (BRNNs): One shortcoming of conventional RNNs is that they are only able to make use of previous context. It is often the case that for malware events the most informative part of a sequence occurs at the beginning of the sequence and may be forgotten by standard recurrent models. Bidirectional RNNs ( [CITATION_1] ) overcome this issue by processing the data in both directions with two separate hidden layers, which are then fed forward to the same output layer. A BRNN computes the forward hidden sequence − → h t , the backward hidden sequence ← − h t and the output sequence y t by iterating the backward layer from t = T to 1 and the forward layer from t = 1 to T , and then updating the output layer. Combing BRNNs with LSTM gives bidirectional LSTM ( [CITATION_2] ), which can access long-range context in both input directions.",
+  "correct_citation": {
+    "[CITATION_1]": "18375389",
+    "[CITATION_2]": "1856462"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Bidirectional RNNs ( [CITATION_1] ) overcome this issue by processing the data in both directions with two separate hidden layers, which are then fed forward to the same output layer."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Combing BRNNs with LSTM gives bidirectional LSTM ( [CITATION_2] ), which can access long-range context in both input directions."
+    }
+  ],
+  "bib_entries": {
+    "1856462": {
+      "title": "Framewise phoneme classification with bidirectional LSTM and other neural network architectures",
+      "abstract": "In this paper, we present bidirectional Long Short Term Memory (LSTM) networks, and a modified, full gradient version of the LSTM learning algorithm. We evaluate Bidirectional LSTM (BLSTM) and several other network architectures on the benchmark task of framewise phoneme classification, using the TIMIT database. Our main findings are that bidirectional networks outperform unidirectional ones, and Long Short Term Memory (LSTM) is much faster and also more accurate than both standard Recurrent Neural Nets (RNNs) and time-windowed Multilayer Perceptrons (MLPs). Our results support the view that contextual information is crucial to speech processing, and suggest that BLSTM is an effective architecture with which to exploit it'."
+    },
+    "18375389": {
+      "title": "Bidirectional recurrent neural networks",
+      "abstract": "In the first part of this paper, a regular recurrent neural network (RNN) is extended to a bidirectional recurrent neural network (BRNN). The BRNN can be trained without the limitation of using input information just up to a preset future frame. This is accomplished by training it simultaneously in positive and negative time direction. Structure and training procedure of the proposed network are explained. In regression and classification experiments on artificial data, the proposed structure gives better results than other approaches. For real data, classification experiments for phonemes from the TIMIT database show the same tendency. In the second part of this paper, it is shown how the proposed bidirectional structure can be easily modified to allow efficient estimation of the conditional posterior probability of complete symbol sequences without making any explicit assumption about the shape of the distribution. For this part, experiments on real data are reported."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

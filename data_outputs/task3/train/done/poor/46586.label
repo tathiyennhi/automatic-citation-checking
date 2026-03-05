@@ -1,0 +1,38 @@
+{
+  "doc_id": "46586",
+  "text": "We use the SGD algorithm with the Nesterov momentum to train all the models for 400 epochs on CIFAR-10/CIFAR-100 and 40 epochs on SVHN, both with a total mini-batch size 64 on two GPUs. The learning rate starts with 0.1 and is reduced by a factor 10 at the 1/2, 3/4 and 7/8 fractions of the number of training epochs. Similar to [CITATION_1] 10] , the weight decay is 0.0001, the momentum is 0.9, and the weights are initialized as in [CITATION_2] . We follow ResNets to design our networks: use three groups of fusion units with the number of filter channels being 16, 32, 64, respectively, and use a Conv-BN-ReLU as a basic layer with the filter size of 3 × 3. In the merge-and-run fusion, merge (+ in Figure 6(b) ) is an averaging operation. All the other + op- erations in Figures 6 are between BN and ReLU. Our implementation is based on MXNet [CITATION_3] , and the code is available at https://github.com/zlmzju/fusenet.",
+  "correct_citation": {
+    "[CITATION_1]": "206594692",
+    "[CITATION_2]": "13740328",
+    "[CITATION_3]": "1507815"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Similar to [CITATION_1] 10] , the weight decay is 0.0001, the momentum is 0.9, and the weights are initialized as in [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Similar to [CITATION_1] 10] , the weight decay is 0.0001, the momentum is 0.9, and the weights are initialized as in [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Our implementation is based on MXNet [CITATION_3] , and the code is available at https://github.com/zlmzju/fusenet."
+    }
+  ],
+  "bib_entries": {
+    "13740328": {
+      "title": "Delving deep into rectifiers: Surpassing human-level performance on imagenet classification",
+      "abstract": "Rectified activation units (rectifiers) are essential for state-of-the-art neural networks. In this work, we study rectifier neural networks for image classification from two aspects. First, we propose a Parametric Rectified Linear Unit (PReLU) that generalizes the traditional rectified unit. PReLU improves model fitting with nearly zero extra computational cost and little overfitting risk. Second, we derive a robust initialization method that particularly considers the rectifier nonlinearities. This method enables us to train extremely deep rectified models directly from scratch and to investigate deeper or wider network architectures. Based on the learnable activation and advanced initialization, we achieve 4.94% top-5 test error on the ImageNet 2012 classification dataset. This is a 26% relative improvement over the ILSVRC 2014 winner (GoogLeNet, 6.66% [33]). To our knowledge, our result is the first to surpass the reported human-level performance (5.1%, [26]) on this dataset."
+    },
+    "206594692": {
+      "title": "Deep residual learning for image recognition",
+      "abstract": "Deeper neural networks are more difficult to train. We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth. On the ImageNet dataset we evaluate residual nets with a depth of up to 152 layers—8× deeper than VGG nets [40] but still having lower complexity. An ensemble of these residual nets achieves 3.57% error on the ImageNet test set. This result won the 1st place on the ILSVRC 2015 classification task. We also present analysis on CIFAR-10 with 100 and 1000 layers. The depth of representations is of central importance for many visual recognition tasks. Solely due to our extremely deep representations, we obtain a 28% relative improvement on the COCO object detection dataset. Deep residual nets are foundations of our submissions to ILSVRC & COCO 2015 competitions1, where we also won the 1st places on the tasks of ImageNet detection, ImageNet localization, COCO detection, and COCO segmentation."
+    },
+    "1507815": {
+      "title": "Mxnet: A flexible and efficient machine learning library for heterogeneous distributed systems",
+      "abstract": "MXNet is a multi-language machine learning (ML) library to ease the development of ML algorithms, especially for deep neural networks. Embedded in the host language, it blends declarative symbolic expression with imperative tensor computation. It offers auto differentiation to derive gradients. MXNet is computation and memory efficient and runs on various heterogeneous systems, ranging from mobile devices to distributed GPU clusters. ::: This paper describes both the API design and the system implementation of MXNet, and explains how embedding of both symbolic expression and tensor operation is handled in a unified fashion. Our preliminary experiments reveal promising results on large scale deep neural network applications using multiple GPU machines."
+    }
+  },
+  "generator": "codex:gpt-5.3"
+}

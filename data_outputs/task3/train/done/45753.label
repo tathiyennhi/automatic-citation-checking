@@ -1,0 +1,20 @@
+{
+  "doc_id": "45753",
+  "text": "Gene expression analysis 92.1 UM cells were treated with 100 nM FR or vehicle (DMSO) in RPMI growth medium and collected after 1 and 3 days of treatment. RNA was isolated using the RNeasy Mini Kit (QIAGEN) following the manufacturer's protocol and including the optional DNase I treatment step. RNA quality was assessed on a Bioanalyzer 2100 (Agilent Technologies). mRNA was extracted from total RNA using a Dynal mRNA Direct kit, fragmented, and reverse-transcribed to double-stranded complementary DNA with random primers before addition of adapters for library preparation. Library preparation and HiSeq 2500 sequencing were performed by the Washington University Genome Technology Access Center (gtac.wustl.edu). FastQ files were aligned to the transcriptome and the whole genome with STAR (Spliced Transcripts Alignment to a Reference). Biologic replicates were simultaneously analyzed by edgeR and Sailfish analyses of gene-level/exon-level features. Unexpressed genes and exons were removed from the analyses. Unsupervised principal component analysis and volcano plots were generated in Bioconductor using edgeR. Significance Analysis of Microarrays version 4.0 was used to generate a ranked gene list, and a threshold of q < 10% and a fold change of >2.0 were then used to select the most highly statistically significant genes that showed reduced expression in FR-treated versus vehicle control cells. This list was used as signature gene sets for GO analysis and GSEA [CITATION_1] . GO groups were assembled by merging the lists of genes from related GO terms that were significantly enriched (P < 0.01 using the Kolmogorov-Smirnov statistic) in the signature gene set. Significant gene sets (P < 0.01 using the Kolmogorov-Smirnov statistic) from GSEA analyses were combined such that genes associated with multiple related signatures were only counted once and each gene was assigned only to a single combined group based on the signature with the highest enrichment score for that gene. Gene expression changes were validated in all three UM cell lines by quantitative PCR using fast SYBR Green Master Mix (Thermo Fisher Scientific), following the manufacturers' protocol. GAPDH (glyceraldehyde-3-phosphate dehydrogenase) was used as an endogenous control. Primer sets used for the assay are listed in data file S6.",
+  "correct_citation": {
+    "[CITATION_1]": "2374637"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Significance Analysis of Microarrays version 4.0 was used to generate a ranked gene list, and a threshold of q < 10% and a fold change of >2.0 were then used to select the most highly statistically significant genes that showed reduced expression in FR-treated versus vehicle control cells. This list was used as signature gene sets for GO analysis and GSEA [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "2374637": {
+      "title": "Gene set enrichment analysis: A knowledge-based approach for interpreting genome-wide expression profiles",
+      "abstract": "Although genomewide RNA expression analysis has become a routine tool in biomedical research, extracting biological insight from such information remains a major challenge. Here, we describe a powerful analytical method called Gene Set Enrichment Analysis (GSEA) for interpreting gene expression data. The method derives its power by focusing on gene sets, that is, groups of genes that share common biological function, chromosomal location, or regulation. We demonstrate how GSEA yields insights into several cancer-related data sets, including leukemia and lung cancer. Notably, where single-gene analysis finds little similarity between two independent studies of patient survival in lung cancer, GSEA reveals many biological pathways in common. The GSEA method is embodied in a freely available software package, together with an initial database of 1,325 biologically defined gene sets."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "49645",
+  "text": "In our system, a pattern-based approach is used to collect the emotion corpus, which is similar to the one used in [CITATION_1] , but we do not limit to event-driven emotions (Kozareva et al., 2008) , and adjust our rules to improve the quality of emotion annotation. There are five steps in our emotion sentence annotation as given below, and Steps (2) and (3) are to improve the annotation quality. 1) Extract emotion sentences: sentences containing emotion keywords are extracted by keyword matching. 2) Delete ambiguous structures: some ambiguous sentences, which contain structures such as negation and modal, are filtered out. 3) Delete ambiguous emotion keywords: if an emotion keyword is very ambiguous, all sentences containing this ambiguous emotion keyword are filtered out. 4) Give emotion tags: each remaining sentence is marked with its emotion tag according to the emotion type which the focus emotion word belongs to (refer to Tables 1 and 2.) 5) Ignore the focus emotion keywords: for emotion computing, the emotion word is removed from each sentence. Polanyi and Zaenen (2004) addressed the issue of polarity-based sentiment context shift, and the similar phenomenon also exists in emotion expressions. In our corpus creation, two kinds of contextual structures are handled with: the negation structure and the modal structure. In both English and Chinese, a negated emotion expression can be interpreted as one of the three possible meanings (as shown in Figure 3 ): opposite to the target emotion (S1), deny the existence of the target emotion (S2), or confirm the existence of the target emotion (S3). The modal structure often indicates that the emotion expression is based on the counter-factual assumption, hence the emotion does not exist at all (S4 and S5 in Figure 3) . Although Chinese and English have different interpretations about the modal structure, for emotion analysis, those sentences often do not express an emotion. Therefore, to ensure the quality of the emotion corpus, all sentences containing a negation structure or a modal structure, which are detected by some rules plus a list of keywords (negation polarity words for the negation structure, and modal words for the modal structure), are removed.",
+  "correct_citation": {
+    "[CITATION_1]": "17658199"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In our system, a pattern-based approach is used to collect the emotion corpus, which is similar to the one used in [CITATION_1] , but we do not limit to event-driven emotions (Kozareva et al., 2008) , and adjust our rules to improve the quality of emotion annotation."
+    }
+  ],
+  "bib_entries": {
+    "17658199": {
+      "title": "Emotion Classification Using Massive Examples Extracted from the Web",
+      "abstract": "In this paper, we propose a data-oriented method for inferring the emotion of a speaker conversing with a dialog system from the semantic content of an utterance. We first fully automatically obtain a huge collection of emotion-provoking event instances from the Web. With Japanese chosen as a target language, about 1.3 million emotion provoking event instances are extracted using an emotion lexicon and lexical patterns. We then decompose the emotion classification task into two sub-steps: sentiment polarity classification (coarsegrained emotion classification), and emotion classification (fine-grained emotion classification). For each subtask, the collection of emotion-proviking event instances is used as labelled examples to train a classifier. The results of our experiments indicate that our method significantly outperforms the baseline method. We also find that compared with the single-step model, which applies the emotion classifier directly to inputs, our two-step model significantly reduces sentiment polarity errors, which are considered fatal errors in real dialog applications."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

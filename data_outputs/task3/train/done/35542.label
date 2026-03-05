@@ -1,0 +1,38 @@
+{
+  "doc_id": "35542",
+  "text": "As before, we simulate the zero-shot learning situation where the number of labeled real images for a novel category is zero, however, here we also experiment with having a small number of labeled real images. For every category, we randomly select 20 [CITATION_1] [CITATION_2] positive training images to form datasets R 20 (R 10 , R 5 ). The sizes of final datasets are 276 (120, 73); note that there are some images which contain two or more positive bounding boxes. fine-tune on V 2k to get the VCNN network, then train SVM classifiers on both R x +V 2k . Baselines. We use datasets R x (x = 20, 10, 5) to train the RCNN model, and R x +V 2k to train the Fast Adaptation method described in [CITATION_3] . The RCNN is pre-trained on Imagenet ILSVRC, however it is not fine-tuned on detection on R 5 and R 10 as data is very limited.",
+  "correct_citation": {
+    "[CITATION_1]": "1769372",
+    "[CITATION_2]": "1241368",
+    "[CITATION_3]": "6018652"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For every category, we randomly select 20 [CITATION_1] [CITATION_2] positive training images to form datasets R 20 (R 10 , R 5 )."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For every category, we randomly select 20 [CITATION_1] [CITATION_2] positive training images to form datasets R 20 (R 10 , R 5 )."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "We use datasets R x (x = 20, 10, 5) to train the RCNN model, and R x +V 2k to train the Fast Adaptation method described in [CITATION_3] ."
+    }
+  ],
+  "bib_entries": {
+    "1769372": {
+      "title": "Multi-view object class detection with a 3d geometric model",
+      "abstract": "This paper presents a new approach for multi-view object class detection. Appearance and geometry are treated as separate learning tasks with different training data. Our approach uses a part model which discriminatively learns the object appearance with spatial pyramids from a database of real images, and encodes the 3D geometry of the object class with a generative representation built from a database of synthetic models. The geometric information is linked to the 2D training data and allows to perform an approximate 3D pose estimation for generic object classes. The pose estimation provides an efficient method to evaluate the likelihood of groups of 2D part detections with respect to a full 3D geometry model in order to disambiguate and prune 2D detections and to handle occlusions. In contrast to other methods, neither tedious manual part annotation of training images nor explicit appearance matching between synthetic and real training data is required, which results in high geometric fidelity and in increased flexibility. On the 3D Object Category datasets CAR and BICYCLE [15], the current state-of-the-art benchmark for 3D object detection, our approach outperforms previously published results for viewpoint estimation."
+    },
+    "1241368": {
+      "title": "Rich feature hierarchies for accurate object detection and semantic segmentation",
+      "abstract": "Object detection performance, as measured on the canonical PASCAL VOC dataset, has plateaued in the last few years. The best-performing methods are complex ensemble systems that typically combine multiple low-level image features with high-level context. In this paper, we propose a simple and scalable detection algorithm that improves mean average precision (mAP) by more than 30% relative to the previous best result on VOC 2012 -- achieving a mAP of 53.3%. Our approach combines two key insights: (1) one can apply high-capacity convolutional neural networks (CNNs) to bottom-up region proposals in order to localize and segment objects and (2) when labeled training data is scarce, supervised pre-training for an auxiliary task, followed by domain-specific fine-tuning, yields a significant performance boost. Since we combine region proposals with CNNs, we call our method R-CNN: Regions with CNN features. We also present experiments that provide insight into what the network learns, revealing a rich hierarchy of image features. Source code for the complete system is available at http://www.cs.berkeley.edu/~rbg/rcnn."
+    },
+    "6018652": {
+      "title": "From virtual to reality: Fast adaptation of virtual object detectors to real domains",
+      "abstract": "The most successful 2D object detection methods require a large number of images annotated with object bounding boxes to be collected for training. We present an alternative approach that trains on virtual data rendered from 3D models, avoiding the need for manual labeling. Growing demand for virtual reality applications is quickly bringing about an abundance of available 3D models for a large variety of object categories. While mainstream use of 3D models in vision has focused on predicting the 3D pose of objects, we investigate the use of such freely available 3D models for multicategory 2D object detection. To address the issue of dataset bias that arises from training on virtual data and testing on real images, we propose a simple and fast adaptation approach based on decorrelated features. We also compare two kinds of virtual data, one rendered with real-image textures and one without. Evaluation on a benchmark domain adaptation dataset demonstrates that our method performs comparably to existing methods trained on large-scale real image domains."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

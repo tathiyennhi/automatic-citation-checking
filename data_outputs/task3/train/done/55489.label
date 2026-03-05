@@ -1,0 +1,80 @@
+{
+  "doc_id": "55489",
+  "text": "Optimizing for rank-based metrics As rank-based evaluation metrics are now central to multiple research areas, their direct optimization has become of great interest to the community. Traditional approaches typically rely on different flavors of loss-augmented inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] , or gradient approximation [CITATION_5] [CITATION_6] . These approaches often require solving a combinatorial problem as a subroutine where the nature of the problem is dependent on the particular rank-based metric. Consequently, efficient algorithms for these subproblems were proposed [CITATION_7] [CITATION_8] [CITATION_9] .",
+  "correct_citation": {
+    "[CITATION_1]": "11464769",
+    "[CITATION_2]": "10934143",
+    "[CITATION_3]": "3621892",
+    "[CITATION_4]": "7423459",
+    "[CITATION_5]": "347907",
+    "[CITATION_6]": "6103568",
+    "[CITATION_7]": "3621892",
+    "[CITATION_8]": "6103568",
+    "[CITATION_9]": "7423459"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Traditional approaches typically rely on different flavors of loss-augmented inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] , or gradient approximation [CITATION_5] [CITATION_6] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Traditional approaches typically rely on different flavors of loss-augmented inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] , or gradient approximation [CITATION_5] [CITATION_6] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Traditional approaches typically rely on different flavors of loss-augmented inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] , or gradient approximation [CITATION_5] [CITATION_6] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Traditional approaches typically rely on different flavors of loss-augmented inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] , or gradient approximation [CITATION_5] [CITATION_6] ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Traditional approaches typically rely on different flavors of loss-augmented inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] , or gradient approximation [CITATION_5] [CITATION_6] ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Traditional approaches typically rely on different flavors of loss-augmented inference [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] , or gradient approximation [CITATION_5] [CITATION_6] ."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Consequently, efficient algorithms for these subproblems were proposed [CITATION_7] [CITATION_8] [CITATION_9] ."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Consequently, efficient algorithms for these subproblems were proposed [CITATION_7] [CITATION_8] [CITATION_9] ."
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "Consequently, efficient algorithms for these subproblems were proposed [CITATION_7] [CITATION_8] [CITATION_9] ."
+    }
+  ],
+  "bib_entries": {
+    "6103568": {
+      "title": "Training deep neural networks via direct loss minimization",
+      "abstract": "Supervised training of deep neural nets typically relies on minimizing cross-entropy. However, in many domains, we are interested in performing well on metrics specific to the application. In this paper we propose a direct loss minimization approach to train deep neural networks, which provably minimizes the application-specific loss function. This is often non-trivial, since these functions are neither smooth nor decomposable and thus are not amenable to optimization with standard gradient-based methods. We demonstrate the effectiveness of our approach in the context of maximizing average precision for ranking problems. Towards this goal, we develop a novel dynamic programming algorithm that can efficiently compute the weight updates. Our approach proves superior to a variety of baselines in the context of action classification and object detection, especially in the presence of label noise."
+    },
+    "3621892": {
+      "title": "Efficient optimization for rank-based loss functions",
+      "abstract": "The accuracy of information retrieval systems is often measured using complex loss functions such as the average precision (AP) or the normalized discounted cumulative gain (NDCG). Given a set of positive (relevant) and negative (non-relevant) samples, the parameters of a retrieval system can be estimated by minimizing these loss functions. However, the non-differentiability and non-decomposability of these loss functions does not allow for simple gradient based optimization algorithms. This issue is generally circumvented by either optimizing a structured hinge-loss upper bound to the loss function or by using asymptotic methods like the direct-loss minimization framework. Yet, the high computational complexity of loss-augmented inference, which is necessary for both the frameworks, prohibits its use in large training data sets. To alleviate this deficiency, we present a novel quicksort flavored algorithm for a large class of non-decomposable loss functions. We provide a complete characterization of the loss functions that are amenable to our algorithm, and show that it includes both AP and NDCG based loss functions. Furthermore, we prove that no comparison based algorithm can improve upon the computational complexity of our approach asymptotically. We demonstrate the effectiveness of our approach in the context of optimizing the structured hinge loss upper bound of AP and NDCG loss for learning models for a variety of vision tasks. Using the CIFAR-10 data set and the PASCAL VOC action recognition and object detection data sets, we show that our approach provides significantly better results than simpler decomposable loss functions, while requiring a comparable training time."
+    },
+    "10934143": {
+      "title": "Efficient optimization for average precision svm",
+      "abstract": "The accuracy of information retrieval systems is often measured using average precision (AP). Given a set of positive (relevant) and negative (non-relevant) samples, the parameters of a retrieval system can be estimated using the AP-SVM framework, which minimizes a regularized convex upper bound on the empirical AP loss. However, the high computational complexity of loss-augmented inference, which is required for learning an AP-SVM, prohibits its use with large training datasets. To alleviate this deficiency, we propose three complementary approaches. The first approach guarantees an asymptotic decrease in the computational complexity of loss-augmented inference by exploiting the problem structure. The second approach takes advantage of the fact that we do not require a full ranking during loss-augmented inference. This helps us to avoid the expensive step of sorting the negative samples according to their individual scores. The third approach approximates the AP loss over all samples by the AP loss over difficult samples (for example, those that are incorrectly classified by a binary SVM), while ensuring the correct classification of the remaining samples. Using the PASCAL VOC action classification and object detection datasets, we show that our approaches provide significant speed-ups during training without degrading the test accuracy of AP-SVM."
+    },
+    "347907": {
+      "title": "End-to-end training of object class detectors for mean average precision",
+      "abstract": "We present a method for training CNN-based object class detectors directly using mean average precision (mAP) as the training loss, in a truly end-to-end fashion that includes non-maximum suppresion (NMS) at training time. This contrasts with the traditional approach of training a CNN for a window classification loss, then applying NMS only at test time, when mAP is used as the evaluation metric in place of classification accuracy. However, mAP following NMS forms a piecewise-constant structured loss over thousands of windows, with gradients that do not convey useful information for gradient descent. Hence, we define new, general gradient-like quantities for piecewise constant functions, which have wide applicability. We describe how to calculate these efficiently for mAP following NMS, enabling to train a detector based on Fast R-CNN [1] directly for mAP. This model achieves equivalent performance to the standard Fast R-CNN on the PASCAL VOC 2007 and 2012 datasets, while being conceptually more appealing as the very same model and loss are used at both training and test time."
+    },
+    "11464769": {
+      "title": "Metric learning to rank",
+      "abstract": "We study metric learning as a problem of information retrieval. We present a general metric learning algorithm, based on the structural SVM framework, to learn a metric such that rankings of data induced by distance from a query can be optimized against various ranking measures, such as AUC, Precision-at-k, MRR, MAP or NDCG. We demonstrate experimental results on standard classification data sets, and a large-scale online dating recommendation problem."
+    },
+    "7423459": {
+      "title": "A support vector method for optimizing average precision",
+      "abstract": "Machine learning is commonly used to improve ranked retrieval systems. Due to computational difficulties, few learning techniques have been developed to directly optimize for mean average precision (MAP), despite its widespread use in evaluating such systems. Existing approaches optimizing MAP either do not find a globally optimal solution, or are computationally expensive. In contrast, we present a general SVM learning algorithm that efficiently finds a globally optimal solution to a straightforward relaxation of MAP. We evaluate our approach using the TREC 9 and TREC 10 Web Track corpora (WT10g), comparing against SVMs optimized for accuracy and ROCArea. In most cases we show our method to produce statistically significant improvements in MAP scores."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

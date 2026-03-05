@@ -1,0 +1,29 @@
+{
+  "doc_id": "35218",
+  "text": "ArtGAN-AE: The discriminator loss is similar to L Debc , except that we do not use the generated images as adversarial samples to update the decoder. This was inspired by DFM [CITATION_1] to use the autoencoder as a source of complementary information when updating the generator, instead of using the autoencoder as an adversarial function (as in [CITATION_2] ). Hence, the discriminator loss L Dae of ArtGAN-AE is formulated as,",
+  "correct_citation": {
+    "[CITATION_1]": "57832010",
+    "[CITATION_2]": "15876696"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This was inspired by DFM [CITATION_1] to use the autoencoder as a source of complementary information when updating the generator, instead of using the autoencoder as an adversarial function (as in [CITATION_2] )."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This was inspired by DFM [CITATION_1] to use the autoencoder as a source of complementary information when updating the generator, instead of using the autoencoder as an adversarial function (as in [CITATION_2] )."
+    }
+  ],
+  "bib_entries": {
+    "15876696": {
+      "title": "Energy-based generative adversarial network",
+      "abstract": "We introduce the \"Energy-based Generative Adversarial Network\" model (EBGAN) which views the discriminator as an energy function that attributes low energies to the regions near the data manifold and higher energies to other regions. Similar to the probabilistic GANs, a generator is seen as being trained to produce contrastive samples with minimal energies, while the discriminator is trained to assign high energies to these generated samples. Viewing the discriminator as an energy function allows to use a wide variety of architectures and loss functionals in addition to the usual binary classifier with logistic output. Among them, we show one instantiation of EBGAN framework as using an auto-encoder architecture, with the energy being the reconstruction error, in place of the discriminator. We show that this form of EBGAN exhibits more stable behavior than regular GANs during training. We also show that a single-scale architecture can be trained to generate high-resolution images."
+    },
+    "57832010": {
+      "title": "Improving generative adversarial networks with denoising feature matching",
+      "abstract": "We propose an augmented training procedure for generative adversarial networks designed to address shortcomings of the original by directing the generator towards probable configurations of abstract discriminator features. We estimate and track the distribution of these features, as computed from data, with a denoising auto-encoder, and use it to propose high-level targets for the generator. We combine this new loss with the original and evaluate the hybrid criterion on the task of unsupervised image synthesis from datasets comprising a diverse set of visual categories, noting a qualitative and quantitative improvement in the ``objectness'' of the resulting samples."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

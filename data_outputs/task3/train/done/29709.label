@@ -1,0 +1,25 @@
+{
+  "doc_id": "29709",
+  "text": "Theorem 5.4 [CITATION_1] Let G be a connected graph, let H be a minimal triangulation of G, let T = (V T , E T ) be a clique tree of H, and let T ′ be the forest obtained from T by removing all edges KK ′ such that K ∩ K ′ is a clique in G, let T ′′ be the tree obtained from T by merging the nodes of each tree of T ′ into one node; then T ′′ is an atom tree of G, and for each edge KK ′ of T such that Thus Algorithm DCL-MLSM-CliqueTree can be modified into Algorithm DCL-AtomTree computing an atom tree and the clique minimal separators of the input graph G: in case a new clique is started, a new atom is started only if S is a clique in G, otherwise the atom containing K p is increased. Note that the atoms are not built one after the other since an atom different from A s may be increased if a new clique is started and S is not a clique in G. Variable q contains the index of the current atom. Algorithm DCL-AtomTree generalizes algorithm MCSM-Atom-Tree from [CITATION_2] , while correcting an error in this algorithm (a confusion between variables q and s)..",
+  "correct_citation": {
+    "[CITATION_1]": "16933728",
+    "[CITATION_2]": "16933728"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Theorem 5.4 [CITATION_1] Let G be a connected graph, let H be a minimal triangulation of G, let T = (V T , E T ) be a clique tree of H, and let T ′ be the forest obtained from T by removing all edges KK ′ such that K ∩ K ′ is a clique in G, let T ′′ be the tree obtained from T by merging the nodes of each tree of T ′ into one node; then T ′′ is an atom tree of G,"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Algorithm DCL-AtomTree generalizes algorithm MCSM-Atom-Tree from [CITATION_2] , while correcting an error in this algorithm (a confusion between variables q and s)."
+    }
+  ],
+  "bib_entries": {
+    "16933728": {
+      "title": "Organizing the atoms of the clique separator decomposition into an atom tree",
+      "abstract": "Abstract We define an atom tree of a graph as a generalization of a clique tree: its nodes are the atoms obtained by clique minimal separator decomposition, and its edges correspond to the clique minimal separators of the graph. Given a graph G , we compute an atom tree by using a clique tree of a minimal triangulation H of G . Computing an atom tree with such a clique tree as input can be done in O ( min ( n m , m + n f ) ) , where f is the number of fill edges added by the triangulation. When both a minimal triangulation and the clique minimal separators of G are provided, we compute an atom tree of G in O ( m + f ) time, which is in O ( n 2 ) time. We give an O ( n m ) time algorithm, based on MCS, which combines in a single pass the 3 steps involved in building an atom tree: computing a minimal triangulation, constructing a clique tree, and constructing the corresponding atom tree. Finally, we present a process which uses a traversal of a clique tree of a minimal triangulation to determine the clique minimal separators and build the corresponding atom tree in O ( n ( n + t ) ) time, where t is the number of 2-pairs of H ( t is at most m ¯ − f , where m ¯ is the number of edges of the complement graph); to complete this, we also give an algorithm which computes a minimal triangulation in O ( n ( n + m ¯ ) ) time, thus providing an approach to compute the decomposition in O ( n ( n + m ¯ ) ) time."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

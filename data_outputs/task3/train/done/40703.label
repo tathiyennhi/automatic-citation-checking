@@ -1,0 +1,20 @@
+{
+  "doc_id": "40703",
+  "text": "This research intends to extend upon the existing effort to make CNNs more efficient with a case study that explores parameter reduction in the domain of signal processing. Specifically, our study focusses on AstroNet [CITATION_1] . AstroNet is a one-dimensional CNN which detects exoplanets from subtle patterns in timevarying stellar brightness signals, so-called stellar light curves. The AstroNet architecture uses two input views; a global view representing an aggregation of available stellar light curves on the exoplanet candidate, and a local view that focuses on the transit event, i.e., the dip in brightness caused by the passing of the exoplanet in front of the star. Both views have their own hidden representation and intermediate outputs, which are then concatenated and fed to fully connected layers before the final output is predicted. This is illustrated in Figure 1 , showing the global view and its hidden representation on the left, while the local view is shown on the right. Both views are concatenated before being processed by multiple hidden layers to generate a scalar output. It is important to note that, the actual AstroNet architecture contains two and five blocks of convolution and pooling layers for the local and global views, respectively. Each block consists of two convolution layers followed by a pooling layer. In addition, after the concatenation of both views, the architecture has four fully-connected layers that feed into a sigmoid unit.",
+  "correct_citation": {
+    "[CITATION_1]": "4535051"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This research intends to extend upon the existing effort to make CNNs more efficient with a case study that explores parameter reduction in the domain of signal processing. Specifically, our study focusses on AstroNet [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "4535051": {
+      "title": "Identifying Exoplanets with Deep Learning: A Five-planet Resonant Chain around Kepler-80 and an Eighth Planet around Kepler-90",
+      "abstract": "NASA's Kepler Space Telescope was designed to determine the frequency of Earth-sized planets orbiting Sun-like stars, but these planets are on the very edge of the mission's detection sensitivity. Accurately determining the occurrence rate of these planets will require automatically and accurately assessing the likelihood that individual candidates are indeed planets, even at low signal-to-noise ratios. We present a method for classifying potential planet signals using deep learning, a class of machine learning algorithms that have recently become state-of-the-art in a wide variety of tasks. We train a deep convolutional neural network to predict whether a given signal is a transiting exoplanet or a false positive caused by astrophysical or instrumental phenomena. Our model is highly effective at ranking individual candidates by the likelihood that they are indeed planets: 98.8% of the time it ranks plausible planet signals higher than false positive signals in our test set. We apply our model to a new set of candidate signals that we identified in a search of known Kepler multi-planet systems. We statistically validate two new planets that are identified with high confidence by our model. One of these planets is part of a five-planet resonant chain around Kepler-80, with an orbital period closely matching the prediction by three-body Laplace relations. The other planet orbits Kepler-90, a star which was previously known to host seven transiting planets. Our discovery of an eighth planet brings Kepler-90 into a tie with our Sun as the star known to host the most planets."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

@@ -1,0 +1,52 @@
+{
+  "doc_id": "58688",
+  "text": "This work follows the philosophy of Matzenmiller as adopted also by [CITATION_1] . In Batra and his team's work, Matzenmiller damage evolution criteria are used to study threedimensional (3D) deformations of a 16-ply laminate subjected to normal incidence impact by a slow-moving rigid sphere, and the effective elastic-plastic properties of the composite were derived using [CITATION_2] method of cells but with the continuity of shear tractions across cell boundaries relaxed. A user-defined subroutine (VUMAT) was developed which updates stresses as its main duty. It has to deal with material degradation to enable accurate stress calculations. The subroutine takes as input from the commercial FE software ABAQUS values of six strain components at an integration point of a generic FE, then computes based on intact constitutive coefficients stresses in each ply using the constituent level properties, computes effective stresses at integration points, checks for Hashin's failure criteria, computes damage if necessary, modifies stresses due to the induced damage and supplies them back to ABAQUS. As the procedure is explicit, there is no need for iterations to update the constitutive model at every increment and the base state for each increment is that of the previous increment. The constitutive tensor is only updated subsequent to calculation of stresses at the end of each increment. [CITATION_3] used a smear crack approach to develop a failure model for predicting damage in 3D deformations of a composite structure. [CITATION_4] colleagues (2008, 2006) have worked extensively on the progressive failure of woven composites. [CITATION_5] proposed a simple damage mechanics-based progressive failure model for thin woven carbon composites under impact loads (i.e. ballistic damage, bird strike and fragmentation attacked). This model can be appreciated when one considers the difficulty in characterising material constants for existing stress-based scalar functions-based techniques of modelling composite failure. The proposed approach is based on an unconventional thermodynamic maximum energy dissipation approach, which entails controlling damage evolution and hence energy dissipation per second, rather than damage. The method was implemented into explicit dynamic FE code, DYNA3D.",
+  "correct_citation": {
+    "[CITATION_1]": "9313886",
+    "[CITATION_2]": "137315419",
+    "[CITATION_3]": "121591793",
+    "[CITATION_4]": "136788236",
+    "[CITATION_5]": "136788236"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This work follows the philosophy of Matzenmiller as adopted also by [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "the effective elastic-plastic properties of the composite were derived using [CITATION_2] method of cells but with the continuity of shear tractions across cell boundaries relaxed."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "[CITATION_3] used a smear crack approach to develop a failure model for predicting damage in 3D deformations of a composite structure."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "[CITATION_4] colleagues (2008, 2006) have worked extensively on the progressive failure of woven composites."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "[CITATION_5] proposed a simple damage mechanics-based progressive failure model for thin woven carbon composites under impact loads (i.e. ballistic damage, bird strike and fragmentation attacked)."
+    }
+  ],
+  "bib_entries": {
+    "136788236": {
+      "title": "Progressive failure modelling of woven carbon composite under impact",
+      "abstract": "Abstract The design of composite structures or components, subject to extreme loading conditions, such as crash, blast, etc. requires a fundamental understanding of the deterioration mechanism within the composite meso-structure. Existing predictive techniques for the analysis of composite structures and components near and beyond their ultimate strength are either based on simple scalar stress functions, or use very complex damage formulations with many material constants, some of which may be difficult to characterise. This paper presents a simple damage mechanics based progressive failure model for thin woven carbon composites under impact loading. The approach is based on an unconventional thermodynamic maximum energy dissipation approach, which entails controlling damage evolution and hence energy dissipation per second, rather than damage. The method has been implemented into the explicit dynamic finite element code DYNA3D. Numerical simulation results using the proposed model are compared with two experimental impact tests. The analysis methodology proposed in this paper reflects a very simple, but effective technique that can be used to model a wide range of problems from extreme events, such as crash or blast, to birdstrike, when tearing and perforation are major failure mechanisms. As damage is cumulative, the technique allows initial or/and post-impact static loads to be applied to the composite structure or component, thus allowing a cradle-to-grave design methodology."
+    },
+    "9313886": {
+      "title": "Damage and failure in low energy impact of fiber-reinforced polymeric composite laminates",
+      "abstract": "We analyze the damage initiation, damage progression, and failure during 3-dimensional (3-D) elastoplastic deformations of a fiber reinforced polymeric laminated composite impacted by a low speed rigid sphere, and compare computed results with experimental findings available in the literature. Damage is assumed to initiate when one of Hashin’s failure criteria is satisfied, and its evolution is modeled by an empirical relation proposed by Matzenmiller, Lubliner and Taylor. The transient nonlinear problem is solved by the finite element method (FEM). Contributions of the work include considering damage in 3-D rather than plane stress deformations of a laminated structure and elasto-plastic deformations of the composite. This has been accomplished by developing a user defined subroutine and implementing it in the FE software ABAQUS. From strains supplied by ABAQUS the material subroutine uses a micromechanics approach based on the method of cells and values of material parameters of constituents to calculate average stresses in an FE, and checks for Hashin’s failure criteria. If damage has initiated in the material, the subroutine evaluates the damage developed, computes resulting stresses, and provides them to ABAQUS. The damage evolved at a material point is not allowed to decrease during unloading. The delamination failure mode is simulated by using the cohesive zone model available in ABAQUS. The computed time histories of the axial load acting on the impactor are found to agree well with the experimental ones available in the literature, and various damage and failure modes agree qualitatively with those observed in tests."
+    },
+    "137315419": {
+      "title": "Micromechanical analysis of composites by the generalized cells model",
+      "abstract": "Abstract In the original formulation of the micromechanical method of cells, designated for the analysis of fibrous composites with periodic structure, the repeating volume element consists of four interacting subcells. The various capabilities and reability of the micromechanical model were verified in a recent review paper and a monograph. The present investigation offers a generalization of the method to an arbitrary number of subcells for the modeling of multiphase periodic composites. Such a generalization is particularly advantageous when dealing with elastic-plastic composites, since yielding and plastic flow of a metallic phase may take place at different locations. Effective constitutive laws that govern overall behavior of the elastic-viscoplastic composite material are established. These laws are given in terms of relationships between the average stress-rate and strain-rate of the inelastic multiphase composite. Comparisons between the response of boron/aluminum composite obtained by the present model and a finite element solution are given."
+    },
+    "121591793": {
+      "title": "A progressive failure model for composite laminates subjected to low velocity impact damage",
+      "abstract": "This paper presents a 3-D failure model for predicting the dynamic material response of composite laminates under impact loading. The formulation is based on the Continuum Damage Mechanics (CDM) approach and enables the control of the energy dissipation associated with each failure mode regardless of mesh refinement and fracture plane orientation. Internal thermodynamically irreversible damage variables were defined in order to quantify damage concentration associated with each possible failure mode and predict the gradual stiffness reduction during the impact damage process. The material model has been implemented into LS-DYNA explicit finite element code within solid elements and it has proven to be capable of reproducing experimental results with good accuracy in terms of static/dynamic responses, absorbed energy and extent of damage."
+    }
+  },
+  "generator": "codex:gpt-5.3"
+}

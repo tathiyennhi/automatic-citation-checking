@@ -1,0 +1,52 @@
+{
+  "doc_id": "52858",
+  "text": "The denominator is the likelihood for site i [CITATION_1] , whereas the numerator is obtained in a very similar way but considering the ancestral states x p and x q as known in the Felsenstein recursion. Term n s xp,xq (t) is the mean number of substitutions of type s that occurred on a branch of length t knowing initial state x p and final state x q . Several methods have been proposed to compute this mean number. Instead of the method of [CITATION_2] , we use the uniformization method proposed by [CITATION_3] and [CITATION_4] because it is exact, numerically more stable, and for each site and branch it returns an array containing counts for each type of substitution. For alphabets with high dimension like the codon alphabets, substitution types can be summed, for example, all synonymous substitutions and all nonsynonymous substitutions, generating two types of counts instead of 61 × (61 − 1) = 3, 660. As shown in [CITATION_5] , these equations can be easily extended to account for variation of the substitution rate across sites and do not depend on the model used to describe the rate variation. For codon models, a constant distribution of codon substitution rates was used, as in the PAML software, whereas for nucleotide sequences we used a gamma distribution of site-specific substitution rates.",
+  "correct_citation": {
+    "[CITATION_1]": "8024924",
+    "[CITATION_2]": "8765299",
+    "[CITATION_3]": "11133003",
+    "[CITATION_4]": "16313735",
+    "[CITATION_5]": "8765299"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The denominator is the likelihood for site i [CITATION_1] , whereas the numerator is obtained in a very similar way but considering the ancestral states x p and x q as known in the Felsenstein recursion."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Instead of the method of [CITATION_2] , we use the uniformization method proposed by [CITATION_3] and [CITATION_4] because it is exact, numerically more stable, and for each site and branch it returns an array containing counts for each type of substitution."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Instead of the method of [CITATION_2] , we use the uniformization method proposed by [CITATION_3] and [CITATION_4] because it is exact, numerically more stable, and for each site and branch it returns an array containing counts for each type of substitution."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Instead of the method of [CITATION_2] , we use the uniformization method proposed by [CITATION_3] and [CITATION_4] because it is exact, numerically more stable, and for each site and branch it returns an array containing counts for each type of substitution."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "As shown in [CITATION_5] , these equations can be easily extended to account for variation of the substitution rate across sites and do not depend on the model used to describe the rate variation."
+    }
+  ],
+  "bib_entries": {
+    "8024924": {
+      "title": "Evolutionary trees from DNA sequences: a maximum likelihood approach",
+      "abstract": "The application of maximum likelihood techniques to the estimation of evolutionary trees from nucleic acid sequence data is discussed. A computationally feasible method for finding such maximum likelihood estimates is developed, and a computer program is available. This method has advantages over the traditional parsimony algorithms, which can give misleading results if rates of evolution differ in different lineages. It also allows the testing of hypotheses about the constancy of evolutionary rates by likelihood ratio tests, and gives rough indication of the error of the estimate of the tree."
+    },
+    "8765299": {
+      "title": "A model-based approach for detecting coevolving positions in a molecule",
+      "abstract": "We present a new method for detecting coevolving sites in molecules. The method relies on a set of aligned sequences (nucleic acid or protein) and uses Markov models of evolution to map the substitutions that occurred at each site onto the branches of the underlying phylogenetic tree. This mapping takes into account the uncertainty over ancestral states and among-site rate variation. We then build, for each site, a \"substitution vector\" containing the posterior estimates of the number of substitutions in each branch. The amount of coevolution for a pair of sites is then measured as the Pearson correlation coefficient between the two corresponding substitution vectors and compared to the expectation under the null hypothesis of independence. We applied the method to a 79-species bacterial ribosomal RNA data set, for which extensive structural characterization has been done over the last 30 years. More than 95% of the intramolecular predicted pairs of sites correspond to known interacting site pairs."
+    },
+    "11133003": {
+      "title": "Simulation from endpoint-conditioned, continuous-time Markov chains on a finite state space, with applications to molecular evolution",
+      "abstract": "Analyses of serially-sampled data often begin with the assumption that the observations represent discrete samples from a latent continuous-time stochastic process. The continuous-time Markov chain (CTMC) is one such generative model whose popularity extends to a variety of disciplines ranging from computational finance to human genetics and genomics. A common theme among these diverse applications is the need to simulate sample paths of a CTMC conditional on realized data that is discretely observed. Here we present a general solution to this sampling problem when the CTMC is defined on a discrete and finite state space. Specifically, we consider the generation of sample paths, including intermediate states and times of transition, from a CTMC whose beginning and ending states are known across a time interval of length $T$. We first unify the literature through a discussion of the three predominant approaches: (1) modified rejection sampling, (2) direct sampling, and (3) uniformization. We then give analytical results for the complexity and efficiency of each method in terms of the instantaneous transition rate matrix $Q$ of the CTMC, its beginning and ending states, and the length of sampling time $T$. In doing so, we show that no method dominates the others across all model specifications, and we give explicit proof of which method prevails for any given $Q,T,$ and endpoints. Finally, we introduce and compare three applications of CTMCs to demonstrate the pitfalls of choosing an inefficient sampler."
+    },
+    "16313735": {
+      "title": "Comparison of methods for calculating conditional expectations of sufficient statistics for continuous time Markov chains",
+      "abstract": "BackgroundContinuous time Markov chains (CTMCs) is a widely used model for describing the evolution of DNA sequences on the nucleotide, amino acid or codon level. The sufficient statistics for CTMCs are the time spent in a state and the number of changes between any two states. In applications past evolutionary events (exact times and types of changes) are unaccessible and the past must be inferred from DNA sequence data observed in the present.ResultsWe describe and implement three algorithms for computing linear combinations of expected values of the sufficient statistics, conditioned on the end-points of the chain, and compare their performance with respect to accuracy and running time. The first algorithm is based on an eigenvalue decomposition of the rate matrix (EVD), the second on uniformization (UNI), and the third on integrals of matrix exponentials (EXPM). The implementation in R of the algorithms is available at http://www.birc.au.dk/~paula/.ConclusionsWe use two different models to analyze the accuracy and eight experiments to investigate the speed of the three algorithms. We find that they have similar accuracy and that EXPM is the slowest method. Furthermore we find that UNI is usually faster than EVD."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

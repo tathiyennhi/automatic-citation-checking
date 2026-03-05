@@ -1,0 +1,20 @@
+{
+  "doc_id": "55272",
+  "text": "where S l×l , U l×h and V h×h denote the sensor-sensor, sensor-anchor, respectively anchor-anchor measurements, and D is a diagonal matrix with D ii = n j=1 |Z ij |. Note that V is a matrix with all nonzero entries, since the (correct) measurement between any two anchors is readily available, and the vector (U a) l×1 can be interpreted as the anchor contribution in the estimation of the sensors. Since a T (D V − V )a is a (nonnegative) constant, we are interested in minimizing the integer quadratic form z T (D S − S)z − 2z T U a. Unfortunately, the non-convex constraint z ∈ Z l 2 renders the problem NP-hard, and thus we introduce the relaxation to a quadratically constrained quadratic program (QCQP) from equation (9.2), whose solution can be shown to be z * = (D S − S + λI) −1 (U a) [CITATION_1] . S z yields the optimization problem shown in (9.3), which is very similar to the one in (9.2).",
+  "correct_citation": {
+    "[CITATION_1]": "5992773"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "2), whose solution can be shown to be z * = (D S − S + λI) −1 (U a) [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "5992773": {
+      "title": "Eigenvector synchronization, graph rigidity and the molecule problem",
+      "abstract": "The graph realization problem has received a great deal of attention in recent years, due to its importance in applications such as wireless sensor networks and structural biology. In this paper, we extend the previous work and propose the 3D-As-Synchronized-As-Possible (3D-ASAP) algorithm, for the graph realization problem in ℝ3, given a sparse and noisy set of distance measurements. 3D-ASAP is a divide and conquer, non-incremental and non-iterative algorithm, which integrates local distance information into a global structure determination. Our approach starts with identifying, for every node, a subgraph of its 1-hop neighborhood graph, which can be accurately embedded in its own coordinate system. In the noise-free case, the computed coordinates of the sensors in each patch must agree with their global positioning up to some unknown rigid motion, that is, up to translation, rotation and possibly reflection. In other words, to every patch, there corresponds an element of the Euclidean group, Euc(3), of rigid transformations in ℝ3, and the goal was to estimate the group elements that will properly align all the patches in a globally consistent way. Furthermore, 3D-ASAP successfully incorporates information specific to the molecule problem in structural biology, in particular information on known substructures and their orientation. In addition, we also propose 3D-spectral-partitioning (SP)-ASAP, a faster version of 3D-ASAP, which uses a spectral partitioning algorithm as a pre-processing step for dividing the initial graph into smaller subgraphs. Our extensive numerical simulations show that 3D-ASAP and 3D-SP-ASAP are very robust to high levels of noise in the measured distances and to sparse connectivity in the measurement graph, and compare favorably with similar state-of-the-art localization algorithms."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

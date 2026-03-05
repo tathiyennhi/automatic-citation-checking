@@ -1,0 +1,49 @@
+{
+  "doc_id": "6097",
+  "text": "We estimated IDS parameters using T = 10 in Algorithm 1. Further, we experimented with several proportion of trainingtesting data. We observed stable performance, i.e., accuracies on testing data converged to one value, for all training set sizes greater than 40%. Thus we use (50-50) proportion of training and testing data for next results. We report average accuracy obtained from 50-fold training-testing process. We compare the performance of the proposed IDS model with the ROVER algorithm and a pure FST based approach shown in [CITATION_1] . ROVER algorithm is used to merge multiple ASR outputs to reduce overall WERs [CITATION_2] . It aligns multiple ASR outputs i.e., word sequences of a given utterance using dynamic programming followed by voting a word token from each bin. The typical voting method is to chose most frequent word from each bin. Such majority voting results a merged transcription. Instead of using words as tokens, we consider phonemes as tokens followed by most frequent phone voting scheme in each bin. Table 3 shows that the accuracies obtained by proposed method are higher for individual as well as all combination of transcriptions as compared to ROVER and FST based approach [CITATION_3] . We observe absolute gain of 15% for Gujarati, 10% for Marathi and 15% for Telugu when compared to ROVER and 12%, 8% and 12% improve- [CITATION_4] . ROVER due to its structure cannot provide performance gains with just two transcriptions. However, we can clearly say that our model allows for soft-weighting and can thus provide gains of 10-16% over a single transcription. The performance of just two combinations is greater than the best possible performance provided by ROVER (combination of 6 transcriptions.) We observe that we continue get gains as more evidences are combined. We highlight that a transcription each from the three Indic languages are able to provide an accuracy of 69%. Finally, we also bring attention to the 4-Best decoding. We achieve an accuracy greater than 80% with just two mismatched workers. This should encourage the use of a mismatched crowd at least for a validation. Note that the performance of FST based approach [CITATION_5] degrades when 4-Indic and 6-all responses are combined. This is due to the fact that phoneme insertion bursts are not modeled in [CITATION_6] . This results in bad alignments when either transcription letters are less than the number of phonemes or transcription is too long compared to its phonetic length. As a result, it achieves very poor score in combining transcriptions using (4). However, our approach explicitly models phoneme edits and hence ",
+  "correct_citation": {
+    "[CITATION_1]": "7883731",
+    "[CITATION_2]": "18751160",
+    "[CITATION_3]": "7883731",
+    "[CITATION_4]": "7883731",
+    "[CITATION_5]": "7883731",
+    "[CITATION_6]": "7883731"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We compare the performance of the proposed IDS model with the ROVER algorithm and a pure FST based approach shown in [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "ROVER algorithm is used to merge multiple ASR outputs to reduce overall WERs [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Table 3 shows that the accuracies obtained by proposed method are higher for individual as well as all combination of transcriptions as compared to ROVER and FST based approach [CITATION_3] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "We observe absolute gain of 15% for Gujarati, 10% for Marathi and 15% for Telugu when compared to ROVER and 12%, 8% and 12% improve- [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Note that the performance of FST based approach [CITATION_5] degrades when 4-Indic and 6-all responses are combined."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "This is due to the fact that phoneme insertion bursts are not modeled in [CITATION_6] ."
+    }
+  ],
+  "bib_entries": {
+    "7883731": {
+      "title": "Acquiring speech transcriptions using mismatched crowdsourcing",
+      "abstract": "Transcribed speech is a critical resource for building statistical speech recognition systems. Recent work has looked towards soliciting transcriptions for large speech corpora from native speakers of the language using crowdsourcing techniques. However, native speakers of the target language may not be readily available for crowdsourcing. We examine the following question: can humans unfamiliar with the target language help transcribe? We follow an information-theoretic approach to this problem: (1) We learn the characteristics of a noisy channel that models the transcribers' systematic perception biases. (2) We use an error-correcting code, specifically a repetition code, to encode the inputs to this channel, in conjunction with a maximum-likelihood decoding rule. To demonstrate the feasibility of this approach, we transcribe isolated Hindi words with the help of Mechanical Turk workers unfamiliar with Hindi. We successfully recover Hindi words with an accuracy of over 85% (and 94% in a 4-best list) using a 15-fold repetition code. We also estimate the conditional entropy of the input to this channel (Hindi words) given the channel output (transcripts from crowdsourced workers) to be less than 2 bits; this serves as a theoretical estimate of the average number of bits of auxiliary information required for errorless recovery."
+    },
+    "18751160": {
+      "title": "A post-processing system to yield reduced word error rates: Recognizer output voting error reduction (rover)",
+      "abstract": "Describes a system developed at NIST to produce a composite automatic speech recognition (ASR) system output when the outputs of multiple ASR systems are available, and for which, in many cases, the composite ASR output has a lower error rate than any of the individual systems. The system implements a \"voting\" or rescoring process to reconcile differences in ASR system outputs. We refer to this system as the NIST Recognizer Output Voting Error Reduction (ROVER) system. As additional knowledge sources are added to an ASR system (e.g. acoustic and language models), error rates are typically decreased. This paper describes a post-recognition process which models the output generated by multiple ASR systems as independent knowledge sources that can be combined and used to generate an output with reduced error rate. To accomplish this, the outputs of multiple of ASR systems are combined into a single, minimal-cost word transition network (WTN) via iterative applications of dynamic programming (DP) alignments. The resulting network is searched by an automatic rescoring or \"voting\" process that selects the output sequence with the lowest score."
+    }
+  },
+  "generator": "llama-3.3-70b-versatile"
+}

@@ -1,0 +1,76 @@
+{
+  "doc_id": "42053",
+  "text": "In some experiments, we used both forward and backward language models. The English forward language model was obtained from TensorFlow 5 using the One Billion Word Benchmark 6 [CITATION_1] and has a perplexity of 30. As the code generating this pre-trained model is not available, we made use of a substitute which produces a higher perplexity language model. For the backward English language model and the Spanish forward and backward ones, they were generated using an LSTM based baseline 7 [CITATION_2] . This code estimates a forward language model and was adapted to estimate a backward language model. Language models were estimated using the One Billion Word benchmark. The vocabulary for the backward English model is the same as the pre-generated forward model. The perplexity for estimated backward English language model is 46; despite the discrepancy in perplexity with the forward language model the performance using this language model still improves the named entity recognition task. The vocabulary for the Spanish language models was generated using tokens with frequency > 2. The perplexity for the forward and backward Spanish language models are 56 and 57 respectively. Table 4 shows the performance of our best systems compared to the state-of-the-art results on ConLL dataset. We focus our comparison to the systems with the same experimental setups (standard train/val/test split, without the use of external label data). The best previous systems [CITATION_3] [CITATION_4] are based upon a similar architecture (CRF-RNN) to ours. [CITATION_5] employed LSTM for character-based embedding, while [CITATION_6] [CITATION_7] 84.57 81.83 [CITATION_8] 90.94 85.75 [CITATION_9] 91. From the results above, we can see that our innovations, the Stacked Residual connection and bias decoding consistently improve the performance across both data sets. However, the improvements from bias decoding is somewhat small in some models. The numerical gradient for training is noisy, and sometimes the SGD process might take several epochs to find an improvement on the development set. This happens especially on the English dataset because the base model trained with sequence level log-likelihood fits very well on the training set. Even with the boosting trick presented during the Experiments section, the training is still very slow. At first, we expected that the biases might give us some ideas about the trade-off between precision and recall similar to the thresholding technique for binary classification, i.e. the based log-likelihood model might favors precision or recall. However, from the analysis of the biases, we found no obvious trends favoring precision or recall.",
+  "correct_citation": {
+    "[CITATION_1]": "14136307",
+    "[CITATION_2]": "260422",
+    "[CITATION_3]": "10489017",
+    "[CITATION_4]": "6042994",
+    "[CITATION_5]": "6042994",
+    "[CITATION_6]": "10489017",
+    "[CITATION_7]": "384520",
+    "[CITATION_8]": "6042994",
+    "[CITATION_9]": "10489017"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The English forward language model was obtained from TensorFlow 5 using the One Billion Word Benchmark 6 [CITATION_1] and has a perplexity of 30."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For the backward English language model and the Spanish forward and backward ones, they were generated using an LSTM based baseline 7 [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The best previous systems [CITATION_3] [CITATION_4] are based upon a similar architecture (CRF-RNN) to ours."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "The best previous systems [CITATION_3] [CITATION_4] are based upon a similar architecture (CRF-RNN) to ours."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "[CITATION_5] employed LSTM for character-based embedding, while [CITATION_6] [CITATION_7] 84.57 81.83 [CITATION_8] 90.94 85.75 [CITATION_9] 91."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "[CITATION_5] employed LSTM for character-based embedding, while [CITATION_6] [CITATION_7] 84.57 81.83 [CITATION_8] 90.94 85.75 [CITATION_9] 91."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "[CITATION_5] employed LSTM for character-based embedding, while [CITATION_6] [CITATION_7] 84.57 81.83 [CITATION_8] 90.94 85.75 [CITATION_9] 91."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "[CITATION_5] employed LSTM for character-based embedding, while [CITATION_6] [CITATION_7] 84.57 81.83 [CITATION_8] 90.94 85.75 [CITATION_9] 91."
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "[CITATION_5] employed LSTM for character-based embedding, while [CITATION_6] [CITATION_7] 84.57 81.83 [CITATION_8] 90.94 85.75 [CITATION_9] 91."
+    }
+  ],
+  "bib_entries": {
+    "10489017": {
+      "title": "End-to-end sequence labeling via bi-directional lstm-cnns-crf",
+      "abstract": "State-of-the-art sequence labeling systems traditionally require large amounts of task-specific knowledge in the form of hand-crafted features and data pre-processing. In this paper, we introduce a novel neutral network architecture that benefits from both word- and character-level representations automatically, by using combination of bidirectional LSTM, CNN and CRF. Our system is truly end-to-end, requiring no feature engineering or data pre-processing, thus making it applicable to a wide range of sequence labeling tasks. We evaluate our system on two data sets for two sequence labeling tasks --- Penn Treebank WSJ corpus for part-of-speech (POS) tagging and CoNLL 2003 corpus for named entity recognition (NER). We obtain state-of-the-art performance on both the two data --- 97.55\\% accuracy for POS tagging and 91.21\\% F1 for NER."
+    },
+    "260422": {
+      "title": "Exploring the limits of language modeling",
+      "abstract": "In this work we explore recent advances in Recurrent Neural Networks for large scale Language Modeling, a task central to language understanding. We extend current models to deal with two key challenges present in this task: corpora and vocabulary sizes, and complex, long term structure of language. We perform an exhaustive study on techniques such as character Convolutional Neural Networks or Long-Short Term Memory, on the One Billion Word Benchmark. Our best single model significantly improves state-of-the-art perplexity from 51.3 down to 30.0 (whilst reducing the number of parameters by a factor of 20), while an ensemble of models sets a new record by improving perplexity from 41.0 down to 23.7. We also release these models for the NLP and ML community to study and improve upon."
+    },
+    "384520": {
+      "title": "Multilingual language processing from bytes",
+      "abstract": "We describe an LSTM-based model which we call Byte-to-Span (BTS) that reads text as bytes and outputs span annotations of the form [start, length, label] where start positions, lengths, and labels are separate entries in our vocabulary. Because we operate directly on unicode bytes rather than language-specific words or characters, we can analyze text in many languages with a single model. Due to the small vocabulary size, these multilingual models are very compact, but produce results similar to or better than the state-of- the-art in Part-of-Speech tagging and Named Entity Recognition that use only the provided training datasets (no external data sources). Our models are learning \"from scratch\" in that they do not rely on any elements of the standard pipeline in Natural Language Processing (including tokenization), and thus can run in standalone fashion on raw text."
+    },
+    "6042994": {
+      "title": "Neural architectures for named entity recognition",
+      "abstract": "State-of-the-art named entity recognition systems rely heavily on hand-crafted features and domain-specific knowledge in order to learn effectively from the small, supervised training corpora that are available. In this paper, we introduce two new neural architectures---one based on bidirectional LSTMs and conditional random fields, and the other that constructs and labels segments using a transition-based approach inspired by shift-reduce parsers. Our models rely on two sources of information about words: character-based word representations learned from the supervised corpus and unsupervised word representations learned from unannotated corpora. Our models obtain state-of-the-art performance in NER in four languages without resorting to any language-specific knowledge or resources such as gazetteers."
+    },
+    "14136307": {
+      "title": "One billion word benchmark for measuring progress in statistical language modeling",
+      "abstract": "We propose a new benchmark corpus to be used for measuring progress in statistical language modeling. With almost one billion words of training data, we hope this benchmark will be useful to quickly evaluate novel language modeling techniques, and to compare their contribution when combined with other advanced techniques. We show performance of several well-known types of language models, with the best results achieved with a recurrent neural network based language model. The baseline unpruned KneserNey 5-gram model achieves perplexity 67.6. A combination of techniques leads to 35% reduction in perplexity, or 10% reduction in cross-entropy (bits), over that baseline. The benchmark is available as a code.google.com project; besides the scripts needed to rebuild the training/held-out data, it also makes available log-probability values for each word in each of ten held-out data sets, for each of the baseline n-gram models."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

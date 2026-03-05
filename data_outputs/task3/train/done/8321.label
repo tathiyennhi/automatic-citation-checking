@@ -1,0 +1,20 @@
+{
+  "doc_id": "8321",
+  "text": "With our two-step approach to discrete event detection using intermediate 2D pose sequences, any missing or wrong motion information in the pose sequences has a direct influence on event detection. Our choice of body model explicitly includes keypoints defining the feet of the athlete, to ensure that stride-related events can be precisely located. Table 1 (mid-lower) shows the results in event detection when reducing the pose estimates to J = 16 keypoints, where the heel and toe tip keypoints are excluded. For high temporal precision with ∆t = 1 we observe a large drop in event detection performance, with a reduction of −9.0 in F 1 score. This Besides the body model, the motion information in pose sequences depends on the quality and precision of the keypoint predictions. Our variant of Mask R-CNN is specifically designed to improve spatial precision and overall pose estimation performance. Table 2 shows pose estimation results on a set of 900 annotated frames from the test set videos. We report pose estimation performance with the percentage of correct keypoints PCK@α, where a keypoint detection is considered correct if it is located within a fraction α of the torso diameter from the ground truth location [CITATION_1] . Our architectural modifications improve the performance of Mask R-CNN by +4.0 for high precision keypoint detections with PCK@0.1. This shows the effectiveness of keypoint re-estimation on a higher spatial resolution within Mask R-CNN. For lower keypoint precision with PCK@0.2, a smaller gain of +0.9 can be observed.",
+  "correct_citation": {
+    "[CITATION_1]": "12576235"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We report pose estimation performance with the percentage of correct keypoints PCK@α, where a keypoint detection is considered correct if it is located within a fraction α of the torso diameter from the ground truth location [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "12576235": {
+      "title": "MODEC: Multimodal Decomposable Models for Human Pose Estimation",
+      "abstract": "We propose a multimodal, decomposable model for articulated human pose estimation in monocular images. A typical approach to this problem is to use a linear structured model, which struggles to capture the wide range of appearance present in realistic, unconstrained images. In this paper, we instead propose a model of human pose that explicitly captures a variety of pose modes. Unlike other multimodal models, our approach includes both global and local pose cues and uses a convex objective and joint training for mode selection and pose estimation. We also employ a cascaded mode selection step which controls the trade-off between speed and accuracy, yielding a 5x speedup in inference and learning. Our model outperforms state-of-the-art approaches across the accuracy-speed trade-off curve for several pose datasets. This includes our newly-collected dataset of people in movies, FLIC, which contains an order of magnitude more labeled data for training and testing than existing datasets."
+    }
+  },
+  "generator": "llama-3.3-70b-versatile"
+}

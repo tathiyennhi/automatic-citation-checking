@@ -1,0 +1,20 @@
+{
+  "doc_id": "8089",
+  "text": "In QRMP (QoS-Aware Multicast Routing Protocol) [CITATION_1] two search modes are defined: single path mode and multiple path mode. The routing process starts with the single path mode, attempting to search only the unicast routing path traveled by the join request through the multicast tree. The join request message carries the QoS requirements. As it travels, it checks the resource availability of every intermediate node and proceeds only when the node has the required resources. If an intermediate node does not have the required resources it triggers the multiple path mode by sending a not acknowledge message to the previous node. Upon receipt the not acknowledge message the previous node sends the join request message to all neighbor nodes except those from which the join request and not acknowledge messages were previously received. Once a feasible branch is detected an acknowledge message is sent back along the branch that triggers to multiple path mode. If more then one acknowledge message arrives at this node, the node will select the best branch and reject all the others. In QRMP, tree construction occurs from new receiver in direction to tree instead of from first in-tree node found backwards to receiver, therefore it does seem adequate to asymmetric topologies. In multiple path mode the join request messages are flooded. Besides, it does not support the establishment of multicast routing ",
+  "correct_citation": {
+    "[CITATION_1]": "44418184"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In QRMP (QoS-Aware Multicast Routing Protocol) [CITATION_1] two search modes are defined: single path mode and multiple path mode."
+    }
+  ],
+  "bib_entries": {
+    "44418184": {
+      "title": "A qos-aware multicast routing protocol",
+      "abstract": "The future Internet is expected to support multicast applications with quality of service (QoS) requirements. To facilitate this, QoS multicast routing protocols are pivotal in enabling new receivers to join a multicast group. However, current routing protocols are either too restrictive in their search for a feasible path between a new receiver and the multicast tree, or burden the network with excessive overhead. We propose QMRP, a new Qos-aware multicast routing protocol. QMRP achieves scalability by significantly reducing the communication overhead in constructing a multicast tree, yet it retains a high chance of success. This is achieved by switching between single-path routing and multiple-path routing according to the current network conditions. The high-level design of QMRP makes it operable on top of any unicast routing algorithm both intra-domain and inter-domain. Its responsiveness is improved by using a termination mechanism which detects the failure as well as the success of routing without the use of timeout. In addition, QMRP always constructs loop-free multicast trees."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

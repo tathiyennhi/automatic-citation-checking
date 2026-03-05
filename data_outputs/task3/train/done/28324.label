@@ -1,0 +1,47 @@
+{
+  "doc_id": "28324",
+  "text": "We discuss four referential compression techniques in detail: In [CITATION_1] , RLZ, an approach based on self-indexing is described. It works as follows: the algorithm compresses input sequences with LZ77 encoding relative to the suffix-array of a reference sequence. Raw sequences are never stored; even very short matches to the reference are encoded, which makes the method impractical. In [CITATION_2] , RLZopt is presented as an extension of RLZ. The key aspect is longest increasing subsequence computation that allows to efficiently encode positions. It incorporates several improvements, including local look-ahead optimization. A LZ77-style compression scheme, called GDC, based on RLZopt was proposed in [CITATION_3] . The main difference is that a way for encoding approximate matches is introduced. Also, the Lempel-Ziv parsing scheme originally based on hashing is slightly altered in that the algorithm considers trade-offs between the length of matches and distance between matches. Compression is performed on input blocks with shared Huffman codes, enabling random access. Furthermore, GDC can be started in mode ultra, which enables compression against multiple references. FRESCO [CITATION_4] is a framework for referential sequence compression. The reference sequence is indexed with a 34-mer index and additional heuristics for fast and compact compression are introduced. All the above methods, in general, compress against a single reference only, with some exceptions:",
+  "correct_citation": {
+    "[CITATION_1]": "27311170",
+    "[CITATION_2]": "6420273",
+    "[CITATION_3]": "11397236",
+    "[CITATION_4]": "855008"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We discuss four referential compression techniques in detail: In [CITATION_1] , RLZ, an approach based on self-indexing is described. It works as follows: the algorithm compresses input sequences with LZ77 encoding relative to the suffix-array of a reference sequence. Raw sequences are never stored; even very short matches to the reference are encoded, which makes the method impractical."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In [CITATION_2] , RLZopt is presented as an extension of RLZ. The key aspect is longest increasing subsequence computation that allows to efficiently encode positions. It incorporates several improvements, including local look-ahead optimization."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "A LZ77-style compression scheme, called GDC, based on RLZopt was proposed in [CITATION_3] . The main difference is that a way for encoding approximate matches is introduced. Also, the Lempel-Ziv parsing scheme originally based on hashing is slightly altered in that the algorithm considers trade-offs between the length of matches and distance between matches."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "FRESCO [CITATION_4] is a framework for referential sequence compression. The reference sequence is indexed with a 34-mer index and additional heuristics for fast and compact compression are introduced."
+    }
+  ],
+  "bib_entries": {
+    "11397236": {
+      "title": "Robust Relative Compression of Genomes with Random Access",
+      "abstract": "Motivation: Storing, transferring and maintaining genomic databases becomes a major challenge because of the rapid technology progress in DNA sequencing and correspondingly growing pace at which the sequencing data are being produced. Efficient compression, with support for extraction of arbitrary snippets of any sequence, is the key to maintaining those huge amounts of data. ::: ::: Results: We present an LZ77-style compression scheme for relative compression of multiple genomes of the same species. While the solution bears similarity to known algorithms, it offers significantly higher compression ratios at compression speed over an order of magnitude greater. In particular, 69 differentially encoded human genomes are compressed over 400 times at fast compression, or even 1000 times at slower compression (the reference genome itself needs much more space). Adding fast random access to text snippets decreases the ratio to ~300. ::: ::: Availability: GDC is available at http://sun.aei.polsl.pl/gdc. ::: ::: Contact: sebastian.deorowicz@polsl.pl ::: ::: Supplementary Information:Supplementary data are available at Bioinformatics online."
+    },
+    "6420273": {
+      "title": "Optimized relative lempel-ziv compression of genomes",
+      "abstract": "High-throughput sequencing technologies make it possible to rapidly acquire large numbers of individual genomes, which, for a given organism, vary only slightly from one to another. Such repetitive and large sequence collections are a unique challange for compression. In previous work we described the RLZ algorithm, which greedily parses each genome into factors, represented as position and length pairs, which identify the corresponding material in a reference genome. RLZ provides effective compression in a single pass over the collection, and the final compressed representation allows rapid random access to arbitrary substrings. In this paper we explore several improvements to the RLZ algorithm. We find that simple non-greedy parsings can significantly improve compression performance and discover a strong correlation between the starting positions of long factors and their positions in the reference. This property is computationally inexpensive to detect and can be exploited to improve compression by nearly 50% compared to the original RLZ encoding, while simultaneously providing faster decompression."
+    },
+    "27311170": {
+      "title": "Relative Lempel-Ziv compression of genomes for large-scale storage and retrieval",
+      "abstract": "Self-indexes - data structures that simultaneously provide fast search of and access to compressed text - are promising for genomic data but in their usual form are not able to exploit the high level of replication present in a collection of related genomes. Our 'RLZ' approach is to store a self-index for a base sequence and then compress every other sequence as an LZ77 encoding relative to the base. For a collection of r sequences totaling N bases, with a total of s point mutations from a base sequence of length n, this representation requires just nHk(T) + s log n + s log N/s + O(s) bits. At the cost of negligible extra space, access to l consecutive symbols requires O(l + log n) time. Our experiments show that, for example, RLZ can represent individual human genomes in around 0.1 bits per base while supporting rapid access and using relatively little memory."
+    },
+    "855008": {
+      "title": "FRESCO: Referential Compression of Highly Similar Sequences",
+      "abstract": "In many applications, sets of similar texts or sequences are of high importance. Prominent examples are revision histories of documents or genomic sequences. Modern high-throughput sequencing technologies are able to generate DNA sequences at an ever-increasing rate. In parallel to the decreasing experimental time and cost necessary to produce DNA sequences, computational requirements for analysis and storage of the sequences are steeply increasing. Compression is a key technology to deal with this challenge. Recently, referential compression schemes, storing only the differences between a to-be-compressed input and a known reference sequence, gained a lot of interest in this field. In this paper, we propose a general open-source framework to compress large amounts of biological sequence data called Framework for REferential Sequence COmpression (FRESCO). Our basic compression algorithm is shown to be one to two orders of magnitudes faster than comparable related work, while achieving similar compression ratios. We also propose several techniques to further increase compression ratios, while still retaining the advantage in speed: 1) selecting a good reference sequence; and 2) rewriting a reference sequence to allow for better compression. In addition, we propose a new way of further boosting the compression ratios by applying referential compression to already referentially compressed files (second-order compression). This technique allows for compression ratios way beyond state of the art, for instance, 4,000:1 and higher for human genomes. We evaluate our algorithms on a large data set from three different species (more than 1,000 genomes, more than 3 TB) and on a collection of versions of Wikipedia pages. Our results show that real-time compression of highly similar sequences at high compression ratios is possible on modern hardware."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

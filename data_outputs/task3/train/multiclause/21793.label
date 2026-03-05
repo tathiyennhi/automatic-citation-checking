@@ -1,0 +1,65 @@
+{
+  "doc_id": "21793",
+  "text": "In general, other de novo approaches rely on peak intensity alone for initial filtering of the spectrum. Pep-Novo uses a sliding window that spans a range of 56 Da. It retains the top three peaks in ranked by intensity in each window [CITATION_1] . ms2preproc uses the same sliding window approach, in addition to other intensity based methods [CITATION_2] . MSNovo also uses a sliding window for peak selection. It selects the 6 most intense peaks in each 100 Da window [CITATION_3] . In contrast, PILOT treats the whole spectrum as a single window and selects the top 125 most intense peaks [CITATION_4] . pNovo similarly treats the entire sepctrum as a single window and selects the 100 most intense peaks [CITATION_5] . This work improves upon our previous ion classifier [CITATION_6] . In particular, we improved our modeling of the principal isotope and complementary peak features, described in greater detail below. We also demonstrate the effectiveness of our approach on a much larger dataset, and provide additional analysis.",
+  "correct_citation": {
+    "[CITATION_1]": "15979330",
+    "[CITATION_2]": "1173893",
+    "[CITATION_3]": "10306183",
+    "[CITATION_4]": "26067698",
+    "[CITATION_5]": "3551728",
+    "[CITATION_6]": "15672534"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Pep-Novo uses a sliding window that spans a range of 56 Da. It retains the top three peaks in ranked by intensity in each window [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "ms2preproc uses the same sliding window approach, in addition to other intensity based methods [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "MSNovo also uses a sliding window for peak selection. It selects the 6 most intense peaks in each 100 Da window [CITATION_3] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In contrast, PILOT treats the whole spectrum as a single window and selects the top 125 most intense peaks [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "pNovo similarly treats the entire sepctrum as a single window and selects the 100 most intense peaks [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "This work improves upon our previous ion classifier [CITATION_6] ."
+    }
+  ],
+  "bib_entries": {
+    "15979330": {
+      "title": "PepNovo: de novo peptide sequencing via probabilistic network modeling",
+      "abstract": "We present a novel scoring method for de novo interpretation of peptides from tandem mass spectrometry data. Our scoring method uses a probabilistic network whose structure reflects the chemical and physical rules that govern the peptide fragmentation. We use a likelihood ratio hypothesis test to determine whether the peaks observed in the mass spectrum are more likely to have been produced under our fragmentation model than under a model that treats peaks as random events. We tested our de novo algorithm PepNovo on ion trap data and achieved results that are superior to popular de novo peptide sequencing algorithms. PepNovo can be accessed via the URL http://www-cse.ucsd.edu/groups/bioinformatics/software.html."
+    },
+    "15672534": {
+      "title": "A Neural Network Approach to the Identification of b-/y-ions in MS/MS Spectra",
+      "abstract": "The effectiveness of de novo peptide sequencing algorithms depends on the quality of MS/MS spectra. Since most of the peaks in a spectrum are uninterpretable ‘noise’ peaks it is necessary to carefully pre-filter the spectra to identify the ‘signal’ peaks that likely correspond to b-/y-ions. Selecting the optimal set of peaks for candidate peptide generation is essential for obtaining accurate results. A careful balance must be maintained between the precision and recall of peaks that are selected for further processing and candidate peptide generation. If too many peaks are selected the search space will be too large and the problem becomes intractable. If too few peaks are selected cleavage sites will be missed, the resulting candidate peptides will have large gaps, and sequencing results will be poor. For this reason pre-filtering of MS/MS spectra and accurate selection of peaks for peptide candidate generation is essential to any de novo peptide sequencing algorithm. We present a novel neural network approach for the selection of b-/y-ions using known fragmentation characteristics, and leveraging neural network probability estimates of flanking and complementary ions. We show a significant improvement in precision and recall of peaks corresponding to b-/y-ions and a reduction in search space over approaches used by other de novo peptide sequencing algorithms."
+    },
+    "1173893": {
+      "title": "When less can yield more -Computational preprocessing of MS/MS spectra for peptide identification",
+      "abstract": "The effectiveness of database search algorithms, such as Mascot, Sequest and ProteinPilot is limited by the quality of the input spectra: spurious peaks in MS/MS spectra can jeopardize the correct identification of peptides or reduce their score significantly. Consequently, an efficient preprocessing of MS/MS spectra can increase the sensitivity of peptide identification at reduced file sizes and run time without compromising its specificity. We investigate the performance of 25 MS/MS preprocessing methods on various data sets and make software for improved preprocessing of mgf/dta-files freely available from http://hci.iwr.uni-heidelberg.de/mip/proteomics or http://www.childrenshospital.org/research/steenlab."
+    },
+    "26067698": {
+      "title": "De Novo Peptide Identification via Tandem Mass Spectrometry and Integer Linear Optimization",
+      "abstract": "A novel methodology for the automated de novo identification of peptides via integer linear optimization (also referred to as integer linear programming or ILP) and tandem mass spectrometry is presented in this article. The various features of the mathematical model are presented and examples are used to illustrate the key concepts of the proposed approach. A variety of challenging peptide identification problems, accompanied by a comparative study with five state-of-the-art methods, are examined to illustrate the proposed method's ability to address (a) residue-dependent fragmentation properties that result in missing ion peaks and (b) the variability of resolution in different mass analyzers. A preprocessing algorithm is utilized to identify important m/z values in the tandem mass spectrum. Missing peaks, due to residue-dependent fragmentation characteristics, are dealt with using a two-stage algorithmic framework. A cross-correlation approach is used to resolve missing amino acid assignments and to select the most probable peptide by comparing the theoretical spectra of the candidate sequences that were generated from the ILP sequencing stages with the experimental tandem mass spectrum. The novel, proposed de novo method, denoted as PILOT, is compared to existing popular methods such as Lutefisk, PEAKS, PepNovo, EigenMS, and NovoHMM for a set of spectra resulting from QTOF and ion trap instruments."
+    },
+    "10306183": {
+      "title": "MSNovo: a dynamic programming algorithm for de novo peptide sequencing via tandem mass spectrometry",
+      "abstract": "Tandem mass spectrometry (MS/MS) has become the experimental method of choice for high-throughput proteomics-based biological discovery. The two primary ways of analyzing MS/MS data are database search and de novo sequencing. In this paper, we present a new approach to peptide de novo sequencing, called MSNovo, which has the following advanced features. (1) It works on data generated from both LCQ and LTQ mass spectrometers and interprets singly, doubly, and triply charged ions. (2) It integrates a new probabilistic scoring function with a mass array-based dynamic programming algorithm. The simplicity of the scoring function, with only 6−10 parameters to be trained, avoids the problem of overfitting and allows MSNovo to be adopted for other machines and data sets easily. The mass array data structure explicitly encodes all possible peptides and allows the dynamic programming algorithm to find the best peptide. (3) Compared to existing programs, MSNovo predicts peptides as well as sequence tags with a high..."
+    },
+    "3551728": {
+      "title": "pNovo: De novo Peptide Sequencing and Identification Using HCD Spectra",
+      "abstract": "De novo peptide sequencing has improved remarkably in the past decade as a result of better instruments and computational algorithms. However, de novo sequencing can correctly interpret only ∼30% of high- and medium-quality spectra generated by collision-induced dissociation (CID), which is much less than database search. This is mainly due to incomplete fragmentation and overlap of different ion series in CID spectra. In this study, we show that higher-energy collisional dissociation (HCD) is of great help to de novo sequencing because it produces high mass accuracy tandem mass spectrometry (MS/MS) spectra without the low-mass cutoff associated with CID in ion trap instruments. Besides, abundant internal and immonium ions in the HCD spectra can help differentiate similar peptide sequences. Taking advantage of these characteristics, we developed an algorithm called pNovo for efficient de novo sequencing of peptides from HCD spectra. pNovo gave correct identifications to 80% or more of the HCD spectra iden..."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

@@ -1,0 +1,30 @@
+{
+  "doc_id": "30422",
+  "text": "An iterative predictor-corrector algorithm to allow for nonlinearity in the system is implemented. Fig. 1 shows the overall algorithm both in serial and parallel, including the nonlinear and time-stepping loops. The diagram also indicates the key loops within sections of the code. The solution to this form of equations has been achieved utilizing a Krylov subspace method; in particular, a biconjugate gradient (BiCG) solver [CITATION_1] has been implemented here, owing to the nonsymmetric and sparse nature of the matrices (½a and ½b). In particular, the iterative solver allows the full maintenance of matrix sparsity in memory during solution, i.e., it does not store zero values and therefore enables larger scale analyses to be undertaken, in comparison to many direct schemes, e.g., Gaussian elimination, where full sparsity cannot be maintained. The pseudocode for the BiCG iterative solver is shown in Fig. 2 (after [CITATION_2] , where A = matrix; M = preconditioner, i.e., a method of solving a similar system of equations of which there are a variety of types; i = integer counter; α, β and ρ = real numbers; and the remainder are vector quantities. Matrix A, in the nomenclature after [CITATION_3] is equivalent to ½a in Eq. (4), b is equivalent to ½b, and x is equivalent to ϕ. The solver can be summarized as a series of nine vectorvector calculations and 2 matrix-vector calculations and a single real number division, assuming that the preconditioner, M, is a vector quantity, e.g., the Jacobi preconditioner.",
+  "correct_citation": {
+    "[CITATION_1]": "15815197",
+    "[CITATION_2]": "15815197",
+    "[CITATION_3]": "15815197"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The solution to this form of equations has been achieved utilizing a Krylov subspace method; in particular, a biconjugate gradient (BiCG) solver [CITATION_1] has been implemented here,"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The pseudocode for the BiCG iterative solver is shown in Fig. 2 (after [CITATION_2]"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Matrix A, in the nomenclature after [CITATION_3] is equivalent to ½a in Eq. (4),"
+    }
+  ],
+  "bib_entries": {
+    "15815197": {
+      "title": "Templates for the solution of linear systems: Building blocks for iterative methods",
+      "abstract": "In this book, which focuses on the use of iterative methods for solving large sparse systems of linear equations, templates are introduced to meet the needs of both the traditional user and the high-performance specialist. Templates, a description of a general algorithm rather than the executable object or source code more commonly found in a conventional software library, offer whatever degree of customization the user may desire."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

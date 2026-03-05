@@ -1,0 +1,38 @@
+{
+  "doc_id": "53505",
+  "text": "In many practical applications, the underlying environments that an agent maneuvers in are often dynamic; therefore, it is necessary to reconstruct their corresponding DMs whenever changes of cell states are observed (e.g., an obstacle is inserted, removed, reshaped, or transferred). Since such changes usually occur within a relatively neighboring area around the agent, only portions of the previously constructed DM need repair. To make use of this localized feature, existing algorithms such as Dynamic Brushfire [CITATION_1] and its subsequent variants [CITATION_2] [CITATION_3] aim to speed up the reconstruction by launching a wavefront from the source of the state changes to incrementally repair the distance values, rather than reconstructing the whole DM from scratch. With such a localized mechanism, only those cells that are actually affected by the wavefront need to be handled; thus, in most cases, the computation costs can be efficiently reduced.",
+  "correct_citation": {
+    "[CITATION_1]": "3696504",
+    "[CITATION_2]": "1535392",
+    "[CITATION_3]": "59458453"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To make use of this localized feature, existing algorithms such as Dynamic Brushfire [CITATION_1] and its subsequent variants [CITATION_2] [CITATION_3] aim to speed up the reconstruction by launching a wavefront from the source of the state changes to incrementally repair the distance values, rather than reconstructing the whole DM from scratch."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "To make use of this localized feature, existing algorithms such as Dynamic Brushfire [CITATION_1] and its subsequent variants [CITATION_2] [CITATION_3] aim to speed up the reconstruction by launching a wavefront from the source of the state changes to incrementally repair the distance values, rather than reconstructing the whole DM from scratch."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "To make use of this localized feature, existing algorithms such as Dynamic Brushfire [CITATION_1] and its subsequent variants [CITATION_2] [CITATION_3] aim to speed up the reconstruction by launching a wavefront from the source of the state changes to incrementally repair the distance values, rather than reconstructing the whole DM from scratch."
+    }
+  ],
+  "bib_entries": {
+    "3696504": {
+      "title": "Incremental Reconstruction of Generalized Voronoi Diagrams on Grids",
+      "abstract": "We present an incremental algorithm for constructing and reconstructing Generalized Voronoi Diagrams (GVDs) on grids. Our algorithm, Dynamic Brushfire, uses techniques from the path planning community to efficiently update GVDs when the underlying environment changes or when new information concerning the environment is received. Dynamic Brushfire is an order of magnitude more efficient than current approaches. In this paper we present the algorithm, compare it to current approaches on several experimental domains involving both simulated and real data, and demonstrate its usefulness for multirobot path planning."
+    },
+    "59458453": {
+      "title": "Dynamic Detection of Topological Information from Grid-Based Generalized Voronoi Diagrams",
+      "abstract": "In the context of robotics, the grid-based Generalized Voronoi Diagrams (GVDs) are widely used by mobile robots to represent their surrounding area. Current approaches for incrementally constructing GVDs mainly focus on providing metric skeletons of underlying grids, while the connectivity among GVD vertices and edges remains implicit, which makes high-level spatial reasoning tasks impractical. In this paper, we present an algorithm named Dynamic Topology Detector (DTD) for extracting a GVD with topological information from a grid map. Beyond the construction and reconstruction of a GVD on grids, DTD further extracts connectivity among the GVD edges and vertices. DTD also provides efficient repair mechanism to treat with local changes, making it work well in dynamic environments. Simulation tests in representative scenarios demonstrate that (1) compared with the static algorithms, DTD generally makes an order of magnitude improvement regarding computation times when working in dynamic environments; (2) with negligible extra computation, DTD detects topologies not computed by existing incremental algorithms. We also demonstrate the usefulness of the resulting topological information for high-level path planning tasks."
+    },
+    "1535392": {
+      "title": "Efficient Grid-Based Spatial Representations for Robot Navigation in Dynamic Environments",
+      "abstract": "In robotics, grid maps are often used for solving tasks like collision checking, path planning, and localization. Many approaches to these problems use Euclidean distance maps (DMs), generalized Voronoi diagrams (GVDs), or configuration space (c-space) maps. A key challenge for their application in dynamic environments is the efficient update after potential changes due to moving obstacles or when mapping a previously unknown area. To this end, this paper presents novel algorithms that perform incremental updates that only visit cells affected by changes. Furthermore, we propose incremental update algorithms for DMs and GVDs in the configuration space of non-circular robots. These approaches can be used to implement highly efficient collision checking and holonomic path planning for these platforms. Our c-space representations benefit from parallelization on multi-core CPUs and can also be integrated with other state-of-the-art path planners such as rapidly-exploring random trees. In various experiments using real-world data we show that our update strategies for DMs and GVDs require substantially less cell visits and computation time compared to previous approaches. Furthermore, we demonstrate that our GVD algorithm deals better with non-convex structures, such as indoor areas. All our algorithms consider actual Euclidean distances rather than grid steps and are easy to implement. An open source implementation is available online."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

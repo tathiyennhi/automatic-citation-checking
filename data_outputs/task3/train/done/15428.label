@@ -1,0 +1,29 @@
+{
+  "doc_id": "15428",
+  "text": "where s is the pathway score, w is the centrality vector and d is the node-level statistic vector for the pathway nodes. The transformation function f acts on the vectorized production of w and d. In Equation (2), d is frequently taken as t-values of the node expression vectors. CePa provides options for three node-level statistics: t-value, absolute t-value and square of t-value, in which the latter two options are recommended because they can capture the both up-and downregulation in the pathway. Nevertheless, user-defined d can also be applied in the package, such as signal-to-noise ratio or other robust methods. The transformation function f provided in CePa includes max, min, median, mean, sum and rank statistic. Similarly, self-defined transformation of f is also allowed in CePa. With such flexible design for the package, many current gene-set enrichment analysis methods, such as SAM-GS [CITATION_1] and maxmean [CITATION_2] can be extended. The GSA extension has been evaluated on a p53 dataset. Compared with standard GSA, CePa can find more significant pathways and reveal more details about the key regulations in the pathways (see Supplementary Data).",
+  "correct_citation": {
+    "[CITATION_1]": "15569265",
+    "[CITATION_2]": "14113440"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "With such flexible design for the package, many current gene-set enrichment analysis methods, such as SAM-GS [CITATION_1] and maxmean [CITATION_2] can be extended."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "With such flexible design for the package, many current gene-set enrichment analysis methods, such as SAM-GS [CITATION_1] and maxmean [CITATION_2] can be extended."
+    }
+  ],
+  "bib_entries": {
+    "14113440": {
+      "title": "On testing the significance of sets of genes",
+      "abstract": "This paper discusses the problem of identifying dieren tially expressed groups of genes from a microarray experiment. The groups of genes are externally dened, for example, sets of gene pathways derived from biological databases. Our starting point is the interesting Gene Set Enrichment Analysis (GSEA) procedure of Subramanian et al. (2005). We study the problem in some generality and propose two potential improvements to GSEA: the maxmean statistic for summarizing gene-sets, and restandardization for more accurate inferences. We discuss a variety of examples and extensions, including the use of gene-set scores for class predictions. We also describe a new R language package GSA that implements our ideas."
+    },
+    "15569265": {
+      "title": "Improving gene set analysis of microarray data by SAM-GS",
+      "abstract": "BackgroundGene-set analysis evaluates the expression of biological pathways, or a priori defined gene sets, rather than that of individual genes, in association with a binary phenotype, and is of great biologic interest in many DNA microarray studies. Gene Set Enrichment Analysis (GSEA) has been applied widely as a tool for gene-set analyses. We describe here some critical problems with GSEA and propose an alternative method by extending the individual-gene analysis method, Significance Analysis of Microarray (SAM), to gene-set analyses (SAM-GS).ResultsUsing a mouse microarray dataset with simulated gene sets, we illustrate that GSEA gives statistical significance to gene sets that have no gene associated with the phenotype (null gene sets), and has very low power to detect gene sets in which half the genes are moderately or strongly associated with the phenotype (truly-associated gene sets). SAM-GS, on the other hand, performs very well. The two methods are also compared in the analyses of three real microarray datasets and relevant pathways, the diverging results of which clearly show advantages of SAM-GS over GSEA, both statistically and biologically. In a microarray study for identifying biological pathways whose gene expressions are associated with p53 mutation in cancer cell lines, we found biologically relevant performance differences between the two methods. Specifically, there are 31 additional pathways identified as significant by SAM-GS over GSEA, that are associated with the presence vs. absence of p53. Of the 31 gene sets, 11 actually involve p53 directly as a member. A further 6 gene sets directly involve the extrinsic and intrinsic apoptosis pathways, 3 involve the cell-cycle machinery, and 3 involve cytokines and/or JAK/STAT signaling. Each of these 12 gene sets, then, is in a direct, well-established relationship with aspects of p53 signaling. Of the remaining 8 gene sets, 6 have plausible, if less well established, links with p53.ConclusionWe conclude that GSEA has important limitations as a gene-set analysis approach for microarray experiments for identifying biological pathways associated with a binary phenotype. As an alternative statistically-sound method, we propose SAM-GS. A free Excel Add-In for performing SAM-GS is available for public use."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

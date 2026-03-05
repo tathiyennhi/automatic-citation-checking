@@ -1,0 +1,52 @@
+{
+  "doc_id": "51777",
+  "text": "Parser Evaluation We evaluate our parser with both unlabeled attachment accuracy of correct words and precision and recall of finding the dependencies of correct words. 7 The second classifier is trained with 3 iterations in the first step and 3 iterations in the second step. We use the attachment accuracy of the parse tree of the correct sentences (without disfluencies) as the upper-bound attachment score and parsed tree of the disfluent sentences (without disfluency detection) as our lower-bound attachment score. As we can see in Table 1 , WAP does a slightly better job parsing sentences. The upper-bound parsing accuracy shows that we do not lose too much information while jointly detecting disfluencies. Our parser is not comparable to [CITATION_1] and [CITATION_2] , since we use dependency relations for evaluation instead of constituencies. [CITATION_3] , MS = [CITATION_4] and QL = [CITATION_5] .",
+  "correct_citation": {
+    "[CITATION_1]": "18837411",
+    "[CITATION_2]": "10905562",
+    "[CITATION_3]": "13391708",
+    "[CITATION_4]": "10905562",
+    "[CITATION_5]": "6193081"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Our parser is not comparable to [CITATION_1] and [CITATION_2] , since we use dependency relations for evaluation instead of constituencies."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Our parser is not comparable to [CITATION_1] and [CITATION_2] , since we use dependency relations for evaluation instead of constituencies."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "[CITATION_3] , MS = [CITATION_4] and QL = [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "[CITATION_3] , MS = [CITATION_4] and QL = [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "[CITATION_3] , MS = [CITATION_4] and QL = [CITATION_5] ."
+    }
+  ],
+  "bib_entries": {
+    "6193081": {
+      "title": "Disfluency detection using multi-step stacked learning",
+      "abstract": "In this paper, we propose a multi-step stacked learning model for disfluency detection. Our method incorporates refined n-gram features step by step from different word sequences. First, we detect filler words. Second, edited words are detected using n-gram features extracted from both the original text and filler filtered text. In the third step, additional n-gram features are extracted from edit removed texts together with our newly induced in-between features to improve edited word detection. We use Max-Margin Markov Networks (M 3 Ns) as the classifier with the weighted hamming loss to balance precision and recall. Experiments on the Switchboard corpus show that the refined n-gram features from multiple steps and M 3 Ns with weighted hamming loss can significantly improve the performance. Our method for disfluency detection achieves the best reported F-score 0.841 without the use of additional resources. 1"
+    },
+    "13391708": {
+      "title": "Early deletion of fillers in processing conversational speech",
+      "abstract": "This paper evaluates the benefit of deleting fillers (e.g. you know, like) early in parsing conversational speech. Readability studies have shown that disfluencies (fillers and speech repairs) may be deleted from transcripts without compromising meaning (Jones et al., 2003), and deleting repairs prior to parsing has been shown to improve its accuracy (Charniak and Johnson, 2001). We explore whether this strategy of early deletion is also beneficial with regard to fillers. Reported experiments measure the effect of early deletion under in-domain and out-of-domain parser training conditions using a state-of-the-art parser (Charniak, 2000). While early deletion is found to yield only modest benefit for in-domain parsing, significant improvement is achieved for out-of-domain adaptation. This suggests a potentially broader role for disfluency modeling in adapting text-based tools for processing conversational speech."
+    },
+    "18837411": {
+      "title": "A tag-based noisy channel model of speech repairs",
+      "abstract": "This paper describes a noisy channel model of speech repairs, which can identify and correct repairs in speech transcripts. A syntactic parser is used as the source model, and a novel type of TAG-based transducer is the channel model. The use of TAG is motivated by the intuition that the reparandum is a \"rough copy\" of the repair. The model is trained and tested on the Switchboard disfluency-annotated corpus."
+    },
+    "10905562": {
+      "title": "A unified syntactic model for parsing fluent and disfluent speech",
+      "abstract": "This paper describes a syntactic representation for modeling speech repairs. This representation makes use of a right corner transform of syntax trees to produce a tree representation in which speech repairs require very few special syntax rules, making better use of training data. PCFGs trained on syntax trees using this model achieve high accuracy on the standard Switchboard parsing task."
+    }
+  },
+  "generator": "codex:gpt-5.3"
+}

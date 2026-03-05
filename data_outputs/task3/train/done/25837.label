@@ -1,0 +1,20 @@
+{
+  "doc_id": "25837",
+  "text": "In our proposed dynamic node/edge coverage condition, each broadcast message piggybacks with it the information of its q most-recently visited nodes (q is a small number such as 2 or 3). A visited node for a message is a node that has forwarded the message. Correspondingly, a visited edge for a message is an edge that has forwarded the message. Then, when a node applies the coverage condition to determine its status for a received message, it considers the information of visited nodes/edges of this message as well as local topology information. The dynamic version of the node and edge coverage conditions resemble the static ones [CITATION_1] except that the node and edge priorities are updated based on the piggybacked broadcast state information. Note that the updated new priority is only valid for the corresponding message. Therefore, a node may have a different status (visited or not, forwarding or not) and priorities for different messages. In the following, an unmarked status represents a non-forwarding status. A dominating neighbor means that there is an incoming edge from that neighbor. A absorbant neighbor means that there is an outgoing edge to that neighbor. Note that each node v has a priority p(v) and such a priority is totally ordered within its h-hop neighborhood, which could be the node ID, node degree, or energy level based on different applications.",
+  "correct_citation": {
+    "[CITATION_1]": "15095877"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The dynamic version of the node and edge coverage conditions resemble the static ones [CITATION_1] except that the node and edge priorities are updated based on the piggybacked broadcast state information."
+    }
+  ],
+  "bib_entries": {
+    "15095877": {
+      "title": "Efficient backbone construction methods in MANETs using directional antennas",
+      "abstract": "In this paper, we consider the issue of constructing an energy-efficient virtual network backbone in mobile ad hoc networks (MANETs) for broadcasting applications using directional antennas. In directional antenna models, the transmission/reception range is divided into several sectors and one or more sectors can be switched on for transmission. Therefore, data forwarding can be restricted to certain directions (sectors), and both energy consumption and interference can be reduced. We develop the notation of directional network backbone using the directional antenna model, and form the problem of the directional connected dominating set (DCDS) which is an extreme case of the directional network backbone using an unlimited number of directional antennas. The minimum DCDS problem is proved to be NP-complete. A localized heuristic algorithm for constructing a small DCDS is proposed. Performance analysis includes an analytical study in terms of an approximation ratio and a simulation study on the proposed algorithms using a custom simulator."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

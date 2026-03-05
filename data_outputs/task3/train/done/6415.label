@@ -1,0 +1,20 @@
+{
+  "doc_id": "6415",
+  "text": "Here we use local binary convolution [CITATION_1] to add sparse feature extraction process into DHM, making it DSHM. Every original convolution layer is replaced by two convolution layers and a ReLU gate. The first convolution layer is fixed and does not introduce any learnable parameters. The output feature maps of the first layer is passed to the ReLU gate, whose outputs are linear combined by the second 1 by 1 convolution layer. During initialization, some entries in the convolution kernel of the first layer are randomly assigned to be zero. The remaining entries are randomly assigned to 1 or -1 with probability 0.5 for each option. The percentage of non-zero entries in the fixed convolution kernel is defined as the sparsity level. In the experiment, we use 16 intermediate channels (output feature map number of the first layer) for all local binary convolution layers. DHM (separated) is used and other network parameters are consistent with the former experiments without sparse convolution layer.",
+  "correct_citation": {
+    "[CITATION_1]": "10388883"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Here we use local binary convolution [CITATION_1] to add sparse feature extraction process into DHM, making it DSHM."
+    }
+  ],
+  "bib_entries": {
+    "10388883": {
+      "title": "Local binary convolutional neural networks",
+      "abstract": "We propose local binary convolution (LBC), an efficient alternative to convolutional layers in standard convolutional neural networks (CNN). The design principles of LBC are motivated by local binary patterns (LBP). The LBC layer comprises of a set of fixed sparse pre-defined binary convolutional filters that are not updated during the training process, a non-linear activation function and a set of learnable linear weights. The linear weights combine the activated filter responses to approximate the corresponding activated filter responses of a standard convolutional layer. The LBC layer affords significant parameter savings, 9x to 169x in the number of learnable parameters compared to a standard convolutional layer. Furthermore, the sparse and binary nature of the weights also results in up to 9x to 169x savings in model size compared to a standard convolutional layer. We demonstrate both theoretically and experimentally that our local binary convolution layer is a good approximation of a standard convolutional layer. Empirically, CNNs with LBC layers, called local binary convolutional neural networks (LBCNN), achieves performance parity with regular CNNs on a range of visual datasets (MNIST, SVHN, CIFAR-10, and ImageNet) while enjoying significant computational savings."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

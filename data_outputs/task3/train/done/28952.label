@@ -1,0 +1,20 @@
+{
+  "doc_id": "28952",
+  "text": "The HSDPA system has two kinds of SFs. The SF is 16 the data symbol and 256 for the pilot symbol. If the SF of pilot symbol is the same as the number of equalizer taps, it can be used easily as a reference signal because one pilot symbol is used as a reference signal. Unfortunately, because the SF of the pilot symbol is 256, the required taps are too large to enable the equalizer to be implemented. We therefore need to find a suitable reference signal for the equalizer. In the chiplevel equalizer of the HSDPA system, if we calculate the tap weights by using a single pilot symbol, the reference signal is inadequate because the receiver only knows the pilot symbol 1 + j and the scrambling/spreading code of the pilot symbol. Hence, a different approach is needed to solve this problem. In [CITATION_1] , a new structure was proposed for the support of a fixed SF of the pilot. Figure 2 shows a block diagram of that structure. The main idea of this system is that the despreading and descrambling after FIR filtering achieves the same result as the despreading and descrambling before FIR filtering. Because the lack reference data is solved, there is no constraint in selecting a suitable algorithm for the FIR filtering. Algorithms for the FIR filter can be a least mean square (LMS) or a square root recursive least square (RLS). The performance of the LMS algorithm is worse than that of the RLS algorithm. However, in contrast to the performance, the computational complexity of the LMS algorithm is less than that of the RLS algorithm. A tradeoff between computational complexity and performance should therefore be considered.",
+  "correct_citation": {
+    "[CITATION_1]": "57490993"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In [CITATION_1] , a new structure was proposed for the support of a fixed SF of the pilot."
+    }
+  ],
+  "bib_entries": {
+    "57490993": {
+      "title": "Pilot-aided adaptive chip equalizer receiver for interference suppression in DS-CDMA forward link",
+      "abstract": "In the forward link of DS-CDMA systems, the multipath propagation channel destroys the orthogonality of the spreading codes and therefore causes multi-user interference (MUI). Ideal non-adaptive zero-forcing (ZF) and MMSE chip equalizer receivers have been proposed to restore the orthogonality and suppress the MUI in DS-CDMA systems employing aperiodic scrambling codes. However, these receivers can only deal with slow fading multipath channels. Practical adaptive implementations of the chip equalizer receiver that can track fast fading multipath channels, are nor straightforward, since no continuous training chip sequence is available. In this paper we propose a new pilot-aided adaptive fractionally-spaced chip equalizer receiver; that is well-suited for fast fading multipath channels. By exploiting the presence of a continuous pilot signal in forthcoming third generation cellular and LEO satellite communication systems, it continuously updates at the symbol rate using a simple NLMS or a more advanced RLS adaptive scheme. The proposed receiver out-performs the RAKE receiver with perfect channel knowledge over a wide range of normalized Doppler spreads, with a complexity that is still independent of the number of users."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

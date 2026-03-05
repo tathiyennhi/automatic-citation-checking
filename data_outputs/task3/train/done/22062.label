@@ -1,0 +1,20 @@
+{
+  "doc_id": "22062",
+  "text": "DNN architecture is used as a feature extractor and a classifier. As mentioned earlier, we evaluate the performance of our approach by using two feature sets, MFCCs and SDC. For the MFCCs, a speech utterance is divided into frames of 25 ms. In total, 39 features, one energy and 12-MFCCs with its first and second derivatives, are extracted for each frame. 39 SDC features are extracted based on the MFCCs features as in [CITATION_1] . The number of nodes in the input layer for both feature sets is equal to 39×n features, where n represents the target frame concatenated with the preceding and following (n-1)/2 frames in the utterance. In the literature, n is selected to be an odd number between 5 and 21. In our work, n is chosen to be 11. 5 hidden layers are used, and 1024 nodes in each layer. The number of output labels equals the total number of speakers in each class. Training data is divided into mini-batches. Each mini-batch consists of 1024 random utterances. In the training process, 12 epochs are used. The learning rate is initially set to 0.1 for the first 6 epochs, and then it is decreased to one-half its initial value for the remaining epochs.",
+  "correct_citation": {
+    "[CITATION_1]": "11122632"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "39 SDC features are extracted based on the MFCCs features as in [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "11122632": {
+      "title": "Support vector machines for speaker and language recognition",
+      "abstract": "Abstract Support vector machines (SVMs) have proven to be a powerful technique for pattern classification. SVMs map inputs into a high-dimensional space and then separate classes with a hyperplane. A critical aspect of using SVMs successfully is the design of the inner product, the kernel, induced by the high dimensional mapping. We consider the application of SVMs to speaker and language recognition. A key part of our approach is the use of a kernel that compares sequences of feature vectors and produces a measure of similarity. Our sequence kernel is based upon generalized linear discriminants. We show that this strategy has several important properties. First, the kernel uses an explicit expansion into SVM feature space—this property makes it possible to collapse all support vectors into a single model vector and have low computational complexity. Second, the SVM builds upon a simpler mean-squared error classifier to produce a more accurate system. Finally, the system is competitive and complimentary to other approaches, such as Gaussian mixture models (GMMs). We give results for the 2003 NIST speaker and language evaluations of the system and also show fusion with the traditional GMM approach."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

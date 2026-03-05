@@ -1,0 +1,29 @@
+{
+  "doc_id": "27928",
+  "text": "For the following analyses, default parameters were used if not indicated, associated with a paired-end and first strand library type modes. Alignment-Sequencing resulted in about 50 million 100bp paired-reads from each library, which were then aligned against the Drosophila melanogaster r5.54 genome reference using TopHat (version 2.0.6) with the following parameters (-N 3-read-edit-dist 3 -p 2 -g 1) [CITATION_1] . Unmapped reads were discarded. Counting reads -Mapped reads were counted on gene using SummarizOverlaps method from the GenomicAlignments package (version 1.8.0) [CITATION_2] with a \"Union\" mode, based on the ENSEMBL GENES 75, BDGP5 genome reference. Principal component: Principal component analysis was performed using the PCAplot function from DEseq2 R package on transformed normalized read counts (rlog function) of all samples. This analysis considers the 300 top-ranked genes (ntop = 300) with the highest row variance across all samples. PCA showed that our samples were distinguishable by the first and second principal component (PC1, 44% and PC2, 19% of the total variation). Interestingly, when doing the PCA analysis by selecting the 500 top-ranked genes based on their row variance, ISC and EB populations were clearly discriminated by the first principal component (PC1, 39% of the total variation), but not the difference between WT and SPEN samples by the second principal component (PC2, 19% of the total variation).",
+  "correct_citation": {
+    "[CITATION_1]": "1866358",
+    "[CITATION_2]": "291999"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Alignment-Sequencing resulted in about 50 million 100bp paired-reads from each library, which were then aligned against the Drosophila melanogaster r5.54 genome reference using TopHat (version 2.0.6) with the following parameters (-N 3-read-edit-dist 3 -p 2 -g 1) [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Counting reads -Mapped reads were counted on gene using SummarizOverlaps method from the GenomicAlignments package (version 1.8.0) [CITATION_2] with a \"Union\" mode, based on the ENSEMBL GENES 75, BDGP5 genome reference."
+    }
+  ],
+  "bib_entries": {
+    "291999": {
+      "title": "Software for computing and annotating genomic ranges",
+      "abstract": "We describe Bioconductor infrastructure for representing and computing on annotated genomic ranges and integrating genomic data with the statistical computing features of R and its extensions. At the core of the infrastructure are three packages: IRanges, GenomicRanges, and GenomicFeatures. These packages provide scalable data structures for representing annotated ranges on the genome, with special support for transcript structures, read alignments and coverage vectors. Computational facilities include efficient algorithms for overlap and nearest neighbor detection, coverage calculation and other range operations. This infrastructure directly supports more than 80 other Bioconductor packages, including those for sequence analysis, differential expression analysis and visualization."
+    },
+    "1866358": {
+      "title": "TopHat: discovering splice junctions with RNA-Seq",
+      "abstract": "Motivation: A new protocol for sequencing the messenger RNA in a cell, known as RNA-Seq, generates millions of short sequence fragments in a single run. These fragments, or ‘reads’, can be used to measure levels of gene expression and to identify novel splice variants of genes. However, current software for aligning RNA-Seq data to a genome relies on known splice junctions and cannot identify novel ones. TopHat is an efficient read-mapping algorithm designed to align reads from an RNA-Seq experiment to a reference genome without relying on known splice sites. ::: ::: Results: We mapped the RNA-Seq reads from a recent mammalian RNA-Seq experiment and recovered more than 72% of the splice junctions reported by the annotation-based software from that study, along with nearly 20 000 previously unreported junctions. The TopHat pipeline is much faster than previous systems, mapping nearly 2.2 million reads per CPU hour, which is sufficient to process an entire RNA-Seq experiment in less than a day on a standard desktop computer. We describe several challenges unique to ab initio splice site discovery from RNA-Seq reads that will require further algorithm development. ::: ::: Availability: TopHat is free, open-source software available from http://tophat.cbcb.umd.edu ::: ::: Contact: ude.dmu.sc@eloc ::: ::: Supplementary information: Supplementary data are available at Bioinformatics online."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

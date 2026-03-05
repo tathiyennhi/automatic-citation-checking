@@ -1,0 +1,65 @@
+{
+  "doc_id": null,
+  "text": "a For details on Sentinel-1 to 5 and 5P visit https://sentinels.copernicus.eu/web/sentinel/sentinel-data-access/access-to-sentinel-data 3) ATGV [CITATION_1] : depth image upsampling guided by an anisotropic diffusion tensor that is computed from HR intensity image. 4) 3D-ToF Upsampling [CITATION_2] : attempts to super-resolve LR depths from noisy 3D time-of-flight (3D-ToF) camera coupled with a HR RGB camera by using non-local mean filtering to regularize depth maps and a multi-features based edge weighting scheme based on the HR RGB input. 5) PatchSDSR [CITATION_3] : increases the depth resolution by matching the height field of each LR patch input against only a generic database of local HR patches; the selection of right HR candidate is done via MRF labeling. 6) Edge-guided [CITATION_4] : super-resolves a single depth image with the help of a HR edge map, obtained by MRF optimization from the edges in its LR counterpart. Other important non-CNN methods for depth SR benchmarking include [CITATION_5] - [CITATION_6] .",
+  "correct_citation": {
+    "[CITATION_1]": "15039048",
+    "[CITATION_2]": "12908921",
+    "[CITATION_3]": "11099201",
+    "[CITATION_4]": "53306068",
+    "[CITATION_5]": "6133704",
+    "[CITATION_6]": "8113252"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "3) ATGV [CITATION_1] : depth image upsampling guided by an anisotropic diffusion tensor that is computed from HR intensity image."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "4) 3D-ToF Upsampling [CITATION_2] : attempts to super-resolve LR depths from noisy 3D time-of-flight (3D-ToF) camera coupled with a HR RGB camera by using non-local mean filtering to regularize depth maps and a multi-features based edge weighting scheme based on the HR RGB input."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "5) PatchSDSR [CITATION_3] : increases the depth resolution by matching the height field of each LR patch input against only a generic database of local HR patches; the selection of right HR candidate is done via MRF labeling."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "6) Edge-guided [CITATION_4] : super-resolves a single depth image with the help of a HR edge map, obtained by MRF optimization from the edges in its LR counterpart."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Other important non-CNN methods for depth SR benchmarking include [CITATION_5] - [CITATION_6] ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Other important non-CNN methods for depth SR benchmarking include [CITATION_5] - [CITATION_6] ."
+    }
+  ],
+  "bib_entries": {
+    "15039048": {
+      "title": "Image guided depth upsampling using anisotropic total generalized variation",
+      "abstract": "In this work we present a novel method for the challenging problem of depth image up sampling. Modern depth cameras such as Kinect or Time-of-Flight cameras deliver dense, high quality depth measurements but are limited in their lateral resolution. To overcome this limitation we formulate a convex optimization problem using higher order regularization for depth image up sampling. In this optimization an an isotropic diffusion tensor, calculated from a high resolution intensity image, is used to guide the up sampling. We derive a numerical algorithm based on a primal-dual formulation that is efficiently parallelized and runs at multiple frames per second. We show that this novel up sampling clearly outperforms state of the art approaches in terms of speed and accuracy on the widely used Middlebury 2007 datasets. Furthermore, we introduce novel datasets with highly accurate ground truth, which, for the first time, enable to benchmark depth up sampling methods using real sensor data."
+    },
+    "8113252": {
+      "title": "Variational depth superresolution using example-based edge representations",
+      "abstract": "In this paper we propose a novel method for depth image superresolution which combines recent advances in example based upsampling with variational superresolution based on a known blur kernel. Most traditional depth superresolution approaches try to use additional high resolution intensity images as guidance for superresolution. In our method we learn a dictionary of edge priors from an external database of high and low resolution examples. In a novel variational sparse coding approach this dictionary is used to infer strong edge priors. Additionally to the traditional sparse coding constraints the difference in the overlap of neighboring edge patches is minimized in our optimization. These edge priors are used in a novel variational superresolution as anisotropic guidance of the higher order regularization. Both the sparse coding and the variational superresolution of the depth are solved based on a primal-dual formulation. In an exhaustive numerical and visual evaluation we show that our method clearly outperforms existing approaches on multiple real and synthetic datasets."
+    },
+    "6133704": {
+      "title": "Depth super resolution by rigid body self-similarity in 3d",
+      "abstract": "We tackle the problem of jointly increasing the spatial resolution and apparent measurement accuracy of an input low-resolution, noisy, and perhaps heavily quantized depth map. In stark contrast to earlier work, we make no use of ancillary data like a color image at the target resolution, multiple aligned depth maps, or a database of high-resolution depth exemplars. Instead, we proceed by identifying and merging patch correspondences within the input depth map itself, exploiting patch wise scene self-similarity across depth such as repetition of geometric primitives or object symmetry. While the notion of 'single-image' super resolution has successfully been applied in the context of color and intensity images, we are to our knowledge the first to present a tailored analogue for depth images. Rather than reason in terms of patches of 2D pixels as others have before us, our key contribution is to proceed by reasoning in terms of patches of 3D points, with matched patch pairs related by a respective 6 DoF rigid body motion in 3D. In support of obtaining a dense correspondence field in reasonable time, we introduce a new 3D variant of Patch Match. A third contribution is a simple, yet effective patch up scaling and merging technique, which predicts sharp object boundaries at the target resolution. We show that our results are highly competitive with those of alternative techniques leveraging even a color image at the target resolution or a database of high-resolution depth exemplars."
+    },
+    "12908921": {
+      "title": "High quality depth map upsampling for 3d-tof cameras",
+      "abstract": "This paper describes an application framework to perform high quality upsampling on depth maps captured from a low-resolution and noisy 3D time-of-flight (3D-ToF) camera that has been coupled with a high-resolution RGB camera. Our framework is inspired by recent work that uses nonlocal means filtering to regularize depth maps in order to maintain fine detail and structure. Our framework extends this regularization with an additional edge weighting scheme based on several image features based on the additional high-resolution RGB input. Quantitative and qualitative results show that our method outperforms existing approaches for 3D-ToF upsampling. We describe the complete process for this system, including device calibration, scene warping for input alignment, and even how the results can be further processed using simple user markup."
+    },
+    "11099201": {
+      "title": "Patch Based Synthesis for Single Depth Image Super-Resolution",
+      "abstract": "We present an algorithm to synthetically increase the resolution of a solitary depth image using only a generic database of local patches. Modern range sensors measure depths with non-Gaussian noise and at lower starting resolutions than typical visible-light cameras. While patch based approaches for upsampling intensity images continue to improve, this is the first exploration of patching for depth images. ::: ::: We match against the height field of each low resolution input depth patch, and search our database for a list of appropriate high resolution candidate patches. Selecting the right candidate at each location in the depth image is then posed as a Markov random field labeling problem. Our experiments also show how important further depth-specific processing, such as noise removal and correct patch normalization, dramatically improves our results. Perhaps surprisingly, even better results are achieved on a variety of real test scenes by providing our algorithm with only synthetic training depth data."
+    },
+    "53306068": {
+      "title": "Edge-guided single depth image super resolution",
+      "abstract": "Recently, consumer depth cameras have gained significant popularity due to their affordable cost. However, the limited resolution and the quality of the depth map generated by these cameras are still problematic for several applications. In this paper, a novel framework for the single depth image superresolution is proposed. In our framework, the upscaling of a single depth image is guided by a high-resolution edge map, which is constructed from the edges of the low-resolution depth image through a Markov random field optimization in a patch synthesis based manner. We also explore the self-similarity of patches during the edge construction stage, when limited training data are available. With the guidance of the high-resolution edge map, we propose upsampling the high-resolution depth image through a modified joint bilateral filter. The edge-based guidance not only helps avoiding artifacts introduced by direct texture prediction, but also reduces jagged artifacts and preserves the sharp edges. Experimental results demonstrate the effectiveness of our method both qualitatively and quantitatively compared with the state-of-the-art methods."
+    }
+  },
+  "generator": "codex:gpt-5.3"
+}

@@ -264,53 +264,71 @@ def main():
         except ValueError:
             return (1, path.stem)
 
-    files = sorted(pending_dir.glob("*.in"), key=sort_key)
-    total = len(files)
-    print(f"Split: {split} | Pending: {total} | Done: {len(list(done_dir.glob('*.in')))} | Model: {MODEL_NAME}")
+    total_success, total_failed = 0, 0
+    round_num = 0
 
-    success, failed = 0, 0
-    failed_files = []
+    while True:
+        files = sorted(pending_dir.glob("*.in"), key=sort_key)
+        if not files:
+            print(f"\n✅ No more pending files. Total: success={total_success} failed={total_failed}")
+            break
 
-    for i, file_path in enumerate(files):
-        try:
-            # If a valid label already exists in done/ (e.g., previous run wrote label but crashed
-            # before moving .in), just move the .in over and continue without re-calling Groq.
-            existing_label = done_dir / file_path.name.replace(".in", ".label")
-            if resume_safe_has_valid_label(existing_label):
+        round_num += 1
+        total = len(files)
+        print(f"\n{'='*60}")
+        print(f"Round {round_num} | Split: {split} | Pending: {total} | Model: {MODEL_NAME}")
+
+        success, failed = 0, 0
+        consecutive_rate_limits = 0
+
+        for i, file_path in enumerate(files):
+            try:
+                existing_label = done_dir / file_path.name.replace(".in", ".label")
+                if resume_safe_has_valid_label(existing_label):
+                    shutil.move(str(file_path), str(done_dir / file_path.name))
+                    success += 1
+                    consecutive_rate_limits = 0
+                    continue
+
+                output = process_file(file_path)
+
+                label_path = done_dir / file_path.name.replace(".in", ".label")
+                with open(label_path, 'w', encoding='utf-8') as f:
+                    json.dump(output, f, ensure_ascii=False, indent=2)
+
                 shutil.move(str(file_path), str(done_dir / file_path.name))
+
                 success += 1
-                if success % 100 == 0:
+                consecutive_rate_limits = 0
+
+                if success % 50 == 0:
                     remaining = total - success - failed
                     print(f"  [{success}/{total}] done={success} failed={failed} remaining={remaining}")
-                continue
 
-            output = process_file(file_path)
+                time.sleep(SLEEP_SECONDS)
 
-            # Save .label to done/
-            label_path = done_dir / file_path.name.replace(".in", ".label")
-            with open(label_path, 'w', encoding='utf-8') as f:
-                json.dump(output, f, ensure_ascii=False, indent=2)
+            except Exception as e:
+                failed += 1
+                print(f"❌ {file_path.name}: {e}")
+                if "429" in str(e) or "rate" in str(e).lower():
+                    consecutive_rate_limits += 1
+                    if consecutive_rate_limits >= 3:
+                        wait = 300
+                        print(f"⏳ Rate limited {consecutive_rate_limits}x liên tiếp. Chờ {wait}s rồi thử lại...")
+                        time.sleep(wait)
+                        consecutive_rate_limits = 0
+                        break  # break inner loop, outer while sẽ retry pending files
 
-            # Move .in to done/
-            shutil.move(str(file_path), str(done_dir / file_path.name))
+        total_success += success
+        total_failed += failed
+        print(f"Round {round_num} done: success={success} failed={failed} | Total: success={total_success}")
 
-            success += 1
-
-            if success % 100 == 0:
-                remaining = total - success - failed
-                print(f"  [{success}/{total}] done={success} failed={failed} remaining={remaining}")
-
-            time.sleep(SLEEP_SECONDS)
-
-        except Exception as e:
-            failed += 1
-            failed_files.append(file_path.name)
-            print(f"❌ {file_path.name}: {e}")
-
-    print(f"\n{'='*60}")
-    print(f"DONE [{split}]: success={success} | failed={failed}")
-    if failed_files:
-        print(f"Failed: {failed_files[:20]}")
+        if failed == 0 and success == 0:
+            print("Không xử lý được file nào. Chờ 10 phút rồi thử lại...")
+            time.sleep(600)
+        elif failed > 0 and success == 0:
+            print("Toàn bộ file đều fail. Chờ 5 phút rồi thử lại...")
+            time.sleep(300)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,20 @@
+{
+  "doc_id": "28633",
+  "text": "In this paper, we are focusing on centrality in large scale networks. As discussed in the next Section, there are many existing approaches to identify nodes with higher centrality indices, including betweenness centrality of particular interest to this paper. Existing exact deterministic algorithms to compute the nodes with high betweenness centrality typically employ Dijkstra's shortest path algorithm [CITATION_1] , wherein they incorporate the dependency of a vertex on another single vertex, or the pair dependency to count the number of shortest paths In this paper, we aim to reduce the execution time by leveraging from the following key insight in modular social networks -the impact of local betweenness centrality indices in each local module of a large social network on the global betweenness centrality indices of the overall network. By a careful application of Dijkstra's shortest path algorithm among nodes in each local module (rather than on the global network) along with the sparse number of external edges (between modules) in such a manner that retains shortest path properties of the entire network, our algorithms to identify the global betweenness central node (i.e, the node in the overall network with the highest betweenness centrality), with significant savings in execution time. To the best of our knowledge, this is the first work that leverage modular properties of large scale social networks in efficiently computing betweenness centrality. The rest of the paper is organized as follows. In section II we discuss centrality measures as background. In section III we propose our approach and algorithm for computing betweenness centrality, while in section IV we discuss some characteristic of centrality relevant to our approach. Finally, in section V we discuss simulation results for our approach and conclude with future works in section VI.",
+  "correct_citation": {
+    "[CITATION_1]": "13971996"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Existing exact deterministic algorithms to compute the nodes with high betweenness centrality typically employ Dijkstra's shortest path algorithm [CITATION_1] , wherein they incorporate the dependency of a vertex on another single vertex, or the pair dependency to count the number of shortest paths"
+    }
+  ],
+  "bib_entries": {
+    "13971996": {
+      "title": "A faster algorithm for betweenness centrality",
+      "abstract": "Motivated by the fast‐growing need to compute centrality indices on large, yet very sparse, networks, new algorithms for betweenness are introduced in this paper. They require O(n + m) space and run in O(nm) and O(nm + n2 log n) time on unweighted and weighted networks, respectively, where m is the number of links. Experimental evidence is provided that this substantially increases the range of networks for which centrality analysis is feasible. The betweenness centrality index is essential in the analysis of social networks, but costly to compute. Currently, the fastest known algorithms require ?(n 3) time and ?(n 2) space, where n is the number of actors in the network."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

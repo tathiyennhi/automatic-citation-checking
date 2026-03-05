@@ -1,0 +1,38 @@
+{
+  "doc_id": "40271",
+  "text": "The baseband OFDM transmitter consists of a 2.5 GS/s digital-to-analog converter (DAC) with 14-bit resolution and a Xilinx FPGA board (ML605). The digital signal processing (DSP) processes of the OFDM transmitter are all implemented in ML605, and it can be divided into seven stages as follows: (1) pseudo-random binary sequence generation (PRBS), which is based on LFSR; (2) mapper, which can be 16QAM or quadrature phase-shift keying (QPSK); (3) Hermitian symmetry (HS); (4) 32-point inverse fast Fourier transform (IFFT); (5) cyclic prefix (CP) addition; (6) clipping; (7) training symbols (TS) insertion. Correspondingly, another Xilinx FPGA board (VC707) and a 2.5 GS/s analog-to-digital converter (ADC) with 10-bit resolution are used to implement the baseband OFDM receiver. The DSP processes of the OFDM receiver realized by VC707 can be divided into seven stages as follows: (1) timing synchronization, which is based on a method proposed in [CITATION_1] ; (2) removing CP; (3) 32-point fast Fourier transform (FFT); (4) channel estimation, which is based on a time-domain averaging (TDA) scheme [CITATION_2] ; (5) channel equalization, which is based on an only phase-compensated method proposed in [CITATION_3] ; (6) demapper; (7) BER analyzer. For calculating BER, the original binary data is generated circularly by the PRBS module and one OFDM frame is transmitted circularly. Meanwhile, in BER analyzer, there is a PRBS module which is the same The location of the data subcarriers 1st∼13th and −13th∼−1st TS number of one frame 8",
+  "correct_citation": {
+    "[CITATION_1]": "111069684",
+    "[CITATION_2]": "32613699",
+    "[CITATION_3]": "18202449"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The DSP processes of the OFDM receiver realized by VC707 can be divided into seven stages as follows: (1) timing synchronization, which is based on a method proposed in [CITATION_1] ;"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The DSP processes of the OFDM receiver realized by VC707 can be divided into seven stages as follows: (1) timing synchronization, which is based on a method proposed in [CITATION_1] ; (2) removing CP; (3) 32-point fast Fourier transform (FFT); (4) channel estimation, which is based on a time-domain averaging (TDA) scheme [CITATION_2] ;"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The DSP processes of the OFDM receiver realized by VC707 can be divided into seven stages as follows: (1) timing synchronization, which is based on a method proposed in [CITATION_1] ; (2) removing CP; (3) 32-point fast Fourier transform (FFT); (4) channel estimation, which is based on a time-domain averaging (TDA) scheme [CITATION_2] ; (5) channel equalization, which is based on an only phase-compensated method proposed in [CITATION_3] ;"
+    }
+  ],
+  "bib_entries": {
+    "111069684": {
+      "title": "Symbol synchronization and sampling frequency synchronization techniques in real-time DDO-OFDM systems",
+      "abstract": "Abstract In this paper, we propose and experimentally demonstrate a symbol synchronization and sampling frequency synchronization techniques in real-time direct-detection optical orthogonal frequency division multiplexing (DDO-OFDM) system, over 100-km standard single mode fiber (SSMF) using a cost-effective directly modulated distributed feedback (DFB) laser. The experiment results show that the proposed symbol synchronization based on training sequence (TS) has a low complexity and high accuracy even at a sampling frequency offset (SFO) of 5000-ppm. Meanwhile, the proposed pilot-assisted sampling frequency synchronization between digital-to-analog converter (DAC) and analog-to-digital converter (ADC) is capable of estimating SFOs with an accuracy of"
+    },
+    "32613699": {
+      "title": "107 Gb/s coherent optical OFDM transmission over 1000-km SSMF fiber using orthogonal band multiplexing",
+      "abstract": "Coherent optical OFDM (CO-OFDM) has emerged as an attractive modulation format for the forthcoming 100 Gb/s Ethernet. However, even the spectral-efficient implementation of CO-OFDM requires digital-to-analog converters (DAC) and analog-to-digital converters (ADC) to operate at the bandwidth which may not be available today or may not be cost-effective. In order to resolve the electronic bandwidth bottleneck associated with DAC/ADC devices, we propose and elucidate the principle of orthogonal-band-multiplexed OFDM (OBM-OFDM) to subdivide the entire OFDM spectrum into multiple orthogonal bands. With this scheme, the DAC/ADCs do not need to operate at extremely high sampling rate. The corresponding mapping to the mixed-signal integrated circuit (IC) design is also revealed. Additionally, we show the proof-of-concept transmission experiment through optical realization of OBM-OFDM. To the best of our knowledge, we present the first experimental demonstration of 107 Gb/s QPSK-encoded CO-OFDM signal transmission over 1000 km standard-single- mode-fiber (SSMF) without optical dispersion compensation and without Raman amplification. The demonstrated system employs 2x2 MIMO-OFDM signal processing and achieves high electrical spectral efficiency with direct-conversion at both transmitter and receiver."
+    },
+    "18202449": {
+      "title": "Real-time optical OFDM long-reach PON system over 100-km SSMF using a directly modulated DFB laser",
+      "abstract": "A real-time base-band orthogonal frequency division multiplexing (OFDM) transceiver with a simple symbol synchronization and channel estimation scheme is implemented on only one off-the-shelf commercial field programmable gate array (FPGA). The real-time optical OFDM long-reach passive optical network (PON) system with direct detection over 100 km standard single-mode fiber (SSMF) employing a cost-effective directly modulated distributed feedback (DFB) laser has been successfully demonstrated experimentally. The experimental results show that the simplified symbol synchronization with low complexity and high accuracy is effective for long-reach optical OFDM transmission systems. After 100 km SSMF transmission, the power penalty at a bit-error rate of 1e-3 is only about 1.1 dB."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

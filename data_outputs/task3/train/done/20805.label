@@ -1,0 +1,20 @@
+{
+  "doc_id": "20805",
+  "text": "A hybrid GPU based Weighted finite state transducer (WFST) decoder [CITATION_1] is used for decoding. The GPU is used to generate the acoustic model likelihoods, while the decoding graph is traversed on the CPU. The language model consists of a 3-gram pruned language model (gram-counts: 146k, 758k, 566k) with special noise and silence words generated from the training text. This is made into a fully composed decoding graph, with the DNN assuming the role of the acoustic model. We use the hybrid decoder to generate state level lattices for the utterances in the data-set. These lattices were then rescored using a 4-gram const-arpa language model (gram-counts: 146k, 4.5M, 3.1M, 2.6M). We perform a multi-threaded decode for all the utterances, but measure the RTF on a single thread with a single GPU. Typically, it takes about 5 minutes on average per decode, but this time can vary depending on the quality of the model and the lattice sizes generated.",
+  "correct_citation": {
+    "[CITATION_1]": "14922334"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A hybrid GPU based Weighted finite state transducer (WFST) decoder [CITATION_1] is used for decoding."
+    }
+  ],
+  "bib_entries": {
+    "14922334": {
+      "title": "Accelerating large vocabulary continuous speech recognition on heterogeneous cpu-gpu platforms",
+      "abstract": "While prior works have demonstrated the effectiveness of GraphicProcessing Units (GPUs) for limited vocabulary speech recognition, these methods were unsuitable for recognition with large language models. To overcome this limitation, previously we introduced a novel “on-the-fly rescoring” approach in which search was performed over a WFST-network composed with a unigram language model on the GPU, and partial hypotheses were rescored on-the-fly using a large language model stored on the CPU. In this paper, we extend our previous algorithm to enable on-the-fly rescoring to be performed over anH-level network composed with anyn-gram language model, and show that using a longer language model history in the H-level network improves decoding speed. We demonstrate that large language models can be applied on-the-fly with no degradation in decoding speed, realizing a LVCSR system that performs recognition over 22 faster than a CPU implementation with no loss in recognition accuracy."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

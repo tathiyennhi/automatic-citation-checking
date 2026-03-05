@@ -1,0 +1,47 @@
+{
+  "doc_id": "50957",
+  "text": "Perfusion was calculated voxel by voxel using formula 1 in Ref. [CITATION_1] , with some parameters assumed constant: brain/blood partition coefficient ¼ 0.9 mL∕g, mouse arterial blood transit time ¼ 0.08 s, tagging efficacy ¼ 0.67, T 1b ¼ 2.3 s, T 1 ¼ 1.53 s, T 1sat ¼ 0.57 s, and M z a ðwÞ ¼ 0.48 s. The anatomical scans were first manually coregistered rigidly using ITK-SNAP [CITATION_2] to a previously generated mouse template, then coregistered nonlinearly with ANTs. [CITATION_3] This provided the ANTs transformations to coregister the perfusion images. Coregistration results were inspected in detail, and registration parameters were stored as potential confounding variables. SPM [CITATION_4] voxel-by-voxel analyses were run on the perfusion images. The lack of any statistically strong effect suggested pursuing the analysis using the above four ROIs as for the ex vivo scanner study. The MarsBar 47 toolbox in SPM was also used for the ROI statistics and to extract the average perfusion data.",
+  "correct_citation": {
+    "[CITATION_1]": "1660596",
+    "[CITATION_2]": "7253493",
+    "[CITATION_3]": "19000170",
+    "[CITATION_4]": "41107450"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Perfusion was calculated voxel by voxel using formula 1 in Ref. [CITATION_1] , with some parameters assumed constant: brain/blood partition coefficient ¼ 0.9 mL∕g, mouse arterial blood transit time ¼ 0.08 s, tagging efficacy ¼ 0.67, T 1b ¼ 2.3 s, T 1 ¼ 1.53 s, T 1sat ¼ 0.57 s, and M z a ðwÞ ¼ 0.48 s."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The anatomical scans were first manually coregistered rigidly using ITK-SNAP [CITATION_2] to a previously generated mouse template, then coregistered nonlinearly with ANTs."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The anatomical scans were first manually coregistered rigidly using ITK-SNAP [CITATION_2] to a previously generated mouse template, then coregistered nonlinearly with ANTs. [CITATION_3]"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "SPM [CITATION_4] voxel-by-voxel analyses were run on the perfusion images."
+    }
+  ],
+  "bib_entries": {
+    "41107450": {
+      "title": "Robust prescan calibration for multiple spin-echo sequences: application to FSE and b-SSFP",
+      "abstract": "The collection of fast imaging techniques that use multiple spin-echo (MSE) sequences relies on a precise phase relationship between spin echoes and stimulated echoes that form along the radiofrequency refocusing pulse train. Failure to achieve this condition produces dark banding artifacts that result from destructive interference between signal coherence pathways. Satisfying this condition on the microsecond timescale required is technically challenging for conditions involving strong diffusion-weighted gradients, for arbitrary orientation acquisitions and at large field strengths with high-resolution acquisitions. Two clinically significant MSE sequences, fast spin echo (FSE) and balanced steady-state free precession (b-SSFP), are investigated in this work using a 4-T whole-body scanner. We developed a readout-projection-based prescan technique that ensures coherent signal formation by utilizing banding artifacts to automatically adjust gradient balance. Subsequent image acquisition using the results of this prescan permits the formation of coherent-echo images, which are robust under challenging imaging conditions. The robustness of this approach is demonstrated for FSE and b-SSFP images obtained from the knees of human volunteers. We believe that the use of this prescan calibration technique for the alignment of signal pools in MSE sequences is critical at high fields and will facilitate the implementation of high-quality clinically significant sequences such as FSE and b-SSFP."
+    },
+    "1660596": {
+      "title": "User-guided 3D active contour segmentation of anatomical structures: significantly improved efficiency and reliability",
+      "abstract": "Active contour segmentation and its robust implementation using level set methods are well-established theoretical approaches that have been studied thoroughly in the image analysis literature. Despite the existence of these powerful segmentation methods, the needs of clinical research continue to be fulfilled, to a large extent, using slice-by-slice manual tracing. To bridge the gap between methodological advances and clinical routine, we developed an open source application called ITK-SNAP, which is intended to make level set segmentation easily accessible to a wide range of users, including those with little or no mathematical expertise. This paper describes the methods and software engineering philosophy behind this new tool and provides the results of validation experiments performed in the context of an ongoing child autism neuroimaging study. The validation establishes SNAP intrarater and interrater reliability and overlap error statistics for the caudate nucleus and finds that SNAP is a highly reliable and efficient alternative to manual tracing. Analogous results for lateral ventricle"
+    },
+    "7253493": {
+      "title": "A reproducible evaluation of ANTs similarity metric performance in brain image registration",
+      "abstract": "Abstract The United States National Institutes of Health (NIH) commit significant support to open-source data and software resources in order to foment reproducibility in the biomedical imaging sciences. Here, we report and evaluate a recent product of this commitment: Advanced Neuroimaging Tools (ANTs), which is approaching its 2.0 release. The ANTs open source software library consists of a suite of state-of-the-art image registration, segmentation and template building tools for quantitative morphometric analysis. In this work, we use ANTs to quantify, for the first time, the impact of similarity metrics on the affine and deformable components of a template-based normalization study. We detail the ANTs implementation of three similarity metrics: squared intensity difference, a new and faster cross-correlation, and voxel-wise mutual information. We then use two-fold cross-validation to compare their performance on openly available, manually labeled, T1-weighted MRI brain image data of 40 subjects (UCLA's LPBA40 dataset). We report evaluation results on cortical and whole brain labels for both the affine and deformable components of the registration. Results indicate that the best ANTs methods are competitive with existing brain extraction results (Jaccard = 0.958) and cortical labeling approaches. Mutual information affine mapping combined with cross-correlation diffeomorphic mapping gave the best cortical labeling results (Jaccard = 0.669 ± 0.022). Furthermore, our two-fold cross-validation allows us to quantify the similarity of templates derived from different subgroups. Our open code, data and evaluation scripts set performance benchmark parameters for this state-of-the-art toolkit. This is the first study to use a consistent transformation framework to provide a reproducible evaluation of the isolated effect of the similarity metric on optimal template construction and brain labeling."
+    },
+    "19000170": {
+      "title": "Statistical parametric mapping",
+      "abstract": "This chapter deals with the experimental design and analysis of functional brain imaging studies. It considers the neurobiological motivations for different designs and describes some standard approaches, developed to analyse the ensuing data. Functional neuroimaging (positron emission tomography - PET and functional magnetic resonance imaging fMRI) are generally used to make inferences about functional anatomy on the basis of evoked patterns of cortical activity. Functional anatomy refers to the anatomical organisation of the brain, as it relates to function. It involves an understanding of what each part of the brain does, and how different brain systems interact to support various sensori-motor and cognitive functions. This chapter discusses how this understanding is attained from the perspective of design and analysis of neuroimaging data."
+    }
+  },
+  "generator": "gemini-2.5-flash"
+}

@@ -1,0 +1,29 @@
+{
+  "doc_id": "56789",
+  "text": "In routine field inspection of concrete structures, a large amount of digital images are usually collected. Wellorganized image archives as well as text-based documents provide an informative means of reporting the structural integrity of civil infrastructure objects. However, these field images are mostly used as a visual media only-readers or analysts read the images visually and may subjectively correlate visual identification with other engineering knowledge. To obtain more quantitative information, an effective image analysis method is needed. In what follows, we present a comparative study to demonstrate that the proposed framework provides a quantitative image-mining solution to this problem, which is unparalleled compared to other noncontour-based image analysis methods. Figure 6 displays a field image of the surface of a concrete region that has clearly observed cracks. One first notices that the surface textures vary spatially showing different modalities (e.g., lighter versus darker texture). Second, there are a large number of small air pockets on the surface. Finally, cracks are not fully connected; rather discontinuities are observed between crack segments. The presence of these artifacts results in significant adverse effects and prevents from realizing an automatic identification of concrete cracks. We first attempt to use a traditional approach. In Figure 7 , two crack detection results are shown using the classical Canny edge detector [CITATION_1] . The two results are presented using different analysis parameters. It is seen that the two results are dramatically different, and it is very difficult to differentiate the boundaries of the concrete cracks from the noisy edges in the background. Although some statistical methods can mitigate this parameter selection problem (e.g., [CITATION_2] ), the critical difficulty that prohibits subsequent geometric quantification is that the detected edges are merely nonclosed segments rather than closed contours. This difficulty exists similarly if other non-modelbased edge detectors (e.g., a Sobel detector or wavelet transform-based detectors) are used.",
+  "correct_citation": {
+    "[CITATION_1]": "13284142",
+    "[CITATION_2]": "1559177"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In Figure 7 , two crack detection results are shown using the classical Canny edge detector [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": ", [CITATION_2] ), the critical difficulty that prohibits subsequent geometric quantification is that the detected edges are merely nonclosed segments rather than closed contours."
+    }
+  ],
+  "bib_entries": {
+    "1559177": {
+      "title": "A method for objective edge detection evaluation and detector parameter selection",
+      "abstract": "Subjective evaluation by human observers is usually used to analyze and select an edge detector parametric setup when real-world images are considered. We propose a statistical objective performance analysis and detector parameter selection, using detection results produced by different detector parameters. Using the correspondence between the different detection results, an estimated best edge map, utilized as an estimated ground truth (EGT), is obtained. This is done using both a receiver operating characteristics (ROC) analysis and a Chi-square test, and considers the trade off between information and noisiness in the detection results. The best edge detector parameter set (PS) is then selected by the same statistical approach, using the EGT. Results are demonstrated for several edge detection techniques, and compared to published subjective evaluation results. The method developed here suggests a general tool to assist in practical implementations of parametric edge detectors where an automatic process is required."
+    },
+    "13284142": {
+      "title": "A computational approach to edge detection",
+      "abstract": "This paper describes a computational approach to edge detection. The success of the approach depends on the definition of a comprehensive set of goals for the computation of edge points. These goals must be precise enough to delimit the desired behavior of the detector while making minimal assumptions about the form of the solution. We define detection and localization criteria for a class of edges, and present mathematical forms for these criteria as functionals on the operator impulse response. A third criterion is then added to ensure that the detector has only one response to a single edge. We use the criteria in numerical optimization to derive detectors for several common image features, including step edges. On specializing the analysis to step edges, we find that there is a natural uncertainty principle between detection and localization performance, which are the two main goals. With this principle we derive a single operator shape which is optimal at any scale. The optimal detector has a simple approximate implementation in which edges are marked at maxima in gradient magnitude of a Gaussian-smoothed image. We extend this simple detector using operators of several widths to cope with different signal-to-noise ratios in the image. We present a general method, called feature synthesis, for the fine-to-coarse integration of information from operators at different scales. Finally we show that step edge detector performance improves considerably as the operator point spread function is extended along the edge."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

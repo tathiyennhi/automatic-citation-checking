@@ -1,0 +1,29 @@
+{
+  "doc_id": "25655",
+  "text": "2014), or alternatively by learning mappings between the two domains with the use of adversarial training [CITATION_1] . We follow a similar approach here but focus on factorizing the pathology. Simple schematic and examples are shown in Figure 1 . We aim to separate what appears to be healthy out of a disease image. We let neural networks decompose an input image into a healthy image (one factor), via a generator, and a binary map that aims to localize disease (the other factor) via a segmentor. These two factors are then composed together to reconstruct the input via another network. The pathological map is necessary as a factor to solve the one-to-many problem 1 [CITATION_2] : the healthy image must by definition contain 'less information' than the disease image.",
+  "correct_citation": {
+    "[CITATION_1]": "53032488",
+    "[CITATION_2]": "26516599"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "2014), or alternatively by learning mappings between the two domains with the use of adversarial training [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "the one-to-many problem 1 [CITATION_2] :"
+    }
+  ],
+  "bib_entries": {
+    "53032488": {
+      "title": "An Adversarial Learning Approach to Medical Image Synthesis for Lesion Removal",
+      "abstract": "The analysis of lesion within medical image data is desirable for efficient disease diagnosis, treatment and prognosis. The common lesion analysis tasks like segmentation and classification are mainly based on supervised learning with well-paired image-level or voxel-level labels. However, labeling the lesion in medical images is laborious requiring highly specialized knowledge. Inspired by the fact that radiologists make diagnoses based on expert knowledge on \"healthiness\" and \"unhealthiness\" developed from extensive experience, we propose an medical image synthesis model named abnormal-to-normal translation generative adversarial network (ANT-GAN) to predict a normal-looking medical image based on its abnormal-looking counterpart without the need of paired data for training. Unlike typical GANs, whose aim is to generate realistic samples with variations, our more restrictive model aims at producing the underlying normal-looking image corresponding to an image containing lesions, and thus requires a specialized design. With an ability to segment normal from abnormal tissue, our model is able to generate a highly realistic lesion-free medical image based on its true lesion-containing counterpart. Being able to provide a \"normal\" version of a medical image (possibly the same image if there is no illness) is not only an intriguing topic, but also can serve as a pre-processing and provide useful side information for medical imaging tasks like lesion segmentation or classification validated by our experiments."
+    },
+    "26516599": {
+      "title": "CycleGAN: a Master of Steganography",
+      "abstract": "CycleGAN (Zhu et al. 2017) is one recent successful approach to learn a transformation between two image distributions. In a series of experiments, we demonstrate an intriguing property of the model: CycleGAN learns to \"hide\" information about a source image into the images it generates in a nearly imperceptible, high-frequency signal. This trick ensures that the generator can recover the original sample and thus satisfy the cyclic consistency requirement, while the generated image remains realistic. We connect this phenomenon with adversarial attacks by viewing CycleGAN's training procedure as training a generator of adversarial examples and demonstrate that the cyclic consistency loss causes CycleGAN to be especially vulnerable to adversarial attacks."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "32909",
+  "text": "Ma et al. [CITATION_1] introduce an RFID system, named \"RFly\", that leverages drones as relays to extend the communication range as shown in Fig. 19 . The key idea of RFly is that the drone is configured to collect queries from a reader, forward it to the tag, i.e., backscatter transmitter, and send the tag's reply back to the reader. However, the signals received at the drone's antennas may be affected by interference, i.e., inter-link self-interference and intra-link self-interference. The inter-link self-interference is from the uplink, i.e., from the tag to the reader, and the downlink, i.e., from the reader to the tag, operating at the same frequency. The intra-link selfinterference is the leakage between the drone's receive and transmit antennas. To address the self-interference, the authors adopt a downconvert-upconvert approach and a baseband filter. For the inter-link self-interference, RFly first downconverts the received signals to baseband, low-pass filters for the downlink and bandpass filters for the uplink, and then upconverts before sending. Through this filtering, RFly prevents the relay's self-interference from leaking into the uplink and downlink channels. For the intra-link self-interference, RFly leverages the downconvert-upconvert approach by using different frequencies in the upconvert stage. As such, the frequencies of reader-relay half-link and relay-transmitter half-link are different, and thus the intra-link self-interference is avoided. Through the experiments, the authors demonstrate that RFly can enable the communication between the reader and the tags at over 50 meters in LOS scenarios.",
+  "correct_citation": {
+    "[CITATION_1]": "207693761"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Ma et al. [CITATION_1] introduce an RFID system, named \"RFly\", that leverages drones as relays to extend the communication range as shown in Fig. 19 ."
+    }
+  ],
+  "bib_entries": {
+    "207693761": {
+      "title": "Drone relays for battery-free networks",
+      "abstract": "Battery-free sensors, such as RFIDs, are annually attached to billions of items including pharmaceutical drugs, clothes, and manufacturing parts. The fundamental challenge with battery-free sensors is that they are only reliable at short distances of tens of centimeters to few meters. As a result, today's systems for communicating with and localizing battery-free sensors are crippled by the limited range. To overcome this challenge, this paper presents RFly, a system that leverages drones as relays for battery-free networks. RFly delivers two key innovations. It introduces the first full-duplex relay for battery-free networks. The relay can seamlessly integrate with a deployed RFID infrastructure, and it preserves phase and timing characteristics of the forwarded packets. RFly also develops the first RF-localization algorithm that can operate through a mobile relay. We built a hardware prototype of RFly's relay into a custom PCB circuit and mounted it on a Parrot Bebop drone. Our experimental evaluation demonstrates that RFly enables communication with commercial RFIDs at over 50 m. Moreover, its through-relay localization algorithm has a median accuracy of 19 centimeters. These results demonstrate that RFly provides powerful primitives for communication and localization in battery-free networks."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

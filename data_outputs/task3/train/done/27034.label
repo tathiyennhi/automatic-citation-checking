@@ -1,0 +1,20 @@
+{
+  "doc_id": "27034",
+  "text": "and then use K l instead of K in Equation (3) to learn the pairwise prediction function. In the first learning stage, pairwise kernel mixture weights are determined (Section 2.2.1), and then a weighted combination of pairwise kernels is used for anticancer drug response prediction with a regularized leastsquares pairwise regression model (Section 2.2.2). Importantly, pairwiseMKL performs those two steps efficiently by avoiding explicit construction of any massive pairwise matrices, and therefore it is very well-suited for solving large pairwise learning problems 2.1.1 Centered kernel alignment The observation that a similarity between the centered input kernel K i ð Þ and a linear kernel derived from the labels K y ¼ yy T (response kernel) correlates with the performance of K i ð Þ in a given prediction task, has inspired a design of the centered kernel alignment-based MKL approach [CITATION_1] . Both K i ð Þ and K y measure similarities between drug-cell line pairs. However, K y can be considered as a ground-truth as it is calculated from the bioactivities which we aim to predict, and hence the ideal input kernel would capture the same information about the similarities of drug-cell line pairs as the response kernel K y . The idea is to first learn a linear mixture of centered input kernels that is maximally aligned to the response kernel, and then use the learned mixture kernel as the input kernel for learning a prediction function. Centering a kernel K corresponds to centering its associated feature mapping /, and it is performed by",
+  "correct_citation": {
+    "[CITATION_1]": "9137763"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The observation that a similarity between the centered input kernel K i ð Þ and a linear kernel derived from the labels K y ¼ yy T (response kernel) correlates with the performance of K i ð Þ in a given prediction task, has inspired a design of the centered kernel alignment-based MKL approach [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "9137763": {
+      "title": "Algorithms for learning kernels based on centered alignment",
+      "abstract": "This paper presents new and effective algorithms for learning kernels. In particular, as shown by our empirical results, these algorithms consistently outperform the so-called uniform combination solution that has proven to be difficult to improve upon in the past, as well as other algorithms for learning kernels based on convex combinations of base kernels in both classification and regression. Our algorithms are based on the notion of centered alignment which is used as a similarity measure between kernels or kernel matrices. We present a number of novel algorithmic, theoretical, and empirical results for learning kernels based on our notion of centered alignment. In particular, we describe efficient algorithms for learning a maximum alignment kernel by showing that the problem can be reduced to a simple QP and discuss a one-stage algorithm for learning both a kernel and a hypothesis based on that kernel using an alignment-based regularization. Our theoretical results include a novel concentration bound for centered alignment between kernel matrices, the proof of the existence of effective predictors for kernels with high alignment, both for classification and for regression, and the proof of stability-based generalization bounds for a broad family of algorithms for learning kernels based on centered alignment. We also report the results of experiments with our centered alignment-based algorithms in both classification and regression."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

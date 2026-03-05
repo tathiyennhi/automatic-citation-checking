@@ -1,0 +1,38 @@
+{
+  "doc_id": null,
+  "text": "Statistical survey is the most intuitive way to qualitatively evaluate the quality of generated images in most generative tasks. By establishing specific rules in advance, subjects vote for generated images with appealing visual fidelity, and then, researchers draw conclusions according to the statistical analysis of votes. For example, [CITATION_1] quantitatively evaluate the performance of generated images in a survey format via AMT (see footnote 1). Given an input image, the workers are required to select the best generated images according to instructions based on perceptual realism, quality of manipulation in attributes, and preservation of original identities. Each worker is asked a set number of questions for validating human effort. [CITATION_2] conduct a statistical survey that asks volunteers to choose the better result from their proposed CAAE or existing works. [CITATION_3] instruct volunteers to rank several deep FAM approaches based on perceptual realism, quality of transferred attributes, and preservation of personal features. Then, they calculate the average rank (between 1 and 7) of each approach. Lample et al. (2017) perform a quantitative evaluation on two different aspects: the naturalness measuring the quality of generated images, and the accuracy measuring the degree of swapping an attribute reflected in the generation.",
+  "correct_citation": {
+    "[CITATION_1]": "9417016",
+    "[CITATION_2]": "810708",
+    "[CITATION_3]": "13744793"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For example, [CITATION_1] quantitatively evaluate the performance of generated images in a survey format via AMT (see footnote 1)."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "[CITATION_2] conduct a statistical survey that asks volunteers to choose the better result from their proposed CAAE or existing works."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "[CITATION_3] instruct volunteers to rank several deep FAM approaches based on perceptual realism, quality of transferred attributes, and preservation of personal features."
+    }
+  ],
+  "bib_entries": {
+    "13744793": {
+      "title": "Mask-aware photorealistic face attribute manipulation",
+      "abstract": "The task of face attribute manipulation has found increasing applications, but still remains challeng- ing with the requirement of editing the attributes of a face image while preserving its unique details. In this paper, we choose to combine the Variational AutoEncoder (VAE) and Generative Adversarial Network (GAN) for photorealistic image genera- tion. We propose an effective method to modify a modest amount of pixels in the feature maps of an encoder, changing the attribute strength contin- uously without hindering global information. Our training objectives of VAE and GAN are reinforced by the supervision of face recognition loss and cy- cle consistency loss for faithful preservation of face details. Moreover, we generate facial masks to en- force background consistency, which allows our training to focus on manipulating the foreground face rather than background. Experimental results demonstrate our method, called Mask-Adversarial AutoEncoder (M-AAE), can generate high-quality images with changing attributes and outperforms prior methods in detail preservation."
+    },
+    "810708": {
+      "title": "Age progression/regression by conditional adversarial autoencoder",
+      "abstract": "If I provide you a face image of mine (without telling you the actual age when I took the picture) and a large amount of face images that I crawled (containing labeled faces of different ages but not necessarily paired), can you show me what I would look like when I am 80 or what I was like when I was 5? The answer is probably a No. Most existing face aging works attempt to learn the transformation between age groups and thus would require the paired samples as well as the labeled query image. In this paper, we look at the problem from a generative modeling perspective such that no paired samples is required. In addition, given an unlabeled image, the generative model can directly produce the image with desired age attribute. We propose a conditional adversarial autoencoder (CAAE) that learns a face manifold, traversing on which smooth age progression and regression can be realized simultaneously. In CAAE, the face is first mapped to a latent vector through a convolutional encoder, and then the vector is projected to the face manifold conditional on age through a deconvolutional generator. The latent vector preserves personalized face features (i.e., personality) and the age condition controls progression vs. regression. Two adversarial networks are imposed on the encoder and generator, respectively, forcing to generate more photo-realistic faces. Experimental results demonstrate the appealing performance and flexibility of the proposed framework by comparing with the state-of-the-art and ground truth."
+    },
+    "9417016": {
+      "title": "Stargan: Unified generative adversarial networks for multi-domain image-to-image translation",
+      "abstract": "Recent studies have shown remarkable success in image-to-image translation for two domains. However, existing approaches have limited scalability and robustness in handling more than two domains, since different models should be built independently for every pair of image domains. To address this limitation, we propose StarGAN, a novel and scalable approach that can perform image-to-image translations for multiple domains using only a single model. Such a unified model architecture of StarGAN allows simultaneous training of multiple datasets with different domains within a single network. This leads to StarGAN's superior quality of translated images compared to existing models as well as the novel capability of flexibly translating an input image to any desired target domain. We empirically demonstrate the effectiveness of our approach on a facial attribute transfer and a facial expression synthesis tasks."
+    }
+  },
+  "generator": "codex:gpt-5.3"
+}

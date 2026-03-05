@@ -1,0 +1,29 @@
+{
+  "doc_id": "54529",
+  "text": "3) The robot control module, which processes motor commands and relays them to the microcontrollers of the robot, which in our case is a locally simulated Nao. Our contribution is the visuomotor learning module which performs incremental adaptation and early prediction of human motion patterns. Although the current setup uses a simulated environment, we will consider a further extension of the experiments toward the real robot. Therefore, we simulate the same amount of motor response latency as it has been quantified in the real Nao robot, i.e., between 30 and 40 ms [CITATION_1] . This latency could be even higher due to reduced motor performance, friction, or weary hardware. Visual sensor latency for an RGB and depth resolution of 640 × 480, together with the computation time required from the skeleton estimation middleware, can peak up to 500 ms [CITATION_2] . Taking into consideration also possible transmission delays due to connectivity issues, we assume a maximum of 600 ms of overall sensorimotor latency for our experiments described in Section V.",
+  "correct_citation": {
+    "[CITATION_1]": "1633712",
+    "[CITATION_2]": "206845034"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": ", between 30 and 40 ms [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Visual sensor latency for an RGB and depth resolution of 640 × 480, together with the computation time required from the skeleton estimation middleware, can peak up to 500 ms [CITATION_2] ."
+    }
+  ],
+  "bib_entries": {
+    "1633712": {
+      "title": "A predictive network architecture for a robust and smooth robot docking behavior",
+      "abstract": "Abstract Robots and living beings exhibit latencies in their sensorimotor processing due to mechanical and electronic or neural processing delays. A reaction typically occurs to input stimuli of the past. This is critical not only when the environment changes (e.g. moving objects) but also when the agent itself moves. An agent that does not predict while moving may need to remain static between sensory input acquisition and output response to guarantee that the response is appropriate to the percept. We propose a biologically-inspired learning model of predictive sensorimotor integration to compensate for this latency. In this model, an Elman network is developed for sensory prediction and sensory filtering; a Continuous Actor-Critic Learning Automaton (CACLA) is trained for continuous action generation. For a robot docking experiment, this architecture improves the smoothness of the robot’s sensory input and therefore results in a faster and more accurate continuous approach behavior."
+    },
+    "206845034": {
+      "title": "Performance measurements for the microsoft kinect skeleton",
+      "abstract": "The Microsoft Kinect for Xbox 360 (“Kinect”) provides a convenient and inexpensive depth sensor and, with the Microsoft software development kit, a skeleton tracker (Figure 2). These have great potential to be useful as virtual environment (VE) control interfaces for avatars or for viewpoint control. In order to determine its suitability for our applications, we devised and conducted tests to measure standard performance specifications for tracking systems. We evaluated the noise, accuracy, resolution, and latency of the skeleton tracking software. We also measured the range in which the person being tracked must be in order to achieve these values."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

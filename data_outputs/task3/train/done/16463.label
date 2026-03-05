@@ -1,0 +1,83 @@
+{
+  "doc_id": "16463",
+  "text": "Stochastic optimization and weighted sampling The proposed MKL-SGDalgorithm inherently implements a weighted sampling strategy to pick samples. Weighted sampling is one of the popular variants of SGD that can be used for matching one distribution to another (importance sampling), improving the rate of convergence, variance reduction or all of them and has been considered in [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] . Other popular weighted sampling techniques include [CITATION_5] [CITATION_6] [CITATION_7] . Without the assumption of strong convexity for each f i (.), the weighted sampling techniques often lead to biased estimators which are difficult to analyze. Another idea that is analogous to weighted sampling includes boosting [CITATION_8] where harder samples are used to train subsequent classifiers. However, in presence of outliers and label noise, learning the hard samples may often lead to over-fitting the solution to these bad samples. This serves as a motivation for picking samples with the lowest loss in MKL-SGD.",
+  "correct_citation": {
+    "[CITATION_1]": "21103559",
+    "[CITATION_2]": "1903919",
+    "[CITATION_3]": "13199836",
+    "[CITATION_4]": "3663876",
+    "[CITATION_5]": "2370209",
+    "[CITATION_6]": "3806935",
+    "[CITATION_7]": "16081848",
+    "[CITATION_8]": "9621074"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Weighted sampling is one of the popular variants of SGD that can be used for matching one distribution to another (importance sampling), improving the rate of convergence, variance reduction or all of them and has been considered in [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Weighted sampling is one of the popular variants of SGD that can be used for matching one distribution to another (importance sampling), improving the rate of convergence, variance reduction or all of them and has been considered in [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Weighted sampling is one of the popular variants of SGD that can be used for matching one distribution to another (importance sampling), improving the rate of convergence, variance reduction or all of them and has been considered in [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Weighted sampling is one of the popular variants of SGD that can be used for matching one distribution to another (importance sampling), improving the rate of convergence, variance reduction or all of them and has been considered in [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Other popular weighted sampling techniques include [CITATION_5] [CITATION_6] [CITATION_7] ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Other popular weighted sampling techniques include [CITATION_5] [CITATION_6] [CITATION_7] ."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Other popular weighted sampling techniques include [CITATION_5] [CITATION_6] [CITATION_7] ."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Another idea that is analogous to weighted sampling includes boosting [CITATION_8] where harder samples are used to train subsequent classifiers."
+    }
+  ],
+  "bib_entries": {
+    "1903919": {
+      "title": "A randomized kaczmarz algorithm with exponential convergence",
+      "abstract": "The Kaczmarz method for solving linear systems of equations is an iterative algorithm that has found many applications ranging from computer tomography to digital signal processing. Despite the popularity of this method, useful theoretical estimates for its rate of convergence are still scarce. We introduce a randomized version of the Kaczmarz method for consistent, overdetermined linear systems and we prove that it converges with expected exponential rate. Furthermore, this is the first solver whose rate does not depend on the number of equations in the system. The solver does not even need to know the whole system, but only a small random part of it. It thus outperforms all previously known methods on general extremely overdetermined systems. Even for moderately overdetermined systems, numerical simulations as well as theoretical analysis reveal that our algorithm can converge faster than the celebrated conjugate gradient algorithm. Furthermore, our theory and numerical simulations confirm a prediction of Feichtinger et al. in the context of reconstructing bandlimited functions from nonuniform sampling."
+    },
+    "9621074": {
+      "title": "A short introduction to boosting",
+      "abstract": "Boosting is a general method for improving the accuracy of any given learning algorithm. This short overview paper introduces the boosting algorithm AdaBoost, and explains the underlying theory of boosting, including an explanation of why boosting often does not suffer from overfitting as well as boosting’s relationship to support-vector machines. Some examples of recent applications of boosting are also described."
+    },
+    "2370209": {
+      "title": "Stochastic gradient descent, weighted sampling, and the randomized kaczmarz algorithm",
+      "abstract": "We obtain an improved finite-sample guarantee on the linear convergence of stochastic gradient descent for smooth and strongly convex objectives, improving from a quadratic dependence on the conditioning $$(L/\\mu )^2$$(L/μ)2 (where $$L$$L is a bound on the smoothness and $$\\mu $$μ on the strong convexity) to a linear dependence on $$L/\\mu $$L/μ. Furthermore, we show how reweighting the sampling distribution (i.e. importance sampling) is necessary in order to further improve convergence, and obtain a linear dependence in the average smoothness, dominating previous results. We also discuss importance sampling for SGD more broadly and show how it can improve convergence also in other scenarios. Our results are based on a connection we make between SGD and the randomized Kaczmarz algorithm, which allows us to transfer ideas between the separate bodies of literature studying each of the two methods. In particular, we recast the randomized Kaczmarz algorithm as an instance of SGD, and apply our results to prove its exponential convergence, but to the solution of a weighted least squares problem rather than the original least squares problem. We then present a modified Kaczmarz algorithm with partially biased sampling which does converge to the original least squares solution with the same exponential convergence rate."
+    },
+    "13199836": {
+      "title": "Stochastic optimization with importance sampling for regularized loss minimization",
+      "abstract": "Uniform sampling of training data has been commonly used in traditional stochastic optimization algorithms such as Proximal Stochastic Mirror Descent (prox-SMD) and Proximal Stochastic Dual Coordinate Ascent (prox-SDCA). Although uniform sampling can guarantee that the sampled stochastic quantity is an unbiased estimate of the corresponding true quantity, the resulting estimator may have a rather high variance, which negatively affects the convergence of the underlying optimization procedure. In this paper we study stochastic optimization, including prox-SMD and prox-SDCA, with importance sampling, which improves the convergence rate by reducing the stochastic variance. We theoretically analyze the algorithms and empirically validate their effectiveness."
+    },
+    "3806935": {
+      "title": "Non-asymptotic analysis of stochastic approximation algorithms for machine learning",
+      "abstract": "We consider the minimization of a convex objective function defined on a Hilbert space, which is only available through unbiased estimates of its gradients. This problem includes standard machine learning algorithms such as kernel logistic regression and least-squares regression, and is commonly referred to as a stochastic approximation problem in the operations research community. We provide a non-asymptotic analysis of the convergence of two well-known algorithms, stochastic gradient descent (a.k.a. Robbins-Monro algorithm) as well as a simple modification where iterates are averaged (a.k.a. Polyak-Ruppert averaging). Our analysis suggests that a learning rate proportional to the inverse of the number of iterations, while leading to the optimal convergence rate in the strongly convex case, is not robust to the lack of strong convexity or the setting of the proportionality constant. This situation is remedied when using slower decays together with averaging, robustly leading to the optimal rate of convergence. We illustrate our theoretical results with simulations on synthetic and standard datasets."
+    },
+    "21103559": {
+      "title": "Methods of reducing sample size in monte carlo computations",
+      "abstract": "This paper deals with the problem of increasing the efficiency of Monte Carlo calculations. The methods of doing so permit one to reduce the sample size required to produce estimates of a fixed level of accuracy or, alternatively, to increase the accuracy of the estimates for a fixed cost of computation. Few theorems are known with regard to optimal sampling schemes, but several helpful ideas of very general applicability are available for use in designing Monte Carlo sampling schemes. Three of these ideas are discussed and illustrated in simple cases. These ideas are (1) correlation of samples, (2) importance sampling, and (3) statistical estimation. Operations Research, ISSN 0030-364X, was published as Journal of the Operations Research Society of America from 1952 to 1955 under ISSN 0096-3984."
+    },
+    "16081848": {
+      "title": "Efficient accelerated coordinate descent methods and faster algorithms for solving linear systems",
+      "abstract": "In this paper we show how to accelerate randomized coordinate descent methods and achieve faster convergence rates without paying per-iteration costs in asymptotic running time. In particular, we show how to generalize and efficiently implement a method proposed by Nesterov, giving faster asymptotic running times for various algorithms that use standard coordinate descent as a black box. In addition to providing a proof of convergence for this new general method, we show that it is numerically stable, efficiently implementable, and in certain regimes, asymptotically optimal. ::: To highlight the computational power of this algorithm, we show how it can used to create faster linear system solvers in several regimes: ::: - We show how this method achieves a faster asymptotic runtime than conjugate gradient for solving a broad class of symmetric positive definite systems of equations. ::: - We improve the best known asymptotic convergence guarantees for Kaczmarz methods, a popular technique for image reconstruction and solving overdetermined systems of equations, by accelerating a randomized algorithm of Strohmer and Vershynin. ::: - We achieve the best known running time for solving Symmetric Diagonally Dominant (SDD) system of equations in the unit-cost RAM model, obtaining an O(m log^{3/2} n (log log n)^{1/2} log (log n / eps)) asymptotic running time by accelerating a recent solver by Kelner et al. ::: Beyond the independent interest of these solvers, we believe they highlight the versatility of the approach of this paper and we hope that they will open the door for further algorithmic improvements in the future."
+    },
+    "3663876": {
+      "title": "Not all samples are created equal: Deep learning with importance sampling",
+      "abstract": "Deep neural network training spends most of the computation on examples that are properly handled, and could be ignored. We propose to mitigate this phenomenon with a principled importance sampling scheme that focuses computation on\"informative\"examples, and reduces the variance of the stochastic gradients during training. Our contribution is twofold: first, we derive a tractable upper bound to the per-sample gradient norm, and second we derive an estimator of the variance reduction achieved with importance sampling, which enables us to switch it on when it will result in an actual speedup. The resulting scheme can be used by changing a few lines of code in a standard SGD procedure, and we demonstrate experimentally, on image classification, CNN fine-tuning, and RNN training, that for a fixed wall-clock time budget, it provides a reduction of the train losses of up to an order of magnitude and a relative improvement of test errors between 5% and 17%."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

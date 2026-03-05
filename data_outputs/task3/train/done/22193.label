@@ -1,0 +1,39 @@
+{
+  "doc_id": "22193",
+  "text": "Floppy disks typically use the modified frequency modulation (MFM) hardware-level coding [CITATION_1] , in which timed flux density transitions are used to encode bits. Figure 1 illustrates how floppy disks store data. The write head causes magnetic particles to align in one of two orientations along cylinders (concentric circles) at different distances from the center of the platter. Because the circles have different radii, the timings of transitions from one orientation to the other vary with radius. Consequently, lead-in transitions are required to set up an oscillator to synchronize this change detection. Figure 2 (adapted from [CITATION_2] ) illustrates the mechanisms used to read data from floppy disks. These include a read head, amplifier, pulse generator, phased lock loop, demodulator and additional hardware needed to produce a controller that is usable by a computer at the bus level. Figure 3 (adapted from [CITATION_3] ) shows the signals that appear at different locations in Figure 2 [CITATION_4] ; it helps clarify the effects of reduced signal levels in the media. As the analog signal (A) degrades, peak pulses (B) disappear, causing the loss of MFM transitions, which result in demodulated data (D) and phased lock loop desynchronization. When a floppy disk is being read, changes in field density produce induced currents in the head, which, regardless of the field direction, is seen as a transition (T); the lack of a change at a timing signal produces \"no transition\" (N). The MFM coding uses a \"no transition-transition\" (NT) sequence to indicate a 1, a \"transition-no-transition\" (TN) to indicate a 0 preceded by a 0, and a \"no transition-no-transition\" (NN) to indicate a 0 preceded by a 1. If a transition is not detected because of a loss in electromagnetic flux density, an NT can turn into an NN or a TN can turn into an NN, but an NN cannot turn into an NT or a TN. Pairs of bits always involve a transition. In particular, a 11 will produce NTNT, a 00 will produce either TNTN (if a 0 preceded it) or NNTN (if a 1 preceded it), a 10 will always produce NTNN, and a 01 will produce either TNNT (if a 0 preceded it) or NNNT (if a 1 preceded it). If no transitions are detected, the controller normally indicates an error condition and the CRC code at the end of every 512-bit block of data is irrelevant. Thus, weak bits produce controller errors due to the inability to observe transitions, or weak transitions change a T to an N. They cannot turn the lack of a transition into a transition. As a result, seven out of eleven possible field reductions turn into invalid codings that should be detected by the drive controller as invalid data. Of the remaining four errors that could produce valid data, three require that the previous bit be a 1 or they too produce invalid data in the controller. Table 1 shows all the possible changes. In the table, data values represented by T and NT sequences are enclosed in brackets (e.g., [11] ) and the required preceding bits are indicated prior to the bracketed pairs (e.g., 1[00]).",
+  "correct_citation": {
+    "[CITATION_1]": "109959299",
+    "[CITATION_2]": "62238929",
+    "[CITATION_3]": "62238929",
+    "[CITATION_4]": "62238929"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Floppy disks typically use the modified frequency modulation (MFM) hardware-level coding [CITATION_1] , in which timed flux density transitions are used to encode bits."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Figure 2 (adapted from [CITATION_2] ) illustrates the mechanisms used to read data from floppy disks."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Figure 3 (adapted from [CITATION_3] ) shows the signals that appear at different locations in Figure 2 [CITATION_4] ; it helps clarify the effects of reduced signal levels in the media."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Figure 3 (adapted from [CITATION_3] ) shows the signals that appear at different locations in Figure 2 [CITATION_4] ; it helps clarify the effects of reduced signal levels in the media."
+    }
+  ],
+  "bib_entries": {
+    "109959299": {
+      "title": "Recording codes for digital magnetic storage",
+      "abstract": "This paper provides a tutorial introduction to recording codes for magnetic disk storage devices and a review of progress in code construction algorithms. Topics covered include: a brief description of typical magnetic recording channels; motivation for use of recording codes; methods of selecting codes to maximize data density and reliability; and techniques for code design and implementation."
+    },
+    "62238929": {
+      "title": "Computer evidence analysis and recovery of magnetic storage media data",
+      "abstract": "The recovery of data that were stored on magnetic media normally poses no problems if the same hardware is used to recover the data that was used to store it on the medium. This is not the case if the magnetic information or the storage media itself have been damaged. If the hardware or software system used to store the data on the media is unknown, then this must be determined by initial analysis. Once the storage format has been analysed and is known, the storage media can then be read using the appropriate equipment. If it is unknown or the storage media is damaged, one can try to recover the data using laboratory measures. The paper describes the possibilities for analysis and recovery. The main emphasis is laid on the technical problem of making the magnetically stored information available as digital data."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

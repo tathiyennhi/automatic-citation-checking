@@ -1,0 +1,20 @@
+{
+  "doc_id": "7888",
+  "text": "The main scheme of the proposed LSMOF is presented in Algorithm 1. To begin with, the population of the embedded MOEA is initialized. Then a two-stage strategy is adopted, where the first stage aims to find several quasi-optimal solutions near the PS and the second stage spreads them over the approximate PS evenly. At the first stage, the decision space is reconstructed with the assistance of population P, and the original LSMOP is reformulated into a low-dimensional SOP Z ; then, a single-objective optimizer (e.g., the differential evolution (DE) algorithm [CITATION_1] ) is used to optimize Z . The above problem reformulation and single-objective optimization repeat until the maximum number of FEs is reached. For simplicity, we allocate 50% of the whole FEs to each stage, i.e., tr is set to 0.5. At the second stage, the original LSMOP is optimized by the embedded MOEA with the population P obtained at the first stage. Note that the LSMOF framework shares the same environmental selection operator with the embedded MOEA, and thus we will not enter the details of it. In the following sections, we will introduce the other two main components in Algorithm 1, i.e., problem reformulation and single-objective optimization. Z ← Problem_Reformulation(P, r, Z)",
+  "correct_citation": {
+    "[CITATION_1]": "5297867"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": ", the differential evolution (DE) algorithm [CITATION_1] ) is used to optimize Z ."
+    }
+  ],
+  "bib_entries": {
+    "5297867": {
+      "title": "Differential evolution-A simple and efficient heuristic for global optimization over continuous spaces",
+      "abstract": "A new heuristic approach for minimizing possibly nonlinear and non-differentiable continuous space functions is presented. By means of an extensive testbed it is demonstrated that the new method converges faster and with more certainty than many other acclaimed global optimization methods. The new method requires few control variables, is robust, easy to use, and lends itself very well to parallel computation."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

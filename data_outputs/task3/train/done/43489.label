@@ -1,0 +1,38 @@
+{
+  "doc_id": "43489",
+  "text": "Reference Monitor Approaches: User-level sandboxes have been used to intercept system call requests and may record, deny, reorder, replace, or dispatch any request. This approach offers significant flexibility because all system calls can be subjected to arbitrary handling by the sandbox. However, sandboxes that do this entirely within user space have difficulty supporting standard features like safe and efficient multi-threading [CITATION_1] . Hybrid interposition architectures [CITATION_2] therefore move part of the sandbox into the kernel. However, this approach still relies on the kernel's native scheduling policies and mechanisms, which do not offer sufficient control over system components such as interrupts [CITATION_3] , and thus leave system activities vulnerable to accidental or adversarial interference through interaction channels (such as resources shared among threads) that do not pass explicitly through the system call interface.",
+  "correct_citation": {
+    "[CITATION_1]": "13993826",
+    "[CITATION_2]": "7415409",
+    "[CITATION_3]": "1150080"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "User-level sandboxes have been used to intercept system call requests and may record, deny, reorder, replace, or dispatch any request. This approach offers significant flexibility because all system calls can be subjected to arbitrary handling by the sandbox. However, sandboxes that do this entirely within user space have difficulty supporting standard features like safe and efficient multi-threading [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "However, sandboxes that do this entirely within user space have difficulty supporting standard features like safe and efficient multi-threading [CITATION_1] . Hybrid interposition architectures [CITATION_2] therefore move part of the sandbox into the kernel."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "However, this approach still relies on the kernel's native scheduling policies and mechanisms, which do not offer sufficient control over system components such as interrupts [CITATION_3] ,"
+    }
+  ],
+  "bib_entries": {
+    "7415409": {
+      "title": "Ostia: A delegating architecture for secure system call interposition",
+      "abstract": "Application sandboxes provide restricted execution environments that limit an application’s access to sensitive OS resources. These systems are an increasingly popular method for limiting the impact of a compromise. While a variety of mechanisms for building these systems have been proposed, the most thoroughly implemented and studied are based on system call interposition. Current interpositionbased architectures offer a wide variety of properties that make them an attractive approach for building sandboxing systems. Unfortunately, these architectures also possess several critical properties that make their implementation error prone and limit their functionality. We present a study of Ostia, a sandboxing system we have developed that relies on a “delegating” architecture which overcomes many of the limitations of today’s sandboxing systems. We compare this delegating architecture to the “filtering” architecture commonly used for sandboxes today. We present the salient features of each architecture and examine the design choices that significantly impact security, compatibility, flexibility, deployability, and performance in this class of system."
+    },
+    "13993826": {
+      "title": "Traps and pitfalls: Practical problems in in system call interposition based security tools",
+      "abstract": "System call interposition is a powerful method for regulating and monitoring application behavior. In recent years, a wide variety of security tools have been developed that use this technique. This approach brings with it a host of pitfalls for the unwary implementer that if overlooked can allow his tool to be easily circumvented. To shed light on these problems, we present the lessons we learned in the course of several design and implementation cycles with our own system call interposition-based sandboxing tool. We first present some of the problems and pitfalls we encountered, including incorrectly replicating OS semantics, overlooking indirect paths to resources, race conditions, incorrectly subsetting a complex interface, and side effects of denying system calls. We then present some practical solutions to these problems, and provide general principles for avoiding the difficulties we encountered."
+    },
+    "1150080": {
+      "title": "The design, modeling, and implementation of group scheduling for isolation of computations from adversarial interference",
+      "abstract": "To isolate computations from denial of service (DoS) attacks and other forms of adversarial interference, it is necessary to constrain the effects of interactions among computations. This paper makes four contributions to research on isolation of computations from adversarial interference: (1) it describes the design and implementation of a kernellevel scheduling policy to control the effects of adversarial attacks on computations’ execution; (2) it presents formal models of the system components that are involved in a representative DoS attack scenario; (3) it shows how model checking can be used to analyze that example scenario, under default Linux scheduling semantics and under our scheduling policy design; and (4) it presents empirical studies we have conducted to validate our scheduling policy implementation. Our results show that, with careful design, scheduling and detailed monitoring of computations’ behavior can be combined effectively to mitigate interference of attacks with computations’ execution."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

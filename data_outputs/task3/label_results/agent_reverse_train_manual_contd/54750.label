@@ -1,0 +1,38 @@
+{
+  "doc_id": "54750",
+  "text": "Recently, researchers have tended to integrate face detection and alignment into the training process of facial attribute analysis. [CITATION_1] take face detection as a special case of general semi-rigid object detection and design joint network architectures to ensure the performance improvement in both face detection and attribute estimation. More importantly, this approach can handle in-the-wild input images with complex illumination and occlusions, and no extra cropping and aligning operations are needed. [CITATION_2] propose a cascade network to locate face regions according to different attributes and perform FAE simultaneously with no need to align faces . [CITATION_3] design an AFFAIR network for learning a hierarchy of spatial transformations and predicting facial attributes without landmarks. In summary, integrating face detection and alignment into the network training process is becoming a beneficial research trend.",
+  "correct_citation": {
+    "[CITATION_1]": "3247793",
+    "[CITATION_2]": "19231876",
+    "[CITATION_3]": "49406459"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "[CITATION_1] take face detection as a special case of general semi-rigid object detection and design joint network architectures to ensure the performance improvement in both face detection and attribute estimation."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "[CITATION_2] propose a cascade network to locate face regions according to different attributes and perform FAE simultaneously with no need to align faces ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "[CITATION_3] design an AFFAIR network for learning a hierarchy of spatial transformations and predicting facial attributes without landmarks."
+    }
+  ],
+  "bib_entries": {
+    "3247793": {
+      "title": "A jointly learned deep architecture for facial attribute analysis and face detection in the wild",
+      "abstract": "Facial attribute analysis in the real world scenario is very challenging mainly because of complex face variations. Existing works of analyzing face attributes are mostly based on the cropped and aligned face images. However, this result in the capability of attribute prediction heavily relies on the preprocessing of face detector. To address this problem, we present a novel jointly learned deep architecture for both facial attribute analysis and face detection. Our framework can process the natural images in the wild and our experiments on CelebA and LFWA datasets clearly show that the state-of-the-art performance is obtained."
+    },
+    "19231876": {
+      "title": "A deep cascade network for unaligned face attribute classification",
+      "abstract": "Humans focus attention on different face regions when recognizing face attributes. Most existing face attribute classification methods use the whole image as input. Moreover, some of these methods rely on fiducial landmarks to provide defined face parts. In this paper, we propose a cascade network that simultaneously learns to localize face regions specific to attributes and performs attribute classification without alignment. First, a weakly-supervised face region localization network is designed to automatically detect regions (or parts) specific to attributes. Then multiple part-based networks and a whole-image-based network are separately constructed and combined together by the region switch layer and attribute relation layer for final attribute classification. A multi-net learning method and hint-based model compression is further proposed to get an effective localization model and a compact classification model, respectively. Our approach achieves significantly better performance than state-of-the-art methods on unaligned CelebA dataset, reducing the classification error by 30.9%."
+    },
+    "49406459": {
+      "title": "Landmark free face attribute prediction",
+      "abstract": "Face attribute prediction in the wild is important for many facial analysis applications, yet it is very challenging due to ubiquitous face variations. In this paper, we address face attribute prediction in the wild by proposing a novel method, lAndmark Free Face AttrIbute pRediction (AFFAIR). Unlike traditional face attribute prediction methods that require facial landmark detection and face alignment, AFFAIR uses an end-to-end learning pipeline to jointly learn a hierarchy of spatial transformations that optimize facial attribute prediction with no reliance on landmark annotations or pre-trained landmark detectors. AFFAIR achieves this through simultaneously: 1) learning a global transformation which effectively alleviates negative effect of global face variation for the following attribute prediction tailored for each face; 2) locating the most relevant facial part for attribute prediction; and 3) aggregating the global and local features for robust attribute prediction. Within AFFAIR, a new competitive learning strategy is developed that effectively enhances global transformation learning for better attribute prediction. We show that with zero information about landmarks, AFFAIR achieves the state-of-the-art performance on three face attribute prediction benchmarks, which simultaneously learns the face-level transformation and attribute-level localization within a unified framework."
+    }
+  },
+  "generator": "codex:gpt-5.3"
+}

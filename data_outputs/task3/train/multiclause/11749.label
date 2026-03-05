@@ -1,0 +1,63 @@
+{
+  "doc_id": "11749",
+  "text": "Background. A foundational line of work in cryptography examines the relations between public-key encryption (PKE) and trapdoor functions (TDFs). A specific question studied in recent works [CITATION_1] [CITATION_2] [CITATION_3] is: What is the minimal security assumption on a trapdoor function needed to obtain a construction of CCA-secure PKE? Currently, the minimal assumption (in terms of black-box implications) is that of adaptivity [CITATION_4] . Intuitively, adaptivity is a form of CCA security for TDFs, asking that the TDF remain one-way even when the adversary may query an inversion oracle on points other than its challenge. 2 Results. We find that the notion of ECCA security for encryption is very natural to consider in this context. Indeed, while [CITATION_5] showed that ATDFs imply CCA secure encryption, we show that ATDFs are equivalent to randomness-recovering ECCA-secure encryption. This helps us better understand the power of ATDFs and gives us constructions of ECCA secure encryption from a variety of standard number-theoretic assumptions as per [CITATION_6] . We furthermore show that \"tag-based\" ATDFs as defined in [CITATION_7] are also equivalent to randomness-recovering ECCA-secure encryption, a corollary being ATDFs and tag-based ATDFs are themselves equivalent, which resolves a foundational question left open by [CITATION_8] . We next discuss how we obtain these results in more detail.",
+  "correct_citation": {
+    "[CITATION_1]": "36024007",
+    "[CITATION_2]": "443317",
+    "[CITATION_3]": "10388650",
+    "[CITATION_4]": "10388650",
+    "[CITATION_5]": "10388650",
+    "[CITATION_6]": "10388650",
+    "[CITATION_7]": "10388650",
+    "[CITATION_8]": "10388650"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A foundational line of work in cryptography examines the relations between public-key encryption (PKE) and trapdoor functions (TDFs). A specific question studied in recent works [CITATION_1] [CITATION_2] [CITATION_3] is: What is the minimal security assumption on a trapdoor function needed to obtain a construction of CCA-secure PKE?"
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A foundational line of work in cryptography examines the relations between public-key encryption (PKE) and trapdoor functions (TDFs). A specific question studied in recent works [CITATION_1] [CITATION_2] [CITATION_3] is: What is the minimal security assumption on a trapdoor function needed to obtain a construction of CCA-secure PKE?"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "A foundational line of work in cryptography examines the relations between public-key encryption (PKE) and trapdoor functions (TDFs). A specific question studied in recent works [CITATION_1] [CITATION_2] [CITATION_3] is: What is the minimal security assumption on a trapdoor function needed to obtain a construction of CCA-secure PKE?"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Currently, the minimal assumption (in terms of black-box implications) is that of adaptivity [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Indeed, while [CITATION_5] showed that ATDFs imply CCA secure encryption,"
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "This helps us better understand the power of ATDFs and gives us constructions of ECCA secure encryption from a variety of standard number-theoretic assumptions as per [CITATION_6] ."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "We furthermore show that \"tag-based\" ATDFs as defined in [CITATION_7] are also equivalent to randomness-recovering ECCA-secure encryption,"
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "which resolves a foundational question left open by [CITATION_8] ."
+    }
+  ],
+  "bib_entries": {
+    "36024007": {
+      "title": "Lossy trapdoor functions and their applications",
+      "abstract": "We propose a general cryptographic primitive called lossy trapdoor functions (lossy TDFs), and we use it to develop new approaches for constructing several important cryptographic tools, including (injective) trapdoor functions, collision-resistant hash functions, oblivious transfer, and chosen ciphertext-secure cryptosystems (in the standard model). All of these constructions are simple, efficient, and black-box. We realize lossy TDFs based on a variety of cryptographic assumptions, including the hardness of the decisional Diffie-Hellman (DDH) problem and the hardness of the “learning with errors” problem (which is implied by the worst-case hardness of various lattice problems). Taken together, our results resolve some long-standing open problems in cryptography. They give the first injective TDFs based on problems not directly related to integer factorization and provide the first chosen ciphertext-secure cryptosystem based solely on worst-case complexity assumptions."
+    },
+    "10388650": {
+      "title": "Adaptive trapdoor functions and chosen-ciphertext security",
+      "abstract": "We introduce the notion of adaptive trapdoor functions (ATDFs); roughly, ATDFs remain one-way even when the adversary is given access to an inversion oracle. Our main application is the black-box construction of chosen-ciphertext secure public-key encryption (CCA-secure PKE). Namely, we give a black-box construction of CCA-Secure PKE from ATDFs, as well as a construction of ATDFs from correlation-secure TDFs introduced by Rosen and Segev (TCC ’09). Moreover, by an extension of a recent result of Vahlis (TCC ’10), we show that ATDFs are strictly weaker than the latter (in a black-box sense). Thus, adaptivity appears to be the weakest condition on a TDF currently known to yield the first implication. ::: ::: We also give a black-box construction of CCA-secure PKE from a natural extension of ATDFs we call tag-based ATDFs that, when applied to our constructions of the latter from either correlation-secure TDFs, or lossy TDFs introduced by Peikert and Waters (STOC ’08), yield precisely the CCA-secure PKE schemes in these works. This helps to unify and clarify their schemes. Finally, we show how to realize tag-based ATDFs from an assumption on RSA inversion not known to yield correlation-secure TDFs."
+    },
+    "443317": {
+      "title": "Chosen-ciphertext security via correlated products",
+      "abstract": "We initiate the study of one-wayness under correlated products . We are interested in identifying necessary and sufficient conditions for a function f and a distribution on inputs (x 1 , ..., x k ), so that the function (f (x 1 ), ..., f (x k )) is one-way. The main motivation of this study is the construction of public-key encryption schemes that are secure against chosen-ciphertext attacks (CCA). We show that any collection of injective trapdoor functions that is secure under a very natural correlated product can be used to construct a CCA-secure encryption scheme. The construction is simple, black-box, and admits a direct proof of security. ::: ::: We provide evidence that security under correlated products is achievable by demonstrating that lossy trapdoor functions (Peikert and Waters, STOC '08) yield injective trapdoor functions that are secure under the above mentioned correlated product. Although we currently base security under correlated products on existing constructions of lossy trapdoor functions, we argue that the former notion is potentially weaker as a general assumption. Specifically, there is no fully-black-box construction of lossy trapdoor functions from trapdoor functions that are secure under correlated products."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

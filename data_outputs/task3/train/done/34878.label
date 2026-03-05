@@ -1,0 +1,47 @@
+{
+  "doc_id": "34878",
+  "text": "In recent years, real-time semantic segmentation has drawn increasing attention. Paszke et al. [CITATION_1] propose the Efficient Neural Network (ENet), which uses a compact encoderdecoder architecture to achieve real-time semantic segmentation. Due to the efficiency of ENet, it can be used for the tasks requiring low latency operations. Efficient Spatial Pyramid Network (ESPNet) [CITATION_2] and Efficient Residual Factorized Network (ERFNet) [CITATION_3] are another two efficient real-time semantic segmentation methods, which are faster and more accurate than ENet using the similar number of parameters. In particular, ESPNet makes use of the Efficient Spatial Pyramid module (ESP), which follows the convolution factorization principle that decomposes a standard convolution into a pointwise convolution and a spatial pyramid of atrous convolutions. ERFNet proposes an efficient convolutional block, which takes advantage of residual connections and factorized convolutions to balance the trade-off between accuracy and efficiency. Segmentation Network (SegNet) [CITATION_4] adopts a small encoderdecoder network architecture and memorizes the max-pooling indices to achieve fast inference speed. Although these methods are able to generate the segmentation results in real-time, their accuracy is still not satisfactory.",
+  "correct_citation": {
+    "[CITATION_1]": "16231053",
+    "[CITATION_2]": "3993692",
+    "[CITATION_3]": "25093571",
+    "[CITATION_4]": "206766608"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Paszke et al. [CITATION_1] propose the Efficient Neural Network (ENet), which uses a compact encoderdecoder architecture to achieve real-time semantic segmentation."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Efficient Spatial Pyramid Network (ESPNet) [CITATION_2] and Efficient Residual Factorized Network (ERFNet) [CITATION_3] are another two efficient real-time semantic segmentation methods, which are faster and more accurate than ENet using the similar number of parameters."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Efficient Spatial Pyramid Network (ESPNet) [CITATION_2] and Efficient Residual Factorized Network (ERFNet) [CITATION_3] are another two efficient real-time semantic segmentation methods, which are faster and more accurate than ENet using the similar number of parameters."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Segmentation Network (SegNet) [CITATION_4] adopts a small encoderdecoder network architecture and memorizes the max-pooling indices to achieve fast inference speed."
+    }
+  ],
+  "bib_entries": {
+    "206766608": {
+      "title": "Segnet: A deep convolutional encoder-decoder architecture for image segmentation",
+      "abstract": "We present a novel and practical deep fully convolutional neural network architecture for semantic pixel-wise segmentation termed SegNet. This core trainable segmentation engine consists of an encoder network, a corresponding decoder network followed by a pixel-wise classification layer. The architecture of the encoder network is topologically identical to the 13 convolutional layers in the VGG16 network [1] . The role of the decoder network is to map the low resolution encoder feature maps to full input resolution feature maps for pixel-wise classification. The novelty of SegNet lies is in the manner in which the decoder upsamples its lower resolution input feature map(s). Specifically, the decoder uses pooling indices computed in the max-pooling step of the corresponding encoder to perform non-linear upsampling. This eliminates the need for learning to upsample. The upsampled maps are sparse and are then convolved with trainable filters to produce dense feature maps. We compare our proposed architecture with the widely adopted FCN [2] and also with the well known DeepLab-LargeFOV [3] , DeconvNet [4] architectures. This comparison reveals the memory versus accuracy trade-off involved in achieving good segmentation performance. SegNet was primarily motivated by scene understanding applications. Hence, it is designed to be efficient both in terms of memory and computational time during inference. It is also significantly smaller in the number of trainable parameters than other competing architectures and can be trained end-to-end using stochastic gradient descent. We also performed a controlled benchmark of SegNet and other architectures on both road scenes and SUN RGB-D indoor scene segmentation tasks. These quantitative assessments show that SegNet provides good performance with competitive inference time and most efficient inference memory-wise as compared to other architectures. We also provide a Caffe implementation of SegNet and a web demo at http://mi.eng.cam.ac.uk/projects/segnet."
+    },
+    "25093571": {
+      "title": "ERFNet: Efficient residual factorized convnet for real-time semantic segmentation",
+      "abstract": "Semantic segmentation is a challenging task that addresses most of the perception needs of intelligent vehicles (IVs) in an unified way. Deep neural networks excel at this task, as they can be trained end-to-end to accurately classify multiple object categories in an image at pixel level. However, a good tradeoff between high quality and computational resources is yet not present in the state-of-the-art semantic segmentation approaches, limiting their application in real vehicles. In this paper, we propose a deep architecture that is able to run in real time while providing accurate semantic segmentation. The core of our architecture is a novel layer that uses residual connections and factorized convolutions in order to remain efficient while retaining remarkable accuracy. Our approach is able to run at over 83 FPS in a single Titan X, and 7 FPS in a Jetson TX1 (embedded device). A comprehensive set of experiments on the publicly available Cityscapes data set demonstrates that our system achieves an accuracy that is similar to the state of the art, while being orders of magnitude faster to compute than other architectures that achieve top precision. The resulting tradeoff makes our model an ideal approach for scene understanding in IV applications. The code is publicly available at: https://github.com/Eromera/erfnet"
+    },
+    "16231053": {
+      "title": "ENet: A deep neural network architecture for real-time semantic segmentation",
+      "abstract": "The ability to perform pixel-wise semantic segmentation in real-time is of paramount importance in practical mobile applications. Recent deep neural networks aimed at this task have the disadvantage of requiring a large number of floating point operations and have long run-times that hinder their usability. In this paper, we propose a novel deep neural network architecture named ENet (efficient neural network), created specifically for tasks requiring low latency operation. ENet is up to 18x faster, requires 75x less FLOPs, has 79x less parameters, and provides similar or better accuracy to existing models. ::: We have tested it on CamVid, Cityscapes and SUN datasets and report on comparisons with existing state-of-the-art methods, and the trade-offs between accuracy and processing time of a network. We present performance measurements of the proposed architecture on embedded systems and suggest possible software improvements that could make ENet even faster."
+    },
+    "3993692": {
+      "title": "ESPNet: Efficient spatial pyramid of dilated convolutions for semantic segmentation",
+      "abstract": "We introduce a fast and efficient convolutional neural network, ESPNet, for semantic segmentation of high resolution images under resource constraints. ESPNet is based on a new convolutional module, efficient spatial pyramid (ESP), which is efficient in terms of computation, memory, and power. ESPNet is 22 times faster (on a standard GPU) and 180 times smaller than the state-of-the-art semantic segmentation network PSPNet, while its category-wise accuracy is only 8% less. We evaluated ESPNet on a variety of semantic segmentation datasets including Cityscapes, PASCAL VOC, and a breast biopsy whole slide image dataset. Under the same constraints on memory and computation, ESPNet outperforms all the current efficient CNN networks such as MobileNet, ShuffleNet, and ENet on both standard metrics and our newly introduced performance metrics that measure efficiency on edge devices. Our network can process high resolution images at a rate of 112 and 9 frames per second on a standard GPU and edge device, respectively."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

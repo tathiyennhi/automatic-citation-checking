@@ -1,0 +1,65 @@
+{
+  "doc_id": "18119",
+  "text": "The contributions of this work are briefly summarized There is a rich literature on dictionary learning approaches for the BoF model. In [CITATION_1] , multiple maximum margin hyperplanes are learned and at the same time the codebooks are adjusted to maximize the corresponding margins. A simple method for supervised codebook learning that incorporates both a traditional MLP layer and a codebook layer is proposed in [CITATION_2] , while a full neural formulation is presented in [CITATION_3] . In [CITATION_4] , the optimization aims to minimize the logistic regression loss, while the representation is optimized using an LDA-based criterion in [CITATION_5] . In [CITATION_6] , multiple dictionaries with complementary discriminative information are learned by adjusting the weights used during the clustering process using the predictions of a classifier. However, these approaches are oriented towards image classification instead of time-series classification.",
+  "correct_citation": {
+    "[CITATION_1]": "6001537",
+    "[CITATION_2]": "15958050",
+    "[CITATION_3]": "8501721",
+    "[CITATION_4]": "90113",
+    "[CITATION_5]": "3736096",
+    "[CITATION_6]": "14480568"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In [CITATION_1] , multiple maximum margin hyperplanes are learned and at the same time the codebooks are adjusted to maximize the corresponding margins."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "A simple method for supervised codebook learning that incorporates both a traditional MLP layer and a codebook layer is proposed in [CITATION_2] , while a full neural formulation is presented in [CITATION_3] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "A simple method for supervised codebook learning that incorporates both a traditional MLP layer and a codebook layer is proposed in [CITATION_2] , while a full neural formulation is presented in [CITATION_3] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In [CITATION_4] , the optimization aims to minimize the logistic regression loss, while the representation is optimized using an LDA-based criterion in [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "In [CITATION_4] , the optimization aims to minimize the logistic regression loss, while the representation is optimized using an LDA-based criterion in [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "In [CITATION_6] , multiple dictionaries with complementary discriminative information are learned by adjusting the weights used during the clustering process using the predictions of a classifier."
+    }
+  ],
+  "bib_entries": {
+    "15958050": {
+      "title": "Supervised learning and codebook optimization for bag-of-words models",
+      "abstract": "In this paper, we present a novel approach for supervised codebook learning and optimization for bag-of-words models. This type of models is frequently used in visual recognition tasks like object class recognition or human action recognition. An entity is represented as a histogram of codewords, which are traditionally clustered with unsupervised methods like k-means or random forests and then classified in a supervised way. We propose a new supervised method for joint codebook creation and class learning, which learns the cluster centers of the codebook in a goal-directed way using the class labels of the training set. As a result, the codebook is highly correlated to the recognition problem, leading to a more discriminative codebook. We propose two different learning algorithms, one based on error backpropagation and the other based on cluster label reassignment. We apply the proposed method to human action recognition from video sequences and evaluate it on the KTH data set, reporting very promising results. The proposed technique allows us to improve the discriminative power of an unsupervised learned codebook or to keep the discriminative power while decreasing the size of the learned codebook, thus decreasing the computational complexity due to the nearest neighbor search."
+    },
+    "3736096": {
+      "title": "Discriminant bag of words based representation for human action recognition",
+      "abstract": "Human action recognition based on Bag of Words representation.Discriminant codebook learning for better action class discrimination.Unified framework for the determination of both the optimized codebook and linear data projections. In this paper we propose a novel framework for human action recognition based on Bag of Words (BoWs) action representation, that unifies discriminative codebook generation and discriminant subspace learning. The proposed framework is able to, naturally, incorporate several (linear or non-linear) discrimination criteria for discriminant BoWs-based action representation. An iterative optimization scheme is proposed for sequential discriminant BoWs-based action representation and codebook adaptation based on action discrimination in a reduced dimensionality feature space where action classes are better discriminated. Experiments on five publicly available data sets aiming at different application scenarios demonstrate that the proposed unified approach increases the codebook discriminative ability providing enhanced action classification performance."
+    },
+    "8501721": {
+      "title": "Neural bag-of-features learning",
+      "abstract": "In this paper, a neural learning architecture for the well-known Bag-of-Features (BoF) model, called Neural Bag-of-Features, is proposed. The Neural BoF model is formulated in two neural layers: a Radial Basis Function (RBF) layer and an accumulation layer. The ability of the Neural BoF model to improve the classification performance is demonstrated using four datasets, including a large-scale dataset, and five different feature types. The gains are two-fold: the classification accuracy increases and, at the same time, smaller networks can be used, reducing the required training and testing time. Furthermore, the Neural BoF natively supports training and classifying from feature streams. This allows the proposed method to efficiently scale to large datasets. The streaming process can also be used to introduce noise and reduce the over-fitting of the network. Finally, the Neural BoF provides a framework that can model and extend the dictionary learning methodology. HighlightsA neural generalization of the Bag-of-Features (BoF) model is introduced.The proposed model supports the discriminant weighting of the feature space.Two incremental algorithms (for training and classification) are proposed.A method for providing visual attention information for the BoF model is introduced.The proposed method is evaluated using four datasets from different domains."
+    },
+    "14480568": {
+      "title": "Learning non-redundant codebooks for classifying complex objects",
+      "abstract": "Codebook-based representations are widely employed in the classification of complex objects such as images and documents. Most previous codebook-based methods construct a single codebook via clustering that maps a bag of low-level features into a fixed-length histogram that describes the distribution of these features. This paper describes a simple yet effective framework for learning multiple non-redundant codebooks that produces surprisingly good results. In this framework, each codebook is learned in sequence to extract discriminative information that was not captured by preceding codebooks and their corresponding classifiers. We apply this framework to two application domains: visual object categorization and document classification. Experiments on large classification tasks show substantial improvements in performance compared to a single codebook or codebooks learned in a bagging style."
+    },
+    "6001537": {
+      "title": "Max-margin dictionary learning for multiclass image categorization",
+      "abstract": "Visual dictionary learning and base (binary) classifier training are two basic problems for the recently most popular image categorization framework, which is based on the bag-of-visual-terms (BOV) models and multiclass SVM classifiers. In this paper, we study new algorithms to improve performance of this framework from these two aspects. Typically SVM classifiers are trained with dictionaries fixed, and as a result the traditional loss function can only be minimized with respect to hyperplane parameters (w and b). We propose a novel loss function for a binary classifier, which links the hinge-loss term with dictionary learning. By doing so, we can further optimize the loss function with respect to the dictionary parameters. Thus, this framework is able to further increase margins of binary classifiers, and consequently decrease the error bound of the aggregated classifier. On two benchmark dataset, Graz [1] and the fifteen scene category dataset [2], our experiment results significantly outperformed state-of-the-art works."
+    },
+    "90113": {
+      "title": "Learning mid-level features for recognition",
+      "abstract": "Many successful models for scene or object recognition transform low-level descriptors (such as Gabor filter responses, or SIFT descriptors) into richer representations of intermediate complexity. This process can often be broken down into two steps: (1) a coding step, which performs a pointwise transformation of the descriptors into a representation better adapted to the task, and (2) a pooling step, which summarizes the coded features over larger neighborhoods. Several combinations of coding and pooling schemes have been proposed in the literature. The goal of this paper is threefold. We seek to establish the relative importance of each step of mid-level feature extraction through a comprehensive cross evaluation of several types of coding modules (hard and soft vector quantization, sparse coding) and pooling schemes (by taking the average, or the maximum), which obtains state-of-the-art performance or better on several recognition benchmarks. We show how to improve the best performing coding scheme by learning a supervised discriminative dictionary for sparse coding. We provide theoretical and empirical insight into the remarkable performance of max pooling. By teasing apart components shared by modern mid-level feature extractors, our approach aims to facilitate the design of better recognition architectures."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

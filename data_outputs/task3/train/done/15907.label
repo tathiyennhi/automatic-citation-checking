@@ -1,0 +1,43 @@
+{
+  "doc_id": "15907",
+  "text": "Pooled mining principles normally consist of two parts: share agreement and reward functions. The share agreement [CITATION_1] , [CITATION_2] means that all members of a mining pool work together to mine a new block and share mining revenues when any one of them successfully mines a new block. This allows each member of the mining pool to receive relatively stable mining rewards. The reward function [CITATION_3] refers to the approach of dividing mining rewards by the pool operator. After completing the mining task, miners report their solutions to the pool operator. If the Bitcoin network accepts the solution, the operator collects the mining rewards and divide it among miners following a specific reward function such as PPS and PPLNS [CITATION_4] that both parties agreed with on beforehand. Fig. 1 shows the measurement framework. In step a), we ran several Bitcoin Full Node clients to synchronize real time network traffics with other nodes in the Bitcoin network through the Bitcoin protocol. We then identified two types of data: historical transactions data and unconfirmed transactions data, where historical transactions data means transactions at the Bitcoin blockchain; and unconfirmed transactions data means unconfirmed transactions at Mempool. In step b) and c), we set up two MongoDB databases, denoted by DB 1 and DB 2 , to store historical transactions data and unconfirmed transactions data, respectively. In step d), most of the confirmed blocks with corresponding mining pool labels can be obtained from data servers such as the Blockchain.Info website and BTC.com. Finally, in step e), we developed a python crawler to collect mining pool During the progress of data processing, for those blocks whose mining pool labels are available, we grouped them into known pools, meaning that the block creators are publicly known. Conversely, for those blocks whose mining pool labels are unavailable, we grouped them into unknown pools, meaning that the block creators are anonymous. Specifically, the data processing results are shown in TA-BLE 1. As we can see that 98.18 percent of block creators are available and only 1.49 percent of block creators are unavailable. The time span began on February 25, 2016, for the following two reasons. First, the computing power of the Bitcoin network increased dramatically and many well known mining pools such as BTC.com, ViaBTC and BTC.TOP started to appear after year 2016. Second, the Bitcoin's network computing power and market price [7] increased dramatically over the period, meaning that Bitcoin started to be popular among the public. work. We crawled blocks of mining pools and traced related information such as alias, the number of blocks and time span. In the following sections, we will focus on analysis of top four minging pools, i.e., AntPool, F2Pool, BTC.com and ViaBTC.",
+  "correct_citation": {
+    "[CITATION_1]": "792090",
+    "[CITATION_2]": "2823706",
+    "[CITATION_3]": "792090",
+    "[CITATION_4]": "169162332"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The share agreement [CITATION_1] , [CITATION_2] means that all members of a mining pool work together to mine a new block and share mining revenues when any one of them successfully mines a new block."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The share agreement [CITATION_1] , [CITATION_2] means that all members of a mining pool work together to mine a new block and share mining revenues when any one of them successfully mines a new block."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The reward function [CITATION_3] refers to the approach of dividing mining rewards by the pool operator."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "PPS and PPLNS [CITATION_4] that both parties agreed with on beforehand."
+    }
+  ],
+  "bib_entries": {
+    "2823706": {
+      "title": "Majority is not enough: Bitcoin mining is vulnerable",
+      "abstract": "The Bitcoin cryptocurrency records its transactions in a public log called the blockchain. Its security rests critically on the distributed protocol that maintains the blockchain, run by participants called miners. Conventional wisdom asserts that the mining protocol is incentive-compatible and secure against colluding minority groups, that is, it incentivizes miners to follow the protocol as prescribed. ::: ::: We show that the Bitcoin mining protocol is not incentive-compatible. We present an attack with which colluding miners' revenue is larger than their fair share. The attack can have significant consequences for Bitcoin: Rational miners will prefer to join the attackers, and the colluding group will increase in size until it becomes a majority. At this point, the Bitcoin system ceases to be a decentralized currency. ::: ::: Unless certain assumptions are made, selfish mining may be feasible for any coalition size of colluding miners. We propose a practical modification to the Bitcoin protocol that protects Bitcoin in the general case. It prohibits selfish mining by a coalition that command less than 1/4 of the resources. This threshold is lower than the wrongly assumed 1/2 bound, but better than the current reality where a coalition of any size can compromise the system."
+    },
+    "792090": {
+      "title": "Incentive compatibility of bitcoin mining pool reward functions",
+      "abstract": "In this paper we introduce a game-theoretic model for reward functions in Bitcoin mining pools. Our model consists only of an unordered history of reported shares and gives participating miners the strategy choices of either reporting or delaying when they discover a share or full solution. We defined a precise condition for incentive compatibility to ensure miners strategy choices optimize the welfare of the pool as a whole. With this definition we show that proportional mining rewards are not incentive compatible in this model. We introduce and analyze a novel reward function which is incentive compatible in this model. Finally we show that the popular reward function pay-per-last-N-shares is also incentive compatible in a more general model."
+    },
+    "169162332": {
+      "title": "A survey: Reward distribution mechanisms and withholding attacks in bitcoin pool mining",
+      "abstract": "The past three years have seen the rapid increase of Bitcoin difficulty, which has led to a substantial variance in solo mining. As a result, miners tend to join a large open pool to get a more stable reward. Nowadays, mining pools take up over 98% of Bitcoins total computation power. In a sense, this is a manifestation of Bitcoin that tends to be centralized. Thus, researchers have shown an increased interest in pool mining payoff and security. The purpose of this paper is to review and summarize recent research in Bitcoin pool mining system. We first introduce several common reward distribution schemes, and analyze their advantages and disadvantages with some improvement mechanisms; In the second section, to address pool security problems, we examined the practical utility of some existing and potential attack strategies. To study those malicious attack in details, several defense methods are collected. Finally, we make an outlook on Bitcoin future."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "44462",
+  "text": "Belshe et al. proposed a SPDY protocol [22] that is compatible to the HTTP protocol but improves web browsing latency by multiplexing multiple web transactions in one connection. By using this protocol, a mobile browser does not need to establish multiple connections and can minimize time-consuming connection establishment phases. This protocol is complementary to our approach because each web page loading incurs at least one round trip over the mobile network to establish the first connection. This round trip time can also be eliminated if our scheme is used. In addition, The SPDY protocol also provides header field compression to reduce the size of web requests. But, it does not eliminate the static header fields so that even if the static header fields are compressed, the compressed data still pass through the mobile network. Our scheme, however, eliminates the static header fields passing through the mobile network so that the number and size of packets can be reduced. Preliminary study on the effect of two-tier web browser architecture was studied in [CITATION_1] . This study, however, only focused on taking advantage of the persistent connection between a mobile browser and a proxy server in a mobile network provider. Our approach enhances the preliminary study in terms of the detailed architecture and the effective configuration of the two-tier browser architecture. In more detail, our approach tries to reduce latency associated with WAN by exploiting HTTP persistent connections with web servers and by maintaining DNS cache inside the TwoB proxy server. In addition, since the proxy server is not a general proxy server but a specialized proxy to a mobile browser, we sought to find the best configuration of the browser and the proxy server in terms of the number of persistent connections between the browser and the proxy by analyzing the packet processing time with varying the number of persistent connections for well-known web sites.",
+  "correct_citation": {
+    "[CITATION_1]": "4495519"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Preliminary study on the effect of two-tier web browser architecture was studied in [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "4495519": {
+      "title": "TwoB: a two-tier web browser architecture optimized for mobile network",
+      "abstract": "The connection establishment phase including DNS lookups and TCP handshakes takes significantly long time during web browsing through mobile network. In this paper, we propose a novel web browser architecture that aims at improving mobile web browsing performance. Our approach delegates the connection establishment phase and HTTP header field delivery to a dedicated proxy server located at the joint point between WAN and mobile network to reduce both the number and size of packets on mobile network. Our evaluation showed that the proposed scheme reduces the number of mobile network packets by up to 52% and, consequently, shortens the average page loading time by up to 37%."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

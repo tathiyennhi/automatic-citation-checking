@@ -1,0 +1,38 @@
+{
+  "doc_id": "38215",
+  "text": "Prior to the production phase each system was prepared using the following protocol: the RNA was constrained and the solvent and counterions were minimized during a 2,500-step minimization stage. Next, a second minimization 15,000-step long simulation was run without constrains. After system minimization, the backbone was constrained and the system was heated at 300 K within 100 ps followed by a 200 ps long MD at 300 K with decreasing force constraints. After relaxation, a 2 ns long MD was performed under NpT ensemble (p = 1 bar, T = 300 K) allowing density balance. The production trajectories were obtained at NVT conditions at 300 K. In all the simulations the PME [CITATION_1] [CITATION_2] method for treatment of electrostatic interaction was used under periodic boundary conditions. A 9 Å short-range cutoff was applied and the SHAKE [CITATION_3] algorithm was used to fix all hydrogen atom positions. The time step was fixed to 2 fs and coordinates were stored every 1 ps. The total simulation time was 200 ns.",
+  "correct_citation": {
+    "[CITATION_1]": "26058358",
+    "[CITATION_2]": "95438718",
+    "[CITATION_3]": "18365139"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In all the simulations the PME [CITATION_1] [CITATION_2] method for treatment of electrostatic interaction was used under periodic boundary conditions."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In all the simulations the PME [CITATION_1] [CITATION_2] method for treatment of electrostatic interaction was used under periodic boundary conditions."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "A 9 Å short-range cutoff was applied and the SHAKE [CITATION_3] algorithm was used to fix all hydrogen atom positions."
+    }
+  ],
+  "bib_entries": {
+    "26058358": {
+      "title": "Towards an accurate representation of electrostatics in classical force fields: Efficient implementation of multipolar interactions in biomolecular simulations",
+      "abstract": "The accurate simulation of biologically active macromolecules faces serious limitations that originate in the treatment of electrostatics in the empirical force fields. The current use of \"partial charges\" is a significant source of errors, since these vary widely with different conformations. By contrast, the molecular electrostatic potential (MEP) obtained through the use of a distributed multipole moment description, has been shown to converge to the quantum MEP outside the van der Waals surface, when higher order multipoles are used. However, in spite of the considerable improvement to the representation of the electronic cloud, higher order multipoles are not part of current classical biomolecular force fields due to the excessive computational cost. In this paper we present an efficient formalism for the treatment of higher order multipoles in Cartesian tensor formalism. The Ewald \"direct sum\" is evaluated through a McMurchie-Davidson formalism [L. McMurchie and E. Davidson, J. Comput. Phys. 26, 218 (1978)]. The \"reciprocal sum\" has been implemented in three different ways: using an Ewald scheme, a particle mesh Ewald (PME) method, and a multigrid-based approach. We find that even though the use of the McMurchie-Davidson formalism considerably reduces the cost of the calculation with respect to the standard matrix implementation of multipole interactions, the calculation in direct space remains expensive. When most of the calculation is moved to reciprocal space via the PME method, the cost of a calculation where all multipolar interactions (up to hexadecapole-hexadecapole) are included is only about 8.5 times more expensive than a regular AMBER 7 [D. A. Pearlman et al., Comput. Phys. Commun. 91, 1 (1995)] implementation with only charge-charge interactions. The multigrid implementation is slower but shows very promising results for parallelization. It provides a natural way to interface with continuous, Gaussian-based electrostatics in the future. It is hoped that this new formalism will facilitate the systematic implementation of higher order multipoles in classical biomolecular force fields."
+    },
+    "95438718": {
+      "title": "Efficient particle-mesh Ewald based approach to fixed and induced dipolar interactions",
+      "abstract": "We have implemented classical Ewald and particle-mesh Ewald (PME) based treatments of fixed and induced point dipoles into the sander molecular dynamics (MD) module of AMBER 6. During MD the induced dipoles can be propagated along with the atomic positions either by iteration to self-consistency at each time step, or by a Car–Parrinello (CP) technique using an extended Lagrangian formalism. In this paper we present the derivation of the new algorithms and compare the various options with respect to accuracy, efficiency, and effect on calculated properties of a polarizable water model. The use of PME for electrostatics of fixed charges and induced dipoles together with a CP treatment of dipole propagation in MD simulations leads to a cost overhead of only 33% above that of MD simulations using standard PME with fixed charges, allowing the study of polarizability in large macromolecular systems."
+    },
+    "18365139": {
+      "title": "Numerical integration of the cartesian equations of motion of a system with constraints: molecular dynamics of n-alkanes",
+      "abstract": "A numerical algorithm integrating the 3N Cartesian equations of motion of a system of N points subject to holonomic constraints is formulated. The relations of constraint remain perfectly fulfilled at each step of the trajectory despite the approximate character of numerical integration. The method is applied to a molecular dynamics simulation of a liquid of 64 n-butane molecules and compared to a simulation using generalized coordinates. The method should be useful for molecular dynamics calculations on large molecules with internal degrees of freedom."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

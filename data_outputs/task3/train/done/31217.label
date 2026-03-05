@@ -1,0 +1,25 @@
+{
+  "doc_id": "31217",
+  "text": "To interface the output of the DDSLL with the input of the static CMOS, a special buffer is needed to convert the DDSLL low-swing clocked signal to a full-swing non-clocked signal. Low-swing to full-swing buffers exist in literature, for example in [CITATION_1] . However, it does not take into account the fact that the differential outputs are both precharged to V DD every clock cycle, while in static CMOS this is not the case. Therefore, the buffer interface needs not only to convert the low-swing signal to a full-swing signal, but also to preserve the evaluated output during the precharge phase of the clock. Figure 4 shows the schematic of the proposed output buffer to interface the DDSLL with the static CMOS. All transistors are SVT devices with minimum feature size. The input signals in and in are the differential low-swing outputs of the DDSLL style, while the out and out signals are the input signals to the static CMOS. In order to explain the functionality of the output buffer let us assume that during evaluation in is the low signal and in is the high signal. During the evaluation phase, transistor M 6 is on, charging node out to V DD , which in turn will switch on transistor M 1 . Now the two series NMOS transistors M 1 and M 3 are on discharging node out to GND. During the precharge phase, both in and in signals are high, turning on transistors M 3 and M 4 . As a consequence, the output buffer acts as a latch preserving the voltages of the differential full-swing previously evaluated outputs. The operation of the output buffer is shown in Figure 5 . On another hand, the interface between the output of the static CMOS and the input of the DDSLL does not require special buffers, it is sufficient to directly connect the output of the static CMOS to the input of the DDSLL similar to [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "14925519",
+    "[CITATION_2]": "14925519"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Low-swing to full-swing buffers exist in literature, for example in [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "it is sufficient to directly connect the output of the static CMOS to the input of the DDSLL similar to [CITATION_2] ."
+    }
+  ],
+  "bib_entries": {
+    "14925519": {
+      "title": "Dynamic Current Mode Logic (DyCML): A new low-power high-performance logic style",
+      "abstract": "This paper introduces a new reduced swing logic style called dynamic current mode logic (DyCML) that reduces both gate and interconnect power dissipation. DyCML circuits combine the advantages of MOS current mode logic (MCML) circuits with those of dynamic logic families to achieve high performance at a low-supply voltage with low-power dissipation. Unlike CML circuits, DyCML gates do not have a static current source, which makes DyCML a good candidate for portable devices and battery-powered systems. Simulation and test results show that DyCML circuits are superior to other logic styles in terms of power and delay. A 16-bit DyCML carry look-ahead adder (CLA), fabricated in 0.6-/spl mu/m CMOS technology, attains a delay of 1.24 ns and dissipates 19.2 mW at 400 MHz."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

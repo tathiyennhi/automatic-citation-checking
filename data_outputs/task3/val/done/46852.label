@@ -1,0 +1,20 @@
+{
+  "doc_id": "46852",
+  "text": "Non-speculative Access in Speculative Region: There was concern about allowing non-speculative accesses in a speculative region for transactional programming since this feature could weaken isolation among speculative regions. Other reviewers liked the feature since it enables TM software tools to \"punch through\" a speculative region. This feature can, for example, be useful for debuggers to log information about outstanding speculative regions [CITATION_1] . We advocate non-speculative accesses mainly for lock-free programming in favor of giving more programming freedom to software developers. In addition, the selective use of speculative accesses can be helpful in saving the ASF hardware resources for transactional programming as shown in Section V-C. However, in any case, programmers can always choose to use only speculative accesses to be on the safe side whenever they are concerned with weakening isolation.",
+  "correct_citation": {
+    "[CITATION_1]": "14848095"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This feature can, for example, be useful for debuggers to log information about outstanding speculative regions [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "14848095": {
+      "title": "Quaketm: parallelizing a complex sequential application using transactional memory",
+      "abstract": "\"Is transactional memory useful?\" is the question that cannot be answered until we provide substantial applications that can evaluate its capabilities. While existing TM applications can partially answer the above question, and are useful in the sense that they provide a first-order TM experimentation framework, they serve only as a proof of concept and fail to make a conclusive case for wide adoption by the general computing community. This paper presents QuakeTM, a multiplayer game server; a complex real life TM application that was parallelized from the sequential version with TM-specific considerations in mind. QuakeTM consists of 27,600 lines of code spread across 49 files and exhibits irregular parallelism for which a task parallel model fits well. We provide a coarse-grained TM implementation characterized with eight large transactional blocks as well as a fine-grained implementation which consists of 58 different critical sections and compare these two approaches. In spite of the fact that QuakeTM scales, we show that more effort is needed to decrease the overhead and the abort rate of current software transactional memory systems to achieve a good performance. We give insights into development challenges, suggest techniques to solve them and provide extensive analysis of the transactional behavior of QuakeTM, with an emphasis and discussion of the TM promise of making parallel programming easier."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

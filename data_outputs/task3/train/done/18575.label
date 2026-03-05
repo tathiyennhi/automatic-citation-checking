@@ -1,0 +1,29 @@
+{
+  "doc_id": "18575",
+  "text": "Finally, advecting too narrow gaussians can lead to aliasing artifacts (Fig.16 ). While such aliasing barely influence computations on PDFs (such as BRDF importance sampling) since the advected PDF remains close to the desired smooth PDF in a mass transport Figure 16 : Disk to square example generated using overly narrow Gaussians, exhibiting aliasing artifacts. Figure 15 : Environment maps interpolation between two synthetic skies (a,b) using the parametric model of [CITATION_1] . Linearly blending the environment maps produce fixed shadows that do not capture the rotation of the sun in the sky (e). Our approach properly captures this rotation although the height of the sun in the sky differs, yielding slightly shorter shadows (f). The non-monotonic variation in intensity and color of the sky across the day are not predicted from an interpolation scheme. We selected largely different skies for our test to make differences more visible. In a practical scenario, one would record environment maps more often during the day to capture these variations, and use our approach to smoothly interpolate them. These results are best seen in the accompanying video. Future work While our method currently only provides interpolation between any two distributions, it would be interesting to study the interpolation between N different distributions. This idea has recently been investigated for texture mixing [CITATION_2] ]. It should also be possible smoothly interpolate sequences of distributions using a method analogous to subdivision methods for modeling curves.",
+  "correct_citation": {
+    "[CITATION_1]": "7993169",
+    "[CITATION_2]": "3571438"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Figure 15 : Environment maps interpolation between two synthetic skies (a,b) using the parametric model of [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This idea has recently been investigated for texture mixing [CITATION_2] ]"
+    }
+  ],
+  "bib_entries": {
+    "3571438": {
+      "title": "Wasserstein Barycenter and its Application to Texture Mixing",
+      "abstract": "This paper proposes a new definition of the averaging of discrete probability distributions as a barycenter over the Monge-Kantorovich optimal transport space. To overcome the time complexity involved by the numerical solving of such problem, the original Wasserstein metric is replaced by a sliced approximation over 1D distributions. This enables us to introduce a new fast gradient descent algorithm to compute Wasserstein barycenters of point clouds. ::: ::: This new notion of barycenter of probabilities is likely to find applications in computer vision where one wants to average features defined as distributions. We show an application to texture synthesis and mixing, where a texture is characterized by the distribution of the response to a multi-scale oriented filter bank. This leads to a simple way to navigate over a convex domain of color textures."
+    },
+    "7993169": {
+      "title": "A practical analytic model for daylight",
+      "abstract": "Sunlight and skylight are rarely rendered correctly in computer graphics. A major reason for this is high computational expense. Another is that precise atmospheric data is rarely available. We present an inexpensive analytic model that approximates full spectrum daylight for various atmospheric conditions. These conditions are parameterized using terms that users can either measure or estimate. We also present an inexpensive analytic model that approximates the effects of atmosphere (aerial perspective). These models are fielded in a number of conditions and intermediate results verified against standard literature from atmospheric science. Our goal is to achieve as much accuracy as possible without sacrificing usability."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

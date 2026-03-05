@@ -1,0 +1,20 @@
+{
+  "doc_id": "38413",
+  "text": "Generally, the bandwidth bottleneck for the maximum data throughput lies more towards the file servers than the I/O nodes when the system is running in its full capacity. However, only partial running jobs are involved in checkpoint in the checkpoint based backfilling scheduler. The bottleneck depends on the I/O nodes bandwidth, which is limited to 0.85 GB/s per I/O node [CITATION_1] . At the reserve time, it's not allowed to run the reserved job until all preempted job have done checkpoint. The delay of the reserved job depends on the maximal checkpoint duration of all preempted jobs. The restart process also consumes the resources, which extends the actual runtime. There is no memory requirement information in the workload trace of ANL. So we prepare for the worst, and simply assume the required memory is the total memory of the compute nodes. We assume that 70% of the bandwidth is available. Therefore, the delay time and extended runtime can be calculated as following.",
+  "correct_citation": {
+    "[CITATION_1]": "2828732"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The bottleneck depends on the I/O nodes bandwidth, which is limited to 0.85 GB/s per I/O node [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "2828732": {
+      "title": "Analyzing checkpointing trends for applications on the IBM Blue Gene/P system",
+      "abstract": "Current petascale systems have tens of thousands of hardware components and complex system software stacks, which increase the probability of faults occurring during the lifetime of a process. Checkpointing has been a popular method of providing fault tolerance in high-end systems. While considerable research has been done to optimize checkpointing, in practice the method still involves a high-cost overhead for users. In this paper, we study the checkpointing overhead seen by applications running on leadership-class machines such as the IBM Blue Gene/P at Argonne National Laboratory. We study various applications and design a methodology to assist users in understanding and choosing checkpointing frequency and reducing the overhead incurred. In particular, we study three popular applications—the Grid-Based Projector-Augmented Wave application, the Carr-Parrinello Molecular Dynamics application, and a Nek5000 computational fluid dynamics application—and analyze their memory usage and possible checkpointing trends on 32,768 processors of the Blue Gene/P system."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

@@ -1,0 +1,20 @@
+{
+  "doc_id": "5097",
+  "text": "Note that two-block ADMM based solvers (OSQP [CITATION_1] and Matlab lasso) due to the inefficiency in factorization of a matrix require more than 1000 seconds to solve the problem even when number of iterations is as low as 10. Glmnet, which does a cyclic coordinate descent algorithm on each variable (similar to RAC-MBADMM when set to use number of blocks equal to problem size), performs significantly better than OSQP and Matlab- Table 5 shows the experimental results for OSQP and Matlab-Lasso with α = 1 and λ = 0.01. Again, Table 6 compares RAC and RP solvers with Glmnet only, by averaging over the model error of test set for different α. The table shows the average run-time and training error collected from experiments with α = {0, 0.1, . . . , 1}. In terms of model error, RAC-MBADMM and RP-MBADMM are still competitive and is of the same level compared with Glmnet. Both Glmnet and RAC-MBADMM outperforms OSQP in terms of model error. The slightly worse model error for either RAC-MBADMM or RP-MBADMM could be resulted from the severe over-fit of the problem data, and Glmnet seems to handle over-fit better due to its coordinate cyclic algorithm structure. In terms of time, RAC-MBADMM is 12 times faster compared with OSQP, and 5 times faster compared with Glmnet. RP-MBADMM is 16 times faster compared with OSQP, and 7 times faster compared with Glmnet.",
+  "correct_citation": {
+    "[CITATION_1]": "32182109"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "two-block ADMM based solvers (OSQP [CITATION_1] and Matlab lasso) due to the inefficiency in factorization of a matrix require more than 1000 seconds to solve the problem even when number of iterations is as low as 10."
+    }
+  ],
+  "bib_entries": {
+    "32182109": {
+      "title": "Osqp: An operator splitting solver for quadratic programs",
+      "abstract": "We present a general purpose solver for quadratic programs based on the alternating direction method of multipliers, employing a novel operator splitting technique that requires the solution of a quasi-definite linear system with the same coefficient matrix in each iteration. Our algorithm is very robust, placing no requirements on the problem data such as positive definiteness of the objective function or linear independence of the constraint functions. It is division-free once an initial matrix factorization is carried out, making it suitable for real-time applications in embedded systems. In addition, our technique is the first operator splitting method for quadratic programs able to reliably detect primal and dual infeasible problems from the algorithm iterates. The method also supports factorization caching and warm starting, making it particularly efficient when solving parametrized problems arising in finance, control, and machine learning. Our open-source C implementation OSQP has a small footprint, is library-free, and has been extensively tested on many problem instances from a wide variety of application areas. It is typically ten times faster than competing interior point methods, and sometimes much more when factorization caching or warm start is used."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

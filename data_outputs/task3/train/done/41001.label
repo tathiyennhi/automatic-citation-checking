@@ -1,0 +1,20 @@
+{
+  "doc_id": "41001",
+  "text": "Except for the extra steps required to generate a reduced representation from a Gaussian pyramid, our preprocessing procedure is equal to the preprocessing procedure used by [CITATION_1] . Below, we provide a brief summary and refer to their paper for a full explanation on the preprocessing. All light curves were read from FITS files, removing any confirmed exoplanet transits in the stellar system. After isolating remaining transits and other nontransit outliers, the light curves were flattened according to fitting a best-fit spline to the remaining data points. The best-fit for the spline was chosen using the Bayesian Information Criterion (BIC). All light curves were then folded into vectors of equal length, generating 'global view' vectors of length 2001 and 'local view' vectors of length 201 centering on the transit event. The reduced Gaussian representation vector (further referred to as 'Gaussian view') of length 251 was generated from a larger view of size 8004. The vector was obtained by the Gaussian pyramid function from the Scikit-image library for Python, using a 5-level pyramid with a downscaling rate of 2 per level. Lastly, brightness was normalized to have a median of 0 and a minimum value of -1. The vectors were saved in two sets of ten equal randomized parts called shards. The first set contained the original global and local view inputs, while the second set contained the Gaussian view input. Eight (80% of the data) were used for training, one for validation during training (10%) and one for testing (10%), meaning each shard contained 1,574 TCEs. The test shard contained 360 planet candidates and 1,214 false positives (combination of AFPs and NTP).",
+  "correct_citation": {
+    "[CITATION_1]": "4535051"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Except for the extra steps required to generate a reduced representation from a Gaussian pyramid, our preprocessing procedure is equal to the preprocessing procedure used by [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "4535051": {
+      "title": "Identifying Exoplanets with Deep Learning: A Five-planet Resonant Chain around Kepler-80 and an Eighth Planet around Kepler-90",
+      "abstract": "NASA's Kepler Space Telescope was designed to determine the frequency of Earth-sized planets orbiting Sun-like stars, but these planets are on the very edge of the mission's detection sensitivity. Accurately determining the occurrence rate of these planets will require automatically and accurately assessing the likelihood that individual candidates are indeed planets, even at low signal-to-noise ratios. We present a method for classifying potential planet signals using deep learning, a class of machine learning algorithms that have recently become state-of-the-art in a wide variety of tasks. We train a deep convolutional neural network to predict whether a given signal is a transiting exoplanet or a false positive caused by astrophysical or instrumental phenomena. Our model is highly effective at ranking individual candidates by the likelihood that they are indeed planets: 98.8% of the time it ranks plausible planet signals higher than false positive signals in our test set. We apply our model to a new set of candidate signals that we identified in a search of known Kepler multi-planet systems. We statistically validate two new planets that are identified with high confidence by our model. One of these planets is part of a five-planet resonant chain around Kepler-80, with an orbital period closely matching the prediction by three-body Laplace relations. The other planet orbits Kepler-90, a star which was previously known to host seven transiting planets. Our discovery of an eighth planet brings Kepler-90 into a tie with our Sun as the star known to host the most planets."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

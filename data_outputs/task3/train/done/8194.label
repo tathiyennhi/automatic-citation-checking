@@ -1,0 +1,34 @@
+{
+  "doc_id": "8194",
+  "text": "With the modeling of our prediction targets, f c (t ) and b c (t ) only depend on the temporally adjacent event occurrences. The network therefore does not necessarily require a temporal receptive field covering the pose sequence of a complete video to infer the adjacent events during the mostly repetitive motion. We therefore limit the input of the network during training to a fixed sequence length s. No zero-padding is applied during convolutions, which otherwise has shown to have negative impact on sequence models [CITATION_1] [CITATION_2] . We further do not pad the input sequences, since no events are annotated at the very beginning or end of a video. Based on the architecture and the number of TCN blocks, we set the input length s equal to the temporal receptive field. The output of the network then consist of only the target values at the central sequence index m = ⌊ s 2 ⌋. Additionally, sequences in a minibatch are sampled from different videos. This counters otherwise correlated batch statistics since subsequent poses from the same video and the respective target values are highly correlated [CITATION_3] .",
+  "correct_citation": {
+    "[CITATION_1]": "53806352",
+    "[CITATION_2]": "53036470",
+    "[CITATION_3]": "53806352"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "No zero-padding is applied during convolutions, which otherwise has shown to have negative impact on sequence models [CITATION_1] [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "No zero-padding is applied during convolutions, which otherwise has shown to have negative impact on sequence models [CITATION_1] [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "This counters otherwise correlated batch statistics since subsequent poses from the same video and the respective target values are highly correlated [CITATION_3] ."
+    }
+  ],
+  "bib_entries": {
+    "53806352": {
+      "title": "3D Human Pose Estimation in Video With Temporal Convolutions and Semi-Supervised Training",
+      "abstract": "In this work, we demonstrate that 3D poses in video can be effectively estimated with a fully convolutional model based on dilated temporal convolutions over 2D keypoints. We also introduce back-projection, a simple and effective semi-supervised training method that leverages unlabeled video data. We start with predicted 2D keypoints for unlabeled video, then estimate 3D poses and finally back-project to the input 2D keypoints. In the supervised setting, our fully-convolutional model outperforms the previous best result from the literature by 6 mm mean per-joint position error on Human3.6M, corresponding to an error reduction of 11%, and the model also shows significant improvements on HumanEva-I. Moreover, experiments with back-projection show that it comfortably outperforms previous state-of-the-art results in semi-supervised settings where labeled data is scarce. Code and models are available at https://github.com/facebookresearch/VideoPose3D"
+    },
+    "53036470": {
+      "title": "A Convolutional Sequence to Sequence Model for Multimodal Dynamics Prediction in Ski Jumps",
+      "abstract": "A convolutional sequence to sequence model for predicting the jump forces of ski jumpers directly from pose estimates is presented. We collect the footage of multiple, unregistered cameras together with the output of force measurement plates and present a spatiotemporal calibration procedure for all modalities which is merely based on the athlete's pose estimates. The synchronized data is used to train a fully convolutional sequence to sequence network for predicting jump forces directly from the human pose. We demonstrate that the best performing networks produce a mean squared error of 0.062 on normalized force time series while being able to identify the moment of maximal force occurrence in the original video at 55% recall within +- 2 frames around the ground truth."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

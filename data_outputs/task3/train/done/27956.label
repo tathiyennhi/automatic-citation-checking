@@ -1,0 +1,20 @@
+{
+  "doc_id": "27956",
+  "text": "ChIAPoP takes two read files (paired, in the FASTQ format) from the original ChIA-PET protocol (1) as the input and outputs the chromosome locations, count, P-value and False Discovery Rate (FDR)-adjusted P-value for each potentially interactive anchor region pair. The pipeline consists of six steps. In step 1, the linkers are removed from the raw reads and the resulting paired reads are separated into two categories: regular read pairs (with both linkers of the same type) and chimeric read pairs (with two linkers of different types). This step generates four read files, including two read files for regular read pairs and two read files for chimeric read pairs. In step 2, the four read files are aligned to a reference genome using bowtie one by one. This step generates four alignment files (in the SAM format). In step 3, the regular alignment files are processed to filter out alignment pairs with at least one unaligned read and duplicated alignment pairs. In addition, the strand orientation of each alignment pair is reversed to make it suitable for peak calling in the next step. The two chimeric alignment files are processed in the same way. This step generates four processed alignment files. In step 4, the four processed alignment files are used for peak calling using MACS2. The four files are treated as independent single-end alignment files and the pairing information is ignored. This step generates a file (in the BED format) of read peaks. In step 5, the anchor regions are built using the detected peaks and the single-end (processed) alignments are extended up to a typical fragment length. Then, the number of regular fragment pairs that connect (i.e. overlap) any two different anchor regions are counted and a regular count table (for all anchor region pairs with non-zero counts) is generated. Similarly, the number of chimeric fragment pairs that connect any two anchor regions (the two anchor regions can be identical) are counted and a chimeric count table (for all anchor region pairs with non-zero counts) is generated. In step 6, pairs of anchor regions in the regular count table, i.e. potential pairs, are divided into two groups: inter-chromosomal pairs and intra-chromosomal pairs. In each group, each pair is assigned a P-value using a positive Poisson (i.e. zero truncated Poisson) distribution with a pair-specific parameter (λ). Benjamini-Hochberg procedure [CITATION_1] is then applied to the two groups (as a whole) to calculate the FDR adjusted P-values. Please see Supplementary Figure S1 in the Supplementary Data for the flow chart of ChIAPoP pipeline.",
+  "correct_citation": {
+    "[CITATION_1]": "45174121"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Benjamini-Hochberg procedure [CITATION_1] is then applied to the two groups (as a whole) to calculate the FDR adjusted P-values."
+    }
+  ],
+  "bib_entries": {
+    "45174121": {
+      "title": "Controlling the false discovery Rate -a practical and powerful approach to multiple testing",
+      "abstract": "SUMMARY The common approach to the multiplicity problem calls for controlling the familywise error rate (FWER). This approach, though, has faults, and we point out a few. A different approach to problems of multiple significance testing is presented. It calls for controlling the expected proportion of falsely rejected hypotheses -the false discovery rate. This error rate is equivalent to the FWER when all hypotheses are true but is smaller otherwise. Therefore, in problems where the control of the false discovery rate rather than that of the FWER is desired, there is potential for a gain in power. A simple sequential Bonferronitype procedure is proved to control the false discovery rate for independent test statistics, and a simulation study shows that the gain in power is substantial. The use of the new procedure and the appropriateness of the criterion are illustrated with examples."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}
