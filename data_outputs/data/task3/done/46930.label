@@ -1,0 +1,25 @@
+{
+  "doc_id": "46930",
+  "text": "Contention Management: The baseline ASF contentionmanagement policy is attacker wins where a speculative region issuing a conflicting memory access wins the conflict [CITATION_1] . This can cause live-locks, and some reviewers expressed that \"dead-lock is hard to deal with, but livelock is harder\". We chose the attacker wins policy for two reasons: 1) it is cheap to implement and 2) the complexity of modern processor designs tends to introduce random back-off latencies when speculative regions are re-executed, which can eliminate live-locks naturally in some cases. However, we agree that there still is a danger to suffer from live-locks, and we are developing cost-effective hardware schemes to eliminate live-locks. For now, we expect that software backup code either takes an alternative execution path or retries the aborted speculative region after random back-off time [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "15716107",
+    "[CITATION_2]": "15716107"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Contention Management: The baseline ASF contentionmanagement policy is attacker wins where a speculative region issuing a conflicting memory access wins the conflict [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For now, we expect that software backup code either takes an alternative execution path or retries the aborted speculative region after random back-off time [CITATION_2] ."
+    }
+  ],
+  "bib_entries": {
+    "15716107": {
+      "title": "Performance pathologies in hardware transactional memory",
+      "abstract": "Hardware Transactional Memory (HTM) systems reflect choices from three key design dimensions: conflict detection, version management, and conflict resolution. Previously proposed HTMs represent three points in this design space: lazy conflict detection, lazy version management, committer wins (LL); eager conflict detection, lazy version management, requester wins (EL); and eager conflict detection, eager version management, and requester stalls with conservative deadlock avoidance (EE). To isolate the effects of these high-level design decisions, we develop a common framework that abstracts away differences in cache write policies, interconnects, and ISA to compare these three design points. Not surprisingly, the relative performance of these systems depends on the workload. Under light transactional loads they perform similarly, but under heavy loads they differ by up to 80%. None of the systems performs best on all of our benchmarks. We identify seven performance pathologies-interactions between workload and system that degrade performance-as the root cause of many performance differences: FriendlyFire, StarvingWriter, SerializedCommit, FutileStall, StarvingElder, RestartConvoy, and DuelingUpgrades. We discuss when and on which systems these pathologies can occur and show that they actually manifest within TM workloads. The insight provided by these pathologies motivated four enhanced systems that often significantly reduce transactional memory overhead. Importantly, by avoiding transaction pathologies, each enhanced system performs well across our suite of benchmarks."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

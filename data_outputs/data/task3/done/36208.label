@@ -1,0 +1,29 @@
+{
+  "doc_id": "36208",
+  "text": "Appearance estimation. Our method is versatile: given the shape and pose estimates from Stage II, we can also estimate a color for each Gaussian. This is needed by earlier tracking methods that use similar volume models, but color appearance-based alignment energies [CITATION_1] [CITATION_2] -we compare against them in our experiments. Direct back-projection of the image color onto the model suffers from occasional reconstruction errors in Stages I and II. Instead, we compute the weighted mean colorā q,c over all pixels separately for each Gaussian G q and view c, where the contribution of each pixel is weighted by the Gaussian's visibility V q (Equation 3 ). Colorsā q,c are taken as candidates from which outliers are removed by iteratively computing the mean color and removing the largest outlier (in Euclidean distance). In our experiments, removing 50% of the candidates leads to consistently clean color estimates, as shown in Figures 4 and 9. ",
+  "correct_citation": {
+    "[CITATION_1]": "11660023",
+    "[CITATION_2]": "14989649"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This is needed by earlier tracking methods that use similar volume models, but color appearance-based alignment energies [CITATION_1] [CITATION_2] -we compare against them in our experiments."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "This is needed by earlier tracking methods that use similar volume models, but color appearance-based alignment energies [CITATION_1] [CITATION_2] -we compare against them in our experiments."
+    }
+  ],
+  "bib_entries": {
+    "14989649": {
+      "title": "Fast articulated motion tracking using a sums of Gaussians body model",
+      "abstract": "We present an approach for modeling the human body by Sums of spatial Gaussians (SoG), allowing us to perform fast and high-quality markerless motion capture from multi-view video sequences. The SoG model is equipped with a color model to represent the shape and appearance of the human and can be reconstructed from a sparse set of images. Similar to the human body, we also represent the image domain as SoG that models color consistent image blobs. Based on the SoG models of the image and the human body, we introduce a novel continuous and differentiable model-to-image similarity measure that can be used to estimate the skeletal motion of a human at 5–15 frames per second even for many camera views. In our experiments, we show that our method, which does not rely on silhouettes or training data, offers an good balance between accuracy and computational cost."
+    },
+    "11660023": {
+      "title": "A versatile scene model with differentiable visibility applied to generative pose estimation",
+      "abstract": "Generative reconstruction methods compute the 3D configuration (such as pose and/or geometry) of a shape by optimizing the overlap of the projected 3D shape model with images. Proper handling of occlusions is a big challenge, since the visibility function that indicates if a surface point is seen from a camera can often not be formulated in closed form, and is in general discrete and non-differentiable at occlusion boundaries. We present a new scene representation that enables an analytically differentiable closed-form formulation of surface visibility. In contrast to previous methods, this yields smooth, analytically differentiable, and efficient to optimize pose similarity energies with rigorous occlusion handling, fewer local minima, and experimentally verified improved convergence of numerical optimization. The underlying idea is a new image formation model that represents opaque objects by a translucent medium with a smooth Gaussian density distribution which turns visibility into a smooth phenomenon. We demonstrate the advantages of our versatile scene model in several generative pose estimation problems, namely marker-less multi-object pose estimation, marker-less human motion capture with few cameras, and image-based 3D geometry estimation."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

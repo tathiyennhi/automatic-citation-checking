@@ -1,0 +1,20 @@
+{
+  "doc_id": "57127",
+  "text": "Figure 4 contains three specifications, E l , E2, and E3, of such a counter: all three specifications store the counter's value in a atomic formula as the argument of the predicate r . In these three specifications, the predicate T is existentially quantified over the specification in which it is used so that the atomic formula that stores the counter's value is itself local to the counter's specification (such existential quantification of predicates is a familiar technique for implementing abstract data types in logic programming [CITATION_1] ). The first two specifications store the counter's value on the right of the sequent arrow, and reading and incrementing a counter occur via a synchronization between evaluation and the atom storing the counter. In the third specification, the counter is stored as a linear assumption on the left of the sequent arrow, and synchronization is not used: instead, the linear assumption is \"destructively\" read and then rewritten in order to specify the read and inc functions (counters such as these are described in [12] ). Finally, in the first and third specifications, evaluating the inc symbol causes 1 to be added to the counter's value. In the second specification, evaluation the inc symbol causes 1 to be subtracted from the counter's value: to compensate for this unusual choice, reading a counter in the second specification returns the minus of the current counter's value.",
+  "correct_citation": {
+    "[CITATION_1]": "12879128"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In these three specifications, the predicate T is existentially quantified over the specification in which it is used so that the atomic formula that stores the counter's value is itself local to the counter's specification (such existential quantification of predicates is a familiar technique for implementing abstract data types in logic programming [CITATION_1] )."
+    }
+  ],
+  "bib_entries": {
+    "12879128": {
+      "title": "Lexical scoping as universal quantification",
+      "abstract": "A universally quantified goal can be interpreted intensionally, that is, the goal ∀x.G(x) succeeds if for some new constant c, the goal G(c) succeeds. The constant c is, in a sense, given a scope: it is introduced to solve this goal and is “discharged” after the goal succeeds or fails. This interpretation is similar to the interpretation of implicational goals: the goal D ⊃ G should succeed if when D is assumed, the goal G succeeds. The assumption D is discharged after G succeeds or fails. An interpreter for a logic programming language containing both universal quantifiers and implications in goals and the body of clauses is described. In its non-deterministic form, this interpreter is sound and complete for intuitionistic logic. Universal quantification can provide lexical scoping of individual, function, and predicate constants. Several examples are presented to show how such scoping can be used to provide a Prolog-like language with facilities for local definition of programs, local declarations in modules, abstract data types, and encapsulation of state. Appears in the Proceedings of the Sixth International Conference on Logic Programming, Lisboa, Portugal, 19–23 June 1989. Address correspondence to Miller at “dale@linc.cis.upenn.edu” or at the address above."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

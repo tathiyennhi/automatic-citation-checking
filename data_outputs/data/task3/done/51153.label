@@ -1,0 +1,20 @@
+{
+  "doc_id": "51153",
+  "text": "6.3.1 Checkpoint advisory. To protect against failures, applications often blindly checkpoint at regular intervals, e.g., 1 hr, without any consideration to the machine MTBF or the I/O rate, and consequently incur excessive I/O overhead and time away from useful computation. We have developed a checkpoint advisory tool that can suggest to applications an optimal checkpoint frequency by fusing both the RAS and storage bandwidth data in GUIDE. Key factors in determining an optimal checkpointing interval include the failure inter arrival times (computed using the RAS logs) and Read\" Write\" the time-to-write one checkpoint (derived from the storage logs using I/O periodicity analysis). The tool also takes the \"job size\" into account to accurately estimate the probability of a failure occurring for the given job [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "10366358"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The tool also takes the \"job size\" into account to accurately estimate the probability of a failure occurring for the given job [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "10366358": {
+      "title": "Lazy checkpointing: Exploiting temporal locality in failures to mitigate checkpointing overheads on extreme-scale systems",
+      "abstract": "Continuing increase in the computational power of supercomputers has enabled large-scale scientific applications in the areas of astrophysics, fusion, climate and combustion to run larger and longer-running simulations, facilitating deeper scientific insights. However, these long-running simulations are often interrupted by multiple system failures. Therefore, these applications rely on \"check pointing'\" as a resilience mechanism to store application state to permanent storage and recover from failures. Unfortunately, check pointing incurs excessive I/O overhead on supercomputers due to large size of checkpoints, resulting in a sub-optimal performance and resource utilization. In this paper, we devise novel mechanisms to show how check pointing overhead can be mitigated significantly by exploiting the temporal characteristics of system failures. We provide new insights and detailed quantitative understanding of the check pointing overheads and trade-offs on large-scale machines. Our prototype implementation shows the viability of our approach on extreme-scale machines."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

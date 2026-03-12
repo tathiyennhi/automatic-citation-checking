@@ -1,0 +1,29 @@
+{
+  "doc_id": "38630",
+  "text": "Allowing pure methods to allocate and initialize new objects is important for expressiveness [CITATION_1] [CITATION_2] . Object-oriented languages represent almost all data as objects. Therefore, methods that return strings, tuples, sequences, sets, etc. often create objects. Moreover, methods often create and manipulate auxiliary objects, for instance, iterators. Such methods are weakly-pure because they do not mod-ify objects that exist in the method prestate, but they are not entirely free from side-effects.",
+  "correct_citation": {
+    "[CITATION_1]": "6252698",
+    "[CITATION_2]": "17210478"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Allowing pure methods to allocate and initialize new objects is important for expressiveness [CITATION_1] [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Allowing pure methods to allocate and initialize new objects is important for expressiveness [CITATION_1] [CITATION_2] ."
+    }
+  ],
+  "bib_entries": {
+    "6252698": {
+      "title": "Observational purity and encapsulation",
+      "abstract": "Practical specification languages for imperative and object-oriented programs, such as JML, Eiffel, and Spec#, allow the use of program expressions including method calls in specification formulas. For coherent semantics of specifications, and to avoid anomalies with runtime assertion checking, expressions in specifications and assertions are typically required to be weakly pure in the sense that their evaluation has no effect on the state of preexisting objects. For specification of large systems using standard libraries this restriction is impractical: it disallows many standard methods that mutate state for purposes such as caching or lazy initialization. Calls of such methods can sensibly be used for specifications and annotations in contexts where their effects cannot be observed. This paper formalizes a notion of observational purity, justifies the use of weakly and observationally pure methods in specifications, and shows that a method is observationally pure if it simulates a weakly pure method."
+    },
+    "17210478": {
+      "title": "Purity and side effect analysis for Java programs",
+      "abstract": "We present a new purity and side effect analysis for Java programs. A method is pure if it does not mutate any location that exists in the program state right before the invocation of the method. Our analysis is built on top of a combined pointer and escape analysis, and is able to determine that methods are pure even when the methods mutate the heap, provided they mutate only new objects. Our analysis provides useful information even for impure methods. In particular, it can recognize read-only parameters (a parameter is read-only if the method does not mutate any objects transitively reachable from the parameter) and safe parameters (a parameter is safe if it is read-only and the method does not create any new externally visible heap paths to objects transitively reachable from the parameter). The analysis can also generate regular expressions that characterize the externally visible heap locations that the method mutates. We have implemented our analysis and used it to analyze several applications. Our results show that our analysis effectively recognizes a variety of pure methods, including pure methods that allocate and mutate complex auxiliary data structures."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

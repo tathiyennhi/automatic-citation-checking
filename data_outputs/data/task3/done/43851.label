@@ -1,0 +1,52 @@
+{
+  "doc_id": "43851",
+  "text": "All the available samples, both labeled and unlabeled, are arranged into a matrix, X 2 R mÂN , each of whose columns represents the feature vector of a sample. To achieve a robust classifier, we seek to denoise this matrix. Following [CITATION_1] , [CITATION_2] , this could be done by assuming that X can be spanned on a low-rank subspace and therefore should be rank-deficient. This assumption supports the fact that samples from same classes are more correlated [CITATION_3] , [CITATION_4] and linearly-dependent. Accordingly, the original matrix X is decomposed into the summation of two counterparts, D 2 R mÂN and E 2 R mÂN . The former represents the denoised data matrix, while the latter is the error matrix. This is similar to RPCA [CITATION_5] , used in many computer vision applications. With this decomposition, we can assume that the denoised data matrix shall be rankdeficient and the error matrix sparse.",
+  "correct_citation": {
+    "[CITATION_1]": "2105943",
+    "[CITATION_2]": "8011610",
+    "[CITATION_3]": "700982",
+    "[CITATION_4]": "8011610",
+    "[CITATION_5]": "7128002"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Following [CITATION_1] , [CITATION_2] , this could be done by assuming that X can be spanned on a low-rank subspace and therefore should be rank-deficient."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Following [CITATION_1] , [CITATION_2] , this could be done by assuming that X can be spanned on a low-rank subspace and therefore should be rank-deficient."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "This assumption supports the fact that samples from same classes are more correlated [CITATION_3] , [CITATION_4] and linearly-dependent."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "This assumption supports the fact that samples from same classes are more correlated [CITATION_3] , [CITATION_4] and linearly-dependent."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "This is similar to RPCA [CITATION_5] , used in many computer vision applications."
+    }
+  ],
+  "bib_entries": {
+    "700982": {
+      "title": "Robust regression",
+      "abstract": "Discriminative methods (e.g., kernel regression, SVM) have been extensively used to solve problems such as object recognition, image alignment and pose estimation from images. Regression methods typically map image features (X) to continuous (e.g., pose) or discrete (e.g., object category) values. A major drawback of existing regression methods is that samples are directly projected onto a subspace and hence fail to account for outliers which are common in realistic training sets due to occlusion, specular reflections or noise. It is important to notice that in existing regression methods, and discriminative methods in general, the regressor variables X are assumed to be noise free. Due to this assumption, discriminative methods experience significant degrades in performance when gross outliers are present. ::: ::: Despite its obvious importance, the problem of robust discriminative learning has been relatively unexplored in computer vision. This paper develops the theory of Robust Regression (RR) and presents an effective convex approach that uses recent advances on rank minimization. The framework applies to a variety of problems in computer vision including robust linear discriminant analysis, multi-label classification and head pose estimation from images. Several synthetic and real world examples are used to illustrate the benefits of RR."
+    },
+    "7128002": {
+      "title": "Robust principal component analysis?",
+      "abstract": "This paper is about a curious phenomenon. Suppose we have a data matrix, which is the superposition of a low-rank component and a sparse component. Can we recover each component individually? We prove that under some suitable assumptions, it is possible to recover both the low-rank and the sparse components exactly by solving a very convenient convex program called Principal Component Pursuit; among all feasible decompositions, simply minimize a weighted combination of the nuclear norm and of the L1 norm. This suggests the possibility of a principled approach to robust principal component analysis since our methodology and results assert that one can recover the principal components of a data matrix even though a positive fraction of its entries are arbitrarily corrupted. This extends to the situation where a fraction of the entries are missing as well. We discuss an algorithm for solving this optimization problem, and present applications in the area of video surveillance, where our methodology allows for the detection of objects in a cluttered background, and in the area of face recognition, where it offers a principled way of removing shadows and specularities in images of faces."
+    },
+    "8011610": {
+      "title": "Transduction with matrix completion: Three birds with one stone",
+      "abstract": "We pose transductive classification as a matrix completion problem. By assuming the underlying matrix has a low rank, our formulation is able to handle three problems simultaneously: i) multi-label learning, where each item has more than one label, ii) transduction, where most of these labels are unspecified, and iii) missing data, where a large number of features are missing. We obtained satisfactory results on several real-world tasks, suggesting that the low rank assumption may not be as restrictive as it seems. Our method allows for different loss functions to apply on the feature and label entries of the matrix. The resulting nuclear norm minimization problem is solved with a modified fixed-point continuation method that is guaranteed to find the global optimum."
+    },
+    "2105943": {
+      "title": "Robust recovery of subspace structures by low-rank representation",
+      "abstract": "In this paper, we address the subspace clustering problem. Given a set of data samples (vectors) approximately drawn from a union of multiple subspaces, our goal is to cluster the samples into their respective subspaces and remove possible outliers as well. To this end, we propose a novel objective function named Low-Rank Representation (LRR), which seeks the lowest rank representation among all the candidates that can represent the data samples as linear combinations of the bases in a given dictionary. It is shown that the convex program associated with LRR solves the subspace clustering problem in the following sense: When the data is clean, we prove that LRR exactly recovers the true subspace structures; when the data are contaminated by outliers, we prove that under certain conditions LRR can exactly recover the row space of the original data and detect the outlier as well; for data corrupted by arbitrary sparse errors, LRR can also approximately recover the row space with theoretical guarantees. Since the subspace membership is provably determined by the row space, these further imply that LRR can perform robust subspace clustering and error correction in an efficient and effective way."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

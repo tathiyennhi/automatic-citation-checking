@@ -1,0 +1,20 @@
+{
+  "doc_id": "32488",
+  "text": "Evaluation is deterministic. Leroy chose to represent evaluation as a relation because Coq had better support for proof induction over relations than over function definitions. We have chosen to represent evaluation as a partial function; this makes some proofs easier in some ways: f (x) = f (x) is simpler than f x y ⇒ f x z ⇒ y = z. Before Coq's new functional induction tactic was available, we developed special-purpose tactics to enable these proofs. Although we specify expression evaluation as a function in Coq, we present evaluation as a judgment relation in Fig. 1 . Our evaluation function is (proved) equivalent to the inductively defined judgment Ψ ; (sp; ρ; φ; m) ⊢ e ⇓ v where: Ψ is the \"program,\" consisting of a global environment (ident → option block) mapping identifiers to function-pointers and other global constants, and a global mapping (block → option function) that maps certain (\"text-segment\") addresses to function definitions. sp : block. The \"stack pointer\" giving the address and size of the memory block for stack-allocated local data in the current activation record. ρ : env. The local environment, a finite mapping from identifiers to values. φ : footprint. It represents the memory used by the evaluation of an expression (or a statement). It is a mapping from memory addresses to permissions. Leroy's Cminor has no footprints. m : mem. The memory, a finite mapping from blocks to block contents [CITATION_1] .",
+  "correct_citation": {
+    "[CITATION_1]": "18192772"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Leroy's Cminor has no footprints. m : mem. The memory, a finite mapping from blocks to block contents [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "18192772": {
+      "title": "Formal verification of a memory model for Clike imperative languages",
+      "abstract": "This paper presents a formal verification with the Coq proof assistant of a memory model for C-like imperative languages. This model defines the memory layout and the operations that manage the memory. The model has been specified at two levels of abstraction and implemented as part of an ongoing certification in Coq of a moderately-optimising C compiler. Many properties of the memory have been verified in the specification. They facilitate the definition of precise formal semantics of C pointers. A certified OCaml code implementing the memory model has been automatically extracted from the specifications."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

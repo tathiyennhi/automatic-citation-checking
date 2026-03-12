@@ -1,0 +1,20 @@
+{
+  "doc_id": "28917",
+  "text": "Our first result is only a portion of fault injections manifest themselves in architectural state because many faults are masked by the microarchitecture. Microarchitecturelevel masking [CITATION_1] arises due to faults that attack idle hardware resources, or hardware resources occupied by mispeculated instructions. The last three columns in Table 3 report the number of faults injected into the physical register file, fetch queue, and IQ, respectively, that become architecturally visible. In parentheses, we report the same data as a fraction of the total injected faults (i.e., the column labeled \"Injects\"). As Table 3 shows, the degree of masking varies considerably across different benchmarks and hardware structures. But on average, only 17.3% of injected faults (27,067 out of 156,205) become architecturally visible, with the fetch queue exhibiting the most fault sensitivity (22.6%) and the register file and IQ exhibiting less sensitivity (12.1% and 17.3%, respectively). Faults that are masked by the microarchitecture produce correct program outputs under both architecture-and application-level correctness. Next, we examine the architecturally visible faults in more detail. Figure 1 breaks down the outcome of all architecturally visible fault injections when they are simulated to program completion. For each benchmark, we report the fault injections into the physical register file, fetch queue, and IQ separately in a group of 3 bars labeled \"R,\" \"F,\"",
+  "correct_citation": {
+    "[CITATION_1]": "58698628"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Microarchitecturelevel masking [CITATION_1] arises due to faults that attack idle hardware resources, or hardware resources occupied by mispeculated instructions."
+    }
+  ],
+  "bib_entries": {
+    "58698628": {
+      "title": "A Systematic Methodology to Compute the Architectural Vulnerability Factor for a High-Performance Microprocessor",
+      "abstract": "Single-event upsets from particle strikes have become a key challenge in microprocessor design. Techniques to deal with these transients faults exist, but come at a cost. Designers clearly require accurate estimates of processor error rates to make appropriate cost/reliability tradeoffs. This paper describes a method for generating these estimates. A key aspect of this analysis is that some single-bit faults (such as those occurring in the branch predictor) do not produce an error in a program's output. We define a structure's architectural vulnerability factor (AVF) as the probability that a fault in that particular structure do not result in an error. A structure's error rate is the product of its raw error rate, as determined by process and circuit technology, and the AVF. Unfortunately, computing AVFs of complex structures, such as the instruction queue, can be quite involved. We identify numerous cases, such as prefetches, dynamically dead code, and wrong-path instructions, in which a fault do not affect, correct execution. We instrument a detailed 1A64 processor simulator to map bit-level microarchitectural state to these cases, generating per-structure AVF estimates. This analysis shows AVFs of 28% and 9% for the instruction queue and execution units, respectively, averaged across dynamic sections of the entire CPU2000 benchmark suite."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

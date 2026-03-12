@@ -1,0 +1,52 @@
+{
+  "doc_id": "48508",
+  "text": "where σ T 2 , σ Q and σ T d denote the control limit of T 2 , Q and T d index, respectively. Equation [CITATION_1] generalizes the combined expression by Alcala and Qin [CITATION_2] to include T d . Fault detection is implemented by comparing the values of the new monitoring index with a pre-defined threshold. In this study, all control limits are calculated from an adaptive kernel density estimator based on a linear diffusion process [CITATION_3] . A non-parametric density estimator can provide an estimate of density for any given random data and has been widely applied for fault diagnosis. In the traditional CVA methods, fault thresholds are obtained based on the assumption that the density of the T 2 , Q and T d indices are Gaussian, which may not hold true in real-world applications due to the presence of system nonlinearities. Later on, a kernel density estimation method was put forward [CITATION_4] to solve this problem. However, this method lacks local adaptivity, which may result in high sensitivity to outliers [CITATION_5] . Moreover, the kernel density estimation method involves a bandwidth selection procedure, which requires a preliminary normal model to be determined. The adaptive kernel density estimator which is used in this study completely avoids the bandwidth selection process and is thus strictly non-parametric and suitable for online monitoring. Furthermore, the adaptive density estimator improves local adaptivity as the estimator is regarded as a transition density of a linear diffusion process. After the probability density functions are estimated from the sample data of the T 2 , Q or T d indices, the threshold for individual health indicators is calculated from the probability density function (PDF) for a given significance level α as follows:",
+  "correct_citation": {
+    "[CITATION_1]": "59619109",
+    "[CITATION_2]": "106435872",
+    "[CITATION_3]": "41350591",
+    "[CITATION_4]": "277184",
+    "[CITATION_5]": "41350591"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Equation [CITATION_1] generalizes the combined expression by Alcala and Qin [CITATION_2] to include T d ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Equation [CITATION_1] generalizes the combined expression by Alcala and Qin [CITATION_2] to include T d ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In this study, all control limits are calculated from an adaptive kernel density estimator based on a linear diffusion process [CITATION_3] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Later on, a kernel density estimation method was put forward [CITATION_4] to solve this problem."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "However, this method lacks local adaptivity, which may result in high sensitivity to outliers [CITATION_5] ."
+    }
+  ],
+  "bib_entries": {
+    "106435872": {
+      "title": "Reconstruction-based contribution for process monitoring",
+      "abstract": "Abstract This paper presents a new method to perform fault diagnosis for data-correlation based process monitoring. As alternative to the traditional contribution plot method, reconstruction-based contribution of fault detection indices is proposed. The monitored indices are SPE, T 2 and a combined index φ. The lack of diagnosability of traditional contributions is analyzed for the case of single sensor faults with large fault magnitudes, whereas for the same case the proposed reconstruction-based contributions guarantee correct diagnosis. Monte Carlo simulation results are provided for the case of modest fault magnitudes by randomly assigning fault sensors and fault magnitudes."
+    },
+    "59619109": {
+      "title": "Deviation Contribution Plots of Multivariate Statistics",
+      "abstract": "As data analytic techniques evolve and the accessibility of process measurements improves, data-driven process monitoring has enjoyed a quick development in both theoretical and application perspectives recently. Although abundant process measurements will facilitate data-driven process monitoring and lead to better monitoring indexes, it becomes difficult to identify the underlying variables that are responsible for a fault directly with the monitoring indexes as the scope of measured variables is getting broader. To restrain the scope and identify the source of fault, contribution plots are commonly used in fault diagnosis in order to quantify the influence of process variables in presence of fault. Nevertheless, as sophisticated monitoring techniques become more and more complicated, deriving corresponding contribution plots is challenging. The concept of deviation contribution plots is proposed to address this issue. By extending the original definition of contribution for linear processes, the deviation contribution is defined to quantify the contribution of deviations in originally measured variables to the deviation of monitoring indexes. The ability of the proposed deviation contribution plots to identify influential variables in monitoring algorithms based on nonlinear feature extractions is verified by both numerical simulation and the Tennessee Eastman process benchmark case study."
+    },
+    "41350591": {
+      "title": "Kernel density estimation via diffusion",
+      "abstract": "We present a new adaptive kernel density estimator based on linear diffusion processes. The proposed estimator builds on existing ideas for adaptive smoothing by incorporating information from a pilot density estimate. In addition, we propose a new plug-in bandwidth selection method that is free from the arbitrary normal reference rules used by existing methods. We present simulation examples in which the proposed approach outperforms existing methods in terms of accuracy and reliability."
+    },
+    "277184": {
+      "title": "Nonlinear Dynamic Process Monitoring Using Canonical Variate Analysis and Kernel Density Estimations",
+      "abstract": "The Principal Component Analysis (PCA) and the Partial Least Squares (PLS) are two commonly used techniques for process monitoring. Both PCA and PLS assume that the data to be analysed are not self-correlated i.e. time-independent. However, most industrial processes are dynamic so that the assumption of time-independence made by the PCA and the PLS is invalid in nature. Dynamic extensions to PCA and PLS, so called DPCA and DPLS, have been developed to address this problem, however, unsatisfactorily. Nevertheless, the Canonical Variate Analysis (CVA) is a state-space-based monitoring tool, hence is more suitable for dynamic monitoring than DPCA and DPLS. The CVA is a linear tool and traditionally for simplicity, the upper control limit (UCL) of monitoring metrics associated with the CVA is derived based on a Gaussian assumption. However, most industrial processes are nonlinear and the Gaussian assumption is invalid for such processes so that CVA with a UCL based on this assumption may not be able to correctly identify underlying faults. In this work, a new monitoring technique using the CVA with UCLs derived from the estimated probability density function through kernel density estimations (KDEs) is proposed and applied to the simulated nonlinear Tennessee Eastman Process Plant. The proposed CVA with KDE approach is able to significantly improve the monitoring performance and detect faults earlier when compared to other methods also examined in this study."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

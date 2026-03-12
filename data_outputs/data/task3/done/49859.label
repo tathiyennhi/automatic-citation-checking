@@ -1,0 +1,29 @@
+{
+  "doc_id": "49859",
+  "text": "It remains a problem for future research to establish a formal connection between syntactic effects (such as those due to command injections) and control operators in the semantics of the language, given by parsing actions [CITATION_1] . The semantic action of a string with a syntactic effect (such as those arising in command injections) may be conjectured to be equivalent to an expression with a suitable control operator, most likely a form of delimited continuation, such as shift/reset [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "14571911",
+    "[CITATION_2]": "6426191"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "It remains a problem for future research to establish a formal connection between syntactic effects (such as those due to command injections) and control operators in the semantics of the language, given by parsing actions [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The semantic action of a string with a syntactic effect (such as those arising in command injections) may be conjectured to be equivalent to an expression with a suitable control operator, most likely a form of delimited continuation, such as shift/reset [CITATION_2] ."
+    }
+  ],
+  "bib_entries": {
+    "6426191": {
+      "title": "Abstracting control",
+      "abstract": "The last few years have seen a renewed interest in continuations for expressing advanced control structures in programming languages, and new models such as Abstract Continuations have been proposed to capture these dimensions. This article investigates an alternative formulation, exploiting the latent expressive power of the standard continuation-passing style (CPS) instead of introducing yet other new concepts. We build on a single foundation: abstracting control as a hierarchy of continuations, each one modeling a specific language feature as acting on nested evaluation contexts. We show how iterating the continuation-passing conversion allows us to specify a wide range of control behavior. For example, two conversions yield an abstraction of Prolog-style backtracking. A number of other constructs can likewise be expressed in this framework; each is defined independently of the others, but all are arranged in a hierarchy making any interactions between them explicit. This approach preserves all the traditional results about CPS, e.g. , its evaluation order independence. Accordingly, our semantics is directly implementable in a call-by-value language such as Scheme or ML. Furthermore, because the control operators denote simple, typable lambda-terms in CPS, they themselves can be statically typed. Contrary to intuition, the iterated CPS transformation does not yield huge results: except where explicitly needed, all continuations beyond the first one disappear due to the extensionality principle ( e -reduction). Besides presenting a new motivation for control operators, this paper also describes an improved conversion into applicative-order CPS. The conversion operates in one pass by performing all administrative reductions at translation time; interestingly, it can be expressed very concisely using the new control operators. The paper also presents some examples of nondeterministic programming in direct style."
+    },
+    "14571911": {
+      "title": "On the Semantics of Parsing Actions",
+      "abstract": "Parsers, whether constructed by hand or automatically via a parser generator tool, typically need to compute some useful semantic information in addition to the purely syntactic analysis of their input. Semantic actions may be added to parsing code by hand, or the parser generator may have its own syntax for annotating grammar rules with semantic actions. In this paper, we take a functional programming view of such actions. We use concepts from the semantics of mostly functional programming languages and adapt them to give meaning to the actions of the parser. Specifically, the semantics is inspired by the categorical semantics of lambda calculi and the use of premonoidal categories for the semantics of effects in programming languages. This framework is then applied to our leading example, the transformation of grammars to eliminate left recursion. The syntactic transformation of left-recursion elimination leads to a corresponding semantic transformation of the actions for the grammar. We prove the semantic transformation correct and relate it to continuation passing style, a widely studied transformation in lambda calculi and functional programming. As an idealization of the input language of parser generators, we define a call-by-value calculus with first-order functions and a type-and-effect system where the effects are given by sequences of grammar symbols. The account of left-recursion elimination is then extended to this calculus."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

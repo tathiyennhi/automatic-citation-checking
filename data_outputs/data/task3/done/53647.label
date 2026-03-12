@@ -1,0 +1,29 @@
+{
+  "doc_id": "53647",
+  "text": "The force-sensing performance of the motion-copying system can be degraded because of the effects of vibration and friction on the ball screw. We have verified the effectiveness of using a friction-free DOB with a dither signal to reduce vibration and friction effects on force estimation in a ball-screw system. Therefore, to improve the force-sensing performance of motion-copying system, we implement a frictionfree DOB with a dither signal for force sensing on the slave side in motion-saving and motion-loading systems. The force sensing function of the master in motion-saving system is performed by the conventional DOB. The block diagram of the motion-copying system with different master and slave mechanisms using the proposed friction-free DOB is shown in Fig. 9 . All the control algorithms are implemented in an FPGA to achieve a high sampling rate for the control cycle, which allows the force-sensing bandwidth to be widened. The algorithms are constructed with arithmetic fixed point to create a hardware-based controller in the FPGA [CITATION_1] - [CITATION_2] . The FPGA configuration for the proposed control system was established using the hardware description language VHDL. Using a complex control algorithm, we achieve a short sam-(a) Motion-saving system (b) Motion-loading system Fig. 9 . Motion-copying system with different master and slave mechanisms based on bilateral control using friction-free DOB pling time of 5 μs for the control system, which is difficult for conventional CPU-based or DSP-based controllers. The FPGA used in this study is the Stratix IV manufactured by Altera. The FPGA board has a clock frequency of 100 MHz. Figure 10 illustrates the FPGA's internal architecture for the proposed motion-copying system utilizing the friction-free DOB.",
+  "correct_citation": {
+    "[CITATION_1]": "6809492",
+    "[CITATION_2]": "36067529"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The algorithms are constructed with arithmetic fixed point to create a hardware-based controller in the FPGA [CITATION_1] - [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The algorithms are constructed with arithmetic fixed point to create a hardware-based controller in the FPGA [CITATION_1] - [CITATION_2] ."
+    }
+  ],
+  "bib_entries": {
+    "6809492": {
+      "title": "FPGA design methodology for industrial control systems -A review",
+      "abstract": "This paper reviews the state of the art of field- programmable gate array (FPGA) design methodologies with a focus on industrial control system applications. This paper starts with an overview of FPGA technology development, followed by a presentation of design methodologies, development tools and relevant CAD environments, including the use of portable hardware description languages and system level programming/design tools. They enable a holistic functional approach with the major advantage of setting up a unique modeling and evaluation environment for complete industrial electronics systems. Three main design rules are then presented. These are algorithm refinement, modularity, and systematic search for the best compromise between the control performance and the architectural constraints. An overview of contributions and limits of FPGAs is also given, followed by a short survey of FPGA-based intelligent controllers for modern industrial systems. Finally, two complete and timely case studies are presented to illustrate the benefits of an FPGA implementation when using the proposed system modeling and design methodology. These consist of the direct torque control for induction motor drives and the control of a diesel-driven synchronous stand-alone generator with the help of fuzzy logic."
+    },
+    "36067529": {
+      "title": "Implementation of bilateral control system based on acceleration control using FPGA for multi-DOF haptic endoscopic surgery robot",
+      "abstract": "Bilateral control systems are strongly required to apply to endoscopic surgeries. It is necessary that the system has enough degrees of freedom for applying various operation procedures including endoscopic surgery. When the degrees of freedom of the system are increased, the amount of control calculation is also increased, and it is hard to keep sampling periods short. The bilateral control systems, however, require comparatively shorter sampling periods, particularly the control system based on an acceleration control system. Hence, it is a difficult issue to increase the degrees of freedom of the bilateral control system. In this paper, the sampling period is kept short in the multidegree of freedom system by using field programmable gate arrays as processors. The bilateral control system based on the acceleration control system is implemented in a robot system, which has 12 DOF, and some experimental results are shown, and the errors between the response of the master and slave robots are discussed."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

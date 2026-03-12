@@ -1,0 +1,20 @@
+{
+  "doc_id": "59174",
+  "text": "Mining QARs by a generic BAR mining algorithm, however, is infeasible in most cases for the following reasons. First, QAR mining suffers from the same problem of a combinatorial explosion of attribute sets as does BAR mining; that is, given a set of N distinct attributes, the number of its non-empty subsets is (2 N − 1). In practice, the number of distinct attributes in a QAR mining problem may not be as large as that in a BAR mining problem. However, as shown by [CITATION_1] , it is necessary to combine the consecutive intervals of a quantitative attribute to gain sufficient support and more meaningful intervals. This leads to another combinatorial explosion problem: if the domain of a quantitative attribute is partitioned into n intervals, the total number of intervals of the attribute grows to O(n 2 ) after combining the consecutive intervals. When we join the attributes in the mining process, the number of itemsets (i.e., a set of attribute, interval pairs) can become prohibitively large if the number of intervals associated with an attribute is large. For example, it is common in a QAR mining problem that a quantitative attribute has 200 intervals; however, there are (200 * (200 + 1)/2) 2 = 404,010,000 different combinations of intervals if we join two such attributes, which is equivalent to 404,010,000 candidate attribute sets in a BAR mining problem. This number further grows exponentially when more than two attributes are joined. As a result, effective techniques to prune the large search space of QAR mining are necessary in order to develop an efficient algorithm for the problem.",
+  "correct_citation": {
+    "[CITATION_1]": "5735552"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, as shown by [CITATION_1] , it is necessary to combine the consecutive intervals of a quantitative attribute to gain sufficient support and more meaningful intervals."
+    }
+  ],
+  "bib_entries": {
+    "5735552": {
+      "title": "Mining quantitative association rules in large relational tables",
+      "abstract": "We introduce the problem of mining association rules in large relational tables containing both quantitative and categorical attributes. An example of such an association might be \"10% of married people between age 50 and 60 have at least 2 cars\". We deal with quantitative attributes by fine-partitioning the values of the attribute and then combining adjacent partitions as necessary. We introduce measures of partial completeness which quantify the information lost due to partitioning. A direct application of this technique can generate too many similar rules. We tackle this problem by using a \"greater-than-expected-value\" interest measure to identify the interesting rules in the output. We give an algorithm for mining such quantitative association rules. Finally, we describe the results of using this approach on a real-life dataset."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

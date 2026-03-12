@@ -1,0 +1,20 @@
+{
+  "doc_id": "18638",
+  "text": "Reads were mapped to the UCSC hg19 (NCBI GRCh37) genome assembly. RSEM [CITATION_1] was modified to call Bowtie (Langmead et al., 2009) v1 .0.0 with the -v 2 argument. RSEM was then called with the arguments --bowtie-m 100 --bowtie-chunkmbs 500 --calc-ci --output-genome-bam on the genome annotation. Read alignments with mapq scores of 0 and/or a splice junction overhang of less than 6 bp were then filtered out. Remaining unaligned reads were then aligned TopHat (Trapnell et al., 2009) v2 .0.8b with the arguments --bowtie1 --read-mismatches 2 --read-edit-dist 2 --no-mixed --no-discordant --min-anchor-length 6 --splice-mismatches 0 --min-intron-length 10 --max-intron-length 1000000 --min-isoform-fraction 0.0 --no-novel-juncs --no-novel-indels --raw-juncs on the splice junction file (--mate-inner-dist and --mate-std-dev were calculated by mapping to constitutive coding exons with MISO's exon_utils.py utility). Alignments produced by this call to TopHat were then filtered identically to the alignments produced by RSEM. Reads aligned by RSEM and TopHat were then merged to create BAM files of all aligned reads.",
+  "correct_citation": {
+    "[CITATION_1]": "13123189"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "RSEM [CITATION_1] was modified to call Bowtie (Langmead et al., 2009) v1 .0.0 with the -v 2 argument."
+    }
+  ],
+  "bib_entries": {
+    "13123189": {
+      "title": "RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome",
+      "abstract": "BackgroundRNA-Seq is revolutionizing the way transcript abundances are measured. A key challenge in transcript quantification from RNA-Seq data is the handling of reads that map to multiple genes or isoforms. This issue is particularly important for quantification with de novo transcriptome assemblies in the absence of sequenced genomes, as it is difficult to determine which transcripts are isoforms of the same gene. A second significant issue is the design of RNA-Seq experiments, in terms of the number of reads, read length, and whether reads come from one or both ends of cDNA fragments.ResultsWe present RSEM, an user-friendly software package for quantifying gene and isoform abundances from single-end or paired-end RNA-Seq data. RSEM outputs abundance estimates, 95% credibility intervals, and visualization files and can also simulate RNA-Seq data. In contrast to other existing tools, the software does not require a reference genome. Thus, in combination with a de novo transcriptome assembler, RSEM enables accurate transcript quantification for species without sequenced genomes. On simulated and real data sets, RSEM has superior or comparable performance to quantification methods that rely on a reference genome. Taking advantage of RSEM's ability to effectively use ambiguously-mapping reads, we show that accurate gene-level abundance estimates are best obtained with large numbers of short single-end reads. On the other hand, estimates of the relative frequencies of isoforms within single genes may be improved through the use of paired-end reads, depending on the number of possible splice forms for each gene.ConclusionsRSEM is an accurate and user-friendly software tool for quantifying transcript abundances from RNA-Seq data. As it does not rely on the existence of a reference genome, it is particularly useful for quantification with de novo transcriptome assemblies. In addition, RSEM has enabled valuable guidance for cost-efficient design of quantification experiments with RNA-Seq, which is currently relatively expensive."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

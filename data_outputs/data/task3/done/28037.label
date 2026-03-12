@@ -1,0 +1,29 @@
+{
+  "doc_id": "28037",
+  "text": "The parameter α defines the startup overhead of the communication. The parameter β defines the time to communicate a machine word. For simplicity, we assume that the size of a machine word is equivalent to the size of a data element. For example, broadcast, reduction, and prefix sums can be implemented to run in time O(βl+α log p) [CITATION_1] , [CITATION_2] for vectors of size l. We have α ≫ β ≫ 1 where our unit is the time for executing a simple machine instruction. Most of the time, we treat α and β as variables in our asymptotic analysis in order to expose effects of latency and bandwidth limitations. i . For this paper, hypercubes are not primarily important as an actual network architecture. Rather, we extensively use communication in a conceptual hypercube as a design pattern for algorithms. More specifically the hypercube algorithms shown in Figure 1 iterate through the dimension of the hypercube. Depending on how this template is instantiated one achieves a large spectrum of global effects. For example, by repeatedly summing an inital local value a, one gets an all-reduce, i.e., all PEs get the global sum of the local values in time O((α + β|a|) log p). Similarly, if we replace addition by concatenation, we perform an all-gather operation (i.e., all PEs get all the local values) which runs in time O(βp|a| + α log p). If the as are a sorted sequences and we replace concatenation by merging, all PEs get the elements in all the local as in sorted order using time O(βp|a|+α log p). We call this operation all-gather-merge.",
+  "correct_citation": {
+    "[CITATION_1]": "207171031",
+    "[CITATION_2]": "16366981"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For example, broadcast, reduction, and prefix sums can be implemented to run in time O(βl+α log p) [CITATION_1] , [CITATION_2] for vectors of size l."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For example, broadcast, reduction, and prefix sums can be implemented to run in time O(βl+α log p) [CITATION_1] , [CITATION_2] for vectors of size l."
+    }
+  ],
+  "bib_entries": {
+    "207171031": {
+      "title": "Sorting networks and their applications",
+      "abstract": "To achieve high throughput rates today's computers perform several operations simultaneously. Not only are I/O operations performed concurrently with computing, but also, in multiprocessors, several computing operations are done concurrently. A major problem in the design of such a computing system is the connecting together of the various parts of the system (the I/O devices, memories, processing units, etc.) in such a way that all the required data transfers can be accommodated. One common scheme is a high-speed bus which is time-shared by the various parts; speed of available hardware limits this scheme. Another scheme is a cross-bar switch or matrix; limiting factors here are the amount of hardware (an m × n matrix requires m × n cross-points) and the fan-in and fan-out of the hardware."
+    },
+    "16366981": {
+      "title": "Two-tree algorithms for full bandwidth broadcast, reduction and scan",
+      "abstract": "We present a new, simple algorithmic idea for the collective communication operations broadcast, reduction, and scan (prefix sums). The algorithms concurrently communicate over two binary trees which both span the entire network. By careful layout and communication scheduling, each tree communicates as efficiently as a single tree with exclusive use of the network. Our algorithms thus achieve up to twice the bandwidth of most previous algorithms. In particular, our approach beats all previous algorithms for reduction and scan. Experiments on clusters with Myrinet and InfiniBand interconnect show significant reductions in running time for all three operations sometimes even close to the best possible factor of two."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

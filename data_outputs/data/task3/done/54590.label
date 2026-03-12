@@ -1,0 +1,47 @@
+{
+  "doc_id": "54590",
+  "text": "McMillan [1998] uses \"compositional model checking\" with various built-in abstractions to reduce an infinite-state system to a finite-state system, which can be model checked using Boolean methods. The abstraction mechanisms include temporal case splitting, datatype reduction [CITATION_1] , and symmetry reduction. Temporal case splitting uses heuristics to slice the program space to only consider the resources necessary for proving a property. Datatype reduction uses abstract interpretation [CITATION_2] ] to abstract unbounded data and operations over them to operations over finite domains. For such finite domains, datatype reduction is subsumed by predicate abstraction. Symmetry is exploited to reduce the number of indices to consider for verifying unbounded arrays or network of processes. The method can prove both safety and liveness properties. Since the abstraction mechanisms are built into the system, they can often be coarse and may not suffice for proving a system. Besides, the user is often required to provide auxiliary lemmas or to decompose the proof to be discharged by symbolic model checkers. For instance, the proof of safety of the Bakery protocol [CITATION_3] or the proof of an outof-order processor model [CITATION_4] ] required nontrivial lemmas in the compositional model checking framework.",
+  "correct_citation": {
+    "[CITATION_1]": "4553749",
+    "[CITATION_2]": "207614632",
+    "[CITATION_3]": "15250059",
+    "[CITATION_4]": "4507494"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The abstraction mechanisms include temporal case splitting, datatype reduction [CITATION_1] , and symmetry reduction."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Datatype reduction uses abstract interpretation [CITATION_2] ] to abstract unbounded data and operations over them to operations over finite domains."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "For instance, the proof of safety of the Bakery protocol [CITATION_3] or the proof of an outof-order processor model [CITATION_4] ] required nontrivial lemmas in the compositional model checking framework."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "For instance, the proof of safety of the Bakery protocol [CITATION_3] or the proof of an outof-order processor model [CITATION_4] ] required nontrivial lemmas in the compositional model checking framework."
+    }
+  ],
+  "bib_entries": {
+    "15250059": {
+      "title": "Induction in compositional model checking",
+      "abstract": "This paper describes a technique of inductive proof based on model checking. It differs from previous techniques that combine induction and model checking in that the proof is fully mechanically checked and temporal variables (process identifiers, for example) may be natural numbers. To prove ∀n.φ(n) inductively, the predicate φ(n - 1) ⇒ φ(n) must be proved for all values of the parameter n. Its proof for a fixed n uses a conservative abstraction that partitions the natural numbers into a finite number of intervals. This renders the model finite. Further, the ions for different values of n fall into a finite number of isomorphism classes. Thus, an inductive proof of ∀n.φ(n) can be obtained by checking a finite number of formulas on finite models. The method is integrated with a compositional proof system based on the SMV model checker. It is illustrated by examples, including the N-process bakery mutual exclusion algorithm."
+    },
+    "4553749": {
+      "title": "Model checking and abstraction",
+      "abstract": "We describe a method for using abstraction to reduce the complexity of temporal-logic model checking. Using techniques similar to those involved in abstract interpretation, we construct an abstract model of a program without ever examining the corresponding unabstracted model. We show how this abstract model can be used to verify properties of the original program. We have implemented a system based on these techniques, and we demonstrate their practicality using a number of examples, including a program representing a pipelined ALU circuit with over 10 1300 states."
+    },
+    "4507494": {
+      "title": "Verification of an implementation of Tomasulo's algorithm by compositional model checking",
+      "abstract": "An implementation of an out-of-order processing unit based on Tomasulo's algorithm is formally verified using compositional model checking techniques. This demonstrates that finite-state methods can be applied to such algorithms, without recourse to higher-order proof systems. The paper introduces a novel compositional system that supports cyclic environment reasoning and multiple environment abstractions per signal. A proof of Tomasulo's algorithm is outlined, based on refinement maps, and relying on the novel features of the compositional system. This proof is fully verified by the SMV verifier, using symmetry to reduce the number of assertions that must be verified."
+    },
+    "207614632": {
+      "title": "Abstract interpretation: A Unified Lattice Model for the Static Analysis of Programs by Construction or Approximation of Fixpoints",
+      "abstract": "A program denotes computations in some universe of objects. Abstract interpretation of programs consists in using that denotation to describe computations in another universe of abstract objects, so that the results of abstract execution give some information on the actual computations. An intuitive example (which we borrow from Sintzoff [72]) is the rule of signs. The text -1515 * 17 may be understood to denote computations on the abstract universe {(+), (-), (±)} where the semantics of arithmetic operators is defined by the rule of signs. The abstract execution -1515 * 17 → -(+) * (+) → (-) * (+) → (-), proves that -1515 * 17 is a negative number. Abstract interpretation is concerned by a particular underlying structure of the usual universe of computations (the sign, in our example). It gives a summary of some facets of the actual executions of a program. In general this summary is simple to obtain but inaccurate (e.g. -1515 + 17 → -(+) + (+) → (-) + (+) → (±)). Despite its fundamentally incomplete results abstract interpretation allows the programmer or the compiler to answer questions which do not need full knowledge of program executions or which tolerate an imprecise answer, (e.g. partial correctness proofs of programs ignoring the termination problems, type checking, program optimizations which are not carried in the absence of certainty about their feasibility, …)."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

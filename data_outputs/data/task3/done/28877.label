@@ -1,0 +1,29 @@
+{
+  "doc_id": "28877",
+  "text": "Looking at Figure 1 , we see a large portion of architecturally visible faults lead to correct program outputs under architecture-level correctness (i.e., the \"Architecture\" components). The last 3 groups of bars in Figure 1 show architecture-level correctness is achieved in 50.4% to 60.1 % of program outputs on average across the 3 hardware structures for the multimedia and SPEC benchmarks, and in 61.0% to 68.8% on average for the Al benchmarks. Similar to microarchitecture-level masking, many fault injections attack architectural state unnecessary for maintaining numerical integrity in our computations, and hence, become architecturally masked [CITATION_1] . In our benchmarks, the primary source of architecture-level masking is logical and inequality instructions. These instructions rarely change their outputs despite corruptions to their input operands; thus, they are highly resilient to faults. Other (less significant) sources of architecture-level masking include dynamically dead code, NOP instructions, and Y-branches [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "58698628",
+    "[CITATION_2]": "15052901"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Similar to microarchitecture-level masking, many fault injections attack architectural state unnecessary for maintaining numerical integrity in our computations, and hence, become architecturally masked [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Other (less significant) sources of architecture-level masking include dynamically dead code, NOP instructions, and Y-branches [CITATION_2] ."
+    }
+  ],
+  "bib_entries": {
+    "15052901": {
+      "title": "Y-branches: When you come to a fork in the road, take it",
+      "abstract": "In this paper, we study the effects of manipulating the architected direction of conditional branches. Through the use of statistical sampling, we .nd that about 40% of all dynamic branches and about 50% of mispredicted branches do not affect correct program behavior when forced down the incorrect path. We call such branches Y-branches.To further examine this unexpected phenomenon, we provide a characterization of the coding constructs that give rise to such branches. Examples of such coding constructs include short-circuits and ineffectual loop iterations. We provide a statistical breakdown of the frequency of these branches and their constructs. Finally, we suggest some techniques for exploiting this behavior, particularly when it results from short-circuit constructs."
+    },
+    "58698628": {
+      "title": "A Systematic Methodology to Compute the Architectural Vulnerability Factor for a High-Performance Microprocessor",
+      "abstract": "Single-event upsets from particle strikes have become a key challenge in microprocessor design. Techniques to deal with these transients faults exist, but come at a cost. Designers clearly require accurate estimates of processor error rates to make appropriate cost/reliability tradeoffs. This paper describes a method for generating these estimates. A key aspect of this analysis is that some single-bit faults (such as those occurring in the branch predictor) do not produce an error in a program's output. We define a structure's architectural vulnerability factor (AVF) as the probability that a fault in that particular structure do not result in an error. A structure's error rate is the product of its raw error rate, as determined by process and circuit technology, and the AVF. Unfortunately, computing AVFs of complex structures, such as the instruction queue, can be quite involved. We identify numerous cases, such as prefetches, dynamically dead code, and wrong-path instructions, in which a fault do not affect, correct execution. We instrument a detailed 1A64 processor simulator to map bit-level microarchitectural state to these cases, generating per-structure AVF estimates. This analysis shows AVFs of 28% and 9% for the instruction queue and execution units, respectively, averaged across dynamic sections of the entire CPU2000 benchmark suite."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

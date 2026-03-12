@@ -1,0 +1,25 @@
+{
+  "doc_id": "40744",
+  "text": "To the best of our knowledge, the is no system that does automatic ontology acquisition or definition generation for biomedical concepts. However, in the domain of life sciences there exist several works that move into that direction. A work by R. J. Kate [CITATION_1] presents the first step towards automated generation of formal definitions for concepts that are not yet present in SNOMED CT. The task is to build a relation identification model that is able to recognize a certain SNOMED CT relation in text. The textual data used in [CITATION_2] are the clinical phrases from SNOMED CT that describe the concept in natural language (e.g., \"acute gastric ulcer with perforation\"). A separate machine learning classifier is trained for every typed version of every SNOMED CT relation, e.g., finding_site(disorder, body_structure) and finding_site(finding, body_structure) yield two separate models. There are three main drawbacks of this work. Firstly, it uses only the data from SNOMED CT clinical phrases, which are formulated in a controlled language. However, the ultimate goal of the system is to be able to identify relations in various medical texts for new biomedical concepts, and these texts are not written in a controlled language. Secondly, the system builds a separate classifier for every relation and its typed version. The resulting system has to run hundreds of models every time a new text passage is processed, which is computationally expensive. Lastly, the work does not discuss how the outputs of multiple classifiers should be combined into a single definition. In our approach we deal with texts of different origin and quality, and we incorporate the information about semantic types of concepts involved in a relation into the feature space instead of training separate classifiers for every combination of concept types and relations.",
+  "correct_citation": {
+    "[CITATION_1]": "6249",
+    "[CITATION_2]": "6249"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "A work by R. J. Kate [CITATION_1] presents the first step towards automated generation of formal definitions for concepts that are not yet present in SNOMED CT."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The textual data used in [CITATION_2] are the clinical phrases from SNOMED CT that describe the concept in natural language (e.g., \"acute gastric ulcer with perforation\")."
+    }
+  ],
+  "bib_entries": {
+    "6249": {
+      "title": "Towards converting clinical phrases into SNOMED CT expressions",
+      "abstract": "Converting information contained in natural language clinical text into computer-amenable structured representations can automate many clinical applications. As a step towards that goal, we present a method which could help in converting novel clinical phrases into new expressions in SNOMED CT, a standard clinical terminology. Since expressions in SNOMED CT are written in terms of their relations with other SNOMED CT concepts, we formulate the important task of identifying relations between clinical phrases and SNOMED CT concepts. We present a machine learning approach for this task and using the dataset of existing SNOMED CT relations we show that it performs well."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

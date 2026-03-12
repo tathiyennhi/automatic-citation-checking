@@ -1,0 +1,20 @@
+{
+  "doc_id": "61148",
+  "text": "Despite the success so far, algorithms for text detection and recognition are still confronted with several challenges. While human have barely no difficulties localizing and recognizing text, current algorithms are not designed and trained effortlessly. They have not yet reached human-level performance. Besides, most datasets are monolingual. We have no idea how these models would perform on other languages. What exacerbates it is that, the evaluation metrics we use today may be far from perfect. Under PASCAL evaluation, a detection result which only covers slightly more than half of the text instance would be judged as successful as it passes the IoU threshold of 0.5. Under DetEval, one can manually enlarge the detected area to meet the requirement of pixel recall, as DetEval requires a high pixel recall (0.8) but rather low pixel precision (0.4). Both cases would be judged as failure from oracle's viewpoint, as the former can not retrieve the whole text, while the later encloses too much background. A new and more appropriate evaluation protocol is needed. Moreover, few works except for TextSnake [CITATION_1] have considered the problem of generalization ability across datasets. Generalization ability is important as we aim to some application scenarios would require the adaptability to changing environments. For example, instant translation and OCR in autonomous vehicles should be able to perform stably under different situations: zoomed-in images with large text instances, far and small words, blurred words, different languages and shapes. However, these scenarios are only represented by different datasets individually. We would expect a more diverse dataset.",
+  "correct_citation": {
+    "[CITATION_1]": "49570059"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Moreover, few works except for TextSnake [CITATION_1] have considered the problem of generalization ability across datasets."
+    }
+  ],
+  "bib_entries": {
+    "49570059": {
+      "title": "Textsnake: A flexible representation for detecting text of arbitrary shapes",
+      "abstract": "Driven by deep neural networks and large scale datasets, scene text detection methods have progressed substantially over the past years, continuously refreshing the performance records on various standard benchmarks. However, limited by the representations (axis-aligned rectangles, rotated rectangles or quadrangles) adopted to describe text, existing methods may fall short when dealing with much more free-form text instances, such as curved text, which are actually very common in real-world scenarios. To tackle this problem, we propose a more flexible representation for scene text, termed as TextSnake, which is able to effectively represent text instances in horizontal, oriented and curved forms. In TextSnake, a text instance is described as a sequence of ordered, overlapping disks centered at symmetric axes, each of which is associated with potentially variable radius and orientation. Such geometry attributes are estimated via a Fully Convolutional Network (FCN) model. In experiments, the text detector based on TextSnake achieves state-of-the-art or comparable performance on Total-Text and SCUT-CTW1500, the two newly published benchmarks with special emphasis on curved text in natural images, as well as the widely-used datasets ICDAR 2015 and MSRA-TD500. Specifically, TextSnake outperforms the baseline on Total-Text by more than 40% in F-measure."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

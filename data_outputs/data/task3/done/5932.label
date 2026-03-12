@@ -1,0 +1,29 @@
+{
+  "doc_id": "5932",
+  "text": "We next move on to finding a packing of the items in L ∪ S ′ (neglecting the largest items which are packed in dedicated bins). In such an instance, the linear program, which we construct, allows the small items of S ′ to be packed fractionally. To construct this linear program we define a set of configurations of large items (this is the standard definition), and a set of extended configurations which also define the space and cardinality of small items in a configuration (this is a non-standard idea). The linear program will decide how many bins with a given extended configuration to open and what type of bins each small item need to be packed in. These types are called windows, and we define them as the pair consisting of the total space for the small items and the total cardinality of small items in a bin with this window. Hence in this linear program we have a constraint for each size of large items (a constant number of constraints) a constraint of each small item (a linear number of such constraints), and two constraints for each type of windows. We apply the column generation technique of Karmarkar and Karp [CITATION_1] to solve approximately the resulting linear program (we use a separation oracle which applies an FPTAS for the Knapsack problem with cardinality constraint given by [CITATION_2] ).",
+  "correct_citation": {
+    "[CITATION_1]": "18583908",
+    "[CITATION_2]": "15692356"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "We apply the column generation technique of Karmarkar and Karp [CITATION_1] to solve approximately the resulting linear program (we use a separation oracle which applies an FPTAS for the Knapsack problem with cardinality constraint given by [CITATION_2] )."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "We apply the column generation technique of Karmarkar and Karp [CITATION_1] to solve approximately the resulting linear program (we use a separation oracle which applies an FPTAS for the Knapsack problem with cardinality constraint given by [CITATION_2] )."
+    }
+  ],
+  "bib_entries": {
+    "18583908": {
+      "title": "An efficient approximation scheme for the one-dimensional binpacking problem",
+      "abstract": "We present several polynomial-time approximation algorithms for the one-dimensional bin-packing problem. using a subroutine to solve a certain linear programming relaxation of the problem. Our main results are as follows: There is a polynomial-time algorithm A such that A(I) ≤ OPT(I) + O(log2 OPT(I)). There is a polynomial-time algorithm A such that, if m(I) denotes the number of distinct sizes of pieces occurring in instance I, then A(I) ≤ OPT(I) + O(log2 m(I)). There is an approximation scheme which accepts as input an instance I and a positive real number e, and produces as output a packing using as most (1 + e) OPT(I) + O(e-2) bins. Its execution time is O(e-c n log n), where c is a constant. These are the best asymptotic performance bounds that have been achieved to date for polynomial-time bin-packing. Each of our algorithms makes at most O(log n) calls on the LP relaxation subroutine and takes at most O(n log n) time for other operations. The LP relaxation of bin packing was solved efficiently in practice by Gilmore and Gomory. We prove its membership in P, despite the fact that it has an astronomically large number of variables."
+    },
+    "15692356": {
+      "title": "Approximation algorithms for knapsack problems with cardinality constraints",
+      "abstract": "Abstract We address a variant of the classical knapsack problem in which an upper bound is imposed on the number of items that can be selected. This problem arises in the solution of real-life cutting stock problems by column generation, and may be used to separate cover inequalities with small support within cutting-plane approaches to integer linear programs. We focus our attention on approximation algorithms for the problem, describing a linear-storage Polynomial Time Approximation Scheme (PTAS) and a dynamic-programming based Fully Polynomial Time Approximation Scheme (FPTAS). The main ideas contained in our PTAS are used to derive PTAS's for the knapsack problem and its multi-dimensional generalization which improve on the previously proposed PTAS's. We finally illustrate better PTAS's and FPTAS's for the subset sum case of the problem in which profits and weights coincide."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

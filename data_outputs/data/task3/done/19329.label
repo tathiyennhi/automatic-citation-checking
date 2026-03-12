@@ -1,0 +1,20 @@
+{
+  "doc_id": "19329",
+  "text": "To infer the feature representation with maximum posterior probability, we use a combination of Gibbs sampling and simulated annealing [CITATION_1] . Gibbs sampling proceeds by first randomly initializing all of the unobserved variables, 26 cycling through the elements of each matrix (e.g., z nk ) and sampling new values for each element conditioned on the values of all of the other variables (e.g., the elements of Z that are not z nk , Y, and X). For our applications, we first resample the feature ownership matrix; we cycle through the objects 1 to N and, for each object n, resample its feature ownership assignments for features that are owned by at least one object without counting object n (resample all z nk for all k such that for at least one object i n, z ik ϭ 1). The Gibbs sampler for elements of the feature ownership matrix is given by",
+  "correct_citation": {
+    "[CITATION_1]": "120489597"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To infer the feature representation with maximum posterior probability, we use a combination of Gibbs sampling and simulated annealing [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "120489597": {
+      "title": "Stochastic relaxation, Gibbs distributions, and the Bayesian restoration of images",
+      "abstract": "We make an analogy between images and statistical mechanics systems. Pixel gray levels and the presence and orientation of edges are viewed as states of atoms or molecules in a lattice-like physical system. The assignment of an energy function in the physical system determines its Gibbs distribution. Because of the Gibbs distribution, Markov random field (MRF) equivalence, this assignment also determines an MRF image model. The energy function is a more convenient and natural mechanism for embodying picture attributes than are the local characteristics of the MRF. For a range of degradation mechanisms, including blurring, non-linear deformations, and multiplicative or additive noise, the posterior distribution is an MRF with a structure akin to the image model. By the analogy, the posterior distribution defines another (imaginary) physical system. Gradual temperature reduction in the physical system isolates low-energy states (‘annealing’), or what is the same thing, the most probable states under the Gib..."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "362",
+  "text": "Like the Tangram system, most stream database systems use a window or summarization scheme to handle blocking and unbounded stateful operators. The Tribeca system [CITATION_1] is another early example of such a system. The authors introduce a high-level query language for data streams, but add operators specifically for defining stream windows. The system discussed by Madden and Franklin [CITATION_2] implements operators that efficiently combine data from static (file-based) and streaming sources. Additionally, they have enhanced their adaptive query processing system [CITATION_3] to support queries over data streams [CITATION_4] . Finally, work on the Aurora system [CITATION_5] investigates optimization tactics for queries over data streams and ways to intelligently shed load when the system is about to run out of memory.",
+  "correct_citation": {
+    "[CITATION_1]": "7857392",
+    "[CITATION_2]": "11724839",
+    "[CITATION_3]": "214800590",
+    "[CITATION_4]": "1957239",
+    "[CITATION_5]": "7816630"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The Tribeca system [CITATION_1] is another early example of such a system."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The system discussed by Madden and Franklin [CITATION_2] implements operators that efficiently combine data from static (file-based) and streaming sources."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Additionally, they have enhanced their adaptive query processing system [CITATION_3] to support queries over data streams [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Additionally, they have enhanced their adaptive query processing system [CITATION_3] to support queries over data streams [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Finally, work on the Aurora system [CITATION_5] investigates optimization tactics for queries over data streams and ways to intelligently shed load when the system is about to run out of memory."
+    }
+  ],
+  "bib_entries": {
+    "214800590": {
+      "title": "Eddies: Continuously Adaptive Query Processing",
+      "abstract": "In large federated and shared-nothing databases, resources can exhibit widely fluctuating characteristics. Assumptions made at the time a query is submitted will rarely hold throughout the duration of query processing. As a result, traditional static query optimization and execution techniques are ineffective in these environments. In this paper we introduce a query processing mechanism called an eddy, which continuously reorders operators in a query plan as it runs. We characterize the moments of symmetry during which pipelined joins can be easily reordered, and the synchronization barriers that require inputs from different sources to be coordinated. By combining eddies with appropriate join algorithms, we merge the optimization and execution phases of query processing, allowing each tuple to have a flexible ordering of the query operators. This flexibility is controlled by a combination of fluid dynamics and a simple learning algorithm. Our initial implementation demonstrates promising results, with eddies performing nearly as well as a static optimizer/executor in static scenarios, and providing dramatic improvements in dynamic execution environments."
+    },
+    "7857392": {
+      "title": "Tribeca: A System for Managing Large Databases of Network Traffic",
+      "abstract": "The engineers who analyze traffic on high bandwidth networks must filter and aggregate either recorded traces of network packets or live traffic from the network itself. These engineers perform operations similar to database queries, but cannot use conventional data managers because of performance concerns and a semantic mismatch between the analysis operations and the operations supported by commercial DBMSs. Traffic analysis does not require fast random access, transactional update, or relational joins. Rather, it needs fast sequential access to a stream of traffic records and the ability to filter, aggregate, define windows, demultiplex, and remultiplex the stream. ::: ::: Tribeca is an extensible, stream-oriented DBMS designed to support network traffic analysis. It combines ideas from temporal and sequence databases with an implementation optimized for databases stored on high speed ID-1 tapes or arriving in real time from the network. The paper describes Tribeca's query language, executor and optimizer as well as performance measurements of a prototype implementation."
+    },
+    "7816630": {
+      "title": "Monitoring Streams-A New Class of Data Management Applications",
+      "abstract": "This paper introduces monitoring applications, which we will show differ substantially from conventional business data processing. The fact that a software system must process and react to continual inputs from many sources (e.g., sensors) rather than from human operators requires one to rethink the fundamental architecture of a DBMS for this application area. In this paper, we present Aurora, a new DBMS that is currently under construction at Brandeis University, Brown University, and M.I.T. We describe the basic system architecture, a stream-oriented set of operators, optimization tactics, and support for real-time operation."
+    },
+    "1957239": {
+      "title": "Continuously Adaptive Continuous Queries over Streams",
+      "abstract": "We present a continuously adaptive, continuous query (CACQ) implementation based on the eddy query processing framework. We show that our design provides significant performance benefits over existing approaches to evaluating continuous queries, not only because of its adaptivity, but also because of the aggressive cross-query sharing of work and space that it enables. By breaking the abstraction of shared relational algebra expressions, our Telegraph CACQ implementation is able to share physical operators --- both selections and join state --- at a very fine grain. We augment these features with a grouped-filter index to simultaneously evaluate multiple selection predicates. We include measurements of the performance of our core system, along with a comparison to existing continuous query approaches."
+    },
+    "11724839": {
+      "title": "Fjording the Stream: An Architecture for Queries over Streaming Sensor Data",
+      "abstract": "If industry visionaries are correct, our lives will soon be full of sensors, connected together in loose conglomerations via wireless networks, each monitoring and collecting data about the environment at large. These sensors behave very differently from traditional database sources: they have intermittent connectivity, are limited by severe power constraints, and typically sample periodically and push immediately, keeping no record of historical information. These limitations make traditional database systems inappropriate for queries over sensors. We present the Fjords architecture for managing multiple queries over many sensors, and show how it can be used to limit sensor resource demands while maintaining high query throughput. We evaluate our architecture using traces from a network of traffic sensors deployed on Interstate 80 near Berkeley and present performance results that show how query throughput, communication costs and power consumption are necessarily coupled in sensor environments."
+    }
+  },
+  "generator": "llama-3.3-70b-versatile"
+}

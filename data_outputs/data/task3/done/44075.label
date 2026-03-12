@@ -1,0 +1,20 @@
+{
+  "doc_id": "44075",
+  "text": "While correcting misclassified pixels, postclassification operation by the coMCRF model caused obvious smoothing effects in finally classified land cover maps, which not only remove noise but also smooth out most of linear features, tiny patches, and irregular patch boundaries, especially for mediumresolution classification. This is a common characteristic of spatial-dependence models. A major reason is that the local neighborhoods they used are normally composed of the nearest data within a circular search area that is usually much wider than many linear features or tiny objects. The second reason is that the postclassification maps shown above are all optimal maps (or map portions), of which each was based on the maximum occurrence probabilities estimated from a set of simulated realizations. Thus, the loss of geometric features of land cover objects is unavoidable because both the neighborhood structure and the optimization tend to remove fine features to get the general trend [CITATION_1] . The incorporation of spectral similarity measures in postclassification helps to preserve the geometric shapes of real land cover objects to some extent, as demonstrated above in the postclassification maps by the SS-coMCRF model.",
+  "correct_citation": {
+    "[CITATION_1]": "54025686"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Thus, the loss of geometric features of land cover objects is unavoidable because both the neighborhood structure and the optimization tend to remove fine features to get the general trend [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "54025686": {
+      "title": "Land cover post-classifications by Markov chain geostatistical cosimulation based on pre-classifications by different conventional classifiers",
+      "abstract": "The recently proposed Bayesian Markov chain random field MCRF cosimulation approach, as a new non-linear geostatistical cosimulation method, for land cover classification improvement i.e. post-classification may significantly increase classification accuracy by taking advantage of expert-interpreted data and pre-classified image data. The objective of this study is to explore the performance of the MCRF post-classification method based on pre-classification results from different conventional classifiers on a complex landscape. Five conventional classifiers, including maximum likelihood ML, neural network NN, Support Vector Machine SVM, minimum distance MD, and k-means KM, were used to conduct land cover pre-classifications of a remotely sensed image with a 90,000 ha area and complex landscape. A sample dataset 0.32% of total pixels was first interpreted based on expert knowledge from the image and other related data sources, and then MCRF cosimulations were performed conditionally on the expert-interpreted sample dataset and the five pre-classified image datasets, respectively. Finally, MCRF post-classification maps were compared with corresponding pre-classification maps. Results showed that the MCRF method achieved obvious accuracy improvements ranging from 4.6% to 16.8% in post-classifications compared to the pre-classification results from different pre-classifiers. This study indicates that the MCRF post-classification method is capable of improving land cover classification accuracy over different conventional classifiers by making use of multiple data sources expert-interpreted data and pre-classified data and spatial correlation information, even if the study area is relatively large and has a complex landscape."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

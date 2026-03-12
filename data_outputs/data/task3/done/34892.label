@@ -1,0 +1,29 @@
+{
+  "doc_id": "34892",
+  "text": "Normalized log2 TF activity fold-change of SCM, rHp, and HpAb were compared directly to control conditions using the limma package in R [CITATION_1] . A linear model was fit to the normalized log2 values for each TF and was used to generate estimated coefficients and squared errors for each time point of the compared samples. The estimated coefficients and squared errors were then used to compute moderated t-statistics, moderated F-statistics, and log-odds of differential expression. Adjusted p-values were computed using the Benjamini-Hochberg procedure to correct for multiple comparisons [CITATION_2] . TFs identified to be differentially active had an adjusted p-value of less than 0.05. To generate heat-maps, the replicate log2 fold-change for each condition and time-point was averaged. Normalized values were then clustered by k-means clustering with random starts. The sum-of-square error was computed for each cluster using the group mean. The optimal number of clusters was determined by maximizing the difference between the sum-of-square error of the computed k-means model and permuted null models.",
+  "correct_citation": {
+    "[CITATION_1]": "7956462",
+    "[CITATION_2]": "45174121"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Normalized log2 TF activity fold-change of SCM, rHp, and HpAb were compared directly to control conditions using the limma package in R [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Adjusted p-values were computed using the Benjamini-Hochberg procedure to correct for multiple comparisons [CITATION_2] ."
+    }
+  ],
+  "bib_entries": {
+    "45174121": {
+      "title": "Controlling the false discovery rate: a practical and powerful approach to multiple testing",
+      "abstract": "SUMMARY The common approach to the multiplicity problem calls for controlling the familywise error rate (FWER). This approach, though, has faults, and we point out a few. A different approach to problems of multiple significance testing is presented. It calls for controlling the expected proportion of falsely rejected hypotheses -the false discovery rate. This error rate is equivalent to the FWER when all hypotheses are true but is smaller otherwise. Therefore, in problems where the control of the false discovery rate rather than that of the FWER is desired, there is potential for a gain in power. A simple sequential Bonferronitype procedure is proved to control the false discovery rate for independent test statistics, and a simulation study shows that the gain in power is substantial. The use of the new procedure and the appropriateness of the criterion are illustrated with examples."
+    },
+    "7956462": {
+      "title": "Use of within-array replicate spots for assessing differential expression in microarray experiments",
+      "abstract": "Motivation: Spotted arrays are often printed with probes in duplicate or triplicate, but current methods for assessing differential expression are not able to make full use of the resulting information. The usual practice is to average the duplicate or triplicate results for each probe before assessing differential expression. This results in the loss of valuable information about genewise variability. ::: ::: Results: A method is proposed for extracting more information from within-array replicate spots in microarray experiments by estimating the strength of the correlation between them. The method involves fitting separate linear models to the expression data for each gene but with a common value for the between-replicate correlation. The method greatly improves the precision with which the genewise variances are estimated and thereby improves inference methods designed to identify differentially expressed genes. The method may be combined with empirical Bayes methods for moderating the genewise variances between genes. The method is validated using data from a microarray experiment involving calibration and ratio control spots in conjunction with spiked-in RNA. Comparing results for calibration and ratio control spots shows that the common correlation method results in substantially better discrimination of differentially expressed genes from those which are not. The spike-in experiment also confirms that the results may be further improved by empirical Bayes smoothing of the variances when the sample size is small. ::: ::: Availability: The methodology is implemented in the limma software package for R, available from the CRAN repository http://www.r-project.org ::: ::: Contact: [email protected]"
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

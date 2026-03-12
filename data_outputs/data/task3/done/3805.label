@@ -1,0 +1,29 @@
+{
+  "doc_id": "3805",
+  "text": "Gibbs sampling is a Markov-chain Monte Carlo (MCMC) algorithm, which can be seen as a special case of the Metropolis-Hastings algorithm [CITATION_1] . It can be used to obtain an observation sequence from a high-dimensional multivariate probability distribution. Consequently, the sequence can be used to approximate a marginal distribution for one or a subset of the model's variables. In addition, it can be used to compute an integral over one of the hidden variables, and consequently compute its expected value. Thanks to the conjugacy between Multinomial and Dirichlet distributions, a 'collapsed' Gibbs sampler [CITATION_2] can be implemented for LDA, where the θ and ϕ variables can be analytically integrated out before carrying out the Gibbs sampling process. This allows us to sample directly from the distribution P (Z|W, α, β) instead of the distribution P (Z|θ, ϕ, W, α, β). This in turns reduces the number of hidden variables in the LDA model, and makes inference and learning faster.",
+  "correct_citation": {
+    "[CITATION_1]": "1046577",
+    "[CITATION_2]": "120964167"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Gibbs sampling is a Markov-chain Monte Carlo (MCMC) algorithm, which can be seen as a special case of the Metropolis-Hastings algorithm [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Thanks to the conjugacy between Multinomial and Dirichlet distributions, a 'collapsed' Gibbs sampler [CITATION_2] can be implemented for LDA,"
+    }
+  ],
+  "bib_entries": {
+    "1046577": {
+      "title": "Equation of state calculations by fast computing machines",
+      "abstract": "A general method, suitable for fast computing machines, for investigating such properties as equations of state for substances consisting of interacting individual molecules is described. The method consists of a modified Monte Carlo integration over configuration space. Results for the two‐dimensional rigid‐sphere system have been obtained on the Los Alamos MANIAC and are presented here. These results are compared to the free volume equation of state and to a four‐term virial coefficient expansion."
+    },
+    "120964167": {
+      "title": "The collapsed Gibbs sampler in Bayesian computations with application to a gene regulation problem",
+      "abstract": "Abstract This article describes a method of “grouping” and “collapsing” in using the Gibbs sampler and proves from an operator theory viewpoint that the method is in general beneficial. The norms of the forward operators associated with the corresponding nonreversible Markov chains are used to discriminate among different simulation schemes. When applied to Bayesian missing data problems, the idea of collapsing suggests skipping the steps of sampling parameter(s) values in standard data augmentation. By doing this, we obtain a predictive update version of the Gibbs sampler. A procedure of calculating the posterior odds ratio via the collapsed Gibbs sampler when incomplete observations are involved is presented. As an illustration of possible applications, three examples, along with a Bayesian treatment for identifying common protein binding sites in unaligned DNA sequences, are provided."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

@@ -1,0 +1,29 @@
+{
+  "doc_id": "6600",
+  "text": "Byong-Deok Choi, Kyung Eun Kim, Ki-Seok Chung, and Dong Kyue Kim that each output node has two discharge paths, and input data is assigned to the discharge paths such that on-and off-transistors are configured equally for all cases. That is, as shown in Table 1 , the transistors at each discharge path are in either onon, on-off, off-on, or off-off states, so the capacitances that supply current charges are equal for all cases of input data. We call these circuits symmetric adiabatic logic (SyAL), ver. 1. The configuration of the discharge paths shown in Fig. 1(b) is very similar to that found in the symmetric discharge logic [CITATION_1] . However, there is another important point we should emphasize in adiabatic logics. An adiabatic logic uses clocked power to recover the charge supplied to the circuits to save power. Therefore, when Vclk of the SyAL, ver. 1, shown in Fig. 1(b) ramps down for energy recovery, the charge on node Y or Yb is discharged according to Vclk. Note that node Y or Yb is not fully discharged to the ground level; rather, it is only discharged to a voltage level, corresponding to the threshold voltage of transistor MY or MYb because discharging occurs through the PMOS transistors as already described in [CITATION_2] . This indicates that the supply current from Vclk in a clock period varies with the charge stored on node Y or Yb in the previous clock period, which in turn depends on the input data. Therefore, we further modify the SyAL, ver. 1, to produce the circuits shown in Fig. 2 . Nodes Y and Yb are connected, and nodes N1, N2, N3, and N4 are connected by a BR signal after the recovery phase for charge sharing. As a result, the supply current is not affected by the previous input data. Transistor MBR4 is only added for the internal nodes, N1 to N4, to have the same parasitic capacitance. This circuit is named SyAL, ver. 2.",
+  "correct_citation": {
+    "[CITATION_1]": "45896903",
+    "[CITATION_2]": "62269896"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The configuration of the discharge paths shown in Fig. 1(b) is very similar to that found in the symmetric discharge logic [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Note that node Y or Yb is not fully discharged to the ground level; rather, it is only discharged to a voltage level, corresponding to the threshold voltage of transistor MY or MYb because discharging occurs through the PMOS transistors as already described in [CITATION_2] ."
+    }
+  ],
+  "bib_entries": {
+    "45896903": {
+      "title": "Symmetric Discharge Logic against Differential Power Analysis",
+      "abstract": "Differential power analysis (DPA) is an effective technique that extracts secret keys from cryptographic systems through statistical analysis of the power traces obtained during encryption and decryption operations. This letter proposes symmetric discharge logic (SDL), a circuit-level countermeasure against DPA, which exhibits uniform power traces for every clock period by maintaining a set of discharge paths independent of input values. This feature minimizes differences in power traces and improves resistance to DPA attacks. HSPICE simulations for the test circuits using 0.18 μm TSMC CMOS process parameters indicate that SDL reduces power differences by an order of magnitude, compared to the existing circuit-level technique."
+    },
+    "62269896": {
+      "title": "An Efficient Charge Recovery Logic Circuit",
+      "abstract": "Efficient charge recovery logic (ECRL) is proposed as a candidate for low-energy adiabatic logic circuit. Power comparison with other logic circuits is performed on an inverter chain and a carry lookahead adder (CLA). ECRL CLA is designed as a pipelined structure for obtaining the same throughput as a conventional static CMOS CLA. Proposed logic shows four to six times power reduction with a practical loading and operation frequency range. An inductor-based supply clock generation circuit is proposed. Circuits are designed using 1.0-/spl mu/m CMOS technology with a reduced threshold voltage of 0.2 V."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

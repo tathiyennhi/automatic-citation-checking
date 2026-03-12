@@ -1,0 +1,29 @@
+{
+  "doc_id": "28439",
+  "text": "Our remedied RSP implementation is potentially more efficient than the original proposal because it does not require cacheline locking. In future work, we plan to assess this hypothesis through architectural simulation. We plan also to extend the compilation scheme to a multiple-device setting. Longer term, we plan to formalise more complex hardware designs. One promising target is AMD's QuickRelease technology [CITATION_1] , parts of which already appear in the design of RSP. The full QuickRelease scheme, which involves separate reading and writing caches, and cacheline-specific L1 invalidations, involves greater hardware complexity but promises superior performance. Another topic for future research is the extension of OpenCL verification tools, such as GPUVerify [CITATION_2] , to handle remote-scope promotion.",
+  "correct_citation": {
+    "[CITATION_1]": "17500096",
+    "[CITATION_2]": "280230"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "One promising target is AMD's QuickRelease technology [CITATION_1] , parts of which already appear in the design of RSP."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Another topic for future research is the extension of OpenCL verification tools, such as GPUVerify [CITATION_2] , to handle remote-scope promotion."
+    }
+  ],
+  "bib_entries": {
+    "17500096": {
+      "title": "QuickRelease: A throughput-oriented approach to release consistency on GPUs",
+      "abstract": "Graphics processing units (GPUs) have specialized throughput-oriented memory systems optimized for stream-ing writes with scratchpad memories to capture locality explicitly. Expanding the utility of GPUs beyond graphics encourages designs that simplify programming (e.g., using caches instead of scratchpads) and better support irregular applications with finer-grain synchronization. Our hypothe-sis is that, like CPUs, GPUs will benefit from caches and coherence, but that CPU-style “read for ownership” (RFO) coherence is inappropriate to maintain support for regular streaming workloads."
+    },
+    "280230": {
+      "title": "The design and implementation of a verification technique for GPU kernels",
+      "abstract": "We present a technique for the formal verification of GPU kernels, addressing two classes of correctness properties: data races and barrier divergence. Our approach is founded on a novel formal operational semantics for GPU kernels termed synchronous, delayed visibility (SDV) semantics, which captures the execution of a GPU kernel by multiple groups of threads. The SDV semantics provides operational definitions for barrier divergence and for both inter- and intra-group data races. We build on the semantics to develop a method for reducing the task of verifying a massively parallel GPU kernel to that of verifying a sequential program. This completely avoids the need to reason about thread interleavings, and allows existing techniques for sequential program verification to be leveraged. We describe an efficient encoding of data race detection and propose a method for automatically inferring the loop invariants that are required for verification. We have implemented these techniques as a practical verification tool, GPUVerify, that can be applied directly to OpenCL and CUDA source code. We evaluate GPUVerify with respect to a set of 162 kernels drawn from public and commercial sources. Our evaluation demonstrates that GPUVerify is capable of efficient, automatic verification of a large number of real-world kernels."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

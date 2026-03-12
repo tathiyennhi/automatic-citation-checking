@@ -1,0 +1,106 @@
+{
+  "doc_id": "34766",
+  "text": "Use of Synthetic Data. The use of synthetic data has a longstanding history in computer vision. Among the earliest attempts, [CITATION_1] used 3D models as the primary source of information to build object models. More recently, [CITATION_2] [CITATION_3] [CITATION_4] used 3D CAD models as their only source of labeled data, but limited their work to a few categories like cars and motorcycles. [CITATION_5] utilized synthetic data to probe invariances for features like SIFT, SLF, etc. In this paper, we generate training data from crowdsourced 3D CAD models, which can be noisy and low-quality, but are free and available for many categories. We evaluate our approach on all 20 categories in the PASCAL VOC2007 dataset, which is much larger and more realistic than previous benchmarks. Previous works designed special features for matching synthetic 3D object models to real image data ( [CITATION_6] ), or used HOG features and linear SVMs ( [CITATION_7] ). We employ more powerful deep convolutional images features and demonstrate their advantage by directy comparing to [CITATION_8] . The authors of [CITATION_9] use CAD models and show results of both 2D detection and pose estimation, but train multi-view detectors on real images labeled with pose. We avoid expensive manual bounding box and pose annotation, and show results with minimum or no real image labels. Finally, several approaches had used synthetic training data for tasks other than object detection. For example, [CITATION_10] recently proposed a synthetic text generation engine to perform text recognition in natural scenes while [CITATION_11] proposed a technique to improve novel-view synthesis for images using the structural information from 3D models.",
+  "correct_citation": {
+    "[CITATION_1]": "10878162",
+    "[CITATION_2]": "6284859",
+    "[CITATION_3]": "1769372",
+    "[CITATION_4]": "6813281",
+    "[CITATION_5]": "7433324",
+    "[CITATION_6]": "1458638",
+    "[CITATION_7]": "6018652",
+    "[CITATION_8]": "6018652",
+    "[CITATION_9]": "11266650",
+    "[CITATION_10]": "11072772",
+    "[CITATION_11]": "12173290"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Among the earliest attempts, [CITATION_1] used 3D models as the primary source of information to build object models."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "More recently, [CITATION_2] [CITATION_3] [CITATION_4] used 3D CAD models as their only source of labeled data, but limited their work to a few categories like cars and motorcycles."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "More recently, [CITATION_2] [CITATION_3] [CITATION_4] used 3D CAD models as their only source of labeled data, but limited their work to a few categories like cars and motorcycles."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "More recently, [CITATION_2] [CITATION_3] [CITATION_4] used 3D CAD models as their only source of labeled data, but limited their work to a few categories like cars and motorcycles."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "[CITATION_5] utilized synthetic data to probe invariances for features like SIFT, SLF, etc."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "Previous works designed special features for matching synthetic 3D object models to real image data ( [CITATION_6] ), or used HOG features and linear SVMs ( [CITATION_7] )."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "Previous works designed special features for matching synthetic 3D object models to real image data ( [CITATION_6] ), or used HOG features and linear SVMs ( [CITATION_7] )."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "We employ more powerful deep convolutional images features and demonstrate their advantage by directy comparing to [CITATION_8] ."
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "The authors of [CITATION_9] use CAD models and show results of both 2D detection and pose estimation, but train multi-view detectors on real images labeled with pose."
+    },
+    {
+      "citation_id": "[CITATION_10]",
+      "span_text": "Finally, several approaches had used synthetic training data for tasks other than object detection. For example, [CITATION_10] recently proposed a synthetic text generation engine to perform text recognition in natural scenes"
+    },
+    {
+      "citation_id": "[CITATION_11]",
+      "span_text": "For example, [CITATION_10] recently proposed a synthetic text generation engine to perform text recognition in natural scenes while [CITATION_11] proposed a technique to improve novel-view synthesis for images using the structural information from 3D models."
+    }
+  ],
+  "bib_entries": {
+    "6813281": {
+      "title": "A multi-view probabilistic model for 3d object classes",
+      "abstract": "We propose a novel probabilistic framework for learning visual models of 3D object categories by combining appearance information and geometric constraints. Objects are represented as a coherent ensemble of parts that are consistent under 3D viewpoint transformations. Each part is a collection of salient image features. A generative framework is used for learning a model that captures the relative position of parts within each of the discretized viewpoints. Contrary to most of the existing mixture of viewpoints models, our model establishes explicit correspondences of parts across different viewpoints of the object class. Given a new image, detection and classification are achieved by determining the position and viewpoint of the model that maximize recognition scores of the candidate objects. Our approach is among the first to propose a generative probabilistic framework for 3D object categorization. We test our algorithm on the detection task and the viewpoint classification task by using “car” category from both the Savarese et al. 2007 and PASCAL VOC 2006 datasets. We show promising results in both the detection and viewpoint classification tasks on these two challenging datasets."
+    },
+    "1458638": {
+      "title": "Viewpointindependent object class detection using 3d feature maps",
+      "abstract": "This paper presents a 3D approach to multi-view object class detection. Most existing approaches recognize object classes for a particular viewpoint or combine classifiers for a few discrete views. We propose instead to build 3D representations of object classes which allow to handle viewpoint changes and intra-class variability. Our approach extracts a set of pose and class discriminant features from synthetic 3D object models using a filtering procedure, evaluates their suitability for matching to real image data and represents them by their appearance and 3D position. We term these representations 3D Feature Maps. For recognizing an object class in an image we match the synthetic descriptors to the real ones in a 3D voting scheme. Geometric coherence is reinforced by means of a robust pose estimation which yields a 3D bounding box in addition to the 2D localization. The precision of the 3D pose estimation is evaluated on a set of images of a calibrated scene. The 2D localization is evaluated on the PASCAL 2006 dataset for motorbikes and cars, showing that its performance can compete with state-of-the-art 2D object detectors."
+    },
+    "6284859": {
+      "title": "Back to the future: Learning shape models from 3d cad data",
+      "abstract": "Recognizing 3D objects from arbitrary view points is one of the most fundamental problems in computer vision. A major challenge lies in the transition between the 3D geometry of objects and 2D representations that can be robustly matched to natural images. Most approaches thus rely on 2D natural images either as the sole source of training data for building an implicit 3D representation, or by enriching 3D models with natural image features. In this paper, we go back to the ideas from the early days of computer vision, by using 3D object models as the only source of information for building a multi-view object class detector. In particular, we use these models for learning 2D shape that can be robustly matched to 2D natural images. Our experiments confirm the validity of our approach, which outperforms current state-of-the-art techniques on a multi-view detection data set."
+    },
+    "12173290": {
+      "title": "Imagebased synthesis and re-synthesis of viewpoints guided by 3d models",
+      "abstract": "We propose a technique to use the structural informa- tion extracted from a set of 3D models of an object class to improve novel-view synthesis for images showing unknown instances of this class. These novel views can be used to \"amplify\" training image collections that typically contain only a low number of views or lack certain classes of views entirely (e. g. top views). We extract the correlation of position, normal, re- flectance and appearance from computer-generated images of a few exemplars and use this information to infer new appearance for new instances. We show that our approach can improve performance of state-of-the-art detectors using real-world training data. Additional applications include guided versions of inpainting, 2D-to-3D conversion, super- resolution and non-local smoothing."
+    },
+    "1769372": {
+      "title": "Multi-view object class detection with a 3d geometric model",
+      "abstract": "This paper presents a new approach for multi-view object class detection. Appearance and geometry are treated as separate learning tasks with different training data. Our approach uses a part model which discriminatively learns the object appearance with spatial pyramids from a database of real images, and encodes the 3D geometry of the object class with a generative representation built from a database of synthetic models. The geometric information is linked to the 2D training data and allows to perform an approximate 3D pose estimation for generic object classes. The pose estimation provides an efficient method to evaluate the likelihood of groups of 2D part detections with respect to a full 3D geometry model in order to disambiguate and prune 2D detections and to handle occlusions. In contrast to other methods, neither tedious manual part annotation of training images nor explicit appearance matching between synthetic and real training data is required, which results in high geometric fidelity and in increased flexibility. On the 3D Object Category datasets CAR and BICYCLE [15], the current state-of-the-art benchmark for 3D object detection, our approach outperforms previously published results for viewpoint estimation."
+    },
+    "7433324": {
+      "title": "Comparing state-of-the-art visual features on invariant object recognition tasks",
+      "abstract": "Tolerance (“invariance”) to identity-preserving image variation (e.g. variation in position, scale, pose, illumination) is a fundamental problem that any visual object recognition system, biological or engineered, must solve. While standard natural image database benchmarks are useful for guiding progress in computer vision, they can fail to probe the ability of a recognition system to solve the invariance problem [23, 24, 25]. Thus, to understand which computational approaches are making progress on solving the invariance problem, we compared and contrasted a variety of state-of-the-art visual representations using synthetic recognition tasks designed to systematically probe invari-ance. We successfully re-implemented a variety of state-of-the-art visual representations and confirmed their published performance on a natural image benchmark. We here report that most of these representations perform poorly on invariant recognition, but that one representation [21] shows significant performance gains over two baseline representations. We also show how this approach can more deeply illuminate the strengths and weaknesses of different visual representations and thus guide progress on invariant object recognition."
+    },
+    "6018652": {
+      "title": "From virtual to reality: Fast adaptation of virtual object detectors to real domains",
+      "abstract": "The most successful 2D object detection methods require a large number of images annotated with object bounding boxes to be collected for training. We present an alternative approach that trains on virtual data rendered from 3D models, avoiding the need for manual labeling. Growing demand for virtual reality applications is quickly bringing about an abundance of available 3D models for a large variety of object categories. While mainstream use of 3D models in vision has focused on predicting the 3D pose of objects, we investigate the use of such freely available 3D models for multicategory 2D object detection. To address the issue of dataset bias that arises from training on virtual data and testing on real images, we propose a simple and fast adaptation approach based on decorrelated features. We also compare two kinds of virtual data, one rendered with real-image textures and one without. Evaluation on a benchmark domain adaptation dataset demonstrates that our method performs comparably to existing methods trained on large-scale real image domains."
+    },
+    "11072772": {
+      "title": "Synthetic data and artificial neural networks for natural scene text recognition",
+      "abstract": "In this work we present a framework for the recognition of natural scene text. Our framework does not require any human-labelled data, and performs word recognition on the whole image holistically, departing from the character based recognition systems of the past. The deep neural network models at the centre of this framework are trained solely on data produced by a synthetic text generation engine -- synthetic data that is highly realistic and sufficient to replace real data, giving us infinite amounts of training data. This excess of data exposes new possibilities for word recognition models, and here we consider three models, each one \"reading\" words in a different way: via 90k-way dictionary encoding, character sequence encoding, and bag-of-N-grams encoding. In the scenarios of language based and completely unconstrained text recognition we greatly improve upon state-of-the-art performance on standard datasets, using our fast, simple machinery and requiring zero data-acquisition costs."
+    },
+    "10878162": {
+      "title": "Description and recognition of curved objects",
+      "abstract": "Analysis of scenes of three-dimensional objects has, in the past, been largely limited to the world of polyhedra. Techniques for generating structured, symbolic descriptions of complex curved objects by segmenting them into simpler sub-parts are presented here. The complexity of objects used is that of toy animals and hand tools. Recognition is performed by matching these descriptions with stored descriptions of models. A laser ranging techniques is used to acquire three-dimensional position of points on the visible surfaces. Successful segmentation and recognition results have been obtained for scenes with multiple, occluding objects in various orientations and with a variety of articulations of sub-parts."
+    },
+    "11266650": {
+      "title": "Beyond pascal: A benchmark for 3d object detection in the wild",
+      "abstract": "3D object detection and pose estimation methods have become popular in recent years since they can handle ambiguities in 2D images and also provide a richer description for objects compared to 2D object detectors. However, most of the datasets for 3D recognition are limited to a small amount of images per category or are captured in controlled environments. In this paper, we contribute PASCAL3D+ dataset, which is a novel and challenging dataset for 3D object detection and pose estimation. PASCAL3D+ augments 12 rigid categories of the PASCAL VOC 2012 [4] with 3D annotations. Furthermore, more images are added for each category from ImageNet [3]. PASCAL3D+ images exhibit much more variability compared to the existing 3D datasets, and on average there are more than 3,000 object instances per category. We believe this dataset will provide a rich testbed to study 3D detection and pose estimation and will help to significantly push forward research in this area. We provide the results of variations of DPM [6] on our new dataset for object detection and viewpoint estimation in different scenarios, which can be used as baselines for the community. Our benchmark is available online at http://cvgl.stanford.edu/projects/pascal3d"
+    }
+  },
+  "generator": "manual-labeling"
+}

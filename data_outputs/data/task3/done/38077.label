@@ -1,0 +1,29 @@
+{
+  "doc_id": "38077",
+  "text": "Yuan et al. [CITATION_1] proposed an end-to-end fully automatic method for skin lesions segmentation by leveraging 19-layer DCNN. They introduced a loss function using Jaccard Distance as the measurement. They compared the results using different parameters such as input size, optimisation methods, augmented strategies, and loss function. To fine tune the hyper-parameters, 5-fold cross-validation with ISBI training dataset was used to determine the best performer. Similar to Bi et al. [CITATION_2] , they evaluated their results on ISBI 2016 and PH2 dataset. The results were outperformed by the state-ofthe-art methods but they suggested that the method achieved poor results in some challenging cases including images with low contrast.",
+  "correct_citation": {
+    "[CITATION_1]": "206750179",
+    "[CITATION_2]": "206616262"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Yuan et al. [CITATION_1] proposed an end-to-end fully automatic method for skin lesions segmentation by leveraging 19-layer DCNN."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Similar to Bi et al. [CITATION_2] , they evaluated their results on ISBI 2016 and PH2 dataset."
+    }
+  ],
+  "bib_entries": {
+    "206750179": {
+      "title": "Automatic skin lesion segmentation using deep fully convolutional networks with Jaccard distance",
+      "abstract": "Automatic skin lesion segmentation in dermoscopic images is a challenging task due to the low contrast between lesion and the surrounding skin, the irregular and fuzzy lesion borders, the existence of various artifacts, and various imaging acquisition conditions. In this paper, we present a fully automatic method for skin lesion segmentation by leveraging 19-layer deep convolutional neural networks that is trained end-to-end and does not rely on prior knowledge of the data. We propose a set of strategies to ensure effective and efficient learning with limited training data. Furthermore, we design a novel loss function based on Jaccard distance to eliminate the need of sample re-weighting, a typical procedure when using cross entropy as the loss function for image segmentation due to the strong imbalance between the number of foreground and background pixels. We evaluated the effectiveness, efficiency, as well as the generalization capability of the proposed framework on two publicly available databases. One is from ISBI 2016 skin lesion analysis towards melanoma detection challenge, and the other is the PH2 database. Experimental results showed that the proposed method outperformed other state-of-the-art algorithms on these two databases. Our method is general enough and only needs minimum pre- and post-processing, which allows its adoption in a variety of medical image segmentation tasks."
+    },
+    "206616262": {
+      "title": "Dermoscopic image segmentation via multistage fully convolutional networks",
+      "abstract": "Objective: Segmentation of skin lesions is an important step in the automated computer aided diagnosis of melanoma. However, existing segmentation methods have a tendency to over- or under-segment the lesions and perform poorly when the lesions have fuzzy boundaries, low contrast with the background, inhomogeneous textures, or contain artifacts. Furthermore, the performance of these methods are heavily reliant on the appropriate tuning of a large number of parameters as well as the use of effective preprocessing techniques, such as illumination correction and hair removal. Methods: We propose to leverage fully convolutional networks (FCNs) to automatically segment the skin lesions. FCNs are a neural network architecture that achieves object detection by hierarchically combining low-level appearance information with high-level semantic information. We address the issue of FCN producing coarse segmentation boundaries for challenging skin lesions (e.g., those with fuzzy boundaries and/or low difference in the textures between the foreground and the background) through a multistage segmentation approach in which multiple FCNs learn complementary visual characteristics of different skin lesions; early stage FCNs learn coarse appearance and localization information while late-stage FCNs learn the subtle characteristics of the lesion boundaries. We also introduce a new parallel integration method to combine the complementary information derived from individual segmentation stages to achieve a final segmentation result that has accurate localization and well-defined lesion boundaries, even for the most challenging skin lesions. Results: We achieved an average Dice coefficient of 91.18% on the ISBI 2016 Skin Lesion Challenge dataset and 90.66% on the PH2 dataset. Conclusion and Significance: Our extensive experimental results on two well-established public benchmark datasets demonstrate that our method is more effective than other state-of-the-art methods for skin lesion segmentation."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

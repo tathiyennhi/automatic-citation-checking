@@ -1,0 +1,20 @@
+{
+  "doc_id": "24208",
+  "text": "It is important that small target detection algorithms are robust and efficient to meet the requirements of early warning systems. However, due to the long-distance imaging, the targets in infrared images are of small size and usually with quite low signal-to-noise ratio, which makes the detection task very difficult. To solve this problem, this paper presents a small target detection method based on modified random walks. Different from the state-of-the-art small target detection algorithms, we treat the dim and small target as a salient target with little prior knowledge. There are roughly two stages in our algorithm: First, the candidate targets are determined according to the seeds selection map (SSM), which is constructed by using the so-called local contrast element. Second, the authenticity of the candidate targets are verified based on the modified random walks and adaptive segmentation. Extensive experiments on a real dataset suggest that our algorithm is robust and effective for small target detection regardless of the varying backgrounds and the poor image quality. The computation of the proposed algorithm mainly comes from the second stage, more specifically, the evaluation of the matrix inversion in Equation [CITATION_1] . Since the Laplacian matrix (see Equation (13)) is a sparse and real symmetric matrix, the evaluation of the matrix inversion can be less time-consuming with the help of the matrix optimization theory. Moreover, we note that the proposed algorithm is highly suited for parallel implementation. Thus, the computing speed can be further increased by using a Graphic Processing Unit (GPU) or Field-Programmable Gate Array (FPGA). In the future, we will continue working on the improvement of the current algorithm and investigating a faster version. ",
+  "correct_citation": {
+    "[CITATION_1]": "4327196"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The computation of the proposed algorithm mainly comes from the second stage, more specifically, the evaluation of the matrix inversion in Equation [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "4327196": {
+      "title": "Derivative entropy-based contrast measure for infrared small-target detection",
+      "abstract": "Robust and effective detection of small target and false alarm (FA) suppression are the key techniques in infrared search and track systems. In this paper, the derivative entropy-based contrast measure (DECM) is proposed for small-target detection under various complex background clutters. Initially, different directional derivatives of an infrared image are calculated based on the facet model. Then, by analyzing the derivative properties of small target, the primitive entropy formula is improved by incorporating derivative information. With the improved entropy, the contrast measure is constructed to enhance small target and suppress background clutters in each derivative subband. Finally, the contrast measure maps derived from derivative subbands are fused together. The small target could be segmented easily from the fusion result. Experimental results demonstrate that DECM could effectively enhance dim small targets and suppress complex background clutters. Besides, DECM is also robust to infrared small-target images with noises of different levels. The detection results achieve higher detection ratio and lower FA compared with those of other methods under various infrared scenes."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

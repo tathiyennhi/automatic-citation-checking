@@ -1,0 +1,38 @@
+{
+  "doc_id": "61403",
+  "text": "We compare our results to simple bicubic interpolation and three state-of-the-art depth map super-resolution methods that utilize an additional guidance image as input. The quantitative results measured with RMSE in mm are presented in Table 2 . Even on this difficult dataset, we are at least on par with other four classic or state-of-the-art methods for all the three test cases. In Fig. 8 , we show the result of upsampling the depth image Shark. It is observed that depth maps recovered by Bicubic and CLMF [CITATION_1] still contain noises, while the results obtained by TGV [CITATION_2] and our method are much clearer. By closer inspection, the TGV method in some cases introduces faulty structures in regions where the associated intensity image has rich textures, e.g., the shape of the shark's dorsal fin is deformation. MSG-Net [CITATION_3] obtains a non-sharp result, and one can see that the region of the shark's teeth is blurred.",
+  "correct_citation": {
+    "[CITATION_1]": "12401446",
+    "[CITATION_2]": "15039048",
+    "[CITATION_3]": "9579734"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "It is observed that depth maps recovered by Bicubic and CLMF [CITATION_1] still contain noises, while the results obtained by TGV [CITATION_2] and our method are much clearer."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "It is observed that depth maps recovered by Bicubic and CLMF [CITATION_1] still contain noises, while the results obtained by TGV [CITATION_2] and our method are much clearer."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "MSG-Net [CITATION_3] obtains a non-sharp result, and one can see that the region of the shark's teeth is blurred."
+    }
+  ],
+  "bib_entries": {
+    "9579734": {
+      "title": "Depth map super-resolution by deep multi-scale guidance",
+      "abstract": "Depth boundaries often lose sharpness when upsampling from low-resolution (LR) depth maps especially at large upscaling factors. We present a new method to address the problem of depth map super resolution in which a high-resolution (HR) depth map is inferred from a LR depth map and an additional HR intensity image of the same scene. We propose a Multi-Scale Guided convolutional network (MSG-Net) for depth map super resolution. MSG-Net complements LR depth features with HR intensity features using a multi-scale fusion strategy. Such a multi-scale guidance allows the network to better adapt for upsampling of both fine- and large-scale structures. Specifically, the rich hierarchical HR intensity features at different levels progressively resolve ambiguity in depth map upsampling. Moreover, we employ a high-frequency domain training method to not only reduce training time but also facilitate the fusion of depth and intensity features. With the multi-scale guidance, MSG-Net achieves state-of-art performance for depth map upsampling."
+    },
+    "12401446": {
+      "title": "Cross-based local multipoint filtering",
+      "abstract": "This paper presents a cross-based framework of performing local multipoint filtering efficiently. We formulate the filtering process as a local multipoint regression problem, consisting of two main steps: 1) multipoint estimation, calculating the estimates for a set of points within a shape-adaptive local support, and 2) aggregation, fusing a number of multipoint estimates available for each point. Compared with the guided filter that applies the linear regression to all pixels covered by a fixed-sized square window non-adaptively, the proposed filtering framework is a more generalized form. Two specific filtering methods are instantiated from this framework, based on piecewise constant and piecewise linear modeling, respectively. Leveraging a cross-based local support representation and integration technique, the proposed filtering methods achieve theoretically strong results in an efficient manner, with the two main steps' complexity independent of the filtering kernel size. We demonstrate the strength of the proposed filters in various applications including stereo matching, depth map enhancement, edge-preserving smoothing, color image denoising, detail enhancement, and flash/no-flash denoising."
+    },
+    "15039048": {
+      "title": "Image guided depth upsampling using anisotropic total generalized variation",
+      "abstract": "In this work we present a novel method for the challenging problem of depth image up sampling. Modern depth cameras such as Kinect or Time-of-Flight cameras deliver dense, high quality depth measurements but are limited in their lateral resolution. To overcome this limitation we formulate a convex optimization problem using higher order regularization for depth image up sampling. In this optimization an an isotropic diffusion tensor, calculated from a high resolution intensity image, is used to guide the up sampling. We derive a numerical algorithm based on a primal-dual formulation that is efficiently parallelized and runs at multiple frames per second. We show that this novel up sampling clearly outperforms state of the art approaches in terms of speed and accuracy on the widely used Middlebury 2007 datasets. Furthermore, we introduce novel datasets with highly accurate ground truth, which, for the first time, enable to benchmark depth up sampling methods using real sensor data."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

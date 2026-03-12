@@ -1,0 +1,38 @@
+{
+  "doc_id": "14489",
+  "text": "Model BOW model is widely used in image retrieval and lots of work help improve BOW for image description and matching. RootSIFT descriptor is developed in [CITATION_1] using a square root kernel instead of the standard Euclidean distance to measure the similarity between SIFT descriptors. Zheng et al. [CITATION_2] analyze the spatial contexts of SIFT features, and use the geometric constraints to improve precision. To reduce quantization error, soft matching [CITATION_3] assigns each descriptor to multiple visual words.",
+  "correct_citation": {
+    "[CITATION_1]": "14678946",
+    "[CITATION_2]": "9107599",
+    "[CITATION_3]": "6875974"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "RootSIFT descriptor is developed in [CITATION_1] using a square root kernel instead of the standard Euclidean distance to measure the similarity between SIFT descriptors."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Zheng et al. [CITATION_2] analyze the spatial contexts of SIFT features, and use the geometric constraints to improve precision."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "To reduce quantization error, soft matching [CITATION_3] assigns each descriptor to multiple visual words."
+    }
+  ],
+  "bib_entries": {
+    "9107599": {
+      "title": "Visual phraselet: Refining spatial constraints for large scale image search",
+      "abstract": "The Bag-of-Words (BoW) model is prone to the deficiency of spatial constraints among visual words. The state of the art methods encode spatial information via visual phrases. However, these methods discard the spatial context among visual phrases instead. To address the problem, this letter introduces a novel visual concept, the Visual Phraselet, as a kind of similarity measurement between images. The visual phraselet refers to the spatial consistent group of visual phrases. In a simple yet effective manner, visual phraselet filters out false visual phrase matches, and is much more discriminative than both visual word and visual phrase. To boost the discovery of visual phraselets, we apply the soft quantization scheme. Our method is evaluated through extensive experiments on three benchmark datasets (Oxford 5 K, Paris 6 K and Flickr 1 M). We report significant improvements as large as 54.6% over the baseline approach, thus validating the concept of visual phraselet."
+    },
+    "6875974": {
+      "title": "Lost in quantization: Improving particular object retrieval in large scale image databases",
+      "abstract": "The state of the art in visual object retrieval from large databases is achieved by systems that are inspired by text retrieval. A key component of these approaches is that local regions of images are characterized using high-dimensional descriptors which are then mapped to ldquovisual wordsrdquo selected from a discrete vocabulary.This paper explores techniques to map each visual region to a weighted set of words, allowing the inclusion of features which were lost in the quantization stage of previous systems. The set of visual words is obtained by selecting words based on proximity in descriptor space. We describe how this representation may be incorporated into a standard tf-idf architecture, and how spatial verification is modified in the case of this soft-assignment. We evaluate our method on the standard Oxford Buildings dataset, and introduce a new dataset for evaluation. Our results exceed the current state of the art retrieval performance on these datasets, particularly on queries with poor initial recall where techniques like query expansion suffer. Overall we show that soft-assignment is always beneficial for retrieval with large vocabularies, at a cost of increased storage requirements for the index."
+    },
+    "14678946": {
+      "title": "Three things everyone should know to improve object retrieval",
+      "abstract": "The objective of this work is object retrieval in large scale image datasets, where the object is specified by an image query and retrieval should be immediate at run time in the manner of Video Google [28]. We make the following three contributions: (i) a new method to compare SIFT descriptors (RootSIFT) which yields superior performance without increasing processing or storage requirements; (ii) a novel method for query expansion where a richer model for the query is learnt discriminatively in a form suited to immediate retrieval through efficient use of the inverted index; (iii) an improvement of the image augmentation method proposed by Turcot and Lowe [29], where only the augmenting features which are spatially consistent with the augmented image are kept. We evaluate these three methods over a number of standard benchmark datasets (Oxford Buildings 5k and 105k, and Paris 6k) and demonstrate substantial improvements in retrieval performance whilst maintaining immediate retrieval speeds. Combining these complementary methods achieves a new state-of-the-art performance on these datasets."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

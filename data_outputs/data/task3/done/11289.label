@@ -1,0 +1,74 @@
+{
+  "doc_id": "11289",
+  "text": "Trimmomatic, v 0.36 [CITATION_1] was used to quality-filter the raw reads: trimming with a quality sliding window of 4:8; cropping sequences to remove 20 bases from the start and bases beyond 220 from the end (based on results of analysis by FASTQC); and filtering out sequences less than 150 bp long. Reads were processed using Kneaddata (https://bitbucket.org/bio bakery/kneaddata/wiki/Home) to remove human DNA sequences. Quality trimmed reads were processed through HUMAnN2 (http://huttenhower.sph. harvard.edu/humann2) with default settings, which includes 1) screening with MetaPhlAn2 for taxonomic identification using clade-specific markers [CITATION_2] ; 2) mapping reads to annotated pangenomes of the identified species in the ChocoPhlAn database using Bowtie2 [CITATION_3] to obtain species-specific gene lists (nucleotide search); 3) translated search of unmapped reads against UniRef90 protein reference database [CITATION_4] using DIAMOND [CITATION_5] . The generated gene lists are then collapsed into protein families and enzyme classes/pathways using PFam [CITATION_6] and MetCyc [CITATION_7] databases, respectively. Species contribution is based on results obtained in step 2 above. The resulting gene families and pathway abundance files from all samples were joined and normalized to relative abundance. Merged data were unstratified and LEfSe was employed to identify differentially abundant features, as described above.",
+  "correct_citation": {
+    "[CITATION_1]": "7324039",
+    "[CITATION_2]": "2099459",
+    "[CITATION_3]": "205420407",
+    "[CITATION_4]": "12423917",
+    "[CITATION_5]": "5346781",
+    "[CITATION_6]": "1246355",
+    "[CITATION_7]": "53303023"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Trimmomatic, v 0.36 [CITATION_1] was used to quality-filter the raw reads: trimming with a quality sliding window of 4:8; cropping sequences to remove 20 bases from the start and bases beyond 220 from the end (based on results of analysis by FASTQC); and filtering out sequences less than 150 bp long."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "screening with MetaPhlAn2 for taxonomic identification using clade-specific markers [CITATION_2] ;"
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "mapping reads to annotated pangenomes of the identified species in the ChocoPhlAn database using Bowtie2 [CITATION_3] to obtain species-specific gene lists (nucleotide search);"
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "translated search of unmapped reads against UniRef90 protein reference database [CITATION_4] using DIAMOND [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "translated search of unmapped reads against UniRef90 protein reference database [CITATION_4] using DIAMOND [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "The generated gene lists are then collapsed into protein families and enzyme classes/pathways using PFam [CITATION_6] and MetCyc [CITATION_7] databases, respectively."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "The generated gene lists are then collapsed into protein families and enzyme classes/pathways using PFam [CITATION_6] and MetCyc [CITATION_7] databases, respectively."
+    }
+  ],
+  "bib_entries": {
+    "7324039": {
+      "title": "Trimmomatic: a flexible trimmer for Illumina sequence data",
+      "abstract": "Motivation: Although many next-generation sequencing (NGS) read preprocessing tools already existed, we could not find any tool or combination of tools that met our requirements in terms of flexibility, correct handling of paired-end data and high performance. We have developed Trimmomatic as a more flexible and efficient preprocessing tool, which could correctly handle paired-end data. ::: ::: Results: The value of NGS read preprocessing is demonstrated for both reference-based and reference-free tasks. Trimmomatic is shown to produce output that is at least competitive with, and in many cases superior to, that produced by other tools, in all scenarios tested. ::: ::: Availability and implementation: Trimmomatic is licensed under GPL V3. It is cross-platform (Java 1.5+ required) and available at http://www.usadellab.org/cms/index.php?page=trimmomatic ::: ::: Contact: ed.nehcaa-htwr.1oib@ledasu ::: ::: Supplementary information: Supplementary data are available at Bioinformatics online."
+    },
+    "12423917": {
+      "title": "UniRef clusters: a comprehensive and scalable alternative for improving sequence similarity searches",
+      "abstract": "MOTIVATION ::: UniRef databases provide full-scale clustering of UniProtKB sequences and are utilized for a broad range of applications, particularly similarity-based functional annotation. Non-redundancy and intra-cluster homogeneity in UniRef were recently improved by adding a sequence length overlap threshold. Our hypothesis is that these improvements would enhance the speed and sensitivity of similarity searches and improve the consistency of annotation within clusters. ::: ::: ::: RESULTS ::: Intra-cluster molecular function consistency was examined by analysis of Gene Ontology terms. Results show that UniRef clusters bring together proteins of identical molecular function in more than 97% of the clusters, implying that clusters are useful for annotation and can also be used to detect annotation inconsistencies. To examine coverage in similarity results, BLASTP searches against UniRef50 followed by expansion of the hit lists with cluster members demonstrated advantages compared with searches against UniProtKB sequences; the searches are concise (∼7 times shorter hit list before expansion), faster (∼6 times) and more sensitive in detection of remote similarities (>96% recall at e-value <0.0001). Our results support the use of UniRef clusters as a comprehensive and scalable alternative to native sequence databases for similarity searches and reinforces its reliability for use in functional annotation."
+    },
+    "1246355": {
+      "title": "Pfam: the protein families database",
+      "abstract": "Pfam, available via servers in the UK (http://pfam.sanger.ac.uk/) and the USA (http://pfam.janelia.org/), is a widely used database of protein families, containing 14 831 manually curated entries in the current release, version 27.0. Since the last update article 2 years ago, we have generated 1182 new families and maintained sequence coverage of the UniProt Knowledgebase (UniProtKB) at nearly 80%, despite a 50% increase in the size of the underlying sequence database. Since our 2012 article describing Pfam, we have also undertaken a comprehensive review of the features that are provided by Pfam over and above the basic family data. For each feature, we determined the relevance, computational burden, usage statistics and the functionality of the feature in a website context. As a consequence of this review, we have removed some features, enhanced others and developed new ones to meet the changing demands of computational biology. Here, we describe the changes to Pfam content. Notably, we now provide family alignments based on four different representative proteome sequence data sets and a new interactive DNA search interface. We also discuss the mapping between Pfam and known 3D structures."
+    },
+    "5346781": {
+      "title": "Fast and sensitive protein alignment using DIAMOND",
+      "abstract": "The alignment of sequencing reads against a protein reference database is a major computational bottleneck in metagenomics and data-intensive evolutionary projects. Although recent tools offer improved performance over the gold standard BLASTX, they exhibit only a modest speedup or low sensitivity. We introduce DIAMOND, an open-source algorithm based on double indexing that is 20,000 times faster than BLASTX on short reads and has a similar degree of sensitivity."
+    },
+    "53303023": {
+      "title": "The MetaCyc database of metabolic pathways and enzymes and the BioCyc collection of Pathway/Genome databases",
+      "abstract": "MetaCyc (MetaCyc.org) is a universal database of metabolic pathways and enzymes from all domains of life. The pathways in MetaCyc are curated from the primary scientific literature, and are experimentally determined small-molecule metabolic pathways. Each reaction in a MetaCyc pathway is annotated with one or more well-characterized enzymes. Because MetaCyc contains only experimentally elucidated knowledge, it provides a uniquely high-quality resource for metabolic pathways and enzymes. BioCyc (BioCyc.org) is a collection of more than 350 organism-specific Pathway/Genome Databases (PGDBs). Each BioCyc PGDB contains the predicted metabolic network of one organism, including metabolic pathways, enzymes, metabolites and reactions predicted by the Pathway Tools software using MetaCyc as a reference database. BioCyc PGDBs also contain predicted operons and predicted pathway hole fillers-predictions of which enzymes may catalyze pathway reactions that have not been assigned to an enzyme. The BioCyc website offers many tools for computational analysis of PGDBs, including comparative analysis and analysis of omics data in a pathway context. The BioCyc PGDBs generated by SRI are offered for adoption by any interested party for the ongoing integration of metabolic and genome-related information about an organism."
+    },
+    "2099459": {
+      "title": "Metagenomic biomarker discovery and explanation",
+      "abstract": "This study describes and validates a new method for metagenomic biomarker discovery by way of class comparison, tests of biological consistency and effect size estimation. This addresses the challenge of finding organisms, genes, or pathways that consistently explain the differences between two or more microbial communities, which is a central problem to the study of metagenomics. We extensively validate our method on several microbiomes and a convenient online interface for the method is provided at http://huttenhower.sph.harvard.edu/lefse/."
+    },
+    "205420407": {
+      "title": "Fast gapped-read alignment with Bowtie 2",
+      "abstract": "As the rate of sequencing increases, greater throughput is demanded from read aligners. The full-text minute index is often used to make alignment very fast and memory-efficient, but the approach is ill-suited to finding longer, gapped alignments. Bowtie 2 combines the strengths of the full-text minute index with the flexibility and speed of hardware-accelerated dynamic programming algorithms to achieve a combination of high speed, sensitivity and accuracy."
+    }
+  },
+  "generator": "manual-labeling"
+}

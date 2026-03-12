@@ -1,0 +1,20 @@
+{
+  "doc_id": "4726",
+  "text": "This paper provides a better solution to the stated problem by offering a middle ground between centralized and distributed approaches, wherein some subsets of small automata are statically composed to comprise a distributed system of locally centralized \"medium\" automata. Typically, each medium automata interacts/synchronizes with few other such medium automata for its transitions, while it represents the composition of a subset of small automata that interact/synchronize with each other relatively heavily. Taking the purely distributed approach as our starting point, we define a new product operator whose application at run-time requires only a relatively simple distributed algorithmautomata need to communicate only locally (i.e., with \"neighbors\") instead of globally (i.e., with everybody)-while allowing independent transitions to execute simultaneously. We then characterize a class of product automata where substituting the existing product operator with our new product operator is semantics-preserving. This class includes product automata whose constituents communicate only asynchronously with each other, and so, the optimization technique based on the identification of synchronous and asynchronous regions of connectors can be combined with our results [CITATION_1] . Finally, to compensate for the nonassociativity of our new product operator, which may make its efficient application at run-time problematic, we introduce a proof method involving the construction of \"huge\" automata to show that efficient implementations in fact exist.",
+  "correct_citation": {
+    "[CITATION_1]": "62565543"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "This class includes product automata whose constituents communicate only asynchronously with each other, and so, the optimization technique based on the identification of synchronous and asynchronous regions of connectors can be combined with our results [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "62565543": {
+      "title": "Synchronous coordination of distributed components",
+      "abstract": "This work contributes to the field of coordination, in particular to Reo, by improving existing approaches to execute synchronisation models in three major ways. First, this work supports decoupled execution and lightweight reconfiguration. We developed a prototype Dreams engine to test our distributed protocol, using an actor library for the Scala language. Reconfiguration of a small part of the system is independent of the execution or behaviour of unrelated parts of the same system. Second, Dreams outperforms previous Reo engines by using constraint satisfaction techniques. In each round of the execution of the Dreams framework, descriptions of the behaviour of all building blocks are combined and a coordination pattern for the current round is chosen using constraint satisfaction techniques. This approach requiring less time than previous attempts that collect all patterns before selecting one. Third, our work improves scalability by identifying synchronous regions. We statically discover regions of the coordination layer that can execute independently, thus achieving a truly decoupled execution of connectors. Consequently, the constraint problem representing the behaviour at each round is smaller and more easily solved."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

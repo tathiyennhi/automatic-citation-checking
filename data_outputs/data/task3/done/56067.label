@@ -1,0 +1,56 @@
+{
+  "doc_id": "56067",
+  "text": "A detailed description of Xtail is given in the method section, and the general outline is illustrated in Fig. 1 . First, given that the ribosome profiling is technically on the basis of next-generation sequencing of small RNA libraries, we adopted negative binomial distributions to model the read counts of both mRNA and RPF, similar to many other data analysis methods for RNA sequencing [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] . We used DESeq2 (refs 21,22) to estimate the parameters (mean and dispersion) of the negative binomial distributions from normalized read counts.",
+  "correct_citation": {
+    "[CITATION_1]": "1133459",
+    "[CITATION_2]": "7633078",
+    "[CITATION_3]": "8620592",
+    "[CITATION_4]": "14052240",
+    "[CITATION_5]": "70074"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "First, given that the ribosome profiling is technically on the basis of next-generation sequencing of small RNA libraries, we adopted negative binomial distributions to model the read counts of both mRNA and RPF, similar to many other data analysis methods for RNA sequencing [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "First, given that the ribosome profiling is technically on the basis of next-generation sequencing of small RNA libraries, we adopted negative binomial distributions to model the read counts of both mRNA and RPF, similar to many other data analysis methods for RNA sequencing [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "First, given that the ribosome profiling is technically on the basis of next-generation sequencing of small RNA libraries, we adopted negative binomial distributions to model the read counts of both mRNA and RPF, similar to many other data analysis methods for RNA sequencing [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "First, given that the ribosome profiling is technically on the basis of next-generation sequencing of small RNA libraries, we adopted negative binomial distributions to model the read counts of both mRNA and RPF, similar to many other data analysis methods for RNA sequencing [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] ."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "First, given that the ribosome profiling is technically on the basis of next-generation sequencing of small RNA libraries, we adopted negative binomial distributions to model the read counts of both mRNA and RPF, similar to many other data analysis methods for RNA sequencing [CITATION_1] [CITATION_2] [CITATION_3] [CITATION_4] [CITATION_5] ."
+    }
+  ],
+  "bib_entries": {
+    "70074": {
+      "title": "Shrinkage estimation of dispersion in Negative Binomial models for RNA-seq experiments with small sample size",
+      "abstract": "Motivation: RNA-seq experiments produce digital counts of reads that are affected by both biological and technical variation. To distinguish the systematic changes in expression between conditions from noise, the counts are frequently modeled by the Negative Binomial distribution. However, in experiments with small sample size, the per-gene estimates of the dispersion parameter are unreliable. ::: ::: Method: We propose a simple and effective approach for estimating the dispersions. First, we obtain the initial estimates for each gene using the method of moments. Second, the estimates are regularized, i.e. shrunk towards a common value that minimizes the average squared difference between the initial estimates and the shrinkage estimates. The approach does not require extra modeling assumptions, is easy to compute and is compatible with the exact test of differential expression. ::: ::: Results: We evaluated the proposed approach using 10 simulated and experimental datasets and compared its performance with that of currently popular packages edgeR, DESeq, baySeq, BBSeq and SAMseq. For these datasets, sSeq performed favorably for experiments with small sample size in sensitivity, specificity and computational time. ::: ::: Availability: http://www.stat.purdue.edu/~ovitek/Software.html and Bioconductor. ::: ::: Contact: ovitek@purdue.edu ::: ::: Supplementary information:Supplementary data are available at Bioinformatics online."
+    },
+    "7633078": {
+      "title": "Differential expression analysis for sequence count data",
+      "abstract": "High-throughput sequencing assays such as RNA-Seq, ChIP-Seq or barcode counting provide quantitative readouts in the form of count data. To infer differential signal in such data correctly and with good statistical power, estimation of data variability throughout the dynamic range and a suitable error model are required. We propose a method based on the negative binomial distribution, with variance and mean linked by local regression and present an implementation, DESeq, as an R/Bioconductor package."
+    },
+    "8620592": {
+      "title": "Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2",
+      "abstract": "In comparative high-throughput sequencing assays, a fundamental task is the analysis of count data, such as read counts per gene in RNA-seq, for evidence of systematic changes across experimental conditions. Small replicate numbers, discreteness, large dynamic range and the presence of outliers require a suitable statistical approach. We present DESeq2, a method for differential analysis of count data, using shrinkage estimation for dispersions and fold changes to improve stability and interpretability of estimates. This enables a more quantitative analysis focused on the strength rather than the mere presence of differential expression. The DESeq2 package is available at http://www.bioconductor.org/packages/release/bioc/html/DESeq2.html."
+    },
+    "1133459": {
+      "title": "baySeq: empirical Bayesian methods for identifying differential expression in sequence count data",
+      "abstract": "Background ::: High throughput sequencing has become an important technology for studying expression levels in many types of genomic, and particularly transcriptomic, data. One key way of analysing such data is to look for elements of the data which display particular patterns of differential expression in order to take these forward for further analysis and validation."
+    },
+    "14052240": {
+      "title": "Differential expression analysis of multifactor RNA-Seq experiments with respect to biological variation",
+      "abstract": "A flexible statistical framework is developed for the analysis of read counts from RNA-Seq gene expression studies. It provides the ability to analyse complex experiments involving multiple treatment conditions and blocking variables while still taking full account of biological variation. Biological variation between RNA samples is estimated separately from the technical variation associated with sequencing technologies. Novel empirical Bayes methods allow each gene to have its own specific variability, even when there are relatively few biological replicates from which to estimate such variability. The pipeline is implemented in the edgeR package of the Bioconductor project. A case study analysis of carcinoma data demonstrates the ability of generalized linear model methods (GLMs) to detect differential expression in a paired design, and even to detect tumour-specific expression changes. The case study demonstrates the need to allow for gene-specific variability, rather than assuming a common dispersion across genes or a fixed relationship between abundance and variability. Genewise dispersions de-prioritize genes with inconsistent results and allow the main analysis to focus on changes that are consistent between biological replicates. Parallel computational approaches are developed to make non-linear model fitting faster and more reliable, making the application of GLMs to genomic data more convenient and practical. Simulations demonstrate the ability of adjusted profile likelihood estimators to return accurate estimators of biological variability in complex situations. When variation is gene-specific, empirical Bayes estimators provide an advantageous compromise between the extremes of assuming common dispersion or separate genewise dispersion. The methods developed here can also be applied to count data arising from DNA-Seq applications, including ChIP-Seq for epigenetic marks and DNA methylation analyses."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

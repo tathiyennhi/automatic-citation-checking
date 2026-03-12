@@ -1,0 +1,20 @@
+{
+  "doc_id": "56211",
+  "text": "Estimating the initial velocity and the gravity in the body frame explicitly using traditional techniques is an extremely challenging problem. Rather than trying to determine the two terms, we instead treat Equation (16) as a sequence, where the inputs are the observed sensor data and the output is the polar vector. The unobservable terms simply become latent states of the estimation. Intuitively, the motivation for this relies on the regular and constrained nature of pedestrian motion. Over a window, which could be a few seconds long, a person walking at a certain rate induces a roughly sinusoidal acceleration pattern. The frequency of this sinusoid relates to the walking speed. In addition, biomechanical measurements of human motion show that as people walk faster, their strides lengthen (Hausdorff 2007). Moreover, the gravity in body frame is related to the initial yaw and roll angle, determined by the attachment/placement of the device, which can be estimated from the raw data [CITATION_1] . In this paper, we propose the use of deep neural networks to learn the relationship between raw acceleration data and the polar delta vector, as illustrated in Figure 3 .",
+  "correct_citation": {
+    "[CITATION_1]": "19666072"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Moreover, the gravity in body frame is related to the initial yaw and roll angle, determined by the attachment/placement of the device, which can be estimated from the raw data [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "19666072": {
+      "title": "Robust pedestrian dead reckoning ( R-PDR ) for arbitrary mobile device placement",
+      "abstract": "Pedestrian dead reckoning, especially on smart-phones, is likely to play an increasingly important role in indoor tracking and navigation, due to its low cost and ability to work without any additional infrastructure. A challenge however, is that positioning, both in terms of step detection and heading estimation, must be accurate and reliable, even when the use of the device is so varied in terms of placement (e.g. handheld or in a pocket) or orientation (e.g holding the device in either portrait or landscape mode). Furthermore, the placement can vary over time as a user performs different tasks, such as making a call or carrying the device in a bag. A second challenge is to be able to distinguish between a true step and other periodic motion such as swinging an arm or tapping when the placement and orientation of the device is unknown. If this is not done correctly, then the PDR system typically overestimates the number of steps taken, leading to a significant long term error. We present a fresh approach, robust PDR (R-PDR), based on exploiting how bipedal motion impacts acquired sensor waveforms. Rather than attempting to recognize different placements through sensor data, we instead simply determine whether the motion of one or both legs impact the measurements. In addition, we formulate a set of techniques to accurately estimate the device orientation, which allows us to very accurately (typically over 99%) reject false positives. We demonstrate that regardless of device placement, we are able to detect the number of steps taken with >99.4% accuracy. R-PDR thus addresses the two main limitations facing existing PDR techniques."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

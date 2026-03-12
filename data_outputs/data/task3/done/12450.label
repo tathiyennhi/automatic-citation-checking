@@ -1,0 +1,20 @@
+{
+  "doc_id": "12450",
+  "text": "3.0.1. To Precompute the Landau Tensor or Not to Precompute. The Landau tensor is only a function of mesh geometry and can be computed and stored for each mesh configuration. The cost of computing the Landau tensor is amortized by the number of nonlinear solver iterations and the number of time steps that the mesh is used for. The computation of the tensor can be expensive, especially in the axisymmetric case which involves two different tensors and evaluation of elliptic integrals (see Appendix [CITATION_1] ), requiring approximately 165 floating point operations (flops) as measured by both the Intel Software Development Emulator (SDE) and code analysis, including four logarithm and square roots. Storing two such tensors requires eight words of storage, 64 bytes with double precision words. There are O(N 2 ) unique mesh (i, j) pairs for which the tensors are computed or stored, which is too much to fit in a cache of any foreseeable machine with any reasonable degree of accuracy (e.g., 64 megabytes with N = 10",
+  "correct_citation": {
+    "[CITATION_1]": "118961504"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The computation of the tensor can be expensive, especially in the axisymmetric case which involves two different tensors and evaluation of elliptic integrals (see Appendix [CITATION_1] ), requiring approximately 165 floating point operations (flops) as measured by both the Intel Software Development Emulator (SDE) and code analysis, including four logarithm and square roots."
+    }
+  ],
+  "bib_entries": {
+    "118961504": {
+      "title": "Conservative Discretization of the Landau Collision Integral",
+      "abstract": "We describe a density, momentum, and energy conserving discretization of the nonlinear Landau collision integral. Our algorithm is suitable for both the finite-element and discontinuous Galerkin methods and does not require structured meshes. The conservation laws for the discretization are proven algebraically and demonstrated numerically for an axially symmetric nonlinear relaxation problem."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

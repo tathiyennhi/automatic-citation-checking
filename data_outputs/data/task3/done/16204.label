@@ -1,0 +1,29 @@
+{
+  "doc_id": "16204",
+  "text": "Because of the discrete-valued gear ratios of a multi-speed transmission, the system representing the BEV's speed-andpowertrain coupled dynamics is essentially a hybrid system 1 . Exactly solving an optimal control problem for such a system usually involves solving a mixed integer nonlinear program, which is typically computationally demanding [CITATION_1] . In [CITATION_2] , the speed trajectory is optimized first using a cost function that approximately represents the energy consumption and does not involve powertrain variables; the gear ratio is then selected for the given speed trajectory. When selecting the gear ratio, it is assumed that the gear ratio is set constant over the control horizon and, as a result, the gearshift optimal control involves only a single discrete-valued optimization variable. Although such a decomposition of speed planning and gear ratio selection as well as the constant gear ratio assumption simplify the computations, multiple gearshifts over the control horizon may lead to better fuel economy.",
+  "correct_citation": {
+    "[CITATION_1]": "2068077",
+    "[CITATION_2]": "19854969"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Exactly solving an optimal control problem for such a system usually involves solving a mixed integer nonlinear program, which is typically computationally demanding [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In [CITATION_2] , the speed trajectory is optimized first using a cost function that approximately represents the energy consumption and does not involve powertrain variables;"
+    }
+  ],
+  "bib_entries": {
+    "2068077": {
+      "title": "A control lyapunov approach to predictive control of hybrid systems",
+      "abstract": "In this paper we consider the stabilization of hybrid systems with both continuous and discrete dynamics via predictive control. To deal with the presence of discrete dynamics we adopt a \"hybrid\" control Lyapunov function approach, which consists of using two different functions. A Lyapunov-like function is designed to ensure finite-time convergence of the discrete state to a target value, while asymptotic stability of the continuous state is guaranteed via a classical local control Lyapunov function. We show that by combining these two functions in a proper manner it is no longer necessary that the control Lyapunov function for the continuous dynamics decreases at each time step. This leads to a significant reduction of conservativeness in contrast with classical Lyapunov based predictive control. Furthermore, the proposed approach also leads to a reduction of the horizon length needed for recursive feasibility with respect to standard predictive control approaches."
+    },
+    "19854969": {
+      "title": "Optimal energy management for hevs in eco-driving applications using bi-level mpc",
+      "abstract": "Wide usage of vehicle’s onboard navigation system offers vehicles better terms to improve energy efficiency. In this paper, a computationally effective energy management strategy using model predictive control (MPC) is proposed to find the energy optimal torque split, gear shift, and velocity control of a parallel hybrid electric vehicle (HEV). We consider the vehicles in urban driving, where the vehicle trajectory is constrained by the infrastructure (road signs) and other vehicles (traffic). Restricted by the discrete gear ratio, nonlinear dynamics of the vehicles, and especially different time scales between velocity trajectory and torque split optimization, finding these control variables in one optimal problem is quite challenging. Thus, this paper uses bi-level methodology to reduce computational time and simplify the hybrid optimal problem by decoupling its components into two subproblems. In the outer loop, the optimal velocity trajectory is obtained by solving a nonlinear time-varying optimal problem using a Krylov subspace method to improve computational efficiency. In the second subproblem, we provide an explicit solution of the optimal torque split ratio and gear shift schedule by combining Pontryagin’s minimum principle and numerical methods in the framework of MPC. Simulation results on an AMESim model of an HEV with seven-speed automated manual transmission over multiple driving cycles are presented. The results indicate that both energy efficiency and computational speed are improved."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

@@ -1,0 +1,38 @@
+{
+  "doc_id": "50391",
+  "text": "Concurrent requests of RAM clients make a suitable arbitration inside a memory controller indispensable. The achievable QoS, defined in Section 2.2, is strongly related to the arbitration algorithm. In order to satisfy various bandwidth requirements of clients the arbiter has to comply with priorities assigned by design automation software. The software, executed on the connected PC, is knowledgeable about the underlying hardware platform and defines a video processing scheduling plan according to user specifications [CITATION_1] . Hence, bandwidth requirements and priority constellations can be determined in advance and are initially transferred to the frame grabber as parameters. Note that, due to the support of dynamically reconfigurable clients, priorities are not necessarily constant during a scheduling cycle. Thus, in order to avoid QoS limitations it is imperative that the arbiter provides priority updates during run-time, controlled by the embedded microcontroller. Round Robin is a frame-based scheduling algorithm, serving flows in cycles [CITATION_2] . Each client gets at least one opportunity per cycle to read or write data. The weighted round-robin (WRR) algorithm facilitates the distribution of available throughput corresponding to clients' priorities [CITATION_3] . Thus, clients may transmit a fixed amount of data in provided time-slots, making WRR perform well in terms of fairness. To increase the arbitration efficiency the visits of clients have to be spread evenly in time, considered in advance by the design automation software.",
+  "correct_citation": {
+    "[CITATION_1]": "33351422",
+    "[CITATION_2]": "5723680",
+    "[CITATION_3]": "43327446"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The software, executed on the connected PC, is knowledgeable about the underlying hardware platform and defines a video processing scheduling plan according to user specifications [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Round Robin is a frame-based scheduling algorithm, serving flows in cycles [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The weighted round-robin (WRR) algorithm facilitates the distribution of available throughput corresponding to clients' priorities [CITATION_3] ."
+    }
+  ],
+  "bib_entries": {
+    "33351422": {
+      "title": "System level design of a dynamically self-reconfigurable image processing system",
+      "abstract": "A linear-moving type displacement detector has a movable electrode disposed between a pair of stationary electrodes such a manner that the electrodes are in parallel with one another, thus forming a pair of variable capacitors. The movable electrode is movable in a direction forming an angle with the stationary electrodes while being kept parallel with the stationary electrodes, so that one of the capacitances of the two capacitors is increased with the movement of the movable electrode, while the other is decreased, and vice versa. The capacitors are coupled to oscillators, the output frequencies of the oscillators are mixed in a mixer, to provide the difference frequency therebetween, or some analogous signal which is responsive to the difference frequency. The difference frequency or the analogous signal is utilized for displacement measurement."
+    },
+    "43327446": {
+      "title": "Weighted round-robin cell multiplexing in a generalpurpose ATM switch chip",
+      "abstract": "The authors present the architecture of a general-purpose broadband-ISDN (B-ISDN) switch chip and, in particular, its novel feature: the weighted round-robin cell (packet) multiplexing algorithm and its implementation in hardware. The flow control and buffer management strategies that allow the chip to operate at top performance under congestion are given, and the reason why this multiplexing scheme should be used under those circumstances is explained. The chip architecture and how the key choices were made are discussed. The statistical performance of the switch is analyzed. The critical parts of the chip have been laid out and simulated, thus proving the feasibility of the architecture. Chip sizes of four to ten links with link throughput of 0.5 to 1 Gb/s and with about 1000 virtual circuits per switch have been realized. The results of simulations of the chip are presented. >"
+    },
+    "5723680": {
+      "title": "A temporal round robin scheduler",
+      "abstract": "In this paper, we present a temporal round robin (TRR) packet scheduler. In default round robin (RR) scheduler, flows are scheduled in sequence one by one without prioritizing any flows assigning the same amount of time slots. The main idea in the proposed TRR is to exploit the temporal variations of a pre-defined utility argument (e.g. SINR or MCS in the context of cellular radio systems) while assigning the same amount of time slots to each flows. It's shown that the expected value of the utility argument of the scheduled flows in TRR case is equal to or greater than that of the traditional RR. In the context of the cellular radio networks, this translates into an equal or higher network throughput as compared to the traditional RR. The proposed scheduler algorithm can be easily implemented into many various cellular networks including WiMAX. Simple simulation results confirms the effectiveness of the algorithm."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

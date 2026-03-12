@@ -1,0 +1,38 @@
+{
+  "doc_id": "47830",
+  "text": "For networks I, C, and A, we use the same VGG network [CITATION_1] structure. Meanwhile, I and C share parameters in the training stage to speed up convergence. For network G, it is an inverse VGG structure. Its pooling layers are replaced by upsampling layers, and the convolution layers are replaced with deconvolution layers. For network D, we use the same discriminative network structure as the DCGAN [CITATION_2] . The batch normalization [CITATION_3] layer is also applied after each convolution and deconvolution layer. The model is implemented using the deep learning toolbox Torch.",
+  "correct_citation": {
+    "[CITATION_1]": "14124313",
+    "[CITATION_2]": "11758569",
+    "[CITATION_3]": "5808102"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For networks I, C, and A, we use the same VGG network [CITATION_1] structure."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "For network D, we use the same discriminative network structure as the DCGAN [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "The batch normalization [CITATION_3] layer is also applied after each convolution and deconvolution layer."
+    }
+  ],
+  "bib_entries": {
+    "14124313": {
+      "title": "Very deep convolutional networks for large-scale image recognition",
+      "abstract": "In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision."
+    },
+    "11758569": {
+      "title": "Unsupervised representation learning with deep convolutional generative adversarial networks",
+      "abstract": "In recent years, supervised learning with convolutional networks (CNNs) has seen huge adoption in computer vision applications. Comparatively, unsupervised learning with CNNs has received less attention. In this work we hope to help bridge the gap between the success of CNNs for supervised learning and unsupervised learning. We introduce a class of CNNs called deep convolutional generative adversarial networks (DCGANs), that have certain architectural constraints, and demonstrate that they are a strong candidate for unsupervised learning. Training on various image datasets, we show convincing evidence that our deep convolutional adversarial pair learns a hierarchy of representations from object parts to scenes in both the generator and discriminator. Additionally, we use the learned features for novel tasks - demonstrating their applicability as general image representations."
+    },
+    "5808102": {
+      "title": "Batch normalization: Accelerating deep network training by reducing internal covariate shift",
+      "abstract": "Training Deep Neural Networks is complicated by the fact that the distribution of each layer's inputs changes during training, as the parameters of the previous layers change. This slows down the training by requiring lower learning rates and careful parameter initialization, and makes it notoriously hard to train models with saturating nonlinearities. We refer to this phenomenon as internal covariate shift, and address the problem by normalizing layer inputs. Our method draws its strength from making normalization a part of the model architecture and performing the normalization for each training mini-batch. Batch Normalization allows us to use much higher learning rates and be less careful about initialization, and in some cases eliminates the need for Dropout. Applied to a state-of-the-art image classification model, Batch Normalization achieves the same accuracy with 14 times fewer training steps, and beats the original model by a significant margin. Using an ensemble of batch-normalized networks, we improve upon the best published result on ImageNet classification: reaching 4.82% top-5 test error, exceeding the accuracy of human raters."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

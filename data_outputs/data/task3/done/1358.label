@@ -1,0 +1,25 @@
+{
+  "doc_id": "1358",
+  "text": "As noted above, the technique in [CITATION_1] , while being provably efficient and correct, suffers from practical implementation issues. Here we discuss two alternatives: orthogonalization by centroid body scaling and orthogonalization by using the empirical covariance. The former, orthogonalization via centroid body scaling, uses the samples already present in the algorithm rather than relying on a random walk to draw samples which are approximately uniform in the algorithm's approximation of the centroid body (as is done in [CITATION_2] ). This removes the dependence on random walks and the ellipsoid algorithm; instead, we use samples that are distributed according to the original heavy-tailed distribution but non-linearly scaled to lie inside the centroid body. We prove in Lemma 3 that the covariance of this subset of samples is enough to orthogonalize the mixing matrix A. Secondly, we prove that one can, in fact, \"forget\" that the data is heavy tailed and orthogonalize by using the empirical covariance of the data, even though it diverges, and that this is enough to orthogonalize the mixing matrix A. However, as observed in experimental results, in general this has a downside compared to orthogonalization via centroid body in that it could cause numerical instability during the \"second\" phase of ICA as the data obtained is less well-conditioned. This is illustrated directly in the table in Figure 4 containing the singular value and condition number of the mixing matrix BA in the approximately orthogonal ICA model.",
+  "correct_citation": {
+    "[CITATION_1]": "13228472",
+    "[CITATION_2]": "13228472"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "As noted above, the technique in [CITATION_1] , while being provably efficient and correct, suffers from practical implementation issues."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The former, orthogonalization via centroid body scaling, uses the samples already present in the algorithm rather than relying on a random walk to draw samples which are approximately uniform in the algorithm's approximation of the centroid body (as is done in [CITATION_2] )."
+    }
+  ],
+  "bib_entries": {
+    "13228472": {
+      "title": "Heavy-tailed independent component analysis",
+      "abstract": "Independent component analysis (ICA) is the problem of efficiently recovering a matrix $A \\in \\mathbb{R}^{n\\times n}$ from i.i.d. observations of $X=AS$ where $S \\in \\mathbb{R}^n$ is a random vector with mutually independent coordinates. This problem has been intensively studied, but all existing efficient algorithms with provable guarantees require that the coordinates $S_i$ have finite fourth moments. We consider the heavy-tailed ICA problem where we do not make this assumption, about the second moment. This problem also has received considerable attention in the applied literature. In the present work, we first give a provably efficient algorithm that works under the assumption that for constant $\\gamma>0$, each $S_i$ has finite $(1+\\gamma)$-moment, thus substantially weakening the moment requirement condition for the ICA problem to be solvable. We then give an algorithm that works under the assumption that matrix $A$ has orthogonal columns but requires no moment assumptions. Our techniques draw ideas from convex geometry and exploit standard properties of the multivariate spherical Gaussian distribution in a novel way."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

@@ -1,0 +1,44 @@
+{
+  "doc_id": "49610",
+  "text": "In classic online learning algorithms, all sampling points need be stored for testing. Thus, the implementation of the algorithm may be difficult in learning problems with high-dimensional inputs and large datasets. To tackle such a challenge, an alternative stochastic method, called doubly online learning algorithm was proposed in [CITATION_1] . The new algorithm is based on the random feature approach proposed in [CITATION_2] . The latter result is based on Bochner's theorem and shows that most shift-invariant kernel functions can be expressed as an inner product of some suitable random features. Thus the kernel function at each iteration in the original online learning algorithm can be estimated (or replaced) by a random feature. As a result, the new algorithm allows us to avoid keeping all the sample points since it only requires generating the random features and recovers past random resampling them using specific random seeds [CITATION_3] . The computational complexities of the algorithm are O(T ) (independent of the dimension of the data) in space and O(T 2 d) in time. Numerical experiments given in [CITATION_4] , show that the algorithm is fast and comparable with state-of-the-art algorithms. Convergence results with respect to the solution of regularized expected risk minimization were derived in [CITATION_5] for doubly online learning algorithms with regularization, considering general Lipschitz and smooth losses.",
+  "correct_citation": {
+    "[CITATION_1]": "703528",
+    "[CITATION_2]": "877929",
+    "[CITATION_3]": "703528",
+    "[CITATION_4]": "703528",
+    "[CITATION_5]": "703528"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "To tackle such a challenge, an alternative stochastic method, called doubly online learning algorithm was proposed in [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "The new algorithm is based on the random feature approach proposed in [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "As a result, the new algorithm allows us to avoid keeping all the sample points since it only requires generating the random features and recovers past random resampling them using specific random seeds [CITATION_3] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Numerical experiments given in [CITATION_4] , show that the algorithm is fast and comparable with state-of-the-art algorithms."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "Convergence results with respect to the solution of regularized expected risk minimization were derived in [CITATION_5] for doubly online learning algorithms with regularization, considering general Lipschitz and smooth losses."
+    }
+  ],
+  "bib_entries": {
+    "703528": {
+      "title": "Scalable kernel methods via doubly stochastic gradients",
+      "abstract": "The general perception is that kernel methods are not scalable, so neural nets become the choice for large-scale nonlinear learning problems. Have we tried hard enough for kernel methods? In this paper, we propose an approach that scales up kernel methods using a novel concept called \"doubly stochastic functional gradients\". Based on the fact that many kernel methods can be expressed as convex optimization problems, our approach solves the optimization problems by making two unbiased stochastic approximations to the functional gradient—one using random training points and another using random features associated with the kernel—and performing descent steps with this noisy functional gradient. Our algorithm is simple, need no commit to a preset number of random features, and allows the flexibility of the function class to grow as we see more incoming data in the streaming setting. We demonstrate that a function learned by this procedure after t iterations converges to the optimal function in the reproducing kernel Hilbert space in rate O(1/t), and achieves a generalization bound of O(1/√t). Our approach can readily scale kernel methods up to the regimes which are dominated by neural nets. We show competitive performances of our approach as compared to neural nets in datasets such as 2.3 million energy materials from MolecularSpace, 8 million handwritten digits from MNIST, and 1 million photos from ImageNet using convolution features."
+    },
+    "877929": {
+      "title": "Random features for large-scale kernel machines",
+      "abstract": "To accelerate the training of kernel machines, we propose to map the input data to a randomized low-dimensional feature space and then apply existing fast linear methods. The features are designed so that the inner products of the transformed data are approximately equal to those in the feature space of a user specified shift-invariant kernel. We explore two sets of random features, provide convergence bounds on their ability to approximate various radial basis kernels, and show that in large-scale classification and regression tasks linear machine learning algorithms applied to these features outperform state-of-the-art large-scale kernel machines."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

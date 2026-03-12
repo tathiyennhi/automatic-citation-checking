@@ -1,0 +1,38 @@
+{
+  "doc_id": "29897",
+  "text": "Methods belonging to the third category rely on a classical limiting strategy. Cockburn and Shu [CITATION_1] have developed a non-linear limiter to avoid spurious oscillations while maintaining the formal accuracy of the scheme. However, in their numerical tests, spurious oscillations were still evident. Yee 13 extended and improved the latter scheme, but no numerical tests were given. Ravichandran 14 employed a TVD limiter combined with a kinetic flux vector splitting (KFVS) method to improve stability of compact upwind schemes, proposing a third order scheme supposed to degenerate to first order accuracy at the extrema. Recently Tu and Yuan [CITATION_2] proposed a method where a compact upwind scheme is limited through a characteristic-based approach. The limiting approach is not as common as the hybridizing approach, as degeneration of accuracy near extrema is an undesirable feature when solving, for example, shock-turbulence interaction problems. Furthermore, Cockburn and Shu 12 found that the introduction of minmod limiters in centered schemes affects the accuracy of the solution, even in smooth regions, if there are spurious oscillations to suppress. On the other hand, Ravichandran [CITATION_3] showed that upwinding the compact scheme and employing kinetic splitting provide effective damping of spurious oscillations in smooth regions, and thus the accuracy degenerates only across discontinuities. This approach is attractive also for its relative simplicity, robustness, and lower computational cost.",
+  "correct_citation": {
+    "[CITATION_1]": "122078222",
+    "[CITATION_2]": "23166519",
+    "[CITATION_3]": "123630165"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Cockburn and Shu [CITATION_1] have developed a non-linear limiter to avoid spurious oscillations while maintaining the formal accuracy of the scheme."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Recently Tu and Yuan [CITATION_2] proposed a method where a compact upwind scheme is limited through a characteristic-based approach."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "On the other hand, Ravichandran [CITATION_3] showed that upwinding the compact scheme and employing kinetic splitting provide effective damping of spurious oscillations in smooth regions,"
+    }
+  ],
+  "bib_entries": {
+    "123630165": {
+      "title": "Higher order KFVS algorithms using compact upwind difference operators",
+      "abstract": "A family of high order accurate compact upwind difference operators have been used, together with the split fluxes of the KFVS (kinetic flux vector splitting) scheme to obtain high order semidiscretizations of the 2D Euler equations of inviscid gas dynamics in general coordinates. A TVD multistage Runge?Kutta time stepping scheme is used to compute steady states for selected transonic/supersonic flow problems which indicate the higher accuracy and low diffusion realizable in such schemes."
+    },
+    "122078222": {
+      "title": "Nonlinearly stable compact schemes for shock calculations",
+      "abstract": "In this paper the authors discuss the applications of high-order compact finite difference methods for shock calculations. The main idea is the definition of a local mean that serves as a reference for introducing a local nonlinear limiting to control spurious numerical oscillations while keeping the formal accuracy of the scheme. For scalar conservation laws, the resulting schemes can be proven total variation stable in one-space dimension and maximum norm stable in multispace dimensions. Numerical examples are shown to verify accuracy and stability of such schemes for problems containing shocks. The idea in this paper can also be applied to other implicit schemes such as the continuous Galerkin finite element methods."
+    },
+    "23166519": {
+      "title": "A characteristic-based shock-capturing scheme for hyperbolic problems",
+      "abstract": "In order to suppress numerical oscillations of linear compact schemes around discontinuities, a characteristic-based flux splitting limited method is introduced instead of ENO/WENO or other shock-capturing algorithms. This method begins with upwind schemes and flux vector splittings. The upwind schemes are projected along characteristic directions in a different way, and their amplitudes are carefully controlled by a special limiter in order to meet entropy condition and to prevent non-physical oscillations. A fifth-order linear compact upwind scheme is modified by this method for solving problems involving discontinuities. The properties of the numerical algorithm are checked on some benchmark problems in one, two and three space dimensions. Numerical results show that it is high-order accurate with high resolution and oscillation-free."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

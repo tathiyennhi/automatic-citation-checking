@@ -1,0 +1,29 @@
+{
+  "doc_id": "28071",
+  "text": "Alglave et al. [CITATION_1] have uncovered two bugs in a similar CUDA implementation [CITATION_2] that led to tasks occasionally being dropped from queues; both bugs arose from assuming an overly-strong memory model. This was demonstrated by hand-compiling suspect slices of the CUDA code into GPU assembly litmus tests (named dlb-mp and dlb-lb) and showing experimentally that these tests could produce results that would lead to bugs at the CUDA level.",
+  "correct_citation": {
+    "[CITATION_1]": "3087755",
+    "[CITATION_2]": "60168512"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "Alglave et al. [CITATION_1] have uncovered two bugs in a similar CUDA implementation [CITATION_2] that led to tasks occasionally being dropped from queues; both bugs arose from assuming an overly-strong memory model."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Alglave et al. [CITATION_1] have uncovered two bugs in a similar CUDA implementation [CITATION_2] that led to tasks occasionally being dropped from queues; both bugs arose from assuming an overly-strong memory model."
+    }
+  ],
+  "bib_entries": {
+    "3087755": {
+      "title": "GPU concurrency: weak behaviours and programming assumptions",
+      "abstract": "Concurrency is pervasive and perplexing, particularly on graphics processing units (GPUs). Current specifications of languages and hardware are inconclusive; thus programmers often rely on folklore assumptions when writing software. To remedy this state of affairs, we conducted a large empirical study of the concurrent behaviour of deployed GPUs. Armed with litmus tests (i.e. short concurrent programs), we questioned the assumptions in programming guides and vendor documentation about the guarantees provided by hardware. We developed a tool to generate thousands of litmus tests and run them under stressful workloads. We observed a litany of previously elusive weak behaviours, and exposed folklore beliefs about GPU programming---often supported by official tutorials---as false. As a way forward, we propose a model of Nvidia GPU hardware, which correctly models every behaviour witnessed in our experiments. The model is a variant of SPARC Relaxed Memory Order (RMO), structured following the GPU concurrency hierarchy."
+    },
+    "60168512": {
+      "title": "Dynamic load balancing using work-stealing",
+      "abstract": "In this chapter, we present a methodology for efficient load balancing of computational problems that ::: can be easily decomposed into multiple tasks, but where it is hard to predict the computation cost of ::: each task, and where new tasks are created dynamically during runtime. We present this methodology ::: and its exploitation and feasibility in the context of graphics processors. Work-stealing allows an idle ::: core to acquire tasks from a core that is overloaded, causing the total work to be distributed evenly ::: among cores, while minimizing the communication costs, as tasks are only redistributed when required. ::: This will often lead to higher throughput than using static partitioning."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

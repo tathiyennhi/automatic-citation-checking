@@ -1,0 +1,43 @@
+{
+  "doc_id": "42768",
+  "text": "The fourth and last measure is the logical coupling. To compute it we first extract change sets from the version control system. For ArgoUML and jEdit we rely on SVN change sets. JHotDraw uses CVS, therefore, we grouped together file changes if the commit note and the committer name matched, and if the time interval between them was less than 200 seconds [CITATION_1] . Then, we applied association rule discovery, similarly to the work by Ying et al. [CITATION_2] and by Zimmermann et al. [CITATION_3] (using the R package arule and, specifically, the Apriori [CITATION_4] algorithm) to detect frequent itemsets in cochanges (i.e., groups of files frequently changing together). The rules are ranked in terms of (i) support of each itemset X, supp(X) (i.e., the proportion of change sets that contain the learned itemset), and (ii) confidence of a rule X → Y , defined as supp(X → Y )/supp(X) (i.e., the fraction of change sets containing X where Y also appears). We set the confidence threshold to 0.8 and the support threshold to 0.02. The rationale was that (i) the learned rules must be precise enough (hence, the high confidence threshold) and (ii) the itemsets may appear in a limited percentage of the change sets (hence, the low support threshold). Using these thresholds, we assumed that there is a logical coupling between two files if they appeared in a frequent itemset. Finally, we mapped files to classes by analyzing each file's source code.",
+  "correct_citation": {
+    "[CITATION_1]": "47037250",
+    "[CITATION_2]": "1168238",
+    "[CITATION_3]": "47037250",
+    "[CITATION_4]": "490415"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For ArgoUML and jEdit we rely on SVN change sets. JHotDraw uses CVS, therefore, we grouped together file changes if the commit note and the committer name matched, and if the time interval between them was less than 200 seconds [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "Then, we applied association rule discovery, similarly to the work by Ying et al. [CITATION_2] and by Zimmermann et al. [CITATION_3] (using the R package arule and, specifically, the Apriori [CITATION_4] algorithm) to detect frequent itemsets in cochanges (i.e., groups of files frequently changing together)."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Then, we applied association rule discovery, similarly to the work by Ying et al. [CITATION_2] and by Zimmermann et al. [CITATION_3] (using the R package arule and, specifically, the Apriori [CITATION_4] algorithm) to detect frequent itemsets in cochanges (i.e., groups of files frequently changing together)."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Then, we applied association rule discovery, similarly to the work by Ying et al. [CITATION_2] and by Zimmermann et al. [CITATION_3] (using the R package arule and, specifically, the Apriori [CITATION_4] algorithm) to detect frequent itemsets in cochanges (i.e., groups of files frequently changing together)."
+    }
+  ],
+  "bib_entries": {
+    "47037250": {
+      "title": "Mining version histories to guide software changes",
+      "abstract": "We apply data mining to version histories in order to guide programmers along related changes: \"Programmers who changed these functions also changed. . . \". Given a set of existing changes, such rules (a) suggest and predict likely further changes, (b) show up item coupling that is indetectable by program analysis, and (c) prevent errors due to incomplete changes. After an initial change, our ROSE prototype can correctly predict 26% of further files to be changed - and 15% of the precise functions or variables. The topmost three suggestions contain a correct location with a likelihood of 64%."
+    },
+    "490415": {
+      "title": "Mining association rules between sets of items in large databases",
+      "abstract": "We are given a large database of customer transactions. Each transaction consists of items purchased by a customer in a visit. We present an efficient algorithm that generates all significant association rules between items in the database. The algorithm incorporates buffer management and novel estimation and pruning techniques. We also present results of applying this algorithm to sales data obtained from a large retailing company, which shows the effectiveness of the algorithm."
+    },
+    "1168238": {
+      "title": "Predicting source code changes by mining change history",
+      "abstract": "Software developers are often faced with modification tasks that involve source which is spread across a code base. Some dependencies between source code, such as those between source code written in different languages, are difficult to determine using existing static and dynamic analyses. To augment existing analyses and to help developers identify relevant source code during a modification task, we have developed an approach that applies data mining techniques to determine change patterns - sets of files that were changed together frequently in the past - from the change history of the code base. Our hypothesis is that the change patterns can be used to recommend potentially relevant source code to a developer performing a modification task. We show that this approach can reveal valuable dependencies by applying the approach to the Eclipse and Mozilla open source projects and by evaluating the predictability and interestingness of the recommendations produced for actual modification tasks on these systems."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

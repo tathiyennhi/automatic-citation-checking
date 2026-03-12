@@ -1,0 +1,34 @@
+{
+  "doc_id": "295",
+  "text": "Perlin [1985] uses slicing in his noise, which is typically filtered using frequency clamping. However, filtering introduces an aliasing vs. detail loss trade-off ( Fig. 1(a.2) ), since the power spectrum of Perlin noise is not band-pass ( Fig. 2(c) ) [CITATION_1] . [CITATION_2] use projection and frequency clamping in their wavelet noise. However, even though the power spectrum of the noise on the surface is band-pass ( Fig. 2(d) ), filtering does not fully solve the aliasing vs. detail loss trade-off. This is because frequency clamping works at the level of entire octaves at once (see supplemental material for the exact method we use), and because frequency clamping is limited to isotropic filtering ( Fig. 1(b.2) ). Moreover, projecting solid noise introduces discontinuities in the noise on the surface at sharp edges ( Fig. 1(b.1) ), since the normal changes discontinuously (Fig. 2(b) ). [CITATION_3] use projection and a filtering approach specific to Gabor noise in their surface Gabor noise. They project Gabor kernels onto the surface and filter the resulting 2D Gabor kernels analytically. This results in high-quality anisotropic filtering ( Fig. 1(c.2) ), since the filtering approach works at the level of individual Gabor kernels. However, similarly to wavelet noise, projection introduces discontinuities at sharp edges ( Fig. 1(c.1) ).",
+  "correct_citation": {
+    "[CITATION_1]": "46324227",
+    "[CITATION_2]": "46324227",
+    "[CITATION_3]": "10308417"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "However, filtering introduces an aliasing vs. detail loss trade-off ( Fig. 1(a.2) ), since the power spectrum of Perlin noise is not band-pass ( Fig. 2(c) ) [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "[CITATION_2] use projection and frequency clamping in their wavelet noise."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "[CITATION_3] use projection and a filtering approach specific to Gabor noise in their surface Gabor noise."
+    }
+  ],
+  "bib_entries": {
+    "46324227": {
+      "title": "Wavelet noise",
+      "abstract": "Noise functions are an essential building block for writing procedural shaders in 3D computer graphics. The original noise function introduced by Ken Perlin is still the most popular because it is simple and fast, and many spectacular images have been made with it. Nevertheless, it is prone to problems with aliasing and detail loss. In this paper we analyze these problems and show that they are particularly severe when 3D noise is used to texture a 2D surface. We use the theory of wavelets to create a new class of simple and fast noise functions that avoid these problems."
+    },
+    "10308417": {
+      "title": "Procedural noise using sparse Gabor convolution",
+      "abstract": "Noise is an essential tool for texturing and modeling. Designing interesting textures with noise calls for accurate spectral control, since noise is best described in terms of spectral content. Texturing requires that noise can be easily mapped to a surface, while high-quality rendering requires anisotropic filtering. A noise function that is procedural and fast to evaluate offers several additional advantages. Unfortunately, no existing noise combines all of these properties. ::: In this paper we introduce a noise based on sparse convolution and the Gabor kernel that enables all of these properties. Our noise offers accurate spectral control with intuitive parameters such as orientation, principal frequency and bandwidth. Our noise supports two-dimensional and solid noise, but we also introduce setup-free surface noise. This is a method for mapping noise onto a surface, complementary to solid noise, that maintains the appearance of the noise pattern along the object and does not require a texture parameterization. Our approach requires only a few bytes of storage, does not use discretely sampled data, and is nonperiodic. It supports anisotropy and anisotropic filtering. We demonstrate our noise using an interactive tool for noise design."
+    }
+  },
+  "generator": "llama-3.3-70b-versatile"
+}

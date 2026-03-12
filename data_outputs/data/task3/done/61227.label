@@ -1,0 +1,80 @@
+{
+  "doc_id": "61227",
+  "text": "In pixel-level methods [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] , an end-to-end fully convolutional neural network learns to generate a dense prediction map indicting whether each pixel in the original image belongs to any text instances or not. Post-processing methods then groups pixels together depending on which pixels belong to the same text instance. Since text can appear in clusters which makes predicted pixels connected to each other, the core of pixel-level methods is to separate text instances from each other. PixelLink [CITATION_7] learns to predict whether two adjacent pixels belong to the same text instance by adding link prediction to each pixel. Border learning method [CITATION_8] casts each pixels into three categories: text, border, and background, assuming that border can well separate text instances. In Holistic [CITATION_9] , pixel-prediction maps include both text-block level and character center levels. Since the centers of characters do not overlap, the separation is done easily.",
+  "correct_citation": {
+    "[CITATION_1]": "19188739",
+    "[CITATION_2]": "19413173",
+    "[CITATION_3]": "23968407",
+    "[CITATION_4]": "13065654",
+    "[CITATION_5]": "6427766",
+    "[CITATION_6]": "2214682",
+    "[CITATION_7]": "19188739",
+    "[CITATION_8]": "13065654",
+    "[CITATION_9]": "6427766"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In pixel-level methods [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] , an end-to-end fully convolutional neural network learns to generate a dense prediction map indicting whether each pixel in the original image belongs to any text instances or not."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "In pixel-level methods [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] , an end-to-end fully convolutional neural network learns to generate a dense prediction map indicting whether each pixel in the original image belongs to any text instances or not."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "In pixel-level methods [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] , an end-to-end fully convolutional neural network learns to generate a dense prediction map indicting whether each pixel in the original image belongs to any text instances or not."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "In pixel-level methods [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] , an end-to-end fully convolutional neural network learns to generate a dense prediction map indicting whether each pixel in the original image belongs to any text instances or not."
+    },
+    {
+      "citation_id": "[CITATION_5]",
+      "span_text": "In pixel-level methods [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] , an end-to-end fully convolutional neural network learns to generate a dense prediction map indicting whether each pixel in the original image belongs to any text instances or not."
+    },
+    {
+      "citation_id": "[CITATION_6]",
+      "span_text": "In pixel-level methods [CITATION_1] , [CITATION_2] , [CITATION_3] , [CITATION_4] , [CITATION_5] , [CITATION_6] , an end-to-end fully convolutional neural network learns to generate a dense prediction map indicting whether each pixel in the original image belongs to any text instances or not."
+    },
+    {
+      "citation_id": "[CITATION_7]",
+      "span_text": "PixelLink [CITATION_7] learns to predict whether two adjacent pixels belong to the same text instance by adding link prediction to each pixel."
+    },
+    {
+      "citation_id": "[CITATION_8]",
+      "span_text": "Border learning method [CITATION_8] casts each pixels into three categories: text, border, and background, assuming that border can well separate text instances."
+    },
+    {
+      "citation_id": "[CITATION_9]",
+      "span_text": "In Holistic [CITATION_9] , pixel-prediction maps include both text-block level and character center levels."
+    }
+  ],
+  "bib_entries": {
+    "2214682": {
+      "title": "Multi-oriented text detection with fully convolutional networks",
+      "abstract": "In this paper, we propose a novel approach for text detection in natural images. Both local and global cues are taken into account for localizing text lines in a coarse-to-fine procedure. First, a Fully Convolutional Network (FCN) model is trained to predict the salient map of text regions in a holistic manner. Then, text line hypotheses are estimated by combining the salient map and character components. Finally, another FCN classifier is used to predict the centroid of each character, in order to remove the false hypotheses. The framework is general for handling text in multiple orientations, languages and fonts. The proposed method consistently achieves the state-of-the-art performance on three text detection benchmarks: MSRA-TD500, ICDAR2015 and ICDAR2013."
+    },
+    "19188739": {
+      "title": "Pixellink: Detecting scene text via instance segmentation",
+      "abstract": "Most state-of-the-art scene text detection algorithms are deep learning based methods that depend on bounding box regression and perform at least two kinds of predictions: text/non-text classification and location regression. Regression plays a key role in the acquisition of bounding boxes in these methods, but it is not indispensable because text/non-text prediction can also be considered as a kind of semantic segmentation that contains full location information in itself. However, text instances in scene images often lie very close to each other, making them very difficult to separate via semantic segmentation. Therefore, instance segmentation is needed to address this problem. In this paper, PixelLink, a novel scene text detection algorithm based on instance segmentation, is proposed. Text instances are first segmented out by linking pixels within the same instance together. Text bounding boxes are then extracted directly from the segmentation result without location regression. Experiments show that, compared with regression-based methods, PixelLink can achieve better or comparable performance on several benchmarks, while requiring many fewer training iterations and less training data."
+    },
+    "13065654": {
+      "title": "Self-organized text detection with minimal post-processing via border learning",
+      "abstract": "In this paper we propose a new solution to the text detection problem via border learning. Specifically, we make four major contributions: 1) We analyze the insufficiencies of the classic non-text and text settings for text detection. 2) We introduce the border class to the text detection problem for the first time, and validate that the decoding process is largely simplified with the help of text border. 3) We collect and release a new text detection PPT dataset containing 10,692 images with non-text, border, and text annotations. 4) We develop a lightweight (only 0.28M parameters), fully convolutional network (FCN) to effectively learn borders in text images. The results of our extensive experiments show that the proposed solution achieves comparable performance, and often outperforms state-of-theart approaches on standard benchmarks–even though our solution only requires minimal post-processing to parse a bounding box from a detected text map, while others often require heavy post-processing."
+    },
+    "6427766": {
+      "title": "Scene text detection via holistic, multi-channel prediction",
+      "abstract": "Recently, scene text detection has become an active research topic in computer vision and document analysis, because of its great importance and significant challenge. However, vast majority of the existing methods detect text within local regions, typically through extracting character, word or line level candidates followed by candidate aggregation and false positive elimination, which potentially exclude the effect of wide-scope and long-range contextual cues in the scene. To take full advantage of the rich information available in the whole natural image, we propose to localize text in a holistic manner, by casting scene text detection as a semantic segmentation problem. The proposed algorithm directly runs on full images and produces global, pixel-wise prediction maps, in which detections are subsequently formed. To better make use of the properties of text, three types of information regarding text region, individual characters and their relationship are estimated, with a single Fully Convolutional Network (FCN) model. With such predictions of text properties, the proposed algorithm can simultaneously handle horizontal, multi-oriented and curved text in real-world natural images. The experiments on standard benchmarks, including ICDAR 2013, ICDAR 2015 and MSRA-TD500, demonstrate that the proposed algorithm substantially outperforms previous state-of-the-art approaches. Moreover, we report the first baseline result on the recently-released, large-scale dataset COCO-Text."
+    },
+    "19413173": {
+      "title": "Multi-scale fcn with cascaded instance aware segmentation for arbitrary oriented word spotting in the wild",
+      "abstract": "Scene text detection has attracted great attention these years. Text potentially exist in a wide variety of images or videos and play an important role in understanding the scene. In this paper, we present a novel text detection algorithm which is composed of two cascaded steps: (1) a multi-scale fully convolutional neural network (FCN) is proposed to extract text block regions, (2) a novel instance (word or line) aware segmentation is designed to further remove false positives and obtain word instances. The proposed algorithm can accurately localize word or text line in arbitrary orientations, including curved text lines which cannot be handled in a lot of other frameworks. Our algorithm achieved state-of-the-art performance in ICDAR 2013 (IC13), ICDAR 2015 (IC15) and CUTE80 and Street View Text (SVT) benchmark datasets."
+    },
+    "23968407": {
+      "title": "Single shot text detector with regional attention",
+      "abstract": "We present a novel single-shot text detector that directly outputs word-level bounding boxes in a natural image. We propose an attention mechanism which roughly identifies text regions via an automatically learned attentional map. This substantially suppresses background interference in the convolutional features, which is the key to producing accurate inference of words, particularly at extremely small sizes. This results in a single model that essentially works in a coarse-to-fine manner. It departs from recent FCN- based text detectors which cascade multiple FCN models to achieve an accurate prediction. Furthermore, we develop a hierarchical inception module which efficiently aggregates multi-scale inception features. This enhances local details, and also encodes strong context information, allow- ing the detector to work reliably on multi-scale and multi- orientation text with single-scale images. Our text detector achieves an F-measure of 77% on the ICDAR 2015 bench- mark, advancing the state-of-the-art results in [18, 28]. Demo is available at: http://sstd.whuang.org/."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

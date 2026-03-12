@@ -1,0 +1,20 @@
+{
+  "doc_id": "35559",
+  "text": "The computation ofũ(x, t) is an easily parallelizable process which we perform on the GPU on a grid laid out in screen space projected on the surface, similar to [CITATION_1] . Further speedups are possible with fast summation techniques like the fast multipole method, though we have not investigated this route. We use Eigen SVD to solve the linear systems in a least-squares sense. We believe the structure of this sparse symmetric positive definite linear system can be exploited to significantly speed up the performance, though we have not tried to optimize our solver performance. Figure 2 shows a simple scenario with rapid animation of hundreds of raindrops using the closed-form ripple solver described in Section 4. Our MFS-based simulator was tested in various different scenarios, from simple examples with a single wavenumber to more complex examples with detailed boundaries and a large range of wavenumbers. We also compare our method to analytical solutions and real-life footage of water waves. Please see our supplemental video to view the animations described in this paper. Alliney [1981] described an analytical solution for the diffraction of a planar water wave around a cylindrical object. We reproduce this scenario and compare the magnitude of the complex wave field u(x) (represented in Figure 7 , left) for a wave of wavelength λ = 1m diffracted by an obstacle of radius r = 1m. The graph in Figure 7 , right, represents the magnitude of the field at a distance d = 5m away from the center of the obstacle in every direction. We compute this comparison both for our static (Section 5.1) and wavelet (Section 5.2.2) approaches, running the time-dependent wavelet simulation until it reaches a steady state. We can see that both the magnitude for the steady (blue) and wavelet (green) waves are close to the analytical solution (red). More importantly for computer graphics applications, they reproduce the same interference pattern. Figure 8 shows how our MFS method reproduces common interference patterns with different boundary configurations. Notably, Figure 8 (c) highlights the method's ability to compute shadows and diffraction around a thin wall, while Figure 8 (d) shows how our method reproduces caustics where waves converge after reflecting from a concave obstacle. Figure 9 shows the interference pattern produced by a moving source. The vertically-translating source creates a curved shadow behind the circular obstacle.",
+  "correct_citation": {
+    "[CITATION_1]": "1980281"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "The computation ofũ(x, t) is an easily parallelizable process which we perform on the GPU on a grid laid out in screen space projected on the surface, similar to [CITATION_1] ."
+    }
+  ],
+  "bib_entries": {
+    "1980281": {
+      "title": "Interactive Animation of Ocean Waves",
+      "abstract": "We present an adaptive scheme for the interactive animation and display of ocean waves far from the coast. Relying on a procedural wave model, the method restricts computations to the visible part of the ocean surface, adapts the geometric resolution to the viewing distance and only considers the visible waves wavelengths. This yields real-time performances, even when the camera moves. The method allows the user to interactively fly over an unbounded animated ocean, which was not possible using previous approaches."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

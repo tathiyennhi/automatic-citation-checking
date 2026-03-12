@@ -10,19 +10,19 @@
   "citation_spans": [
     {
       "citation_id": "[CITATION_1]",
-      "span_text": "The wavefront tracking method of  (middle left) uses geometric optics to calculate the wavefronts, and they do not have an exact treatment of diffraction."
+      "span_text": "The wavefront tracking method of [CITATION_1] (middle left) uses geometric optics to calculate the wavefronts, and they do not have an exact treatment of diffraction."
     },
     {
       "citation_id": "[CITATION_2]",
-      "span_text": "The Lagrangian wave packet simulator of  (middle right) is also based on geometric optics, so it successfully reproduces the shadow and has similar issues with diffraction."
+      "span_text": "The Lagrangian wave packet simulator of [CITATION_2] (middle right) is also based on geometric optics, so it successfully reproduces the shadow and has similar issues with diffraction."
     },
     {
       "citation_id": "[CITATION_3]",
-      "span_text": "Finally, we compare to the water surface wavelets approach of  (far right)."
+      "span_text": "Finally, we compare to the water surface wavelets approach of [CITATION_3] (far right). Using the parameters in their paper (a large number of spatial grid samples, but only a small number of wave direction samples) causes the wave angles to exhibit discretization artifacts."
     },
     {
       "citation_id": "[CITATION_4]",
-      "span_text": "On the other hand, the method of  is significantly more efficient than ours when animating this scenario."
+      "span_text": "On the other hand, the method of [CITATION_4] is significantly more efficient than ours when animating this scenario. Their method can reach real time while ours still takes 2 or 3 seconds per frame for this example."
     }
   ],
   "bib_entries": {
@@ -39,5 +39,5 @@
       "abstract": "The current state of the art in real-time two-dimensional water wave simulation requires developers to choose between efficient Fourier-based methods, which lack interactions with moving obstacles, and finite-difference or finite element methods, which handle environmental interactions but are significantly more expensive. This paper attempts to bridge this long-standing gap between complexity and performance, by proposing a new wave simulation method that can faithfully simulate wave interactions with moving obstacles in real time while simultaneously preserving minute details and accommodating very large simulation domains. ::: Previous methods for simulating 2D water waves directly compute the change in height of the water surface, a strategy which imposes limitations based on the CFL condition (fast moving waves require small time steps) and Nyquist's limit (small wave details require closely-spaced simulation variables). This paper proposes a novel wavelet transformation that discretizes the liquid motion in terms of amplitude-like functions that vary over space, frequency, and direction, effectively generalizing Fourier-based methods to handle local interactions. Because these new variables change much more slowly over space than the original water height function, our change of variables drastically reduces the limitations of the CFL condition and Nyquist limit, allowing us to simulate highly detailed water waves at very large visual resolutions. Our discretization is amenable to fast summation and easy to parallelize. We also present basic extensions like pre-computed wave paths and two-way solid fluid coupling. Finally, we argue that our discretization provides a convenient set of variables for artistic manipulation, which we illustrate with a novel wave-painting interface."
     }
   },
-  "generator": "fallback_v4"
+  "generator": "ollama:llama3.1:8b"
 }

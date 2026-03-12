@@ -1,0 +1,20 @@
+{
+  "doc_id": "41211",
+  "text": "Once the relation sets are fixed, we need a set of relation instances to be used as training data. In the case of SemRep, we take the instances that are annotated in the corpus. In SNOMED CT, due to its formal semantics, we can distinguish two cases: explicit and inferred relationships. The explicit relationship base (ExpRB) contains all relationships among concepts that are explicitly given in the description of concepts in SNOMED CT. For instance, in Table 1 , a human readable display of the formal definition for the concept Baritosis, we have Baritosis|Causative_agent|Barium_dust as an explicit one. The inferred relationship base (InfRB) can be built through a tractable Description Logic (DL) reasoning engine as follows: InfRB = {A|R|B : SNOMED CT |= A ∃R.B}, where |= is the logical entailment under DL semantics which is tractable for EL++ [CITATION_1] , the logic language underlying SNOMED CT. By this, we have Baritosis|Causative_agent|Dust as an inferred relationship since Barium_dust is a subclass of Dust by SNOMED CT. By the monotonicity of DL semantics, we have ExpRB ⊆ InfRB. The details of the two relationship bases for SNOMED CT are summarized in Table 2 .",
+  "correct_citation": {
+    "[CITATION_1]": "5171420"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "where |= is the logical entailment under DL semantics which is tractable for EL++ [CITATION_1] , the logic language underlying SNOMED CT."
+    }
+  ],
+  "bib_entries": {
+    "5171420": {
+      "title": "Pushing the EL envelope",
+      "abstract": "Recently, it has been shown that the small description logic (DL) EL, which allows for conjunction and existential restrictions, has better algorithmic properties than its counterpart FL0, which allows for conjunction and value restrictions. Whereas the subsumption problem in FL0 becomes already intractable in the presence of acyclic TBoxes, it remains tractable in EL even with general concept inclusion axioms (GCIs). On the one hand, we extend the positive result for EL by identifying a set of expressive means that can be added to EL without sacrificing tractability. On the other hand, we show that basically all other additions of typical DL constructors to EL with GCIs make subsumption intractable, and in most cases even EXPTIME-complete. In addition, we show that subsumption in FL0 with GCIs is EXPTIME-complete."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

@@ -1,0 +1,47 @@
+{
+  "doc_id": "46707",
+  "text": "Multi-core processors are now prevalent in server and client systems. However, the complexity of parallel programming prevents programmers from taking advantage of abundant hardware parallelism. While scalable lock-free data structures avoid the drawbacks of the traditional lockbased programming such as deadlock and priority inversion, it remains difficult to develop and express their complex algorithms with basic atomic primitives such as single-word CAS (compare-and-swap) [CITATION_1] - [CITATION_2] . Transactional memory (TM) makes parallel programming easier by allowing programmers to execute a group of instructions atomically with transactions but needs hardware acceleration for performance [CITATION_3] - [CITATION_4] .",
+  "correct_citation": {
+    "[CITATION_1]": "2856013",
+    "[CITATION_2]": "9735308",
+    "[CITATION_3]": "554620",
+    "[CITATION_4]": "14238550"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "While scalable lock-free data structures avoid the drawbacks of the traditional lockbased programming such as deadlock and priority inversion, it remains difficult to develop and express their complex algorithms with basic atomic primitives such as single-word CAS (compare-and-swap) [CITATION_1] - [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "While scalable lock-free data structures avoid the drawbacks of the traditional lockbased programming such as deadlock and priority inversion, it remains difficult to develop and express their complex algorithms with basic atomic primitives such as single-word CAS (compare-and-swap) [CITATION_1] - [CITATION_2] ."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "Transactional memory (TM) makes parallel programming easier by allowing programmers to execute a group of instructions atomically with transactions but needs hardware acceleration for performance [CITATION_3] - [CITATION_4] ."
+    },
+    {
+      "citation_id": "[CITATION_4]",
+      "span_text": "Transactional memory (TM) makes parallel programming easier by allowing programmers to execute a group of instructions atomically with transactions but needs hardware acceleration for performance [CITATION_3] - [CITATION_4] ."
+    }
+  ],
+  "bib_entries": {
+    "554620": {
+      "title": "An Effective Hybrid Transactional Memory System with Strong Isolation Guarantees",
+      "abstract": "We propose signature-accelerated transactional memory (SigTM), ahybrid TM system that reduces the overhead of software transactions. SigTM uses hardware signatures to track the read-set and write-set forpending transactions and perform conflict detection between concurrent threads. All other transactional functionality, including dataversioning, is implemented in software. Unlike previously proposed hybrid TM systems, SigTM requires no modifications to the hardware caches, which reduces hardware cost and simplifies support for nested transactions and multithreaded processor cores. SigTM is also the first hybrid TM system to provide strong isolation guarantees between transactional blocks and non-transactional accesses without additional read and write barriers in non-transactional code. Using a set of parallel programs that make frequent use of coarse-grain transactions, we show that SigTM accelerates software transactions by 30% to 280%. For certain workloads, SigTM can match the performance of a full-featured hardware TM system, while for workloads with large read-sets it can be up to two times slower. Overall, we show that SigTM combines the performance characteristics and strong isolation guarantees of hardware TM implementations with the low cost and flexibility of software TM systems."
+    },
+    "14238550": {
+      "title": "LogTM-SE: Decoupling Hardware Transactional Memory from Caches",
+      "abstract": "This paper proposes a hardware transactional memory (HTM) system called LogTM Signature Edition (LogTM-SE). LogTM-SE uses signatures to summarize a transactions read-and write-sets and detects conflicts on coherence requests (eager conflict detection). Transactions update memory \"in place\" after saving the old value in a per-thread memory log (eager version management). Finally, a transaction commits locally by clearing its signature, resetting the log pointer, etc., while aborts must undo the log. LogTM-SE achieves two key benefits. First, signatures and logs can be implemented without changes to highly-optimized cache arrays because LogTM-SE never moves cached data, changes a blocks cache state, or flash clears bits in the cache. Second, transactions are more easily virtualized because signatures and logs are software accessible, allowing the operating system and runtime to save and restore this state. In particular, LogTM-SE allows cache victimization, unbounded nesting (both open and closed), thread context switching and migration, and paging"
+    },
+    "2856013": {
+      "title": "Scalable lock-free dynamic memory allocation",
+      "abstract": "Dynamic memory allocators (malloc/free) rely on mutual exclusion locks for protecting the consistency of their shared data structures under multithreading. The use of locking has many disadvantages with respect to performance, availability, robustness, and programming flexibility. A lock-free memory allocator guarantees progress regardless of whether some threads are delayed or even killed and regardless of scheduling policies. This paper presents a completely lock-free memory allocator. It uses only widely-available operating system support and hardware atomic instructions. It offers guaranteed availability even under arbitrary thread termination and crash-failure, and it is immune to deadlock regardless of scheduling policies, and hence it can be used even in interrupt handlers and real-time applications without requiring special scheduler support. Also, by leveraging some high-level structures from Hoard, our allocator is highly scalable, limits space blowup to a constant factor, and is capable of avoiding false sharing. In addition, our allocator allows finer concurrency and much lower latency than Hoard. We use PowerPC shared memory multiprocessor systems to compare the performance of our allocator with the default AIX 5.1 libc malloc, and two widely-used multithread allocators, Hoard and Ptmalloc. Our allocator outperforms the other allocators in virtually all cases and often by substantial margins, under various levels of parallelism and allocation patterns. Furthermore, our allocator also offers the lowest contention-free latency among the allocators by significant margins."
+    },
+    "9735308": {
+      "title": "A methodology for implementing highly concurrent data structures",
+      "abstract": "A concurrent object is a data structure shared by concurrent processes. Conventional techniques for implementing concurrent objects typically rely on critical sections : ensuring that only one process at a time can operate on the object. Nevertheless, critical sections are poorly suited for asynchronous systems: if one process is halted or delayed in a critical section, other, non-faulty processes will be unable to progress. By contrast, a concurrent object implementation is non-blocking if it always guarantees that some process will complete an operation in a finite number of steps, and it is wait-free if it guarantees that each process will complete an operation in a finite number of steps. This paper proposes a new methodology for constructing non-blocking and wait-free implementations of concurrent objects. The object's representation and operations are written as stylized sequential programs, with no explicit synchronization. Each sequential operation is automatically transformed into a non-blocking or wait-free operation using novel synchronization and memory management algorithms. These algorithms are presented for a multiple instruction/multiple data (MIMD) architecture in which n processes communicate by applying read, write , and compare&swap operations to a shared memory."
+    }
+  },
+  "generator": "logic:full-sentence-heuristic-v1-strict"
+}

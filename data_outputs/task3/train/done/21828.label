@@ -1,0 +1,38 @@
+{
+  "doc_id": "21828",
+  "text": "We have developed conservative estimators for the variance of the sample mean under partial observation of a dependency graph and assumptions about the variance of individual outcomes. The variance estimation setting we address here is quite flexible, and can accommodate a wide variety of dependency and observation assumptions. For example, Assumption 1, which states that we observe Y = (X, d, G R ), can be weakened when G R is completely unknown. In this case the constraint in the integer linear programs (5) and (8) becomes A 0 where 0 is the n × n matrix of all zeros; this constraint is met for all adjacency matrices A, so it becomes superfluous. Alternatively, we may not have full knowledge of the degrees d = (d 1 , . We note here four extensions. (i) Upper bounds for the variance estimates can be obtained by solving a relaxed form of the programs (5) and (8). By Proposition 3, using such upper bounds as a basis for conservative inference will also yield valid confidence intervals. In practice, the results obtained by modern optimization solvers will be tighter with a provably small optimality gap and thus will typically be preferable. (ii) It is possible to extend our results to obtain confidence intervals more generally for asymptotically linear estimators (including regression estimators, e.g., [CITATION_1] using an empirical analogue of the variance of the influence function as the objective function. (iii) Our results facilitate conservative inference for causal estimands under interference between units (e.g., [CITATION_2] [CITATION_3] , given interference that can be characterized by a constrained dependency graph. (iv) Given additional assumptions about the manner in which the units in the sample are drawn from a broader population, our results could be extended to facilitate confidence intervals for the mean of this broader population.",
+  "correct_citation": {
+    "[CITATION_1]": "1296789",
+    "[CITATION_2]": "34519507",
+    "[CITATION_3]": "6165038"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "(ii) It is possible to extend our results to obtain confidence intervals more generally for asymptotically linear estimators (including regression estimators, e.g., [CITATION_1] using an empirical analogue of the variance of the influence function as the objective function."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "(iii) Our results facilitate conservative inference for causal estimands under interference between units (e.g., [CITATION_2] [CITATION_3] , given interference that can be characterized by a constrained dependency graph."
+    },
+    {
+      "citation_id": "[CITATION_3]",
+      "span_text": "(iii) Our results facilitate conservative inference for causal estimands under interference between units (e.g., [CITATION_2] [CITATION_3] , given interference that can be characterized by a constrained dependency graph."
+    }
+  ],
+  "bib_entries": {
+    "34519507": {
+      "title": "On causal inference in the presence of interference",
+      "abstract": "Interference is said to be present when the exposure or treatment received by one individual may affect the outcomes of other individuals. Such interference can arise in settings in which the outcomes of the various individuals come about through social interactions. When interference is present, causal inference is rendered considerably more complex, and the literature on causal inference in the presence of interference has just recently begun to develop. In this article we summarise some of the concepts and results from the existing literature and extend that literature in considering new results for finite sample inference, new inverse probability weighting estimators in the presence of interference and new causal estimands of interest."
+    },
+    "6165038": {
+      "title": "Large sample randomization inference of causal effects in the presence of interference",
+      "abstract": "Recently, there has been increasing interest in making causal inference when interference is possible. In the presence of interference, treatment may have several types of effects. In this article, we consider inference about such effects when the population consists of groups of individuals where interference is possible within groups but not between groups. A two-stage randomization design is assumed where in the first stage groups are randomized to different treatment allocation strategies and in the second stage individuals are randomized to treatment or control conditional on the strategy assigned to their group in the first stage. For this design, the asymptotic distributions of estimators of the causal effects are derived when either the number of individuals per group or the number of groups grows large. Under certain homogeneity assumptions, the asymptotic distributions provide justification for Wald-type confidence intervals (CIs) and tests. Empirical results demonstrate that the Wald CIs have good coverage in finite samples and are narrower than CIs based on either the Chebyshev or Hoeffding inequalities provided the number of groups is not too small. The methods are illustrated by two examples which consider the effects of cholera vaccination and an intervention to encourage voting."
+    },
+    "1296789": {
+      "title": "A practitioner's guide to cluster-robust inference",
+      "abstract": "We consider statistical inference for regression when data are grouped into clusters, with regression model errors independent across clusters but correlated within clusters. Examples include data on individuals with clustering on village or region or other category such as industry, and state-year differences-in-differences studies with clustering on state. In such settings, default standard errors can greatly overstate estimator precision. Instead, if the number of clusters is large, statistical inference after OLS should be based on cluster-robust standard errors. We outline the basic method as well as many complications that can arise in practice. These include cluster-specific fixed effects, few clusters, multiway clustering, and estimators other than OLS."
+    }
+  },
+  "generator": "auto-fixed-from-ollama:llama3.1:8b"
+}

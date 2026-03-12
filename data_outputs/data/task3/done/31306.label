@@ -1,0 +1,20 @@
+{
+  "doc_id": "31306",
+  "text": "There are both conceptual and technical challenges for identifying root causes. Firstly, symptoms of a bug may not reveal a root cause. For example, when a program fails with a \"division by zero\" exception, it does not tell where the zero comes from; a debugger may need to back track the data flow to find the source of the zero. Secondly, treatments of a bug (i.e., changes made to fix the bug) may often contain not only treatments for bugs but also non-essential changes (e.g., code reformatting, code refactoring, etc.) [CITATION_1] , new feature additions, many of which are intermingled. The treatments may add extra code which does not reveal the location of root causes. For example, \"division by zero\" exceptions can be fixed by adding an exception handler spatially far away from either the failure location or the root cause.",
+  "correct_citation": {
+    "[CITATION_1]": "1792074"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "For example, when a program fails with a \"division by zero\" exception, it does not tell where the zero comes from; a debugger may need to back track the data flow to find the source of the zero. Secondly, treatments of a bug (i.e., changes made to fix the bug) may often contain not only treatments for bugs but also non-essential changes (e.g., code reformatting, code refactoring, etc.) [CITATION_1] , new feature additions, many of which are intermingled."
+    }
+  ],
+  "bib_entries": {
+    "1792074": {
+      "title": "Non-essential changes in version histories",
+      "abstract": "Numerous techniques involve mining change data captured in software archives to assist engineering efforts, for example to identify components that tend to evolve together. We observed that important changes to software artifacts are sometimes accompanied by numerous non-essential modifications, such as local variable refactorings, or textual differences induced as part of a rename refactoring. We developed a tool-supported technique for detecting non-essential code differences in the revision histories of software systems. We used our technique to investigate code changes in over 24,000 change sets gathered from the change histories of seven long-lived open-source systems. We found that up to 15.5% of a system's method updates were due solely to non-essential differences. We also report on numerous observations on the distribution of non-essential differences in change history and their potential impact on change-based analyses."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}

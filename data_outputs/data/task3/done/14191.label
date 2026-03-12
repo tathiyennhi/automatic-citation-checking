@@ -1,0 +1,25 @@
+{
+  "doc_id": "14191",
+  "text": "In general-purpose systems, another protection mechanism employed is to utilize address-space layout randomization (ASLR) [CITATION_1] . The stack is placed in a hard-toguess location in the memory. If an attacker attempts to jump to code placed on the stack, it becomes difficult to infer absolute stack addresses where attack code may have been injected. This method is best suited for systems that employ 64-bit addressing spaces, i.e., where ample room for stack placement exists such that repeated brute-force attempts are statistically ineffective. However, such techniques may be circumvented by repeated attacks in a space-constrained embedded real-time system with 8/16/32-bit address spaces [CITATION_2] .",
+  "correct_citation": {
+    "[CITATION_1]": "5864467",
+    "[CITATION_2]": "5864467"
+  },
+  "citation_spans": [
+    {
+      "citation_id": "[CITATION_1]",
+      "span_text": "In general-purpose systems, another protection mechanism employed is to utilize address-space layout randomization (ASLR) [CITATION_1] ."
+    },
+    {
+      "citation_id": "[CITATION_2]",
+      "span_text": "However, such techniques may be circumvented by repeated attacks in a space-constrained embedded real-time system with 8/16/32-bit address spaces [CITATION_2] ."
+    }
+  ],
+  "bib_entries": {
+    "5864467": {
+      "title": "On the effectiveness of address-space randomization",
+      "abstract": "Address-space randomization is a technique used to fortify systems against buffer overflow attacks. The idea is to introduce artificial diversity by randomizing the memory location of certain system components. This mechanism is available for both Linux (via PaX ASLR) and OpenBSD. We study the effectiveness of address-space randomization and find that its utility on 32-bit architectures is limited by the number of bits available for address randomization. In particular, we demonstrate a derandomization attack that will convert any standard buffer-overflow exploit into an exploit that works against systems protected by address-space randomization. The resulting exploit is as effective as the original exploit, although it takes a little longer to compromise a target machine: on average 216 seconds to compromise Apache running on a Linux PaX ASLR system. The attack does not require running code on the stack. We also explore various ways of strengthening address-space randomization and point out weaknesses in each. Surprisingly, increasing the frequency of re-randomizations adds at most 1 bit of security. Furthermore, compile-time randomization appears to be more effective than runtime randomization. We conclude that, on 32-bit architectures, the only benefit of PaX-like address-space randomization is a small slowdown in worm propagation speed. The cost of randomization is extra complexity in system support."
+    }
+  },
+  "generator": "ollama:llama3.1:8b"
+}
