@@ -1,0 +1,17 @@
+{
+  "text": "Dentler and Cornet [CITATION_1] eliminate redundant elements in already existing SNOMED CT definitions. Using the ELK reasoner [CITATION_2] , the authors eliminated redundant concepts, existential restrictions and rolegroups. Here is an example of the elimination rule for concepts: if a concept is more general or equivalent to one of the other concepts in the definition of the same concept or a superconcept. This work is highly relevant to the task of formal definition generation, as it provides a method for post-processing that can improve the quality of generated axioms and to make the resulting ontology easier to maintain, construct and expand.",
+  "correct_citation": {
+    "[CITATION_1]": "16234110",
+    "[CITATION_2]": "15496393"
+  },
+  "bib_entries": {
+    "16234110": {
+      "title": "Redundant elements in SNOMED CT concept definitions",
+      "abstract": "While redundant elements in SNOMED CT concept definitions are harmless from a logical point of view, they unnecessarily make concept definitions of typically large ontologies such as SNOMED CT hard to construct and to maintain. In this paper, we apply a fully automated method to detect intra-axiom redundancies in SNOMED CT. We systematically analyse the completeness and soundness of the results of our method by examining the identified redundant elements. In absence of a gold standard, we check whether our method identifies concepts that are likely to contain redundant elements because they become equivalent to their stated subsumer when they are replaced by a fully defined concept with the same definition. To evaluate soundness, we remove all identified redundancies, and test whether the logical closure is preserved by comparing the concept hierarchy to the one of the official SNOMED CT distribution. We found that 35,010 of the 296,433 SNOMED CT concepts (12%) contain redundant elements in their definitions, and that the results of our method are sound and complete with respect to our partial evaluation. We recommend to free the stated form from these redundancies. In future, knowledge modellers should be supported by being pointed to newly introduced redundancies"
+    },
+    "15496393": {
+      "title": "Concurrent classification of EL ontologies",
+      "abstract": "We describe an optimised consequence-based procedure for classification of ontologies expressed in a polynomial fragment ELHR+ of the OWL 2 EL profile. A distinguishing property of our procedure is that it can take advantage of multiple processors/cores, which increasingly prevail in computer systems. Our solution is based on a variant of the 'given clause' saturation algorithm for first-order theorem proving, where we assign derived axioms to 'contexts' within which they can be used and which can be processed independently. We describe an implementation of our procedure within the Java-based reasoner ELK. Our implementation is light-weight in the sense that an overhead of managing concurrent computations is minimal. This is achieved by employing lock-free data structures and operations such as 'compare-and-swap'. We report on preliminary experimental results demonstrating a substantial speedup of ontology classification on multi-core systems. In particular, one of the largest and widely-used medical ontologies SNOMED CT can be classified in as little as 5 seconds."
+    }
+  }
+}
