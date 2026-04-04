@@ -18,7 +18,7 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 # BASE_DIR = Path("/Users/tathiyennhi/Documents/automatic-citation-checking/data_outputs/task3")
 BASE_DIR = Path(__file__).parent / "data_outputs" / "task3"
 MODEL_NAME = "llama-3.3-70b-versatile"
-VALID_SPLITS = ["train", "val", "test_gold_500", "test_silver_2500"]
+VALID_SPLITS = ["train", "val", "test"]
 SLEEP_SECONDS = float(os.getenv("GROQ_SLEEP_SECONDS", "0.5"))
 
 client = Groq(api_key=GROQ_API_KEY)

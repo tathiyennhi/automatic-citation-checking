@@ -9,7 +9,7 @@ from task3_strict import validate_spans, resume_safe_has_valid_label
 
 
 BASE_DIR = Path(__file__).parent / "data_outputs" / "task3"
-VALID_SPLITS = ["train", "val", "test_gold_500", "test_silver_2500"]
+VALID_SPLITS = ["train", "val", "test"]
 SENTENCE_ENDINGS = ".!?"
 
 

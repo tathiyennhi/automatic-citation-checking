@@ -18,7 +18,7 @@ HF_API_KEY = os.getenv("HF_API_KEY")
 # BASE_DIR = Path("/Users/tathiyennhi/Documents/automatic-citation-checking/data_outputs/task3")
 BASE_DIR = Path(__file__).parent / "data_outputs" / "task3"
 MODEL_NAME = "meta-llama/Llama-3.3-70B-Instruct"
-VALID_SPLITS = ["train", "val", "test_gold_500", "test_silver_2500"]
+VALID_SPLITS = ["train", "val", "test"]
 
 client = InferenceClient(token=HF_API_KEY)
 

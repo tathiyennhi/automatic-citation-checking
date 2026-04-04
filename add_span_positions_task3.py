@@ -199,7 +199,7 @@ if __name__ == '__main__':
     parser.add_argument('--dry-run', action='store_true', help='Test without saving')
     parser.add_argument('--limit', type=int, default=-1, help='Limit files per directory')
     parser.add_argument('--subdirs', nargs='+',
-                       default=['train', 'val', 'test_gold_500'],
+                       default=['train', 'val', 'test'],
                        help='Subdirectories to process')
 
     args = parser.parse_args()

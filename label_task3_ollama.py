@@ -12,7 +12,7 @@ from urllib import request, error
 # --- CONFIG ---
 # BASE_DIR = Path("/Users/tathiyennhi/Documents/automatic-citation-checking/data_outputs/task3")
 BASE_DIR = Path(__file__).parent / "data_outputs" / "task3"
-VALID_SPLITS = ["train", "val", "test_gold_500", "test_silver_2500"]
+VALID_SPLITS = ["train", "val", "test"]
 
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 MODEL_NAME = os.getenv("OLLAMA_MODEL", "llama3.1:8b")

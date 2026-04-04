@@ -8,7 +8,7 @@ from pathlib import Path
 # --- CONFIG ---
 # BASE_DIR = Path("/Users/tathiyennhi/Documents/automatic-citation-checking/data_outputs/task3")
 BASE_DIR = Path(__file__).parent / "data_outputs" / "task3"
-VALID_SPLITS = ["train", "val", "test_gold_500", "test_silver_2500"]
+VALID_SPLITS = ["train", "val", "test"]
 GENERATOR_NAME = "rules_sentence_extractor_v1"
 
 

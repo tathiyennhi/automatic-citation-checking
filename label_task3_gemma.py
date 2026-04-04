@@ -18,7 +18,7 @@ API_KEY = os.getenv("GOOGLE_AI_API_KEY")
 # BASE_DIR = Path("/Users/tathiyennhi/Documents/automatic-citation-checking/data_outputs/task3")
 BASE_DIR = Path(__file__).parent / "data_outputs" / "task3"
 MODEL_NAME = "gemma-3-27b-it"
-VALID_SPLITS = ["train", "val", "test_gold_500", "test_silver_2500"]
+VALID_SPLITS = ["train", "val", "test"]
 TEST_LIMIT = 5  # Set to None to process all files
 
 client = genai.Client(api_key=API_KEY)
