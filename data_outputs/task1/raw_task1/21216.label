@@ -1,0 +1,43 @@
+{
+  "text": "A number of top-down class-specific segmentation approaches have been proposed in recent years, where the low-level cues are balanced concurrently with insight from trained object models. One set of methods deals with foreground segmentation, where the best figure/ground assignment will have boundaries that agree with a previously learned shape model or other class-based cue         . Such two-class techniques are intended for single-object images with a given target class, and generally work best when it is possible to construct a consistent shape prior for that category (e.g., side views of horses). Some explore the space of groupings using merge operations   , which we also consider here, though with a distinct objective function. The approach of  does not use any class-specific knowledge but instead learns to differentiate between \"good\" and \"bad\" moves among merges, shifts, and splits between superpixels using low-level cues and hand-drawn segmentations.",
+  "correct_citation": [
+    "5558414",
+    "14122369",
+    "BIBREF4",
+    "5489503",
+    "6533591",
+    "13571735",
+    "121938695",
+    "1761618"
+  ],
+  "bib_entries": {
+    "5558414": {
+      "title": "Class-Specific, Top-Down Segmentation",
+      "abstract": "In this paper we present a novel class-based segmentation method, which is guided by a stored representation of the shape of objects within a general class (such as horse images). The approach is different from bottom-up segmentation methods that primarily use the continuity of grey-level, texture, and bounding contours. We show that the method leads to markedly improved segmentation results and can deal with significant variation in shape and varying backgrounds. We discuss the relative merits of class-specific and general image-based segmentation methods and suggest how they can be usefully combined."
+    },
+    "14122369": {
+      "title": "Recognizing Objects by Piecing Together the Segmentation Puzzle",
+      "abstract": "We present an algorithm that recognizes objects of a given category using a small number of hand segmented images as references. Our method first over segments an input image into superpixels, and then finds a shortlist of optimal combinations of superpixels that best fit one of template parts, under affine transformations. Second, we develop a contextual interpretation of the parts, gluing image segments using top-down fiducial points, and checking overall shape similarity. In contrast to previous work, the search for candidate superpixel combinations is not exponential in the number of segments, and in fact leads to a very efficient detection scheme. Both the storage and the detection of templates only require space and time proportional to the length of the template boundary, allowing us to store potentially millions of templates, and to detect a template anywhere in a large image in roughly 0.01 seconds. We apply our algorithm on the Weizmann horse database, and show our method is comparable to the state of the art while offering a simpler and more efficient alternative compared to previous work."
+    },
+    "5489503": {
+      "title": "LOCUS: Learning Object Classes with Unsupervised Segmentation",
+      "abstract": "We address the problem of learning object class models and object segmentations from unannotated images. We introduce LOCUS (learning object classes with unsupervised segmentation) which uses a generative probabilistic model to combine bottom-up cues of color and edge with top-down cues of shape and pose. A key aspect of this model is that the object appearance is allowed to vary from image to image, allowing for significant within-class variation. By iteratively updating the belief in the object's position, size, segmentation and pose, LOCUS avoids making hard decisions about any of these quantities and so allows for each to be refined at any stage. We show that LOCUS successfully learns an object class model from unlabeled images, whilst also giving segmentation accuracies that rival existing supervised methods. Finally, we demonstrate simultaneous recognition and segmentation in novel images using the learned models for a number of object classes, as well as unsupervised object discovery and tracking in video."
+    },
+    "6533591": {
+      "title": "Combined Object Categorization and Segmentation with an Implicit Shape Model",
+      "abstract": "We present a method for object categorization in real-world scenes. Following a common consensus in the field, we do not assume that a figure- ground segmentation is available prior to recognition. However, in contrast to most standard approaches for object class recognition, our approach automati- cally segments the object as a result of the categorization. This combination of recognition and segmentation into one process is made pos- sible by our use of an Implicit Shape Model, which integrates both into a common probabilistic framework. In addition to the recognition and segmentation result, it also generates a per-pixel confidence measure specifying the area that supports a hypothesis and how much it can be trusted. We use this confidence to derive a nat- ural extension of the approach to handle multiple objects in a scene and resolve ambiguities between overlapping hypotheses with a novel MDL-based criterion. In addition, we present an extensive evaluation of our method on a standard dataset for car detection and compare its performance to existing methods from the literature. Our results show that the proposed method significantly outper- forms previously published methods while needing one order of magnitude less training examples. Finally, we present results for articulated objects, which show that the proposed method can categorize and segment unfamiliar objects in differ- ent articulations and with widely varying texture patterns, even under significant partial occlusion."
+    },
+    "13571735": {
+      "title": "Learning a Classification Model for Segmentation",
+      "abstract": "We propose a two-class classification model for grouping. Human segmented natural images are used as positive examples. Negative examples of grouping are constructed by randomly matching human segmentations and images. In a preprocessing stage an image is over-segmented into super-pixels. We define a variety of features derived from the classical Gestalt cues, including contour, texture, brightness and good continuation. Information-theoretic analysis is applied to evaluate the power of these grouping cues. We train a linear classifier to combine these features. To demonstrate the power of the classification model, a simple algorithm is used to randomly search for good segmentations. Results are shown on a wide range of images."
+    },
+    "121938695": {
+      "title": "Region Segmentation via Deformable ModelGuided Split and Merge",
+      "abstract": "An improved method for deformable shape-based image segmentation is described. Image regions are merged together and/or split apart, based on their agreement with an a priori distribution on the global deformation parameters for a shape template. Perceptually-motivated criteria are used to determine where/how to split regions, based on the local shape properties of the region group's bounding contour. A globally consistent interpretation is determined in part by the minimum description length principle. Experiments show that model-guided split and merge yields a significant improvement in segmention over a method that uses merging alone."
+    },
+    "1761618": {
+      "title": "Concurrent Object Recognition and Segmentation by Graph Partitioning",
+      "abstract": "Segmentation and recognition have long been treated as two separate processes. We propose a mechanism based on spectral graph partitioning that readily combine the two processes into one. A part-based recognition system detects object patches, supplies their partial segmentations as well as knowledge about the spatial configurations of the object. The goal of patch grouping is to find a set of patches that conform best to the object configuration, while the goal of pixel grouping is to find a set of pixels that have the best low-level feature similarity. Through pixel-patch interactions and between-pateh competition encoded in the solution space, these two processes are realized in one joint optimization problem. The globally optima] partition is obtained by solving a constrained eigenvalue problem. We demonstrate that the resulting object segmentation eliminates false positives for the part detection, while overcoming occlusion and weak contours for the low-level edge detection."
+    }
+  }
+}
